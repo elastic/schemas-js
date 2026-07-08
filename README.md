@@ -21,9 +21,9 @@ npm install path/to/schemas-js
 Import schemas by product namespace and use them like any Zod schema:
 
 ```typescript
-import { EsSchemas } from '@elastic/schemas'
+import { ElasticsearchSchemas } from '@elastic/schemas'
 
-const result = EsSchemas.SearchRequest.safeParse({
+const result = ElasticsearchSchemas.SearchRequest.safeParse({
   index: 'my-index',
   query: { match: { title: 'elasticsearch' } },
   size: 10,
