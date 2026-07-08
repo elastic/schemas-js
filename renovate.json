@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "local>elastic/renovate-config",
+    "schedule:automergeMonthly",
+    "security:minimumReleaseAgeNpm",
+    "mergeConfidence:all-badges"
+  ],
+  "schedule": [
+    "* 0-3 1 * *"
+  ],
+  "prConcurrentLimit": 10
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"snapshot_cleanup_repository.js","sourceRoot":"","sources":["../../../../src/es/tools/apis/snapshot_cleanup_repository.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAUH,MAAM,CAAC,MAAM,uCAAuC,GAAsB;IACxE;QACE,IAAI,EAAE,oBAAoB;QAC1B,SAAS,EAAE,UAAU;QACrB,WAAW,EAAE,mCAAmC;QAChD,MAAM,EAAE,MAAM;QACd,IAAI,EAAE,kCAAkC;KACzC;CACF,CAAA"}

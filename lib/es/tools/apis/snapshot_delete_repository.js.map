@@ -1,0 +1,1 @@
+{"version":3,"file":"snapshot_delete_repository.js","sourceRoot":"","sources":["../../../../src/es/tools/apis/snapshot_delete_repository.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAUH,MAAM,CAAC,MAAM,sCAAsC,GAAsB;IACvE;QACE,IAAI,EAAE,mBAAmB;QACzB,SAAS,EAAE,UAAU;QACrB,WAAW,EAAE,+BAA+B;QAC5C,MAAM,EAAE,QAAQ;QAChB,IAAI,EAAE,yBAAyB;KAChC;CACF,CAAA"}

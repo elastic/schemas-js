@@ -1,0 +1,36 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Coverage
+coverage
+.nyc_output
+
+# Dependency directories
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# mac files
+.DS_Store
+
+# vim swap files
+*.swp
+
+# Jetbrains
+.idea
+
+package-lock.json
+
+# Build output
+lib
+
+# ESLint
+.eslintcache

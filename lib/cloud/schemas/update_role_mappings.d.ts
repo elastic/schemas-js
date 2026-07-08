@@ -1,0 +1,244 @@
+import { z } from 'zod';
+export declare const EmptyResponse: z.ZodObject<{}, z.core.$strip>;
+export type EmptyResponse = z.infer<typeof EmptyResponse>;
+export declare const ProjectRoleAssignment: z.ZodObject<{
+    role_id: z.ZodString;
+    organization_id: z.ZodString;
+    all: z.ZodOptional<z.ZodBoolean>;
+    project_ids: z.ZodOptional<z.ZodArray<z.ZodString>>;
+    application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+}, z.core.$strip>;
+export type ProjectRoleAssignment = z.infer<typeof ProjectRoleAssignment>;
+export declare const DeploymentRoleAssignment: z.ZodObject<{
+    role_id: z.ZodString;
+    organization_id: z.ZodString;
+    all: z.ZodOptional<z.ZodBoolean>;
+    deployment_ids: z.ZodOptional<z.ZodArray<z.ZodString>>;
+    application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+}, z.core.$strip>;
+export type DeploymentRoleAssignment = z.infer<typeof DeploymentRoleAssignment>;
+export declare const OrganizationRoleAssignment: z.ZodObject<{
+    role_id: z.ZodString;
+    organization_id: z.ZodString;
+    application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+}, z.core.$strip>;
+export type OrganizationRoleAssignment = z.infer<typeof OrganizationRoleAssignment>;
+export declare const PlatformRoleAssignment: z.ZodObject<{
+    role_id: z.ZodString;
+}, z.core.$strip>;
+export type PlatformRoleAssignment = z.infer<typeof PlatformRoleAssignment>;
+export declare const RoleMappingGroupRule: z.ZodObject<{
+    group: z.ZodString;
+}, z.core.$strip>;
+export type RoleMappingGroupRule = z.infer<typeof RoleMappingGroupRule>;
+export declare const ProjectRoleAssignments: z.ZodObject<{
+    elasticsearch: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        role_id: z.ZodString;
+        organization_id: z.ZodString;
+        all: z.ZodOptional<z.ZodBoolean>;
+        project_ids: z.ZodOptional<z.ZodArray<z.ZodString>>;
+        application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+    }, z.core.$strip>>>;
+    observability: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        role_id: z.ZodString;
+        organization_id: z.ZodString;
+        all: z.ZodOptional<z.ZodBoolean>;
+        project_ids: z.ZodOptional<z.ZodArray<z.ZodString>>;
+        application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+    }, z.core.$strip>>>;
+    security: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        role_id: z.ZodString;
+        organization_id: z.ZodString;
+        all: z.ZodOptional<z.ZodBoolean>;
+        project_ids: z.ZodOptional<z.ZodArray<z.ZodString>>;
+        application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+    }, z.core.$strip>>>;
+    workplaceai: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        role_id: z.ZodString;
+        organization_id: z.ZodString;
+        all: z.ZodOptional<z.ZodBoolean>;
+        project_ids: z.ZodOptional<z.ZodArray<z.ZodString>>;
+        application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+    }, z.core.$strip>>>;
+}, z.core.$strip>;
+export type ProjectRoleAssignments = z.infer<typeof ProjectRoleAssignments>;
+export declare const RoleMappingRule: z.ZodObject<{
+    any: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        group: z.ZodString;
+    }, z.core.$strip>>>;
+    all: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        group: z.ZodString;
+    }, z.core.$strip>>>;
+}, z.core.$strip>;
+export type RoleMappingRule = z.infer<typeof RoleMappingRule>;
+export declare const RoleAssignments: z.ZodObject<{
+    platform: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        role_id: z.ZodString;
+    }, z.core.$strip>>>;
+    organization: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        role_id: z.ZodString;
+        organization_id: z.ZodString;
+        application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+    }, z.core.$strip>>>;
+    deployment: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        role_id: z.ZodString;
+        organization_id: z.ZodString;
+        all: z.ZodOptional<z.ZodBoolean>;
+        deployment_ids: z.ZodOptional<z.ZodArray<z.ZodString>>;
+        application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+    }, z.core.$strip>>>;
+    project: z.ZodOptional<z.ZodObject<{
+        elasticsearch: z.ZodOptional<z.ZodArray<z.ZodObject<{
+            role_id: z.ZodString;
+            organization_id: z.ZodString;
+            all: z.ZodOptional<z.ZodBoolean>;
+            project_ids: z.ZodOptional<z.ZodArray<z.ZodString>>;
+            application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+        }, z.core.$strip>>>;
+        observability: z.ZodOptional<z.ZodArray<z.ZodObject<{
+            role_id: z.ZodString;
+            organization_id: z.ZodString;
+            all: z.ZodOptional<z.ZodBoolean>;
+            project_ids: z.ZodOptional<z.ZodArray<z.ZodString>>;
+            application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+        }, z.core.$strip>>>;
+        security: z.ZodOptional<z.ZodArray<z.ZodObject<{
+            role_id: z.ZodString;
+            organization_id: z.ZodString;
+            all: z.ZodOptional<z.ZodBoolean>;
+            project_ids: z.ZodOptional<z.ZodArray<z.ZodString>>;
+            application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+        }, z.core.$strip>>>;
+        workplaceai: z.ZodOptional<z.ZodArray<z.ZodObject<{
+            role_id: z.ZodString;
+            organization_id: z.ZodString;
+            all: z.ZodOptional<z.ZodBoolean>;
+            project_ids: z.ZodOptional<z.ZodArray<z.ZodString>>;
+            application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+        }, z.core.$strip>>>;
+    }, z.core.$strip>>;
+}, z.core.$strip>;
+export type RoleAssignments = z.infer<typeof RoleAssignments>;
+export declare const RoleMapping: z.ZodObject<{
+    enabled: z.ZodBoolean;
+    name: z.ZodString;
+    rule: z.ZodObject<{
+        any: z.ZodOptional<z.ZodArray<z.ZodObject<{
+            group: z.ZodString;
+        }, z.core.$strip>>>;
+        all: z.ZodOptional<z.ZodArray<z.ZodObject<{
+            group: z.ZodString;
+        }, z.core.$strip>>>;
+    }, z.core.$strip>;
+    role_assignments: z.ZodObject<{
+        platform: z.ZodOptional<z.ZodArray<z.ZodObject<{
+            role_id: z.ZodString;
+        }, z.core.$strip>>>;
+        organization: z.ZodOptional<z.ZodArray<z.ZodObject<{
+            role_id: z.ZodString;
+            organization_id: z.ZodString;
+            application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+        }, z.core.$strip>>>;
+        deployment: z.ZodOptional<z.ZodArray<z.ZodObject<{
+            role_id: z.ZodString;
+            organization_id: z.ZodString;
+            all: z.ZodOptional<z.ZodBoolean>;
+            deployment_ids: z.ZodOptional<z.ZodArray<z.ZodString>>;
+            application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+        }, z.core.$strip>>>;
+        project: z.ZodOptional<z.ZodObject<{
+            elasticsearch: z.ZodOptional<z.ZodArray<z.ZodObject<{
+                role_id: z.ZodString;
+                organization_id: z.ZodString;
+                all: z.ZodOptional<z.ZodBoolean>;
+                project_ids: z.ZodOptional<z.ZodArray<z.ZodString>>;
+                application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+            }, z.core.$strip>>>;
+            observability: z.ZodOptional<z.ZodArray<z.ZodObject<{
+                role_id: z.ZodString;
+                organization_id: z.ZodString;
+                all: z.ZodOptional<z.ZodBoolean>;
+                project_ids: z.ZodOptional<z.ZodArray<z.ZodString>>;
+                application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+            }, z.core.$strip>>>;
+            security: z.ZodOptional<z.ZodArray<z.ZodObject<{
+                role_id: z.ZodString;
+                organization_id: z.ZodString;
+                all: z.ZodOptional<z.ZodBoolean>;
+                project_ids: z.ZodOptional<z.ZodArray<z.ZodString>>;
+                application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+            }, z.core.$strip>>>;
+            workplaceai: z.ZodOptional<z.ZodArray<z.ZodObject<{
+                role_id: z.ZodString;
+                organization_id: z.ZodString;
+                all: z.ZodOptional<z.ZodBoolean>;
+                project_ids: z.ZodOptional<z.ZodArray<z.ZodString>>;
+                application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+            }, z.core.$strip>>>;
+        }, z.core.$strip>>;
+    }, z.core.$strip>;
+}, z.core.$strip>;
+export type RoleMapping = z.infer<typeof RoleMapping>;
+export declare const UpdateOrganizationRoleMappingRequest: z.ZodObject<{
+    mappings: z.ZodArray<z.ZodObject<{
+        enabled: z.ZodBoolean;
+        name: z.ZodString;
+        rule: z.ZodObject<{
+            any: z.ZodOptional<z.ZodArray<z.ZodObject<{
+                group: z.ZodString;
+            }, z.core.$strip>>>;
+            all: z.ZodOptional<z.ZodArray<z.ZodObject<{
+                group: z.ZodString;
+            }, z.core.$strip>>>;
+        }, z.core.$strip>;
+        role_assignments: z.ZodObject<{
+            platform: z.ZodOptional<z.ZodArray<z.ZodObject<{
+                role_id: z.ZodString;
+            }, z.core.$strip>>>;
+            organization: z.ZodOptional<z.ZodArray<z.ZodObject<{
+                role_id: z.ZodString;
+                organization_id: z.ZodString;
+                application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+            }, z.core.$strip>>>;
+            deployment: z.ZodOptional<z.ZodArray<z.ZodObject<{
+                role_id: z.ZodString;
+                organization_id: z.ZodString;
+                all: z.ZodOptional<z.ZodBoolean>;
+                deployment_ids: z.ZodOptional<z.ZodArray<z.ZodString>>;
+                application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+            }, z.core.$strip>>>;
+            project: z.ZodOptional<z.ZodObject<{
+                elasticsearch: z.ZodOptional<z.ZodArray<z.ZodObject<{
+                    role_id: z.ZodString;
+                    organization_id: z.ZodString;
+                    all: z.ZodOptional<z.ZodBoolean>;
+                    project_ids: z.ZodOptional<z.ZodArray<z.ZodString>>;
+                    application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+                }, z.core.$strip>>>;
+                observability: z.ZodOptional<z.ZodArray<z.ZodObject<{
+                    role_id: z.ZodString;
+                    organization_id: z.ZodString;
+                    all: z.ZodOptional<z.ZodBoolean>;
+                    project_ids: z.ZodOptional<z.ZodArray<z.ZodString>>;
+                    application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+                }, z.core.$strip>>>;
+                security: z.ZodOptional<z.ZodArray<z.ZodObject<{
+                    role_id: z.ZodString;
+                    organization_id: z.ZodString;
+                    all: z.ZodOptional<z.ZodBoolean>;
+                    project_ids: z.ZodOptional<z.ZodArray<z.ZodString>>;
+                    application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+                }, z.core.$strip>>>;
+                workplaceai: z.ZodOptional<z.ZodArray<z.ZodObject<{
+                    role_id: z.ZodString;
+                    organization_id: z.ZodString;
+                    all: z.ZodOptional<z.ZodBoolean>;
+                    project_ids: z.ZodOptional<z.ZodArray<z.ZodString>>;
+                    application_roles: z.ZodOptional<z.ZodArray<z.ZodString>>;
+                }, z.core.$strip>>>;
+            }, z.core.$strip>>;
+        }, z.core.$strip>;
+    }, z.core.$strip>>;
+}, z.core.$strip>;
+export type UpdateOrganizationRoleMappingRequest = z.infer<typeof UpdateOrganizationRoleMappingRequest>;
+//# sourceMappingURL=update_role_mappings.d.ts.map

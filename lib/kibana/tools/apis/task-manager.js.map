@@ -1,0 +1,1 @@
+{"version":3,"file":"task-manager.js","sourceRoot":"","sources":["../../../../src/kibana/tools/apis/task-manager.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAUH,MAAM,CAAC,MAAM,sBAAsB,GAAsB;IACvD;QACE,IAAI,EAAE,qBAAqB;QAC3B,SAAS,EAAE,cAAc;QACzB,WAAW,EAAE,6BAA6B;QAC1C,MAAM,EAAE,KAAK;QACb,IAAI,EAAE,2BAA2B;KAClC;CACF,CAAA"}

@@ -1,0 +1,74 @@
+---
+name: Codegen
+
+on:
+  schedule:
+    # Run at 06:00 UTC every Monday — catches weekly spec updates
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+    inputs:
+      generator-ref:
+        description: 'Branch/tag/SHA of elastic-client-generator-js to use'
+        required: false
+        default: main
+
+jobs:
+  generate:
+    name: Run generators and open PR
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Check out schemas repo
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          persist-credentials: true
+
+      - name: Check out elastic-client-generator-js
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          repository: elastic/elastic-client-generator-js
+          ref: ${{ github.event.inputs.generator-ref || 'main' }}
+          path: .generator
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24.x
+
+      - name: Install schemas repo dependencies
+        run: npm install
+
+      - name: Run codegen
+        run: node scripts/generate.mjs --generator-path .generator
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git add src/
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create pull request
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: 'chore: regenerate API schemas'
+          branch: codegen/update-${{ github.run_id }}
+          delete-branch: true
+          title: 'chore: regenerate API schemas'
+          body: |
+            Automated schema regeneration via the [Codegen workflow](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}).
+
+            Generator ref: `${{ github.event.inputs.generator-ref || 'main' }}`
+
+            Generated from:
+            - `zod/elasticsearch` → `src/es/`
+            - `zod/cloud` → `src/cloud/`
+            - `zod/kibana` → `src/kibana/`
+          labels: codegen

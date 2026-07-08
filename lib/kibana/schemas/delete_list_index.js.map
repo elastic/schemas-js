@@ -1,0 +1,1 @@
+{"version":3,"file":"delete_list_index.js","sourceRoot":"","sources":["../../../src/kibana/schemas/delete_list_index.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAEH;;;;GAIG;AAEH,oDAAoD;AACpD,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAA;AAEvB,MAAM,CAAC,MAAM,uBAAuB,GAAG,CAAC,CAAC,MAAM,CAAC;IAC9C,YAAY,EAAE,CAAC,CAAC,OAAO,EAAE;CAC1B,CAAC,CAAC,IAAI,CAAC,EAAE,EAAE,EAAE,yBAAyB,EAAE,CAAC,CAAA"}

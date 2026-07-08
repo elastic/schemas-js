@@ -1,0 +1,3 @@
+import type { EsApiDefinition } from '../types.ts';
+export declare const ilm_get_lifecycle_definitions: EsApiDefinition[];
+//# sourceMappingURL=ilm_get_lifecycle.d.ts.map

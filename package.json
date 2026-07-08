@@ -1,0 +1,66 @@
+{
+  "name": "@elastic/schemas",
+  "version": "0.1.0-alpha.1",
+  "description": "Request and response schemas for all Elastic APIs",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "node --max-old-space-size=8192 ./node_modules/.bin/tsc",
+    "generate": "node scripts/generate.mjs",
+    "test:lint": "eslint --cache src/",
+    "test:unit": "node --test --experimental-strip-types test/*.test.ts",
+    "test:unit-bun": "bun test test/*.test.ts",
+    "lint:fix": "eslint --cache src/ --fix",
+    "test": "npm run test:lint && npm run test:unit",
+    "license-checker": "license-checker --production --onlyAllow='MIT;Apache-2.0;Apache1.1;ISC;BSD-3-Clause;BSD-2-Clause;0BSD'",
+    "license-header": "./scripts/check-spdx"
+  },
+  "keywords": [
+    "json-schema",
+    "elastic",
+    "elasticsearch",
+    "zod",
+    "kibana",
+    "schema",
+    "validation"
+  ],
+  "author": {
+    "name": "Elastic Client Library Maintainers",
+    "company": "Elastic BV"
+  },
+  "license": "Apache-2.0",
+  "type": "module",
+  "dependencies": {
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "eslint": "9.39.4",
+    "license-checker": "^25.0.1",
+    "neostandard": "0.13.0",
+    "ora": "8.0.0",
+    "typescript": "6.0.3"
+  },
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "types": "./lib/index.d.ts"
+    }
+  },
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/",
+    "LICENSE",
+    "NOTICE.txt",
+    "README.md"
+  ],
+  "homepage": "https://github.com/elastic/schemas",
+  "bugs": {
+    "url": "https://github.com/elastic/schemas/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elastic/schemas.git"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
