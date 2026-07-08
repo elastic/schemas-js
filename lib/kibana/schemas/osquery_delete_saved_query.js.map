@@ -1,1 +1,0 @@
-{"version":3,"file":"osquery_delete_saved_query.js","sourceRoot":"","sources":["../../../src/kibana/schemas/osquery_delete_saved_query.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAEH;;;;GAIG;AAEH,oDAAoD;AACpD,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAA;AAEvB,MAAM,CAAC,MAAM,2CAA2C,GAAG,CAAC,CAAC,MAAM,CAAC,EAEnE,CAAC,CAAC,IAAI,CAAC,EAAE,EAAE,EAAE,6CAA6C,EAAE,CAAC,CAAA"}

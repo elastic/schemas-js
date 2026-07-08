@@ -1,1 +1,0 @@
-{"version":3,"file":"get_endpoint_metadata.js","sourceRoot":"","sources":["../../../src/kibana/schemas/get_endpoint_metadata.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAEH;;;;GAIG;AAEH,oDAAoD;AACpD,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAA;AAEvB,MAAM,CAAC,MAAM,yDAAyD,GAAG,CAAC,CAAC,MAAM,CAAC,EAEjF,CAAC,CAAC,IAAI,CAAC,EAAE,EAAE,EAAE,2DAA2D,EAAE,CAAC,CAAA"}

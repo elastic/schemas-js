@@ -1,1 +1,0 @@
-{"version":3,"file":"get_fleet_agents_setup.d.ts","sourceRoot":"","sources":["../../../src/kibana/schemas/get_fleet_agents_setup.ts"],"names":[],"mappings":"AAYA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAA;AAEvB,eAAO,MAAM,2BAA2B;;;;;;;;;;;;;;;;;iBASM,CAAA;AAC9C,MAAM,MAAM,2BAA2B,GAAG,CAAC,CAAC,KAAK,CAAC,OAAO,2BAA2B,CAAC,CAAA"}

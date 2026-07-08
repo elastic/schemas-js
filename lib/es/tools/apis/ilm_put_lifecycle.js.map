@@ -1,1 +1,0 @@
-{"version":3,"file":"ilm_put_lifecycle.js","sourceRoot":"","sources":["../../../../src/es/tools/apis/ilm_put_lifecycle.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAUH,MAAM,CAAC,MAAM,6BAA6B,GAAsB;IAC9D;QACE,IAAI,EAAE,eAAe;QACrB,SAAS,EAAE,KAAK;QAChB,WAAW,EAAE,sCAAsC;QACnD,MAAM,EAAE,KAAK;QACb,IAAI,EAAE,uBAAuB;KAC9B;CACF,CAAA"}
