@@ -39,9 +39,9 @@ if (!result.success) {
 Load a tool definition by API ID and build a ready-to-send HTTP request:
 
 ```typescript
-import { EsTools } from '@elastic/schemas'
+import { ElasticsearchTools } from '@elastic/schemas'
 
-const api = await EsTools.esRegistry.loadApi('search')
+const api = await ElasticsearchTools.esRegistry.loadApi('search')
 
 const request = api.buildRequest({
   index: 'my-index',
@@ -51,13 +51,13 @@ const request = api.buildRequest({
 // { method: 'GET', path: '/my-index/_search', body: { query: ..., size: 10 } }
 ```
 
-Browse available API IDs via `EsTools.esRegistry.manifest` (an array of `{ id, name, namespace, description }` entries).
+Browse available API IDs via `ElasticsearchTools.esRegistry.manifest` (an array of `{ id, name, namespace, description }` entries).
 
 ### Available exports
 
 For each API target, the following root exports are available:
 
-- **Elasticsearch:** `EsSchemas` and `EsTools`
+- **Elasticsearch:** `ElasticsearchSchemas` and `ElasticsearchTools`
 - **Kibana:** `KibanaSchemas` and `KibanaTools`
 - **Cloud:** `CloudSchemas`
 
