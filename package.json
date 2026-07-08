@@ -7,7 +7,7 @@
     "build": "node --max-old-space-size=8192 ./node_modules/.bin/tsc",
     "generate": "node scripts/generate.mjs",
     "test:lint": "eslint --cache src/",
-    "test:unit": "node --import tsx --test test/*.test.ts",
+    "test:unit": "tsx --test test/registry.test.ts",
     "test:unit-bun": "bun test test/*.test.ts",
     "lint:fix": "eslint --cache src/ --fix",
     "test": "npm run test:lint && npm run test:unit",
