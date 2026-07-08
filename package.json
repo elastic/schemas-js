@@ -44,6 +44,18 @@
     ".": {
       "import": "./lib/index.js",
       "types": "./lib/index.d.ts"
+    },
+    "./es/schemas/*.js": {
+      "import": "./lib/es/schemas/*.js",
+      "types": "./lib/es/schemas/*.d.ts"
+    },
+    "./cloud/schemas/*.js": {
+      "import": "./lib/cloud/schemas/*.js",
+      "types": "./lib/cloud/schemas/*.d.ts"
+    },
+    "./kibana/schemas/*.js": {
+      "import": "./lib/kibana/schemas/*.js",
+      "types": "./lib/kibana/schemas/*.d.ts"
     }
   },
   "types": "lib/index.d.ts",
