@@ -1,1 +1,0 @@
-{"version":3,"file":"ilm_delete_lifecycle.js","sourceRoot":"","sources":["../../../../src/es/tools/apis/ilm_delete_lifecycle.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAUH,MAAM,CAAC,MAAM,gCAAgC,GAAsB;IACjE;QACE,IAAI,EAAE,kBAAkB;QACxB,SAAS,EAAE,KAAK;QAChB,WAAW,EAAE,4BAA4B;QACzC,MAAM,EAAE,QAAQ;QAChB,IAAI,EAAE,uBAAuB;KAC9B;CACF,CAAA"}

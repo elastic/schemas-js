@@ -8,6 +8,19 @@ permissions:
   contents: read
 
 jobs:
+  validate-pr-title:
+    if: github.event_name == 'pull_request'
+    name: Validate PR title
+    permissions:
+      pull-requests: read
+    runs-on: ubuntu-latest
+    steps:
+      - name: PR Conventional Commit Validation
+        uses: ytanikin/pr-conventional-commits@639145d78959c53c43112365837e3abd21ed67c1 # v1.5.2
+        with:
+          task_types: '["feat","fix","docs","test","ci","refactor","perf","chore","revert"]'
+          add_label: "false"
+
   test:
     name: Test
     runs-on: ${{ matrix.os }}
@@ -77,10 +90,6 @@ jobs:
       - name: Install
         run: bun install
 
-      - name: Lint
-        shell: bash
-        run: bun run lint
-
       - name: Unit test
         shell: bash
         run: bun run test:unit-bun
@@ -93,6 +102,7 @@ jobs:
       - test
       - license
       - test-bun
+      - validate-pr-title
     steps:
       - run: |
           if [[ "${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}" == "true" ]]; then

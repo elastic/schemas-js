@@ -7,7 +7,7 @@
     "build": "node --max-old-space-size=8192 ./node_modules/.bin/tsc",
     "generate": "node scripts/generate.mjs",
     "test:lint": "eslint --cache src/",
-    "test:unit": "node --test --experimental-strip-types test/*.test.ts",
+    "test:unit": "tsx --test test/registry.test.ts",
     "test:unit-bun": "bun test test/*.test.ts",
     "lint:fix": "eslint --cache src/ --fix",
     "test": "npm run test:lint && npm run test:unit",
@@ -34,9 +34,10 @@
   },
   "devDependencies": {
     "eslint": "9.39.4",
-    "license-checker": "^25.0.1",
+    "license-checker": "25.0.1",
     "neostandard": "0.13.0",
     "ora": "8.0.0",
+    "tsx": "4.22.4",
     "typescript": "6.0.3"
   },
   "exports": {

@@ -1,1 +1,0 @@
-{"version":3,"file":"osquery_delete_packs.js","sourceRoot":"","sources":["../../../src/kibana/schemas/osquery_delete_packs.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAEH;;;;GAIG;AAEH,oDAAoD;AACpD,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAA;AAEvB,MAAM,CAAC,MAAM,0BAA0B,GAAG,CAAC,CAAC,MAAM,CAAC,EAElD,CAAC,CAAC,IAAI,CAAC,EAAE,EAAE,EAAE,4BAA4B,EAAE,CAAC,CAAA"}

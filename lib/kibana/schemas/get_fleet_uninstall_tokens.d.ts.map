@@ -1,1 +1,0 @@
-{"version":3,"file":"get_fleet_uninstall_tokens.d.ts","sourceRoot":"","sources":["../../../src/kibana/schemas/get_fleet_uninstall_tokens.ts"],"names":[],"mappings":"AAYA,OAAO,EAAE,CAAC,EAAE,MAAM,KAAK,CAAA;AAEvB,eAAO,MAAM,+BAA+B;;;;;;;;;;;iBAWM,CAAA;AAClD,MAAM,MAAM,+BAA+B,GAAG,CAAC,CAAC,KAAK,CAAC,OAAO,+BAA+B,CAAC,CAAA"}
