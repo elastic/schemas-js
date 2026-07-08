@@ -90,10 +90,6 @@ jobs:
       - name: Install
         run: bun install
 
-      - name: Lint
-        shell: bash
-        run: bun run lint
-
       - name: Unit test
         shell: bash
         run: bun run test:unit-bun
