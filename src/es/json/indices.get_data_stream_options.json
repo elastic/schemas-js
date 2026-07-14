@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"indices.get_data_stream_options__DataStreamWithOptions":{"type":"object","properties":{"name":{"type":"string"},"options":{"$ref":"./indices._types.json#/$defs/indices._types__DataStreamOptions"}},"required":["name"]}}}

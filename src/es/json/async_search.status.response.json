@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"async_search.status","$ref":"./async_search.status.json#/$defs/async_search.status__StatusResponseBase"}

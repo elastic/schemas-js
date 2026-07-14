@@ -1,0 +1,1 @@
+{"$ref":"./_defs.json#/$defs/SLOs_bulk_delete_status_response","$schema":"https://json-schema.org/draft/2020-12/schema","title":"bulkDeleteStatusOp"}

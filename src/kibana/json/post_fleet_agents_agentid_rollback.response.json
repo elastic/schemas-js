@@ -1,0 +1,1 @@
+{"oneOf":[{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_action_id_response"},{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_action_message_response"}],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-agents-agentid-rollback"}

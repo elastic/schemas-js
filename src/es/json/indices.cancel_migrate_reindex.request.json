@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.cancel_migrate_reindex","type":"object","properties":{"index":{"$ref":"./_types.json#/$defs/_types__Indices","description":"The index or data stream name"}},"required":["index"],"description":"Cancel a migration reindex operation.\n\nCancel a migration reindex attempt for a data stream or index."}

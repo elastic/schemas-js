@@ -1,0 +1,1 @@
+{"oneOf":[{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_core_status_response"},{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_core_status_redactedResponse"}],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-status"}

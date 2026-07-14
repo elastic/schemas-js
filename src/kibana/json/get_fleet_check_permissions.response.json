@@ -1,0 +1,1 @@
+{"type":"object","properties":{"error":{"enum":["MISSING_SECURITY","MISSING_PRIVILEGES","MISSING_FLEET_SERVER_SETUP_PRIVILEGES"]},"success":{"type":"boolean"}},"required":["success"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-check-permissions"}

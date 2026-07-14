@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-api-keys","$ref":"#/$defs/DeleteApiKeysRequest","$defs":{"DeleteApiKeysRequest":{"type":"object","properties":{"keys":{"type":"array","items":{"type":"string"}}},"required":["keys"]}}}

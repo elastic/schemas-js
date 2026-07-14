@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"indices.get_data_lifecycle__DataStreamWithLifecycle":{"type":"object","properties":{"name":{"type":"string"},"lifecycle":{"$ref":"./indices._types.json#/$defs/indices._types__DataStreamLifecycleWithRollover"}},"required":["name"]}}}

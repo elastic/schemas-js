@@ -1,0 +1,1 @@
+{"type":"object","properties":{"policy_id":{"type":"string"}},"required":["policy_id"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-agents-agentid-reassign"}

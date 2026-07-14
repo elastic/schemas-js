@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.get_region_policy","type":"object","properties":{},"description":"Get the inference region policy."}

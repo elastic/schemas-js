@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"indices.remove_block__RemoveIndicesBlockStatus":{"type":"object","properties":{"name":{"type":"string"},"unblocked":{"type":"boolean"},"exception":{"$ref":"./_types.json#/$defs/_types__ErrorCause"}},"required":["name"]}}}

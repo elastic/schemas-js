@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.ml_data_frame_analytics","type":"array","items":{"$ref":"./cat.ml_data_frame_analytics.json#/$defs/cat.ml_data_frame_analytics__DataFrameAnalyticsRecord"}}

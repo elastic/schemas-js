@@ -1,0 +1,1 @@
+{"type":"object","properties":{"agents":{"oneOf":[{"type":"array","items":{"type":"string"}},{"type":"string"}]},"batchSize":{"type":"number"},"includeInactive":{"type":"boolean"},"policy_id":{"type":"string"}},"required":["policy_id","agents"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-agents-bulk-reassign"}

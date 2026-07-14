@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"eql.search","$ref":"./eql._types.json#/$defs/eql._types__EqlSearchResponseBase"}

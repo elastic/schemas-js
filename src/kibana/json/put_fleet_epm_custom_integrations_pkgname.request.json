@@ -1,0 +1,1 @@
+{"type":"object","properties":{"categories":{"type":"array","items":{"type":"string"}},"readMeData":{"type":"string"}},"required":["readMeData"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-fleet-epm-custom-integrations-pkgname"}

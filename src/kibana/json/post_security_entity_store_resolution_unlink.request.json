@@ -1,0 +1,1 @@
+{"type":"object","properties":{"entity_ids":{"type":"array","items":{"type":"string"},"description":"Entity identifiers to unlink from their resolution group. Minimum 1, maximum 1000."}},"required":["entity_ids"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-security-entity-store-resolution-unlink"}

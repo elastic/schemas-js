@@ -1,0 +1,1 @@
+{"type":"object","properties":{"inputs":{"type":"object","additionalProperties":{},"description":"Key-value inputs for the workflow execution."},"metadata":{"type":"object","additionalProperties":{},"description":"Optional metadata for the execution."}},"required":["inputs"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-workflows-workflow-id-run"}

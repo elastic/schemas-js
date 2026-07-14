@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"connector.list","type":"object","properties":{"count":{"type":"number"},"results":{"type":"array","items":{"$ref":"./connector._types.json#/$defs/connector._types__Connector"}}},"required":["count","results"]}

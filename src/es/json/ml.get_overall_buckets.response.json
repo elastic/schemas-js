@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.get_overall_buckets","type":"object","properties":{"count":{"type":"number"},"overall_buckets":{"type":"array","items":{"$ref":"./ml._types.json#/$defs/ml._types__OverallBucket"},"description":"Array of overall bucket objects"}},"required":["count","overall_buckets"]}

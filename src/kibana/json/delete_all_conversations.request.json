@@ -1,0 +1,1 @@
+{"type":"object","properties":{"excludedIds":{"type":"array","items":{"type":"string"},"description":"Optional list of conversation IDs to delete."}},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"DeleteAllConversations"}

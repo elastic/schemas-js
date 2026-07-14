@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"search_application.get","$ref":"./search_application._types.json#/$defs/search_application._types__SearchApplication"}

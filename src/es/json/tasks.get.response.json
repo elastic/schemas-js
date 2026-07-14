@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"tasks.get","type":"object","properties":{"completed":{"type":"boolean"},"task":{"$ref":"./tasks._types.json#/$defs/tasks._types__TaskInfo"},"response":{},"error":{"$ref":"./_types.json#/$defs/_types__ErrorCause"}},"required":["completed","task"]}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"indices.add_block__AddIndicesBlockStatus":{"type":"object","properties":{"name":{"type":"string"},"blocked":{"type":"boolean"}},"required":["name","blocked"]}}}

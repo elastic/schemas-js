@@ -1,0 +1,1 @@
+{"type":"object","properties":{"force":{"type":"boolean"},"skipRateLimitCheck":{"type":"boolean"},"source_uri":{"type":"string"},"version":{"type":"string"}},"required":["version"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-agents-agentid-upgrade"}

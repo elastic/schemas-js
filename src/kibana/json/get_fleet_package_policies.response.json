@@ -1,0 +1,1 @@
+{"type":"object","properties":{"items":{"type":"array","items":{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_package_policy_response"}},"page":{"type":"number"},"perPage":{"type":"number"},"total":{"type":"number"}},"required":["items","total","page","perPage"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-package-policies"}

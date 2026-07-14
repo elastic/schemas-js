@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"connector.check_in","type":"object","properties":{"connector_id":{"type":"string","description":"The unique identifier of the connector to be checked in"}},"required":["connector_id"],"description":"Check in a connector.\n\nUpdate the `last_seen` field in the connector and set it to the current timestamp."}

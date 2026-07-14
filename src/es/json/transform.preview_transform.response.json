@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"transform.preview_transform","type":"object","properties":{"generated_dest_index":{"$ref":"./indices._types.json#/$defs/indices._types__IndexState"},"preview":{"type":"array","items":{}}},"required":["generated_dest_index","preview"]}

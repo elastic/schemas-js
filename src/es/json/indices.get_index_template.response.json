@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.get_index_template","type":"object","properties":{"index_templates":{"type":"array","items":{"$ref":"./indices.get_index_template.json#/$defs/indices.get_index_template__IndexTemplateItem"}}},"required":["index_templates"]}

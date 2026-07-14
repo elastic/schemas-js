@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"connector.update_active_filtering","type":"object","properties":{"connector_id":{"type":"string","description":"The unique identifier of the connector to be updated"}},"required":["connector_id"],"description":"Activate the connector draft filter.\n\nActivates the valid draft filtering for a connector."}

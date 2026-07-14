@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"project.tags","type":"object","properties":{},"description":"Get tags.\n\nGet the tags that are defined for the project."}

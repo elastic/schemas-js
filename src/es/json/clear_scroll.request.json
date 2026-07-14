@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"clear_scroll","type":"object","properties":{"scroll_id":{"$ref":"./_types.json#/$defs/_types__ScrollIds","description":"The scroll IDs to clear.\nTo clear all scroll IDs, use `_all`."}},"description":"Clear a scrolling search.\n\nClear the search context and results for a scrolling search."}

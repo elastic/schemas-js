@@ -1,0 +1,1 @@
+{"oneOf":[{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_install_package_from_registry_request"},{"type":"null"}],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-epm-packages-pkgname-pkgversion"}

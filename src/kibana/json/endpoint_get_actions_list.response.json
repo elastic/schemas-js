@@ -1,0 +1,1 @@
+{"$ref":"./_defs.json#/$defs/Security_Endpoint_Management_API_GetEndpointActionListResponse","$schema":"https://json-schema.org/draft/2020-12/schema","title":"EndpointGetActionsList"}

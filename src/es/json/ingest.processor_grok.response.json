@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ingest.processor_grok","type":"object","properties":{"patterns":{"type":"object","additionalProperties":{"type":"string"}}},"required":["patterns"]}

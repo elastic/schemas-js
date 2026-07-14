@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"_global.search_mvt._types__GridAggregationType":{"enum":["geotile","geohex"]},"_global.search_mvt._types__GridType":{"enum":["grid","point","centroid"]}}}

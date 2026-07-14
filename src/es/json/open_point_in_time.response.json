@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"open_point_in_time","type":"object","properties":{"_shards":{"$ref":"./_types.json#/$defs/_types__ShardStatistics","description":"Shards used to create the PIT"},"id":{"type":"string"}},"required":["_shards","id"]}

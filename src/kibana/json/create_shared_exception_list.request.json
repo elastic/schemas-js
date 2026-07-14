@@ -1,0 +1,1 @@
+{"type":"object","properties":{"description":{"$ref":"./_defs.json#/$defs/Security_Exceptions_API_ExceptionListDescription"},"name":{"$ref":"./_defs.json#/$defs/Security_Exceptions_API_ExceptionListName"}},"required":["name","description"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"CreateSharedExceptionList"}

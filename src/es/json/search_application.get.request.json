@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"search_application.get","type":"object","properties":{"name":{"type":"string","description":"The name of the search application"}},"required":["name"],"description":"Get search application details."}

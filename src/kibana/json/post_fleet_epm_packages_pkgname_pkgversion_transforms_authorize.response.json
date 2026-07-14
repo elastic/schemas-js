@@ -1,0 +1,1 @@
+{"type":"array","items":{"type":"object","properties":{"error":{},"success":{"type":"boolean"},"transformId":{"type":"string"}},"required":["transformId","success","error"]},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-epm-packages-pkgname-pkgversion-transforms-authorize"}

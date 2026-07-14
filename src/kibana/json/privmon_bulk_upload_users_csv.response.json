@@ -1,0 +1,1 @@
+{"type":"object","properties":{"errors":{"type":"array","items":{"$ref":"./_defs.json#/$defs/Security_Entity_Analytics_API_PrivmonUserCsvUploadErrorItem"}},"stats":{"$ref":"./_defs.json#/$defs/Security_Entity_Analytics_API_PrivmonUserCsvUploadStats"}},"required":["errors","stats"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"PrivmonBulkUploadUsersCSV"}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"cat.count__CountRecord":{"type":"object","properties":{"epoch":{"$ref":"./_spec_utils.json#/$defs/_spec_utils__Stringified","description":"seconds since 1970-01-01 00:00:00"},"timestamp":{"type":"string","description":"time in HH:MM:SS"},"count":{"type":"string","description":"the document count"}}}}}

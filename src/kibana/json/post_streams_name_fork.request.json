@@ -1,0 +1,1 @@
+{"type":"object","properties":{"draft":{"type":"boolean"},"status":{"enum":["enabled","disabled"]},"stream":{"type":"object","properties":{"name":{"type":"string"}},"required":["name"]},"where":{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_Condition"}},"required":["stream","where"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-streams-name-fork"}

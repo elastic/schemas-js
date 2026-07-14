@@ -1,0 +1,1 @@
+{"type":"object","properties":{"description":{"type":"string"},"include":{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_ContentPackIncludedObjects"},"name":{"type":"string"},"version":{"type":"string"}},"required":["name","description","version","include"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-streams-name-content-export"}

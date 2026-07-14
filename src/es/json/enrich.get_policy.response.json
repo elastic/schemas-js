@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"enrich.get_policy","type":"object","properties":{"policies":{"type":"array","items":{"$ref":"./enrich._types.json#/$defs/enrich._types__Summary"}}},"required":["policies"]}

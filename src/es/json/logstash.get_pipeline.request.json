@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"logstash.get_pipeline","type":"object","properties":{"id":{"$ref":"./_types.json#/$defs/_types__Ids","description":"A comma-separated list of pipeline identifiers."}},"description":"Get Logstash pipelines.\n\nGet pipelines that are used for Logstash Central Management."}

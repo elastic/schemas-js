@@ -1,0 +1,1 @@
+{"type":"object","properties":{"name":{"type":"string","description":"The name for a runtime field.\n"},"runtimeField":{"type":"object","description":"The runtime field definition object.\n"}},"required":["name","runtimeField"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"createUpdateRuntimeFieldDefault"}

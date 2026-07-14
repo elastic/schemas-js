@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.put_filter","type":"object","properties":{"description":{"type":"string"},"filter_id":{"type":"string"},"items":{"type":"array","items":{"type":"string"}}},"required":["description","filter_id","items"]}

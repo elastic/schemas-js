@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"list-extensions","$ref":"#/$defs/Extensions","$defs":{"Extensions":{"type":"object","properties":{"extensions":{"type":"array","items":{"$ref":"_defs.json#/$defs/Extension"}}},"required":["extensions"]}}}

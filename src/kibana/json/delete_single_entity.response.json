@@ -1,0 +1,1 @@
+{"type":"object","properties":{"deleted":{"type":"boolean","description":"Whether the entity was successfully deleted."}},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"DeleteSingleEntity"}

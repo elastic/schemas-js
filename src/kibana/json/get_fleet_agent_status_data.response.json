@@ -1,0 +1,1 @@
+{"type":"object","properties":{"dataPreview":{"type":"array","items":{}},"items":{"type":"array","items":{"type":"object","additionalProperties":{"type":"object","properties":{"data":{"type":"boolean"}},"required":["data"]}}}},"required":["items","dataPreview"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-agent-status-data"}

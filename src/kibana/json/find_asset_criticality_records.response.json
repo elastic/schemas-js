@@ -1,0 +1,1 @@
+{"type":"object","properties":{"page":{"type":"number"},"per_page":{"type":"number"},"records":{"type":"array","items":{"$ref":"./_defs.json#/$defs/Security_Entity_Analytics_API_AssetCriticalityRecord"}},"total":{"type":"number"}},"required":["records","page","per_page","total"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"FindAssetCriticalityRecords"}

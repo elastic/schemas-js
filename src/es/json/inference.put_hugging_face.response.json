@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.put_hugging_face","$ref":"./inference._types.json#/$defs/inference._types__InferenceEndpointInfoHuggingFace"}

@@ -1,0 +1,1 @@
+{"type":"object","properties":{"items":{"type":"array","items":{"$ref":"./_defs.json#/$defs/Security_Exceptions_API_CreateRuleExceptionListItemProps"}}},"required":["items"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"CreateRuleExceptionListItems"}

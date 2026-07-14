@@ -53,6 +53,36 @@ const request = api.buildRequest({
 
 Browse available API IDs via `ElasticsearchTools.esRegistry.manifest` (an array of `{ id, name, namespace, description }` entries).
 
+### JSON schemas
+
+Static [JSON Schema](https://json-schema.org/) files are available for each API's request and response. Namespaced APIs are named `{namespace}.{name}.request.json`; top-level (global) APIs are named `{name}.request.json`.
+
+```typescript
+import searchRequest from '@elastic/schemas/es/json/search.request.json' with { type: 'json' }
+import searchResponse from '@elastic/schemas/es/json/search.response.json' with { type: 'json' }
+```
+
+```typescript
+import findRulesRequest from '@elastic/schemas/kibana/json/find_rules.request.json' with { type: 'json' }
+```
+
+```typescript
+import createApiKeyRequest from '@elastic/schemas/cloud/json/create_api_key.request.json' with { type: 'json' }
+```
+
+The schemas can be used directly with any JSON Schema validator, e.g. [Ajv](https://ajv.js.org/):
+
+```typescript
+import Ajv from 'ajv'
+import searchRequest from '@elastic/schemas/es/json/search.request.json' with { type: 'json' }
+
+const ajv = new Ajv()
+const validate = ajv.compile(searchRequest)
+
+const valid = validate({ index: 'my-index', query: { match_all: {} } })
+if (!valid) console.error(validate.errors)
+```
+
 ### Available exports
 
 For each API target, the following root exports are available:

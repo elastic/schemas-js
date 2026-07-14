@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"esql.list_queries","type":"object","properties":{"queries":{"type":"object","additionalProperties":{"$ref":"./esql.list_queries.json#/$defs/esql.list_queries__Body"}}},"required":["queries"]}

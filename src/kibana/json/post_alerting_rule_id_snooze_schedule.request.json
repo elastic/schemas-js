@@ -1,0 +1,1 @@
+{"type":"object","properties":{"schedule":{"type":"object","properties":{"custom":{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_schedule_request"}}}},"required":["schedule"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-alerting-rule-id-snooze-schedule"}

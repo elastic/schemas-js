@@ -1,0 +1,1 @@
+{"type":"object","properties":{"host_id":{"type":"string"},"name":{"type":"string"},"status":{"type":"string"}},"required":["status"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-health-check"}

@@ -1,0 +1,1 @@
+{"type":"object","properties":{"field_descriptions":{"type":"object","additionalProperties":{"type":"string"}},"query":{"type":"object","properties":{"esql":{"type":"string"}},"required":["esql"]}},"required":["query"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-streams-name-query"}

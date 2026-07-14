@@ -1,0 +1,1 @@
+{"type":"object","properties":{"runtimeField":{"type":"object","description":"The runtime field definition object.\n\nYou can update following fields:\n\n- `type`\n- `script`\n"}},"required":["runtimeField"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"updateRuntimeFieldDefault"}

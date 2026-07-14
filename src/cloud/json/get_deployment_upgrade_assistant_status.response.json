@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-deployment-upgrade-assistant-status","$ref":"#/$defs/DeploymentUpgradeAssistantStatusResponse","$defs":{"DeploymentUpgradeAssistantStatusResponse":{"type":"object","properties":{"ready_for_upgrade":{"type":"boolean"},"details":{"type":"string"}},"required":["details","ready_for_upgrade"]}}}

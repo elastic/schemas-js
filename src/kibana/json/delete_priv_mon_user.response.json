@@ -1,0 +1,1 @@
+{"type":"object","properties":{"acknowledged":{"type":"boolean","description":"Indicates if the deletion was successful"},"message":{"type":"string","description":"A message providing additional information about the deletion status"}},"required":["success"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"DeletePrivMonUser"}

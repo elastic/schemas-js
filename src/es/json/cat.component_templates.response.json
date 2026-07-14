@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.component_templates","type":"array","items":{"$ref":"./cat.component_templates.json#/$defs/cat.component_templates__ComponentTemplate"}}

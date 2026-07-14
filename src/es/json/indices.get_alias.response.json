@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.get_alias","type":"object","additionalProperties":{"$ref":"./indices.get_alias._types.json#/$defs/indices.get_alias._types__IndexAliases"}}

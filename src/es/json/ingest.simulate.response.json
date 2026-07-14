@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ingest.simulate","type":"object","properties":{"docs":{"type":"array","items":{"$ref":"./ingest._types.json#/$defs/ingest._types__SimulateDocumentResult"}}},"required":["docs"]}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"esql.get_query","type":"object","properties":{"id":{"type":"string","description":"The query ID"}},"required":["id"],"description":"Get a specific running ES|QL query information.\n\nReturns an object extended information about a running ES|QL query."}

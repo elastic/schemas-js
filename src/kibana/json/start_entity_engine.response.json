@@ -1,0 +1,1 @@
+{"type":"object","properties":{"started":{"type":"boolean","description":"Whether the engine was successfully started."}},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"StartEntityEngine"}

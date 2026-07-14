@@ -1,0 +1,1 @@
+{"type":"object","properties":{"allowed_namespace_prefixes":{"type":"array","items":{"type":"string"}}},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-fleet-space-settings"}

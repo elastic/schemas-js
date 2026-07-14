@@ -1,0 +1,1 @@
+{"type":"object","properties":{"data":{"description":"The new attachment data/content."},"description":{"type":"string","description":"Optional new description for the attachment."}},"required":["data"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-agent-builder-conversations-conversation-id-attachments-attachment-id"}

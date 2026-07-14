@@ -1,0 +1,1 @@
+{"type":"array","items":{"oneOf":[{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_backfill_response"},{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_backfill_error_response"}]},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-alerting-rules-backfill-schedule"}

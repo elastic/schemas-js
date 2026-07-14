@@ -11,6 +11,9 @@ export default defineConfig([
     ts: true,
     ignores: [
       'node_modules/**',
+      'src/es/json/**',
+      'src/kibana/json/**',
+      'src/cloud/json/**',
     ]
   }),
 

@@ -112,6 +112,27 @@ const generators = [
     outputSubdir: join('ab-tools', 'kibana'),
     srcSubdir: join('kibana', 'tools'),
   },
+  {
+    name: 'JSON Schema: Elasticsearch',
+    npmScript: 'json-schema-es',
+    outputSubdir: join('json-schema', 'elasticsearch'),
+    srcSubdir: join('es', 'json'),
+    lint: false,
+  },
+  {
+    name: 'JSON Schema: Kibana',
+    npmScript: 'json-schema-kibana',
+    outputSubdir: join('json-schema', 'kibana'),
+    srcSubdir: join('kibana', 'json'),
+    lint: false,
+  },
+  {
+    name: 'JSON Schema: Cloud',
+    npmScript: 'json-schema-cloud',
+    outputSubdir: join('json-schema', 'cloud'),
+    srcSubdir: join('cloud', 'json'),
+    lint: false,
+  },
 ]
 
 export default async function generate (generatorPath) {
@@ -123,7 +144,7 @@ export default async function generate (generatorPath) {
   log.text = 'Deleting generated .ts files'
   await deleteGeneratedTs()
 
-  for (const { name, npmScript, outputSubdir, srcSubdir } of generators) {
+  for (const { name, npmScript, outputSubdir, srcSubdir, lint = true } of generators) {
     log.text = `Running ${name} generator`
     await run('npm', ['run', npmScript], generatorPath)
 
@@ -131,8 +152,10 @@ export default async function generate (generatorPath) {
     log.text = `Syncing ${name} output → src/${srcSubdir}/`
     await syncDir(join(generatorPath, 'output', outputSubdir), dest)
 
-    log.text = `Lint-fixing ${name} output`
-    await run('node_modules/.bin/eslint', ['--cache', '--fix', dest], repoRoot)
+    if (lint) {
+      log.text = `Lint-fixing ${name} output`
+      await run('node_modules/.bin/eslint', ['--cache', '--fix', dest], repoRoot)
+    }
   }
 
   log.succeed('Codegen complete. src/ updated.')

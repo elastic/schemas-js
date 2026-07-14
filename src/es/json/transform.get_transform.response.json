@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"transform.get_transform","type":"object","properties":{"count":{"type":"number"},"transforms":{"type":"array","items":{"$ref":"./transform.get_transform.json#/$defs/transform.get_transform__TransformSummary"}}},"required":["count","transforms"]}

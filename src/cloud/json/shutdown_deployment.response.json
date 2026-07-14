@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"shutdown-deployment","$ref":"#/$defs/DeploymentShutdownResponse","$defs":{"DeploymentShutdownResponse":{"type":"object","properties":{"id":{"type":"string"},"name":{"type":"string"},"orphaned":{"$ref":"_defs.json#/$defs/Orphaned"}},"required":["id","name"]}}}

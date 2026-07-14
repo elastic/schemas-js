@@ -1,0 +1,1 @@
+{"$ref":"./_defs.json#/$defs/Security_Exceptions_API_ExceptionList","$schema":"https://json-schema.org/draft/2020-12/schema","title":"DeleteExceptionList"}

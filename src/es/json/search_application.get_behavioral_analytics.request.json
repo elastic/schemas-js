@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"search_application.get_behavioral_analytics","type":"object","properties":{"name":{"type":"array","items":{"type":"string"},"description":"A list of analytics collections to limit the returned information"}},"description":"Get behavioral analytics collections."}

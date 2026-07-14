@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"license._types__LicenseStatus":{"enum":["active","valid","invalid","expired"]},"license._types__LicenseType":{"enum":["missing","trial","basic","standard","dev","silver","gold","platinum","enterprise"]}}}

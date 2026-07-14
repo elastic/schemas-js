@@ -1,0 +1,1 @@
+{"type":"object","properties":{"message":{"type":"string"}},"required":["message"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-message-signing-service-rotate-key-pair"}

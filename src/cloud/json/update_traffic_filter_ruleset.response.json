@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"update-traffic-filter-ruleset","$ref":"#/$defs/TrafficFilterRulesetResponse","$defs":{"TrafficFilterRulesetResponse":{"type":"object","properties":{"id":{"type":"string"}},"required":["id"]}}}

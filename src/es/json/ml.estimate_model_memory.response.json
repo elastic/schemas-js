@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.estimate_model_memory","type":"object","properties":{"model_memory_estimate":{"type":"string"}},"required":["model_memory_estimate"]}

@@ -1,0 +1,1 @@
+{"type":"object","properties":{"data_view":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"name":{"type":"string"},"namespaces":{"type":"array","items":{"type":"string"}},"title":{"type":"string"},"typeMeta":{"type":"object"}}}}},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"getAllDataViewsDefault"}
