@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"explain","type":"object","properties":{"_index":{"type":"string"},"_id":{"type":"string"},"matched":{"type":"boolean"},"explanation":{"$ref":"./_global.explain.json#/$defs/_global.explain__ExplanationDetail"},"get":{"$ref":"./_types.json#/$defs/_types__InlineGet"}},"required":["_index","_id","matched"]}

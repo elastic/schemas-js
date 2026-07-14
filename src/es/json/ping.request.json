@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ping","type":"object","properties":{},"description":"Ping the cluster.\n\nGet information about whether the cluster is running."}

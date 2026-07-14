@@ -1,0 +1,1 @@
+{"oneOf":[{"type":"object","properties":{"refresh":{"enum":["wait_for"],"description":"If 'wait_for' the request will wait for the index refresh."}}},{"$ref":"./_defs.json#/$defs/Security_Entity_Analytics_API_CreateAssetCriticalityRecord"}],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"CreateAssetCriticalityRecord"}

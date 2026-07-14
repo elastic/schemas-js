@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.infer_trained_model","type":"object","properties":{"inference_results":{"type":"array","items":{"$ref":"./ml._types.json#/$defs/ml._types__InferenceResponseResult"}}},"required":["inference_results"]}

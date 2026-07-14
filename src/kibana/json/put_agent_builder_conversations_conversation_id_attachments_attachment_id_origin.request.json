@@ -1,0 +1,1 @@
+{"type":"object","properties":{"origin":{"type":"string","description":"The origin string (e.g., saved object ID for visualizations and dashboards)."}},"required":["origin"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-agent-builder-conversations-conversation-id-attachments-attachment-id-origin"}

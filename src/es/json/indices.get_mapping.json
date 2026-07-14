@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"indices.get_mapping__IndexMappingRecord":{"type":"object","properties":{"item":{"$ref":"./_types.mapping.json#/$defs/_types.mapping__TypeMapping"},"mappings":{"$ref":"./_types.mapping.json#/$defs/_types.mapping__TypeMapping"}},"required":["mappings"]}}}

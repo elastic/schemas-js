@@ -1,0 +1,1 @@
+{"oneOf":[{"type":"object","properties":{"force":{"type":"boolean"},"revoke":{"type":"boolean"}}},{"type":"null"}],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-agents-agentid-unenroll"}

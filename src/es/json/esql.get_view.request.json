@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"esql.get_view","type":"object","properties":{"name":{"type":"string","description":"The comma-separated view names to retrieve."}},"description":"Get an ES|QL view.\n\nReturns a stored ES|QL view."}

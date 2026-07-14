@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"eql.get_status","type":"object","properties":{"id":{"type":"string","description":"Identifier for the search."}},"required":["id"],"description":"Get the async EQL status.\n\nGet the current status for an async EQL search or a stored synchronous EQL search without returning results."}

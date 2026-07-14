@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.get_calendar_events","type":"object","properties":{"count":{"type":"number"},"events":{"type":"array","items":{"$ref":"./ml._types.json#/$defs/ml._types__CalendarEvent"}}},"required":["count","events"]}

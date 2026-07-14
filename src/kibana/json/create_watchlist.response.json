@@ -1,0 +1,1 @@
+{"oneOf":[{"type":"object","properties":{"entitySources":{"type":"array","items":{"$ref":"./_defs.json#/$defs/Security_Entity_Analytics_API_MonitoringEntitySource"}}}},{"$ref":"./_defs.json#/$defs/Security_Entity_Analytics_API_WatchlistObject"}],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"CreateWatchlist"}

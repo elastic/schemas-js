@@ -1,0 +1,1 @@
+{"type":"object","properties":{"full":{"type":"boolean","description":"get full policies with package policies populated"},"ids":{"type":"array","items":{"type":"string"},"description":"list of package policy ids"},"ignoreMissing":{"type":"boolean"}},"required":["ids"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-agent-policies-bulk-get"}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"async_search.submit","$ref":"./async_search._types.json#/$defs/async_search._types__AsyncSearchDocumentResponseBase"}

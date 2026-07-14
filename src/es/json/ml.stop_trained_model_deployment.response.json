@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.stop_trained_model_deployment","type":"object","properties":{"stopped":{"type":"boolean"}},"required":["stopped"]}

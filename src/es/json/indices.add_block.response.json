@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.add_block","type":"object","properties":{"acknowledged":{"type":"boolean"},"shards_acknowledged":{"type":"boolean"},"indices":{"type":"array","items":{"$ref":"./indices.add_block.json#/$defs/indices.add_block__AddIndicesBlockStatus"}}},"required":["acknowledged","shards_acknowledged","indices"]}

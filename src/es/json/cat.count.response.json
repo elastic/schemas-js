@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.count","type":"array","items":{"$ref":"./cat.count.json#/$defs/cat.count__CountRecord"}}

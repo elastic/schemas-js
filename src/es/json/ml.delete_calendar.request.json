@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.delete_calendar","type":"object","properties":{"calendar_id":{"type":"string","description":"A string that uniquely identifies a calendar."}},"required":["calendar_id"],"description":"Delete a calendar.\n\nRemove all scheduled events from a calendar, then delete it."}

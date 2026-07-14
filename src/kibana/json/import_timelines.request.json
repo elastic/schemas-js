@@ -1,0 +1,1 @@
+{"type":"object","properties":{"file":{},"isImmutable":{"enum":["true","false"],"description":"Whether the Timeline should be immutable"}},"required":["file"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ImportTimelines"}

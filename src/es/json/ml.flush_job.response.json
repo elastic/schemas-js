@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.flush_job","type":"object","properties":{"flushed":{"type":"boolean"},"last_finalized_bucket_end":{"type":"number","description":"Provides the timestamp (in milliseconds since the epoch) of the end of\nthe last bucket that was processed."}},"required":["flushed"]}

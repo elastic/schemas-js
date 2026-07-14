@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cluster.get_component_template","type":"object","properties":{"component_templates":{"type":"array","items":{"$ref":"./cluster._types.json#/$defs/cluster._types__ComponentTemplate"}}},"required":["component_templates"]}

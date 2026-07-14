@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"project.create_many_routing","type":"object","properties":{},"description":"Create or update project routing expressions."}

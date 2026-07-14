@@ -1,0 +1,1 @@
+{"type":"object","properties":{"item":{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_package_policy_response"}},"required":["item"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-fleet-package-policies-packagepolicyid"}

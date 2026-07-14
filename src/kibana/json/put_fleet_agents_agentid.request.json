@@ -1,0 +1,1 @@
+{"type":"object","properties":{"tags":{"type":"array","items":{"type":"string"}},"user_provided_metadata":{"type":"object","additionalProperties":{}}},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-fleet-agents-agentid"}

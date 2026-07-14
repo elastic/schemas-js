@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.put_role","type":"object","properties":{"role":{"$ref":"./security._types.json#/$defs/security._types__CreatedStatus","description":"When an existing role is updated, `created` is set to `false`."}},"required":["role"]}

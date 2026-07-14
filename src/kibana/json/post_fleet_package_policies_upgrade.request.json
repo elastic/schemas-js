@@ -1,0 +1,1 @@
+{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_upgrade_package_policies_request","$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-package-policies-upgrade"}

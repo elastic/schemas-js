@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"connector.post","type":"object","properties":{"result":{"$ref":"./_types.json#/$defs/_types__Result"},"id":{"type":"string"}},"required":["result","id"]}

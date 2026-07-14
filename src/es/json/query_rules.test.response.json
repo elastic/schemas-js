@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"query_rules.test","type":"object","properties":{"total_matched_rules":{"type":"number"},"matched_rules":{"type":"array","items":{"$ref":"./query_rules.test.json#/$defs/query_rules.test__QueryRulesetMatchedRule"}}},"required":["total_matched_rules","matched_rules"]}

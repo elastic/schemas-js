@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"mtermvectors","type":"object","properties":{"docs":{"type":"array","items":{"$ref":"./_global.mtermvectors.json#/$defs/_global.mtermvectors__TermVectorsResult"}}},"required":["docs"]}

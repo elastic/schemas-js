@@ -1,0 +1,1 @@
+{"$ref":"./_defs.json#/$defs/SLOs_create_slo_request","$schema":"https://json-schema.org/draft/2020-12/schema","title":"createSloOp"}

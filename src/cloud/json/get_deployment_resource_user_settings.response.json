@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-deployment-resource-user-settings","$ref":"#/$defs/DeploymentResourceUserSettingsResponse","$defs":{"DeploymentResourceUserSettingsResponse":{"type":"object","properties":{"user_settings":{"type":"object"}}}}}

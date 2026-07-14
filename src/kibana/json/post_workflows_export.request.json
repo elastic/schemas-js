@@ -1,0 +1,1 @@
+{"type":"object","properties":{"ids":{"type":"array","items":{"type":"string"},"description":"Array of workflow IDs to export."}},"required":["ids"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-workflows-export"}

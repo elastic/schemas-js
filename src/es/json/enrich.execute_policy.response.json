@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"enrich.execute_policy","type":"object","properties":{"status":{"$ref":"./enrich.execute_policy.json#/$defs/enrich.execute_policy__ExecuteEnrichPolicyStatus"},"task":{"type":"string"}}}

@@ -1,0 +1,1 @@
+{"type":"object","properties":{"action":{"enum":["deleted"]}},"required":["action"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-fleet-agents-agentid"}

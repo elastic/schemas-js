@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.post_calendar_events","type":"object","properties":{"events":{"type":"array","items":{"$ref":"./ml._types.json#/$defs/ml._types__CalendarEvent"}}},"required":["events"]}

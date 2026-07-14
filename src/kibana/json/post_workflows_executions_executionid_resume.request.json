@@ -1,0 +1,1 @@
+{"type":"object","properties":{"input":{"type":"object","additionalProperties":{},"description":"Input data to resume the execution with."}},"required":["input"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-workflows-executions-executionid-resume"}

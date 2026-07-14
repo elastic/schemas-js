@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.create_service_token","type":"object","properties":{"created":{"type":"boolean"},"token":{"$ref":"./security.create_service_token.json#/$defs/security.create_service_token__Token"}},"required":["created","token"]}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"esql.put_view","type":"object","properties":{"name":{"type":"string","description":"The view name to create or update."},"query":{"type":"string","description":"The ES|QL query string from which to create a view."}},"required":["name","query"],"description":"Create or update an ES|QL view."}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.create","type":"object","properties":{"index":{"type":"string"},"shards_acknowledged":{"type":"boolean"},"acknowledged":{"type":"boolean"}},"required":["index","shards_acknowledged","acknowledged"]}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.indices","type":"array","items":{"$ref":"./cat.indices.json#/$defs/cat.indices__IndicesRecord"}}

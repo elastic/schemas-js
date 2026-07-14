@@ -1,0 +1,1 @@
+{"type":"object","properties":{"count":{"type":"number","description":"The total number of entity engines."},"engines":{"type":"array","items":{"$ref":"./_defs.json#/$defs/Security_Entity_Analytics_API_EngineDescriptor"},"description":"An array of engine descriptors."}},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ListEntityEngines"}

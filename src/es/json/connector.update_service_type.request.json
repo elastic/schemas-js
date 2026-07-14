@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"connector.update_service_type","type":"object","properties":{"connector_id":{"type":"string","description":"The unique identifier of the connector to be updated"},"service_type":{"type":"string"}},"required":["connector_id","service_type"],"description":"Update the connector service type."}

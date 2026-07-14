@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.delete_role","type":"object","properties":{"found":{"type":"boolean","description":"If the role is successfully deleted, `found` is `true`.\nOtherwise, `found` is `false`."}},"required":["found"]}

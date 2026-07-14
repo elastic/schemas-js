@@ -1,0 +1,1 @@
+{"type":"object","properties":{"data":{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_kbn-tags-attributes"},"id":{"type":"string","description":"The tag ID."},"meta":{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_kbn-as-code-meta"}},"required":["id","data","meta"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-tags"}

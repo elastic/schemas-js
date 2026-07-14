@@ -1,0 +1,1 @@
+{"oneOf":[{"type":"object","properties":{"user_info":{"type":"object","properties":{"groupname":{"type":"string"},"password":{"type":"string"},"username":{"type":"string"}}}}},{"type":"null"}],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-agents-agentid-privilege-level-change"}

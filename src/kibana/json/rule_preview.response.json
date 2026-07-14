@@ -1,0 +1,1 @@
+{"type":"object","properties":{"isAborted":{"type":"boolean"},"logs":{"type":"array","items":{"$ref":"./_defs.json#/$defs/Security_Detections_API_RulePreviewLogs"}},"previewId":{"$ref":"./_defs.json#/$defs/Security_Detections_API_NonEmptyString"}},"required":["logs"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"RulePreview"}

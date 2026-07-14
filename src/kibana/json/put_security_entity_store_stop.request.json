@@ -1,0 +1,1 @@
+{"type":"object","properties":{"entityTypes":{"type":"array","items":{"enum":["user","host","service","generic"]},"description":"Entity types to stop. Defaults to all running types."}},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-security-entity-store-stop"}

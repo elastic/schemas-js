@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"esql.delete_view","type":"object","properties":{"name":{"$ref":"./_types.json#/$defs/_types__Ids","description":"The view name to remove."}},"required":["name"],"description":"Delete an ES|QL view.\n\nDeletes a stored ES|QL view."}

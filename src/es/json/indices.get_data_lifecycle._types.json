@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"indices.get_data_lifecycle._types__GlobalRetention":{"type":"object","properties":{"max_retention":{"$ref":"./_types.json#/$defs/_types__Duration"},"default_retention":{"$ref":"./_types.json#/$defs/_types__Duration"}}}}}

@@ -1,0 +1,1 @@
+{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_security_role_put_payload","$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-security-role-name"}

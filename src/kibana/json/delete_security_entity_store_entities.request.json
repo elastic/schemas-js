@@ -1,0 +1,1 @@
+{"type":"object","properties":{"entityId":{"type":"string","description":"The identifier of the entity to delete."}},"required":["entityId"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-security-entity-store-entities"}

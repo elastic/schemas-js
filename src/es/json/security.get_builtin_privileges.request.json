@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.get_builtin_privileges","type":"object","properties":{},"description":"Get builtin privileges.\n\nGet the list of cluster privileges and index privileges that are available in this version of Elasticsearch."}

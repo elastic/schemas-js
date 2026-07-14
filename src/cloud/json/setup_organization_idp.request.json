@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"setup-organization-idp","$ref":"#/$defs/IdpConfigurationRequest","$defs":{"IdpConfigurationRequest":{"type":"object","properties":{"enabled":{"type":"boolean"},"login_identifier_prefix":{"type":"string"},"saml_idp":{"$ref":"_defs.json#/$defs/SamlIdp"}},"required":["enabled","login_identifier_prefix","saml_idp"]}}}

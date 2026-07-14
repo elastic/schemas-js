@@ -1,0 +1,1 @@
+{"type":"object","properties":{"has_encryption_key":{"type":"boolean"},"is_authenticated":{"type":"boolean"}},"required":["is_authenticated","has_encryption_key"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ReadPrivileges"}

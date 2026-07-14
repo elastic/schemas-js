@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"update","$ref":"./_global.update.json#/$defs/_global.update__UpdateWriteResponseBase"}

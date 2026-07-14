@@ -10,9 +10,10 @@
     "test:unit": "tsx --test test/registry.test.ts",
     "test:unit-bun": "bun test test/*.test.ts",
     "lint:fix": "eslint --cache src/ --fix",
-    "test": "npm run test:lint && npm run test:unit",
+    "test": "npm run test:lint && npm run test:unit && npm run test:json-schemas",
     "license-checker": "license-checker --production --onlyAllow='MIT;Apache-2.0;Apache1.1;ISC;BSD-3-Clause;BSD-2-Clause;0BSD'",
-    "license-header": "./scripts/check-spdx"
+    "license-header": "./scripts/check-spdx",
+    "test:json-schemas": "tsx --test test/json-schemas.test.ts"
   },
   "keywords": [
     "json-schema",
@@ -33,6 +34,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "ajv": "8.20.0",
     "eslint": "9.39.4",
     "license-checker": "25.0.1",
     "neostandard": "0.13.0",
@@ -56,11 +58,17 @@
     "./kibana/schemas/*.js": {
       "import": "./lib/kibana/schemas/*.js",
       "types": "./lib/kibana/schemas/*.d.ts"
-    }
+    },
+    "./es/json/*.json": "./src/es/json/*.json",
+    "./kibana/json/*.json": "./src/kibana/json/*.json",
+    "./cloud/json/*.json": "./src/cloud/json/*.json"
   },
   "types": "lib/index.d.ts",
   "files": [
     "lib/",
+    "src/es/json/",
+    "src/kibana/json/",
+    "src/cloud/json/",
     "LICENSE",
     "NOTICE.txt",
     "README.md"

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.get_role","type":"object","additionalProperties":{"$ref":"./security.get_role.json#/$defs/security.get_role__Role"}}

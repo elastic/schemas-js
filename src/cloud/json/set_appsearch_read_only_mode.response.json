@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"set-appsearch-read-only-mode","$ref":"_defs.json#/$defs/ReadOnlyResponse","$defs":{"ReadOnlyRequest":{"type":"object","properties":{"enabled":{"type":"boolean"}},"required":["enabled"]}}}

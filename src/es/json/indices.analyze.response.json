@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.analyze","type":"object","properties":{"detail":{"$ref":"./indices.analyze.json#/$defs/indices.analyze__AnalyzeDetail"},"tokens":{"type":"array","items":{"$ref":"./indices.analyze.json#/$defs/indices.analyze__AnalyzeToken"}}}}

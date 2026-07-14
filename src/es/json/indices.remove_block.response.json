@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.remove_block","type":"object","properties":{"acknowledged":{"type":"boolean"},"indices":{"type":"array","items":{"$ref":"./indices.remove_block.json#/$defs/indices.remove_block__RemoveIndicesBlockStatus"}}},"required":["acknowledged","indices"]}

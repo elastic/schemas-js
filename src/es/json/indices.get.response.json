@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.get","type":"object","additionalProperties":{"$ref":"./indices._types.json#/$defs/indices._types__IndexState"}}

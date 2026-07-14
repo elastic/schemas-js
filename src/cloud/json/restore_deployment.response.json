@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"restore-deployment","$ref":"#/$defs/DeploymentRestoreResponse","$defs":{"DeploymentRestoreResponse":{"type":"object","properties":{"id":{"type":"string"}},"required":["id"]}}}

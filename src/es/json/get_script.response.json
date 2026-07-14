@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get_script","type":"object","properties":{"_id":{"type":"string"},"found":{"type":"boolean"},"script":{"$ref":"./_types.json#/$defs/_types__StoredScript"}},"required":["_id","found"]}

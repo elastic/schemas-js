@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"indices.get__Features":{"oneOf":[{"$ref":"./indices.get.json#/$defs/indices.get__Feature"},{"type":"array","items":{"$ref":"./indices.get.json#/$defs/indices.get__Feature"}}]},"indices.get__Feature":{"enum":["aliases","mappings","settings"]}}}

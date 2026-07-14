@@ -1,0 +1,1 @@
+{"type":"object","properties":{"list_index":{"type":"boolean"},"list_item_index":{"type":"boolean"}},"required":["list_index","list_item_index"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ReadListIndex"}

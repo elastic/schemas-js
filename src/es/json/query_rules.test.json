@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"query_rules.test__QueryRulesetMatchedRule":{"type":"object","properties":{"ruleset_id":{"type":"string","description":"Ruleset unique identifier"},"rule_id":{"type":"string","description":"Rule unique identifier within that ruleset"}},"required":["ruleset_id","rule_id"]}}}

@@ -1,0 +1,1 @@
+{"type":"object","properties":{"data":{"type":"array","items":{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_rule_response"}},"page":{"type":"number"},"per_page":{"type":"number"},"total":{"type":"number"}},"required":["page","per_page","total","data"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-alerting-rules-find"}

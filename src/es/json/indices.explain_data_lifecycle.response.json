@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.explain_data_lifecycle","type":"object","properties":{"indices":{"type":"object","additionalProperties":{"$ref":"./indices.explain_data_lifecycle.json#/$defs/indices.explain_data_lifecycle__DataStreamLifecycleExplain"}}},"required":["indices"]}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"search_application.delete_behavioral_analytics","type":"object","properties":{"name":{"type":"string","description":"The name of the analytics collection to be deleted"}},"required":["name"],"description":"Delete a behavioral analytics collection.\n\nThe associated data stream is also deleted."}

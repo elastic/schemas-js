@@ -1,0 +1,1 @@
+{"oneOf":[{"type":"object","properties":{"untrack":{"type":"boolean","description":"Defines whether this rule's alerts should be untracked."}}},{"type":"null"}],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-alerting-rule-id-disable"}

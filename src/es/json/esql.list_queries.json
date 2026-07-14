@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"esql.list_queries__Body":{"type":"object","properties":{"id":{"type":"number"},"node":{"type":"string"},"start_time_millis":{"type":"number"},"running_time_nanos":{"type":"number"},"query":{"type":"string"}},"required":["id","node","start_time_millis","running_time_nanos","query"]}}}

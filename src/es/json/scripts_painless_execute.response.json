@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"scripts_painless_execute","type":"object","properties":{"result":{}},"required":["result"]}

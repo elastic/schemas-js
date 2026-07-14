@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"create-deployment-es-resource-snapshot-repository","$ref":"#/$defs/CreateSnapshotDependencyRequest","$defs":{"CreateSnapshotDependencyRequest":{"type":"object","properties":{"source_deployment_id":{"type":"string"}},"required":["source_deployment_id"]}}}

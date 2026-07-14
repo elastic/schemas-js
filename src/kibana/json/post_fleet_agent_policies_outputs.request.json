@@ -1,0 +1,1 @@
+{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_get_list_agent_policy_outputs_request","$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-agent-policies-outputs"}

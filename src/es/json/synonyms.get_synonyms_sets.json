@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"synonyms.get_synonyms_sets__SynonymsSetItem":{"type":"object","properties":{"synonyms_set":{"type":"string","description":"Synonyms set identifier"},"count":{"type":"number","description":"Number of synonym rules that the synonym set contains"}},"required":["synonyms_set","count"]}}}

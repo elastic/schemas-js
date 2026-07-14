@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"license.get","type":"object","properties":{"license":{"$ref":"./license.get.json#/$defs/license.get__LicenseInformation"}},"required":["license"]}

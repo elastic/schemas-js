@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.update_api_key","type":"object","properties":{"updated":{"type":"boolean","description":"If `true`, the API key was updated.\nIf `false`, the API key didn't change because no change was detected."}},"required":["updated"]}

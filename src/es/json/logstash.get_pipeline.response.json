@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"logstash.get_pipeline","type":"object","additionalProperties":{"$ref":"./logstash._types.json#/$defs/logstash._types__Pipeline"}}

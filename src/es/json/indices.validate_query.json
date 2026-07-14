@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"indices.validate_query__IndicesValidationExplanation":{"type":"object","properties":{"error":{"type":"string"},"explanation":{"type":"string"},"index":{"type":"string"},"shard":{"type":"number"},"valid":{"type":"boolean"}},"required":["valid"]}}}

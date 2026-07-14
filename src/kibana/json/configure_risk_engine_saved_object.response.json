@@ -1,0 +1,1 @@
+{"type":"object","properties":{"risk_engine_saved_object_configured":{"type":"boolean"}},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ConfigureRiskEngineSavedObject"}

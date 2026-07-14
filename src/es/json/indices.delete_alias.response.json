@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.delete_alias","$ref":"./indices.delete_alias.json#/$defs/indices.delete_alias__IndicesAliasesResponseBody"}

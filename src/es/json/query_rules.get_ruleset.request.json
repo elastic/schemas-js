@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"query_rules.get_ruleset","type":"object","properties":{"ruleset_id":{"type":"string","description":"The unique identifier of the query ruleset"}},"required":["ruleset_id"],"description":"Get a query ruleset.\n\nGet details about a query ruleset."}

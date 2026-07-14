@@ -1,0 +1,1 @@
+{"type":"object","properties":{"agents":{"oneOf":[{"type":"array","items":{"type":"string"}},{"type":"string"}]},"includeInactive":{"type":"boolean","description":"When passing collectors by KQL query, also removes inactive collectors"}},"required":["agents"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-agents-bulk-remove-collectors"}
