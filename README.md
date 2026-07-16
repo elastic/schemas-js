@@ -1,6 +1,12 @@
-# Elastic schemas
+# Elastic Schemas
 
-Schema definitions for all Elastic APIs, including Elasticsearch, Kibana, and Cloud. Expressed as [Zod](https://zod.dev/) schemas and tool manifests, plus request builder utilities for helping serialize API parameter inputs into a valid HTTP request structure.
+Schema definitions for all Elastic APIs, including Elasticsearch, Kibana, and Cloud. Available in multiple forms:
+
+- [Zod](https://zod.dev/) schemas
+- plain JSON schemas
+- a tool registry optimized for LLM-based agents
+
+Also includes basic utilities for building HTTP API requests from inputs that match one of the provided schemas.
 
 ## Installation
 
@@ -16,7 +22,7 @@ npm install path/to/schemas-js
 
 ## Usage
 
-### Zod schema validation
+### Zod schema
 
 Import schemas by product namespace and use them like any Zod schema:
 
