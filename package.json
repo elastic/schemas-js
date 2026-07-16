@@ -60,6 +60,14 @@
       "import": "./lib/kibana/schemas/*.js",
       "types": "./lib/kibana/schemas/*.d.ts"
     },
+    "./kibana/tools/manifest.js": {
+      "import": "./lib/kibana/tools/manifest.js",
+      "types": "./lib/kibana/tools/manifest.d.ts"
+    },
+    "./es/tools/manifest.js": {
+      "import": "./lib/es/tools/manifest.js",
+      "types": "./lib/es/tools/manifest.d.ts"
+    },
     "./es/json/*.json": "./src/es/json/*.json",
     "./kibana/json/*.json": "./src/kibana/json/*.json",
     "./cloud/json/*.json": "./src/cloud/json/*.json"
