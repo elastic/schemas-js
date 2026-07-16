@@ -97,13 +97,36 @@ const request = api.buildRequest({
 
 Browse available API IDs via `ElasticsearchTools.esRegistry.manifest` (an array of `{ id, name, namespace, description }` entries).
 
+
+### Tool manifests
+
+Each product exposes a lightweight manifest — an array of `ApiRegistryMeta` objects (`{ id, name, namespace, description, namespaceFile }`) — without loading any schema code. Import them directly:
+
+```typescript
+import { kibanaManifest } from '@elastic/schemas/kibana/tools/manifest.js'
+import { esManifest }     from '@elastic/schemas/es/tools/manifest.js'
+```
+
+These are the same manifests available via the registry objects (`ElasticsearchTools.esRegistry.manifest`, etc.), but they can be imported in isolation without pulling in the full schema bundle. `ApiRegistryMeta` is re-exported from the main entry point:
+
+```typescript
+import type { ApiRegistryMeta } from '@elastic/schemas'
+```
+
 ### Available exports
 
 For each API target, the following root exports are available:
 
-- **Elasticsearch:** `ElasticsearchSchemas` and `ElasticsearchTools`
-- **Kibana:** `KibanaSchemas` and `KibanaTools`
-- **Cloud:** `CloudSchemas`
+| Export | Path | Description |
+|--------|------|-------------|
+| `ElasticsearchSchemas` | `@elastic/schemas` | Zod schemas for all ES APIs |
+| `ElasticsearchTools` | `@elastic/schemas` | ES tool registry + `esRegistry` |
+| `KibanaSchemas` | `@elastic/schemas` | Zod schemas for all Kibana APIs |
+| `KibanaTools` | `@elastic/schemas` | Kibana tool registry + `kibanaRegistry` |
+| `CloudSchemas` | `@elastic/schemas` | Zod schemas for all Cloud APIs |
+| `ApiRegistryMeta` | `@elastic/schemas` | Shared type for manifest entries |
+| `esManifest` | `@elastic/schemas/es/tools/manifest.js` | Lightweight ES API manifest (no schemas) |
+| `kibanaManifest` | `@elastic/schemas/kibana/tools/manifest.js` | Lightweight Kibana API manifest (no schemas) |
 
 ## Version support
 
