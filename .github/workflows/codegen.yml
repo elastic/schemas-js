@@ -19,12 +19,19 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      id-token: write
 
     steps:
       - name: Check out schemas repo
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           persist-credentials: true
+
+      - name: Fetch ephemeral GitHub token
+        id: fetch-token
+        uses: elastic/ci-gh-actions/fetch-github-token@2feb1c6f5086cf8e06f61ef35e275abed3456f7b # v1.5.3
+        with:
+          vault-instance: "ci-prod"
 
       - name: Install devcontainer CLI
         run: npm install -g @devcontainers/cli
@@ -33,6 +40,7 @@ jobs:
         run: devcontainer up --workspace-folder . && devcontainer exec --workspace-folder . just codegen
         env:
           GENERATOR_REF: ${{ github.event.inputs.generator-ref || 'main' }}
+          GITHUB_TOKEN: ${{ steps.fetch-token.outputs.token }}
 
       - name: Check for changes
         id: changes
