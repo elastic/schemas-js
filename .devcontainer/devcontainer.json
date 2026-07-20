@@ -1,0 +1,15 @@
+{
+  "name": "elastic-schemas",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22",
+  "features": {
+    "ghcr.io/guiyomh/features/just:0": {}
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder}/../elastic-client-generator-js,target=${containerWorkspaceFolder}/../elastic-client-generator-js,type=bind,consistency=cached"
+  ],
+  "postCreateCommand": "npm install && ([ -f ../elastic-client-generator-js/package.json ] || git clone --depth 1 --branch ${GENERATOR_REF:-main} https://${GITHUB_TOKEN}@github.com/elastic/elastic-client-generator-js ../elastic-client-generator-js) && npm install --prefix ../elastic-client-generator-js",
+  "remoteEnv": {
+    "GENERATOR_PATH": "${containerWorkspaceFolder}/../elastic-client-generator-js",
+    "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}"
+  }
+}

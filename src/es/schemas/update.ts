@@ -3265,7 +3265,7 @@ export const QueryDslPrefixQuery = z.object({
   ...QueryDslQueryBase.shape,
   rewrite: MultiTermQueryRewrite.describe('Method used to rewrite the query.').optional(),
   value: z.string().describe('Beginning characters of terms you wish to find in the provided field.'),
-  case_insensitive: z.boolean().describe('Allows ASCII case insensitive matching of the value with the indexed field values when set to `true`. Default is `false` which means the case sensitivity of matching depends on the underlying field’s mapping.').optional()
+  case_insensitive: z.boolean().describe('Allows case insensitive matching of the value with the indexed field values when set to `true`. Default is `false` which means the case sensitivity of matching depends on the underlying field’s mapping.').optional()
 }).meta({ id: 'QueryDslPrefixQuery' })
 export type QueryDslPrefixQuery = z.infer<typeof QueryDslPrefixQuery>
 
@@ -3649,7 +3649,7 @@ export type QueryDslSparseVectorQuery = z.infer<typeof QueryDslSparseVectorQuery
 export const QueryDslTermQuery = z.object({
   ...QueryDslQueryBase.shape,
   value: FieldValue.describe('Term you wish to find in the provided field.'),
-  case_insensitive: z.boolean().describe('Allows ASCII case insensitive matching of the value with the indexed field values when set to `true`. When `false`, the case sensitivity of matching depends on the underlying field’s mapping.').optional()
+  case_insensitive: z.boolean().describe('Allows case insensitive matching of the value with the indexed field values when set to `true`. When `false`, the case sensitivity of matching depends on the underlying field’s mapping.').optional()
 }).meta({ id: 'QueryDslTermQuery' })
 export type QueryDslTermQuery = z.infer<typeof QueryDslTermQuery>
 
@@ -4014,12 +4014,6 @@ export type SequenceNumber = z.infer<typeof SequenceNumber>
 export const Refresh = z.union([z.boolean(), z.enum(['true', 'false', 'wait_for'])]).meta({ id: 'Refresh' })
 export type Refresh = z.infer<typeof Refresh>
 
-export const WaitForActiveShardOptions = z.enum(['all', 'index-setting']).meta({ id: 'WaitForActiveShardOptions' })
-export type WaitForActiveShardOptions = z.infer<typeof WaitForActiveShardOptions>
-
-export const WaitForActiveShards = z.union([integer, WaitForActiveShardOptions]).meta({ id: 'WaitForActiveShards' })
-export type WaitForActiveShards = z.infer<typeof WaitForActiveShards>
-
 /**
  * Update a document.
  *
@@ -4053,9 +4047,8 @@ export const UpdateRequest = z.object({
   refresh: Refresh.describe('If \'true\', Elasticsearch refreshes the affected shards to make this operation visible to search. If \'wait_for\', it waits for a refresh to make this operation visible to search. If \'false\', it does nothing with refreshes.').optional().meta({ found_in: 'query' }),
   require_alias: z.boolean().describe('If `true`, the destination must be an index alias.').optional().meta({ found_in: 'query' }),
   retry_on_conflict: integer.describe('The number of times the operation should be retried when a conflict occurs.').optional().meta({ found_in: 'query' }),
-  routing: Routing.describe('A custom value used to route operations to a specific shard.').optional().meta({ found_in: 'query' }),
+  routing: Routing.describe('A custom value used to route operations to a specific shard. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional().meta({ found_in: 'query' }),
   timeout: Duration.describe('The period to wait for the following operations: dynamic mapping updates and waiting for active shards. Elasticsearch waits for at least the timeout period before failing. The actual wait time could be longer, particularly when multiple waits occur.').optional().meta({ found_in: 'query' }),
-  wait_for_active_shards: WaitForActiveShards.describe('The number of copies of each shard that must be active before proceeding with the operation. Set to \'all\' or any positive integer up to the total number of shards in the index (`number_of_replicas`+1). The default value of `1` means it waits for each primary shard to be active.').optional().meta({ found_in: 'query' }),
   _source_excludes: Fields.describe('The source fields you want to exclude.').optional().meta({ found_in: 'query' }),
   _source_includes: Fields.describe('The source fields you want to retrieve.').optional().meta({ found_in: 'query' }),
   detect_noop: z.boolean().describe('If `true`, the `result` in the response is set to `noop` (no operation) when there are no changes to the document.').optional().meta({ found_in: 'body' }),

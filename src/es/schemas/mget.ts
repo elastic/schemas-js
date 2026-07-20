@@ -151,7 +151,7 @@ export const MgetRequest = z.object({
   preference: z.string().describe('Specifies the node or shard the operation should be performed on. Random by default.').optional().meta({ found_in: 'query' }),
   realtime: z.boolean().describe('If `true`, the request is real-time as opposed to near-real-time.').optional().meta({ found_in: 'query' }),
   refresh: z.boolean().describe('If `true`, the request refreshes relevant shards before retrieving documents.').optional().meta({ found_in: 'query' }),
-  routing: Routing.describe('Custom value used to route operations to a specific shard.').optional().meta({ found_in: 'query' }),
+  routing: Routing.describe('Custom value used to route operations to a specific shard. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional().meta({ found_in: 'query' }),
   _source: SearchSourceConfigParam.describe('True or false to return the `_source` field or not, or a list of fields to return.').optional().meta({ found_in: 'query' }),
   _source_excludes: Fields.describe('A comma-separated list of source fields to exclude from the response. You can also use this parameter to exclude fields from the subset specified in `_source_includes` query parameter.').optional().meta({ found_in: 'query' }),
   _source_includes: Fields.describe('A comma-separated list of source fields to include in the response. If this parameter is specified, only these source fields are returned. You can exclude fields from this subset using the `_source_excludes` query parameter. If the `_source` parameter is `false`, this parameter is ignored.').optional().meta({ found_in: 'query' }),

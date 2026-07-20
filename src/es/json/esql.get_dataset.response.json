@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"esql.get_dataset","type":"object","properties":{"datasets":{"type":"array","items":{"$ref":"./esql._types.json#/$defs/esql._types__ESQLDataset"},"description":"The matching datasets."}},"required":["datasets"]}

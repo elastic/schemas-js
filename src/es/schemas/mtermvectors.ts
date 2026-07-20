@@ -101,7 +101,7 @@ export const MtermvectorsRequest = z.object({
   positions: z.boolean().describe('If `true`, the response includes term positions.').optional().meta({ found_in: 'query' }),
   preference: z.string().describe('The node or shard the operation should be performed on. It is random by default.').optional().meta({ found_in: 'query' }),
   realtime: z.boolean().describe('If true, the request is real-time as opposed to near-real-time.').optional().meta({ found_in: 'query' }),
-  routing: Routing.describe('A custom value used to route operations to a specific shard.').optional().meta({ found_in: 'query' }),
+  routing: Routing.describe('A custom value used to route operations to a specific shard. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional().meta({ found_in: 'query' }),
   term_statistics: z.boolean().describe('If true, the response includes term frequency and document frequency.').optional().meta({ found_in: 'query' }),
   version: VersionNumber.describe('If `true`, returns the document version as part of a hit.').optional().meta({ found_in: 'query' }),
   version_type: VersionType.describe('The version type.').optional().meta({ found_in: 'query' }),

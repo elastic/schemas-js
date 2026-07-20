@@ -1,0 +1,9 @@
+{
+  "features": {
+    "ghcr.io/guiyomh/features/just:0": {
+      "version": "0.1.0",
+      "resolved": "ghcr.io/guiyomh/features/just@sha256:8311dff976bd153a54a879021353a7e149963e580022b25af49c45cfc5f13bec",
+      "integrity": "sha256:8311dff976bd153a54a879021353a7e149963e580022b25af49c45cfc5f13bec"
+    }
+  }
+}

@@ -58,15 +58,6 @@ export type VersionNumber = z.infer<typeof VersionNumber>
 export const VersionType = z.enum(['internal', 'external', 'external_gte']).meta({ id: 'VersionType' })
 export type VersionType = z.infer<typeof VersionType>
 
-export const integer = z.number().meta({ id: 'integer' })
-export type integer = z.infer<typeof integer>
-
-export const WaitForActiveShardOptions = z.enum(['all', 'index-setting']).meta({ id: 'WaitForActiveShardOptions' })
-export type WaitForActiveShardOptions = z.infer<typeof WaitForActiveShardOptions>
-
-export const WaitForActiveShards = z.union([integer, WaitForActiveShardOptions]).meta({ id: 'WaitForActiveShards' })
-export type WaitForActiveShards = z.infer<typeof WaitForActiveShards>
-
 /**
  * Create or update a document in an index.
  *
@@ -84,7 +75,7 @@ export type WaitForActiveShards = z.infer<typeof WaitForActiveShards>
  * Automatic data stream creation requires a matching index template with data stream enabled.
  *
  * NOTE: Replica shards might not all be started when an indexing operation returns successfully.
- * By default, only the primary is required. Set `wait_for_active_shards` to change this default behavior.
+ * By default, only the primary is required. Set `wait_for_active_shards` to change this default behavior (this parameter is not available in Elasticsearch Serverless).
  *
  * **Automatically create data streams and indices**
  *
@@ -133,7 +124,7 @@ export type WaitForActiveShards = z.infer<typeof WaitForActiveShards>
  * If the requisite number of active shard copies are not available, then the write operation must wait and retry, until either the requisite shard copies have started or a timeout occurs.
  * By default, write operations only wait for the primary shards to be active before proceeding (that is to say `wait_for_active_shards` is `1`).
  * This default can be overridden in the index settings dynamically by setting `index.write.wait_for_active_shards`.
- * To alter this behavior per operation, use the `wait_for_active_shards request` parameter.
+ * To alter this behavior per operation, use the `wait_for_active_shards request` parameter (this parameter is not available in Elasticsearch Serverless).
  *
  * Valid values are all or any positive integer up to the total number of configured copies per shard in the index (which is `number_of_replicas`+1).
  * Specifying a negative value or a number greater than the number of shard copies will throw an error.
@@ -199,11 +190,10 @@ export const IndexRequest = z.object({
   op_type: OpType.describe('Set to `create` to only index the document if it does not already exist (put if absent). If a document with the specified `_id` already exists, the indexing operation will fail. The behavior is the same as using the `<index>/_create` endpoint. If a document ID is specified, this paramater defaults to `index`. Otherwise, it defaults to `create`. If the request targets a data stream, an `op_type` of `create` is required.').optional().meta({ found_in: 'query' }),
   pipeline: z.string().describe('The ID of the pipeline to use to preprocess incoming documents. If the index has a default ingest pipeline specified, then setting the value to `_none` disables the default ingest pipeline for this request. If a final pipeline is configured it will always run, regardless of the value of this parameter.').optional().meta({ found_in: 'query' }),
   refresh: Refresh.describe('If `true`, Elasticsearch refreshes the affected shards to make this operation visible to search. If `wait_for`, it waits for a refresh to make this operation visible to search. If `false`, it does nothing with refreshes.').optional().meta({ found_in: 'query' }),
-  routing: Routing.describe('A custom value that is used to route operations to a specific shard.').optional().meta({ found_in: 'query' }),
+  routing: Routing.describe('A custom value that is used to route operations to a specific shard. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional().meta({ found_in: 'query' }),
   timeout: Duration.describe('The period the request waits for the following operations: automatic index creation, dynamic mapping updates, waiting for active shards. This parameter is useful for situations where the primary shard assigned to perform the operation might not be available when the operation runs. Some reasons for this might be that the primary shard is currently recovering from a gateway or undergoing relocation. By default, the operation will wait on the primary shard to become available for at least 1 minute before failing and responding with an error. The actual wait time could be longer, particularly when multiple waits occur.').optional().meta({ found_in: 'query' }),
   version: VersionNumber.describe('An explicit version number for concurrency control. It must be a non-negative long number.').optional().meta({ found_in: 'query' }),
   version_type: VersionType.describe('The version type.').optional().meta({ found_in: 'query' }),
-  wait_for_active_shards: WaitForActiveShards.describe('The number of shard copies that must be active before proceeding with the operation. You can set it to `all` or any positive integer up to the total number of shards in the index (`number_of_replicas+1`). The default value of `1` means it waits for each primary shard to be active.').optional().meta({ found_in: 'query' }),
   require_alias: z.boolean().describe('If `true`, the destination must be an index alias.').optional().meta({ found_in: 'query' }),
   require_data_stream: z.boolean().describe('If `true`, the request\'s actions must target a data stream (existing or to be created).').optional().meta({ found_in: 'query' }),
   document: z.any().meta({ found_in: 'body' })
@@ -237,6 +227,9 @@ export const ErrorCause = z.looseObject({
   get suppressed () { return ErrorCause.array().optional() }
 }).meta({ id: 'ErrorCause' })
 export type ErrorCause = z.infer<typeof ErrorCause>
+
+export const integer = z.number().meta({ id: 'integer' })
+export type integer = z.infer<typeof integer>
 
 export const ShardFailure = z.object({
   index: IndexName.optional(),

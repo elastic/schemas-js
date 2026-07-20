@@ -68,12 +68,6 @@ export type SlicesCalculation = z.infer<typeof SlicesCalculation>
 export const Slices = z.union([integer, SlicesCalculation]).meta({ id: 'Slices' })
 export type Slices = z.infer<typeof Slices>
 
-export const WaitForActiveShardOptions = z.enum(['all', 'index-setting']).meta({ id: 'WaitForActiveShardOptions' })
-export type WaitForActiveShardOptions = z.infer<typeof WaitForActiveShardOptions>
-
-export const WaitForActiveShards = z.union([integer, WaitForActiveShardOptions]).meta({ id: 'WaitForActiveShards' })
-export type WaitForActiveShards = z.infer<typeof WaitForActiveShards>
-
 export const QueryDslQueryBase = z.object({
   boost: float.describe('Floating point number used to decrease or increase the relevance scores of the query. Boost values are relative to the default value of 1.0. A boost value between 0 and 1.0 decreases the relevance score. A value greater than 1.0 increases the relevance score.').optional(),
   query_name: z.string().optional()
@@ -3509,7 +3503,7 @@ export const QueryDslPrefixQuery = z.object({
   ...QueryDslQueryBase.shape,
   rewrite: MultiTermQueryRewrite.describe('Method used to rewrite the query.').optional(),
   value: z.string().describe('Beginning characters of terms you wish to find in the provided field.'),
-  case_insensitive: z.boolean().describe('Allows ASCII case insensitive matching of the value with the indexed field values when set to `true`. Default is `false` which means the case sensitivity of matching depends on the underlying field’s mapping.').optional()
+  case_insensitive: z.boolean().describe('Allows case insensitive matching of the value with the indexed field values when set to `true`. Default is `false` which means the case sensitivity of matching depends on the underlying field’s mapping.').optional()
 }).meta({ id: 'QueryDslPrefixQuery' })
 export type QueryDslPrefixQuery = z.infer<typeof QueryDslPrefixQuery>
 
@@ -3893,7 +3887,7 @@ export type QueryDslSparseVectorQuery = z.infer<typeof QueryDslSparseVectorQuery
 export const QueryDslTermQuery = z.object({
   ...QueryDslQueryBase.shape,
   value: FieldValue.describe('Term you wish to find in the provided field.'),
-  case_insensitive: z.boolean().describe('Allows ASCII case insensitive matching of the value with the indexed field values when set to `true`. When `false`, the case sensitivity of matching depends on the underlying field’s mapping.').optional()
+  case_insensitive: z.boolean().describe('Allows case insensitive matching of the value with the indexed field values when set to `true`. When `false`, the case sensitivity of matching depends on the underlying field’s mapping.').optional()
 }).meta({ id: 'QueryDslTermQuery' })
 export type QueryDslTermQuery = z.infer<typeof QueryDslTermQuery>
 
@@ -4125,7 +4119,7 @@ export const DeleteByQueryRequest = z.object({
   refresh: z.boolean().describe('If `true`, Elasticsearch refreshes all shards involved in the delete by query after the request completes. This is different than the delete API\'s `refresh` parameter, which causes just the shard that received the delete request to be refreshed. Unlike the delete API, it does not support `wait_for`.').optional().meta({ found_in: 'query' }),
   request_cache: z.boolean().describe('If `true`, the request cache is used for this request. Defaults to the index-level setting.').optional().meta({ found_in: 'query' }),
   requests_per_second: float.describe('The maximum number of documents to delete per second, across the entire delete-by-query operation (including slices). It can be either `-1` to turn off throttling or any decimal number like `1.7` or `12` to throttle to that level.').optional().meta({ found_in: 'query' }),
-  routing: Routing.describe('A custom value used to route operations to a specific shard.').optional().meta({ found_in: 'query' }),
+  routing: Routing.describe('A custom value used to route operations to a specific shard. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional().meta({ found_in: 'query' }),
   q: z.string().describe('A query in the Lucene query string syntax.').optional().meta({ found_in: 'query' }),
   scroll: Duration.describe('The period to retain the search context for scrolling.').optional().meta({ found_in: 'query' }),
   scroll_size: long.describe('The size of the scroll request that powers the operation.').optional().meta({ found_in: 'query' }),
@@ -4136,7 +4130,6 @@ export const DeleteByQueryRequest = z.object({
   terminate_after: long.describe('The maximum number of documents to collect for each shard. If a query reaches this limit, Elasticsearch terminates the query early. Elasticsearch collects documents before sorting. Use with caution. Elasticsearch applies this parameter to each shard handling the request. When possible, let Elasticsearch perform early termination automatically. Avoid specifying this parameter for requests that target data streams with backing indices across multiple data tiers.').optional().meta({ found_in: 'query' }),
   timeout: Duration.describe('The period each deletion request waits for active shards.').optional().meta({ found_in: 'query' }),
   version: z.boolean().describe('If `true`, returns the document version as part of a hit.').optional().meta({ found_in: 'query' }),
-  wait_for_active_shards: WaitForActiveShards.describe('The number of shard copies that must be active before proceeding with the operation. Set to `all` or any positive integer up to the total number of shards in the index (`number_of_replicas+1`). The `timeout` value controls how long each write request waits for unavailable shards to become available.').optional().meta({ found_in: 'query' }),
   wait_for_completion: z.boolean().describe('If `true`, the request blocks until the operation is complete. If `false`, Elasticsearch performs some preflight checks, launches the request, and returns a task you can use to cancel or get the status of the task. Elasticsearch creates a record of this task as a document at `.tasks/task/{taskId}`. When you are done with a task, you should delete the task document so Elasticsearch can reclaim the space.').optional().meta({ found_in: 'query' }),
   max_docs: long.describe('The maximum number of documents to delete.').optional().meta({ found_in: 'body' }),
   query: z.lazy(() => QueryDslQueryContainer).describe('The documents to delete specified with Query DSL.').optional().meta({ found_in: 'body' }),
