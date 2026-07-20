@@ -7,8 +7,7 @@
     "build": "node --max-old-space-size=8192 ./node_modules/.bin/tsc",
     "generate": "node scripts/generate.mjs",
     "test:lint": "eslint --cache src/",
-    "test:unit": "npx --no tsx --test \"test/*.test.ts\"",
-    "test:unit-bun": "bun test test/*.test.ts",
+    "test:unit": "vitest run",
     "lint:fix": "eslint --cache src/ --fix",
     "test": "npm run test:lint && npm run test:unit",
     "license-checker": "license-checker --production --onlyAllow='MIT;Apache-2.0;Apache1.1;ISC;BSD-3-Clause;BSD-2-Clause;0BSD'",
@@ -39,7 +38,8 @@
     "neostandard": "0.13.0",
     "ora": "8.0.0",
     "tsx": "4.23.0",
-    "typescript": "6.0.3"
+    "typescript": "6.0.3",
+    "vitest": "3.0.0"
   },
   "exports": {
     ".": {

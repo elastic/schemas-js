@@ -45,7 +45,6 @@ jobs:
         run: npm install
 
       - name: npm test
-        shell: bash
         run: npm test
 
   license:
@@ -93,7 +92,7 @@ jobs:
 
       - name: Unit test
         shell: bash
-        run: bun run test:unit-bun
+        run: bun run test:unit
 
   ci:
     name: CI Result

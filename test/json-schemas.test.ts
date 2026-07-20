@@ -3,15 +3,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { describe, it } from 'node:test'
-import assert from 'node:assert/strict'
+import { describe, it, expect } from 'vitest'
 import { readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import Ajv from 'ajv/dist/2020.js'
 
 const ajv = new Ajv({ strict: false })
 
-const srcDir = join(import.meta.dirname, '..', 'src')
+const srcDir = join(fileURLToPath(import.meta.url), '..', '..', 'src')
 const jsonDirs = ['es/json', 'kibana/json', 'cloud/json']
 
 for (const dir of jsonDirs) {
@@ -29,7 +29,7 @@ for (const dir of jsonDirs) {
       it(file, () => {
         const schema = JSON.parse(readFileSync(join(fullDir, file), 'utf8'))
         const valid = ajv.validateSchema(schema)
-        assert.ok(valid, `Invalid schema in ${file}: ${JSON.stringify(ajv.errors)}`)
+        expect(valid, `Invalid schema in ${file}: ${JSON.stringify(ajv.errors)}`).toBe(true)
       })
     }
   })
