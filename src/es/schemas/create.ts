@@ -52,15 +52,6 @@ export type VersionNumber = z.infer<typeof VersionNumber>
 export const VersionType = z.enum(['internal', 'external', 'external_gte']).meta({ id: 'VersionType' })
 export type VersionType = z.infer<typeof VersionType>
 
-export const integer = z.number().meta({ id: 'integer' })
-export type integer = z.infer<typeof integer>
-
-export const WaitForActiveShardOptions = z.enum(['all', 'index-setting']).meta({ id: 'WaitForActiveShardOptions' })
-export type WaitForActiveShardOptions = z.infer<typeof WaitForActiveShardOptions>
-
-export const WaitForActiveShards = z.union([integer, WaitForActiveShardOptions]).meta({ id: 'WaitForActiveShards' })
-export type WaitForActiveShards = z.infer<typeof WaitForActiveShards>
-
 /**
  * Create a new document in the index.
  *
@@ -148,7 +139,6 @@ export const CreateRequest = z.object({
   timeout: Duration.describe('The period the request waits for the following operations: automatic index creation, dynamic mapping updates, waiting for active shards. Elasticsearch waits for at least the specified timeout period before failing. The actual wait time could be longer, particularly when multiple waits occur. This parameter is useful for situations where the primary shard assigned to perform the operation might not be available when the operation runs. Some reasons for this might be that the primary shard is currently recovering from a gateway or undergoing relocation. By default, the operation will wait on the primary shard to become available for at least 1 minute before failing and responding with an error. The actual wait time could be longer, particularly when multiple waits occur.').optional().meta({ found_in: 'query' }),
   version: VersionNumber.describe('The explicit version number for concurrency control. It must be a non-negative long number.').optional().meta({ found_in: 'query' }),
   version_type: VersionType.describe('The version type.').optional().meta({ found_in: 'query' }),
-  wait_for_active_shards: WaitForActiveShards.describe('The number of shard copies that must be active before proceeding with the operation. You can set it to `all` or any positive integer up to the total number of shards in the index (`number_of_replicas+1`). The default value of `1` means it waits for each primary shard to be active.').optional().meta({ found_in: 'query' }),
   document: z.any().meta({ found_in: 'body' })
 }).meta({ id: 'CreateRequest' })
 export type CreateRequest = z.infer<typeof CreateRequest>
@@ -183,6 +173,9 @@ export const ErrorCause = z.looseObject({
   get suppressed () { return ErrorCause.array().optional() }
 }).meta({ id: 'ErrorCause' })
 export type ErrorCause = z.infer<typeof ErrorCause>
+
+export const integer = z.number().meta({ id: 'integer' })
+export type integer = z.infer<typeof integer>
 
 export const ShardFailure = z.object({
   index: IndexName.optional(),

@@ -29,7 +29,7 @@ export const ReindexDestination = z.object({
   index: IndexName.describe('The name of the data stream, index, or index alias you are copying to.'),
   op_type: OpType.describe('If it is `create`, the operation will only index documents that do not already exist (also known as "put if absent"). IMPORTANT: To reindex to a data stream destination, this argument must be `create`.').optional(),
   pipeline: z.string().describe('The name of the pipeline to use.').optional(),
-  routing: z.string().describe('By default, a document\'s routing is preserved unless it\'s changed by the script. If it is `keep`, the routing on the bulk request sent for each match is set to the routing on the match. If it is `discard`, the routing on the bulk request sent for each match is set to `null`. If it is `=value`, the routing on the bulk request sent for each match is set to all value specified after the equals sign (`=`).').optional(),
+  routing: z.string().describe('By default, a document\'s routing is preserved unless it\'s changed by the script. If it is `keep`, the routing on the bulk request sent for each match is set to the routing on the match. If it is `discard`, the routing on the bulk request sent for each match is set to `null`. If it is `=value`, the routing on the bulk request sent for each match is set to all value specified after the equals sign (`=`). Not allowed when `index.slice.enabled` is `true` for the destination index; use `_slice` instead.').optional(),
   version_type: VersionType.describe('The versioning to use for the indexing operation.').optional()
 }).meta({ id: 'ReindexDestination' })
 export type ReindexDestination = z.infer<typeof ReindexDestination>
@@ -77,12 +77,6 @@ export type SlicesCalculation = z.infer<typeof SlicesCalculation>
 /** Slices configuration used to parallelize a process. */
 export const Slices = z.union([integer, SlicesCalculation]).meta({ id: 'Slices' })
 export type Slices = z.infer<typeof Slices>
-
-export const WaitForActiveShardOptions = z.enum(['all', 'index-setting']).meta({ id: 'WaitForActiveShardOptions' })
-export type WaitForActiveShardOptions = z.infer<typeof WaitForActiveShardOptions>
-
-export const WaitForActiveShards = z.union([integer, WaitForActiveShardOptions]).meta({ id: 'WaitForActiveShards' })
-export type WaitForActiveShards = z.infer<typeof WaitForActiveShards>
 
 export const Conflicts = z.enum(['abort', 'proceed']).meta({ id: 'Conflicts' })
 export type Conflicts = z.infer<typeof Conflicts>
@@ -1263,7 +1257,7 @@ export const QueryDslPrefixQuery = z.object({
   ...QueryDslQueryBase.shape,
   rewrite: MultiTermQueryRewrite.describe('Method used to rewrite the query.').optional(),
   value: z.string().describe('Beginning characters of terms you wish to find in the provided field.'),
-  case_insensitive: z.boolean().describe('Allows ASCII case insensitive matching of the value with the indexed field values when set to `true`. Default is `false` which means the case sensitivity of matching depends on the underlying field’s mapping.').optional()
+  case_insensitive: z.boolean().describe('Allows case insensitive matching of the value with the indexed field values when set to `true`. Default is `false` which means the case sensitivity of matching depends on the underlying field’s mapping.').optional()
 }).meta({ id: 'QueryDslPrefixQuery' })
 export type QueryDslPrefixQuery = z.infer<typeof QueryDslPrefixQuery>
 
@@ -1654,7 +1648,7 @@ export type QueryDslSparseVectorQuery = z.infer<typeof QueryDslSparseVectorQuery
 export const QueryDslTermQuery = z.object({
   ...QueryDslQueryBase.shape,
   value: FieldValue.describe('Term you wish to find in the provided field.'),
-  case_insensitive: z.boolean().describe('Allows ASCII case insensitive matching of the value with the indexed field values when set to `true`. When `false`, the case sensitivity of matching depends on the underlying field’s mapping.').optional()
+  case_insensitive: z.boolean().describe('Allows case insensitive matching of the value with the indexed field values when set to `true`. When `false`, the case sensitivity of matching depends on the underlying field’s mapping.').optional()
 }).meta({ id: 'QueryDslTermQuery' })
 export type QueryDslTermQuery = z.infer<typeof QueryDslTermQuery>
 
@@ -4119,8 +4113,7 @@ export const ReindexRequest = z.object({
   scroll: Duration.describe('The period of time that a consistent view of the index should be maintained for scrolled search. In serverless, and stack versions >= v9.5.0, we use PIT rather than scroll for pagination. We only use scroll for reindexing from remote clusters that are older than v7.10.0. Therefore, this parameter is ignored unless you are reindexing from a remote cluster that is older than v7.10.0.').optional().meta({ found_in: 'query' }),
   slices: Slices.describe('The number of slices this task should be divided into. It defaults to one slice, which means the task isn\'t sliced into subtasks. Reindex supports sliced scroll to parallelize the reindexing process. This parallelization can improve efficiency and provide a convenient way to break the request down into smaller parts. NOTE: Reindexing from remote clusters does not support manual or automatic slicing. If set to `auto`, Elasticsearch chooses the number of slices to use. This setting will use one slice per shard, up to a certain limit. If there are multiple sources, it will choose the number of slices based on the index or backing index with the smallest number of shards.').optional().meta({ found_in: 'query' }),
   timeout: Duration.describe('The period each indexing waits for automatic index creation, dynamic mapping updates, and waiting for active shards. By default, Elasticsearch waits for at least one minute before failing. The actual wait time could be longer, particularly when multiple waits occur.').optional().meta({ found_in: 'query' }),
-  wait_for_active_shards: WaitForActiveShards.describe('The number of shard copies that must be active before proceeding with the operation. Set it to `all` or any positive integer up to the total number of shards in the index (`number_of_replicas+1`). The default value is one, which means it waits for each primary shard to be active.').optional().meta({ found_in: 'query' }),
-  wait_for_completion: z.boolean().describe('If `true`, the request blocks until the operation is complete.').optional().meta({ found_in: 'query' }),
+  wait_for_completion: z.boolean().describe('If `true`, the request blocks until the operation is complete. If your requested reindex operation is complex or time-consuming, it might timeout due to transport-layer limitations. While the reindex will continue to be processed by the cluster, your client will not receive updates on status automatically after timeout. Set this option `true` if you anticipate a long-running reindex.').optional().meta({ found_in: 'query' }),
   require_alias: z.boolean().describe('If `true`, the destination must be an index alias.').optional().meta({ found_in: 'query' }),
   conflicts: Conflicts.describe('Indicates whether to continue reindexing even when there are conflicts.').optional().meta({ found_in: 'body' }),
   dest: ReindexDestination.describe('The destination you are copying to.').meta({ found_in: 'body' }),

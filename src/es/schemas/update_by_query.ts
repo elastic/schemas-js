@@ -3262,7 +3262,7 @@ export const QueryDslPrefixQuery = z.object({
   ...QueryDslQueryBase.shape,
   rewrite: MultiTermQueryRewrite.describe('Method used to rewrite the query.').optional(),
   value: z.string().describe('Beginning characters of terms you wish to find in the provided field.'),
-  case_insensitive: z.boolean().describe('Allows ASCII case insensitive matching of the value with the indexed field values when set to `true`. Default is `false` which means the case sensitivity of matching depends on the underlying field’s mapping.').optional()
+  case_insensitive: z.boolean().describe('Allows case insensitive matching of the value with the indexed field values when set to `true`. Default is `false` which means the case sensitivity of matching depends on the underlying field’s mapping.').optional()
 }).meta({ id: 'QueryDslPrefixQuery' })
 export type QueryDslPrefixQuery = z.infer<typeof QueryDslPrefixQuery>
 
@@ -3646,7 +3646,7 @@ export type QueryDslSparseVectorQuery = z.infer<typeof QueryDslSparseVectorQuery
 export const QueryDslTermQuery = z.object({
   ...QueryDslQueryBase.shape,
   value: FieldValue.describe('Term you wish to find in the provided field.'),
-  case_insensitive: z.boolean().describe('Allows ASCII case insensitive matching of the value with the indexed field values when set to `true`. When `false`, the case sensitivity of matching depends on the underlying field’s mapping.').optional()
+  case_insensitive: z.boolean().describe('Allows case insensitive matching of the value with the indexed field values when set to `true`. When `false`, the case sensitivity of matching depends on the underlying field’s mapping.').optional()
 }).meta({ id: 'QueryDslTermQuery' })
 export type QueryDslTermQuery = z.infer<typeof QueryDslTermQuery>
 
@@ -4020,12 +4020,6 @@ export type SlicesCalculation = z.infer<typeof SlicesCalculation>
 export const Slices = z.union([integer, SlicesCalculation]).meta({ id: 'Slices' })
 export type Slices = z.infer<typeof Slices>
 
-export const WaitForActiveShardOptions = z.enum(['all', 'index-setting']).meta({ id: 'WaitForActiveShardOptions' })
-export type WaitForActiveShardOptions = z.infer<typeof WaitForActiveShardOptions>
-
-export const WaitForActiveShards = z.union([integer, WaitForActiveShardOptions]).meta({ id: 'WaitForActiveShards' })
-export type WaitForActiveShards = z.infer<typeof WaitForActiveShards>
-
 /**
  * Update documents.
  *
@@ -4065,16 +4059,6 @@ export type WaitForActiveShards = z.infer<typeof WaitForActiveShards>
  * performs some preflight checks, launches the request, and returns a
  * [task](https://www.elastic.co/docs/api/doc/elasticsearch/group/endpoint-tasks) you can use to cancel or get the status of the task.
  * Elasticsearch creates a record of this task as a document at `.tasks/task/${taskId}`.
- *
- * **Waiting for active shards**
- *
- * `wait_for_active_shards` controls how many copies of a shard must be active
- * before proceeding with the request. See [`wait_for_active_shards`](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-create#operation-create-wait_for_active_shards)
- * for details. `timeout` controls how long each write request waits for unavailable
- * shards to become available. Both work exactly the way they work in the
- * [Bulk API](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-bulk). Update by query uses scrolled searches, so you can also
- * specify the `scroll` parameter to control how long it keeps the search context
- * alive, for example `?scroll=10m`. The default is 5 minutes.
  *
  * **Throttling update requests**
  *
@@ -4140,7 +4124,7 @@ export const UpdateByQueryRequest = z.object({
   refresh: z.boolean().describe('If `true`, Elasticsearch refreshes affected shards to make the operation visible to search after the request completes. This is different than the update API\'s `refresh` parameter, which causes just the shard that received the request to be refreshed.').optional().meta({ found_in: 'query' }),
   request_cache: z.boolean().describe('If `true`, the request cache is used for this request. It defaults to the index-level setting.').optional().meta({ found_in: 'query' }),
   requests_per_second: float.describe('The maximum number of documents to update per second, across the entire update_by_query operation (including slices). It can be either `-1` to turn off throttling or any decimal number like `1.7` or `12` to throttle to that level.').optional().meta({ found_in: 'query' }),
-  routing: Routing.describe('A custom value used to route operations to a specific shard.').optional().meta({ found_in: 'query' }),
+  routing: Routing.describe('A custom value used to route operations to a specific shard. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional().meta({ found_in: 'query' }),
   scroll: Duration.describe('The period to retain the search context for scrolling.').optional().meta({ found_in: 'query' }),
   scroll_size: long.describe('The size of the scroll request that powers the operation.').optional().meta({ found_in: 'query' }),
   search_timeout: Duration.describe('An explicit timeout for each search request. By default, there is no timeout.').optional().meta({ found_in: 'query' }),
@@ -4152,7 +4136,6 @@ export const UpdateByQueryRequest = z.object({
   timeout: Duration.describe('The period each update request waits for the following operations: dynamic mapping updates, waiting for active shards. By default, it is one minute. This guarantees Elasticsearch waits for at least the timeout before failing. The actual wait time could be longer, particularly when multiple waits occur.').optional().meta({ found_in: 'query' }),
   version: z.boolean().describe('If `true`, returns the document version as part of a hit.').optional().meta({ found_in: 'query' }),
   version_type: z.boolean().describe('Should the document increment the version number (internal) on hit or not (reindex)').optional().meta({ found_in: 'query' }),
-  wait_for_active_shards: WaitForActiveShards.describe('The number of shard copies that must be active before proceeding with the operation. Set to `all` or any positive integer up to the total number of shards in the index (`number_of_replicas+1`). The `timeout` parameter controls how long each write request waits for unavailable shards to become available. Both work exactly the way they work in the bulk API.').optional().meta({ found_in: 'query' }),
   wait_for_completion: z.boolean().describe('If `true`, the request blocks until the operation is complete. If `false`, Elasticsearch performs some preflight checks, launches the request, and returns a task ID that you can use to cancel or get the status of the task. Elasticsearch creates a record of this task as a document at `.tasks/task/{taskId}`.').optional().meta({ found_in: 'query' }),
   max_docs: long.describe('The maximum number of documents to update.').optional().meta({ found_in: 'body' }),
   query: z.lazy(() => QueryDslQueryContainer).describe('The documents to update using the Query DSL.').optional().meta({ found_in: 'body' }),

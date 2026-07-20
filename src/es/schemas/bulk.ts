@@ -83,6 +83,11 @@ export type BulkUpdateOperation = z.infer<typeof BulkUpdateOperation>
 
 const BulkOperationContainerExclusiveProps = z.union([z.object({ index: BulkIndexOperation }), z.object({ create: BulkCreateOperation }), z.object({ update: BulkUpdateOperation }), z.object({ delete: BulkDeleteOperation })])
 
+/**
+ * An action line, which is the first line of each operation in a bulk request.
+ * It specifies the action to perform (`index`, `create`, `update`, or `delete`) and its metadata, such as the target index and document ID.
+ * All actions except `delete` expect a source line to follow.
+ */
 export const BulkOperationContainer = BulkOperationContainerExclusiveProps.meta({ id: 'BulkOperationContainer' })
 export type BulkOperationContainer = z.infer<typeof BulkOperationContainer>
 
@@ -120,12 +125,6 @@ export type SearchSourceConfigParam = z.infer<typeof SearchSourceConfigParam>
  */
 export const Duration = z.union([z.string(), z.literal(-1), z.literal(0)]).meta({ id: 'Duration' })
 export type Duration = z.infer<typeof Duration>
-
-export const WaitForActiveShardOptions = z.enum(['all', 'index-setting']).meta({ id: 'WaitForActiveShardOptions' })
-export type WaitForActiveShardOptions = z.infer<typeof WaitForActiveShardOptions>
-
-export const WaitForActiveShards = z.union([integer, WaitForActiveShardOptions]).meta({ id: 'WaitForActiveShards' })
-export type WaitForActiveShards = z.infer<typeof WaitForActiveShards>
 
 export const Metadata = z.record(z.string(), z.any()).meta({ id: 'Metadata' })
 export type Metadata = z.infer<typeof Metadata>
@@ -1286,7 +1285,7 @@ export const QueryDslPrefixQuery = z.object({
   ...QueryDslQueryBase.shape,
   rewrite: MultiTermQueryRewrite.describe('Method used to rewrite the query.').optional(),
   value: z.string().describe('Beginning characters of terms you wish to find in the provided field.'),
-  case_insensitive: z.boolean().describe('Allows ASCII case insensitive matching of the value with the indexed field values when set to `true`. Default is `false` which means the case sensitivity of matching depends on the underlying field’s mapping.').optional()
+  case_insensitive: z.boolean().describe('Allows case insensitive matching of the value with the indexed field values when set to `true`. Default is `false` which means the case sensitivity of matching depends on the underlying field’s mapping.').optional()
 }).meta({ id: 'QueryDslPrefixQuery' })
 export type QueryDslPrefixQuery = z.infer<typeof QueryDslPrefixQuery>
 
@@ -1677,7 +1676,7 @@ export type QueryDslSparseVectorQuery = z.infer<typeof QueryDslSparseVectorQuery
 export const QueryDslTermQuery = z.object({
   ...QueryDslQueryBase.shape,
   value: FieldValue.describe('Term you wish to find in the provided field.'),
-  case_insensitive: z.boolean().describe('Allows ASCII case insensitive matching of the value with the indexed field values when set to `true`. When `false`, the case sensitivity of matching depends on the underlying field’s mapping.').optional()
+  case_insensitive: z.boolean().describe('Allows case insensitive matching of the value with the indexed field values when set to `true`. When `false`, the case sensitivity of matching depends on the underlying field’s mapping.').optional()
 }).meta({ id: 'QueryDslTermQuery' })
 export type QueryDslTermQuery = z.infer<typeof QueryDslTermQuery>
 
@@ -4069,6 +4068,10 @@ export const Script = z.object({
 }).meta({ id: 'Script' })
 export type Script = z.infer<typeof Script>
 
+/**
+ * The source line that must follow an `update` action line.
+ * It specifies the partial document, script, or upsert options to apply, plus optional update settings.
+ */
 export const BulkUpdateAction = z.object({
   detect_noop: z.boolean().describe('If true, the `result` in the response is set to \'noop\' when no changes to the document occur.').optional(),
   doc: z.any().describe('A partial update to an existing document.').optional(),
@@ -4182,10 +4185,6 @@ export type BulkUpdateAction = z.infer<typeof BulkUpdateAction>
  *
  * NOTE: Data streams do not support custom routing unless they were created with the `allow_custom_routing` setting enabled in the template.
  *
- * **Wait for active shards**
- *
- * When making bulk calls, you can set the `wait_for_active_shards` parameter to require a minimum number of shard copies to be active before starting to process the bulk request.
- *
  * **Refresh**
  *
  * Control when the changes made by this request are visible to search.
@@ -4205,12 +4204,11 @@ export const BulkRequest = z.object({
   list_executed_pipelines: z.boolean().describe('If `true`, the response will include the ingest pipelines that were run for each index or create.').optional().meta({ found_in: 'query' }),
   pipeline: z.string().describe('The pipeline identifier to use to preprocess incoming documents. If the index has a default ingest pipeline specified, setting the value to `_none` turns off the default ingest pipeline for this request. If a final pipeline is configured, it will always run regardless of the value of this parameter.').optional().meta({ found_in: 'query' }),
   refresh: Refresh.describe('If `true`, Elasticsearch refreshes the affected shards to make this operation visible to search. If `wait_for`, wait for a refresh to make this operation visible to search. If `false`, do nothing with refreshes. Valid values: `true`, `false`, `wait_for`.').optional().meta({ found_in: 'query' }),
-  routing: Routing.describe('A custom value that is used to route operations to a specific shard.').optional().meta({ found_in: 'query' }),
+  routing: Routing.describe('A custom value that is used to route operations to a specific shard. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional().meta({ found_in: 'query' }),
   _source: SearchSourceConfigParam.describe('Indicates whether to return the `_source` field (`true` or `false`) or contains a list of fields to return.').optional().meta({ found_in: 'query' }),
   _source_excludes: Fields.describe('A comma-separated list of source fields to exclude from the response. You can also use this parameter to exclude fields from the subset specified in `_source_includes` query parameter. If the `_source` parameter is `false`, this parameter is ignored.').optional().meta({ found_in: 'query' }),
   _source_includes: Fields.describe('A comma-separated list of source fields to include in the response. If this parameter is specified, only these source fields are returned. You can exclude fields from this subset using the `_source_excludes` query parameter. If the `_source` parameter is `false`, this parameter is ignored.').optional().meta({ found_in: 'query' }),
   timeout: Duration.describe('The period each action waits for the following operations: automatic index creation, dynamic mapping updates, and waiting for active shards. The default is `1m` (one minute), which guarantees Elasticsearch waits for at least the timeout before failing. The actual wait time could be longer, particularly when multiple waits occur.').optional().meta({ found_in: 'query' }),
-  wait_for_active_shards: WaitForActiveShards.describe('The number of shard copies that must be active before proceeding with the operation. Set to `all` or any positive integer up to the total number of shards in the index (`number_of_replicas+1`). The default is `1`, which waits for each primary shard to be active.').optional().meta({ found_in: 'query' }),
   require_alias: z.boolean().describe('If `true`, the request\'s actions must target an index alias.').optional().meta({ found_in: 'query' }),
   require_data_stream: z.boolean().describe('If `true`, the request\'s actions must target a data stream (existing or to be created).').optional().meta({ found_in: 'query' }),
   operations: z.array(z.union([BulkOperationContainer, BulkUpdateAction, z.any()])).meta({ found_in: 'body' })

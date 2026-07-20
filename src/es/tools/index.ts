@@ -15,21 +15,21 @@ import type { ApiRegistry, EsApiDefinition } from './types.ts'
 
 async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[]> {
   switch (namespaceFile) {
-    case 'async_search_delete': {
-      const mod = await import('./apis/async_search_delete.ts') as Record<string, unknown>
-      return mod['async_search_delete_definitions'] as EsApiDefinition[]
+    case 'async_search.delete': {
+      const mod = await import('./apis/async_search.delete.ts') as Record<string, unknown>
+      return mod['async_search.delete_definitions'] as EsApiDefinition[]
     }
-    case 'async_search_get': {
-      const mod = await import('./apis/async_search_get.ts') as Record<string, unknown>
-      return mod['async_search_get_definitions'] as EsApiDefinition[]
+    case 'async_search.get': {
+      const mod = await import('./apis/async_search.get.ts') as Record<string, unknown>
+      return mod['async_search.get_definitions'] as EsApiDefinition[]
     }
-    case 'async_search_status': {
-      const mod = await import('./apis/async_search_status.ts') as Record<string, unknown>
-      return mod['async_search_status_definitions'] as EsApiDefinition[]
+    case 'async_search.status': {
+      const mod = await import('./apis/async_search.status.ts') as Record<string, unknown>
+      return mod['async_search.status_definitions'] as EsApiDefinition[]
     }
-    case 'async_search_submit': {
-      const mod = await import('./apis/async_search_submit.ts') as Record<string, unknown>
-      return mod['async_search_submit_definitions'] as EsApiDefinition[]
+    case 'async_search.submit': {
+      const mod = await import('./apis/async_search.submit.ts') as Record<string, unknown>
+      return mod['async_search.submit_definitions'] as EsApiDefinition[]
     }
     case 'bulk': {
       const mod = await import('./apis/bulk.ts') as Record<string, unknown>
@@ -39,165 +39,165 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
       const mod = await import('./apis/cancel_reindex.ts') as Record<string, unknown>
       return mod['cancel_reindex_definitions'] as EsApiDefinition[]
     }
-    case 'cat_aliases': {
-      const mod = await import('./apis/cat_aliases.ts') as Record<string, unknown>
-      return mod['cat_aliases_definitions'] as EsApiDefinition[]
+    case 'cat.aliases': {
+      const mod = await import('./apis/cat.aliases.ts') as Record<string, unknown>
+      return mod['cat.aliases_definitions'] as EsApiDefinition[]
     }
-    case 'cat_allocation': {
-      const mod = await import('./apis/cat_allocation.ts') as Record<string, unknown>
-      return mod['cat_allocation_definitions'] as EsApiDefinition[]
+    case 'cat.allocation': {
+      const mod = await import('./apis/cat.allocation.ts') as Record<string, unknown>
+      return mod['cat.allocation_definitions'] as EsApiDefinition[]
     }
-    case 'cat_circuit_breaker': {
-      const mod = await import('./apis/cat_circuit_breaker.ts') as Record<string, unknown>
-      return mod['cat_circuit_breaker_definitions'] as EsApiDefinition[]
+    case 'cat.circuit_breaker': {
+      const mod = await import('./apis/cat.circuit_breaker.ts') as Record<string, unknown>
+      return mod['cat.circuit_breaker_definitions'] as EsApiDefinition[]
     }
-    case 'cat_component_templates': {
-      const mod = await import('./apis/cat_component_templates.ts') as Record<string, unknown>
-      return mod['cat_component_templates_definitions'] as EsApiDefinition[]
+    case 'cat.component_templates': {
+      const mod = await import('./apis/cat.component_templates.ts') as Record<string, unknown>
+      return mod['cat.component_templates_definitions'] as EsApiDefinition[]
     }
-    case 'cat_count': {
-      const mod = await import('./apis/cat_count.ts') as Record<string, unknown>
-      return mod['cat_count_definitions'] as EsApiDefinition[]
+    case 'cat.count': {
+      const mod = await import('./apis/cat.count.ts') as Record<string, unknown>
+      return mod['cat.count_definitions'] as EsApiDefinition[]
     }
-    case 'cat_fielddata': {
-      const mod = await import('./apis/cat_fielddata.ts') as Record<string, unknown>
-      return mod['cat_fielddata_definitions'] as EsApiDefinition[]
+    case 'cat.fielddata': {
+      const mod = await import('./apis/cat.fielddata.ts') as Record<string, unknown>
+      return mod['cat.fielddata_definitions'] as EsApiDefinition[]
     }
-    case 'cat_health': {
-      const mod = await import('./apis/cat_health.ts') as Record<string, unknown>
-      return mod['cat_health_definitions'] as EsApiDefinition[]
+    case 'cat.health': {
+      const mod = await import('./apis/cat.health.ts') as Record<string, unknown>
+      return mod['cat.health_definitions'] as EsApiDefinition[]
     }
-    case 'cat_help': {
-      const mod = await import('./apis/cat_help.ts') as Record<string, unknown>
-      return mod['cat_help_definitions'] as EsApiDefinition[]
+    case 'cat.help': {
+      const mod = await import('./apis/cat.help.ts') as Record<string, unknown>
+      return mod['cat.help_definitions'] as EsApiDefinition[]
     }
-    case 'cat_indices': {
-      const mod = await import('./apis/cat_indices.ts') as Record<string, unknown>
-      return mod['cat_indices_definitions'] as EsApiDefinition[]
+    case 'cat.indices': {
+      const mod = await import('./apis/cat.indices.ts') as Record<string, unknown>
+      return mod['cat.indices_definitions'] as EsApiDefinition[]
     }
-    case 'cat_master': {
-      const mod = await import('./apis/cat_master.ts') as Record<string, unknown>
-      return mod['cat_master_definitions'] as EsApiDefinition[]
+    case 'cat.master': {
+      const mod = await import('./apis/cat.master.ts') as Record<string, unknown>
+      return mod['cat.master_definitions'] as EsApiDefinition[]
     }
-    case 'cat_ml_data_frame_analytics': {
-      const mod = await import('./apis/cat_ml_data_frame_analytics.ts') as Record<string, unknown>
-      return mod['cat_ml_data_frame_analytics_definitions'] as EsApiDefinition[]
+    case 'cat.ml_data_frame_analytics': {
+      const mod = await import('./apis/cat.ml_data_frame_analytics.ts') as Record<string, unknown>
+      return mod['cat.ml_data_frame_analytics_definitions'] as EsApiDefinition[]
     }
-    case 'cat_ml_datafeeds': {
-      const mod = await import('./apis/cat_ml_datafeeds.ts') as Record<string, unknown>
-      return mod['cat_ml_datafeeds_definitions'] as EsApiDefinition[]
+    case 'cat.ml_datafeeds': {
+      const mod = await import('./apis/cat.ml_datafeeds.ts') as Record<string, unknown>
+      return mod['cat.ml_datafeeds_definitions'] as EsApiDefinition[]
     }
-    case 'cat_ml_jobs': {
-      const mod = await import('./apis/cat_ml_jobs.ts') as Record<string, unknown>
-      return mod['cat_ml_jobs_definitions'] as EsApiDefinition[]
+    case 'cat.ml_jobs': {
+      const mod = await import('./apis/cat.ml_jobs.ts') as Record<string, unknown>
+      return mod['cat.ml_jobs_definitions'] as EsApiDefinition[]
     }
-    case 'cat_ml_trained_models': {
-      const mod = await import('./apis/cat_ml_trained_models.ts') as Record<string, unknown>
-      return mod['cat_ml_trained_models_definitions'] as EsApiDefinition[]
+    case 'cat.ml_trained_models': {
+      const mod = await import('./apis/cat.ml_trained_models.ts') as Record<string, unknown>
+      return mod['cat.ml_trained_models_definitions'] as EsApiDefinition[]
     }
-    case 'cat_nodeattrs': {
-      const mod = await import('./apis/cat_nodeattrs.ts') as Record<string, unknown>
-      return mod['cat_nodeattrs_definitions'] as EsApiDefinition[]
+    case 'cat.nodeattrs': {
+      const mod = await import('./apis/cat.nodeattrs.ts') as Record<string, unknown>
+      return mod['cat.nodeattrs_definitions'] as EsApiDefinition[]
     }
-    case 'cat_nodes': {
-      const mod = await import('./apis/cat_nodes.ts') as Record<string, unknown>
-      return mod['cat_nodes_definitions'] as EsApiDefinition[]
+    case 'cat.nodes': {
+      const mod = await import('./apis/cat.nodes.ts') as Record<string, unknown>
+      return mod['cat.nodes_definitions'] as EsApiDefinition[]
     }
-    case 'cat_pending_tasks': {
-      const mod = await import('./apis/cat_pending_tasks.ts') as Record<string, unknown>
-      return mod['cat_pending_tasks_definitions'] as EsApiDefinition[]
+    case 'cat.pending_tasks': {
+      const mod = await import('./apis/cat.pending_tasks.ts') as Record<string, unknown>
+      return mod['cat.pending_tasks_definitions'] as EsApiDefinition[]
     }
-    case 'cat_plugins': {
-      const mod = await import('./apis/cat_plugins.ts') as Record<string, unknown>
-      return mod['cat_plugins_definitions'] as EsApiDefinition[]
+    case 'cat.plugins': {
+      const mod = await import('./apis/cat.plugins.ts') as Record<string, unknown>
+      return mod['cat.plugins_definitions'] as EsApiDefinition[]
     }
-    case 'cat_recovery': {
-      const mod = await import('./apis/cat_recovery.ts') as Record<string, unknown>
-      return mod['cat_recovery_definitions'] as EsApiDefinition[]
+    case 'cat.recovery': {
+      const mod = await import('./apis/cat.recovery.ts') as Record<string, unknown>
+      return mod['cat.recovery_definitions'] as EsApiDefinition[]
     }
-    case 'cat_repositories': {
-      const mod = await import('./apis/cat_repositories.ts') as Record<string, unknown>
-      return mod['cat_repositories_definitions'] as EsApiDefinition[]
+    case 'cat.repositories': {
+      const mod = await import('./apis/cat.repositories.ts') as Record<string, unknown>
+      return mod['cat.repositories_definitions'] as EsApiDefinition[]
     }
-    case 'cat_segments': {
-      const mod = await import('./apis/cat_segments.ts') as Record<string, unknown>
-      return mod['cat_segments_definitions'] as EsApiDefinition[]
+    case 'cat.segments': {
+      const mod = await import('./apis/cat.segments.ts') as Record<string, unknown>
+      return mod['cat.segments_definitions'] as EsApiDefinition[]
     }
-    case 'cat_shards': {
-      const mod = await import('./apis/cat_shards.ts') as Record<string, unknown>
-      return mod['cat_shards_definitions'] as EsApiDefinition[]
+    case 'cat.shards': {
+      const mod = await import('./apis/cat.shards.ts') as Record<string, unknown>
+      return mod['cat.shards_definitions'] as EsApiDefinition[]
     }
-    case 'cat_snapshots': {
-      const mod = await import('./apis/cat_snapshots.ts') as Record<string, unknown>
-      return mod['cat_snapshots_definitions'] as EsApiDefinition[]
+    case 'cat.snapshots': {
+      const mod = await import('./apis/cat.snapshots.ts') as Record<string, unknown>
+      return mod['cat.snapshots_definitions'] as EsApiDefinition[]
     }
-    case 'cat_tasks': {
-      const mod = await import('./apis/cat_tasks.ts') as Record<string, unknown>
-      return mod['cat_tasks_definitions'] as EsApiDefinition[]
+    case 'cat.tasks': {
+      const mod = await import('./apis/cat.tasks.ts') as Record<string, unknown>
+      return mod['cat.tasks_definitions'] as EsApiDefinition[]
     }
-    case 'cat_templates': {
-      const mod = await import('./apis/cat_templates.ts') as Record<string, unknown>
-      return mod['cat_templates_definitions'] as EsApiDefinition[]
+    case 'cat.templates': {
+      const mod = await import('./apis/cat.templates.ts') as Record<string, unknown>
+      return mod['cat.templates_definitions'] as EsApiDefinition[]
     }
-    case 'cat_thread_pool': {
-      const mod = await import('./apis/cat_thread_pool.ts') as Record<string, unknown>
-      return mod['cat_thread_pool_definitions'] as EsApiDefinition[]
+    case 'cat.thread_pool': {
+      const mod = await import('./apis/cat.thread_pool.ts') as Record<string, unknown>
+      return mod['cat.thread_pool_definitions'] as EsApiDefinition[]
     }
-    case 'cat_transforms': {
-      const mod = await import('./apis/cat_transforms.ts') as Record<string, unknown>
-      return mod['cat_transforms_definitions'] as EsApiDefinition[]
+    case 'cat.transforms': {
+      const mod = await import('./apis/cat.transforms.ts') as Record<string, unknown>
+      return mod['cat.transforms_definitions'] as EsApiDefinition[]
     }
-    case 'ccr_delete_auto_follow_pattern': {
-      const mod = await import('./apis/ccr_delete_auto_follow_pattern.ts') as Record<string, unknown>
-      return mod['ccr_delete_auto_follow_pattern_definitions'] as EsApiDefinition[]
+    case 'ccr.delete_auto_follow_pattern': {
+      const mod = await import('./apis/ccr.delete_auto_follow_pattern.ts') as Record<string, unknown>
+      return mod['ccr.delete_auto_follow_pattern_definitions'] as EsApiDefinition[]
     }
-    case 'ccr_follow': {
-      const mod = await import('./apis/ccr_follow.ts') as Record<string, unknown>
-      return mod['ccr_follow_definitions'] as EsApiDefinition[]
+    case 'ccr.follow': {
+      const mod = await import('./apis/ccr.follow.ts') as Record<string, unknown>
+      return mod['ccr.follow_definitions'] as EsApiDefinition[]
     }
-    case 'ccr_follow_info': {
-      const mod = await import('./apis/ccr_follow_info.ts') as Record<string, unknown>
-      return mod['ccr_follow_info_definitions'] as EsApiDefinition[]
+    case 'ccr.follow_info': {
+      const mod = await import('./apis/ccr.follow_info.ts') as Record<string, unknown>
+      return mod['ccr.follow_info_definitions'] as EsApiDefinition[]
     }
-    case 'ccr_follow_stats': {
-      const mod = await import('./apis/ccr_follow_stats.ts') as Record<string, unknown>
-      return mod['ccr_follow_stats_definitions'] as EsApiDefinition[]
+    case 'ccr.follow_stats': {
+      const mod = await import('./apis/ccr.follow_stats.ts') as Record<string, unknown>
+      return mod['ccr.follow_stats_definitions'] as EsApiDefinition[]
     }
-    case 'ccr_forget_follower': {
-      const mod = await import('./apis/ccr_forget_follower.ts') as Record<string, unknown>
-      return mod['ccr_forget_follower_definitions'] as EsApiDefinition[]
+    case 'ccr.forget_follower': {
+      const mod = await import('./apis/ccr.forget_follower.ts') as Record<string, unknown>
+      return mod['ccr.forget_follower_definitions'] as EsApiDefinition[]
     }
-    case 'ccr_get_auto_follow_pattern': {
-      const mod = await import('./apis/ccr_get_auto_follow_pattern.ts') as Record<string, unknown>
-      return mod['ccr_get_auto_follow_pattern_definitions'] as EsApiDefinition[]
+    case 'ccr.get_auto_follow_pattern': {
+      const mod = await import('./apis/ccr.get_auto_follow_pattern.ts') as Record<string, unknown>
+      return mod['ccr.get_auto_follow_pattern_definitions'] as EsApiDefinition[]
     }
-    case 'ccr_pause_auto_follow_pattern': {
-      const mod = await import('./apis/ccr_pause_auto_follow_pattern.ts') as Record<string, unknown>
-      return mod['ccr_pause_auto_follow_pattern_definitions'] as EsApiDefinition[]
+    case 'ccr.pause_auto_follow_pattern': {
+      const mod = await import('./apis/ccr.pause_auto_follow_pattern.ts') as Record<string, unknown>
+      return mod['ccr.pause_auto_follow_pattern_definitions'] as EsApiDefinition[]
     }
-    case 'ccr_pause_follow': {
-      const mod = await import('./apis/ccr_pause_follow.ts') as Record<string, unknown>
-      return mod['ccr_pause_follow_definitions'] as EsApiDefinition[]
+    case 'ccr.pause_follow': {
+      const mod = await import('./apis/ccr.pause_follow.ts') as Record<string, unknown>
+      return mod['ccr.pause_follow_definitions'] as EsApiDefinition[]
     }
-    case 'ccr_put_auto_follow_pattern': {
-      const mod = await import('./apis/ccr_put_auto_follow_pattern.ts') as Record<string, unknown>
-      return mod['ccr_put_auto_follow_pattern_definitions'] as EsApiDefinition[]
+    case 'ccr.put_auto_follow_pattern': {
+      const mod = await import('./apis/ccr.put_auto_follow_pattern.ts') as Record<string, unknown>
+      return mod['ccr.put_auto_follow_pattern_definitions'] as EsApiDefinition[]
     }
-    case 'ccr_resume_auto_follow_pattern': {
-      const mod = await import('./apis/ccr_resume_auto_follow_pattern.ts') as Record<string, unknown>
-      return mod['ccr_resume_auto_follow_pattern_definitions'] as EsApiDefinition[]
+    case 'ccr.resume_auto_follow_pattern': {
+      const mod = await import('./apis/ccr.resume_auto_follow_pattern.ts') as Record<string, unknown>
+      return mod['ccr.resume_auto_follow_pattern_definitions'] as EsApiDefinition[]
     }
-    case 'ccr_resume_follow': {
-      const mod = await import('./apis/ccr_resume_follow.ts') as Record<string, unknown>
-      return mod['ccr_resume_follow_definitions'] as EsApiDefinition[]
+    case 'ccr.resume_follow': {
+      const mod = await import('./apis/ccr.resume_follow.ts') as Record<string, unknown>
+      return mod['ccr.resume_follow_definitions'] as EsApiDefinition[]
     }
-    case 'ccr_stats': {
-      const mod = await import('./apis/ccr_stats.ts') as Record<string, unknown>
-      return mod['ccr_stats_definitions'] as EsApiDefinition[]
+    case 'ccr.stats': {
+      const mod = await import('./apis/ccr.stats.ts') as Record<string, unknown>
+      return mod['ccr.stats_definitions'] as EsApiDefinition[]
     }
-    case 'ccr_unfollow': {
-      const mod = await import('./apis/ccr_unfollow.ts') as Record<string, unknown>
-      return mod['ccr_unfollow_definitions'] as EsApiDefinition[]
+    case 'ccr.unfollow': {
+      const mod = await import('./apis/ccr.unfollow.ts') as Record<string, unknown>
+      return mod['ccr.unfollow_definitions'] as EsApiDefinition[]
     }
     case 'clear_scroll': {
       const mod = await import('./apis/clear_scroll.ts') as Record<string, unknown>
@@ -207,185 +207,185 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
       const mod = await import('./apis/close_point_in_time.ts') as Record<string, unknown>
       return mod['close_point_in_time_definitions'] as EsApiDefinition[]
     }
-    case 'cluster_allocation_explain': {
-      const mod = await import('./apis/cluster_allocation_explain.ts') as Record<string, unknown>
-      return mod['cluster_allocation_explain_definitions'] as EsApiDefinition[]
+    case 'cluster.allocation_explain': {
+      const mod = await import('./apis/cluster.allocation_explain.ts') as Record<string, unknown>
+      return mod['cluster.allocation_explain_definitions'] as EsApiDefinition[]
     }
-    case 'cluster_delete_component_template': {
-      const mod = await import('./apis/cluster_delete_component_template.ts') as Record<string, unknown>
-      return mod['cluster_delete_component_template_definitions'] as EsApiDefinition[]
+    case 'cluster.delete_component_template': {
+      const mod = await import('./apis/cluster.delete_component_template.ts') as Record<string, unknown>
+      return mod['cluster.delete_component_template_definitions'] as EsApiDefinition[]
     }
-    case 'cluster_delete_voting_config_exclusions': {
-      const mod = await import('./apis/cluster_delete_voting_config_exclusions.ts') as Record<string, unknown>
-      return mod['cluster_delete_voting_config_exclusions_definitions'] as EsApiDefinition[]
+    case 'cluster.delete_voting_config_exclusions': {
+      const mod = await import('./apis/cluster.delete_voting_config_exclusions.ts') as Record<string, unknown>
+      return mod['cluster.delete_voting_config_exclusions_definitions'] as EsApiDefinition[]
     }
-    case 'cluster_exists_component_template': {
-      const mod = await import('./apis/cluster_exists_component_template.ts') as Record<string, unknown>
-      return mod['cluster_exists_component_template_definitions'] as EsApiDefinition[]
+    case 'cluster.exists_component_template': {
+      const mod = await import('./apis/cluster.exists_component_template.ts') as Record<string, unknown>
+      return mod['cluster.exists_component_template_definitions'] as EsApiDefinition[]
     }
-    case 'cluster_get_component_template': {
-      const mod = await import('./apis/cluster_get_component_template.ts') as Record<string, unknown>
-      return mod['cluster_get_component_template_definitions'] as EsApiDefinition[]
+    case 'cluster.get_component_template': {
+      const mod = await import('./apis/cluster.get_component_template.ts') as Record<string, unknown>
+      return mod['cluster.get_component_template_definitions'] as EsApiDefinition[]
     }
-    case 'cluster_get_settings': {
-      const mod = await import('./apis/cluster_get_settings.ts') as Record<string, unknown>
-      return mod['cluster_get_settings_definitions'] as EsApiDefinition[]
+    case 'cluster.get_settings': {
+      const mod = await import('./apis/cluster.get_settings.ts') as Record<string, unknown>
+      return mod['cluster.get_settings_definitions'] as EsApiDefinition[]
     }
-    case 'cluster_health': {
-      const mod = await import('./apis/cluster_health.ts') as Record<string, unknown>
-      return mod['cluster_health_definitions'] as EsApiDefinition[]
+    case 'cluster.health': {
+      const mod = await import('./apis/cluster.health.ts') as Record<string, unknown>
+      return mod['cluster.health_definitions'] as EsApiDefinition[]
     }
-    case 'cluster_info': {
-      const mod = await import('./apis/cluster_info.ts') as Record<string, unknown>
-      return mod['cluster_info_definitions'] as EsApiDefinition[]
+    case 'cluster.info': {
+      const mod = await import('./apis/cluster.info.ts') as Record<string, unknown>
+      return mod['cluster.info_definitions'] as EsApiDefinition[]
     }
-    case 'cluster_pending_tasks': {
-      const mod = await import('./apis/cluster_pending_tasks.ts') as Record<string, unknown>
-      return mod['cluster_pending_tasks_definitions'] as EsApiDefinition[]
+    case 'cluster.pending_tasks': {
+      const mod = await import('./apis/cluster.pending_tasks.ts') as Record<string, unknown>
+      return mod['cluster.pending_tasks_definitions'] as EsApiDefinition[]
     }
-    case 'cluster_post_voting_config_exclusions': {
-      const mod = await import('./apis/cluster_post_voting_config_exclusions.ts') as Record<string, unknown>
-      return mod['cluster_post_voting_config_exclusions_definitions'] as EsApiDefinition[]
+    case 'cluster.post_voting_config_exclusions': {
+      const mod = await import('./apis/cluster.post_voting_config_exclusions.ts') as Record<string, unknown>
+      return mod['cluster.post_voting_config_exclusions_definitions'] as EsApiDefinition[]
     }
-    case 'cluster_put_component_template': {
-      const mod = await import('./apis/cluster_put_component_template.ts') as Record<string, unknown>
-      return mod['cluster_put_component_template_definitions'] as EsApiDefinition[]
+    case 'cluster.put_component_template': {
+      const mod = await import('./apis/cluster.put_component_template.ts') as Record<string, unknown>
+      return mod['cluster.put_component_template_definitions'] as EsApiDefinition[]
     }
-    case 'cluster_put_settings': {
-      const mod = await import('./apis/cluster_put_settings.ts') as Record<string, unknown>
-      return mod['cluster_put_settings_definitions'] as EsApiDefinition[]
+    case 'cluster.put_settings': {
+      const mod = await import('./apis/cluster.put_settings.ts') as Record<string, unknown>
+      return mod['cluster.put_settings_definitions'] as EsApiDefinition[]
     }
-    case 'cluster_remote_info': {
-      const mod = await import('./apis/cluster_remote_info.ts') as Record<string, unknown>
-      return mod['cluster_remote_info_definitions'] as EsApiDefinition[]
+    case 'cluster.remote_info': {
+      const mod = await import('./apis/cluster.remote_info.ts') as Record<string, unknown>
+      return mod['cluster.remote_info_definitions'] as EsApiDefinition[]
     }
-    case 'cluster_reroute': {
-      const mod = await import('./apis/cluster_reroute.ts') as Record<string, unknown>
-      return mod['cluster_reroute_definitions'] as EsApiDefinition[]
+    case 'cluster.reroute': {
+      const mod = await import('./apis/cluster.reroute.ts') as Record<string, unknown>
+      return mod['cluster.reroute_definitions'] as EsApiDefinition[]
     }
-    case 'cluster_state': {
-      const mod = await import('./apis/cluster_state.ts') as Record<string, unknown>
-      return mod['cluster_state_definitions'] as EsApiDefinition[]
+    case 'cluster.state': {
+      const mod = await import('./apis/cluster.state.ts') as Record<string, unknown>
+      return mod['cluster.state_definitions'] as EsApiDefinition[]
     }
-    case 'cluster_stats': {
-      const mod = await import('./apis/cluster_stats.ts') as Record<string, unknown>
-      return mod['cluster_stats_definitions'] as EsApiDefinition[]
+    case 'cluster.stats': {
+      const mod = await import('./apis/cluster.stats.ts') as Record<string, unknown>
+      return mod['cluster.stats_definitions'] as EsApiDefinition[]
     }
-    case 'connector_check_in': {
-      const mod = await import('./apis/connector_check_in.ts') as Record<string, unknown>
-      return mod['connector_check_in_definitions'] as EsApiDefinition[]
+    case 'connector.check_in': {
+      const mod = await import('./apis/connector.check_in.ts') as Record<string, unknown>
+      return mod['connector.check_in_definitions'] as EsApiDefinition[]
     }
-    case 'connector_delete': {
-      const mod = await import('./apis/connector_delete.ts') as Record<string, unknown>
-      return mod['connector_delete_definitions'] as EsApiDefinition[]
+    case 'connector.delete': {
+      const mod = await import('./apis/connector.delete.ts') as Record<string, unknown>
+      return mod['connector.delete_definitions'] as EsApiDefinition[]
     }
-    case 'connector_get': {
-      const mod = await import('./apis/connector_get.ts') as Record<string, unknown>
-      return mod['connector_get_definitions'] as EsApiDefinition[]
+    case 'connector.get': {
+      const mod = await import('./apis/connector.get.ts') as Record<string, unknown>
+      return mod['connector.get_definitions'] as EsApiDefinition[]
     }
-    case 'connector_list': {
-      const mod = await import('./apis/connector_list.ts') as Record<string, unknown>
-      return mod['connector_list_definitions'] as EsApiDefinition[]
+    case 'connector.list': {
+      const mod = await import('./apis/connector.list.ts') as Record<string, unknown>
+      return mod['connector.list_definitions'] as EsApiDefinition[]
     }
-    case 'connector_post': {
-      const mod = await import('./apis/connector_post.ts') as Record<string, unknown>
-      return mod['connector_post_definitions'] as EsApiDefinition[]
+    case 'connector.post': {
+      const mod = await import('./apis/connector.post.ts') as Record<string, unknown>
+      return mod['connector.post_definitions'] as EsApiDefinition[]
     }
-    case 'connector_put': {
-      const mod = await import('./apis/connector_put.ts') as Record<string, unknown>
-      return mod['connector_put_definitions'] as EsApiDefinition[]
+    case 'connector.put': {
+      const mod = await import('./apis/connector.put.ts') as Record<string, unknown>
+      return mod['connector.put_definitions'] as EsApiDefinition[]
     }
-    case 'connector_sync_job_cancel': {
-      const mod = await import('./apis/connector_sync_job_cancel.ts') as Record<string, unknown>
-      return mod['connector_sync_job_cancel_definitions'] as EsApiDefinition[]
+    case 'connector.sync_job_cancel': {
+      const mod = await import('./apis/connector.sync_job_cancel.ts') as Record<string, unknown>
+      return mod['connector.sync_job_cancel_definitions'] as EsApiDefinition[]
     }
-    case 'connector_sync_job_check_in': {
-      const mod = await import('./apis/connector_sync_job_check_in.ts') as Record<string, unknown>
-      return mod['connector_sync_job_check_in_definitions'] as EsApiDefinition[]
+    case 'connector.sync_job_check_in': {
+      const mod = await import('./apis/connector.sync_job_check_in.ts') as Record<string, unknown>
+      return mod['connector.sync_job_check_in_definitions'] as EsApiDefinition[]
     }
-    case 'connector_sync_job_claim': {
-      const mod = await import('./apis/connector_sync_job_claim.ts') as Record<string, unknown>
-      return mod['connector_sync_job_claim_definitions'] as EsApiDefinition[]
+    case 'connector.sync_job_claim': {
+      const mod = await import('./apis/connector.sync_job_claim.ts') as Record<string, unknown>
+      return mod['connector.sync_job_claim_definitions'] as EsApiDefinition[]
     }
-    case 'connector_sync_job_delete': {
-      const mod = await import('./apis/connector_sync_job_delete.ts') as Record<string, unknown>
-      return mod['connector_sync_job_delete_definitions'] as EsApiDefinition[]
+    case 'connector.sync_job_delete': {
+      const mod = await import('./apis/connector.sync_job_delete.ts') as Record<string, unknown>
+      return mod['connector.sync_job_delete_definitions'] as EsApiDefinition[]
     }
-    case 'connector_sync_job_error': {
-      const mod = await import('./apis/connector_sync_job_error.ts') as Record<string, unknown>
-      return mod['connector_sync_job_error_definitions'] as EsApiDefinition[]
+    case 'connector.sync_job_error': {
+      const mod = await import('./apis/connector.sync_job_error.ts') as Record<string, unknown>
+      return mod['connector.sync_job_error_definitions'] as EsApiDefinition[]
     }
-    case 'connector_sync_job_get': {
-      const mod = await import('./apis/connector_sync_job_get.ts') as Record<string, unknown>
-      return mod['connector_sync_job_get_definitions'] as EsApiDefinition[]
+    case 'connector.sync_job_get': {
+      const mod = await import('./apis/connector.sync_job_get.ts') as Record<string, unknown>
+      return mod['connector.sync_job_get_definitions'] as EsApiDefinition[]
     }
-    case 'connector_sync_job_list': {
-      const mod = await import('./apis/connector_sync_job_list.ts') as Record<string, unknown>
-      return mod['connector_sync_job_list_definitions'] as EsApiDefinition[]
+    case 'connector.sync_job_list': {
+      const mod = await import('./apis/connector.sync_job_list.ts') as Record<string, unknown>
+      return mod['connector.sync_job_list_definitions'] as EsApiDefinition[]
     }
-    case 'connector_sync_job_post': {
-      const mod = await import('./apis/connector_sync_job_post.ts') as Record<string, unknown>
-      return mod['connector_sync_job_post_definitions'] as EsApiDefinition[]
+    case 'connector.sync_job_post': {
+      const mod = await import('./apis/connector.sync_job_post.ts') as Record<string, unknown>
+      return mod['connector.sync_job_post_definitions'] as EsApiDefinition[]
     }
-    case 'connector_sync_job_update_stats': {
-      const mod = await import('./apis/connector_sync_job_update_stats.ts') as Record<string, unknown>
-      return mod['connector_sync_job_update_stats_definitions'] as EsApiDefinition[]
+    case 'connector.sync_job_update_stats': {
+      const mod = await import('./apis/connector.sync_job_update_stats.ts') as Record<string, unknown>
+      return mod['connector.sync_job_update_stats_definitions'] as EsApiDefinition[]
     }
-    case 'connector_update_active_filtering': {
-      const mod = await import('./apis/connector_update_active_filtering.ts') as Record<string, unknown>
-      return mod['connector_update_active_filtering_definitions'] as EsApiDefinition[]
+    case 'connector.update_active_filtering': {
+      const mod = await import('./apis/connector.update_active_filtering.ts') as Record<string, unknown>
+      return mod['connector.update_active_filtering_definitions'] as EsApiDefinition[]
     }
-    case 'connector_update_api_key_id': {
-      const mod = await import('./apis/connector_update_api_key_id.ts') as Record<string, unknown>
-      return mod['connector_update_api_key_id_definitions'] as EsApiDefinition[]
+    case 'connector.update_api_key_id': {
+      const mod = await import('./apis/connector.update_api_key_id.ts') as Record<string, unknown>
+      return mod['connector.update_api_key_id_definitions'] as EsApiDefinition[]
     }
-    case 'connector_update_configuration': {
-      const mod = await import('./apis/connector_update_configuration.ts') as Record<string, unknown>
-      return mod['connector_update_configuration_definitions'] as EsApiDefinition[]
+    case 'connector.update_configuration': {
+      const mod = await import('./apis/connector.update_configuration.ts') as Record<string, unknown>
+      return mod['connector.update_configuration_definitions'] as EsApiDefinition[]
     }
-    case 'connector_update_error': {
-      const mod = await import('./apis/connector_update_error.ts') as Record<string, unknown>
-      return mod['connector_update_error_definitions'] as EsApiDefinition[]
+    case 'connector.update_error': {
+      const mod = await import('./apis/connector.update_error.ts') as Record<string, unknown>
+      return mod['connector.update_error_definitions'] as EsApiDefinition[]
     }
-    case 'connector_update_features': {
-      const mod = await import('./apis/connector_update_features.ts') as Record<string, unknown>
-      return mod['connector_update_features_definitions'] as EsApiDefinition[]
+    case 'connector.update_features': {
+      const mod = await import('./apis/connector.update_features.ts') as Record<string, unknown>
+      return mod['connector.update_features_definitions'] as EsApiDefinition[]
     }
-    case 'connector_update_filtering': {
-      const mod = await import('./apis/connector_update_filtering.ts') as Record<string, unknown>
-      return mod['connector_update_filtering_definitions'] as EsApiDefinition[]
+    case 'connector.update_filtering': {
+      const mod = await import('./apis/connector.update_filtering.ts') as Record<string, unknown>
+      return mod['connector.update_filtering_definitions'] as EsApiDefinition[]
     }
-    case 'connector_update_filtering_validation': {
-      const mod = await import('./apis/connector_update_filtering_validation.ts') as Record<string, unknown>
-      return mod['connector_update_filtering_validation_definitions'] as EsApiDefinition[]
+    case 'connector.update_filtering_validation': {
+      const mod = await import('./apis/connector.update_filtering_validation.ts') as Record<string, unknown>
+      return mod['connector.update_filtering_validation_definitions'] as EsApiDefinition[]
     }
-    case 'connector_update_index_name': {
-      const mod = await import('./apis/connector_update_index_name.ts') as Record<string, unknown>
-      return mod['connector_update_index_name_definitions'] as EsApiDefinition[]
+    case 'connector.update_index_name': {
+      const mod = await import('./apis/connector.update_index_name.ts') as Record<string, unknown>
+      return mod['connector.update_index_name_definitions'] as EsApiDefinition[]
     }
-    case 'connector_update_name': {
-      const mod = await import('./apis/connector_update_name.ts') as Record<string, unknown>
-      return mod['connector_update_name_definitions'] as EsApiDefinition[]
+    case 'connector.update_name': {
+      const mod = await import('./apis/connector.update_name.ts') as Record<string, unknown>
+      return mod['connector.update_name_definitions'] as EsApiDefinition[]
     }
-    case 'connector_update_native': {
-      const mod = await import('./apis/connector_update_native.ts') as Record<string, unknown>
-      return mod['connector_update_native_definitions'] as EsApiDefinition[]
+    case 'connector.update_native': {
+      const mod = await import('./apis/connector.update_native.ts') as Record<string, unknown>
+      return mod['connector.update_native_definitions'] as EsApiDefinition[]
     }
-    case 'connector_update_pipeline': {
-      const mod = await import('./apis/connector_update_pipeline.ts') as Record<string, unknown>
-      return mod['connector_update_pipeline_definitions'] as EsApiDefinition[]
+    case 'connector.update_pipeline': {
+      const mod = await import('./apis/connector.update_pipeline.ts') as Record<string, unknown>
+      return mod['connector.update_pipeline_definitions'] as EsApiDefinition[]
     }
-    case 'connector_update_scheduling': {
-      const mod = await import('./apis/connector_update_scheduling.ts') as Record<string, unknown>
-      return mod['connector_update_scheduling_definitions'] as EsApiDefinition[]
+    case 'connector.update_scheduling': {
+      const mod = await import('./apis/connector.update_scheduling.ts') as Record<string, unknown>
+      return mod['connector.update_scheduling_definitions'] as EsApiDefinition[]
     }
-    case 'connector_update_service_type': {
-      const mod = await import('./apis/connector_update_service_type.ts') as Record<string, unknown>
-      return mod['connector_update_service_type_definitions'] as EsApiDefinition[]
+    case 'connector.update_service_type': {
+      const mod = await import('./apis/connector.update_service_type.ts') as Record<string, unknown>
+      return mod['connector.update_service_type_definitions'] as EsApiDefinition[]
     }
-    case 'connector_update_status': {
-      const mod = await import('./apis/connector_update_status.ts') as Record<string, unknown>
-      return mod['connector_update_status_definitions'] as EsApiDefinition[]
+    case 'connector.update_status': {
+      const mod = await import('./apis/connector.update_status.ts') as Record<string, unknown>
+      return mod['connector.update_status_definitions'] as EsApiDefinition[]
     }
     case 'count': {
       const mod = await import('./apis/count.ts') as Record<string, unknown>
@@ -395,17 +395,17 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
       const mod = await import('./apis/create.ts') as Record<string, unknown>
       return mod['create_definitions'] as EsApiDefinition[]
     }
-    case 'dangling_indices_delete_dangling_index': {
-      const mod = await import('./apis/dangling_indices_delete_dangling_index.ts') as Record<string, unknown>
-      return mod['dangling_indices_delete_dangling_index_definitions'] as EsApiDefinition[]
+    case 'dangling_indices.delete_dangling_index': {
+      const mod = await import('./apis/dangling_indices.delete_dangling_index.ts') as Record<string, unknown>
+      return mod['dangling_indices.delete_dangling_index_definitions'] as EsApiDefinition[]
     }
-    case 'dangling_indices_import_dangling_index': {
-      const mod = await import('./apis/dangling_indices_import_dangling_index.ts') as Record<string, unknown>
-      return mod['dangling_indices_import_dangling_index_definitions'] as EsApiDefinition[]
+    case 'dangling_indices.import_dangling_index': {
+      const mod = await import('./apis/dangling_indices.import_dangling_index.ts') as Record<string, unknown>
+      return mod['dangling_indices.import_dangling_index_definitions'] as EsApiDefinition[]
     }
-    case 'dangling_indices_list_dangling_indices': {
-      const mod = await import('./apis/dangling_indices_list_dangling_indices.ts') as Record<string, unknown>
-      return mod['dangling_indices_list_dangling_indices_definitions'] as EsApiDefinition[]
+    case 'dangling_indices.list_dangling_indices': {
+      const mod = await import('./apis/dangling_indices.list_dangling_indices.ts') as Record<string, unknown>
+      return mod['dangling_indices.list_dangling_indices_definitions'] as EsApiDefinition[]
     }
     case 'delete': {
       const mod = await import('./apis/delete.ts') as Record<string, unknown>
@@ -423,81 +423,109 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
       const mod = await import('./apis/delete_script.ts') as Record<string, unknown>
       return mod['delete_script_definitions'] as EsApiDefinition[]
     }
-    case 'enrich_delete_policy': {
-      const mod = await import('./apis/enrich_delete_policy.ts') as Record<string, unknown>
-      return mod['enrich_delete_policy_definitions'] as EsApiDefinition[]
+    case 'encryption.reset': {
+      const mod = await import('./apis/encryption.reset.ts') as Record<string, unknown>
+      return mod['encryption.reset_definitions'] as EsApiDefinition[]
     }
-    case 'enrich_execute_policy': {
-      const mod = await import('./apis/enrich_execute_policy.ts') as Record<string, unknown>
-      return mod['enrich_execute_policy_definitions'] as EsApiDefinition[]
+    case 'enrich.delete_policy': {
+      const mod = await import('./apis/enrich.delete_policy.ts') as Record<string, unknown>
+      return mod['enrich.delete_policy_definitions'] as EsApiDefinition[]
     }
-    case 'enrich_get_policy': {
-      const mod = await import('./apis/enrich_get_policy.ts') as Record<string, unknown>
-      return mod['enrich_get_policy_definitions'] as EsApiDefinition[]
+    case 'enrich.execute_policy': {
+      const mod = await import('./apis/enrich.execute_policy.ts') as Record<string, unknown>
+      return mod['enrich.execute_policy_definitions'] as EsApiDefinition[]
     }
-    case 'enrich_put_policy': {
-      const mod = await import('./apis/enrich_put_policy.ts') as Record<string, unknown>
-      return mod['enrich_put_policy_definitions'] as EsApiDefinition[]
+    case 'enrich.get_policy': {
+      const mod = await import('./apis/enrich.get_policy.ts') as Record<string, unknown>
+      return mod['enrich.get_policy_definitions'] as EsApiDefinition[]
     }
-    case 'enrich_stats': {
-      const mod = await import('./apis/enrich_stats.ts') as Record<string, unknown>
-      return mod['enrich_stats_definitions'] as EsApiDefinition[]
+    case 'enrich.put_policy': {
+      const mod = await import('./apis/enrich.put_policy.ts') as Record<string, unknown>
+      return mod['enrich.put_policy_definitions'] as EsApiDefinition[]
     }
-    case 'eql_delete': {
-      const mod = await import('./apis/eql_delete.ts') as Record<string, unknown>
-      return mod['eql_delete_definitions'] as EsApiDefinition[]
+    case 'enrich.stats': {
+      const mod = await import('./apis/enrich.stats.ts') as Record<string, unknown>
+      return mod['enrich.stats_definitions'] as EsApiDefinition[]
     }
-    case 'eql_get': {
-      const mod = await import('./apis/eql_get.ts') as Record<string, unknown>
-      return mod['eql_get_definitions'] as EsApiDefinition[]
+    case 'eql.delete': {
+      const mod = await import('./apis/eql.delete.ts') as Record<string, unknown>
+      return mod['eql.delete_definitions'] as EsApiDefinition[]
     }
-    case 'eql_get_status': {
-      const mod = await import('./apis/eql_get_status.ts') as Record<string, unknown>
-      return mod['eql_get_status_definitions'] as EsApiDefinition[]
+    case 'eql.get': {
+      const mod = await import('./apis/eql.get.ts') as Record<string, unknown>
+      return mod['eql.get_definitions'] as EsApiDefinition[]
     }
-    case 'eql_search': {
-      const mod = await import('./apis/eql_search.ts') as Record<string, unknown>
-      return mod['eql_search_definitions'] as EsApiDefinition[]
+    case 'eql.get_status': {
+      const mod = await import('./apis/eql.get_status.ts') as Record<string, unknown>
+      return mod['eql.get_status_definitions'] as EsApiDefinition[]
     }
-    case 'esql_async_query': {
-      const mod = await import('./apis/esql_async_query.ts') as Record<string, unknown>
-      return mod['esql_async_query_definitions'] as EsApiDefinition[]
+    case 'eql.search': {
+      const mod = await import('./apis/eql.search.ts') as Record<string, unknown>
+      return mod['eql.search_definitions'] as EsApiDefinition[]
     }
-    case 'esql_async_query_delete': {
-      const mod = await import('./apis/esql_async_query_delete.ts') as Record<string, unknown>
-      return mod['esql_async_query_delete_definitions'] as EsApiDefinition[]
+    case 'esql.async_query': {
+      const mod = await import('./apis/esql.async_query.ts') as Record<string, unknown>
+      return mod['esql.async_query_definitions'] as EsApiDefinition[]
     }
-    case 'esql_async_query_get': {
-      const mod = await import('./apis/esql_async_query_get.ts') as Record<string, unknown>
-      return mod['esql_async_query_get_definitions'] as EsApiDefinition[]
+    case 'esql.async_query_delete': {
+      const mod = await import('./apis/esql.async_query_delete.ts') as Record<string, unknown>
+      return mod['esql.async_query_delete_definitions'] as EsApiDefinition[]
     }
-    case 'esql_async_query_stop': {
-      const mod = await import('./apis/esql_async_query_stop.ts') as Record<string, unknown>
-      return mod['esql_async_query_stop_definitions'] as EsApiDefinition[]
+    case 'esql.async_query_get': {
+      const mod = await import('./apis/esql.async_query_get.ts') as Record<string, unknown>
+      return mod['esql.async_query_get_definitions'] as EsApiDefinition[]
     }
-    case 'esql_delete_view': {
-      const mod = await import('./apis/esql_delete_view.ts') as Record<string, unknown>
-      return mod['esql_delete_view_definitions'] as EsApiDefinition[]
+    case 'esql.async_query_stop': {
+      const mod = await import('./apis/esql.async_query_stop.ts') as Record<string, unknown>
+      return mod['esql.async_query_stop_definitions'] as EsApiDefinition[]
     }
-    case 'esql_get_query': {
-      const mod = await import('./apis/esql_get_query.ts') as Record<string, unknown>
-      return mod['esql_get_query_definitions'] as EsApiDefinition[]
+    case 'esql.delete_data_source': {
+      const mod = await import('./apis/esql.delete_data_source.ts') as Record<string, unknown>
+      return mod['esql.delete_data_source_definitions'] as EsApiDefinition[]
     }
-    case 'esql_get_view': {
-      const mod = await import('./apis/esql_get_view.ts') as Record<string, unknown>
-      return mod['esql_get_view_definitions'] as EsApiDefinition[]
+    case 'esql.delete_dataset': {
+      const mod = await import('./apis/esql.delete_dataset.ts') as Record<string, unknown>
+      return mod['esql.delete_dataset_definitions'] as EsApiDefinition[]
     }
-    case 'esql_list_queries': {
-      const mod = await import('./apis/esql_list_queries.ts') as Record<string, unknown>
-      return mod['esql_list_queries_definitions'] as EsApiDefinition[]
+    case 'esql.delete_view': {
+      const mod = await import('./apis/esql.delete_view.ts') as Record<string, unknown>
+      return mod['esql.delete_view_definitions'] as EsApiDefinition[]
     }
-    case 'esql_put_view': {
-      const mod = await import('./apis/esql_put_view.ts') as Record<string, unknown>
-      return mod['esql_put_view_definitions'] as EsApiDefinition[]
+    case 'esql.get_data_source': {
+      const mod = await import('./apis/esql.get_data_source.ts') as Record<string, unknown>
+      return mod['esql.get_data_source_definitions'] as EsApiDefinition[]
     }
-    case 'esql_query': {
-      const mod = await import('./apis/esql_query.ts') as Record<string, unknown>
-      return mod['esql_query_definitions'] as EsApiDefinition[]
+    case 'esql.get_dataset': {
+      const mod = await import('./apis/esql.get_dataset.ts') as Record<string, unknown>
+      return mod['esql.get_dataset_definitions'] as EsApiDefinition[]
+    }
+    case 'esql.get_query': {
+      const mod = await import('./apis/esql.get_query.ts') as Record<string, unknown>
+      return mod['esql.get_query_definitions'] as EsApiDefinition[]
+    }
+    case 'esql.get_view': {
+      const mod = await import('./apis/esql.get_view.ts') as Record<string, unknown>
+      return mod['esql.get_view_definitions'] as EsApiDefinition[]
+    }
+    case 'esql.list_queries': {
+      const mod = await import('./apis/esql.list_queries.ts') as Record<string, unknown>
+      return mod['esql.list_queries_definitions'] as EsApiDefinition[]
+    }
+    case 'esql.put_data_source': {
+      const mod = await import('./apis/esql.put_data_source.ts') as Record<string, unknown>
+      return mod['esql.put_data_source_definitions'] as EsApiDefinition[]
+    }
+    case 'esql.put_dataset': {
+      const mod = await import('./apis/esql.put_dataset.ts') as Record<string, unknown>
+      return mod['esql.put_dataset_definitions'] as EsApiDefinition[]
+    }
+    case 'esql.put_view': {
+      const mod = await import('./apis/esql.put_view.ts') as Record<string, unknown>
+      return mod['esql.put_view_definitions'] as EsApiDefinition[]
+    }
+    case 'esql.query': {
+      const mod = await import('./apis/esql.query.ts') as Record<string, unknown>
+      return mod['esql.query_definitions'] as EsApiDefinition[]
     }
     case 'exists': {
       const mod = await import('./apis/exists.ts') as Record<string, unknown>
@@ -511,29 +539,29 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
       const mod = await import('./apis/explain.ts') as Record<string, unknown>
       return mod['explain_definitions'] as EsApiDefinition[]
     }
-    case 'features_get_features': {
-      const mod = await import('./apis/features_get_features.ts') as Record<string, unknown>
-      return mod['features_get_features_definitions'] as EsApiDefinition[]
+    case 'features.get_features': {
+      const mod = await import('./apis/features.get_features.ts') as Record<string, unknown>
+      return mod['features.get_features_definitions'] as EsApiDefinition[]
     }
-    case 'features_reset_features': {
-      const mod = await import('./apis/features_reset_features.ts') as Record<string, unknown>
-      return mod['features_reset_features_definitions'] as EsApiDefinition[]
+    case 'features.reset_features': {
+      const mod = await import('./apis/features.reset_features.ts') as Record<string, unknown>
+      return mod['features.reset_features_definitions'] as EsApiDefinition[]
     }
     case 'field_caps': {
       const mod = await import('./apis/field_caps.ts') as Record<string, unknown>
       return mod['field_caps_definitions'] as EsApiDefinition[]
     }
-    case 'fleet_global_checkpoints': {
-      const mod = await import('./apis/fleet_global_checkpoints.ts') as Record<string, unknown>
-      return mod['fleet_global_checkpoints_definitions'] as EsApiDefinition[]
+    case 'fleet.global_checkpoints': {
+      const mod = await import('./apis/fleet.global_checkpoints.ts') as Record<string, unknown>
+      return mod['fleet.global_checkpoints_definitions'] as EsApiDefinition[]
     }
-    case 'fleet_msearch': {
-      const mod = await import('./apis/fleet_msearch.ts') as Record<string, unknown>
-      return mod['fleet_msearch_definitions'] as EsApiDefinition[]
+    case 'fleet.msearch': {
+      const mod = await import('./apis/fleet.msearch.ts') as Record<string, unknown>
+      return mod['fleet.msearch_definitions'] as EsApiDefinition[]
     }
-    case 'fleet_search': {
-      const mod = await import('./apis/fleet_search.ts') as Record<string, unknown>
-      return mod['fleet_search_definitions'] as EsApiDefinition[]
+    case 'fleet.search': {
+      const mod = await import('./apis/fleet.search.ts') as Record<string, unknown>
+      return mod['fleet.search_definitions'] as EsApiDefinition[]
     }
     case 'get': {
       const mod = await import('./apis/get.ts') as Record<string, unknown>
@@ -559,893 +587,905 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
       const mod = await import('./apis/get_source.ts') as Record<string, unknown>
       return mod['get_source_definitions'] as EsApiDefinition[]
     }
-    case 'graph_explore': {
-      const mod = await import('./apis/graph_explore.ts') as Record<string, unknown>
-      return mod['graph_explore_definitions'] as EsApiDefinition[]
+    case 'graph.explore': {
+      const mod = await import('./apis/graph.explore.ts') as Record<string, unknown>
+      return mod['graph.explore_definitions'] as EsApiDefinition[]
     }
     case 'health_report': {
       const mod = await import('./apis/health_report.ts') as Record<string, unknown>
       return mod['health_report_definitions'] as EsApiDefinition[]
     }
-    case 'ilm_delete_lifecycle': {
-      const mod = await import('./apis/ilm_delete_lifecycle.ts') as Record<string, unknown>
-      return mod['ilm_delete_lifecycle_definitions'] as EsApiDefinition[]
+    case 'ilm.delete_lifecycle': {
+      const mod = await import('./apis/ilm.delete_lifecycle.ts') as Record<string, unknown>
+      return mod['ilm.delete_lifecycle_definitions'] as EsApiDefinition[]
     }
-    case 'ilm_explain_lifecycle': {
-      const mod = await import('./apis/ilm_explain_lifecycle.ts') as Record<string, unknown>
-      return mod['ilm_explain_lifecycle_definitions'] as EsApiDefinition[]
+    case 'ilm.explain_lifecycle': {
+      const mod = await import('./apis/ilm.explain_lifecycle.ts') as Record<string, unknown>
+      return mod['ilm.explain_lifecycle_definitions'] as EsApiDefinition[]
     }
-    case 'ilm_get_lifecycle': {
-      const mod = await import('./apis/ilm_get_lifecycle.ts') as Record<string, unknown>
-      return mod['ilm_get_lifecycle_definitions'] as EsApiDefinition[]
+    case 'ilm.get_lifecycle': {
+      const mod = await import('./apis/ilm.get_lifecycle.ts') as Record<string, unknown>
+      return mod['ilm.get_lifecycle_definitions'] as EsApiDefinition[]
     }
-    case 'ilm_get_status': {
-      const mod = await import('./apis/ilm_get_status.ts') as Record<string, unknown>
-      return mod['ilm_get_status_definitions'] as EsApiDefinition[]
+    case 'ilm.get_status': {
+      const mod = await import('./apis/ilm.get_status.ts') as Record<string, unknown>
+      return mod['ilm.get_status_definitions'] as EsApiDefinition[]
     }
-    case 'ilm_migrate_to_data_tiers': {
-      const mod = await import('./apis/ilm_migrate_to_data_tiers.ts') as Record<string, unknown>
-      return mod['ilm_migrate_to_data_tiers_definitions'] as EsApiDefinition[]
+    case 'ilm.migrate_to_data_tiers': {
+      const mod = await import('./apis/ilm.migrate_to_data_tiers.ts') as Record<string, unknown>
+      return mod['ilm.migrate_to_data_tiers_definitions'] as EsApiDefinition[]
     }
-    case 'ilm_move_to_step': {
-      const mod = await import('./apis/ilm_move_to_step.ts') as Record<string, unknown>
-      return mod['ilm_move_to_step_definitions'] as EsApiDefinition[]
+    case 'ilm.move_to_step': {
+      const mod = await import('./apis/ilm.move_to_step.ts') as Record<string, unknown>
+      return mod['ilm.move_to_step_definitions'] as EsApiDefinition[]
     }
-    case 'ilm_put_lifecycle': {
-      const mod = await import('./apis/ilm_put_lifecycle.ts') as Record<string, unknown>
-      return mod['ilm_put_lifecycle_definitions'] as EsApiDefinition[]
+    case 'ilm.put_lifecycle': {
+      const mod = await import('./apis/ilm.put_lifecycle.ts') as Record<string, unknown>
+      return mod['ilm.put_lifecycle_definitions'] as EsApiDefinition[]
     }
-    case 'ilm_remove_policy': {
-      const mod = await import('./apis/ilm_remove_policy.ts') as Record<string, unknown>
-      return mod['ilm_remove_policy_definitions'] as EsApiDefinition[]
+    case 'ilm.remove_policy': {
+      const mod = await import('./apis/ilm.remove_policy.ts') as Record<string, unknown>
+      return mod['ilm.remove_policy_definitions'] as EsApiDefinition[]
     }
-    case 'ilm_retry': {
-      const mod = await import('./apis/ilm_retry.ts') as Record<string, unknown>
-      return mod['ilm_retry_definitions'] as EsApiDefinition[]
+    case 'ilm.retry': {
+      const mod = await import('./apis/ilm.retry.ts') as Record<string, unknown>
+      return mod['ilm.retry_definitions'] as EsApiDefinition[]
     }
-    case 'ilm_start': {
-      const mod = await import('./apis/ilm_start.ts') as Record<string, unknown>
-      return mod['ilm_start_definitions'] as EsApiDefinition[]
+    case 'ilm.start': {
+      const mod = await import('./apis/ilm.start.ts') as Record<string, unknown>
+      return mod['ilm.start_definitions'] as EsApiDefinition[]
     }
-    case 'ilm_stop': {
-      const mod = await import('./apis/ilm_stop.ts') as Record<string, unknown>
-      return mod['ilm_stop_definitions'] as EsApiDefinition[]
+    case 'ilm.stop': {
+      const mod = await import('./apis/ilm.stop.ts') as Record<string, unknown>
+      return mod['ilm.stop_definitions'] as EsApiDefinition[]
     }
     case 'index': {
       const mod = await import('./apis/index.ts') as Record<string, unknown>
       return mod['index_definitions'] as EsApiDefinition[]
     }
-    case 'indices_add_block': {
-      const mod = await import('./apis/indices_add_block.ts') as Record<string, unknown>
-      return mod['indices_add_block_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_analyze': {
-      const mod = await import('./apis/indices_analyze.ts') as Record<string, unknown>
-      return mod['indices_analyze_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_cancel_migrate_reindex': {
-      const mod = await import('./apis/indices_cancel_migrate_reindex.ts') as Record<string, unknown>
-      return mod['indices_cancel_migrate_reindex_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_clear_cache': {
-      const mod = await import('./apis/indices_clear_cache.ts') as Record<string, unknown>
-      return mod['indices_clear_cache_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_clone': {
-      const mod = await import('./apis/indices_clone.ts') as Record<string, unknown>
-      return mod['indices_clone_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_close': {
-      const mod = await import('./apis/indices_close.ts') as Record<string, unknown>
-      return mod['indices_close_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_create': {
-      const mod = await import('./apis/indices_create.ts') as Record<string, unknown>
-      return mod['indices_create_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_create_data_stream': {
-      const mod = await import('./apis/indices_create_data_stream.ts') as Record<string, unknown>
-      return mod['indices_create_data_stream_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_create_from': {
-      const mod = await import('./apis/indices_create_from.ts') as Record<string, unknown>
-      return mod['indices_create_from_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_data_streams_stats': {
-      const mod = await import('./apis/indices_data_streams_stats.ts') as Record<string, unknown>
-      return mod['indices_data_streams_stats_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_delete': {
-      const mod = await import('./apis/indices_delete.ts') as Record<string, unknown>
-      return mod['indices_delete_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_delete_alias': {
-      const mod = await import('./apis/indices_delete_alias.ts') as Record<string, unknown>
-      return mod['indices_delete_alias_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_delete_data_lifecycle': {
-      const mod = await import('./apis/indices_delete_data_lifecycle.ts') as Record<string, unknown>
-      return mod['indices_delete_data_lifecycle_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_delete_data_stream': {
-      const mod = await import('./apis/indices_delete_data_stream.ts') as Record<string, unknown>
-      return mod['indices_delete_data_stream_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_delete_data_stream_options': {
-      const mod = await import('./apis/indices_delete_data_stream_options.ts') as Record<string, unknown>
-      return mod['indices_delete_data_stream_options_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_delete_index_template': {
-      const mod = await import('./apis/indices_delete_index_template.ts') as Record<string, unknown>
-      return mod['indices_delete_index_template_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_delete_template': {
-      const mod = await import('./apis/indices_delete_template.ts') as Record<string, unknown>
-      return mod['indices_delete_template_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_disk_usage': {
-      const mod = await import('./apis/indices_disk_usage.ts') as Record<string, unknown>
-      return mod['indices_disk_usage_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_downsample': {
-      const mod = await import('./apis/indices_downsample.ts') as Record<string, unknown>
-      return mod['indices_downsample_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_exists': {
-      const mod = await import('./apis/indices_exists.ts') as Record<string, unknown>
-      return mod['indices_exists_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_exists_alias': {
-      const mod = await import('./apis/indices_exists_alias.ts') as Record<string, unknown>
-      return mod['indices_exists_alias_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_exists_index_template': {
-      const mod = await import('./apis/indices_exists_index_template.ts') as Record<string, unknown>
-      return mod['indices_exists_index_template_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_exists_template': {
-      const mod = await import('./apis/indices_exists_template.ts') as Record<string, unknown>
-      return mod['indices_exists_template_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_explain_data_lifecycle': {
-      const mod = await import('./apis/indices_explain_data_lifecycle.ts') as Record<string, unknown>
-      return mod['indices_explain_data_lifecycle_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_field_usage_stats': {
-      const mod = await import('./apis/indices_field_usage_stats.ts') as Record<string, unknown>
-      return mod['indices_field_usage_stats_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_flush': {
-      const mod = await import('./apis/indices_flush.ts') as Record<string, unknown>
-      return mod['indices_flush_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_forcemerge': {
-      const mod = await import('./apis/indices_forcemerge.ts') as Record<string, unknown>
-      return mod['indices_forcemerge_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_get': {
-      const mod = await import('./apis/indices_get.ts') as Record<string, unknown>
-      return mod['indices_get_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_get_alias': {
-      const mod = await import('./apis/indices_get_alias.ts') as Record<string, unknown>
-      return mod['indices_get_alias_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_get_data_lifecycle': {
-      const mod = await import('./apis/indices_get_data_lifecycle.ts') as Record<string, unknown>
-      return mod['indices_get_data_lifecycle_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_get_data_lifecycle_stats': {
-      const mod = await import('./apis/indices_get_data_lifecycle_stats.ts') as Record<string, unknown>
-      return mod['indices_get_data_lifecycle_stats_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_get_data_stream': {
-      const mod = await import('./apis/indices_get_data_stream.ts') as Record<string, unknown>
-      return mod['indices_get_data_stream_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_get_data_stream_mappings': {
-      const mod = await import('./apis/indices_get_data_stream_mappings.ts') as Record<string, unknown>
-      return mod['indices_get_data_stream_mappings_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_get_data_stream_options': {
-      const mod = await import('./apis/indices_get_data_stream_options.ts') as Record<string, unknown>
-      return mod['indices_get_data_stream_options_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_get_data_stream_settings': {
-      const mod = await import('./apis/indices_get_data_stream_settings.ts') as Record<string, unknown>
-      return mod['indices_get_data_stream_settings_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_get_field_mapping': {
-      const mod = await import('./apis/indices_get_field_mapping.ts') as Record<string, unknown>
-      return mod['indices_get_field_mapping_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_get_index_template': {
-      const mod = await import('./apis/indices_get_index_template.ts') as Record<string, unknown>
-      return mod['indices_get_index_template_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_get_mapping': {
-      const mod = await import('./apis/indices_get_mapping.ts') as Record<string, unknown>
-      return mod['indices_get_mapping_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_get_migrate_reindex_status': {
-      const mod = await import('./apis/indices_get_migrate_reindex_status.ts') as Record<string, unknown>
-      return mod['indices_get_migrate_reindex_status_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_get_settings': {
-      const mod = await import('./apis/indices_get_settings.ts') as Record<string, unknown>
-      return mod['indices_get_settings_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_get_template': {
-      const mod = await import('./apis/indices_get_template.ts') as Record<string, unknown>
-      return mod['indices_get_template_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_migrate_reindex': {
-      const mod = await import('./apis/indices_migrate_reindex.ts') as Record<string, unknown>
-      return mod['indices_migrate_reindex_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_migrate_to_data_stream': {
-      const mod = await import('./apis/indices_migrate_to_data_stream.ts') as Record<string, unknown>
-      return mod['indices_migrate_to_data_stream_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_modify_data_stream': {
-      const mod = await import('./apis/indices_modify_data_stream.ts') as Record<string, unknown>
-      return mod['indices_modify_data_stream_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_open': {
-      const mod = await import('./apis/indices_open.ts') as Record<string, unknown>
-      return mod['indices_open_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_promote_data_stream': {
-      const mod = await import('./apis/indices_promote_data_stream.ts') as Record<string, unknown>
-      return mod['indices_promote_data_stream_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_put_alias': {
-      const mod = await import('./apis/indices_put_alias.ts') as Record<string, unknown>
-      return mod['indices_put_alias_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_put_data_lifecycle': {
-      const mod = await import('./apis/indices_put_data_lifecycle.ts') as Record<string, unknown>
-      return mod['indices_put_data_lifecycle_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_put_data_stream_mappings': {
-      const mod = await import('./apis/indices_put_data_stream_mappings.ts') as Record<string, unknown>
-      return mod['indices_put_data_stream_mappings_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_put_data_stream_options': {
-      const mod = await import('./apis/indices_put_data_stream_options.ts') as Record<string, unknown>
-      return mod['indices_put_data_stream_options_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_put_data_stream_settings': {
-      const mod = await import('./apis/indices_put_data_stream_settings.ts') as Record<string, unknown>
-      return mod['indices_put_data_stream_settings_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_put_index_template': {
-      const mod = await import('./apis/indices_put_index_template.ts') as Record<string, unknown>
-      return mod['indices_put_index_template_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_put_mapping': {
-      const mod = await import('./apis/indices_put_mapping.ts') as Record<string, unknown>
-      return mod['indices_put_mapping_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_put_settings': {
-      const mod = await import('./apis/indices_put_settings.ts') as Record<string, unknown>
-      return mod['indices_put_settings_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_put_template': {
-      const mod = await import('./apis/indices_put_template.ts') as Record<string, unknown>
-      return mod['indices_put_template_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_recovery': {
-      const mod = await import('./apis/indices_recovery.ts') as Record<string, unknown>
-      return mod['indices_recovery_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_refresh': {
-      const mod = await import('./apis/indices_refresh.ts') as Record<string, unknown>
-      return mod['indices_refresh_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_reload_search_analyzers': {
-      const mod = await import('./apis/indices_reload_search_analyzers.ts') as Record<string, unknown>
-      return mod['indices_reload_search_analyzers_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_remove_block': {
-      const mod = await import('./apis/indices_remove_block.ts') as Record<string, unknown>
-      return mod['indices_remove_block_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_resolve_cluster': {
-      const mod = await import('./apis/indices_resolve_cluster.ts') as Record<string, unknown>
-      return mod['indices_resolve_cluster_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_resolve_index': {
-      const mod = await import('./apis/indices_resolve_index.ts') as Record<string, unknown>
-      return mod['indices_resolve_index_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_rollover': {
-      const mod = await import('./apis/indices_rollover.ts') as Record<string, unknown>
-      return mod['indices_rollover_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_segments': {
-      const mod = await import('./apis/indices_segments.ts') as Record<string, unknown>
-      return mod['indices_segments_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_shard_stores': {
-      const mod = await import('./apis/indices_shard_stores.ts') as Record<string, unknown>
-      return mod['indices_shard_stores_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_shrink': {
-      const mod = await import('./apis/indices_shrink.ts') as Record<string, unknown>
-      return mod['indices_shrink_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_simulate_index_template': {
-      const mod = await import('./apis/indices_simulate_index_template.ts') as Record<string, unknown>
-      return mod['indices_simulate_index_template_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_simulate_template': {
-      const mod = await import('./apis/indices_simulate_template.ts') as Record<string, unknown>
-      return mod['indices_simulate_template_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_split': {
-      const mod = await import('./apis/indices_split.ts') as Record<string, unknown>
-      return mod['indices_split_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_stats': {
-      const mod = await import('./apis/indices_stats.ts') as Record<string, unknown>
-      return mod['indices_stats_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_update_aliases': {
-      const mod = await import('./apis/indices_update_aliases.ts') as Record<string, unknown>
-      return mod['indices_update_aliases_definitions'] as EsApiDefinition[]
-    }
-    case 'indices_validate_query': {
-      const mod = await import('./apis/indices_validate_query.ts') as Record<string, unknown>
-      return mod['indices_validate_query_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_chat_completion_unified': {
-      const mod = await import('./apis/inference_chat_completion_unified.ts') as Record<string, unknown>
-      return mod['inference_chat_completion_unified_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_completion': {
-      const mod = await import('./apis/inference_completion.ts') as Record<string, unknown>
-      return mod['inference_completion_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_delete': {
-      const mod = await import('./apis/inference_delete.ts') as Record<string, unknown>
-      return mod['inference_delete_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_embedding': {
-      const mod = await import('./apis/inference_embedding.ts') as Record<string, unknown>
-      return mod['inference_embedding_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_get': {
-      const mod = await import('./apis/inference_get.ts') as Record<string, unknown>
-      return mod['inference_get_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_inference': {
-      const mod = await import('./apis/inference_inference.ts') as Record<string, unknown>
-      return mod['inference_inference_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put': {
-      const mod = await import('./apis/inference_put.ts') as Record<string, unknown>
-      return mod['inference_put_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_ai21': {
-      const mod = await import('./apis/inference_put_ai21.ts') as Record<string, unknown>
-      return mod['inference_put_ai21_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_alibabacloud': {
-      const mod = await import('./apis/inference_put_alibabacloud.ts') as Record<string, unknown>
-      return mod['inference_put_alibabacloud_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_amazonbedrock': {
-      const mod = await import('./apis/inference_put_amazonbedrock.ts') as Record<string, unknown>
-      return mod['inference_put_amazonbedrock_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_amazonsagemaker': {
-      const mod = await import('./apis/inference_put_amazonsagemaker.ts') as Record<string, unknown>
-      return mod['inference_put_amazonsagemaker_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_anthropic': {
-      const mod = await import('./apis/inference_put_anthropic.ts') as Record<string, unknown>
-      return mod['inference_put_anthropic_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_azureaistudio': {
-      const mod = await import('./apis/inference_put_azureaistudio.ts') as Record<string, unknown>
-      return mod['inference_put_azureaistudio_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_azureopenai': {
-      const mod = await import('./apis/inference_put_azureopenai.ts') as Record<string, unknown>
-      return mod['inference_put_azureopenai_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_cohere': {
-      const mod = await import('./apis/inference_put_cohere.ts') as Record<string, unknown>
-      return mod['inference_put_cohere_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_contextualai': {
-      const mod = await import('./apis/inference_put_contextualai.ts') as Record<string, unknown>
-      return mod['inference_put_contextualai_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_custom': {
-      const mod = await import('./apis/inference_put_custom.ts') as Record<string, unknown>
-      return mod['inference_put_custom_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_deepseek': {
-      const mod = await import('./apis/inference_put_deepseek.ts') as Record<string, unknown>
-      return mod['inference_put_deepseek_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_elasticsearch': {
-      const mod = await import('./apis/inference_put_elasticsearch.ts') as Record<string, unknown>
-      return mod['inference_put_elasticsearch_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_elser': {
-      const mod = await import('./apis/inference_put_elser.ts') as Record<string, unknown>
-      return mod['inference_put_elser_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_fireworksai': {
-      const mod = await import('./apis/inference_put_fireworksai.ts') as Record<string, unknown>
-      return mod['inference_put_fireworksai_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_googleaistudio': {
-      const mod = await import('./apis/inference_put_googleaistudio.ts') as Record<string, unknown>
-      return mod['inference_put_googleaistudio_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_googlevertexai': {
-      const mod = await import('./apis/inference_put_googlevertexai.ts') as Record<string, unknown>
-      return mod['inference_put_googlevertexai_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_groq': {
-      const mod = await import('./apis/inference_put_groq.ts') as Record<string, unknown>
-      return mod['inference_put_groq_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_hugging_face': {
-      const mod = await import('./apis/inference_put_hugging_face.ts') as Record<string, unknown>
-      return mod['inference_put_hugging_face_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_jinaai': {
-      const mod = await import('./apis/inference_put_jinaai.ts') as Record<string, unknown>
-      return mod['inference_put_jinaai_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_llama': {
-      const mod = await import('./apis/inference_put_llama.ts') as Record<string, unknown>
-      return mod['inference_put_llama_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_mistral': {
-      const mod = await import('./apis/inference_put_mistral.ts') as Record<string, unknown>
-      return mod['inference_put_mistral_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_nvidia': {
-      const mod = await import('./apis/inference_put_nvidia.ts') as Record<string, unknown>
-      return mod['inference_put_nvidia_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_openai': {
-      const mod = await import('./apis/inference_put_openai.ts') as Record<string, unknown>
-      return mod['inference_put_openai_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_openshift_ai': {
-      const mod = await import('./apis/inference_put_openshift_ai.ts') as Record<string, unknown>
-      return mod['inference_put_openshift_ai_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_voyageai': {
-      const mod = await import('./apis/inference_put_voyageai.ts') as Record<string, unknown>
-      return mod['inference_put_voyageai_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_put_watsonx': {
-      const mod = await import('./apis/inference_put_watsonx.ts') as Record<string, unknown>
-      return mod['inference_put_watsonx_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_rerank': {
-      const mod = await import('./apis/inference_rerank.ts') as Record<string, unknown>
-      return mod['inference_rerank_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_sparse_embedding': {
-      const mod = await import('./apis/inference_sparse_embedding.ts') as Record<string, unknown>
-      return mod['inference_sparse_embedding_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_stream_completion': {
-      const mod = await import('./apis/inference_stream_completion.ts') as Record<string, unknown>
-      return mod['inference_stream_completion_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_text_embedding': {
-      const mod = await import('./apis/inference_text_embedding.ts') as Record<string, unknown>
-      return mod['inference_text_embedding_definitions'] as EsApiDefinition[]
-    }
-    case 'inference_update': {
-      const mod = await import('./apis/inference_update.ts') as Record<string, unknown>
-      return mod['inference_update_definitions'] as EsApiDefinition[]
+    case 'indices.add_block': {
+      const mod = await import('./apis/indices.add_block.ts') as Record<string, unknown>
+      return mod['indices.add_block_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.analyze': {
+      const mod = await import('./apis/indices.analyze.ts') as Record<string, unknown>
+      return mod['indices.analyze_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.cancel_migrate_reindex': {
+      const mod = await import('./apis/indices.cancel_migrate_reindex.ts') as Record<string, unknown>
+      return mod['indices.cancel_migrate_reindex_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.clear_cache': {
+      const mod = await import('./apis/indices.clear_cache.ts') as Record<string, unknown>
+      return mod['indices.clear_cache_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.clone': {
+      const mod = await import('./apis/indices.clone.ts') as Record<string, unknown>
+      return mod['indices.clone_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.close': {
+      const mod = await import('./apis/indices.close.ts') as Record<string, unknown>
+      return mod['indices.close_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.create': {
+      const mod = await import('./apis/indices.create.ts') as Record<string, unknown>
+      return mod['indices.create_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.create_data_stream': {
+      const mod = await import('./apis/indices.create_data_stream.ts') as Record<string, unknown>
+      return mod['indices.create_data_stream_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.create_from': {
+      const mod = await import('./apis/indices.create_from.ts') as Record<string, unknown>
+      return mod['indices.create_from_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.data_streams_stats': {
+      const mod = await import('./apis/indices.data_streams_stats.ts') as Record<string, unknown>
+      return mod['indices.data_streams_stats_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.delete': {
+      const mod = await import('./apis/indices.delete.ts') as Record<string, unknown>
+      return mod['indices.delete_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.delete_alias': {
+      const mod = await import('./apis/indices.delete_alias.ts') as Record<string, unknown>
+      return mod['indices.delete_alias_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.delete_data_lifecycle': {
+      const mod = await import('./apis/indices.delete_data_lifecycle.ts') as Record<string, unknown>
+      return mod['indices.delete_data_lifecycle_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.delete_data_stream': {
+      const mod = await import('./apis/indices.delete_data_stream.ts') as Record<string, unknown>
+      return mod['indices.delete_data_stream_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.delete_data_stream_options': {
+      const mod = await import('./apis/indices.delete_data_stream_options.ts') as Record<string, unknown>
+      return mod['indices.delete_data_stream_options_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.delete_index_template': {
+      const mod = await import('./apis/indices.delete_index_template.ts') as Record<string, unknown>
+      return mod['indices.delete_index_template_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.delete_template': {
+      const mod = await import('./apis/indices.delete_template.ts') as Record<string, unknown>
+      return mod['indices.delete_template_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.disk_usage': {
+      const mod = await import('./apis/indices.disk_usage.ts') as Record<string, unknown>
+      return mod['indices.disk_usage_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.downsample': {
+      const mod = await import('./apis/indices.downsample.ts') as Record<string, unknown>
+      return mod['indices.downsample_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.exists': {
+      const mod = await import('./apis/indices.exists.ts') as Record<string, unknown>
+      return mod['indices.exists_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.exists_alias': {
+      const mod = await import('./apis/indices.exists_alias.ts') as Record<string, unknown>
+      return mod['indices.exists_alias_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.exists_index_template': {
+      const mod = await import('./apis/indices.exists_index_template.ts') as Record<string, unknown>
+      return mod['indices.exists_index_template_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.exists_template': {
+      const mod = await import('./apis/indices.exists_template.ts') as Record<string, unknown>
+      return mod['indices.exists_template_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.explain_data_lifecycle': {
+      const mod = await import('./apis/indices.explain_data_lifecycle.ts') as Record<string, unknown>
+      return mod['indices.explain_data_lifecycle_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.field_usage_stats': {
+      const mod = await import('./apis/indices.field_usage_stats.ts') as Record<string, unknown>
+      return mod['indices.field_usage_stats_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.flush': {
+      const mod = await import('./apis/indices.flush.ts') as Record<string, unknown>
+      return mod['indices.flush_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.forcemerge': {
+      const mod = await import('./apis/indices.forcemerge.ts') as Record<string, unknown>
+      return mod['indices.forcemerge_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.get': {
+      const mod = await import('./apis/indices.get.ts') as Record<string, unknown>
+      return mod['indices.get_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.get_alias': {
+      const mod = await import('./apis/indices.get_alias.ts') as Record<string, unknown>
+      return mod['indices.get_alias_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.get_data_lifecycle': {
+      const mod = await import('./apis/indices.get_data_lifecycle.ts') as Record<string, unknown>
+      return mod['indices.get_data_lifecycle_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.get_data_lifecycle_stats': {
+      const mod = await import('./apis/indices.get_data_lifecycle_stats.ts') as Record<string, unknown>
+      return mod['indices.get_data_lifecycle_stats_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.get_data_stream': {
+      const mod = await import('./apis/indices.get_data_stream.ts') as Record<string, unknown>
+      return mod['indices.get_data_stream_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.get_data_stream_mappings': {
+      const mod = await import('./apis/indices.get_data_stream_mappings.ts') as Record<string, unknown>
+      return mod['indices.get_data_stream_mappings_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.get_data_stream_options': {
+      const mod = await import('./apis/indices.get_data_stream_options.ts') as Record<string, unknown>
+      return mod['indices.get_data_stream_options_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.get_data_stream_settings': {
+      const mod = await import('./apis/indices.get_data_stream_settings.ts') as Record<string, unknown>
+      return mod['indices.get_data_stream_settings_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.get_field_mapping': {
+      const mod = await import('./apis/indices.get_field_mapping.ts') as Record<string, unknown>
+      return mod['indices.get_field_mapping_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.get_index_template': {
+      const mod = await import('./apis/indices.get_index_template.ts') as Record<string, unknown>
+      return mod['indices.get_index_template_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.get_mapping': {
+      const mod = await import('./apis/indices.get_mapping.ts') as Record<string, unknown>
+      return mod['indices.get_mapping_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.get_migrate_reindex_status': {
+      const mod = await import('./apis/indices.get_migrate_reindex_status.ts') as Record<string, unknown>
+      return mod['indices.get_migrate_reindex_status_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.get_settings': {
+      const mod = await import('./apis/indices.get_settings.ts') as Record<string, unknown>
+      return mod['indices.get_settings_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.get_template': {
+      const mod = await import('./apis/indices.get_template.ts') as Record<string, unknown>
+      return mod['indices.get_template_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.migrate_reindex': {
+      const mod = await import('./apis/indices.migrate_reindex.ts') as Record<string, unknown>
+      return mod['indices.migrate_reindex_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.migrate_to_data_stream': {
+      const mod = await import('./apis/indices.migrate_to_data_stream.ts') as Record<string, unknown>
+      return mod['indices.migrate_to_data_stream_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.modify_data_stream': {
+      const mod = await import('./apis/indices.modify_data_stream.ts') as Record<string, unknown>
+      return mod['indices.modify_data_stream_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.open': {
+      const mod = await import('./apis/indices.open.ts') as Record<string, unknown>
+      return mod['indices.open_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.promote_data_stream': {
+      const mod = await import('./apis/indices.promote_data_stream.ts') as Record<string, unknown>
+      return mod['indices.promote_data_stream_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.put_alias': {
+      const mod = await import('./apis/indices.put_alias.ts') as Record<string, unknown>
+      return mod['indices.put_alias_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.put_data_lifecycle': {
+      const mod = await import('./apis/indices.put_data_lifecycle.ts') as Record<string, unknown>
+      return mod['indices.put_data_lifecycle_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.put_data_stream_mappings': {
+      const mod = await import('./apis/indices.put_data_stream_mappings.ts') as Record<string, unknown>
+      return mod['indices.put_data_stream_mappings_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.put_data_stream_options': {
+      const mod = await import('./apis/indices.put_data_stream_options.ts') as Record<string, unknown>
+      return mod['indices.put_data_stream_options_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.put_data_stream_settings': {
+      const mod = await import('./apis/indices.put_data_stream_settings.ts') as Record<string, unknown>
+      return mod['indices.put_data_stream_settings_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.put_index_template': {
+      const mod = await import('./apis/indices.put_index_template.ts') as Record<string, unknown>
+      return mod['indices.put_index_template_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.put_mapping': {
+      const mod = await import('./apis/indices.put_mapping.ts') as Record<string, unknown>
+      return mod['indices.put_mapping_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.put_settings': {
+      const mod = await import('./apis/indices.put_settings.ts') as Record<string, unknown>
+      return mod['indices.put_settings_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.put_template': {
+      const mod = await import('./apis/indices.put_template.ts') as Record<string, unknown>
+      return mod['indices.put_template_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.recovery': {
+      const mod = await import('./apis/indices.recovery.ts') as Record<string, unknown>
+      return mod['indices.recovery_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.refresh': {
+      const mod = await import('./apis/indices.refresh.ts') as Record<string, unknown>
+      return mod['indices.refresh_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.reload_search_analyzers': {
+      const mod = await import('./apis/indices.reload_search_analyzers.ts') as Record<string, unknown>
+      return mod['indices.reload_search_analyzers_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.remove_block': {
+      const mod = await import('./apis/indices.remove_block.ts') as Record<string, unknown>
+      return mod['indices.remove_block_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.resolve_cluster': {
+      const mod = await import('./apis/indices.resolve_cluster.ts') as Record<string, unknown>
+      return mod['indices.resolve_cluster_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.resolve_index': {
+      const mod = await import('./apis/indices.resolve_index.ts') as Record<string, unknown>
+      return mod['indices.resolve_index_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.rollover': {
+      const mod = await import('./apis/indices.rollover.ts') as Record<string, unknown>
+      return mod['indices.rollover_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.segments': {
+      const mod = await import('./apis/indices.segments.ts') as Record<string, unknown>
+      return mod['indices.segments_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.shard_stores': {
+      const mod = await import('./apis/indices.shard_stores.ts') as Record<string, unknown>
+      return mod['indices.shard_stores_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.shrink': {
+      const mod = await import('./apis/indices.shrink.ts') as Record<string, unknown>
+      return mod['indices.shrink_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.simulate_index_template': {
+      const mod = await import('./apis/indices.simulate_index_template.ts') as Record<string, unknown>
+      return mod['indices.simulate_index_template_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.simulate_template': {
+      const mod = await import('./apis/indices.simulate_template.ts') as Record<string, unknown>
+      return mod['indices.simulate_template_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.split': {
+      const mod = await import('./apis/indices.split.ts') as Record<string, unknown>
+      return mod['indices.split_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.stats': {
+      const mod = await import('./apis/indices.stats.ts') as Record<string, unknown>
+      return mod['indices.stats_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.update_aliases': {
+      const mod = await import('./apis/indices.update_aliases.ts') as Record<string, unknown>
+      return mod['indices.update_aliases_definitions'] as EsApiDefinition[]
+    }
+    case 'indices.validate_query': {
+      const mod = await import('./apis/indices.validate_query.ts') as Record<string, unknown>
+      return mod['indices.validate_query_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.chat_completion_unified': {
+      const mod = await import('./apis/inference.chat_completion_unified.ts') as Record<string, unknown>
+      return mod['inference.chat_completion_unified_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.completion': {
+      const mod = await import('./apis/inference.completion.ts') as Record<string, unknown>
+      return mod['inference.completion_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.delete': {
+      const mod = await import('./apis/inference.delete.ts') as Record<string, unknown>
+      return mod['inference.delete_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.delete_region_policy': {
+      const mod = await import('./apis/inference.delete_region_policy.ts') as Record<string, unknown>
+      return mod['inference.delete_region_policy_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.embedding': {
+      const mod = await import('./apis/inference.embedding.ts') as Record<string, unknown>
+      return mod['inference.embedding_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.get': {
+      const mod = await import('./apis/inference.get.ts') as Record<string, unknown>
+      return mod['inference.get_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.get_region_policy': {
+      const mod = await import('./apis/inference.get_region_policy.ts') as Record<string, unknown>
+      return mod['inference.get_region_policy_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.inference': {
+      const mod = await import('./apis/inference.inference.ts') as Record<string, unknown>
+      return mod['inference.inference_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put': {
+      const mod = await import('./apis/inference.put.ts') as Record<string, unknown>
+      return mod['inference.put_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_ai21': {
+      const mod = await import('./apis/inference.put_ai21.ts') as Record<string, unknown>
+      return mod['inference.put_ai21_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_alibabacloud': {
+      const mod = await import('./apis/inference.put_alibabacloud.ts') as Record<string, unknown>
+      return mod['inference.put_alibabacloud_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_amazonbedrock': {
+      const mod = await import('./apis/inference.put_amazonbedrock.ts') as Record<string, unknown>
+      return mod['inference.put_amazonbedrock_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_amazonsagemaker': {
+      const mod = await import('./apis/inference.put_amazonsagemaker.ts') as Record<string, unknown>
+      return mod['inference.put_amazonsagemaker_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_anthropic': {
+      const mod = await import('./apis/inference.put_anthropic.ts') as Record<string, unknown>
+      return mod['inference.put_anthropic_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_azureaistudio': {
+      const mod = await import('./apis/inference.put_azureaistudio.ts') as Record<string, unknown>
+      return mod['inference.put_azureaistudio_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_azureopenai': {
+      const mod = await import('./apis/inference.put_azureopenai.ts') as Record<string, unknown>
+      return mod['inference.put_azureopenai_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_cohere': {
+      const mod = await import('./apis/inference.put_cohere.ts') as Record<string, unknown>
+      return mod['inference.put_cohere_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_contextualai': {
+      const mod = await import('./apis/inference.put_contextualai.ts') as Record<string, unknown>
+      return mod['inference.put_contextualai_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_custom': {
+      const mod = await import('./apis/inference.put_custom.ts') as Record<string, unknown>
+      return mod['inference.put_custom_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_deepseek': {
+      const mod = await import('./apis/inference.put_deepseek.ts') as Record<string, unknown>
+      return mod['inference.put_deepseek_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_elasticsearch': {
+      const mod = await import('./apis/inference.put_elasticsearch.ts') as Record<string, unknown>
+      return mod['inference.put_elasticsearch_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_elser': {
+      const mod = await import('./apis/inference.put_elser.ts') as Record<string, unknown>
+      return mod['inference.put_elser_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_fireworksai': {
+      const mod = await import('./apis/inference.put_fireworksai.ts') as Record<string, unknown>
+      return mod['inference.put_fireworksai_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_googleaistudio': {
+      const mod = await import('./apis/inference.put_googleaistudio.ts') as Record<string, unknown>
+      return mod['inference.put_googleaistudio_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_googlevertexai': {
+      const mod = await import('./apis/inference.put_googlevertexai.ts') as Record<string, unknown>
+      return mod['inference.put_googlevertexai_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_groq': {
+      const mod = await import('./apis/inference.put_groq.ts') as Record<string, unknown>
+      return mod['inference.put_groq_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_hugging_face': {
+      const mod = await import('./apis/inference.put_hugging_face.ts') as Record<string, unknown>
+      return mod['inference.put_hugging_face_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_jinaai': {
+      const mod = await import('./apis/inference.put_jinaai.ts') as Record<string, unknown>
+      return mod['inference.put_jinaai_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_llama': {
+      const mod = await import('./apis/inference.put_llama.ts') as Record<string, unknown>
+      return mod['inference.put_llama_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_mistral': {
+      const mod = await import('./apis/inference.put_mistral.ts') as Record<string, unknown>
+      return mod['inference.put_mistral_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_nvidia': {
+      const mod = await import('./apis/inference.put_nvidia.ts') as Record<string, unknown>
+      return mod['inference.put_nvidia_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_openai': {
+      const mod = await import('./apis/inference.put_openai.ts') as Record<string, unknown>
+      return mod['inference.put_openai_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_openshift_ai': {
+      const mod = await import('./apis/inference.put_openshift_ai.ts') as Record<string, unknown>
+      return mod['inference.put_openshift_ai_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_region_policy': {
+      const mod = await import('./apis/inference.put_region_policy.ts') as Record<string, unknown>
+      return mod['inference.put_region_policy_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_voyageai': {
+      const mod = await import('./apis/inference.put_voyageai.ts') as Record<string, unknown>
+      return mod['inference.put_voyageai_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.put_watsonx': {
+      const mod = await import('./apis/inference.put_watsonx.ts') as Record<string, unknown>
+      return mod['inference.put_watsonx_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.rerank': {
+      const mod = await import('./apis/inference.rerank.ts') as Record<string, unknown>
+      return mod['inference.rerank_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.sparse_embedding': {
+      const mod = await import('./apis/inference.sparse_embedding.ts') as Record<string, unknown>
+      return mod['inference.sparse_embedding_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.stream_completion': {
+      const mod = await import('./apis/inference.stream_completion.ts') as Record<string, unknown>
+      return mod['inference.stream_completion_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.text_embedding': {
+      const mod = await import('./apis/inference.text_embedding.ts') as Record<string, unknown>
+      return mod['inference.text_embedding_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.update': {
+      const mod = await import('./apis/inference.update.ts') as Record<string, unknown>
+      return mod['inference.update_definitions'] as EsApiDefinition[]
     }
     case 'info': {
       const mod = await import('./apis/info.ts') as Record<string, unknown>
       return mod['info_definitions'] as EsApiDefinition[]
     }
-    case 'ingest_delete_geoip_database': {
-      const mod = await import('./apis/ingest_delete_geoip_database.ts') as Record<string, unknown>
-      return mod['ingest_delete_geoip_database_definitions'] as EsApiDefinition[]
+    case 'ingest.delete_geoip_database': {
+      const mod = await import('./apis/ingest.delete_geoip_database.ts') as Record<string, unknown>
+      return mod['ingest.delete_geoip_database_definitions'] as EsApiDefinition[]
     }
-    case 'ingest_delete_ip_location_database': {
-      const mod = await import('./apis/ingest_delete_ip_location_database.ts') as Record<string, unknown>
-      return mod['ingest_delete_ip_location_database_definitions'] as EsApiDefinition[]
+    case 'ingest.delete_ip_location_database': {
+      const mod = await import('./apis/ingest.delete_ip_location_database.ts') as Record<string, unknown>
+      return mod['ingest.delete_ip_location_database_definitions'] as EsApiDefinition[]
     }
-    case 'ingest_delete_pipeline': {
-      const mod = await import('./apis/ingest_delete_pipeline.ts') as Record<string, unknown>
-      return mod['ingest_delete_pipeline_definitions'] as EsApiDefinition[]
+    case 'ingest.delete_pipeline': {
+      const mod = await import('./apis/ingest.delete_pipeline.ts') as Record<string, unknown>
+      return mod['ingest.delete_pipeline_definitions'] as EsApiDefinition[]
     }
-    case 'ingest_geo_ip_stats': {
-      const mod = await import('./apis/ingest_geo_ip_stats.ts') as Record<string, unknown>
-      return mod['ingest_geo_ip_stats_definitions'] as EsApiDefinition[]
+    case 'ingest.geo_ip_stats': {
+      const mod = await import('./apis/ingest.geo_ip_stats.ts') as Record<string, unknown>
+      return mod['ingest.geo_ip_stats_definitions'] as EsApiDefinition[]
     }
-    case 'ingest_get_geoip_database': {
-      const mod = await import('./apis/ingest_get_geoip_database.ts') as Record<string, unknown>
-      return mod['ingest_get_geoip_database_definitions'] as EsApiDefinition[]
+    case 'ingest.get_geoip_database': {
+      const mod = await import('./apis/ingest.get_geoip_database.ts') as Record<string, unknown>
+      return mod['ingest.get_geoip_database_definitions'] as EsApiDefinition[]
     }
-    case 'ingest_get_ip_location_database': {
-      const mod = await import('./apis/ingest_get_ip_location_database.ts') as Record<string, unknown>
-      return mod['ingest_get_ip_location_database_definitions'] as EsApiDefinition[]
+    case 'ingest.get_ip_location_database': {
+      const mod = await import('./apis/ingest.get_ip_location_database.ts') as Record<string, unknown>
+      return mod['ingest.get_ip_location_database_definitions'] as EsApiDefinition[]
     }
-    case 'ingest_get_pipeline': {
-      const mod = await import('./apis/ingest_get_pipeline.ts') as Record<string, unknown>
-      return mod['ingest_get_pipeline_definitions'] as EsApiDefinition[]
+    case 'ingest.get_pipeline': {
+      const mod = await import('./apis/ingest.get_pipeline.ts') as Record<string, unknown>
+      return mod['ingest.get_pipeline_definitions'] as EsApiDefinition[]
     }
-    case 'ingest_processor_grok': {
-      const mod = await import('./apis/ingest_processor_grok.ts') as Record<string, unknown>
-      return mod['ingest_processor_grok_definitions'] as EsApiDefinition[]
+    case 'ingest.processor_grok': {
+      const mod = await import('./apis/ingest.processor_grok.ts') as Record<string, unknown>
+      return mod['ingest.processor_grok_definitions'] as EsApiDefinition[]
     }
-    case 'ingest_put_geoip_database': {
-      const mod = await import('./apis/ingest_put_geoip_database.ts') as Record<string, unknown>
-      return mod['ingest_put_geoip_database_definitions'] as EsApiDefinition[]
+    case 'ingest.put_geoip_database': {
+      const mod = await import('./apis/ingest.put_geoip_database.ts') as Record<string, unknown>
+      return mod['ingest.put_geoip_database_definitions'] as EsApiDefinition[]
     }
-    case 'ingest_put_ip_location_database': {
-      const mod = await import('./apis/ingest_put_ip_location_database.ts') as Record<string, unknown>
-      return mod['ingest_put_ip_location_database_definitions'] as EsApiDefinition[]
+    case 'ingest.put_ip_location_database': {
+      const mod = await import('./apis/ingest.put_ip_location_database.ts') as Record<string, unknown>
+      return mod['ingest.put_ip_location_database_definitions'] as EsApiDefinition[]
     }
-    case 'ingest_put_pipeline': {
-      const mod = await import('./apis/ingest_put_pipeline.ts') as Record<string, unknown>
-      return mod['ingest_put_pipeline_definitions'] as EsApiDefinition[]
+    case 'ingest.put_pipeline': {
+      const mod = await import('./apis/ingest.put_pipeline.ts') as Record<string, unknown>
+      return mod['ingest.put_pipeline_definitions'] as EsApiDefinition[]
     }
-    case 'ingest_simulate': {
-      const mod = await import('./apis/ingest_simulate.ts') as Record<string, unknown>
-      return mod['ingest_simulate_definitions'] as EsApiDefinition[]
+    case 'ingest.simulate': {
+      const mod = await import('./apis/ingest.simulate.ts') as Record<string, unknown>
+      return mod['ingest.simulate_definitions'] as EsApiDefinition[]
     }
-    case 'license_delete': {
-      const mod = await import('./apis/license_delete.ts') as Record<string, unknown>
-      return mod['license_delete_definitions'] as EsApiDefinition[]
+    case 'license.delete': {
+      const mod = await import('./apis/license.delete.ts') as Record<string, unknown>
+      return mod['license.delete_definitions'] as EsApiDefinition[]
     }
-    case 'license_get': {
-      const mod = await import('./apis/license_get.ts') as Record<string, unknown>
-      return mod['license_get_definitions'] as EsApiDefinition[]
+    case 'license.get': {
+      const mod = await import('./apis/license.get.ts') as Record<string, unknown>
+      return mod['license.get_definitions'] as EsApiDefinition[]
     }
-    case 'license_get_basic_status': {
-      const mod = await import('./apis/license_get_basic_status.ts') as Record<string, unknown>
-      return mod['license_get_basic_status_definitions'] as EsApiDefinition[]
+    case 'license.get_basic_status': {
+      const mod = await import('./apis/license.get_basic_status.ts') as Record<string, unknown>
+      return mod['license.get_basic_status_definitions'] as EsApiDefinition[]
     }
-    case 'license_get_trial_status': {
-      const mod = await import('./apis/license_get_trial_status.ts') as Record<string, unknown>
-      return mod['license_get_trial_status_definitions'] as EsApiDefinition[]
+    case 'license.get_trial_status': {
+      const mod = await import('./apis/license.get_trial_status.ts') as Record<string, unknown>
+      return mod['license.get_trial_status_definitions'] as EsApiDefinition[]
     }
-    case 'license_post': {
-      const mod = await import('./apis/license_post.ts') as Record<string, unknown>
-      return mod['license_post_definitions'] as EsApiDefinition[]
+    case 'license.post': {
+      const mod = await import('./apis/license.post.ts') as Record<string, unknown>
+      return mod['license.post_definitions'] as EsApiDefinition[]
     }
-    case 'license_post_start_basic': {
-      const mod = await import('./apis/license_post_start_basic.ts') as Record<string, unknown>
-      return mod['license_post_start_basic_definitions'] as EsApiDefinition[]
+    case 'license.post_start_basic': {
+      const mod = await import('./apis/license.post_start_basic.ts') as Record<string, unknown>
+      return mod['license.post_start_basic_definitions'] as EsApiDefinition[]
     }
-    case 'license_post_start_trial': {
-      const mod = await import('./apis/license_post_start_trial.ts') as Record<string, unknown>
-      return mod['license_post_start_trial_definitions'] as EsApiDefinition[]
+    case 'license.post_start_trial': {
+      const mod = await import('./apis/license.post_start_trial.ts') as Record<string, unknown>
+      return mod['license.post_start_trial_definitions'] as EsApiDefinition[]
     }
     case 'list_reindex': {
       const mod = await import('./apis/list_reindex.ts') as Record<string, unknown>
       return mod['list_reindex_definitions'] as EsApiDefinition[]
     }
-    case 'logstash_delete_pipeline': {
-      const mod = await import('./apis/logstash_delete_pipeline.ts') as Record<string, unknown>
-      return mod['logstash_delete_pipeline_definitions'] as EsApiDefinition[]
+    case 'logstash.delete_pipeline': {
+      const mod = await import('./apis/logstash.delete_pipeline.ts') as Record<string, unknown>
+      return mod['logstash.delete_pipeline_definitions'] as EsApiDefinition[]
     }
-    case 'logstash_get_pipeline': {
-      const mod = await import('./apis/logstash_get_pipeline.ts') as Record<string, unknown>
-      return mod['logstash_get_pipeline_definitions'] as EsApiDefinition[]
+    case 'logstash.get_pipeline': {
+      const mod = await import('./apis/logstash.get_pipeline.ts') as Record<string, unknown>
+      return mod['logstash.get_pipeline_definitions'] as EsApiDefinition[]
     }
-    case 'logstash_put_pipeline': {
-      const mod = await import('./apis/logstash_put_pipeline.ts') as Record<string, unknown>
-      return mod['logstash_put_pipeline_definitions'] as EsApiDefinition[]
+    case 'logstash.put_pipeline': {
+      const mod = await import('./apis/logstash.put_pipeline.ts') as Record<string, unknown>
+      return mod['logstash.put_pipeline_definitions'] as EsApiDefinition[]
     }
     case 'mget': {
       const mod = await import('./apis/mget.ts') as Record<string, unknown>
       return mod['mget_definitions'] as EsApiDefinition[]
     }
-    case 'migration_deprecations': {
-      const mod = await import('./apis/migration_deprecations.ts') as Record<string, unknown>
-      return mod['migration_deprecations_definitions'] as EsApiDefinition[]
-    }
-    case 'migration_get_feature_upgrade_status': {
-      const mod = await import('./apis/migration_get_feature_upgrade_status.ts') as Record<string, unknown>
-      return mod['migration_get_feature_upgrade_status_definitions'] as EsApiDefinition[]
-    }
-    case 'migration_post_feature_upgrade': {
-      const mod = await import('./apis/migration_post_feature_upgrade.ts') as Record<string, unknown>
-      return mod['migration_post_feature_upgrade_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_clear_trained_model_deployment_cache': {
-      const mod = await import('./apis/ml_clear_trained_model_deployment_cache.ts') as Record<string, unknown>
-      return mod['ml_clear_trained_model_deployment_cache_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_close_job': {
-      const mod = await import('./apis/ml_close_job.ts') as Record<string, unknown>
-      return mod['ml_close_job_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_delete_calendar': {
-      const mod = await import('./apis/ml_delete_calendar.ts') as Record<string, unknown>
-      return mod['ml_delete_calendar_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_delete_calendar_event': {
-      const mod = await import('./apis/ml_delete_calendar_event.ts') as Record<string, unknown>
-      return mod['ml_delete_calendar_event_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_delete_calendar_job': {
-      const mod = await import('./apis/ml_delete_calendar_job.ts') as Record<string, unknown>
-      return mod['ml_delete_calendar_job_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_delete_data_frame_analytics': {
-      const mod = await import('./apis/ml_delete_data_frame_analytics.ts') as Record<string, unknown>
-      return mod['ml_delete_data_frame_analytics_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_delete_datafeed': {
-      const mod = await import('./apis/ml_delete_datafeed.ts') as Record<string, unknown>
-      return mod['ml_delete_datafeed_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_delete_expired_data': {
-      const mod = await import('./apis/ml_delete_expired_data.ts') as Record<string, unknown>
-      return mod['ml_delete_expired_data_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_delete_filter': {
-      const mod = await import('./apis/ml_delete_filter.ts') as Record<string, unknown>
-      return mod['ml_delete_filter_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_delete_forecast': {
-      const mod = await import('./apis/ml_delete_forecast.ts') as Record<string, unknown>
-      return mod['ml_delete_forecast_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_delete_job': {
-      const mod = await import('./apis/ml_delete_job.ts') as Record<string, unknown>
-      return mod['ml_delete_job_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_delete_model_snapshot': {
-      const mod = await import('./apis/ml_delete_model_snapshot.ts') as Record<string, unknown>
-      return mod['ml_delete_model_snapshot_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_delete_trained_model': {
-      const mod = await import('./apis/ml_delete_trained_model.ts') as Record<string, unknown>
-      return mod['ml_delete_trained_model_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_delete_trained_model_alias': {
-      const mod = await import('./apis/ml_delete_trained_model_alias.ts') as Record<string, unknown>
-      return mod['ml_delete_trained_model_alias_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_estimate_model_memory': {
-      const mod = await import('./apis/ml_estimate_model_memory.ts') as Record<string, unknown>
-      return mod['ml_estimate_model_memory_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_evaluate_data_frame': {
-      const mod = await import('./apis/ml_evaluate_data_frame.ts') as Record<string, unknown>
-      return mod['ml_evaluate_data_frame_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_explain_data_frame_analytics': {
-      const mod = await import('./apis/ml_explain_data_frame_analytics.ts') as Record<string, unknown>
-      return mod['ml_explain_data_frame_analytics_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_flush_job': {
-      const mod = await import('./apis/ml_flush_job.ts') as Record<string, unknown>
-      return mod['ml_flush_job_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_forecast': {
-      const mod = await import('./apis/ml_forecast.ts') as Record<string, unknown>
-      return mod['ml_forecast_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_get_buckets': {
-      const mod = await import('./apis/ml_get_buckets.ts') as Record<string, unknown>
-      return mod['ml_get_buckets_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_get_calendar_events': {
-      const mod = await import('./apis/ml_get_calendar_events.ts') as Record<string, unknown>
-      return mod['ml_get_calendar_events_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_get_calendars': {
-      const mod = await import('./apis/ml_get_calendars.ts') as Record<string, unknown>
-      return mod['ml_get_calendars_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_get_categories': {
-      const mod = await import('./apis/ml_get_categories.ts') as Record<string, unknown>
-      return mod['ml_get_categories_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_get_data_frame_analytics': {
-      const mod = await import('./apis/ml_get_data_frame_analytics.ts') as Record<string, unknown>
-      return mod['ml_get_data_frame_analytics_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_get_data_frame_analytics_stats': {
-      const mod = await import('./apis/ml_get_data_frame_analytics_stats.ts') as Record<string, unknown>
-      return mod['ml_get_data_frame_analytics_stats_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_get_datafeed_stats': {
-      const mod = await import('./apis/ml_get_datafeed_stats.ts') as Record<string, unknown>
-      return mod['ml_get_datafeed_stats_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_get_datafeeds': {
-      const mod = await import('./apis/ml_get_datafeeds.ts') as Record<string, unknown>
-      return mod['ml_get_datafeeds_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_get_filters': {
-      const mod = await import('./apis/ml_get_filters.ts') as Record<string, unknown>
-      return mod['ml_get_filters_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_get_influencers': {
-      const mod = await import('./apis/ml_get_influencers.ts') as Record<string, unknown>
-      return mod['ml_get_influencers_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_get_job_stats': {
-      const mod = await import('./apis/ml_get_job_stats.ts') as Record<string, unknown>
-      return mod['ml_get_job_stats_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_get_jobs': {
-      const mod = await import('./apis/ml_get_jobs.ts') as Record<string, unknown>
-      return mod['ml_get_jobs_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_get_memory_stats': {
-      const mod = await import('./apis/ml_get_memory_stats.ts') as Record<string, unknown>
-      return mod['ml_get_memory_stats_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_get_model_snapshot_upgrade_stats': {
-      const mod = await import('./apis/ml_get_model_snapshot_upgrade_stats.ts') as Record<string, unknown>
-      return mod['ml_get_model_snapshot_upgrade_stats_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_get_model_snapshots': {
-      const mod = await import('./apis/ml_get_model_snapshots.ts') as Record<string, unknown>
-      return mod['ml_get_model_snapshots_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_get_overall_buckets': {
-      const mod = await import('./apis/ml_get_overall_buckets.ts') as Record<string, unknown>
-      return mod['ml_get_overall_buckets_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_get_records': {
-      const mod = await import('./apis/ml_get_records.ts') as Record<string, unknown>
-      return mod['ml_get_records_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_get_trained_models': {
-      const mod = await import('./apis/ml_get_trained_models.ts') as Record<string, unknown>
-      return mod['ml_get_trained_models_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_get_trained_models_stats': {
-      const mod = await import('./apis/ml_get_trained_models_stats.ts') as Record<string, unknown>
-      return mod['ml_get_trained_models_stats_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_infer_trained_model': {
-      const mod = await import('./apis/ml_infer_trained_model.ts') as Record<string, unknown>
-      return mod['ml_infer_trained_model_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_info': {
-      const mod = await import('./apis/ml_info.ts') as Record<string, unknown>
-      return mod['ml_info_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_open_job': {
-      const mod = await import('./apis/ml_open_job.ts') as Record<string, unknown>
-      return mod['ml_open_job_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_post_calendar_events': {
-      const mod = await import('./apis/ml_post_calendar_events.ts') as Record<string, unknown>
-      return mod['ml_post_calendar_events_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_post_data': {
-      const mod = await import('./apis/ml_post_data.ts') as Record<string, unknown>
-      return mod['ml_post_data_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_preview_data_frame_analytics': {
-      const mod = await import('./apis/ml_preview_data_frame_analytics.ts') as Record<string, unknown>
-      return mod['ml_preview_data_frame_analytics_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_preview_datafeed': {
-      const mod = await import('./apis/ml_preview_datafeed.ts') as Record<string, unknown>
-      return mod['ml_preview_datafeed_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_put_calendar': {
-      const mod = await import('./apis/ml_put_calendar.ts') as Record<string, unknown>
-      return mod['ml_put_calendar_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_put_calendar_job': {
-      const mod = await import('./apis/ml_put_calendar_job.ts') as Record<string, unknown>
-      return mod['ml_put_calendar_job_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_put_data_frame_analytics': {
-      const mod = await import('./apis/ml_put_data_frame_analytics.ts') as Record<string, unknown>
-      return mod['ml_put_data_frame_analytics_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_put_datafeed': {
-      const mod = await import('./apis/ml_put_datafeed.ts') as Record<string, unknown>
-      return mod['ml_put_datafeed_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_put_filter': {
-      const mod = await import('./apis/ml_put_filter.ts') as Record<string, unknown>
-      return mod['ml_put_filter_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_put_job': {
-      const mod = await import('./apis/ml_put_job.ts') as Record<string, unknown>
-      return mod['ml_put_job_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_put_trained_model': {
-      const mod = await import('./apis/ml_put_trained_model.ts') as Record<string, unknown>
-      return mod['ml_put_trained_model_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_put_trained_model_alias': {
-      const mod = await import('./apis/ml_put_trained_model_alias.ts') as Record<string, unknown>
-      return mod['ml_put_trained_model_alias_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_put_trained_model_definition_part': {
-      const mod = await import('./apis/ml_put_trained_model_definition_part.ts') as Record<string, unknown>
-      return mod['ml_put_trained_model_definition_part_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_put_trained_model_vocabulary': {
-      const mod = await import('./apis/ml_put_trained_model_vocabulary.ts') as Record<string, unknown>
-      return mod['ml_put_trained_model_vocabulary_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_reset_job': {
-      const mod = await import('./apis/ml_reset_job.ts') as Record<string, unknown>
-      return mod['ml_reset_job_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_revert_model_snapshot': {
-      const mod = await import('./apis/ml_revert_model_snapshot.ts') as Record<string, unknown>
-      return mod['ml_revert_model_snapshot_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_set_upgrade_mode': {
-      const mod = await import('./apis/ml_set_upgrade_mode.ts') as Record<string, unknown>
-      return mod['ml_set_upgrade_mode_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_start_data_frame_analytics': {
-      const mod = await import('./apis/ml_start_data_frame_analytics.ts') as Record<string, unknown>
-      return mod['ml_start_data_frame_analytics_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_start_datafeed': {
-      const mod = await import('./apis/ml_start_datafeed.ts') as Record<string, unknown>
-      return mod['ml_start_datafeed_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_start_trained_model_deployment': {
-      const mod = await import('./apis/ml_start_trained_model_deployment.ts') as Record<string, unknown>
-      return mod['ml_start_trained_model_deployment_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_stop_data_frame_analytics': {
-      const mod = await import('./apis/ml_stop_data_frame_analytics.ts') as Record<string, unknown>
-      return mod['ml_stop_data_frame_analytics_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_stop_datafeed': {
-      const mod = await import('./apis/ml_stop_datafeed.ts') as Record<string, unknown>
-      return mod['ml_stop_datafeed_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_stop_trained_model_deployment': {
-      const mod = await import('./apis/ml_stop_trained_model_deployment.ts') as Record<string, unknown>
-      return mod['ml_stop_trained_model_deployment_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_update_data_frame_analytics': {
-      const mod = await import('./apis/ml_update_data_frame_analytics.ts') as Record<string, unknown>
-      return mod['ml_update_data_frame_analytics_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_update_datafeed': {
-      const mod = await import('./apis/ml_update_datafeed.ts') as Record<string, unknown>
-      return mod['ml_update_datafeed_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_update_filter': {
-      const mod = await import('./apis/ml_update_filter.ts') as Record<string, unknown>
-      return mod['ml_update_filter_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_update_job': {
-      const mod = await import('./apis/ml_update_job.ts') as Record<string, unknown>
-      return mod['ml_update_job_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_update_model_snapshot': {
-      const mod = await import('./apis/ml_update_model_snapshot.ts') as Record<string, unknown>
-      return mod['ml_update_model_snapshot_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_update_trained_model_deployment': {
-      const mod = await import('./apis/ml_update_trained_model_deployment.ts') as Record<string, unknown>
-      return mod['ml_update_trained_model_deployment_definitions'] as EsApiDefinition[]
-    }
-    case 'ml_upgrade_job_snapshot': {
-      const mod = await import('./apis/ml_upgrade_job_snapshot.ts') as Record<string, unknown>
-      return mod['ml_upgrade_job_snapshot_definitions'] as EsApiDefinition[]
+    case 'migration.deprecations': {
+      const mod = await import('./apis/migration.deprecations.ts') as Record<string, unknown>
+      return mod['migration.deprecations_definitions'] as EsApiDefinition[]
+    }
+    case 'migration.get_feature_upgrade_status': {
+      const mod = await import('./apis/migration.get_feature_upgrade_status.ts') as Record<string, unknown>
+      return mod['migration.get_feature_upgrade_status_definitions'] as EsApiDefinition[]
+    }
+    case 'migration.post_feature_upgrade': {
+      const mod = await import('./apis/migration.post_feature_upgrade.ts') as Record<string, unknown>
+      return mod['migration.post_feature_upgrade_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.clear_trained_model_deployment_cache': {
+      const mod = await import('./apis/ml.clear_trained_model_deployment_cache.ts') as Record<string, unknown>
+      return mod['ml.clear_trained_model_deployment_cache_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.close_job': {
+      const mod = await import('./apis/ml.close_job.ts') as Record<string, unknown>
+      return mod['ml.close_job_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.delete_calendar': {
+      const mod = await import('./apis/ml.delete_calendar.ts') as Record<string, unknown>
+      return mod['ml.delete_calendar_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.delete_calendar_event': {
+      const mod = await import('./apis/ml.delete_calendar_event.ts') as Record<string, unknown>
+      return mod['ml.delete_calendar_event_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.delete_calendar_job': {
+      const mod = await import('./apis/ml.delete_calendar_job.ts') as Record<string, unknown>
+      return mod['ml.delete_calendar_job_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.delete_data_frame_analytics': {
+      const mod = await import('./apis/ml.delete_data_frame_analytics.ts') as Record<string, unknown>
+      return mod['ml.delete_data_frame_analytics_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.delete_datafeed': {
+      const mod = await import('./apis/ml.delete_datafeed.ts') as Record<string, unknown>
+      return mod['ml.delete_datafeed_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.delete_expired_data': {
+      const mod = await import('./apis/ml.delete_expired_data.ts') as Record<string, unknown>
+      return mod['ml.delete_expired_data_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.delete_filter': {
+      const mod = await import('./apis/ml.delete_filter.ts') as Record<string, unknown>
+      return mod['ml.delete_filter_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.delete_forecast': {
+      const mod = await import('./apis/ml.delete_forecast.ts') as Record<string, unknown>
+      return mod['ml.delete_forecast_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.delete_job': {
+      const mod = await import('./apis/ml.delete_job.ts') as Record<string, unknown>
+      return mod['ml.delete_job_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.delete_model_snapshot': {
+      const mod = await import('./apis/ml.delete_model_snapshot.ts') as Record<string, unknown>
+      return mod['ml.delete_model_snapshot_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.delete_trained_model': {
+      const mod = await import('./apis/ml.delete_trained_model.ts') as Record<string, unknown>
+      return mod['ml.delete_trained_model_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.delete_trained_model_alias': {
+      const mod = await import('./apis/ml.delete_trained_model_alias.ts') as Record<string, unknown>
+      return mod['ml.delete_trained_model_alias_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.estimate_model_memory': {
+      const mod = await import('./apis/ml.estimate_model_memory.ts') as Record<string, unknown>
+      return mod['ml.estimate_model_memory_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.evaluate_data_frame': {
+      const mod = await import('./apis/ml.evaluate_data_frame.ts') as Record<string, unknown>
+      return mod['ml.evaluate_data_frame_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.explain_data_frame_analytics': {
+      const mod = await import('./apis/ml.explain_data_frame_analytics.ts') as Record<string, unknown>
+      return mod['ml.explain_data_frame_analytics_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.flush_job': {
+      const mod = await import('./apis/ml.flush_job.ts') as Record<string, unknown>
+      return mod['ml.flush_job_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.forecast': {
+      const mod = await import('./apis/ml.forecast.ts') as Record<string, unknown>
+      return mod['ml.forecast_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.get_buckets': {
+      const mod = await import('./apis/ml.get_buckets.ts') as Record<string, unknown>
+      return mod['ml.get_buckets_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.get_calendar_events': {
+      const mod = await import('./apis/ml.get_calendar_events.ts') as Record<string, unknown>
+      return mod['ml.get_calendar_events_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.get_calendars': {
+      const mod = await import('./apis/ml.get_calendars.ts') as Record<string, unknown>
+      return mod['ml.get_calendars_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.get_categories': {
+      const mod = await import('./apis/ml.get_categories.ts') as Record<string, unknown>
+      return mod['ml.get_categories_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.get_data_frame_analytics': {
+      const mod = await import('./apis/ml.get_data_frame_analytics.ts') as Record<string, unknown>
+      return mod['ml.get_data_frame_analytics_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.get_data_frame_analytics_stats': {
+      const mod = await import('./apis/ml.get_data_frame_analytics_stats.ts') as Record<string, unknown>
+      return mod['ml.get_data_frame_analytics_stats_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.get_datafeed_stats': {
+      const mod = await import('./apis/ml.get_datafeed_stats.ts') as Record<string, unknown>
+      return mod['ml.get_datafeed_stats_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.get_datafeeds': {
+      const mod = await import('./apis/ml.get_datafeeds.ts') as Record<string, unknown>
+      return mod['ml.get_datafeeds_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.get_filters': {
+      const mod = await import('./apis/ml.get_filters.ts') as Record<string, unknown>
+      return mod['ml.get_filters_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.get_influencers': {
+      const mod = await import('./apis/ml.get_influencers.ts') as Record<string, unknown>
+      return mod['ml.get_influencers_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.get_job_stats': {
+      const mod = await import('./apis/ml.get_job_stats.ts') as Record<string, unknown>
+      return mod['ml.get_job_stats_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.get_jobs': {
+      const mod = await import('./apis/ml.get_jobs.ts') as Record<string, unknown>
+      return mod['ml.get_jobs_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.get_memory_stats': {
+      const mod = await import('./apis/ml.get_memory_stats.ts') as Record<string, unknown>
+      return mod['ml.get_memory_stats_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.get_model_snapshot_upgrade_stats': {
+      const mod = await import('./apis/ml.get_model_snapshot_upgrade_stats.ts') as Record<string, unknown>
+      return mod['ml.get_model_snapshot_upgrade_stats_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.get_model_snapshots': {
+      const mod = await import('./apis/ml.get_model_snapshots.ts') as Record<string, unknown>
+      return mod['ml.get_model_snapshots_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.get_overall_buckets': {
+      const mod = await import('./apis/ml.get_overall_buckets.ts') as Record<string, unknown>
+      return mod['ml.get_overall_buckets_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.get_records': {
+      const mod = await import('./apis/ml.get_records.ts') as Record<string, unknown>
+      return mod['ml.get_records_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.get_trained_models': {
+      const mod = await import('./apis/ml.get_trained_models.ts') as Record<string, unknown>
+      return mod['ml.get_trained_models_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.get_trained_models_stats': {
+      const mod = await import('./apis/ml.get_trained_models_stats.ts') as Record<string, unknown>
+      return mod['ml.get_trained_models_stats_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.infer_trained_model': {
+      const mod = await import('./apis/ml.infer_trained_model.ts') as Record<string, unknown>
+      return mod['ml.infer_trained_model_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.info': {
+      const mod = await import('./apis/ml.info.ts') as Record<string, unknown>
+      return mod['ml.info_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.open_job': {
+      const mod = await import('./apis/ml.open_job.ts') as Record<string, unknown>
+      return mod['ml.open_job_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.post_calendar_events': {
+      const mod = await import('./apis/ml.post_calendar_events.ts') as Record<string, unknown>
+      return mod['ml.post_calendar_events_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.post_data': {
+      const mod = await import('./apis/ml.post_data.ts') as Record<string, unknown>
+      return mod['ml.post_data_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.preview_data_frame_analytics': {
+      const mod = await import('./apis/ml.preview_data_frame_analytics.ts') as Record<string, unknown>
+      return mod['ml.preview_data_frame_analytics_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.preview_datafeed': {
+      const mod = await import('./apis/ml.preview_datafeed.ts') as Record<string, unknown>
+      return mod['ml.preview_datafeed_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.put_calendar': {
+      const mod = await import('./apis/ml.put_calendar.ts') as Record<string, unknown>
+      return mod['ml.put_calendar_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.put_calendar_job': {
+      const mod = await import('./apis/ml.put_calendar_job.ts') as Record<string, unknown>
+      return mod['ml.put_calendar_job_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.put_data_frame_analytics': {
+      const mod = await import('./apis/ml.put_data_frame_analytics.ts') as Record<string, unknown>
+      return mod['ml.put_data_frame_analytics_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.put_datafeed': {
+      const mod = await import('./apis/ml.put_datafeed.ts') as Record<string, unknown>
+      return mod['ml.put_datafeed_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.put_filter': {
+      const mod = await import('./apis/ml.put_filter.ts') as Record<string, unknown>
+      return mod['ml.put_filter_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.put_job': {
+      const mod = await import('./apis/ml.put_job.ts') as Record<string, unknown>
+      return mod['ml.put_job_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.put_trained_model': {
+      const mod = await import('./apis/ml.put_trained_model.ts') as Record<string, unknown>
+      return mod['ml.put_trained_model_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.put_trained_model_alias': {
+      const mod = await import('./apis/ml.put_trained_model_alias.ts') as Record<string, unknown>
+      return mod['ml.put_trained_model_alias_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.put_trained_model_definition_part': {
+      const mod = await import('./apis/ml.put_trained_model_definition_part.ts') as Record<string, unknown>
+      return mod['ml.put_trained_model_definition_part_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.put_trained_model_vocabulary': {
+      const mod = await import('./apis/ml.put_trained_model_vocabulary.ts') as Record<string, unknown>
+      return mod['ml.put_trained_model_vocabulary_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.reset_job': {
+      const mod = await import('./apis/ml.reset_job.ts') as Record<string, unknown>
+      return mod['ml.reset_job_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.revert_model_snapshot': {
+      const mod = await import('./apis/ml.revert_model_snapshot.ts') as Record<string, unknown>
+      return mod['ml.revert_model_snapshot_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.set_upgrade_mode': {
+      const mod = await import('./apis/ml.set_upgrade_mode.ts') as Record<string, unknown>
+      return mod['ml.set_upgrade_mode_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.start_data_frame_analytics': {
+      const mod = await import('./apis/ml.start_data_frame_analytics.ts') as Record<string, unknown>
+      return mod['ml.start_data_frame_analytics_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.start_datafeed': {
+      const mod = await import('./apis/ml.start_datafeed.ts') as Record<string, unknown>
+      return mod['ml.start_datafeed_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.start_trained_model_deployment': {
+      const mod = await import('./apis/ml.start_trained_model_deployment.ts') as Record<string, unknown>
+      return mod['ml.start_trained_model_deployment_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.stop_data_frame_analytics': {
+      const mod = await import('./apis/ml.stop_data_frame_analytics.ts') as Record<string, unknown>
+      return mod['ml.stop_data_frame_analytics_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.stop_datafeed': {
+      const mod = await import('./apis/ml.stop_datafeed.ts') as Record<string, unknown>
+      return mod['ml.stop_datafeed_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.stop_trained_model_deployment': {
+      const mod = await import('./apis/ml.stop_trained_model_deployment.ts') as Record<string, unknown>
+      return mod['ml.stop_trained_model_deployment_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.update_data_frame_analytics': {
+      const mod = await import('./apis/ml.update_data_frame_analytics.ts') as Record<string, unknown>
+      return mod['ml.update_data_frame_analytics_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.update_datafeed': {
+      const mod = await import('./apis/ml.update_datafeed.ts') as Record<string, unknown>
+      return mod['ml.update_datafeed_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.update_filter': {
+      const mod = await import('./apis/ml.update_filter.ts') as Record<string, unknown>
+      return mod['ml.update_filter_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.update_job': {
+      const mod = await import('./apis/ml.update_job.ts') as Record<string, unknown>
+      return mod['ml.update_job_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.update_model_snapshot': {
+      const mod = await import('./apis/ml.update_model_snapshot.ts') as Record<string, unknown>
+      return mod['ml.update_model_snapshot_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.update_trained_model_deployment': {
+      const mod = await import('./apis/ml.update_trained_model_deployment.ts') as Record<string, unknown>
+      return mod['ml.update_trained_model_deployment_definitions'] as EsApiDefinition[]
+    }
+    case 'ml.upgrade_job_snapshot': {
+      const mod = await import('./apis/ml.upgrade_job_snapshot.ts') as Record<string, unknown>
+      return mod['ml.upgrade_job_snapshot_definitions'] as EsApiDefinition[]
     }
     case 'msearch': {
       const mod = await import('./apis/msearch.ts') as Record<string, unknown>
@@ -1459,33 +1499,33 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
       const mod = await import('./apis/mtermvectors.ts') as Record<string, unknown>
       return mod['mtermvectors_definitions'] as EsApiDefinition[]
     }
-    case 'nodes_clear_repositories_metering_archive': {
-      const mod = await import('./apis/nodes_clear_repositories_metering_archive.ts') as Record<string, unknown>
-      return mod['nodes_clear_repositories_metering_archive_definitions'] as EsApiDefinition[]
+    case 'nodes.clear_repositories_metering_archive': {
+      const mod = await import('./apis/nodes.clear_repositories_metering_archive.ts') as Record<string, unknown>
+      return mod['nodes.clear_repositories_metering_archive_definitions'] as EsApiDefinition[]
     }
-    case 'nodes_get_repositories_metering_info': {
-      const mod = await import('./apis/nodes_get_repositories_metering_info.ts') as Record<string, unknown>
-      return mod['nodes_get_repositories_metering_info_definitions'] as EsApiDefinition[]
+    case 'nodes.get_repositories_metering_info': {
+      const mod = await import('./apis/nodes.get_repositories_metering_info.ts') as Record<string, unknown>
+      return mod['nodes.get_repositories_metering_info_definitions'] as EsApiDefinition[]
     }
-    case 'nodes_hot_threads': {
-      const mod = await import('./apis/nodes_hot_threads.ts') as Record<string, unknown>
-      return mod['nodes_hot_threads_definitions'] as EsApiDefinition[]
+    case 'nodes.hot_threads': {
+      const mod = await import('./apis/nodes.hot_threads.ts') as Record<string, unknown>
+      return mod['nodes.hot_threads_definitions'] as EsApiDefinition[]
     }
-    case 'nodes_info': {
-      const mod = await import('./apis/nodes_info.ts') as Record<string, unknown>
-      return mod['nodes_info_definitions'] as EsApiDefinition[]
+    case 'nodes.info': {
+      const mod = await import('./apis/nodes.info.ts') as Record<string, unknown>
+      return mod['nodes.info_definitions'] as EsApiDefinition[]
     }
-    case 'nodes_reload_secure_settings': {
-      const mod = await import('./apis/nodes_reload_secure_settings.ts') as Record<string, unknown>
-      return mod['nodes_reload_secure_settings_definitions'] as EsApiDefinition[]
+    case 'nodes.reload_secure_settings': {
+      const mod = await import('./apis/nodes.reload_secure_settings.ts') as Record<string, unknown>
+      return mod['nodes.reload_secure_settings_definitions'] as EsApiDefinition[]
     }
-    case 'nodes_stats': {
-      const mod = await import('./apis/nodes_stats.ts') as Record<string, unknown>
-      return mod['nodes_stats_definitions'] as EsApiDefinition[]
+    case 'nodes.stats': {
+      const mod = await import('./apis/nodes.stats.ts') as Record<string, unknown>
+      return mod['nodes.stats_definitions'] as EsApiDefinition[]
     }
-    case 'nodes_usage': {
-      const mod = await import('./apis/nodes_usage.ts') as Record<string, unknown>
-      return mod['nodes_usage_definitions'] as EsApiDefinition[]
+    case 'nodes.usage': {
+      const mod = await import('./apis/nodes.usage.ts') as Record<string, unknown>
+      return mod['nodes.usage_definitions'] as EsApiDefinition[]
     }
     case 'open_point_in_time': {
       const mod = await import('./apis/open_point_in_time.ts') as Record<string, unknown>
@@ -1495,65 +1535,65 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
       const mod = await import('./apis/ping.ts') as Record<string, unknown>
       return mod['ping_definitions'] as EsApiDefinition[]
     }
-    case 'project_create_many_routing': {
-      const mod = await import('./apis/project_create_many_routing.ts') as Record<string, unknown>
-      return mod['project_create_many_routing_definitions'] as EsApiDefinition[]
+    case 'project.create_many_routing': {
+      const mod = await import('./apis/project.create_many_routing.ts') as Record<string, unknown>
+      return mod['project.create_many_routing_definitions'] as EsApiDefinition[]
     }
-    case 'project_create_routing': {
-      const mod = await import('./apis/project_create_routing.ts') as Record<string, unknown>
-      return mod['project_create_routing_definitions'] as EsApiDefinition[]
+    case 'project.create_routing': {
+      const mod = await import('./apis/project.create_routing.ts') as Record<string, unknown>
+      return mod['project.create_routing_definitions'] as EsApiDefinition[]
     }
-    case 'project_delete_routing': {
-      const mod = await import('./apis/project_delete_routing.ts') as Record<string, unknown>
-      return mod['project_delete_routing_definitions'] as EsApiDefinition[]
+    case 'project.delete_routing': {
+      const mod = await import('./apis/project.delete_routing.ts') as Record<string, unknown>
+      return mod['project.delete_routing_definitions'] as EsApiDefinition[]
     }
-    case 'project_get_many_routing': {
-      const mod = await import('./apis/project_get_many_routing.ts') as Record<string, unknown>
-      return mod['project_get_many_routing_definitions'] as EsApiDefinition[]
+    case 'project.get_many_routing': {
+      const mod = await import('./apis/project.get_many_routing.ts') as Record<string, unknown>
+      return mod['project.get_many_routing_definitions'] as EsApiDefinition[]
     }
-    case 'project_get_routing': {
-      const mod = await import('./apis/project_get_routing.ts') as Record<string, unknown>
-      return mod['project_get_routing_definitions'] as EsApiDefinition[]
+    case 'project.get_routing': {
+      const mod = await import('./apis/project.get_routing.ts') as Record<string, unknown>
+      return mod['project.get_routing_definitions'] as EsApiDefinition[]
     }
-    case 'project_tags': {
-      const mod = await import('./apis/project_tags.ts') as Record<string, unknown>
-      return mod['project_tags_definitions'] as EsApiDefinition[]
+    case 'project.tags': {
+      const mod = await import('./apis/project.tags.ts') as Record<string, unknown>
+      return mod['project.tags_definitions'] as EsApiDefinition[]
     }
     case 'put_script': {
       const mod = await import('./apis/put_script.ts') as Record<string, unknown>
       return mod['put_script_definitions'] as EsApiDefinition[]
     }
-    case 'query_rules_delete_rule': {
-      const mod = await import('./apis/query_rules_delete_rule.ts') as Record<string, unknown>
-      return mod['query_rules_delete_rule_definitions'] as EsApiDefinition[]
+    case 'query_rules.delete_rule': {
+      const mod = await import('./apis/query_rules.delete_rule.ts') as Record<string, unknown>
+      return mod['query_rules.delete_rule_definitions'] as EsApiDefinition[]
     }
-    case 'query_rules_delete_ruleset': {
-      const mod = await import('./apis/query_rules_delete_ruleset.ts') as Record<string, unknown>
-      return mod['query_rules_delete_ruleset_definitions'] as EsApiDefinition[]
+    case 'query_rules.delete_ruleset': {
+      const mod = await import('./apis/query_rules.delete_ruleset.ts') as Record<string, unknown>
+      return mod['query_rules.delete_ruleset_definitions'] as EsApiDefinition[]
     }
-    case 'query_rules_get_rule': {
-      const mod = await import('./apis/query_rules_get_rule.ts') as Record<string, unknown>
-      return mod['query_rules_get_rule_definitions'] as EsApiDefinition[]
+    case 'query_rules.get_rule': {
+      const mod = await import('./apis/query_rules.get_rule.ts') as Record<string, unknown>
+      return mod['query_rules.get_rule_definitions'] as EsApiDefinition[]
     }
-    case 'query_rules_get_ruleset': {
-      const mod = await import('./apis/query_rules_get_ruleset.ts') as Record<string, unknown>
-      return mod['query_rules_get_ruleset_definitions'] as EsApiDefinition[]
+    case 'query_rules.get_ruleset': {
+      const mod = await import('./apis/query_rules.get_ruleset.ts') as Record<string, unknown>
+      return mod['query_rules.get_ruleset_definitions'] as EsApiDefinition[]
     }
-    case 'query_rules_list_rulesets': {
-      const mod = await import('./apis/query_rules_list_rulesets.ts') as Record<string, unknown>
-      return mod['query_rules_list_rulesets_definitions'] as EsApiDefinition[]
+    case 'query_rules.list_rulesets': {
+      const mod = await import('./apis/query_rules.list_rulesets.ts') as Record<string, unknown>
+      return mod['query_rules.list_rulesets_definitions'] as EsApiDefinition[]
     }
-    case 'query_rules_put_rule': {
-      const mod = await import('./apis/query_rules_put_rule.ts') as Record<string, unknown>
-      return mod['query_rules_put_rule_definitions'] as EsApiDefinition[]
+    case 'query_rules.put_rule': {
+      const mod = await import('./apis/query_rules.put_rule.ts') as Record<string, unknown>
+      return mod['query_rules.put_rule_definitions'] as EsApiDefinition[]
     }
-    case 'query_rules_put_ruleset': {
-      const mod = await import('./apis/query_rules_put_ruleset.ts') as Record<string, unknown>
-      return mod['query_rules_put_ruleset_definitions'] as EsApiDefinition[]
+    case 'query_rules.put_ruleset': {
+      const mod = await import('./apis/query_rules.put_ruleset.ts') as Record<string, unknown>
+      return mod['query_rules.put_ruleset_definitions'] as EsApiDefinition[]
     }
-    case 'query_rules_test': {
-      const mod = await import('./apis/query_rules_test.ts') as Record<string, unknown>
-      return mod['query_rules_test_definitions'] as EsApiDefinition[]
+    case 'query_rules.test': {
+      const mod = await import('./apis/query_rules.test.ts') as Record<string, unknown>
+      return mod['query_rules.test_definitions'] as EsApiDefinition[]
     }
     case 'rank_eval': {
       const mod = await import('./apis/rank_eval.ts') as Record<string, unknown>
@@ -1571,37 +1611,37 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
       const mod = await import('./apis/render_search_template.ts') as Record<string, unknown>
       return mod['render_search_template_definitions'] as EsApiDefinition[]
     }
-    case 'rollup_delete_job': {
-      const mod = await import('./apis/rollup_delete_job.ts') as Record<string, unknown>
-      return mod['rollup_delete_job_definitions'] as EsApiDefinition[]
+    case 'rollup.delete_job': {
+      const mod = await import('./apis/rollup.delete_job.ts') as Record<string, unknown>
+      return mod['rollup.delete_job_definitions'] as EsApiDefinition[]
     }
-    case 'rollup_get_jobs': {
-      const mod = await import('./apis/rollup_get_jobs.ts') as Record<string, unknown>
-      return mod['rollup_get_jobs_definitions'] as EsApiDefinition[]
+    case 'rollup.get_jobs': {
+      const mod = await import('./apis/rollup.get_jobs.ts') as Record<string, unknown>
+      return mod['rollup.get_jobs_definitions'] as EsApiDefinition[]
     }
-    case 'rollup_get_rollup_caps': {
-      const mod = await import('./apis/rollup_get_rollup_caps.ts') as Record<string, unknown>
-      return mod['rollup_get_rollup_caps_definitions'] as EsApiDefinition[]
+    case 'rollup.get_rollup_caps': {
+      const mod = await import('./apis/rollup.get_rollup_caps.ts') as Record<string, unknown>
+      return mod['rollup.get_rollup_caps_definitions'] as EsApiDefinition[]
     }
-    case 'rollup_get_rollup_index_caps': {
-      const mod = await import('./apis/rollup_get_rollup_index_caps.ts') as Record<string, unknown>
-      return mod['rollup_get_rollup_index_caps_definitions'] as EsApiDefinition[]
+    case 'rollup.get_rollup_index_caps': {
+      const mod = await import('./apis/rollup.get_rollup_index_caps.ts') as Record<string, unknown>
+      return mod['rollup.get_rollup_index_caps_definitions'] as EsApiDefinition[]
     }
-    case 'rollup_put_job': {
-      const mod = await import('./apis/rollup_put_job.ts') as Record<string, unknown>
-      return mod['rollup_put_job_definitions'] as EsApiDefinition[]
+    case 'rollup.put_job': {
+      const mod = await import('./apis/rollup.put_job.ts') as Record<string, unknown>
+      return mod['rollup.put_job_definitions'] as EsApiDefinition[]
     }
-    case 'rollup_rollup_search': {
-      const mod = await import('./apis/rollup_rollup_search.ts') as Record<string, unknown>
-      return mod['rollup_rollup_search_definitions'] as EsApiDefinition[]
+    case 'rollup.rollup_search': {
+      const mod = await import('./apis/rollup.rollup_search.ts') as Record<string, unknown>
+      return mod['rollup.rollup_search_definitions'] as EsApiDefinition[]
     }
-    case 'rollup_start_job': {
-      const mod = await import('./apis/rollup_start_job.ts') as Record<string, unknown>
-      return mod['rollup_start_job_definitions'] as EsApiDefinition[]
+    case 'rollup.start_job': {
+      const mod = await import('./apis/rollup.start_job.ts') as Record<string, unknown>
+      return mod['rollup.start_job_definitions'] as EsApiDefinition[]
     }
-    case 'rollup_stop_job': {
-      const mod = await import('./apis/rollup_stop_job.ts') as Record<string, unknown>
-      return mod['rollup_stop_job_definitions'] as EsApiDefinition[]
+    case 'rollup.stop_job': {
+      const mod = await import('./apis/rollup.stop_job.ts') as Record<string, unknown>
+      return mod['rollup.stop_job_definitions'] as EsApiDefinition[]
     }
     case 'scripts_painless_execute': {
       const mod = await import('./apis/scripts_painless_execute.ts') as Record<string, unknown>
@@ -1615,45 +1655,45 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
       const mod = await import('./apis/search.ts') as Record<string, unknown>
       return mod['search_definitions'] as EsApiDefinition[]
     }
-    case 'search_application_delete': {
-      const mod = await import('./apis/search_application_delete.ts') as Record<string, unknown>
-      return mod['search_application_delete_definitions'] as EsApiDefinition[]
+    case 'search_application.delete': {
+      const mod = await import('./apis/search_application.delete.ts') as Record<string, unknown>
+      return mod['search_application.delete_definitions'] as EsApiDefinition[]
     }
-    case 'search_application_delete_behavioral_analytics': {
-      const mod = await import('./apis/search_application_delete_behavioral_analytics.ts') as Record<string, unknown>
-      return mod['search_application_delete_behavioral_analytics_definitions'] as EsApiDefinition[]
+    case 'search_application.delete_behavioral_analytics': {
+      const mod = await import('./apis/search_application.delete_behavioral_analytics.ts') as Record<string, unknown>
+      return mod['search_application.delete_behavioral_analytics_definitions'] as EsApiDefinition[]
     }
-    case 'search_application_get': {
-      const mod = await import('./apis/search_application_get.ts') as Record<string, unknown>
-      return mod['search_application_get_definitions'] as EsApiDefinition[]
+    case 'search_application.get': {
+      const mod = await import('./apis/search_application.get.ts') as Record<string, unknown>
+      return mod['search_application.get_definitions'] as EsApiDefinition[]
     }
-    case 'search_application_get_behavioral_analytics': {
-      const mod = await import('./apis/search_application_get_behavioral_analytics.ts') as Record<string, unknown>
-      return mod['search_application_get_behavioral_analytics_definitions'] as EsApiDefinition[]
+    case 'search_application.get_behavioral_analytics': {
+      const mod = await import('./apis/search_application.get_behavioral_analytics.ts') as Record<string, unknown>
+      return mod['search_application.get_behavioral_analytics_definitions'] as EsApiDefinition[]
     }
-    case 'search_application_list': {
-      const mod = await import('./apis/search_application_list.ts') as Record<string, unknown>
-      return mod['search_application_list_definitions'] as EsApiDefinition[]
+    case 'search_application.list': {
+      const mod = await import('./apis/search_application.list.ts') as Record<string, unknown>
+      return mod['search_application.list_definitions'] as EsApiDefinition[]
     }
-    case 'search_application_post_behavioral_analytics_event': {
-      const mod = await import('./apis/search_application_post_behavioral_analytics_event.ts') as Record<string, unknown>
-      return mod['search_application_post_behavioral_analytics_event_definitions'] as EsApiDefinition[]
+    case 'search_application.post_behavioral_analytics_event': {
+      const mod = await import('./apis/search_application.post_behavioral_analytics_event.ts') as Record<string, unknown>
+      return mod['search_application.post_behavioral_analytics_event_definitions'] as EsApiDefinition[]
     }
-    case 'search_application_put': {
-      const mod = await import('./apis/search_application_put.ts') as Record<string, unknown>
-      return mod['search_application_put_definitions'] as EsApiDefinition[]
+    case 'search_application.put': {
+      const mod = await import('./apis/search_application.put.ts') as Record<string, unknown>
+      return mod['search_application.put_definitions'] as EsApiDefinition[]
     }
-    case 'search_application_put_behavioral_analytics': {
-      const mod = await import('./apis/search_application_put_behavioral_analytics.ts') as Record<string, unknown>
-      return mod['search_application_put_behavioral_analytics_definitions'] as EsApiDefinition[]
+    case 'search_application.put_behavioral_analytics': {
+      const mod = await import('./apis/search_application.put_behavioral_analytics.ts') as Record<string, unknown>
+      return mod['search_application.put_behavioral_analytics_definitions'] as EsApiDefinition[]
     }
-    case 'search_application_render_query': {
-      const mod = await import('./apis/search_application_render_query.ts') as Record<string, unknown>
-      return mod['search_application_render_query_definitions'] as EsApiDefinition[]
+    case 'search_application.render_query': {
+      const mod = await import('./apis/search_application.render_query.ts') as Record<string, unknown>
+      return mod['search_application.render_query_definitions'] as EsApiDefinition[]
     }
-    case 'search_application_search': {
-      const mod = await import('./apis/search_application_search.ts') as Record<string, unknown>
-      return mod['search_application_search_definitions'] as EsApiDefinition[]
+    case 'search_application.search': {
+      const mod = await import('./apis/search_application.search.ts') as Record<string, unknown>
+      return mod['search_application.search_definitions'] as EsApiDefinition[]
     }
     case 'search_mvt': {
       const mod = await import('./apis/search_mvt.ts') as Record<string, unknown>
@@ -1667,457 +1707,457 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
       const mod = await import('./apis/search_template.ts') as Record<string, unknown>
       return mod['search_template_definitions'] as EsApiDefinition[]
     }
-    case 'searchable_snapshots_cache_stats': {
-      const mod = await import('./apis/searchable_snapshots_cache_stats.ts') as Record<string, unknown>
-      return mod['searchable_snapshots_cache_stats_definitions'] as EsApiDefinition[]
-    }
-    case 'searchable_snapshots_clear_cache': {
-      const mod = await import('./apis/searchable_snapshots_clear_cache.ts') as Record<string, unknown>
-      return mod['searchable_snapshots_clear_cache_definitions'] as EsApiDefinition[]
-    }
-    case 'searchable_snapshots_mount': {
-      const mod = await import('./apis/searchable_snapshots_mount.ts') as Record<string, unknown>
-      return mod['searchable_snapshots_mount_definitions'] as EsApiDefinition[]
-    }
-    case 'searchable_snapshots_stats': {
-      const mod = await import('./apis/searchable_snapshots_stats.ts') as Record<string, unknown>
-      return mod['searchable_snapshots_stats_definitions'] as EsApiDefinition[]
-    }
-    case 'security_activate_user_profile': {
-      const mod = await import('./apis/security_activate_user_profile.ts') as Record<string, unknown>
-      return mod['security_activate_user_profile_definitions'] as EsApiDefinition[]
-    }
-    case 'security_authenticate': {
-      const mod = await import('./apis/security_authenticate.ts') as Record<string, unknown>
-      return mod['security_authenticate_definitions'] as EsApiDefinition[]
-    }
-    case 'security_bulk_delete_role': {
-      const mod = await import('./apis/security_bulk_delete_role.ts') as Record<string, unknown>
-      return mod['security_bulk_delete_role_definitions'] as EsApiDefinition[]
-    }
-    case 'security_bulk_put_role': {
-      const mod = await import('./apis/security_bulk_put_role.ts') as Record<string, unknown>
-      return mod['security_bulk_put_role_definitions'] as EsApiDefinition[]
-    }
-    case 'security_bulk_update_api_keys': {
-      const mod = await import('./apis/security_bulk_update_api_keys.ts') as Record<string, unknown>
-      return mod['security_bulk_update_api_keys_definitions'] as EsApiDefinition[]
-    }
-    case 'security_change_password': {
-      const mod = await import('./apis/security_change_password.ts') as Record<string, unknown>
-      return mod['security_change_password_definitions'] as EsApiDefinition[]
-    }
-    case 'security_clear_api_key_cache': {
-      const mod = await import('./apis/security_clear_api_key_cache.ts') as Record<string, unknown>
-      return mod['security_clear_api_key_cache_definitions'] as EsApiDefinition[]
-    }
-    case 'security_clear_cached_privileges': {
-      const mod = await import('./apis/security_clear_cached_privileges.ts') as Record<string, unknown>
-      return mod['security_clear_cached_privileges_definitions'] as EsApiDefinition[]
-    }
-    case 'security_clear_cached_realms': {
-      const mod = await import('./apis/security_clear_cached_realms.ts') as Record<string, unknown>
-      return mod['security_clear_cached_realms_definitions'] as EsApiDefinition[]
-    }
-    case 'security_clear_cached_roles': {
-      const mod = await import('./apis/security_clear_cached_roles.ts') as Record<string, unknown>
-      return mod['security_clear_cached_roles_definitions'] as EsApiDefinition[]
-    }
-    case 'security_clear_cached_service_tokens': {
-      const mod = await import('./apis/security_clear_cached_service_tokens.ts') as Record<string, unknown>
-      return mod['security_clear_cached_service_tokens_definitions'] as EsApiDefinition[]
-    }
-    case 'security_clone_api_key': {
-      const mod = await import('./apis/security_clone_api_key.ts') as Record<string, unknown>
-      return mod['security_clone_api_key_definitions'] as EsApiDefinition[]
-    }
-    case 'security_create_api_key': {
-      const mod = await import('./apis/security_create_api_key.ts') as Record<string, unknown>
-      return mod['security_create_api_key_definitions'] as EsApiDefinition[]
-    }
-    case 'security_create_cross_cluster_api_key': {
-      const mod = await import('./apis/security_create_cross_cluster_api_key.ts') as Record<string, unknown>
-      return mod['security_create_cross_cluster_api_key_definitions'] as EsApiDefinition[]
-    }
-    case 'security_create_service_token': {
-      const mod = await import('./apis/security_create_service_token.ts') as Record<string, unknown>
-      return mod['security_create_service_token_definitions'] as EsApiDefinition[]
-    }
-    case 'security_delegate_pki': {
-      const mod = await import('./apis/security_delegate_pki.ts') as Record<string, unknown>
-      return mod['security_delegate_pki_definitions'] as EsApiDefinition[]
-    }
-    case 'security_delete_privileges': {
-      const mod = await import('./apis/security_delete_privileges.ts') as Record<string, unknown>
-      return mod['security_delete_privileges_definitions'] as EsApiDefinition[]
-    }
-    case 'security_delete_role': {
-      const mod = await import('./apis/security_delete_role.ts') as Record<string, unknown>
-      return mod['security_delete_role_definitions'] as EsApiDefinition[]
-    }
-    case 'security_delete_role_mapping': {
-      const mod = await import('./apis/security_delete_role_mapping.ts') as Record<string, unknown>
-      return mod['security_delete_role_mapping_definitions'] as EsApiDefinition[]
-    }
-    case 'security_delete_service_token': {
-      const mod = await import('./apis/security_delete_service_token.ts') as Record<string, unknown>
-      return mod['security_delete_service_token_definitions'] as EsApiDefinition[]
-    }
-    case 'security_delete_user': {
-      const mod = await import('./apis/security_delete_user.ts') as Record<string, unknown>
-      return mod['security_delete_user_definitions'] as EsApiDefinition[]
-    }
-    case 'security_disable_user': {
-      const mod = await import('./apis/security_disable_user.ts') as Record<string, unknown>
-      return mod['security_disable_user_definitions'] as EsApiDefinition[]
-    }
-    case 'security_disable_user_profile': {
-      const mod = await import('./apis/security_disable_user_profile.ts') as Record<string, unknown>
-      return mod['security_disable_user_profile_definitions'] as EsApiDefinition[]
-    }
-    case 'security_enable_user': {
-      const mod = await import('./apis/security_enable_user.ts') as Record<string, unknown>
-      return mod['security_enable_user_definitions'] as EsApiDefinition[]
-    }
-    case 'security_enable_user_profile': {
-      const mod = await import('./apis/security_enable_user_profile.ts') as Record<string, unknown>
-      return mod['security_enable_user_profile_definitions'] as EsApiDefinition[]
-    }
-    case 'security_enroll_kibana': {
-      const mod = await import('./apis/security_enroll_kibana.ts') as Record<string, unknown>
-      return mod['security_enroll_kibana_definitions'] as EsApiDefinition[]
-    }
-    case 'security_enroll_node': {
-      const mod = await import('./apis/security_enroll_node.ts') as Record<string, unknown>
-      return mod['security_enroll_node_definitions'] as EsApiDefinition[]
-    }
-    case 'security_get_api_key': {
-      const mod = await import('./apis/security_get_api_key.ts') as Record<string, unknown>
-      return mod['security_get_api_key_definitions'] as EsApiDefinition[]
-    }
-    case 'security_get_builtin_privileges': {
-      const mod = await import('./apis/security_get_builtin_privileges.ts') as Record<string, unknown>
-      return mod['security_get_builtin_privileges_definitions'] as EsApiDefinition[]
-    }
-    case 'security_get_privileges': {
-      const mod = await import('./apis/security_get_privileges.ts') as Record<string, unknown>
-      return mod['security_get_privileges_definitions'] as EsApiDefinition[]
-    }
-    case 'security_get_role': {
-      const mod = await import('./apis/security_get_role.ts') as Record<string, unknown>
-      return mod['security_get_role_definitions'] as EsApiDefinition[]
-    }
-    case 'security_get_role_mapping': {
-      const mod = await import('./apis/security_get_role_mapping.ts') as Record<string, unknown>
-      return mod['security_get_role_mapping_definitions'] as EsApiDefinition[]
-    }
-    case 'security_get_service_accounts': {
-      const mod = await import('./apis/security_get_service_accounts.ts') as Record<string, unknown>
-      return mod['security_get_service_accounts_definitions'] as EsApiDefinition[]
-    }
-    case 'security_get_service_credentials': {
-      const mod = await import('./apis/security_get_service_credentials.ts') as Record<string, unknown>
-      return mod['security_get_service_credentials_definitions'] as EsApiDefinition[]
-    }
-    case 'security_get_settings': {
-      const mod = await import('./apis/security_get_settings.ts') as Record<string, unknown>
-      return mod['security_get_settings_definitions'] as EsApiDefinition[]
-    }
-    case 'security_get_stats': {
-      const mod = await import('./apis/security_get_stats.ts') as Record<string, unknown>
-      return mod['security_get_stats_definitions'] as EsApiDefinition[]
-    }
-    case 'security_get_token': {
-      const mod = await import('./apis/security_get_token.ts') as Record<string, unknown>
-      return mod['security_get_token_definitions'] as EsApiDefinition[]
-    }
-    case 'security_get_user': {
-      const mod = await import('./apis/security_get_user.ts') as Record<string, unknown>
-      return mod['security_get_user_definitions'] as EsApiDefinition[]
-    }
-    case 'security_get_user_privileges': {
-      const mod = await import('./apis/security_get_user_privileges.ts') as Record<string, unknown>
-      return mod['security_get_user_privileges_definitions'] as EsApiDefinition[]
-    }
-    case 'security_get_user_profile': {
-      const mod = await import('./apis/security_get_user_profile.ts') as Record<string, unknown>
-      return mod['security_get_user_profile_definitions'] as EsApiDefinition[]
-    }
-    case 'security_grant_api_key': {
-      const mod = await import('./apis/security_grant_api_key.ts') as Record<string, unknown>
-      return mod['security_grant_api_key_definitions'] as EsApiDefinition[]
-    }
-    case 'security_has_privileges': {
-      const mod = await import('./apis/security_has_privileges.ts') as Record<string, unknown>
-      return mod['security_has_privileges_definitions'] as EsApiDefinition[]
-    }
-    case 'security_has_privileges_user_profile': {
-      const mod = await import('./apis/security_has_privileges_user_profile.ts') as Record<string, unknown>
-      return mod['security_has_privileges_user_profile_definitions'] as EsApiDefinition[]
-    }
-    case 'security_invalidate_api_key': {
-      const mod = await import('./apis/security_invalidate_api_key.ts') as Record<string, unknown>
-      return mod['security_invalidate_api_key_definitions'] as EsApiDefinition[]
-    }
-    case 'security_invalidate_token': {
-      const mod = await import('./apis/security_invalidate_token.ts') as Record<string, unknown>
-      return mod['security_invalidate_token_definitions'] as EsApiDefinition[]
-    }
-    case 'security_oidc_authenticate': {
-      const mod = await import('./apis/security_oidc_authenticate.ts') as Record<string, unknown>
-      return mod['security_oidc_authenticate_definitions'] as EsApiDefinition[]
-    }
-    case 'security_oidc_logout': {
-      const mod = await import('./apis/security_oidc_logout.ts') as Record<string, unknown>
-      return mod['security_oidc_logout_definitions'] as EsApiDefinition[]
-    }
-    case 'security_oidc_prepare_authentication': {
-      const mod = await import('./apis/security_oidc_prepare_authentication.ts') as Record<string, unknown>
-      return mod['security_oidc_prepare_authentication_definitions'] as EsApiDefinition[]
-    }
-    case 'security_put_privileges': {
-      const mod = await import('./apis/security_put_privileges.ts') as Record<string, unknown>
-      return mod['security_put_privileges_definitions'] as EsApiDefinition[]
-    }
-    case 'security_put_role': {
-      const mod = await import('./apis/security_put_role.ts') as Record<string, unknown>
-      return mod['security_put_role_definitions'] as EsApiDefinition[]
-    }
-    case 'security_put_role_mapping': {
-      const mod = await import('./apis/security_put_role_mapping.ts') as Record<string, unknown>
-      return mod['security_put_role_mapping_definitions'] as EsApiDefinition[]
-    }
-    case 'security_put_user': {
-      const mod = await import('./apis/security_put_user.ts') as Record<string, unknown>
-      return mod['security_put_user_definitions'] as EsApiDefinition[]
-    }
-    case 'security_query_api_keys': {
-      const mod = await import('./apis/security_query_api_keys.ts') as Record<string, unknown>
-      return mod['security_query_api_keys_definitions'] as EsApiDefinition[]
-    }
-    case 'security_query_role': {
-      const mod = await import('./apis/security_query_role.ts') as Record<string, unknown>
-      return mod['security_query_role_definitions'] as EsApiDefinition[]
-    }
-    case 'security_query_user': {
-      const mod = await import('./apis/security_query_user.ts') as Record<string, unknown>
-      return mod['security_query_user_definitions'] as EsApiDefinition[]
-    }
-    case 'security_saml_authenticate': {
-      const mod = await import('./apis/security_saml_authenticate.ts') as Record<string, unknown>
-      return mod['security_saml_authenticate_definitions'] as EsApiDefinition[]
-    }
-    case 'security_saml_complete_logout': {
-      const mod = await import('./apis/security_saml_complete_logout.ts') as Record<string, unknown>
-      return mod['security_saml_complete_logout_definitions'] as EsApiDefinition[]
-    }
-    case 'security_saml_invalidate': {
-      const mod = await import('./apis/security_saml_invalidate.ts') as Record<string, unknown>
-      return mod['security_saml_invalidate_definitions'] as EsApiDefinition[]
-    }
-    case 'security_saml_logout': {
-      const mod = await import('./apis/security_saml_logout.ts') as Record<string, unknown>
-      return mod['security_saml_logout_definitions'] as EsApiDefinition[]
-    }
-    case 'security_saml_prepare_authentication': {
-      const mod = await import('./apis/security_saml_prepare_authentication.ts') as Record<string, unknown>
-      return mod['security_saml_prepare_authentication_definitions'] as EsApiDefinition[]
-    }
-    case 'security_saml_service_provider_metadata': {
-      const mod = await import('./apis/security_saml_service_provider_metadata.ts') as Record<string, unknown>
-      return mod['security_saml_service_provider_metadata_definitions'] as EsApiDefinition[]
-    }
-    case 'security_suggest_user_profiles': {
-      const mod = await import('./apis/security_suggest_user_profiles.ts') as Record<string, unknown>
-      return mod['security_suggest_user_profiles_definitions'] as EsApiDefinition[]
-    }
-    case 'security_update_api_key': {
-      const mod = await import('./apis/security_update_api_key.ts') as Record<string, unknown>
-      return mod['security_update_api_key_definitions'] as EsApiDefinition[]
-    }
-    case 'security_update_cross_cluster_api_key': {
-      const mod = await import('./apis/security_update_cross_cluster_api_key.ts') as Record<string, unknown>
-      return mod['security_update_cross_cluster_api_key_definitions'] as EsApiDefinition[]
-    }
-    case 'security_update_settings': {
-      const mod = await import('./apis/security_update_settings.ts') as Record<string, unknown>
-      return mod['security_update_settings_definitions'] as EsApiDefinition[]
-    }
-    case 'security_update_user_profile_data': {
-      const mod = await import('./apis/security_update_user_profile_data.ts') as Record<string, unknown>
-      return mod['security_update_user_profile_data_definitions'] as EsApiDefinition[]
-    }
-    case 'simulate_ingest': {
-      const mod = await import('./apis/simulate_ingest.ts') as Record<string, unknown>
-      return mod['simulate_ingest_definitions'] as EsApiDefinition[]
-    }
-    case 'slm_delete_lifecycle': {
-      const mod = await import('./apis/slm_delete_lifecycle.ts') as Record<string, unknown>
-      return mod['slm_delete_lifecycle_definitions'] as EsApiDefinition[]
-    }
-    case 'slm_execute_lifecycle': {
-      const mod = await import('./apis/slm_execute_lifecycle.ts') as Record<string, unknown>
-      return mod['slm_execute_lifecycle_definitions'] as EsApiDefinition[]
-    }
-    case 'slm_execute_retention': {
-      const mod = await import('./apis/slm_execute_retention.ts') as Record<string, unknown>
-      return mod['slm_execute_retention_definitions'] as EsApiDefinition[]
-    }
-    case 'slm_get_lifecycle': {
-      const mod = await import('./apis/slm_get_lifecycle.ts') as Record<string, unknown>
-      return mod['slm_get_lifecycle_definitions'] as EsApiDefinition[]
-    }
-    case 'slm_get_stats': {
-      const mod = await import('./apis/slm_get_stats.ts') as Record<string, unknown>
-      return mod['slm_get_stats_definitions'] as EsApiDefinition[]
-    }
-    case 'slm_get_status': {
-      const mod = await import('./apis/slm_get_status.ts') as Record<string, unknown>
-      return mod['slm_get_status_definitions'] as EsApiDefinition[]
-    }
-    case 'slm_put_lifecycle': {
-      const mod = await import('./apis/slm_put_lifecycle.ts') as Record<string, unknown>
-      return mod['slm_put_lifecycle_definitions'] as EsApiDefinition[]
-    }
-    case 'slm_start': {
-      const mod = await import('./apis/slm_start.ts') as Record<string, unknown>
-      return mod['slm_start_definitions'] as EsApiDefinition[]
-    }
-    case 'slm_stop': {
-      const mod = await import('./apis/slm_stop.ts') as Record<string, unknown>
-      return mod['slm_stop_definitions'] as EsApiDefinition[]
-    }
-    case 'snapshot_cleanup_repository': {
-      const mod = await import('./apis/snapshot_cleanup_repository.ts') as Record<string, unknown>
-      return mod['snapshot_cleanup_repository_definitions'] as EsApiDefinition[]
-    }
-    case 'snapshot_clone': {
-      const mod = await import('./apis/snapshot_clone.ts') as Record<string, unknown>
-      return mod['snapshot_clone_definitions'] as EsApiDefinition[]
-    }
-    case 'snapshot_create': {
-      const mod = await import('./apis/snapshot_create.ts') as Record<string, unknown>
-      return mod['snapshot_create_definitions'] as EsApiDefinition[]
-    }
-    case 'snapshot_create_repository': {
-      const mod = await import('./apis/snapshot_create_repository.ts') as Record<string, unknown>
-      return mod['snapshot_create_repository_definitions'] as EsApiDefinition[]
-    }
-    case 'snapshot_delete': {
-      const mod = await import('./apis/snapshot_delete.ts') as Record<string, unknown>
-      return mod['snapshot_delete_definitions'] as EsApiDefinition[]
-    }
-    case 'snapshot_delete_repository': {
-      const mod = await import('./apis/snapshot_delete_repository.ts') as Record<string, unknown>
-      return mod['snapshot_delete_repository_definitions'] as EsApiDefinition[]
-    }
-    case 'snapshot_get': {
-      const mod = await import('./apis/snapshot_get.ts') as Record<string, unknown>
-      return mod['snapshot_get_definitions'] as EsApiDefinition[]
-    }
-    case 'snapshot_get_repository': {
-      const mod = await import('./apis/snapshot_get_repository.ts') as Record<string, unknown>
-      return mod['snapshot_get_repository_definitions'] as EsApiDefinition[]
-    }
-    case 'snapshot_repository_analyze': {
-      const mod = await import('./apis/snapshot_repository_analyze.ts') as Record<string, unknown>
-      return mod['snapshot_repository_analyze_definitions'] as EsApiDefinition[]
-    }
-    case 'snapshot_repository_verify_integrity': {
-      const mod = await import('./apis/snapshot_repository_verify_integrity.ts') as Record<string, unknown>
-      return mod['snapshot_repository_verify_integrity_definitions'] as EsApiDefinition[]
-    }
-    case 'snapshot_restore': {
-      const mod = await import('./apis/snapshot_restore.ts') as Record<string, unknown>
-      return mod['snapshot_restore_definitions'] as EsApiDefinition[]
-    }
-    case 'snapshot_status': {
-      const mod = await import('./apis/snapshot_status.ts') as Record<string, unknown>
-      return mod['snapshot_status_definitions'] as EsApiDefinition[]
-    }
-    case 'snapshot_verify_repository': {
-      const mod = await import('./apis/snapshot_verify_repository.ts') as Record<string, unknown>
-      return mod['snapshot_verify_repository_definitions'] as EsApiDefinition[]
-    }
-    case 'sql_clear_cursor': {
-      const mod = await import('./apis/sql_clear_cursor.ts') as Record<string, unknown>
-      return mod['sql_clear_cursor_definitions'] as EsApiDefinition[]
-    }
-    case 'sql_delete_async': {
-      const mod = await import('./apis/sql_delete_async.ts') as Record<string, unknown>
-      return mod['sql_delete_async_definitions'] as EsApiDefinition[]
-    }
-    case 'sql_get_async': {
-      const mod = await import('./apis/sql_get_async.ts') as Record<string, unknown>
-      return mod['sql_get_async_definitions'] as EsApiDefinition[]
-    }
-    case 'sql_get_async_status': {
-      const mod = await import('./apis/sql_get_async_status.ts') as Record<string, unknown>
-      return mod['sql_get_async_status_definitions'] as EsApiDefinition[]
-    }
-    case 'sql_query': {
-      const mod = await import('./apis/sql_query.ts') as Record<string, unknown>
-      return mod['sql_query_definitions'] as EsApiDefinition[]
-    }
-    case 'sql_translate': {
-      const mod = await import('./apis/sql_translate.ts') as Record<string, unknown>
-      return mod['sql_translate_definitions'] as EsApiDefinition[]
-    }
-    case 'ssl_certificates': {
-      const mod = await import('./apis/ssl_certificates.ts') as Record<string, unknown>
-      return mod['ssl_certificates_definitions'] as EsApiDefinition[]
-    }
-    case 'streams_logs_disable': {
-      const mod = await import('./apis/streams_logs_disable.ts') as Record<string, unknown>
-      return mod['streams_logs_disable_definitions'] as EsApiDefinition[]
-    }
-    case 'streams_logs_enable': {
-      const mod = await import('./apis/streams_logs_enable.ts') as Record<string, unknown>
-      return mod['streams_logs_enable_definitions'] as EsApiDefinition[]
-    }
-    case 'streams_status': {
-      const mod = await import('./apis/streams_status.ts') as Record<string, unknown>
-      return mod['streams_status_definitions'] as EsApiDefinition[]
-    }
-    case 'synonyms_delete_synonym': {
-      const mod = await import('./apis/synonyms_delete_synonym.ts') as Record<string, unknown>
-      return mod['synonyms_delete_synonym_definitions'] as EsApiDefinition[]
-    }
-    case 'synonyms_delete_synonym_rule': {
-      const mod = await import('./apis/synonyms_delete_synonym_rule.ts') as Record<string, unknown>
-      return mod['synonyms_delete_synonym_rule_definitions'] as EsApiDefinition[]
-    }
-    case 'synonyms_get_synonym': {
-      const mod = await import('./apis/synonyms_get_synonym.ts') as Record<string, unknown>
-      return mod['synonyms_get_synonym_definitions'] as EsApiDefinition[]
-    }
-    case 'synonyms_get_synonym_rule': {
-      const mod = await import('./apis/synonyms_get_synonym_rule.ts') as Record<string, unknown>
-      return mod['synonyms_get_synonym_rule_definitions'] as EsApiDefinition[]
-    }
-    case 'synonyms_get_synonyms_sets': {
-      const mod = await import('./apis/synonyms_get_synonyms_sets.ts') as Record<string, unknown>
-      return mod['synonyms_get_synonyms_sets_definitions'] as EsApiDefinition[]
-    }
-    case 'synonyms_put_synonym': {
-      const mod = await import('./apis/synonyms_put_synonym.ts') as Record<string, unknown>
-      return mod['synonyms_put_synonym_definitions'] as EsApiDefinition[]
-    }
-    case 'synonyms_put_synonym_rule': {
-      const mod = await import('./apis/synonyms_put_synonym_rule.ts') as Record<string, unknown>
-      return mod['synonyms_put_synonym_rule_definitions'] as EsApiDefinition[]
-    }
-    case 'tasks_cancel': {
-      const mod = await import('./apis/tasks_cancel.ts') as Record<string, unknown>
-      return mod['tasks_cancel_definitions'] as EsApiDefinition[]
-    }
-    case 'tasks_get': {
-      const mod = await import('./apis/tasks_get.ts') as Record<string, unknown>
-      return mod['tasks_get_definitions'] as EsApiDefinition[]
-    }
-    case 'tasks_list': {
-      const mod = await import('./apis/tasks_list.ts') as Record<string, unknown>
-      return mod['tasks_list_definitions'] as EsApiDefinition[]
+    case 'searchable_snapshots.cache_stats': {
+      const mod = await import('./apis/searchable_snapshots.cache_stats.ts') as Record<string, unknown>
+      return mod['searchable_snapshots.cache_stats_definitions'] as EsApiDefinition[]
+    }
+    case 'searchable_snapshots.clear_cache': {
+      const mod = await import('./apis/searchable_snapshots.clear_cache.ts') as Record<string, unknown>
+      return mod['searchable_snapshots.clear_cache_definitions'] as EsApiDefinition[]
+    }
+    case 'searchable_snapshots.mount': {
+      const mod = await import('./apis/searchable_snapshots.mount.ts') as Record<string, unknown>
+      return mod['searchable_snapshots.mount_definitions'] as EsApiDefinition[]
+    }
+    case 'searchable_snapshots.stats': {
+      const mod = await import('./apis/searchable_snapshots.stats.ts') as Record<string, unknown>
+      return mod['searchable_snapshots.stats_definitions'] as EsApiDefinition[]
+    }
+    case 'security.activate_user_profile': {
+      const mod = await import('./apis/security.activate_user_profile.ts') as Record<string, unknown>
+      return mod['security.activate_user_profile_definitions'] as EsApiDefinition[]
+    }
+    case 'security.authenticate': {
+      const mod = await import('./apis/security.authenticate.ts') as Record<string, unknown>
+      return mod['security.authenticate_definitions'] as EsApiDefinition[]
+    }
+    case 'security.bulk_delete_role': {
+      const mod = await import('./apis/security.bulk_delete_role.ts') as Record<string, unknown>
+      return mod['security.bulk_delete_role_definitions'] as EsApiDefinition[]
+    }
+    case 'security.bulk_put_role': {
+      const mod = await import('./apis/security.bulk_put_role.ts') as Record<string, unknown>
+      return mod['security.bulk_put_role_definitions'] as EsApiDefinition[]
+    }
+    case 'security.bulk_update_api_keys': {
+      const mod = await import('./apis/security.bulk_update_api_keys.ts') as Record<string, unknown>
+      return mod['security.bulk_update_api_keys_definitions'] as EsApiDefinition[]
+    }
+    case 'security.change_password': {
+      const mod = await import('./apis/security.change_password.ts') as Record<string, unknown>
+      return mod['security.change_password_definitions'] as EsApiDefinition[]
+    }
+    case 'security.clear_api_key_cache': {
+      const mod = await import('./apis/security.clear_api_key_cache.ts') as Record<string, unknown>
+      return mod['security.clear_api_key_cache_definitions'] as EsApiDefinition[]
+    }
+    case 'security.clear_cached_privileges': {
+      const mod = await import('./apis/security.clear_cached_privileges.ts') as Record<string, unknown>
+      return mod['security.clear_cached_privileges_definitions'] as EsApiDefinition[]
+    }
+    case 'security.clear_cached_realms': {
+      const mod = await import('./apis/security.clear_cached_realms.ts') as Record<string, unknown>
+      return mod['security.clear_cached_realms_definitions'] as EsApiDefinition[]
+    }
+    case 'security.clear_cached_roles': {
+      const mod = await import('./apis/security.clear_cached_roles.ts') as Record<string, unknown>
+      return mod['security.clear_cached_roles_definitions'] as EsApiDefinition[]
+    }
+    case 'security.clear_cached_service_tokens': {
+      const mod = await import('./apis/security.clear_cached_service_tokens.ts') as Record<string, unknown>
+      return mod['security.clear_cached_service_tokens_definitions'] as EsApiDefinition[]
+    }
+    case 'security.clone_api_key': {
+      const mod = await import('./apis/security.clone_api_key.ts') as Record<string, unknown>
+      return mod['security.clone_api_key_definitions'] as EsApiDefinition[]
+    }
+    case 'security.create_api_key': {
+      const mod = await import('./apis/security.create_api_key.ts') as Record<string, unknown>
+      return mod['security.create_api_key_definitions'] as EsApiDefinition[]
+    }
+    case 'security.create_cross_cluster_api_key': {
+      const mod = await import('./apis/security.create_cross_cluster_api_key.ts') as Record<string, unknown>
+      return mod['security.create_cross_cluster_api_key_definitions'] as EsApiDefinition[]
+    }
+    case 'security.create_service_token': {
+      const mod = await import('./apis/security.create_service_token.ts') as Record<string, unknown>
+      return mod['security.create_service_token_definitions'] as EsApiDefinition[]
+    }
+    case 'security.delegate_pki': {
+      const mod = await import('./apis/security.delegate_pki.ts') as Record<string, unknown>
+      return mod['security.delegate_pki_definitions'] as EsApiDefinition[]
+    }
+    case 'security.delete_privileges': {
+      const mod = await import('./apis/security.delete_privileges.ts') as Record<string, unknown>
+      return mod['security.delete_privileges_definitions'] as EsApiDefinition[]
+    }
+    case 'security.delete_role': {
+      const mod = await import('./apis/security.delete_role.ts') as Record<string, unknown>
+      return mod['security.delete_role_definitions'] as EsApiDefinition[]
+    }
+    case 'security.delete_role_mapping': {
+      const mod = await import('./apis/security.delete_role_mapping.ts') as Record<string, unknown>
+      return mod['security.delete_role_mapping_definitions'] as EsApiDefinition[]
+    }
+    case 'security.delete_service_token': {
+      const mod = await import('./apis/security.delete_service_token.ts') as Record<string, unknown>
+      return mod['security.delete_service_token_definitions'] as EsApiDefinition[]
+    }
+    case 'security.delete_user': {
+      const mod = await import('./apis/security.delete_user.ts') as Record<string, unknown>
+      return mod['security.delete_user_definitions'] as EsApiDefinition[]
+    }
+    case 'security.disable_user': {
+      const mod = await import('./apis/security.disable_user.ts') as Record<string, unknown>
+      return mod['security.disable_user_definitions'] as EsApiDefinition[]
+    }
+    case 'security.disable_user_profile': {
+      const mod = await import('./apis/security.disable_user_profile.ts') as Record<string, unknown>
+      return mod['security.disable_user_profile_definitions'] as EsApiDefinition[]
+    }
+    case 'security.enable_user': {
+      const mod = await import('./apis/security.enable_user.ts') as Record<string, unknown>
+      return mod['security.enable_user_definitions'] as EsApiDefinition[]
+    }
+    case 'security.enable_user_profile': {
+      const mod = await import('./apis/security.enable_user_profile.ts') as Record<string, unknown>
+      return mod['security.enable_user_profile_definitions'] as EsApiDefinition[]
+    }
+    case 'security.enroll_kibana': {
+      const mod = await import('./apis/security.enroll_kibana.ts') as Record<string, unknown>
+      return mod['security.enroll_kibana_definitions'] as EsApiDefinition[]
+    }
+    case 'security.enroll_node': {
+      const mod = await import('./apis/security.enroll_node.ts') as Record<string, unknown>
+      return mod['security.enroll_node_definitions'] as EsApiDefinition[]
+    }
+    case 'security.get_api_key': {
+      const mod = await import('./apis/security.get_api_key.ts') as Record<string, unknown>
+      return mod['security.get_api_key_definitions'] as EsApiDefinition[]
+    }
+    case 'security.get_builtin_privileges': {
+      const mod = await import('./apis/security.get_builtin_privileges.ts') as Record<string, unknown>
+      return mod['security.get_builtin_privileges_definitions'] as EsApiDefinition[]
+    }
+    case 'security.get_privileges': {
+      const mod = await import('./apis/security.get_privileges.ts') as Record<string, unknown>
+      return mod['security.get_privileges_definitions'] as EsApiDefinition[]
+    }
+    case 'security.get_role': {
+      const mod = await import('./apis/security.get_role.ts') as Record<string, unknown>
+      return mod['security.get_role_definitions'] as EsApiDefinition[]
+    }
+    case 'security.get_role_mapping': {
+      const mod = await import('./apis/security.get_role_mapping.ts') as Record<string, unknown>
+      return mod['security.get_role_mapping_definitions'] as EsApiDefinition[]
+    }
+    case 'security.get_service_accounts': {
+      const mod = await import('./apis/security.get_service_accounts.ts') as Record<string, unknown>
+      return mod['security.get_service_accounts_definitions'] as EsApiDefinition[]
+    }
+    case 'security.get_service_credentials': {
+      const mod = await import('./apis/security.get_service_credentials.ts') as Record<string, unknown>
+      return mod['security.get_service_credentials_definitions'] as EsApiDefinition[]
+    }
+    case 'security.get_settings': {
+      const mod = await import('./apis/security.get_settings.ts') as Record<string, unknown>
+      return mod['security.get_settings_definitions'] as EsApiDefinition[]
+    }
+    case 'security.get_stats': {
+      const mod = await import('./apis/security.get_stats.ts') as Record<string, unknown>
+      return mod['security.get_stats_definitions'] as EsApiDefinition[]
+    }
+    case 'security.get_token': {
+      const mod = await import('./apis/security.get_token.ts') as Record<string, unknown>
+      return mod['security.get_token_definitions'] as EsApiDefinition[]
+    }
+    case 'security.get_user': {
+      const mod = await import('./apis/security.get_user.ts') as Record<string, unknown>
+      return mod['security.get_user_definitions'] as EsApiDefinition[]
+    }
+    case 'security.get_user_privileges': {
+      const mod = await import('./apis/security.get_user_privileges.ts') as Record<string, unknown>
+      return mod['security.get_user_privileges_definitions'] as EsApiDefinition[]
+    }
+    case 'security.get_user_profile': {
+      const mod = await import('./apis/security.get_user_profile.ts') as Record<string, unknown>
+      return mod['security.get_user_profile_definitions'] as EsApiDefinition[]
+    }
+    case 'security.grant_api_key': {
+      const mod = await import('./apis/security.grant_api_key.ts') as Record<string, unknown>
+      return mod['security.grant_api_key_definitions'] as EsApiDefinition[]
+    }
+    case 'security.has_privileges': {
+      const mod = await import('./apis/security.has_privileges.ts') as Record<string, unknown>
+      return mod['security.has_privileges_definitions'] as EsApiDefinition[]
+    }
+    case 'security.has_privileges_user_profile': {
+      const mod = await import('./apis/security.has_privileges_user_profile.ts') as Record<string, unknown>
+      return mod['security.has_privileges_user_profile_definitions'] as EsApiDefinition[]
+    }
+    case 'security.invalidate_api_key': {
+      const mod = await import('./apis/security.invalidate_api_key.ts') as Record<string, unknown>
+      return mod['security.invalidate_api_key_definitions'] as EsApiDefinition[]
+    }
+    case 'security.invalidate_token': {
+      const mod = await import('./apis/security.invalidate_token.ts') as Record<string, unknown>
+      return mod['security.invalidate_token_definitions'] as EsApiDefinition[]
+    }
+    case 'security.oidc_authenticate': {
+      const mod = await import('./apis/security.oidc_authenticate.ts') as Record<string, unknown>
+      return mod['security.oidc_authenticate_definitions'] as EsApiDefinition[]
+    }
+    case 'security.oidc_logout': {
+      const mod = await import('./apis/security.oidc_logout.ts') as Record<string, unknown>
+      return mod['security.oidc_logout_definitions'] as EsApiDefinition[]
+    }
+    case 'security.oidc_prepare_authentication': {
+      const mod = await import('./apis/security.oidc_prepare_authentication.ts') as Record<string, unknown>
+      return mod['security.oidc_prepare_authentication_definitions'] as EsApiDefinition[]
+    }
+    case 'security.put_privileges': {
+      const mod = await import('./apis/security.put_privileges.ts') as Record<string, unknown>
+      return mod['security.put_privileges_definitions'] as EsApiDefinition[]
+    }
+    case 'security.put_role': {
+      const mod = await import('./apis/security.put_role.ts') as Record<string, unknown>
+      return mod['security.put_role_definitions'] as EsApiDefinition[]
+    }
+    case 'security.put_role_mapping': {
+      const mod = await import('./apis/security.put_role_mapping.ts') as Record<string, unknown>
+      return mod['security.put_role_mapping_definitions'] as EsApiDefinition[]
+    }
+    case 'security.put_user': {
+      const mod = await import('./apis/security.put_user.ts') as Record<string, unknown>
+      return mod['security.put_user_definitions'] as EsApiDefinition[]
+    }
+    case 'security.query_api_keys': {
+      const mod = await import('./apis/security.query_api_keys.ts') as Record<string, unknown>
+      return mod['security.query_api_keys_definitions'] as EsApiDefinition[]
+    }
+    case 'security.query_role': {
+      const mod = await import('./apis/security.query_role.ts') as Record<string, unknown>
+      return mod['security.query_role_definitions'] as EsApiDefinition[]
+    }
+    case 'security.query_user': {
+      const mod = await import('./apis/security.query_user.ts') as Record<string, unknown>
+      return mod['security.query_user_definitions'] as EsApiDefinition[]
+    }
+    case 'security.saml_authenticate': {
+      const mod = await import('./apis/security.saml_authenticate.ts') as Record<string, unknown>
+      return mod['security.saml_authenticate_definitions'] as EsApiDefinition[]
+    }
+    case 'security.saml_complete_logout': {
+      const mod = await import('./apis/security.saml_complete_logout.ts') as Record<string, unknown>
+      return mod['security.saml_complete_logout_definitions'] as EsApiDefinition[]
+    }
+    case 'security.saml_invalidate': {
+      const mod = await import('./apis/security.saml_invalidate.ts') as Record<string, unknown>
+      return mod['security.saml_invalidate_definitions'] as EsApiDefinition[]
+    }
+    case 'security.saml_logout': {
+      const mod = await import('./apis/security.saml_logout.ts') as Record<string, unknown>
+      return mod['security.saml_logout_definitions'] as EsApiDefinition[]
+    }
+    case 'security.saml_prepare_authentication': {
+      const mod = await import('./apis/security.saml_prepare_authentication.ts') as Record<string, unknown>
+      return mod['security.saml_prepare_authentication_definitions'] as EsApiDefinition[]
+    }
+    case 'security.saml_service_provider_metadata': {
+      const mod = await import('./apis/security.saml_service_provider_metadata.ts') as Record<string, unknown>
+      return mod['security.saml_service_provider_metadata_definitions'] as EsApiDefinition[]
+    }
+    case 'security.suggest_user_profiles': {
+      const mod = await import('./apis/security.suggest_user_profiles.ts') as Record<string, unknown>
+      return mod['security.suggest_user_profiles_definitions'] as EsApiDefinition[]
+    }
+    case 'security.update_api_key': {
+      const mod = await import('./apis/security.update_api_key.ts') as Record<string, unknown>
+      return mod['security.update_api_key_definitions'] as EsApiDefinition[]
+    }
+    case 'security.update_cross_cluster_api_key': {
+      const mod = await import('./apis/security.update_cross_cluster_api_key.ts') as Record<string, unknown>
+      return mod['security.update_cross_cluster_api_key_definitions'] as EsApiDefinition[]
+    }
+    case 'security.update_settings': {
+      const mod = await import('./apis/security.update_settings.ts') as Record<string, unknown>
+      return mod['security.update_settings_definitions'] as EsApiDefinition[]
+    }
+    case 'security.update_user_profile_data': {
+      const mod = await import('./apis/security.update_user_profile_data.ts') as Record<string, unknown>
+      return mod['security.update_user_profile_data_definitions'] as EsApiDefinition[]
+    }
+    case 'simulate.ingest': {
+      const mod = await import('./apis/simulate.ingest.ts') as Record<string, unknown>
+      return mod['simulate.ingest_definitions'] as EsApiDefinition[]
+    }
+    case 'slm.delete_lifecycle': {
+      const mod = await import('./apis/slm.delete_lifecycle.ts') as Record<string, unknown>
+      return mod['slm.delete_lifecycle_definitions'] as EsApiDefinition[]
+    }
+    case 'slm.execute_lifecycle': {
+      const mod = await import('./apis/slm.execute_lifecycle.ts') as Record<string, unknown>
+      return mod['slm.execute_lifecycle_definitions'] as EsApiDefinition[]
+    }
+    case 'slm.execute_retention': {
+      const mod = await import('./apis/slm.execute_retention.ts') as Record<string, unknown>
+      return mod['slm.execute_retention_definitions'] as EsApiDefinition[]
+    }
+    case 'slm.get_lifecycle': {
+      const mod = await import('./apis/slm.get_lifecycle.ts') as Record<string, unknown>
+      return mod['slm.get_lifecycle_definitions'] as EsApiDefinition[]
+    }
+    case 'slm.get_stats': {
+      const mod = await import('./apis/slm.get_stats.ts') as Record<string, unknown>
+      return mod['slm.get_stats_definitions'] as EsApiDefinition[]
+    }
+    case 'slm.get_status': {
+      const mod = await import('./apis/slm.get_status.ts') as Record<string, unknown>
+      return mod['slm.get_status_definitions'] as EsApiDefinition[]
+    }
+    case 'slm.put_lifecycle': {
+      const mod = await import('./apis/slm.put_lifecycle.ts') as Record<string, unknown>
+      return mod['slm.put_lifecycle_definitions'] as EsApiDefinition[]
+    }
+    case 'slm.start': {
+      const mod = await import('./apis/slm.start.ts') as Record<string, unknown>
+      return mod['slm.start_definitions'] as EsApiDefinition[]
+    }
+    case 'slm.stop': {
+      const mod = await import('./apis/slm.stop.ts') as Record<string, unknown>
+      return mod['slm.stop_definitions'] as EsApiDefinition[]
+    }
+    case 'snapshot.cleanup_repository': {
+      const mod = await import('./apis/snapshot.cleanup_repository.ts') as Record<string, unknown>
+      return mod['snapshot.cleanup_repository_definitions'] as EsApiDefinition[]
+    }
+    case 'snapshot.clone': {
+      const mod = await import('./apis/snapshot.clone.ts') as Record<string, unknown>
+      return mod['snapshot.clone_definitions'] as EsApiDefinition[]
+    }
+    case 'snapshot.create': {
+      const mod = await import('./apis/snapshot.create.ts') as Record<string, unknown>
+      return mod['snapshot.create_definitions'] as EsApiDefinition[]
+    }
+    case 'snapshot.create_repository': {
+      const mod = await import('./apis/snapshot.create_repository.ts') as Record<string, unknown>
+      return mod['snapshot.create_repository_definitions'] as EsApiDefinition[]
+    }
+    case 'snapshot.delete': {
+      const mod = await import('./apis/snapshot.delete.ts') as Record<string, unknown>
+      return mod['snapshot.delete_definitions'] as EsApiDefinition[]
+    }
+    case 'snapshot.delete_repository': {
+      const mod = await import('./apis/snapshot.delete_repository.ts') as Record<string, unknown>
+      return mod['snapshot.delete_repository_definitions'] as EsApiDefinition[]
+    }
+    case 'snapshot.get': {
+      const mod = await import('./apis/snapshot.get.ts') as Record<string, unknown>
+      return mod['snapshot.get_definitions'] as EsApiDefinition[]
+    }
+    case 'snapshot.get_repository': {
+      const mod = await import('./apis/snapshot.get_repository.ts') as Record<string, unknown>
+      return mod['snapshot.get_repository_definitions'] as EsApiDefinition[]
+    }
+    case 'snapshot.repository_analyze': {
+      const mod = await import('./apis/snapshot.repository_analyze.ts') as Record<string, unknown>
+      return mod['snapshot.repository_analyze_definitions'] as EsApiDefinition[]
+    }
+    case 'snapshot.repository_verify_integrity': {
+      const mod = await import('./apis/snapshot.repository_verify_integrity.ts') as Record<string, unknown>
+      return mod['snapshot.repository_verify_integrity_definitions'] as EsApiDefinition[]
+    }
+    case 'snapshot.restore': {
+      const mod = await import('./apis/snapshot.restore.ts') as Record<string, unknown>
+      return mod['snapshot.restore_definitions'] as EsApiDefinition[]
+    }
+    case 'snapshot.status': {
+      const mod = await import('./apis/snapshot.status.ts') as Record<string, unknown>
+      return mod['snapshot.status_definitions'] as EsApiDefinition[]
+    }
+    case 'snapshot.verify_repository': {
+      const mod = await import('./apis/snapshot.verify_repository.ts') as Record<string, unknown>
+      return mod['snapshot.verify_repository_definitions'] as EsApiDefinition[]
+    }
+    case 'sql.clear_cursor': {
+      const mod = await import('./apis/sql.clear_cursor.ts') as Record<string, unknown>
+      return mod['sql.clear_cursor_definitions'] as EsApiDefinition[]
+    }
+    case 'sql.delete_async': {
+      const mod = await import('./apis/sql.delete_async.ts') as Record<string, unknown>
+      return mod['sql.delete_async_definitions'] as EsApiDefinition[]
+    }
+    case 'sql.get_async': {
+      const mod = await import('./apis/sql.get_async.ts') as Record<string, unknown>
+      return mod['sql.get_async_definitions'] as EsApiDefinition[]
+    }
+    case 'sql.get_async_status': {
+      const mod = await import('./apis/sql.get_async_status.ts') as Record<string, unknown>
+      return mod['sql.get_async_status_definitions'] as EsApiDefinition[]
+    }
+    case 'sql.query': {
+      const mod = await import('./apis/sql.query.ts') as Record<string, unknown>
+      return mod['sql.query_definitions'] as EsApiDefinition[]
+    }
+    case 'sql.translate': {
+      const mod = await import('./apis/sql.translate.ts') as Record<string, unknown>
+      return mod['sql.translate_definitions'] as EsApiDefinition[]
+    }
+    case 'ssl.certificates': {
+      const mod = await import('./apis/ssl.certificates.ts') as Record<string, unknown>
+      return mod['ssl.certificates_definitions'] as EsApiDefinition[]
+    }
+    case 'streams.logs_disable': {
+      const mod = await import('./apis/streams.logs_disable.ts') as Record<string, unknown>
+      return mod['streams.logs_disable_definitions'] as EsApiDefinition[]
+    }
+    case 'streams.logs_enable': {
+      const mod = await import('./apis/streams.logs_enable.ts') as Record<string, unknown>
+      return mod['streams.logs_enable_definitions'] as EsApiDefinition[]
+    }
+    case 'streams.status': {
+      const mod = await import('./apis/streams.status.ts') as Record<string, unknown>
+      return mod['streams.status_definitions'] as EsApiDefinition[]
+    }
+    case 'synonyms.delete_synonym': {
+      const mod = await import('./apis/synonyms.delete_synonym.ts') as Record<string, unknown>
+      return mod['synonyms.delete_synonym_definitions'] as EsApiDefinition[]
+    }
+    case 'synonyms.delete_synonym_rule': {
+      const mod = await import('./apis/synonyms.delete_synonym_rule.ts') as Record<string, unknown>
+      return mod['synonyms.delete_synonym_rule_definitions'] as EsApiDefinition[]
+    }
+    case 'synonyms.get_synonym': {
+      const mod = await import('./apis/synonyms.get_synonym.ts') as Record<string, unknown>
+      return mod['synonyms.get_synonym_definitions'] as EsApiDefinition[]
+    }
+    case 'synonyms.get_synonym_rule': {
+      const mod = await import('./apis/synonyms.get_synonym_rule.ts') as Record<string, unknown>
+      return mod['synonyms.get_synonym_rule_definitions'] as EsApiDefinition[]
+    }
+    case 'synonyms.get_synonyms_sets': {
+      const mod = await import('./apis/synonyms.get_synonyms_sets.ts') as Record<string, unknown>
+      return mod['synonyms.get_synonyms_sets_definitions'] as EsApiDefinition[]
+    }
+    case 'synonyms.put_synonym': {
+      const mod = await import('./apis/synonyms.put_synonym.ts') as Record<string, unknown>
+      return mod['synonyms.put_synonym_definitions'] as EsApiDefinition[]
+    }
+    case 'synonyms.put_synonym_rule': {
+      const mod = await import('./apis/synonyms.put_synonym_rule.ts') as Record<string, unknown>
+      return mod['synonyms.put_synonym_rule_definitions'] as EsApiDefinition[]
+    }
+    case 'tasks.cancel': {
+      const mod = await import('./apis/tasks.cancel.ts') as Record<string, unknown>
+      return mod['tasks.cancel_definitions'] as EsApiDefinition[]
+    }
+    case 'tasks.get': {
+      const mod = await import('./apis/tasks.get.ts') as Record<string, unknown>
+      return mod['tasks.get_definitions'] as EsApiDefinition[]
+    }
+    case 'tasks.list': {
+      const mod = await import('./apis/tasks.list.ts') as Record<string, unknown>
+      return mod['tasks.list_definitions'] as EsApiDefinition[]
     }
     case 'terms_enum': {
       const mod = await import('./apis/terms_enum.ts') as Record<string, unknown>
@@ -2127,73 +2167,73 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
       const mod = await import('./apis/termvectors.ts') as Record<string, unknown>
       return mod['termvectors_definitions'] as EsApiDefinition[]
     }
-    case 'text_structure_find_field_structure': {
-      const mod = await import('./apis/text_structure_find_field_structure.ts') as Record<string, unknown>
-      return mod['text_structure_find_field_structure_definitions'] as EsApiDefinition[]
+    case 'text_structure.find_field_structure': {
+      const mod = await import('./apis/text_structure.find_field_structure.ts') as Record<string, unknown>
+      return mod['text_structure.find_field_structure_definitions'] as EsApiDefinition[]
     }
-    case 'text_structure_find_message_structure': {
-      const mod = await import('./apis/text_structure_find_message_structure.ts') as Record<string, unknown>
-      return mod['text_structure_find_message_structure_definitions'] as EsApiDefinition[]
+    case 'text_structure.find_message_structure': {
+      const mod = await import('./apis/text_structure.find_message_structure.ts') as Record<string, unknown>
+      return mod['text_structure.find_message_structure_definitions'] as EsApiDefinition[]
     }
-    case 'text_structure_find_structure': {
-      const mod = await import('./apis/text_structure_find_structure.ts') as Record<string, unknown>
-      return mod['text_structure_find_structure_definitions'] as EsApiDefinition[]
+    case 'text_structure.find_structure': {
+      const mod = await import('./apis/text_structure.find_structure.ts') as Record<string, unknown>
+      return mod['text_structure.find_structure_definitions'] as EsApiDefinition[]
     }
-    case 'text_structure_test_grok_pattern': {
-      const mod = await import('./apis/text_structure_test_grok_pattern.ts') as Record<string, unknown>
-      return mod['text_structure_test_grok_pattern_definitions'] as EsApiDefinition[]
+    case 'text_structure.test_grok_pattern': {
+      const mod = await import('./apis/text_structure.test_grok_pattern.ts') as Record<string, unknown>
+      return mod['text_structure.test_grok_pattern_definitions'] as EsApiDefinition[]
     }
-    case 'transform_delete_transform': {
-      const mod = await import('./apis/transform_delete_transform.ts') as Record<string, unknown>
-      return mod['transform_delete_transform_definitions'] as EsApiDefinition[]
+    case 'transform.delete_transform': {
+      const mod = await import('./apis/transform.delete_transform.ts') as Record<string, unknown>
+      return mod['transform.delete_transform_definitions'] as EsApiDefinition[]
     }
-    case 'transform_get_node_stats': {
-      const mod = await import('./apis/transform_get_node_stats.ts') as Record<string, unknown>
-      return mod['transform_get_node_stats_definitions'] as EsApiDefinition[]
+    case 'transform.get_node_stats': {
+      const mod = await import('./apis/transform.get_node_stats.ts') as Record<string, unknown>
+      return mod['transform.get_node_stats_definitions'] as EsApiDefinition[]
     }
-    case 'transform_get_transform': {
-      const mod = await import('./apis/transform_get_transform.ts') as Record<string, unknown>
-      return mod['transform_get_transform_definitions'] as EsApiDefinition[]
+    case 'transform.get_transform': {
+      const mod = await import('./apis/transform.get_transform.ts') as Record<string, unknown>
+      return mod['transform.get_transform_definitions'] as EsApiDefinition[]
     }
-    case 'transform_get_transform_stats': {
-      const mod = await import('./apis/transform_get_transform_stats.ts') as Record<string, unknown>
-      return mod['transform_get_transform_stats_definitions'] as EsApiDefinition[]
+    case 'transform.get_transform_stats': {
+      const mod = await import('./apis/transform.get_transform_stats.ts') as Record<string, unknown>
+      return mod['transform.get_transform_stats_definitions'] as EsApiDefinition[]
     }
-    case 'transform_preview_transform': {
-      const mod = await import('./apis/transform_preview_transform.ts') as Record<string, unknown>
-      return mod['transform_preview_transform_definitions'] as EsApiDefinition[]
+    case 'transform.preview_transform': {
+      const mod = await import('./apis/transform.preview_transform.ts') as Record<string, unknown>
+      return mod['transform.preview_transform_definitions'] as EsApiDefinition[]
     }
-    case 'transform_put_transform': {
-      const mod = await import('./apis/transform_put_transform.ts') as Record<string, unknown>
-      return mod['transform_put_transform_definitions'] as EsApiDefinition[]
+    case 'transform.put_transform': {
+      const mod = await import('./apis/transform.put_transform.ts') as Record<string, unknown>
+      return mod['transform.put_transform_definitions'] as EsApiDefinition[]
     }
-    case 'transform_reset_transform': {
-      const mod = await import('./apis/transform_reset_transform.ts') as Record<string, unknown>
-      return mod['transform_reset_transform_definitions'] as EsApiDefinition[]
+    case 'transform.reset_transform': {
+      const mod = await import('./apis/transform.reset_transform.ts') as Record<string, unknown>
+      return mod['transform.reset_transform_definitions'] as EsApiDefinition[]
     }
-    case 'transform_schedule_now_transform': {
-      const mod = await import('./apis/transform_schedule_now_transform.ts') as Record<string, unknown>
-      return mod['transform_schedule_now_transform_definitions'] as EsApiDefinition[]
+    case 'transform.schedule_now_transform': {
+      const mod = await import('./apis/transform.schedule_now_transform.ts') as Record<string, unknown>
+      return mod['transform.schedule_now_transform_definitions'] as EsApiDefinition[]
     }
-    case 'transform_set_upgrade_mode': {
-      const mod = await import('./apis/transform_set_upgrade_mode.ts') as Record<string, unknown>
-      return mod['transform_set_upgrade_mode_definitions'] as EsApiDefinition[]
+    case 'transform.set_upgrade_mode': {
+      const mod = await import('./apis/transform.set_upgrade_mode.ts') as Record<string, unknown>
+      return mod['transform.set_upgrade_mode_definitions'] as EsApiDefinition[]
     }
-    case 'transform_start_transform': {
-      const mod = await import('./apis/transform_start_transform.ts') as Record<string, unknown>
-      return mod['transform_start_transform_definitions'] as EsApiDefinition[]
+    case 'transform.start_transform': {
+      const mod = await import('./apis/transform.start_transform.ts') as Record<string, unknown>
+      return mod['transform.start_transform_definitions'] as EsApiDefinition[]
     }
-    case 'transform_stop_transform': {
-      const mod = await import('./apis/transform_stop_transform.ts') as Record<string, unknown>
-      return mod['transform_stop_transform_definitions'] as EsApiDefinition[]
+    case 'transform.stop_transform': {
+      const mod = await import('./apis/transform.stop_transform.ts') as Record<string, unknown>
+      return mod['transform.stop_transform_definitions'] as EsApiDefinition[]
     }
-    case 'transform_update_transform': {
-      const mod = await import('./apis/transform_update_transform.ts') as Record<string, unknown>
-      return mod['transform_update_transform_definitions'] as EsApiDefinition[]
+    case 'transform.update_transform': {
+      const mod = await import('./apis/transform.update_transform.ts') as Record<string, unknown>
+      return mod['transform.update_transform_definitions'] as EsApiDefinition[]
     }
-    case 'transform_upgrade_transforms': {
-      const mod = await import('./apis/transform_upgrade_transforms.ts') as Record<string, unknown>
-      return mod['transform_upgrade_transforms_definitions'] as EsApiDefinition[]
+    case 'transform.upgrade_transforms': {
+      const mod = await import('./apis/transform.upgrade_transforms.ts') as Record<string, unknown>
+      return mod['transform.upgrade_transforms_definitions'] as EsApiDefinition[]
     }
     case 'update': {
       const mod = await import('./apis/update.ts') as Record<string, unknown>
@@ -2207,65 +2247,65 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
       const mod = await import('./apis/update_by_query_rethrottle.ts') as Record<string, unknown>
       return mod['update_by_query_rethrottle_definitions'] as EsApiDefinition[]
     }
-    case 'watcher_ack_watch': {
-      const mod = await import('./apis/watcher_ack_watch.ts') as Record<string, unknown>
-      return mod['watcher_ack_watch_definitions'] as EsApiDefinition[]
+    case 'watcher.ack_watch': {
+      const mod = await import('./apis/watcher.ack_watch.ts') as Record<string, unknown>
+      return mod['watcher.ack_watch_definitions'] as EsApiDefinition[]
     }
-    case 'watcher_activate_watch': {
-      const mod = await import('./apis/watcher_activate_watch.ts') as Record<string, unknown>
-      return mod['watcher_activate_watch_definitions'] as EsApiDefinition[]
+    case 'watcher.activate_watch': {
+      const mod = await import('./apis/watcher.activate_watch.ts') as Record<string, unknown>
+      return mod['watcher.activate_watch_definitions'] as EsApiDefinition[]
     }
-    case 'watcher_deactivate_watch': {
-      const mod = await import('./apis/watcher_deactivate_watch.ts') as Record<string, unknown>
-      return mod['watcher_deactivate_watch_definitions'] as EsApiDefinition[]
+    case 'watcher.deactivate_watch': {
+      const mod = await import('./apis/watcher.deactivate_watch.ts') as Record<string, unknown>
+      return mod['watcher.deactivate_watch_definitions'] as EsApiDefinition[]
     }
-    case 'watcher_delete_watch': {
-      const mod = await import('./apis/watcher_delete_watch.ts') as Record<string, unknown>
-      return mod['watcher_delete_watch_definitions'] as EsApiDefinition[]
+    case 'watcher.delete_watch': {
+      const mod = await import('./apis/watcher.delete_watch.ts') as Record<string, unknown>
+      return mod['watcher.delete_watch_definitions'] as EsApiDefinition[]
     }
-    case 'watcher_execute_watch': {
-      const mod = await import('./apis/watcher_execute_watch.ts') as Record<string, unknown>
-      return mod['watcher_execute_watch_definitions'] as EsApiDefinition[]
+    case 'watcher.execute_watch': {
+      const mod = await import('./apis/watcher.execute_watch.ts') as Record<string, unknown>
+      return mod['watcher.execute_watch_definitions'] as EsApiDefinition[]
     }
-    case 'watcher_get_settings': {
-      const mod = await import('./apis/watcher_get_settings.ts') as Record<string, unknown>
-      return mod['watcher_get_settings_definitions'] as EsApiDefinition[]
+    case 'watcher.get_settings': {
+      const mod = await import('./apis/watcher.get_settings.ts') as Record<string, unknown>
+      return mod['watcher.get_settings_definitions'] as EsApiDefinition[]
     }
-    case 'watcher_get_watch': {
-      const mod = await import('./apis/watcher_get_watch.ts') as Record<string, unknown>
-      return mod['watcher_get_watch_definitions'] as EsApiDefinition[]
+    case 'watcher.get_watch': {
+      const mod = await import('./apis/watcher.get_watch.ts') as Record<string, unknown>
+      return mod['watcher.get_watch_definitions'] as EsApiDefinition[]
     }
-    case 'watcher_put_watch': {
-      const mod = await import('./apis/watcher_put_watch.ts') as Record<string, unknown>
-      return mod['watcher_put_watch_definitions'] as EsApiDefinition[]
+    case 'watcher.put_watch': {
+      const mod = await import('./apis/watcher.put_watch.ts') as Record<string, unknown>
+      return mod['watcher.put_watch_definitions'] as EsApiDefinition[]
     }
-    case 'watcher_query_watches': {
-      const mod = await import('./apis/watcher_query_watches.ts') as Record<string, unknown>
-      return mod['watcher_query_watches_definitions'] as EsApiDefinition[]
+    case 'watcher.query_watches': {
+      const mod = await import('./apis/watcher.query_watches.ts') as Record<string, unknown>
+      return mod['watcher.query_watches_definitions'] as EsApiDefinition[]
     }
-    case 'watcher_start': {
-      const mod = await import('./apis/watcher_start.ts') as Record<string, unknown>
-      return mod['watcher_start_definitions'] as EsApiDefinition[]
+    case 'watcher.start': {
+      const mod = await import('./apis/watcher.start.ts') as Record<string, unknown>
+      return mod['watcher.start_definitions'] as EsApiDefinition[]
     }
-    case 'watcher_stats': {
-      const mod = await import('./apis/watcher_stats.ts') as Record<string, unknown>
-      return mod['watcher_stats_definitions'] as EsApiDefinition[]
+    case 'watcher.stats': {
+      const mod = await import('./apis/watcher.stats.ts') as Record<string, unknown>
+      return mod['watcher.stats_definitions'] as EsApiDefinition[]
     }
-    case 'watcher_stop': {
-      const mod = await import('./apis/watcher_stop.ts') as Record<string, unknown>
-      return mod['watcher_stop_definitions'] as EsApiDefinition[]
+    case 'watcher.stop': {
+      const mod = await import('./apis/watcher.stop.ts') as Record<string, unknown>
+      return mod['watcher.stop_definitions'] as EsApiDefinition[]
     }
-    case 'watcher_update_settings': {
-      const mod = await import('./apis/watcher_update_settings.ts') as Record<string, unknown>
-      return mod['watcher_update_settings_definitions'] as EsApiDefinition[]
+    case 'watcher.update_settings': {
+      const mod = await import('./apis/watcher.update_settings.ts') as Record<string, unknown>
+      return mod['watcher.update_settings_definitions'] as EsApiDefinition[]
     }
-    case 'xpack_info': {
-      const mod = await import('./apis/xpack_info.ts') as Record<string, unknown>
-      return mod['xpack_info_definitions'] as EsApiDefinition[]
+    case 'xpack.info': {
+      const mod = await import('./apis/xpack.info.ts') as Record<string, unknown>
+      return mod['xpack.info_definitions'] as EsApiDefinition[]
     }
-    case 'xpack_usage': {
-      const mod = await import('./apis/xpack_usage.ts') as Record<string, unknown>
-      return mod['xpack_usage_definitions'] as EsApiDefinition[]
+    case 'xpack.usage': {
+      const mod = await import('./apis/xpack.usage.ts') as Record<string, unknown>
+      return mod['xpack.usage_definitions'] as EsApiDefinition[]
     }
     default: return []
   }

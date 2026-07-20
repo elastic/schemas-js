@@ -243,6 +243,23 @@ export const HealthReportShardsCapacityIndicator = z.object({
 }).meta({ id: 'HealthReportShardsCapacityIndicator' })
 export type HealthReportShardsCapacityIndicator = z.infer<typeof HealthReportShardsCapacityIndicator>
 
+export const HealthReportProjectEncryptionKeyDetails = z.object({
+  active_key_id: z.string().optional(),
+  active_password_id: z.string(),
+  encryption_required: z.boolean().describe('Whether callers must refuse to store secrets when the service is not ready. If `false`, callers may fall back to storing secrets in plaintext (with a warning).'),
+  key_count: integer.optional(),
+  metadata_password_id: z.string().optional(),
+  state: z.string()
+}).meta({ id: 'HealthReportProjectEncryptionKeyDetails' })
+export type HealthReportProjectEncryptionKeyDetails = z.infer<typeof HealthReportProjectEncryptionKeyDetails>
+
+/** PROJECT_ENCRYPTION_KEY */
+export const HealthReportProjectEncryptionKeyIndicator = z.object({
+  ...HealthReportBaseIndicator.shape,
+  details: HealthReportProjectEncryptionKeyDetails.optional()
+}).meta({ id: 'HealthReportProjectEncryptionKeyIndicator' })
+export type HealthReportProjectEncryptionKeyIndicator = z.infer<typeof HealthReportProjectEncryptionKeyIndicator>
+
 export const HealthReportIndicators = z.object({
   master_is_stable: HealthReportMasterIsStableIndicator.optional(),
   shards_availability: HealthReportShardsAvailabilityIndicator.optional(),
@@ -252,7 +269,8 @@ export const HealthReportIndicators = z.object({
   ilm: HealthReportIlmIndicator.optional(),
   slm: HealthReportSlmIndicator.optional(),
   shards_capacity: HealthReportShardsCapacityIndicator.optional(),
-  file_settings: HealthReportFileSettingsIndicator.optional()
+  file_settings: HealthReportFileSettingsIndicator.optional(),
+  project_encryption_key: HealthReportProjectEncryptionKeyIndicator.optional()
 }).meta({ id: 'HealthReportIndicators' })
 export type HealthReportIndicators = z.infer<typeof HealthReportIndicators>
 

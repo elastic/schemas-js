@@ -55,15 +55,6 @@ export type VersionNumber = z.infer<typeof VersionNumber>
 export const VersionType = z.enum(['internal', 'external', 'external_gte']).meta({ id: 'VersionType' })
 export type VersionType = z.infer<typeof VersionType>
 
-export const integer = z.number().meta({ id: 'integer' })
-export type integer = z.infer<typeof integer>
-
-export const WaitForActiveShardOptions = z.enum(['all', 'index-setting']).meta({ id: 'WaitForActiveShardOptions' })
-export type WaitForActiveShardOptions = z.infer<typeof WaitForActiveShardOptions>
-
-export const WaitForActiveShards = z.union([integer, WaitForActiveShardOptions]).meta({ id: 'WaitForActiveShards' })
-export type WaitForActiveShards = z.infer<typeof WaitForActiveShards>
-
 /**
  * Delete a document.
  *
@@ -112,11 +103,10 @@ export const DeleteRequest = z.object({
   if_primary_term: long.describe('Only perform the operation if the document has this primary term.').optional().meta({ found_in: 'query' }),
   if_seq_no: SequenceNumber.describe('Only perform the operation if the document has this sequence number.').optional().meta({ found_in: 'query' }),
   refresh: Refresh.describe('If `true`, Elasticsearch refreshes the affected shards to make this operation visible to search. If `wait_for`, it waits for a refresh to make this operation visible to search. If `false`, it does nothing with refreshes.').optional().meta({ found_in: 'query' }),
-  routing: Routing.describe('A custom value used to route operations to a specific shard.').optional().meta({ found_in: 'query' }),
+  routing: Routing.describe('A custom value used to route operations to a specific shard. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional().meta({ found_in: 'query' }),
   timeout: Duration.describe('The period to wait for active shards. This parameter is useful for situations where the primary shard assigned to perform the delete operation might not be available when the delete operation runs. Some reasons for this might be that the primary shard is currently recovering from a store or undergoing relocation. By default, the delete operation will wait on the primary shard to become available for up to 1 minute before failing and responding with an error.').optional().meta({ found_in: 'query' }),
   version: VersionNumber.describe('An explicit version number for concurrency control. It must match the current version of the document for the request to succeed.').optional().meta({ found_in: 'query' }),
-  version_type: VersionType.describe('The version type.').optional().meta({ found_in: 'query' }),
-  wait_for_active_shards: WaitForActiveShards.describe('The minimum number of shard copies that must be active before proceeding with the operation. You can set it to `all` or any positive integer up to the total number of shards in the index (`number_of_replicas+1`). The default value of `1` means it waits for each primary shard to be active.').optional().meta({ found_in: 'query' })
+  version_type: VersionType.describe('The version type.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'DeleteRequest' })
 export type DeleteRequest = z.infer<typeof DeleteRequest>
 
@@ -147,6 +137,9 @@ export const ErrorCause = z.looseObject({
   get suppressed () { return ErrorCause.array().optional() }
 }).meta({ id: 'ErrorCause' })
 export type ErrorCause = z.infer<typeof ErrorCause>
+
+export const integer = z.number().meta({ id: 'integer' })
+export type integer = z.infer<typeof integer>
 
 export const ShardFailure = z.object({
   index: IndexName.optional(),
