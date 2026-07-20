@@ -108,7 +108,8 @@ export function createRegistry (
       const definitions = await loader(meta.namespaceFile)
       const definition = definitions.find((d) => {
         const defId = d.namespace != null ? `${d.namespace}.${d.name}` : d.name
-        return defId === id
+        const metaId = meta.namespace != null ? `${meta.namespace}.${meta.name}` : meta.name
+        return defId === metaId
       })
       if (definition == null) throw new UnknownApiError(id)
 

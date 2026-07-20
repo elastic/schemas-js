@@ -98,6 +98,7 @@ describe('buildRequest', () => {
 const manifest: readonly ApiRegistryMeta[] = [
   { id: 'indices.create', name: 'create', namespace: 'indices', description: 'Create index', namespaceFile: 'indices_create' },
   { id: 'search', name: 'search', namespace: null, description: 'Search', namespaceFile: 'search' },
+  { id: 'query-rules.delete_rule', name: 'delete-rule', namespace: 'query-rules', description: 'Delete a query rule', namespaceFile: 'query_rules_delete_rule' },
 ]
 
 const indicesCreateDef: ApiRegistryDefinition = {
@@ -121,16 +122,25 @@ const searchApiDef: ApiRegistryDefinition = {
   path: '/_search',
 }
 
+const deleteRuleDef: ApiRegistryDefinition = {
+  name: 'delete-rule',
+  namespace: 'query-rules',
+  description: 'Delete a query rule',
+  method: 'DELETE',
+  path: '/_query_rules/{ruleset_id}/_rule/{rule_id}',
+}
+
 const loader = async (namespaceFile: string): Promise<ApiRegistryDefinition[]> => {
   if (namespaceFile === 'indices_create') return [indicesCreateDef]
   if (namespaceFile === 'search') return [searchApiDef]
+  if (namespaceFile === 'query_rules_delete_rule') return [deleteRuleDef]
   return []
 }
 
 describe('createRegistry', () => {
   it('exposes manifest', () => {
     const registry = createRegistry(manifest, loader)
-    assert.equal(registry.manifest.length, 2)
+    assert.equal(registry.manifest.length, 3)
     assert.equal(registry.manifest[0]!.id, 'indices.create')
   })
 
@@ -165,5 +175,12 @@ describe('createRegistry', () => {
         return true
       }
     )
+  })
+
+  it('loadApi resolves multi-word API where id is snake_case but definition name is kebab-case', async () => {
+    const registry = createRegistry(manifest, loader)
+    const loaded = await registry.loadApi('query-rules.delete_rule')
+    assert.equal(loaded.definition.name, 'delete-rule')
+    assert.equal(loaded.definition.namespace, 'query-rules')
   })
 })
