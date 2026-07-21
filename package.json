@@ -2,9 +2,9 @@
   "name": "@elastic/schemas",
   "version": "0.1.0-alpha.1",
   "description": "Request and response schemas for all Elastic APIs",
-  "main": "lib/index.js",
+  "main": "lib/cjs/index.js",
   "scripts": {
-    "build": "node --max-old-space-size=8192 ./node_modules/.bin/tsc",
+    "build": "node --max-old-space-size=8192 ./node_modules/.bin/tsc && node --max-old-space-size=8192 ./node_modules/.bin/tsc -p tsconfig.cjs.json && node scripts/postbuild-cjs.mjs",
     "generate": "node scripts/generate.mjs",
     "test:lint": "eslint --cache src/",
     "test:unit": "vitest run",
@@ -44,26 +44,32 @@
   "exports": {
     ".": {
       "import": "./lib/index.js",
+      "require": "./lib/cjs/index.js",
       "types": "./lib/index.d.ts"
     },
     "./es/schemas/*.js": {
       "import": "./lib/es/schemas/*.js",
+      "require": "./lib/cjs/es/schemas/*.js",
       "types": "./lib/es/schemas/*.d.ts"
     },
     "./cloud/schemas/*.js": {
       "import": "./lib/cloud/schemas/*.js",
+      "require": "./lib/cjs/cloud/schemas/*.js",
       "types": "./lib/cloud/schemas/*.d.ts"
     },
     "./kibana/schemas/*.js": {
       "import": "./lib/kibana/schemas/*.js",
+      "require": "./lib/cjs/kibana/schemas/*.js",
       "types": "./lib/kibana/schemas/*.d.ts"
     },
     "./kibana/tools/*.js": {
       "import": "./lib/kibana/tools/*.js",
+      "require": "./lib/cjs/kibana/tools/*.js",
       "types": "./lib/kibana/tools/*.d.ts"
     },
     "./es/tools/*.js": {
       "import": "./lib/es/tools/*.js",
+      "require": "./lib/cjs/es/tools/*.js",
       "types": "./lib/es/tools/*.d.ts"
     },
     "./es/json/*.json": "./src/es/json/*.json",
