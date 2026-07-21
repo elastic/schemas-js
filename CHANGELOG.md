@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.2.0-alpha.1](https://github.com/elastic/schemas-js/compare/v0.1.0-alpha.1...v0.2.0-alpha.1) (2026-07-21)
+
+
+### Features
+
+* commonjs exports ([#19](https://github.com/elastic/schemas-js/issues/19)) ([0cc7893](https://github.com/elastic/schemas-js/commit/0cc789352c4447784a625b9f97628e4cd10a34ce))
+
+
+### Bug Fixes
+
+* add more deep exports ([#18](https://github.com/elastic/schemas-js/issues/18)) ([5895492](https://github.com/elastic/schemas-js/commit/589549298d79b7ef55c237b2fb92ba5c1ca5c04a))
+* preserve types.ts files for tools exports ([#16](https://github.com/elastic/schemas-js/issues/16)) ([66d1a64](https://github.com/elastic/schemas-js/commit/66d1a6488ed19fbf693148a84f7e1324d030d380))
+
 ## [0.1.0-alpha.1](https://github.com/elastic/schemas-js/compare/schemas-v0.1.0-alpha.1...schemas-v0.1.0-alpha.1) (2026-07-21)
 
 
