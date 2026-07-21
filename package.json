@@ -43,34 +43,34 @@
   },
   "exports": {
     ".": {
+      "types": "./lib/index.d.ts",
       "import": "./lib/index.js",
-      "require": "./lib/cjs/index.js",
-      "types": "./lib/index.d.ts"
+      "require": "./lib/cjs/index.js"
     },
     "./es/schemas/*.js": {
+      "types": "./lib/es/schemas/*.d.ts",
       "import": "./lib/es/schemas/*.js",
-      "require": "./lib/cjs/es/schemas/*.js",
-      "types": "./lib/es/schemas/*.d.ts"
+      "require": "./lib/cjs/es/schemas/*.js"
     },
     "./cloud/schemas/*.js": {
+      "types": "./lib/cloud/schemas/*.d.ts",
       "import": "./lib/cloud/schemas/*.js",
-      "require": "./lib/cjs/cloud/schemas/*.js",
-      "types": "./lib/cloud/schemas/*.d.ts"
+      "require": "./lib/cjs/cloud/schemas/*.js"
     },
     "./kibana/schemas/*.js": {
+      "types": "./lib/kibana/schemas/*.d.ts",
       "import": "./lib/kibana/schemas/*.js",
-      "require": "./lib/cjs/kibana/schemas/*.js",
-      "types": "./lib/kibana/schemas/*.d.ts"
+      "require": "./lib/cjs/kibana/schemas/*.js"
     },
     "./kibana/tools/*.js": {
+      "types": "./lib/kibana/tools/*.d.ts",
       "import": "./lib/kibana/tools/*.js",
-      "require": "./lib/cjs/kibana/tools/*.js",
-      "types": "./lib/kibana/tools/*.d.ts"
+      "require": "./lib/cjs/kibana/tools/*.js"
     },
     "./es/tools/*.js": {
+      "types": "./lib/es/tools/*.d.ts",
       "import": "./lib/es/tools/*.js",
-      "require": "./lib/cjs/es/tools/*.js",
-      "types": "./lib/es/tools/*.d.ts"
+      "require": "./lib/cjs/es/tools/*.js"
     },
     "./es/json/*.json": "./src/es/json/*.json",
     "./kibana/json/*.json": "./src/kibana/json/*.json",
