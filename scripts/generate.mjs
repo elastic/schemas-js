@@ -56,7 +56,20 @@ function run (cmd, args, cwd) {
 
 async function syncDir (src, dest) {
   await fs.mkdir(dest, { recursive: true })
-  await fs.cp(src, dest, { recursive: true })
+  const entries = await fs.readdir(src, { recursive: true })
+  await Promise.all(
+    entries
+      .filter(f => f.endsWith('.ts') || !f.includes('.'))
+      .map(async (f) => {
+        const srcFile = join(src, f)
+        const destFile = join(dest, f)
+        if (PRESERVE.has(destFile)) return
+        const stat = await fs.stat(srcFile).catch(() => null)
+        if (!stat || stat.isDirectory()) return
+        await fs.mkdir(dirname(destFile), { recursive: true })
+        await fs.copyFile(srcFile, destFile)
+      })
+  )
 }
 
 const PRESERVE = new Set([
