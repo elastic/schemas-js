@@ -1,5 +1,8 @@
 # Elastic Schemas
 
+![@elastic/schemas](https://img.shields.io/npm/v/%40elastic%2Fschemas)
+![Build status](https://img.shields.io/github/actions/workflow/status/elastic/schemas-js/ci.yml)
+
 Schema definitions for all Elastic APIs, including Elasticsearch, Kibana, and Cloud. Available in multiple forms:
 
 - [Zod](https://zod.dev/) schemas
@@ -10,14 +13,10 @@ Also includes basic utilities for building HTTP API requests from inputs that ma
 
 ## Installation
 
-Until this is published to npm, you will need to clone, build and install manually:
+Install from npm:
 
 ```sh
-git clone git@github.com:elastic/schemas-js.git
-cd schemas-js
-npm run build
-cd path/to/your/project
-npm install path/to/schemas-js
+npm install @elastic/schemas
 ```
 
 ### Optional dependencies
@@ -62,12 +61,12 @@ if (!valid) console.error(validate.errors)
 
 ### Zod schemas
 
-If you have Zod installed, import schemas by product namespace and use them like any Zod schema:
+If you have Zod installed, import individual schemas by their module path and use them like any Zod schema:
 
 ```typescript
-import { ElasticsearchSchemas } from '@elastic/schemas'
+import { SearchRequest } from '@elastic/schemas/es/schemas/search.js'
 
-const result = ElasticsearchSchemas.SearchRequest.safeParse({
+const result = SearchRequest.safeParse({
   index: 'my-index',
   query: { match: { title: 'elasticsearch' } },
   size: 10,
@@ -83,9 +82,9 @@ if (!result.success) {
 Load a tool definition by API ID and build a ready-to-send HTTP request:
 
 ```typescript
-import { ElasticsearchTools } from '@elastic/schemas'
+import { esRegistry } from '@elastic/schemas/es/tools/index.js'
 
-const api = await ElasticsearchTools.esRegistry.loadApi('search')
+const api = await esRegistry.loadApi('search')
 
 const request = api.buildRequest({
   index: 'my-index',
@@ -95,19 +94,19 @@ const request = api.buildRequest({
 // { method: 'GET', path: '/my-index/_search', body: { query: ..., size: 10 } }
 ```
 
-Browse available API IDs via `ElasticsearchTools.esRegistry.manifest` (an array of `{ id, name, namespace, description }` entries).
+Browse available API IDs via `esRegistry.manifest` (an array of `{ id, name, namespace, description }` entries).
 
 
 ### Tool manifests
 
-Each product exposes a lightweight manifest — an array of `ApiRegistryMeta` objects (`{ id, name, namespace, description, namespaceFile }`) — without loading any schema code. Import them directly:
+Each product exposes a manifest: a lightweight array of `ApiRegistryMeta` objects describing every available API (`{ id, name, namespace, description, namespaceFile }`). You can import a manifest directly without loading any schema code:
 
 ```typescript
 import { kibanaManifest } from '@elastic/schemas/kibana/tools/manifest.js'
-import { esManifest }     from '@elastic/schemas/es/tools/manifest.js'
+import { esManifest } from '@elastic/schemas/es/tools/manifest.js'
 ```
 
-These are the same manifests available via the registry objects (`ElasticsearchTools.esRegistry.manifest`, etc.), but they can be imported in isolation without pulling in the full schema bundle. `ApiRegistryMeta` is re-exported from the main entry point:
+The `ApiRegistryMeta` type is exported from the main entry point:
 
 ```typescript
 import type { ApiRegistryMeta } from '@elastic/schemas'
@@ -115,18 +114,22 @@ import type { ApiRegistryMeta } from '@elastic/schemas'
 
 ### Available exports
 
-For each API target, the following root exports are available:
+:warning: Importing all the schemas as a single object is going to consume **a lot** of memory, so we encourage you to use the exact path to the schema you need:
 
-| Export | Path | Description |
-|--------|------|-------------|
-| `ElasticsearchSchemas` | `@elastic/schemas` | Zod schemas for all ES APIs |
-| `ElasticsearchTools` | `@elastic/schemas` | ES tool registry + `esRegistry` |
-| `KibanaSchemas` | `@elastic/schemas` | Zod schemas for all Kibana APIs |
-| `KibanaTools` | `@elastic/schemas` | Kibana tool registry + `kibanaRegistry` |
-| `CloudSchemas` | `@elastic/schemas` | Zod schemas for all Cloud APIs |
-| `ApiRegistryMeta` | `@elastic/schemas` | Shared type for manifest entries |
-| `esManifest` | `@elastic/schemas/es/tools/manifest.js` | Lightweight ES API manifest (no schemas) |
-| `kibanaManifest` | `@elastic/schemas/kibana/tools/manifest.js` | Lightweight Kibana API manifest (no schemas) |
+```js
+import { SearchRequest } from '@elastic/schemas/es/schemas/search.js'
+```
+
+However, if you do need a full export as one object, the following exports are provided:
+
+| Export | Description |
+|--------|-------------|
+| `ElasticsearchSchemas` | Zod schemas for all ES APIs |
+| `ElasticsearchTools` | ES tool registry + `esRegistry` |
+| `KibanaSchemas` | Zod schemas for all Kibana APIs |
+| `KibanaTools` | Kibana tool registry + `kibanaRegistry` |
+| `CloudSchemas` | Zod schemas for all Cloud APIs |
+| `ApiRegistryMeta` | Shared type for manifest entries |
 
 ## Version support
 
