@@ -3,8 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { describe, it } from 'node:test'
-import assert from 'node:assert/strict'
+import { describe, it, expect } from 'vitest'
 import { buildRequest, createRegistry } from '../src/registry.ts'
 import { UnknownApiError } from '../src/registry.ts'
 import type { ApiRegistryDefinition, ApiRegistryMeta } from '../src/registry.ts'
@@ -45,50 +44,38 @@ const bulkDef: ApiRegistryDefinition = {
 
 describe('buildRequest', () => {
   it('interpolates path params', () => {
-    const req = buildRequest(searchDef, { index: 'my-index', query: { match_all: {} } })
-    assert.equal(req.path, '/my-index/_search')
+    expect(buildRequest(searchDef, { index: 'my-index', query: { match_all: {} } }).path).toBe('/my-index/_search')
   })
 
   it('puts query params in querystring', () => {
-    const req = buildRequest(searchDef, { index: 'logs', q: 'error', size: 10 })
-    assert.deepEqual(req.querystring, { q: 'error', size: 10 })
+    expect(buildRequest(searchDef, { index: 'logs', q: 'error', size: 10 }).querystring).toEqual({ q: 'error', size: 10 })
   })
 
   it('puts body params in body', () => {
-    const req = buildRequest(searchDef, { index: 'logs', query: { term: { status: 'active' } } })
-    assert.deepEqual(req.body, { query: { term: { status: 'active' } } })
+    expect(buildRequest(searchDef, { index: 'logs', query: { term: { status: 'active' } } }).body).toEqual({ query: { term: { status: 'active' } } })
   })
 
   it('encodes path param values', () => {
-    const req = buildRequest(searchDef, { index: 'my index' })
-    assert.equal(req.path, '/my%20index/_search')
+    expect(buildRequest(searchDef, { index: 'my index' }).path).toBe('/my%20index/_search')
   })
 
   it('skips undefined values', () => {
-    const req = buildRequest(searchDef, { index: 'logs', q: undefined })
-    assert.equal(req.querystring, undefined)
+    expect(buildRequest(searchDef, { index: 'logs', q: undefined }).querystring).toBeUndefined()
   })
 
   it('does not include empty querystring', () => {
-    const req = buildRequest(searchDef, { index: 'logs', query: {} })
-    assert.equal(req.querystring, undefined)
+    expect(buildRequest(searchDef, { index: 'logs', query: {} }).querystring).toBeUndefined()
   })
 
   it('puts ndjson body in bulkBody', () => {
     const req = buildRequest(bulkDef, { operations: ['line1', 'line2'] })
-    assert.deepEqual(req.bulkBody, { operations: ['line1', 'line2'] })
-    assert.equal(req.body, undefined)
+    expect(req.bulkBody).toEqual({ operations: ['line1', 'line2'] })
+    expect(req.body).toBeUndefined()
   })
 
   it('uses querystring for unannotated params', () => {
-    const def: ApiRegistryDefinition = {
-      name: 'test',
-      description: 'Test',
-      method: 'GET',
-      path: '/_test',
-    }
-    const req = buildRequest(def, { unknown: 'value' })
-    assert.deepEqual(req.querystring, { unknown: 'value' })
+    const def: ApiRegistryDefinition = { name: 'test', description: 'Test', method: 'GET', path: '/_test' }
+    expect(buildRequest(def, { unknown: 'value' }).querystring).toEqual({ unknown: 'value' })
   })
 })
 
@@ -102,33 +89,11 @@ const manifest: readonly ApiRegistryMeta[] = [
 ]
 
 const indicesCreateDef: ApiRegistryDefinition = {
-  name: 'create',
-  namespace: 'indices',
-  description: 'Create index',
-  method: 'PUT',
-  path: '/{index}',
-  input: {
-    type: 'object',
-    properties: {
-      index: { type: 'string', 'x-found-in': 'path' },
-    },
-  },
+  name: 'create', namespace: 'indices', description: 'Create index', method: 'PUT', path: '/{index}',
+  input: { type: 'object', properties: { index: { type: 'string', 'x-found-in': 'path' } } },
 }
-
-const searchApiDef: ApiRegistryDefinition = {
-  name: 'search',
-  description: 'Search',
-  method: 'POST',
-  path: '/_search',
-}
-
-const deleteRuleDef: ApiRegistryDefinition = {
-  name: 'delete-rule',
-  namespace: 'query-rules',
-  description: 'Delete a query rule',
-  method: 'DELETE',
-  path: '/_query_rules/{ruleset_id}/_rule/{rule_id}',
-}
+const searchApiDef: ApiRegistryDefinition = { name: 'search', description: 'Search', method: 'POST', path: '/_search' }
+const deleteRuleDef: ApiRegistryDefinition = { name: 'delete-rule', namespace: 'query-rules', description: 'Delete a query rule', method: 'DELETE', path: '/_query_rules/{ruleset_id}/_rule/{rule_id}' }
 
 const loader = async (namespaceFile: string): Promise<ApiRegistryDefinition[]> => {
   if (namespaceFile === 'indices_create') return [indicesCreateDef]
@@ -140,47 +105,42 @@ const loader = async (namespaceFile: string): Promise<ApiRegistryDefinition[]> =
 describe('createRegistry', () => {
   it('exposes manifest', () => {
     const registry = createRegistry(manifest, loader)
-    assert.equal(registry.manifest.length, 3)
-    assert.equal(registry.manifest[0]!.id, 'indices.create')
+    expect(registry.manifest.length).toBe(3)
+    expect(registry.manifest[0]!.id).toBe('indices.create')
   })
 
   it('loadApi resolves a namespaced API', async () => {
     const registry = createRegistry(manifest, loader)
     const loaded = await registry.loadApi('indices.create')
-    assert.equal(loaded.definition.name, 'create')
-    assert.equal(loaded.definition.namespace, 'indices')
+    expect(loaded.definition.name).toBe('create')
+    expect(loaded.definition.namespace).toBe('indices')
   })
 
   it('loadApi returns a working buildRequest', async () => {
     const registry = createRegistry(manifest, loader)
     const loaded = await registry.loadApi('indices.create')
     const req = loaded.buildRequest({ index: 'my-index' })
-    assert.equal(req.path, '/my-index')
-    assert.equal(req.method, 'PUT')
+    expect(req.path).toBe('/my-index')
+    expect(req.method).toBe('PUT')
   })
 
   it('loadApi resolves a root-level API', async () => {
     const registry = createRegistry(manifest, loader)
     const loaded = await registry.loadApi('search')
-    assert.equal(loaded.definition.name, 'search')
+    expect(loaded.definition.name).toBe('search')
   })
 
   it('loadApi throws UnknownApiError for unknown id', async () => {
     const registry = createRegistry(manifest, loader)
-    await assert.rejects(
-      () => registry.loadApi('nonexistent'),
-      (err: unknown) => {
-        assert.ok(err instanceof UnknownApiError)
-        assert.equal((err as UnknownApiError).id, 'nonexistent')
-        return true
-      }
-    )
+    const err = await registry.loadApi('nonexistent').catch(e => e)
+    expect(err).toBeInstanceOf(UnknownApiError)
+    expect((err as UnknownApiError).id).toBe('nonexistent')
   })
 
   it('loadApi resolves multi-word API where id is snake_case but definition name is kebab-case', async () => {
     const registry = createRegistry(manifest, loader)
     const loaded = await registry.loadApi('query-rules.delete_rule')
-    assert.equal(loaded.definition.name, 'delete-rule')
-    assert.equal(loaded.definition.namespace, 'query-rules')
+    expect(loaded.definition.name).toBe('delete-rule')
+    expect(loaded.definition.namespace).toBe('query-rules')
   })
 })

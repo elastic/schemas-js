@@ -92,7 +92,7 @@ jobs:
 
       - name: Unit test
         shell: bash
-        run: bun run test:unit-bun
+        run: bun run test:unit
 
   ci:
     name: CI Result

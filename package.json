@@ -7,13 +7,11 @@
     "build": "node --max-old-space-size=8192 ./node_modules/.bin/tsc",
     "generate": "node scripts/generate.mjs",
     "test:lint": "eslint --cache src/",
-    "test:unit": "tsx --test test/registry.test.ts",
-    "test:unit-bun": "bun test test/*.test.ts",
+    "test:unit": "vitest run",
     "lint:fix": "eslint --cache src/ --fix",
-    "test": "npm run test:lint && npm run test:unit && npm run test:json-schemas",
+    "test": "npm run test:lint && npm run test:unit",
     "license-checker": "license-checker --production --onlyAllow='MIT;Apache-2.0;Apache1.1;ISC;BSD-3-Clause;BSD-2-Clause;0BSD'",
-    "license-header": "./scripts/check-spdx",
-    "test:json-schemas": "tsx --test test/json-schemas.test.ts"
+    "license-header": "./scripts/check-spdx"
   },
   "keywords": [
     "json-schema",
@@ -30,7 +28,6 @@
   },
   "license": "Apache-2.0",
   "type": "module",
-  "dependencies": {},
   "optionalDependencies": {
     "zod": "^4.4.3"
   },
@@ -40,8 +37,9 @@
     "license-checker": "25.0.1",
     "neostandard": "0.13.0",
     "ora": "8.0.0",
-    "tsx": "4.22.4",
-    "typescript": "6.0.3"
+    "tsx": "4.23.0",
+    "typescript": "6.0.3",
+    "vitest": "3.0.0"
   },
   "exports": {
     ".": {
