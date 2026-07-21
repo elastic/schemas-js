@@ -77,6 +77,7 @@ const PRESERVE = new Set([
   join(srcDir, 'json-schema.ts'),
   join(srcDir, 'es', 'tools', 'types.ts'),
   join(srcDir, 'kibana', 'tools', 'types.ts'),
+  join(srcDir, 'cloud', 'tools', 'types.ts'),
   join(srcDir, 'registry.ts'),
 ])
 
@@ -124,6 +125,12 @@ const generators = [
     npmScript: 'ab-tools-kibana',
     outputSubdir: join('ab-tools', 'kibana'),
     srcSubdir: join('kibana', 'tools'),
+  },
+  {
+    name: 'AB tools: Cloud',
+    npmScript: 'ab-tools-cloud',
+    outputSubdir: join('ab-tools', 'cloud'),
+    srcSubdir: join('cloud', 'tools'),
   },
   {
     name: 'JSON Schema: Elasticsearch',

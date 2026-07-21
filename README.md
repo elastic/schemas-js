@@ -104,6 +104,7 @@ Each product exposes a manifest: a lightweight array of `ApiRegistryMeta` object
 ```typescript
 import { kibanaManifest } from '@elastic/schemas/kibana/tools/manifest.js'
 import { esManifest } from '@elastic/schemas/es/tools/manifest.js'
+import { cloudManifest } from '@elastic/schemas/cloud/tools/manifest.js'
 ```
 
 The `ApiRegistryMeta` type is exported from the main entry point:
@@ -129,6 +130,7 @@ However, if you do need a full export as one object, the following exports are p
 | `KibanaSchemas` | Zod schemas for all Kibana APIs |
 | `KibanaTools` | Kibana tool registry + `kibanaRegistry` |
 | `CloudSchemas` | Zod schemas for all Cloud APIs |
+| `CloudTools` | Cloud tool registry + `cloudRegistry` |
 | `ApiRegistryMeta` | Shared type for manifest entries |
 
 ## Version support
