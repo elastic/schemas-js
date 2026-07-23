@@ -7,16 +7,16 @@ export type { ApiRegistry, ApiRegistryMeta } from '../../registry.ts'
 
 import type { JsonSchemaObject } from '../../json-schema.ts'
 
-/** Valid HTTP methods for Kibana API requests. */
+/** Valid HTTP methods for Cloud API requests. */
 export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH' | 'HEAD'
 
 /**
- * Declarative description of a single Kibana API endpoint.
+ * Declarative description of a single Cloud API endpoint.
  */
-export interface KbApiDefinition {
-  /** kebab-case command name (e.g. `"get"`, `"create"`) */
+export interface CloudApiDefinition {
+  /** kebab-case command name (e.g. `"get-deployment"`, `"create-deployment"`) */
   name: string
-  /** Kibana namespace (e.g. `"data-views"`, `"alerting"`) -- determines the parent group in the command tree. */
+  /** Cloud namespace (e.g. `"deployments"`, `"organizations"`) -- determines the parent group in the command tree. */
   namespace: string
   /** human-readable description for `--help` text */
   description: string

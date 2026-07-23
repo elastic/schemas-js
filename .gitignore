@@ -34,3 +34,7 @@ package-lock.json
 
 # ESLint
 /.eslintcache
+
+# devcontainer.json mounts the generator at ../elastic-client-generator-js;
+# ignore it here in case it's ever cloned into place by mistake
+/.devcontainer/elastic-client-generator-js
