@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0-alpha.1](https://github.com/elastic/schemas-js/compare/v0.2.0-alpha.1...v0.3.0-alpha.1) (2026-07-23)
+
+
+### Features
+
+* add tools for the Cloud API ([#23](https://github.com/elastic/schemas-js/issues/23)) ([84619d0](https://github.com/elastic/schemas-js/commit/84619d06a831023cecf2713684df0f841c647311))
+
 ## [0.2.0-alpha.1](https://github.com/elastic/schemas-js/compare/v0.1.0-alpha.1...v0.2.0-alpha.1) (2026-07-21)
 
 
