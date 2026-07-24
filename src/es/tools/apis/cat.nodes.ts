@@ -31,6 +31,7 @@ export const cat_nodes_definitions: EsApiDefinition[] = [
     description: 'Get node information.',
     method: 'GET',
     path: '/_cat/nodes',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

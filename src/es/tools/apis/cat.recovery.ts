@@ -31,6 +31,7 @@ export const cat_recovery_definitions: EsApiDefinition[] = [
     description: 'Get shard recovery information.',
     method: 'GET',
     path: '/_cat/recovery/{index}',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

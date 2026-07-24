@@ -18,6 +18,7 @@ export const fleetOutputsDefinitions: KbApiDefinition[] = [
     description: 'Generate a Logstash API key',
     method: 'POST',
     path: '/api/fleet/logstash_api_keys',
+    destructive: true,
   },
   {
     name: 'get-fleet-outputs',
@@ -25,6 +26,7 @@ export const fleetOutputsDefinitions: KbApiDefinition[] = [
     description: 'Get outputs',
     method: 'GET',
     path: '/api/fleet/outputs',
+    destructive: false,
   },
   {
     name: 'post-fleet-outputs',
@@ -32,6 +34,7 @@ export const fleetOutputsDefinitions: KbApiDefinition[] = [
     description: 'Create output',
     method: 'POST',
     path: '/api/fleet/outputs',
+    destructive: false,
   },
   {
     name: 'delete-fleet-outputs-outputid',
@@ -39,6 +42,7 @@ export const fleetOutputsDefinitions: KbApiDefinition[] = [
     description: 'Delete output',
     method: 'DELETE',
     path: '/api/fleet/outputs/{outputId}',
+    destructive: true,
     input: { type: 'object', properties: { outputId: { type: 'string', description: 'The ID of the output', 'x-found-in': 'path' } }, required: ['outputId'] },
   },
   {
@@ -47,6 +51,7 @@ export const fleetOutputsDefinitions: KbApiDefinition[] = [
     description: 'Get output',
     method: 'GET',
     path: '/api/fleet/outputs/{outputId}',
+    destructive: false,
     input: { type: 'object', properties: { outputId: { type: 'string', description: 'The ID of the output', 'x-found-in': 'path' } }, required: ['outputId'] },
   },
   {
@@ -55,6 +60,7 @@ export const fleetOutputsDefinitions: KbApiDefinition[] = [
     description: 'Update output',
     method: 'PUT',
     path: '/api/fleet/outputs/{outputId}',
+    destructive: true,
     input: { type: 'object', properties: { outputId: { type: 'string', description: 'The ID of the output', 'x-found-in': 'path' } }, required: ['outputId'] },
   },
   {
@@ -63,6 +69,7 @@ export const fleetOutputsDefinitions: KbApiDefinition[] = [
     description: 'Get the latest output health',
     method: 'GET',
     path: '/api/fleet/outputs/{outputId}/health',
+    destructive: false,
     input: { type: 'object', properties: { outputId: { type: 'string', description: 'The ID of the output', 'x-found-in': 'path' } }, required: ['outputId'] },
   },
 ]

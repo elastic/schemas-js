@@ -31,6 +31,7 @@ export const ilm_remove_policy_definitions: EsApiDefinition[] = [
     description: 'Remove policies from an index.',
     method: 'POST',
     path: '/{index}/_ilm/remove',
+    destructive: true,
     input: _inputSchema,
   },
 ]

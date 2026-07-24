@@ -31,6 +31,7 @@ export const security_delegate_pki_definitions: EsApiDefinition[] = [
     description: 'Delegate PKI authentication.',
     method: 'POST',
     path: '/_security/delegate_pki',
+    destructive: true,
     input: _inputSchema,
   },
 ]

@@ -30,6 +30,7 @@ export const field_caps_definitions: EsApiDefinition[] = [
     description: 'Get the field capabilities.',
     method: 'GET',
     path: '/{index}/_field_caps',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const ml_post_data_definitions: EsApiDefinition[] = [
     description: 'Send data to an anomaly detection job for analysis.',
     method: 'POST',
     path: '/_ml/anomaly_detectors/{job_id}/_data',
+    destructive: true,
     input: _inputSchema,
     bodyFormat: 'ndjson',
   },

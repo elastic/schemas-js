@@ -18,6 +18,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Get response actions',
     method: 'GET',
     path: '/api/endpoint/action',
+    destructive: false,
     input: { type: 'object', properties: { page: { type: 'number', description: 'The page number to return.', 'x-found-in': 'query' }, pageSize: { type: 'number', description: 'The number of response actions to return per page.', 'x-found-in': 'query' }, commands: { type: 'string', description: 'A list of response action command names to filter by.', 'x-found-in': 'query' }, agentIds: { type: 'string', description: 'A list of Elastic Agent IDs to filter the response actions by.', 'x-found-in': 'query' }, userIds: { type: 'string', description: 'A list of user IDs that submitted the response actions.', 'x-found-in': 'query' }, startDate: { type: 'string', description: 'A start date in ISO 8601 format or Date Math format (for example, `now-24h`).', 'x-found-in': 'query' }, endDate: { type: 'string', description: 'An end date in ISO 8601 format or Date Math format (for example, `now`).', 'x-found-in': 'query' }, agentTypes: { type: 'string', description: 'The agent type to filter response actions by. Defaults to `endpoint`.', 'x-found-in': 'query' }, withOutputs: { type: 'string', description: 'A list of response action IDs whose outputs should be included in the response.', 'x-found-in': 'query' }, types: { type: 'string', description: 'A list of response action types to filter by (`automated`, `manual`).', 'x-found-in': 'query' } } },
   },
   {
@@ -26,6 +27,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Get response actions status',
     method: 'GET',
     path: '/api/endpoint/action_status',
+    destructive: false,
     input: { type: 'object', properties: { agent_ids: { type: 'string', description: 'A list of agent IDs to get the action status for.', 'x-found-in': 'query' } }, required: ['agent_ids'] },
   },
   {
@@ -34,6 +36,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Get action details',
     method: 'GET',
     path: '/api/endpoint/action/{action_id}',
+    destructive: false,
     input: { type: 'object', properties: { action_id: { type: 'string', description: 'The ID of the response action to retrieve.', 'x-found-in': 'path' } }, required: ['action_id'] },
   },
   {
@@ -42,6 +45,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Get file information',
     method: 'GET',
     path: '/api/endpoint/action/{action_id}/file/{file_id}',
+    destructive: false,
     input: { type: 'object', properties: { action_id: { type: 'string', description: 'The ID of the response action that generated the file.', 'x-found-in': 'path' }, file_id: { type: 'string', description: 'The file identifier is constructed in one of two ways:', 'x-found-in': 'path' } }, required: ['action_id', 'file_id'] },
   },
   {
@@ -50,6 +54,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Download a file',
     method: 'GET',
     path: '/api/endpoint/action/{action_id}/file/{file_id}/download',
+    destructive: false,
     input: { type: 'object', properties: { action_id: { type: 'string', description: 'The ID of the response action that generated the file.', 'x-found-in': 'path' }, file_id: { type: 'string', description: 'The file identifier is constructed in one of two ways:', 'x-found-in': 'path' } }, required: ['action_id', 'file_id'] },
   },
   {
@@ -58,6 +63,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Cancel a response action',
     method: 'POST',
     path: '/api/endpoint/action/cancel',
+    destructive: true,
     input: { type: 'object', properties: { agent_type: { description: 'List of agent types to retrieve. Defaults to `endpoint`.', 'x-found-in': 'body', type: 'string' }, alert_ids: { description: 'If this action is associated with any alerts, they can be specified here. The action will be logged in any cases associated with the specified alerts. Max of 50.', 'x-found-in': 'body' }, case_ids: { description: 'The IDs of cases where the action taken will be logged. Max of 50.', 'x-found-in': 'body' }, comment: { description: 'Optional comment', 'x-found-in': 'body', type: 'string' }, endpoint_ids: { description: 'List of endpoint IDs (cannot contain empty strings). Max of 250.', 'x-found-in': 'body' }, parameters: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['endpoint_ids', 'parameters'] },
   },
   {
@@ -66,6 +72,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Run a command',
     method: 'POST',
     path: '/api/endpoint/action/execute',
+    destructive: true,
     input: { type: 'object', properties: { agent_type: { description: 'List of agent types to retrieve. Defaults to `endpoint`.', 'x-found-in': 'body', type: 'string' }, alert_ids: { description: 'If this action is associated with any alerts, they can be specified here. The action will be logged in any cases associated with the specified alerts. Max of 50.', 'x-found-in': 'body' }, case_ids: { description: 'The IDs of cases where the action taken will be logged. Max of 50.', 'x-found-in': 'body' }, comment: { description: 'Optional comment', 'x-found-in': 'body', type: 'string' }, endpoint_ids: { description: 'List of endpoint IDs (cannot contain empty strings). Max of 250.', 'x-found-in': 'body' }, parameters: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['endpoint_ids', 'parameters'] },
   },
   {
@@ -74,6 +81,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Get a file',
     method: 'POST',
     path: '/api/endpoint/action/get_file',
+    destructive: true,
     input: { type: 'object', properties: { agent_type: { description: 'List of agent types to retrieve. Defaults to `endpoint`.', 'x-found-in': 'body', type: 'string' }, alert_ids: { description: 'If this action is associated with any alerts, they can be specified here. The action will be logged in any cases associated with the specified alerts. Max of 50.', 'x-found-in': 'body' }, case_ids: { description: 'The IDs of cases where the action taken will be logged. Max of 50.', 'x-found-in': 'body' }, comment: { description: 'Optional comment', 'x-found-in': 'body', type: 'string' }, endpoint_ids: { description: 'List of endpoint IDs (cannot contain empty strings). Max of 250.', 'x-found-in': 'body' }, parameters: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['endpoint_ids', 'parameters'] },
   },
   {
@@ -82,6 +90,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Isolate an endpoint',
     method: 'POST',
     path: '/api/endpoint/action/isolate',
+    destructive: true,
     input: { type: 'object', properties: { agent_type: { description: 'List of agent types to retrieve. Defaults to `endpoint`.', 'x-found-in': 'body', type: 'string' }, alert_ids: { description: 'If this action is associated with any alerts, they can be specified here. The action will be logged in any cases associated with the specified alerts. Max of 50.', 'x-found-in': 'body' }, case_ids: { description: 'The IDs of cases where the action taken will be logged. Max of 50.', 'x-found-in': 'body' }, comment: { description: 'Optional comment', 'x-found-in': 'body', type: 'string' }, endpoint_ids: { description: 'List of endpoint IDs (cannot contain empty strings). Max of 250.', 'x-found-in': 'body' }, parameters: { description: 'Parameters object', 'x-found-in': 'body', type: 'object' } }, required: ['endpoint_ids'] },
   },
   {
@@ -90,6 +99,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Terminate a process',
     method: 'POST',
     path: '/api/endpoint/action/kill_process',
+    destructive: true,
     input: { type: 'object', properties: { agent_type: { description: 'List of agent types to retrieve. Defaults to `endpoint`.', 'x-found-in': 'body', type: 'string' }, alert_ids: { description: 'If this action is associated with any alerts, they can be specified here. The action will be logged in any cases associated with the specified alerts. Max of 50.', 'x-found-in': 'body' }, case_ids: { description: 'The IDs of cases where the action taken will be logged. Max of 50.', 'x-found-in': 'body' }, comment: { description: 'Optional comment', 'x-found-in': 'body', type: 'string' }, endpoint_ids: { description: 'List of endpoint IDs (cannot contain empty strings). Max of 250.', 'x-found-in': 'body' }, parameters: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['endpoint_ids', 'parameters'] },
   },
   {
@@ -98,6 +108,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Generate a memory dump from the host machine',
     method: 'POST',
     path: '/api/endpoint/action/memory_dump',
+    destructive: true,
     input: { type: 'object', properties: { agent_type: { description: 'List of agent types to retrieve. Defaults to `endpoint`.', 'x-found-in': 'body', type: 'string' }, alert_ids: { description: 'If this action is associated with any alerts, they can be specified here. The action will be logged in any cases associated with the specified alerts. Max of 50.', 'x-found-in': 'body' }, case_ids: { description: 'The IDs of cases where the action taken will be logged. Max of 50.', 'x-found-in': 'body' }, comment: { description: 'Optional comment', 'x-found-in': 'body', type: 'string' }, endpoint_ids: { description: 'List of endpoint IDs (cannot contain empty strings). Max of 250.', 'x-found-in': 'body' }, parameters: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['endpoint_ids', 'parameters'] },
   },
   {
@@ -106,6 +117,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Run a script',
     method: 'POST',
     path: '/api/endpoint/action/run_script',
+    destructive: true,
     input: { type: 'object', properties: { agent_type: { description: 'List of agent types to retrieve. Defaults to `endpoint`.', 'x-found-in': 'body', type: 'string' }, alert_ids: { description: 'If this action is associated with any alerts, they can be specified here. The action will be logged in any cases associated with the specified alerts. Max of 50.', 'x-found-in': 'body' }, case_ids: { description: 'The IDs of cases where the action taken will be logged. Max of 50.', 'x-found-in': 'body' }, comment: { description: 'Optional comment', 'x-found-in': 'body', type: 'string' }, endpoint_ids: { description: 'List of endpoint IDs (cannot contain empty strings). Max of 250.', 'x-found-in': 'body' }, parameters: { description: 'One of the following set of parameters must be provided for the `agentType` that is specified.', 'x-found-in': 'body', type: 'object' } }, required: ['endpoint_ids', 'parameters'] },
   },
   {
@@ -114,6 +126,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Get running processes',
     method: 'POST',
     path: '/api/endpoint/action/running_procs',
+    destructive: true,
     input: { type: 'object', properties: { agent_type: { description: 'List of agent types to retrieve. Defaults to `endpoint`.', 'x-found-in': 'body', type: 'string' }, alert_ids: { description: 'If this action is associated with any alerts, they can be specified here. The action will be logged in any cases associated with the specified alerts. Max of 50.', 'x-found-in': 'body' }, case_ids: { description: 'The IDs of cases where the action taken will be logged. Max of 50.', 'x-found-in': 'body' }, comment: { description: 'Optional comment', 'x-found-in': 'body', type: 'string' }, endpoint_ids: { description: 'List of endpoint IDs (cannot contain empty strings). Max of 250.', 'x-found-in': 'body' }, parameters: { description: 'Parameters object', 'x-found-in': 'body', type: 'object' } }, required: ['endpoint_ids'] },
   },
   {
@@ -122,6 +135,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Scan a file or directory',
     method: 'POST',
     path: '/api/endpoint/action/scan',
+    destructive: true,
     input: { type: 'object', properties: { agent_type: { description: 'List of agent types to retrieve. Defaults to `endpoint`.', 'x-found-in': 'body', type: 'string' }, alert_ids: { description: 'If this action is associated with any alerts, they can be specified here. The action will be logged in any cases associated with the specified alerts. Max of 50.', 'x-found-in': 'body' }, case_ids: { description: 'The IDs of cases where the action taken will be logged. Max of 50.', 'x-found-in': 'body' }, comment: { description: 'Optional comment', 'x-found-in': 'body', type: 'string' }, endpoint_ids: { description: 'List of endpoint IDs (cannot contain empty strings). Max of 250.', 'x-found-in': 'body' }, parameters: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['endpoint_ids', 'parameters'] },
   },
   {
@@ -130,6 +144,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Get actions state',
     method: 'GET',
     path: '/api/endpoint/action/state',
+    destructive: false,
   },
   {
     name: 'endpoint-suspend-process-action',
@@ -137,6 +152,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Suspend a process',
     method: 'POST',
     path: '/api/endpoint/action/suspend_process',
+    destructive: true,
     input: { type: 'object', properties: { agent_type: { description: 'List of agent types to retrieve. Defaults to `endpoint`.', 'x-found-in': 'body', type: 'string' }, alert_ids: { description: 'If this action is associated with any alerts, they can be specified here. The action will be logged in any cases associated with the specified alerts. Max of 50.', 'x-found-in': 'body' }, case_ids: { description: 'The IDs of cases where the action taken will be logged. Max of 50.', 'x-found-in': 'body' }, comment: { description: 'Optional comment', 'x-found-in': 'body', type: 'string' }, endpoint_ids: { description: 'List of endpoint IDs (cannot contain empty strings). Max of 250.', 'x-found-in': 'body' }, parameters: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['endpoint_ids', 'parameters'] },
   },
   {
@@ -145,6 +161,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Release an isolated endpoint',
     method: 'POST',
     path: '/api/endpoint/action/unisolate',
+    destructive: true,
     input: { type: 'object', properties: { agent_type: { description: 'List of agent types to retrieve. Defaults to `endpoint`.', 'x-found-in': 'body', type: 'string' }, alert_ids: { description: 'If this action is associated with any alerts, they can be specified here. The action will be logged in any cases associated with the specified alerts. Max of 50.', 'x-found-in': 'body' }, case_ids: { description: 'The IDs of cases where the action taken will be logged. Max of 50.', 'x-found-in': 'body' }, comment: { description: 'Optional comment', 'x-found-in': 'body', type: 'string' }, endpoint_ids: { description: 'List of endpoint IDs (cannot contain empty strings). Max of 250.', 'x-found-in': 'body' }, parameters: { description: 'Parameters object', 'x-found-in': 'body', type: 'object' } }, required: ['endpoint_ids'] },
   },
   {
@@ -153,6 +170,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Upload a file',
     method: 'POST',
     path: '/api/endpoint/action/upload',
+    destructive: true,
   },
   {
     name: 'get-endpoint-metadata-list',
@@ -160,6 +178,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Get a metadata list',
     method: 'GET',
     path: '/api/endpoint/metadata',
+    destructive: false,
     input: { type: 'object', properties: { page: { type: 'number', description: 'The page number to return.', 'x-found-in': 'query' }, pageSize: { type: 'number', description: 'The number of endpoints to return per page.', 'x-found-in': 'query' }, kuery: { type: 'string', description: 'A KQL string to filter the endpoint metadata results.', 'x-found-in': 'query' }, hostStatuses: { type: 'string', description: 'A set of host statuses to filter the results by (for example, `healthy`, `updating`).', 'x-found-in': 'query' }, sortField: { type: 'string', description: 'The field used to sort the results.', 'x-found-in': 'query' }, sortDirection: { type: 'string', description: 'The sort order, either `asc` or `desc`.', 'x-found-in': 'query' } }, required: ['hostStatuses'] },
   },
   {
@@ -168,6 +187,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Get metadata',
     method: 'GET',
     path: '/api/endpoint/metadata/{id}',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The agent ID of the endpoint.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -176,6 +196,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Get a policy response',
     method: 'GET',
     path: '/api/endpoint/policy_response',
+    destructive: false,
     input: { type: 'object', properties: { agentId: { type: 'string', description: 'The agent ID to retrieve the policy response for.', 'x-found-in': 'query' } }, required: ['agentId'] },
   },
   {
@@ -184,6 +205,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Get a protection updates note',
     method: 'GET',
     path: '/api/endpoint/protection_updates_note/{package_policy_id}',
+    destructive: false,
     input: { type: 'object', properties: { package_policy_id: { type: 'string', description: 'The package policy ID to retrieve the protection updates note for.', 'x-found-in': 'path' } }, required: ['package_policy_id'] },
   },
   {
@@ -192,6 +214,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Create or update a protection updates note',
     method: 'POST',
     path: '/api/endpoint/protection_updates_note/{package_policy_id}',
+    destructive: true,
     input: { type: 'object', properties: { package_policy_id: { type: 'string', description: 'The package policy ID to create or update the protection updates note for.', 'x-found-in': 'path' }, note: { description: 'The note content.', 'x-found-in': 'body', type: 'string' } }, required: ['package_policy_id'] },
   },
   {
@@ -200,6 +223,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Get a list of scripts',
     method: 'GET',
     path: '/api/endpoint/scripts_library',
+    destructive: false,
     input: { type: 'object', properties: { page: { type: 'number', description: 'Page number of the results to return. Defaults to 1.', 'x-found-in': 'query' }, pageSize: { type: 'number', description: 'Number of results to return per page. Defaults to 10. Max value is 1000.', 'x-found-in': 'query' }, sortField: { type: 'string', description: 'The field to sort the results by. Defaults to name.', 'x-found-in': 'query' }, sortDirection: { type: 'string', description: 'The direction to sort the results by. Defaults to asc (ascending).', 'x-found-in': 'query' }, kuery: { type: 'string', description: 'A KQL query string to filter the list of scripts. Nearly all fields in the script object are searchable.', 'x-found-in': 'query' } } },
   },
   {
@@ -208,6 +232,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Create script',
     method: 'POST',
     path: '/api/endpoint/scripts_library',
+    destructive: false,
     input: { type: 'object', properties: { description: { description: 'Description of the script and its purpose/functionality', 'x-found-in': 'body', type: 'string' }, example: { description: 'Example usage of the script', 'x-found-in': 'body', type: 'string' }, file: { description: 'The script file upload', 'x-found-in': 'body', type: 'string' }, fileType: { description: 'The type of the uploaded file, which determines the expected value of `pathToExecutable`. If `fileType` is "script", then `pathToExecutable` should not be included. If `fileType` is "archive", then `pathToExecutable` is required and should specify the path to the executable file within the archive.', 'x-found-in': 'body', type: 'string' }, instructions: { description: 'Instructions for using the script, including details around its supported input arguments', 'x-found-in': 'body', type: 'string' }, name: { description: 'Name of the script', 'x-found-in': 'body', type: 'string' }, pathToExecutable: { description: 'Used only for when the uploaded script is an archive (.zip file for example). This property defines the relative path to the file included in the archive that should be executed once its contents are extracted. The path should be relative to the root of the archive.', 'x-found-in': 'body', type: 'string' }, platform: { description: 'Platforms supported by the the script', 'x-found-in': 'body', type: 'string' }, requiresInput: { description: 'Whether the script requires input arguments', 'x-found-in': 'body', type: 'string' }, tags: { description: 'Tags to categorize the script', 'x-found-in': 'body', type: 'string' } }, required: ['file', 'fileType', 'name', 'platform'] },
   },
   {
@@ -216,6 +241,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Delete a script',
     method: 'DELETE',
     path: '/api/endpoint/scripts_library/{script_id}',
+    destructive: true,
     input: { type: 'object', properties: { script_id: { type: 'string', description: 'The ID of the script entry to be deleted.', 'x-found-in': 'path' } }, required: ['script_id'] },
   },
   {
@@ -224,6 +250,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Get script',
     method: 'GET',
     path: '/api/endpoint/scripts_library/{script_id}',
+    destructive: false,
     input: { type: 'object', properties: { script_id: { type: 'string', description: 'The ID of the script entry.', 'x-found-in': 'path' } }, required: ['script_id'] },
   },
   {
@@ -232,6 +259,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Update script',
     method: 'PATCH',
     path: '/api/endpoint/scripts_library/{script_id}',
+    destructive: true,
     input: { type: 'object', properties: { script_id: { type: 'string', description: 'The ID of the script entry to be updated.', 'x-found-in': 'path' }, description: { description: 'Description of the script and its purpose/functionality', 'x-found-in': 'body', type: 'string' }, example: { description: 'Example usage of the script', 'x-found-in': 'body', type: 'string' }, file: { description: 'The script file upload', 'x-found-in': 'body', type: 'string' }, fileType: { description: 'The type of the uploaded file, which determines the expected value of `pathToExecutable`. If `fileType` is "script", then `pathToExecutable` should not be included. If `fileType` is "archive", then `pathToExecutable` is required and should specify the path to the executable file within the archive.', 'x-found-in': 'body', type: 'string' }, instructions: { description: 'Instructions for using the script, including details around its supported input arguments', 'x-found-in': 'body', type: 'string' }, name: { description: 'Name of the script', 'x-found-in': 'body', type: 'string' }, pathToExecutable: { description: 'Used only for when the uploaded script is an archive (.zip file for example). This property defines the relative path to the file included in the archive that should be executed once its contents are extracted. The path should be relative to the root of the archive.', 'x-found-in': 'body', type: 'string' }, platform: { description: 'Platforms supported by the the script', 'x-found-in': 'body', type: 'string' }, requiresInput: { description: 'Whether the script requires input arguments', 'x-found-in': 'body', type: 'string' }, tags: { description: 'Tags to categorize the script', 'x-found-in': 'body', type: 'string' } }, required: ['script_id'] },
   },
   {
@@ -240,6 +268,7 @@ export const securityEndpointManagementApiDefinitions: KbApiDefinition[] = [
     description: 'Download a script file',
     method: 'GET',
     path: '/api/endpoint/scripts_library/{script_id}/download',
+    destructive: false,
     input: { type: 'object', properties: { script_id: { type: 'string', description: 'The ID of the script entry.', 'x-found-in': 'path' } }, required: ['script_id'] },
   },
 ]

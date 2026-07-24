@@ -31,6 +31,7 @@ export const logstash_get_pipeline_definitions: EsApiDefinition[] = [
     description: 'Get Logstash pipelines.',
     method: 'GET',
     path: '/_logstash/pipeline/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

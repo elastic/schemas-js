@@ -31,6 +31,7 @@ export const searchable_snapshots_mount_definitions: EsApiDefinition[] = [
     description: 'Mount a snapshot.',
     method: 'POST',
     path: '/_snapshot/{repository}/{snapshot}/_mount',
+    destructive: true,
     input: _inputSchema,
   },
 ]

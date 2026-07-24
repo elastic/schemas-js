@@ -31,6 +31,7 @@ export const security_bulk_put_role_definitions: EsApiDefinition[] = [
     description: 'Bulk create or update roles.',
     method: 'POST',
     path: '/_security/role',
+    destructive: true,
     input: _inputSchema,
   },
 ]

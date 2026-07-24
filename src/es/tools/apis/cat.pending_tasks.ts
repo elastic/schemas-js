@@ -31,6 +31,7 @@ export const cat_pending_tasks_definitions: EsApiDefinition[] = [
     description: 'Get pending task information.',
     method: 'GET',
     path: '/_cat/pending_tasks',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

@@ -18,6 +18,7 @@ export const elasticAgentBinaryDownloadSourcesDefinitions: KbApiDefinition[] = [
     description: 'Get agent binary download sources',
     method: 'GET',
     path: '/api/fleet/agent_download_sources',
+    destructive: false,
   },
   {
     name: 'post-fleet-agent-download-sources',
@@ -25,6 +26,7 @@ export const elasticAgentBinaryDownloadSourcesDefinitions: KbApiDefinition[] = [
     description: 'Create an agent binary download source',
     method: 'POST',
     path: '/api/fleet/agent_download_sources',
+    destructive: false,
     input: { type: 'object', properties: { auth: { description: '', 'x-found-in': 'body', type: 'object' }, host: { description: '', 'x-found-in': 'body', type: 'string' }, id: { description: '', 'x-found-in': 'body', type: 'string' }, is_default: { description: '', 'x-found-in': 'body', type: 'boolean' }, name: { description: '', 'x-found-in': 'body', type: 'string' }, proxy_id: { description: 'The ID of the proxy to use for this download source. See the proxies API for more information.', 'x-found-in': 'body', type: 'string' }, secrets: { description: '', 'x-found-in': 'body', type: 'object' }, ssl: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['host', 'name'] },
   },
   {
@@ -33,6 +35,7 @@ export const elasticAgentBinaryDownloadSourcesDefinitions: KbApiDefinition[] = [
     description: 'Delete an agent binary download source',
     method: 'DELETE',
     path: '/api/fleet/agent_download_sources/{sourceId}',
+    destructive: true,
     input: { type: 'object', properties: { sourceId: { type: 'string', description: 'The ID of the download source', 'x-found-in': 'path' } }, required: ['sourceId'] },
   },
   {
@@ -41,6 +44,7 @@ export const elasticAgentBinaryDownloadSourcesDefinitions: KbApiDefinition[] = [
     description: 'Get an agent binary download source',
     method: 'GET',
     path: '/api/fleet/agent_download_sources/{sourceId}',
+    destructive: false,
     input: { type: 'object', properties: { sourceId: { type: 'string', description: 'The ID of the download source', 'x-found-in': 'path' } }, required: ['sourceId'] },
   },
   {
@@ -49,6 +53,7 @@ export const elasticAgentBinaryDownloadSourcesDefinitions: KbApiDefinition[] = [
     description: 'Update an agent binary download source',
     method: 'PUT',
     path: '/api/fleet/agent_download_sources/{sourceId}',
+    destructive: true,
     input: { type: 'object', properties: { sourceId: { type: 'string', description: 'The ID of the download source', 'x-found-in': 'path' }, auth: { description: '', 'x-found-in': 'body', type: 'object' }, host: { description: '', 'x-found-in': 'body', type: 'string' }, id: { description: '', 'x-found-in': 'body', type: 'string' }, is_default: { description: '', 'x-found-in': 'body', type: 'boolean' }, name: { description: '', 'x-found-in': 'body', type: 'string' }, proxy_id: { description: 'The ID of the proxy to use for this download source. See the proxies API for more information.', 'x-found-in': 'body', type: 'string' }, secrets: { description: '', 'x-found-in': 'body', type: 'object' }, ssl: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['sourceId', 'host', 'name'] },
   },
 ]

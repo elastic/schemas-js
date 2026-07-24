@@ -31,6 +31,7 @@ export const features_reset_features_definitions: EsApiDefinition[] = [
     description: 'Reset the features.',
     method: 'POST',
     path: '/_features/_reset',
+    destructive: true,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const cluster_put_component_template_definitions: EsApiDefinition[] = [
     description: 'Create or update a component template.',
     method: 'PUT',
     path: '/_component_template/{name}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

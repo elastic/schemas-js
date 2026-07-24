@@ -31,6 +31,7 @@ export const indices_flush_definitions: EsApiDefinition[] = [
     description: 'Flush data streams or indices.',
     method: 'POST',
     path: '/{index}/_flush',
+    destructive: true,
     input: _inputSchema,
   },
 ]

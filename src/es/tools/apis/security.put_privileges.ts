@@ -31,6 +31,7 @@ export const security_put_privileges_definitions: EsApiDefinition[] = [
     description: 'Create or update application privileges.',
     method: 'PUT',
     path: '/_security/privilege',
+    destructive: true,
     input: _inputSchema,
   },
 ]

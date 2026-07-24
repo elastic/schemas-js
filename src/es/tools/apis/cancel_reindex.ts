@@ -30,6 +30,7 @@ export const cancel_reindex_definitions: EsApiDefinition[] = [
     description: 'Cancel an ongoing reindex task.',
     method: 'POST',
     path: '/_reindex/{task_id}/_cancel',
+    destructive: true,
     input: _inputSchema,
   },
 ]

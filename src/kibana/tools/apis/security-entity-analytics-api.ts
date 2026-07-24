@@ -18,6 +18,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Delete an asset criticality record',
     method: 'DELETE',
     path: '/api/asset_criticality',
+    destructive: true,
     input: { type: 'object', properties: { id_value: { type: 'string', description: 'The ID value of the asset.', 'x-found-in': 'query' }, id_field: { type: 'string', description: 'The field representing the ID.', 'x-found-in': 'query' }, refresh: { type: 'string', description: "If 'wait_for' the request will wait for the index refresh.", 'x-found-in': 'query' } }, required: ['id_value', 'id_field'] },
   },
   {
@@ -26,6 +27,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Get an asset criticality record',
     method: 'GET',
     path: '/api/asset_criticality',
+    destructive: false,
     input: { type: 'object', properties: { id_value: { type: 'string', description: 'The ID value of the asset.', 'x-found-in': 'query' }, id_field: { type: 'string', description: 'The field representing the ID.', 'x-found-in': 'query' } }, required: ['id_value', 'id_field'] },
   },
   {
@@ -34,6 +36,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Upsert an asset criticality record',
     method: 'POST',
     path: '/api/asset_criticality',
+    destructive: true,
     input: { type: 'object', properties: { refresh: { description: "If 'wait_for' the request will wait for the index refresh.", 'x-found-in': 'body', type: 'string' } } },
   },
   {
@@ -42,6 +45,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Bulk upsert asset criticality records',
     method: 'POST',
     path: '/api/asset_criticality/bulk',
+    destructive: true,
     input: { type: 'object', properties: { records: { description: '', 'x-found-in': 'body' } }, required: ['records'] },
   },
   {
@@ -50,6 +54,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'List asset criticality records',
     method: 'GET',
     path: '/api/asset_criticality/list',
+    destructive: false,
     input: { type: 'object', properties: { sort_field: { type: 'string', description: 'The field to sort by.', 'x-found-in': 'query' }, sort_direction: { type: 'string', description: 'The order to sort by.', 'x-found-in': 'query' }, page: { type: 'number', description: 'The page number to return.', 'x-found-in': 'query' }, per_page: { type: 'number', description: 'The number of records to return per page.', 'x-found-in': 'query' }, kuery: { type: 'string', description: 'The kuery to filter by.', 'x-found-in': 'query' } } },
   },
   {
@@ -58,6 +63,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Delete the Privilege Monitoring Engine',
     method: 'DELETE',
     path: '/api/entity_analytics/monitoring/engine/delete',
+    destructive: true,
     input: { type: 'object', properties: { data: { type: 'boolean', description: 'Whether to delete all the privileged user data', 'x-found-in': 'query' } } },
   },
   {
@@ -66,6 +72,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Disable the Privilege Monitoring Engine',
     method: 'POST',
     path: '/api/entity_analytics/monitoring/engine/disable',
+    destructive: true,
   },
   {
     name: 'init-monitoring-engine',
@@ -73,6 +80,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Initialize the Privilege Monitoring Engine',
     method: 'POST',
     path: '/api/entity_analytics/monitoring/engine/init',
+    destructive: true,
   },
   {
     name: 'schedule-monitoring-engine',
@@ -80,6 +88,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Schedule the Privilege Monitoring Engine',
     method: 'POST',
     path: '/api/entity_analytics/monitoring/engine/schedule_now',
+    destructive: true,
   },
   {
     name: 'priv-mon-health',
@@ -87,6 +96,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Health check on Privilege Monitoring',
     method: 'GET',
     path: '/api/entity_analytics/monitoring/privileges/health',
+    destructive: false,
   },
   {
     name: 'priv-mon-privileges',
@@ -94,6 +104,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Run a privileges check on Privilege Monitoring',
     method: 'GET',
     path: '/api/entity_analytics/monitoring/privileges/privileges',
+    destructive: false,
   },
   {
     name: 'create-priv-mon-user',
@@ -101,6 +112,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Create a new monitored user',
     method: 'POST',
     path: '/api/entity_analytics/monitoring/users',
+    destructive: false,
     input: { type: 'object', properties: { entity_analytics_monitoring: { description: 'Entity analytics monitoring configuration for the user', 'x-found-in': 'body', type: 'object' }, user: { description: '', 'x-found-in': 'body', type: 'object' } } },
   },
   {
@@ -109,6 +121,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Upsert multiple monitored users via CSV upload',
     method: 'POST',
     path: '/api/entity_analytics/monitoring/users/_csv',
+    destructive: true,
     input: { type: 'object', properties: { file: { description: 'The CSV file to upload.', 'x-found-in': 'body', type: 'string' } }, required: ['file'] },
   },
   {
@@ -117,6 +130,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Delete a monitored user',
     method: 'DELETE',
     path: '/api/entity_analytics/monitoring/users/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The document ID of the monitored user to delete', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -125,6 +139,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Update a monitored user',
     method: 'PUT',
     path: '/api/entity_analytics/monitoring/users/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { description: '', 'x-found-in': 'body', type: 'string' }, entity_analytics_monitoring: { description: '', 'x-found-in': 'body', type: 'object' }, labels: { description: '', 'x-found-in': 'body', type: 'object' }, user: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['id'] },
   },
   {
@@ -133,6 +148,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'List all monitored users',
     method: 'GET',
     path: '/api/entity_analytics/monitoring/users/list',
+    destructive: false,
     input: { type: 'object', properties: { kql: { type: 'string', description: 'KQL query to filter the list of monitored users', 'x-found-in': 'query' } } },
   },
   {
@@ -141,6 +157,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Installs the privileged access detection package for the Entity Analytics privileged user monitoring experience',
     method: 'POST',
     path: '/api/entity_analytics/privileged_user_monitoring/pad/install',
+    destructive: true,
   },
   {
     name: 'get-privileged-access-detection-package-status',
@@ -148,6 +165,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Gets the status of the privileged access detection package for the Entity Analytics privileged user monitoring experience',
     method: 'GET',
     path: '/api/entity_analytics/privileged_user_monitoring/pad/status',
+    destructive: false,
   },
   {
     name: 'create-watchlist',
@@ -155,6 +173,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Create a new watchlist',
     method: 'POST',
     path: '/api/entity_analytics/watchlists',
+    destructive: false,
     input: { type: 'object', properties: { description: { description: 'Description of the watchlist', 'x-found-in': 'body', type: 'string' }, entitySources: { description: 'Optional entity sources to create and link to the watchlist', 'x-found-in': 'body' }, managed: { description: 'Indicates if the watchlist is managed by the system', 'x-found-in': 'body', type: 'boolean' }, name: { description: 'Unique name for the watchlist', 'x-found-in': 'body', type: 'string' }, riskModifier: { description: 'Risk score modifier associated with the watchlist', 'x-found-in': 'body', type: 'number' } }, required: ['name', 'riskModifier'] },
   },
   {
@@ -163,6 +182,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Get a watchlist by ID',
     method: 'GET',
     path: '/api/entity_analytics/watchlists/{id}',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: 'Unique ID of the watchlist', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -171,6 +191,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Update an existing watchlist',
     method: 'PUT',
     path: '/api/entity_analytics/watchlists/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The ID of the watchlist to update', 'x-found-in': 'path' }, description: { description: 'Description of the watchlist', 'x-found-in': 'body', type: 'string' }, managed: { description: 'Indicates if the watchlist is managed by the system', 'x-found-in': 'body', type: 'boolean' }, name: { description: 'Unique name of the watchlist', 'x-found-in': 'body', type: 'string' }, riskModifier: { description: 'Risk score modifier associated with the watchlist', 'x-found-in': 'body', type: 'number' } }, required: ['id', 'name', 'riskModifier'] },
   },
   {
@@ -179,6 +200,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Upload a CSV file to add entities to a watchlist',
     method: 'POST',
     path: '/api/entity_analytics/watchlists/{watchlist_id}/csv_upload',
+    destructive: true,
     input: { type: 'object', properties: { watchlist_id: { type: 'string', description: 'The ID of the watchlist to add entities to', 'x-found-in': 'path' }, file: { description: 'The CSV file to upload.', 'x-found-in': 'body', type: 'string' } }, required: ['watchlist_id', 'file'] },
   },
   {
@@ -187,6 +209,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Manually assign entities to a watchlist',
     method: 'POST',
     path: '/api/entity_analytics/watchlists/{watchlist_id}/entities/assign',
+    destructive: true,
     input: { type: 'object', properties: { watchlist_id: { type: 'string', description: 'The ID of the watchlist to add entities to', 'x-found-in': 'path' }, euids: { description: 'The EUIDs of the entities to assign', 'x-found-in': 'body' } }, required: ['watchlist_id', 'euids'] },
   },
   {
@@ -195,6 +218,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Manually unassign entities from a watchlist',
     method: 'POST',
     path: '/api/entity_analytics/watchlists/{watchlist_id}/entities/unassign',
+    destructive: true,
     input: { type: 'object', properties: { watchlist_id: { type: 'string', description: 'The ID of the watchlist to remove entities from', 'x-found-in': 'path' }, euids: { description: 'The EUIDs of the entities to unassign', 'x-found-in': 'body' } }, required: ['watchlist_id', 'euids'] },
   },
   {
@@ -203,6 +227,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'List all watchlists',
     method: 'GET',
     path: '/api/entity_analytics/watchlists/list',
+    destructive: false,
   },
   {
     name: 'init-entity-store',
@@ -210,6 +235,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Initialize the Entity Store',
     method: 'POST',
     path: '/api/entity_store/enable',
+    destructive: true,
     input: { type: 'object', properties: { delay: { description: 'The delay before the transform will run.', 'x-found-in': 'body', type: 'string' }, docsPerSecond: { description: 'The number of documents per second to process.', 'x-found-in': 'body', type: 'number' }, enrichPolicyExecutionInterval: { description: 'Interval in which enrich policy runs. For example, `"1h"` means the rule runs every hour. Must be less than or equal to half the duration of the lookback period,', 'x-found-in': 'body', type: 'string' }, entityTypes: { description: '', 'x-found-in': 'body' }, fieldHistoryLength: { description: 'The number of historical values to keep for each field.', 'x-found-in': 'body', type: 'number' }, filter: { description: '', 'x-found-in': 'body', type: 'string' }, frequency: { description: 'The frequency at which the transform will run.', 'x-found-in': 'body', type: 'string' }, indexPattern: { description: 'An additional Elasticsearch index pattern to include as a source for entity data. Merged with the default data view indices when the engine runs.', 'x-found-in': 'body', type: 'string' }, lookbackPeriod: { description: 'The amount of time the transform looks back to calculate the aggregations.', 'x-found-in': 'body', type: 'string' }, maxPageSearchSize: { description: 'The initial page size to use for the composite aggregation of each checkpoint.', 'x-found-in': 'body', type: 'number' }, timeout: { description: 'The timeout for initializing the aggregating transform.', 'x-found-in': 'body', type: 'string' }, timestampField: { description: 'The field to use as the timestamp.', 'x-found-in': 'body', type: 'string' } } },
   },
   {
@@ -218,6 +244,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Delete Entity Engines',
     method: 'DELETE',
     path: '/api/entity_store/engines',
+    destructive: true,
     input: { type: 'object', properties: { entityTypes: { type: 'string', description: "The entity type of the engine ('user', 'host', 'service', 'generic').", 'x-found-in': 'query' }, delete_data: { type: 'boolean', description: 'Control flag to also delete the entity data.', 'x-found-in': 'query' } } },
   },
   {
@@ -226,6 +253,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'List the Entity Engines',
     method: 'GET',
     path: '/api/entity_store/engines',
+    destructive: false,
   },
   {
     name: 'delete-entity-engine',
@@ -233,6 +261,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Delete the Entity Engine',
     method: 'DELETE',
     path: '/api/entity_store/engines/{entityType}',
+    destructive: true,
     input: { type: 'object', properties: { entityType: { type: 'string', description: "The entity type of the engine (either 'user' or 'host').", 'x-found-in': 'path' }, delete_data: { type: 'boolean', description: 'Control flag to also delete the entity data.', 'x-found-in': 'query' }, data: { type: 'boolean', description: 'Control flag to also delete the entity data.', 'x-found-in': 'query' } }, required: ['entityType'] },
   },
   {
@@ -241,6 +270,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Get an Entity Engine',
     method: 'GET',
     path: '/api/entity_store/engines/{entityType}',
+    destructive: false,
     input: { type: 'object', properties: { entityType: { type: 'string', description: 'The entity type of the engine.', 'x-found-in': 'path' } }, required: ['entityType'] },
   },
   {
@@ -249,6 +279,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Initialize an Entity Engine',
     method: 'POST',
     path: '/api/entity_store/engines/{entityType}/init',
+    destructive: true,
     input: { type: 'object', properties: { entityType: { type: 'string', description: 'The entity type of the engine.', 'x-found-in': 'path' }, delay: { description: 'The delay before the transform will run.', 'x-found-in': 'body', type: 'string' }, docsPerSecond: { description: 'The number of documents per second to process.', 'x-found-in': 'body', type: 'number' }, enrichPolicyExecutionInterval: { description: 'Interval in which enrich policy runs. For example, `"1h"` means the rule runs every hour. Must be less than or equal to half the duration of the lookback period,', 'x-found-in': 'body', type: 'string' }, fieldHistoryLength: { description: 'The number of historical values to keep for each field.', 'x-found-in': 'body', type: 'number' }, filter: { description: '', 'x-found-in': 'body', type: 'string' }, frequency: { description: 'The frequency at which the transform will run.', 'x-found-in': 'body', type: 'string' }, indexPattern: { description: 'An additional Elasticsearch index pattern to include as a source for entity data. Merged with the default data view indices when the engine runs.', 'x-found-in': 'body', type: 'string' }, lookbackPeriod: { description: 'The amount of time the transform looks back to calculate the aggregations.', 'x-found-in': 'body', type: 'string' }, maxPageSearchSize: { description: 'The initial page size to use for the composite aggregation of each checkpoint.', 'x-found-in': 'body', type: 'number' }, timeout: { description: 'The timeout for initializing the aggregating transform.', 'x-found-in': 'body', type: 'string' }, timestampField: { description: 'The field to use as the timestamp for the entity type.', 'x-found-in': 'body', type: 'string' } }, required: ['entityType'] },
   },
   {
@@ -257,6 +288,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Start an Entity Engine',
     method: 'POST',
     path: '/api/entity_store/engines/{entityType}/start',
+    destructive: true,
     input: { type: 'object', properties: { entityType: { type: 'string', description: 'The entity type of the engine to start.', 'x-found-in': 'path' } }, required: ['entityType'] },
   },
   {
@@ -265,6 +297,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Stop an Entity Engine',
     method: 'POST',
     path: '/api/entity_store/engines/{entityType}/stop',
+    destructive: true,
     input: { type: 'object', properties: { entityType: { type: 'string', description: 'The entity type of the engine to stop.', 'x-found-in': 'path' } }, required: ['entityType'] },
   },
   {
@@ -273,6 +306,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Apply DataView indices to all installed engines',
     method: 'POST',
     path: '/api/entity_store/engines/apply_dataview_indices',
+    destructive: true,
   },
   {
     name: 'delete-single-entity',
@@ -280,6 +314,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Delete an entity in Entity Store',
     method: 'DELETE',
     path: '/api/entity_store/entities/{entityType}',
+    destructive: true,
     input: { type: 'object', properties: { entityType: { type: 'string', description: 'The entityType parameter', 'x-found-in': 'path' }, id: { description: 'Identifier of the entity to be deleted, commonly entity.id value.', 'x-found-in': 'body', type: 'string' } }, required: ['entityType', 'id'] },
   },
   {
@@ -288,6 +323,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Upsert an entity in Entity Store',
     method: 'PUT',
     path: '/api/entity_store/entities/{entityType}',
+    destructive: true,
     input: { type: 'object', properties: { entityType: { type: 'string', description: 'The entityType parameter', 'x-found-in': 'path' }, force: { type: 'boolean', description: 'When true, allows updating protected fields.', 'x-found-in': 'query' } }, required: ['entityType'] },
   },
   {
@@ -296,6 +332,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Upsert many entities in Entity Store',
     method: 'PUT',
     path: '/api/entity_store/entities/bulk',
+    destructive: true,
     input: { type: 'object', properties: { force: { type: 'boolean', description: 'When true, allows updating protected fields.', 'x-found-in': 'query' }, entities: { description: 'The entities to create or update.', 'x-found-in': 'body' } }, required: ['entities'] },
   },
   {
@@ -304,6 +341,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'List Entity Store Entities',
     method: 'GET',
     path: '/api/entity_store/entities/list',
+    destructive: false,
     input: { type: 'object', properties: { sort_field: { type: 'string', description: 'Field to sort results by.', 'x-found-in': 'query' }, sort_order: { type: 'string', description: 'Sort order.', 'x-found-in': 'query' }, page: { type: 'number', description: 'Page number to return (1-indexed).', 'x-found-in': 'query' }, per_page: { type: 'number', description: 'Number of entities per page.', 'x-found-in': 'query' }, filterQuery: { type: 'string', description: 'An ES query to filter by.', 'x-found-in': 'query' }, entity_types: { type: 'string', description: 'Entity types to include in the results.', 'x-found-in': 'query' } }, required: ['entity_types'] },
   },
   {
@@ -312,6 +350,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Get the status of the Entity Store',
     method: 'GET',
     path: '/api/entity_store/status',
+    destructive: false,
     input: { type: 'object', properties: { include_components: { type: 'boolean', description: 'If true, returns a detailed status of each engine including all its components.', 'x-found-in': 'query' } } },
   },
   {
@@ -320,6 +359,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Cleanup the Risk Engine',
     method: 'DELETE',
     path: '/api/risk_score/engine/dangerously_delete_data',
+    destructive: true,
   },
   {
     name: 'configure-risk-engine-saved-object',
@@ -327,6 +367,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Configure the Risk Engine Saved Object',
     method: 'PATCH',
     path: '/api/risk_score/engine/saved_object/configure',
+    destructive: true,
     input: { type: 'object', properties: { enable_reset_to_zero: { description: '', 'x-found-in': 'body', type: 'boolean' }, exclude_alert_statuses: { description: '', 'x-found-in': 'body' }, exclude_alert_tags: { description: '', 'x-found-in': 'body' }, filters: { description: '', 'x-found-in': 'body' }, page_size: { description: 'Number of entities to score per page. Higher values reduce total scoring time by reducing the number of alert-index scans, but cannot exceed the ES|QL result limit (10,000 by default).', 'x-found-in': 'body', type: 'number' }, range: { description: '', 'x-found-in': 'body', type: 'object' } } },
   },
   {
@@ -335,6 +376,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Run the risk scoring engine',
     method: 'POST',
     path: '/api/risk_score/engine/schedule_now',
+    destructive: true,
   },
   {
     name: 'get-risk-score-history',
@@ -342,6 +384,7 @@ export const securityEntityAnalyticsApiDefinitions: KbApiDefinition[] = [
     description: 'Get risk score history for an entity',
     method: 'GET',
     path: '/api/risk_score/history',
+    destructive: false,
     input: { type: 'object', properties: { entity_type: { type: 'string', description: 'The type of entity to retrieve history for.', 'x-found-in': 'query' }, entity_id: { type: 'string', description: 'The identifier of the entity to retrieve history for.', 'x-found-in': 'query' }, from: { type: 'string', description: 'Start of the time range, in date-math syntax. Defaults to 90 days ago.', 'x-found-in': 'query' }, to: { type: 'string', description: 'End of the time range, in date-math syntax. Defaults to now.', 'x-found-in': 'query' }, score_type: { type: 'string', description: 'Filter entries by the type of score recorded (`base`, `propagated`, or `resolution`).', 'x-found-in': 'query' }, page_size: { type: 'number', description: 'Maximum number of history entries to return per request.', 'x-found-in': 'query' } }, required: ['entity_type', 'entity_id'] },
   },
 ]

@@ -31,6 +31,7 @@ export const slm_put_lifecycle_definitions: EsApiDefinition[] = [
     description: 'Create or update a policy.',
     method: 'PUT',
     path: '/_slm/policy/{policy_id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const streams_status_definitions: EsApiDefinition[] = [
     description: 'Get the status of streams.',
     method: 'GET',
     path: '/_streams/status',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -18,6 +18,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Bulk delete workflows',
     method: 'DELETE',
     path: '/api/workflows',
+    destructive: true,
     input: { type: 'object', properties: { force: { type: 'boolean', description: 'When true, permanently deletes the workflows (hard delete) instead of soft-deleting them. The workflow IDs become available for reuse.', 'x-found-in': 'query' }, ids: { description: 'Array of workflow IDs to delete.', 'x-found-in': 'body' } }, required: ['ids'] },
   },
   {
@@ -26,6 +27,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Get workflows',
     method: 'GET',
     path: '/api/workflows',
+    destructive: false,
     input: { type: 'object', properties: { query: { type: 'string', description: 'Free-text search query.', 'x-found-in': 'query' }, size: { type: 'number', description: 'Number of results per page.', 'x-found-in': 'query' }, page: { type: 'number', description: 'Page number.', 'x-found-in': 'query' }, enabled: { type: 'string', description: 'Filter by enabled state.', 'x-found-in': 'query' }, createdBy: { type: 'string', description: 'Filter by creator.', 'x-found-in': 'query' }, tags: { type: 'string', description: 'Filter by tags.', 'x-found-in': 'query' }, managed: { type: 'string', description: 'Filter by managed status. Defaults to "unmanaged".', 'x-found-in': 'query' }, sortField: { type: 'string', description: 'Field to sort by.', 'x-found-in': 'query' }, sortOrder: { type: 'string', description: 'Sort direction.', 'x-found-in': 'query' } } },
   },
   {
@@ -34,6 +36,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Bulk create workflows',
     method: 'POST',
     path: '/api/workflows',
+    destructive: false,
     input: { type: 'object', properties: { overwrite: { type: 'boolean', description: 'Whether to overwrite existing workflows.', 'x-found-in': 'query' }, workflows: { description: '', 'x-found-in': 'body' } }, required: ['workflows'] },
   },
   {
@@ -42,6 +45,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Get workflow aggregations',
     method: 'GET',
     path: '/api/workflows/aggs',
+    destructive: false,
     input: { type: 'object', properties: { fields: { type: 'string', description: 'Field or fields to aggregate on.', 'x-found-in': 'query' }, managed: { type: 'string', description: 'Filter aggregations by managed status.', 'x-found-in': 'query' } }, required: ['fields'] },
   },
   {
@@ -50,6 +54,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Get available connectors',
     method: 'GET',
     path: '/api/workflows/connectors',
+    destructive: false,
   },
   {
     name: 'get-workflows-executions-executionid',
@@ -57,6 +62,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Get a workflow execution',
     method: 'GET',
     path: '/api/workflows/executions/{executionId}',
+    destructive: false,
     input: { type: 'object', properties: { executionId: { type: 'string', description: 'Workflow execution ID', 'x-found-in': 'path' }, includeInput: { type: 'boolean', description: 'Include execution input data.', 'x-found-in': 'query' }, includeOutput: { type: 'boolean', description: 'Include execution output data.', 'x-found-in': 'query' } }, required: ['executionId'] },
   },
   {
@@ -65,6 +71,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Cancel a workflow execution',
     method: 'POST',
     path: '/api/workflows/executions/{executionId}/cancel',
+    destructive: true,
     input: { type: 'object', properties: { executionId: { type: 'string', description: 'Workflow execution ID', 'x-found-in': 'path' } }, required: ['executionId'] },
   },
   {
@@ -73,6 +80,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Get child executions',
     method: 'GET',
     path: '/api/workflows/executions/{executionId}/children',
+    destructive: false,
     input: { type: 'object', properties: { executionId: { type: 'string', description: 'Workflow execution ID', 'x-found-in': 'path' } }, required: ['executionId'] },
   },
   {
@@ -81,6 +89,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Get execution logs',
     method: 'GET',
     path: '/api/workflows/executions/{executionId}/logs',
+    destructive: false,
     input: { type: 'object', properties: { executionId: { type: 'string', description: 'Workflow execution ID', 'x-found-in': 'path' }, stepExecutionId: { type: 'string', description: 'Filter logs by a specific step execution ID.', 'x-found-in': 'query' }, size: { type: 'number', description: 'Number of log entries per page.', 'x-found-in': 'query' }, page: { type: 'number', description: 'Page number.', 'x-found-in': 'query' }, sortField: { type: 'string', description: 'Field to sort by.', 'x-found-in': 'query' }, sortOrder: { type: 'string', description: 'Sort order.', 'x-found-in': 'query' } }, required: ['executionId'] },
   },
   {
@@ -89,6 +98,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Resume a workflow execution',
     method: 'POST',
     path: '/api/workflows/executions/{executionId}/resume',
+    destructive: true,
     input: { type: 'object', properties: { executionId: { type: 'string', description: 'Workflow execution ID', 'x-found-in': 'path' }, input: { description: 'Input data to resume the execution with.', 'x-found-in': 'body', type: 'object' } }, required: ['executionId', 'input'] },
   },
   {
@@ -97,6 +107,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Get a step execution',
     method: 'GET',
     path: '/api/workflows/executions/{executionId}/step/{stepExecutionId}',
+    destructive: false,
     input: { type: 'object', properties: { executionId: { type: 'string', description: 'Workflow execution ID.', 'x-found-in': 'path' }, stepExecutionId: { type: 'string', description: 'Step execution ID.', 'x-found-in': 'path' } }, required: ['executionId', 'stepExecutionId'] },
   },
   {
@@ -105,6 +116,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Export workflows',
     method: 'POST',
     path: '/api/workflows/export',
+    destructive: true,
     input: { type: 'object', properties: { ids: { description: 'Array of workflow IDs to export.', 'x-found-in': 'body' } }, required: ['ids'] },
   },
   {
@@ -113,6 +125,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Update a managed workflow',
     method: 'PUT',
     path: '/api/workflows/managed/workflow/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'Workflow ID', 'x-found-in': 'path' }, description: { description: '', 'x-found-in': 'body', type: 'string' }, enabled: { description: '', 'x-found-in': 'body', type: 'boolean' }, name: { description: '', 'x-found-in': 'body', type: 'string' }, tags: { description: '', 'x-found-in': 'body' }, yaml: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['id'] },
   },
   {
@@ -121,6 +134,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Get workflows by IDs',
     method: 'POST',
     path: '/api/workflows/mget',
+    destructive: true,
     input: { type: 'object', properties: { ids: { description: 'Array of workflow IDs to look up.', 'x-found-in': 'body' }, source: { description: 'Array of source fields to include.', 'x-found-in': 'body' } }, required: ['ids'] },
   },
   {
@@ -129,6 +143,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Get workflow JSON schema',
     method: 'GET',
     path: '/api/workflows/schema',
+    destructive: false,
     input: { type: 'object', properties: { loose: { type: 'boolean', description: 'When true, returns a permissive schema that allows additional properties. When false, returns a strict schema for full validation.', 'x-found-in': 'query' } }, required: ['loose'] },
   },
   {
@@ -137,6 +152,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Get workflow statistics',
     method: 'GET',
     path: '/api/workflows/stats',
+    destructive: false,
   },
   {
     name: 'post-workflows-step-test',
@@ -144,6 +160,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Test a workflow step',
     method: 'POST',
     path: '/api/workflows/step/test',
+    destructive: true,
     input: { type: 'object', properties: { contextOverride: { description: 'Context overrides for the step execution.', 'x-found-in': 'body', type: 'object' }, executionContext: { description: 'Execution context for the step execution.', 'x-found-in': 'body', type: 'object' }, stepId: { description: 'ID of the step to test.', 'x-found-in': 'body', type: 'string' }, workflowId: { description: 'ID of the workflow containing the step.', 'x-found-in': 'body', type: 'string' }, workflowYaml: { description: 'YAML definition of the workflow containing the step.', 'x-found-in': 'body', type: 'string' } }, required: ['contextOverride', 'stepId', 'workflowYaml'] },
   },
   {
@@ -152,6 +169,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Test a workflow',
     method: 'POST',
     path: '/api/workflows/test',
+    destructive: true,
     input: { type: 'object', properties: { inputs: { description: 'Key-value inputs for the test execution.', 'x-found-in': 'body', type: 'object' }, workflowId: { description: 'ID of an existing workflow to test.', 'x-found-in': 'body', type: 'string' }, workflowYaml: { description: 'YAML definition to test.', 'x-found-in': 'body', type: 'string' } }, required: ['inputs'] },
   },
   {
@@ -160,6 +178,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Create a workflow',
     method: 'POST',
     path: '/api/workflows/workflow',
+    destructive: false,
     input: { type: 'object', properties: { id: { description: '', 'x-found-in': 'body', type: 'string' }, yaml: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['yaml'] },
   },
   {
@@ -168,6 +187,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Delete a workflow',
     method: 'DELETE',
     path: '/api/workflows/workflow/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'Workflow ID', 'x-found-in': 'path' }, force: { type: 'boolean', description: 'When true, permanently deletes the workflow (hard delete) instead of soft-deleting it. The workflow ID becomes available for reuse.', 'x-found-in': 'query' } }, required: ['id'] },
   },
   {
@@ -176,6 +196,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Get a workflow',
     method: 'GET',
     path: '/api/workflows/workflow/{id}',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: 'Workflow ID', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -184,6 +205,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Update a workflow',
     method: 'PUT',
     path: '/api/workflows/workflow/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'Workflow ID', 'x-found-in': 'path' }, description: { description: '', 'x-found-in': 'body', type: 'string' }, enabled: { description: '', 'x-found-in': 'body', type: 'boolean' }, name: { description: '', 'x-found-in': 'body', type: 'string' }, tags: { description: '', 'x-found-in': 'body' }, yaml: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['id'] },
   },
   {
@@ -192,6 +214,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Clone a workflow',
     method: 'POST',
     path: '/api/workflows/workflow/{id}/clone',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'Workflow ID', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -200,6 +223,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Run a workflow',
     method: 'POST',
     path: '/api/workflows/workflow/{id}/run',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'Workflow ID', 'x-found-in': 'path' }, inputs: { description: 'Key-value inputs for the workflow execution.', 'x-found-in': 'body', type: 'object' }, metadata: { description: 'Optional metadata for the execution.', 'x-found-in': 'body', type: 'object' } }, required: ['id', 'inputs'] },
   },
   {
@@ -208,6 +232,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Get workflow executions',
     method: 'GET',
     path: '/api/workflows/workflow/{workflowId}/executions',
+    destructive: false,
     input: { type: 'object', properties: { workflowId: { type: 'string', description: 'Workflow ID', 'x-found-in': 'path' }, statuses: { type: 'string', description: 'Filter by execution status.', 'x-found-in': 'query' }, executionTypes: { type: 'string', description: 'Filter by execution type.', 'x-found-in': 'query' }, executedBy: { type: 'string', description: 'Filter by the user who triggered the execution.', 'x-found-in': 'query' }, concurrencyGroupKey: { type: 'string', description: 'Filter by evaluated concurrency group key.', 'x-found-in': 'query' }, omitStepRuns: { type: 'boolean', description: 'Whether to exclude step-level execution data.', 'x-found-in': 'query' }, finishedAfter: { type: 'string', description: 'Datemath lower bound for filtering executions by finishedAt (inclusive when parsed).', 'x-found-in': 'query' }, finishedBefore: { type: 'string', description: 'Datemath upper bound for filtering executions by finishedAt (inclusive when parsed with roundUp).', 'x-found-in': 'query' }, collapse: { type: 'string', description: 'Field to collapse execution results by.', 'x-found-in': 'query' }, sortField: { type: 'string', description: 'Field to sort executions by.', 'x-found-in': 'query' }, sortOrder: { type: 'string', description: 'Sort order.', 'x-found-in': 'query' }, page: { type: 'number', description: 'Page number.', 'x-found-in': 'query' }, size: { type: 'number', description: 'Number of results per page.', 'x-found-in': 'query' }, startedAfter: { type: 'string', description: 'Datemath lower bound for filtering executions by startedAt (inclusive when parsed).', 'x-found-in': 'query' }, startedBefore: { type: 'string', description: 'Datemath upper bound for filtering executions by startedAt (inclusive when parsed with roundUp).', 'x-found-in': 'query' } }, required: ['workflowId'] },
   },
   {
@@ -216,6 +241,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Cancel all active workflow executions',
     method: 'POST',
     path: '/api/workflows/workflow/{workflowId}/executions/cancel',
+    destructive: true,
     input: { type: 'object', properties: { workflowId: { type: 'string', description: 'Workflow ID', 'x-found-in': 'path' } }, required: ['workflowId'] },
   },
   {
@@ -224,6 +250,7 @@ export const workflowsDefinitions: KbApiDefinition[] = [
     description: 'Get workflow step executions',
     method: 'GET',
     path: '/api/workflows/workflow/{workflowId}/executions/steps',
+    destructive: false,
     input: { type: 'object', properties: { workflowId: { type: 'string', description: 'Workflow ID', 'x-found-in': 'path' }, stepId: { type: 'string', description: 'Filter by step ID.', 'x-found-in': 'query' }, includeInput: { type: 'boolean', description: 'Include step input data.', 'x-found-in': 'query' }, includeOutput: { type: 'boolean', description: 'Include step output data.', 'x-found-in': 'query' }, page: { type: 'number', description: 'Page number for pagination.', 'x-found-in': 'query' }, size: { type: 'number', description: 'Number of results per page.', 'x-found-in': 'query' }, startedAfter: { type: 'string', description: 'Datemath lower bound for filtering step executions by startedAt (inclusive when parsed).', 'x-found-in': 'query' }, startedBefore: { type: 'string', description: 'Datemath upper bound for filtering step executions by startedAt (inclusive when parsed with roundUp).', 'x-found-in': 'query' } }, required: ['workflowId'] },
   },
 ]

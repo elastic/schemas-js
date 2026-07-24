@@ -31,6 +31,7 @@ export const nodes_get_repositories_metering_info_definitions: EsApiDefinition[]
     description: 'Get cluster repositories metering.',
     method: 'GET',
     path: '/_nodes/{node_id}/_repositories_metering',
+    destructive: false,
     input: _inputSchema,
   },
 ]

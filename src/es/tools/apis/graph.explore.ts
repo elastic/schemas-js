@@ -31,6 +31,7 @@ export const graph_explore_definitions: EsApiDefinition[] = [
     description: 'Explore graph analytics.',
     method: 'GET',
     path: '/{index}/_graph/explore',
+    destructive: false,
     input: _inputSchema,
   },
 ]

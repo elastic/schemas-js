@@ -31,6 +31,7 @@ export const ml_upgrade_job_snapshot_definitions: EsApiDefinition[] = [
     description: 'Upgrade a snapshot.',
     method: 'POST',
     path: '/_ml/anomaly_detectors/{job_id}/model_snapshots/{snapshot_id}/_upgrade',
+    destructive: true,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const transform_set_upgrade_mode_definitions: EsApiDefinition[] = [
     description: 'Set upgrade_mode for transform indices.',
     method: 'POST',
     path: '/_transform/set_upgrade_mode',
+    destructive: true,
     input: _inputSchema,
   },
 ]

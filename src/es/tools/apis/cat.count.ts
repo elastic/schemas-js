@@ -31,6 +31,7 @@ export const cat_count_definitions: EsApiDefinition[] = [
     description: 'Get a document count.',
     method: 'POST',
     path: '/_cat/count/{index}',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

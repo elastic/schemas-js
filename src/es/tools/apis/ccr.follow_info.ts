@@ -31,6 +31,7 @@ export const ccr_follow_info_definitions: EsApiDefinition[] = [
     description: 'Get follower information.',
     method: 'GET',
     path: '/{index}/_ccr/info',
+    destructive: false,
     input: _inputSchema,
   },
 ]

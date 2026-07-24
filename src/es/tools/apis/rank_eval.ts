@@ -30,6 +30,7 @@ export const rank_eval_definitions: EsApiDefinition[] = [
     description: 'Evaluate ranked search results.',
     method: 'GET',
     path: '/{index}/_rank_eval',
+    destructive: false,
     input: _inputSchema,
   },
 ]

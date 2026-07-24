@@ -31,6 +31,7 @@ export const security_get_service_accounts_definitions: EsApiDefinition[] = [
     description: 'Get service accounts.',
     method: 'GET',
     path: '/_security/service/{namespace}/{service}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

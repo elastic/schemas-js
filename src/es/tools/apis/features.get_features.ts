@@ -31,6 +31,7 @@ export const features_get_features_definitions: EsApiDefinition[] = [
     description: 'Get the features.',
     method: 'GET',
     path: '/_features',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const transform_start_transform_definitions: EsApiDefinition[] = [
     description: 'Start a transform.',
     method: 'POST',
     path: '/_transform/{transform_id}/_start',
+    destructive: true,
     input: _inputSchema,
   },
 ]

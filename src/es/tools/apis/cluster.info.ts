@@ -31,6 +31,7 @@ export const cluster_info_definitions: EsApiDefinition[] = [
     description: 'Get cluster info.',
     method: 'GET',
     path: '/_info/{target}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

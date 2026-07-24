@@ -31,6 +31,7 @@ export const inference_put_watsonx_definitions: EsApiDefinition[] = [
     description: 'Create a Watsonx inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{watsonx_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

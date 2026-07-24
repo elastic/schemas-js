@@ -31,6 +31,7 @@ export const indices_get_data_stream_options_definitions: EsApiDefinition[] = [
     description: 'Get data stream options.',
     method: 'GET',
     path: '/_data_stream/{name}/_options',
+    destructive: false,
     input: _inputSchema,
   },
 ]

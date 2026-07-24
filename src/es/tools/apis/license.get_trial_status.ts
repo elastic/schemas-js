@@ -31,6 +31,7 @@ export const license_get_trial_status_definitions: EsApiDefinition[] = [
     description: 'Get the trial status.',
     method: 'GET',
     path: '/_license/trial_status',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const watcher_execute_watch_definitions: EsApiDefinition[] = [
     description: 'Run a watch.',
     method: 'PUT',
     path: '/_watcher/watch/{id}/_execute',
+    destructive: true,
     input: _inputSchema,
   },
 ]

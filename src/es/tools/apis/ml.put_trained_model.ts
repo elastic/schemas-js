@@ -31,6 +31,7 @@ export const ml_put_trained_model_definitions: EsApiDefinition[] = [
     description: 'Create a trained model.',
     method: 'PUT',
     path: '/_ml/trained_models/{model_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

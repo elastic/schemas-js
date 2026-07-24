@@ -31,6 +31,7 @@ export const security_bulk_update_api_keys_definitions: EsApiDefinition[] = [
     description: 'Bulk update API keys.',
     method: 'POST',
     path: '/_security/api_key/_bulk_update',
+    destructive: true,
     input: _inputSchema,
   },
 ]

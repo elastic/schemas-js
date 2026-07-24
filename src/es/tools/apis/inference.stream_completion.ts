@@ -31,6 +31,7 @@ export const inference_stream_completion_definitions: EsApiDefinition[] = [
     description: 'Perform streaming completion inference on the service.',
     method: 'POST',
     path: '/_inference/completion/{inference_id}/_stream',
+    destructive: true,
     input: _inputSchema,
   },
 ]

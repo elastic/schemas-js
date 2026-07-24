@@ -31,6 +31,7 @@ export const esql_async_query_definitions: EsApiDefinition[] = [
     description: 'Run an async ES|QL query.',
     method: 'POST',
     path: '/_query/async',
+    destructive: false,
     input: _inputSchema,
   },
 ]

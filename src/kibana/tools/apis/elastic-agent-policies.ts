@@ -18,6 +18,7 @@ export const elasticAgentPoliciesDefinitions: KbApiDefinition[] = [
     description: 'Get agent policies',
     method: 'GET',
     path: '/api/fleet/agent_policies',
+    destructive: false,
     input: { type: 'object', properties: { page: { type: 'number', description: 'Page number', 'x-found-in': 'query' }, perPage: { type: 'number', description: 'Number of results per page', 'x-found-in': 'query' }, sortField: { type: 'string', description: 'Field to sort results by', 'x-found-in': 'query' }, sortOrder: { type: 'string', description: 'Sort order, ascending or descending', 'x-found-in': 'query' }, showUpgradeable: { type: 'boolean', description: 'When true, only show policies with upgradeable agents', 'x-found-in': 'query' }, kuery: { type: 'string', description: 'A KQL query string to filter results', 'x-found-in': 'query' }, noAgentCount: { type: 'boolean', description: 'use withAgentCount instead', 'x-found-in': 'query' }, withAgentCount: { type: 'boolean', description: 'get policies with agent count', 'x-found-in': 'query' }, full: { type: 'boolean', description: 'get full policies with package policies populated', 'x-found-in': 'query' }, format: { type: 'string', description: 'Format for the response: simplified or legacy', 'x-found-in': 'query' } } },
   },
   {
@@ -26,6 +27,7 @@ export const elasticAgentPoliciesDefinitions: KbApiDefinition[] = [
     description: 'Create an agent policy',
     method: 'POST',
     path: '/api/fleet/agent_policies',
+    destructive: false,
     input: { type: 'object', properties: { sys_monitoring: { type: 'boolean', description: 'Whether to add the system integration to the new agent policy', 'x-found-in': 'query' }, advanced_settings: { description: '', 'x-found-in': 'body', type: 'object' }, agent_features: { description: '', 'x-found-in': 'body' }, agentless: { description: '', 'x-found-in': 'body', type: 'object' }, bumpRevision: { description: '', 'x-found-in': 'body', type: 'boolean' }, data_output_id: { description: '', 'x-found-in': 'body', type: 'string' }, description: { description: '', 'x-found-in': 'body', type: 'string' }, download_source_id: { description: '', 'x-found-in': 'body', type: 'string' }, fleet_server_host_id: { description: '', 'x-found-in': 'body', type: 'string' }, force: { description: '', 'x-found-in': 'body', type: 'boolean' }, global_data_tags: { description: 'User defined data tags that are added to all of the inputs. The values can be strings or numbers.', 'x-found-in': 'body' }, has_agent_version_conditions: { description: '', 'x-found-in': 'body', type: 'boolean' }, has_fleet_server: { description: '', 'x-found-in': 'body', type: 'boolean' }, id: { description: '', 'x-found-in': 'body', type: 'string' }, inactivity_timeout: { description: '', 'x-found-in': 'body', type: 'number' }, is_default: { description: '', 'x-found-in': 'body', type: 'boolean' }, is_default_fleet_server: { description: '', 'x-found-in': 'body', type: 'boolean' }, is_managed: { description: '', 'x-found-in': 'body', type: 'boolean' }, is_protected: { description: '', 'x-found-in': 'body', type: 'boolean' }, is_verifier: { description: '', 'x-found-in': 'body', type: 'boolean' }, keep_monitoring_alive: { description: 'When set to true, monitoring will be enabled but logs/metrics collection will be disabled', 'x-found-in': 'body', type: 'boolean' }, min_agent_version: { description: '', 'x-found-in': 'body', type: 'string' }, monitoring_diagnostics: { description: '', 'x-found-in': 'body', type: 'object' }, monitoring_enabled: { description: '', 'x-found-in': 'body' }, monitoring_http: { description: '', 'x-found-in': 'body', type: 'object' }, monitoring_output_id: { description: '', 'x-found-in': 'body', type: 'string' }, monitoring_pprof_enabled: { description: '', 'x-found-in': 'body', type: 'boolean' }, name: { description: '', 'x-found-in': 'body', type: 'string' }, namespace: { description: '', 'x-found-in': 'body', type: 'string' }, overrides: { description: 'Override settings that are defined in the agent policy. Input settings cannot be overridden. The override option should be used only in unusual circumstances and not as a routine procedure.', 'x-found-in': 'body', type: 'object' }, package_agent_version_conditions: { description: '', 'x-found-in': 'body' }, required_versions: { description: '', 'x-found-in': 'body' }, space_ids: { description: '', 'x-found-in': 'body' }, supports_agentless: { description: 'Indicates whether the agent policy supports agentless integrations. Deprecated in favor of the Fleet agentless policies API.', 'x-found-in': 'body', type: 'boolean' }, unenroll_timeout: { description: '', 'x-found-in': 'body', type: 'number' } }, required: ['name', 'namespace'] },
   },
   {
@@ -34,6 +36,7 @@ export const elasticAgentPoliciesDefinitions: KbApiDefinition[] = [
     description: 'Bulk get agent policies',
     method: 'POST',
     path: '/api/fleet/agent_policies/_bulk_get',
+    destructive: true,
     input: { type: 'object', properties: { format: { type: 'string', description: 'Format for the response: simplified or legacy', 'x-found-in': 'query' }, full: { description: 'get full policies with package policies populated', 'x-found-in': 'body', type: 'boolean' }, ids: { description: 'list of package policy ids', 'x-found-in': 'body' }, ignoreMissing: { description: '', 'x-found-in': 'body', type: 'boolean' } }, required: ['ids'] },
   },
   {
@@ -42,6 +45,7 @@ export const elasticAgentPoliciesDefinitions: KbApiDefinition[] = [
     description: 'Get an agent policy',
     method: 'GET',
     path: '/api/fleet/agent_policies/{agentPolicyId}',
+    destructive: false,
     input: { type: 'object', properties: { agentPolicyId: { type: 'string', description: 'The ID of the agent policy', 'x-found-in': 'path' }, format: { type: 'string', description: 'Format for the response: simplified or legacy', 'x-found-in': 'query' } }, required: ['agentPolicyId'] },
   },
   {
@@ -50,6 +54,7 @@ export const elasticAgentPoliciesDefinitions: KbApiDefinition[] = [
     description: 'Update an agent policy',
     method: 'PUT',
     path: '/api/fleet/agent_policies/{agentPolicyId}',
+    destructive: true,
     input: { type: 'object', properties: { agentPolicyId: { type: 'string', description: 'The ID of the agent policy', 'x-found-in': 'path' }, format: { type: 'string', description: 'Format for the response: simplified or legacy', 'x-found-in': 'query' }, advanced_settings: { description: '', 'x-found-in': 'body', type: 'object' }, agent_features: { description: '', 'x-found-in': 'body' }, agentless: { description: '', 'x-found-in': 'body', type: 'object' }, bumpRevision: { description: '', 'x-found-in': 'body', type: 'boolean' }, data_output_id: { description: '', 'x-found-in': 'body', type: 'string' }, description: { description: '', 'x-found-in': 'body', type: 'string' }, download_source_id: { description: '', 'x-found-in': 'body', type: 'string' }, fleet_server_host_id: { description: '', 'x-found-in': 'body', type: 'string' }, force: { description: '', 'x-found-in': 'body', type: 'boolean' }, global_data_tags: { description: 'User defined data tags that are added to all of the inputs. The values can be strings or numbers.', 'x-found-in': 'body' }, has_agent_version_conditions: { description: '', 'x-found-in': 'body', type: 'boolean' }, has_fleet_server: { description: '', 'x-found-in': 'body', type: 'boolean' }, id: { description: '', 'x-found-in': 'body', type: 'string' }, inactivity_timeout: { description: '', 'x-found-in': 'body', type: 'number' }, is_default: { description: '', 'x-found-in': 'body', type: 'boolean' }, is_default_fleet_server: { description: '', 'x-found-in': 'body', type: 'boolean' }, is_managed: { description: '', 'x-found-in': 'body', type: 'boolean' }, is_protected: { description: '', 'x-found-in': 'body', type: 'boolean' }, is_verifier: { description: '', 'x-found-in': 'body', type: 'boolean' }, keep_monitoring_alive: { description: 'When set to true, monitoring will be enabled but logs/metrics collection will be disabled', 'x-found-in': 'body', type: 'boolean' }, min_agent_version: { description: '', 'x-found-in': 'body', type: 'string' }, monitoring_diagnostics: { description: '', 'x-found-in': 'body', type: 'object' }, monitoring_enabled: { description: '', 'x-found-in': 'body' }, monitoring_http: { description: '', 'x-found-in': 'body', type: 'object' }, monitoring_output_id: { description: '', 'x-found-in': 'body', type: 'string' }, monitoring_pprof_enabled: { description: '', 'x-found-in': 'body', type: 'boolean' }, name: { description: '', 'x-found-in': 'body', type: 'string' }, namespace: { description: '', 'x-found-in': 'body', type: 'string' }, overrides: { description: 'Override settings that are defined in the agent policy. Input settings cannot be overridden. The override option should be used only in unusual circumstances and not as a routine procedure.', 'x-found-in': 'body', type: 'object' }, package_agent_version_conditions: { description: '', 'x-found-in': 'body' }, required_versions: { description: '', 'x-found-in': 'body' }, space_ids: { description: '', 'x-found-in': 'body' }, supports_agentless: { description: 'Indicates whether the agent policy supports agentless integrations. Deprecated in favor of the Fleet agentless policies API.', 'x-found-in': 'body', type: 'boolean' }, unenroll_timeout: { description: '', 'x-found-in': 'body', type: 'number' } }, required: ['agentPolicyId', 'name', 'namespace'] },
   },
   {
@@ -58,6 +63,7 @@ export const elasticAgentPoliciesDefinitions: KbApiDefinition[] = [
     description: 'Get auto upgrade agent status',
     method: 'GET',
     path: '/api/fleet/agent_policies/{agentPolicyId}/auto_upgrade_agents_status',
+    destructive: false,
     input: { type: 'object', properties: { agentPolicyId: { type: 'string', description: 'The ID of the agent policy', 'x-found-in': 'path' } }, required: ['agentPolicyId'] },
   },
   {
@@ -66,6 +72,7 @@ export const elasticAgentPoliciesDefinitions: KbApiDefinition[] = [
     description: 'Copy an agent policy',
     method: 'POST',
     path: '/api/fleet/agent_policies/{agentPolicyId}/copy',
+    destructive: true,
     input: { type: 'object', properties: { agentPolicyId: { type: 'string', description: 'The ID of the agent policy', 'x-found-in': 'path' }, format: { type: 'string', description: 'Format for the response: simplified or legacy', 'x-found-in': 'query' }, description: { description: '', 'x-found-in': 'body', type: 'string' }, name: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['agentPolicyId', 'name'] },
   },
   {
@@ -74,6 +81,7 @@ export const elasticAgentPoliciesDefinitions: KbApiDefinition[] = [
     description: 'Download an agent policy',
     method: 'GET',
     path: '/api/fleet/agent_policies/{agentPolicyId}/download',
+    destructive: false,
     input: { type: 'object', properties: { agentPolicyId: { type: 'string', description: 'The ID of the agent policy', 'x-found-in': 'path' }, download: { type: 'boolean', description: 'If true, returns the policy as a downloadable file', 'x-found-in': 'query' }, standalone: { type: 'boolean', description: 'If true, returns the policy formatted for standalone agents', 'x-found-in': 'query' }, kubernetes: { type: 'boolean', description: 'If true, returns the policy formatted for Kubernetes deployment', 'x-found-in': 'query' }, revision: { type: 'number', description: 'If provided, returns the policy at the specified revision. Cannot be used with standalone or kubernetes flags.', 'x-found-in': 'query' } }, required: ['agentPolicyId'] },
   },
   {
@@ -82,6 +90,7 @@ export const elasticAgentPoliciesDefinitions: KbApiDefinition[] = [
     description: 'Get a full agent policy',
     method: 'GET',
     path: '/api/fleet/agent_policies/{agentPolicyId}/full',
+    destructive: false,
     input: { type: 'object', properties: { agentPolicyId: { type: 'string', description: 'The ID of the agent policy', 'x-found-in': 'path' }, download: { type: 'boolean', description: 'If true, returns the policy as a downloadable file', 'x-found-in': 'query' }, standalone: { type: 'boolean', description: 'If true, returns the policy formatted for standalone agents', 'x-found-in': 'query' }, kubernetes: { type: 'boolean', description: 'If true, returns the policy formatted for Kubernetes deployment', 'x-found-in': 'query' }, revision: { type: 'number', description: 'If provided, returns the policy at the specified revision. Cannot be used with standalone or kubernetes flags.', 'x-found-in': 'query' } }, required: ['agentPolicyId'] },
   },
   {
@@ -90,6 +99,7 @@ export const elasticAgentPoliciesDefinitions: KbApiDefinition[] = [
     description: 'Get outputs for an agent policy',
     method: 'GET',
     path: '/api/fleet/agent_policies/{agentPolicyId}/outputs',
+    destructive: false,
     input: { type: 'object', properties: { agentPolicyId: { type: 'string', description: 'The ID of the agent policy', 'x-found-in': 'path' } }, required: ['agentPolicyId'] },
   },
   {
@@ -98,6 +108,7 @@ export const elasticAgentPoliciesDefinitions: KbApiDefinition[] = [
     description: 'Delete an agent policy',
     method: 'POST',
     path: '/api/fleet/agent_policies/delete',
+    destructive: true,
     input: { type: 'object', properties: { agentPolicyId: { description: 'The ID of the agent policy', 'x-found-in': 'body', type: 'string' }, force: { description: 'bypass validation checks that can prevent agent policy deletion', 'x-found-in': 'body', type: 'boolean' } }, required: ['agentPolicyId'] },
   },
   {
@@ -106,6 +117,7 @@ export const elasticAgentPoliciesDefinitions: KbApiDefinition[] = [
     description: 'Get outputs for agent policies',
     method: 'POST',
     path: '/api/fleet/agent_policies/outputs',
+    destructive: true,
     input: { type: 'object', properties: { ids: { description: 'list of package policy ids', 'x-found-in': 'body' } }, required: ['ids'] },
   },
   {
@@ -114,6 +126,7 @@ export const elasticAgentPoliciesDefinitions: KbApiDefinition[] = [
     description: 'Get a full K8s agent manifest',
     method: 'GET',
     path: '/api/fleet/kubernetes',
+    destructive: false,
     input: { type: 'object', properties: { download: { type: 'boolean', description: 'If true, returns the manifest as a downloadable file', 'x-found-in': 'query' }, fleetServer: { type: 'string', description: 'Fleet Server host URL to include in the manifest', 'x-found-in': 'query' }, enrolToken: { type: 'string', description: 'Enrollment token to include in the manifest', 'x-found-in': 'query' } } },
   },
   {
@@ -122,6 +135,7 @@ export const elasticAgentPoliciesDefinitions: KbApiDefinition[] = [
     description: 'Download an agent manifest',
     method: 'GET',
     path: '/api/fleet/kubernetes/download',
+    destructive: false,
     input: { type: 'object', properties: { download: { type: 'boolean', description: 'If true, returns the manifest as a downloadable file', 'x-found-in': 'query' }, fleetServer: { type: 'string', description: 'Fleet Server host URL to include in the manifest', 'x-found-in': 'query' }, enrolToken: { type: 'string', description: 'Enrollment token to include in the manifest', 'x-found-in': 'query' } } },
   },
 ]

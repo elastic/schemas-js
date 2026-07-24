@@ -18,6 +18,7 @@ export const alertingDefinitions: KbApiDefinition[] = [
     description: 'Delete a rule',
     method: 'DELETE',
     path: '/api/alerting/rule/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The identifier for the rule.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -26,6 +27,7 @@ export const alertingDefinitions: KbApiDefinition[] = [
     description: 'Get rule details',
     method: 'GET',
     path: '/api/alerting/rule/{id}',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The identifier for the rule.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -34,6 +36,7 @@ export const alertingDefinitions: KbApiDefinition[] = [
     description: 'Create a rule',
     method: 'POST',
     path: '/api/alerting/rule/{id}',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The identifier for the rule. If it is omitted, an ID is randomly generated.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -42,6 +45,7 @@ export const alertingDefinitions: KbApiDefinition[] = [
     description: 'Update a rule',
     method: 'PUT',
     path: '/api/alerting/rule/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The identifier for the rule.', 'x-found-in': 'path' }, actions: { description: '', 'x-found-in': 'body' }, alert_delay: { description: 'Indicates that an alert occurs only when the specified number of consecutive runs met the rule conditions.', 'x-found-in': 'body', type: 'object' }, artifacts: { description: '', 'x-found-in': 'body', type: 'object' }, flapping: { description: '', 'x-found-in': 'body', type: 'object' }, name: { description: 'The name of the rule. While this name does not have to be unique, a distinctive name can help you identify a rule.', 'x-found-in': 'body', type: 'string' }, notify_when: { description: 'Indicates how frequently rule actions are triggered. Valid values include: `onActionGroupChange`: Actions run when the alert status changes; `onActiveAlert`: Actions run when the alert becomes active and at each check interval while the rule conditions are met; `onThrottleInterval`: Actions run when the alert becomes active and at the interval specified in the throttle property while the rule conditions are met. You cannot specify `notify_when` at both the rule and action level. The recommended approach is to set it for each action individually. If you set `notify_when` at the rule level and then edit the rule, it will automatically be converted to action-specific values.', 'x-found-in': 'body', type: 'string' }, params: { description: 'The parameters for the rule.', 'x-found-in': 'body', type: 'object' }, schedule: { description: '', 'x-found-in': 'body', type: 'object' }, tags: { description: '', 'x-found-in': 'body' }, throttle: { description: 'Use the `throttle` property in the action `frequency` object instead. The throttle interval, which defines how frequently rule actions are triggered. You cannot specify the throttle interval at both the rule and action level. If you set the throttle interval at the rule level and then edit the rule, it will automatically be converted to action-specific values.', 'x-found-in': 'body', type: 'string' } }, required: ['id', 'name', 'schedule'] },
   },
   {
@@ -50,6 +54,7 @@ export const alertingDefinitions: KbApiDefinition[] = [
     description: 'Disable a rule',
     method: 'POST',
     path: '/api/alerting/rule/{id}/_disable',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The identifier for the rule.', 'x-found-in': 'path' }, untrack: { description: "Defines whether this rule's alerts should be untracked.", 'x-found-in': 'body', type: 'boolean' } }, required: ['id'] },
   },
   {
@@ -58,6 +63,7 @@ export const alertingDefinitions: KbApiDefinition[] = [
     description: 'Enable a rule',
     method: 'POST',
     path: '/api/alerting/rule/{id}/_enable',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The identifier for the rule.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -66,6 +72,7 @@ export const alertingDefinitions: KbApiDefinition[] = [
     description: 'Mute all alerts',
     method: 'POST',
     path: '/api/alerting/rule/{id}/_mute_all',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The identifier for the rule.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -74,6 +81,7 @@ export const alertingDefinitions: KbApiDefinition[] = [
     description: 'Unmute all alerts',
     method: 'POST',
     path: '/api/alerting/rule/{id}/_unmute_all',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The identifier for the rule.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -82,6 +90,7 @@ export const alertingDefinitions: KbApiDefinition[] = [
     description: 'Update the API key for a rule',
     method: 'POST',
     path: '/api/alerting/rule/{id}/_update_api_key',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The identifier for the rule.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -90,6 +99,7 @@ export const alertingDefinitions: KbApiDefinition[] = [
     description: 'Get the Elasticsearch query for a rule',
     method: 'GET',
     path: '/api/alerting/rule/{id}/query_inspector',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The identifier for the rule.', 'x-found-in': 'path' }, mode: { type: 'string', description: 'The inspection mode. Use "build" to return only the query, or "execute" to run the query and include the response.', 'x-found-in': 'query' }, alert_id: { type: 'string', description: 'The alert document ID. When provided, the query inspector uses the evaluation time range from the alert instead of the current time.', 'x-found-in': 'query' } }, required: ['id'] },
   },
   {
@@ -98,6 +108,7 @@ export const alertingDefinitions: KbApiDefinition[] = [
     description: 'Schedule a snooze for the rule',
     method: 'POST',
     path: '/api/alerting/rule/{id}/snooze_schedule',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'Identifier of the rule.', 'x-found-in': 'path' }, schedule: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['id', 'schedule'] },
   },
   {
@@ -106,6 +117,7 @@ export const alertingDefinitions: KbApiDefinition[] = [
     description: 'Mute an alert',
     method: 'POST',
     path: '/api/alerting/rule/{rule_id}/alert/{alert_id}/_mute',
+    destructive: true,
     input: { type: 'object', properties: { rule_id: { type: 'string', description: 'The identifier for the rule.', 'x-found-in': 'path' }, alert_id: { type: 'string', description: 'The identifier for the alert.', 'x-found-in': 'path' }, validate_alerts_existence: { type: 'boolean', description: 'Whether to validate the existence of the alert.', 'x-found-in': 'query' } }, required: ['rule_id', 'alert_id'] },
   },
   {
@@ -114,6 +126,7 @@ export const alertingDefinitions: KbApiDefinition[] = [
     description: 'Unmute an alert',
     method: 'POST',
     path: '/api/alerting/rule/{rule_id}/alert/{alert_id}/_unmute',
+    destructive: true,
     input: { type: 'object', properties: { rule_id: { type: 'string', description: 'The identifier for the rule.', 'x-found-in': 'path' }, alert_id: { type: 'string', description: 'The identifier for the alert.', 'x-found-in': 'path' } }, required: ['rule_id', 'alert_id'] },
   },
   {
@@ -122,6 +135,7 @@ export const alertingDefinitions: KbApiDefinition[] = [
     description: 'Delete a snooze schedule for a rule',
     method: 'DELETE',
     path: '/api/alerting/rule/{ruleId}/snooze_schedule/{scheduleId}',
+    destructive: true,
     input: { type: 'object', properties: { ruleId: { type: 'string', description: 'The identifier for the rule.', 'x-found-in': 'path' }, scheduleId: { type: 'string', description: 'The identifier for the snooze schedule.', 'x-found-in': 'path' } }, required: ['ruleId', 'scheduleId'] },
   },
   {
@@ -130,6 +144,7 @@ export const alertingDefinitions: KbApiDefinition[] = [
     description: 'Get information about rules',
     method: 'GET',
     path: '/api/alerting/rules/_find',
+    destructive: false,
     input: { type: 'object', properties: { per_page: { type: 'number', description: 'The number of rules to return per page.', 'x-found-in': 'query' }, page: { type: 'number', description: 'The page number to return.', 'x-found-in': 'query' }, search: { type: 'string', description: 'An Elasticsearch simple_query_string query that filters the objects in the response.', 'x-found-in': 'query' }, default_search_operator: { type: 'string', description: 'The default operator to use for the simple_query_string.', 'x-found-in': 'query' }, search_fields: { type: 'string', description: 'The fields to perform the simple_query_string parsed query against.', 'x-found-in': 'query' }, sort_field: { type: 'string', description: 'Determines which field is used to sort the results. The field must exist in the `attributes` key of the response.', 'x-found-in': 'query' }, sort_order: { type: 'string', description: 'Determines the sort order.', 'x-found-in': 'query' }, has_reference: { type: 'string', description: 'Filters the rules that have a relation with the reference objects with a specific type and identifier.', 'x-found-in': 'query' }, fields: { type: 'string', description: 'The fields to return in the `attributes` key of the response.', 'x-found-in': 'query' }, filter: { type: 'string', description: 'A KQL string that you filter with an attribute from your saved object. It should look like `savedObjectType.attributes.title: "myTitle"`. However, if you used a direct attribute of a saved object, such as `updatedAt`, you must define your filter, for example, `savedObjectType.updatedAt > 2018-12-22`.', 'x-found-in': 'query' }, filter_consumers: { type: 'string', description: '', 'x-found-in': 'query' } } },
   },
   {
@@ -138,6 +153,7 @@ export const alertingDefinitions: KbApiDefinition[] = [
     description: 'Find backfills for rules',
     method: 'POST',
     path: '/api/alerting/rules/backfill/_find',
+    destructive: true,
     input: { type: 'object', properties: { end: { type: 'string', description: 'The end date for filtering backfills.', 'x-found-in': 'query' }, page: { type: 'number', description: 'The page number to return.', 'x-found-in': 'query' }, per_page: { type: 'number', description: 'The number of backfills to return per page.', 'x-found-in': 'query' }, rule_ids: { type: 'string', description: 'A comma-separated list of rule identifiers.', 'x-found-in': 'query' }, initiator: { type: 'string', description: 'The initiator of the backfill, either `user` for manual backfills or `system` for automatic gap fills.', 'x-found-in': 'query' }, start: { type: 'string', description: 'The start date for filtering backfills.', 'x-found-in': 'query' }, sort_field: { type: 'string', description: 'The field to sort backfills by.', 'x-found-in': 'query' }, sort_order: { type: 'string', description: 'The sort order.', 'x-found-in': 'query' } } },
   },
   {
@@ -146,6 +162,7 @@ export const alertingDefinitions: KbApiDefinition[] = [
     description: 'Schedule a backfill for rules',
     method: 'POST',
     path: '/api/alerting/rules/backfill/_schedule',
+    destructive: true,
   },
   {
     name: 'delete-alerting-rules-backfill-id',
@@ -153,6 +170,7 @@ export const alertingDefinitions: KbApiDefinition[] = [
     description: 'Delete a backfill by ID',
     method: 'DELETE',
     path: '/api/alerting/rules/backfill/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The identifier for the backfill.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -161,6 +179,7 @@ export const alertingDefinitions: KbApiDefinition[] = [
     description: 'Get a backfill by ID',
     method: 'GET',
     path: '/api/alerting/rules/backfill/{id}',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The identifier for the backfill.', 'x-found-in': 'path' } }, required: ['id'] },
   },
 ]

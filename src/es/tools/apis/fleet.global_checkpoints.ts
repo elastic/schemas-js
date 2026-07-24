@@ -31,6 +31,7 @@ export const fleet_global_checkpoints_definitions: EsApiDefinition[] = [
     description: 'Get global checkpoints.',
     method: 'GET',
     path: '/{index}/_fleet/global_checkpoints',
+    destructive: false,
     input: _inputSchema,
   },
 ]

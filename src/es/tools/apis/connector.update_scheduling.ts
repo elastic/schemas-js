@@ -31,6 +31,7 @@ export const connector_update_scheduling_definitions: EsApiDefinition[] = [
     description: 'Update the connector scheduling.',
     method: 'PUT',
     path: '/_connector/{connector_id}/_scheduling',
+    destructive: true,
     input: _inputSchema,
   },
 ]

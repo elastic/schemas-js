@@ -31,6 +31,7 @@ export const security_update_settings_definitions: EsApiDefinition[] = [
     description: 'Update security index settings.',
     method: 'PUT',
     path: '/_security/settings',
+    destructive: true,
     input: _inputSchema,
   },
 ]

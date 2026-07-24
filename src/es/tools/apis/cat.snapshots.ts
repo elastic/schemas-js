@@ -31,6 +31,7 @@ export const cat_snapshots_definitions: EsApiDefinition[] = [
     description: 'Get snapshot information.',
     method: 'GET',
     path: '/_cat/snapshots/{repository}',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

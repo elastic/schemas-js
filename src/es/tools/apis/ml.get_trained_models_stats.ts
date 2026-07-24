@@ -31,6 +31,7 @@ export const ml_get_trained_models_stats_definitions: EsApiDefinition[] = [
     description: 'Get trained models usage info.',
     method: 'GET',
     path: '/_ml/trained_models/{model_id}/_stats',
+    destructive: false,
     input: _inputSchema,
   },
 ]

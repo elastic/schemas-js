@@ -31,6 +31,7 @@ export const ilm_get_status_definitions: EsApiDefinition[] = [
     description: 'Get the ILM status.',
     method: 'GET',
     path: '/_ilm/status',
+    destructive: false,
     input: _inputSchema,
   },
 ]

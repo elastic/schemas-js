@@ -18,6 +18,7 @@ export const dashboardsDefinitions: KbApiDefinition[] = [
     description: 'Get dashboards',
     method: 'GET',
     path: '/api/dashboards',
+    destructive: false,
   },
   {
     name: 'create-dashboard-redirect',
@@ -25,6 +26,7 @@ export const dashboardsDefinitions: KbApiDefinition[] = [
     description: 'Create a dashboard',
     method: 'POST',
     path: '/api/dashboards',
+    destructive: false,
   },
   {
     name: 'get-dashboard-redirect',
@@ -32,6 +34,7 @@ export const dashboardsDefinitions: KbApiDefinition[] = [
     description: 'Get a dashboard',
     method: 'GET',
     path: '/api/dashboards/{id}',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The id parameter', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -40,6 +43,7 @@ export const dashboardsDefinitions: KbApiDefinition[] = [
     description: 'Update a dashboard',
     method: 'PUT',
     path: '/api/dashboards/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The id parameter', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -48,6 +52,7 @@ export const dashboardsDefinitions: KbApiDefinition[] = [
     description: 'Delete a dashboard',
     method: 'DELETE',
     path: '/api/dashboards/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The id parameter', 'x-found-in': 'path' } }, required: ['id'] },
   },
 ]

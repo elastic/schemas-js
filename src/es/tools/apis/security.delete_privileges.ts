@@ -31,6 +31,7 @@ export const security_delete_privileges_definitions: EsApiDefinition[] = [
     description: 'Delete application privileges.',
     method: 'DELETE',
     path: '/_security/privilege/{application}/{name}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

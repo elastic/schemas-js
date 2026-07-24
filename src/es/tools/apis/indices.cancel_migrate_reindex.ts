@@ -31,6 +31,7 @@ export const indices_cancel_migrate_reindex_definitions: EsApiDefinition[] = [
     description: 'Cancel a migration reindex operation.',
     method: 'POST',
     path: '/_migration/reindex/{index}/_cancel',
+    destructive: true,
     input: _inputSchema,
   },
 ]

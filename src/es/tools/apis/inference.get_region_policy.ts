@@ -31,6 +31,7 @@ export const inference_get_region_policy_definitions: EsApiDefinition[] = [
     description: 'Get the inference region policy.',
     method: 'GET',
     path: '/_inference/_region_policy',
+    destructive: false,
     input: _inputSchema,
   },
 ]

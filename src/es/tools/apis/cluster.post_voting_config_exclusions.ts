@@ -31,6 +31,7 @@ export const cluster_post_voting_config_exclusions_definitions: EsApiDefinition[
     description: 'Update voting configuration exclusions.',
     method: 'POST',
     path: '/_cluster/voting_config_exclusions',
+    destructive: true,
     input: _inputSchema,
   },
 ]

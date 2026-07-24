@@ -31,6 +31,7 @@ export const indices_clear_cache_definitions: EsApiDefinition[] = [
     description: 'Clear the cache.',
     method: 'POST',
     path: '/{index}/_cache/clear',
+    destructive: true,
     input: _inputSchema,
   },
 ]

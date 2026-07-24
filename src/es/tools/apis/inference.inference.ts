@@ -31,6 +31,7 @@ export const inference_inference_definitions: EsApiDefinition[] = [
     description: 'Perform inference on the service.',
     method: 'POST',
     path: '/_inference/{task_type}/{inference_id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

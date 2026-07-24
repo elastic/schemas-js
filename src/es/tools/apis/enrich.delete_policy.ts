@@ -31,6 +31,7 @@ export const enrich_delete_policy_definitions: EsApiDefinition[] = [
     description: 'Delete an enrich policy.',
     method: 'DELETE',
     path: '/_enrich/policy/{name}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

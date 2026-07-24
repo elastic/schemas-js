@@ -30,6 +30,7 @@ export const reindex_rethrottle_definitions: EsApiDefinition[] = [
     description: 'Throttle a reindex operation.',
     method: 'POST',
     path: '/_reindex/{task_id}/_rethrottle',
+    destructive: true,
     input: _inputSchema,
   },
 ]

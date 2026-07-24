@@ -31,6 +31,7 @@ export const watcher_stop_definitions: EsApiDefinition[] = [
     description: 'Stop the watch service.',
     method: 'POST',
     path: '/_watcher/_stop',
+    destructive: true,
     input: _inputSchema,
   },
 ]

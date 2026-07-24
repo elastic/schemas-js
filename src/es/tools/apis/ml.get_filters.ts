@@ -31,6 +31,7 @@ export const ml_get_filters_definitions: EsApiDefinition[] = [
     description: 'Get filters.',
     method: 'GET',
     path: '/_ml/filters/{filter_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -18,5 +18,6 @@ export const snapshot_delete_repository_definitions: EsApiDefinition[] = [
     description: 'Delete snapshot repositories.',
     method: 'DELETE',
     path: '/_snapshot/{repository}',
+    destructive: true,
   },
 ]

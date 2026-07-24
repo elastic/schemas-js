@@ -31,6 +31,7 @@ export const ml_put_calendar_definitions: EsApiDefinition[] = [
     description: 'Create a calendar.',
     method: 'PUT',
     path: '/_ml/calendars/{calendar_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

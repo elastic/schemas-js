@@ -31,6 +31,7 @@ export const indices_reload_search_analyzers_definitions: EsApiDefinition[] = [
     description: 'Reload search analyzers.',
     method: 'GET',
     path: '/{index}/_reload_search_analyzers',
+    destructive: false,
     input: _inputSchema,
   },
 ]

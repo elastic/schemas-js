@@ -31,6 +31,7 @@ export const indices_exists_definitions: EsApiDefinition[] = [
     description: 'Check indices.',
     method: 'HEAD',
     path: '/{index}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

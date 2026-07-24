@@ -31,6 +31,7 @@ export const indices_field_usage_stats_definitions: EsApiDefinition[] = [
     description: 'Get field usage stats.',
     method: 'GET',
     path: '/{index}/_field_usage_stats',
+    destructive: false,
     input: _inputSchema,
   },
 ]

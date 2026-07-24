@@ -31,6 +31,7 @@ export const ml_put_filter_definitions: EsApiDefinition[] = [
     description: 'Create a filter.',
     method: 'PUT',
     path: '/_ml/filters/{filter_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const license_get_basic_status_definitions: EsApiDefinition[] = [
     description: 'Get the basic license status.',
     method: 'GET',
     path: '/_license/basic_status',
+    destructive: false,
     input: _inputSchema,
   },
 ]

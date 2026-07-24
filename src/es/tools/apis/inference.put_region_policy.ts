@@ -31,6 +31,7 @@ export const inference_put_region_policy_definitions: EsApiDefinition[] = [
     description: 'Create or update the inference region policy.',
     method: 'PUT',
     path: '/_inference/_region_policy',
+    destructive: true,
     input: _inputSchema,
   },
 ]

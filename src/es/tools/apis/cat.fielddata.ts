@@ -31,6 +31,7 @@ export const cat_fielddata_definitions: EsApiDefinition[] = [
     description: 'Get field data cache information.',
     method: 'GET',
     path: '/_cat/fielddata/{fields}',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

@@ -18,6 +18,7 @@ export const accountsDefinitions: CloudApiDefinition[] = [
     description: 'Fetch current account information',
     method: 'GET',
     path: '/api/v1/account',
+    destructive: false,
   },
   {
     name: 'update-current-account',
@@ -25,6 +26,7 @@ export const accountsDefinitions: CloudApiDefinition[] = [
     description: 'Updates the current account',
     method: 'PUT',
     path: '/api/v1/account',
+    destructive: true,
   },
   {
     name: 'patch-current-account',
@@ -32,5 +34,6 @@ export const accountsDefinitions: CloudApiDefinition[] = [
     description: 'Updates the current account',
     method: 'PATCH',
     path: '/api/v1/account',
+    destructive: true,
   },
 ]

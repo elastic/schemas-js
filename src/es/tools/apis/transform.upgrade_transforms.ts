@@ -31,6 +31,7 @@ export const transform_upgrade_transforms_definitions: EsApiDefinition[] = [
     description: 'Upgrade all transforms.',
     method: 'POST',
     path: '/_transform/_upgrade',
+    destructive: true,
     input: _inputSchema,
   },
 ]

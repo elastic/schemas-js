@@ -18,6 +18,7 @@ export const elasticAgentStatusDefinitions: KbApiDefinition[] = [
     description: 'Get an agent status summary',
     method: 'GET',
     path: '/api/fleet/agent_status',
+    destructive: false,
     input: { type: 'object', properties: { policyId: { type: 'string', description: 'Filter by agent policy ID', 'x-found-in': 'query' }, policyIds: { type: 'string', description: 'Filter by one or more agent policy IDs', 'x-found-in': 'query' }, kuery: { type: 'string', description: 'A KQL query string to filter results', 'x-found-in': 'query' } } },
   },
 ]

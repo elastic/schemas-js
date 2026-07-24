@@ -18,6 +18,7 @@ export const messageSigningServiceDefinitions: KbApiDefinition[] = [
     description: 'Rotate a Fleet message signing key pair',
     method: 'POST',
     path: '/api/fleet/message_signing_service/rotate_key_pair',
+    destructive: true,
     input: { type: 'object', properties: { acknowledge: { type: 'boolean', description: 'Set to true to confirm you understand the risks of rotating the key pair', 'x-found-in': 'query' } } },
   },
 ]

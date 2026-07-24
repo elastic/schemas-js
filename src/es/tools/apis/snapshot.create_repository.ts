@@ -18,5 +18,6 @@ export const snapshot_create_repository_definitions: EsApiDefinition[] = [
     description: 'Create or update a snapshot repository.',
     method: 'PUT',
     path: '/_snapshot/{repository}',
+    destructive: true,
   },
 ]

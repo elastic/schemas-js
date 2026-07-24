@@ -31,6 +31,7 @@ export const cat_allocation_definitions: EsApiDefinition[] = [
     description: 'Get shard allocation information.',
     method: 'GET',
     path: '/_cat/allocation/{node_id}',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

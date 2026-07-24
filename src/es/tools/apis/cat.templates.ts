@@ -31,6 +31,7 @@ export const cat_templates_definitions: EsApiDefinition[] = [
     description: 'Get index template information.',
     method: 'GET',
     path: '/_cat/templates/{name}',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

@@ -18,5 +18,6 @@ export const ilm_put_lifecycle_definitions: EsApiDefinition[] = [
     description: 'Create or update a lifecycle policy.',
     method: 'PUT',
     path: '/_ilm/policy/{policy}',
+    destructive: true,
   },
 ]

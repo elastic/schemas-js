@@ -31,6 +31,7 @@ export const indices_put_settings_definitions: EsApiDefinition[] = [
     description: 'Update index settings.',
     method: 'PUT',
     path: '/{index}/_settings',
+    destructive: true,
     input: _inputSchema,
   },
 ]

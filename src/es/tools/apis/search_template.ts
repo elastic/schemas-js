@@ -30,6 +30,7 @@ export const search_template_definitions: EsApiDefinition[] = [
     description: 'Run a search with a search template.',
     method: 'GET',
     path: '/{index}/_search/template',
+    destructive: false,
     input: _inputSchema,
   },
 ]

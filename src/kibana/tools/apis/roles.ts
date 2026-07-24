@@ -18,6 +18,7 @@ export const rolesDefinitions: KbApiDefinition[] = [
     description: 'Get all roles',
     method: 'GET',
     path: '/api/security/role',
+    destructive: false,
     input: { type: 'object', properties: { replaceDeprecatedPrivileges: { type: 'boolean', description: 'If `true` and the response contains any privileges that are associated with deprecated features, they are omitted in favor of details about the appropriate replacement feature privileges.', 'x-found-in': 'query' } } },
   },
   {
@@ -26,6 +27,7 @@ export const rolesDefinitions: KbApiDefinition[] = [
     description: 'Delete a role',
     method: 'DELETE',
     path: '/api/security/role/{name}',
+    destructive: true,
     input: { type: 'object', properties: { name: { type: 'string', description: 'The role name.', 'x-found-in': 'path' } }, required: ['name'] },
   },
   {
@@ -34,6 +36,7 @@ export const rolesDefinitions: KbApiDefinition[] = [
     description: 'Get a role',
     method: 'GET',
     path: '/api/security/role/{name}',
+    destructive: false,
     input: { type: 'object', properties: { name: { type: 'string', description: 'The role name.', 'x-found-in': 'path' }, replaceDeprecatedPrivileges: { type: 'boolean', description: 'If `true` and the response contains any privileges that are associated with deprecated features, they are omitted in favor of details about the appropriate replacement feature privileges.', 'x-found-in': 'query' } }, required: ['name'] },
   },
   {
@@ -42,6 +45,7 @@ export const rolesDefinitions: KbApiDefinition[] = [
     description: 'Create or update a role',
     method: 'PUT',
     path: '/api/security/role/{name}',
+    destructive: true,
     input: { type: 'object', properties: { name: { type: 'string', description: 'The role name.', 'x-found-in': 'path' }, createOnly: { type: 'boolean', description: 'When true, a role is not overwritten if it already exists.', 'x-found-in': 'query' }, description: { description: 'A description for the role.', 'x-found-in': 'body', type: 'string' }, elasticsearch: { description: 'The Elasticsearch cluster, index, and remote cluster security privileges for the role.', 'x-found-in': 'body', type: 'object' }, kibana: { description: '', 'x-found-in': 'body' }, metadata: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['name', 'elasticsearch'] },
   },
   {
@@ -50,6 +54,7 @@ export const rolesDefinitions: KbApiDefinition[] = [
     description: 'Create or update roles',
     method: 'POST',
     path: '/api/security/roles',
+    destructive: true,
     input: { type: 'object', properties: { roles: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['roles'] },
   },
 ]

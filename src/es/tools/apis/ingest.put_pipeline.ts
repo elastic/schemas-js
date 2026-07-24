@@ -31,6 +31,7 @@ export const ingest_put_pipeline_definitions: EsApiDefinition[] = [
     description: 'Create or update a pipeline.',
     method: 'PUT',
     path: '/_ingest/pipeline/{id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

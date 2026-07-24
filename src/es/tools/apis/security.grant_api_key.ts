@@ -31,6 +31,7 @@ export const security_grant_api_key_definitions: EsApiDefinition[] = [
     description: 'Grant an API key.',
     method: 'POST',
     path: '/_security/api_key/grant',
+    destructive: true,
     input: _inputSchema,
   },
 ]

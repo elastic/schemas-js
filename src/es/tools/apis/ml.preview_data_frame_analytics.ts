@@ -31,6 +31,7 @@ export const ml_preview_data_frame_analytics_definitions: EsApiDefinition[] = [
     description: 'Preview features used by data frame analytics.',
     method: 'GET',
     path: '/_ml/data_frame/analytics/{id}/_preview',
+    destructive: false,
     input: _inputSchema,
   },
 ]

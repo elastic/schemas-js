@@ -18,6 +18,7 @@ export const fleetProxiesDefinitions: KbApiDefinition[] = [
     description: 'Get proxies',
     method: 'GET',
     path: '/api/fleet/proxies',
+    destructive: false,
   },
   {
     name: 'post-fleet-proxies',
@@ -25,6 +26,7 @@ export const fleetProxiesDefinitions: KbApiDefinition[] = [
     description: 'Create a proxy',
     method: 'POST',
     path: '/api/fleet/proxies',
+    destructive: false,
     input: { type: 'object', properties: { certificate: { description: '', 'x-found-in': 'body', type: 'string' }, certificate_authorities: { description: '', 'x-found-in': 'body', type: 'string' }, certificate_key: { description: '', 'x-found-in': 'body', type: 'string' }, id: { description: '', 'x-found-in': 'body', type: 'string' }, is_preconfigured: { description: '', 'x-found-in': 'body', type: 'boolean' }, name: { description: '', 'x-found-in': 'body', type: 'string' }, proxy_headers: { description: '', 'x-found-in': 'body', type: 'object' }, url: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['name', 'url'] },
   },
   {
@@ -33,6 +35,7 @@ export const fleetProxiesDefinitions: KbApiDefinition[] = [
     description: 'Delete a proxy',
     method: 'DELETE',
     path: '/api/fleet/proxies/{itemId}',
+    destructive: true,
     input: { type: 'object', properties: { itemId: { type: 'string', description: 'The ID of the proxy', 'x-found-in': 'path' } }, required: ['itemId'] },
   },
   {
@@ -41,6 +44,7 @@ export const fleetProxiesDefinitions: KbApiDefinition[] = [
     description: 'Get a proxy',
     method: 'GET',
     path: '/api/fleet/proxies/{itemId}',
+    destructive: false,
     input: { type: 'object', properties: { itemId: { type: 'string', description: 'The ID of the proxy', 'x-found-in': 'path' } }, required: ['itemId'] },
   },
   {
@@ -49,6 +53,7 @@ export const fleetProxiesDefinitions: KbApiDefinition[] = [
     description: 'Update a proxy',
     method: 'PUT',
     path: '/api/fleet/proxies/{itemId}',
+    destructive: true,
     input: { type: 'object', properties: { itemId: { type: 'string', description: 'The ID of the proxy', 'x-found-in': 'path' }, certificate: { description: '', 'x-found-in': 'body', type: 'string' }, certificate_authorities: { description: '', 'x-found-in': 'body', type: 'string' }, certificate_key: { description: '', 'x-found-in': 'body', type: 'string' }, name: { description: '', 'x-found-in': 'body', type: 'string' }, proxy_headers: { description: '', 'x-found-in': 'body', type: 'object' }, url: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['itemId'] },
   },
 ]

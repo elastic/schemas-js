@@ -31,6 +31,7 @@ export const sql_clear_cursor_definitions: EsApiDefinition[] = [
     description: 'Clear an SQL search cursor.',
     method: 'POST',
     path: '/_sql/close',
+    destructive: true,
     input: _inputSchema,
   },
 ]

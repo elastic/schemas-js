@@ -31,6 +31,7 @@ export const indices_refresh_definitions: EsApiDefinition[] = [
     description: 'Refresh an index.',
     method: 'POST',
     path: '/{index}/_refresh',
+    destructive: true,
     input: _inputSchema,
   },
 ]

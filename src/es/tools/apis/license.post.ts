@@ -31,6 +31,7 @@ export const license_post_definitions: EsApiDefinition[] = [
     description: 'Update the license.',
     method: 'PUT',
     path: '/_license',
+    destructive: true,
     input: _inputSchema,
   },
 ]

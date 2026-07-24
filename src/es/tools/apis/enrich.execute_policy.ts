@@ -31,6 +31,7 @@ export const enrich_execute_policy_definitions: EsApiDefinition[] = [
     description: 'Run an enrich policy.',
     method: 'PUT',
     path: '/_enrich/policy/{name}/_execute',
+    destructive: true,
     input: _inputSchema,
   },
 ]

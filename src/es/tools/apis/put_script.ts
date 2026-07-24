@@ -30,6 +30,7 @@ export const put_script_definitions: EsApiDefinition[] = [
     description: 'Create or update a script or search template.',
     method: 'PUT',
     path: '/_scripts/{id}/{context}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

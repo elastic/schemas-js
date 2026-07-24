@@ -31,6 +31,7 @@ export const search_application_get_behavioral_analytics_definitions: EsApiDefin
     description: 'Get behavioral analytics collections.',
     method: 'GET',
     path: '/_application/analytics/{name}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

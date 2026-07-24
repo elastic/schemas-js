@@ -31,6 +31,7 @@ export const security_clear_api_key_cache_definitions: EsApiDefinition[] = [
     description: 'Clear the API key cache.',
     method: 'POST',
     path: '/_security/api_key/{ids}/_clear_cache',
+    destructive: true,
     input: _inputSchema,
   },
 ]

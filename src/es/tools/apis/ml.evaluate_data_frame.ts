@@ -31,6 +31,7 @@ export const ml_evaluate_data_frame_definitions: EsApiDefinition[] = [
     description: 'Evaluate data frame analytics.',
     method: 'POST',
     path: '/_ml/data_frame/_evaluate',
+    destructive: false,
     input: _inputSchema,
   },
 ]

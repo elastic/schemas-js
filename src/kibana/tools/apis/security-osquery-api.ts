@@ -18,6 +18,7 @@ export const securityOsqueryApiDefinitions: KbApiDefinition[] = [
     description: 'Get unified query history',
     method: 'GET',
     path: '/api/osquery/history',
+    destructive: false,
     input: { type: 'object', properties: { pageSize: { type: 'number', description: 'The number of results to return per page.', 'x-found-in': 'query' }, nextPage: { type: 'string', description: 'A base64-encoded cursor for pagination. Use the value from the previous response to fetch the next page.', 'x-found-in': 'query' }, kuery: { type: 'string', description: 'A search string to filter history entries by pack name, query text, or query ID.', 'x-found-in': 'query' }, userIds: { type: 'string', description: 'Comma-separated list of user IDs to filter live query history.', 'x-found-in': 'query' }, sourceFilters: { type: 'string', description: 'Comma-separated list of source types to include. Valid values are `live`, `rule`, and `scheduled`.', 'x-found-in': 'query' }, startDate: { type: 'string', description: 'The start of the time range filter (ISO 8601).', 'x-found-in': 'query' }, endDate: { type: 'string', description: 'The end of the time range filter (ISO 8601).', 'x-found-in': 'query' } } },
   },
   {
@@ -26,6 +27,7 @@ export const securityOsqueryApiDefinitions: KbApiDefinition[] = [
     description: 'Get live queries',
     method: 'GET',
     path: '/api/osquery/live_queries',
+    destructive: false,
     input: { type: 'object', properties: { kuery: { type: 'string', description: 'A KQL search string to filter live queries.', 'x-found-in': 'query' }, page: { type: 'number', description: 'The page number to return.', 'x-found-in': 'query' }, pageSize: { type: 'number', description: 'The number of results to return per page.', 'x-found-in': 'query' }, sort: { type: 'string', description: 'The field to sort results by.', 'x-found-in': 'query' }, sortOrder: { type: 'string', description: 'The sort order.', 'x-found-in': 'query' } } },
   },
   {
@@ -34,6 +36,7 @@ export const securityOsqueryApiDefinitions: KbApiDefinition[] = [
     description: 'Create a live query',
     method: 'POST',
     path: '/api/osquery/live_queries',
+    destructive: false,
     input: { type: 'object', properties: { agent_all: { description: 'When `true`, the query runs on all agents.', 'x-found-in': 'body', type: 'boolean' }, agent_ids: { description: 'A list of agent IDs to run the query on.', 'x-found-in': 'body' }, agent_platforms: { description: 'A list of agent platforms to run the query on.', 'x-found-in': 'body' }, agent_policy_ids: { description: 'A list of agent policy IDs to run the query on.', 'x-found-in': 'body' }, alert_ids: { description: 'A list of alert IDs associated with the live query.', 'x-found-in': 'body' }, case_ids: { description: 'A list of case IDs associated with the live query.', 'x-found-in': 'body' }, ecs_mapping: { description: 'Map osquery results columns or static values to Elastic Common Schema (ECS) fields', 'x-found-in': 'body', type: 'object' }, event_ids: { description: 'A list of event IDs associated with the live query.', 'x-found-in': 'body' }, metadata: { description: 'Custom metadata object associated with the live query.', 'x-found-in': 'body', type: 'object' }, pack_id: { description: 'The ID of the pack.', 'x-found-in': 'body', type: 'string' }, queries: { description: 'An array of queries to run.', 'x-found-in': 'body' }, query: { description: 'The SQL query you want to run.', 'x-found-in': 'body', type: 'string' }, saved_query_id: { description: 'The ID of a saved query.', 'x-found-in': 'body', type: 'string' } } },
   },
   {
@@ -42,6 +45,7 @@ export const securityOsqueryApiDefinitions: KbApiDefinition[] = [
     description: 'Get live query details',
     method: 'GET',
     path: '/api/osquery/live_queries/{id}',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The ID of the live query.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -50,6 +54,7 @@ export const securityOsqueryApiDefinitions: KbApiDefinition[] = [
     description: 'Get live query results',
     method: 'GET',
     path: '/api/osquery/live_queries/{id}/results/{actionId}',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The ID of the live query.', 'x-found-in': 'path' }, actionId: { type: 'string', description: 'The ID of the query action.', 'x-found-in': 'path' }, kuery: { type: 'string', description: 'A KQL search string to filter results.', 'x-found-in': 'query' }, page: { type: 'number', description: 'The page number to return.', 'x-found-in': 'query' }, pageSize: { type: 'number', description: 'The number of results to return per page.', 'x-found-in': 'query' }, sort: { type: 'string', description: 'The field to sort results by.', 'x-found-in': 'query' }, sortOrder: { type: 'string', description: 'The sort order.', 'x-found-in': 'query' } }, required: ['id', 'actionId'] },
   },
   {
@@ -58,6 +63,7 @@ export const securityOsqueryApiDefinitions: KbApiDefinition[] = [
     description: 'Get packs',
     method: 'GET',
     path: '/api/osquery/packs',
+    destructive: false,
     input: { type: 'object', properties: { page: { type: 'number', description: 'The page number to return.', 'x-found-in': 'query' }, pageSize: { type: 'number', description: 'The number of results to return per page.', 'x-found-in': 'query' }, sort: { type: 'string', description: 'The field to sort results by.', 'x-found-in': 'query' }, sortOrder: { type: 'string', description: 'The sort order.', 'x-found-in': 'query' } } },
   },
   {
@@ -66,6 +72,7 @@ export const securityOsqueryApiDefinitions: KbApiDefinition[] = [
     description: 'Create a pack',
     method: 'POST',
     path: '/api/osquery/packs',
+    destructive: false,
     input: { type: 'object', properties: { description: { description: 'The pack description.', 'x-found-in': 'body', type: 'string' }, enabled: { description: 'Enables the pack.', 'x-found-in': 'body', type: 'boolean' }, interval: { description: 'Pack-level interval, in seconds. Used when `schedule_type` is `interval`. Mutually exclusive with `rrule_schedule`.', 'x-found-in': 'body', type: 'number' }, name: { description: 'The pack name.', 'x-found-in': 'body', type: 'string' }, policy_ids: { description: 'A list of agents policy IDs.', 'x-found-in': 'body' }, queries: { description: 'An object of queries.', 'x-found-in': 'body', type: 'object' }, rrule_schedule: { description: 'RRULE schedule configuration consumed by osquerybeat. Loose date', 'x-found-in': 'body', type: 'object' }, schedule_type: { description: "Discriminator for the pack's schedule mode. `interval` uses native", 'x-found-in': 'body', type: 'string' }, shards: { description: 'An object with shard configuration for policies included in the pack. For each policy, set the shard configuration to a percentage (1–100) of target hosts.', 'x-found-in': 'body', type: 'object' } } },
   },
   {
@@ -74,6 +81,7 @@ export const securityOsqueryApiDefinitions: KbApiDefinition[] = [
     description: 'Delete a pack',
     method: 'DELETE',
     path: '/api/osquery/packs/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The pack ID.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -82,6 +90,7 @@ export const securityOsqueryApiDefinitions: KbApiDefinition[] = [
     description: 'Get pack details',
     method: 'GET',
     path: '/api/osquery/packs/{id}',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The pack ID.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -90,6 +99,7 @@ export const securityOsqueryApiDefinitions: KbApiDefinition[] = [
     description: 'Update a pack',
     method: 'PUT',
     path: '/api/osquery/packs/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The pack ID.', 'x-found-in': 'path' }, description: { description: 'The pack description.', 'x-found-in': 'body', type: 'string' }, enabled: { description: 'Enables the pack.', 'x-found-in': 'body', type: 'boolean' }, interval: { description: 'Pack-level interval, in seconds. Used when `schedule_type` is `interval`. Mutually exclusive with `rrule_schedule`.', 'x-found-in': 'body', type: 'number' }, name: { description: 'The pack name.', 'x-found-in': 'body', type: 'string' }, policy_ids: { description: 'A list of agents policy IDs.', 'x-found-in': 'body' }, queries: { description: 'An object of queries.', 'x-found-in': 'body', type: 'object' }, rrule_schedule: { description: 'RRULE schedule configuration consumed by osquerybeat. Loose date', 'x-found-in': 'body', type: 'object' }, schedule_type: { description: "Discriminator for the pack's schedule mode. `interval` uses native", 'x-found-in': 'body', type: 'string' }, shards: { description: 'An object with shard configuration for policies included in the pack. For each policy, set the shard configuration to a percentage (1–100) of target hosts.', 'x-found-in': 'body', type: 'object' } }, required: ['id'] },
   },
   {
@@ -98,6 +108,7 @@ export const securityOsqueryApiDefinitions: KbApiDefinition[] = [
     description: 'Copy a pack',
     method: 'POST',
     path: '/api/osquery/packs/{id}/copy',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The ID of the pack to copy.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -106,6 +117,7 @@ export const securityOsqueryApiDefinitions: KbApiDefinition[] = [
     description: 'Get saved queries',
     method: 'GET',
     path: '/api/osquery/saved_queries',
+    destructive: false,
     input: { type: 'object', properties: { page: { type: 'number', description: 'The page number to return.', 'x-found-in': 'query' }, pageSize: { type: 'number', description: 'The number of results to return per page.', 'x-found-in': 'query' }, sort: { type: 'string', description: 'The field to sort results by.', 'x-found-in': 'query' }, sortOrder: { type: 'string', description: 'The sort order.', 'x-found-in': 'query' } } },
   },
   {
@@ -114,6 +126,7 @@ export const securityOsqueryApiDefinitions: KbApiDefinition[] = [
     description: 'Create a saved query',
     method: 'POST',
     path: '/api/osquery/saved_queries',
+    destructive: false,
     input: { type: 'object', properties: { description: { description: 'The saved query description.', 'x-found-in': 'body', type: 'string' }, ecs_mapping: { description: 'Map osquery results columns or static values to Elastic Common Schema (ECS) fields', 'x-found-in': 'body', type: 'object' }, id: { description: 'The ID of a saved query.', 'x-found-in': 'body', type: 'string' }, interval: { description: 'An interval, in seconds, on which to run the query.', 'x-found-in': 'body', type: 'string' }, platform: { description: 'Restricts the query to a specified platform. The default is all platforms. To specify multiple platforms, use commas. For example, `linux,darwin`.', 'x-found-in': 'body', type: 'string' }, query: { description: 'The SQL query you want to run.', 'x-found-in': 'body', type: 'string' }, removed: { description: 'Indicates whether the query is removed.', 'x-found-in': 'body', type: 'boolean' }, snapshot: { description: 'Indicates whether the query is a snapshot.', 'x-found-in': 'body', type: 'boolean' }, version: { description: 'Uses the Osquery versions greater than or equal to the specified version string.', 'x-found-in': 'body', type: 'string' } } },
   },
   {
@@ -122,6 +135,7 @@ export const securityOsqueryApiDefinitions: KbApiDefinition[] = [
     description: 'Delete a saved query',
     method: 'DELETE',
     path: '/api/osquery/saved_queries/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The saved query ID.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -130,6 +144,7 @@ export const securityOsqueryApiDefinitions: KbApiDefinition[] = [
     description: 'Get saved query details',
     method: 'GET',
     path: '/api/osquery/saved_queries/{id}',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The saved query ID.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -138,6 +153,7 @@ export const securityOsqueryApiDefinitions: KbApiDefinition[] = [
     description: 'Update a saved query',
     method: 'PUT',
     path: '/api/osquery/saved_queries/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { description: 'The ID of a saved query.', 'x-found-in': 'body', type: 'string' }, description: { description: 'The saved query description.', 'x-found-in': 'body', type: 'string' }, ecs_mapping: { description: 'Map osquery results columns or static values to Elastic Common Schema (ECS) fields', 'x-found-in': 'body', type: 'object' }, interval: { description: 'An interval, in seconds, on which to run the query.', 'x-found-in': 'body', type: 'string' }, platform: { description: 'Restricts the query to a specified platform. The default is all platforms. To specify multiple platforms, use commas. For example, `linux,darwin`.', 'x-found-in': 'body', type: 'string' }, query: { description: 'The SQL query you want to run.', 'x-found-in': 'body', type: 'string' }, removed: { description: 'Indicates whether the query is removed.', 'x-found-in': 'body', type: 'boolean' }, snapshot: { description: 'Indicates whether the query is a snapshot.', 'x-found-in': 'body', type: 'boolean' }, version: { description: 'Uses the Osquery versions greater than or equal to the specified version string.', 'x-found-in': 'body', type: 'string' } }, required: ['id'] },
   },
   {
@@ -146,6 +162,7 @@ export const securityOsqueryApiDefinitions: KbApiDefinition[] = [
     description: 'Copy a saved query',
     method: 'POST',
     path: '/api/osquery/saved_queries/{id}/copy',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The ID of the saved query to copy.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -154,6 +171,7 @@ export const securityOsqueryApiDefinitions: KbApiDefinition[] = [
     description: 'Get scheduled action results',
     method: 'GET',
     path: '/api/osquery/scheduled_results/{scheduleId}/{executionCount}',
+    destructive: false,
     input: { type: 'object', properties: { scheduleId: { type: 'string', description: 'The schedule ID of the scheduled query.', 'x-found-in': 'path' }, executionCount: { type: 'string', description: 'The execution count for this scheduled query run.', 'x-found-in': 'path' }, kuery: { type: 'string', description: 'The kuery to filter the results by.', 'x-found-in': 'query' }, page: { type: 'number', description: 'The page number to return. The default is 1.', 'x-found-in': 'query' }, pageSize: { type: 'number', description: 'The number of results to return per page. The default is 20.', 'x-found-in': 'query' }, sort: { type: 'string', description: 'The field that is used to sort the results.', 'x-found-in': 'query' }, sortOrder: { type: 'string', description: 'Specifies the sort order.', 'x-found-in': 'query' } }, required: ['scheduleId', 'executionCount'] },
   },
   {
@@ -162,6 +180,7 @@ export const securityOsqueryApiDefinitions: KbApiDefinition[] = [
     description: 'Get scheduled query results',
     method: 'GET',
     path: '/api/osquery/scheduled_results/{scheduleId}/{executionCount}/results',
+    destructive: false,
     input: { type: 'object', properties: { scheduleId: { type: 'string', description: 'The schedule ID of the scheduled query.', 'x-found-in': 'path' }, executionCount: { type: 'string', description: 'The execution count for this scheduled query run.', 'x-found-in': 'path' }, kuery: { type: 'string', description: 'The kuery to filter the results by.', 'x-found-in': 'query' }, page: { type: 'number', description: 'The page number to return. The default is 1.', 'x-found-in': 'query' }, pageSize: { type: 'number', description: 'The number of results to return per page. The default is 20.', 'x-found-in': 'query' }, sort: { type: 'string', description: 'The field that is used to sort the results.', 'x-found-in': 'query' }, sortOrder: { type: 'string', description: 'Specifies the sort order.', 'x-found-in': 'query' }, startDate: { type: 'string', description: 'The start date filter (ISO 8601) to narrow down results.', 'x-found-in': 'query' } }, required: ['scheduleId', 'executionCount'] },
   },
 ]

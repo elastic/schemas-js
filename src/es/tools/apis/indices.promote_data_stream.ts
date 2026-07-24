@@ -31,6 +31,7 @@ export const indices_promote_data_stream_definitions: EsApiDefinition[] = [
     description: 'Promote a data stream.',
     method: 'POST',
     path: '/_data_stream/_promote/{name}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

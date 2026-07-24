@@ -31,6 +31,7 @@ export const text_structure_find_message_structure_definitions: EsApiDefinition[
     description: 'Find the structure of text messages.',
     method: 'GET',
     path: '/_text_structure/find_message_structure',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const tasks_cancel_definitions: EsApiDefinition[] = [
     description: 'Cancel a task.',
     method: 'POST',
     path: '/_tasks/{task_id}/_cancel',
+    destructive: true,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const inference_put_openshift_ai_definitions: EsApiDefinition[] = [
     description: 'Create an OpenShift AI inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{openshiftai_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

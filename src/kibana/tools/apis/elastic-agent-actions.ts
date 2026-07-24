@@ -18,6 +18,7 @@ export const elasticAgentActionsDefinitions: KbApiDefinition[] = [
     description: 'Create an agent action',
     method: 'POST',
     path: '/api/fleet/agents/{agentId}/actions',
+    destructive: false,
     input: { type: 'object', properties: { agentId: { type: 'string', description: 'The agent ID', 'x-found-in': 'path' }, action: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['agentId', 'action'] },
   },
   {
@@ -26,6 +27,7 @@ export const elasticAgentActionsDefinitions: KbApiDefinition[] = [
     description: 'Reassign an agent',
     method: 'POST',
     path: '/api/fleet/agents/{agentId}/reassign',
+    destructive: true,
     input: { type: 'object', properties: { agentId: { type: 'string', description: 'The agent ID', 'x-found-in': 'path' }, policy_id: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['agentId', 'policy_id'] },
   },
   {
@@ -34,6 +36,7 @@ export const elasticAgentActionsDefinitions: KbApiDefinition[] = [
     description: 'Remove an OpAMP collector',
     method: 'POST',
     path: '/api/fleet/agents/{agentId}/remove_collector',
+    destructive: true,
     input: { type: 'object', properties: { agentId: { type: 'string', description: 'The collector agent ID', 'x-found-in': 'path' } }, required: ['agentId'] },
   },
   {
@@ -42,6 +45,7 @@ export const elasticAgentActionsDefinitions: KbApiDefinition[] = [
     description: 'Request agent diagnostics',
     method: 'POST',
     path: '/api/fleet/agents/{agentId}/request_diagnostics',
+    destructive: true,
     input: { type: 'object', properties: { agentId: { type: 'string', description: 'The agent ID', 'x-found-in': 'path' }, additional_metrics: { description: '', 'x-found-in': 'body' } }, required: ['agentId'] },
   },
   {
@@ -50,6 +54,7 @@ export const elasticAgentActionsDefinitions: KbApiDefinition[] = [
     description: 'Rollback an agent',
     method: 'POST',
     path: '/api/fleet/agents/{agentId}/rollback',
+    destructive: true,
     input: { type: 'object', properties: { agentId: { type: 'string', description: 'The agent ID to rollback', 'x-found-in': 'path' } }, required: ['agentId'] },
   },
   {
@@ -58,6 +63,7 @@ export const elasticAgentActionsDefinitions: KbApiDefinition[] = [
     description: 'Unenroll an agent',
     method: 'POST',
     path: '/api/fleet/agents/{agentId}/unenroll',
+    destructive: true,
     input: { type: 'object', properties: { agentId: { type: 'string', description: 'The agent ID', 'x-found-in': 'path' }, force: { description: '', 'x-found-in': 'body', type: 'boolean' }, revoke: { description: '', 'x-found-in': 'body', type: 'boolean' } }, required: ['agentId'] },
   },
   {
@@ -66,6 +72,7 @@ export const elasticAgentActionsDefinitions: KbApiDefinition[] = [
     description: 'Upgrade an agent',
     method: 'POST',
     path: '/api/fleet/agents/{agentId}/upgrade',
+    destructive: true,
     input: { type: 'object', properties: { agentId: { type: 'string', description: 'The agent ID', 'x-found-in': 'path' }, force: { description: '', 'x-found-in': 'body', type: 'boolean' }, skipRateLimitCheck: { description: '', 'x-found-in': 'body', type: 'boolean' }, source_uri: { description: '', 'x-found-in': 'body', type: 'string' }, version: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['agentId', 'version'] },
   },
   {
@@ -74,6 +81,7 @@ export const elasticAgentActionsDefinitions: KbApiDefinition[] = [
     description: 'Get an agent action status',
     method: 'GET',
     path: '/api/fleet/agents/action_status',
+    destructive: false,
     input: { type: 'object', properties: { page: { type: 'number', description: 'Page number', 'x-found-in': 'query' }, perPage: { type: 'number', description: 'Number of results per page', 'x-found-in': 'query' }, date: { type: 'string', description: 'Return actions created before this date', 'x-found-in': 'query' }, latest: { type: 'number', description: 'Return only the latest N actions', 'x-found-in': 'query' }, errorSize: { type: 'number', description: 'Number of error details to include per action', 'x-found-in': 'query' } } },
   },
   {
@@ -82,6 +90,7 @@ export const elasticAgentActionsDefinitions: KbApiDefinition[] = [
     description: 'Cancel an agent action',
     method: 'POST',
     path: '/api/fleet/agents/actions/{actionId}/cancel',
+    destructive: true,
     input: { type: 'object', properties: { actionId: { type: 'string', description: 'The ID of the action to cancel', 'x-found-in': 'path' } }, required: ['actionId'] },
   },
   {
@@ -90,6 +99,7 @@ export const elasticAgentActionsDefinitions: KbApiDefinition[] = [
     description: 'Bulk reassign agents',
     method: 'POST',
     path: '/api/fleet/agents/bulk_reassign',
+    destructive: true,
     input: { type: 'object', properties: { agents: { description: '', 'x-found-in': 'body', type: 'object' }, batchSize: { description: '', 'x-found-in': 'body', type: 'number' }, includeInactive: { description: '', 'x-found-in': 'body', type: 'boolean' }, policy_id: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['agents', 'policy_id'] },
   },
   {
@@ -98,6 +108,7 @@ export const elasticAgentActionsDefinitions: KbApiDefinition[] = [
     description: 'Bulk remove OpAMP collectors',
     method: 'POST',
     path: '/api/fleet/agents/bulk_remove_collectors',
+    destructive: true,
     input: { type: 'object', properties: { agents: { description: '', 'x-found-in': 'body', type: 'object' }, includeInactive: { description: 'When passing collectors by KQL query, also removes inactive collectors', 'x-found-in': 'body', type: 'boolean' } }, required: ['agents'] },
   },
   {
@@ -106,6 +117,7 @@ export const elasticAgentActionsDefinitions: KbApiDefinition[] = [
     description: 'Bulk request diagnostics from agents',
     method: 'POST',
     path: '/api/fleet/agents/bulk_request_diagnostics',
+    destructive: true,
     input: { type: 'object', properties: { additional_metrics: { description: '', 'x-found-in': 'body' }, agents: { description: '', 'x-found-in': 'body', type: 'object' }, batchSize: { description: '', 'x-found-in': 'body', type: 'number' } }, required: ['agents'] },
   },
   {
@@ -114,6 +126,7 @@ export const elasticAgentActionsDefinitions: KbApiDefinition[] = [
     description: 'Bulk rollback agents',
     method: 'POST',
     path: '/api/fleet/agents/bulk_rollback',
+    destructive: true,
     input: { type: 'object', properties: { agents: { description: '', 'x-found-in': 'body', type: 'object' }, batchSize: { description: '', 'x-found-in': 'body', type: 'number' }, includeInactive: { description: '', 'x-found-in': 'body', type: 'boolean' } }, required: ['agents'] },
   },
   {
@@ -122,6 +135,7 @@ export const elasticAgentActionsDefinitions: KbApiDefinition[] = [
     description: 'Bulk unenroll agents',
     method: 'POST',
     path: '/api/fleet/agents/bulk_unenroll',
+    destructive: true,
     input: { type: 'object', properties: { agents: { description: '', 'x-found-in': 'body', type: 'object' }, batchSize: { description: '', 'x-found-in': 'body', type: 'number' }, force: { description: 'Unenrolls hosted agents too', 'x-found-in': 'body', type: 'boolean' }, includeInactive: { description: 'When passing agents by KQL query, unenrolls inactive agents too', 'x-found-in': 'body', type: 'boolean' }, revoke: { description: 'Revokes API keys of agents', 'x-found-in': 'body', type: 'boolean' } }, required: ['agents'] },
   },
   {
@@ -130,6 +144,7 @@ export const elasticAgentActionsDefinitions: KbApiDefinition[] = [
     description: 'Bulk update agent tags',
     method: 'POST',
     path: '/api/fleet/agents/bulk_update_agent_tags',
+    destructive: true,
     input: { type: 'object', properties: { agents: { description: '', 'x-found-in': 'body', type: 'object' }, batchSize: { description: '', 'x-found-in': 'body', type: 'number' }, includeInactive: { description: '', 'x-found-in': 'body', type: 'boolean' }, tagsToAdd: { description: '', 'x-found-in': 'body' }, tagsToRemove: { description: '', 'x-found-in': 'body' } }, required: ['agents'] },
   },
   {
@@ -138,6 +153,7 @@ export const elasticAgentActionsDefinitions: KbApiDefinition[] = [
     description: 'Bulk upgrade agents',
     method: 'POST',
     path: '/api/fleet/agents/bulk_upgrade',
+    destructive: true,
     input: { type: 'object', properties: { agents: { description: '', 'x-found-in': 'body', type: 'object' }, batchSize: { description: '', 'x-found-in': 'body', type: 'number' }, force: { description: '', 'x-found-in': 'body', type: 'boolean' }, includeInactive: { description: '', 'x-found-in': 'body', type: 'boolean' }, rollout_duration_seconds: { description: '', 'x-found-in': 'body', type: 'number' }, skipRateLimitCheck: { description: '', 'x-found-in': 'body', type: 'boolean' }, source_uri: { description: '', 'x-found-in': 'body', type: 'string' }, start_time: { description: '', 'x-found-in': 'body', type: 'string' }, version: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['agents', 'version'] },
   },
 ]

@@ -31,6 +31,7 @@ export const slm_get_lifecycle_definitions: EsApiDefinition[] = [
     description: 'Get policy information.',
     method: 'GET',
     path: '/_slm/policy/{policy_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

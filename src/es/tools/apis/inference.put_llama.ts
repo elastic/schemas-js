@@ -31,6 +31,7 @@ export const inference_put_llama_definitions: EsApiDefinition[] = [
     description: 'Create a Llama inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{llama_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

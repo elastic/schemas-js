@@ -31,6 +31,7 @@ export const security_get_builtin_privileges_definitions: EsApiDefinition[] = [
     description: 'Get builtin privileges.',
     method: 'GET',
     path: '/_security/privilege/_builtin',
+    destructive: false,
     input: _inputSchema,
   },
 ]

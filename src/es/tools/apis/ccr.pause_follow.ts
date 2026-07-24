@@ -31,6 +31,7 @@ export const ccr_pause_follow_definitions: EsApiDefinition[] = [
     description: 'Pause a follower.',
     method: 'POST',
     path: '/{index}/_ccr/pause_follow',
+    destructive: true,
     input: _inputSchema,
   },
 ]

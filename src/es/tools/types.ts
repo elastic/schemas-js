@@ -38,4 +38,6 @@ export interface EsApiDefinition {
   responseType?: 'json' | 'text'
   /** how to serialize the request body; defaults to `"json"` */
   bodyFormat?: 'json' | 'ndjson'
+  /** Marks an operation as destructive (delete, update, etc.). */
+  destructive: boolean
 }

@@ -31,6 +31,7 @@ export const ml_delete_expired_data_definitions: EsApiDefinition[] = [
     description: 'Delete expired ML data.',
     method: 'DELETE',
     path: '/_ml/_delete_expired_data/{job_id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

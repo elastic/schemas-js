@@ -31,6 +31,7 @@ export const inference_put_anthropic_definitions: EsApiDefinition[] = [
     description: 'Create an Anthropic inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{anthropic_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

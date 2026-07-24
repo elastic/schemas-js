@@ -31,6 +31,7 @@ export const cluster_delete_voting_config_exclusions_definitions: EsApiDefinitio
     description: 'Clear cluster voting config exclusions.',
     method: 'DELETE',
     path: '/_cluster/voting_config_exclusions',
+    destructive: true,
     input: _inputSchema,
   },
 ]

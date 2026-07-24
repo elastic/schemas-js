@@ -31,6 +31,7 @@ export const cat_plugins_definitions: EsApiDefinition[] = [
     description: 'Get plugin information.',
     method: 'GET',
     path: '/_cat/plugins',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

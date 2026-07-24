@@ -18,6 +18,7 @@ export const maintenanceWindowDefinitions: KbApiDefinition[] = [
     description: 'Create a maintenance window.',
     method: 'POST',
     path: '/api/maintenance_window',
+    destructive: false,
     input: { type: 'object', properties: { enabled: { description: 'Whether the current maintenance window is enabled. Disabled maintenance windows do not suppress notifications.', 'x-found-in': 'body', type: 'boolean' }, schedule: { description: '', 'x-found-in': 'body', type: 'object' }, scope: { description: '', 'x-found-in': 'body', type: 'object' }, title: { description: 'The name of the maintenance window. While this name does not have to be unique, a distinctive name can help you identify a specific maintenance window.', 'x-found-in': 'body', type: 'string' } }, required: ['schedule', 'title'] },
   },
   {
@@ -26,6 +27,7 @@ export const maintenanceWindowDefinitions: KbApiDefinition[] = [
     description: 'Search for a maintenance window.',
     method: 'GET',
     path: '/api/maintenance_window/_find',
+    destructive: false,
     input: { type: 'object', properties: { title: { type: 'string', description: 'The title of the maintenance window.', 'x-found-in': 'query' }, created_by: { type: 'string', description: 'The user who created the maintenance window.', 'x-found-in': 'query' }, status: { type: 'string', description: 'The status of the maintenance window. It can be "running", "upcoming", "finished", "archived", or "disabled".', 'x-found-in': 'query' }, page: { type: 'number', description: 'The page number to return.', 'x-found-in': 'query' }, per_page: { type: 'number', description: 'The number of maintenance windows to return per page.', 'x-found-in': 'query' } } },
   },
   {
@@ -34,6 +36,7 @@ export const maintenanceWindowDefinitions: KbApiDefinition[] = [
     description: 'Delete a maintenance window.',
     method: 'DELETE',
     path: '/api/maintenance_window/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The identifier for the maintenance window to be deleted.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -42,6 +45,7 @@ export const maintenanceWindowDefinitions: KbApiDefinition[] = [
     description: 'Get maintenance window details.',
     method: 'GET',
     path: '/api/maintenance_window/{id}',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The identifier for the maintenance window.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -50,6 +54,7 @@ export const maintenanceWindowDefinitions: KbApiDefinition[] = [
     description: 'Update a maintenance window.',
     method: 'PATCH',
     path: '/api/maintenance_window/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The identifier for the maintenance window.', 'x-found-in': 'path' }, enabled: { description: 'Whether the current maintenance window is enabled. Disabled maintenance windows do not suppress notifications.', 'x-found-in': 'body', type: 'boolean' }, schedule: { description: '', 'x-found-in': 'body', type: 'object' }, scope: { description: '', 'x-found-in': 'body', type: 'object' }, title: { description: 'The name of the maintenance window. While this name does not have to be unique, a distinctive name can help you identify a specific maintenance window.', 'x-found-in': 'body', type: 'string' } }, required: ['id'] },
   },
   {
@@ -58,6 +63,7 @@ export const maintenanceWindowDefinitions: KbApiDefinition[] = [
     description: 'Archive a maintenance window.',
     method: 'POST',
     path: '/api/maintenance_window/{id}/_archive',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The identifier for the maintenance window to be archived.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -66,6 +72,7 @@ export const maintenanceWindowDefinitions: KbApiDefinition[] = [
     description: 'Unarchive a maintenance window.',
     method: 'POST',
     path: '/api/maintenance_window/{id}/_unarchive',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The identifier for the maintenance window to be unarchived.', 'x-found-in': 'path' } }, required: ['id'] },
   },
 ]

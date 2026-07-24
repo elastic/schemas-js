@@ -31,6 +31,7 @@ export const connector_sync_job_delete_definitions: EsApiDefinition[] = [
     description: 'Delete a connector sync job.',
     method: 'DELETE',
     path: '/_connector/_sync_job/{connector_sync_job_id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

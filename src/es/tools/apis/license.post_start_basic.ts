@@ -31,6 +31,7 @@ export const license_post_start_basic_definitions: EsApiDefinition[] = [
     description: 'Start a basic license.',
     method: 'POST',
     path: '/_license/start_basic',
+    destructive: true,
     input: _inputSchema,
   },
 ]

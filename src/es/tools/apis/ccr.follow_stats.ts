@@ -31,6 +31,7 @@ export const ccr_follow_stats_definitions: EsApiDefinition[] = [
     description: 'Get follower stats.',
     method: 'GET',
     path: '/{index}/_ccr/stats',
+    destructive: false,
     input: _inputSchema,
   },
 ]

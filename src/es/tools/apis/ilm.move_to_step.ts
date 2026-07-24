@@ -31,6 +31,7 @@ export const ilm_move_to_step_definitions: EsApiDefinition[] = [
     description: 'Move to a lifecycle step.',
     method: 'POST',
     path: '/_ilm/move/{index}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

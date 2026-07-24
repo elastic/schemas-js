@@ -18,5 +18,6 @@ export const snapshot_repository_analyze_definitions: EsApiDefinition[] = [
     description: 'Analyze a snapshot repository.',
     method: 'POST',
     path: '/_snapshot/{repository}/_analyze',
+    destructive: true,
   },
 ]

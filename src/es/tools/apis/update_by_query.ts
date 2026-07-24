@@ -30,6 +30,7 @@ export const update_by_query_definitions: EsApiDefinition[] = [
     description: 'Update documents.',
     method: 'POST',
     path: '/{index}/_update_by_query',
+    destructive: true,
     input: _inputSchema,
   },
 ]

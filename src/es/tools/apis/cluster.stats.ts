@@ -18,5 +18,6 @@ export const cluster_stats_definitions: EsApiDefinition[] = [
     description: 'Get cluster statistics.',
     method: 'GET',
     path: '/_cluster/stats',
+    destructive: false,
   },
 ]

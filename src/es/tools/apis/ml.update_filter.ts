@@ -31,6 +31,7 @@ export const ml_update_filter_definitions: EsApiDefinition[] = [
     description: 'Update a filter.',
     method: 'POST',
     path: '/_ml/filters/{filter_id}/_update',
+    destructive: true,
     input: _inputSchema,
   },
 ]

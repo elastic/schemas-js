@@ -31,6 +31,7 @@ export const search_application_list_definitions: EsApiDefinition[] = [
     description: 'Get search applications.',
     method: 'GET',
     path: '/_application/search_application',
+    destructive: false,
     input: _inputSchema,
   },
 ]

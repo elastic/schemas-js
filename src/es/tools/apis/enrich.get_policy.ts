@@ -31,6 +31,7 @@ export const enrich_get_policy_definitions: EsApiDefinition[] = [
     description: 'Get an enrich policy.',
     method: 'GET',
     path: '/_enrich/policy/{name}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const searchable_snapshots_cache_stats_definitions: EsApiDefinition[] = [
     description: 'Get cache statistics.',
     method: 'GET',
     path: '/_searchable_snapshots/{node_id}/cache/stats',
+    destructive: false,
     input: _inputSchema,
   },
 ]

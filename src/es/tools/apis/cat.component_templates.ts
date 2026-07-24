@@ -31,6 +31,7 @@ export const cat_component_templates_definitions: EsApiDefinition[] = [
     description: 'Get component templates.',
     method: 'GET',
     path: '/_cat/component_templates/{name}',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

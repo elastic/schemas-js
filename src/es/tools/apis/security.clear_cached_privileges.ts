@@ -31,6 +31,7 @@ export const security_clear_cached_privileges_definitions: EsApiDefinition[] = [
     description: 'Clear the privileges cache.',
     method: 'POST',
     path: '/_security/privilege/{application}/_clear_cache',
+    destructive: true,
     input: _inputSchema,
   },
 ]

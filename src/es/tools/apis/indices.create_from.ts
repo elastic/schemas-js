@@ -31,6 +31,7 @@ export const indices_create_from_definitions: EsApiDefinition[] = [
     description: 'Create an index from a source index.',
     method: 'PUT',
     path: '/_create_from/{source}/{dest}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

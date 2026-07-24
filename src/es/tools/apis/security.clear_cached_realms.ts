@@ -31,6 +31,7 @@ export const security_clear_cached_realms_definitions: EsApiDefinition[] = [
     description: 'Clear the user cache.',
     method: 'POST',
     path: '/_security/realm/{realms}/_clear_cache',
+    destructive: true,
     input: _inputSchema,
   },
 ]

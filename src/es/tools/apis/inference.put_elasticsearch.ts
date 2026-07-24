@@ -31,6 +31,7 @@ export const inference_put_elasticsearch_definitions: EsApiDefinition[] = [
     description: 'Create an Elasticsearch inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{elasticsearch_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

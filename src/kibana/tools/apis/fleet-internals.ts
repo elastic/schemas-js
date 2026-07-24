@@ -18,6 +18,7 @@ export const fleetInternalsDefinitions: KbApiDefinition[] = [
     description: 'Check permissions',
     method: 'GET',
     path: '/api/fleet/check-permissions',
+    destructive: false,
     input: { type: 'object', properties: { fleetServerSetup: { type: 'boolean', description: 'When true, check Fleet Server setup privileges in addition to standard Fleet privileges', 'x-found-in': 'query' } } },
   },
   {
@@ -26,6 +27,7 @@ export const fleetInternalsDefinitions: KbApiDefinition[] = [
     description: 'Check Fleet Server health',
     method: 'POST',
     path: '/api/fleet/health_check',
+    destructive: true,
     input: { type: 'object', properties: { id: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['id'] },
   },
   {
@@ -34,6 +36,7 @@ export const fleetInternalsDefinitions: KbApiDefinition[] = [
     description: 'Get settings',
     method: 'GET',
     path: '/api/fleet/settings',
+    destructive: false,
   },
   {
     name: 'put-fleet-settings',
@@ -41,6 +44,7 @@ export const fleetInternalsDefinitions: KbApiDefinition[] = [
     description: 'Update settings',
     method: 'PUT',
     path: '/api/fleet/settings',
+    destructive: true,
     input: { type: 'object', properties: { additional_yaml_config: { description: '', 'x-found-in': 'body', type: 'string' }, delete_unenrolled_agents: { description: '', 'x-found-in': 'body', type: 'object' }, has_seen_add_data_notice: { description: '', 'x-found-in': 'body', type: 'boolean' }, integration_knowledge_enabled: { description: '', 'x-found-in': 'body', type: 'boolean' }, kibana_ca_sha256: { description: '', 'x-found-in': 'body', type: 'string' }, kibana_urls: { description: '', 'x-found-in': 'body' }, prerelease_integrations_enabled: { description: '', 'x-found-in': 'body', type: 'boolean' } } },
   },
   {
@@ -49,5 +53,6 @@ export const fleetInternalsDefinitions: KbApiDefinition[] = [
     description: 'Initiate Fleet setup',
     method: 'POST',
     path: '/api/fleet/setup',
+    destructive: true,
   },
 ]

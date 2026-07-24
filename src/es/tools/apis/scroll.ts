@@ -30,6 +30,7 @@ export const scroll_definitions: EsApiDefinition[] = [
     description: 'Run a scrolling search.',
     method: 'GET',
     path: '/_search/scroll',
+    destructive: false,
     input: _inputSchema,
   },
 ]

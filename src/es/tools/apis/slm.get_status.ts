@@ -31,6 +31,7 @@ export const slm_get_status_definitions: EsApiDefinition[] = [
     description: 'Get the snapshot lifecycle management status.',
     method: 'GET',
     path: '/_slm/status',
+    destructive: false,
     input: _inputSchema,
   },
 ]

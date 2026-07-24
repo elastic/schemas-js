@@ -18,6 +18,7 @@ export const fleetUninstallTokensDefinitions: KbApiDefinition[] = [
     description: 'Get metadata for latest uninstall tokens',
     method: 'GET',
     path: '/api/fleet/uninstall_tokens',
+    destructive: false,
     input: { type: 'object', properties: { policyId: { type: 'string', description: 'Partial match filtering for policy IDs', 'x-found-in': 'query' }, search: { type: 'string', description: 'Partial match filtering for uninstall token values', 'x-found-in': 'query' }, perPage: { type: 'number', description: 'The number of items to return', 'x-found-in': 'query' }, page: { type: 'number', description: 'Page number', 'x-found-in': 'query' } } },
   },
   {
@@ -26,6 +27,7 @@ export const fleetUninstallTokensDefinitions: KbApiDefinition[] = [
     description: 'Get a decrypted uninstall token',
     method: 'GET',
     path: '/api/fleet/uninstall_tokens/{uninstallTokenId}',
+    destructive: false,
     input: { type: 'object', properties: { uninstallTokenId: { type: 'string', description: 'The ID of the uninstall token', 'x-found-in': 'path' } }, required: ['uninstallTokenId'] },
   },
 ]

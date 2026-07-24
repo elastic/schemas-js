@@ -31,6 +31,7 @@ export const inference_put_nvidia_definitions: EsApiDefinition[] = [
     description: 'Create an Nvidia inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{nvidia_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const cat_shards_definitions: EsApiDefinition[] = [
     description: 'Get shard information.',
     method: 'GET',
     path: '/_cat/shards/{index}',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

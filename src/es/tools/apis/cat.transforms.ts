@@ -31,6 +31,7 @@ export const cat_transforms_definitions: EsApiDefinition[] = [
     description: 'Get transform information.',
     method: 'GET',
     path: '/_cat/transforms/{transform_id}',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

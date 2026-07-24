@@ -31,6 +31,7 @@ export const snapshot_create_definitions: EsApiDefinition[] = [
     description: 'Create a snapshot.',
     method: 'PUT',
     path: '/_snapshot/{repository}/{snapshot}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

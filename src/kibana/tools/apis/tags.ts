@@ -18,6 +18,7 @@ export const tagsDefinitions: KbApiDefinition[] = [
     description: 'Search tags',
     method: 'GET',
     path: '/api/tags',
+    destructive: false,
     input: { type: 'object', properties: { query: { type: 'string', description: 'Filters results by `name` and `description` using Elasticsearch [`simple_query_string`](https://www.elastic.co/docs/reference/query-languages/query-dsl/simple-query-string-query) syntax. Multi-word terms require all words to match.', 'x-found-in': 'query' }, page: { type: 'number', description: 'The page of results to return.', 'x-found-in': 'query' }, per_page: { type: 'number', description: 'The number of results to return per page.', 'x-found-in': 'query' } } },
   },
   {
@@ -26,6 +27,7 @@ export const tagsDefinitions: KbApiDefinition[] = [
     description: 'Create a tag',
     method: 'POST',
     path: '/api/tags',
+    destructive: false,
     input: { type: 'object', properties: { color: { description: 'The tag color as a hex value (e.g. `#772299`). If omitted, a random color is generated.', 'x-found-in': 'body', type: 'string' }, description: { description: 'Optional description of the tag.', 'x-found-in': 'body', type: 'string' }, name: { description: 'The display name of the tag.', 'x-found-in': 'body', type: 'string' } }, required: ['name'] },
   },
   {
@@ -34,6 +36,7 @@ export const tagsDefinitions: KbApiDefinition[] = [
     description: 'Delete a tag',
     method: 'DELETE',
     path: '/api/tags/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The tag ID, as returned by the create or search endpoints.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -42,6 +45,7 @@ export const tagsDefinitions: KbApiDefinition[] = [
     description: 'Get a tag',
     method: 'GET',
     path: '/api/tags/{id}',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The tag ID, as returned by the create or search endpoints.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -50,6 +54,7 @@ export const tagsDefinitions: KbApiDefinition[] = [
     description: 'Upsert a tag',
     method: 'PUT',
     path: '/api/tags/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The tag ID, as returned by the create or search endpoints.', 'x-found-in': 'path' }, color: { description: 'The tag color as a hex value (e.g. `#772299`). If omitted, a random color is generated.', 'x-found-in': 'body', type: 'string' }, description: { description: 'Optional description of the tag.', 'x-found-in': 'body', type: 'string' }, name: { description: 'The display name of the tag.', 'x-found-in': 'body', type: 'string' } }, required: ['id', 'name'] },
   },
 ]

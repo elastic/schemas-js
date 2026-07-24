@@ -30,6 +30,7 @@ export const get_script_definitions: EsApiDefinition[] = [
     description: 'Get a script or search template.',
     method: 'GET',
     path: '/_scripts/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

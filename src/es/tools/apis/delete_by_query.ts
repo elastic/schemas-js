@@ -30,6 +30,7 @@ export const delete_by_query_definitions: EsApiDefinition[] = [
     description: 'Delete documents.',
     method: 'POST',
     path: '/{index}/_delete_by_query',
+    destructive: true,
     input: _inputSchema,
   },
 ]

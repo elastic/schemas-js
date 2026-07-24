@@ -31,6 +31,7 @@ export const security_clone_api_key_definitions: EsApiDefinition[] = [
     description: 'Clone an API key.',
     method: 'POST',
     path: '/_security/api_key/clone',
+    destructive: true,
     input: _inputSchema,
   },
 ]

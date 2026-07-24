@@ -31,6 +31,7 @@ export const security_put_role_definitions: EsApiDefinition[] = [
     description: 'Create or update roles.',
     method: 'PUT',
     path: '/_security/role/{name}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const ingest_delete_geoip_database_definitions: EsApiDefinition[] = [
     description: 'Delete GeoIP database configurations.',
     method: 'DELETE',
     path: '/_ingest/geoip/database/{id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

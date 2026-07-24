@@ -31,6 +31,7 @@ export const ml_get_influencers_definitions: EsApiDefinition[] = [
     description: 'Get anomaly detection job results for influencers.',
     method: 'GET',
     path: '/_ml/anomaly_detectors/{job_id}/results/influencers',
+    destructive: false,
     input: _inputSchema,
   },
 ]

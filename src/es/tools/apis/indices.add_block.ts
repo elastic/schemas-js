@@ -31,6 +31,7 @@ export const indices_add_block_definitions: EsApiDefinition[] = [
     description: 'Add an index block.',
     method: 'PUT',
     path: '/{index}/_block/{block}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

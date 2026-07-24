@@ -31,6 +31,7 @@ export const ssl_certificates_definitions: EsApiDefinition[] = [
     description: 'Get SSL certificates.',
     method: 'GET',
     path: '/_ssl/certificates',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -18,6 +18,7 @@ export const miscDefinitions: KbApiDefinition[] = [
     description: '',
     method: 'GET',
     path: '/api/actions/connector/_oauth_callback_script',
+    destructive: false,
   },
   {
     name: 'get-fleet-space-settings',
@@ -25,6 +26,7 @@ export const miscDefinitions: KbApiDefinition[] = [
     description: 'Get space settings',
     method: 'GET',
     path: '/api/fleet/space_settings',
+    destructive: false,
   },
   {
     name: 'put-fleet-space-settings',
@@ -32,6 +34,7 @@ export const miscDefinitions: KbApiDefinition[] = [
     description: 'Create space settings',
     method: 'PUT',
     path: '/api/fleet/space_settings',
+    destructive: false,
     input: { type: 'object', properties: { allowed_namespace_prefixes: { description: '', 'x-found-in': 'body' } } },
   },
   {
@@ -40,6 +43,7 @@ export const miscDefinitions: KbApiDefinition[] = [
     description: 'Query roles',
     method: 'POST',
     path: '/api/security/role/_query',
+    destructive: true,
     input: { type: 'object', properties: { filters: { description: 'The filter criteria for the query.', 'x-found-in': 'body', type: 'object' }, from: { description: '', 'x-found-in': 'body', type: 'number' }, query: { description: '', 'x-found-in': 'body', type: 'string' }, size: { description: '', 'x-found-in': 'body', type: 'number' }, sort: { description: 'The sort criteria for the query.', 'x-found-in': 'body', type: 'object' } } },
   },
 ]

@@ -31,6 +31,7 @@ export const security_create_service_token_definitions: EsApiDefinition[] = [
     description: 'Create a service account token.',
     method: 'PUT',
     path: '/_security/service/{namespace}/{service}/credential/token/{name}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

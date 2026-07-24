@@ -18,6 +18,7 @@ export const stackDefinitions: CloudApiDefinition[] = [
     description: 'Get stack versions',
     method: 'GET',
     path: '/api/v1/stack/versions',
+    destructive: false,
     input: { type: 'object', properties: { show_deleted: { type: 'boolean', description: 'Whether to show deleted stack versions or not', 'x-found-in': 'query' }, show_unusable: { type: 'boolean', description: 'Whether to show versions that are unusable by the authenticated user', 'x-found-in': 'query' } } },
   },
 ]

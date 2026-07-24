@@ -31,6 +31,7 @@ export const indices_exists_alias_definitions: EsApiDefinition[] = [
     description: 'Check aliases.',
     method: 'HEAD',
     path: '/{index}/_alias/{name}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

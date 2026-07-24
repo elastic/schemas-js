@@ -31,6 +31,7 @@ export const security_query_role_definitions: EsApiDefinition[] = [
     description: 'Find roles with a query.',
     method: 'GET',
     path: '/_security/_query/role',
+    destructive: false,
     input: _inputSchema,
   },
 ]

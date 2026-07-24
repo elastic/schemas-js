@@ -18,6 +18,7 @@ export const visualizationsDefinitions: KbApiDefinition[] = [
     description: 'Get visualizations',
     method: 'GET',
     path: '/api/visualizations',
+    destructive: false,
   },
   {
     name: 'create-visualization-redirect',
@@ -25,6 +26,7 @@ export const visualizationsDefinitions: KbApiDefinition[] = [
     description: 'Create a visualization',
     method: 'POST',
     path: '/api/visualizations',
+    destructive: false,
   },
   {
     name: 'get-visualization-redirect',
@@ -32,6 +34,7 @@ export const visualizationsDefinitions: KbApiDefinition[] = [
     description: 'Get a visualization',
     method: 'GET',
     path: '/api/visualizations/{id}',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The id parameter', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -40,6 +43,7 @@ export const visualizationsDefinitions: KbApiDefinition[] = [
     description: 'Update a visualization',
     method: 'PUT',
     path: '/api/visualizations/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The id parameter', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -48,6 +52,7 @@ export const visualizationsDefinitions: KbApiDefinition[] = [
     description: 'Delete a visualization',
     method: 'DELETE',
     path: '/api/visualizations/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The id parameter', 'x-found-in': 'path' } }, required: ['id'] },
   },
 ]

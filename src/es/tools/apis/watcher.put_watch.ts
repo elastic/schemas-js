@@ -31,6 +31,7 @@ export const watcher_put_watch_definitions: EsApiDefinition[] = [
     description: 'Create or update a watch.',
     method: 'PUT',
     path: '/_watcher/watch/{id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

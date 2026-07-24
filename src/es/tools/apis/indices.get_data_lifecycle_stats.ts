@@ -31,6 +31,7 @@ export const indices_get_data_lifecycle_stats_definitions: EsApiDefinition[] = [
     description: 'Get data stream lifecycle stats.',
     method: 'GET',
     path: '/_lifecycle/stats',
+    destructive: false,
     input: _inputSchema,
   },
 ]

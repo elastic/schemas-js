@@ -30,6 +30,7 @@ export const ping_definitions: EsApiDefinition[] = [
     description: 'Ping the cluster.',
     method: 'HEAD',
     path: '/',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const query_rules_list_rulesets_definitions: EsApiDefinition[] = [
     description: 'Get all query rulesets.',
     method: 'GET',
     path: '/_query_rules',
+    destructive: false,
     input: _inputSchema,
   },
 ]

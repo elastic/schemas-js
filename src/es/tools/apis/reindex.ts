@@ -30,6 +30,7 @@ export const reindex_definitions: EsApiDefinition[] = [
     description: 'Reindex documents.',
     method: 'POST',
     path: '/_reindex',
+    destructive: true,
     input: _inputSchema,
   },
 ]

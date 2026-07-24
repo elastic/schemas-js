@@ -31,6 +31,7 @@ export const inference_put_openai_definitions: EsApiDefinition[] = [
     description: 'Create an OpenAI inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{openai_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

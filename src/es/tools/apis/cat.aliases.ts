@@ -31,6 +31,7 @@ export const cat_aliases_definitions: EsApiDefinition[] = [
     description: 'Get aliases.',
     method: 'GET',
     path: '/_cat/aliases/{name}',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

@@ -18,6 +18,7 @@ export const apmAgentConfigurationDefinitions: KbApiDefinition[] = [
     description: 'Delete agent configuration',
     method: 'DELETE',
     path: '/api/apm/settings/agent-configuration',
+    destructive: true,
     input: { type: 'object', properties: { service: { description: 'Service', 'x-found-in': 'body', type: 'object' } }, required: ['service'] },
   },
   {
@@ -26,6 +27,7 @@ export const apmAgentConfigurationDefinitions: KbApiDefinition[] = [
     description: 'Get a list of agent configurations',
     method: 'GET',
     path: '/api/apm/settings/agent-configuration',
+    destructive: false,
   },
   {
     name: 'create-update-agent-configuration',
@@ -33,6 +35,7 @@ export const apmAgentConfigurationDefinitions: KbApiDefinition[] = [
     description: 'Create or update agent configuration',
     method: 'PUT',
     path: '/api/apm/settings/agent-configuration',
+    destructive: true,
     input: { type: 'object', properties: { overwrite: { type: 'boolean', description: 'If the config exists ?overwrite=true is required', 'x-found-in': 'query' }, agent_name: { description: 'The agent name is used by the UI to determine which settings to display.', 'x-found-in': 'body', type: 'string' }, service: { description: 'Service', 'x-found-in': 'body', type: 'object' }, settings: { description: 'Agent configuration settings', 'x-found-in': 'body', type: 'object' } }, required: ['service', 'settings'] },
   },
   {
@@ -41,6 +44,7 @@ export const apmAgentConfigurationDefinitions: KbApiDefinition[] = [
     description: 'Get agent name for service',
     method: 'GET',
     path: '/api/apm/settings/agent-configuration/agent_name',
+    destructive: false,
     input: { type: 'object', properties: { serviceName: { type: 'string', description: 'The name of the service', 'x-found-in': 'query' } }, required: ['serviceName'] },
   },
   {
@@ -49,6 +53,7 @@ export const apmAgentConfigurationDefinitions: KbApiDefinition[] = [
     description: 'Get environments for service',
     method: 'GET',
     path: '/api/apm/settings/agent-configuration/environments',
+    destructive: false,
     input: { type: 'object', properties: { serviceName: { type: 'string', description: 'The name of the service. If omitted, environments across all services are returned.', 'x-found-in': 'query' } } },
   },
   {
@@ -57,6 +62,7 @@ export const apmAgentConfigurationDefinitions: KbApiDefinition[] = [
     description: 'Lookup single agent configuration',
     method: 'POST',
     path: '/api/apm/settings/agent-configuration/search',
+    destructive: true,
     input: { type: 'object', properties: { error: { description: 'If provided, the agent configuration will be marked as error and `applied_by_agent` will be set to `false`.', 'x-found-in': 'body', type: 'string' }, etag: { description: 'If etags match then `applied_by_agent` field will be set to `true`', 'x-found-in': 'body', type: 'string' }, mark_as_applied_by_agent: { description: '`markAsAppliedByAgent=true` means "force setting it to true regardless of etag".', 'x-found-in': 'body', type: 'boolean' }, service: { description: 'Service', 'x-found-in': 'body', type: 'object' } }, required: ['service'] },
   },
   {
@@ -65,6 +71,7 @@ export const apmAgentConfigurationDefinitions: KbApiDefinition[] = [
     description: 'Get single agent configuration',
     method: 'GET',
     path: '/api/apm/settings/agent-configuration/view',
+    destructive: false,
     input: { type: 'object', properties: { name: { type: 'string', description: 'Service name', 'x-found-in': 'query' }, environment: { type: 'string', description: 'Service environment', 'x-found-in': 'query' } } },
   },
 ]

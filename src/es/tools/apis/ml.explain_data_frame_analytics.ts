@@ -31,6 +31,7 @@ export const ml_explain_data_frame_analytics_definitions: EsApiDefinition[] = [
     description: 'Explain data frame analytics config.',
     method: 'GET',
     path: '/_ml/data_frame/analytics/{id}/_explain',
+    destructive: false,
     input: _inputSchema,
   },
 ]

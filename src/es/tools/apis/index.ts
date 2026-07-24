@@ -30,6 +30,7 @@ export const index_definitions: EsApiDefinition[] = [
     description: 'Create or update a document in an index.',
     method: 'PUT',
     path: '/{index}/_doc/{id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

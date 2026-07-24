@@ -30,6 +30,7 @@ export const update_definitions: EsApiDefinition[] = [
     description: 'Update a document.',
     method: 'POST',
     path: '/{index}/_update/{id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

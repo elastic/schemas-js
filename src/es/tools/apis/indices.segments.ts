@@ -31,6 +31,7 @@ export const indices_segments_definitions: EsApiDefinition[] = [
     description: 'Get index segments.',
     method: 'GET',
     path: '/{index}/_segments',
+    destructive: false,
     input: _inputSchema,
   },
 ]

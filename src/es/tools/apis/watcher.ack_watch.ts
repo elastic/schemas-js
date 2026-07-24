@@ -31,6 +31,7 @@ export const watcher_ack_watch_definitions: EsApiDefinition[] = [
     description: 'Acknowledge a watch.',
     method: 'PUT',
     path: '/_watcher/watch/{watch_id}/_ack/{action_id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

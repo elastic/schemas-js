@@ -31,6 +31,7 @@ export const connector_list_definitions: EsApiDefinition[] = [
     description: 'Get all connectors.',
     method: 'GET',
     path: '/_connector',
+    destructive: false,
     input: _inputSchema,
   },
 ]

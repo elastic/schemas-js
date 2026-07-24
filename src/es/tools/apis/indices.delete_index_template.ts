@@ -31,6 +31,7 @@ export const indices_delete_index_template_definitions: EsApiDefinition[] = [
     description: 'Delete an index template.',
     method: 'DELETE',
     path: '/_index_template/{name}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

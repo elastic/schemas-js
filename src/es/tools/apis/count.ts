@@ -30,6 +30,7 @@ export const count_definitions: EsApiDefinition[] = [
     description: 'Count search results.',
     method: 'POST',
     path: '/{index}/_count',
+    destructive: false,
     input: _inputSchema,
   },
 ]

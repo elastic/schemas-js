@@ -31,6 +31,7 @@ export const indices_downsample_definitions: EsApiDefinition[] = [
     description: 'Downsample an index.',
     method: 'POST',
     path: '/{index}/_downsample/{target_index}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

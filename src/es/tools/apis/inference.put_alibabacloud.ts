@@ -31,6 +31,7 @@ export const inference_put_alibabacloud_definitions: EsApiDefinition[] = [
     description: 'Create an AlibabaCloud AI Search inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{alibabacloud_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

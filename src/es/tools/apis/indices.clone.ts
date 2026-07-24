@@ -31,6 +31,7 @@ export const indices_clone_definitions: EsApiDefinition[] = [
     description: 'Clone an index.',
     method: 'PUT',
     path: '/{index}/_clone/{target}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

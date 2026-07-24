@@ -31,6 +31,7 @@ export const ml_estimate_model_memory_definitions: EsApiDefinition[] = [
     description: 'Estimate job model memory usage.',
     method: 'POST',
     path: '/_ml/anomaly_detectors/_estimate_model_memory',
+    destructive: true,
     input: _inputSchema,
   },
 ]

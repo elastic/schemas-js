@@ -31,6 +31,7 @@ export const ml_delete_trained_model_definitions: EsApiDefinition[] = [
     description: 'Delete an unreferenced trained model.',
     method: 'DELETE',
     path: '/_ml/trained_models/{model_id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

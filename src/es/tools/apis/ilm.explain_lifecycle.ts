@@ -31,6 +31,7 @@ export const ilm_explain_lifecycle_definitions: EsApiDefinition[] = [
     description: 'Explain the lifecycle state.',
     method: 'GET',
     path: '/{index}/_ilm/explain',
+    destructive: false,
     input: _inputSchema,
   },
 ]

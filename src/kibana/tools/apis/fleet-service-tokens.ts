@@ -18,6 +18,7 @@ export const fleetServiceTokensDefinitions: KbApiDefinition[] = [
     description: 'Create a service token',
     method: 'POST',
     path: '/api/fleet/service_tokens',
+    destructive: false,
     input: { type: 'object', properties: { remote: { description: '', 'x-found-in': 'body', type: 'boolean' } } },
   },
 ]

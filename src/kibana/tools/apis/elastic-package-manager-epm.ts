@@ -18,6 +18,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Bulk get assets',
     method: 'POST',
     path: '/api/fleet/epm/bulk_assets',
+    destructive: true,
     input: { type: 'object', properties: { assetIds: { description: '', 'x-found-in': 'body' } }, required: ['assetIds'] },
   },
   {
@@ -26,6 +27,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Get package categories',
     method: 'GET',
     path: '/api/fleet/epm/categories',
+    destructive: false,
     input: { type: 'object', properties: { prerelease: { type: 'boolean', description: 'When true, include prerelease packages in the results', 'x-found-in': 'query' }, include_policy_templates: { type: 'boolean', description: 'When true, include categories that only contain policy templates', 'x-found-in': 'query' } } },
   },
   {
@@ -34,6 +36,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Create a custom integration',
     method: 'POST',
     path: '/api/fleet/epm/custom_integrations',
+    destructive: false,
     input: { type: 'object', properties: { datasets: { description: '', 'x-found-in': 'body' }, force: { description: '', 'x-found-in': 'body', type: 'boolean' }, integrationName: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['datasets', 'integrationName'] },
   },
   {
@@ -42,6 +45,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Update a custom integration',
     method: 'PUT',
     path: '/api/fleet/epm/custom_integrations/{pkgName}',
+    destructive: true,
     input: { type: 'object', properties: { pkgName: { type: 'string', description: 'Package name', 'x-found-in': 'path' }, categories: { description: '', 'x-found-in': 'body' }, readMeData: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['pkgName', 'readMeData'] },
   },
   {
@@ -50,6 +54,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Get packages',
     method: 'GET',
     path: '/api/fleet/epm/packages',
+    destructive: false,
     input: { type: 'object', properties: { category: { type: 'string', description: 'Filter packages by category', 'x-found-in': 'query' }, prerelease: { type: 'boolean', description: 'When true, include prerelease packages in the results', 'x-found-in': 'query' }, excludeInstallStatus: { type: 'boolean', description: 'When true, exclude the install status from the response', 'x-found-in': 'query' }, withPackagePoliciesCount: { type: 'boolean', description: 'When true, include the number of package policies per package', 'x-found-in': 'query' } } },
   },
   {
@@ -58,6 +63,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Install a package by upload',
     method: 'POST',
     path: '/api/fleet/epm/packages',
+    destructive: true,
     input: { type: 'object', properties: { ignoreMappingUpdateErrors: { type: 'boolean', description: 'When true, ignore mapping update errors during installation', 'x-found-in': 'query' }, skipDataStreamRollover: { type: 'boolean', description: 'When true, skip data stream rollover after installation', 'x-found-in': 'query' } } },
   },
   {
@@ -66,6 +72,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Bulk install packages',
     method: 'POST',
     path: '/api/fleet/epm/packages/_bulk',
+    destructive: true,
     input: { type: 'object', properties: { prerelease: { type: 'boolean', description: 'When true, allow installing prerelease versions', 'x-found-in': 'query' }, force: { description: '', 'x-found-in': 'body', type: 'boolean' }, packages: { description: '', 'x-found-in': 'body' } }, required: ['packages'] },
   },
   {
@@ -74,6 +81,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Bulk enable/disable namespace-level customization for packages',
     method: 'POST',
     path: '/api/fleet/epm/packages/_bulk_namespace_customization',
+    destructive: true,
     input: { type: 'object', properties: { disable: { description: 'Namespaces to disable namespace-level customization for on each package.', 'x-found-in': 'body' }, enable: { description: 'Namespaces to enable namespace-level customization for on each package.', 'x-found-in': 'body' }, packages: { description: 'Package names to apply the customization changes to.', 'x-found-in': 'body' } }, required: ['packages'] },
   },
   {
@@ -82,6 +90,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Bulk rollback packages',
     method: 'POST',
     path: '/api/fleet/epm/packages/_bulk_rollback',
+    destructive: true,
     input: { type: 'object', properties: { packages: { description: '', 'x-found-in': 'body' } }, required: ['packages'] },
   },
   {
@@ -90,6 +99,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Get Bulk rollback packages details',
     method: 'GET',
     path: '/api/fleet/epm/packages/_bulk_rollback/{taskId}',
+    destructive: false,
     input: { type: 'object', properties: { taskId: { type: 'string', description: 'Task ID of the bulk operation', 'x-found-in': 'path' } }, required: ['taskId'] },
   },
   {
@@ -98,6 +108,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Bulk uninstall packages',
     method: 'POST',
     path: '/api/fleet/epm/packages/_bulk_uninstall',
+    destructive: true,
     input: { type: 'object', properties: { force: { description: '', 'x-found-in': 'body', type: 'boolean' }, packages: { description: '', 'x-found-in': 'body' } }, required: ['packages'] },
   },
   {
@@ -106,6 +117,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Get Bulk uninstall packages details',
     method: 'GET',
     path: '/api/fleet/epm/packages/_bulk_uninstall/{taskId}',
+    destructive: false,
     input: { type: 'object', properties: { taskId: { type: 'string', description: 'Task ID of the bulk operation', 'x-found-in': 'path' } }, required: ['taskId'] },
   },
   {
@@ -114,6 +126,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Bulk upgrade packages',
     method: 'POST',
     path: '/api/fleet/epm/packages/_bulk_upgrade',
+    destructive: true,
     input: { type: 'object', properties: { force: { description: '', 'x-found-in': 'body', type: 'boolean' }, packages: { description: '', 'x-found-in': 'body' }, prerelease: { description: '', 'x-found-in': 'body', type: 'boolean' }, upgrade_package_policies: { description: '', 'x-found-in': 'body', type: 'boolean' } }, required: ['packages'] },
   },
   {
@@ -122,6 +135,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Get Bulk upgrade packages details',
     method: 'GET',
     path: '/api/fleet/epm/packages/_bulk_upgrade/{taskId}',
+    destructive: false,
     input: { type: 'object', properties: { taskId: { type: 'string', description: 'Task ID of the bulk operation', 'x-found-in': 'path' } }, required: ['taskId'] },
   },
   {
@@ -130,6 +144,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Delete a package',
     method: 'DELETE',
     path: '/api/fleet/epm/packages/{pkgName}',
+    destructive: true,
     input: { type: 'object', properties: { pkgName: { type: 'string', description: 'Package name', 'x-found-in': 'path' }, force: { type: 'boolean', description: 'When true, delete the package even if it has active package policies', 'x-found-in': 'query' } }, required: ['pkgName'] },
   },
   {
@@ -138,6 +153,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Get a package',
     method: 'GET',
     path: '/api/fleet/epm/packages/{pkgName}',
+    destructive: false,
     input: { type: 'object', properties: { pkgName: { type: 'string', description: 'Package name', 'x-found-in': 'path' }, ignoreUnverified: { type: 'boolean', description: 'When true, returns the package even if the signature cannot be verified', 'x-found-in': 'query' }, prerelease: { type: 'boolean', description: 'When true, include prerelease versions', 'x-found-in': 'query' }, full: { type: 'boolean', description: 'When true, return the full package info including assets', 'x-found-in': 'query' }, withMetadata: { type: 'boolean', description: 'When true, include package metadata such as whether it has package policies', 'x-found-in': 'query' } }, required: ['pkgName'] },
   },
   {
@@ -146,6 +162,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Install a package from the registry',
     method: 'POST',
     path: '/api/fleet/epm/packages/{pkgName}',
+    destructive: true,
     input: { type: 'object', properties: { pkgName: { type: 'string', description: 'Package name', 'x-found-in': 'path' }, prerelease: { type: 'boolean', description: 'When true, allow installing prerelease versions', 'x-found-in': 'query' }, ignoreMappingUpdateErrors: { type: 'boolean', description: 'When true, ignore mapping update errors during installation', 'x-found-in': 'query' }, skipDataStreamRollover: { type: 'boolean', description: 'When true, skip data stream rollover after installation', 'x-found-in': 'query' }, skipDependencyCheck: { type: 'boolean', description: 'Skip dependency validation when installing a package with dependencies', 'x-found-in': 'query' }, force: { description: '', 'x-found-in': 'body', type: 'boolean' }, ignore_constraints: { description: '', 'x-found-in': 'body', type: 'boolean' } }, required: ['pkgName'] },
   },
   {
@@ -154,6 +171,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Update package settings',
     method: 'PUT',
     path: '/api/fleet/epm/packages/{pkgName}',
+    destructive: true,
     input: { type: 'object', properties: { pkgName: { type: 'string', description: 'Package name', 'x-found-in': 'path' }, keepPoliciesUpToDate: { description: '', 'x-found-in': 'body', type: 'boolean' }, namespace_customization_enabled_for: { description: 'Namespaces for which namespace-level customization is enabled on this package.', 'x-found-in': 'body' } }, required: ['pkgName'] },
   },
   {
@@ -162,6 +180,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Delete a package',
     method: 'DELETE',
     path: '/api/fleet/epm/packages/{pkgName}/{pkgVersion}',
+    destructive: true,
     input: { type: 'object', properties: { pkgName: { type: 'string', description: 'Package name', 'x-found-in': 'path' }, pkgVersion: { type: 'string', description: 'Package version', 'x-found-in': 'path' }, force: { type: 'boolean', description: 'When true, delete the package even if it has active package policies', 'x-found-in': 'query' } }, required: ['pkgName', 'pkgVersion'] },
   },
   {
@@ -170,6 +189,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Get a package',
     method: 'GET',
     path: '/api/fleet/epm/packages/{pkgName}/{pkgVersion}',
+    destructive: false,
     input: { type: 'object', properties: { pkgName: { type: 'string', description: 'Package name', 'x-found-in': 'path' }, pkgVersion: { type: 'string', description: 'Package version', 'x-found-in': 'path' }, ignoreUnverified: { type: 'boolean', description: 'When true, returns the package even if the signature cannot be verified', 'x-found-in': 'query' }, prerelease: { type: 'boolean', description: 'When true, include prerelease versions', 'x-found-in': 'query' }, full: { type: 'boolean', description: 'When true, return the full package info including assets', 'x-found-in': 'query' }, withMetadata: { type: 'boolean', description: 'When true, include package metadata such as whether it has package policies', 'x-found-in': 'query' } }, required: ['pkgName', 'pkgVersion'] },
   },
   {
@@ -178,6 +198,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Install a package from the registry',
     method: 'POST',
     path: '/api/fleet/epm/packages/{pkgName}/{pkgVersion}',
+    destructive: true,
     input: { type: 'object', properties: { pkgName: { type: 'string', description: 'Package name', 'x-found-in': 'path' }, pkgVersion: { type: 'string', description: 'Package version', 'x-found-in': 'path' }, prerelease: { type: 'boolean', description: 'When true, allow installing prerelease versions', 'x-found-in': 'query' }, ignoreMappingUpdateErrors: { type: 'boolean', description: 'When true, ignore mapping update errors during installation', 'x-found-in': 'query' }, skipDataStreamRollover: { type: 'boolean', description: 'When true, skip data stream rollover after installation', 'x-found-in': 'query' }, skipDependencyCheck: { type: 'boolean', description: 'Skip dependency validation when installing a package with dependencies', 'x-found-in': 'query' }, force: { description: '', 'x-found-in': 'body', type: 'boolean' }, ignore_constraints: { description: '', 'x-found-in': 'body', type: 'boolean' } }, required: ['pkgName', 'pkgVersion'] },
   },
   {
@@ -186,6 +207,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Update package settings',
     method: 'PUT',
     path: '/api/fleet/epm/packages/{pkgName}/{pkgVersion}',
+    destructive: true,
     input: { type: 'object', properties: { pkgName: { type: 'string', description: 'Package name', 'x-found-in': 'path' }, pkgVersion: { type: 'string', description: 'Package version', 'x-found-in': 'path' }, keepPoliciesUpToDate: { description: '', 'x-found-in': 'body', type: 'boolean' }, namespace_customization_enabled_for: { description: 'Namespaces for which namespace-level customization is enabled on this package.', 'x-found-in': 'body' } }, required: ['pkgName', 'pkgVersion'] },
   },
   {
@@ -194,6 +216,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Get a package file',
     method: 'GET',
     path: '/api/fleet/epm/packages/{pkgName}/{pkgVersion}/{filePath}',
+    destructive: false,
     input: { type: 'object', properties: { pkgName: { type: 'string', description: 'Package name', 'x-found-in': 'path' }, pkgVersion: { type: 'string', description: 'Package version', 'x-found-in': 'path' }, filePath: { type: 'string', description: 'File path within the package', 'x-found-in': 'path' } }, required: ['pkgName', 'pkgVersion', 'filePath'] },
   },
   {
@@ -202,6 +225,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Delete assets for a package',
     method: 'DELETE',
     path: '/api/fleet/epm/packages/{pkgName}/{pkgVersion}/datastream_assets',
+    destructive: true,
     input: { type: 'object', properties: { pkgName: { type: 'string', description: 'Package name', 'x-found-in': 'path' }, pkgVersion: { type: 'string', description: 'Package version', 'x-found-in': 'path' }, packagePolicyId: { type: 'string', description: 'The ID of the package policy', 'x-found-in': 'query' } }, required: ['pkgName', 'pkgVersion', 'packagePolicyId'] },
   },
   {
@@ -210,6 +234,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Get package dependencies',
     method: 'GET',
     path: '/api/fleet/epm/packages/{pkgName}/{pkgVersion}/dependencies',
+    destructive: false,
     input: { type: 'object', properties: { pkgName: { type: 'string', description: 'Package name', 'x-found-in': 'path' }, pkgVersion: { type: 'string', description: 'Package version', 'x-found-in': 'path' } }, required: ['pkgName', 'pkgVersion'] },
   },
   {
@@ -218,6 +243,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Delete Kibana assets for a package',
     method: 'DELETE',
     path: '/api/fleet/epm/packages/{pkgName}/{pkgVersion}/kibana_assets',
+    destructive: true,
     input: { type: 'object', properties: { pkgName: { type: 'string', description: 'Package name', 'x-found-in': 'path' }, pkgVersion: { type: 'string', description: 'Package version', 'x-found-in': 'path' } }, required: ['pkgName', 'pkgVersion'] },
   },
   {
@@ -226,6 +252,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Install Kibana assets for a package',
     method: 'POST',
     path: '/api/fleet/epm/packages/{pkgName}/{pkgVersion}/kibana_assets',
+    destructive: true,
     input: { type: 'object', properties: { pkgName: { type: 'string', description: 'Package name', 'x-found-in': 'path' }, pkgVersion: { type: 'string', description: 'Package version', 'x-found-in': 'path' }, force: { description: '', 'x-found-in': 'body', type: 'boolean' }, space_ids: { description: 'When provided, assets are installed in the specified spaces instead of the current space.', 'x-found-in': 'body' } }, required: ['pkgName', 'pkgVersion'] },
   },
   {
@@ -234,6 +261,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Install Kibana alert rule for a package',
     method: 'POST',
     path: '/api/fleet/epm/packages/{pkgName}/{pkgVersion}/rule_assets',
+    destructive: true,
     input: { type: 'object', properties: { pkgName: { type: 'string', description: 'Package name', 'x-found-in': 'path' }, pkgVersion: { type: 'string', description: 'Package version', 'x-found-in': 'path' }, force: { description: '', 'x-found-in': 'body', type: 'boolean' } }, required: ['pkgName', 'pkgVersion'] },
   },
   {
@@ -242,6 +270,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Authorize transforms',
     method: 'POST',
     path: '/api/fleet/epm/packages/{pkgName}/{pkgVersion}/transforms/authorize',
+    destructive: true,
     input: { type: 'object', properties: { pkgName: { type: 'string', description: 'Package name', 'x-found-in': 'path' }, pkgVersion: { type: 'string', description: 'Package version', 'x-found-in': 'path' }, prerelease: { type: 'boolean', description: 'When true, allow prerelease versions', 'x-found-in': 'query' }, transforms: { description: '', 'x-found-in': 'body' } }, required: ['pkgName', 'pkgVersion', 'transforms'] },
   },
   {
@@ -250,6 +279,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Review a pending policy upgrade for a package with deprecations',
     method: 'POST',
     path: '/api/fleet/epm/packages/{pkgName}/review_upgrade',
+    destructive: true,
     input: { type: 'object', properties: { pkgName: { type: 'string', description: 'Package name to review upgrade for', 'x-found-in': 'path' }, action: { description: '', 'x-found-in': 'body', type: 'string' }, target_version: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['pkgName', 'action', 'target_version'] },
   },
   {
@@ -258,6 +288,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Rollback a package to previous version',
     method: 'POST',
     path: '/api/fleet/epm/packages/{pkgName}/rollback',
+    destructive: true,
     input: { type: 'object', properties: { pkgName: { type: 'string', description: 'Package name to roll back', 'x-found-in': 'path' } }, required: ['pkgName'] },
   },
   {
@@ -266,6 +297,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Get package stats',
     method: 'GET',
     path: '/api/fleet/epm/packages/{pkgName}/stats',
+    destructive: false,
     input: { type: 'object', properties: { pkgName: { type: 'string', description: 'Package name', 'x-found-in': 'path' } }, required: ['pkgName'] },
   },
   {
@@ -274,6 +306,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Get installed packages',
     method: 'GET',
     path: '/api/fleet/epm/packages/installed',
+    destructive: false,
     input: { type: 'object', properties: { dataStreamType: { type: 'string', description: 'Filter by data stream type', 'x-found-in': 'query' }, showOnlyActiveDataStreams: { type: 'boolean', description: 'When true, only return packages with active data streams', 'x-found-in': 'query' }, nameQuery: { type: 'string', description: 'Filter packages by name', 'x-found-in': 'query' }, searchAfter: { type: 'string', description: 'Sort values from the previous page for `search_after` pagination', 'x-found-in': 'query' }, perPage: { type: 'number', description: 'Number of results per page', 'x-found-in': 'query' }, sortOrder: { type: 'string', description: 'Sort order, ascending or descending', 'x-found-in': 'query' } } },
   },
   {
@@ -282,6 +315,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Get a limited package list',
     method: 'GET',
     path: '/api/fleet/epm/packages/limited',
+    destructive: false,
   },
   {
     name: 'get-fleet-epm-templates-pkgname-pkgversion-inputs',
@@ -289,6 +323,7 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Get an inputs template',
     method: 'GET',
     path: '/api/fleet/epm/templates/{pkgName}/{pkgVersion}/inputs',
+    destructive: false,
     input: { type: 'object', properties: { pkgName: { type: 'string', description: 'Package name', 'x-found-in': 'path' }, pkgVersion: { type: 'string', description: 'Package version', 'x-found-in': 'path' }, format: { type: 'string', description: 'Output format for the inputs template: json, yml, or yaml', 'x-found-in': 'query' }, prerelease: { type: 'boolean', description: 'When true, allow prerelease versions', 'x-found-in': 'query' }, ignoreUnverified: { type: 'boolean', description: 'When true, return inputs even if the package signature cannot be verified', 'x-found-in': 'query' } }, required: ['pkgName', 'pkgVersion'] },
   },
   {
@@ -297,5 +332,6 @@ export const elasticPackageManagerEpmDefinitions: KbApiDefinition[] = [
     description: 'Get a package signature verification key ID',
     method: 'GET',
     path: '/api/fleet/epm/verification_key_id',
+    destructive: false,
   },
 ]

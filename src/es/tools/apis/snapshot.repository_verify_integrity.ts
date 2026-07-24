@@ -18,5 +18,6 @@ export const snapshot_repository_verify_integrity_definitions: EsApiDefinition[]
     description: 'Verify the repository integrity.',
     method: 'POST',
     path: '/_snapshot/{repository}/_verify_integrity',
+    destructive: true,
   },
 ]

@@ -31,6 +31,7 @@ export const eql_get_definitions: EsApiDefinition[] = [
     description: 'Get async EQL search results.',
     method: 'GET',
     path: '/_eql/search/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

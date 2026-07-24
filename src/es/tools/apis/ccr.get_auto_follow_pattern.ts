@@ -31,6 +31,7 @@ export const ccr_get_auto_follow_pattern_definitions: EsApiDefinition[] = [
     description: 'Get auto-follow patterns.',
     method: 'GET',
     path: '/_ccr/auto_follow/{name}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

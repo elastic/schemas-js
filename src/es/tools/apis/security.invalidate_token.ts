@@ -31,6 +31,7 @@ export const security_invalidate_token_definitions: EsApiDefinition[] = [
     description: 'Invalidate a token.',
     method: 'DELETE',
     path: '/_security/oauth2/token',
+    destructive: true,
     input: _inputSchema,
   },
 ]

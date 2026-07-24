@@ -18,6 +18,7 @@ export const billingCostsAnalysisDefinitions: CloudApiDefinition[] = [
     description: 'Get costs overview for the organization. Currently unavailable in self-hosted ECE.',
     method: 'GET',
     path: '/api/v1/billing/costs/{organization_id}',
+    destructive: false,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the organization', 'x-found-in': 'path' }, from: { type: 'string', description: 'A datetime for the beginning of the desired range for which to fetch costs. Defaults to start of current month.', 'x-found-in': 'query' }, to: { type: 'string', description: 'A datetime for the end of the desired range for which to fetch costs. Defaults to the current date.', 'x-found-in': 'query' } }, required: ['organization_id'] },
   },
   {
@@ -26,6 +27,7 @@ export const billingCostsAnalysisDefinitions: CloudApiDefinition[] = [
     description: 'Get charts for the organization. Currently unavailable in self-hosted ECE.',
     method: 'GET',
     path: '/api/v1/billing/costs/{organization_id}/charts',
+    destructive: false,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the organization', 'x-found-in': 'path' }, from: { type: 'string', description: 'A datetime for the beginning of the desired range for which to fetch costs. Defaults to start of current month.', 'x-found-in': 'query' }, to: { type: 'string', description: 'A datetime for the end of the desired range for which to fetch costs. Defaults to the current date.', 'x-found-in': 'query' }, bucketing_strategy: { type: 'string', description: 'The desired bucketing strategy for the charts. Defaults to `daily`.', 'x-found-in': 'query' } }, required: ['organization_id'] },
   },
   {
@@ -34,6 +36,7 @@ export const billingCostsAnalysisDefinitions: CloudApiDefinition[] = [
     description: 'Get deployments costs for the organization. Currently unavailable in self-hosted ECE.',
     method: 'GET',
     path: '/api/v1/billing/costs/{organization_id}/deployments',
+    destructive: false,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the organization', 'x-found-in': 'path' }, from: { type: 'string', description: 'A datetime for the beginning of the desired range for which to fetch activity. Defaults to start of current month.', 'x-found-in': 'query' }, to: { type: 'string', description: 'A datetime for the end of the desired range for which to fetch activity. Defaults to the current date.', 'x-found-in': 'query' } }, required: ['organization_id'] },
   },
   {
@@ -42,6 +45,7 @@ export const billingCostsAnalysisDefinitions: CloudApiDefinition[] = [
     description: 'Get charts by deployment. Currently unavailable in self-hosted ECE.',
     method: 'GET',
     path: '/api/v1/billing/costs/{organization_id}/deployments/{deployment_id}/charts',
+    destructive: false,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the organization', 'x-found-in': 'path' }, deployment_id: { type: 'string', description: 'Id of a Deployment', 'x-found-in': 'path' }, from: { type: 'string', description: 'A datetime for the beginning of the desired range for which to fetch costs. Defaults to start of current month.', 'x-found-in': 'query' }, to: { type: 'string', description: 'A datetime for the end of the desired range for which to fetch costs. Defaults to the current date.', 'x-found-in': 'query' }, bucketing_strategy: { type: 'string', description: 'The desired bucketing strategy for the charts. Defaults to `daily`.', 'x-found-in': 'query' } }, required: ['organization_id', 'deployment_id'] },
   },
   {
@@ -50,6 +54,7 @@ export const billingCostsAnalysisDefinitions: CloudApiDefinition[] = [
     description: 'Get itemized costs by deployments. Currently unavailable in self-hosted ECE.',
     method: 'GET',
     path: '/api/v1/billing/costs/{organization_id}/deployments/{deployment_id}/items',
+    destructive: false,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the organization', 'x-found-in': 'path' }, deployment_id: { type: 'string', description: 'Id of a Deployment', 'x-found-in': 'path' }, from: { type: 'string', description: 'A datetime for the beginning of the desired range for which to fetch costs. Defaults to start of current month.', 'x-found-in': 'query' }, to: { type: 'string', description: 'A datetime for the end of the desired range for which to fetch costs. Defaults to the current date.', 'x-found-in': 'query' } }, required: ['organization_id', 'deployment_id'] },
   },
   {
@@ -58,6 +63,7 @@ export const billingCostsAnalysisDefinitions: CloudApiDefinition[] = [
     description: 'Get itemized costs for the organization. Currently unavailable in self-hosted ECE.',
     method: 'GET',
     path: '/api/v1/billing/costs/{organization_id}/items',
+    destructive: false,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the organization', 'x-found-in': 'path' }, from: { type: 'string', description: 'A datetime for the beginning of the desired range for which to fetch costs. Defaults to start of current month.', 'x-found-in': 'query' }, to: { type: 'string', description: 'A datetime for the end of the desired range for which to fetch costs. Defaults to the current date.', 'x-found-in': 'query' } }, required: ['organization_id'] },
   },
 ]

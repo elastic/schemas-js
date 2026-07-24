@@ -31,6 +31,7 @@ export const security_get_service_credentials_definitions: EsApiDefinition[] = [
     description: 'Get service account credentials.',
     method: 'GET',
     path: '/_security/service/{namespace}/{service}/credential',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -30,6 +30,7 @@ export const delete_script_definitions: EsApiDefinition[] = [
     description: 'Delete a script or search template.',
     method: 'DELETE',
     path: '/_scripts/{id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

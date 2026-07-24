@@ -31,6 +31,7 @@ export const sql_get_async_definitions: EsApiDefinition[] = [
     description: 'Get async SQL search results.',
     method: 'GET',
     path: '/_sql/async/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

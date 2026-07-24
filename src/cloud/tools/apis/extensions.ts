@@ -18,6 +18,7 @@ export const extensionsDefinitions: CloudApiDefinition[] = [
     description: 'List Extensions',
     method: 'GET',
     path: '/api/v1/deployments/extensions',
+    destructive: false,
   },
   {
     name: 'create-extension',
@@ -25,6 +26,7 @@ export const extensionsDefinitions: CloudApiDefinition[] = [
     description: 'Create an extension',
     method: 'POST',
     path: '/api/v1/deployments/extensions',
+    destructive: false,
   },
   {
     name: 'get-extension',
@@ -32,6 +34,7 @@ export const extensionsDefinitions: CloudApiDefinition[] = [
     description: 'Get Extension',
     method: 'GET',
     path: '/api/v1/deployments/extensions/{extension_id}',
+    destructive: false,
     input: { type: 'object', properties: { extension_id: { type: 'string', description: 'Id of an extension', 'x-found-in': 'path' }, include_deployments: { type: 'boolean', description: 'Include deployments referencing this extension. Up to only 10000 deployments will be included.', 'x-found-in': 'query' } }, required: ['extension_id'] },
   },
   {
@@ -40,6 +43,7 @@ export const extensionsDefinitions: CloudApiDefinition[] = [
     description: 'Update Extension',
     method: 'POST',
     path: '/api/v1/deployments/extensions/{extension_id}',
+    destructive: true,
     input: { type: 'object', properties: { extension_id: { type: 'string', description: 'Id of an extension', 'x-found-in': 'path' } }, required: ['extension_id'] },
   },
   {
@@ -48,6 +52,7 @@ export const extensionsDefinitions: CloudApiDefinition[] = [
     description: 'Uploads the Extension',
     method: 'PUT',
     path: '/api/v1/deployments/extensions/{extension_id}',
+    destructive: true,
     input: { type: 'object', properties: { extension_id: { type: 'string', description: 'Id of an extension', 'x-found-in': 'path' } }, required: ['extension_id'] },
   },
   {
@@ -56,6 +61,7 @@ export const extensionsDefinitions: CloudApiDefinition[] = [
     description: 'Delete Extension',
     method: 'DELETE',
     path: '/api/v1/deployments/extensions/{extension_id}',
+    destructive: true,
     input: { type: 'object', properties: { extension_id: { type: 'string', description: 'Id of an extension', 'x-found-in': 'path' } }, required: ['extension_id'] },
   },
 ]

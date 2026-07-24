@@ -31,6 +31,7 @@ export const ingest_put_geoip_database_definitions: EsApiDefinition[] = [
     description: 'Create or update a GeoIP database configuration.',
     method: 'PUT',
     path: '/_ingest/geoip/database/{id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

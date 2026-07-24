@@ -31,6 +31,7 @@ export const indices_put_data_stream_mappings_definitions: EsApiDefinition[] = [
     description: 'Update data stream mappings.',
     method: 'PUT',
     path: '/_data_stream/{name}/_mappings',
+    destructive: true,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const indices_put_template_definitions: EsApiDefinition[] = [
     description: 'Create or update a legacy index template.',
     method: 'PUT',
     path: '/_template/{name}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

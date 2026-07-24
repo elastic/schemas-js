@@ -31,6 +31,7 @@ export const license_get_definitions: EsApiDefinition[] = [
     description: 'Get license information.',
     method: 'GET',
     path: '/_license',
+    destructive: false,
     input: _inputSchema,
   },
 ]

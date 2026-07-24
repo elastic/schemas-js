@@ -31,6 +31,7 @@ export const ml_put_trained_model_alias_definitions: EsApiDefinition[] = [
     description: 'Create or update a trained model alias.',
     method: 'PUT',
     path: '/_ml/trained_models/{model_id}/model_aliases/{model_alias}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const security_oidc_prepare_authentication_definitions: EsApiDefinition[]
     description: 'Prepare OpenID connect authentication.',
     method: 'POST',
     path: '/_security/oidc/prepare',
+    destructive: true,
     input: _inputSchema,
   },
 ]

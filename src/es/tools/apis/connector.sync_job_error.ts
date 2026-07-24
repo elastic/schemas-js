@@ -31,6 +31,7 @@ export const connector_sync_job_error_definitions: EsApiDefinition[] = [
     description: 'Set a connector sync job error.',
     method: 'PUT',
     path: '/_connector/_sync_job/{connector_sync_job_id}/_error',
+    destructive: true,
     input: _inputSchema,
   },
 ]

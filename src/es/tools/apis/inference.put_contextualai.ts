@@ -31,6 +31,7 @@ export const inference_put_contextualai_definitions: EsApiDefinition[] = [
     description: 'Create an Contextual AI inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{contextualai_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

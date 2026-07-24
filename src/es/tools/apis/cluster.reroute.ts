@@ -31,6 +31,7 @@ export const cluster_reroute_definitions: EsApiDefinition[] = [
     description: 'Reroute the cluster.',
     method: 'POST',
     path: '/_cluster/reroute',
+    destructive: true,
     input: _inputSchema,
   },
 ]

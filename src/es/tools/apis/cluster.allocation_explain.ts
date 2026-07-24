@@ -31,6 +31,7 @@ export const cluster_allocation_explain_definitions: EsApiDefinition[] = [
     description: 'Explain the shard allocations.',
     method: 'GET',
     path: '/_cluster/allocation/explain',
+    destructive: false,
     input: _inputSchema,
   },
 ]

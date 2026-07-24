@@ -31,6 +31,7 @@ export const security_get_user_privileges_definitions: EsApiDefinition[] = [
     description: 'Get user privileges.',
     method: 'GET',
     path: '/_security/user/_privileges',
+    destructive: false,
     input: _inputSchema,
   },
 ]

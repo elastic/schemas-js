@@ -18,6 +18,7 @@ export const securityTimelineApiDefinitions: KbApiDefinition[] = [
     description: 'Delete one or more notes',
     method: 'DELETE',
     path: '/api/note',
+    destructive: true,
   },
   {
     name: 'get-notes',
@@ -25,6 +26,7 @@ export const securityTimelineApiDefinitions: KbApiDefinition[] = [
     description: 'Get notes',
     method: 'GET',
     path: '/api/note',
+    destructive: false,
     input: { type: 'object', properties: { documentIds: { type: 'string', description: "Event document `_id` values to match against each note's `eventId`. When this parameter is present, the response is all matching notes (up to the server's hard limit), not a paged list using `page`/`perPage`.", 'x-found-in': 'query' }, savedObjectIds: { type: 'string', description: "Timeline `savedObjectId` value(s). Returns notes that reference those timelines. When present, list-mode pagination parameters are not used; up to the server's hard limit of notes may be returned.", 'x-found-in': 'query' }, page: { type: 'string', description: 'Page number for list mode (when `documentIds` and `savedObjectIds` are omitted). Passed as a string; default 1.', 'x-found-in': 'query' }, perPage: { type: 'string', description: 'Page size for list mode (when `documentIds` and `savedObjectIds` are omitted). Passed as a string; default 10.', 'x-found-in': 'query' }, search: { type: 'string', description: 'Search string for saved-objects find (list mode only).', 'x-found-in': 'query' }, sortField: { type: 'string', description: 'Field to sort by for saved-objects find (list mode only).', 'x-found-in': 'query' }, sortOrder: { type: 'string', description: 'Sort order (`asc` or `desc`) for saved-objects find (list mode only).', 'x-found-in': 'query' }, filter: { type: 'string', description: 'Kuery filter string combined with other list-mode filters (for example `createdByFilter` or `associatedFilter`). Typed as a string for API compatibility; interpreted by the saved-objects layer (list mode only).', 'x-found-in': 'query' }, createdByFilter: { type: 'string', description: "Kibana user profile **UID** (UUID). The server resolves the user's display identifiers and returns notes whose `createdBy` matches any of them (list mode only).", 'x-found-in': 'query' }, associatedFilter: { type: 'string', description: 'Restricts notes by how they relate to a Timeline and/or an event document (list mode only). Some values apply extra filtering after the query. Ignored when `documentIds` or `savedObjectIds` is used.', 'x-found-in': 'query' } } },
   },
   {
@@ -33,6 +35,7 @@ export const securityTimelineApiDefinitions: KbApiDefinition[] = [
     description: 'Add or update a note',
     method: 'PATCH',
     path: '/api/note',
+    destructive: true,
     input: { type: 'object', properties: { note: { description: '', 'x-found-in': 'body', type: 'object' }, noteId: { description: 'The `savedObjectId` of the note to update. Omit when creating a new note.', 'x-found-in': 'body', type: 'string' }, version: { description: 'Saved object version string from a previous read; optional on update.', 'x-found-in': 'body', type: 'string' } }, required: ['note'] },
   },
   {
@@ -41,6 +44,7 @@ export const securityTimelineApiDefinitions: KbApiDefinition[] = [
     description: 'Pin/unpin an event',
     method: 'PATCH',
     path: '/api/pinned_event',
+    destructive: true,
     input: { type: 'object', properties: { eventId: { description: 'The `_id` of the associated event for this pinned event.', 'x-found-in': 'body', type: 'string' }, pinnedEventId: { description: 'The `savedObjectId` of the pinned event you want to unpin.', 'x-found-in': 'body', type: 'string' }, timelineId: { description: 'The `savedObjectId` of the timeline that you want this pinned event unpinned from.', 'x-found-in': 'body', type: 'string' } }, required: ['eventId', 'timelineId'] },
   },
   {
@@ -49,6 +53,7 @@ export const securityTimelineApiDefinitions: KbApiDefinition[] = [
     description: 'Delete Timelines or Timeline templates',
     method: 'DELETE',
     path: '/api/timeline',
+    destructive: true,
     input: { type: 'object', properties: { savedObjectIds: { description: 'The list of IDs of the Timelines or Timeline templates to delete', 'x-found-in': 'body' }, searchIds: { description: 'Saved search IDs that should be deleted alongside the timelines', 'x-found-in': 'body' } }, required: ['savedObjectIds'] },
   },
   {
@@ -57,6 +62,7 @@ export const securityTimelineApiDefinitions: KbApiDefinition[] = [
     description: 'Get Timeline or Timeline template details',
     method: 'GET',
     path: '/api/timeline',
+    destructive: false,
     input: { type: 'object', properties: { template_timeline_id: { type: 'string', description: 'The `savedObjectId` of the Timeline template to retrieve.', 'x-found-in': 'query' }, id: { type: 'string', description: 'The `savedObjectId` of the Timeline to retrieve.', 'x-found-in': 'query' } } },
   },
   {
@@ -65,6 +71,7 @@ export const securityTimelineApiDefinitions: KbApiDefinition[] = [
     description: 'Update a Timeline',
     method: 'PATCH',
     path: '/api/timeline',
+    destructive: true,
     input: { type: 'object', properties: { timeline: { description: '', 'x-found-in': 'body', type: 'object' }, timelineId: { description: 'The `savedObjectId` of the Timeline or Timeline template that you’re updating.', 'x-found-in': 'body', type: 'string' }, version: { description: 'The version of the Timeline or Timeline template that you’re updating.', 'x-found-in': 'body', type: 'string' } }, required: ['timeline', 'timelineId', 'version'] },
   },
   {
@@ -73,6 +80,7 @@ export const securityTimelineApiDefinitions: KbApiDefinition[] = [
     description: 'Create a Timeline or Timeline template',
     method: 'POST',
     path: '/api/timeline',
+    destructive: false,
     input: { type: 'object', properties: { status: { description: 'The status of the Timeline.', 'x-found-in': 'body', type: 'string' }, templateTimelineId: { description: 'A unique identifier for the Timeline template.', 'x-found-in': 'body', type: 'string' }, templateTimelineVersion: { description: 'Timeline template version number.', 'x-found-in': 'body', type: 'number' }, timeline: { description: '', 'x-found-in': 'body', type: 'object' }, timelineId: { description: 'A unique identifier for the Timeline.', 'x-found-in': 'body', type: 'string' }, timelineType: { description: 'The type of Timeline.', 'x-found-in': 'body', type: 'string' }, version: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['timeline'] },
   },
   {
@@ -81,6 +89,7 @@ export const securityTimelineApiDefinitions: KbApiDefinition[] = [
     description: 'Copies timeline or timeline template',
     method: 'POST',
     path: '/api/timeline/_copy',
+    destructive: true,
     input: { type: 'object', properties: { timeline: { description: '', 'x-found-in': 'body', type: 'object' }, timelineIdToCopy: { description: 'The `savedObjectId` of the timeline or template to duplicate.', 'x-found-in': 'body', type: 'string' } }, required: ['timeline', 'timelineIdToCopy'] },
   },
   {
@@ -89,6 +98,7 @@ export const securityTimelineApiDefinitions: KbApiDefinition[] = [
     description: 'Get draft Timeline or Timeline template details',
     method: 'GET',
     path: '/api/timeline/_draft',
+    destructive: false,
     input: { type: 'object', properties: { timelineType: { type: 'string', description: 'Which draft to load (`default` investigation timeline or `template` timeline template).', 'x-found-in': 'query' } }, required: ['timelineType'] },
   },
   {
@@ -97,6 +107,7 @@ export const securityTimelineApiDefinitions: KbApiDefinition[] = [
     description: 'Create a clean draft Timeline or Timeline template',
     method: 'POST',
     path: '/api/timeline/_draft',
+    destructive: false,
     input: { type: 'object', properties: { timelineType: { description: 'The type of Timeline.', 'x-found-in': 'body', type: 'string' } }, required: ['timelineType'] },
   },
   {
@@ -105,6 +116,7 @@ export const securityTimelineApiDefinitions: KbApiDefinition[] = [
     description: 'Export Timelines',
     method: 'POST',
     path: '/api/timeline/_export',
+    destructive: true,
     input: { type: 'object', properties: { file_name: { type: 'string', description: 'The name of the file to export', 'x-found-in': 'query' }, ids: { description: '', 'x-found-in': 'body' } }, required: ['file_name'] },
     responseType: 'ndjson',
   },
@@ -114,6 +126,7 @@ export const securityTimelineApiDefinitions: KbApiDefinition[] = [
     description: 'Favorite a Timeline or Timeline template',
     method: 'PATCH',
     path: '/api/timeline/_favorite',
+    destructive: true,
     input: { type: 'object', properties: { templateTimelineId: { description: '', 'x-found-in': 'body', type: 'string' }, templateTimelineVersion: { description: '', 'x-found-in': 'body', type: 'number' }, timelineId: { description: '', 'x-found-in': 'body', type: 'string' }, timelineType: { description: 'The type of Timeline.', 'x-found-in': 'body', type: 'string' } }, required: ['templateTimelineId', 'templateTimelineVersion', 'timelineId', 'timelineType'] },
   },
   {
@@ -122,6 +135,7 @@ export const securityTimelineApiDefinitions: KbApiDefinition[] = [
     description: 'Import Timelines',
     method: 'POST',
     path: '/api/timeline/_import',
+    destructive: true,
     input: { type: 'object', properties: { file: { description: '', 'x-found-in': 'body', type: 'string' }, isImmutable: { description: 'Whether the Timeline should be immutable', 'x-found-in': 'body', type: 'string' } }, required: ['file'] },
   },
   {
@@ -130,6 +144,7 @@ export const securityTimelineApiDefinitions: KbApiDefinition[] = [
     description: 'Install prepackaged Timelines',
     method: 'POST',
     path: '/api/timeline/_prepackaged',
+    destructive: true,
     input: { type: 'object', properties: { prepackagedTimelines: { description: '', 'x-found-in': 'body' }, timelinesToInstall: { description: '', 'x-found-in': 'body' }, timelinesToUpdate: { description: '', 'x-found-in': 'body' } }, required: ['prepackagedTimelines', 'timelinesToInstall', 'timelinesToUpdate'] },
   },
   {
@@ -138,6 +153,7 @@ export const securityTimelineApiDefinitions: KbApiDefinition[] = [
     description: 'Resolve a Timeline or Timeline template',
     method: 'GET',
     path: '/api/timeline/resolve',
+    destructive: false,
     input: { type: 'object', properties: { template_timeline_id: { type: 'string', description: 'The ID of the template timeline to resolve', 'x-found-in': 'query' }, id: { type: 'string', description: 'The ID of the timeline to resolve', 'x-found-in': 'query' } } },
   },
   {
@@ -146,6 +162,7 @@ export const securityTimelineApiDefinitions: KbApiDefinition[] = [
     description: 'Get Timelines or Timeline templates',
     method: 'GET',
     path: '/api/timelines',
+    destructive: false,
     input: { type: 'object', properties: { only_user_favorite: { type: 'string', description: 'If `true`, only Timelines that the current user has marked as favorite are returned.', 'x-found-in': 'query' }, timeline_type: { type: 'string', description: 'Restrict results to `default` investigation timelines or `template` timeline templates.', 'x-found-in': 'query' }, sort_field: { type: 'string', description: 'Field used to sort the list (`title`, `description`, `updated`, or `created`).', 'x-found-in': 'query' }, sort_order: { type: 'string', description: 'Whether to sort the results `ascending` or `descending`', 'x-found-in': 'query' }, page_size: { type: 'string', description: 'How many results should returned at once', 'x-found-in': 'query' }, page_index: { type: 'string', description: 'How many pages should be skipped', 'x-found-in': 'query' }, search: { type: 'string', description: 'Allows to search for timelines by their title', 'x-found-in': 'query' }, status: { type: 'string', description: 'Filter by timeline lifecycle state (`active`, `draft`, or `immutable`).', 'x-found-in': 'query' } } },
   },
 ]

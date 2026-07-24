@@ -31,6 +31,7 @@ export const indices_exists_index_template_definitions: EsApiDefinition[] = [
     description: 'Check index templates.',
     method: 'HEAD',
     path: '/_index_template/{name}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const indices_put_data_stream_settings_definitions: EsApiDefinition[] = [
     description: 'Update data stream settings.',
     method: 'PUT',
     path: '/_data_stream/{name}/_settings',
+    destructive: true,
     input: _inputSchema,
   },
 ]

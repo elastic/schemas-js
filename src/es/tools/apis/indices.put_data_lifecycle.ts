@@ -31,6 +31,7 @@ export const indices_put_data_lifecycle_definitions: EsApiDefinition[] = [
     description: 'Update data stream lifecycles.',
     method: 'PUT',
     path: '/_data_stream/{name}/_lifecycle',
+    destructive: true,
     input: _inputSchema,
   },
 ]

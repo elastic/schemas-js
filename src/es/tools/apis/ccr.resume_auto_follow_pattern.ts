@@ -31,6 +31,7 @@ export const ccr_resume_auto_follow_pattern_definitions: EsApiDefinition[] = [
     description: 'Resume an auto-follow pattern.',
     method: 'POST',
     path: '/_ccr/auto_follow/{name}/resume',
+    destructive: true,
     input: _inputSchema,
   },
 ]

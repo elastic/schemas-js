@@ -31,6 +31,7 @@ export const dangling_indices_delete_dangling_index_definitions: EsApiDefinition
     description: 'Delete a dangling index.',
     method: 'DELETE',
     path: '/_dangling/{index_uuid}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

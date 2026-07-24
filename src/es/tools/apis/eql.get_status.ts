@@ -31,6 +31,7 @@ export const eql_get_status_definitions: EsApiDefinition[] = [
     description: 'Get the async EQL status.',
     method: 'GET',
     path: '/_eql/search/status/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

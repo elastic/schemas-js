@@ -31,6 +31,7 @@ export const ml_get_datafeed_stats_definitions: EsApiDefinition[] = [
     description: 'Get datafeed stats.',
     method: 'GET',
     path: '/_ml/datafeeds/{datafeed_id}/_stats',
+    destructive: false,
     input: _inputSchema,
   },
 ]

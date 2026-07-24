@@ -31,6 +31,7 @@ export const esql_get_query_definitions: EsApiDefinition[] = [
     description: 'Get a specific running ES|QL query information.',
     method: 'GET',
     path: '/_query/queries/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

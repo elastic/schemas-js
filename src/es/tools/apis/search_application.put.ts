@@ -31,6 +31,7 @@ export const search_application_put_definitions: EsApiDefinition[] = [
     description: 'Create or update a search application.',
     method: 'PUT',
     path: '/_application/search_application/{name}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

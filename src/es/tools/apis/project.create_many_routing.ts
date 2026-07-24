@@ -31,6 +31,7 @@ export const project_create_many_routing_definitions: EsApiDefinition[] = [
     description: 'Create or update project routing expressions.',
     method: 'PUT',
     path: '/_project_routing',
+    destructive: true,
     input: _inputSchema,
   },
 ]

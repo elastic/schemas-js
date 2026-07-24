@@ -31,6 +31,7 @@ export const inference_completion_definitions: EsApiDefinition[] = [
     description: 'Perform completion inference on the service.',
     method: 'POST',
     path: '/_inference/completion/{inference_id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

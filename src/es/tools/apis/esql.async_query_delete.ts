@@ -31,6 +31,7 @@ export const esql_async_query_delete_definitions: EsApiDefinition[] = [
     description: 'Delete an async ES|QL query.',
     method: 'DELETE',
     path: '/_query/async/{id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

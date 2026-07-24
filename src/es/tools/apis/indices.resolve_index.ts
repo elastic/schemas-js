@@ -31,6 +31,7 @@ export const indices_resolve_index_definitions: EsApiDefinition[] = [
     description: 'Resolve indices.',
     method: 'GET',
     path: '/_resolve/index/{name}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

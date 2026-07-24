@@ -31,6 +31,7 @@ export const security_put_role_mapping_definitions: EsApiDefinition[] = [
     description: 'Create or update role mappings.',
     method: 'PUT',
     path: '/_security/role_mapping/{name}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

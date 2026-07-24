@@ -31,6 +31,7 @@ export const ml_get_model_snapshots_definitions: EsApiDefinition[] = [
     description: 'Get model snapshots info.',
     method: 'GET',
     path: '/_ml/anomaly_detectors/{job_id}/model_snapshots/{snapshot_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

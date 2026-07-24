@@ -31,6 +31,7 @@ export const indices_modify_data_stream_definitions: EsApiDefinition[] = [
     description: 'Update data streams.',
     method: 'POST',
     path: '/_data_stream/_modify',
+    destructive: true,
     input: _inputSchema,
   },
 ]

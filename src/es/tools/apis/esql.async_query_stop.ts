@@ -31,6 +31,7 @@ export const esql_async_query_stop_definitions: EsApiDefinition[] = [
     description: 'Stop async ES|QL query.',
     method: 'POST',
     path: '/_query/async/{id}/stop',
+    destructive: true,
     input: _inputSchema,
   },
 ]

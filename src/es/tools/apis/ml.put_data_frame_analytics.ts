@@ -31,6 +31,7 @@ export const ml_put_data_frame_analytics_definitions: EsApiDefinition[] = [
     description: 'Create a data frame analytics job.',
     method: 'PUT',
     path: '/_ml/data_frame/analytics/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

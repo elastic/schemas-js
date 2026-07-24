@@ -31,6 +31,7 @@ export const security_disable_user_profile_definitions: EsApiDefinition[] = [
     description: 'Disable a user profile.',
     method: 'PUT',
     path: '/_security/profile/{uid}/_disable',
+    destructive: true,
     input: _inputSchema,
   },
 ]

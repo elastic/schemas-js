@@ -31,6 +31,7 @@ export const security_authenticate_definitions: EsApiDefinition[] = [
     description: 'Authenticate a user.',
     method: 'GET',
     path: '/_security/_authenticate',
+    destructive: false,
     input: _inputSchema,
   },
 ]

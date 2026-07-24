@@ -31,6 +31,7 @@ export const ingest_delete_pipeline_definitions: EsApiDefinition[] = [
     description: 'Delete pipelines.',
     method: 'DELETE',
     path: '/_ingest/pipeline/{id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

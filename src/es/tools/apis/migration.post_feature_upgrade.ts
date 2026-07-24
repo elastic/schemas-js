@@ -31,6 +31,7 @@ export const migration_post_feature_upgrade_definitions: EsApiDefinition[] = [
     description: 'Start the feature migration.',
     method: 'POST',
     path: '/_migration/system_features',
+    destructive: true,
     input: _inputSchema,
   },
 ]

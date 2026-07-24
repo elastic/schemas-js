@@ -31,6 +31,7 @@ export const connector_delete_definitions: EsApiDefinition[] = [
     description: 'Delete a connector.',
     method: 'DELETE',
     path: '/_connector/{connector_id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

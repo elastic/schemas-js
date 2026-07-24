@@ -31,6 +31,7 @@ export const cluster_health_definitions: EsApiDefinition[] = [
     description: 'Get the cluster health status.',
     method: 'GET',
     path: '/_cluster/health/{index}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

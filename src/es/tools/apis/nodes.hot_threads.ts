@@ -31,6 +31,7 @@ export const nodes_hot_threads_definitions: EsApiDefinition[] = [
     description: 'Get the hot threads for nodes.',
     method: 'GET',
     path: '/_nodes/{node_id}/hot_threads',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

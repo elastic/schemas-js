@@ -31,6 +31,7 @@ export const ingest_put_ip_location_database_definitions: EsApiDefinition[] = [
     description: 'Create or update an IP geolocation database configuration.',
     method: 'PUT',
     path: '/_ingest/ip_location/database/{id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

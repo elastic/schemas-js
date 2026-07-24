@@ -31,6 +31,7 @@ export const nodes_usage_definitions: EsApiDefinition[] = [
     description: 'Get feature usage information.',
     method: 'GET',
     path: '/_nodes/{node_id}/usage/{metric}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

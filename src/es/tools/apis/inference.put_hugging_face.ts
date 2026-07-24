@@ -31,6 +31,7 @@ export const inference_put_hugging_face_definitions: EsApiDefinition[] = [
     description: 'Create a Hugging Face inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{huggingface_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

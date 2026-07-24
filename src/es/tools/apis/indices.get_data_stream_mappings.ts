@@ -31,6 +31,7 @@ export const indices_get_data_stream_mappings_definitions: EsApiDefinition[] = [
     description: 'Get data stream mappings.',
     method: 'GET',
     path: '/_data_stream/{name}/_mappings',
+    destructive: false,
     input: _inputSchema,
   },
 ]

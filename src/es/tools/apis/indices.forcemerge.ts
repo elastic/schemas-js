@@ -31,6 +31,7 @@ export const indices_forcemerge_definitions: EsApiDefinition[] = [
     description: 'Force a merge.',
     method: 'POST',
     path: '/{index}/_forcemerge',
+    destructive: true,
     input: _inputSchema,
   },
 ]

@@ -18,6 +18,7 @@ export const dataViewsDefinitions: KbApiDefinition[] = [
     description: 'Get all data views',
     method: 'GET',
     path: '/api/data_views',
+    destructive: false,
   },
   {
     name: 'create-data-view-defaultw',
@@ -25,6 +26,7 @@ export const dataViewsDefinitions: KbApiDefinition[] = [
     description: 'Create a data view',
     method: 'POST',
     path: '/api/data_views/data_view',
+    destructive: false,
     input: { type: 'object', properties: { data_view: { description: 'The data view object.', 'x-found-in': 'body', type: 'object' }, override: { description: 'Override an existing data view if a data view with the provided title already exists.', 'x-found-in': 'body', type: 'boolean' } }, required: ['data_view'] },
   },
   {
@@ -33,6 +35,7 @@ export const dataViewsDefinitions: KbApiDefinition[] = [
     description: 'Delete a data view',
     method: 'DELETE',
     path: '/api/data_views/data_view/{viewId}',
+    destructive: true,
     input: { type: 'object', properties: { viewId: { type: 'string', description: 'The viewId parameter', 'x-found-in': 'path' } }, required: ['viewId'] },
   },
   {
@@ -41,6 +44,7 @@ export const dataViewsDefinitions: KbApiDefinition[] = [
     description: 'Get a data view',
     method: 'GET',
     path: '/api/data_views/data_view/{viewId}',
+    destructive: false,
     input: { type: 'object', properties: { viewId: { type: 'string', description: 'The viewId parameter', 'x-found-in': 'path' } }, required: ['viewId'] },
   },
   {
@@ -49,6 +53,7 @@ export const dataViewsDefinitions: KbApiDefinition[] = [
     description: 'Update a data view',
     method: 'POST',
     path: '/api/data_views/data_view/{viewId}',
+    destructive: true,
     input: { type: 'object', properties: { viewId: { type: 'string', description: 'The viewId parameter', 'x-found-in': 'path' }, data_view: { description: 'The data view properties you want to update. Only the specified properties are updated in the data view. Unspecified fields stay as they are persisted.', 'x-found-in': 'body', type: 'object' }, refresh_fields: { description: 'Reloads the data view fields after the data view is updated.', 'x-found-in': 'body', type: 'boolean' } }, required: ['viewId', 'data_view'] },
   },
   {
@@ -57,6 +62,7 @@ export const dataViewsDefinitions: KbApiDefinition[] = [
     description: 'Update field metadata',
     method: 'POST',
     path: '/api/data_views/data_view/{viewId}/fields',
+    destructive: true,
     input: { type: 'object', properties: { viewId: { type: 'string', description: 'The viewId parameter', 'x-found-in': 'path' }, fields: { description: 'The field object.', 'x-found-in': 'body', type: 'object' } }, required: ['viewId', 'fields'] },
   },
   {
@@ -65,6 +71,7 @@ export const dataViewsDefinitions: KbApiDefinition[] = [
     description: 'Create a runtime field',
     method: 'POST',
     path: '/api/data_views/data_view/{viewId}/runtime_field',
+    destructive: false,
     input: { type: 'object', properties: { viewId: { type: 'string', description: 'The viewId parameter', 'x-found-in': 'path' }, name: { description: 'The name for a runtime field.', 'x-found-in': 'body', type: 'string' }, runtimeField: { description: 'The runtime field definition object.', 'x-found-in': 'body', type: 'object' } }, required: ['viewId', 'name', 'runtimeField'] },
   },
   {
@@ -73,6 +80,7 @@ export const dataViewsDefinitions: KbApiDefinition[] = [
     description: 'Create or update a runtime field',
     method: 'PUT',
     path: '/api/data_views/data_view/{viewId}/runtime_field',
+    destructive: true,
     input: { type: 'object', properties: { viewId: { type: 'string', description: 'The ID of the data view fields you want to update.', 'x-found-in': 'path' }, name: { description: 'The name for a runtime field.', 'x-found-in': 'body', type: 'string' }, runtimeField: { description: 'The runtime field definition object.', 'x-found-in': 'body', type: 'object' } }, required: ['viewId', 'name', 'runtimeField'] },
   },
   {
@@ -81,6 +89,7 @@ export const dataViewsDefinitions: KbApiDefinition[] = [
     description: 'Delete a runtime field',
     method: 'DELETE',
     path: '/api/data_views/data_view/{viewId}/runtime_field/{fieldName}',
+    destructive: true,
     input: { type: 'object', properties: { viewId: { type: 'string', description: 'The viewId parameter', 'x-found-in': 'path' }, fieldName: { type: 'string', description: 'The fieldName parameter', 'x-found-in': 'path' } }, required: ['viewId', 'fieldName'] },
   },
   {
@@ -89,6 +98,7 @@ export const dataViewsDefinitions: KbApiDefinition[] = [
     description: 'Get a runtime field',
     method: 'GET',
     path: '/api/data_views/data_view/{viewId}/runtime_field/{fieldName}',
+    destructive: false,
     input: { type: 'object', properties: { viewId: { type: 'string', description: 'The viewId parameter', 'x-found-in': 'path' }, fieldName: { type: 'string', description: 'The fieldName parameter', 'x-found-in': 'path' } }, required: ['viewId', 'fieldName'] },
   },
   {
@@ -97,6 +107,7 @@ export const dataViewsDefinitions: KbApiDefinition[] = [
     description: 'Update a runtime field',
     method: 'POST',
     path: '/api/data_views/data_view/{viewId}/runtime_field/{fieldName}',
+    destructive: true,
     input: { type: 'object', properties: { viewId: { type: 'string', description: 'The viewId parameter', 'x-found-in': 'path' }, fieldName: { type: 'string', description: 'The fieldName parameter', 'x-found-in': 'path' }, runtimeField: { description: 'The runtime field definition object.', 'x-found-in': 'body', type: 'object' } }, required: ['viewId', 'fieldName', 'runtimeField'] },
   },
   {
@@ -105,6 +116,7 @@ export const dataViewsDefinitions: KbApiDefinition[] = [
     description: 'Get the default data view',
     method: 'GET',
     path: '/api/data_views/default',
+    destructive: false,
   },
   {
     name: 'set-default-datail-view-default',
@@ -112,6 +124,7 @@ export const dataViewsDefinitions: KbApiDefinition[] = [
     description: 'Set the default data view',
     method: 'POST',
     path: '/api/data_views/default',
+    destructive: true,
     input: { type: 'object', properties: { data_view_id: { description: 'The data view identifier. NOTE: The API does not validate whether it is a valid identifier. Use `null` to unset the default data view.', 'x-found-in': 'body', type: 'string' }, force: { description: 'Update an existing default data view identifier.', 'x-found-in': 'body', type: 'boolean' } }, required: ['data_view_id'] },
   },
   {
@@ -120,6 +133,7 @@ export const dataViewsDefinitions: KbApiDefinition[] = [
     description: 'Swap saved object references',
     method: 'POST',
     path: '/api/data_views/swap_references',
+    destructive: true,
     input: { type: 'object', properties: { delete: { description: 'Deletes referenced saved object if all references are removed.', 'x-found-in': 'body', type: 'boolean' }, forId: { description: 'Limit the affected saved objects to one or more by identifier.', 'x-found-in': 'body', type: 'object' }, forType: { description: 'Limit the affected saved objects by type.', 'x-found-in': 'body', type: 'string' }, fromId: { description: 'The saved object reference to change.', 'x-found-in': 'body', type: 'string' }, fromType: { description: 'Specify the type of the saved object reference to alter. The default value is `index-pattern` for data views.', 'x-found-in': 'body', type: 'string' }, toId: { description: 'New saved object reference value to replace the old value.', 'x-found-in': 'body', type: 'string' } }, required: ['fromId', 'toId'] },
   },
   {
@@ -128,6 +142,7 @@ export const dataViewsDefinitions: KbApiDefinition[] = [
     description: 'Preview swap references',
     method: 'POST',
     path: '/api/data_views/swap_references/_preview',
+    destructive: true,
     input: { type: 'object', properties: { delete: { description: 'Deletes referenced saved object if all references are removed.', 'x-found-in': 'body', type: 'boolean' }, forId: { description: 'Limit the affected saved objects to one or more by identifier.', 'x-found-in': 'body', type: 'object' }, forType: { description: 'Limit the affected saved objects by type.', 'x-found-in': 'body', type: 'string' }, fromId: { description: 'The saved object reference to change.', 'x-found-in': 'body', type: 'string' }, fromType: { description: 'Specify the type of the saved object reference to alter. The default value is `index-pattern` for data views.', 'x-found-in': 'body', type: 'string' }, toId: { description: 'New saved object reference value to replace the old value.', 'x-found-in': 'body', type: 'string' } }, required: ['fromId', 'toId'] },
   },
 ]

@@ -31,6 +31,7 @@ export const indices_analyze_definitions: EsApiDefinition[] = [
     description: 'Get tokens from text analysis.',
     method: 'GET',
     path: '/{index}/_analyze',
+    destructive: false,
     input: _inputSchema,
   },
 ]

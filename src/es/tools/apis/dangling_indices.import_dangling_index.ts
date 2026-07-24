@@ -31,6 +31,7 @@ export const dangling_indices_import_dangling_index_definitions: EsApiDefinition
     description: 'Import a dangling index.',
     method: 'POST',
     path: '/_dangling/{index_uuid}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

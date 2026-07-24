@@ -31,6 +31,7 @@ export const security_get_user_definitions: EsApiDefinition[] = [
     description: 'Get users.',
     method: 'GET',
     path: '/_security/user/{username}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

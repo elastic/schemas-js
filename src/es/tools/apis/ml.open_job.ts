@@ -31,6 +31,7 @@ export const ml_open_job_definitions: EsApiDefinition[] = [
     description: 'Open anomaly detection jobs.',
     method: 'POST',
     path: '/_ml/anomaly_detectors/{job_id}/_open',
+    destructive: true,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const transform_schedule_now_transform_definitions: EsApiDefinition[] = [
     description: 'Schedule a transform to start now.',
     method: 'POST',
     path: '/_transform/{transform_id}/_schedule_now',
+    destructive: true,
     input: _inputSchema,
   },
 ]

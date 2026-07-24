@@ -30,6 +30,7 @@ export const update_by_query_rethrottle_definitions: EsApiDefinition[] = [
     description: 'Throttle an update by query operation.',
     method: 'POST',
     path: '/_update_by_query/{task_id}/_rethrottle',
+    destructive: true,
     input: _inputSchema,
   },
 ]

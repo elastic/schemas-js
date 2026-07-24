@@ -31,6 +31,7 @@ export const nodes_clear_repositories_metering_archive_definitions: EsApiDefinit
     description: 'Clear the archived repositories metering.',
     method: 'DELETE',
     path: '/_nodes/{node_id}/_repositories_metering/{max_archive_version}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

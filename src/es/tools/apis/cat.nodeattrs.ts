@@ -31,6 +31,7 @@ export const cat_nodeattrs_definitions: EsApiDefinition[] = [
     description: 'Get node attribute information.',
     method: 'GET',
     path: '/_cat/nodeattrs',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

@@ -31,6 +31,7 @@ export const ml_flush_job_definitions: EsApiDefinition[] = [
     description: 'Force buffered data to be processed.',
     method: 'POST',
     path: '/_ml/anomaly_detectors/{job_id}/_flush',
+    destructive: true,
     input: _inputSchema,
   },
 ]

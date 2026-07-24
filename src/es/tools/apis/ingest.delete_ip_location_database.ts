@@ -31,6 +31,7 @@ export const ingest_delete_ip_location_database_definitions: EsApiDefinition[] =
     description: 'Delete IP geolocation database configurations.',
     method: 'DELETE',
     path: '/_ingest/ip_location/database/{id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

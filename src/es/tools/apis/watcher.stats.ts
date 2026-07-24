@@ -31,6 +31,7 @@ export const watcher_stats_definitions: EsApiDefinition[] = [
     description: 'Get Watcher statistics.',
     method: 'GET',
     path: '/_watcher/stats/{metric}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const security_suggest_user_profiles_definitions: EsApiDefinition[] = [
     description: 'Suggest a user profile.',
     method: 'GET',
     path: '/_security/profile/_suggest',
+    destructive: false,
     input: _inputSchema,
   },
 ]

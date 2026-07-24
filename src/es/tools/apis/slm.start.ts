@@ -31,6 +31,7 @@ export const slm_start_definitions: EsApiDefinition[] = [
     description: 'Start snapshot lifecycle management.',
     method: 'POST',
     path: '/_slm/start',
+    destructive: true,
     input: _inputSchema,
   },
 ]

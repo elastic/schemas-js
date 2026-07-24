@@ -31,6 +31,7 @@ export const security_delete_user_definitions: EsApiDefinition[] = [
     description: 'Delete users.',
     method: 'DELETE',
     path: '/_security/user/{username}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

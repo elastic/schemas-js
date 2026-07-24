@@ -31,6 +31,7 @@ export const indices_simulate_index_template_definitions: EsApiDefinition[] = [
     description: 'Simulate an index.',
     method: 'POST',
     path: '/_index_template/_simulate_index/{name}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

@@ -18,6 +18,7 @@ export const fleetPackagePoliciesDefinitions: KbApiDefinition[] = [
     description: 'Get package policies',
     method: 'GET',
     path: '/api/fleet/package_policies',
+    destructive: false,
     input: { type: 'object', properties: { page: { type: 'number', description: 'Page number', 'x-found-in': 'query' }, perPage: { type: 'number', description: 'Number of results per page', 'x-found-in': 'query' }, sortField: { type: 'string', description: 'Field to sort results by', 'x-found-in': 'query' }, sortOrder: { type: 'string', description: 'Sort order, ascending or descending', 'x-found-in': 'query' }, showUpgradeable: { type: 'boolean', description: 'When true, only show policies with available upgrades', 'x-found-in': 'query' }, kuery: { type: 'string', description: 'A KQL query string to filter results', 'x-found-in': 'query' }, format: { type: 'string', description: 'Format for the response: simplified or legacy', 'x-found-in': 'query' }, withAgentCount: { type: 'boolean', description: 'When true, include the agent count per package policy', 'x-found-in': 'query' } } },
   },
   {
@@ -26,6 +27,7 @@ export const fleetPackagePoliciesDefinitions: KbApiDefinition[] = [
     description: 'Create a package policy',
     method: 'POST',
     path: '/api/fleet/package_policies',
+    destructive: false,
     input: { type: 'object', properties: { format: { type: 'string', description: 'Format for the response: simplified or legacy', 'x-found-in': 'query' } } },
   },
   {
@@ -34,6 +36,7 @@ export const fleetPackagePoliciesDefinitions: KbApiDefinition[] = [
     description: 'Bulk get package policies',
     method: 'POST',
     path: '/api/fleet/package_policies/_bulk_get',
+    destructive: true,
     input: { type: 'object', properties: { format: { type: 'string', description: 'Format for the response: simplified or legacy', 'x-found-in': 'query' }, ids: { description: 'list of package policy ids', 'x-found-in': 'body' }, ignoreMissing: { description: '', 'x-found-in': 'body', type: 'boolean' } }, required: ['ids'] },
   },
   {
@@ -42,6 +45,7 @@ export const fleetPackagePoliciesDefinitions: KbApiDefinition[] = [
     description: 'Delete a package policy',
     method: 'DELETE',
     path: '/api/fleet/package_policies/{packagePolicyId}',
+    destructive: true,
     input: { type: 'object', properties: { packagePolicyId: { type: 'string', description: 'The ID of the package policy', 'x-found-in': 'path' }, force: { type: 'boolean', description: 'When true, delete the package policy even if it is managed', 'x-found-in': 'query' } }, required: ['packagePolicyId'] },
   },
   {
@@ -50,6 +54,7 @@ export const fleetPackagePoliciesDefinitions: KbApiDefinition[] = [
     description: 'Get a package policy',
     method: 'GET',
     path: '/api/fleet/package_policies/{packagePolicyId}',
+    destructive: false,
     input: { type: 'object', properties: { packagePolicyId: { type: 'string', description: 'The ID of the package policy', 'x-found-in': 'path' }, format: { type: 'string', description: 'Format for the response: simplified or legacy', 'x-found-in': 'query' } }, required: ['packagePolicyId'] },
   },
   {
@@ -58,6 +63,7 @@ export const fleetPackagePoliciesDefinitions: KbApiDefinition[] = [
     description: 'Update a package policy',
     method: 'PUT',
     path: '/api/fleet/package_policies/{packagePolicyId}',
+    destructive: true,
     input: { type: 'object', properties: { packagePolicyId: { type: 'string', description: 'The ID of the package policy', 'x-found-in': 'path' }, format: { type: 'string', description: 'Format for the response: simplified or legacy', 'x-found-in': 'query' } }, required: ['packagePolicyId'] },
   },
   {
@@ -66,6 +72,7 @@ export const fleetPackagePoliciesDefinitions: KbApiDefinition[] = [
     description: 'Bulk delete package policies',
     method: 'POST',
     path: '/api/fleet/package_policies/delete',
+    destructive: true,
     input: { type: 'object', properties: { force: { description: '', 'x-found-in': 'body', type: 'boolean' }, packagePolicyIds: { description: '', 'x-found-in': 'body' } }, required: ['packagePolicyIds'] },
   },
   {
@@ -74,6 +81,7 @@ export const fleetPackagePoliciesDefinitions: KbApiDefinition[] = [
     description: 'Upgrade a package policy',
     method: 'POST',
     path: '/api/fleet/package_policies/upgrade',
+    destructive: true,
     input: { type: 'object', properties: { packagePolicyIds: { description: '', 'x-found-in': 'body' } }, required: ['packagePolicyIds'] },
   },
   {
@@ -82,6 +90,7 @@ export const fleetPackagePoliciesDefinitions: KbApiDefinition[] = [
     description: 'Dry run a package policy upgrade',
     method: 'POST',
     path: '/api/fleet/package_policies/upgrade/dryrun',
+    destructive: true,
     input: { type: 'object', properties: { packagePolicyIds: { description: '', 'x-found-in': 'body' }, packageVersion: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['packagePolicyIds'] },
   },
 ]

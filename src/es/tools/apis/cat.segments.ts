@@ -31,6 +31,7 @@ export const cat_segments_definitions: EsApiDefinition[] = [
     description: 'Get segment information.',
     method: 'GET',
     path: '/_cat/segments/{index}',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

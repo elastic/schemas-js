@@ -31,6 +31,7 @@ export const indices_migrate_reindex_definitions: EsApiDefinition[] = [
     description: 'Reindex legacy backing indices.',
     method: 'POST',
     path: '/_migration/reindex',
+    destructive: true,
     input: _inputSchema,
   },
 ]

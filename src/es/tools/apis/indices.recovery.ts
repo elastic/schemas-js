@@ -31,6 +31,7 @@ export const indices_recovery_definitions: EsApiDefinition[] = [
     description: 'Get index recovery information.',
     method: 'GET',
     path: '/{index}/_recovery',
+    destructive: false,
     input: _inputSchema,
   },
 ]
