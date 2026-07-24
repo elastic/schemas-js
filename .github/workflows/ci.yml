@@ -94,6 +94,25 @@ jobs:
         shell: bash
         run: bun run test:unit
 
+  test-types:
+    name: Type checker
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          persist-credentials: false
+
+      - name: Use Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+
+      - name: Install
+        run: npm install
+
+      - name: Validate types
+        run: npm run test:ts
+
   ci:
     name: CI Result
     if: always()
@@ -102,6 +121,7 @@ jobs:
       - test
       - license
       - test-bun
+      - test-types
       - validate-pr-title
     steps:
       - run: |
