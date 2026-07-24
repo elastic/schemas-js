@@ -91,13 +91,13 @@
     "NOTICE.txt",
     "README.md"
   ],
-  "homepage": "https://github.com/elastic/schemas",
+  "homepage": "https://github.com/elastic/schemas-js",
   "bugs": {
-    "url": "https://github.com/elastic/schemas/issues"
+    "url": "https://github.com/elastic/schemas-js/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/elastic/schemas.git"
+    "url": "https://github.com/elastic/schemas-js.git"
   },
   "engines": {
     "node": ">=20"
