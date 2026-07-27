@@ -31,6 +31,7 @@ export const esql_get_view_definitions: EsApiDefinition[] = [
     description: 'Get an ES|QL view.',
     method: 'GET',
     path: '/_query/view/{name}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

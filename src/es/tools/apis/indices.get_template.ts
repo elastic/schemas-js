@@ -31,6 +31,7 @@ export const indices_get_template_definitions: EsApiDefinition[] = [
     description: 'Get legacy index templates.',
     method: 'GET',
     path: '/_template/{name}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

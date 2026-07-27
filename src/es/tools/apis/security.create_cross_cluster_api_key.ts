@@ -31,6 +31,7 @@ export const security_create_cross_cluster_api_key_definitions: EsApiDefinition[
     description: 'Create a cross-cluster API key.',
     method: 'POST',
     path: '/_security/cross_cluster/api_key',
+    destructive: false,
     input: _inputSchema,
   },
 ]

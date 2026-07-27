@@ -31,6 +31,7 @@ export const inference_put_mistral_definitions: EsApiDefinition[] = [
     description: 'Create a Mistral inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{mistral_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

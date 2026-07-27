@@ -30,6 +30,7 @@ export const open_point_in_time_definitions: EsApiDefinition[] = [
     description: 'Open a point in time.',
     method: 'POST',
     path: '/{index}/_pit',
+    destructive: false,
     input: _inputSchema,
   },
 ]

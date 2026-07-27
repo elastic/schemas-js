@@ -31,6 +31,7 @@ export const inference_put_googlevertexai_definitions: EsApiDefinition[] = [
     description: 'Create a Google Vertex AI inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{googlevertexai_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

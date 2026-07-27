@@ -30,6 +30,7 @@ export const msearch_template_definitions: EsApiDefinition[] = [
     description: 'Run multiple templated searches.',
     method: 'GET',
     path: '/{index}/_msearch/template',
+    destructive: false,
     input: _inputSchema,
     bodyFormat: 'ndjson',
   },

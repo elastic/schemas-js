@@ -18,6 +18,7 @@ export const deploymentTemplatesDefinitions: CloudApiDefinition[] = [
     description: 'Get deployment templates',
     method: 'GET',
     path: '/api/v1/deployments/templates',
+    destructive: false,
     input: { type: 'object', properties: { metadata: { type: 'string', description: 'An optional key/value pair in the form of (key:value) that will act as a filter and exclude any templates that do not have a matching metadata item associated.', 'x-found-in': 'query' }, show_instance_configurations: { type: 'boolean', description: 'If true, will return details for each instance configuration referenced by the template.', 'x-found-in': 'query' }, show_max_zones: { type: 'boolean', description: 'If true, will populate the max_zones field in the instance configurations. Only relevant if show_instance_configurations=true.', 'x-found-in': 'query' }, stack_version: { type: 'string', description: 'If present, it will cause the returned deployment templates to be adapted to return only the elements allowed in that version.', 'x-found-in': 'query' }, hide_deprecated: { type: 'boolean', description: 'If true, templates flagged as deprecated will NOT be returned.', 'x-found-in': 'query' }, region: { type: 'string', description: 'Region of the deployment templates', 'x-found-in': 'query' } }, required: ['region'] },
   },
   {
@@ -26,6 +27,7 @@ export const deploymentTemplatesDefinitions: CloudApiDefinition[] = [
     description: 'Get deployment template',
     method: 'GET',
     path: '/api/v1/deployments/templates/{template_id}',
+    destructive: false,
     input: { type: 'object', properties: { template_id: { type: 'string', description: 'The identifier for the deployment template.', 'x-found-in': 'path' }, show_instance_configurations: { type: 'boolean', description: 'If true, will return details for each instance configuration referenced by the template.', 'x-found-in': 'query' }, show_max_zones: { type: 'boolean', description: 'If true, will populate the max_zones field in the instance configurations. Only relevant if show_instance_configurations=true.', 'x-found-in': 'query' }, stack_version: { type: 'string', description: 'If present, it will cause the returned deployment template to be adapted to return only the elements allowed in that version.', 'x-found-in': 'query' }, region: { type: 'string', description: 'Region of the deployment template', 'x-found-in': 'query' } }, required: ['template_id', 'region'] },
   },
 ]

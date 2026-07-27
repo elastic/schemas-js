@@ -18,5 +18,6 @@ export const snapshot_get_repository_definitions: EsApiDefinition[] = [
     description: 'Get snapshot repository information.',
     method: 'GET',
     path: '/_snapshot/{repository}',
+    destructive: false,
   },
 ]

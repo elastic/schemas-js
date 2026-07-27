@@ -31,6 +31,7 @@ export const ml_get_job_stats_definitions: EsApiDefinition[] = [
     description: 'Get anomaly detection job stats.',
     method: 'GET',
     path: '/_ml/anomaly_detectors/{job_id}/_stats',
+    destructive: false,
     input: _inputSchema,
   },
 ]

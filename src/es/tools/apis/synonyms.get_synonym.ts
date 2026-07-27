@@ -31,6 +31,7 @@ export const synonyms_get_synonym_definitions: EsApiDefinition[] = [
     description: 'Get a synonym set.',
     method: 'GET',
     path: '/_synonyms/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

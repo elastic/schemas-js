@@ -31,6 +31,7 @@ export const indices_remove_block_definitions: EsApiDefinition[] = [
     description: 'Remove an index block.',
     method: 'DELETE',
     path: '/{index}/_block/{block}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

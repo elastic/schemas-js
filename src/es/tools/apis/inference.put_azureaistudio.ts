@@ -31,6 +31,7 @@ export const inference_put_azureaistudio_definitions: EsApiDefinition[] = [
     description: 'Create an Azure AI studio inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{azureaistudio_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const inference_put_elser_definitions: EsApiDefinition[] = [
     description: 'Create an ELSER inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{elser_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

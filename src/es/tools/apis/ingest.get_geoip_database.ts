@@ -31,6 +31,7 @@ export const ingest_get_geoip_database_definitions: EsApiDefinition[] = [
     description: 'Get GeoIP database configurations.',
     method: 'GET',
     path: '/_ingest/geoip/database/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

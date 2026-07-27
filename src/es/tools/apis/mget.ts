@@ -30,6 +30,7 @@ export const mget_definitions: EsApiDefinition[] = [
     description: 'Get multiple documents.',
     method: 'GET',
     path: '/{index}/_mget',
+    destructive: false,
     input: _inputSchema,
   },
 ]

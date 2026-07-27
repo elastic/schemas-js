@@ -31,6 +31,7 @@ export const transform_put_transform_definitions: EsApiDefinition[] = [
     description: 'Create a transform.',
     method: 'PUT',
     path: '/_transform/{transform_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

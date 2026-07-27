@@ -31,6 +31,7 @@ export const ml_get_overall_buckets_definitions: EsApiDefinition[] = [
     description: 'Get overall bucket results.',
     method: 'GET',
     path: '/_ml/anomaly_detectors/{job_id}/results/overall_buckets',
+    destructive: false,
     input: _inputSchema,
   },
 ]

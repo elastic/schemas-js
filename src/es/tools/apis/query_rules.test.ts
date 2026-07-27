@@ -31,6 +31,7 @@ export const query_rules_test_definitions: EsApiDefinition[] = [
     description: 'Test a query ruleset.',
     method: 'POST',
     path: '/_query_rules/{ruleset_id}/_test',
+    destructive: true,
     input: _inputSchema,
   },
 ]

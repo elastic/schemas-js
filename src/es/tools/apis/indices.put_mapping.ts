@@ -31,6 +31,7 @@ export const indices_put_mapping_definitions: EsApiDefinition[] = [
     description: 'Update field mappings.',
     method: 'PUT',
     path: '/{index}/_mapping',
+    destructive: true,
     input: _inputSchema,
   },
 ]

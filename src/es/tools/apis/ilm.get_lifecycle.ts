@@ -18,5 +18,6 @@ export const ilm_get_lifecycle_definitions: EsApiDefinition[] = [
     description: 'Get lifecycle policies.',
     method: 'GET',
     path: '/_ilm/policy/{policy}',
+    destructive: false,
   },
 ]

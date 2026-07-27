@@ -31,6 +31,7 @@ export const ml_stop_data_frame_analytics_definitions: EsApiDefinition[] = [
     description: 'Stop data frame analytics jobs.',
     method: 'POST',
     path: '/_ml/data_frame/analytics/{id}/_stop',
+    destructive: true,
     input: _inputSchema,
   },
 ]

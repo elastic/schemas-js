@@ -31,6 +31,7 @@ export const ingest_get_ip_location_database_definitions: EsApiDefinition[] = [
     description: 'Get IP geolocation database configurations.',
     method: 'GET',
     path: '/_ingest/ip_location/database/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

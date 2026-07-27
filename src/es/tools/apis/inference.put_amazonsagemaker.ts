@@ -31,6 +31,7 @@ export const inference_put_amazonsagemaker_definitions: EsApiDefinition[] = [
     description: 'Create an Amazon SageMaker inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{amazonsagemaker_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

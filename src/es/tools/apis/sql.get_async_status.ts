@@ -31,6 +31,7 @@ export const sql_get_async_status_definitions: EsApiDefinition[] = [
     description: 'Get the async SQL search status.',
     method: 'GET',
     path: '/_sql/async/status/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

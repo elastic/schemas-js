@@ -31,6 +31,7 @@ export const ml_delete_calendar_definitions: EsApiDefinition[] = [
     description: 'Delete a calendar.',
     method: 'DELETE',
     path: '/_ml/calendars/{calendar_id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

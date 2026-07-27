@@ -31,6 +31,7 @@ export const query_rules_put_rule_definitions: EsApiDefinition[] = [
     description: 'Create or update a query rule.',
     method: 'PUT',
     path: '/_query_rules/{ruleset_id}/_rule/{rule_id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

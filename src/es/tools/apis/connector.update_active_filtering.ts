@@ -31,6 +31,7 @@ export const connector_update_active_filtering_definitions: EsApiDefinition[] = 
     description: 'Activate the connector draft filter.',
     method: 'PUT',
     path: '/_connector/{connector_id}/_filtering/_activate',
+    destructive: true,
     input: _inputSchema,
   },
 ]

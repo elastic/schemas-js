@@ -31,6 +31,7 @@ export const logstash_put_pipeline_definitions: EsApiDefinition[] = [
     description: 'Create or update a Logstash pipeline.',
     method: 'PUT',
     path: '/_logstash/pipeline/{id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

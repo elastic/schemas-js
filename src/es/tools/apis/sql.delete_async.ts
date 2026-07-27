@@ -31,6 +31,7 @@ export const sql_delete_async_definitions: EsApiDefinition[] = [
     description: 'Delete an async SQL search.',
     method: 'DELETE',
     path: '/_sql/async/delete/{id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

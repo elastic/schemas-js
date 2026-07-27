@@ -31,6 +31,7 @@ export const esql_put_view_definitions: EsApiDefinition[] = [
     description: 'Create or update an ES|QL view.',
     method: 'PUT',
     path: '/_query/view/{name}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

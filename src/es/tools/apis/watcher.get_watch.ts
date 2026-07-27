@@ -31,6 +31,7 @@ export const watcher_get_watch_definitions: EsApiDefinition[] = [
     description: 'Get a watch.',
     method: 'GET',
     path: '/_watcher/watch/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const eql_delete_definitions: EsApiDefinition[] = [
     description: 'Delete an async EQL search.',
     method: 'DELETE',
     path: '/_eql/search/{id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

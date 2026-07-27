@@ -31,6 +31,7 @@ export const security_oidc_authenticate_definitions: EsApiDefinition[] = [
     description: 'Authenticate OpenID Connect.',
     method: 'POST',
     path: '/_security/oidc/authenticate',
+    destructive: true,
     input: _inputSchema,
   },
 ]

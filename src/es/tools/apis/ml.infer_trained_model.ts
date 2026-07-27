@@ -31,6 +31,7 @@ export const ml_infer_trained_model_definitions: EsApiDefinition[] = [
     description: 'Evaluate a trained model.',
     method: 'POST',
     path: '/_ml/trained_models/{model_id}/_infer',
+    destructive: true,
     input: _inputSchema,
   },
 ]

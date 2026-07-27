@@ -31,6 +31,7 @@ export const ml_forecast_definitions: EsApiDefinition[] = [
     description: 'Predict future behavior of a time series.',
     method: 'POST',
     path: '/_ml/anomaly_detectors/{job_id}/_forecast',
+    destructive: true,
     input: _inputSchema,
   },
 ]

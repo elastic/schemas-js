@@ -31,6 +31,7 @@ export const indices_put_alias_definitions: EsApiDefinition[] = [
     description: 'Create or update an alias.',
     method: 'PUT',
     path: '/{index}/_aliases/{name}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

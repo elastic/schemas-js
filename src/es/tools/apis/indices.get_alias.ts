@@ -31,6 +31,7 @@ export const indices_get_alias_definitions: EsApiDefinition[] = [
     description: 'Get aliases.',
     method: 'GET',
     path: '/{index}/_alias/{name}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

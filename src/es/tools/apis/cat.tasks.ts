@@ -31,6 +31,7 @@ export const cat_tasks_definitions: EsApiDefinition[] = [
     description: 'Get task information.',
     method: 'GET',
     path: '/_cat/tasks',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

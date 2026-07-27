@@ -18,5 +18,6 @@ export const snapshot_cleanup_repository_definitions: EsApiDefinition[] = [
     description: 'Clean up the snapshot repository.',
     method: 'POST',
     path: '/_snapshot/{repository}/_cleanup',
+    destructive: true,
   },
 ]

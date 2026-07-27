@@ -31,6 +31,7 @@ export const watcher_start_definitions: EsApiDefinition[] = [
     description: 'Start the watch service.',
     method: 'POST',
     path: '/_watcher/_start',
+    destructive: true,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const ml_get_memory_stats_definitions: EsApiDefinition[] = [
     description: 'Get machine learning memory usage info.',
     method: 'GET',
     path: '/_ml/memory/{node_id}/_stats',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const snapshot_clone_definitions: EsApiDefinition[] = [
     description: 'Clone a snapshot.',
     method: 'PUT',
     path: '/_snapshot/{repository}/{snapshot}/_clone/{target_snapshot}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

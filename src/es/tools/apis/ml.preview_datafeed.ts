@@ -31,6 +31,7 @@ export const ml_preview_datafeed_definitions: EsApiDefinition[] = [
     description: 'Preview a datafeed.',
     method: 'GET',
     path: '/_ml/datafeeds/{datafeed_id}/_preview',
+    destructive: false,
     input: _inputSchema,
   },
 ]

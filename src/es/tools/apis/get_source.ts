@@ -30,6 +30,7 @@ export const get_source_definitions: EsApiDefinition[] = [
     description: "Get a document's source.",
     method: 'GET',
     path: '/{index}/_source/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

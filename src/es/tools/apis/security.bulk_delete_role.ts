@@ -31,6 +31,7 @@ export const security_bulk_delete_role_definitions: EsApiDefinition[] = [
     description: 'Bulk delete roles.',
     method: 'DELETE',
     path: '/_security/role',
+    destructive: true,
     input: _inputSchema,
   },
 ]

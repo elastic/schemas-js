@@ -31,6 +31,7 @@ export const ingest_get_pipeline_definitions: EsApiDefinition[] = [
     description: 'Get pipelines.',
     method: 'GET',
     path: '/_ingest/pipeline/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

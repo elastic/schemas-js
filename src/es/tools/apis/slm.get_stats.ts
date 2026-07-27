@@ -31,6 +31,7 @@ export const slm_get_stats_definitions: EsApiDefinition[] = [
     description: 'Get snapshot lifecycle management statistics.',
     method: 'GET',
     path: '/_slm/stats',
+    destructive: false,
     input: _inputSchema,
   },
 ]

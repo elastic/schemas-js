@@ -31,6 +31,7 @@ export const dangling_indices_list_dangling_indices_definitions: EsApiDefinition
     description: 'Get the dangling indices.',
     method: 'GET',
     path: '/_dangling',
+    destructive: false,
     input: _inputSchema,
   },
 ]

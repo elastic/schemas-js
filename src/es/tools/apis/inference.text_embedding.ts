@@ -31,6 +31,7 @@ export const inference_text_embedding_definitions: EsApiDefinition[] = [
     description: 'Perform text embedding inference on the service.',
     method: 'POST',
     path: '/_inference/text_embedding/{inference_id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

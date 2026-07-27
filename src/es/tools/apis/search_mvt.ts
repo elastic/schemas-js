@@ -30,6 +30,7 @@ export const search_mvt_definitions: EsApiDefinition[] = [
     description: 'Search a vector tile.',
     method: 'POST',
     path: '/{index}/_mvt/{field}/{zoom}/{x}/{y}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

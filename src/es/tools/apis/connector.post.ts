@@ -31,6 +31,7 @@ export const connector_post_definitions: EsApiDefinition[] = [
     description: 'Create a connector.',
     method: 'POST',
     path: '/_connector',
+    destructive: false,
     input: _inputSchema,
   },
 ]

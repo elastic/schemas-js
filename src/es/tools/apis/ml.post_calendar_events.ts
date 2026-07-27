@@ -31,6 +31,7 @@ export const ml_post_calendar_events_definitions: EsApiDefinition[] = [
     description: 'Add scheduled events to the calendar.',
     method: 'POST',
     path: '/_ml/calendars/{calendar_id}/events',
+    destructive: true,
     input: _inputSchema,
   },
 ]

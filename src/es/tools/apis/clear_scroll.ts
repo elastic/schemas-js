@@ -30,6 +30,7 @@ export const clear_scroll_definitions: EsApiDefinition[] = [
     description: 'Clear a scrolling search.',
     method: 'DELETE',
     path: '/_search/scroll',
+    destructive: true,
     input: _inputSchema,
   },
 ]

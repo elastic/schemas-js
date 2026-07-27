@@ -31,6 +31,7 @@ export const inference_delete_region_policy_definitions: EsApiDefinition[] = [
     description: 'Delete the inference region policy.',
     method: 'DELETE',
     path: '/_inference/_region_policy',
+    destructive: true,
     input: _inputSchema,
   },
 ]

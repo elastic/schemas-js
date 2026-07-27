@@ -31,6 +31,7 @@ export const security_delete_role_definitions: EsApiDefinition[] = [
     description: 'Delete roles.',
     method: 'DELETE',
     path: '/_security/role/{name}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

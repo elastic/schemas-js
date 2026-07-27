@@ -31,6 +31,7 @@ export const connector_update_index_name_definitions: EsApiDefinition[] = [
     description: 'Update the connector index name.',
     method: 'PUT',
     path: '/_connector/{connector_id}/_index_name',
+    destructive: true,
     input: _inputSchema,
   },
 ]

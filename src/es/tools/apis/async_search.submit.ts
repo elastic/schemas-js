@@ -31,6 +31,7 @@ export const async_search_submit_definitions: EsApiDefinition[] = [
     description: 'Run an async search.',
     method: 'POST',
     path: '/{index}/_async_search',
+    destructive: false,
     input: _inputSchema,
   },
 ]

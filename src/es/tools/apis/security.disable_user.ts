@@ -31,6 +31,7 @@ export const security_disable_user_definitions: EsApiDefinition[] = [
     description: 'Disable users.',
     method: 'PUT',
     path: '/_security/user/{username}/_disable',
+    destructive: true,
     input: _inputSchema,
   },
 ]

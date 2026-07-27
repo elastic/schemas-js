@@ -31,6 +31,7 @@ export const ml_update_datafeed_definitions: EsApiDefinition[] = [
     description: 'Update a datafeed.',
     method: 'POST',
     path: '/_ml/datafeeds/{datafeed_id}/_update',
+    destructive: true,
     input: _inputSchema,
   },
 ]

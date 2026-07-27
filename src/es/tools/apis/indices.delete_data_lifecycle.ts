@@ -31,6 +31,7 @@ export const indices_delete_data_lifecycle_definitions: EsApiDefinition[] = [
     description: 'Delete data stream lifecycles.',
     method: 'DELETE',
     path: '/_data_stream/{name}/_lifecycle',
+    destructive: true,
     input: _inputSchema,
   },
 ]

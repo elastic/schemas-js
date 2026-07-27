@@ -31,6 +31,7 @@ export const cat_help_definitions: EsApiDefinition[] = [
     description: 'Get CAT help.',
     method: 'GET',
     path: '/_cat',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

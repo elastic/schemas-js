@@ -31,6 +31,7 @@ export const cluster_get_settings_definitions: EsApiDefinition[] = [
     description: 'Get cluster-wide settings.',
     method: 'GET',
     path: '/_cluster/settings',
+    destructive: false,
     input: _inputSchema,
   },
 ]

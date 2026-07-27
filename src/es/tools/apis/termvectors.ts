@@ -30,6 +30,7 @@ export const termvectors_definitions: EsApiDefinition[] = [
     description: 'Get term vector information.',
     method: 'GET',
     path: '/{index}/_termvectors/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

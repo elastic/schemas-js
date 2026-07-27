@@ -31,6 +31,7 @@ export const cat_indices_definitions: EsApiDefinition[] = [
     description: 'Get index information.',
     method: 'GET',
     path: '/_cat/indices/{index}',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

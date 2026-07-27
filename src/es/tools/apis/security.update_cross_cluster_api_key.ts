@@ -31,6 +31,7 @@ export const security_update_cross_cluster_api_key_definitions: EsApiDefinition[
     description: 'Update a cross-cluster API key.',
     method: 'PUT',
     path: '/_security/cross_cluster/api_key/{id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

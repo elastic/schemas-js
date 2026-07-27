@@ -31,6 +31,7 @@ export const rollup_get_rollup_caps_definitions: EsApiDefinition[] = [
     description: 'Get the rollup job capabilities.',
     method: 'GET',
     path: '/_rollup/data/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

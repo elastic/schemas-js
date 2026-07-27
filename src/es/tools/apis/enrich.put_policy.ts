@@ -31,6 +31,7 @@ export const enrich_put_policy_definitions: EsApiDefinition[] = [
     description: 'Create an enrich policy.',
     method: 'PUT',
     path: '/_enrich/policy/{name}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

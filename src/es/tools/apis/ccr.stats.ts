@@ -31,6 +31,7 @@ export const ccr_stats_definitions: EsApiDefinition[] = [
     description: 'Get cross-cluster replication stats.',
     method: 'GET',
     path: '/_ccr/stats',
+    destructive: false,
     input: _inputSchema,
   },
 ]

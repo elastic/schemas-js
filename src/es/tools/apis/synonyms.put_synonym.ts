@@ -31,6 +31,7 @@ export const synonyms_put_synonym_definitions: EsApiDefinition[] = [
     description: 'Create or update a synonym set.',
     method: 'PUT',
     path: '/_synonyms/{id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

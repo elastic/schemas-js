@@ -31,6 +31,7 @@ export const rollup_rollup_search_definitions: EsApiDefinition[] = [
     description: 'Search rolled-up data.',
     method: 'GET',
     path: '/{index}/_rollup_search',
+    destructive: false,
     input: _inputSchema,
   },
 ]

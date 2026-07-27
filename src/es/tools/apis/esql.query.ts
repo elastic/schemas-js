@@ -31,6 +31,7 @@ export const esql_query_definitions: EsApiDefinition[] = [
     description: 'Run an ES|QL query.',
     method: 'POST',
     path: '/_query',
+    destructive: false,
     input: _inputSchema,
   },
 ]

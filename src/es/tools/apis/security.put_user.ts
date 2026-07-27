@@ -31,6 +31,7 @@ export const security_put_user_definitions: EsApiDefinition[] = [
     description: 'Create or update users.',
     method: 'PUT',
     path: '/_security/user/{username}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

@@ -18,6 +18,7 @@ export const securityListsApiDefinitions: KbApiDefinition[] = [
     description: 'Delete a value list',
     method: 'DELETE',
     path: '/api/lists',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'Value list identifier to delete, including all of its list items.', 'x-found-in': 'query' }, deleteReferences: { type: 'boolean', description: 'Determines whether exception items referencing this value list should be deleted.', 'x-found-in': 'query' }, ignoreReferences: { type: 'boolean', description: 'Determines whether to delete value list without performing any additional checks of where this list may be utilized.', 'x-found-in': 'query' } }, required: ['id'] },
   },
   {
@@ -26,6 +27,7 @@ export const securityListsApiDefinitions: KbApiDefinition[] = [
     description: 'Get value list details',
     method: 'GET',
     path: '/api/lists',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: 'Value list identifier (`id`) returned when the list was created.', 'x-found-in': 'query' } }, required: ['id'] },
   },
   {
@@ -34,6 +36,7 @@ export const securityListsApiDefinitions: KbApiDefinition[] = [
     description: 'Patch a value list',
     method: 'PATCH',
     path: '/api/lists',
+    destructive: true,
     input: { type: 'object', properties: { _version: { description: 'The version id, normally returned by the API when the document is retrieved. Use it ensure updates are done against the latest version.', 'x-found-in': 'body', type: 'string' }, description: { description: 'Describes the value list.', 'x-found-in': 'body', type: 'string' }, id: { description: "Value list's identifier.", 'x-found-in': 'body', type: 'string' }, meta: { description: 'Placeholder for metadata about the value list.', 'x-found-in': 'body', type: 'object' }, name: { description: "Value list's name.", 'x-found-in': 'body', type: 'string' }, version: { description: 'The document version number.', 'x-found-in': 'body', type: 'number' } }, required: ['id'] },
   },
   {
@@ -42,6 +45,7 @@ export const securityListsApiDefinitions: KbApiDefinition[] = [
     description: 'Create a value list',
     method: 'POST',
     path: '/api/lists',
+    destructive: false,
     input: { type: 'object', properties: { description: { description: 'Describes the value list.', 'x-found-in': 'body', type: 'string' }, id: { description: "Value list's identifier.", 'x-found-in': 'body', type: 'string' }, meta: { description: 'Placeholder for metadata about the value list.', 'x-found-in': 'body', type: 'object' }, name: { description: "Value list's name.", 'x-found-in': 'body', type: 'string' }, type: { description: 'Specifies the Elasticsearch data type of excludes the list container holds. Some common examples:', 'x-found-in': 'body', type: 'string' }, version: { description: '', 'x-found-in': 'body', type: 'number' } }, required: ['description', 'name', 'type'] },
   },
   {
@@ -50,6 +54,7 @@ export const securityListsApiDefinitions: KbApiDefinition[] = [
     description: 'Update a value list',
     method: 'PUT',
     path: '/api/lists',
+    destructive: true,
     input: { type: 'object', properties: { _version: { description: 'The version id, normally returned by the API when the document is retrieved. Use it ensure updates are done against the latest version.', 'x-found-in': 'body', type: 'string' }, description: { description: 'Describes the value list.', 'x-found-in': 'body', type: 'string' }, id: { description: "Value list's identifier.", 'x-found-in': 'body', type: 'string' }, meta: { description: 'Placeholder for metadata about the value list.', 'x-found-in': 'body', type: 'object' }, name: { description: "Value list's name.", 'x-found-in': 'body', type: 'string' }, version: { description: 'The document version number.', 'x-found-in': 'body', type: 'number' } }, required: ['description', 'id', 'name'] },
   },
   {
@@ -58,6 +63,7 @@ export const securityListsApiDefinitions: KbApiDefinition[] = [
     description: 'Get value lists',
     method: 'GET',
     path: '/api/lists/_find',
+    destructive: false,
     input: { type: 'object', properties: { page: { type: 'number', description: 'The page number to return.', 'x-found-in': 'query' }, per_page: { type: 'number', description: 'The number of value lists to return per page.', 'x-found-in': 'query' }, sort_field: { type: 'string', description: 'Determines which field is used to sort the results.', 'x-found-in': 'query' }, sort_order: { type: 'string', description: 'Determines the sort order, which can be `desc` or `asc`', 'x-found-in': 'query' }, cursor: { type: 'string', description: 'Returns the lists that come after the last lists returned in the previous call (use the `cursor` value returned in the previous call). This parameter uses the `tie_breaker_id` field to ensure all lists are sorted and returned correctly.', 'x-found-in': 'query' }, filter: { type: 'string', description: 'Filters the returned results according to the value of the specified field,', 'x-found-in': 'query' } } },
   },
   {
@@ -66,6 +72,7 @@ export const securityListsApiDefinitions: KbApiDefinition[] = [
     description: 'Delete value list data streams',
     method: 'DELETE',
     path: '/api/lists/index',
+    destructive: true,
   },
   {
     name: 'read-list-index',
@@ -73,6 +80,7 @@ export const securityListsApiDefinitions: KbApiDefinition[] = [
     description: 'Get status of value list data streams',
     method: 'GET',
     path: '/api/lists/index',
+    destructive: false,
   },
   {
     name: 'create-list-index',
@@ -80,6 +88,7 @@ export const securityListsApiDefinitions: KbApiDefinition[] = [
     description: 'Create list data streams',
     method: 'POST',
     path: '/api/lists/index',
+    destructive: false,
   },
   {
     name: 'delete-list-item',
@@ -87,6 +96,7 @@ export const securityListsApiDefinitions: KbApiDefinition[] = [
     description: 'Delete a value list item',
     method: 'DELETE',
     path: '/api/lists/items',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: "Value list item's identifier. Required if `list_id` and `value` are not specified.", 'x-found-in': 'query' }, list_id: { type: 'string', description: "Value list's identifier. Required if `id` is not specified.", 'x-found-in': 'query' }, value: { type: 'string', description: 'The value used to evaluate exceptions. Required if `id` is not specified.', 'x-found-in': 'query' }, refresh: { type: 'string', description: 'Determines when changes made by the request are made visible to search.', 'x-found-in': 'query' } } },
   },
   {
@@ -95,6 +105,7 @@ export const securityListsApiDefinitions: KbApiDefinition[] = [
     description: 'Get a value list item',
     method: 'GET',
     path: '/api/lists/items',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: 'Value list item identifier. Required if `list_id` and `value` are not specified.', 'x-found-in': 'query' }, list_id: { type: 'string', description: "Value list item list's `id` identfier. Required if `id` is not specified.", 'x-found-in': 'query' }, value: { type: 'string', description: 'The value used to evaluate exceptions. Required if `id` is not specified.', 'x-found-in': 'query' } } },
   },
   {
@@ -103,6 +114,7 @@ export const securityListsApiDefinitions: KbApiDefinition[] = [
     description: 'Patch a value list item',
     method: 'PATCH',
     path: '/api/lists/items',
+    destructive: true,
     input: { type: 'object', properties: { _version: { description: 'The version id, normally returned by the API when the document is retrieved. Use it ensure updates are done against the latest version.', 'x-found-in': 'body', type: 'string' }, id: { description: "Value list item's identifier.", 'x-found-in': 'body', type: 'string' }, meta: { description: 'Placeholder for metadata about the value list item.', 'x-found-in': 'body', type: 'object' }, refresh: { description: 'Determines when changes made by the request are made visible to search.', 'x-found-in': 'body', type: 'string' }, value: { description: 'The value used to evaluate exceptions.', 'x-found-in': 'body', type: 'string' } }, required: ['id'] },
   },
   {
@@ -111,6 +123,7 @@ export const securityListsApiDefinitions: KbApiDefinition[] = [
     description: 'Create a value list item',
     method: 'POST',
     path: '/api/lists/items',
+    destructive: false,
     input: { type: 'object', properties: { id: { description: "Value list item's identifier.", 'x-found-in': 'body', type: 'string' }, list_id: { description: "Value list's identifier.", 'x-found-in': 'body', type: 'string' }, meta: { description: 'Placeholder for metadata about the value list item.', 'x-found-in': 'body', type: 'object' }, refresh: { description: 'Determines when changes made by the request are made visible to search.', 'x-found-in': 'body', type: 'string' }, value: { description: 'The value used to evaluate exceptions.', 'x-found-in': 'body', type: 'string' } }, required: ['list_id', 'value'] },
   },
   {
@@ -119,6 +132,7 @@ export const securityListsApiDefinitions: KbApiDefinition[] = [
     description: 'Update a value list item',
     method: 'PUT',
     path: '/api/lists/items',
+    destructive: true,
     input: { type: 'object', properties: { _version: { description: 'The version id, normally returned by the API when the document is retrieved. Use it ensure updates are done against the latest version.', 'x-found-in': 'body', type: 'string' }, id: { description: "Value list item's identifier.", 'x-found-in': 'body', type: 'string' }, meta: { description: 'Placeholder for metadata about the value list item.', 'x-found-in': 'body', type: 'object' }, value: { description: 'The value used to evaluate exceptions.', 'x-found-in': 'body', type: 'string' } }, required: ['id', 'value'] },
   },
   {
@@ -127,6 +141,7 @@ export const securityListsApiDefinitions: KbApiDefinition[] = [
     description: 'Export value list items',
     method: 'POST',
     path: '/api/lists/items/_export',
+    destructive: true,
     input: { type: 'object', properties: { list_id: { type: 'string', description: "Value list's `id` to export.", 'x-found-in': 'query' } }, required: ['list_id'] },
     responseType: 'ndjson',
   },
@@ -136,6 +151,7 @@ export const securityListsApiDefinitions: KbApiDefinition[] = [
     description: 'Get value list items',
     method: 'GET',
     path: '/api/lists/items/_find',
+    destructive: false,
     input: { type: 'object', properties: { list_id: { type: 'string', description: "Parent value list's `id` to page through items for.", 'x-found-in': 'query' }, page: { type: 'number', description: 'The page number to return.', 'x-found-in': 'query' }, per_page: { type: 'number', description: 'The number of list items to return per page.', 'x-found-in': 'query' }, sort_field: { type: 'string', description: 'Determines which field is used to sort the results.', 'x-found-in': 'query' }, sort_order: { type: 'string', description: 'Determines the sort order, which can be `desc` or `asc`', 'x-found-in': 'query' }, cursor: { type: 'string', description: 'Opaque cursor returned in a previous response; pass it to continue listing from the next page. Omit on the first request.', 'x-found-in': 'query' }, filter: { type: 'string', description: 'Filters the returned results according to the value of the specified field,', 'x-found-in': 'query' } }, required: ['list_id'] },
   },
   {
@@ -144,6 +160,7 @@ export const securityListsApiDefinitions: KbApiDefinition[] = [
     description: 'Import value list items',
     method: 'POST',
     path: '/api/lists/items/_import',
+    destructive: true,
     input: { type: 'object', properties: { list_id: { type: 'string', description: "List's id.", 'x-found-in': 'query' }, type: { type: 'string', description: 'Type of the importing list.', 'x-found-in': 'query' }, refresh: { type: 'string', description: 'Determines when changes made by the request are made visible to search.', 'x-found-in': 'query' }, file: { description: 'A `.txt` or `.csv` file containing newline separated list items.', 'x-found-in': 'body', type: 'string' } } },
   },
   {
@@ -152,5 +169,6 @@ export const securityListsApiDefinitions: KbApiDefinition[] = [
     description: 'Get value list privileges',
     method: 'GET',
     path: '/api/lists/privileges',
+    destructive: false,
   },
 ]

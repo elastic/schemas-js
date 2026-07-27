@@ -31,6 +31,7 @@ export const indices_delete_alias_definitions: EsApiDefinition[] = [
     description: 'Delete an alias.',
     method: 'DELETE',
     path: '/{index}/_aliases/{name}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

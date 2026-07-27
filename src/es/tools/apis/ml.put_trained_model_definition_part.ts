@@ -31,6 +31,7 @@ export const ml_put_trained_model_definition_part_definitions: EsApiDefinition[]
     description: 'Create part of a trained model definition.',
     method: 'PUT',
     path: '/_ml/trained_models/{model_id}/definition/{part}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

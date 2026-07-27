@@ -31,6 +31,7 @@ export const inference_put_voyageai_definitions: EsApiDefinition[] = [
     description: 'Create a VoyageAI inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{voyageai_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

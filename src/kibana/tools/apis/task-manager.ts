@@ -18,5 +18,6 @@ export const taskManagerDefinitions: KbApiDefinition[] = [
     description: 'Get the task manager health',
     method: 'GET',
     path: '/api/task_manager/_health',
+    destructive: false,
   },
 ]

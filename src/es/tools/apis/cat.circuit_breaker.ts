@@ -31,6 +31,7 @@ export const cat_circuit_breaker_definitions: EsApiDefinition[] = [
     description: 'Get circuit breakers statistics.',
     method: 'GET',
     path: '/_cat/circuit_breaker/{circuit_breaker_patterns}',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

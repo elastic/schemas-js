@@ -31,6 +31,7 @@ export const enrich_stats_definitions: EsApiDefinition[] = [
     description: 'Get enrich stats.',
     method: 'GET',
     path: '/_enrich/_stats',
+    destructive: false,
     input: _inputSchema,
   },
 ]

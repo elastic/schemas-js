@@ -31,6 +31,7 @@ export const ml_update_data_frame_analytics_definitions: EsApiDefinition[] = [
     description: 'Update a data frame analytics job.',
     method: 'POST',
     path: '/_ml/data_frame/analytics/{id}/_update',
+    destructive: true,
     input: _inputSchema,
   },
 ]

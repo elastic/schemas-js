@@ -31,6 +31,7 @@ export const connector_update_pipeline_definitions: EsApiDefinition[] = [
     description: 'Update the connector pipeline.',
     method: 'PUT',
     path: '/_connector/{connector_id}/_pipeline',
+    destructive: true,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const indices_get_migrate_reindex_status_definitions: EsApiDefinition[] =
     description: 'Get the migration reindexing status.',
     method: 'GET',
     path: '/_migration/reindex/{index}/_status',
+    destructive: false,
     input: _inputSchema,
   },
 ]

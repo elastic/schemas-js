@@ -31,6 +31,7 @@ export const connector_update_filtering_validation_definitions: EsApiDefinition[
     description: 'Update the connector draft filtering validation.',
     method: 'PUT',
     path: '/_connector/{connector_id}/_filtering/_validation',
+    destructive: true,
     input: _inputSchema,
   },
 ]

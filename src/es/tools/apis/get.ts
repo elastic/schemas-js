@@ -30,6 +30,7 @@ export const get_definitions: EsApiDefinition[] = [
     description: 'Get a document by its ID.',
     method: 'GET',
     path: '/{index}/_doc/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

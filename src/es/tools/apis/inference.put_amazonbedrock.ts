@@ -31,6 +31,7 @@ export const inference_put_amazonbedrock_definitions: EsApiDefinition[] = [
     description: 'Create an Amazon Bedrock inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{amazonbedrock_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

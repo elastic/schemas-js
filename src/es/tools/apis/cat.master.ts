@@ -31,6 +31,7 @@ export const cat_master_definitions: EsApiDefinition[] = [
     description: 'Get master node information.',
     method: 'GET',
     path: '/_cat/master',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

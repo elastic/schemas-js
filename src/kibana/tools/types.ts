@@ -34,4 +34,6 @@ export interface KbApiDefinition {
   input?: JsonSchemaObject
   /** When 'ndjson', the success response is newline-delimited JSON (parsed into an array). */
   responseType?: 'ndjson'
+  /** Marks an operation as destructive (delete, update, etc.). */
+  destructive: boolean
 }

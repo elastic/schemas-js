@@ -31,6 +31,7 @@ export const watcher_get_settings_definitions: EsApiDefinition[] = [
     description: 'Get Watcher index settings.',
     method: 'GET',
     path: '/_watcher/settings',
+    destructive: false,
     input: _inputSchema,
   },
 ]

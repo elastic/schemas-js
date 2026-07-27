@@ -18,6 +18,7 @@ export const securityEntityStoreDefinitions: KbApiDefinition[] = [
     description: 'Update the Entity Store',
     method: 'PUT',
     path: '/api/security/entity_store',
+    destructive: true,
     input: { type: 'object', properties: { logExtraction: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['logExtraction'] },
   },
   {
@@ -26,6 +27,7 @@ export const securityEntityStoreDefinitions: KbApiDefinition[] = [
     description: 'List entities',
     method: 'GET',
     path: '/api/security/entity_store/entities',
+    destructive: false,
     input: { type: 'object', properties: { filter: { type: 'string', description: 'A Kibana Query Language (KQL) filter for the search-after mode.', 'x-found-in': 'query' }, size: { type: 'number', description: 'Number of entities to return in search-after mode.', 'x-found-in': 'query' }, searchAfter: { type: 'string', description: 'JSON-encoded search_after value for cursor-based pagination.', 'x-found-in': 'query' }, source: { type: 'string', description: 'Fields to include in the response source.', 'x-found-in': 'query' }, fields: { type: 'string', description: 'Fields to include in the response.', 'x-found-in': 'query' }, sort_field: { type: 'string', description: 'Field to sort results by in page mode.', 'x-found-in': 'query' }, sort_order: { type: 'string', description: 'Sort order in page mode.', 'x-found-in': 'query' }, page: { type: 'number', description: 'Page number to return (1-indexed) in page mode.', 'x-found-in': 'query' }, per_page: { type: 'number', description: 'Number of entities per page in page mode.', 'x-found-in': 'query' }, filterQuery: { type: 'string', description: 'An Elasticsearch query string to filter entities in page mode.', 'x-found-in': 'query' }, entity_types: { type: 'string', description: 'Entity types to include in the results.', 'x-found-in': 'query' } } },
   },
   {
@@ -34,6 +36,7 @@ export const securityEntityStoreDefinitions: KbApiDefinition[] = [
     description: 'Delete an entity',
     method: 'DELETE',
     path: '/api/security/entity_store/entities/',
+    destructive: true,
     input: { type: 'object', properties: { entityId: { description: 'The identifier of the entity to delete.', 'x-found-in': 'body', type: 'string' } }, required: ['entityId'] },
   },
   {
@@ -42,6 +45,7 @@ export const securityEntityStoreDefinitions: KbApiDefinition[] = [
     description: 'Create an entity',
     method: 'POST',
     path: '/api/security/entity_store/entities/{entityType}',
+    destructive: false,
     input: { type: 'object', properties: { entityType: { type: 'string', description: 'The entity type to create.', 'x-found-in': 'path' } }, required: ['entityType'] },
   },
   {
@@ -50,6 +54,7 @@ export const securityEntityStoreDefinitions: KbApiDefinition[] = [
     description: 'Update an entity',
     method: 'PUT',
     path: '/api/security/entity_store/entities/{entityType}',
+    destructive: true,
     input: { type: 'object', properties: { entityType: { type: 'string', description: 'The entity type to update.', 'x-found-in': 'path' }, force: { type: 'string', description: 'When true, allows updating protected fields.', 'x-found-in': 'query' } }, required: ['entityType'] },
   },
   {
@@ -58,6 +63,7 @@ export const securityEntityStoreDefinitions: KbApiDefinition[] = [
     description: 'Bulk update entities',
     method: 'PUT',
     path: '/api/security/entity_store/entities/bulk',
+    destructive: true,
     input: { type: 'object', properties: { force: { type: 'string', description: 'When true, allows updating protected fields.', 'x-found-in': 'query' }, entities: { description: 'The entities to update.', 'x-found-in': 'body' } }, required: ['entities'] },
   },
   {
@@ -66,6 +72,7 @@ export const securityEntityStoreDefinitions: KbApiDefinition[] = [
     description: 'Install the Entity Store',
     method: 'POST',
     path: '/api/security/entity_store/install',
+    destructive: true,
     input: { type: 'object', properties: { entityTypes: { description: '', 'x-found-in': 'body' }, historySnapshot: { description: '', 'x-found-in': 'body', type: 'object' }, logExtraction: { description: '', 'x-found-in': 'body', type: 'object' } } },
   },
   {
@@ -74,6 +81,7 @@ export const securityEntityStoreDefinitions: KbApiDefinition[] = [
     description: 'Get resolution group',
     method: 'GET',
     path: '/api/security/entity_store/resolution/group',
+    destructive: false,
     input: { type: 'object', properties: { entity_id: { type: 'string', description: 'The entity identifier to look up the resolution group for.', 'x-found-in': 'query' } }, required: ['entity_id'] },
   },
   {
@@ -82,6 +90,7 @@ export const securityEntityStoreDefinitions: KbApiDefinition[] = [
     description: 'Link entities',
     method: 'POST',
     path: '/api/security/entity_store/resolution/link',
+    destructive: true,
     input: { type: 'object', properties: { entity_ids: { description: 'Entity identifiers to link to the target entity. Minimum 1, maximum 1000.', 'x-found-in': 'body' }, target_id: { description: 'The entity identifier to resolve the linked entities to.', 'x-found-in': 'body', type: 'string' } }, required: ['entity_ids', 'target_id'] },
   },
   {
@@ -90,6 +99,7 @@ export const securityEntityStoreDefinitions: KbApiDefinition[] = [
     description: 'Unlink entities',
     method: 'POST',
     path: '/api/security/entity_store/resolution/unlink',
+    destructive: true,
     input: { type: 'object', properties: { entity_ids: { description: 'Entity identifiers to unlink from their resolution group. Minimum 1, maximum 1000.', 'x-found-in': 'body' } }, required: ['entity_ids'] },
   },
   {
@@ -98,6 +108,7 @@ export const securityEntityStoreDefinitions: KbApiDefinition[] = [
     description: 'Start Entity Store engines',
     method: 'PUT',
     path: '/api/security/entity_store/start',
+    destructive: true,
     input: { type: 'object', properties: { entityTypes: { description: 'Entity types to start. Defaults to all installed types.', 'x-found-in': 'body' } } },
   },
   {
@@ -106,6 +117,7 @@ export const securityEntityStoreDefinitions: KbApiDefinition[] = [
     description: 'Get Entity Store status',
     method: 'GET',
     path: '/api/security/entity_store/status',
+    destructive: false,
     input: { type: 'object', properties: { include_components: { type: 'string', description: 'If true, returns a detailed status of each engine including all its components.', 'x-found-in': 'query' } } },
   },
   {
@@ -114,6 +126,7 @@ export const securityEntityStoreDefinitions: KbApiDefinition[] = [
     description: 'Stop Entity Store engines',
     method: 'PUT',
     path: '/api/security/entity_store/stop',
+    destructive: true,
     input: { type: 'object', properties: { entityTypes: { description: 'Entity types to stop. Defaults to all running types.', 'x-found-in': 'body' } } },
   },
   {
@@ -122,6 +135,7 @@ export const securityEntityStoreDefinitions: KbApiDefinition[] = [
     description: 'Uninstall the Entity Store',
     method: 'POST',
     path: '/api/security/entity_store/uninstall',
+    destructive: true,
     input: { type: 'object', properties: { entityTypes: { description: 'Entity types to uninstall. Defaults to all installed types.', 'x-found-in': 'body' } } },
   },
 ]

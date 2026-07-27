@@ -30,6 +30,7 @@ export const list_reindex_definitions: EsApiDefinition[] = [
     description: 'Get information about all currently running reindex tasks.',
     method: 'GET',
     path: '/_reindex',
+    destructive: false,
     input: _inputSchema,
   },
 ]

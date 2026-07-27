@@ -31,6 +31,7 @@ export const migration_deprecations_definitions: EsApiDefinition[] = [
     description: 'Get deprecation information.',
     method: 'GET',
     path: '/{index}/_migration/deprecations',
+    destructive: false,
     input: _inputSchema,
   },
 ]

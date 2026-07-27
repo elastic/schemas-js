@@ -31,6 +31,7 @@ export const ml_info_definitions: EsApiDefinition[] = [
     description: 'Get machine learning information.',
     method: 'GET',
     path: '/_ml/info',
+    destructive: false,
     input: _inputSchema,
   },
 ]

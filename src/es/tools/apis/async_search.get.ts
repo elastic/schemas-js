@@ -31,6 +31,7 @@ export const async_search_get_definitions: EsApiDefinition[] = [
     description: 'Get async search results.',
     method: 'GET',
     path: '/_async_search/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

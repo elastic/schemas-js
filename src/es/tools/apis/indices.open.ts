@@ -31,6 +31,7 @@ export const indices_open_definitions: EsApiDefinition[] = [
     description: 'Open a closed index.',
     method: 'POST',
     path: '/{index}/_open',
+    destructive: true,
     input: _inputSchema,
   },
 ]

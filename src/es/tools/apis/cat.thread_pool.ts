@@ -31,6 +31,7 @@ export const cat_thread_pool_definitions: EsApiDefinition[] = [
     description: 'Get thread pool statistics.',
     method: 'GET',
     path: '/_cat/thread_pool/{thread_pool_patterns}',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

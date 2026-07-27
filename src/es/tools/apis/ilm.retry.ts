@@ -31,6 +31,7 @@ export const ilm_retry_definitions: EsApiDefinition[] = [
     description: 'Retry a policy.',
     method: 'POST',
     path: '/{index}/_ilm/retry',
+    destructive: true,
     input: _inputSchema,
   },
 ]

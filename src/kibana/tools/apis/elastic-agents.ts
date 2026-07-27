@@ -18,6 +18,7 @@ export const elasticAgentsDefinitions: KbApiDefinition[] = [
     description: 'Get incoming agent data',
     method: 'GET',
     path: '/api/fleet/agent_status/data',
+    destructive: false,
     input: { type: 'object', properties: { agentsIds: { type: 'string', description: 'Agent IDs to check data for, as an array or comma-separated string', 'x-found-in': 'query' }, pkgName: { type: 'string', description: 'Filter by integration package name', 'x-found-in': 'query' }, pkgVersion: { type: 'string', description: 'Filter by integration package version', 'x-found-in': 'query' }, previewData: { type: 'boolean', description: 'When true, return a preview of the ingested data', 'x-found-in': 'query' } }, required: ['agentsIds'] },
   },
   {
@@ -26,6 +27,7 @@ export const elasticAgentsDefinitions: KbApiDefinition[] = [
     description: 'Get agents',
     method: 'GET',
     path: '/api/fleet/agents',
+    destructive: false,
     input: { type: 'object', properties: { page: { type: 'number', description: 'Page number', 'x-found-in': 'query' }, perPage: { type: 'number', description: 'Number of results per page', 'x-found-in': 'query' }, kuery: { type: 'string', description: 'A KQL query string to filter results', 'x-found-in': 'query' }, showAgentless: { type: 'boolean', description: 'When true, include agentless agents in the results', 'x-found-in': 'query' }, showInactive: { type: 'boolean', description: 'When true, include inactive agents in the results', 'x-found-in': 'query' }, withMetrics: { type: 'boolean', description: 'When true, include CPU and memory metrics in the response', 'x-found-in': 'query' }, showUpgradeable: { type: 'boolean', description: 'When true, only return agents that are upgradeable', 'x-found-in': 'query' }, getStatusSummary: { type: 'boolean', description: 'When true, return a summary of agent statuses in the response', 'x-found-in': 'query' }, sortField: { type: 'string', description: 'Field to sort results by', 'x-found-in': 'query' }, sortOrder: { type: 'string', description: 'Sort order, ascending or descending', 'x-found-in': 'query' }, searchAfter: { type: 'string', description: 'JSON-encoded array of sort values for `search_after` pagination', 'x-found-in': 'query' }, openPit: { type: 'boolean', description: 'When true, opens a new point-in-time for pagination', 'x-found-in': 'query' }, pitId: { type: 'string', description: 'Point-in-time ID for pagination', 'x-found-in': 'query' }, pitKeepAlive: { type: 'string', description: 'Duration to keep the point-in-time alive, for example, `1m`', 'x-found-in': 'query' } } },
   },
   {
@@ -34,6 +36,7 @@ export const elasticAgentsDefinitions: KbApiDefinition[] = [
     description: 'Get agents by action ids',
     method: 'POST',
     path: '/api/fleet/agents',
+    destructive: true,
     input: { type: 'object', properties: { actionIds: { description: '', 'x-found-in': 'body' } }, required: ['actionIds'] },
   },
   {
@@ -42,6 +45,7 @@ export const elasticAgentsDefinitions: KbApiDefinition[] = [
     description: 'Delete an agent',
     method: 'DELETE',
     path: '/api/fleet/agents/{agentId}',
+    destructive: true,
     input: { type: 'object', properties: { agentId: { type: 'string', description: 'The agent ID', 'x-found-in': 'path' } }, required: ['agentId'] },
   },
   {
@@ -50,6 +54,7 @@ export const elasticAgentsDefinitions: KbApiDefinition[] = [
     description: 'Get an agent',
     method: 'GET',
     path: '/api/fleet/agents/{agentId}',
+    destructive: false,
     input: { type: 'object', properties: { agentId: { type: 'string', description: 'The agent ID', 'x-found-in': 'path' }, withMetrics: { type: 'boolean', description: 'When true, include CPU and memory metrics in the response', 'x-found-in': 'query' } }, required: ['agentId'] },
   },
   {
@@ -58,6 +63,7 @@ export const elasticAgentsDefinitions: KbApiDefinition[] = [
     description: 'Update an agent by ID',
     method: 'PUT',
     path: '/api/fleet/agents/{agentId}',
+    destructive: true,
     input: { type: 'object', properties: { agentId: { type: 'string', description: 'The agent ID', 'x-found-in': 'path' }, tags: { description: '', 'x-found-in': 'body' }, user_provided_metadata: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['agentId'] },
   },
   {
@@ -66,6 +72,7 @@ export const elasticAgentsDefinitions: KbApiDefinition[] = [
     description: "Get an agent's effective config",
     method: 'GET',
     path: '/api/fleet/agents/{agentId}/effective_config',
+    destructive: false,
     input: { type: 'object', properties: { agentId: { type: 'string', description: 'The agent ID to get effective config of', 'x-found-in': 'path' } }, required: ['agentId'] },
   },
   {
@@ -74,6 +81,7 @@ export const elasticAgentsDefinitions: KbApiDefinition[] = [
     description: 'Migrate a single agent',
     method: 'POST',
     path: '/api/fleet/agents/{agentId}/migrate',
+    destructive: true,
     input: { type: 'object', properties: { agentId: { type: 'string', description: 'The agent ID', 'x-found-in': 'path' }, enrollment_token: { description: '', 'x-found-in': 'body', type: 'string' }, settings: { description: '', 'x-found-in': 'body', type: 'object' }, uri: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['agentId', 'enrollment_token', 'uri'] },
   },
   {
@@ -82,6 +90,7 @@ export const elasticAgentsDefinitions: KbApiDefinition[] = [
     description: 'Change agent privilege level',
     method: 'POST',
     path: '/api/fleet/agents/{agentId}/privilege_level_change',
+    destructive: true,
     input: { type: 'object', properties: { agentId: { type: 'string', description: 'The agent ID to change privilege level for', 'x-found-in': 'path' }, user_info: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['agentId'] },
   },
   {
@@ -90,6 +99,7 @@ export const elasticAgentsDefinitions: KbApiDefinition[] = [
     description: 'Get agent uploads',
     method: 'GET',
     path: '/api/fleet/agents/{agentId}/uploads',
+    destructive: false,
     input: { type: 'object', properties: { agentId: { type: 'string', description: 'The agent ID', 'x-found-in': 'path' } }, required: ['agentId'] },
   },
   {
@@ -98,6 +108,7 @@ export const elasticAgentsDefinitions: KbApiDefinition[] = [
     description: 'Get available agent versions',
     method: 'GET',
     path: '/api/fleet/agents/available_versions',
+    destructive: false,
   },
   {
     name: 'post-fleet-agents-bulk-migrate',
@@ -105,6 +116,7 @@ export const elasticAgentsDefinitions: KbApiDefinition[] = [
     description: 'Migrate multiple agents',
     method: 'POST',
     path: '/api/fleet/agents/bulk_migrate',
+    destructive: true,
     input: { type: 'object', properties: { agents: { description: '', 'x-found-in': 'body', type: 'object' }, batchSize: { description: '', 'x-found-in': 'body', type: 'number' }, enrollment_token: { description: '', 'x-found-in': 'body', type: 'string' }, settings: { description: '', 'x-found-in': 'body', type: 'object' }, uri: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['agents', 'enrollment_token', 'uri'] },
   },
   {
@@ -113,6 +125,7 @@ export const elasticAgentsDefinitions: KbApiDefinition[] = [
     description: 'Bulk change agent privilege level',
     method: 'POST',
     path: '/api/fleet/agents/bulk_privilege_level_change',
+    destructive: true,
     input: { type: 'object', properties: { agents: { description: '', 'x-found-in': 'body', type: 'object' }, batchSize: { description: '', 'x-found-in': 'body', type: 'number' }, user_info: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['agents'] },
   },
   {
@@ -121,6 +134,7 @@ export const elasticAgentsDefinitions: KbApiDefinition[] = [
     description: 'Delete an uploaded file',
     method: 'DELETE',
     path: '/api/fleet/agents/files/{fileId}',
+    destructive: true,
     input: { type: 'object', properties: { fileId: { type: 'string', description: 'The ID of the uploaded file', 'x-found-in': 'path' } }, required: ['fileId'] },
   },
   {
@@ -129,6 +143,7 @@ export const elasticAgentsDefinitions: KbApiDefinition[] = [
     description: 'Get an uploaded file',
     method: 'GET',
     path: '/api/fleet/agents/files/{fileId}/{fileName}',
+    destructive: false,
     input: { type: 'object', properties: { fileId: { type: 'string', description: 'The ID of the uploaded file', 'x-found-in': 'path' }, fileName: { type: 'string', description: 'The name of the uploaded file', 'x-found-in': 'path' } }, required: ['fileId', 'fileName'] },
   },
   {
@@ -137,6 +152,7 @@ export const elasticAgentsDefinitions: KbApiDefinition[] = [
     description: 'Get agent setup info',
     method: 'GET',
     path: '/api/fleet/agents/setup',
+    destructive: false,
   },
   {
     name: 'post-fleet-agents-setup',
@@ -144,6 +160,7 @@ export const elasticAgentsDefinitions: KbApiDefinition[] = [
     description: 'Initiate Fleet setup',
     method: 'POST',
     path: '/api/fleet/agents/setup',
+    destructive: true,
   },
   {
     name: 'get-fleet-agents-tags',
@@ -151,6 +168,7 @@ export const elasticAgentsDefinitions: KbApiDefinition[] = [
     description: 'Get agent tags',
     method: 'GET',
     path: '/api/fleet/agents/tags',
+    destructive: false,
     input: { type: 'object', properties: { kuery: { type: 'string', description: 'A KQL query string to filter results', 'x-found-in': 'query' }, showInactive: { type: 'boolean', description: 'When true, include tags from inactive agents', 'x-found-in': 'query' } } },
   },
 ]

@@ -31,6 +31,7 @@ export const ml_update_trained_model_deployment_definitions: EsApiDefinition[] =
     description: 'Update a trained model deployment.',
     method: 'POST',
     path: '/_ml/trained_models/{model_id}/deployment/_update',
+    destructive: true,
     input: _inputSchema,
   },
 ]

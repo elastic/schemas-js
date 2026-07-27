@@ -31,6 +31,7 @@ export const indices_explain_data_lifecycle_definitions: EsApiDefinition[] = [
     description: 'Get the status for a data stream lifecycle.',
     method: 'GET',
     path: '/{index}/_lifecycle/explain',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -18,6 +18,7 @@ export const connectorsDefinitions: KbApiDefinition[] = [
     description: 'Get connector types',
     method: 'GET',
     path: '/api/actions/connector_types',
+    destructive: false,
     input: { type: 'object', properties: { feature_id: { type: 'string', description: 'A filter to limit the retrieved connector types to those that support a specific feature (such as alerting or cases).', 'x-found-in': 'query' } } },
   },
   {
@@ -26,6 +27,7 @@ export const connectorsDefinitions: KbApiDefinition[] = [
     description: 'Handle OAuth callback',
     method: 'GET',
     path: '/api/actions/connector/_oauth_callback',
+    destructive: false,
     input: { type: 'object', properties: { code: { type: 'string', description: 'The authorization code returned by the OAuth provider.', 'x-found-in': 'query' }, state: { type: 'string', description: 'The state parameter for CSRF protection.', 'x-found-in': 'query' }, error: { type: 'string', description: 'Error code if the authorization failed.', 'x-found-in': 'query' }, error_description: { type: 'string', description: 'Human-readable error description.', 'x-found-in': 'query' }, session_state: { type: 'string', description: 'Session state from the OAuth provider (e.g., Microsoft).', 'x-found-in': 'query' } } },
   },
   {
@@ -34,6 +36,7 @@ export const connectorsDefinitions: KbApiDefinition[] = [
     description: 'Delete a connector',
     method: 'DELETE',
     path: '/api/actions/connector/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'An identifier for the connector.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -42,6 +45,7 @@ export const connectorsDefinitions: KbApiDefinition[] = [
     description: 'Get connector information',
     method: 'GET',
     path: '/api/actions/connector/{id}',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: 'An identifier for the connector.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -50,6 +54,7 @@ export const connectorsDefinitions: KbApiDefinition[] = [
     description: 'Create a connector',
     method: 'POST',
     path: '/api/actions/connector/{id}',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: 'An identifier for the connector.', 'x-found-in': 'path' }, connector_type_id: { description: 'The type of connector.', 'x-found-in': 'body', type: 'string' }, name: { description: 'The display name for the connector.', 'x-found-in': 'body', type: 'string' }, config: { description: 'The connector configuration details.', 'x-found-in': 'body', type: 'object' }, secrets: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['id', 'connector_type_id', 'name'] },
   },
   {
@@ -58,6 +63,7 @@ export const connectorsDefinitions: KbApiDefinition[] = [
     description: 'Update a connector',
     method: 'PUT',
     path: '/api/actions/connector/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'An identifier for the connector.', 'x-found-in': 'path' }, name: { description: 'The display name for the connector.', 'x-found-in': 'body', type: 'string' }, config: { description: 'The connector configuration details.', 'x-found-in': 'body', type: 'object' }, secrets: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['id', 'name'] },
   },
   {
@@ -66,6 +72,7 @@ export const connectorsDefinitions: KbApiDefinition[] = [
     description: 'Run a connector',
     method: 'POST',
     path: '/api/actions/connector/{id}/_execute',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'An identifier for the connector.', 'x-found-in': 'path' }, params: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['id', 'params'] },
   },
   {
@@ -74,5 +81,6 @@ export const connectorsDefinitions: KbApiDefinition[] = [
     description: 'Get all connectors',
     method: 'GET',
     path: '/api/actions/connectors',
+    destructive: false,
   },
 ]

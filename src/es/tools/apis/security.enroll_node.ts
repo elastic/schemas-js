@@ -31,6 +31,7 @@ export const security_enroll_node_definitions: EsApiDefinition[] = [
     description: 'Enroll a node.',
     method: 'GET',
     path: '/_security/enroll/node',
+    destructive: false,
     input: _inputSchema,
   },
 ]

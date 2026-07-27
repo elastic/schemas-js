@@ -31,6 +31,7 @@ export const snapshot_get_definitions: EsApiDefinition[] = [
     description: 'Get snapshot information.',
     method: 'GET',
     path: '/_snapshot/{repository}/{snapshot}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

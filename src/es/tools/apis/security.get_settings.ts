@@ -31,6 +31,7 @@ export const security_get_settings_definitions: EsApiDefinition[] = [
     description: 'Get security index settings.',
     method: 'GET',
     path: '/_security/settings',
+    destructive: false,
     input: _inputSchema,
   },
 ]

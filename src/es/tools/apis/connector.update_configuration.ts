@@ -31,6 +31,7 @@ export const connector_update_configuration_definitions: EsApiDefinition[] = [
     description: 'Update the connector configuration.',
     method: 'PUT',
     path: '/_connector/{connector_id}/_configuration',
+    destructive: true,
     input: _inputSchema,
   },
 ]

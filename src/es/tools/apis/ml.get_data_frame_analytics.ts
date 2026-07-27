@@ -31,6 +31,7 @@ export const ml_get_data_frame_analytics_definitions: EsApiDefinition[] = [
     description: 'Get data frame analytics job configuration info.',
     method: 'GET',
     path: '/_ml/data_frame/analytics/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

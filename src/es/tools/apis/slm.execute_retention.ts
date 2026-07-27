@@ -31,6 +31,7 @@ export const slm_execute_retention_definitions: EsApiDefinition[] = [
     description: 'Run a retention policy.',
     method: 'POST',
     path: '/_slm/_execute_retention',
+    destructive: true,
     input: _inputSchema,
   },
 ]

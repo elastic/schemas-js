@@ -31,6 +31,7 @@ export const synonyms_get_synonym_rule_definitions: EsApiDefinition[] = [
     description: 'Get a synonym rule.',
     method: 'GET',
     path: '/_synonyms/{set_id}/{rule_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

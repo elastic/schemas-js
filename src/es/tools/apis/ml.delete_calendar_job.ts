@@ -31,6 +31,7 @@ export const ml_delete_calendar_job_definitions: EsApiDefinition[] = [
     description: 'Delete anomaly jobs from a calendar.',
     method: 'DELETE',
     path: '/_ml/calendars/{calendar_id}/jobs/{job_id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

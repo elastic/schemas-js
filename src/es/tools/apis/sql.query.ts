@@ -31,6 +31,7 @@ export const sql_query_definitions: EsApiDefinition[] = [
     description: 'Get SQL search results.',
     method: 'POST',
     path: '/_sql',
+    destructive: false,
     input: _inputSchema,
   },
 ]

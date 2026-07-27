@@ -31,6 +31,7 @@ export const project_tags_definitions: EsApiDefinition[] = [
     description: 'Get tags.',
     method: 'GET',
     path: '/_project/tags',
+    destructive: false,
     input: _inputSchema,
   },
 ]

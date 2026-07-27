@@ -31,6 +31,7 @@ export const security_saml_logout_definitions: EsApiDefinition[] = [
     description: 'Logout of SAML.',
     method: 'POST',
     path: '/_security/saml/logout',
+    destructive: true,
     input: _inputSchema,
   },
 ]

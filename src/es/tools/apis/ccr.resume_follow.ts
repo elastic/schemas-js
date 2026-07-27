@@ -31,6 +31,7 @@ export const ccr_resume_follow_definitions: EsApiDefinition[] = [
     description: 'Resume a follower.',
     method: 'POST',
     path: '/{index}/_ccr/resume_follow',
+    destructive: true,
     input: _inputSchema,
   },
 ]

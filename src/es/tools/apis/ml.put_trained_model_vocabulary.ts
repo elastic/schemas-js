@@ -31,6 +31,7 @@ export const ml_put_trained_model_vocabulary_definitions: EsApiDefinition[] = [
     description: 'Create a trained model vocabulary.',
     method: 'PUT',
     path: '/_ml/trained_models/{model_id}/vocabulary',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const ml_get_model_snapshot_upgrade_stats_definitions: EsApiDefinition[] 
     description: 'Get anomaly detection job model snapshot upgrade usage info.',
     method: 'GET',
     path: '/_ml/anomaly_detectors/{job_id}/model_snapshots/{snapshot_id}/_upgrade/_stats',
+    destructive: false,
     input: _inputSchema,
   },
 ]

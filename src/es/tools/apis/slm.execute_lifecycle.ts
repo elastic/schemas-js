@@ -31,6 +31,7 @@ export const slm_execute_lifecycle_definitions: EsApiDefinition[] = [
     description: 'Run a policy.',
     method: 'PUT',
     path: '/_slm/policy/{policy_id}/_execute',
+    destructive: true,
     input: _inputSchema,
   },
 ]

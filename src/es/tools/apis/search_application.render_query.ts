@@ -31,6 +31,7 @@ export const search_application_render_query_definitions: EsApiDefinition[] = [
     description: 'Render a search application query.',
     method: 'POST',
     path: '/_application/search_application/{name}/_render_query',
+    destructive: false,
     input: _inputSchema,
   },
 ]

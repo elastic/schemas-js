@@ -31,6 +31,7 @@ export const inference_put_googleaistudio_definitions: EsApiDefinition[] = [
     description: 'Create an Google AI Studio inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{googleaistudio_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

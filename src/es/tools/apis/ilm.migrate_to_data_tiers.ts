@@ -31,6 +31,7 @@ export const ilm_migrate_to_data_tiers_definitions: EsApiDefinition[] = [
     description: 'Migrate to data tiers routing.',
     method: 'POST',
     path: '/_ilm/migrate_to_data_tiers',
+    destructive: true,
     input: _inputSchema,
   },
 ]

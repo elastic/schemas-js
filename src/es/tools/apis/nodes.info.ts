@@ -31,6 +31,7 @@ export const nodes_info_definitions: EsApiDefinition[] = [
     description: 'Get node information.',
     method: 'GET',
     path: '/_nodes/{node_id}/{metric}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

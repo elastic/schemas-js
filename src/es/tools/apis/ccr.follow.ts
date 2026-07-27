@@ -31,6 +31,7 @@ export const ccr_follow_definitions: EsApiDefinition[] = [
     description: 'Create a follower.',
     method: 'PUT',
     path: '/{index}/_ccr/follow',
+    destructive: false,
     input: _inputSchema,
   },
 ]

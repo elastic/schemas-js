@@ -31,6 +31,7 @@ export const ilm_stop_definitions: EsApiDefinition[] = [
     description: 'Stop the ILM plugin.',
     method: 'POST',
     path: '/_ilm/stop',
+    destructive: true,
     input: _inputSchema,
   },
 ]

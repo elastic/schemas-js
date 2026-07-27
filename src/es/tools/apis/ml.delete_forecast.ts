@@ -31,6 +31,7 @@ export const ml_delete_forecast_definitions: EsApiDefinition[] = [
     description: 'Delete forecasts from a job.',
     method: 'DELETE',
     path: '/_ml/anomaly_detectors/{job_id}/_forecast/{forecast_id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

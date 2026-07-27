@@ -31,6 +31,7 @@ export const ilm_start_definitions: EsApiDefinition[] = [
     description: 'Start the ILM plugin.',
     method: 'POST',
     path: '/_ilm/start',
+    destructive: true,
     input: _inputSchema,
   },
 ]

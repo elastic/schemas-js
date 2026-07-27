@@ -31,6 +31,7 @@ export const connector_update_native_definitions: EsApiDefinition[] = [
     description: 'Update the connector is_native flag.',
     method: 'PUT',
     path: '/_connector/{connector_id}/_native',
+    destructive: true,
     input: _inputSchema,
   },
 ]

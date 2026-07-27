@@ -31,6 +31,7 @@ export const watcher_update_settings_definitions: EsApiDefinition[] = [
     description: 'Update Watcher index settings.',
     method: 'PUT',
     path: '/_watcher/settings',
+    destructive: true,
     input: _inputSchema,
   },
 ]

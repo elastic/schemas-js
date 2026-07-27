@@ -31,6 +31,7 @@ export const search_application_delete_definitions: EsApiDefinition[] = [
     description: 'Delete a search application.',
     method: 'DELETE',
     path: '/_application/search_application/{name}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

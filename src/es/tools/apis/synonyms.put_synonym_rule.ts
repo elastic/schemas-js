@@ -31,6 +31,7 @@ export const synonyms_put_synonym_rule_definitions: EsApiDefinition[] = [
     description: 'Create or update a synonym rule.',
     method: 'PUT',
     path: '/_synonyms/{set_id}/{rule_id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

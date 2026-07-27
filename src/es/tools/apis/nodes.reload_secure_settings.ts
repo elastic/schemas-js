@@ -31,6 +31,7 @@ export const nodes_reload_secure_settings_definitions: EsApiDefinition[] = [
     description: 'Reload the keystore on nodes in the cluster.',
     method: 'POST',
     path: '/_nodes/{node_id}/reload_secure_settings',
+    destructive: true,
     input: _inputSchema,
   },
 ]

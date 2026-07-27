@@ -30,6 +30,7 @@ export const bulk_definitions: EsApiDefinition[] = [
     description: 'Bulk index or delete documents.',
     method: 'POST',
     path: '/{index}/_bulk',
+    destructive: true,
     input: _inputSchema,
     bodyFormat: 'ndjson',
   },

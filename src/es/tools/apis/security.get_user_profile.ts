@@ -31,6 +31,7 @@ export const security_get_user_profile_definitions: EsApiDefinition[] = [
     description: 'Get a user profile.',
     method: 'GET',
     path: '/_security/profile/{uid}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

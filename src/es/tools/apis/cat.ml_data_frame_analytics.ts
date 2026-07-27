@@ -31,6 +31,7 @@ export const cat_ml_data_frame_analytics_definitions: EsApiDefinition[] = [
     description: 'Get data frame analytics jobs.',
     method: 'GET',
     path: '/_cat/ml/data_frame/analytics/{id}',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

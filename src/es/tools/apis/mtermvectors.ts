@@ -30,6 +30,7 @@ export const mtermvectors_definitions: EsApiDefinition[] = [
     description: 'Get multiple term vectors.',
     method: 'GET',
     path: '/{index}/_mtermvectors',
+    destructive: false,
     input: _inputSchema,
   },
 ]

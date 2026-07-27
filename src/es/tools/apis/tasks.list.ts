@@ -31,6 +31,7 @@ export const tasks_list_definitions: EsApiDefinition[] = [
     description: 'Get all tasks.',
     method: 'GET',
     path: '/_tasks',
+    destructive: false,
     input: _inputSchema,
   },
 ]

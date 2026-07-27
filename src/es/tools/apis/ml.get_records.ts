@@ -31,6 +31,7 @@ export const ml_get_records_definitions: EsApiDefinition[] = [
     description: 'Get anomaly records for an anomaly detection job.',
     method: 'GET',
     path: '/_ml/anomaly_detectors/{job_id}/results/records',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const indices_shard_stores_definitions: EsApiDefinition[] = [
     description: 'Get index shard stores.',
     method: 'GET',
     path: '/{index}/_shard_stores',
+    destructive: false,
     input: _inputSchema,
   },
 ]

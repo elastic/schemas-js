@@ -31,6 +31,7 @@ export const streams_logs_enable_definitions: EsApiDefinition[] = [
     description: 'Enable a named stream.',
     method: 'POST',
     path: '/_streams/{name}/_enable',
+    destructive: true,
     input: _inputSchema,
   },
 ]

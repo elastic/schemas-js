@@ -31,6 +31,7 @@ export const search_application_post_behavioral_analytics_event_definitions: EsA
     description: 'Create a behavioral analytics collection event.',
     method: 'POST',
     path: '/_application/analytics/{collection_name}/event/{event_type}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const cluster_get_component_template_definitions: EsApiDefinition[] = [
     description: 'Get component templates.',
     method: 'GET',
     path: '/_component_template/{name}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

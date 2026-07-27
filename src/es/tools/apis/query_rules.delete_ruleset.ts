@@ -31,6 +31,7 @@ export const query_rules_delete_ruleset_definitions: EsApiDefinition[] = [
     description: 'Delete a query ruleset.',
     method: 'DELETE',
     path: '/_query_rules/{ruleset_id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

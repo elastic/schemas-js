@@ -18,6 +18,7 @@ export const savedObjectsDefinitions: KbApiDefinition[] = [
     description: 'Export saved objects',
     method: 'POST',
     path: '/api/saved_objects/_export',
+    destructive: true,
     input: { type: 'object', properties: { excludeExportDetails: { description: 'Do not add export details entry at the end of the stream.', 'x-found-in': 'body', type: 'boolean' }, hasReference: { description: '', 'x-found-in': 'body', type: 'object' }, includeReferencesDeep: { description: 'Includes all of the referenced objects in the exported objects.', 'x-found-in': 'body', type: 'boolean' }, objects: { description: 'A list of objects to export. NOTE: this optional parameter cannot be combined with the `types` option', 'x-found-in': 'body' }, search: { description: 'Search for documents to export using the Elasticsearch Simple Query String syntax.', 'x-found-in': 'body', type: 'string' }, type: { description: 'The saved object types to include in the export. Use `*` to export all the types. Valid options depend on enabled plugins, but may include `visualization`, `dashboard`, `search`, `index-pattern`, `tag`, `config`, `config-global`, `lens`, `map`, `event-annotation-group`, `query`, `url`, `action`, `alert`, `alerting_rule_template`, `apm-indices`, `cases-user-actions`, `cases`, `cases-comments`, `infrastructure-monitoring-log-view`, `ml-trained-model`, `osquery-saved-query`, `osquery-pack`, `osquery-pack-asset`.', 'x-found-in': 'body', type: 'object' } } },
     responseType: 'ndjson',
   },
@@ -27,6 +28,7 @@ export const savedObjectsDefinitions: KbApiDefinition[] = [
     description: 'Import saved objects',
     method: 'POST',
     path: '/api/saved_objects/_import',
+    destructive: true,
     input: { type: 'object', properties: { overwrite: { type: 'boolean', description: 'Overwrites saved objects when they already exist. When used, potential conflict errors are automatically resolved by overwriting the destination object. NOTE: This option cannot be used with the `createNewCopies` option.', 'x-found-in': 'query' }, createNewCopies: { type: 'boolean', description: 'Creates copies of saved objects, regenerates each object ID, and resets the origin. When used, potential conflict errors are avoided. NOTE: This option cannot be used with the `overwrite` and `compatibilityMode` options.', 'x-found-in': 'query' }, compatibilityMode: { type: 'boolean', description: 'Applies various adjustments to the saved objects that are being imported to maintain compatibility between different Kibana versions. Use this option only if you encounter issues with imported saved objects. NOTE: This option cannot be used with the `createNewCopies` option.', 'x-found-in': 'query' }, file: { description: 'A file exported using the export API. Changing the contents of the exported file in any way before importing it can cause errors, crashes or data loss. NOTE: The `savedObjects.maxImportExportSize` configuration setting limits the number of saved objects which may be included in this file. Similarly, the `savedObjects.maxImportPayloadBytes` setting limits the overall size of the file that can be imported.', 'x-found-in': 'body', type: 'string' } }, required: ['file'] },
   },
   {
@@ -35,6 +37,7 @@ export const savedObjectsDefinitions: KbApiDefinition[] = [
     description: 'Resolve import errors',
     method: 'POST',
     path: '/api/saved_objects/_resolve_import_errors',
+    destructive: true,
     input: { type: 'object', properties: { createNewCopies: { type: 'boolean', description: 'Creates copies of saved objects, regenerates each object ID, and resets the origin.', 'x-found-in': 'query' }, compatibilityMode: { type: 'boolean', description: 'Applies adjustments to maintain compatibility between different Kibana versions.', 'x-found-in': 'query' }, file: { description: '', 'x-found-in': 'body', type: 'string' }, retries: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['file', 'retries'] },
   },
 ]

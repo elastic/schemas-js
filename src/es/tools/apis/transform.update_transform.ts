@@ -31,6 +31,7 @@ export const transform_update_transform_definitions: EsApiDefinition[] = [
     description: 'Update a transform.',
     method: 'POST',
     path: '/_transform/{transform_id}/_update',
+    destructive: true,
     input: _inputSchema,
   },
 ]

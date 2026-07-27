@@ -31,6 +31,7 @@ export const project_get_routing_definitions: EsApiDefinition[] = [
     description: 'Get a project routing expression.',
     method: 'GET',
     path: '/_project_routing/{name}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

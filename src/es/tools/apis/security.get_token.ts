@@ -31,6 +31,7 @@ export const security_get_token_definitions: EsApiDefinition[] = [
     description: 'Get a token.',
     method: 'POST',
     path: '/_security/oauth2/token',
+    destructive: true,
     input: _inputSchema,
   },
 ]

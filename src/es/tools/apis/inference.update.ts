@@ -31,6 +31,7 @@ export const inference_update_definitions: EsApiDefinition[] = [
     description: 'Update an inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{inference_id}/_update',
+    destructive: true,
     input: _inputSchema,
   },
 ]

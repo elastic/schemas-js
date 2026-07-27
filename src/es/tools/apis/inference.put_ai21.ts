@@ -31,6 +31,7 @@ export const inference_put_ai21_definitions: EsApiDefinition[] = [
     description: 'Create a AI21 inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{ai21_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

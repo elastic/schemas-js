@@ -31,6 +31,7 @@ export const search_application_put_behavioral_analytics_definitions: EsApiDefin
     description: 'Create a behavioral analytics collection.',
     method: 'PUT',
     path: '/_application/analytics/{name}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

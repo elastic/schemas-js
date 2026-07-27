@@ -31,6 +31,7 @@ export const cluster_put_settings_definitions: EsApiDefinition[] = [
     description: 'Update the cluster settings.',
     method: 'PUT',
     path: '/_cluster/settings',
+    destructive: true,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const indices_split_definitions: EsApiDefinition[] = [
     description: 'Split an index.',
     method: 'PUT',
     path: '/{index}/_split/{target}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

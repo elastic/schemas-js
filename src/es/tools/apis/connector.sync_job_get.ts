@@ -31,6 +31,7 @@ export const connector_sync_job_get_definitions: EsApiDefinition[] = [
     description: 'Get a connector sync job.',
     method: 'GET',
     path: '/_connector/_sync_job/{connector_sync_job_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

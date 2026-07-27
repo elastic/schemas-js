@@ -31,6 +31,7 @@ export const cat_health_definitions: EsApiDefinition[] = [
     description: 'Get the cluster health status.',
     method: 'GET',
     path: '/_cat/health',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

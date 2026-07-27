@@ -30,6 +30,7 @@ export const explain_definitions: EsApiDefinition[] = [
     description: 'Explain a document match result.',
     method: 'GET',
     path: '/{index}/_explain/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

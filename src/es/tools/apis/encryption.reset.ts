@@ -31,6 +31,7 @@ export const encryption_reset_definitions: EsApiDefinition[] = [
     description: 'Reset the project encryption key.',
     method: 'POST',
     path: '/_encryption/_reset',
+    destructive: true,
     input: _inputSchema,
   },
 ]

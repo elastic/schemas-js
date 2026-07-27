@@ -31,6 +31,7 @@ export const security_get_role_definitions: EsApiDefinition[] = [
     description: 'Get roles.',
     method: 'GET',
     path: '/_security/role/{name}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

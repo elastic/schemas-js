@@ -31,6 +31,7 @@ export const connector_update_error_definitions: EsApiDefinition[] = [
     description: 'Update the connector error field.',
     method: 'PUT',
     path: '/_connector/{connector_id}/_error',
+    destructive: true,
     input: _inputSchema,
   },
 ]

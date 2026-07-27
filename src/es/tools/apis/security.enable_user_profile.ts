@@ -31,6 +31,7 @@ export const security_enable_user_profile_definitions: EsApiDefinition[] = [
     description: 'Enable a user profile.',
     method: 'PUT',
     path: '/_security/profile/{uid}/_enable',
+    destructive: true,
     input: _inputSchema,
   },
 ]

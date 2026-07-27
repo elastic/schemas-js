@@ -31,6 +31,7 @@ export const indices_close_definitions: EsApiDefinition[] = [
     description: 'Close an index.',
     method: 'POST',
     path: '/{index}/_close',
+    destructive: true,
     input: _inputSchema,
   },
 ]

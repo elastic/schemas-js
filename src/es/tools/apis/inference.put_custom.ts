@@ -31,6 +31,7 @@ export const inference_put_custom_definitions: EsApiDefinition[] = [
     description: 'Create a custom inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{custom_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

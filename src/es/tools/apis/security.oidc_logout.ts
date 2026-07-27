@@ -31,6 +31,7 @@ export const security_oidc_logout_definitions: EsApiDefinition[] = [
     description: 'Logout of OpenID Connect.',
     method: 'POST',
     path: '/_security/oidc/logout',
+    destructive: true,
     input: _inputSchema,
   },
 ]

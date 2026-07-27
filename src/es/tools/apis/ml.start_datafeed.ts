@@ -31,6 +31,7 @@ export const ml_start_datafeed_definitions: EsApiDefinition[] = [
     description: 'Start datafeeds.',
     method: 'POST',
     path: '/_ml/datafeeds/{datafeed_id}/_start',
+    destructive: true,
     input: _inputSchema,
   },
 ]

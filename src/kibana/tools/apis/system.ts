@@ -18,6 +18,7 @@ export const systemDefinitions: KbApiDefinition[] = [
     description: "Get Kibana's current status",
     method: 'GET',
     path: '/api/status',
+    destructive: false,
     input: { type: 'object', properties: { v7format: { type: 'boolean', description: 'Set to "true" to get the response in v7 format.', 'x-found-in': 'query' }, v8format: { type: 'boolean', description: 'Set to "true" to get the response in v8 format.', 'x-found-in': 'query' } } },
   },
 ]

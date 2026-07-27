@@ -31,6 +31,7 @@ export const cluster_delete_component_template_definitions: EsApiDefinition[] = 
     description: 'Delete component templates.',
     method: 'DELETE',
     path: '/_component_template/{name}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

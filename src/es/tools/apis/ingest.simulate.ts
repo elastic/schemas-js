@@ -31,6 +31,7 @@ export const ingest_simulate_definitions: EsApiDefinition[] = [
     description: 'Simulate a pipeline.',
     method: 'GET',
     path: '/_ingest/pipeline/{id}/_simulate',
+    destructive: false,
     input: _inputSchema,
   },
 ]

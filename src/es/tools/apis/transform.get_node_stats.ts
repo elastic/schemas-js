@@ -31,6 +31,7 @@ export const transform_get_node_stats_definitions: EsApiDefinition[] = [
     description: 'Get node stats.',
     method: 'GET',
     path: '/_transform/_node_stats',
+    destructive: false,
     input: _inputSchema,
   },
 ]

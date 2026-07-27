@@ -31,6 +31,7 @@ export const connector_update_status_definitions: EsApiDefinition[] = [
     description: 'Update the connector status.',
     method: 'PUT',
     path: '/_connector/{connector_id}/_status',
+    destructive: true,
     input: _inputSchema,
   },
 ]

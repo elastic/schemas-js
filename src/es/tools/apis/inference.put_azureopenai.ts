@@ -31,6 +31,7 @@ export const inference_put_azureopenai_definitions: EsApiDefinition[] = [
     description: 'Create an Azure OpenAI inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{azureopenai_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

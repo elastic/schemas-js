@@ -31,6 +31,7 @@ export const transform_reset_transform_definitions: EsApiDefinition[] = [
     description: 'Reset a transform.',
     method: 'POST',
     path: '/_transform/{transform_id}/_reset',
+    destructive: true,
     input: _inputSchema,
   },
 ]

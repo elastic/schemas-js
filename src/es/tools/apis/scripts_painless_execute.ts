@@ -30,6 +30,7 @@ export const scripts_painless_execute_definitions: EsApiDefinition[] = [
     description: 'Run a script.',
     method: 'GET',
     path: '/_scripts/painless/_execute',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const ml_put_calendar_job_definitions: EsApiDefinition[] = [
     description: 'Add anomaly detection job to calendar.',
     method: 'PUT',
     path: '/_ml/calendars/{calendar_id}/jobs/{job_id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

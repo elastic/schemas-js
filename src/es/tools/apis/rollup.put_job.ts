@@ -31,6 +31,7 @@ export const rollup_put_job_definitions: EsApiDefinition[] = [
     description: 'Create a rollup job.',
     method: 'PUT',
     path: '/_rollup/job/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

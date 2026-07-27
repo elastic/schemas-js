@@ -30,6 +30,7 @@ export const exists_source_definitions: EsApiDefinition[] = [
     description: 'Check for a document source.',
     method: 'HEAD',
     path: '/{index}/_source/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

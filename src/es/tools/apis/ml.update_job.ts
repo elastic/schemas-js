@@ -31,6 +31,7 @@ export const ml_update_job_definitions: EsApiDefinition[] = [
     description: 'Update an anomaly detection job.',
     method: 'POST',
     path: '/_ml/anomaly_detectors/{job_id}/_update',
+    destructive: true,
     input: _inputSchema,
   },
 ]

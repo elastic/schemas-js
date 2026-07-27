@@ -31,6 +31,7 @@ export const slm_stop_definitions: EsApiDefinition[] = [
     description: 'Stop snapshot lifecycle management.',
     method: 'POST',
     path: '/_slm/stop',
+    destructive: true,
     input: _inputSchema,
   },
 ]

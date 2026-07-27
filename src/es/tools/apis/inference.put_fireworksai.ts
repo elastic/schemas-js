@@ -31,6 +31,7 @@ export const inference_put_fireworksai_definitions: EsApiDefinition[] = [
     description: 'Create a Fireworks AI inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{fireworksai_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

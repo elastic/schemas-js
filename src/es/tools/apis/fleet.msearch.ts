@@ -31,6 +31,7 @@ export const fleet_msearch_definitions: EsApiDefinition[] = [
     description: 'Run multiple Fleet searches.',
     method: 'GET',
     path: '/{index}/_fleet/_fleet_msearch',
+    destructive: false,
     input: _inputSchema,
     bodyFormat: 'ndjson',
   },

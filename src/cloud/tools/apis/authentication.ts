@@ -18,6 +18,7 @@ export const authenticationDefinitions: CloudApiDefinition[] = [
     description: 'Get all API keys',
     method: 'GET',
     path: '/api/v1/users/auth/keys',
+    destructive: false,
     input: { type: 'object', properties: { next_page: { type: 'string', description: 'Pagination cursor to get the next page of records', 'x-found-in': 'query' } } },
   },
   {
@@ -26,6 +27,7 @@ export const authenticationDefinitions: CloudApiDefinition[] = [
     description: 'Create API key',
     method: 'POST',
     path: '/api/v1/users/auth/keys',
+    destructive: false,
   },
   {
     name: 'delete-api-keys',
@@ -33,6 +35,7 @@ export const authenticationDefinitions: CloudApiDefinition[] = [
     description: 'Delete API keys',
     method: 'DELETE',
     path: '/api/v1/users/auth/keys',
+    destructive: true,
   },
   {
     name: 'get-api-key',
@@ -40,6 +43,7 @@ export const authenticationDefinitions: CloudApiDefinition[] = [
     description: 'Get API key',
     method: 'GET',
     path: '/api/v1/users/auth/keys/{api_key_id}',
+    destructive: false,
     input: { type: 'object', properties: { api_key_id: { type: 'string', description: 'The API Key ID.', 'x-found-in': 'path' } }, required: ['api_key_id'] },
   },
   {
@@ -48,6 +52,7 @@ export const authenticationDefinitions: CloudApiDefinition[] = [
     description: 'Delete API key',
     method: 'DELETE',
     path: '/api/v1/users/auth/keys/{api_key_id}',
+    destructive: true,
     input: { type: 'object', properties: { api_key_id: { type: 'string', description: 'The API Key ID.', 'x-found-in': 'path' } }, required: ['api_key_id'] },
   },
 ]

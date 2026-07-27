@@ -31,6 +31,7 @@ export const security_query_api_keys_definitions: EsApiDefinition[] = [
     description: 'Find API keys with a query.',
     method: 'GET',
     path: '/_security/_query/api_key',
+    destructive: false,
     input: _inputSchema,
   },
 ]

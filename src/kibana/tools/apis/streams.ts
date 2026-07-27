@@ -18,6 +18,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Get stream list',
     method: 'GET',
     path: '/api/streams',
+    destructive: false,
   },
   {
     name: 'post-streams-disable',
@@ -25,6 +26,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Disable streams',
     method: 'POST',
     path: '/api/streams/_disable',
+    destructive: true,
   },
   {
     name: 'post-streams-enable',
@@ -32,6 +34,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Enable streams',
     method: 'POST',
     path: '/api/streams/_enable',
+    destructive: true,
   },
   {
     name: 'post-streams-resync',
@@ -39,6 +42,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Resync streams',
     method: 'POST',
     path: '/api/streams/_resync',
+    destructive: true,
   },
   {
     name: 'delete-streams-name',
@@ -46,6 +50,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Delete a stream',
     method: 'DELETE',
     path: '/api/streams/{name}',
+    destructive: true,
     input: { type: 'object', properties: { name: { type: 'string', description: 'The name of the stream.', 'x-found-in': 'path' } }, required: ['name'] },
   },
   {
@@ -54,6 +59,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Get a stream',
     method: 'GET',
     path: '/api/streams/{name}',
+    destructive: false,
     input: { type: 'object', properties: { name: { type: 'string', description: 'The name of the stream.', 'x-found-in': 'path' } }, required: ['name'] },
   },
   {
@@ -62,6 +68,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Create or update a stream',
     method: 'PUT',
     path: '/api/streams/{name}',
+    destructive: true,
     input: { type: 'object', properties: { name: { type: 'string', description: 'The name of the stream.', 'x-found-in': 'path' } }, required: ['name'] },
   },
   {
@@ -70,6 +77,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Fork a stream',
     method: 'POST',
     path: '/api/streams/{name}/_fork',
+    destructive: true,
     input: { type: 'object', properties: { name: { type: 'string', description: 'The name of the parent stream to fork from.', 'x-found-in': 'path' }, draft: { description: '', 'x-found-in': 'body', type: 'boolean' }, status: { description: '', 'x-found-in': 'body', type: 'string' }, stream: { description: '', 'x-found-in': 'body', type: 'object' }, where: { description: 'The root condition object. It can be a simple filter or a combination of other conditions.', 'x-found-in': 'body', type: 'object' } }, required: ['name', 'stream', 'where'] },
   },
   {
@@ -78,6 +86,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Get ingest stream settings',
     method: 'GET',
     path: '/api/streams/{name}/_ingest',
+    destructive: false,
     input: { type: 'object', properties: { name: { type: 'string', description: 'The name of the stream.', 'x-found-in': 'path' } }, required: ['name'] },
   },
   {
@@ -86,6 +95,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Update ingest stream settings',
     method: 'PUT',
     path: '/api/streams/{name}/_ingest',
+    destructive: true,
     input: { type: 'object', properties: { name: { type: 'string', description: 'The name of the stream.', 'x-found-in': 'path' }, ingest: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['name', 'ingest'] },
   },
   {
@@ -94,6 +104,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Get query stream settings',
     method: 'GET',
     path: '/api/streams/{name}/_query',
+    destructive: false,
     input: { type: 'object', properties: { name: { type: 'string', description: 'The name of the query stream.', 'x-found-in': 'path' } }, required: ['name'] },
   },
   {
@@ -102,6 +113,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Upsert query stream settings',
     method: 'PUT',
     path: '/api/streams/{name}/_query',
+    destructive: false,
     input: { type: 'object', properties: { name: { type: 'string', description: 'The name of the query stream.', 'x-found-in': 'path' }, field_descriptions: { description: '', 'x-found-in': 'body', type: 'object' }, query: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['name', 'query'] },
   },
   {
@@ -110,6 +122,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Export stream content',
     method: 'POST',
     path: '/api/streams/{name}/content/export',
+    destructive: true,
     input: { type: 'object', properties: { name: { description: '', 'x-found-in': 'body', type: 'string' }, description: { description: '', 'x-found-in': 'body', type: 'string' }, include: { description: '', 'x-found-in': 'body', type: 'object' }, version: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['name', 'description', 'include', 'name', 'version'] },
   },
   {
@@ -118,6 +131,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Import content into a stream',
     method: 'POST',
     path: '/api/streams/{name}/content/import',
+    destructive: true,
     input: { type: 'object', properties: { name: { type: 'string', description: 'The name of the stream to import content into.', 'x-found-in': 'path' }, content: { description: '', 'x-found-in': 'body', type: 'string' }, include: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['name', 'content', 'include'] },
   },
   {
@@ -126,6 +140,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Get stream queries',
     method: 'GET',
     path: '/api/streams/{name}/queries',
+    destructive: false,
     input: { type: 'object', properties: { name: { type: 'string', description: 'The name of the stream.', 'x-found-in': 'path' } }, required: ['name'] },
   },
   {
@@ -134,6 +149,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Bulk update queries',
     method: 'POST',
     path: '/api/streams/{name}/queries/_bulk',
+    destructive: true,
     input: { type: 'object', properties: { name: { type: 'string', description: 'The name of the stream.', 'x-found-in': 'path' }, operations: { description: '', 'x-found-in': 'body' } }, required: ['name', 'operations'] },
   },
   {
@@ -142,6 +158,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Remove a query from a stream',
     method: 'DELETE',
     path: '/api/streams/{name}/queries/{queryId}',
+    destructive: true,
     input: { type: 'object', properties: { name: { type: 'string', description: 'The name of the stream.', 'x-found-in': 'path' }, queryId: { type: 'string', description: 'The identifier of the query to remove.', 'x-found-in': 'path' } }, required: ['name', 'queryId'] },
   },
   {
@@ -150,6 +167,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Upsert a query to a stream',
     method: 'PUT',
     path: '/api/streams/{name}/queries/{queryId}',
+    destructive: true,
     input: { type: 'object', properties: { name: { type: 'string', description: 'The name of the stream.', 'x-found-in': 'path' }, queryId: { type: 'string', description: 'The identifier of the query.', 'x-found-in': 'path' }, description: { description: '', 'x-found-in': 'body', type: 'string' }, esql: { description: '', 'x-found-in': 'body', type: 'object' }, evidence: { description: '', 'x-found-in': 'body' }, severity_score: { description: '', 'x-found-in': 'body', type: 'number' }, title: { description: 'A non-empty string.', 'x-found-in': 'body', type: 'string' } }, required: ['name', 'queryId', 'esql', 'title'] },
   },
   {
@@ -158,6 +176,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Read the significant events',
     method: 'GET',
     path: '/api/streams/{name}/significant_events',
+    destructive: false,
     input: { type: 'object', properties: { name: { type: 'string', description: 'The name of the stream.', 'x-found-in': 'path' }, from: { type: 'string', description: 'Start of the time range as an ISO 8601 date string.', 'x-found-in': 'query' }, to: { type: 'string', description: 'End of the time range as an ISO 8601 date string.', 'x-found-in': 'query' }, bucketSize: { type: 'string', description: 'The bucket size for aggregating events (e.g. "1m", "1h").', 'x-found-in': 'query' }, query: { type: 'string', description: 'Query string to filter significant events on metadata fields', 'x-found-in': 'query' }, searchMode: { type: 'string', description: 'Search mode: keyword (BM25), semantic (vector), or hybrid (RRF). When omitted, defaults to hybrid with a silent keyword fallback on failure. When set explicitly, failures propagate as errors.', 'x-found-in': 'query' } }, required: ['name', 'from', 'to', 'bucketSize'] },
   },
   {
@@ -166,6 +185,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Get stream attachments',
     method: 'GET',
     path: '/api/streams/{streamName}/attachments',
+    destructive: false,
     input: { type: 'object', properties: { streamName: { type: 'string', description: 'The name of the stream', 'x-found-in': 'path' }, query: { type: 'string', description: 'Search query to filter attachments by title', 'x-found-in': 'query' }, attachmentTypes: { type: 'string', description: 'Filter by attachment types (single value or array)', 'x-found-in': 'query' }, tags: { type: 'string', description: 'Filter by tags (single value or array)', 'x-found-in': 'query' } }, required: ['streamName'] },
   },
   {
@@ -174,6 +194,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Bulk update attachments',
     method: 'POST',
     path: '/api/streams/{streamName}/attachments/_bulk',
+    destructive: true,
     input: { type: 'object', properties: { streamName: { type: 'string', description: 'The name of the stream', 'x-found-in': 'path' }, operations: { description: '', 'x-found-in': 'body' } }, required: ['streamName', 'operations'] },
   },
   {
@@ -182,6 +203,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Unlink an attachment from a stream',
     method: 'DELETE',
     path: '/api/streams/{streamName}/attachments/{attachmentType}/{attachmentId}',
+    destructive: true,
     input: { type: 'object', properties: { streamName: { type: 'string', description: 'The name of the stream', 'x-found-in': 'path' }, attachmentType: { type: 'string', description: 'The type of the attachment', 'x-found-in': 'path' }, attachmentId: { type: 'string', description: 'The ID of the attachment', 'x-found-in': 'path' } }, required: ['streamName', 'attachmentType', 'attachmentId'] },
   },
   {
@@ -190,6 +212,7 @@ export const streamsDefinitions: KbApiDefinition[] = [
     description: 'Link an attachment to a stream',
     method: 'PUT',
     path: '/api/streams/{streamName}/attachments/{attachmentType}/{attachmentId}',
+    destructive: true,
     input: { type: 'object', properties: { streamName: { type: 'string', description: 'The name of the stream', 'x-found-in': 'path' }, attachmentType: { type: 'string', description: 'The type of the attachment', 'x-found-in': 'path' }, attachmentId: { type: 'string', description: 'The ID of the attachment', 'x-found-in': 'path' } }, required: ['streamName', 'attachmentType', 'attachmentId'] },
   },
 ]

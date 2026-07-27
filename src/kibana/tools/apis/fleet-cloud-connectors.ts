@@ -18,6 +18,7 @@ export const fleetCloudConnectorsDefinitions: KbApiDefinition[] = [
     description: 'Get cloud connectors',
     method: 'GET',
     path: '/api/fleet/cloud_connectors',
+    destructive: false,
     input: { type: 'object', properties: { page: { type: 'string', description: 'The page number for pagination.', 'x-found-in': 'query' }, perPage: { type: 'string', description: 'The number of items per page.', 'x-found-in': 'query' }, kuery: { type: 'string', description: 'KQL query to filter cloud connectors.', 'x-found-in': 'query' } } },
   },
   {
@@ -26,6 +27,7 @@ export const fleetCloudConnectorsDefinitions: KbApiDefinition[] = [
     description: 'Create cloud connector',
     method: 'POST',
     path: '/api/fleet/cloud_connectors',
+    destructive: false,
     input: { type: 'object', properties: { accountType: { description: 'The account type: single-account (single account/subscription) or organization-account (organization-wide).', 'x-found-in': 'body', type: 'string' }, cloudProvider: { description: 'The cloud provider type: aws, azure, or gcp.', 'x-found-in': 'body', type: 'string' }, name: { description: 'The name of the cloud connector.', 'x-found-in': 'body', type: 'string' }, vars: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['cloudProvider', 'name', 'vars'] },
   },
   {
@@ -34,6 +36,7 @@ export const fleetCloudConnectorsDefinitions: KbApiDefinition[] = [
     description: 'Delete cloud connector (supports force deletion)',
     method: 'DELETE',
     path: '/api/fleet/cloud_connectors/{cloudConnectorId}',
+    destructive: true,
     input: { type: 'object', properties: { cloudConnectorId: { type: 'string', description: 'The unique identifier of the cloud connector to delete.', 'x-found-in': 'path' }, force: { type: 'boolean', description: 'If true, forces deletion even if the cloud connector is in use.', 'x-found-in': 'query' } }, required: ['cloudConnectorId'] },
   },
   {
@@ -42,6 +45,7 @@ export const fleetCloudConnectorsDefinitions: KbApiDefinition[] = [
     description: 'Get cloud connector',
     method: 'GET',
     path: '/api/fleet/cloud_connectors/{cloudConnectorId}',
+    destructive: false,
     input: { type: 'object', properties: { cloudConnectorId: { type: 'string', description: 'The unique identifier of the cloud connector.', 'x-found-in': 'path' } }, required: ['cloudConnectorId'] },
   },
   {
@@ -50,6 +54,7 @@ export const fleetCloudConnectorsDefinitions: KbApiDefinition[] = [
     description: 'Update cloud connector',
     method: 'PUT',
     path: '/api/fleet/cloud_connectors/{cloudConnectorId}',
+    destructive: true,
     input: { type: 'object', properties: { cloudConnectorId: { type: 'string', description: 'The unique identifier of the cloud connector to update.', 'x-found-in': 'path' }, accountType: { description: 'The account type: single-account (single account/subscription) or organization-account (organization-wide).', 'x-found-in': 'body', type: 'string' }, name: { description: 'The name of the cloud connector.', 'x-found-in': 'body', type: 'string' }, vars: { description: '', 'x-found-in': 'body', type: 'object' } }, required: ['cloudConnectorId'] },
   },
   {
@@ -58,6 +63,7 @@ export const fleetCloudConnectorsDefinitions: KbApiDefinition[] = [
     description: 'Get cloud connector usage (package policies using the connector)',
     method: 'GET',
     path: '/api/fleet/cloud_connectors/{cloudConnectorId}/usage',
+    destructive: false,
     input: { type: 'object', properties: { cloudConnectorId: { type: 'string', description: 'The unique identifier of the cloud connector.', 'x-found-in': 'path' }, page: { type: 'number', description: 'The page number for pagination.', 'x-found-in': 'query' }, perPage: { type: 'number', description: 'The number of items per page.', 'x-found-in': 'query' } }, required: ['cloudConnectorId'] },
   },
 ]

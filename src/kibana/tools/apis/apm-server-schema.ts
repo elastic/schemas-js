@@ -18,6 +18,7 @@ export const apmServerSchemaDefinitions: KbApiDefinition[] = [
     description: 'Save APM server schema',
     method: 'POST',
     path: '/api/apm/fleet/apm_server_schema',
+    destructive: true,
     input: { type: 'object', properties: { schema: { description: 'Schema object', 'x-found-in': 'body', type: 'object' } } },
   },
 ]

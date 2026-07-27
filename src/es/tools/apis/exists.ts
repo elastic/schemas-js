@@ -30,6 +30,7 @@ export const exists_definitions: EsApiDefinition[] = [
     description: 'Check a document.',
     method: 'HEAD',
     path: '/{index}/_doc/{id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const cluster_pending_tasks_definitions: EsApiDefinition[] = [
     description: 'Get the pending cluster tasks.',
     method: 'GET',
     path: '/_cluster/pending_tasks',
+    destructive: false,
     input: _inputSchema,
   },
 ]

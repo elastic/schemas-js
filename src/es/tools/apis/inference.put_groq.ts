@@ -31,6 +31,7 @@ export const inference_put_groq_definitions: EsApiDefinition[] = [
     description: 'Create a Groq inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{groq_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

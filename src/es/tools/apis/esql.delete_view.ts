@@ -31,6 +31,7 @@ export const esql_delete_view_definitions: EsApiDefinition[] = [
     description: 'Delete an ES|QL view.',
     method: 'DELETE',
     path: '/_query/view/{name}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const inference_put_deepseek_definitions: EsApiDefinition[] = [
     description: 'Create a DeepSeek inference endpoint.',
     method: 'PUT',
     path: '/_inference/{task_type}/{deepseek_inference_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

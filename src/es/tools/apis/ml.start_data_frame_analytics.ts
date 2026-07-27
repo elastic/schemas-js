@@ -31,6 +31,7 @@ export const ml_start_data_frame_analytics_definitions: EsApiDefinition[] = [
     description: 'Start a data frame analytics job.',
     method: 'POST',
     path: '/_ml/data_frame/analytics/{id}/_start',
+    destructive: true,
     input: _inputSchema,
   },
 ]

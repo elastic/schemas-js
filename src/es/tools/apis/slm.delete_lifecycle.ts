@@ -31,6 +31,7 @@ export const slm_delete_lifecycle_definitions: EsApiDefinition[] = [
     description: 'Delete a policy.',
     method: 'DELETE',
     path: '/_slm/policy/{policy_id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

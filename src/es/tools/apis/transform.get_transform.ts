@@ -31,6 +31,7 @@ export const transform_get_transform_definitions: EsApiDefinition[] = [
     description: 'Get transforms.',
     method: 'GET',
     path: '/_transform/{transform_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

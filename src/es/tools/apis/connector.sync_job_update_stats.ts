@@ -31,6 +31,7 @@ export const connector_sync_job_update_stats_definitions: EsApiDefinition[] = [
     description: 'Set the connector sync job stats.',
     method: 'PUT',
     path: '/_connector/_sync_job/{connector_sync_job_id}/_stats',
+    destructive: true,
     input: _inputSchema,
   },
 ]

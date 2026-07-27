@@ -31,6 +31,7 @@ export const cat_repositories_definitions: EsApiDefinition[] = [
     description: 'Get snapshot repository information.',
     method: 'GET',
     path: '/_cat/repositories',
+    destructive: false,
     input: _inputSchema,
     responseType: 'text',
   },

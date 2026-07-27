@@ -31,6 +31,7 @@ export const xpack_usage_definitions: EsApiDefinition[] = [
     description: 'Get usage information.',
     method: 'GET',
     path: '/_xpack/usage',
+    destructive: false,
     input: _inputSchema,
   },
 ]

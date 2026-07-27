@@ -31,6 +31,7 @@ export const security_saml_service_provider_metadata_definitions: EsApiDefinitio
     description: 'Create SAML service provider metadata.',
     method: 'GET',
     path: '/_security/saml/metadata/{realm_name}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const ml_get_trained_models_definitions: EsApiDefinition[] = [
     description: 'Get trained model configuration info.',
     method: 'GET',
     path: '/_ml/trained_models/{model_id}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

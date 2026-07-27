@@ -31,6 +31,7 @@ export const security_clear_cached_service_tokens_definitions: EsApiDefinition[]
     description: 'Clear service account token caches.',
     method: 'POST',
     path: '/_security/service/{namespace}/{service}/credential/token/{name}/_clear_cache',
+    destructive: true,
     input: _inputSchema,
   },
 ]

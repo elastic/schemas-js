@@ -18,6 +18,7 @@ export const securityAiAssistantApiDefinitions: KbApiDefinition[] = [
     description: 'Apply a bulk action to anonymization fields',
     method: 'POST',
     path: '/api/security_ai_assistant/anonymization_fields/_bulk_action',
+    destructive: true,
     input: { type: 'object', properties: { create: { description: 'Array of anonymization fields to create.', 'x-found-in': 'body' }, delete: { description: 'Object containing the query to filter anonymization fields and/or an array of anonymization field IDs to delete.', 'x-found-in': 'body', type: 'object' }, update: { description: 'Array of anonymization fields to update.', 'x-found-in': 'body' } } },
   },
   {
@@ -26,6 +27,7 @@ export const securityAiAssistantApiDefinitions: KbApiDefinition[] = [
     description: 'Get anonymization fields',
     method: 'GET',
     path: '/api/security_ai_assistant/anonymization_fields/_find',
+    destructive: false,
     input: { type: 'object', properties: { fields: { type: 'string', description: 'Fields to return', 'x-found-in': 'query' }, filter: { type: 'string', description: 'Search query', 'x-found-in': 'query' }, sort_field: { type: 'string', description: 'Field to sort by', 'x-found-in': 'query' }, sort_order: { type: 'string', description: 'Sort order', 'x-found-in': 'query' }, page: { type: 'number', description: 'Page number', 'x-found-in': 'query' }, per_page: { type: 'number', description: 'AnonymizationFields per page', 'x-found-in': 'query' }, all_data: { type: 'boolean', description: 'If true, additionally fetch all anonymization fields, otherwise fetch only the provided page', 'x-found-in': 'query' } } },
   },
   {
@@ -34,6 +36,7 @@ export const securityAiAssistantApiDefinitions: KbApiDefinition[] = [
     description: 'Create a model response',
     method: 'POST',
     path: '/api/security_ai_assistant/chat/complete',
+    destructive: false,
     input: { type: 'object', properties: { content_references_disabled: { type: 'boolean', description: 'If true, the response will not include content references.', 'x-found-in': 'query' }, connectorId: { description: 'Required connector identifier to route the request.', 'x-found-in': 'body', type: 'string' }, conversationId: { description: 'A string that does not contain only whitespace characters.', 'x-found-in': 'body', type: 'string' }, isStream: { description: 'If true, the response will be streamed in chunks.', 'x-found-in': 'body', type: 'boolean' }, langSmithApiKey: { description: 'API key for LangSmith integration.', 'x-found-in': 'body', type: 'string' }, langSmithProject: { description: 'LangSmith project name for tracing.', 'x-found-in': 'body', type: 'string' }, messages: { description: 'List of chat messages exchanged so far.', 'x-found-in': 'body' }, model: { description: 'Model ID or name to use for the response.', 'x-found-in': 'body', type: 'string' }, persist: { description: 'Whether to persist the chat and response to storage.', 'x-found-in': 'body', type: 'boolean' }, promptId: { description: 'Prompt template identifier.', 'x-found-in': 'body', type: 'string' }, responseLanguage: { description: "ISO language code for the assistant's response.", 'x-found-in': 'body', type: 'string' } }, required: ['connectorId', 'messages', 'persist'] },
   },
   {
@@ -42,6 +45,7 @@ export const securityAiAssistantApiDefinitions: KbApiDefinition[] = [
     description: 'Delete conversations',
     method: 'DELETE',
     path: '/api/security_ai_assistant/current_user/conversations',
+    destructive: true,
     input: { type: 'object', properties: { excludedIds: { description: 'Optional list of conversation IDs to delete.', 'x-found-in': 'body' } } },
   },
   {
@@ -50,6 +54,7 @@ export const securityAiAssistantApiDefinitions: KbApiDefinition[] = [
     description: 'Create a conversation',
     method: 'POST',
     path: '/api/security_ai_assistant/current_user/conversations',
+    destructive: false,
     input: { type: 'object', properties: { apiConfig: { description: '', 'x-found-in': 'body', type: 'object' }, category: { description: 'The conversation category.', 'x-found-in': 'body', type: 'string' }, excludeFromLastConversationStorage: { description: 'Exclude from last conversation storage.', 'x-found-in': 'body', type: 'boolean' }, id: { description: 'The conversation id.', 'x-found-in': 'body', type: 'string' }, messages: { description: 'The conversation messages.', 'x-found-in': 'body' }, replacements: { description: 'Replacements object used to anonymize/deanonymize messages', 'x-found-in': 'body', type: 'object' }, title: { description: 'The conversation title.', 'x-found-in': 'body', type: 'string' } }, required: ['title'] },
   },
   {
@@ -58,6 +63,7 @@ export const securityAiAssistantApiDefinitions: KbApiDefinition[] = [
     description: 'Get conversations',
     method: 'GET',
     path: '/api/security_ai_assistant/current_user/conversations/_find',
+    destructive: false,
     input: { type: 'object', properties: { fields: { type: 'string', description: 'A list of fields to include in the response. If omitted, all fields are returned.', 'x-found-in': 'query' }, filter: { type: 'string', description: 'A search query to filter the conversations. Can match against titles, messages, or other conversation attributes.', 'x-found-in': 'query' }, sort_field: { type: 'string', description: 'The field by which to sort the results. Valid fields are `created_at`, `title`, and `updated_at`.', 'x-found-in': 'query' }, sort_order: { type: 'string', description: 'The order in which to sort the results. Can be either `asc` for ascending or `desc` for descending.', 'x-found-in': 'query' }, page: { type: 'number', description: 'The page number of the results to retrieve. Default is 1.', 'x-found-in': 'query' }, per_page: { type: 'number', description: 'The number of conversations to return per page. Default is 20.', 'x-found-in': 'query' }, is_owner: { type: 'boolean', description: 'Whether to return conversations that the current user owns. If true, only conversations owned by the user are returned.', 'x-found-in': 'query' } } },
   },
   {
@@ -66,6 +72,7 @@ export const securityAiAssistantApiDefinitions: KbApiDefinition[] = [
     description: 'Delete a conversation',
     method: 'DELETE',
     path: '/api/security_ai_assistant/current_user/conversations/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: "The conversation's `id` value.", 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -74,6 +81,7 @@ export const securityAiAssistantApiDefinitions: KbApiDefinition[] = [
     description: 'Get a conversation',
     method: 'GET',
     path: '/api/security_ai_assistant/current_user/conversations/{id}',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: "The conversation's `id` value, a unique identifier for the conversation.", 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -82,6 +90,7 @@ export const securityAiAssistantApiDefinitions: KbApiDefinition[] = [
     description: 'Update a conversation',
     method: 'PUT',
     path: '/api/security_ai_assistant/current_user/conversations/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { description: 'A string that does not contain only whitespace characters.', 'x-found-in': 'body', type: 'string' }, apiConfig: { description: '', 'x-found-in': 'body', type: 'object' }, category: { description: 'The conversation category.', 'x-found-in': 'body', type: 'string' }, excludeFromLastConversationStorage: { description: 'Exclude from last conversation storage.', 'x-found-in': 'body', type: 'boolean' }, messages: { description: 'The conversation messages.', 'x-found-in': 'body' }, replacements: { description: 'Replacements object used to anonymize/deanonymize messages', 'x-found-in': 'body', type: 'object' }, title: { description: 'The conversation title.', 'x-found-in': 'body', type: 'string' }, users: { description: '', 'x-found-in': 'body' } }, required: ['id', 'id'] },
   },
   {
@@ -90,6 +99,7 @@ export const securityAiAssistantApiDefinitions: KbApiDefinition[] = [
     description: 'Read a KnowledgeBase',
     method: 'GET',
     path: '/api/security_ai_assistant/knowledge_base',
+    destructive: false,
   },
   {
     name: 'post-knowledge-base',
@@ -97,6 +107,7 @@ export const securityAiAssistantApiDefinitions: KbApiDefinition[] = [
     description: 'Create a KnowledgeBase',
     method: 'POST',
     path: '/api/security_ai_assistant/knowledge_base',
+    destructive: false,
     input: { type: 'object', properties: { modelId: { type: 'string', description: 'ELSER modelId to use when setting up the Knowledge Base. If not provided, a default model will be used.', 'x-found-in': 'query' }, ignoreSecurityLabs: { type: 'boolean', description: 'Indicates whether we should or should not install Security Labs docs when setting up the Knowledge Base. Defaults to `false`.', 'x-found-in': 'query' } } },
   },
   {
@@ -105,6 +116,7 @@ export const securityAiAssistantApiDefinitions: KbApiDefinition[] = [
     description: 'Read a KnowledgeBase for a resource',
     method: 'GET',
     path: '/api/security_ai_assistant/knowledge_base/{resource}',
+    destructive: false,
     input: { type: 'object', properties: { resource: { type: 'string', description: 'The KnowledgeBase `resource` value.', 'x-found-in': 'path' } }, required: ['resource'] },
   },
   {
@@ -113,6 +125,7 @@ export const securityAiAssistantApiDefinitions: KbApiDefinition[] = [
     description: 'Create a KnowledgeBase for a resource',
     method: 'POST',
     path: '/api/security_ai_assistant/knowledge_base/{resource}',
+    destructive: false,
     input: { type: 'object', properties: { resource: { type: 'string', description: 'The KnowledgeBase `resource` value.', 'x-found-in': 'path' }, modelId: { type: 'string', description: 'ELSER modelId to use when setting up the Knowledge Base. If not provided, a default model will be used.', 'x-found-in': 'query' }, ignoreSecurityLabs: { type: 'boolean', description: 'Indicates whether we should or should not install Security Labs docs when setting up the Knowledge Base. Defaults to `false`.', 'x-found-in': 'query' } }, required: ['resource'] },
   },
   {
@@ -121,6 +134,7 @@ export const securityAiAssistantApiDefinitions: KbApiDefinition[] = [
     description: 'Create a Knowledge Base Entry',
     method: 'POST',
     path: '/api/security_ai_assistant/knowledge_base/entries',
+    destructive: false,
   },
   {
     name: 'perform-knowledge-base-entry-bulk-action',
@@ -128,6 +142,7 @@ export const securityAiAssistantApiDefinitions: KbApiDefinition[] = [
     description: 'Applies a bulk action to multiple Knowledge Base Entries',
     method: 'POST',
     path: '/api/security_ai_assistant/knowledge_base/entries/_bulk_action',
+    destructive: true,
     input: { type: 'object', properties: { create: { description: 'List of Knowledge Base Entries to create.', 'x-found-in': 'body' }, delete: { description: '', 'x-found-in': 'body', type: 'object' }, update: { description: 'List of Knowledge Base Entries to update.', 'x-found-in': 'body' } } },
   },
   {
@@ -136,6 +151,7 @@ export const securityAiAssistantApiDefinitions: KbApiDefinition[] = [
     description: 'Finds Knowledge Base Entries that match the given query.',
     method: 'GET',
     path: '/api/security_ai_assistant/knowledge_base/entries/_find',
+    destructive: false,
     input: { type: 'object', properties: { fields: { type: 'string', description: 'A list of fields to include in the response. If not provided, all fields will be included.', 'x-found-in': 'query' }, filter: { type: 'string', description: 'Search query to filter Knowledge Base Entries by specific criteria.', 'x-found-in': 'query' }, sort_field: { type: 'string', description: 'Field to sort the Knowledge Base Entries by.', 'x-found-in': 'query' }, sort_order: { type: 'string', description: 'Sort order for the results, either asc or desc.', 'x-found-in': 'query' }, page: { type: 'number', description: 'Page number for paginated results. Defaults to 1.', 'x-found-in': 'query' }, per_page: { type: 'number', description: 'Number of Knowledge Base Entries to return per page. Defaults to 20.', 'x-found-in': 'query' } } },
   },
   {
@@ -144,6 +160,7 @@ export const securityAiAssistantApiDefinitions: KbApiDefinition[] = [
     description: 'Deletes a single Knowledge Base Entry using the `id` field',
     method: 'DELETE',
     path: '/api/security_ai_assistant/knowledge_base/entries/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The unique identifier (`id`) of the Knowledge Base Entry to delete.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -152,6 +169,7 @@ export const securityAiAssistantApiDefinitions: KbApiDefinition[] = [
     description: 'Read a Knowledge Base Entry',
     method: 'GET',
     path: '/api/security_ai_assistant/knowledge_base/entries/{id}',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The unique identifier (`id`) of the Knowledge Base Entry to retrieve.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -160,6 +178,7 @@ export const securityAiAssistantApiDefinitions: KbApiDefinition[] = [
     description: 'Update a Knowledge Base Entry',
     method: 'PUT',
     path: '/api/security_ai_assistant/knowledge_base/entries/{id}',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: 'The unique identifier (`id`) of the Knowledge Base Entry to update.', 'x-found-in': 'path' } }, required: ['id'] },
   },
   {
@@ -168,6 +187,7 @@ export const securityAiAssistantApiDefinitions: KbApiDefinition[] = [
     description: 'Apply a bulk action to prompts',
     method: 'POST',
     path: '/api/security_ai_assistant/prompts/_bulk_action',
+    destructive: true,
     input: { type: 'object', properties: { create: { description: 'List of prompts to be created.', 'x-found-in': 'body' }, delete: { description: 'Criteria for deleting prompts in bulk.', 'x-found-in': 'body', type: 'object' }, update: { description: 'List of prompts to be updated.', 'x-found-in': 'body' } } },
   },
   {
@@ -176,6 +196,7 @@ export const securityAiAssistantApiDefinitions: KbApiDefinition[] = [
     description: 'Get prompts',
     method: 'GET',
     path: '/api/security_ai_assistant/prompts/_find',
+    destructive: false,
     input: { type: 'object', properties: { fields: { type: 'string', description: 'List of specific fields to include in each returned prompt.', 'x-found-in': 'query' }, filter: { type: 'string', description: 'Search query string to filter prompts by matching fields.', 'x-found-in': 'query' }, sort_field: { type: 'string', description: 'Field to sort prompts by.', 'x-found-in': 'query' }, sort_order: { type: 'string', description: 'Sort order, either asc or desc.', 'x-found-in': 'query' }, page: { type: 'number', description: 'Page number for pagination.', 'x-found-in': 'query' }, per_page: { type: 'number', description: 'Number of prompts per page.', 'x-found-in': 'query' } } },
   },
 ]

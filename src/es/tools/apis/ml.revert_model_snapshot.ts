@@ -31,6 +31,7 @@ export const ml_revert_model_snapshot_definitions: EsApiDefinition[] = [
     description: 'Revert to a snapshot.',
     method: 'POST',
     path: '/_ml/anomaly_detectors/{job_id}/model_snapshots/{snapshot_id}/_revert',
+    destructive: true,
     input: _inputSchema,
   },
 ]

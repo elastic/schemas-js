@@ -31,6 +31,7 @@ export const streams_logs_disable_definitions: EsApiDefinition[] = [
     description: 'Disable a named stream.',
     method: 'POST',
     path: '/_streams/{name}/_disable',
+    destructive: true,
     input: _inputSchema,
   },
 ]

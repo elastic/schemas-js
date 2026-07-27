@@ -31,6 +31,7 @@ export const indices_rollover_definitions: EsApiDefinition[] = [
     description: 'Roll over to a new index.',
     method: 'POST',
     path: '/{alias}/_rollover/{new_index}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

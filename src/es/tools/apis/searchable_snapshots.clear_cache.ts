@@ -31,6 +31,7 @@ export const searchable_snapshots_clear_cache_definitions: EsApiDefinition[] = [
     description: 'Clear the cache.',
     method: 'POST',
     path: '/{index}/_searchable_snapshots/cache/clear',
+    destructive: true,
     input: _inputSchema,
   },
 ]

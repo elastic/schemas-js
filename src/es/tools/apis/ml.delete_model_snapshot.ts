@@ -31,6 +31,7 @@ export const ml_delete_model_snapshot_definitions: EsApiDefinition[] = [
     description: 'Delete a model snapshot.',
     method: 'DELETE',
     path: '/_ml/anomaly_detectors/{job_id}/model_snapshots/{snapshot_id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

@@ -18,6 +18,7 @@ export const securityDetectionsApiDefinitions: KbApiDefinition[] = [
     description: 'Returns user privileges for the Kibana space',
     method: 'GET',
     path: '/api/detection_engine/privileges',
+    destructive: false,
   },
   {
     name: 'delete-rule',
@@ -25,6 +26,7 @@ export const securityDetectionsApiDefinitions: KbApiDefinition[] = [
     description: 'Delete a detection rule',
     method: 'DELETE',
     path: '/api/detection_engine/rules',
+    destructive: true,
     input: { type: 'object', properties: { id: { type: 'string', description: "The rule's `id` value.", 'x-found-in': 'query' }, rule_id: { type: 'string', description: "The rule's `rule_id` value.", 'x-found-in': 'query' } } },
   },
   {
@@ -33,6 +35,7 @@ export const securityDetectionsApiDefinitions: KbApiDefinition[] = [
     description: 'Retrieve a detection rule',
     method: 'GET',
     path: '/api/detection_engine/rules',
+    destructive: false,
     input: { type: 'object', properties: { id: { type: 'string', description: "The rule's `id` value.", 'x-found-in': 'query' }, rule_id: { type: 'string', description: "The rule's `rule_id` value.", 'x-found-in': 'query' } } },
   },
   {
@@ -41,6 +44,7 @@ export const securityDetectionsApiDefinitions: KbApiDefinition[] = [
     description: 'Patch a detection rule',
     method: 'PATCH',
     path: '/api/detection_engine/rules',
+    destructive: true,
   },
   {
     name: 'create-rule',
@@ -48,6 +52,7 @@ export const securityDetectionsApiDefinitions: KbApiDefinition[] = [
     description: 'Create a detection rule',
     method: 'POST',
     path: '/api/detection_engine/rules',
+    destructive: false,
   },
   {
     name: 'update-rule',
@@ -55,6 +60,7 @@ export const securityDetectionsApiDefinitions: KbApiDefinition[] = [
     description: 'Update a detection rule',
     method: 'PUT',
     path: '/api/detection_engine/rules',
+    destructive: true,
   },
   {
     name: 'perform-rules-bulk-action',
@@ -62,6 +68,7 @@ export const securityDetectionsApiDefinitions: KbApiDefinition[] = [
     description: 'Apply a bulk action to detection rules',
     method: 'POST',
     path: '/api/detection_engine/rules/_bulk_action',
+    destructive: true,
     input: { type: 'object', properties: { dry_run: { type: 'boolean', description: 'Enables dry run mode for the request call.', 'x-found-in': 'query' } } },
   },
   {
@@ -70,6 +77,7 @@ export const securityDetectionsApiDefinitions: KbApiDefinition[] = [
     description: 'Export detection rules',
     method: 'POST',
     path: '/api/detection_engine/rules/_export',
+    destructive: true,
     input: { type: 'object', properties: { exclude_export_details: { type: 'boolean', description: 'Determines whether a summary of the exported rules is returned.', 'x-found-in': 'query' }, file_name: { type: 'string', description: 'File name for saving the exported rules.', 'x-found-in': 'query' }, objects: { description: "Array of objects with a rule's `rule_id` field. Do not use rule's `id` here. Exports all rules when unspecified.", 'x-found-in': 'body' } }, required: ['objects'] },
     responseType: 'ndjson',
   },
@@ -79,6 +87,7 @@ export const securityDetectionsApiDefinitions: KbApiDefinition[] = [
     description: 'List all detection rules',
     method: 'GET',
     path: '/api/detection_engine/rules/_find',
+    destructive: false,
     input: { type: 'object', properties: { fields: { type: 'string', description: 'List of `alert.attributes` field names to return for each rule (for example `name`, `enabled`).', 'x-found-in': 'query' }, filter: { type: 'string', description: 'Search query', 'x-found-in': 'query' }, sort_field: { type: 'string', description: 'Field to sort by', 'x-found-in': 'query' }, sort_order: { type: 'string', description: 'Sort order', 'x-found-in': 'query' }, page: { type: 'number', description: 'Page number', 'x-found-in': 'query' }, per_page: { type: 'number', description: 'Rules per page', 'x-found-in': 'query' }, gaps_range_start: { type: 'string', description: 'Gaps range start', 'x-found-in': 'query' }, gaps_range_end: { type: 'string', description: 'Gaps range end', 'x-found-in': 'query' }, gap_fill_statuses: { type: 'string', description: 'Gap fill statuses', 'x-found-in': 'query' }, gap_auto_fill_scheduler_id: { type: 'string', description: 'Gap auto fill scheduler ID used to determine gap fill status for rules', 'x-found-in': 'query' } } },
   },
   {
@@ -87,6 +96,7 @@ export const securityDetectionsApiDefinitions: KbApiDefinition[] = [
     description: 'Import detection rules',
     method: 'POST',
     path: '/api/detection_engine/rules/_import',
+    destructive: true,
     input: { type: 'object', properties: { overwrite: { type: 'boolean', description: 'Determines whether existing rules with the same `rule_id` are overwritten.', 'x-found-in': 'query' }, overwrite_exceptions: { type: 'boolean', description: 'Determines whether existing exception lists with the same `list_id` are overwritten. Both the exception list container and its items are overwritten.', 'x-found-in': 'query' }, overwrite_action_connectors: { type: 'boolean', description: 'Determines whether existing actions with the same `kibana.alert.rule.actions.id` are overwritten.', 'x-found-in': 'query' }, as_new_list: { type: 'boolean', description: 'Generates a new list ID for each imported exception list.', 'x-found-in': 'query' }, file: { description: 'The `.ndjson` file containing the rules.', 'x-found-in': 'body', type: 'string' } } },
   },
   {
@@ -95,6 +105,7 @@ export const securityDetectionsApiDefinitions: KbApiDefinition[] = [
     description: 'Preview rule alerts generated on specified time range',
     method: 'POST',
     path: '/api/detection_engine/rules/preview',
+    destructive: true,
     input: { type: 'object', properties: { enable_logged_requests: { type: 'boolean', description: 'Enables logging and returning in response ES queries, performed during rule execution', 'x-found-in': 'query' } } },
   },
   {
@@ -103,6 +114,7 @@ export const securityDetectionsApiDefinitions: KbApiDefinition[] = [
     description: 'Assign and unassign users from detection alerts',
     method: 'POST',
     path: '/api/detection_engine/signals/assignees',
+    destructive: true,
     input: { type: 'object', properties: { assignees: { description: '', 'x-found-in': 'body', type: 'object' }, ids: { description: 'A list of alerts `id`s.', 'x-found-in': 'body' } }, required: ['assignees', 'ids'] },
   },
   {
@@ -111,6 +123,7 @@ export const securityDetectionsApiDefinitions: KbApiDefinition[] = [
     description: 'Find and/or aggregate detection alerts',
     method: 'POST',
     path: '/api/detection_engine/signals/search',
+    destructive: true,
     input: { type: 'object', properties: { _source: { description: '', 'x-found-in': 'body', type: 'object' }, aggs: { description: '', 'x-found-in': 'body', type: 'object' }, fields: { description: '', 'x-found-in': 'body' }, query: { description: '', 'x-found-in': 'body', type: 'object' }, runtime_mappings: { description: '', 'x-found-in': 'body', type: 'object' }, size: { description: '', 'x-found-in': 'body', type: 'number' }, sort: { description: '', 'x-found-in': 'body', type: 'object' }, track_total_hits: { description: '', 'x-found-in': 'body', type: 'boolean' } } },
   },
   {
@@ -119,6 +132,7 @@ export const securityDetectionsApiDefinitions: KbApiDefinition[] = [
     description: 'Set a detection alert status',
     method: 'POST',
     path: '/api/detection_engine/signals/status',
+    destructive: true,
   },
   {
     name: 'set-alert-tags',
@@ -126,6 +140,7 @@ export const securityDetectionsApiDefinitions: KbApiDefinition[] = [
     description: 'Add and remove detection alert tags',
     method: 'POST',
     path: '/api/detection_engine/signals/tags',
+    destructive: true,
     input: { type: 'object', properties: { ids: { description: 'A list of alerts `id`s.', 'x-found-in': 'body' }, tags: { description: 'Object with list of tags to add and remove.', 'x-found-in': 'body', type: 'object' } }, required: ['ids', 'tags'] },
   },
   {
@@ -134,5 +149,6 @@ export const securityDetectionsApiDefinitions: KbApiDefinition[] = [
     description: 'List all detection rule tags',
     method: 'GET',
     path: '/api/detection_engine/tags',
+    destructive: false,
   },
 ]

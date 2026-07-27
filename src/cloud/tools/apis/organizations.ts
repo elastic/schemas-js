@@ -18,6 +18,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     description: 'List organizations',
     method: 'GET',
     path: '/api/v1/organizations',
+    destructive: false,
   },
   {
     name: 'get-organization-invitation',
@@ -25,6 +26,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     description: 'Get organization invitation',
     method: 'GET',
     path: '/api/v1/organizations/invitations/{invitation_token}',
+    destructive: false,
     input: { type: 'object', properties: { invitation_token: { type: 'string', description: 'Organization invitation token', 'x-found-in': 'path' } }, required: ['invitation_token'] },
   },
   {
@@ -33,6 +35,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     description: 'Accept an organization invitation',
     method: 'POST',
     path: '/api/v1/organizations/invitations/{invitation_token}/_accept',
+    destructive: true,
     input: { type: 'object', properties: { invitation_token: { type: 'string', description: 'Organization invitation token', 'x-found-in': 'path' } }, required: ['invitation_token'] },
   },
   {
@@ -41,6 +44,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     description: 'Fetch organization information',
     method: 'GET',
     path: '/api/v1/organizations/{organization_id}',
+    destructive: false,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
   },
   {
@@ -49,6 +53,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     description: 'Update organization',
     method: 'PUT',
     path: '/api/v1/organizations/{organization_id}',
+    destructive: true,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
   },
   {
@@ -57,6 +62,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     description: 'Get domain claims',
     method: 'GET',
     path: '/api/v1/organizations/{organization_id}/domains',
+    destructive: false,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
   },
   {
@@ -65,6 +71,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     description: 'Delete domain claim',
     method: 'DELETE',
     path: '/api/v1/organizations/{organization_id}/domains',
+    destructive: true,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
   },
   {
@@ -73,6 +80,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     description: 'Generate verification code',
     method: 'POST',
     path: '/api/v1/organizations/{organization_id}/domains/_generate_verification_code',
+    destructive: true,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
   },
   {
@@ -81,6 +89,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     description: 'Verify domain claim',
     method: 'POST',
     path: '/api/v1/organizations/{organization_id}/domains/_verify',
+    destructive: true,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
   },
   {
@@ -89,6 +98,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     description: 'Get organization IdP',
     method: 'GET',
     path: '/api/v1/organizations/{organization_id}/idp',
+    destructive: false,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
   },
   {
@@ -97,6 +107,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     description: 'Setup organization IdP',
     method: 'PUT',
     path: '/api/v1/organizations/{organization_id}/idp',
+    destructive: true,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
   },
   {
@@ -105,6 +116,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     description: 'Tear down organization IdP',
     method: 'DELETE',
     path: '/api/v1/organizations/{organization_id}/idp',
+    destructive: true,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
   },
   {
@@ -113,6 +125,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     description: 'Get organization service provider SAML2 metadata.xml for configuring the identity provider',
     method: 'GET',
     path: '/api/v1/organizations/{organization_id}/idp/metadata.xml',
+    destructive: false,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
   },
   {
@@ -121,6 +134,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     description: 'List organization invitations',
     method: 'GET',
     path: '/api/v1/organizations/{organization_id}/invitations',
+    destructive: false,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
   },
   {
@@ -129,6 +143,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     description: 'Create organization invitations',
     method: 'POST',
     path: '/api/v1/organizations/{organization_id}/invitations',
+    destructive: false,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
   },
   {
@@ -137,6 +152,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     description: 'Delete organization invitations',
     method: 'DELETE',
     path: '/api/v1/organizations/{organization_id}/invitations/{invitation_tokens}',
+    destructive: true,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' }, invitation_tokens: { type: 'string', description: 'CSV list of Invitation tokens', 'x-found-in': 'path' } }, required: ['organization_id', 'invitation_tokens'] },
   },
   {
@@ -145,6 +161,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     description: 'List organization members',
     method: 'GET',
     path: '/api/v1/organizations/{organization_id}/members',
+    destructive: false,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
   },
   {
@@ -153,6 +170,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     description: 'Delete organization memberships',
     method: 'DELETE',
     path: '/api/v1/organizations/{organization_id}/members/{user_ids}',
+    destructive: true,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' }, user_ids: { type: 'string', description: 'CSV list of User identifiers', 'x-found-in': 'path' }, force: { type: 'boolean', description: 'Whether or not to force the removal of Org memberships (effective only for Platform Admins)', 'x-found-in': 'query' } }, required: ['organization_id', 'user_ids'] },
   },
   {
@@ -161,6 +179,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     description: 'Get role mappings',
     method: 'GET',
     path: '/api/v1/organizations/{organization_id}/role_mappings',
+    destructive: false,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
   },
   {
@@ -169,6 +188,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     description: 'Updates role mappings',
     method: 'PUT',
     path: '/api/v1/organizations/{organization_id}/role_mappings',
+    destructive: true,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
   },
   {
@@ -177,6 +197,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     description: 'Delete role mappings',
     method: 'DELETE',
     path: '/api/v1/organizations/{organization_id}/role_mappings',
+    destructive: true,
     input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
   },
 ]

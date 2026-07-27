@@ -18,6 +18,7 @@ export const userRoleAssignmentsDefinitions: CloudApiDefinition[] = [
     description: 'Add Role Assignments',
     method: 'POST',
     path: '/api/v1/users/{user_id}/role_assignments',
+    destructive: true,
     input: { type: 'object', properties: { user_id: { type: 'string', description: 'Identifier for the user; include realm name and id if required', 'x-found-in': 'path' } }, required: ['user_id'] },
   },
   {
@@ -26,6 +27,7 @@ export const userRoleAssignmentsDefinitions: CloudApiDefinition[] = [
     description: 'Remove Role Assignments',
     method: 'DELETE',
     path: '/api/v1/users/{user_id}/role_assignments',
+    destructive: true,
     input: { type: 'object', properties: { user_id: { type: 'string', description: 'Identifier for the user; include realm name and id if required', 'x-found-in': 'path' } }, required: ['user_id'] },
   },
 ]

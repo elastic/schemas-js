@@ -30,6 +30,7 @@ export const search_shards_definitions: EsApiDefinition[] = [
     description: 'Get the search shards.',
     method: 'GET',
     path: '/{index}/_search_shards',
+    destructive: false,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const inference_rerank_definitions: EsApiDefinition[] = [
     description: 'Perform reranking inference on the service.',
     method: 'POST',
     path: '/_inference/rerank/{inference_id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

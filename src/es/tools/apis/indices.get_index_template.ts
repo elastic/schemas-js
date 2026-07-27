@@ -31,6 +31,7 @@ export const indices_get_index_template_definitions: EsApiDefinition[] = [
     description: 'Get index templates.',
     method: 'GET',
     path: '/_index_template/{name}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

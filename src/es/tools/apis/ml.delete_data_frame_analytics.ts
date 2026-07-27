@@ -31,6 +31,7 @@ export const ml_delete_data_frame_analytics_definitions: EsApiDefinition[] = [
     description: 'Delete a data frame analytics job.',
     method: 'DELETE',
     path: '/_ml/data_frame/analytics/{id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

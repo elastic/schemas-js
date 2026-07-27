@@ -31,6 +31,7 @@ export const security_query_user_definitions: EsApiDefinition[] = [
     description: 'Find users with a query.',
     method: 'GET',
     path: '/_security/_query/user',
+    destructive: false,
     input: _inputSchema,
   },
 ]

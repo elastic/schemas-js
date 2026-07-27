@@ -31,6 +31,7 @@ export const rollup_delete_job_definitions: EsApiDefinition[] = [
     description: 'Delete a rollup job.',
     method: 'DELETE',
     path: '/_rollup/job/{id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

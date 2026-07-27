@@ -30,6 +30,7 @@ export const close_point_in_time_definitions: EsApiDefinition[] = [
     description: 'Close a point in time.',
     method: 'DELETE',
     path: '/_pit',
+    destructive: true,
     input: _inputSchema,
   },
 ]

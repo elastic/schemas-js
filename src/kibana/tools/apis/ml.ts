@@ -18,6 +18,7 @@ export const mlDefinitions: KbApiDefinition[] = [
     description: 'Sync saved objects in the default space',
     method: 'GET',
     path: '/api/ml/saved_objects/sync',
+    destructive: false,
   },
   {
     name: 'ml-update-jobs-spaces',
@@ -25,6 +26,7 @@ export const mlDefinitions: KbApiDefinition[] = [
     description: 'Update jobs spaces',
     method: 'POST',
     path: '/api/ml/saved_objects/update_jobs_spaces',
+    destructive: true,
   },
   {
     name: 'ml-update-trained-models-spaces',
@@ -32,5 +34,6 @@ export const mlDefinitions: KbApiDefinition[] = [
     description: 'Update trained models spaces',
     method: 'POST',
     path: '/api/ml/saved_objects/update_trained_models_spaces',
+    destructive: true,
   },
 ]

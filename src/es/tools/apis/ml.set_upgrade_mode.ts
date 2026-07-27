@@ -31,6 +31,7 @@ export const ml_set_upgrade_mode_definitions: EsApiDefinition[] = [
     description: 'Set upgrade_mode for ML indices.',
     method: 'POST',
     path: '/_ml/set_upgrade_mode',
+    destructive: true,
     input: _inputSchema,
   },
 ]

@@ -31,6 +31,7 @@ export const cluster_exists_component_template_definitions: EsApiDefinition[] = 
     description: 'Check component templates.',
     method: 'HEAD',
     path: '/_component_template/{name}',
+    destructive: false,
     input: _inputSchema,
   },
 ]

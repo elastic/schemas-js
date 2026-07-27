@@ -30,6 +30,7 @@ export const delete_definitions: EsApiDefinition[] = [
     description: 'Delete a document.',
     method: 'DELETE',
     path: '/{index}/_doc/{id}',
+    destructive: true,
     input: _inputSchema,
   },
 ]

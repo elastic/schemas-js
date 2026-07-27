@@ -31,6 +31,7 @@ export const indices_resolve_cluster_definitions: EsApiDefinition[] = [
     description: 'Resolve the cluster.',
     method: 'GET',
     path: '/_resolve/cluster/{name}',
+    destructive: false,
     input: _inputSchema,
   },
 ]
