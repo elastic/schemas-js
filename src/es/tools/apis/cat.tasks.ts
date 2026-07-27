@@ -9,20 +9,11 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
-import { z } from 'zod'
-import { CatTasksRequest } from '../../../es/schemas/cat.tasks.ts'
-
 import type { JsonSchemaObject } from '../../../json-schema.ts'
+import _inputSchemaRaw from '../../../es/json/cat.tasks.request.json' with { type: 'json' }
 import type { EsApiDefinition } from '../types.ts'
 
-const _rawSchema = z.toJSONSchema(CatTasksRequest) as Record<string, unknown>
-const _props = _rawSchema['properties'] as Record<string, Record<string, unknown>> | undefined
-if (_props != null) {
-  for (const prop of Object.values(_props)) {
-    if (prop['found_in'] != null) { prop['x-found-in'] = prop['found_in']; delete prop['found_in'] }
-  }
-}
-const _inputSchema = _rawSchema as JsonSchemaObject
+const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const cat_tasks_definitions: EsApiDefinition[] = [
   {

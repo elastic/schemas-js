@@ -9,20 +9,11 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
-import { z } from 'zod'
-import { SecurityQueryApiKeysRequest } from '../../../es/schemas/security.query_api_keys.ts'
-
 import type { JsonSchemaObject } from '../../../json-schema.ts'
+import _inputSchemaRaw from '../../../es/json/security.query_api_keys.request.json' with { type: 'json' }
 import type { EsApiDefinition } from '../types.ts'
 
-const _rawSchema = z.toJSONSchema(SecurityQueryApiKeysRequest) as Record<string, unknown>
-const _props = _rawSchema['properties'] as Record<string, Record<string, unknown>> | undefined
-if (_props != null) {
-  for (const prop of Object.values(_props)) {
-    if (prop['found_in'] != null) { prop['x-found-in'] = prop['found_in']; delete prop['found_in'] }
-  }
-}
-const _inputSchema = _rawSchema as JsonSchemaObject
+const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const security_query_api_keys_definitions: EsApiDefinition[] = [
   {
