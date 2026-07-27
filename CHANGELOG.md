@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.0-alpha.1](https://github.com/elastic/schemas-js/compare/v0.3.1-alpha.1...v0.4.0-alpha.1) (2026-07-27)
+
+
+### Features
+
+* add destructive flag to all tool API definitions ([#33](https://github.com/elastic/schemas-js/issues/33)) ([3b6705e](https://github.com/elastic/schemas-js/commit/3b6705e0a4f0f9ed4ffd130909cc185eddebd8f8))
+
+
+### Bug Fixes
+
+* CommonJS build output ([#32](https://github.com/elastic/schemas-js/issues/32)) ([7660df4](https://github.com/elastic/schemas-js/commit/7660df453e3a9f0ba6fd381b704220138b825f25))
+* correct package git metadata ([#29](https://github.com/elastic/schemas-js/issues/29)) ([8dafacf](https://github.com/elastic/schemas-js/commit/8dafacf439bdf5c57344c30f6fba92c59c03aa80))
+
 ## [0.3.1-alpha.1](https://github.com/elastic/schemas-js/compare/v0.3.0-alpha.1...v0.3.1-alpha.1) (2026-07-24)
 
 
