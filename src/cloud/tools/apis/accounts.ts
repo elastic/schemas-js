@@ -9,7 +9,14 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
+import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
+
+import _update_current_accountSchemaRaw from '../../../cloud/json/update_current_account.request.json' with { type: 'json' }
+import _patch_current_accountSchemaRaw from '../../../cloud/json/patch_current_account.request.json' with { type: 'json' }
+
+const _update_current_accountSchema = _update_current_accountSchemaRaw as unknown as JsonSchemaObject
+const _patch_current_accountSchema = _patch_current_accountSchemaRaw as unknown as JsonSchemaObject
 
 export const accountsDefinitions: CloudApiDefinition[] = [
   {
@@ -27,6 +34,7 @@ export const accountsDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/account',
     destructive: true,
+    input: _update_current_accountSchema,
   },
   {
     name: 'patch-current-account',
@@ -35,5 +43,6 @@ export const accountsDefinitions: CloudApiDefinition[] = [
     method: 'PATCH',
     path: '/api/v1/account',
     destructive: true,
+    input: _patch_current_accountSchema,
   },
 ]

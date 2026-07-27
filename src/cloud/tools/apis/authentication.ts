@@ -9,7 +9,20 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
+import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
+
+import _get_api_keysSchemaRaw from '../../../cloud/json/get_api_keys.request.json' with { type: 'json' }
+import _create_api_keySchemaRaw from '../../../cloud/json/create_api_key.request.json' with { type: 'json' }
+import _delete_api_keysSchemaRaw from '../../../cloud/json/delete_api_keys.request.json' with { type: 'json' }
+import _get_api_keySchemaRaw from '../../../cloud/json/get_api_key.request.json' with { type: 'json' }
+import _delete_api_keySchemaRaw from '../../../cloud/json/delete_api_key.request.json' with { type: 'json' }
+
+const _get_api_keysSchema = _get_api_keysSchemaRaw as unknown as JsonSchemaObject
+const _create_api_keySchema = _create_api_keySchemaRaw as unknown as JsonSchemaObject
+const _delete_api_keysSchema = _delete_api_keysSchemaRaw as unknown as JsonSchemaObject
+const _get_api_keySchema = _get_api_keySchemaRaw as unknown as JsonSchemaObject
+const _delete_api_keySchema = _delete_api_keySchemaRaw as unknown as JsonSchemaObject
 
 export const authenticationDefinitions: CloudApiDefinition[] = [
   {
@@ -19,7 +32,7 @@ export const authenticationDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/users/auth/keys',
     destructive: false,
-    input: { type: 'object', properties: { next_page: { type: 'string', description: 'Pagination cursor to get the next page of records', 'x-found-in': 'query' } } },
+    input: _get_api_keysSchema,
   },
   {
     name: 'create-api-key',
@@ -28,6 +41,7 @@ export const authenticationDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/users/auth/keys',
     destructive: false,
+    input: _create_api_keySchema,
   },
   {
     name: 'delete-api-keys',
@@ -36,6 +50,7 @@ export const authenticationDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/users/auth/keys',
     destructive: true,
+    input: _delete_api_keysSchema,
   },
   {
     name: 'get-api-key',
@@ -44,7 +59,7 @@ export const authenticationDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/users/auth/keys/{api_key_id}',
     destructive: false,
-    input: { type: 'object', properties: { api_key_id: { type: 'string', description: 'The API Key ID.', 'x-found-in': 'path' } }, required: ['api_key_id'] },
+    input: _get_api_keySchema,
   },
   {
     name: 'delete-api-key',
@@ -53,6 +68,6 @@ export const authenticationDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/users/auth/keys/{api_key_id}',
     destructive: true,
-    input: { type: 'object', properties: { api_key_id: { type: 'string', description: 'The API Key ID.', 'x-found-in': 'path' } }, required: ['api_key_id'] },
+    input: _delete_api_keySchema,
   },
 ]

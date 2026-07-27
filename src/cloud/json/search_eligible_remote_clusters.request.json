@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"search-eligible-remote-clusters","$ref":"_defs.json#/$defs/SearchRequest"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"search-eligible-remote-clusters","type":"object","properties":{"version":{"type":"string","description":"The version of the Elasticsearch cluster cluster that will potentially be configured to have remote clusters.","x-found-in":"query"}},"required":["version"],"allOf":[{"$ref":"_defs.json#/$defs/SearchRequest"}]}

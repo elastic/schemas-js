@@ -9,7 +9,14 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
+import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
+
+import _get_deployment_templates_v2SchemaRaw from '../../../cloud/json/get_deployment_templates_v2.request.json' with { type: 'json' }
+import _get_deployment_template_v2SchemaRaw from '../../../cloud/json/get_deployment_template_v2.request.json' with { type: 'json' }
+
+const _get_deployment_templates_v2Schema = _get_deployment_templates_v2SchemaRaw as unknown as JsonSchemaObject
+const _get_deployment_template_v2Schema = _get_deployment_template_v2SchemaRaw as unknown as JsonSchemaObject
 
 export const deploymentTemplatesDefinitions: CloudApiDefinition[] = [
   {
@@ -19,7 +26,7 @@ export const deploymentTemplatesDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/templates',
     destructive: false,
-    input: { type: 'object', properties: { metadata: { type: 'string', description: 'An optional key/value pair in the form of (key:value) that will act as a filter and exclude any templates that do not have a matching metadata item associated.', 'x-found-in': 'query' }, show_instance_configurations: { type: 'boolean', description: 'If true, will return details for each instance configuration referenced by the template.', 'x-found-in': 'query' }, show_max_zones: { type: 'boolean', description: 'If true, will populate the max_zones field in the instance configurations. Only relevant if show_instance_configurations=true.', 'x-found-in': 'query' }, stack_version: { type: 'string', description: 'If present, it will cause the returned deployment templates to be adapted to return only the elements allowed in that version.', 'x-found-in': 'query' }, hide_deprecated: { type: 'boolean', description: 'If true, templates flagged as deprecated will NOT be returned.', 'x-found-in': 'query' }, region: { type: 'string', description: 'Region of the deployment templates', 'x-found-in': 'query' } }, required: ['region'] },
+    input: _get_deployment_templates_v2Schema,
   },
   {
     name: 'get-deployment-template-v2',
@@ -28,6 +35,6 @@ export const deploymentTemplatesDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/templates/{template_id}',
     destructive: false,
-    input: { type: 'object', properties: { template_id: { type: 'string', description: 'The identifier for the deployment template.', 'x-found-in': 'path' }, show_instance_configurations: { type: 'boolean', description: 'If true, will return details for each instance configuration referenced by the template.', 'x-found-in': 'query' }, show_max_zones: { type: 'boolean', description: 'If true, will populate the max_zones field in the instance configurations. Only relevant if show_instance_configurations=true.', 'x-found-in': 'query' }, stack_version: { type: 'string', description: 'If present, it will cause the returned deployment template to be adapted to return only the elements allowed in that version.', 'x-found-in': 'query' }, region: { type: 'string', description: 'Region of the deployment template', 'x-found-in': 'query' } }, required: ['template_id', 'region'] },
+    input: _get_deployment_template_v2Schema,
   },
 ]

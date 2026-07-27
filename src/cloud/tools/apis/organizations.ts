@@ -9,7 +9,50 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
+import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
+
+import _get_organization_invitationSchemaRaw from '../../../cloud/json/get_organization_invitation.request.json' with { type: 'json' }
+import _accept_organization_invitationSchemaRaw from '../../../cloud/json/accept_organization_invitation.request.json' with { type: 'json' }
+import _get_organizationSchemaRaw from '../../../cloud/json/get_organization.request.json' with { type: 'json' }
+import _update_organizationSchemaRaw from '../../../cloud/json/update_organization.request.json' with { type: 'json' }
+import _domain_claim_get_domain_claimsSchemaRaw from '../../../cloud/json/domain_claim_get_domain_claims.request.json' with { type: 'json' }
+import _domain_claim_deleteSchemaRaw from '../../../cloud/json/domain_claim_delete.request.json' with { type: 'json' }
+import _domain_claim_generate_verification_codeSchemaRaw from '../../../cloud/json/domain_claim_generate_verification_code.request.json' with { type: 'json' }
+import _domain_claim_verify_domainSchemaRaw from '../../../cloud/json/domain_claim_verify_domain.request.json' with { type: 'json' }
+import _get_organization_idpSchemaRaw from '../../../cloud/json/get_organization_idp.request.json' with { type: 'json' }
+import _setup_organization_idpSchemaRaw from '../../../cloud/json/setup_organization_idp.request.json' with { type: 'json' }
+import _teardown_organization_idpSchemaRaw from '../../../cloud/json/teardown_organization_idp.request.json' with { type: 'json' }
+import _get_organization_idp_metadataSchemaRaw from '../../../cloud/json/get_organization_idp_metadata.request.json' with { type: 'json' }
+import _list_organization_invitationsSchemaRaw from '../../../cloud/json/list_organization_invitations.request.json' with { type: 'json' }
+import _create_organization_invitationsSchemaRaw from '../../../cloud/json/create_organization_invitations.request.json' with { type: 'json' }
+import _delete_organization_invitationsSchemaRaw from '../../../cloud/json/delete_organization_invitations.request.json' with { type: 'json' }
+import _list_organization_membersSchemaRaw from '../../../cloud/json/list_organization_members.request.json' with { type: 'json' }
+import _delete_organization_membershipsSchemaRaw from '../../../cloud/json/delete_organization_memberships.request.json' with { type: 'json' }
+import _get_role_mappingsSchemaRaw from '../../../cloud/json/get_role_mappings.request.json' with { type: 'json' }
+import _update_role_mappingsSchemaRaw from '../../../cloud/json/update_role_mappings.request.json' with { type: 'json' }
+import _delete_role_mappingsSchemaRaw from '../../../cloud/json/delete_role_mappings.request.json' with { type: 'json' }
+
+const _get_organization_invitationSchema = _get_organization_invitationSchemaRaw as unknown as JsonSchemaObject
+const _accept_organization_invitationSchema = _accept_organization_invitationSchemaRaw as unknown as JsonSchemaObject
+const _get_organizationSchema = _get_organizationSchemaRaw as unknown as JsonSchemaObject
+const _update_organizationSchema = _update_organizationSchemaRaw as unknown as JsonSchemaObject
+const _domain_claim_get_domain_claimsSchema = _domain_claim_get_domain_claimsSchemaRaw as unknown as JsonSchemaObject
+const _domain_claim_deleteSchema = _domain_claim_deleteSchemaRaw as unknown as JsonSchemaObject
+const _domain_claim_generate_verification_codeSchema = _domain_claim_generate_verification_codeSchemaRaw as unknown as JsonSchemaObject
+const _domain_claim_verify_domainSchema = _domain_claim_verify_domainSchemaRaw as unknown as JsonSchemaObject
+const _get_organization_idpSchema = _get_organization_idpSchemaRaw as unknown as JsonSchemaObject
+const _setup_organization_idpSchema = _setup_organization_idpSchemaRaw as unknown as JsonSchemaObject
+const _teardown_organization_idpSchema = _teardown_organization_idpSchemaRaw as unknown as JsonSchemaObject
+const _get_organization_idp_metadataSchema = _get_organization_idp_metadataSchemaRaw as unknown as JsonSchemaObject
+const _list_organization_invitationsSchema = _list_organization_invitationsSchemaRaw as unknown as JsonSchemaObject
+const _create_organization_invitationsSchema = _create_organization_invitationsSchemaRaw as unknown as JsonSchemaObject
+const _delete_organization_invitationsSchema = _delete_organization_invitationsSchemaRaw as unknown as JsonSchemaObject
+const _list_organization_membersSchema = _list_organization_membersSchemaRaw as unknown as JsonSchemaObject
+const _delete_organization_membershipsSchema = _delete_organization_membershipsSchemaRaw as unknown as JsonSchemaObject
+const _get_role_mappingsSchema = _get_role_mappingsSchemaRaw as unknown as JsonSchemaObject
+const _update_role_mappingsSchema = _update_role_mappingsSchemaRaw as unknown as JsonSchemaObject
+const _delete_role_mappingsSchema = _delete_role_mappingsSchemaRaw as unknown as JsonSchemaObject
 
 export const organizationsDefinitions: CloudApiDefinition[] = [
   {
@@ -27,7 +70,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/organizations/invitations/{invitation_token}',
     destructive: false,
-    input: { type: 'object', properties: { invitation_token: { type: 'string', description: 'Organization invitation token', 'x-found-in': 'path' } }, required: ['invitation_token'] },
+    input: _get_organization_invitationSchema,
   },
   {
     name: 'accept-organization-invitation',
@@ -36,7 +79,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/organizations/invitations/{invitation_token}/_accept',
     destructive: true,
-    input: { type: 'object', properties: { invitation_token: { type: 'string', description: 'Organization invitation token', 'x-found-in': 'path' } }, required: ['invitation_token'] },
+    input: _accept_organization_invitationSchema,
   },
   {
     name: 'get-organization',
@@ -45,7 +88,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/organizations/{organization_id}',
     destructive: false,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
+    input: _get_organizationSchema,
   },
   {
     name: 'update-organization',
@@ -54,7 +97,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/organizations/{organization_id}',
     destructive: true,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
+    input: _update_organizationSchema,
   },
   {
     name: 'domain-claim-get-domain-claims',
@@ -63,7 +106,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/organizations/{organization_id}/domains',
     destructive: false,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
+    input: _domain_claim_get_domain_claimsSchema,
   },
   {
     name: 'domain-claim-delete',
@@ -72,7 +115,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/organizations/{organization_id}/domains',
     destructive: true,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
+    input: _domain_claim_deleteSchema,
   },
   {
     name: 'domain-claim-generate-verification-code',
@@ -81,7 +124,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/organizations/{organization_id}/domains/_generate_verification_code',
     destructive: true,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
+    input: _domain_claim_generate_verification_codeSchema,
   },
   {
     name: 'domain-claim-verify-domain',
@@ -90,7 +133,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/organizations/{organization_id}/domains/_verify',
     destructive: true,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
+    input: _domain_claim_verify_domainSchema,
   },
   {
     name: 'get-organization-idp',
@@ -99,7 +142,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/organizations/{organization_id}/idp',
     destructive: false,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
+    input: _get_organization_idpSchema,
   },
   {
     name: 'setup-organization-idp',
@@ -108,7 +151,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/organizations/{organization_id}/idp',
     destructive: true,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
+    input: _setup_organization_idpSchema,
   },
   {
     name: 'teardown-organization-idp',
@@ -117,7 +160,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/organizations/{organization_id}/idp',
     destructive: true,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
+    input: _teardown_organization_idpSchema,
   },
   {
     name: 'get-organization-idp-metadata',
@@ -126,7 +169,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/organizations/{organization_id}/idp/metadata.xml',
     destructive: false,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
+    input: _get_organization_idp_metadataSchema,
   },
   {
     name: 'list-organization-invitations',
@@ -135,7 +178,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/organizations/{organization_id}/invitations',
     destructive: false,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
+    input: _list_organization_invitationsSchema,
   },
   {
     name: 'create-organization-invitations',
@@ -144,7 +187,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/organizations/{organization_id}/invitations',
     destructive: false,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
+    input: _create_organization_invitationsSchema,
   },
   {
     name: 'delete-organization-invitations',
@@ -153,7 +196,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/organizations/{organization_id}/invitations/{invitation_tokens}',
     destructive: true,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' }, invitation_tokens: { type: 'string', description: 'CSV list of Invitation tokens', 'x-found-in': 'path' } }, required: ['organization_id', 'invitation_tokens'] },
+    input: _delete_organization_invitationsSchema,
   },
   {
     name: 'list-organization-members',
@@ -162,7 +205,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/organizations/{organization_id}/members',
     destructive: false,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
+    input: _list_organization_membersSchema,
   },
   {
     name: 'delete-organization-memberships',
@@ -171,7 +214,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/organizations/{organization_id}/members/{user_ids}',
     destructive: true,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' }, user_ids: { type: 'string', description: 'CSV list of User identifiers', 'x-found-in': 'path' }, force: { type: 'boolean', description: 'Whether or not to force the removal of Org memberships (effective only for Platform Admins)', 'x-found-in': 'query' } }, required: ['organization_id', 'user_ids'] },
+    input: _delete_organization_membershipsSchema,
   },
   {
     name: 'get-role-mappings',
@@ -180,7 +223,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/organizations/{organization_id}/role_mappings',
     destructive: false,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
+    input: _get_role_mappingsSchema,
   },
   {
     name: 'update-role-mappings',
@@ -189,7 +232,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/organizations/{organization_id}/role_mappings',
     destructive: true,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
+    input: _update_role_mappingsSchema,
   },
   {
     name: 'delete-role-mappings',
@@ -198,6 +241,6 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/organizations/{organization_id}/role_mappings',
     destructive: true,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the Organization', 'x-found-in': 'path' } }, required: ['organization_id'] },
+    input: _delete_role_mappingsSchema,
   },
 ]

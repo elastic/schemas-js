@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-api-key","type":"object","properties":{"api_key_id":{"type":"string","description":"The API Key ID.","x-found-in":"path"}},"required":["api_key_id"]}

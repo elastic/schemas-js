@@ -9,7 +9,12 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
+import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
+
+import _get_version_stacksSchemaRaw from '../../../cloud/json/get_version_stacks.request.json' with { type: 'json' }
+
+const _get_version_stacksSchema = _get_version_stacksSchemaRaw as unknown as JsonSchemaObject
 
 export const stackDefinitions: CloudApiDefinition[] = [
   {
@@ -19,6 +24,6 @@ export const stackDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/stack/versions',
     destructive: false,
-    input: { type: 'object', properties: { show_deleted: { type: 'boolean', description: 'Whether to show deleted stack versions or not', 'x-found-in': 'query' }, show_unusable: { type: 'boolean', description: 'Whether to show versions that are unusable by the authenticated user', 'x-found-in': 'query' } } },
+    input: _get_version_stacksSchema,
   },
 ]

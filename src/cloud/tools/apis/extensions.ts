@@ -9,7 +9,20 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
+import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
+
+import _create_extensionSchemaRaw from '../../../cloud/json/create_extension.request.json' with { type: 'json' }
+import _get_extensionSchemaRaw from '../../../cloud/json/get_extension.request.json' with { type: 'json' }
+import _update_extensionSchemaRaw from '../../../cloud/json/update_extension.request.json' with { type: 'json' }
+import _upload_extensionSchemaRaw from '../../../cloud/json/upload_extension.request.json' with { type: 'json' }
+import _delete_extensionSchemaRaw from '../../../cloud/json/delete_extension.request.json' with { type: 'json' }
+
+const _create_extensionSchema = _create_extensionSchemaRaw as unknown as JsonSchemaObject
+const _get_extensionSchema = _get_extensionSchemaRaw as unknown as JsonSchemaObject
+const _update_extensionSchema = _update_extensionSchemaRaw as unknown as JsonSchemaObject
+const _upload_extensionSchema = _upload_extensionSchemaRaw as unknown as JsonSchemaObject
+const _delete_extensionSchema = _delete_extensionSchemaRaw as unknown as JsonSchemaObject
 
 export const extensionsDefinitions: CloudApiDefinition[] = [
   {
@@ -27,6 +40,7 @@ export const extensionsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/extensions',
     destructive: false,
+    input: _create_extensionSchema,
   },
   {
     name: 'get-extension',
@@ -35,7 +49,7 @@ export const extensionsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/extensions/{extension_id}',
     destructive: false,
-    input: { type: 'object', properties: { extension_id: { type: 'string', description: 'Id of an extension', 'x-found-in': 'path' }, include_deployments: { type: 'boolean', description: 'Include deployments referencing this extension. Up to only 10000 deployments will be included.', 'x-found-in': 'query' } }, required: ['extension_id'] },
+    input: _get_extensionSchema,
   },
   {
     name: 'update-extension',
@@ -44,7 +58,7 @@ export const extensionsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/extensions/{extension_id}',
     destructive: true,
-    input: { type: 'object', properties: { extension_id: { type: 'string', description: 'Id of an extension', 'x-found-in': 'path' } }, required: ['extension_id'] },
+    input: _update_extensionSchema,
   },
   {
     name: 'upload-extension',
@@ -53,7 +67,7 @@ export const extensionsDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/deployments/extensions/{extension_id}',
     destructive: true,
-    input: { type: 'object', properties: { extension_id: { type: 'string', description: 'Id of an extension', 'x-found-in': 'path' } }, required: ['extension_id'] },
+    input: _upload_extensionSchema,
   },
   {
     name: 'delete-extension',
@@ -62,6 +76,6 @@ export const extensionsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/deployments/extensions/{extension_id}',
     destructive: true,
-    input: { type: 'object', properties: { extension_id: { type: 'string', description: 'Id of an extension', 'x-found-in': 'path' } }, required: ['extension_id'] },
+    input: _delete_extensionSchema,
   },
 ]
