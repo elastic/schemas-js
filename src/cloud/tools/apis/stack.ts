@@ -12,7 +12,7 @@
 import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
 
-import _get_version_stacksSchemaRaw from '../../../cloud/json/get_version_stacks.request.json' with { type: 'json' }
+import _get_version_stacksSchemaRaw from '../../../cloud/json/get_version_stacks.request.json'
 
 const _get_version_stacksSchema = _get_version_stacksSchemaRaw as unknown as JsonSchemaObject
 

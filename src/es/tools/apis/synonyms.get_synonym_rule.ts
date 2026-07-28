@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../json/synonyms.get_synonym_rule.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../json/synonyms.get_synonym_rule.request.json'
 import type { EsApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject

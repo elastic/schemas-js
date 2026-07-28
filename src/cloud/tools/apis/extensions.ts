@@ -12,11 +12,11 @@
 import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
 
-import _create_extensionSchemaRaw from '../../../cloud/json/create_extension.request.json' with { type: 'json' }
-import _get_extensionSchemaRaw from '../../../cloud/json/get_extension.request.json' with { type: 'json' }
-import _update_extensionSchemaRaw from '../../../cloud/json/update_extension.request.json' with { type: 'json' }
-import _upload_extensionSchemaRaw from '../../../cloud/json/upload_extension.request.json' with { type: 'json' }
-import _delete_extensionSchemaRaw from '../../../cloud/json/delete_extension.request.json' with { type: 'json' }
+import _create_extensionSchemaRaw from '../../../cloud/json/create_extension.request.json'
+import _get_extensionSchemaRaw from '../../../cloud/json/get_extension.request.json'
+import _update_extensionSchemaRaw from '../../../cloud/json/update_extension.request.json'
+import _upload_extensionSchemaRaw from '../../../cloud/json/upload_extension.request.json'
+import _delete_extensionSchemaRaw from '../../../cloud/json/delete_extension.request.json'
 
 const _create_extensionSchema = _create_extensionSchemaRaw as unknown as JsonSchemaObject
 const _get_extensionSchema = _get_extensionSchemaRaw as unknown as JsonSchemaObject

@@ -1,9 +1,11 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
+    "module": "CommonJS",
+    "moduleResolution": "node",
     "outDir": "lib/cjs",
-    "rewriteRelativeImportExtensions": true
+    "rewriteRelativeImportExtensions": true,
+    "verbatimModuleSyntax": false,
+    "ignoreDeprecations": "6.0"
   }
 }

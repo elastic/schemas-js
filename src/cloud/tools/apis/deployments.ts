@@ -12,58 +12,58 @@
 import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
 
-import _create_deploymentSchemaRaw from '../../../cloud/json/create_deployment.request.json' with { type: 'json' }
-import _search_deploymentsSchemaRaw from '../../../cloud/json/search_deployments.request.json' with { type: 'json' }
-import _search_eligible_remote_clustersSchemaRaw from '../../../cloud/json/search_eligible_remote_clusters.request.json' with { type: 'json' }
-import _get_deploymentSchemaRaw from '../../../cloud/json/get_deployment.request.json' with { type: 'json' }
-import _update_deploymentSchemaRaw from '../../../cloud/json/update_deployment.request.json' with { type: 'json' }
-import _restore_deploymentSchemaRaw from '../../../cloud/json/restore_deployment.request.json' with { type: 'json' }
-import _shutdown_deploymentSchemaRaw from '../../../cloud/json/shutdown_deployment.request.json' with { type: 'json' }
-import _get_deployment_apm_resource_infoSchemaRaw from '../../../cloud/json/get_deployment_apm_resource_info.request.json' with { type: 'json' }
-import _deployment_apm_reset_secret_tokenSchemaRaw from '../../../cloud/json/deployment_apm_reset_secret_token.request.json' with { type: 'json' }
-import _get_deployment_appsearch_resource_infoSchemaRaw from '../../../cloud/json/get_deployment_appsearch_resource_info.request.json' with { type: 'json' }
-import _get_appsearch_read_only_modeSchemaRaw from '../../../cloud/json/get_appsearch_read_only_mode.request.json' with { type: 'json' }
-import _set_appsearch_read_only_modeSchemaRaw from '../../../cloud/json/set_appsearch_read_only_mode.request.json' with { type: 'json' }
-import _get_deployment_certificate_authoritySchemaRaw from '../../../cloud/json/get_deployment_certificate_authority.request.json' with { type: 'json' }
-import _get_deployment_es_resource_infoSchemaRaw from '../../../cloud/json/get_deployment_es_resource_info.request.json' with { type: 'json' }
-import _enable_deployment_resource_ccrSchemaRaw from '../../../cloud/json/enable_deployment_resource_ccr.request.json' with { type: 'json' }
-import _enable_deployment_resource_ilmSchemaRaw from '../../../cloud/json/enable_deployment_resource_ilm.request.json' with { type: 'json' }
-import _enable_deployment_resource_slmSchemaRaw from '../../../cloud/json/enable_deployment_resource_slm.request.json' with { type: 'json' }
-import _reset_elasticsearch_user_passwordSchemaRaw from '../../../cloud/json/reset_elasticsearch_user_password.request.json' with { type: 'json' }
-import _restart_deployment_es_resourceSchemaRaw from '../../../cloud/json/restart_deployment_es_resource.request.json' with { type: 'json' }
-import _shutdown_deployment_es_resourceSchemaRaw from '../../../cloud/json/shutdown_deployment_es_resource.request.json' with { type: 'json' }
-import _get_deployment_es_resource_eligible_remote_clustersSchemaRaw from '../../../cloud/json/get_deployment_es_resource_eligible_remote_clusters.request.json' with { type: 'json' }
-import _get_deployment_es_resource_keystoreSchemaRaw from '../../../cloud/json/get_deployment_es_resource_keystore.request.json' with { type: 'json' }
-import _set_deployment_es_resource_keystoreSchemaRaw from '../../../cloud/json/set_deployment_es_resource_keystore.request.json' with { type: 'json' }
-import _get_deployment_es_resource_remote_clustersSchemaRaw from '../../../cloud/json/get_deployment_es_resource_remote_clusters.request.json' with { type: 'json' }
-import _set_deployment_es_resource_remote_clustersSchemaRaw from '../../../cloud/json/set_deployment_es_resource_remote_clusters.request.json' with { type: 'json' }
-import _get_deployment_es_resource_snapshot_repositorySchemaRaw from '../../../cloud/json/get_deployment_es_resource_snapshot_repository.request.json' with { type: 'json' }
-import _create_deployment_es_resource_snapshot_repositorySchemaRaw from '../../../cloud/json/create_deployment_es_resource_snapshot_repository.request.json' with { type: 'json' }
-import _delete_deployment_es_resource_snapshot_repositorySchemaRaw from '../../../cloud/json/delete_deployment_es_resource_snapshot_repository.request.json' with { type: 'json' }
-import _get_deployment_es_resource_tiersSchemaRaw from '../../../cloud/json/get_deployment_es_resource_tiers.request.json' with { type: 'json' }
-import _update_deployment_es_resource_tierSchemaRaw from '../../../cloud/json/update_deployment_es_resource_tier.request.json' with { type: 'json' }
-import _get_deployment_enterprise_search_resource_infoSchemaRaw from '../../../cloud/json/get_deployment_enterprise_search_resource_info.request.json' with { type: 'json' }
-import _get_deployment_integrations_server_resource_infoSchemaRaw from '../../../cloud/json/get_deployment_integrations_server_resource_info.request.json' with { type: 'json' }
-import _get_deployment_kib_resource_infoSchemaRaw from '../../../cloud/json/get_deployment_kib_resource_info.request.json' with { type: 'json' }
-import _migrate_deployment_templateSchemaRaw from '../../../cloud/json/migrate_deployment_template.request.json' with { type: 'json' }
-import _get_deployment_tagsSchemaRaw from '../../../cloud/json/get_deployment_tags.request.json' with { type: 'json' }
-import _set_deployment_tagsSchemaRaw from '../../../cloud/json/set_deployment_tags.request.json' with { type: 'json' }
-import _upgrade_deploymentSchemaRaw from '../../../cloud/json/upgrade_deployment.request.json' with { type: 'json' }
-import _get_deployment_upgrade_assistant_statusSchemaRaw from '../../../cloud/json/get_deployment_upgrade_assistant_status.request.json' with { type: 'json' }
-import _restore_deployment_resourceSchemaRaw from '../../../cloud/json/restore_deployment_resource.request.json' with { type: 'json' }
-import _start_deployment_resource_instances_allSchemaRaw from '../../../cloud/json/start_deployment_resource_instances_all.request.json' with { type: 'json' }
-import _stop_deployment_resource_instances_allSchemaRaw from '../../../cloud/json/stop_deployment_resource_instances_all.request.json' with { type: 'json' }
-import _start_deployment_resource_instances_all_maintenance_modeSchemaRaw from '../../../cloud/json/start_deployment_resource_instances_all_maintenance_mode.request.json' with { type: 'json' }
-import _stop_deployment_resource_instances_all_maintenance_modeSchemaRaw from '../../../cloud/json/stop_deployment_resource_instances_all_maintenance_mode.request.json' with { type: 'json' }
-import _start_deployment_resource_instancesSchemaRaw from '../../../cloud/json/start_deployment_resource_instances.request.json' with { type: 'json' }
-import _stop_deployment_resource_instancesSchemaRaw from '../../../cloud/json/stop_deployment_resource_instances.request.json' with { type: 'json' }
-import _start_deployment_resource_maintenance_modeSchemaRaw from '../../../cloud/json/start_deployment_resource_maintenance_mode.request.json' with { type: 'json' }
-import _stop_deployment_resource_maintenance_modeSchemaRaw from '../../../cloud/json/stop_deployment_resource_maintenance_mode.request.json' with { type: 'json' }
-import _cancel_deployment_resource_pending_planSchemaRaw from '../../../cloud/json/cancel_deployment_resource_pending_plan.request.json' with { type: 'json' }
-import _get_deployment_resource_user_settingsSchemaRaw from '../../../cloud/json/get_deployment_resource_user_settings.request.json' with { type: 'json' }
-import _update_deployment_resource_user_settingsSchemaRaw from '../../../cloud/json/update_deployment_resource_user_settings.request.json' with { type: 'json' }
-import _restart_deployment_stateless_resourceSchemaRaw from '../../../cloud/json/restart_deployment_stateless_resource.request.json' with { type: 'json' }
-import _shutdown_deployment_stateless_resourceSchemaRaw from '../../../cloud/json/shutdown_deployment_stateless_resource.request.json' with { type: 'json' }
+import _create_deploymentSchemaRaw from '../../../cloud/json/create_deployment.request.json'
+import _search_deploymentsSchemaRaw from '../../../cloud/json/search_deployments.request.json'
+import _search_eligible_remote_clustersSchemaRaw from '../../../cloud/json/search_eligible_remote_clusters.request.json'
+import _get_deploymentSchemaRaw from '../../../cloud/json/get_deployment.request.json'
+import _update_deploymentSchemaRaw from '../../../cloud/json/update_deployment.request.json'
+import _restore_deploymentSchemaRaw from '../../../cloud/json/restore_deployment.request.json'
+import _shutdown_deploymentSchemaRaw from '../../../cloud/json/shutdown_deployment.request.json'
+import _get_deployment_apm_resource_infoSchemaRaw from '../../../cloud/json/get_deployment_apm_resource_info.request.json'
+import _deployment_apm_reset_secret_tokenSchemaRaw from '../../../cloud/json/deployment_apm_reset_secret_token.request.json'
+import _get_deployment_appsearch_resource_infoSchemaRaw from '../../../cloud/json/get_deployment_appsearch_resource_info.request.json'
+import _get_appsearch_read_only_modeSchemaRaw from '../../../cloud/json/get_appsearch_read_only_mode.request.json'
+import _set_appsearch_read_only_modeSchemaRaw from '../../../cloud/json/set_appsearch_read_only_mode.request.json'
+import _get_deployment_certificate_authoritySchemaRaw from '../../../cloud/json/get_deployment_certificate_authority.request.json'
+import _get_deployment_es_resource_infoSchemaRaw from '../../../cloud/json/get_deployment_es_resource_info.request.json'
+import _enable_deployment_resource_ccrSchemaRaw from '../../../cloud/json/enable_deployment_resource_ccr.request.json'
+import _enable_deployment_resource_ilmSchemaRaw from '../../../cloud/json/enable_deployment_resource_ilm.request.json'
+import _enable_deployment_resource_slmSchemaRaw from '../../../cloud/json/enable_deployment_resource_slm.request.json'
+import _reset_elasticsearch_user_passwordSchemaRaw from '../../../cloud/json/reset_elasticsearch_user_password.request.json'
+import _restart_deployment_es_resourceSchemaRaw from '../../../cloud/json/restart_deployment_es_resource.request.json'
+import _shutdown_deployment_es_resourceSchemaRaw from '../../../cloud/json/shutdown_deployment_es_resource.request.json'
+import _get_deployment_es_resource_eligible_remote_clustersSchemaRaw from '../../../cloud/json/get_deployment_es_resource_eligible_remote_clusters.request.json'
+import _get_deployment_es_resource_keystoreSchemaRaw from '../../../cloud/json/get_deployment_es_resource_keystore.request.json'
+import _set_deployment_es_resource_keystoreSchemaRaw from '../../../cloud/json/set_deployment_es_resource_keystore.request.json'
+import _get_deployment_es_resource_remote_clustersSchemaRaw from '../../../cloud/json/get_deployment_es_resource_remote_clusters.request.json'
+import _set_deployment_es_resource_remote_clustersSchemaRaw from '../../../cloud/json/set_deployment_es_resource_remote_clusters.request.json'
+import _get_deployment_es_resource_snapshot_repositorySchemaRaw from '../../../cloud/json/get_deployment_es_resource_snapshot_repository.request.json'
+import _create_deployment_es_resource_snapshot_repositorySchemaRaw from '../../../cloud/json/create_deployment_es_resource_snapshot_repository.request.json'
+import _delete_deployment_es_resource_snapshot_repositorySchemaRaw from '../../../cloud/json/delete_deployment_es_resource_snapshot_repository.request.json'
+import _get_deployment_es_resource_tiersSchemaRaw from '../../../cloud/json/get_deployment_es_resource_tiers.request.json'
+import _update_deployment_es_resource_tierSchemaRaw from '../../../cloud/json/update_deployment_es_resource_tier.request.json'
+import _get_deployment_enterprise_search_resource_infoSchemaRaw from '../../../cloud/json/get_deployment_enterprise_search_resource_info.request.json'
+import _get_deployment_integrations_server_resource_infoSchemaRaw from '../../../cloud/json/get_deployment_integrations_server_resource_info.request.json'
+import _get_deployment_kib_resource_infoSchemaRaw from '../../../cloud/json/get_deployment_kib_resource_info.request.json'
+import _migrate_deployment_templateSchemaRaw from '../../../cloud/json/migrate_deployment_template.request.json'
+import _get_deployment_tagsSchemaRaw from '../../../cloud/json/get_deployment_tags.request.json'
+import _set_deployment_tagsSchemaRaw from '../../../cloud/json/set_deployment_tags.request.json'
+import _upgrade_deploymentSchemaRaw from '../../../cloud/json/upgrade_deployment.request.json'
+import _get_deployment_upgrade_assistant_statusSchemaRaw from '../../../cloud/json/get_deployment_upgrade_assistant_status.request.json'
+import _restore_deployment_resourceSchemaRaw from '../../../cloud/json/restore_deployment_resource.request.json'
+import _start_deployment_resource_instances_allSchemaRaw from '../../../cloud/json/start_deployment_resource_instances_all.request.json'
+import _stop_deployment_resource_instances_allSchemaRaw from '../../../cloud/json/stop_deployment_resource_instances_all.request.json'
+import _start_deployment_resource_instances_all_maintenance_modeSchemaRaw from '../../../cloud/json/start_deployment_resource_instances_all_maintenance_mode.request.json'
+import _stop_deployment_resource_instances_all_maintenance_modeSchemaRaw from '../../../cloud/json/stop_deployment_resource_instances_all_maintenance_mode.request.json'
+import _start_deployment_resource_instancesSchemaRaw from '../../../cloud/json/start_deployment_resource_instances.request.json'
+import _stop_deployment_resource_instancesSchemaRaw from '../../../cloud/json/stop_deployment_resource_instances.request.json'
+import _start_deployment_resource_maintenance_modeSchemaRaw from '../../../cloud/json/start_deployment_resource_maintenance_mode.request.json'
+import _stop_deployment_resource_maintenance_modeSchemaRaw from '../../../cloud/json/stop_deployment_resource_maintenance_mode.request.json'
+import _cancel_deployment_resource_pending_planSchemaRaw from '../../../cloud/json/cancel_deployment_resource_pending_plan.request.json'
+import _get_deployment_resource_user_settingsSchemaRaw from '../../../cloud/json/get_deployment_resource_user_settings.request.json'
+import _update_deployment_resource_user_settingsSchemaRaw from '../../../cloud/json/update_deployment_resource_user_settings.request.json'
+import _restart_deployment_stateless_resourceSchemaRaw from '../../../cloud/json/restart_deployment_stateless_resource.request.json'
+import _shutdown_deployment_stateless_resourceSchemaRaw from '../../../cloud/json/shutdown_deployment_stateless_resource.request.json'
 
 const _create_deploymentSchema = _create_deploymentSchemaRaw as unknown as JsonSchemaObject
 const _search_deploymentsSchema = _search_deploymentsSchemaRaw as unknown as JsonSchemaObject

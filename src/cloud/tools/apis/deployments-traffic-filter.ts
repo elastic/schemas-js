@@ -12,18 +12,18 @@
 import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
 
-import _get_traffic_filter_deployment_ruleset_associationsSchemaRaw from '../../../cloud/json/get_traffic_filter_deployment_ruleset_associations.request.json' with { type: 'json' }
-import _get_traffic_filter_claimed_link_idsSchemaRaw from '../../../cloud/json/get_traffic_filter_claimed_link_ids.request.json' with { type: 'json' }
-import _claim_traffic_filter_link_idSchemaRaw from '../../../cloud/json/claim_traffic_filter_link_id.request.json' with { type: 'json' }
-import _unclaim_traffic_filter_link_idSchemaRaw from '../../../cloud/json/unclaim_traffic_filter_link_id.request.json' with { type: 'json' }
-import _get_traffic_filter_rulesetsSchemaRaw from '../../../cloud/json/get_traffic_filter_rulesets.request.json' with { type: 'json' }
-import _create_traffic_filter_rulesetSchemaRaw from '../../../cloud/json/create_traffic_filter_ruleset.request.json' with { type: 'json' }
-import _get_traffic_filter_rulesetSchemaRaw from '../../../cloud/json/get_traffic_filter_ruleset.request.json' with { type: 'json' }
-import _update_traffic_filter_rulesetSchemaRaw from '../../../cloud/json/update_traffic_filter_ruleset.request.json' with { type: 'json' }
-import _delete_traffic_filter_rulesetSchemaRaw from '../../../cloud/json/delete_traffic_filter_ruleset.request.json' with { type: 'json' }
-import _get_traffic_filter_ruleset_deployment_associationsSchemaRaw from '../../../cloud/json/get_traffic_filter_ruleset_deployment_associations.request.json' with { type: 'json' }
-import _create_traffic_filter_ruleset_associationSchemaRaw from '../../../cloud/json/create_traffic_filter_ruleset_association.request.json' with { type: 'json' }
-import _delete_traffic_filter_ruleset_associationSchemaRaw from '../../../cloud/json/delete_traffic_filter_ruleset_association.request.json' with { type: 'json' }
+import _get_traffic_filter_deployment_ruleset_associationsSchemaRaw from '../../../cloud/json/get_traffic_filter_deployment_ruleset_associations.request.json'
+import _get_traffic_filter_claimed_link_idsSchemaRaw from '../../../cloud/json/get_traffic_filter_claimed_link_ids.request.json'
+import _claim_traffic_filter_link_idSchemaRaw from '../../../cloud/json/claim_traffic_filter_link_id.request.json'
+import _unclaim_traffic_filter_link_idSchemaRaw from '../../../cloud/json/unclaim_traffic_filter_link_id.request.json'
+import _get_traffic_filter_rulesetsSchemaRaw from '../../../cloud/json/get_traffic_filter_rulesets.request.json'
+import _create_traffic_filter_rulesetSchemaRaw from '../../../cloud/json/create_traffic_filter_ruleset.request.json'
+import _get_traffic_filter_rulesetSchemaRaw from '../../../cloud/json/get_traffic_filter_ruleset.request.json'
+import _update_traffic_filter_rulesetSchemaRaw from '../../../cloud/json/update_traffic_filter_ruleset.request.json'
+import _delete_traffic_filter_rulesetSchemaRaw from '../../../cloud/json/delete_traffic_filter_ruleset.request.json'
+import _get_traffic_filter_ruleset_deployment_associationsSchemaRaw from '../../../cloud/json/get_traffic_filter_ruleset_deployment_associations.request.json'
+import _create_traffic_filter_ruleset_associationSchemaRaw from '../../../cloud/json/create_traffic_filter_ruleset_association.request.json'
+import _delete_traffic_filter_ruleset_associationSchemaRaw from '../../../cloud/json/delete_traffic_filter_ruleset_association.request.json'
 
 const _get_traffic_filter_deployment_ruleset_associationsSchema = _get_traffic_filter_deployment_ruleset_associationsSchemaRaw as unknown as JsonSchemaObject
 const _get_traffic_filter_claimed_link_idsSchema = _get_traffic_filter_claimed_link_idsSchemaRaw as unknown as JsonSchemaObject
