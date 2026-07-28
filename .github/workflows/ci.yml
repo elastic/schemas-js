@@ -21,8 +21,8 @@ jobs:
           task_types: '["feat","fix","docs","test","ci","refactor","perf","chore","revert"]'
           add_label: "false"
 
-  test:
-    name: Test
+  test-unit:
+    name: Unit tests
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -44,8 +44,49 @@ jobs:
       - name: Install
         run: npm install
 
-      - name: npm test
-        run: npm test
+      - name: Run unit tests
+        run: npm run test:unit
+        shell: bash
+
+  test-lint:
+    name: Linter
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          persist-credentials: false
+
+      - name: Use Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+
+      - name: Install
+        run: npm install
+
+      - name: Run linter
+        run: npm run test:lint
+
+  test-build:
+    name: Type checker + CJS build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          persist-credentials: false
+
+      - name: Use Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+
+      - name: Install
+        run: npm install
+
+      - name: Check types + validate build script
+        run: npm run build
 
   license:
     name: License check
@@ -90,38 +131,20 @@ jobs:
       - name: Install
         run: bun install
 
-      - name: Unit test
+      - name: Unit test (Bun)
         shell: bash
         run: bun run test:unit
-
-  test-types:
-    name: Type checker
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          persist-credentials: false
-
-      - name: Use Node.js
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
-        with:
-          node-version: 24
-
-      - name: Install
-        run: npm install
-
-      - name: Validate types
-        run: npm run test:ts
 
   ci:
     name: CI Result
     if: always()
     runs-on: ubuntu-latest
     needs:
-      - test
       - license
+      - test-build
       - test-bun
-      - test-types
+      - test-lint
+      - test-unit
       - validate-pr-title
     steps:
       - run: |
