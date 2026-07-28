@@ -48,8 +48,4 @@ jobs:
         run: npm test
       - name: Publish
         run: |
-          VERSION=$(node -p "require('./package.json').version")
-          if [[ "$VERSION" == *alpha* ]]; then TAG="--tag alpha"
-          elif [[ "$VERSION" == *beta* ]]; then TAG="--tag beta"
-          fi
-          npm publish --provenance --access public $TAG
+          npm publish --provenance --access public
