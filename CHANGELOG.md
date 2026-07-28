@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.2-alpha.1](https://github.com/elastic/schemas-js/compare/v0.4.1-alpha.1...v0.4.2-alpha.1) (2026-07-28)
+
+
+### Bug Fixes
+
+* adjust CI to validate PRs more effectively, drop alpha/beta labels from npm temporarily ([#36](https://github.com/elastic/schemas-js/issues/36)) ([9622b21](https://github.com/elastic/schemas-js/commit/9622b21fffc82e5651a56b8b69f73ecd8e8ebb76))
+
 ## [0.4.1-alpha.1](https://github.com/elastic/schemas-js/compare/v0.4.0-alpha.1...v0.4.1-alpha.1) (2026-07-28)
 
 
