@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.3-alpha.1](https://github.com/elastic/schemas-js/compare/v0.4.2-alpha.1...v0.4.3-alpha.1) (2026-07-28)
+
+
+### Bug Fixes
+
+* add serverless control plane APIs ([#39](https://github.com/elastic/schemas-js/issues/39)) ([e263d08](https://github.com/elastic/schemas-js/commit/e263d08f0b1c8097a3eb534a542645579755e5b5))
+
 ## [0.4.2-alpha.1](https://github.com/elastic/schemas-js/compare/v0.4.1-alpha.1...v0.4.2-alpha.1) (2026-07-28)
 
 
