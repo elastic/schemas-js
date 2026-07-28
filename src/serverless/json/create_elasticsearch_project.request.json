@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "createElasticsearchProject",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "alias": {
+      "type": "string"
+    },
+    "region_id": {
+      "type": "string"
+    },
+    "optimized_for": {
+      "enum": [
+        "general_purpose",
+        "vector"
+      ]
+    },
+    "search_lake": {
+      "type": "object",
+      "properties": {
+        "search_power": {
+          "type": "number"
+        },
+        "boost_window": {
+          "type": "number"
+        }
+      }
+    },
+    "traffic_filters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    },
+    "linked": {
+      "type": "object",
+      "properties": {
+        "projects": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "enum": [
+                  "elasticsearch",
+                  "observability",
+                  "security",
+                  "vectordb"
+                ]
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "projects"
+      ],
+      "additionalProperties": false
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "tags": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "tags"
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "region_id"
+  ],
+  "additionalProperties": false
+}

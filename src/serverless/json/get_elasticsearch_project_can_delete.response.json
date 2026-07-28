@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "getElasticsearchProjectCanDelete",
+  "type": "object",
+  "properties": {
+    "linked_projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "alias": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "elasticsearch",
+              "observability",
+              "security",
+              "vectordb"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "type"
+        ]
+      }
+    },
+    "can_be_deleted": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "linked_projects",
+    "monitored_projects",
+    "can_be_deleted"
+  ]
+}

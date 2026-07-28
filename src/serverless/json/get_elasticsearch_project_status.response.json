@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "getElasticsearchProjectStatus",
+  "type": "object",
+  "properties": {
+    "phase": {
+      "enum": [
+        "initializing",
+        "initialized",
+        "deleting",
+        "suspending",
+        "suspended"
+      ]
+    },
+    "phase_change_timestamp": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "phase"
+  ]
+}

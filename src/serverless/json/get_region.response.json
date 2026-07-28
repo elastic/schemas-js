@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "getRegion",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "csp": {
+      "enum": [
+        "aws",
+        "gcp",
+        "azure"
+      ]
+    },
+    "csp_region": {
+      "type": "string"
+    },
+    "country_code": {
+      "type": "string"
+    },
+    "project_creation_enabled": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "csp",
+    "csp_region",
+    "country_code",
+    "project_creation_enabled"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "getTrafficFilterMetadata",
+  "type": "object",
+  "properties": {
+    "regions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "region": {
+            "type": "string"
+          },
+          "csp": {
+            "type": "string"
+          },
+          "vpc_service_name": {
+            "type": "string"
+          },
+          "private_service_name": {
+            "type": "string"
+          },
+          "private_hosted_zone_domain_name": {
+            "type": "string"
+          },
+          "availability_zones": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "id"
+              ]
+            }
+          }
+        },
+        "required": [
+          "region",
+          "vpc_service_name",
+          "private_hosted_zone_domain_name",
+          "availability_zones"
+        ]
+      }
+    }
+  }
+}

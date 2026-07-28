@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "listTrafficFilters",
+  "type": "object",
+  "properties": {
+    "include_by_default": {
+      "type": "boolean",
+      "description": "Retrieves a list of resources that have include_by_default set or not set",
+      "x-found-in": "query"
+    },
+    "region": {
+      "type": "string",
+      "description": "If provided limits the traffic filters to that region only.",
+      "x-found-in": "query"
+    }
+  }
+}

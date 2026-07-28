@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "patchTrafficFilter",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The traffic filter ID.",
+      "x-found-in": "path"
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "allOf": [
+    {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "include_by_default": {
+          "type": "boolean"
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string"
+              },
+              "azure_endpoint_name": {
+                "type": "string"
+              },
+              "azure_endpoint_guid": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "getObservabilityProjectLinkCandidates",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "alias": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "elasticsearch",
+              "observability",
+              "security",
+              "vectordb"
+            ]
+          },
+          "csp": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "linked": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "alias",
+          "type",
+          "csp",
+          "region",
+          "tags",
+          "linked"
+        ]
+      }
+    }
+  },
+  "required": [
+    "items"
+  ]
+}
