@@ -2,9 +2,10 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "module": "CommonJS",
-    "moduleResolution": "node10",
-    "ignoreDeprecations": "6.0",
+    "moduleResolution": "node",
     "outDir": "lib/cjs",
-    "rewriteRelativeImportExtensions": true
+    "rewriteRelativeImportExtensions": true,
+    "verbatimModuleSyntax": false,
+    "ignoreDeprecations": "6.0"
   }
 }
