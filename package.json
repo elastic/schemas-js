@@ -77,6 +77,12 @@
       "import": "./lib/cloud/tools/*.js",
       "require": "./lib/cjs/cloud/tools/*.js"
     },
+    "./serverless/tools/*.js": {
+      "types": "./lib/serverless/tools/*.d.ts",
+      "import": "./lib/serverless/tools/*.js",
+      "require": "./lib/cjs/serverless/tools/*.js"
+    },
+    "./serverless/json/*.json": "./src/serverless/json/*.json",
     "./es/json/*.json": "./src/es/json/*.json",
     "./kibana/json/*.json": "./src/kibana/json/*.json",
     "./cloud/json/*.json": "./src/cloud/json/*.json"
@@ -87,6 +93,7 @@
     "src/es/json/",
     "src/kibana/json/",
     "src/cloud/json/",
+    "src/serverless/json/",
     "LICENSE",
     "NOTICE.txt",
     "README.md"

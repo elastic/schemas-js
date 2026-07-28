@@ -1,0 +1,244 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "listSecurityProjects",
+  "type": "object",
+  "properties": {
+    "next_page": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "alias": {
+            "type": "string"
+          },
+          "region_id": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "properties": {
+              "created_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "organization_id": {
+                "type": "string"
+              },
+              "suspended_at": {
+                "type": "string"
+              },
+              "suspended_reason": {
+                "type": "string"
+              },
+              "tags": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "system_tags": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "created_at",
+              "created_by",
+              "organization_id"
+            ]
+          },
+          "cloud_id": {
+            "type": "string"
+          },
+          "traffic_filters": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          },
+          "linked": {
+            "type": "object",
+            "properties": {
+              "projects": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "enum": [
+                        "enabled",
+                        "suspended",
+                        "deleted"
+                      ]
+                    },
+                    "type": {
+                      "enum": [
+                        "elasticsearch",
+                        "observability",
+                        "security",
+                        "vectordb"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "type"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "projects"
+            ],
+            "additionalProperties": false
+          },
+          "type": {
+            "enum": [
+              "security"
+            ]
+          },
+          "endpoints": {
+            "type": "object",
+            "properties": {
+              "elasticsearch": {
+                "type": "string"
+              },
+              "kibana": {
+                "type": "string"
+              },
+              "ingest": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "elasticsearch",
+              "kibana",
+              "ingest"
+            ]
+          },
+          "private_endpoints": {
+            "type": "object",
+            "properties": {
+              "elasticsearch": {
+                "type": "string"
+              },
+              "kibana": {
+                "type": "string"
+              },
+              "ingest": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "elasticsearch",
+              "kibana",
+              "ingest"
+            ]
+          },
+          "search_lake": {
+            "type": "object",
+            "properties": {
+              "data_retention": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "max_retention_days": {
+                        "oneOf": [
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "default_retention_days": {
+                        "oneOf": [
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          },
+          "admin_features_package": {
+            "enum": [
+              "standard",
+              "enterprise"
+            ]
+          },
+          "product_types": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "product_line": {
+                  "enum": [
+                    "security",
+                    "cloud",
+                    "endpoint"
+                  ]
+                },
+                "product_tier": {
+                  "enum": [
+                    "complete",
+                    "essentials"
+                  ]
+                }
+              },
+              "required": [
+                "product_line",
+                "product_tier"
+              ]
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "alias",
+          "region_id",
+          "metadata",
+          "cloud_id",
+          "type",
+          "endpoints"
+        ]
+      }
+    }
+  },
+  "required": [
+    "items"
+  ]
+}

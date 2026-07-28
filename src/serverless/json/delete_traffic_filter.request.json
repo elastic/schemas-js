@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "deleteTrafficFilter",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The traffic filter ID.",
+      "x-found-in": "path"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

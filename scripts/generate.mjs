@@ -153,6 +153,25 @@ const generators = [
     srcSubdir: join('cloud', 'json'),
     lint: false,
   },
+  {
+    name: 'Zod: Serverless',
+    npmScript: 'zod-serverless',
+    outputSubdir: 'serverless',
+    srcSubdir: join('serverless', 'schemas'),
+  },
+  {
+    name: 'AB tools: Serverless',
+    npmScript: 'ab-tools-serverless',
+    outputSubdir: join('ab-tools', 'serverless'),
+    srcSubdir: join('serverless', 'tools'),
+  },
+  {
+    name: 'JSON Schema: Serverless',
+    npmScript: 'json-schema-serverless',
+    outputSubdir: join('json-schema', 'serverless'),
+    srcSubdir: join('serverless', 'json'),
+    lint: false,
+  },
 ]
 
 export default async function generate (generatorPath) {

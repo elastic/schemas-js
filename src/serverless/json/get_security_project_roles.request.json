@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "getSecurityProjectRoles",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The ID of the project",
+      "x-found-in": "path"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

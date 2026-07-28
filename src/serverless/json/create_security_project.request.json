@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "createSecurityProject",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "alias": {
+      "type": "string"
+    },
+    "region_id": {
+      "type": "string"
+    },
+    "admin_features_package": {
+      "enum": [
+        "standard",
+        "enterprise"
+      ]
+    },
+    "product_types": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_line": {
+            "enum": [
+              "security",
+              "cloud",
+              "endpoint"
+            ]
+          },
+          "product_tier": {
+            "enum": [
+              "complete",
+              "essentials"
+            ]
+          }
+        },
+        "required": [
+          "product_line",
+          "product_tier"
+        ]
+      }
+    },
+    "search_lake": {
+      "type": "object",
+      "properties": {
+        "data_retention": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "max_retention_days": {
+                  "oneOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "default_retention_days": {
+                  "oneOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "traffic_filters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    },
+    "linked": {
+      "type": "object",
+      "properties": {
+        "projects": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "enum": [
+                  "elasticsearch",
+                  "observability",
+                  "security",
+                  "vectordb"
+                ]
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "projects"
+      ],
+      "additionalProperties": false
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "tags": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "tags"
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "region_id"
+  ],
+  "additionalProperties": false
+}

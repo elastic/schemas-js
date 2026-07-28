@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "createTrafficFilter",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "ip",
+        "vpce",
+        "private_endpoint"
+      ]
+    },
+    "include_by_default": {
+      "type": "boolean"
+    },
+    "region": {
+      "type": "string"
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "azure_endpoint_name": {
+            "type": "string"
+          },
+          "azure_endpoint_guid": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "name",
+    "region",
+    "type"
+  ]
+}

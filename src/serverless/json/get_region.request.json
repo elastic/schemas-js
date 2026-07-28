@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "getRegion",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "ID of the region",
+      "x-found-in": "path"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}
