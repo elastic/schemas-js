@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.put_user","type":"object","properties":{"created":{"type":"boolean","description":"A successful call returns a JSON structure that shows whether the user has been created or updated.\nWhen an existing user is updated, `created` is set to `false`."}},"required":["created"]}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"ilm.move_to_step__StepKey":{"type":"object","properties":{"action":{"type":"string","description":"The optional action to which the index will be moved."},"name":{"type":"string","description":"The optional step name to which the index will be moved."},"phase":{"type":"string"}},"required":["phase"]}}}

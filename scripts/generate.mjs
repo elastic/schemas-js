@@ -59,7 +59,7 @@ async function syncDir (src, dest) {
   const entries = await fs.readdir(src, { recursive: true })
   await Promise.all(
     entries
-      .filter(f => f.endsWith('.ts') || !f.includes('.'))
+      .filter(f => f.endsWith('.ts') || f.endsWith('.json') || !f.includes('.'))
       .map(async (f) => {
         const srcFile = join(src, f)
         const destFile = join(dest, f)

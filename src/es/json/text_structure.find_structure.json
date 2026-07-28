@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"text_structure.find_structure__FindStructureFormat":{"enum":["ndjson","xml","delimited","semi_structured_text"]}}}

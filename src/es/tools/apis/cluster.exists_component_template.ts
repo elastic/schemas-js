@@ -9,20 +9,11 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
-import { z } from 'zod'
-import { ClusterExistsComponentTemplateRequest } from '../../../es/schemas/cluster.exists_component_template.ts'
-
 import type { JsonSchemaObject } from '../../../json-schema.ts'
+import _inputSchemaRaw from '../../json/cluster.exists_component_template.request.json' with { type: 'json' }
 import type { EsApiDefinition } from '../types.ts'
 
-const _rawSchema = z.toJSONSchema(ClusterExistsComponentTemplateRequest) as Record<string, unknown>
-const _props = _rawSchema['properties'] as Record<string, Record<string, unknown>> | undefined
-if (_props != null) {
-  for (const prop of Object.values(_props)) {
-    if (prop['found_in'] != null) { prop['x-found-in'] = prop['found_in']; delete prop['found_in'] }
-  }
-}
-const _inputSchema = _rawSchema as JsonSchemaObject
+const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const cluster_exists_component_template_definitions: EsApiDefinition[] = [
   {

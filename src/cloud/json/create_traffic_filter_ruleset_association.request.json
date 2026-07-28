@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"create-traffic-filter-ruleset-association","$ref":"_defs.json#/$defs/FilterAssociation"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"create-traffic-filter-ruleset-association","type":"object","properties":{"ruleset_id":{"type":"string","description":"The mandatory ruleset ID.","x-found-in":"path"}},"required":["ruleset_id"],"allOf":[{"$ref":"_defs.json#/$defs/FilterAssociation"}]}

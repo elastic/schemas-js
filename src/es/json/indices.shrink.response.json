@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.shrink","type":"object","properties":{"acknowledged":{"type":"boolean"},"shards_acknowledged":{"type":"boolean"},"index":{"type":"string"}},"required":["acknowledged","shards_acknowledged","index"]}

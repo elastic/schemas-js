@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"remove-role-assignments","$ref":"_defs.json#/$defs/RoleAssignments"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"remove-role-assignments","type":"object","properties":{"user_id":{"type":"string","description":"Identifier for the user; include realm name and id if required","x-found-in":"path"}},"required":["user_id"],"allOf":[{"$ref":"_defs.json#/$defs/RoleAssignments"}]}

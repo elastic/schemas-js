@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"teardown-organization-idp","type":"object","properties":{"organization_id":{"type":"string","description":"Identifier for the Organization","x-found-in":"path"}},"required":["organization_id"]}

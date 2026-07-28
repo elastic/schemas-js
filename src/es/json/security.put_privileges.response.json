@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.put_privileges","type":"object","additionalProperties":{"type":"object","additionalProperties":{"$ref":"./security._types.json#/$defs/security._types__CreatedStatus"}}}

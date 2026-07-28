@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cluster.remote_info","type":"object","additionalProperties":{"$ref":"./cluster.remote_info.json#/$defs/cluster.remote_info__ClusterRemoteInfo"}}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get_script_languages","type":"object","properties":{},"description":"Get script languages.\n\nGet a list of available script types, languages, and contexts."}

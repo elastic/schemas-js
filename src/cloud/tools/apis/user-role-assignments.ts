@@ -9,7 +9,14 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
+import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
+
+import _add_role_assignmentsSchemaRaw from '../../../cloud/json/add_role_assignments.request.json' with { type: 'json' }
+import _remove_role_assignmentsSchemaRaw from '../../../cloud/json/remove_role_assignments.request.json' with { type: 'json' }
+
+const _add_role_assignmentsSchema = _add_role_assignmentsSchemaRaw as unknown as JsonSchemaObject
+const _remove_role_assignmentsSchema = _remove_role_assignmentsSchemaRaw as unknown as JsonSchemaObject
 
 export const userRoleAssignmentsDefinitions: CloudApiDefinition[] = [
   {
@@ -19,7 +26,7 @@ export const userRoleAssignmentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/users/{user_id}/role_assignments',
     destructive: true,
-    input: { type: 'object', properties: { user_id: { type: 'string', description: 'Identifier for the user; include realm name and id if required', 'x-found-in': 'path' } }, required: ['user_id'] },
+    input: _add_role_assignmentsSchema,
   },
   {
     name: 'remove-role-assignments',
@@ -28,6 +35,6 @@ export const userRoleAssignmentsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/users/{user_id}/role_assignments',
     destructive: true,
-    input: { type: 'object', properties: { user_id: { type: 'string', description: 'Identifier for the user; include realm name and id if required', 'x-found-in': 'path' } }, required: ['user_id'] },
+    input: _remove_role_assignmentsSchema,
   },
 ]

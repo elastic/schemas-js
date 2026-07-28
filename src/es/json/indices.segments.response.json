@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.segments","type":"object","properties":{"indices":{"type":"object","additionalProperties":{"$ref":"./indices.segments.json#/$defs/indices.segments__IndexSegment"}},"_shards":{"$ref":"./_types.json#/$defs/_types__ShardStatistics"}},"required":["indices","_shards"]}

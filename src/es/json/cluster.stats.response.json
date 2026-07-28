@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cluster.stats","$ref":"./cluster.stats.json#/$defs/cluster.stats__StatsResponseBase"}

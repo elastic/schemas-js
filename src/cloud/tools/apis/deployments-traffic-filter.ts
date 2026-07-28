@@ -9,7 +9,34 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
+import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
+
+import _get_traffic_filter_deployment_ruleset_associationsSchemaRaw from '../../../cloud/json/get_traffic_filter_deployment_ruleset_associations.request.json' with { type: 'json' }
+import _get_traffic_filter_claimed_link_idsSchemaRaw from '../../../cloud/json/get_traffic_filter_claimed_link_ids.request.json' with { type: 'json' }
+import _claim_traffic_filter_link_idSchemaRaw from '../../../cloud/json/claim_traffic_filter_link_id.request.json' with { type: 'json' }
+import _unclaim_traffic_filter_link_idSchemaRaw from '../../../cloud/json/unclaim_traffic_filter_link_id.request.json' with { type: 'json' }
+import _get_traffic_filter_rulesetsSchemaRaw from '../../../cloud/json/get_traffic_filter_rulesets.request.json' with { type: 'json' }
+import _create_traffic_filter_rulesetSchemaRaw from '../../../cloud/json/create_traffic_filter_ruleset.request.json' with { type: 'json' }
+import _get_traffic_filter_rulesetSchemaRaw from '../../../cloud/json/get_traffic_filter_ruleset.request.json' with { type: 'json' }
+import _update_traffic_filter_rulesetSchemaRaw from '../../../cloud/json/update_traffic_filter_ruleset.request.json' with { type: 'json' }
+import _delete_traffic_filter_rulesetSchemaRaw from '../../../cloud/json/delete_traffic_filter_ruleset.request.json' with { type: 'json' }
+import _get_traffic_filter_ruleset_deployment_associationsSchemaRaw from '../../../cloud/json/get_traffic_filter_ruleset_deployment_associations.request.json' with { type: 'json' }
+import _create_traffic_filter_ruleset_associationSchemaRaw from '../../../cloud/json/create_traffic_filter_ruleset_association.request.json' with { type: 'json' }
+import _delete_traffic_filter_ruleset_associationSchemaRaw from '../../../cloud/json/delete_traffic_filter_ruleset_association.request.json' with { type: 'json' }
+
+const _get_traffic_filter_deployment_ruleset_associationsSchema = _get_traffic_filter_deployment_ruleset_associationsSchemaRaw as unknown as JsonSchemaObject
+const _get_traffic_filter_claimed_link_idsSchema = _get_traffic_filter_claimed_link_idsSchemaRaw as unknown as JsonSchemaObject
+const _claim_traffic_filter_link_idSchema = _claim_traffic_filter_link_idSchemaRaw as unknown as JsonSchemaObject
+const _unclaim_traffic_filter_link_idSchema = _unclaim_traffic_filter_link_idSchemaRaw as unknown as JsonSchemaObject
+const _get_traffic_filter_rulesetsSchema = _get_traffic_filter_rulesetsSchemaRaw as unknown as JsonSchemaObject
+const _create_traffic_filter_rulesetSchema = _create_traffic_filter_rulesetSchemaRaw as unknown as JsonSchemaObject
+const _get_traffic_filter_rulesetSchema = _get_traffic_filter_rulesetSchemaRaw as unknown as JsonSchemaObject
+const _update_traffic_filter_rulesetSchema = _update_traffic_filter_rulesetSchemaRaw as unknown as JsonSchemaObject
+const _delete_traffic_filter_rulesetSchema = _delete_traffic_filter_rulesetSchemaRaw as unknown as JsonSchemaObject
+const _get_traffic_filter_ruleset_deployment_associationsSchema = _get_traffic_filter_ruleset_deployment_associationsSchemaRaw as unknown as JsonSchemaObject
+const _create_traffic_filter_ruleset_associationSchema = _create_traffic_filter_ruleset_associationSchemaRaw as unknown as JsonSchemaObject
+const _delete_traffic_filter_ruleset_associationSchema = _delete_traffic_filter_ruleset_associationSchemaRaw as unknown as JsonSchemaObject
 
 export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
   {
@@ -19,7 +46,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/traffic-filter/associations/{association_type}/{associated_entity_id}/rulesets',
     destructive: false,
-    input: { type: 'object', properties: { association_type: { type: 'string', description: 'Association type', 'x-found-in': 'path' }, associated_entity_id: { type: 'string', description: 'Associated entity ID', 'x-found-in': 'path' } }, required: ['association_type', 'associated_entity_id'] },
+    input: _get_traffic_filter_deployment_ruleset_associationsSchema,
   },
   {
     name: 'get-traffic-filter-claimed-link-ids',
@@ -28,7 +55,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/traffic-filter/link-ids',
     destructive: false,
-    input: { type: 'object', properties: { region: { type: 'string', description: 'If provided limits the claimed id to that region only.', 'x-found-in': 'query' }, organization_id: { type: 'string', description: 'Retrieves a list of resources that are associated to the specified organization ID. It only takes effect if the user is an admin.', 'x-found-in': 'query' } } },
+    input: _get_traffic_filter_claimed_link_idsSchema,
   },
   {
     name: 'claim-traffic-filter-link-id',
@@ -37,6 +64,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/traffic-filter/link-ids/_claim',
     destructive: true,
+    input: _claim_traffic_filter_link_idSchema,
   },
   {
     name: 'unclaim-traffic-filter-link-id',
@@ -45,6 +73,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/traffic-filter/link-ids/_unclaim',
     destructive: true,
+    input: _unclaim_traffic_filter_link_idSchema,
   },
   {
     name: 'get-traffic-filter-rulesets',
@@ -53,7 +82,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/traffic-filter/rulesets',
     destructive: false,
-    input: { type: 'object', properties: { include_associations: { type: 'boolean', description: 'Retrieves a list of resources that are associated to the specified ruleset.', 'x-found-in': 'query' }, region: { type: 'string', description: 'If provided limits the rulesets to that region only.', 'x-found-in': 'query' }, organization_id: { type: 'string', description: 'Retrieves a list of resources that are associated to the specified organization ID. It only takes effect if the user is an admin.', 'x-found-in': 'query' } } },
+    input: _get_traffic_filter_rulesetsSchema,
   },
   {
     name: 'create-traffic-filter-ruleset',
@@ -62,6 +91,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/traffic-filter/rulesets',
     destructive: false,
+    input: _create_traffic_filter_rulesetSchema,
   },
   {
     name: 'get-traffic-filter-ruleset',
@@ -70,7 +100,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/traffic-filter/rulesets/{ruleset_id}',
     destructive: false,
-    input: { type: 'object', properties: { ruleset_id: { type: 'string', description: 'The mandatory ruleset ID.', 'x-found-in': 'path' }, include_associations: { type: 'boolean', description: 'Retrieves a list of resources that are associated to the specified ruleset.', 'x-found-in': 'query' } }, required: ['ruleset_id'] },
+    input: _get_traffic_filter_rulesetSchema,
   },
   {
     name: 'update-traffic-filter-ruleset',
@@ -79,7 +109,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/deployments/traffic-filter/rulesets/{ruleset_id}',
     destructive: true,
-    input: { type: 'object', properties: { ruleset_id: { type: 'string', description: 'The mandatory ruleset ID.', 'x-found-in': 'path' } }, required: ['ruleset_id'] },
+    input: _update_traffic_filter_rulesetSchema,
   },
   {
     name: 'delete-traffic-filter-ruleset',
@@ -88,7 +118,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/deployments/traffic-filter/rulesets/{ruleset_id}',
     destructive: true,
-    input: { type: 'object', properties: { ruleset_id: { type: 'string', description: 'The mandatory ruleset ID.', 'x-found-in': 'path' }, ignore_associations: { type: 'boolean', description: 'When true, ignores the associations and deletes the ruleset. When false, recognizes the associations, which prevents the deletion of the rule set.', 'x-found-in': 'query' } }, required: ['ruleset_id'] },
+    input: _delete_traffic_filter_rulesetSchema,
   },
   {
     name: 'get-traffic-filter-ruleset-deployment-associations',
@@ -97,7 +127,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/traffic-filter/rulesets/{ruleset_id}/associations',
     destructive: false,
-    input: { type: 'object', properties: { ruleset_id: { type: 'string', description: 'The mandatory ruleset ID.', 'x-found-in': 'path' } }, required: ['ruleset_id'] },
+    input: _get_traffic_filter_ruleset_deployment_associationsSchema,
   },
   {
     name: 'create-traffic-filter-ruleset-association',
@@ -106,7 +136,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/traffic-filter/rulesets/{ruleset_id}/associations',
     destructive: false,
-    input: { type: 'object', properties: { ruleset_id: { type: 'string', description: 'The mandatory ruleset ID.', 'x-found-in': 'path' } }, required: ['ruleset_id'] },
+    input: _create_traffic_filter_ruleset_associationSchema,
   },
   {
     name: 'delete-traffic-filter-ruleset-association',
@@ -115,6 +145,6 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/deployments/traffic-filter/rulesets/{ruleset_id}/associations/{association_type}/{associated_entity_id}',
     destructive: true,
-    input: { type: 'object', properties: { ruleset_id: { type: 'string', description: 'The mandatory ruleset ID.', 'x-found-in': 'path' }, association_type: { type: 'string', description: 'Association type', 'x-found-in': 'path' }, associated_entity_id: { type: 'string', description: 'Associated entity ID', 'x-found-in': 'path' } }, required: ['ruleset_id', 'association_type', 'associated_entity_id'] },
+    input: _delete_traffic_filter_ruleset_associationSchema,
   },
 ]

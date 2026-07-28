@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"snapshot.restore","type":"object","properties":{"accepted":{"type":"boolean"},"snapshot":{"$ref":"./snapshot.restore.json#/$defs/snapshot.restore__SnapshotRestore"}}}

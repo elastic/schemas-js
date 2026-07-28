@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"migration.post_feature_upgrade__MigrationFeature":{"type":"object","properties":{"feature_name":{"type":"string"}},"required":["feature_name"]}}}

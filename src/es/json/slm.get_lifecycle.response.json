@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"slm.get_lifecycle","type":"object","additionalProperties":{"$ref":"./slm._types.json#/$defs/slm._types__SnapshotLifecycle"}}

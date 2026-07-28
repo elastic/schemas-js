@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"watcher.put_watch","type":"object","properties":{"created":{"type":"boolean"},"_id":{"type":"string"},"_primary_term":{"type":"number"},"_seq_no":{"type":"number"},"_version":{"type":"number"}},"required":["created","_id","_primary_term","_seq_no","_version"]}

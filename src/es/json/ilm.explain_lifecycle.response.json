@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ilm.explain_lifecycle","type":"object","properties":{"indices":{"type":"object","additionalProperties":{"$ref":"./ilm.explain_lifecycle.json#/$defs/ilm.explain_lifecycle__LifecycleExplain"}}},"required":["indices"]}

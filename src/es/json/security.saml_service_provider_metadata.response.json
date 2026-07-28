@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.saml_service_provider_metadata","type":"object","properties":{"metadata":{"type":"string","description":"An XML string that contains a SAML Service Provider's metadata for the realm."}},"required":["metadata"]}

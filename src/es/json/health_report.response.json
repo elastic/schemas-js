@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"health_report","type":"object","properties":{"cluster_name":{"type":"string"},"indicators":{"$ref":"./_global.health_report.json#/$defs/_global.health_report__Indicators"},"status":{"$ref":"./_global.health_report.json#/$defs/_global.health_report__IndicatorHealthStatus"}},"required":["cluster_name","indicators"]}

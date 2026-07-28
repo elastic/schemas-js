@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"snapshot.cleanup_repository","type":"object","properties":{"results":{"$ref":"./snapshot.cleanup_repository.json#/$defs/snapshot.cleanup_repository__CleanupRepositoryResults","description":"Statistics for cleanup operations."}},"required":["results"]}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.grant_api_key","type":"object","properties":{"api_key":{"type":"string"},"id":{"type":"string"},"name":{"type":"string"},"expiration":{},"encoded":{"type":"string"}},"required":["api_key","id","name","encoded"]}

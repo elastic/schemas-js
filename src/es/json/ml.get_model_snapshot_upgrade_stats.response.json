@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.get_model_snapshot_upgrade_stats","type":"object","properties":{"count":{"type":"number"},"model_snapshot_upgrades":{"type":"array","items":{"$ref":"./ml._types.json#/$defs/ml._types__ModelSnapshotUpgrade"}}},"required":["count","model_snapshot_upgrades"]}

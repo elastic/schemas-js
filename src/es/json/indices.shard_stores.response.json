@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.shard_stores","type":"object","properties":{"indices":{"type":"object","additionalProperties":{"$ref":"./indices.shard_stores.json#/$defs/indices.shard_stores__IndicesShardStores"}}},"required":["indices"]}

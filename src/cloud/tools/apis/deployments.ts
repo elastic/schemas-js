@@ -9,7 +9,114 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
+import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
+
+import _create_deploymentSchemaRaw from '../../../cloud/json/create_deployment.request.json' with { type: 'json' }
+import _search_deploymentsSchemaRaw from '../../../cloud/json/search_deployments.request.json' with { type: 'json' }
+import _search_eligible_remote_clustersSchemaRaw from '../../../cloud/json/search_eligible_remote_clusters.request.json' with { type: 'json' }
+import _get_deploymentSchemaRaw from '../../../cloud/json/get_deployment.request.json' with { type: 'json' }
+import _update_deploymentSchemaRaw from '../../../cloud/json/update_deployment.request.json' with { type: 'json' }
+import _restore_deploymentSchemaRaw from '../../../cloud/json/restore_deployment.request.json' with { type: 'json' }
+import _shutdown_deploymentSchemaRaw from '../../../cloud/json/shutdown_deployment.request.json' with { type: 'json' }
+import _get_deployment_apm_resource_infoSchemaRaw from '../../../cloud/json/get_deployment_apm_resource_info.request.json' with { type: 'json' }
+import _deployment_apm_reset_secret_tokenSchemaRaw from '../../../cloud/json/deployment_apm_reset_secret_token.request.json' with { type: 'json' }
+import _get_deployment_appsearch_resource_infoSchemaRaw from '../../../cloud/json/get_deployment_appsearch_resource_info.request.json' with { type: 'json' }
+import _get_appsearch_read_only_modeSchemaRaw from '../../../cloud/json/get_appsearch_read_only_mode.request.json' with { type: 'json' }
+import _set_appsearch_read_only_modeSchemaRaw from '../../../cloud/json/set_appsearch_read_only_mode.request.json' with { type: 'json' }
+import _get_deployment_certificate_authoritySchemaRaw from '../../../cloud/json/get_deployment_certificate_authority.request.json' with { type: 'json' }
+import _get_deployment_es_resource_infoSchemaRaw from '../../../cloud/json/get_deployment_es_resource_info.request.json' with { type: 'json' }
+import _enable_deployment_resource_ccrSchemaRaw from '../../../cloud/json/enable_deployment_resource_ccr.request.json' with { type: 'json' }
+import _enable_deployment_resource_ilmSchemaRaw from '../../../cloud/json/enable_deployment_resource_ilm.request.json' with { type: 'json' }
+import _enable_deployment_resource_slmSchemaRaw from '../../../cloud/json/enable_deployment_resource_slm.request.json' with { type: 'json' }
+import _reset_elasticsearch_user_passwordSchemaRaw from '../../../cloud/json/reset_elasticsearch_user_password.request.json' with { type: 'json' }
+import _restart_deployment_es_resourceSchemaRaw from '../../../cloud/json/restart_deployment_es_resource.request.json' with { type: 'json' }
+import _shutdown_deployment_es_resourceSchemaRaw from '../../../cloud/json/shutdown_deployment_es_resource.request.json' with { type: 'json' }
+import _get_deployment_es_resource_eligible_remote_clustersSchemaRaw from '../../../cloud/json/get_deployment_es_resource_eligible_remote_clusters.request.json' with { type: 'json' }
+import _get_deployment_es_resource_keystoreSchemaRaw from '../../../cloud/json/get_deployment_es_resource_keystore.request.json' with { type: 'json' }
+import _set_deployment_es_resource_keystoreSchemaRaw from '../../../cloud/json/set_deployment_es_resource_keystore.request.json' with { type: 'json' }
+import _get_deployment_es_resource_remote_clustersSchemaRaw from '../../../cloud/json/get_deployment_es_resource_remote_clusters.request.json' with { type: 'json' }
+import _set_deployment_es_resource_remote_clustersSchemaRaw from '../../../cloud/json/set_deployment_es_resource_remote_clusters.request.json' with { type: 'json' }
+import _get_deployment_es_resource_snapshot_repositorySchemaRaw from '../../../cloud/json/get_deployment_es_resource_snapshot_repository.request.json' with { type: 'json' }
+import _create_deployment_es_resource_snapshot_repositorySchemaRaw from '../../../cloud/json/create_deployment_es_resource_snapshot_repository.request.json' with { type: 'json' }
+import _delete_deployment_es_resource_snapshot_repositorySchemaRaw from '../../../cloud/json/delete_deployment_es_resource_snapshot_repository.request.json' with { type: 'json' }
+import _get_deployment_es_resource_tiersSchemaRaw from '../../../cloud/json/get_deployment_es_resource_tiers.request.json' with { type: 'json' }
+import _update_deployment_es_resource_tierSchemaRaw from '../../../cloud/json/update_deployment_es_resource_tier.request.json' with { type: 'json' }
+import _get_deployment_enterprise_search_resource_infoSchemaRaw from '../../../cloud/json/get_deployment_enterprise_search_resource_info.request.json' with { type: 'json' }
+import _get_deployment_integrations_server_resource_infoSchemaRaw from '../../../cloud/json/get_deployment_integrations_server_resource_info.request.json' with { type: 'json' }
+import _get_deployment_kib_resource_infoSchemaRaw from '../../../cloud/json/get_deployment_kib_resource_info.request.json' with { type: 'json' }
+import _migrate_deployment_templateSchemaRaw from '../../../cloud/json/migrate_deployment_template.request.json' with { type: 'json' }
+import _get_deployment_tagsSchemaRaw from '../../../cloud/json/get_deployment_tags.request.json' with { type: 'json' }
+import _set_deployment_tagsSchemaRaw from '../../../cloud/json/set_deployment_tags.request.json' with { type: 'json' }
+import _upgrade_deploymentSchemaRaw from '../../../cloud/json/upgrade_deployment.request.json' with { type: 'json' }
+import _get_deployment_upgrade_assistant_statusSchemaRaw from '../../../cloud/json/get_deployment_upgrade_assistant_status.request.json' with { type: 'json' }
+import _restore_deployment_resourceSchemaRaw from '../../../cloud/json/restore_deployment_resource.request.json' with { type: 'json' }
+import _start_deployment_resource_instances_allSchemaRaw from '../../../cloud/json/start_deployment_resource_instances_all.request.json' with { type: 'json' }
+import _stop_deployment_resource_instances_allSchemaRaw from '../../../cloud/json/stop_deployment_resource_instances_all.request.json' with { type: 'json' }
+import _start_deployment_resource_instances_all_maintenance_modeSchemaRaw from '../../../cloud/json/start_deployment_resource_instances_all_maintenance_mode.request.json' with { type: 'json' }
+import _stop_deployment_resource_instances_all_maintenance_modeSchemaRaw from '../../../cloud/json/stop_deployment_resource_instances_all_maintenance_mode.request.json' with { type: 'json' }
+import _start_deployment_resource_instancesSchemaRaw from '../../../cloud/json/start_deployment_resource_instances.request.json' with { type: 'json' }
+import _stop_deployment_resource_instancesSchemaRaw from '../../../cloud/json/stop_deployment_resource_instances.request.json' with { type: 'json' }
+import _start_deployment_resource_maintenance_modeSchemaRaw from '../../../cloud/json/start_deployment_resource_maintenance_mode.request.json' with { type: 'json' }
+import _stop_deployment_resource_maintenance_modeSchemaRaw from '../../../cloud/json/stop_deployment_resource_maintenance_mode.request.json' with { type: 'json' }
+import _cancel_deployment_resource_pending_planSchemaRaw from '../../../cloud/json/cancel_deployment_resource_pending_plan.request.json' with { type: 'json' }
+import _get_deployment_resource_user_settingsSchemaRaw from '../../../cloud/json/get_deployment_resource_user_settings.request.json' with { type: 'json' }
+import _update_deployment_resource_user_settingsSchemaRaw from '../../../cloud/json/update_deployment_resource_user_settings.request.json' with { type: 'json' }
+import _restart_deployment_stateless_resourceSchemaRaw from '../../../cloud/json/restart_deployment_stateless_resource.request.json' with { type: 'json' }
+import _shutdown_deployment_stateless_resourceSchemaRaw from '../../../cloud/json/shutdown_deployment_stateless_resource.request.json' with { type: 'json' }
+
+const _create_deploymentSchema = _create_deploymentSchemaRaw as unknown as JsonSchemaObject
+const _search_deploymentsSchema = _search_deploymentsSchemaRaw as unknown as JsonSchemaObject
+const _search_eligible_remote_clustersSchema = _search_eligible_remote_clustersSchemaRaw as unknown as JsonSchemaObject
+const _get_deploymentSchema = _get_deploymentSchemaRaw as unknown as JsonSchemaObject
+const _update_deploymentSchema = _update_deploymentSchemaRaw as unknown as JsonSchemaObject
+const _restore_deploymentSchema = _restore_deploymentSchemaRaw as unknown as JsonSchemaObject
+const _shutdown_deploymentSchema = _shutdown_deploymentSchemaRaw as unknown as JsonSchemaObject
+const _get_deployment_apm_resource_infoSchema = _get_deployment_apm_resource_infoSchemaRaw as unknown as JsonSchemaObject
+const _deployment_apm_reset_secret_tokenSchema = _deployment_apm_reset_secret_tokenSchemaRaw as unknown as JsonSchemaObject
+const _get_deployment_appsearch_resource_infoSchema = _get_deployment_appsearch_resource_infoSchemaRaw as unknown as JsonSchemaObject
+const _get_appsearch_read_only_modeSchema = _get_appsearch_read_only_modeSchemaRaw as unknown as JsonSchemaObject
+const _set_appsearch_read_only_modeSchema = _set_appsearch_read_only_modeSchemaRaw as unknown as JsonSchemaObject
+const _get_deployment_certificate_authoritySchema = _get_deployment_certificate_authoritySchemaRaw as unknown as JsonSchemaObject
+const _get_deployment_es_resource_infoSchema = _get_deployment_es_resource_infoSchemaRaw as unknown as JsonSchemaObject
+const _enable_deployment_resource_ccrSchema = _enable_deployment_resource_ccrSchemaRaw as unknown as JsonSchemaObject
+const _enable_deployment_resource_ilmSchema = _enable_deployment_resource_ilmSchemaRaw as unknown as JsonSchemaObject
+const _enable_deployment_resource_slmSchema = _enable_deployment_resource_slmSchemaRaw as unknown as JsonSchemaObject
+const _reset_elasticsearch_user_passwordSchema = _reset_elasticsearch_user_passwordSchemaRaw as unknown as JsonSchemaObject
+const _restart_deployment_es_resourceSchema = _restart_deployment_es_resourceSchemaRaw as unknown as JsonSchemaObject
+const _shutdown_deployment_es_resourceSchema = _shutdown_deployment_es_resourceSchemaRaw as unknown as JsonSchemaObject
+const _get_deployment_es_resource_eligible_remote_clustersSchema = _get_deployment_es_resource_eligible_remote_clustersSchemaRaw as unknown as JsonSchemaObject
+const _get_deployment_es_resource_keystoreSchema = _get_deployment_es_resource_keystoreSchemaRaw as unknown as JsonSchemaObject
+const _set_deployment_es_resource_keystoreSchema = _set_deployment_es_resource_keystoreSchemaRaw as unknown as JsonSchemaObject
+const _get_deployment_es_resource_remote_clustersSchema = _get_deployment_es_resource_remote_clustersSchemaRaw as unknown as JsonSchemaObject
+const _set_deployment_es_resource_remote_clustersSchema = _set_deployment_es_resource_remote_clustersSchemaRaw as unknown as JsonSchemaObject
+const _get_deployment_es_resource_snapshot_repositorySchema = _get_deployment_es_resource_snapshot_repositorySchemaRaw as unknown as JsonSchemaObject
+const _create_deployment_es_resource_snapshot_repositorySchema = _create_deployment_es_resource_snapshot_repositorySchemaRaw as unknown as JsonSchemaObject
+const _delete_deployment_es_resource_snapshot_repositorySchema = _delete_deployment_es_resource_snapshot_repositorySchemaRaw as unknown as JsonSchemaObject
+const _get_deployment_es_resource_tiersSchema = _get_deployment_es_resource_tiersSchemaRaw as unknown as JsonSchemaObject
+const _update_deployment_es_resource_tierSchema = _update_deployment_es_resource_tierSchemaRaw as unknown as JsonSchemaObject
+const _get_deployment_enterprise_search_resource_infoSchema = _get_deployment_enterprise_search_resource_infoSchemaRaw as unknown as JsonSchemaObject
+const _get_deployment_integrations_server_resource_infoSchema = _get_deployment_integrations_server_resource_infoSchemaRaw as unknown as JsonSchemaObject
+const _get_deployment_kib_resource_infoSchema = _get_deployment_kib_resource_infoSchemaRaw as unknown as JsonSchemaObject
+const _migrate_deployment_templateSchema = _migrate_deployment_templateSchemaRaw as unknown as JsonSchemaObject
+const _get_deployment_tagsSchema = _get_deployment_tagsSchemaRaw as unknown as JsonSchemaObject
+const _set_deployment_tagsSchema = _set_deployment_tagsSchemaRaw as unknown as JsonSchemaObject
+const _upgrade_deploymentSchema = _upgrade_deploymentSchemaRaw as unknown as JsonSchemaObject
+const _get_deployment_upgrade_assistant_statusSchema = _get_deployment_upgrade_assistant_statusSchemaRaw as unknown as JsonSchemaObject
+const _restore_deployment_resourceSchema = _restore_deployment_resourceSchemaRaw as unknown as JsonSchemaObject
+const _start_deployment_resource_instances_allSchema = _start_deployment_resource_instances_allSchemaRaw as unknown as JsonSchemaObject
+const _stop_deployment_resource_instances_allSchema = _stop_deployment_resource_instances_allSchemaRaw as unknown as JsonSchemaObject
+const _start_deployment_resource_instances_all_maintenance_modeSchema = _start_deployment_resource_instances_all_maintenance_modeSchemaRaw as unknown as JsonSchemaObject
+const _stop_deployment_resource_instances_all_maintenance_modeSchema = _stop_deployment_resource_instances_all_maintenance_modeSchemaRaw as unknown as JsonSchemaObject
+const _start_deployment_resource_instancesSchema = _start_deployment_resource_instancesSchemaRaw as unknown as JsonSchemaObject
+const _stop_deployment_resource_instancesSchema = _stop_deployment_resource_instancesSchemaRaw as unknown as JsonSchemaObject
+const _start_deployment_resource_maintenance_modeSchema = _start_deployment_resource_maintenance_modeSchemaRaw as unknown as JsonSchemaObject
+const _stop_deployment_resource_maintenance_modeSchema = _stop_deployment_resource_maintenance_modeSchemaRaw as unknown as JsonSchemaObject
+const _cancel_deployment_resource_pending_planSchema = _cancel_deployment_resource_pending_planSchemaRaw as unknown as JsonSchemaObject
+const _get_deployment_resource_user_settingsSchema = _get_deployment_resource_user_settingsSchemaRaw as unknown as JsonSchemaObject
+const _update_deployment_resource_user_settingsSchema = _update_deployment_resource_user_settingsSchemaRaw as unknown as JsonSchemaObject
+const _restart_deployment_stateless_resourceSchema = _restart_deployment_stateless_resourceSchemaRaw as unknown as JsonSchemaObject
+const _shutdown_deployment_stateless_resourceSchema = _shutdown_deployment_stateless_resourceSchemaRaw as unknown as JsonSchemaObject
 
 export const deploymentsDefinitions: CloudApiDefinition[] = [
   {
@@ -27,7 +134,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments',
     destructive: false,
-    input: { type: 'object', properties: { request_id: { type: 'string', description: 'An optional idempotency token - if two create requests share the same request_id token (min size 32 characters, max 128) then only one deployment will be created, the second request will return the info of that deployment (in the same format described below, but with blanks for auth-related fields)', 'x-found-in': 'query' }, validate_only: { type: 'boolean', description: 'If true, will just validate the Deployment definition but will not perform the creation', 'x-found-in': 'query' }, template_id: { type: 'string', description: 'An optional template id - if present, the referenced template will be used to fill in the resources field of the deployment creation request. If any resources are present in the request together with the template, the ones coming in the request will prevail and no merging with the template will be performed.', 'x-found-in': 'query' } } },
+    input: _create_deploymentSchema,
   },
   {
     name: 'search-deployments',
@@ -36,7 +143,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/_search',
     destructive: true,
-    input: { type: 'object', properties: { minimal_metadata: { type: 'string', description: 'Comma separated list of attributes to include in response for deployments found. Useful for reducing response size when retrieving many deployments. Use of this parameter moves the result to the minimal_metadata section of the response.', 'x-found-in': 'query' } } },
+    input: _search_deploymentsSchema,
   },
   {
     name: 'search-eligible-remote-clusters',
@@ -45,7 +152,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/eligible-remote-clusters',
     destructive: true,
-    input: { type: 'object', properties: { version: { type: 'string', description: 'The version of the Elasticsearch cluster cluster that will potentially be configured to have remote clusters.', 'x-found-in': 'query' } }, required: ['version'] },
+    input: _search_eligible_remote_clustersSchema,
   },
   {
     name: 'get-deployment',
@@ -54,7 +161,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}',
     destructive: false,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, show_security: { type: 'boolean', description: 'Whether to include the Elasticsearch 2.x security information in the response - can be large per cluster and also include credentials', 'x-found-in': 'query' }, show_metadata: { type: 'boolean', description: 'Whether to include the full cluster metadata in the response - can be large per cluster and also include credentials', 'x-found-in': 'query' }, show_plans: { type: 'boolean', description: 'Whether to include the full current and pending plan information in the response - can be large per cluster', 'x-found-in': 'query' }, show_plan_logs: { type: 'boolean', description: 'Whether to include with the current and pending plan information the attempt log - can be very large per cluster', 'x-found-in': 'query' }, show_plan_history: { type: 'boolean', description: 'Whether to include the plan history with the current and pending plan information. The results can be very large per cluster.\n By default, if a given resource kind (e.g. Elasticsearch, Kibana, etc.) has more than 100 plans\n (which should be very rare, most likely caused by a bug) only 100 plans are returned for the given resource type:\n The first 10 plans, and the last 90 plans for that resource type.\n If ALL of the plans are desired, pass the `force_all_plan_history` parameter with a value of `true`.\n', 'x-found-in': 'query' }, show_plan_defaults: { type: 'boolean', description: 'If showing plans, whether to show values that are left at their default value (less readable but more informative)', 'x-found-in': 'query' }, convert_legacy_plans: { type: 'boolean', description: "If showing plans, whether to leave pre-2.0.0 plans in their legacy format (the default), or whether to update them to 2.0.x+ format (if 'true')", 'x-found-in': 'query' }, show_system_alerts: { type: 'number', description: 'Number of system alerts (such as forced restarts due to memory limits) to be included in the response - can be large per cluster. Negative numbers or 0 will not return field.', 'x-found-in': 'query' }, show_settings: { type: 'boolean', description: 'Whether to show cluster settings in the response.', 'x-found-in': 'query' }, show_instance_metrics: { type: 'boolean', description: 'Whether to show resources instance metrics in the response.', 'x-found-in': 'query' }, show_instance_configurations: { type: 'boolean', description: 'If true, will return details for each instance configuration referenced by the deployment.', 'x-found-in': 'query' }, enrich_with_template: { type: 'boolean', description: 'If showing plans, whether to enrich the plan by including the missing elements from the deployment template it is based on', 'x-found-in': 'query' }, force_all_plan_history: { type: 'boolean', description: 'Force show the entire plan history no matter how long.\n As noted in the `show_plan_history` parameter description, by default, a maximum of 100 plans are shown per resource. \n If `true`, this parameter overrides the default, and ALL plans are returned.\n Use with care as the plan history can be VERY large. Consider pairing with `show_plan_logs=false`.\n ', 'x-found-in': 'query' }, clear_transient: { type: 'boolean', description: 'If set (defaults to false) then removes the transient section from all child resources, making it safe to reapply via an update', 'x-found-in': 'query' } }, required: ['deployment_id'] },
+    input: _get_deploymentSchema,
   },
   {
     name: 'update-deployment',
@@ -63,7 +170,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/deployments/{deployment_id}',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, hide_pruned_orphans: { type: 'boolean', description: 'Whether or not to hide orphaned resources that were shut down (relevant if prune on the request is true)', 'x-found-in': 'query' }, skip_snapshot: { type: 'boolean', description: 'Whether or not to skip snapshots before shutting down orphaned resources (relevant if prune on the request is true)', 'x-found-in': 'query' }, validate_only: { type: 'boolean', description: 'If true, will just validate the Deployment definition but will not perform the update', 'x-found-in': 'query' }, version: { type: 'string', description: "If specified then checks for conflicts against the version stored in the persistent store (returned in 'x-cloud-resource-version' of the GET request)", 'x-found-in': 'query' } }, required: ['deployment_id'] },
+    input: _update_deploymentSchema,
   },
   {
     name: 'restore-deployment',
@@ -72,7 +179,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/_restore',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, restore_snapshot: { type: 'boolean', description: 'Whether or not to restore a snapshot for those resources that allow it.', 'x-found-in': 'query' } }, required: ['deployment_id'] },
+    input: _restore_deploymentSchema,
   },
   {
     name: 'shutdown-deployment',
@@ -81,7 +188,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/_shutdown',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, hide: { type: 'boolean', description: 'Whether or not to hide the deployment and its resources.Only applicable for Platform administrators.', 'x-found-in': 'query' }, skip_snapshot: { type: 'boolean', description: 'Whether or not to skip snapshots before shutting down the resources', 'x-found-in': 'query' } }, required: ['deployment_id'] },
+    input: _shutdown_deploymentSchema,
   },
   {
     name: 'get-deployment-apm-resource-info',
@@ -90,7 +197,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/apm/{ref_id}',
     destructive: false,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' }, show_metadata: { type: 'boolean', description: 'Whether to include the full cluster metadata in the response - can be large per cluster and also include credentials.', 'x-found-in': 'query' }, show_plans: { type: 'boolean', description: 'Whether to include the full current and pending plan information in the response - can be large per cluster.', 'x-found-in': 'query' }, show_plan_logs: { type: 'boolean', description: 'Whether to include with the current and pending plan information the attempt log - can be very large per cluster.', 'x-found-in': 'query' }, show_plan_history: { type: 'boolean', description: 'Whether to include with the current and pending plan information the plan history- can be very large per cluster.', 'x-found-in': 'query' }, show_plan_defaults: { type: 'boolean', description: 'If showing plans, whether to show values that are left at their default value (less readable but more informative).', 'x-found-in': 'query' }, show_settings: { type: 'boolean', description: 'Whether to show cluster settings in the response.', 'x-found-in': 'query' }, clear_transient: { type: 'boolean', description: 'If set (defaults to false) then removes the transient section from all child resources, making it safe to reapply via an update', 'x-found-in': 'query' } }, required: ['deployment_id', 'ref_id'] },
+    input: _get_deployment_apm_resource_infoSchema,
   },
   {
     name: 'deployment-apm-reset-secret-token',
@@ -99,7 +206,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/apm/{ref_id}/_reset-token',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' } }, required: ['deployment_id', 'ref_id'] },
+    input: _deployment_apm_reset_secret_tokenSchema,
   },
   {
     name: 'get-deployment-appsearch-resource-info',
@@ -108,7 +215,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/appsearch/{ref_id}',
     destructive: false,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' }, show_metadata: { type: 'boolean', description: 'Whether to include the full cluster metadata in the response - can be large per cluster and also include credentials.', 'x-found-in': 'query' }, show_plans: { type: 'boolean', description: 'Whether to include the full current and pending plan information in the response - can be large per cluster.', 'x-found-in': 'query' }, show_plan_logs: { type: 'boolean', description: 'Whether to include with the current and pending plan information the attempt log - can be very large per cluster.', 'x-found-in': 'query' }, show_plan_history: { type: 'boolean', description: 'Whether to include with the current and pending plan information the plan history- can be very large per cluster.', 'x-found-in': 'query' }, show_plan_defaults: { type: 'boolean', description: 'If showing plans, whether to show values that are left at their default value (less readable but more informative).', 'x-found-in': 'query' }, show_settings: { type: 'boolean', description: 'Whether to show cluster settings in the response.', 'x-found-in': 'query' }, clear_transient: { type: 'boolean', description: 'If set (defaults to false) then removes the transient section from all child resources, making it safe to reapply via an update', 'x-found-in': 'query' } }, required: ['deployment_id', 'ref_id'] },
+    input: _get_deployment_appsearch_resource_infoSchema,
   },
   {
     name: 'get-appsearch-read-only-mode',
@@ -117,7 +224,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/appsearch/{ref_id}/read_only_mode',
     destructive: false,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' } }, required: ['deployment_id', 'ref_id'] },
+    input: _get_appsearch_read_only_modeSchema,
   },
   {
     name: 'set-appsearch-read-only-mode',
@@ -126,7 +233,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/deployments/{deployment_id}/appsearch/{ref_id}/read_only_mode',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' } }, required: ['deployment_id', 'ref_id'] },
+    input: _set_appsearch_read_only_modeSchema,
   },
   {
     name: 'get-deployment-certificate-authority',
@@ -135,7 +242,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/certificate-authority',
     destructive: false,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' } }, required: ['deployment_id'] },
+    input: _get_deployment_certificate_authoritySchema,
   },
   {
     name: 'get-deployment-es-resource-info',
@@ -144,7 +251,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}',
     destructive: false,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' }, show_security: { type: 'boolean', description: 'Whether to include the Elasticsearch 2.x security information in the response - can be large per cluster and also include credentials.', 'x-found-in': 'query' }, show_metadata: { type: 'boolean', description: 'Whether to include the full cluster metadata in the response - can be large per cluster and also include credentials.', 'x-found-in': 'query' }, show_plans: { type: 'boolean', description: 'Whether to include the full current and pending plan information in the response - can be large per cluster.', 'x-found-in': 'query' }, show_plan_logs: { type: 'boolean', description: 'Whether to include with the current and pending plan information the attempt log - can be very large per cluster.', 'x-found-in': 'query' }, show_plan_history: { type: 'boolean', description: 'Whether to include with the current and pending plan information the plan history- can be very large per cluster.', 'x-found-in': 'query' }, show_plan_defaults: { type: 'boolean', description: 'If showing plans, whether to show values that are left at their default value (less readable but more informative).', 'x-found-in': 'query' }, convert_legacy_plans: { type: 'boolean', description: "If showing plans, whether to leave pre-2.0.0 plans in their legacy format (the default), or whether to update them to 2.0.x+ format (if 'true').", 'x-found-in': 'query' }, show_system_alerts: { type: 'number', description: 'Number of system alerts (such as forced restarts due to memory limits) to be included in the response - can be large per cluster. Negative numbers or 0 will not return field.', 'x-found-in': 'query' }, show_settings: { type: 'boolean', description: 'Whether to show cluster settings in the response.', 'x-found-in': 'query' }, enrich_with_template: { type: 'boolean', description: 'If showing plans, whether to enrich the plan by including the missing elements from the deployment template it is based on.', 'x-found-in': 'query' }, clear_transient: { type: 'boolean', description: 'If set (defaults to false) then removes the transient section from all child resources, making it safe to reapply via an update', 'x-found-in': 'query' } }, required: ['deployment_id', 'ref_id'] },
+    input: _get_deployment_es_resource_infoSchema,
   },
   {
     name: 'enable-deployment-resource-ccr',
@@ -153,7 +260,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/_enable-ccr',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' }, validate_only: { type: 'boolean', description: 'When `true`, will not enable CCR but returns warnings if any elements may lose availability during CCR enablement', 'x-found-in': 'query' } }, required: ['deployment_id', 'ref_id'] },
+    input: _enable_deployment_resource_ccrSchema,
   },
   {
     name: 'enable-deployment-resource-ilm',
@@ -162,7 +269,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/_enable-ilm',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' }, validate_only: { type: 'boolean', description: 'When `true`, does not enable ILM but returns warnings if any applications may lose availability during ILM migration.', 'x-found-in': 'query' } }, required: ['deployment_id', 'ref_id'] },
+    input: _enable_deployment_resource_ilmSchema,
   },
   {
     name: 'enable-deployment-resource-slm',
@@ -171,7 +278,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/_enable-slm',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' }, validate_only: { type: 'boolean', description: 'When `true`, does not enable SLM but returns warnings if any applications may lose availability during SLM migration.', 'x-found-in': 'query' } }, required: ['deployment_id', 'ref_id'] },
+    input: _enable_deployment_resource_slmSchema,
   },
   {
     name: 'reset-elasticsearch-user-password',
@@ -180,7 +287,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/_reset-password',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' }, check_completion: { type: 'boolean', description: 'If true, will not reset elastic user password and instead will return a status code signaling whether or not the current credentials are ready to use (eg from creation or the last call to _reset_password)', 'x-found-in': 'query' } }, required: ['deployment_id', 'ref_id'] },
+    input: _reset_elasticsearch_user_passwordSchema,
   },
   {
     name: 'restart-deployment-es-resource',
@@ -189,7 +296,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/_restart',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' }, restore_snapshot: { type: 'boolean', description: 'When set to true and restoring from shutdown, then will restore the cluster from the last snapshot (if available).', 'x-found-in': 'query' }, skip_snapshot: { type: 'boolean', description: 'If true, will not take a snapshot of the cluster before restarting.', 'x-found-in': 'query' }, cancel_pending: { type: 'boolean', description: 'If true, cancels any pending plans before restarting. If false and there are pending plans, returns an error.', 'x-found-in': 'query' }, group_attribute: { type: 'string', description: "Indicates the property or properties used to divide the list of instances to restart in groups. Valid options are: '\\_\\_all\\_\\_' (restart all at once), '\\_\\_zone\\_\\_' by logical zone, '\\_\\_name\\_\\_' one instance at a time, or a comma-separated list of attributes of the instances", 'x-found-in': 'query' }, shard_init_wait_time: { type: 'number', description: 'The time, in seconds, to wait for shards that show no progress of initializing, before rolling the next group (default: 10 minutes)', 'x-found-in': 'query' } }, required: ['deployment_id', 'ref_id'] },
+    input: _restart_deployment_es_resourceSchema,
   },
   {
     name: 'shutdown-deployment-es-resource',
@@ -198,7 +305,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/_shutdown',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' }, hide: { type: 'boolean', description: 'Hide cluster on shutdown. Hidden clusters are not listed by default. Only applicable for Platform administrators.', 'x-found-in': 'query' }, skip_snapshot: { type: 'boolean', description: 'If true, will skip taking a snapshot of the cluster before shutting the cluster down (if even possible).', 'x-found-in': 'query' } }, required: ['deployment_id', 'ref_id'] },
+    input: _shutdown_deployment_es_resourceSchema,
   },
   {
     name: 'get-deployment-es-resource-eligible-remote-clusters',
@@ -207,7 +314,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/eligible-remote-clusters',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' } }, required: ['deployment_id', 'ref_id'] },
+    input: _get_deployment_es_resource_eligible_remote_clustersSchema,
   },
   {
     name: 'get-deployment-es-resource-keystore',
@@ -216,7 +323,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/keystore',
     destructive: false,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one)", 'x-found-in': 'path' } }, required: ['deployment_id', 'ref_id'] },
+    input: _get_deployment_es_resource_keystoreSchema,
   },
   {
     name: 'set-deployment-es-resource-keystore',
@@ -225,7 +332,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'PATCH',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/keystore',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one)", 'x-found-in': 'path' }, validate_only: { type: 'boolean', description: "When `true`, does nothing except return the entries' allowlist and reloadability statuses.", 'x-found-in': 'query' } }, required: ['deployment_id', 'ref_id'] },
+    input: _set_deployment_es_resource_keystoreSchema,
   },
   {
     name: 'get-deployment-es-resource-remote-clusters',
@@ -234,7 +341,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/remote-clusters',
     destructive: false,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' } }, required: ['deployment_id', 'ref_id'] },
+    input: _get_deployment_es_resource_remote_clustersSchema,
   },
   {
     name: 'set-deployment-es-resource-remote-clusters',
@@ -243,7 +350,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/remote-clusters',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' } }, required: ['deployment_id', 'ref_id'] },
+    input: _set_deployment_es_resource_remote_clustersSchema,
   },
   {
     name: 'get-deployment-es-resource-snapshot-repository',
@@ -252,7 +359,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/snapshot/repository',
     destructive: false,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one)", 'x-found-in': 'path' } }, required: ['deployment_id', 'ref_id'] },
+    input: _get_deployment_es_resource_snapshot_repositorySchema,
   },
   {
     name: 'create-deployment-es-resource-snapshot-repository',
@@ -261,7 +368,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/snapshot/repository',
     destructive: false,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one)", 'x-found-in': 'path' } }, required: ['deployment_id', 'ref_id'] },
+    input: _create_deployment_es_resource_snapshot_repositorySchema,
   },
   {
     name: 'delete-deployment-es-resource-snapshot-repository',
@@ -270,7 +377,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/snapshot/repository/{repository_name}',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one)", 'x-found-in': 'path' }, repository_name: { type: 'string', description: 'The name of the snapshot repository to remove (e.g. _clone_abcd1234)', 'x-found-in': 'path' } }, required: ['deployment_id', 'ref_id', 'repository_name'] },
+    input: _delete_deployment_es_resource_snapshot_repositorySchema,
   },
   {
     name: 'get-deployment-es-resource-tiers',
@@ -279,7 +386,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/tiers',
     destructive: false,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one)", 'x-found-in': 'path' } }, required: ['deployment_id', 'ref_id'] },
+    input: _get_deployment_es_resource_tiersSchema,
   },
   {
     name: 'update-deployment-es-resource-tier',
@@ -288,7 +395,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'PATCH',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/tiers',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one)", 'x-found-in': 'path' } }, required: ['deployment_id', 'ref_id'] },
+    input: _update_deployment_es_resource_tierSchema,
   },
   {
     name: 'get-deployment-enterprise-search-resource-info',
@@ -297,7 +404,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/enterprise_search/{ref_id}',
     destructive: false,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' }, show_metadata: { type: 'boolean', description: 'Whether to include the full cluster metadata in the response - can be large per cluster and also include credentials.', 'x-found-in': 'query' }, show_plans: { type: 'boolean', description: 'Whether to include the full current and pending plan information in the response - can be large per cluster.', 'x-found-in': 'query' }, show_plan_logs: { type: 'boolean', description: 'Whether to include with the current and pending plan information the attempt log - can be very large per cluster.', 'x-found-in': 'query' }, show_plan_history: { type: 'boolean', description: 'Whether to include with the current and pending plan information the plan history- can be very large per cluster.', 'x-found-in': 'query' }, show_plan_defaults: { type: 'boolean', description: 'If showing plans, whether to show values that are left at their default value (less readable but more informative).', 'x-found-in': 'query' }, show_settings: { type: 'boolean', description: 'Whether to show cluster settings in the response.', 'x-found-in': 'query' }, clear_transient: { type: 'boolean', description: 'If set (defaults to false) then removes the transient section from all child resources, making it safe to reapply via an update', 'x-found-in': 'query' } }, required: ['deployment_id', 'ref_id'] },
+    input: _get_deployment_enterprise_search_resource_infoSchema,
   },
   {
     name: 'get-deployment-integrations-server-resource-info',
@@ -306,7 +413,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/integrations_server/{ref_id}',
     destructive: false,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' }, show_metadata: { type: 'boolean', description: 'Whether to include the full cluster metadata in the response - can be large per cluster and also include credentials.', 'x-found-in': 'query' }, show_plans: { type: 'boolean', description: 'Whether to include the full current and pending plan information in the response - can be large per cluster.', 'x-found-in': 'query' }, show_plan_logs: { type: 'boolean', description: 'Whether to include with the current and pending plan information the attempt log - can be very large per cluster.', 'x-found-in': 'query' }, show_plan_history: { type: 'boolean', description: 'Whether to include with the current and pending plan information the plan history- can be very large per cluster.', 'x-found-in': 'query' }, show_plan_defaults: { type: 'boolean', description: 'If showing plans, whether to show values that are left at their default value (less readable but more informative).', 'x-found-in': 'query' }, show_settings: { type: 'boolean', description: 'Whether to show cluster settings in the response.', 'x-found-in': 'query' }, clear_transient: { type: 'boolean', description: 'If set (defaults to false) then removes the transient section from all child resources, making it safe to reapply via an update', 'x-found-in': 'query' } }, required: ['deployment_id', 'ref_id'] },
+    input: _get_deployment_integrations_server_resource_infoSchema,
   },
   {
     name: 'get-deployment-kib-resource-info',
@@ -315,7 +422,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/kibana/{ref_id}',
     destructive: false,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' }, show_metadata: { type: 'boolean', description: 'Whether to include the full cluster metadata in the response - can be large per cluster and also include credentials.', 'x-found-in': 'query' }, show_plans: { type: 'boolean', description: 'Whether to include the full current and pending plan information in the response - can be large per cluster.', 'x-found-in': 'query' }, show_plan_logs: { type: 'boolean', description: 'Whether to include with the current and pending plan information the attempt log - can be very large per cluster.', 'x-found-in': 'query' }, show_plan_history: { type: 'boolean', description: 'Whether to include with the current and pending plan information the plan history- can be very large per cluster.', 'x-found-in': 'query' }, show_plan_defaults: { type: 'boolean', description: 'If showing plans, whether to show values that are left at their default value (less readable but more informative).', 'x-found-in': 'query' }, convert_legacy_plans: { type: 'boolean', description: "If showing plans, whether to leave pre-2.0.0 plans in their legacy format (the default), or whether to update them to 2.0.x+ format (if 'true').", 'x-found-in': 'query' }, show_settings: { type: 'boolean', description: 'Whether to show cluster settings in the response.', 'x-found-in': 'query' }, clear_transient: { type: 'boolean', description: 'If set (defaults to false) then removes the transient section from all child resources, making it safe to reapply via an update', 'x-found-in': 'query' } }, required: ['deployment_id', 'ref_id'] },
+    input: _get_deployment_kib_resource_infoSchema,
   },
   {
     name: 'migrate-deployment-template',
@@ -324,7 +431,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/migrate_template',
     destructive: false,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, template_id: { type: 'string', description: 'The ID of the deployment template to migrate to', 'x-found-in': 'query' }, skip_instance_metrics_check: { type: 'boolean', description: 'If true, will skip the instance metrics check for memory and disk usage calculations', 'x-found-in': 'query' } }, required: ['deployment_id', 'template_id'] },
+    input: _migrate_deployment_templateSchema,
   },
   {
     name: 'get-deployment-tags',
@@ -333,7 +440,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/tags',
     destructive: false,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' } }, required: ['deployment_id'] },
+    input: _get_deployment_tagsSchema,
   },
   {
     name: 'set-deployment-tags',
@@ -342,7 +449,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/deployments/{deployment_id}/tags',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' } }, required: ['deployment_id'] },
+    input: _set_deployment_tagsSchema,
   },
   {
     name: 'upgrade-deployment',
@@ -351,7 +458,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/upgrade',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' } }, required: ['deployment_id'] },
+    input: _upgrade_deploymentSchema,
   },
   {
     name: 'get-deployment-upgrade-assistant-status',
@@ -360,7 +467,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/upgrade_assistant/status',
     destructive: false,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, target_version: { type: 'string', description: 'If present, value is included in resource request to provide additional context (only supported for Kibana)', 'x-found-in': 'query' } }, required: ['deployment_id'] },
+    input: _get_deployment_upgrade_assistant_statusSchema,
   },
   {
     name: 'restore-deployment-resource',
@@ -369,7 +476,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/_restore',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, resource_kind: { type: 'string', description: 'The kind of resource', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one)", 'x-found-in': 'path' }, restore_snapshot: { type: 'boolean', description: 'Whether or not to restore a snapshot for those resources that allow it.', 'x-found-in': 'query' } }, required: ['deployment_id', 'resource_kind', 'ref_id'] },
+    input: _restore_deployment_resourceSchema,
   },
   {
     name: 'start-deployment-resource-instances-all',
@@ -378,7 +485,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/instances/_start',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, resource_kind: { type: 'string', description: 'The kind of resource (one of elasticsearch, kibana, apm, or integrations_server).', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' } }, required: ['deployment_id', 'resource_kind', 'ref_id'] },
+    input: _start_deployment_resource_instances_allSchema,
   },
   {
     name: 'stop-deployment-resource-instances-all',
@@ -387,7 +494,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/instances/_stop',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, resource_kind: { type: 'string', description: 'The kind of resource (one of elasticsearch, kibana, apm, or integrations_server).', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' } }, required: ['deployment_id', 'resource_kind', 'ref_id'] },
+    input: _stop_deployment_resource_instances_allSchema,
   },
   {
     name: 'start-deployment-resource-instances-all-maintenance-mode',
@@ -396,7 +503,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/instances/maintenance-mode/_start',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, resource_kind: { type: 'string', description: 'The kind of resource (one of elasticsearch, kibana, apm, or integrations_server).', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' } }, required: ['deployment_id', 'resource_kind', 'ref_id'] },
+    input: _start_deployment_resource_instances_all_maintenance_modeSchema,
   },
   {
     name: 'stop-deployment-resource-instances-all-maintenance-mode',
@@ -405,7 +512,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/instances/maintenance-mode/_stop',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, resource_kind: { type: 'string', description: 'The kind of resource (one of elasticsearch, kibana, apm, or integrations_server).', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' } }, required: ['deployment_id', 'resource_kind', 'ref_id'] },
+    input: _stop_deployment_resource_instances_all_maintenance_modeSchema,
   },
   {
     name: 'start-deployment-resource-instances',
@@ -414,7 +521,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/instances/{instance_ids}/_start',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, resource_kind: { type: 'string', description: 'The kind of resource (one of elasticsearch, kibana, apm, or integrations_server).', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' }, instance_ids: { type: 'string', description: 'A comma-separated list of instance identifiers.', 'x-found-in': 'path' }, ignore_missing: { type: 'boolean', description: 'If true and the instance does not exist then quietly proceed to the next instance, otherwise treated as an error', 'x-found-in': 'query' } }, required: ['deployment_id', 'resource_kind', 'ref_id', 'instance_ids'] },
+    input: _start_deployment_resource_instancesSchema,
   },
   {
     name: 'stop-deployment-resource-instances',
@@ -423,7 +530,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/instances/{instance_ids}/_stop',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, resource_kind: { type: 'string', description: 'The kind of resource (one of elasticsearch, kibana, apm, or integrations_server).', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' }, instance_ids: { type: 'string', description: 'A comma-separated list of instance identifiers.', 'x-found-in': 'path' }, ignore_missing: { type: 'boolean', description: 'If true and the instance does not exist then quietly proceed to the next instance, otherwise treated as an error.', 'x-found-in': 'query' } }, required: ['deployment_id', 'resource_kind', 'ref_id', 'instance_ids'] },
+    input: _stop_deployment_resource_instancesSchema,
   },
   {
     name: 'start-deployment-resource-maintenance-mode',
@@ -432,7 +539,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/instances/{instance_ids}/maintenance-mode/_start',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, resource_kind: { type: 'string', description: 'The kind of resource (one of elasticsearch, kibana, apm, or integrations_server).', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' }, instance_ids: { type: 'string', description: 'A comma-separated list of instance identifiers.', 'x-found-in': 'path' }, ignore_missing: { type: 'boolean', description: 'If true and the instance does not exist then quietly proceed to the next instance, otherwise treated as an error.', 'x-found-in': 'query' } }, required: ['deployment_id', 'resource_kind', 'ref_id', 'instance_ids'] },
+    input: _start_deployment_resource_maintenance_modeSchema,
   },
   {
     name: 'stop-deployment-resource-maintenance-mode',
@@ -441,7 +548,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/instances/{instance_ids}/maintenance-mode/_stop',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, resource_kind: { type: 'string', description: 'The kind of resource (one of elasticsearch, kibana, apm, or integrations_server).', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' }, instance_ids: { type: 'string', description: 'A comma-separated list of instance identifiers.', 'x-found-in': 'path' }, ignore_missing: { type: 'boolean', description: 'If true and the instance does not exist then quietly proceed to the next instance, otherwise treated as an error.', 'x-found-in': 'query' } }, required: ['deployment_id', 'resource_kind', 'ref_id', 'instance_ids'] },
+    input: _stop_deployment_resource_maintenance_modeSchema,
   },
   {
     name: 'cancel-deployment-resource-pending-plan',
@@ -450,7 +557,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/plan/pending',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, resource_kind: { type: 'string', description: 'The kind of resource', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one)", 'x-found-in': 'path' }, force_delete: { type: 'boolean', description: 'When `true`, deletes the pending plan instead of attempting a graceful cancellation. The default is `false`.', 'x-found-in': 'query' }, ignore_missing: { type: 'boolean', description: 'When `true`, returns successfully, even when plans are missing. The default is `false`.', 'x-found-in': 'query' } }, required: ['deployment_id', 'resource_kind', 'ref_id'] },
+    input: _cancel_deployment_resource_pending_planSchema,
   },
   {
     name: 'get-deployment-resource-user-settings',
@@ -459,7 +566,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/user_settings',
     destructive: false,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, resource_kind: { type: 'string', description: 'The kind of resource', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one)", 'x-found-in': 'path' } }, required: ['deployment_id', 'resource_kind', 'ref_id'] },
+    input: _get_deployment_resource_user_settingsSchema,
   },
   {
     name: 'update-deployment-resource-user-settings',
@@ -468,7 +575,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/user_settings',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment', 'x-found-in': 'path' }, resource_kind: { type: 'string', description: 'The kind of resource', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one)", 'x-found-in': 'path' } }, required: ['deployment_id', 'resource_kind', 'ref_id'] },
+    input: _update_deployment_resource_user_settingsSchema,
   },
   {
     name: 'restart-deployment-stateless-resource',
@@ -477,7 +584,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{stateless_resource_kind}/{ref_id}/_restart',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, stateless_resource_kind: { type: 'string', description: 'The kind of stateless resource', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' }, cancel_pending: { type: 'boolean', description: 'If true, cancels any pending plans before restarting. If false and there are pending plans, returns an error.', 'x-found-in': 'query' } }, required: ['deployment_id', 'stateless_resource_kind', 'ref_id'] },
+    input: _restart_deployment_stateless_resourceSchema,
   },
   {
     name: 'shutdown-deployment-stateless-resource',
@@ -486,6 +593,6 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{stateless_resource_kind}/{ref_id}/_shutdown',
     destructive: true,
-    input: { type: 'object', properties: { deployment_id: { type: 'string', description: 'Identifier for the Deployment.', 'x-found-in': 'path' }, stateless_resource_kind: { type: 'string', description: 'The kind of stateless resource', 'x-found-in': 'path' }, ref_id: { type: 'string', description: "User-specified RefId for the Resource (or '_main' if there is only one).", 'x-found-in': 'path' }, hide: { type: 'boolean', description: 'Hide cluster on shutdown. Hidden clusters are not listed by default. Only applicable for Platform administrators.', 'x-found-in': 'query' }, skip_snapshot: { type: 'boolean', description: 'If true, will skip taking a snapshot of the cluster before shutting the cluster down (if even possible)', 'x-found-in': 'query' } }, required: ['deployment_id', 'stateless_resource_kind', 'ref_id'] },
+    input: _shutdown_deployment_stateless_resourceSchema,
   },
 ]

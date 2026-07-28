@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"security.get_user_profile__GetUserProfileErrors":{"type":"object","properties":{"count":{"type":"number"},"details":{"type":"object","additionalProperties":{"$ref":"./_types.json#/$defs/_types__ErrorCause"}}},"required":["count","details"]}}}

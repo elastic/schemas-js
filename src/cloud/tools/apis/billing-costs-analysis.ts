@@ -9,7 +9,22 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
+import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
+
+import _get_costs_overviewSchemaRaw from '../../../cloud/json/get_costs_overview.request.json' with { type: 'json' }
+import _get_costs_chartsSchemaRaw from '../../../cloud/json/get_costs_charts.request.json' with { type: 'json' }
+import _get_costs_deploymentsSchemaRaw from '../../../cloud/json/get_costs_deployments.request.json' with { type: 'json' }
+import _get_costs_charts_by_deploymentSchemaRaw from '../../../cloud/json/get_costs_charts_by_deployment.request.json' with { type: 'json' }
+import _get_costs_items_by_deploymentSchemaRaw from '../../../cloud/json/get_costs_items_by_deployment.request.json' with { type: 'json' }
+import _get_costs_itemsSchemaRaw from '../../../cloud/json/get_costs_items.request.json' with { type: 'json' }
+
+const _get_costs_overviewSchema = _get_costs_overviewSchemaRaw as unknown as JsonSchemaObject
+const _get_costs_chartsSchema = _get_costs_chartsSchemaRaw as unknown as JsonSchemaObject
+const _get_costs_deploymentsSchema = _get_costs_deploymentsSchemaRaw as unknown as JsonSchemaObject
+const _get_costs_charts_by_deploymentSchema = _get_costs_charts_by_deploymentSchemaRaw as unknown as JsonSchemaObject
+const _get_costs_items_by_deploymentSchema = _get_costs_items_by_deploymentSchemaRaw as unknown as JsonSchemaObject
+const _get_costs_itemsSchema = _get_costs_itemsSchemaRaw as unknown as JsonSchemaObject
 
 export const billingCostsAnalysisDefinitions: CloudApiDefinition[] = [
   {
@@ -19,7 +34,7 @@ export const billingCostsAnalysisDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/billing/costs/{organization_id}',
     destructive: false,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the organization', 'x-found-in': 'path' }, from: { type: 'string', description: 'A datetime for the beginning of the desired range for which to fetch costs. Defaults to start of current month.', 'x-found-in': 'query' }, to: { type: 'string', description: 'A datetime for the end of the desired range for which to fetch costs. Defaults to the current date.', 'x-found-in': 'query' } }, required: ['organization_id'] },
+    input: _get_costs_overviewSchema,
   },
   {
     name: 'get-costs-charts',
@@ -28,7 +43,7 @@ export const billingCostsAnalysisDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/billing/costs/{organization_id}/charts',
     destructive: false,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the organization', 'x-found-in': 'path' }, from: { type: 'string', description: 'A datetime for the beginning of the desired range for which to fetch costs. Defaults to start of current month.', 'x-found-in': 'query' }, to: { type: 'string', description: 'A datetime for the end of the desired range for which to fetch costs. Defaults to the current date.', 'x-found-in': 'query' }, bucketing_strategy: { type: 'string', description: 'The desired bucketing strategy for the charts. Defaults to `daily`.', 'x-found-in': 'query' } }, required: ['organization_id'] },
+    input: _get_costs_chartsSchema,
   },
   {
     name: 'get-costs-deployments',
@@ -37,7 +52,7 @@ export const billingCostsAnalysisDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/billing/costs/{organization_id}/deployments',
     destructive: false,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the organization', 'x-found-in': 'path' }, from: { type: 'string', description: 'A datetime for the beginning of the desired range for which to fetch activity. Defaults to start of current month.', 'x-found-in': 'query' }, to: { type: 'string', description: 'A datetime for the end of the desired range for which to fetch activity. Defaults to the current date.', 'x-found-in': 'query' } }, required: ['organization_id'] },
+    input: _get_costs_deploymentsSchema,
   },
   {
     name: 'get-costs-charts-by-deployment',
@@ -46,7 +61,7 @@ export const billingCostsAnalysisDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/billing/costs/{organization_id}/deployments/{deployment_id}/charts',
     destructive: false,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the organization', 'x-found-in': 'path' }, deployment_id: { type: 'string', description: 'Id of a Deployment', 'x-found-in': 'path' }, from: { type: 'string', description: 'A datetime for the beginning of the desired range for which to fetch costs. Defaults to start of current month.', 'x-found-in': 'query' }, to: { type: 'string', description: 'A datetime for the end of the desired range for which to fetch costs. Defaults to the current date.', 'x-found-in': 'query' }, bucketing_strategy: { type: 'string', description: 'The desired bucketing strategy for the charts. Defaults to `daily`.', 'x-found-in': 'query' } }, required: ['organization_id', 'deployment_id'] },
+    input: _get_costs_charts_by_deploymentSchema,
   },
   {
     name: 'get-costs-items-by-deployment',
@@ -55,7 +70,7 @@ export const billingCostsAnalysisDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/billing/costs/{organization_id}/deployments/{deployment_id}/items',
     destructive: false,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the organization', 'x-found-in': 'path' }, deployment_id: { type: 'string', description: 'Id of a Deployment', 'x-found-in': 'path' }, from: { type: 'string', description: 'A datetime for the beginning of the desired range for which to fetch costs. Defaults to start of current month.', 'x-found-in': 'query' }, to: { type: 'string', description: 'A datetime for the end of the desired range for which to fetch costs. Defaults to the current date.', 'x-found-in': 'query' } }, required: ['organization_id', 'deployment_id'] },
+    input: _get_costs_items_by_deploymentSchema,
   },
   {
     name: 'get-costs-items',
@@ -64,6 +79,6 @@ export const billingCostsAnalysisDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/billing/costs/{organization_id}/items',
     destructive: false,
-    input: { type: 'object', properties: { organization_id: { type: 'string', description: 'Identifier for the organization', 'x-found-in': 'path' }, from: { type: 'string', description: 'A datetime for the beginning of the desired range for which to fetch costs. Defaults to start of current month.', 'x-found-in': 'query' }, to: { type: 'string', description: 'A datetime for the end of the desired range for which to fetch costs. Defaults to the current date.', 'x-found-in': 'query' } }, required: ['organization_id'] },
+    input: _get_costs_itemsSchema,
   },
 ]

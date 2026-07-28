@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.revert_model_snapshot","type":"object","properties":{"model":{"$ref":"./ml._types.json#/$defs/ml._types__ModelSnapshot"}},"required":["model"]}

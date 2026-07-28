@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"dangling_indices.list_dangling_indices__DanglingIndex":{"type":"object","properties":{"index_name":{"type":"string"},"index_uuid":{"type":"string"},"creation_date_millis":{},"node_ids":{"$ref":"./_types.json#/$defs/_types__Ids"}},"required":["index_name","index_uuid","creation_date_millis","node_ids"]}}}

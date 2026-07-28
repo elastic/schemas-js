@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"snapshot.get__SnapshotResponseItem":{"type":"object","properties":{"repository":{"type":"string"},"snapshots":{"type":"array","items":{"$ref":"./snapshot._types.json#/$defs/snapshot._types__SnapshotInfo"}},"error":{"$ref":"./_types.json#/$defs/_types__ErrorCause"}},"required":["repository"]}}}

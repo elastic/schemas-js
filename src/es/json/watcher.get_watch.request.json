@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"watcher.get_watch","type":"object","properties":{"id":{"type":"string","description":"The watch identifier.","x-found-in":"path"}},"required":["id"],"description":"Get a watch."}

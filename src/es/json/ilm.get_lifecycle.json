@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"ilm.get_lifecycle__Lifecycle":{"type":"object","properties":{"modified_date":{"$ref":"./_types.json#/$defs/_types__DateTime"},"policy":{"$ref":"./ilm._types.json#/$defs/ilm._types__Policy"},"version":{"type":"number"}},"required":["modified_date","policy","version"]}}}

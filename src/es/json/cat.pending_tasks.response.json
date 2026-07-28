@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.pending_tasks","type":"array","items":{"$ref":"./cat.pending_tasks.json#/$defs/cat.pending_tasks__PendingTasksRecord"}}
