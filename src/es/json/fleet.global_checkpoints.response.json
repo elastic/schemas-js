@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"fleet.global_checkpoints","type":"object","properties":{"global_checkpoints":{"type":"array","items":{"type":"number"}},"timed_out":{"type":"boolean"}},"required":["global_checkpoints","timed_out"]}

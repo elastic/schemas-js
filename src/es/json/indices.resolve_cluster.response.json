@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.resolve_cluster","type":"object","additionalProperties":{"$ref":"./indices.resolve_cluster.json#/$defs/indices.resolve_cluster__ResolveClusterInfo"}}

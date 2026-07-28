@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.nodes","type":"array","items":{"$ref":"./cat.nodes.json#/$defs/cat.nodes__NodesRecord"}}

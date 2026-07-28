@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../es/json/indices.simulate_template.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../json/indices.simulate_template.request.json' with { type: 'json' }
 import type { EsApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.saml_logout","type":"object","properties":{"redirect":{"type":"string","description":"A URL that contains a SAML logout request as a parameter.\nYou can use this URL to be redirected back to the SAML IdP and to initiate Single Logout."}},"required":["redirect"]}

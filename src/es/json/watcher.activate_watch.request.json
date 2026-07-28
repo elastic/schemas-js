@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"watcher.activate_watch","type":"object","properties":{"watch_id":{"type":"string","description":"The watch identifier.","x-found-in":"path"}},"required":["watch_id"],"description":"Activate a watch.\n\nA watch can be either active or inactive."}

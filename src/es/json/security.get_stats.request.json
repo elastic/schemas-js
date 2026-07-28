@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.get_stats","type":"object","properties":{},"description":"Get security stats.\n\nGather security usage statistics from all node(s) within the cluster."}

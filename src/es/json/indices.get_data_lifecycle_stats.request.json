@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.get_data_lifecycle_stats","type":"object","properties":{},"description":"Get data stream lifecycle stats.\n\nGet statistics about the data streams that are managed by a data stream lifecycle."}

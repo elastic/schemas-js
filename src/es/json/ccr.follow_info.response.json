@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ccr.follow_info","type":"object","properties":{"follower_indices":{"type":"array","items":{"$ref":"./ccr.follow_info.json#/$defs/ccr.follow_info__FollowerIndex"}}},"required":["follower_indices"]}

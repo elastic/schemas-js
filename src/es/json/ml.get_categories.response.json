@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.get_categories","type":"object","properties":{"categories":{"type":"array","items":{"$ref":"./ml._types.json#/$defs/ml._types__Category"}},"count":{"type":"number"}},"required":["categories","count"]}

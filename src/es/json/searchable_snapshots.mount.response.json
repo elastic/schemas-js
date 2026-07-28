@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"searchable_snapshots.mount","type":"object","properties":{"snapshot":{"$ref":"./searchable_snapshots.mount.json#/$defs/searchable_snapshots.mount__MountedSnapshot"}},"required":["snapshot"]}

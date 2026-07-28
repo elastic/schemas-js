@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"cat.repositories__RepositoriesRecord":{"type":"object","properties":{"id":{"type":"string","description":"The unique repository identifier."},"type":{"type":"string","description":"The repository type."}}}}}

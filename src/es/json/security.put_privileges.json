@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"security.put_privileges__Actions":{"type":"object","properties":{"actions":{"type":"array","items":{"type":"string"}},"application":{"type":"string"},"name":{"type":"string"},"metadata":{"$ref":"./_types.json#/$defs/_types__Metadata"}},"required":["actions"]}}}

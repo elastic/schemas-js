@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../es/json/ingest.delete_geoip_database.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../json/ingest.delete_geoip_database.request.json' with { type: 'json' }
 import type { EsApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject

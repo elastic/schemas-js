@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"migration.post_feature_upgrade","type":"object","properties":{"accepted":{"type":"boolean"},"features":{"type":"array","items":{"$ref":"./migration.post_feature_upgrade.json#/$defs/migration.post_feature_upgrade__MigrationFeature"}},"reason":{"type":"string"}},"required":["accepted"]}

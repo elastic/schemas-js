@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.get_model_snapshots","type":"object","properties":{"count":{"type":"number"},"model_snapshots":{"type":"array","items":{"$ref":"./ml._types.json#/$defs/ml._types__ModelSnapshot"}}},"required":["count","model_snapshots"]}

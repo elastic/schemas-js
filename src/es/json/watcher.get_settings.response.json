@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"watcher.get_settings","type":"object","properties":{"index":{"$ref":"./indices._types.json#/$defs/indices._types__IndexSettings"}},"required":["index"]}

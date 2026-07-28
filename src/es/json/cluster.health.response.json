@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cluster.health","$ref":"./cluster.health.json#/$defs/cluster.health__HealthResponseBody"}

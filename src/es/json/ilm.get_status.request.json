@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ilm.get_status","type":"object","properties":{},"description":"Get the ILM status.\n\nGet the current index lifecycle management status."}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"streams.status__StreamStatus":{"type":"object","properties":{"enabled":{"type":"boolean","description":"If true, the stream feature is enabled."}},"required":["enabled"]}}}

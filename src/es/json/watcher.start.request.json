@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"watcher.start","type":"object","properties":{"master_timeout":{"$ref":"./_types.json#/$defs/_types__Duration","description":"Period to wait for a connection to the master node.","x-found-in":"query"}},"description":"Start the watch service.\n\nStart the Watcher service if it is not already running."}

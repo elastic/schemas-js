@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../es/json/ml.revert_model_snapshot.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../json/ml.revert_model_snapshot.request.json' with { type: 'json' }
 import type { EsApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject

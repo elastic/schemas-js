@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.clear_trained_model_deployment_cache","type":"object","properties":{"cleared":{"type":"boolean"}},"required":["cleared"]}

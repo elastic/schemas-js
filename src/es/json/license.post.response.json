@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"license.post","type":"object","properties":{"acknowledge":{"$ref":"./license.post.json#/$defs/license.post__Acknowledgement"},"acknowledged":{"type":"boolean"},"license_status":{"$ref":"./license._types.json#/$defs/license._types__LicenseStatus"}},"required":["acknowledged","license_status"]}

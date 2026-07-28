@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"searchable_snapshots.cache_stats","type":"object","properties":{"nodes":{"type":"object","additionalProperties":{"$ref":"./searchable_snapshots.cache_stats.json#/$defs/searchable_snapshots.cache_stats__Node"}}},"required":["nodes"]}

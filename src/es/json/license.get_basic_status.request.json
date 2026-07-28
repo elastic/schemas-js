@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"license.get_basic_status","type":"object","properties":{},"description":"Get the basic license status."}

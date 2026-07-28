@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"indices.get_field_mapping__TypeFieldMappings":{"type":"object","properties":{"mappings":{"type":"object","additionalProperties":{"$ref":"./_types.mapping.json#/$defs/_types.mapping__FieldMapping"}}},"required":["mappings"]}}}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"snapshot.restore__SnapshotRestore":{"type":"object","properties":{"indices":{"type":"array","items":{"type":"string"}},"snapshot":{"type":"string"},"shards":{"$ref":"./_types.json#/$defs/_types__ShardStatistics"}},"required":["indices","snapshot","shards"]}}}

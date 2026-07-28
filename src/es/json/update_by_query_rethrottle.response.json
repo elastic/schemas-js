@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"update_by_query_rethrottle","type":"object","properties":{"nodes":{"type":"object","additionalProperties":{"$ref":"./_global.update_by_query_rethrottle.json#/$defs/_global.update_by_query_rethrottle__UpdateByQueryRethrottleNode"}}},"required":["nodes"]}

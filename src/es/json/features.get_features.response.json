@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"features.get_features","type":"object","properties":{"features":{"type":"array","items":{"$ref":"./features._types.json#/$defs/features._types__Feature"}}},"required":["features"]}

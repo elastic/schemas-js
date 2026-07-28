@@ -110,7 +110,7 @@ export const SnapshotStatus = z.object({
   repository: z.string().describe('The name of the repository that includes the snapshot.'),
   shards_stats: SnapshotShardsStats.describe('Statistics for the shards in the snapshot.'),
   snapshot: z.string().describe('The name of the snapshot.'),
-  state: z.string().describe('The current snapshot state: * `FAILED`: The snapshot finished with an error and failed to store any data. * `STARTED`: The snapshot is currently running. * `SUCCESS`: The snapshot completed.'),
+  state: z.string().describe('The current snapshot state: * `STARTED`: The snapshot is currently running. * `SUCCESS`: All shard snapshots have completed. The snapshot may or may not have completed finalization. * `FAILED`: The snapshot finished with an error and failed to store any data.'),
   stats: SnapshotSnapshotStats.describe('Details about the number (`file_count`) and size (`size_in_bytes`) of files included in the snapshot.'),
   uuid: Uuid.describe('The universally unique identifier (UUID) for the snapshot.')
 }).meta({ id: 'SnapshotStatus' })

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"text_structure.test_grok_pattern","type":"object","properties":{"matches":{"type":"array","items":{"$ref":"./text_structure.test_grok_pattern.json#/$defs/text_structure.test_grok_pattern__MatchedText"}}},"required":["matches"]}

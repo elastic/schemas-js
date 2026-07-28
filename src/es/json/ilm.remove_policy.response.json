@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ilm.remove_policy","type":"object","properties":{"failed_indexes":{"type":"array","items":{"type":"string"}},"has_failures":{"type":"boolean"}},"required":["failed_indexes","has_failures"]}

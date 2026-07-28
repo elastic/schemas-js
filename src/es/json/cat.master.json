@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"cat.master__MasterRecord":{"type":"object","properties":{"id":{"type":"string","description":"node id"},"host":{"type":"string","description":"host name"},"ip":{"type":"string","description":"ip address"},"node":{"type":"string","description":"node name"}}}}}
