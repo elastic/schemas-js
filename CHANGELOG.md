@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1-alpha.1](https://github.com/elastic/schemas-js/compare/v0.4.0-alpha.1...v0.4.1-alpha.1) (2026-07-28)
+
+
+### Bug Fixes
+
+* reuse static JSON schema files for tool API definitions ([#34](https://github.com/elastic/schemas-js/issues/34)) ([f97cd55](https://github.com/elastic/schemas-js/commit/f97cd55dbff0d4788996dd465d2889fe7b84d4fe))
+
 ## [0.4.0-alpha.1](https://github.com/elastic/schemas-js/compare/v0.3.1-alpha.1...v0.4.0-alpha.1) (2026-07-27)
 
 
