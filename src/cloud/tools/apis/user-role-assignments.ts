@@ -12,8 +12,8 @@
 import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
 
-import _add_role_assignmentsSchemaRaw from '../../../cloud/json/add_role_assignments.request.json'
-import _remove_role_assignmentsSchemaRaw from '../../../cloud/json/remove_role_assignments.request.json'
+import _add_role_assignmentsSchemaRaw from '../../../cloud/json/add_role_assignments.request.json' with { type: 'json' }
+import _remove_role_assignmentsSchemaRaw from '../../../cloud/json/remove_role_assignments.request.json' with { type: 'json' }
 
 const _add_role_assignmentsSchema = _add_role_assignmentsSchemaRaw as unknown as JsonSchemaObject
 const _remove_role_assignmentsSchema = _remove_role_assignmentsSchemaRaw as unknown as JsonSchemaObject

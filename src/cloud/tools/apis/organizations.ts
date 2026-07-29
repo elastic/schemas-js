@@ -12,26 +12,26 @@
 import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
 
-import _get_organization_invitationSchemaRaw from '../../../cloud/json/get_organization_invitation.request.json'
-import _accept_organization_invitationSchemaRaw from '../../../cloud/json/accept_organization_invitation.request.json'
-import _get_organizationSchemaRaw from '../../../cloud/json/get_organization.request.json'
-import _update_organizationSchemaRaw from '../../../cloud/json/update_organization.request.json'
-import _domain_claim_get_domain_claimsSchemaRaw from '../../../cloud/json/domain_claim_get_domain_claims.request.json'
-import _domain_claim_deleteSchemaRaw from '../../../cloud/json/domain_claim_delete.request.json'
-import _domain_claim_generate_verification_codeSchemaRaw from '../../../cloud/json/domain_claim_generate_verification_code.request.json'
-import _domain_claim_verify_domainSchemaRaw from '../../../cloud/json/domain_claim_verify_domain.request.json'
-import _get_organization_idpSchemaRaw from '../../../cloud/json/get_organization_idp.request.json'
-import _setup_organization_idpSchemaRaw from '../../../cloud/json/setup_organization_idp.request.json'
-import _teardown_organization_idpSchemaRaw from '../../../cloud/json/teardown_organization_idp.request.json'
-import _get_organization_idp_metadataSchemaRaw from '../../../cloud/json/get_organization_idp_metadata.request.json'
-import _list_organization_invitationsSchemaRaw from '../../../cloud/json/list_organization_invitations.request.json'
-import _create_organization_invitationsSchemaRaw from '../../../cloud/json/create_organization_invitations.request.json'
-import _delete_organization_invitationsSchemaRaw from '../../../cloud/json/delete_organization_invitations.request.json'
-import _list_organization_membersSchemaRaw from '../../../cloud/json/list_organization_members.request.json'
-import _delete_organization_membershipsSchemaRaw from '../../../cloud/json/delete_organization_memberships.request.json'
-import _get_role_mappingsSchemaRaw from '../../../cloud/json/get_role_mappings.request.json'
-import _update_role_mappingsSchemaRaw from '../../../cloud/json/update_role_mappings.request.json'
-import _delete_role_mappingsSchemaRaw from '../../../cloud/json/delete_role_mappings.request.json'
+import _get_organization_invitationSchemaRaw from '../../../cloud/json/get_organization_invitation.request.json' with { type: 'json' }
+import _accept_organization_invitationSchemaRaw from '../../../cloud/json/accept_organization_invitation.request.json' with { type: 'json' }
+import _get_organizationSchemaRaw from '../../../cloud/json/get_organization.request.json' with { type: 'json' }
+import _update_organizationSchemaRaw from '../../../cloud/json/update_organization.request.json' with { type: 'json' }
+import _domain_claim_get_domain_claimsSchemaRaw from '../../../cloud/json/domain_claim_get_domain_claims.request.json' with { type: 'json' }
+import _domain_claim_deleteSchemaRaw from '../../../cloud/json/domain_claim_delete.request.json' with { type: 'json' }
+import _domain_claim_generate_verification_codeSchemaRaw from '../../../cloud/json/domain_claim_generate_verification_code.request.json' with { type: 'json' }
+import _domain_claim_verify_domainSchemaRaw from '../../../cloud/json/domain_claim_verify_domain.request.json' with { type: 'json' }
+import _get_organization_idpSchemaRaw from '../../../cloud/json/get_organization_idp.request.json' with { type: 'json' }
+import _setup_organization_idpSchemaRaw from '../../../cloud/json/setup_organization_idp.request.json' with { type: 'json' }
+import _teardown_organization_idpSchemaRaw from '../../../cloud/json/teardown_organization_idp.request.json' with { type: 'json' }
+import _get_organization_idp_metadataSchemaRaw from '../../../cloud/json/get_organization_idp_metadata.request.json' with { type: 'json' }
+import _list_organization_invitationsSchemaRaw from '../../../cloud/json/list_organization_invitations.request.json' with { type: 'json' }
+import _create_organization_invitationsSchemaRaw from '../../../cloud/json/create_organization_invitations.request.json' with { type: 'json' }
+import _delete_organization_invitationsSchemaRaw from '../../../cloud/json/delete_organization_invitations.request.json' with { type: 'json' }
+import _list_organization_membersSchemaRaw from '../../../cloud/json/list_organization_members.request.json' with { type: 'json' }
+import _delete_organization_membershipsSchemaRaw from '../../../cloud/json/delete_organization_memberships.request.json' with { type: 'json' }
+import _get_role_mappingsSchemaRaw from '../../../cloud/json/get_role_mappings.request.json' with { type: 'json' }
+import _update_role_mappingsSchemaRaw from '../../../cloud/json/update_role_mappings.request.json' with { type: 'json' }
+import _delete_role_mappingsSchemaRaw from '../../../cloud/json/delete_role_mappings.request.json' with { type: 'json' }
 
 const _get_organization_invitationSchema = _get_organization_invitationSchemaRaw as unknown as JsonSchemaObject
 const _accept_organization_invitationSchema = _accept_organization_invitationSchemaRaw as unknown as JsonSchemaObject

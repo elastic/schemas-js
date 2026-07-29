@@ -12,11 +12,11 @@
 import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
 
-import _get_api_keysSchemaRaw from '../../../cloud/json/get_api_keys.request.json'
-import _create_api_keySchemaRaw from '../../../cloud/json/create_api_key.request.json'
-import _delete_api_keysSchemaRaw from '../../../cloud/json/delete_api_keys.request.json'
-import _get_api_keySchemaRaw from '../../../cloud/json/get_api_key.request.json'
-import _delete_api_keySchemaRaw from '../../../cloud/json/delete_api_key.request.json'
+import _get_api_keysSchemaRaw from '../../../cloud/json/get_api_keys.request.json' with { type: 'json' }
+import _create_api_keySchemaRaw from '../../../cloud/json/create_api_key.request.json' with { type: 'json' }
+import _delete_api_keysSchemaRaw from '../../../cloud/json/delete_api_keys.request.json' with { type: 'json' }
+import _get_api_keySchemaRaw from '../../../cloud/json/get_api_key.request.json' with { type: 'json' }
+import _delete_api_keySchemaRaw from '../../../cloud/json/delete_api_key.request.json' with { type: 'json' }
 
 const _get_api_keysSchema = _get_api_keysSchemaRaw as unknown as JsonSchemaObject
 const _create_api_keySchema = _create_api_keySchemaRaw as unknown as JsonSchemaObject

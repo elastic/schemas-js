@@ -12,12 +12,12 @@
 import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
 
-import _get_costs_overviewSchemaRaw from '../../../cloud/json/get_costs_overview.request.json'
-import _get_costs_chartsSchemaRaw from '../../../cloud/json/get_costs_charts.request.json'
-import _get_costs_deploymentsSchemaRaw from '../../../cloud/json/get_costs_deployments.request.json'
-import _get_costs_charts_by_deploymentSchemaRaw from '../../../cloud/json/get_costs_charts_by_deployment.request.json'
-import _get_costs_items_by_deploymentSchemaRaw from '../../../cloud/json/get_costs_items_by_deployment.request.json'
-import _get_costs_itemsSchemaRaw from '../../../cloud/json/get_costs_items.request.json'
+import _get_costs_overviewSchemaRaw from '../../../cloud/json/get_costs_overview.request.json' with { type: 'json' }
+import _get_costs_chartsSchemaRaw from '../../../cloud/json/get_costs_charts.request.json' with { type: 'json' }
+import _get_costs_deploymentsSchemaRaw from '../../../cloud/json/get_costs_deployments.request.json' with { type: 'json' }
+import _get_costs_charts_by_deploymentSchemaRaw from '../../../cloud/json/get_costs_charts_by_deployment.request.json' with { type: 'json' }
+import _get_costs_items_by_deploymentSchemaRaw from '../../../cloud/json/get_costs_items_by_deployment.request.json' with { type: 'json' }
+import _get_costs_itemsSchemaRaw from '../../../cloud/json/get_costs_items.request.json' with { type: 'json' }
 
 const _get_costs_overviewSchema = _get_costs_overviewSchemaRaw as unknown as JsonSchemaObject
 const _get_costs_chartsSchema = _get_costs_chartsSchemaRaw as unknown as JsonSchemaObject

@@ -1,4 +1,13 @@
-# Agent notes
+## Slow commands
+
+The codebase is quite large, and almost entirely generated, from specs for over 1200 APIs. Commands like the following will often take several minutes to complete:
+- `npm run build`
+- `npm test`
+- `tsc --noEmit`
+
+Avoid running them if you can provide a more targeted command that validates your exact changes, by e.g. providing paths or globs to files that need testing.
+
+If running the full command is unavoidable, **do not** run with `timeout [seconds] [command]` or equivalent. It will almost always run longer than your first guess at a time estimate. Rerunning then takes more time and resources than if you'd not applied a timeout at all, and thus should be avoided.
 
 ## Avoiding stuck/OOM builds
 
