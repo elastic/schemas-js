@@ -4,7 +4,9 @@
   "description": "Request and response schemas for all Elastic APIs",
   "main": "lib/cjs/index.js",
   "scripts": {
-    "build": "node --max-old-space-size=8192 ./node_modules/.bin/tsc -b && node --max-old-space-size=8192 ./node_modules/.bin/tsc -p tsconfig.cjs.json --noCheck && node scripts/postbuild-cjs.mjs",
+    "build:esm": "node --max-old-space-size=8192 ./node_modules/.bin/tsc -b",
+    "build:cjs": "node --max-old-space-size=8192 ./node_modules/.bin/tsc -p tsconfig.cjs.json --noCheck && node scripts/postbuild-cjs.mjs",
+    "build": "npm run build:esm && npm run build:cjs",
     "generate": "node scripts/generate.mjs",
     "test:lint": "eslint --cache src/",
     "test:unit": "vitest run",
