@@ -12,12 +12,12 @@
 import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
 
-import _list_traffic_filtersSchemaRaw from '../../../serverless/json/list_traffic_filters.request.json'
-import _create_traffic_filterSchemaRaw from '../../../serverless/json/create_traffic_filter.request.json'
-import _get_traffic_filter_metadataSchemaRaw from '../../../serverless/json/get_traffic_filter_metadata.request.json'
-import _get_traffic_filterSchemaRaw from '../../../serverless/json/get_traffic_filter.request.json'
-import _delete_traffic_filterSchemaRaw from '../../../serverless/json/delete_traffic_filter.request.json'
-import _patch_traffic_filterSchemaRaw from '../../../serverless/json/patch_traffic_filter.request.json'
+import _list_traffic_filtersSchemaRaw from '../../../serverless/json/list_traffic_filters.request.json' with { type: 'json' }
+import _create_traffic_filterSchemaRaw from '../../../serverless/json/create_traffic_filter.request.json' with { type: 'json' }
+import _get_traffic_filter_metadataSchemaRaw from '../../../serverless/json/get_traffic_filter_metadata.request.json' with { type: 'json' }
+import _get_traffic_filterSchemaRaw from '../../../serverless/json/get_traffic_filter.request.json' with { type: 'json' }
+import _delete_traffic_filterSchemaRaw from '../../../serverless/json/delete_traffic_filter.request.json' with { type: 'json' }
+import _patch_traffic_filterSchemaRaw from '../../../serverless/json/patch_traffic_filter.request.json' with { type: 'json' }
 
 const _list_traffic_filtersSchema = _list_traffic_filtersSchemaRaw as unknown as JsonSchemaObject
 const _create_traffic_filterSchema = _create_traffic_filterSchemaRaw as unknown as JsonSchemaObject

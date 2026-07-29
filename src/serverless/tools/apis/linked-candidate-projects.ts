@@ -12,9 +12,9 @@
 import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
 
-import _get_elasticsearch_project_link_candidatesSchemaRaw from '../../../serverless/json/get_elasticsearch_project_link_candidates.request.json'
-import _get_observability_project_link_candidatesSchemaRaw from '../../../serverless/json/get_observability_project_link_candidates.request.json'
-import _get_security_project_link_candidatesSchemaRaw from '../../../serverless/json/get_security_project_link_candidates.request.json'
+import _get_elasticsearch_project_link_candidatesSchemaRaw from '../../../serverless/json/get_elasticsearch_project_link_candidates.request.json' with { type: 'json' }
+import _get_observability_project_link_candidatesSchemaRaw from '../../../serverless/json/get_observability_project_link_candidates.request.json' with { type: 'json' }
+import _get_security_project_link_candidatesSchemaRaw from '../../../serverless/json/get_security_project_link_candidates.request.json' with { type: 'json' }
 
 const _get_elasticsearch_project_link_candidatesSchema = _get_elasticsearch_project_link_candidatesSchemaRaw as unknown as JsonSchemaObject
 const _get_observability_project_link_candidatesSchema = _get_observability_project_link_candidatesSchemaRaw as unknown as JsonSchemaObject

@@ -12,15 +12,15 @@
 import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
 
-import _list_elasticsearch_projectsSchemaRaw from '../../../serverless/json/list_elasticsearch_projects.request.json'
-import _create_elasticsearch_projectSchemaRaw from '../../../serverless/json/create_elasticsearch_project.request.json'
-import _get_elasticsearch_projectSchemaRaw from '../../../serverless/json/get_elasticsearch_project.request.json'
-import _delete_elasticsearch_projectSchemaRaw from '../../../serverless/json/delete_elasticsearch_project.request.json'
-import _patch_elasticsearch_projectSchemaRaw from '../../../serverless/json/patch_elasticsearch_project.request.json'
-import _reset_elasticsearch_project_credentialsSchemaRaw from '../../../serverless/json/reset_elasticsearch_project_credentials.request.json'
-import _resume_elasticsearch_projectSchemaRaw from '../../../serverless/json/resume_elasticsearch_project.request.json'
-import _get_elasticsearch_project_rolesSchemaRaw from '../../../serverless/json/get_elasticsearch_project_roles.request.json'
-import _get_elasticsearch_project_statusSchemaRaw from '../../../serverless/json/get_elasticsearch_project_status.request.json'
+import _list_elasticsearch_projectsSchemaRaw from '../../../serverless/json/list_elasticsearch_projects.request.json' with { type: 'json' }
+import _create_elasticsearch_projectSchemaRaw from '../../../serverless/json/create_elasticsearch_project.request.json' with { type: 'json' }
+import _get_elasticsearch_projectSchemaRaw from '../../../serverless/json/get_elasticsearch_project.request.json' with { type: 'json' }
+import _delete_elasticsearch_projectSchemaRaw from '../../../serverless/json/delete_elasticsearch_project.request.json' with { type: 'json' }
+import _patch_elasticsearch_projectSchemaRaw from '../../../serverless/json/patch_elasticsearch_project.request.json' with { type: 'json' }
+import _reset_elasticsearch_project_credentialsSchemaRaw from '../../../serverless/json/reset_elasticsearch_project_credentials.request.json' with { type: 'json' }
+import _resume_elasticsearch_projectSchemaRaw from '../../../serverless/json/resume_elasticsearch_project.request.json' with { type: 'json' }
+import _get_elasticsearch_project_rolesSchemaRaw from '../../../serverless/json/get_elasticsearch_project_roles.request.json' with { type: 'json' }
+import _get_elasticsearch_project_statusSchemaRaw from '../../../serverless/json/get_elasticsearch_project_status.request.json' with { type: 'json' }
 
 const _list_elasticsearch_projectsSchema = _list_elasticsearch_projectsSchemaRaw as unknown as JsonSchemaObject
 const _create_elasticsearch_projectSchema = _create_elasticsearch_projectSchemaRaw as unknown as JsonSchemaObject

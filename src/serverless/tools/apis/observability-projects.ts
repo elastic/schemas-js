@@ -12,15 +12,15 @@
 import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
 
-import _list_observability_projectsSchemaRaw from '../../../serverless/json/list_observability_projects.request.json'
-import _create_observability_projectSchemaRaw from '../../../serverless/json/create_observability_project.request.json'
-import _get_observability_projectSchemaRaw from '../../../serverless/json/get_observability_project.request.json'
-import _delete_observability_projectSchemaRaw from '../../../serverless/json/delete_observability_project.request.json'
-import _patch_observability_projectSchemaRaw from '../../../serverless/json/patch_observability_project.request.json'
-import _reset_observability_project_credentialsSchemaRaw from '../../../serverless/json/reset_observability_project_credentials.request.json'
-import _resume_observability_projectSchemaRaw from '../../../serverless/json/resume_observability_project.request.json'
-import _get_observability_project_rolesSchemaRaw from '../../../serverless/json/get_observability_project_roles.request.json'
-import _get_observability_project_statusSchemaRaw from '../../../serverless/json/get_observability_project_status.request.json'
+import _list_observability_projectsSchemaRaw from '../../../serverless/json/list_observability_projects.request.json' with { type: 'json' }
+import _create_observability_projectSchemaRaw from '../../../serverless/json/create_observability_project.request.json' with { type: 'json' }
+import _get_observability_projectSchemaRaw from '../../../serverless/json/get_observability_project.request.json' with { type: 'json' }
+import _delete_observability_projectSchemaRaw from '../../../serverless/json/delete_observability_project.request.json' with { type: 'json' }
+import _patch_observability_projectSchemaRaw from '../../../serverless/json/patch_observability_project.request.json' with { type: 'json' }
+import _reset_observability_project_credentialsSchemaRaw from '../../../serverless/json/reset_observability_project_credentials.request.json' with { type: 'json' }
+import _resume_observability_projectSchemaRaw from '../../../serverless/json/resume_observability_project.request.json' with { type: 'json' }
+import _get_observability_project_rolesSchemaRaw from '../../../serverless/json/get_observability_project_roles.request.json' with { type: 'json' }
+import _get_observability_project_statusSchemaRaw from '../../../serverless/json/get_observability_project_status.request.json' with { type: 'json' }
 
 const _list_observability_projectsSchema = _list_observability_projectsSchemaRaw as unknown as JsonSchemaObject
 const _create_observability_projectSchema = _create_observability_projectSchemaRaw as unknown as JsonSchemaObject

@@ -12,7 +12,7 @@
 import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
 
-import _get_regionSchemaRaw from '../../../serverless/json/get_region.request.json'
+import _get_regionSchemaRaw from '../../../serverless/json/get_region.request.json' with { type: 'json' }
 
 const _get_regionSchema = _get_regionSchemaRaw as unknown as JsonSchemaObject
 

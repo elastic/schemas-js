@@ -12,8 +12,8 @@
 import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
 
-import _get_deployment_templates_v2SchemaRaw from '../../../cloud/json/get_deployment_templates_v2.request.json'
-import _get_deployment_template_v2SchemaRaw from '../../../cloud/json/get_deployment_template_v2.request.json'
+import _get_deployment_templates_v2SchemaRaw from '../../../cloud/json/get_deployment_templates_v2.request.json' with { type: 'json' }
+import _get_deployment_template_v2SchemaRaw from '../../../cloud/json/get_deployment_template_v2.request.json' with { type: 'json' }
 
 const _get_deployment_templates_v2Schema = _get_deployment_templates_v2SchemaRaw as unknown as JsonSchemaObject
 const _get_deployment_template_v2Schema = _get_deployment_template_v2SchemaRaw as unknown as JsonSchemaObject

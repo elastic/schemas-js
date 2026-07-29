@@ -8039,8 +8039,7 @@ export const IndicesDataStreamLifecycle = z.object({
   retention_determined_by: IndicesRetentionSource.describe('Configuration source that can influence the retention of a data stream.').optional(),
   downsampling: z.array(IndicesDownsamplingRound).describe('The list of downsampling rounds to execute as part of this downsampling configuration').optional(),
   downsampling_method: IndicesSamplingMethod.describe('The method used to downsample the data. There are two options `aggregate` and `last_value`. It requires `downsampling` to be defined. Defaults to `aggregate`.').optional(),
-  enabled: z.boolean().describe('If defined, it turns data stream lifecycle on/off (`true`/`false`) for this data stream. A data stream lifecycle that\'s disabled (enabled: `false`) will have no effect on the data stream.').optional(),
-  frozen_after: Duration.describe('Only available with feature flag dlm_searchable_snapshots.').optional()
+  enabled: z.boolean().describe('If defined, it turns data stream lifecycle on/off (`true`/`false`) for this data stream. A data stream lifecycle that\'s disabled (enabled: `false`) will have no effect on the data stream.').optional()
 }).meta({ id: 'IndicesDataStreamLifecycle' })
 export type IndicesDataStreamLifecycle = z.infer<typeof IndicesDataStreamLifecycle>
 

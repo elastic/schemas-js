@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../json/ccr.resume_auto_follow_pattern.request.json'
+import _inputSchemaRaw from '../../json/ccr.resume_auto_follow_pattern.request.json' with { type: 'json' }
 import type { EsApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject

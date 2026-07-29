@@ -12,9 +12,9 @@
 import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
 
-import _get_elasticsearch_project_can_deleteSchemaRaw from '../../../serverless/json/get_elasticsearch_project_can_delete.request.json'
-import _get_observability_project_can_deleteSchemaRaw from '../../../serverless/json/get_observability_project_can_delete.request.json'
-import _get_security_project_can_deleteSchemaRaw from '../../../serverless/json/get_security_project_can_delete.request.json'
+import _get_elasticsearch_project_can_deleteSchemaRaw from '../../../serverless/json/get_elasticsearch_project_can_delete.request.json' with { type: 'json' }
+import _get_observability_project_can_deleteSchemaRaw from '../../../serverless/json/get_observability_project_can_delete.request.json' with { type: 'json' }
+import _get_security_project_can_deleteSchemaRaw from '../../../serverless/json/get_security_project_can_delete.request.json' with { type: 'json' }
 
 const _get_elasticsearch_project_can_deleteSchema = _get_elasticsearch_project_can_deleteSchemaRaw as unknown as JsonSchemaObject
 const _get_observability_project_can_deleteSchema = _get_observability_project_can_deleteSchemaRaw as unknown as JsonSchemaObject
