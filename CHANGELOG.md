@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.3](https://github.com/elastic/schemas-js/compare/v0.4.2...v0.4.3) (2026-07-29)
+
+
+### Bug Fixes
+
+* use import attributes for JSON files ([#45](https://github.com/elastic/schemas-js/issues/45)) ([f2c268a](https://github.com/elastic/schemas-js/commit/f2c268a7b5dfb5f5a16ec46dabe5a601f50273de))
+
 ## [0.4.2](https://github.com/elastic/schemas-js/compare/v0.4.1-alpha.1...v0.4.2) (2026-07-28)
 
 
