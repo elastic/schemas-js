@@ -68,8 +68,8 @@ jobs:
       - name: Run linter
         run: npm run test:lint
 
-  test-build:
-    name: Type checker + CJS build
+  test-build-esm:
+    name: Type checker + ESM build
     runs-on: ubuntu-latest
 
     steps:
@@ -85,8 +85,28 @@ jobs:
       - name: Install
         run: npm install
 
-      - name: Check types + validate build script
-        run: npm run build
+      - name: Check types + validate ESM build script
+        run: npm run build:esm
+
+  test-build-cjs:
+    name: CJS build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          persist-credentials: false
+
+      - name: Use Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+
+      - name: Install
+        run: npm install
+
+      - name: Validate CJS build script
+        run: npm run build:cjs
 
   license:
     name: License check
@@ -141,7 +161,8 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - license
-      - test-build
+      - test-build-esm
+      - test-build-cjs
       - test-bun
       - test-lint
       - test-unit
