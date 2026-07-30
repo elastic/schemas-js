@@ -9,7 +9,11 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
+import type { JsonSchemaObject } from '../../../json-schema.ts'
+import _inputSchemaRaw from '../../json/snapshot.repository_analyze.request.json' with { type: 'json' }
 import type { EsApiDefinition } from '../types.ts'
+
+const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const snapshot_repository_analyze_definitions: EsApiDefinition[] = [
   {
@@ -19,5 +23,6 @@ export const snapshot_repository_analyze_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_snapshot/{repository}/_analyze',
     destructive: true,
+    input: _inputSchema,
   },
 ]

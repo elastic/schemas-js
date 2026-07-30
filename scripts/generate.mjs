@@ -78,6 +78,7 @@ const PRESERVE = new Set([
   join(srcDir, 'es', 'tools', 'types.ts'),
   join(srcDir, 'kibana', 'tools', 'types.ts'),
   join(srcDir, 'cloud', 'tools', 'types.ts'),
+  join(srcDir, 'serverless', 'tools', 'types.ts'),
   join(srcDir, 'registry.ts'),
 ])
 

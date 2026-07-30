@@ -9,7 +9,11 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
+import type { JsonSchemaObject } from '../../../json-schema.ts'
+import _inputSchemaRaw from '../../json/snapshot.repository_verify_integrity.request.json' with { type: 'json' }
 import type { EsApiDefinition } from '../types.ts'
+
+const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const snapshot_repository_verify_integrity_definitions: EsApiDefinition[] = [
   {
@@ -19,5 +23,6 @@ export const snapshot_repository_verify_integrity_definitions: EsApiDefinition[]
     method: 'POST',
     path: '/_snapshot/{repository}/_verify_integrity',
     destructive: true,
+    input: _inputSchema,
   },
 ]
