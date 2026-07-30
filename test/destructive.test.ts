@@ -29,7 +29,7 @@ describe('spot-check known destructive classifications', () => {
   for (const [registry, id, expected] of cases) {
     it(`${id} → destructive: ${expected}`, async () => {
       const { definition } = await registry.loadApi(id)
-      expect((definition as { destructive?: boolean }).destructive).toBe(expected)
+      expect(definition.destructive).toBe(expected)
     }, 30_000)
   }
 })

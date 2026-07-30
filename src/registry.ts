@@ -29,6 +29,7 @@ export interface ApiRegistryDefinition {
   readonly input?: Record<string, unknown>
   readonly bodyFormat?: 'json' | 'ndjson'
   readonly responseType?: 'json' | 'text' | 'ndjson'
+  readonly destructive: boolean
 }
 
 export interface LoadedApi {
