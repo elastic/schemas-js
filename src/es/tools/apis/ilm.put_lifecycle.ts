@@ -9,7 +9,11 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
+import type { JsonSchemaObject } from '../../../json-schema.ts'
+import _inputSchemaRaw from '../../json/ilm.put_lifecycle.request.json' with { type: 'json' }
 import type { EsApiDefinition } from '../types.ts'
+
+const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const ilm_put_lifecycle_definitions: EsApiDefinition[] = [
   {
@@ -19,5 +23,6 @@ export const ilm_put_lifecycle_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_ilm/policy/{policy}',
     destructive: true,
+    input: _inputSchema,
   },
 ]
