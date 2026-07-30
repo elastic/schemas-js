@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.4](https://github.com/elastic/schemas-js/compare/v0.4.3...v0.4.4) (2026-07-30)
+
+
+### Bug Fixes
+
+* add destructive field to ApiRegistryDefinition ([#48](https://github.com/elastic/schemas-js/issues/48)) ([305fdc5](https://github.com/elastic/schemas-js/commit/305fdc5b7d2f2bf82696ef9d32053ed249c4de28))
+* ensure ES JSON schemas use x-found-in properly with path params ([#50](https://github.com/elastic/schemas-js/issues/50)) ([8533df4](https://github.com/elastic/schemas-js/commit/8533df44c60bf16a50ad8d0ff777383df3ee9b35))
+
 ## [0.4.3](https://github.com/elastic/schemas-js/compare/v0.4.2...v0.4.3) (2026-07-29)
 
 
