@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.5](https://github.com/elastic/schemas-js/compare/v0.4.4...v0.4.5) (2026-07-31)
+
+
+### Bug Fixes
+
+* ensure JSON schemas handle ValueBody specs appropriately ([#51](https://github.com/elastic/schemas-js/issues/51)) ([bb294ee](https://github.com/elastic/schemas-js/commit/bb294ee36b356d298242b8075c65226edb457e4e))
+
 ## [0.4.4](https://github.com/elastic/schemas-js/compare/v0.4.3...v0.4.4) (2026-07-30)
 
 
