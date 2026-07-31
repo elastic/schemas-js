@@ -12,7 +12,11 @@
             "type": "string"
           },
           "csp": {
-            "type": "string"
+            "enum": [
+              "aws",
+              "azure",
+              "gcp"
+            ]
           },
           "vpc_service_name": {
             "type": "string"
@@ -44,7 +48,8 @@
         },
         "required": [
           "region",
-          "vpc_service_name",
+          "csp",
+          "private_service_name",
           "private_hosted_zone_domain_name",
           "availability_zones"
         ]

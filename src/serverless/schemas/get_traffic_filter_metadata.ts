@@ -15,9 +15,9 @@ import { z } from 'zod'
 export const GetTrafficFilterMetadataResponse = z.object({
   regions: z.array(z.object({
     region: z.string(),
-    csp: z.string().optional(),
-    vpc_service_name: z.string(),
-    private_service_name: z.string().optional(),
+    csp: z.enum(['aws', 'azure', 'gcp']),
+    vpc_service_name: z.string().optional(),
+    private_service_name: z.string(),
     private_hosted_zone_domain_name: z.string(),
     availability_zones: z.array(z.object({
       name: z.string(),
