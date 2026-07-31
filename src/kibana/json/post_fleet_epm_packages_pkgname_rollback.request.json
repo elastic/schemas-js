@@ -1,0 +1,1 @@
+{"type":"object","properties":{"pkgName":{"type":"string","description":"Package name to roll back","x-found-in":"path"}},"required":["pkgName"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-epm-packages-pkgname-rollback"}

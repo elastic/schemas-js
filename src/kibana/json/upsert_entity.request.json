@@ -1,1 +1,1 @@
-{"$ref":"./_defs.json#/$defs/Security_Entity_Analytics_API_Entity","$schema":"https://json-schema.org/draft/2020-12/schema","title":"UpsertEntity"}
+{"type":"object","properties":{"entityType":{"type":"string","description":"","x-found-in":"path"},"force":{"type":"boolean","description":"When true, allows updating protected fields.","x-found-in":"query"}},"required":["entityType"],"allOf":[{"$ref":"./_defs.json#/$defs/Security_Entity_Analytics_API_Entity"}],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"UpsertEntity"}

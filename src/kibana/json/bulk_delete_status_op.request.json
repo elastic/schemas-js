@@ -1,0 +1,1 @@
+{"type":"object","properties":{"taskId":{"type":"string","description":"The task id of the bulk delete operation","x-found-in":"path"},"spaceId":{"type":"string","description":"The spaceId parameter","x-found-in":"path"}},"required":["taskId","spaceId"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"bulkDeleteStatusOp"}

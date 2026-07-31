@@ -1,0 +1,1 @@
+{"type":"object","properties":{"id":{"type":"string","description":"Value list identifier (`id`) returned when the list was created.","x-found-in":"query"}},"required":["id"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ReadList"}

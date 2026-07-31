@@ -1,0 +1,1 @@
+{"type":"object","properties":{"template_timeline_id":{"type":"string","description":"The `savedObjectId` of the Timeline template to retrieve.","x-found-in":"query"},"id":{"type":"string","description":"The `savedObjectId` of the Timeline to retrieve.","x-found-in":"query"}},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"GetTimeline"}

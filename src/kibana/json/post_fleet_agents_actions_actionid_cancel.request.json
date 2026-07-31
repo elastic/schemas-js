@@ -1,0 +1,1 @@
+{"type":"object","properties":{"actionId":{"type":"string","description":"The ID of the action to cancel","x-found-in":"path"}},"required":["actionId"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-agents-actions-actionid-cancel"}

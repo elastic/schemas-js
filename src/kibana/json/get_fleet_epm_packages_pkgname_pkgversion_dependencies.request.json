@@ -1,0 +1,1 @@
+{"type":"object","properties":{"pkgName":{"type":"string","description":"Package name","x-found-in":"path"},"pkgVersion":{"type":"string","description":"Package version","x-found-in":"path"}},"required":["pkgName","pkgVersion"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-epm-packages-pkgname-pkgversion-dependencies"}

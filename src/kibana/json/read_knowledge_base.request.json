@@ -1,0 +1,1 @@
+{"type":"object","properties":{"resource":{"type":"string","description":"The KnowledgeBase `resource` value.","x-found-in":"path"}},"required":["resource"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ReadKnowledgeBase"}

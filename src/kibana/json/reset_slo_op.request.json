@@ -1,0 +1,1 @@
+{"type":"object","properties":{"spaceId":{"type":"string","description":"The spaceId parameter","x-found-in":"path"},"sloId":{"type":"string","description":"The sloId parameter","x-found-in":"path"}},"required":["spaceId","sloId"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"resetSloOp"}

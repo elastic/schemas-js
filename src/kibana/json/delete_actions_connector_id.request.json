@@ -1,0 +1,1 @@
+{"type":"object","properties":{"id":{"type":"string","description":"An identifier for the connector.","x-found-in":"path"}},"required":["id"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-actions-connector-id"}

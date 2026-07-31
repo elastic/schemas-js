@@ -1,0 +1,1 @@
+{"type":"object","properties":{"entityTypes":{"type":"string","description":"The entity type of the engine ('user', 'host', 'service', 'generic').","x-found-in":"query"},"delete_data":{"type":"boolean","description":"Control flag to also delete the entity data.","x-found-in":"query"}},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"DeleteEntityEngines"}

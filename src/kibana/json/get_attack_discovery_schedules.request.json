@@ -1,0 +1,1 @@
+{"type":"object","properties":{"id":{"type":"string","description":"The unique identifier (UUID) of the Attack Discovery schedule to retrieve. This ID is returned when creating a schedule and can be found in schedule listings.","x-found-in":"path"}},"required":["id"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"GetAttackDiscoverySchedules"}

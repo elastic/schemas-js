@@ -1,0 +1,1 @@
+{"type":"object","properties":{"cloudConnectorId":{"type":"string","description":"The unique identifier of the cloud connector.","x-found-in":"path"}},"required":["cloudConnectorId"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-cloud-connectors-cloudconnectorid"}

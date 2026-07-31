@@ -1,0 +1,1 @@
+{"type":"object","properties":{"name":{"type":"string","description":"The role name.","x-found-in":"path"}},"required":["name"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-security-role-name"}
