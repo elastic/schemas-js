@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/elastic/schemas-js/compare/v0.4.5...v0.5.0) (2026-08-03)
+
+
+### Features
+
+* split Kibana tools into one file per API, flatten nested oneOf/anyOf unions ([#54](https://github.com/elastic/schemas-js/issues/54)) ([791238a](https://github.com/elastic/schemas-js/commit/791238af9ae6b1b778f06567297a147ce8bdd954))
+
 ## [0.4.5](https://github.com/elastic/schemas-js/compare/v0.4.4...v0.4.5) (2026-07-31)
 
 
