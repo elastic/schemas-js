@@ -1,0 +1,1 @@
+{"type":"object","properties":{"executionId":{"type":"string","description":"Workflow execution ID","x-found-in":"path"}},"required":["executionId"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-workflows-executions-executionid-cancel"}

@@ -1,3 +1,7 @@
+## Most code is generated
+
+The majority of code in this repo is generated from API specs. Whenever a change is needed to a generated file, the actual fix should be made upstream in the elastic-client-generator-js repo and then codegen should be rerun. The repo is very likely available in an adjacent directory to this repo in most dev environments. Make edits there if it's available and won't clobber other in-progress work. Otherwise, respond with instructions for what changes must be made there.
+
 ## Slow commands
 
 The codebase is quite large, and almost entirely generated, from specs for over 1200 APIs. Commands like the following will often take several minutes to complete:

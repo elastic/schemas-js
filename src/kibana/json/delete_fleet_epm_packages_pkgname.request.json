@@ -1,0 +1,1 @@
+{"type":"object","properties":{"pkgName":{"type":"string","description":"Package name","x-found-in":"path"},"force":{"type":"boolean","description":"When true, delete the package even if it has active package policies","x-found-in":"query"}},"required":["pkgName"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-fleet-epm-packages-pkgname"}

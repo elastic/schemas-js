@@ -1,0 +1,1 @@
+{"type":"object","properties":{"script_id":{"type":"string","description":"The ID of the script entry to be updated.","x-found-in":"path"}},"required":["script_id"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"EndpointScriptLibraryPatchUpdateScript"}

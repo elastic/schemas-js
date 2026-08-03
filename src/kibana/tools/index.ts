@@ -15,213 +15,2225 @@ import type { ApiRegistry, KbApiDefinition } from './types.ts'
 
 async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[]> {
   switch (namespaceFile) {
-    case 'agent-builder': {
-      const mod = await import('./apis/agent-builder.ts') as Record<string, unknown>
-      return mod['agentBuilderDefinitions'] as KbApiDefinition[]
+    case 'apply_entity_engine_dataview_indices': {
+      const mod = await import('./apis/apply_entity_engine_dataview_indices.ts') as Record<string, unknown>
+      return mod['apply_entity_engine_dataview_indicesDefinitions'] as KbApiDefinition[]
     }
-    case 'alerting': {
-      const mod = await import('./apis/alerting.ts') as Record<string, unknown>
-      return mod['alertingDefinitions'] as KbApiDefinition[]
+    case 'assign_watchlist_entities': {
+      const mod = await import('./apis/assign_watchlist_entities.ts') as Record<string, unknown>
+      return mod['assign_watchlist_entitiesDefinitions'] as KbApiDefinition[]
     }
-    case 'apm-agent-configuration': {
-      const mod = await import('./apis/apm-agent-configuration.ts') as Record<string, unknown>
-      return mod['apmAgentConfigurationDefinitions'] as KbApiDefinition[]
+    case 'attack_discovery_find': {
+      const mod = await import('./apis/attack_discovery_find.ts') as Record<string, unknown>
+      return mod['attack_discovery_findDefinitions'] as KbApiDefinition[]
     }
-    case 'apm-agent-keys': {
-      const mod = await import('./apis/apm-agent-keys.ts') as Record<string, unknown>
-      return mod['apmAgentKeysDefinitions'] as KbApiDefinition[]
+    case 'bulk_delete_attack_discovery_schedules': {
+      const mod = await import('./apis/bulk_delete_attack_discovery_schedules.ts') as Record<string, unknown>
+      return mod['bulk_delete_attack_discovery_schedulesDefinitions'] as KbApiDefinition[]
     }
-    case 'apm-annotations': {
-      const mod = await import('./apis/apm-annotations.ts') as Record<string, unknown>
-      return mod['apmAnnotationsDefinitions'] as KbApiDefinition[]
+    case 'bulk_delete_op': {
+      const mod = await import('./apis/bulk_delete_op.ts') as Record<string, unknown>
+      return mod['bulk_delete_opDefinitions'] as KbApiDefinition[]
     }
-    case 'apm-server-schema': {
-      const mod = await import('./apis/apm-server-schema.ts') as Record<string, unknown>
-      return mod['apmServerSchemaDefinitions'] as KbApiDefinition[]
+    case 'bulk_delete_status_op': {
+      const mod = await import('./apis/bulk_delete_status_op.ts') as Record<string, unknown>
+      return mod['bulk_delete_status_opDefinitions'] as KbApiDefinition[]
     }
-    case 'connectors': {
-      const mod = await import('./apis/connectors.ts') as Record<string, unknown>
-      return mod['connectorsDefinitions'] as KbApiDefinition[]
+    case 'bulk_disable_attack_discovery_schedules': {
+      const mod = await import('./apis/bulk_disable_attack_discovery_schedules.ts') as Record<string, unknown>
+      return mod['bulk_disable_attack_discovery_schedulesDefinitions'] as KbApiDefinition[]
     }
-    case 'dashboards': {
-      const mod = await import('./apis/dashboards.ts') as Record<string, unknown>
-      return mod['dashboardsDefinitions'] as KbApiDefinition[]
+    case 'bulk_enable_attack_discovery_schedules': {
+      const mod = await import('./apis/bulk_enable_attack_discovery_schedules.ts') as Record<string, unknown>
+      return mod['bulk_enable_attack_discovery_schedulesDefinitions'] as KbApiDefinition[]
     }
-    case 'data-streams': {
-      const mod = await import('./apis/data-streams.ts') as Record<string, unknown>
-      return mod['dataStreamsDefinitions'] as KbApiDefinition[]
+    case 'bulk_upsert_asset_criticality_records': {
+      const mod = await import('./apis/bulk_upsert_asset_criticality_records.ts') as Record<string, unknown>
+      return mod['bulk_upsert_asset_criticality_recordsDefinitions'] as KbApiDefinition[]
     }
-    case 'data-views': {
-      const mod = await import('./apis/data-views.ts') as Record<string, unknown>
-      return mod['dataViewsDefinitions'] as KbApiDefinition[]
+    case 'cancel_action': {
+      const mod = await import('./apis/cancel_action.ts') as Record<string, unknown>
+      return mod['cancel_actionDefinitions'] as KbApiDefinition[]
     }
-    case 'elastic-agent-actions': {
-      const mod = await import('./apis/elastic-agent-actions.ts') as Record<string, unknown>
-      return mod['elasticAgentActionsDefinitions'] as KbApiDefinition[]
+    case 'chat_complete': {
+      const mod = await import('./apis/chat_complete.ts') as Record<string, unknown>
+      return mod['chat_completeDefinitions'] as KbApiDefinition[]
     }
-    case 'elastic-agent-binary-download-sources': {
-      const mod = await import('./apis/elastic-agent-binary-download-sources.ts') as Record<string, unknown>
-      return mod['elasticAgentBinaryDownloadSourcesDefinitions'] as KbApiDefinition[]
+    case 'clean_draft_timelines': {
+      const mod = await import('./apis/clean_draft_timelines.ts') as Record<string, unknown>
+      return mod['clean_draft_timelinesDefinitions'] as KbApiDefinition[]
     }
-    case 'elastic-agent-policies': {
-      const mod = await import('./apis/elastic-agent-policies.ts') as Record<string, unknown>
-      return mod['elasticAgentPoliciesDefinitions'] as KbApiDefinition[]
+    case 'clean_up_risk_engine': {
+      const mod = await import('./apis/clean_up_risk_engine.ts') as Record<string, unknown>
+      return mod['clean_up_risk_engineDefinitions'] as KbApiDefinition[]
     }
-    case 'elastic-agent-status': {
-      const mod = await import('./apis/elastic-agent-status.ts') as Record<string, unknown>
-      return mod['elasticAgentStatusDefinitions'] as KbApiDefinition[]
+    case 'configure_risk_engine_saved_object': {
+      const mod = await import('./apis/configure_risk_engine_saved_object.ts') as Record<string, unknown>
+      return mod['configure_risk_engine_saved_objectDefinitions'] as KbApiDefinition[]
     }
-    case 'elastic-agents': {
-      const mod = await import('./apis/elastic-agents.ts') as Record<string, unknown>
-      return mod['elasticAgentsDefinitions'] as KbApiDefinition[]
+    case 'copy_timeline': {
+      const mod = await import('./apis/copy_timeline.ts') as Record<string, unknown>
+      return mod['copy_timelineDefinitions'] as KbApiDefinition[]
     }
-    case 'elastic-package-manager-epm': {
-      const mod = await import('./apis/elastic-package-manager-epm.ts') as Record<string, unknown>
-      return mod['elasticPackageManagerEpmDefinitions'] as KbApiDefinition[]
+    case 'create_agent_key': {
+      const mod = await import('./apis/create_agent_key.ts') as Record<string, unknown>
+      return mod['create_agent_keyDefinitions'] as KbApiDefinition[]
     }
-    case 'fleet-agentless-policies': {
-      const mod = await import('./apis/fleet-agentless-policies.ts') as Record<string, unknown>
-      return mod['fleetAgentlessPoliciesDefinitions'] as KbApiDefinition[]
+    case 'create_annotation': {
+      const mod = await import('./apis/create_annotation.ts') as Record<string, unknown>
+      return mod['create_annotationDefinitions'] as KbApiDefinition[]
     }
-    case 'fleet-cloud-connectors': {
-      const mod = await import('./apis/fleet-cloud-connectors.ts') as Record<string, unknown>
-      return mod['fleetCloudConnectorsDefinitions'] as KbApiDefinition[]
+    case 'create_asset_criticality_record': {
+      const mod = await import('./apis/create_asset_criticality_record.ts') as Record<string, unknown>
+      return mod['create_asset_criticality_recordDefinitions'] as KbApiDefinition[]
     }
-    case 'fleet-enrollment-api-keys': {
-      const mod = await import('./apis/fleet-enrollment-api-keys.ts') as Record<string, unknown>
-      return mod['fleetEnrollmentApiKeysDefinitions'] as KbApiDefinition[]
+    case 'create_attack_discovery_schedules': {
+      const mod = await import('./apis/create_attack_discovery_schedules.ts') as Record<string, unknown>
+      return mod['create_attack_discovery_schedulesDefinitions'] as KbApiDefinition[]
     }
-    case 'fleet-internals': {
-      const mod = await import('./apis/fleet-internals.ts') as Record<string, unknown>
-      return mod['fleetInternalsDefinitions'] as KbApiDefinition[]
+    case 'create_conversation': {
+      const mod = await import('./apis/create_conversation.ts') as Record<string, unknown>
+      return mod['create_conversationDefinitions'] as KbApiDefinition[]
     }
-    case 'fleet-outputs': {
-      const mod = await import('./apis/fleet-outputs.ts') as Record<string, unknown>
-      return mod['fleetOutputsDefinitions'] as KbApiDefinition[]
+    case 'create_dashboard_redirect': {
+      const mod = await import('./apis/create_dashboard_redirect.ts') as Record<string, unknown>
+      return mod['create_dashboard_redirectDefinitions'] as KbApiDefinition[]
     }
-    case 'fleet-package-policies': {
-      const mod = await import('./apis/fleet-package-policies.ts') as Record<string, unknown>
-      return mod['fleetPackagePoliciesDefinitions'] as KbApiDefinition[]
+    case 'create_data_view_defaultw': {
+      const mod = await import('./apis/create_data_view_defaultw.ts') as Record<string, unknown>
+      return mod['create_data_view_defaultwDefinitions'] as KbApiDefinition[]
     }
-    case 'fleet-proxies': {
-      const mod = await import('./apis/fleet-proxies.ts') as Record<string, unknown>
-      return mod['fleetProxiesDefinitions'] as KbApiDefinition[]
+    case 'create_endpoint_list': {
+      const mod = await import('./apis/create_endpoint_list.ts') as Record<string, unknown>
+      return mod['create_endpoint_listDefinitions'] as KbApiDefinition[]
     }
-    case 'fleet-server-hosts': {
-      const mod = await import('./apis/fleet-server-hosts.ts') as Record<string, unknown>
-      return mod['fleetServerHostsDefinitions'] as KbApiDefinition[]
+    case 'create_endpoint_list_item': {
+      const mod = await import('./apis/create_endpoint_list_item.ts') as Record<string, unknown>
+      return mod['create_endpoint_list_itemDefinitions'] as KbApiDefinition[]
     }
-    case 'fleet-service-tokens': {
-      const mod = await import('./apis/fleet-service-tokens.ts') as Record<string, unknown>
-      return mod['fleetServiceTokensDefinitions'] as KbApiDefinition[]
+    case 'create_exception_list': {
+      const mod = await import('./apis/create_exception_list.ts') as Record<string, unknown>
+      return mod['create_exception_listDefinitions'] as KbApiDefinition[]
     }
-    case 'fleet-uninstall-tokens': {
-      const mod = await import('./apis/fleet-uninstall-tokens.ts') as Record<string, unknown>
-      return mod['fleetUninstallTokensDefinitions'] as KbApiDefinition[]
+    case 'create_exception_list_item': {
+      const mod = await import('./apis/create_exception_list_item.ts') as Record<string, unknown>
+      return mod['create_exception_list_itemDefinitions'] as KbApiDefinition[]
     }
-    case 'maintenance-window': {
-      const mod = await import('./apis/maintenance-window.ts') as Record<string, unknown>
-      return mod['maintenanceWindowDefinitions'] as KbApiDefinition[]
+    case 'create_knowledge_base': {
+      const mod = await import('./apis/create_knowledge_base.ts') as Record<string, unknown>
+      return mod['create_knowledge_baseDefinitions'] as KbApiDefinition[]
     }
-    case 'message-signing-service': {
-      const mod = await import('./apis/message-signing-service.ts') as Record<string, unknown>
-      return mod['messageSigningServiceDefinitions'] as KbApiDefinition[]
+    case 'create_knowledge_base_entry': {
+      const mod = await import('./apis/create_knowledge_base_entry.ts') as Record<string, unknown>
+      return mod['create_knowledge_base_entryDefinitions'] as KbApiDefinition[]
     }
-    case 'misc': {
-      const mod = await import('./apis/misc.ts') as Record<string, unknown>
-      return mod['miscDefinitions'] as KbApiDefinition[]
+    case 'create_list': {
+      const mod = await import('./apis/create_list.ts') as Record<string, unknown>
+      return mod['create_listDefinitions'] as KbApiDefinition[]
     }
-    case 'ml': {
-      const mod = await import('./apis/ml.ts') as Record<string, unknown>
-      return mod['mlDefinitions'] as KbApiDefinition[]
+    case 'create_list_index': {
+      const mod = await import('./apis/create_list_index.ts') as Record<string, unknown>
+      return mod['create_list_indexDefinitions'] as KbApiDefinition[]
     }
-    case 'observabilityaiassistant': {
-      const mod = await import('./apis/observabilityaiassistant.ts') as Record<string, unknown>
-      return mod['observabilityaiassistantDefinitions'] as KbApiDefinition[]
+    case 'create_list_item': {
+      const mod = await import('./apis/create_list_item.ts') as Record<string, unknown>
+      return mod['create_list_itemDefinitions'] as KbApiDefinition[]
     }
-    case 'roles': {
-      const mod = await import('./apis/roles.ts') as Record<string, unknown>
-      return mod['rolesDefinitions'] as KbApiDefinition[]
+    case 'create_priv_mon_user': {
+      const mod = await import('./apis/create_priv_mon_user.ts') as Record<string, unknown>
+      return mod['create_priv_mon_userDefinitions'] as KbApiDefinition[]
     }
-    case 'saved-objects': {
-      const mod = await import('./apis/saved-objects.ts') as Record<string, unknown>
-      return mod['savedObjectsDefinitions'] as KbApiDefinition[]
+    case 'create_rule': {
+      const mod = await import('./apis/create_rule.ts') as Record<string, unknown>
+      return mod['create_ruleDefinitions'] as KbApiDefinition[]
     }
-    case 'security-ai-assistant-api': {
-      const mod = await import('./apis/security-ai-assistant-api.ts') as Record<string, unknown>
-      return mod['securityAiAssistantApiDefinitions'] as KbApiDefinition[]
+    case 'create_rule_exception_list_items': {
+      const mod = await import('./apis/create_rule_exception_list_items.ts') as Record<string, unknown>
+      return mod['create_rule_exception_list_itemsDefinitions'] as KbApiDefinition[]
     }
-    case 'security-attack-discovery-api': {
-      const mod = await import('./apis/security-attack-discovery-api.ts') as Record<string, unknown>
-      return mod['securityAttackDiscoveryApiDefinitions'] as KbApiDefinition[]
+    case 'create_runtime_field_default': {
+      const mod = await import('./apis/create_runtime_field_default.ts') as Record<string, unknown>
+      return mod['create_runtime_field_defaultDefinitions'] as KbApiDefinition[]
     }
-    case 'security-detections-api': {
-      const mod = await import('./apis/security-detections-api.ts') as Record<string, unknown>
-      return mod['securityDetectionsApiDefinitions'] as KbApiDefinition[]
+    case 'create_shared_exception_list': {
+      const mod = await import('./apis/create_shared_exception_list.ts') as Record<string, unknown>
+      return mod['create_shared_exception_listDefinitions'] as KbApiDefinition[]
     }
-    case 'security-endpoint-exceptions-api': {
-      const mod = await import('./apis/security-endpoint-exceptions-api.ts') as Record<string, unknown>
-      return mod['securityEndpointExceptionsApiDefinitions'] as KbApiDefinition[]
+    case 'create_slo_op': {
+      const mod = await import('./apis/create_slo_op.ts') as Record<string, unknown>
+      return mod['create_slo_opDefinitions'] as KbApiDefinition[]
     }
-    case 'security-endpoint-management-api': {
-      const mod = await import('./apis/security-endpoint-management-api.ts') as Record<string, unknown>
-      return mod['securityEndpointManagementApiDefinitions'] as KbApiDefinition[]
+    case 'create_timelines': {
+      const mod = await import('./apis/create_timelines.ts') as Record<string, unknown>
+      return mod['create_timelinesDefinitions'] as KbApiDefinition[]
     }
-    case 'security-entity-analytics-api': {
-      const mod = await import('./apis/security-entity-analytics-api.ts') as Record<string, unknown>
-      return mod['securityEntityAnalyticsApiDefinitions'] as KbApiDefinition[]
+    case 'create_update_agent_configuration': {
+      const mod = await import('./apis/create_update_agent_configuration.ts') as Record<string, unknown>
+      return mod['create_update_agent_configurationDefinitions'] as KbApiDefinition[]
     }
-    case 'security-entity-store': {
-      const mod = await import('./apis/security-entity-store.ts') as Record<string, unknown>
-      return mod['securityEntityStoreDefinitions'] as KbApiDefinition[]
+    case 'create_update_protection_updates_note': {
+      const mod = await import('./apis/create_update_protection_updates_note.ts') as Record<string, unknown>
+      return mod['create_update_protection_updates_noteDefinitions'] as KbApiDefinition[]
     }
-    case 'security-exceptions-api': {
-      const mod = await import('./apis/security-exceptions-api.ts') as Record<string, unknown>
-      return mod['securityExceptionsApiDefinitions'] as KbApiDefinition[]
+    case 'create_update_runtime_field_default': {
+      const mod = await import('./apis/create_update_runtime_field_default.ts') as Record<string, unknown>
+      return mod['create_update_runtime_field_defaultDefinitions'] as KbApiDefinition[]
     }
-    case 'security-lists-api': {
-      const mod = await import('./apis/security-lists-api.ts') as Record<string, unknown>
-      return mod['securityListsApiDefinitions'] as KbApiDefinition[]
+    case 'create_visualization_redirect': {
+      const mod = await import('./apis/create_visualization_redirect.ts') as Record<string, unknown>
+      return mod['create_visualization_redirectDefinitions'] as KbApiDefinition[]
     }
-    case 'security-osquery-api': {
-      const mod = await import('./apis/security-osquery-api.ts') as Record<string, unknown>
-      return mod['securityOsqueryApiDefinitions'] as KbApiDefinition[]
+    case 'create_watchlist': {
+      const mod = await import('./apis/create_watchlist.ts') as Record<string, unknown>
+      return mod['create_watchlistDefinitions'] as KbApiDefinition[]
     }
-    case 'security-timeline-api': {
-      const mod = await import('./apis/security-timeline-api.ts') as Record<string, unknown>
-      return mod['securityTimelineApiDefinitions'] as KbApiDefinition[]
+    case 'delete_actions_connector_id': {
+      const mod = await import('./apis/delete_actions_connector_id.ts') as Record<string, unknown>
+      return mod['delete_actions_connector_idDefinitions'] as KbApiDefinition[]
     }
-    case 'slo': {
-      const mod = await import('./apis/slo.ts') as Record<string, unknown>
-      return mod['sloDefinitions'] as KbApiDefinition[]
+    case 'delete_agent_builder_agents_id': {
+      const mod = await import('./apis/delete_agent_builder_agents_id.ts') as Record<string, unknown>
+      return mod['delete_agent_builder_agents_idDefinitions'] as KbApiDefinition[]
     }
-    case 'spaces': {
-      const mod = await import('./apis/spaces.ts') as Record<string, unknown>
-      return mod['spacesDefinitions'] as KbApiDefinition[]
+    case 'delete_agent_builder_conversations_conversation_id': {
+      const mod = await import('./apis/delete_agent_builder_conversations_conversation_id.ts') as Record<string, unknown>
+      return mod['delete_agent_builder_conversations_conversation_idDefinitions'] as KbApiDefinition[]
     }
-    case 'streams': {
-      const mod = await import('./apis/streams.ts') as Record<string, unknown>
-      return mod['streamsDefinitions'] as KbApiDefinition[]
+    case 'delete_agent_builder_conversations_conversation_id_attachments_attachment_id': {
+      const mod = await import('./apis/delete_agent_builder_conversations_conversation_id_attachments_attachment_id.ts') as Record<string, unknown>
+      return mod['delete_agent_builder_conversations_conversation_id_attachments_attachment_idDefinitions'] as KbApiDefinition[]
     }
-    case 'system': {
-      const mod = await import('./apis/system.ts') as Record<string, unknown>
-      return mod['systemDefinitions'] as KbApiDefinition[]
+    case 'delete_agent_builder_plugins_pluginid': {
+      const mod = await import('./apis/delete_agent_builder_plugins_pluginid.ts') as Record<string, unknown>
+      return mod['delete_agent_builder_plugins_pluginidDefinitions'] as KbApiDefinition[]
     }
-    case 'tags': {
-      const mod = await import('./apis/tags.ts') as Record<string, unknown>
-      return mod['tagsDefinitions'] as KbApiDefinition[]
+    case 'delete_agent_builder_skills_skillid': {
+      const mod = await import('./apis/delete_agent_builder_skills_skillid.ts') as Record<string, unknown>
+      return mod['delete_agent_builder_skills_skillidDefinitions'] as KbApiDefinition[]
     }
-    case 'task-manager': {
-      const mod = await import('./apis/task-manager.ts') as Record<string, unknown>
-      return mod['taskManagerDefinitions'] as KbApiDefinition[]
+    case 'delete_agent_builder_tools_toolid': {
+      const mod = await import('./apis/delete_agent_builder_tools_toolid.ts') as Record<string, unknown>
+      return mod['delete_agent_builder_tools_toolidDefinitions'] as KbApiDefinition[]
     }
-    case 'visualizations': {
-      const mod = await import('./apis/visualizations.ts') as Record<string, unknown>
-      return mod['visualizationsDefinitions'] as KbApiDefinition[]
+    case 'delete_agent_configuration': {
+      const mod = await import('./apis/delete_agent_configuration.ts') as Record<string, unknown>
+      return mod['delete_agent_configurationDefinitions'] as KbApiDefinition[]
     }
-    case 'workflows': {
-      const mod = await import('./apis/workflows.ts') as Record<string, unknown>
-      return mod['workflowsDefinitions'] as KbApiDefinition[]
+    case 'delete_alerting_rule_id': {
+      const mod = await import('./apis/delete_alerting_rule_id.ts') as Record<string, unknown>
+      return mod['delete_alerting_rule_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_alerting_rule_ruleid_snooze_schedule_scheduleid': {
+      const mod = await import('./apis/delete_alerting_rule_ruleid_snooze_schedule_scheduleid.ts') as Record<string, unknown>
+      return mod['delete_alerting_rule_ruleid_snooze_schedule_scheduleidDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_alerting_rules_backfill_id': {
+      const mod = await import('./apis/delete_alerting_rules_backfill_id.ts') as Record<string, unknown>
+      return mod['delete_alerting_rules_backfill_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_all_conversations': {
+      const mod = await import('./apis/delete_all_conversations.ts') as Record<string, unknown>
+      return mod['delete_all_conversationsDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_asset_criticality_record': {
+      const mod = await import('./apis/delete_asset_criticality_record.ts') as Record<string, unknown>
+      return mod['delete_asset_criticality_recordDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_attack_discovery_schedules': {
+      const mod = await import('./apis/delete_attack_discovery_schedules.ts') as Record<string, unknown>
+      return mod['delete_attack_discovery_schedulesDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_conversation': {
+      const mod = await import('./apis/delete_conversation.ts') as Record<string, unknown>
+      return mod['delete_conversationDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_dashboard_redirect': {
+      const mod = await import('./apis/delete_dashboard_redirect.ts') as Record<string, unknown>
+      return mod['delete_dashboard_redirectDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_data_view_default': {
+      const mod = await import('./apis/delete_data_view_default.ts') as Record<string, unknown>
+      return mod['delete_data_view_defaultDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_endpoint_list_item': {
+      const mod = await import('./apis/delete_endpoint_list_item.ts') as Record<string, unknown>
+      return mod['delete_endpoint_list_itemDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_entity_engine': {
+      const mod = await import('./apis/delete_entity_engine.ts') as Record<string, unknown>
+      return mod['delete_entity_engineDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_entity_engines': {
+      const mod = await import('./apis/delete_entity_engines.ts') as Record<string, unknown>
+      return mod['delete_entity_enginesDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_exception_list': {
+      const mod = await import('./apis/delete_exception_list.ts') as Record<string, unknown>
+      return mod['delete_exception_listDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_exception_list_item': {
+      const mod = await import('./apis/delete_exception_list_item.ts') as Record<string, unknown>
+      return mod['delete_exception_list_itemDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_fleet_agent_download_sources_sourceid': {
+      const mod = await import('./apis/delete_fleet_agent_download_sources_sourceid.ts') as Record<string, unknown>
+      return mod['delete_fleet_agent_download_sources_sourceidDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_fleet_agentless_policies_policyid': {
+      const mod = await import('./apis/delete_fleet_agentless_policies_policyid.ts') as Record<string, unknown>
+      return mod['delete_fleet_agentless_policies_policyidDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_fleet_agents_agentid': {
+      const mod = await import('./apis/delete_fleet_agents_agentid.ts') as Record<string, unknown>
+      return mod['delete_fleet_agents_agentidDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_fleet_agents_files_fileid': {
+      const mod = await import('./apis/delete_fleet_agents_files_fileid.ts') as Record<string, unknown>
+      return mod['delete_fleet_agents_files_fileidDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_fleet_cloud_connectors_cloudconnectorid': {
+      const mod = await import('./apis/delete_fleet_cloud_connectors_cloudconnectorid.ts') as Record<string, unknown>
+      return mod['delete_fleet_cloud_connectors_cloudconnectoridDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_fleet_enrollment_api_keys_keyid': {
+      const mod = await import('./apis/delete_fleet_enrollment_api_keys_keyid.ts') as Record<string, unknown>
+      return mod['delete_fleet_enrollment_api_keys_keyidDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_fleet_epm_packages_pkgname': {
+      const mod = await import('./apis/delete_fleet_epm_packages_pkgname.ts') as Record<string, unknown>
+      return mod['delete_fleet_epm_packages_pkgnameDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_fleet_epm_packages_pkgname_pkgversion': {
+      const mod = await import('./apis/delete_fleet_epm_packages_pkgname_pkgversion.ts') as Record<string, unknown>
+      return mod['delete_fleet_epm_packages_pkgname_pkgversionDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_fleet_epm_packages_pkgname_pkgversion_datastream_assets': {
+      const mod = await import('./apis/delete_fleet_epm_packages_pkgname_pkgversion_datastream_assets.ts') as Record<string, unknown>
+      return mod['delete_fleet_epm_packages_pkgname_pkgversion_datastream_assetsDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_fleet_epm_packages_pkgname_pkgversion_kibana_assets': {
+      const mod = await import('./apis/delete_fleet_epm_packages_pkgname_pkgversion_kibana_assets.ts') as Record<string, unknown>
+      return mod['delete_fleet_epm_packages_pkgname_pkgversion_kibana_assetsDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_fleet_fleet_server_hosts_itemid': {
+      const mod = await import('./apis/delete_fleet_fleet_server_hosts_itemid.ts') as Record<string, unknown>
+      return mod['delete_fleet_fleet_server_hosts_itemidDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_fleet_outputs_outputid': {
+      const mod = await import('./apis/delete_fleet_outputs_outputid.ts') as Record<string, unknown>
+      return mod['delete_fleet_outputs_outputidDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_fleet_package_policies_packagepolicyid': {
+      const mod = await import('./apis/delete_fleet_package_policies_packagepolicyid.ts') as Record<string, unknown>
+      return mod['delete_fleet_package_policies_packagepolicyidDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_fleet_proxies_itemid': {
+      const mod = await import('./apis/delete_fleet_proxies_itemid.ts') as Record<string, unknown>
+      return mod['delete_fleet_proxies_itemidDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_knowledge_base_entry': {
+      const mod = await import('./apis/delete_knowledge_base_entry.ts') as Record<string, unknown>
+      return mod['delete_knowledge_base_entryDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_list': {
+      const mod = await import('./apis/delete_list.ts') as Record<string, unknown>
+      return mod['delete_listDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_list_index': {
+      const mod = await import('./apis/delete_list_index.ts') as Record<string, unknown>
+      return mod['delete_list_indexDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_list_item': {
+      const mod = await import('./apis/delete_list_item.ts') as Record<string, unknown>
+      return mod['delete_list_itemDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_maintenance_window_id': {
+      const mod = await import('./apis/delete_maintenance_window_id.ts') as Record<string, unknown>
+      return mod['delete_maintenance_window_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_monitoring_engine': {
+      const mod = await import('./apis/delete_monitoring_engine.ts') as Record<string, unknown>
+      return mod['delete_monitoring_engineDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_note': {
+      const mod = await import('./apis/delete_note.ts') as Record<string, unknown>
+      return mod['delete_noteDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_priv_mon_user': {
+      const mod = await import('./apis/delete_priv_mon_user.ts') as Record<string, unknown>
+      return mod['delete_priv_mon_userDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_rollup_data_op': {
+      const mod = await import('./apis/delete_rollup_data_op.ts') as Record<string, unknown>
+      return mod['delete_rollup_data_opDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_rule': {
+      const mod = await import('./apis/delete_rule.ts') as Record<string, unknown>
+      return mod['delete_ruleDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_runtime_field_default': {
+      const mod = await import('./apis/delete_runtime_field_default.ts') as Record<string, unknown>
+      return mod['delete_runtime_field_defaultDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_security_entity_store_entities': {
+      const mod = await import('./apis/delete_security_entity_store_entities.ts') as Record<string, unknown>
+      return mod['delete_security_entity_store_entitiesDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_security_role_name': {
+      const mod = await import('./apis/delete_security_role_name.ts') as Record<string, unknown>
+      return mod['delete_security_role_nameDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_single_entity': {
+      const mod = await import('./apis/delete_single_entity.ts') as Record<string, unknown>
+      return mod['delete_single_entityDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_slo_instances_op': {
+      const mod = await import('./apis/delete_slo_instances_op.ts') as Record<string, unknown>
+      return mod['delete_slo_instances_opDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_slo_op': {
+      const mod = await import('./apis/delete_slo_op.ts') as Record<string, unknown>
+      return mod['delete_slo_opDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_spaces_space_id': {
+      const mod = await import('./apis/delete_spaces_space_id.ts') as Record<string, unknown>
+      return mod['delete_spaces_space_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_streams_name': {
+      const mod = await import('./apis/delete_streams_name.ts') as Record<string, unknown>
+      return mod['delete_streams_nameDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_streams_name_queries_queryid': {
+      const mod = await import('./apis/delete_streams_name_queries_queryid.ts') as Record<string, unknown>
+      return mod['delete_streams_name_queries_queryidDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_streams_streamname_attachments_attachmenttype_attachmentid': {
+      const mod = await import('./apis/delete_streams_streamname_attachments_attachmenttype_attachmentid.ts') as Record<string, unknown>
+      return mod['delete_streams_streamname_attachments_attachmenttype_attachmentidDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_tags_id': {
+      const mod = await import('./apis/delete_tags_id.ts') as Record<string, unknown>
+      return mod['delete_tags_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_timelines': {
+      const mod = await import('./apis/delete_timelines.ts') as Record<string, unknown>
+      return mod['delete_timelinesDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_visualization_redirect': {
+      const mod = await import('./apis/delete_visualization_redirect.ts') as Record<string, unknown>
+      return mod['delete_visualization_redirectDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_workflows': {
+      const mod = await import('./apis/delete_workflows.ts') as Record<string, unknown>
+      return mod['delete_workflowsDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_workflows_workflow_id': {
+      const mod = await import('./apis/delete_workflows_workflow_id.ts') as Record<string, unknown>
+      return mod['delete_workflows_workflow_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'disable_attack_discovery_schedules': {
+      const mod = await import('./apis/disable_attack_discovery_schedules.ts') as Record<string, unknown>
+      return mod['disable_attack_discovery_schedulesDefinitions'] as KbApiDefinition[]
+    }
+    case 'disable_monitoring_engine': {
+      const mod = await import('./apis/disable_monitoring_engine.ts') as Record<string, unknown>
+      return mod['disable_monitoring_engineDefinitions'] as KbApiDefinition[]
+    }
+    case 'disable_slo_op': {
+      const mod = await import('./apis/disable_slo_op.ts') as Record<string, unknown>
+      return mod['disable_slo_opDefinitions'] as KbApiDefinition[]
+    }
+    case 'duplicate_exception_list': {
+      const mod = await import('./apis/duplicate_exception_list.ts') as Record<string, unknown>
+      return mod['duplicate_exception_listDefinitions'] as KbApiDefinition[]
+    }
+    case 'enable_attack_discovery_schedules': {
+      const mod = await import('./apis/enable_attack_discovery_schedules.ts') as Record<string, unknown>
+      return mod['enable_attack_discovery_schedulesDefinitions'] as KbApiDefinition[]
+    }
+    case 'enable_slo_op': {
+      const mod = await import('./apis/enable_slo_op.ts') as Record<string, unknown>
+      return mod['enable_slo_opDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_execute_action': {
+      const mod = await import('./apis/endpoint_execute_action.ts') as Record<string, unknown>
+      return mod['endpoint_execute_actionDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_file_download': {
+      const mod = await import('./apis/endpoint_file_download.ts') as Record<string, unknown>
+      return mod['endpoint_file_downloadDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_file_info': {
+      const mod = await import('./apis/endpoint_file_info.ts') as Record<string, unknown>
+      return mod['endpoint_file_infoDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_generate_memory_dump': {
+      const mod = await import('./apis/endpoint_generate_memory_dump.ts') as Record<string, unknown>
+      return mod['endpoint_generate_memory_dumpDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_get_actions_details': {
+      const mod = await import('./apis/endpoint_get_actions_details.ts') as Record<string, unknown>
+      return mod['endpoint_get_actions_detailsDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_get_actions_list': {
+      const mod = await import('./apis/endpoint_get_actions_list.ts') as Record<string, unknown>
+      return mod['endpoint_get_actions_listDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_get_actions_state': {
+      const mod = await import('./apis/endpoint_get_actions_state.ts') as Record<string, unknown>
+      return mod['endpoint_get_actions_stateDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_get_actions_status': {
+      const mod = await import('./apis/endpoint_get_actions_status.ts') as Record<string, unknown>
+      return mod['endpoint_get_actions_statusDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_get_file_action': {
+      const mod = await import('./apis/endpoint_get_file_action.ts') as Record<string, unknown>
+      return mod['endpoint_get_file_actionDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_get_processes_action': {
+      const mod = await import('./apis/endpoint_get_processes_action.ts') as Record<string, unknown>
+      return mod['endpoint_get_processes_actionDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_isolate_action': {
+      const mod = await import('./apis/endpoint_isolate_action.ts') as Record<string, unknown>
+      return mod['endpoint_isolate_actionDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_kill_process_action': {
+      const mod = await import('./apis/endpoint_kill_process_action.ts') as Record<string, unknown>
+      return mod['endpoint_kill_process_actionDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_scan_action': {
+      const mod = await import('./apis/endpoint_scan_action.ts') as Record<string, unknown>
+      return mod['endpoint_scan_actionDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_script_library_create_script': {
+      const mod = await import('./apis/endpoint_script_library_create_script.ts') as Record<string, unknown>
+      return mod['endpoint_script_library_create_scriptDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_script_library_delete_script': {
+      const mod = await import('./apis/endpoint_script_library_delete_script.ts') as Record<string, unknown>
+      return mod['endpoint_script_library_delete_scriptDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_script_library_download_script': {
+      const mod = await import('./apis/endpoint_script_library_download_script.ts') as Record<string, unknown>
+      return mod['endpoint_script_library_download_scriptDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_script_library_get_one_script': {
+      const mod = await import('./apis/endpoint_script_library_get_one_script.ts') as Record<string, unknown>
+      return mod['endpoint_script_library_get_one_scriptDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_script_library_list_scripts': {
+      const mod = await import('./apis/endpoint_script_library_list_scripts.ts') as Record<string, unknown>
+      return mod['endpoint_script_library_list_scriptsDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_script_library_patch_update_script': {
+      const mod = await import('./apis/endpoint_script_library_patch_update_script.ts') as Record<string, unknown>
+      return mod['endpoint_script_library_patch_update_scriptDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_suspend_process_action': {
+      const mod = await import('./apis/endpoint_suspend_process_action.ts') as Record<string, unknown>
+      return mod['endpoint_suspend_process_actionDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_unisolate_action': {
+      const mod = await import('./apis/endpoint_unisolate_action.ts') as Record<string, unknown>
+      return mod['endpoint_unisolate_actionDefinitions'] as KbApiDefinition[]
+    }
+    case 'endpoint_upload_action': {
+      const mod = await import('./apis/endpoint_upload_action.ts') as Record<string, unknown>
+      return mod['endpoint_upload_actionDefinitions'] as KbApiDefinition[]
+    }
+    case 'export_exception_list': {
+      const mod = await import('./apis/export_exception_list.ts') as Record<string, unknown>
+      return mod['export_exception_listDefinitions'] as KbApiDefinition[]
+    }
+    case 'export_list_items': {
+      const mod = await import('./apis/export_list_items.ts') as Record<string, unknown>
+      return mod['export_list_itemsDefinitions'] as KbApiDefinition[]
+    }
+    case 'export_rules': {
+      const mod = await import('./apis/export_rules.ts') as Record<string, unknown>
+      return mod['export_rulesDefinitions'] as KbApiDefinition[]
+    }
+    case 'export_timelines': {
+      const mod = await import('./apis/export_timelines.ts') as Record<string, unknown>
+      return mod['export_timelinesDefinitions'] as KbApiDefinition[]
+    }
+    case 'find_anonymization_fields': {
+      const mod = await import('./apis/find_anonymization_fields.ts') as Record<string, unknown>
+      return mod['find_anonymization_fieldsDefinitions'] as KbApiDefinition[]
+    }
+    case 'find_asset_criticality_records': {
+      const mod = await import('./apis/find_asset_criticality_records.ts') as Record<string, unknown>
+      return mod['find_asset_criticality_recordsDefinitions'] as KbApiDefinition[]
+    }
+    case 'find_attack_discovery_schedules': {
+      const mod = await import('./apis/find_attack_discovery_schedules.ts') as Record<string, unknown>
+      return mod['find_attack_discovery_schedulesDefinitions'] as KbApiDefinition[]
+    }
+    case 'find_conversations': {
+      const mod = await import('./apis/find_conversations.ts') as Record<string, unknown>
+      return mod['find_conversationsDefinitions'] as KbApiDefinition[]
+    }
+    case 'find_endpoint_list_items': {
+      const mod = await import('./apis/find_endpoint_list_items.ts') as Record<string, unknown>
+      return mod['find_endpoint_list_itemsDefinitions'] as KbApiDefinition[]
+    }
+    case 'find_exception_list_items': {
+      const mod = await import('./apis/find_exception_list_items.ts') as Record<string, unknown>
+      return mod['find_exception_list_itemsDefinitions'] as KbApiDefinition[]
+    }
+    case 'find_exception_lists': {
+      const mod = await import('./apis/find_exception_lists.ts') as Record<string, unknown>
+      return mod['find_exception_listsDefinitions'] as KbApiDefinition[]
+    }
+    case 'find_knowledge_base_entries': {
+      const mod = await import('./apis/find_knowledge_base_entries.ts') as Record<string, unknown>
+      return mod['find_knowledge_base_entriesDefinitions'] as KbApiDefinition[]
+    }
+    case 'find_list_items': {
+      const mod = await import('./apis/find_list_items.ts') as Record<string, unknown>
+      return mod['find_list_itemsDefinitions'] as KbApiDefinition[]
+    }
+    case 'find_lists': {
+      const mod = await import('./apis/find_lists.ts') as Record<string, unknown>
+      return mod['find_listsDefinitions'] as KbApiDefinition[]
+    }
+    case 'find_prompts': {
+      const mod = await import('./apis/find_prompts.ts') as Record<string, unknown>
+      return mod['find_promptsDefinitions'] as KbApiDefinition[]
+    }
+    case 'find_rules': {
+      const mod = await import('./apis/find_rules.ts') as Record<string, unknown>
+      return mod['find_rulesDefinitions'] as KbApiDefinition[]
+    }
+    case 'find_slos_op': {
+      const mod = await import('./apis/find_slos_op.ts') as Record<string, unknown>
+      return mod['find_slos_opDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_actions_connector_id': {
+      const mod = await import('./apis/get_actions_connector_id.ts') as Record<string, unknown>
+      return mod['get_actions_connector_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_actions_connector_oauth_callback': {
+      const mod = await import('./apis/get_actions_connector_oauth_callback.ts') as Record<string, unknown>
+      return mod['get_actions_connector_oauth_callbackDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_actions_connector_oauth_callback_script': {
+      const mod = await import('./apis/get_actions_connector_oauth_callback_script.ts') as Record<string, unknown>
+      return mod['get_actions_connector_oauth_callback_scriptDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_actions_connector_types': {
+      const mod = await import('./apis/get_actions_connector_types.ts') as Record<string, unknown>
+      return mod['get_actions_connector_typesDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_actions_connectors': {
+      const mod = await import('./apis/get_actions_connectors.ts') as Record<string, unknown>
+      return mod['get_actions_connectorsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_agent_builder_a2a_agentid.json': {
+      const mod = await import('./apis/get_agent_builder_a2a_agentid.json.ts') as Record<string, unknown>
+      return mod['get_agent_builder_a2a_agentid_jsonDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_agent_builder_agents': {
+      const mod = await import('./apis/get_agent_builder_agents.ts') as Record<string, unknown>
+      return mod['get_agent_builder_agentsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_agent_builder_agents_id': {
+      const mod = await import('./apis/get_agent_builder_agents_id.ts') as Record<string, unknown>
+      return mod['get_agent_builder_agents_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_agent_builder_agents_id_acl': {
+      const mod = await import('./apis/get_agent_builder_agents_id_acl.ts') as Record<string, unknown>
+      return mod['get_agent_builder_agents_id_aclDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_agent_builder_conversations': {
+      const mod = await import('./apis/get_agent_builder_conversations.ts') as Record<string, unknown>
+      return mod['get_agent_builder_conversationsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_agent_builder_conversations_conversation_id': {
+      const mod = await import('./apis/get_agent_builder_conversations_conversation_id.ts') as Record<string, unknown>
+      return mod['get_agent_builder_conversations_conversation_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_agent_builder_conversations_conversation_id_attachments': {
+      const mod = await import('./apis/get_agent_builder_conversations_conversation_id_attachments.ts') as Record<string, unknown>
+      return mod['get_agent_builder_conversations_conversation_id_attachmentsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_agent_builder_conversations_conversation_id_attachments_stale': {
+      const mod = await import('./apis/get_agent_builder_conversations_conversation_id_attachments_stale.ts') as Record<string, unknown>
+      return mod['get_agent_builder_conversations_conversation_id_attachments_staleDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_agent_builder_plugins': {
+      const mod = await import('./apis/get_agent_builder_plugins.ts') as Record<string, unknown>
+      return mod['get_agent_builder_pluginsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_agent_builder_plugins_pluginid': {
+      const mod = await import('./apis/get_agent_builder_plugins_pluginid.ts') as Record<string, unknown>
+      return mod['get_agent_builder_plugins_pluginidDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_agent_builder_skills': {
+      const mod = await import('./apis/get_agent_builder_skills.ts') as Record<string, unknown>
+      return mod['get_agent_builder_skillsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_agent_builder_skills_skillid': {
+      const mod = await import('./apis/get_agent_builder_skills_skillid.ts') as Record<string, unknown>
+      return mod['get_agent_builder_skills_skillidDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_agent_builder_tools': {
+      const mod = await import('./apis/get_agent_builder_tools.ts') as Record<string, unknown>
+      return mod['get_agent_builder_toolsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_agent_builder_tools_toolid': {
+      const mod = await import('./apis/get_agent_builder_tools_toolid.ts') as Record<string, unknown>
+      return mod['get_agent_builder_tools_toolidDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_agent_configurations': {
+      const mod = await import('./apis/get_agent_configurations.ts') as Record<string, unknown>
+      return mod['get_agent_configurationsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_agent_name_for_service': {
+      const mod = await import('./apis/get_agent_name_for_service.ts') as Record<string, unknown>
+      return mod['get_agent_name_for_serviceDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_alerting_rule_id': {
+      const mod = await import('./apis/get_alerting_rule_id.ts') as Record<string, unknown>
+      return mod['get_alerting_rule_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_alerting_rule_id_query_inspector': {
+      const mod = await import('./apis/get_alerting_rule_id_query_inspector.ts') as Record<string, unknown>
+      return mod['get_alerting_rule_id_query_inspectorDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_alerting_rules_backfill_id': {
+      const mod = await import('./apis/get_alerting_rules_backfill_id.ts') as Record<string, unknown>
+      return mod['get_alerting_rules_backfill_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_alerting_rules_find': {
+      const mod = await import('./apis/get_alerting_rules_find.ts') as Record<string, unknown>
+      return mod['get_alerting_rules_findDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_all_data_views_default': {
+      const mod = await import('./apis/get_all_data_views_default.ts') as Record<string, unknown>
+      return mod['get_all_data_views_defaultDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_annotation': {
+      const mod = await import('./apis/get_annotation.ts') as Record<string, unknown>
+      return mod['get_annotationDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_asset_criticality_record': {
+      const mod = await import('./apis/get_asset_criticality_record.ts') as Record<string, unknown>
+      return mod['get_asset_criticality_recordDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_attack_discovery_generation': {
+      const mod = await import('./apis/get_attack_discovery_generation.ts') as Record<string, unknown>
+      return mod['get_attack_discovery_generationDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_attack_discovery_generations': {
+      const mod = await import('./apis/get_attack_discovery_generations.ts') as Record<string, unknown>
+      return mod['get_attack_discovery_generationsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_attack_discovery_schedules': {
+      const mod = await import('./apis/get_attack_discovery_schedules.ts') as Record<string, unknown>
+      return mod['get_attack_discovery_schedulesDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_dashboard_redirect': {
+      const mod = await import('./apis/get_dashboard_redirect.ts') as Record<string, unknown>
+      return mod['get_dashboard_redirectDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_dashboards_redirect': {
+      const mod = await import('./apis/get_dashboards_redirect.ts') as Record<string, unknown>
+      return mod['get_dashboards_redirectDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_data_view_default': {
+      const mod = await import('./apis/get_data_view_default.ts') as Record<string, unknown>
+      return mod['get_data_view_defaultDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_default_data_view_default': {
+      const mod = await import('./apis/get_default_data_view_default.ts') as Record<string, unknown>
+      return mod['get_default_data_view_defaultDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_definitions_op': {
+      const mod = await import('./apis/get_definitions_op.ts') as Record<string, unknown>
+      return mod['get_definitions_opDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_draft_timelines': {
+      const mod = await import('./apis/get_draft_timelines.ts') as Record<string, unknown>
+      return mod['get_draft_timelinesDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_endpoint_metadata': {
+      const mod = await import('./apis/get_endpoint_metadata.ts') as Record<string, unknown>
+      return mod['get_endpoint_metadataDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_endpoint_metadata_list': {
+      const mod = await import('./apis/get_endpoint_metadata_list.ts') as Record<string, unknown>
+      return mod['get_endpoint_metadata_listDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_entity_engine': {
+      const mod = await import('./apis/get_entity_engine.ts') as Record<string, unknown>
+      return mod['get_entity_engineDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_entity_store_status': {
+      const mod = await import('./apis/get_entity_store_status.ts') as Record<string, unknown>
+      return mod['get_entity_store_statusDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_environments_for_service': {
+      const mod = await import('./apis/get_environments_for_service.ts') as Record<string, unknown>
+      return mod['get_environments_for_serviceDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_agent_download_sources': {
+      const mod = await import('./apis/get_fleet_agent_download_sources.ts') as Record<string, unknown>
+      return mod['get_fleet_agent_download_sourcesDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_agent_download_sources_sourceid': {
+      const mod = await import('./apis/get_fleet_agent_download_sources_sourceid.ts') as Record<string, unknown>
+      return mod['get_fleet_agent_download_sources_sourceidDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_agent_policies': {
+      const mod = await import('./apis/get_fleet_agent_policies.ts') as Record<string, unknown>
+      return mod['get_fleet_agent_policiesDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_agent_policies_agentpolicyid': {
+      const mod = await import('./apis/get_fleet_agent_policies_agentpolicyid.ts') as Record<string, unknown>
+      return mod['get_fleet_agent_policies_agentpolicyidDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_agent_policies_agentpolicyid_auto_upgrade_agents_status': {
+      const mod = await import('./apis/get_fleet_agent_policies_agentpolicyid_auto_upgrade_agents_status.ts') as Record<string, unknown>
+      return mod['get_fleet_agent_policies_agentpolicyid_auto_upgrade_agents_statusDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_agent_policies_agentpolicyid_download': {
+      const mod = await import('./apis/get_fleet_agent_policies_agentpolicyid_download.ts') as Record<string, unknown>
+      return mod['get_fleet_agent_policies_agentpolicyid_downloadDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_agent_policies_agentpolicyid_full': {
+      const mod = await import('./apis/get_fleet_agent_policies_agentpolicyid_full.ts') as Record<string, unknown>
+      return mod['get_fleet_agent_policies_agentpolicyid_fullDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_agent_policies_agentpolicyid_outputs': {
+      const mod = await import('./apis/get_fleet_agent_policies_agentpolicyid_outputs.ts') as Record<string, unknown>
+      return mod['get_fleet_agent_policies_agentpolicyid_outputsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_agent_status': {
+      const mod = await import('./apis/get_fleet_agent_status.ts') as Record<string, unknown>
+      return mod['get_fleet_agent_statusDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_agent_status_data': {
+      const mod = await import('./apis/get_fleet_agent_status_data.ts') as Record<string, unknown>
+      return mod['get_fleet_agent_status_dataDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_agents': {
+      const mod = await import('./apis/get_fleet_agents.ts') as Record<string, unknown>
+      return mod['get_fleet_agentsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_agents_action_status': {
+      const mod = await import('./apis/get_fleet_agents_action_status.ts') as Record<string, unknown>
+      return mod['get_fleet_agents_action_statusDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_agents_agentid': {
+      const mod = await import('./apis/get_fleet_agents_agentid.ts') as Record<string, unknown>
+      return mod['get_fleet_agents_agentidDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_agents_agentid_effective_config': {
+      const mod = await import('./apis/get_fleet_agents_agentid_effective_config.ts') as Record<string, unknown>
+      return mod['get_fleet_agents_agentid_effective_configDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_agents_agentid_uploads': {
+      const mod = await import('./apis/get_fleet_agents_agentid_uploads.ts') as Record<string, unknown>
+      return mod['get_fleet_agents_agentid_uploadsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_agents_available_versions': {
+      const mod = await import('./apis/get_fleet_agents_available_versions.ts') as Record<string, unknown>
+      return mod['get_fleet_agents_available_versionsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_agents_files_fileid_filename': {
+      const mod = await import('./apis/get_fleet_agents_files_fileid_filename.ts') as Record<string, unknown>
+      return mod['get_fleet_agents_files_fileid_filenameDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_agents_setup': {
+      const mod = await import('./apis/get_fleet_agents_setup.ts') as Record<string, unknown>
+      return mod['get_fleet_agents_setupDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_agents_tags': {
+      const mod = await import('./apis/get_fleet_agents_tags.ts') as Record<string, unknown>
+      return mod['get_fleet_agents_tagsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_check_permissions': {
+      const mod = await import('./apis/get_fleet_check_permissions.ts') as Record<string, unknown>
+      return mod['get_fleet_check_permissionsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_cloud_connectors': {
+      const mod = await import('./apis/get_fleet_cloud_connectors.ts') as Record<string, unknown>
+      return mod['get_fleet_cloud_connectorsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_cloud_connectors_cloudconnectorid': {
+      const mod = await import('./apis/get_fleet_cloud_connectors_cloudconnectorid.ts') as Record<string, unknown>
+      return mod['get_fleet_cloud_connectors_cloudconnectoridDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_cloud_connectors_cloudconnectorid_usage': {
+      const mod = await import('./apis/get_fleet_cloud_connectors_cloudconnectorid_usage.ts') as Record<string, unknown>
+      return mod['get_fleet_cloud_connectors_cloudconnectorid_usageDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_data_streams': {
+      const mod = await import('./apis/get_fleet_data_streams.ts') as Record<string, unknown>
+      return mod['get_fleet_data_streamsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_enrollment_api_keys': {
+      const mod = await import('./apis/get_fleet_enrollment_api_keys.ts') as Record<string, unknown>
+      return mod['get_fleet_enrollment_api_keysDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_enrollment_api_keys_keyid': {
+      const mod = await import('./apis/get_fleet_enrollment_api_keys_keyid.ts') as Record<string, unknown>
+      return mod['get_fleet_enrollment_api_keys_keyidDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_epm_categories': {
+      const mod = await import('./apis/get_fleet_epm_categories.ts') as Record<string, unknown>
+      return mod['get_fleet_epm_categoriesDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_epm_data_streams': {
+      const mod = await import('./apis/get_fleet_epm_data_streams.ts') as Record<string, unknown>
+      return mod['get_fleet_epm_data_streamsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_epm_packages': {
+      const mod = await import('./apis/get_fleet_epm_packages.ts') as Record<string, unknown>
+      return mod['get_fleet_epm_packagesDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_epm_packages_bulk_rollback_taskid': {
+      const mod = await import('./apis/get_fleet_epm_packages_bulk_rollback_taskid.ts') as Record<string, unknown>
+      return mod['get_fleet_epm_packages_bulk_rollback_taskidDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_epm_packages_bulk_uninstall_taskid': {
+      const mod = await import('./apis/get_fleet_epm_packages_bulk_uninstall_taskid.ts') as Record<string, unknown>
+      return mod['get_fleet_epm_packages_bulk_uninstall_taskidDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_epm_packages_bulk_upgrade_taskid': {
+      const mod = await import('./apis/get_fleet_epm_packages_bulk_upgrade_taskid.ts') as Record<string, unknown>
+      return mod['get_fleet_epm_packages_bulk_upgrade_taskidDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_epm_packages_installed': {
+      const mod = await import('./apis/get_fleet_epm_packages_installed.ts') as Record<string, unknown>
+      return mod['get_fleet_epm_packages_installedDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_epm_packages_limited': {
+      const mod = await import('./apis/get_fleet_epm_packages_limited.ts') as Record<string, unknown>
+      return mod['get_fleet_epm_packages_limitedDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_epm_packages_pkgname': {
+      const mod = await import('./apis/get_fleet_epm_packages_pkgname.ts') as Record<string, unknown>
+      return mod['get_fleet_epm_packages_pkgnameDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_epm_packages_pkgname_pkgversion': {
+      const mod = await import('./apis/get_fleet_epm_packages_pkgname_pkgversion.ts') as Record<string, unknown>
+      return mod['get_fleet_epm_packages_pkgname_pkgversionDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_epm_packages_pkgname_pkgversion_dependencies': {
+      const mod = await import('./apis/get_fleet_epm_packages_pkgname_pkgversion_dependencies.ts') as Record<string, unknown>
+      return mod['get_fleet_epm_packages_pkgname_pkgversion_dependenciesDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_epm_packages_pkgname_pkgversion_filepath': {
+      const mod = await import('./apis/get_fleet_epm_packages_pkgname_pkgversion_filepath.ts') as Record<string, unknown>
+      return mod['get_fleet_epm_packages_pkgname_pkgversion_filepathDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_epm_packages_pkgname_stats': {
+      const mod = await import('./apis/get_fleet_epm_packages_pkgname_stats.ts') as Record<string, unknown>
+      return mod['get_fleet_epm_packages_pkgname_statsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_epm_templates_pkgname_pkgversion_inputs': {
+      const mod = await import('./apis/get_fleet_epm_templates_pkgname_pkgversion_inputs.ts') as Record<string, unknown>
+      return mod['get_fleet_epm_templates_pkgname_pkgversion_inputsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_epm_verification_key_id': {
+      const mod = await import('./apis/get_fleet_epm_verification_key_id.ts') as Record<string, unknown>
+      return mod['get_fleet_epm_verification_key_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_fleet_server_hosts': {
+      const mod = await import('./apis/get_fleet_fleet_server_hosts.ts') as Record<string, unknown>
+      return mod['get_fleet_fleet_server_hostsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_fleet_server_hosts_itemid': {
+      const mod = await import('./apis/get_fleet_fleet_server_hosts_itemid.ts') as Record<string, unknown>
+      return mod['get_fleet_fleet_server_hosts_itemidDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_kubernetes': {
+      const mod = await import('./apis/get_fleet_kubernetes.ts') as Record<string, unknown>
+      return mod['get_fleet_kubernetesDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_kubernetes_download': {
+      const mod = await import('./apis/get_fleet_kubernetes_download.ts') as Record<string, unknown>
+      return mod['get_fleet_kubernetes_downloadDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_outputs': {
+      const mod = await import('./apis/get_fleet_outputs.ts') as Record<string, unknown>
+      return mod['get_fleet_outputsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_outputs_outputid': {
+      const mod = await import('./apis/get_fleet_outputs_outputid.ts') as Record<string, unknown>
+      return mod['get_fleet_outputs_outputidDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_outputs_outputid_health': {
+      const mod = await import('./apis/get_fleet_outputs_outputid_health.ts') as Record<string, unknown>
+      return mod['get_fleet_outputs_outputid_healthDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_package_policies': {
+      const mod = await import('./apis/get_fleet_package_policies.ts') as Record<string, unknown>
+      return mod['get_fleet_package_policiesDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_package_policies_packagepolicyid': {
+      const mod = await import('./apis/get_fleet_package_policies_packagepolicyid.ts') as Record<string, unknown>
+      return mod['get_fleet_package_policies_packagepolicyidDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_proxies': {
+      const mod = await import('./apis/get_fleet_proxies.ts') as Record<string, unknown>
+      return mod['get_fleet_proxiesDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_proxies_itemid': {
+      const mod = await import('./apis/get_fleet_proxies_itemid.ts') as Record<string, unknown>
+      return mod['get_fleet_proxies_itemidDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_settings': {
+      const mod = await import('./apis/get_fleet_settings.ts') as Record<string, unknown>
+      return mod['get_fleet_settingsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_space_settings': {
+      const mod = await import('./apis/get_fleet_space_settings.ts') as Record<string, unknown>
+      return mod['get_fleet_space_settingsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_uninstall_tokens': {
+      const mod = await import('./apis/get_fleet_uninstall_tokens.ts') as Record<string, unknown>
+      return mod['get_fleet_uninstall_tokensDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_uninstall_tokens_uninstalltokenid': {
+      const mod = await import('./apis/get_fleet_uninstall_tokens_uninstalltokenid.ts') as Record<string, unknown>
+      return mod['get_fleet_uninstall_tokens_uninstalltokenidDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_knowledge_base': {
+      const mod = await import('./apis/get_knowledge_base.ts') as Record<string, unknown>
+      return mod['get_knowledge_baseDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_maintenance_window_find': {
+      const mod = await import('./apis/get_maintenance_window_find.ts') as Record<string, unknown>
+      return mod['get_maintenance_window_findDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_maintenance_window_id': {
+      const mod = await import('./apis/get_maintenance_window_id.ts') as Record<string, unknown>
+      return mod['get_maintenance_window_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_notes': {
+      const mod = await import('./apis/get_notes.ts') as Record<string, unknown>
+      return mod['get_notesDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_policy_response': {
+      const mod = await import('./apis/get_policy_response.ts') as Record<string, unknown>
+      return mod['get_policy_responseDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_privileged_access_detection_package_status': {
+      const mod = await import('./apis/get_privileged_access_detection_package_status.ts') as Record<string, unknown>
+      return mod['get_privileged_access_detection_package_statusDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_protection_updates_note': {
+      const mod = await import('./apis/get_protection_updates_note.ts') as Record<string, unknown>
+      return mod['get_protection_updates_noteDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_risk_score_history': {
+      const mod = await import('./apis/get_risk_score_history.ts') as Record<string, unknown>
+      return mod['get_risk_score_historyDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_runtime_field_default': {
+      const mod = await import('./apis/get_runtime_field_default.ts') as Record<string, unknown>
+      return mod['get_runtime_field_defaultDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_security_entity_store_entities': {
+      const mod = await import('./apis/get_security_entity_store_entities.ts') as Record<string, unknown>
+      return mod['get_security_entity_store_entitiesDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_security_entity_store_resolution_group': {
+      const mod = await import('./apis/get_security_entity_store_resolution_group.ts') as Record<string, unknown>
+      return mod['get_security_entity_store_resolution_groupDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_security_entity_store_status': {
+      const mod = await import('./apis/get_security_entity_store_status.ts') as Record<string, unknown>
+      return mod['get_security_entity_store_statusDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_security_role': {
+      const mod = await import('./apis/get_security_role.ts') as Record<string, unknown>
+      return mod['get_security_roleDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_security_role_name': {
+      const mod = await import('./apis/get_security_role_name.ts') as Record<string, unknown>
+      return mod['get_security_role_nameDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_single_agent_configuration': {
+      const mod = await import('./apis/get_single_agent_configuration.ts') as Record<string, unknown>
+      return mod['get_single_agent_configurationDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_slo_op': {
+      const mod = await import('./apis/get_slo_op.ts') as Record<string, unknown>
+      return mod['get_slo_opDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_spaces_space': {
+      const mod = await import('./apis/get_spaces_space.ts') as Record<string, unknown>
+      return mod['get_spaces_spaceDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_spaces_space_id': {
+      const mod = await import('./apis/get_spaces_space_id.ts') as Record<string, unknown>
+      return mod['get_spaces_space_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_status': {
+      const mod = await import('./apis/get_status.ts') as Record<string, unknown>
+      return mod['get_statusDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_streams': {
+      const mod = await import('./apis/get_streams.ts') as Record<string, unknown>
+      return mod['get_streamsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_streams_name': {
+      const mod = await import('./apis/get_streams_name.ts') as Record<string, unknown>
+      return mod['get_streams_nameDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_streams_name_ingest': {
+      const mod = await import('./apis/get_streams_name_ingest.ts') as Record<string, unknown>
+      return mod['get_streams_name_ingestDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_streams_name_queries': {
+      const mod = await import('./apis/get_streams_name_queries.ts') as Record<string, unknown>
+      return mod['get_streams_name_queriesDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_streams_name_query': {
+      const mod = await import('./apis/get_streams_name_query.ts') as Record<string, unknown>
+      return mod['get_streams_name_queryDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_streams_name_significant_events': {
+      const mod = await import('./apis/get_streams_name_significant_events.ts') as Record<string, unknown>
+      return mod['get_streams_name_significant_eventsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_streams_streamname_attachments': {
+      const mod = await import('./apis/get_streams_streamname_attachments.ts') as Record<string, unknown>
+      return mod['get_streams_streamname_attachmentsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_tags': {
+      const mod = await import('./apis/get_tags.ts') as Record<string, unknown>
+      return mod['get_tagsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_tags_id': {
+      const mod = await import('./apis/get_tags_id.ts') as Record<string, unknown>
+      return mod['get_tags_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_timeline': {
+      const mod = await import('./apis/get_timeline.ts') as Record<string, unknown>
+      return mod['get_timelineDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_timelines': {
+      const mod = await import('./apis/get_timelines.ts') as Record<string, unknown>
+      return mod['get_timelinesDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_visualization_redirect': {
+      const mod = await import('./apis/get_visualization_redirect.ts') as Record<string, unknown>
+      return mod['get_visualization_redirectDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_visualizations_redirect': {
+      const mod = await import('./apis/get_visualizations_redirect.ts') as Record<string, unknown>
+      return mod['get_visualizations_redirectDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_watchlist': {
+      const mod = await import('./apis/get_watchlist.ts') as Record<string, unknown>
+      return mod['get_watchlistDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_workflows': {
+      const mod = await import('./apis/get_workflows.ts') as Record<string, unknown>
+      return mod['get_workflowsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_workflows_aggs': {
+      const mod = await import('./apis/get_workflows_aggs.ts') as Record<string, unknown>
+      return mod['get_workflows_aggsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_workflows_connectors': {
+      const mod = await import('./apis/get_workflows_connectors.ts') as Record<string, unknown>
+      return mod['get_workflows_connectorsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_workflows_executions_executionid': {
+      const mod = await import('./apis/get_workflows_executions_executionid.ts') as Record<string, unknown>
+      return mod['get_workflows_executions_executionidDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_workflows_executions_executionid_children': {
+      const mod = await import('./apis/get_workflows_executions_executionid_children.ts') as Record<string, unknown>
+      return mod['get_workflows_executions_executionid_childrenDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_workflows_executions_executionid_logs': {
+      const mod = await import('./apis/get_workflows_executions_executionid_logs.ts') as Record<string, unknown>
+      return mod['get_workflows_executions_executionid_logsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_workflows_executions_executionid_step_stepexecutionid': {
+      const mod = await import('./apis/get_workflows_executions_executionid_step_stepexecutionid.ts') as Record<string, unknown>
+      return mod['get_workflows_executions_executionid_step_stepexecutionidDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_workflows_schema': {
+      const mod = await import('./apis/get_workflows_schema.ts') as Record<string, unknown>
+      return mod['get_workflows_schemaDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_workflows_stats': {
+      const mod = await import('./apis/get_workflows_stats.ts') as Record<string, unknown>
+      return mod['get_workflows_statsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_workflows_workflow_id': {
+      const mod = await import('./apis/get_workflows_workflow_id.ts') as Record<string, unknown>
+      return mod['get_workflows_workflow_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_workflows_workflow_workflowid_executions': {
+      const mod = await import('./apis/get_workflows_workflow_workflowid_executions.ts') as Record<string, unknown>
+      return mod['get_workflows_workflow_workflowid_executionsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_workflows_workflow_workflowid_executions_steps': {
+      const mod = await import('./apis/get_workflows_workflow_workflowid_executions_steps.ts') as Record<string, unknown>
+      return mod['get_workflows_workflow_workflowid_executions_stepsDefinitions'] as KbApiDefinition[]
+    }
+    case 'import_exception_list': {
+      const mod = await import('./apis/import_exception_list.ts') as Record<string, unknown>
+      return mod['import_exception_listDefinitions'] as KbApiDefinition[]
+    }
+    case 'import_list_items': {
+      const mod = await import('./apis/import_list_items.ts') as Record<string, unknown>
+      return mod['import_list_itemsDefinitions'] as KbApiDefinition[]
+    }
+    case 'import_rules': {
+      const mod = await import('./apis/import_rules.ts') as Record<string, unknown>
+      return mod['import_rulesDefinitions'] as KbApiDefinition[]
+    }
+    case 'import_timelines': {
+      const mod = await import('./apis/import_timelines.ts') as Record<string, unknown>
+      return mod['import_timelinesDefinitions'] as KbApiDefinition[]
+    }
+    case 'init_entity_engine': {
+      const mod = await import('./apis/init_entity_engine.ts') as Record<string, unknown>
+      return mod['init_entity_engineDefinitions'] as KbApiDefinition[]
+    }
+    case 'init_entity_store': {
+      const mod = await import('./apis/init_entity_store.ts') as Record<string, unknown>
+      return mod['init_entity_storeDefinitions'] as KbApiDefinition[]
+    }
+    case 'init_monitoring_engine': {
+      const mod = await import('./apis/init_monitoring_engine.ts') as Record<string, unknown>
+      return mod['init_monitoring_engineDefinitions'] as KbApiDefinition[]
+    }
+    case 'install_prepacked_timelines': {
+      const mod = await import('./apis/install_prepacked_timelines.ts') as Record<string, unknown>
+      return mod['install_prepacked_timelinesDefinitions'] as KbApiDefinition[]
+    }
+    case 'install_privileged_access_detection_package': {
+      const mod = await import('./apis/install_privileged_access_detection_package.ts') as Record<string, unknown>
+      return mod['install_privileged_access_detection_packageDefinitions'] as KbApiDefinition[]
+    }
+    case 'list_entities': {
+      const mod = await import('./apis/list_entities.ts') as Record<string, unknown>
+      return mod['list_entitiesDefinitions'] as KbApiDefinition[]
+    }
+    case 'list_entity_engines': {
+      const mod = await import('./apis/list_entity_engines.ts') as Record<string, unknown>
+      return mod['list_entity_enginesDefinitions'] as KbApiDefinition[]
+    }
+    case 'list_priv_mon_users': {
+      const mod = await import('./apis/list_priv_mon_users.ts') as Record<string, unknown>
+      return mod['list_priv_mon_usersDefinitions'] as KbApiDefinition[]
+    }
+    case 'list_watchlists': {
+      const mod = await import('./apis/list_watchlists.ts') as Record<string, unknown>
+      return mod['list_watchlistsDefinitions'] as KbApiDefinition[]
+    }
+    case 'ml_sync': {
+      const mod = await import('./apis/ml_sync.ts') as Record<string, unknown>
+      return mod['ml_syncDefinitions'] as KbApiDefinition[]
+    }
+    case 'ml_update_jobs_spaces': {
+      const mod = await import('./apis/ml_update_jobs_spaces.ts') as Record<string, unknown>
+      return mod['ml_update_jobs_spacesDefinitions'] as KbApiDefinition[]
+    }
+    case 'ml_update_trained_models_spaces': {
+      const mod = await import('./apis/ml_update_trained_models_spaces.ts') as Record<string, unknown>
+      return mod['ml_update_trained_models_spacesDefinitions'] as KbApiDefinition[]
+    }
+    case 'observability_ai_assistant_chat_complete': {
+      const mod = await import('./apis/observability_ai_assistant_chat_complete.ts') as Record<string, unknown>
+      return mod['observability_ai_assistant_chat_completeDefinitions'] as KbApiDefinition[]
+    }
+    case 'osquery_copy_packs': {
+      const mod = await import('./apis/osquery_copy_packs.ts') as Record<string, unknown>
+      return mod['osquery_copy_packsDefinitions'] as KbApiDefinition[]
+    }
+    case 'osquery_copy_saved_query': {
+      const mod = await import('./apis/osquery_copy_saved_query.ts') as Record<string, unknown>
+      return mod['osquery_copy_saved_queryDefinitions'] as KbApiDefinition[]
+    }
+    case 'osquery_create_live_query': {
+      const mod = await import('./apis/osquery_create_live_query.ts') as Record<string, unknown>
+      return mod['osquery_create_live_queryDefinitions'] as KbApiDefinition[]
+    }
+    case 'osquery_create_packs': {
+      const mod = await import('./apis/osquery_create_packs.ts') as Record<string, unknown>
+      return mod['osquery_create_packsDefinitions'] as KbApiDefinition[]
+    }
+    case 'osquery_create_saved_query': {
+      const mod = await import('./apis/osquery_create_saved_query.ts') as Record<string, unknown>
+      return mod['osquery_create_saved_queryDefinitions'] as KbApiDefinition[]
+    }
+    case 'osquery_delete_packs': {
+      const mod = await import('./apis/osquery_delete_packs.ts') as Record<string, unknown>
+      return mod['osquery_delete_packsDefinitions'] as KbApiDefinition[]
+    }
+    case 'osquery_delete_saved_query': {
+      const mod = await import('./apis/osquery_delete_saved_query.ts') as Record<string, unknown>
+      return mod['osquery_delete_saved_queryDefinitions'] as KbApiDefinition[]
+    }
+    case 'osquery_find_live_queries': {
+      const mod = await import('./apis/osquery_find_live_queries.ts') as Record<string, unknown>
+      return mod['osquery_find_live_queriesDefinitions'] as KbApiDefinition[]
+    }
+    case 'osquery_find_packs': {
+      const mod = await import('./apis/osquery_find_packs.ts') as Record<string, unknown>
+      return mod['osquery_find_packsDefinitions'] as KbApiDefinition[]
+    }
+    case 'osquery_find_saved_queries': {
+      const mod = await import('./apis/osquery_find_saved_queries.ts') as Record<string, unknown>
+      return mod['osquery_find_saved_queriesDefinitions'] as KbApiDefinition[]
+    }
+    case 'osquery_get_live_query_details': {
+      const mod = await import('./apis/osquery_get_live_query_details.ts') as Record<string, unknown>
+      return mod['osquery_get_live_query_detailsDefinitions'] as KbApiDefinition[]
+    }
+    case 'osquery_get_live_query_results': {
+      const mod = await import('./apis/osquery_get_live_query_results.ts') as Record<string, unknown>
+      return mod['osquery_get_live_query_resultsDefinitions'] as KbApiDefinition[]
+    }
+    case 'osquery_get_packs_details': {
+      const mod = await import('./apis/osquery_get_packs_details.ts') as Record<string, unknown>
+      return mod['osquery_get_packs_detailsDefinitions'] as KbApiDefinition[]
+    }
+    case 'osquery_get_saved_query_details': {
+      const mod = await import('./apis/osquery_get_saved_query_details.ts') as Record<string, unknown>
+      return mod['osquery_get_saved_query_detailsDefinitions'] as KbApiDefinition[]
+    }
+    case 'osquery_get_scheduled_action_results': {
+      const mod = await import('./apis/osquery_get_scheduled_action_results.ts') as Record<string, unknown>
+      return mod['osquery_get_scheduled_action_resultsDefinitions'] as KbApiDefinition[]
+    }
+    case 'osquery_get_scheduled_query_results': {
+      const mod = await import('./apis/osquery_get_scheduled_query_results.ts') as Record<string, unknown>
+      return mod['osquery_get_scheduled_query_resultsDefinitions'] as KbApiDefinition[]
+    }
+    case 'osquery_get_unified_history': {
+      const mod = await import('./apis/osquery_get_unified_history.ts') as Record<string, unknown>
+      return mod['osquery_get_unified_historyDefinitions'] as KbApiDefinition[]
+    }
+    case 'osquery_update_packs': {
+      const mod = await import('./apis/osquery_update_packs.ts') as Record<string, unknown>
+      return mod['osquery_update_packsDefinitions'] as KbApiDefinition[]
+    }
+    case 'osquery_update_saved_query': {
+      const mod = await import('./apis/osquery_update_saved_query.ts') as Record<string, unknown>
+      return mod['osquery_update_saved_queryDefinitions'] as KbApiDefinition[]
+    }
+    case 'patch_agent_builder_conversations_conversation_id_attachments_attachment_id': {
+      const mod = await import('./apis/patch_agent_builder_conversations_conversation_id_attachments_attachment_id.ts') as Record<string, unknown>
+      return mod['patch_agent_builder_conversations_conversation_id_attachments_attachment_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'patch_list': {
+      const mod = await import('./apis/patch_list.ts') as Record<string, unknown>
+      return mod['patch_listDefinitions'] as KbApiDefinition[]
+    }
+    case 'patch_list_item': {
+      const mod = await import('./apis/patch_list_item.ts') as Record<string, unknown>
+      return mod['patch_list_itemDefinitions'] as KbApiDefinition[]
+    }
+    case 'patch_maintenance_window_id': {
+      const mod = await import('./apis/patch_maintenance_window_id.ts') as Record<string, unknown>
+      return mod['patch_maintenance_window_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'patch_rule': {
+      const mod = await import('./apis/patch_rule.ts') as Record<string, unknown>
+      return mod['patch_ruleDefinitions'] as KbApiDefinition[]
+    }
+    case 'patch_timeline': {
+      const mod = await import('./apis/patch_timeline.ts') as Record<string, unknown>
+      return mod['patch_timelineDefinitions'] as KbApiDefinition[]
+    }
+    case 'perform_anonymization_fields_bulk_action': {
+      const mod = await import('./apis/perform_anonymization_fields_bulk_action.ts') as Record<string, unknown>
+      return mod['perform_anonymization_fields_bulk_actionDefinitions'] as KbApiDefinition[]
+    }
+    case 'perform_knowledge_base_entry_bulk_action': {
+      const mod = await import('./apis/perform_knowledge_base_entry_bulk_action.ts') as Record<string, unknown>
+      return mod['perform_knowledge_base_entry_bulk_actionDefinitions'] as KbApiDefinition[]
+    }
+    case 'perform_prompts_bulk_action': {
+      const mod = await import('./apis/perform_prompts_bulk_action.ts') as Record<string, unknown>
+      return mod['perform_prompts_bulk_actionDefinitions'] as KbApiDefinition[]
+    }
+    case 'perform_rules_bulk_action': {
+      const mod = await import('./apis/perform_rules_bulk_action.ts') as Record<string, unknown>
+      return mod['perform_rules_bulk_actionDefinitions'] as KbApiDefinition[]
+    }
+    case 'persist_favorite_route': {
+      const mod = await import('./apis/persist_favorite_route.ts') as Record<string, unknown>
+      return mod['persist_favorite_routeDefinitions'] as KbApiDefinition[]
+    }
+    case 'persist_note_route': {
+      const mod = await import('./apis/persist_note_route.ts') as Record<string, unknown>
+      return mod['persist_note_routeDefinitions'] as KbApiDefinition[]
+    }
+    case 'persist_pinned_event_route': {
+      const mod = await import('./apis/persist_pinned_event_route.ts') as Record<string, unknown>
+      return mod['persist_pinned_event_routeDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_actions_connector_id': {
+      const mod = await import('./apis/post_actions_connector_id.ts') as Record<string, unknown>
+      return mod['post_actions_connector_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_actions_connector_id_execute': {
+      const mod = await import('./apis/post_actions_connector_id_execute.ts') as Record<string, unknown>
+      return mod['post_actions_connector_id_executeDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_agent_builder_a2a_agentid': {
+      const mod = await import('./apis/post_agent_builder_a2a_agentid.ts') as Record<string, unknown>
+      return mod['post_agent_builder_a2a_agentidDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_agent_builder_agents': {
+      const mod = await import('./apis/post_agent_builder_agents.ts') as Record<string, unknown>
+      return mod['post_agent_builder_agentsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_agent_builder_agents_agent_id_consumption': {
+      const mod = await import('./apis/post_agent_builder_agents_agent_id_consumption.ts') as Record<string, unknown>
+      return mod['post_agent_builder_agents_agent_id_consumptionDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_agent_builder_conversations_conversation_id_attachments': {
+      const mod = await import('./apis/post_agent_builder_conversations_conversation_id_attachments.ts') as Record<string, unknown>
+      return mod['post_agent_builder_conversations_conversation_id_attachmentsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_agent_builder_conversations_conversation_id_attachments_attachment_id_restore': {
+      const mod = await import('./apis/post_agent_builder_conversations_conversation_id_attachments_attachment_id_restore.ts') as Record<string, unknown>
+      return mod['post_agent_builder_conversations_conversation_id_attachments_attachment_id_restoreDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_agent_builder_converse': {
+      const mod = await import('./apis/post_agent_builder_converse.ts') as Record<string, unknown>
+      return mod['post_agent_builder_converseDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_agent_builder_converse_async': {
+      const mod = await import('./apis/post_agent_builder_converse_async.ts') as Record<string, unknown>
+      return mod['post_agent_builder_converse_asyncDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_agent_builder_mcp': {
+      const mod = await import('./apis/post_agent_builder_mcp.ts') as Record<string, unknown>
+      return mod['post_agent_builder_mcpDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_agent_builder_plugins_install': {
+      const mod = await import('./apis/post_agent_builder_plugins_install.ts') as Record<string, unknown>
+      return mod['post_agent_builder_plugins_installDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_agent_builder_skills': {
+      const mod = await import('./apis/post_agent_builder_skills.ts') as Record<string, unknown>
+      return mod['post_agent_builder_skillsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_agent_builder_tools': {
+      const mod = await import('./apis/post_agent_builder_tools.ts') as Record<string, unknown>
+      return mod['post_agent_builder_toolsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_agent_builder_tools_execute': {
+      const mod = await import('./apis/post_agent_builder_tools_execute.ts') as Record<string, unknown>
+      return mod['post_agent_builder_tools_executeDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_rule_id': {
+      const mod = await import('./apis/post_alerting_rule_id.ts') as Record<string, unknown>
+      return mod['post_alerting_rule_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_rule_id_disable': {
+      const mod = await import('./apis/post_alerting_rule_id_disable.ts') as Record<string, unknown>
+      return mod['post_alerting_rule_id_disableDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_rule_id_enable': {
+      const mod = await import('./apis/post_alerting_rule_id_enable.ts') as Record<string, unknown>
+      return mod['post_alerting_rule_id_enableDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_rule_id_mute_all': {
+      const mod = await import('./apis/post_alerting_rule_id_mute_all.ts') as Record<string, unknown>
+      return mod['post_alerting_rule_id_mute_allDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_rule_id_snooze_schedule': {
+      const mod = await import('./apis/post_alerting_rule_id_snooze_schedule.ts') as Record<string, unknown>
+      return mod['post_alerting_rule_id_snooze_scheduleDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_rule_id_unmute_all': {
+      const mod = await import('./apis/post_alerting_rule_id_unmute_all.ts') as Record<string, unknown>
+      return mod['post_alerting_rule_id_unmute_allDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_rule_id_update_api_key': {
+      const mod = await import('./apis/post_alerting_rule_id_update_api_key.ts') as Record<string, unknown>
+      return mod['post_alerting_rule_id_update_api_keyDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_rule_rule_id_alert_alert_id_mute': {
+      const mod = await import('./apis/post_alerting_rule_rule_id_alert_alert_id_mute.ts') as Record<string, unknown>
+      return mod['post_alerting_rule_rule_id_alert_alert_id_muteDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_rule_rule_id_alert_alert_id_unmute': {
+      const mod = await import('./apis/post_alerting_rule_rule_id_alert_alert_id_unmute.ts') as Record<string, unknown>
+      return mod['post_alerting_rule_rule_id_alert_alert_id_unmuteDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_rules_backfill_find': {
+      const mod = await import('./apis/post_alerting_rules_backfill_find.ts') as Record<string, unknown>
+      return mod['post_alerting_rules_backfill_findDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_rules_backfill_schedule': {
+      const mod = await import('./apis/post_alerting_rules_backfill_schedule.ts') as Record<string, unknown>
+      return mod['post_alerting_rules_backfill_scheduleDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_attack_discovery_bulk': {
+      const mod = await import('./apis/post_attack_discovery_bulk.ts') as Record<string, unknown>
+      return mod['post_attack_discovery_bulkDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_attack_discovery_generate': {
+      const mod = await import('./apis/post_attack_discovery_generate.ts') as Record<string, unknown>
+      return mod['post_attack_discovery_generateDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_attack_discovery_generations_dismiss': {
+      const mod = await import('./apis/post_attack_discovery_generations_dismiss.ts') as Record<string, unknown>
+      return mod['post_attack_discovery_generations_dismissDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agent_download_sources': {
+      const mod = await import('./apis/post_fleet_agent_download_sources.ts') as Record<string, unknown>
+      return mod['post_fleet_agent_download_sourcesDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agent_policies': {
+      const mod = await import('./apis/post_fleet_agent_policies.ts') as Record<string, unknown>
+      return mod['post_fleet_agent_policiesDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agent_policies_agentpolicyid_copy': {
+      const mod = await import('./apis/post_fleet_agent_policies_agentpolicyid_copy.ts') as Record<string, unknown>
+      return mod['post_fleet_agent_policies_agentpolicyid_copyDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agent_policies_bulk_get': {
+      const mod = await import('./apis/post_fleet_agent_policies_bulk_get.ts') as Record<string, unknown>
+      return mod['post_fleet_agent_policies_bulk_getDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agent_policies_delete': {
+      const mod = await import('./apis/post_fleet_agent_policies_delete.ts') as Record<string, unknown>
+      return mod['post_fleet_agent_policies_deleteDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agent_policies_outputs': {
+      const mod = await import('./apis/post_fleet_agent_policies_outputs.ts') as Record<string, unknown>
+      return mod['post_fleet_agent_policies_outputsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agentless_policies': {
+      const mod = await import('./apis/post_fleet_agentless_policies.ts') as Record<string, unknown>
+      return mod['post_fleet_agentless_policiesDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agents': {
+      const mod = await import('./apis/post_fleet_agents.ts') as Record<string, unknown>
+      return mod['post_fleet_agentsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agents_actions_actionid_cancel': {
+      const mod = await import('./apis/post_fleet_agents_actions_actionid_cancel.ts') as Record<string, unknown>
+      return mod['post_fleet_agents_actions_actionid_cancelDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agents_agentid_actions': {
+      const mod = await import('./apis/post_fleet_agents_agentid_actions.ts') as Record<string, unknown>
+      return mod['post_fleet_agents_agentid_actionsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agents_agentid_migrate': {
+      const mod = await import('./apis/post_fleet_agents_agentid_migrate.ts') as Record<string, unknown>
+      return mod['post_fleet_agents_agentid_migrateDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agents_agentid_privilege_level_change': {
+      const mod = await import('./apis/post_fleet_agents_agentid_privilege_level_change.ts') as Record<string, unknown>
+      return mod['post_fleet_agents_agentid_privilege_level_changeDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agents_agentid_reassign': {
+      const mod = await import('./apis/post_fleet_agents_agentid_reassign.ts') as Record<string, unknown>
+      return mod['post_fleet_agents_agentid_reassignDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agents_agentid_remove_collector': {
+      const mod = await import('./apis/post_fleet_agents_agentid_remove_collector.ts') as Record<string, unknown>
+      return mod['post_fleet_agents_agentid_remove_collectorDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agents_agentid_request_diagnostics': {
+      const mod = await import('./apis/post_fleet_agents_agentid_request_diagnostics.ts') as Record<string, unknown>
+      return mod['post_fleet_agents_agentid_request_diagnosticsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agents_agentid_rollback': {
+      const mod = await import('./apis/post_fleet_agents_agentid_rollback.ts') as Record<string, unknown>
+      return mod['post_fleet_agents_agentid_rollbackDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agents_agentid_unenroll': {
+      const mod = await import('./apis/post_fleet_agents_agentid_unenroll.ts') as Record<string, unknown>
+      return mod['post_fleet_agents_agentid_unenrollDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agents_agentid_upgrade': {
+      const mod = await import('./apis/post_fleet_agents_agentid_upgrade.ts') as Record<string, unknown>
+      return mod['post_fleet_agents_agentid_upgradeDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agents_bulk_migrate': {
+      const mod = await import('./apis/post_fleet_agents_bulk_migrate.ts') as Record<string, unknown>
+      return mod['post_fleet_agents_bulk_migrateDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agents_bulk_privilege_level_change': {
+      const mod = await import('./apis/post_fleet_agents_bulk_privilege_level_change.ts') as Record<string, unknown>
+      return mod['post_fleet_agents_bulk_privilege_level_changeDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agents_bulk_reassign': {
+      const mod = await import('./apis/post_fleet_agents_bulk_reassign.ts') as Record<string, unknown>
+      return mod['post_fleet_agents_bulk_reassignDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agents_bulk_remove_collectors': {
+      const mod = await import('./apis/post_fleet_agents_bulk_remove_collectors.ts') as Record<string, unknown>
+      return mod['post_fleet_agents_bulk_remove_collectorsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agents_bulk_request_diagnostics': {
+      const mod = await import('./apis/post_fleet_agents_bulk_request_diagnostics.ts') as Record<string, unknown>
+      return mod['post_fleet_agents_bulk_request_diagnosticsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agents_bulk_rollback': {
+      const mod = await import('./apis/post_fleet_agents_bulk_rollback.ts') as Record<string, unknown>
+      return mod['post_fleet_agents_bulk_rollbackDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agents_bulk_unenroll': {
+      const mod = await import('./apis/post_fleet_agents_bulk_unenroll.ts') as Record<string, unknown>
+      return mod['post_fleet_agents_bulk_unenrollDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agents_bulk_update_agent_tags': {
+      const mod = await import('./apis/post_fleet_agents_bulk_update_agent_tags.ts') as Record<string, unknown>
+      return mod['post_fleet_agents_bulk_update_agent_tagsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agents_bulk_upgrade': {
+      const mod = await import('./apis/post_fleet_agents_bulk_upgrade.ts') as Record<string, unknown>
+      return mod['post_fleet_agents_bulk_upgradeDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_agents_setup': {
+      const mod = await import('./apis/post_fleet_agents_setup.ts') as Record<string, unknown>
+      return mod['post_fleet_agents_setupDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_cloud_connectors': {
+      const mod = await import('./apis/post_fleet_cloud_connectors.ts') as Record<string, unknown>
+      return mod['post_fleet_cloud_connectorsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_enrollment_api_keys': {
+      const mod = await import('./apis/post_fleet_enrollment_api_keys.ts') as Record<string, unknown>
+      return mod['post_fleet_enrollment_api_keysDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_enrollment_api_keys_bulk_delete': {
+      const mod = await import('./apis/post_fleet_enrollment_api_keys_bulk_delete.ts') as Record<string, unknown>
+      return mod['post_fleet_enrollment_api_keys_bulk_deleteDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_epm_bulk_assets': {
+      const mod = await import('./apis/post_fleet_epm_bulk_assets.ts') as Record<string, unknown>
+      return mod['post_fleet_epm_bulk_assetsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_epm_custom_integrations': {
+      const mod = await import('./apis/post_fleet_epm_custom_integrations.ts') as Record<string, unknown>
+      return mod['post_fleet_epm_custom_integrationsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_epm_packages': {
+      const mod = await import('./apis/post_fleet_epm_packages.ts') as Record<string, unknown>
+      return mod['post_fleet_epm_packagesDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_epm_packages_bulk': {
+      const mod = await import('./apis/post_fleet_epm_packages_bulk.ts') as Record<string, unknown>
+      return mod['post_fleet_epm_packages_bulkDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_epm_packages_bulk_namespace_customization': {
+      const mod = await import('./apis/post_fleet_epm_packages_bulk_namespace_customization.ts') as Record<string, unknown>
+      return mod['post_fleet_epm_packages_bulk_namespace_customizationDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_epm_packages_bulk_rollback': {
+      const mod = await import('./apis/post_fleet_epm_packages_bulk_rollback.ts') as Record<string, unknown>
+      return mod['post_fleet_epm_packages_bulk_rollbackDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_epm_packages_bulk_uninstall': {
+      const mod = await import('./apis/post_fleet_epm_packages_bulk_uninstall.ts') as Record<string, unknown>
+      return mod['post_fleet_epm_packages_bulk_uninstallDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_epm_packages_bulk_upgrade': {
+      const mod = await import('./apis/post_fleet_epm_packages_bulk_upgrade.ts') as Record<string, unknown>
+      return mod['post_fleet_epm_packages_bulk_upgradeDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_epm_packages_pkgname': {
+      const mod = await import('./apis/post_fleet_epm_packages_pkgname.ts') as Record<string, unknown>
+      return mod['post_fleet_epm_packages_pkgnameDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_epm_packages_pkgname_pkgversion': {
+      const mod = await import('./apis/post_fleet_epm_packages_pkgname_pkgversion.ts') as Record<string, unknown>
+      return mod['post_fleet_epm_packages_pkgname_pkgversionDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_epm_packages_pkgname_pkgversion_kibana_assets': {
+      const mod = await import('./apis/post_fleet_epm_packages_pkgname_pkgversion_kibana_assets.ts') as Record<string, unknown>
+      return mod['post_fleet_epm_packages_pkgname_pkgversion_kibana_assetsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_epm_packages_pkgname_pkgversion_rule_assets': {
+      const mod = await import('./apis/post_fleet_epm_packages_pkgname_pkgversion_rule_assets.ts') as Record<string, unknown>
+      return mod['post_fleet_epm_packages_pkgname_pkgversion_rule_assetsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_epm_packages_pkgname_pkgversion_transforms_authorize': {
+      const mod = await import('./apis/post_fleet_epm_packages_pkgname_pkgversion_transforms_authorize.ts') as Record<string, unknown>
+      return mod['post_fleet_epm_packages_pkgname_pkgversion_transforms_authorizeDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_epm_packages_pkgname_review_upgrade': {
+      const mod = await import('./apis/post_fleet_epm_packages_pkgname_review_upgrade.ts') as Record<string, unknown>
+      return mod['post_fleet_epm_packages_pkgname_review_upgradeDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_epm_packages_pkgname_rollback': {
+      const mod = await import('./apis/post_fleet_epm_packages_pkgname_rollback.ts') as Record<string, unknown>
+      return mod['post_fleet_epm_packages_pkgname_rollbackDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_fleet_server_hosts': {
+      const mod = await import('./apis/post_fleet_fleet_server_hosts.ts') as Record<string, unknown>
+      return mod['post_fleet_fleet_server_hostsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_health_check': {
+      const mod = await import('./apis/post_fleet_health_check.ts') as Record<string, unknown>
+      return mod['post_fleet_health_checkDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_logstash_api_keys': {
+      const mod = await import('./apis/post_fleet_logstash_api_keys.ts') as Record<string, unknown>
+      return mod['post_fleet_logstash_api_keysDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_message_signing_service_rotate_key_pair': {
+      const mod = await import('./apis/post_fleet_message_signing_service_rotate_key_pair.ts') as Record<string, unknown>
+      return mod['post_fleet_message_signing_service_rotate_key_pairDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_outputs': {
+      const mod = await import('./apis/post_fleet_outputs.ts') as Record<string, unknown>
+      return mod['post_fleet_outputsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_package_policies': {
+      const mod = await import('./apis/post_fleet_package_policies.ts') as Record<string, unknown>
+      return mod['post_fleet_package_policiesDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_package_policies_bulk_get': {
+      const mod = await import('./apis/post_fleet_package_policies_bulk_get.ts') as Record<string, unknown>
+      return mod['post_fleet_package_policies_bulk_getDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_package_policies_delete': {
+      const mod = await import('./apis/post_fleet_package_policies_delete.ts') as Record<string, unknown>
+      return mod['post_fleet_package_policies_deleteDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_package_policies_upgrade': {
+      const mod = await import('./apis/post_fleet_package_policies_upgrade.ts') as Record<string, unknown>
+      return mod['post_fleet_package_policies_upgradeDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_package_policies_upgrade_dryrun': {
+      const mod = await import('./apis/post_fleet_package_policies_upgrade_dryrun.ts') as Record<string, unknown>
+      return mod['post_fleet_package_policies_upgrade_dryrunDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_proxies': {
+      const mod = await import('./apis/post_fleet_proxies.ts') as Record<string, unknown>
+      return mod['post_fleet_proxiesDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_service_tokens': {
+      const mod = await import('./apis/post_fleet_service_tokens.ts') as Record<string, unknown>
+      return mod['post_fleet_service_tokensDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_fleet_setup': {
+      const mod = await import('./apis/post_fleet_setup.ts') as Record<string, unknown>
+      return mod['post_fleet_setupDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_knowledge_base': {
+      const mod = await import('./apis/post_knowledge_base.ts') as Record<string, unknown>
+      return mod['post_knowledge_baseDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_maintenance_window': {
+      const mod = await import('./apis/post_maintenance_window.ts') as Record<string, unknown>
+      return mod['post_maintenance_windowDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_maintenance_window_id_archive': {
+      const mod = await import('./apis/post_maintenance_window_id_archive.ts') as Record<string, unknown>
+      return mod['post_maintenance_window_id_archiveDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_maintenance_window_id_unarchive': {
+      const mod = await import('./apis/post_maintenance_window_id_unarchive.ts') as Record<string, unknown>
+      return mod['post_maintenance_window_id_unarchiveDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_saved_objects_export': {
+      const mod = await import('./apis/post_saved_objects_export.ts') as Record<string, unknown>
+      return mod['post_saved_objects_exportDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_saved_objects_import': {
+      const mod = await import('./apis/post_saved_objects_import.ts') as Record<string, unknown>
+      return mod['post_saved_objects_importDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_saved_objects_resolve_import_errors': {
+      const mod = await import('./apis/post_saved_objects_resolve_import_errors.ts') as Record<string, unknown>
+      return mod['post_saved_objects_resolve_import_errorsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_security_entity_store_entities_entitytype': {
+      const mod = await import('./apis/post_security_entity_store_entities_entitytype.ts') as Record<string, unknown>
+      return mod['post_security_entity_store_entities_entitytypeDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_security_entity_store_install': {
+      const mod = await import('./apis/post_security_entity_store_install.ts') as Record<string, unknown>
+      return mod['post_security_entity_store_installDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_security_entity_store_resolution_link': {
+      const mod = await import('./apis/post_security_entity_store_resolution_link.ts') as Record<string, unknown>
+      return mod['post_security_entity_store_resolution_linkDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_security_entity_store_resolution_unlink': {
+      const mod = await import('./apis/post_security_entity_store_resolution_unlink.ts') as Record<string, unknown>
+      return mod['post_security_entity_store_resolution_unlinkDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_security_entity_store_uninstall': {
+      const mod = await import('./apis/post_security_entity_store_uninstall.ts') as Record<string, unknown>
+      return mod['post_security_entity_store_uninstallDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_security_role_query': {
+      const mod = await import('./apis/post_security_role_query.ts') as Record<string, unknown>
+      return mod['post_security_role_queryDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_security_roles': {
+      const mod = await import('./apis/post_security_roles.ts') as Record<string, unknown>
+      return mod['post_security_rolesDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_spaces_space': {
+      const mod = await import('./apis/post_spaces_space.ts') as Record<string, unknown>
+      return mod['post_spaces_spaceDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_streams_disable': {
+      const mod = await import('./apis/post_streams_disable.ts') as Record<string, unknown>
+      return mod['post_streams_disableDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_streams_enable': {
+      const mod = await import('./apis/post_streams_enable.ts') as Record<string, unknown>
+      return mod['post_streams_enableDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_streams_name_content_export': {
+      const mod = await import('./apis/post_streams_name_content_export.ts') as Record<string, unknown>
+      return mod['post_streams_name_content_exportDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_streams_name_content_import': {
+      const mod = await import('./apis/post_streams_name_content_import.ts') as Record<string, unknown>
+      return mod['post_streams_name_content_importDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_streams_name_fork': {
+      const mod = await import('./apis/post_streams_name_fork.ts') as Record<string, unknown>
+      return mod['post_streams_name_forkDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_streams_name_queries_bulk': {
+      const mod = await import('./apis/post_streams_name_queries_bulk.ts') as Record<string, unknown>
+      return mod['post_streams_name_queries_bulkDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_streams_resync': {
+      const mod = await import('./apis/post_streams_resync.ts') as Record<string, unknown>
+      return mod['post_streams_resyncDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_streams_streamname_attachments_bulk': {
+      const mod = await import('./apis/post_streams_streamname_attachments_bulk.ts') as Record<string, unknown>
+      return mod['post_streams_streamname_attachments_bulkDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_tags': {
+      const mod = await import('./apis/post_tags.ts') as Record<string, unknown>
+      return mod['post_tagsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_workflows': {
+      const mod = await import('./apis/post_workflows.ts') as Record<string, unknown>
+      return mod['post_workflowsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_workflows_executions_executionid_cancel': {
+      const mod = await import('./apis/post_workflows_executions_executionid_cancel.ts') as Record<string, unknown>
+      return mod['post_workflows_executions_executionid_cancelDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_workflows_executions_executionid_resume': {
+      const mod = await import('./apis/post_workflows_executions_executionid_resume.ts') as Record<string, unknown>
+      return mod['post_workflows_executions_executionid_resumeDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_workflows_export': {
+      const mod = await import('./apis/post_workflows_export.ts') as Record<string, unknown>
+      return mod['post_workflows_exportDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_workflows_mget': {
+      const mod = await import('./apis/post_workflows_mget.ts') as Record<string, unknown>
+      return mod['post_workflows_mgetDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_workflows_step_test': {
+      const mod = await import('./apis/post_workflows_step_test.ts') as Record<string, unknown>
+      return mod['post_workflows_step_testDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_workflows_test': {
+      const mod = await import('./apis/post_workflows_test.ts') as Record<string, unknown>
+      return mod['post_workflows_testDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_workflows_workflow': {
+      const mod = await import('./apis/post_workflows_workflow.ts') as Record<string, unknown>
+      return mod['post_workflows_workflowDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_workflows_workflow_id_clone': {
+      const mod = await import('./apis/post_workflows_workflow_id_clone.ts') as Record<string, unknown>
+      return mod['post_workflows_workflow_id_cloneDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_workflows_workflow_id_run': {
+      const mod = await import('./apis/post_workflows_workflow_id_run.ts') as Record<string, unknown>
+      return mod['post_workflows_workflow_id_runDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_workflows_workflow_workflowid_executions_cancel': {
+      const mod = await import('./apis/post_workflows_workflow_workflowid_executions_cancel.ts') as Record<string, unknown>
+      return mod['post_workflows_workflow_workflowid_executions_cancelDefinitions'] as KbApiDefinition[]
+    }
+    case 'preview_swap_data_views_default': {
+      const mod = await import('./apis/preview_swap_data_views_default.ts') as Record<string, unknown>
+      return mod['preview_swap_data_views_defaultDefinitions'] as KbApiDefinition[]
+    }
+    case 'priv_mon_health': {
+      const mod = await import('./apis/priv_mon_health.ts') as Record<string, unknown>
+      return mod['priv_mon_healthDefinitions'] as KbApiDefinition[]
+    }
+    case 'priv_mon_privileges': {
+      const mod = await import('./apis/priv_mon_privileges.ts') as Record<string, unknown>
+      return mod['priv_mon_privilegesDefinitions'] as KbApiDefinition[]
+    }
+    case 'privmon_bulk_upload_users_csv': {
+      const mod = await import('./apis/privmon_bulk_upload_users_csv.ts') as Record<string, unknown>
+      return mod['privmon_bulk_upload_users_csvDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_actions_connector_id': {
+      const mod = await import('./apis/put_actions_connector_id.ts') as Record<string, unknown>
+      return mod['put_actions_connector_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_agent_builder_agents_id': {
+      const mod = await import('./apis/put_agent_builder_agents_id.ts') as Record<string, unknown>
+      return mod['put_agent_builder_agents_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_agent_builder_agents_id_acl': {
+      const mod = await import('./apis/put_agent_builder_agents_id_acl.ts') as Record<string, unknown>
+      return mod['put_agent_builder_agents_id_aclDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_agent_builder_conversations_conversation_id_attachments_attachment_id': {
+      const mod = await import('./apis/put_agent_builder_conversations_conversation_id_attachments_attachment_id.ts') as Record<string, unknown>
+      return mod['put_agent_builder_conversations_conversation_id_attachments_attachment_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_agent_builder_conversations_conversation_id_attachments_attachment_id_origin': {
+      const mod = await import('./apis/put_agent_builder_conversations_conversation_id_attachments_attachment_id_origin.ts') as Record<string, unknown>
+      return mod['put_agent_builder_conversations_conversation_id_attachments_attachment_id_originDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_agent_builder_skills_skillid': {
+      const mod = await import('./apis/put_agent_builder_skills_skillid.ts') as Record<string, unknown>
+      return mod['put_agent_builder_skills_skillidDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_agent_builder_tools_toolid': {
+      const mod = await import('./apis/put_agent_builder_tools_toolid.ts') as Record<string, unknown>
+      return mod['put_agent_builder_tools_toolidDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_alerting_rule_id': {
+      const mod = await import('./apis/put_alerting_rule_id.ts') as Record<string, unknown>
+      return mod['put_alerting_rule_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_fleet_agent_download_sources_sourceid': {
+      const mod = await import('./apis/put_fleet_agent_download_sources_sourceid.ts') as Record<string, unknown>
+      return mod['put_fleet_agent_download_sources_sourceidDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_fleet_agent_policies_agentpolicyid': {
+      const mod = await import('./apis/put_fleet_agent_policies_agentpolicyid.ts') as Record<string, unknown>
+      return mod['put_fleet_agent_policies_agentpolicyidDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_fleet_agents_agentid': {
+      const mod = await import('./apis/put_fleet_agents_agentid.ts') as Record<string, unknown>
+      return mod['put_fleet_agents_agentidDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_fleet_cloud_connectors_cloudconnectorid': {
+      const mod = await import('./apis/put_fleet_cloud_connectors_cloudconnectorid.ts') as Record<string, unknown>
+      return mod['put_fleet_cloud_connectors_cloudconnectoridDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_fleet_epm_custom_integrations_pkgname': {
+      const mod = await import('./apis/put_fleet_epm_custom_integrations_pkgname.ts') as Record<string, unknown>
+      return mod['put_fleet_epm_custom_integrations_pkgnameDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_fleet_epm_packages_pkgname': {
+      const mod = await import('./apis/put_fleet_epm_packages_pkgname.ts') as Record<string, unknown>
+      return mod['put_fleet_epm_packages_pkgnameDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_fleet_epm_packages_pkgname_pkgversion': {
+      const mod = await import('./apis/put_fleet_epm_packages_pkgname_pkgversion.ts') as Record<string, unknown>
+      return mod['put_fleet_epm_packages_pkgname_pkgversionDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_fleet_fleet_server_hosts_itemid': {
+      const mod = await import('./apis/put_fleet_fleet_server_hosts_itemid.ts') as Record<string, unknown>
+      return mod['put_fleet_fleet_server_hosts_itemidDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_fleet_outputs_outputid': {
+      const mod = await import('./apis/put_fleet_outputs_outputid.ts') as Record<string, unknown>
+      return mod['put_fleet_outputs_outputidDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_fleet_package_policies_packagepolicyid': {
+      const mod = await import('./apis/put_fleet_package_policies_packagepolicyid.ts') as Record<string, unknown>
+      return mod['put_fleet_package_policies_packagepolicyidDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_fleet_proxies_itemid': {
+      const mod = await import('./apis/put_fleet_proxies_itemid.ts') as Record<string, unknown>
+      return mod['put_fleet_proxies_itemidDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_fleet_settings': {
+      const mod = await import('./apis/put_fleet_settings.ts') as Record<string, unknown>
+      return mod['put_fleet_settingsDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_fleet_space_settings': {
+      const mod = await import('./apis/put_fleet_space_settings.ts') as Record<string, unknown>
+      return mod['put_fleet_space_settingsDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_security_entity_store': {
+      const mod = await import('./apis/put_security_entity_store.ts') as Record<string, unknown>
+      return mod['put_security_entity_storeDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_security_entity_store_entities_bulk': {
+      const mod = await import('./apis/put_security_entity_store_entities_bulk.ts') as Record<string, unknown>
+      return mod['put_security_entity_store_entities_bulkDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_security_entity_store_entities_entitytype': {
+      const mod = await import('./apis/put_security_entity_store_entities_entitytype.ts') as Record<string, unknown>
+      return mod['put_security_entity_store_entities_entitytypeDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_security_entity_store_start': {
+      const mod = await import('./apis/put_security_entity_store_start.ts') as Record<string, unknown>
+      return mod['put_security_entity_store_startDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_security_entity_store_stop': {
+      const mod = await import('./apis/put_security_entity_store_stop.ts') as Record<string, unknown>
+      return mod['put_security_entity_store_stopDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_security_role_name': {
+      const mod = await import('./apis/put_security_role_name.ts') as Record<string, unknown>
+      return mod['put_security_role_nameDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_spaces_space_id': {
+      const mod = await import('./apis/put_spaces_space_id.ts') as Record<string, unknown>
+      return mod['put_spaces_space_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_streams_name': {
+      const mod = await import('./apis/put_streams_name.ts') as Record<string, unknown>
+      return mod['put_streams_nameDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_streams_name_ingest': {
+      const mod = await import('./apis/put_streams_name_ingest.ts') as Record<string, unknown>
+      return mod['put_streams_name_ingestDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_streams_name_queries_queryid': {
+      const mod = await import('./apis/put_streams_name_queries_queryid.ts') as Record<string, unknown>
+      return mod['put_streams_name_queries_queryidDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_streams_name_query': {
+      const mod = await import('./apis/put_streams_name_query.ts') as Record<string, unknown>
+      return mod['put_streams_name_queryDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_streams_streamname_attachments_attachmenttype_attachmentid': {
+      const mod = await import('./apis/put_streams_streamname_attachments_attachmenttype_attachmentid.ts') as Record<string, unknown>
+      return mod['put_streams_streamname_attachments_attachmenttype_attachmentidDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_tags_id': {
+      const mod = await import('./apis/put_tags_id.ts') as Record<string, unknown>
+      return mod['put_tags_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_workflows_managed_workflow_id': {
+      const mod = await import('./apis/put_workflows_managed_workflow_id.ts') as Record<string, unknown>
+      return mod['put_workflows_managed_workflow_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_workflows_workflow_id': {
+      const mod = await import('./apis/put_workflows_workflow_id.ts') as Record<string, unknown>
+      return mod['put_workflows_workflow_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'read_conversation': {
+      const mod = await import('./apis/read_conversation.ts') as Record<string, unknown>
+      return mod['read_conversationDefinitions'] as KbApiDefinition[]
+    }
+    case 'read_endpoint_list_item': {
+      const mod = await import('./apis/read_endpoint_list_item.ts') as Record<string, unknown>
+      return mod['read_endpoint_list_itemDefinitions'] as KbApiDefinition[]
+    }
+    case 'read_exception_list': {
+      const mod = await import('./apis/read_exception_list.ts') as Record<string, unknown>
+      return mod['read_exception_listDefinitions'] as KbApiDefinition[]
+    }
+    case 'read_exception_list_item': {
+      const mod = await import('./apis/read_exception_list_item.ts') as Record<string, unknown>
+      return mod['read_exception_list_itemDefinitions'] as KbApiDefinition[]
+    }
+    case 'read_exception_list_summary': {
+      const mod = await import('./apis/read_exception_list_summary.ts') as Record<string, unknown>
+      return mod['read_exception_list_summaryDefinitions'] as KbApiDefinition[]
+    }
+    case 'read_knowledge_base': {
+      const mod = await import('./apis/read_knowledge_base.ts') as Record<string, unknown>
+      return mod['read_knowledge_baseDefinitions'] as KbApiDefinition[]
+    }
+    case 'read_knowledge_base_entry': {
+      const mod = await import('./apis/read_knowledge_base_entry.ts') as Record<string, unknown>
+      return mod['read_knowledge_base_entryDefinitions'] as KbApiDefinition[]
+    }
+    case 'read_list': {
+      const mod = await import('./apis/read_list.ts') as Record<string, unknown>
+      return mod['read_listDefinitions'] as KbApiDefinition[]
+    }
+    case 'read_list_index': {
+      const mod = await import('./apis/read_list_index.ts') as Record<string, unknown>
+      return mod['read_list_indexDefinitions'] as KbApiDefinition[]
+    }
+    case 'read_list_item': {
+      const mod = await import('./apis/read_list_item.ts') as Record<string, unknown>
+      return mod['read_list_itemDefinitions'] as KbApiDefinition[]
+    }
+    case 'read_list_privileges': {
+      const mod = await import('./apis/read_list_privileges.ts') as Record<string, unknown>
+      return mod['read_list_privilegesDefinitions'] as KbApiDefinition[]
+    }
+    case 'read_privileges': {
+      const mod = await import('./apis/read_privileges.ts') as Record<string, unknown>
+      return mod['read_privilegesDefinitions'] as KbApiDefinition[]
+    }
+    case 'read_rule': {
+      const mod = await import('./apis/read_rule.ts') as Record<string, unknown>
+      return mod['read_ruleDefinitions'] as KbApiDefinition[]
+    }
+    case 'read_tags': {
+      const mod = await import('./apis/read_tags.ts') as Record<string, unknown>
+      return mod['read_tagsDefinitions'] as KbApiDefinition[]
+    }
+    case 'reset_slo_op': {
+      const mod = await import('./apis/reset_slo_op.ts') as Record<string, unknown>
+      return mod['reset_slo_opDefinitions'] as KbApiDefinition[]
+    }
+    case 'resolve_timeline': {
+      const mod = await import('./apis/resolve_timeline.ts') as Record<string, unknown>
+      return mod['resolve_timelineDefinitions'] as KbApiDefinition[]
+    }
+    case 'rule_preview': {
+      const mod = await import('./apis/rule_preview.ts') as Record<string, unknown>
+      return mod['rule_previewDefinitions'] as KbApiDefinition[]
+    }
+    case 'run_script_action': {
+      const mod = await import('./apis/run_script_action.ts') as Record<string, unknown>
+      return mod['run_script_actionDefinitions'] as KbApiDefinition[]
+    }
+    case 'save_apm_server_schema': {
+      const mod = await import('./apis/save_apm_server_schema.ts') as Record<string, unknown>
+      return mod['save_apm_server_schemaDefinitions'] as KbApiDefinition[]
+    }
+    case 'schedule_monitoring_engine': {
+      const mod = await import('./apis/schedule_monitoring_engine.ts') as Record<string, unknown>
+      return mod['schedule_monitoring_engineDefinitions'] as KbApiDefinition[]
+    }
+    case 'schedule_risk_engine_now': {
+      const mod = await import('./apis/schedule_risk_engine_now.ts') as Record<string, unknown>
+      return mod['schedule_risk_engine_nowDefinitions'] as KbApiDefinition[]
+    }
+    case 'search_alerts': {
+      const mod = await import('./apis/search_alerts.ts') as Record<string, unknown>
+      return mod['search_alertsDefinitions'] as KbApiDefinition[]
+    }
+    case 'search_single_configuration': {
+      const mod = await import('./apis/search_single_configuration.ts') as Record<string, unknown>
+      return mod['search_single_configurationDefinitions'] as KbApiDefinition[]
+    }
+    case 'set_alert_assignees': {
+      const mod = await import('./apis/set_alert_assignees.ts') as Record<string, unknown>
+      return mod['set_alert_assigneesDefinitions'] as KbApiDefinition[]
+    }
+    case 'set_alert_tags': {
+      const mod = await import('./apis/set_alert_tags.ts') as Record<string, unknown>
+      return mod['set_alert_tagsDefinitions'] as KbApiDefinition[]
+    }
+    case 'set_alerts_status': {
+      const mod = await import('./apis/set_alerts_status.ts') as Record<string, unknown>
+      return mod['set_alerts_statusDefinitions'] as KbApiDefinition[]
+    }
+    case 'set_default_datail_view_default': {
+      const mod = await import('./apis/set_default_datail_view_default.ts') as Record<string, unknown>
+      return mod['set_default_datail_view_defaultDefinitions'] as KbApiDefinition[]
+    }
+    case 'start_entity_engine': {
+      const mod = await import('./apis/start_entity_engine.ts') as Record<string, unknown>
+      return mod['start_entity_engineDefinitions'] as KbApiDefinition[]
+    }
+    case 'stop_entity_engine': {
+      const mod = await import('./apis/stop_entity_engine.ts') as Record<string, unknown>
+      return mod['stop_entity_engineDefinitions'] as KbApiDefinition[]
+    }
+    case 'swap_data_views_default': {
+      const mod = await import('./apis/swap_data_views_default.ts') as Record<string, unknown>
+      return mod['swap_data_views_defaultDefinitions'] as KbApiDefinition[]
+    }
+    case 'task_manager_health': {
+      const mod = await import('./apis/task_manager_health.ts') as Record<string, unknown>
+      return mod['task_manager_healthDefinitions'] as KbApiDefinition[]
+    }
+    case 'unassign_watchlist_entities': {
+      const mod = await import('./apis/unassign_watchlist_entities.ts') as Record<string, unknown>
+      return mod['unassign_watchlist_entitiesDefinitions'] as KbApiDefinition[]
+    }
+    case 'update_attack_discovery_schedules': {
+      const mod = await import('./apis/update_attack_discovery_schedules.ts') as Record<string, unknown>
+      return mod['update_attack_discovery_schedulesDefinitions'] as KbApiDefinition[]
+    }
+    case 'update_conversation': {
+      const mod = await import('./apis/update_conversation.ts') as Record<string, unknown>
+      return mod['update_conversationDefinitions'] as KbApiDefinition[]
+    }
+    case 'update_dashboard_redirect': {
+      const mod = await import('./apis/update_dashboard_redirect.ts') as Record<string, unknown>
+      return mod['update_dashboard_redirectDefinitions'] as KbApiDefinition[]
+    }
+    case 'update_data_view_default': {
+      const mod = await import('./apis/update_data_view_default.ts') as Record<string, unknown>
+      return mod['update_data_view_defaultDefinitions'] as KbApiDefinition[]
+    }
+    case 'update_endpoint_list_item': {
+      const mod = await import('./apis/update_endpoint_list_item.ts') as Record<string, unknown>
+      return mod['update_endpoint_list_itemDefinitions'] as KbApiDefinition[]
+    }
+    case 'update_exception_list': {
+      const mod = await import('./apis/update_exception_list.ts') as Record<string, unknown>
+      return mod['update_exception_listDefinitions'] as KbApiDefinition[]
+    }
+    case 'update_exception_list_item': {
+      const mod = await import('./apis/update_exception_list_item.ts') as Record<string, unknown>
+      return mod['update_exception_list_itemDefinitions'] as KbApiDefinition[]
+    }
+    case 'update_fields_metadata_default': {
+      const mod = await import('./apis/update_fields_metadata_default.ts') as Record<string, unknown>
+      return mod['update_fields_metadata_defaultDefinitions'] as KbApiDefinition[]
+    }
+    case 'update_knowledge_base_entry': {
+      const mod = await import('./apis/update_knowledge_base_entry.ts') as Record<string, unknown>
+      return mod['update_knowledge_base_entryDefinitions'] as KbApiDefinition[]
+    }
+    case 'update_list': {
+      const mod = await import('./apis/update_list.ts') as Record<string, unknown>
+      return mod['update_listDefinitions'] as KbApiDefinition[]
+    }
+    case 'update_list_item': {
+      const mod = await import('./apis/update_list_item.ts') as Record<string, unknown>
+      return mod['update_list_itemDefinitions'] as KbApiDefinition[]
+    }
+    case 'update_priv_mon_user': {
+      const mod = await import('./apis/update_priv_mon_user.ts') as Record<string, unknown>
+      return mod['update_priv_mon_userDefinitions'] as KbApiDefinition[]
+    }
+    case 'update_rule': {
+      const mod = await import('./apis/update_rule.ts') as Record<string, unknown>
+      return mod['update_ruleDefinitions'] as KbApiDefinition[]
+    }
+    case 'update_runtime_field_default': {
+      const mod = await import('./apis/update_runtime_field_default.ts') as Record<string, unknown>
+      return mod['update_runtime_field_defaultDefinitions'] as KbApiDefinition[]
+    }
+    case 'update_slo_op': {
+      const mod = await import('./apis/update_slo_op.ts') as Record<string, unknown>
+      return mod['update_slo_opDefinitions'] as KbApiDefinition[]
+    }
+    case 'update_visualization_redirect': {
+      const mod = await import('./apis/update_visualization_redirect.ts') as Record<string, unknown>
+      return mod['update_visualization_redirectDefinitions'] as KbApiDefinition[]
+    }
+    case 'update_watchlist': {
+      const mod = await import('./apis/update_watchlist.ts') as Record<string, unknown>
+      return mod['update_watchlistDefinitions'] as KbApiDefinition[]
+    }
+    case 'upload_watchlist_csv': {
+      const mod = await import('./apis/upload_watchlist_csv.ts') as Record<string, unknown>
+      return mod['upload_watchlist_csvDefinitions'] as KbApiDefinition[]
+    }
+    case 'upsert_entities_bulk': {
+      const mod = await import('./apis/upsert_entities_bulk.ts') as Record<string, unknown>
+      return mod['upsert_entities_bulkDefinitions'] as KbApiDefinition[]
+    }
+    case 'upsert_entity': {
+      const mod = await import('./apis/upsert_entity.ts') as Record<string, unknown>
+      return mod['upsert_entityDefinitions'] as KbApiDefinition[]
     }
     default: return []
   }

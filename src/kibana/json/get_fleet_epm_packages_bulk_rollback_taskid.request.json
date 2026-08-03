@@ -1,0 +1,1 @@
+{"type":"object","properties":{"taskId":{"type":"string","description":"Task ID of the bulk operation","x-found-in":"path"}},"required":["taskId"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-epm-packages-bulk-rollback-taskid"}

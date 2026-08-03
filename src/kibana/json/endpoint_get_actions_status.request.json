@@ -1,0 +1,1 @@
+{"type":"object","properties":{"agent_ids":{"type":"string","description":"A list of agent IDs to get the action status for.","x-found-in":"query"}},"required":["agent_ids"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"EndpointGetActionsStatus"}

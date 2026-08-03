@@ -1,0 +1,1 @@
+{"type":"object","properties":{"pluginId":{"type":"string","description":"The unique identifier of the plugin.","x-found-in":"path"}},"required":["pluginId"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-agent-builder-plugins-pluginid"}

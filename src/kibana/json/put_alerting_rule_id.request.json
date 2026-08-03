@@ -1,1 +1,1 @@
-{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_update_rule","$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-alerting-rule-id"}
+{"type":"object","properties":{"id":{"type":"string","description":"The identifier for the rule.","x-found-in":"path"}},"required":["id"],"allOf":[{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_update_rule"}],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-alerting-rule-id"}

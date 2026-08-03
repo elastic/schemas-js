@@ -1,1 +1,1 @@
-{"$ref":"./_defs.json#/$defs/APM_UI_create_annotation_object","$schema":"https://json-schema.org/draft/2020-12/schema","title":"createAnnotation"}
+{"type":"object","properties":{"serviceName":{"type":"string","description":"The name of the service","x-found-in":"path"}},"required":["serviceName"],"allOf":[{"$ref":"./_defs.json#/$defs/APM_UI_create_annotation_object"}],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"createAnnotation"}

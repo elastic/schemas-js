@@ -1,1 +1,1 @@
-{"$ref":"./_defs.json#/$defs/APM_UI_agent_configuration_intake_object","$schema":"https://json-schema.org/draft/2020-12/schema","title":"createUpdateAgentConfiguration"}
+{"type":"object","properties":{"overwrite":{"type":"boolean","description":"If the config exists ?overwrite=true is required","x-found-in":"query"}},"allOf":[{"$ref":"./_defs.json#/$defs/APM_UI_agent_configuration_intake_object"}],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"createUpdateAgentConfiguration"}

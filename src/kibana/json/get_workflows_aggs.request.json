@@ -1,0 +1,1 @@
+{"type":"object","properties":{"fields":{"type":"string","description":"Field or fields to aggregate on.","x-found-in":"query"},"managed":{"type":"string","description":"Filter aggregations by managed status.","x-found-in":"query"}},"required":["fields"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-workflows-aggs"}

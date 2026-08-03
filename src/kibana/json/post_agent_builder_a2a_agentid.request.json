@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-agent-builder-a2a-agentid"}
+{"type":"object","properties":{"agentId":{"type":"string","description":"The unique identifier of the agent to send the A2A task to.","x-found-in":"path"}},"required":["agentId"],"allOf":[{}],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-agent-builder-a2a-agentid"}

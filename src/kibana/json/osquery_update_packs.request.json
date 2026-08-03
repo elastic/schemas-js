@@ -1,1 +1,1 @@
-{"$ref":"./_defs.json#/$defs/Security_Osquery_API_UpdatePacksRequestBody","$schema":"https://json-schema.org/draft/2020-12/schema","title":"OsqueryUpdatePacks"}
+{"type":"object","properties":{"id":{"type":"string","description":"The pack ID.","x-found-in":"path"}},"required":["id"],"allOf":[{"$ref":"./_defs.json#/$defs/Security_Osquery_API_UpdatePacksRequestBody"}],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"OsqueryUpdatePacks"}

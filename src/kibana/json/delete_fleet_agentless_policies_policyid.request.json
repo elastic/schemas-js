@@ -1,0 +1,1 @@
+{"type":"object","properties":{"policyId":{"type":"string","description":"The ID of the policy to delete.","x-found-in":"path"},"force":{"type":"boolean","description":"Force delete the policy even if the policy is managed.","x-found-in":"query"}},"required":["policyId"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-fleet-agentless-policies-policyid"}

@@ -1,0 +1,1 @@
+{"type":"object","properties":{"template_timeline_id":{"type":"string","description":"The ID of the template timeline to resolve","x-found-in":"query"},"id":{"type":"string","description":"The ID of the timeline to resolve","x-found-in":"query"}},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ResolveTimeline"}
