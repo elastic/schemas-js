@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"getSloOp","x-api":{"id":"slo.get-slo-op","name":"get-slo-op","namespace":"slo"},"$ref":"./_defs.json#/$defs/SLOs_slo_with_summary_response"}

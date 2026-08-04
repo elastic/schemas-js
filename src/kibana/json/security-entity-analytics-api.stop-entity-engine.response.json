@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"StopEntityEngine","x-api":{"id":"security-entity-analytics-api.stop-entity-engine","name":"stop-entity-engine","namespace":"security-entity-analytics-api"},"type":"object","properties":{"stopped":{"type":"boolean","description":"Whether the engine was successfully stopped."}}}

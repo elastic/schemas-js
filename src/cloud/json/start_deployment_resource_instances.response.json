@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"start-deployment-resource-instances","x-api":{"id":"deployments.start-deployment-resource-instances","name":"start-deployment-resource-instances","namespace":"deployments"},"type":"object","properties":{}}

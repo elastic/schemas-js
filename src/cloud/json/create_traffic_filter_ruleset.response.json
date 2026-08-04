@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"create-traffic-filter-ruleset","x-api":{"id":"deployments-traffic-filter.create-traffic-filter-ruleset","name":"create-traffic-filter-ruleset","namespace":"deployments-traffic-filter"},"type":"object","properties":{}}

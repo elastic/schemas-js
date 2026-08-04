@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-organization-idp-metadata","type":"string"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-organization-idp-metadata","x-api":{"id":"organizations.get-organization-idp-metadata","name":"get-organization-idp-metadata","namespace":"organizations"},"type":"string"}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.delete_datafeed","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.delete_datafeed","x-api":{"id":"ml.delete_datafeed","name":"delete-datafeed","namespace":"ml"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

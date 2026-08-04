@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-fleet-agents-files-fileid","x-api":{"id":"elastic-agents.delete-fleet-agents-files-fileid","name":"delete-fleet-agents-files-fileid","namespace":"elastic-agents"},"type":"object","properties":{"deleted":{"type":"boolean"},"id":{"type":"string"}},"required":["id","deleted"]}

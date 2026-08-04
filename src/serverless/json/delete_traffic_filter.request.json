@@ -1,15 +1,1 @@
-{
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "deleteTrafficFilter",
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "string",
-      "description": "The traffic filter ID.",
-      "x-found-in": "path"
-    }
-  },
-  "required": [
-    "id"
-  ]
-}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"deleteTrafficFilter","x-api":{"id":"traffic-filters.delete-traffic-filter","name":"delete-traffic-filter","namespace":"traffic-filters"},"x-method":"DELETE","x-path":"/api/v1/serverless/traffic-filters/{id}","x-destructive":true,"type":"object","properties":{"id":{"type":"string","description":"The traffic filter ID.","x-found-in":"path"}},"required":["id"]}

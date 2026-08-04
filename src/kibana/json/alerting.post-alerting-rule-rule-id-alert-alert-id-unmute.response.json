@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-alerting-rule-rule-id-alert-alert-id-unmute","x-api":{"id":"alerting.post-alerting-rule-rule-id-alert-alert-id-unmute","name":"post-alerting-rule-rule-id-alert-alert-id-unmute","namespace":"alerting"},"type":"object","properties":{}}

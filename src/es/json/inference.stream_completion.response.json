@@ -1,1 +1,1 @@
-{"type":"string","description":"base64-encoded binary","$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.stream_completion"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.stream_completion","description":"base64-encoded binary","x-api":{"id":"inference.stream_completion","name":"stream-completion","namespace":"inference"},"type":"string"}

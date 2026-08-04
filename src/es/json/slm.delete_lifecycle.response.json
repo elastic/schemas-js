@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"slm.delete_lifecycle","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"slm.delete_lifecycle","x-api":{"id":"slm.delete_lifecycle","name":"delete-lifecycle","namespace":"slm"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

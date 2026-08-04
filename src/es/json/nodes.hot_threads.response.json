@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"nodes.hot_threads","type":"object","properties":{}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"nodes.hot_threads","x-api":{"id":"nodes.hot_threads","name":"hot-threads","namespace":"nodes"},"type":"object","properties":{}}

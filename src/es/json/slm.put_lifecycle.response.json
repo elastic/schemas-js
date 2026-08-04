@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"slm.put_lifecycle","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"slm.put_lifecycle","x-api":{"id":"slm.put_lifecycle","name":"put-lifecycle","namespace":"slm"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

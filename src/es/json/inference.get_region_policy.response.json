@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.get_region_policy","$ref":"./inference._types.json#/$defs/inference._types__RegionPolicyDoc"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.get_region_policy","x-api":{"id":"inference.get_region_policy","name":"get-region-policy","namespace":"inference"},"$ref":"./inference._types.json#/$defs/inference._types__RegionPolicyDoc"}

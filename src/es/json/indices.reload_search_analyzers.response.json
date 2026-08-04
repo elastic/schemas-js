@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.reload_search_analyzers","$ref":"./indices.reload_search_analyzers.json#/$defs/indices.reload_search_analyzers__ReloadResult"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.reload_search_analyzers","x-api":{"id":"indices.reload_search_analyzers","name":"reload-search-analyzers","namespace":"indices"},"$ref":"./indices.reload_search_analyzers.json#/$defs/indices.reload_search_analyzers__ReloadResult"}

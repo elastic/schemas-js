@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.put_openshift_ai","$ref":"./inference._types.json#/$defs/inference._types__InferenceEndpointInfoOpenShiftAi"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.put_openshift_ai","x-api":{"id":"inference.put_openshift_ai","name":"put-openshift-ai","namespace":"inference"},"$ref":"./inference._types.json#/$defs/inference._types__InferenceEndpointInfoOpenShiftAi"}

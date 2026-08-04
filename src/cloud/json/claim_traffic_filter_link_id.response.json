@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"claim-traffic-filter-link-id","x-api":{"id":"deployments-traffic-filter.claim-traffic-filter-link-id","name":"claim-traffic-filter-link-id","namespace":"deployments-traffic-filter"},"type":"object","properties":{}}

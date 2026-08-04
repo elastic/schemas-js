@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.preview_datafeed","type":"array","items":{}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.preview_datafeed","x-api":{"id":"ml.preview_datafeed","name":"preview-datafeed","namespace":"ml"},"type":"array","items":{}}

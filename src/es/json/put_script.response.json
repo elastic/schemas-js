@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put_script","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put_script","x-api":{"id":"put_script","name":"put-script","namespace":null},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

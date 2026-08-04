@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.get_alias","type":"object","additionalProperties":{"$ref":"./indices.get_alias._types.json#/$defs/indices.get_alias._types__IndexAliases"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.get_alias","x-api":{"id":"indices.get_alias","name":"get-alias","namespace":"indices"},"type":"object","additionalProperties":{"$ref":"./indices.get_alias._types.json#/$defs/indices.get_alias._types__IndexAliases"}}

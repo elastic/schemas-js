@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-agent-builder-a2a-agentid","x-api":{"id":"agent-builder.post-agent-builder-a2a-agentid","name":"post-agent-builder-a2a-agentid","namespace":"agent-builder"},"type":"object","properties":{}}

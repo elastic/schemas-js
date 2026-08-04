@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.delete_model_snapshot","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.delete_model_snapshot","x-api":{"id":"ml.delete_model_snapshot","name":"delete-model-snapshot","namespace":"ml"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

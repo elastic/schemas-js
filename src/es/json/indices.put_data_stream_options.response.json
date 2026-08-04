@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.put_data_stream_options","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.put_data_stream_options","x-api":{"id":"indices.put_data_stream_options","name":"put-data-stream-options","namespace":"indices"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

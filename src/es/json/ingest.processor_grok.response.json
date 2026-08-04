@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ingest.processor_grok","type":"object","properties":{"patterns":{"type":"object","additionalProperties":{"type":"string"}}},"required":["patterns"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ingest.processor_grok","x-api":{"id":"ingest.processor_grok","name":"processor-grok","namespace":"ingest"},"type":"object","properties":{"patterns":{"type":"object","additionalProperties":{"type":"string"}}},"required":["patterns"]}

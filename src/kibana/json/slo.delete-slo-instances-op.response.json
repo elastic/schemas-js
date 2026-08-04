@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"deleteSloInstancesOp","x-api":{"id":"slo.delete-slo-instances-op","name":"delete-slo-instances-op","namespace":"slo"},"type":"object","properties":{}}

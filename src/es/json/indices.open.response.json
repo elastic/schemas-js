@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.open","type":"object","properties":{"acknowledged":{"type":"boolean"},"shards_acknowledged":{"type":"boolean"}},"required":["acknowledged","shards_acknowledged"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.open","x-api":{"id":"indices.open","name":"open","namespace":"indices"},"type":"object","properties":{"acknowledged":{"type":"boolean"},"shards_acknowledged":{"type":"boolean"}},"required":["acknowledged","shards_acknowledged"]}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"enable-deployment-resource-ccr","$ref":"_defs.json#/$defs/DeploymentResourceCommandResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"enable-deployment-resource-ccr","x-api":{"id":"deployments.enable-deployment-resource-ccr","name":"enable-deployment-resource-ccr","namespace":"deployments"},"$ref":"_defs.json#/$defs/DeploymentResourceCommandResponse"}

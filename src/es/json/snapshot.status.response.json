@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"snapshot.status","type":"object","properties":{"snapshots":{"type":"array","items":{"$ref":"./snapshot._types.json#/$defs/snapshot._types__Status"}}},"required":["snapshots"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"snapshot.status","x-api":{"id":"snapshot.status","name":"status","namespace":"snapshot"},"type":"object","properties":{"snapshots":{"type":"array","items":{"$ref":"./snapshot._types.json#/$defs/snapshot._types__Status"}}},"required":["snapshots"]}

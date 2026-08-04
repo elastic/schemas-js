@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.activate_user_profile","$ref":"./security._types.json#/$defs/security._types__UserProfileWithMetadata"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.activate_user_profile","x-api":{"id":"security.activate_user_profile","name":"activate-user-profile","namespace":"security"},"$ref":"./security._types.json#/$defs/security._types__UserProfileWithMetadata"}

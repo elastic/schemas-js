@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"OsqueryCopySavedQuery","x-api":{"id":"security-osquery-api.osquery-copy-saved-query","name":"osquery-copy-saved-query","namespace":"security-osquery-api"},"$ref":"./_defs.json#/$defs/Security_Osquery_API_CopySavedQueryResponse"}

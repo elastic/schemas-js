@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"shutdown-deployment-stateless-resource","$ref":"_defs.json#/$defs/DeploymentResourceCommandResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"shutdown-deployment-stateless-resource","x-api":{"id":"deployments.shutdown-deployment-stateless-resource","name":"shutdown-deployment-stateless-resource","namespace":"deployments"},"$ref":"_defs.json#/$defs/DeploymentResourceCommandResponse"}

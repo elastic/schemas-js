@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-agent-policies-delete","x-api":{"id":"elastic-agent-policies.post-fleet-agent-policies-delete","name":"post-fleet-agent-policies-delete","namespace":"elastic-agent-policies"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_delete_agent_policy_response"}

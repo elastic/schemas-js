@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"async_search.delete","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"async_search.delete","x-api":{"id":"async-search.delete","name":"delete","namespace":"async-search"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

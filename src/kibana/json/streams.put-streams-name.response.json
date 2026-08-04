@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-streams-name","x-api":{"id":"streams.put-streams-name","name":"put-streams-name","namespace":"streams"},"type":"object","properties":{}}

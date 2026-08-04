@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-alerting-rules-backfill-id","x-api":{"id":"alerting.get-alerting-rules-backfill-id","name":"get-alerting-rules-backfill-id","namespace":"alerting"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_backfill_response"}

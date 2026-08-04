@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.delete","$ref":"./inference._types.json#/$defs/inference._types__DeleteInferenceEndpointResult"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.delete","x-api":{"id":"inference.delete","name":"delete","namespace":"inference"},"$ref":"./inference._types.json#/$defs/inference._types__DeleteInferenceEndpointResult"}

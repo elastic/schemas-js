@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"restore-deployment-resource","$ref":"_defs.json#/$defs/DeploymentResourceCrudResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"restore-deployment-resource","x-api":{"id":"deployments.restore-deployment-resource","name":"restore-deployment-resource","namespace":"deployments"},"$ref":"_defs.json#/$defs/DeploymentResourceCrudResponse"}

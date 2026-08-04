@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.put_googleaistudio","$ref":"./inference._types.json#/$defs/inference._types__InferenceEndpointInfoGoogleAIStudio"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.put_googleaistudio","x-api":{"id":"inference.put_googleaistudio","name":"put-googleaistudio","namespace":"inference"},"$ref":"./inference._types.json#/$defs/inference._types__InferenceEndpointInfoGoogleAIStudio"}

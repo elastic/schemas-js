@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.saml_complete_logout","type":"null"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.saml_complete_logout","x-api":{"id":"security.saml_complete_logout","name":"saml-complete-logout","namespace":"security"},"type":"null"}

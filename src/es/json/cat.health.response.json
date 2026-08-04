@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.health","type":"array","items":{"$ref":"./cat.health.json#/$defs/cat.health__HealthRecord"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.health","x-api":{"id":"cat.health","name":"health","namespace":"cat"},"type":"array","items":{"$ref":"./cat.health.json#/$defs/cat.health__HealthRecord"}}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.post_calendar_events","type":"object","properties":{"events":{"type":"array","items":{"$ref":"./ml._types.json#/$defs/ml._types__CalendarEvent"}}},"required":["events"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.post_calendar_events","x-api":{"id":"ml.post_calendar_events","name":"post-calendar-events","namespace":"ml"},"type":"object","properties":{"events":{"type":"array","items":{"$ref":"./ml._types.json#/$defs/ml._types__CalendarEvent"}}},"required":["events"]}

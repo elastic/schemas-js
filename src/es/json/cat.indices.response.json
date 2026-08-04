@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.indices","type":"array","items":{"$ref":"./cat.indices.json#/$defs/cat.indices__IndicesRecord"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.indices","x-api":{"id":"cat.indices","name":"indices","namespace":"cat"},"type":"array","items":{"$ref":"./cat.indices.json#/$defs/cat.indices__IndicesRecord"}}

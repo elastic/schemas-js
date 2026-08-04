@@ -1,15 +1,1 @@
-{
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "getSecurityProjectStatus",
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "string",
-      "description": "The ID of the project",
-      "x-found-in": "path"
-    }
-  },
-  "required": [
-    "id"
-  ]
-}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"getSecurityProjectStatus","x-api":{"id":"security-projects.get-security-project-status","name":"get-security-project-status","namespace":"security-projects"},"x-method":"GET","x-path":"/api/v1/serverless/projects/security/{id}/status","x-destructive":false,"type":"object","properties":{"id":{"type":"string","description":"The ID of the project","x-found-in":"path"}},"required":["id"]}

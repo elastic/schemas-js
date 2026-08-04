@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-agents-agentid-remove-collector","x-api":{"id":"elastic-agent-actions.post-fleet-agents-agentid-remove-collector","name":"post-fleet-agents-agentid-remove-collector","namespace":"elastic-agent-actions"},"type":"object","properties":{}}

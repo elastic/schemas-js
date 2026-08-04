@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-alerting-rules-backfill-id","x-api":{"id":"alerting.delete-alerting-rules-backfill-id","name":"delete-alerting-rules-backfill-id","namespace":"alerting"},"type":"object","properties":{}}

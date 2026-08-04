@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"DeleteList","x-api":{"id":"security-lists-api.delete-list","name":"delete-list","namespace":"security-lists-api"},"$ref":"./_defs.json#/$defs/Security_Lists_API_List"}

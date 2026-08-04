@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-epm-packages-pkgname-rollback","x-api":{"id":"elastic-package-manager-epm.post-fleet-epm-packages-pkgname-rollback","name":"post-fleet-epm-packages-pkgname-rollback","namespace":"elastic-package-manager-epm"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_rollback_package_response"}

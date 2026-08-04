@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-workflows-schema","x-api":{"id":"workflows.get-workflows-schema","name":"get-workflows-schema","namespace":"workflows"},"type":"object","properties":{}}

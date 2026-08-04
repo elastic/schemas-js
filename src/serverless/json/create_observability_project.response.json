@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"createObservabilityProject","x-api":{"id":"observability-projects.create-observability-project","name":"create-observability-project","namespace":"observability-projects"},"type":"object","properties":{}}

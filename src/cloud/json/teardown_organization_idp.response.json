@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"teardown-organization-idp","$ref":"_defs.json#/$defs/EmptyResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"teardown-organization-idp","x-api":{"id":"organizations.teardown-organization-idp","name":"teardown-organization-idp","namespace":"organizations"},"$ref":"_defs.json#/$defs/EmptyResponse"}

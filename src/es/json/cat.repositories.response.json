@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.repositories","type":"array","items":{"$ref":"./cat.repositories.json#/$defs/cat.repositories__RepositoriesRecord"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.repositories","x-api":{"id":"cat.repositories","name":"repositories","namespace":"cat"},"type":"array","items":{"$ref":"./cat.repositories.json#/$defs/cat.repositories__RepositoriesRecord"}}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-data-streams","x-api":{"id":"data-streams.get-fleet-data-streams","name":"get-fleet-data-streams","namespace":"data-streams"},"x-method":"GET","x-path":"/api/fleet/data_streams","x-destructive":false,"type":"object","properties":{}}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-workflows","x-api":{"id":"workflows.post-workflows","name":"post-workflows","namespace":"workflows"},"type":"object","properties":{}}

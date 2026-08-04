@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-agent-policies-bulk-get","x-api":{"id":"elastic-agent-policies.post-fleet-agent-policies-bulk-get","name":"post-fleet-agent-policies-bulk-get","namespace":"elastic-agent-policies"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_bulk_get_agent_policies_response"}

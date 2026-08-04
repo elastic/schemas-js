@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"OsqueryGetLiveQueryDetails","x-api":{"id":"security-osquery-api.osquery-get-live-query-details","name":"osquery-get-live-query-details","namespace":"security-osquery-api"},"$ref":"./_defs.json#/$defs/Security_Osquery_API_FindLiveQueryDetailsResponse"}

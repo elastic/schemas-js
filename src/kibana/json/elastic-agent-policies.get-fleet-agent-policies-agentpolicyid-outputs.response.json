@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-agent-policies-agentpolicyid-outputs","x-api":{"id":"elastic-agent-policies.get-fleet-agent-policies-agentpolicyid-outputs","name":"get-fleet-agent-policies-agentpolicyid-outputs","namespace":"elastic-agent-policies"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_get_agent_policy_outputs_response"}

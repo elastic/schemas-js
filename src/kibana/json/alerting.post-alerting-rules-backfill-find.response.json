@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-alerting-rules-backfill-find","x-api":{"id":"alerting.post-alerting-rules-backfill-find","name":"post-alerting-rules-backfill-find","namespace":"alerting"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_find_backfill_response"}

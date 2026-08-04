@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"slm.stop","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"slm.stop","x-api":{"id":"slm.stop","name":"stop","namespace":"slm"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

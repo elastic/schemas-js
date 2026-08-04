@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-streams-streamname-attachments-attachmenttype-attachmentid","x-api":{"id":"streams.put-streams-streamname-attachments-attachmenttype-attachmentid","name":"put-streams-streamname-attachments-attachmenttype-attachmentid","namespace":"streams"},"type":"object","properties":{}}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-security-role","x-api":{"id":"roles.get-security-role","name":"get-security-role","namespace":"roles"},"type":"array","items":{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_security_role_response"}}

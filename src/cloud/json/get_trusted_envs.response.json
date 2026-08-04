@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-trusted-envs","$ref":"_defs.json#/$defs/ElasticsearchClusterTrustSettings"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-trusted-envs","x-api":{"id":"trusted-environments.get-trusted-envs","name":"get-trusted-envs","namespace":"trusted-environments"},"$ref":"_defs.json#/$defs/ElasticsearchClusterTrustSettings"}

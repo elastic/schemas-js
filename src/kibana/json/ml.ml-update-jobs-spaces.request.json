@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"mlUpdateJobsSpaces","x-api":{"id":"ml.ml-update-jobs-spaces","name":"ml-update-jobs-spaces","namespace":"ml"},"x-method":"POST","x-path":"/api/ml/saved_objects/update_jobs_spaces","x-destructive":true,"type":"object","properties":{}}

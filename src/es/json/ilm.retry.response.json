@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ilm.retry","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ilm.retry","x-api":{"id":"ilm.retry","name":"retry","namespace":"ilm"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"InstallPrepackedTimelines","x-api":{"id":"security-timeline-api.install-prepacked-timelines","name":"install-prepacked-timelines","namespace":"security-timeline-api"},"$ref":"./_defs.json#/$defs/Security_Timeline_API_ImportTimelineResult"}

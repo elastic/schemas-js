@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.segments","type":"array","items":{"$ref":"./cat.segments.json#/$defs/cat.segments__SegmentsRecord"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.segments","x-api":{"id":"cat.segments","name":"segments","namespace":"cat"},"type":"array","items":{"$ref":"./cat.segments.json#/$defs/cat.segments__SegmentsRecord"}}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-fleet-outputs-outputid","x-api":{"id":"fleet-outputs.delete-fleet-outputs-outputid","name":"delete-fleet-outputs-outputid","namespace":"fleet-outputs"},"type":"object","properties":{"id":{"type":"string"}},"required":["id"]}

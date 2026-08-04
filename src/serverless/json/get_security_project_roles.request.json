@@ -1,15 +1,1 @@
-{
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "getSecurityProjectRoles",
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "string",
-      "description": "The ID of the project",
-      "x-found-in": "path"
-    }
-  },
-  "required": [
-    "id"
-  ]
-}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"getSecurityProjectRoles","x-api":{"id":"security-projects.get-security-project-roles","name":"get-security-project-roles","namespace":"security-projects"},"x-method":"GET","x-path":"/api/v1/serverless/projects/security/{id}/roles","x-destructive":false,"type":"object","properties":{"id":{"type":"string","description":"The ID of the project","x-found-in":"path"}},"required":["id"]}

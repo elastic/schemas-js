@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-agent-builder-plugins-pluginid","x-api":{"id":"agent-builder.delete-agent-builder-plugins-pluginid","name":"delete-agent-builder-plugins-pluginid","namespace":"agent-builder"},"type":"object","properties":{}}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.downsample"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.downsample","x-api":{"id":"indices.downsample","name":"downsample","namespace":"indices"}}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-agents","x-api":{"id":"elastic-agents.post-fleet-agents","name":"post-fleet-agents","namespace":"elastic-agents"},"type":"object","properties":{"items":{"type":"array","items":{"type":"string"}}},"required":["items"]}

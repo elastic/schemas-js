@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"watcher.stop","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"watcher.stop","x-api":{"id":"watcher.stop","name":"stop","namespace":"watcher"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

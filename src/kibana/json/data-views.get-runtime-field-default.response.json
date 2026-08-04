@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"getRuntimeFieldDefault","x-api":{"id":"data-views.get-runtime-field-default","name":"get-runtime-field-default","namespace":"data-views"},"type":"object","properties":{"data_view":{"type":"object"},"fields":{"type":"array","items":{"type":"object"}}}}

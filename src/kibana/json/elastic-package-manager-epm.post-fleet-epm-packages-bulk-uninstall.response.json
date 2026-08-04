@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-epm-packages-bulk-uninstall","x-api":{"id":"elastic-package-manager-epm.post-fleet-epm-packages-bulk-uninstall","name":"post-fleet-epm-packages-bulk-uninstall","namespace":"elastic-package-manager-epm"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_bulk_upgrade_packages_response"}

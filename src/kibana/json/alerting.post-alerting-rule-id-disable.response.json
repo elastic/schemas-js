@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-alerting-rule-id-disable","x-api":{"id":"alerting.post-alerting-rule-id-disable","name":"post-alerting-rule-id-disable","namespace":"alerting"},"type":"object","properties":{}}

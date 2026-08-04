@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-organization-idp","$ref":"_defs.json#/$defs/OrganizationIdp"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-organization-idp","x-api":{"id":"organizations.get-organization-idp","name":"get-organization-idp","namespace":"organizations"},"$ref":"_defs.json#/$defs/OrganizationIdp"}

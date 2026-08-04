@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-saved-objects-export","x-api":{"id":"saved-objects.post-saved-objects-export","name":"post-saved-objects-export","namespace":"saved-objects"},"type":"object","properties":{}}

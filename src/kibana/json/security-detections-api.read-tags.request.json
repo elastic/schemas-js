@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ReadTags","x-api":{"id":"security-detections-api.read-tags","name":"read-tags","namespace":"security-detections-api"},"x-method":"GET","x-path":"/api/detection_engine/tags","x-destructive":false,"type":"object","properties":{}}

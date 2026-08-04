@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"snapshot.get_repository","type":"object","additionalProperties":{"$ref":"./snapshot._types.json#/$defs/snapshot._types__Repository"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"snapshot.get_repository","x-api":{"id":"snapshot.get_repository","name":"get-repository","namespace":"snapshot"},"type":"object","additionalProperties":{"$ref":"./snapshot._types.json#/$defs/snapshot._types__Repository"}}

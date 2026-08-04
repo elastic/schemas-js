@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"createAnnotation","x-api":{"id":"apm-annotations.create-annotation","name":"create-annotation","namespace":"apm-annotations"},"$ref":"./_defs.json#/$defs/APM_UI_create_annotation_response"}

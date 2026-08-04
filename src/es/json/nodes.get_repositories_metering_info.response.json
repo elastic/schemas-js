@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"nodes.get_repositories_metering_info","$ref":"./nodes.get_repositories_metering_info.json#/$defs/nodes.get_repositories_metering_info__ResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"nodes.get_repositories_metering_info","x-api":{"id":"nodes.get_repositories_metering_info","name":"get-repositories-metering-info","namespace":"nodes"},"$ref":"./nodes.get_repositories_metering_info.json#/$defs/nodes.get_repositories_metering_info__ResponseBase"}

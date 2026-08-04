@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.update_user_profile_data","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.update_user_profile_data","x-api":{"id":"security.update_user_profile_data","name":"update-user-profile-data","namespace":"security"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

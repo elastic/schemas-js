@@ -1,15 +1,1 @@
-{
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "getObservabilityProjectStatus",
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "string",
-      "description": "The ID of the project",
-      "x-found-in": "path"
-    }
-  },
-  "required": [
-    "id"
-  ]
-}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"getObservabilityProjectStatus","x-api":{"id":"observability-projects.get-observability-project-status","name":"get-observability-project-status","namespace":"observability-projects"},"x-method":"GET","x-path":"/api/v1/serverless/projects/observability/{id}/status","x-destructive":false,"type":"object","properties":{"id":{"type":"string","description":"The ID of the project","x-found-in":"path"}},"required":["id"]}

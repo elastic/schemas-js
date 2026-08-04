@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-fleet-agents-agentid","x-api":{"id":"elastic-agents.delete-fleet-agents-agentid","name":"delete-fleet-agents-agentid","namespace":"elastic-agents"},"type":"object","properties":{"action":{"enum":["deleted"]}},"required":["action"]}

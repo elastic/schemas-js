@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"sql.clear_cursor","type":"object","properties":{"succeeded":{"type":"boolean"}},"required":["succeeded"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"sql.clear_cursor","x-api":{"id":"sql.clear_cursor","name":"clear-cursor","namespace":"sql"},"type":"object","properties":{"succeeded":{"type":"boolean"}},"required":["succeeded"]}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ccr.forget_follower","type":"object","properties":{"_shards":{"$ref":"./_types.json#/$defs/_types__ShardStatistics"}},"required":["_shards"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ccr.forget_follower","x-api":{"id":"ccr.forget_follower","name":"forget-follower","namespace":"ccr"},"type":"object","properties":{"_shards":{"$ref":"./_types.json#/$defs/_types__ShardStatistics"}},"required":["_shards"]}

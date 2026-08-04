@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"msearch","$ref":"./_global.msearch.json#/$defs/_global.msearch__MultiSearchResult"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"msearch","x-api":{"id":"msearch","name":"msearch","namespace":null},"$ref":"./_global.msearch.json#/$defs/_global.msearch__MultiSearchResult"}

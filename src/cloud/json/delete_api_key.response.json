@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-api-key","$ref":"_defs.json#/$defs/EmptyResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-api-key","x-api":{"id":"authentication.delete-api-key","name":"delete-api-key","namespace":"authentication"},"$ref":"_defs.json#/$defs/EmptyResponse"}

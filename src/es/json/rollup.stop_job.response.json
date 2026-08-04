@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"rollup.stop_job","type":"object","properties":{"stopped":{"type":"boolean"}},"required":["stopped"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"rollup.stop_job","x-api":{"id":"rollup.stop_job","name":"stop-job","namespace":"rollup"},"type":"object","properties":{"stopped":{"type":"boolean"}},"required":["stopped"]}

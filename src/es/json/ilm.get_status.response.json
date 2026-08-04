@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ilm.get_status","type":"object","properties":{"operation_mode":{"$ref":"./_types.json#/$defs/_types__LifecycleOperationMode"}},"required":["operation_mode"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ilm.get_status","x-api":{"id":"ilm.get_status","name":"get-status","namespace":"ilm"},"type":"object","properties":{"operation_mode":{"$ref":"./_types.json#/$defs/_types__LifecycleOperationMode"}},"required":["operation_mode"]}

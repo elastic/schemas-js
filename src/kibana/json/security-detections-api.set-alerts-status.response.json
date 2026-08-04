@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"SetAlertsStatus","x-api":{"id":"security-detections-api.set-alerts-status","name":"set-alerts-status","namespace":"security-detections-api"},"type":"object","additionalProperties":true}

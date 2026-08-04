@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.create_data_stream","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.create_data_stream","x-api":{"id":"indices.create_data_stream","name":"create-data-stream","namespace":"indices"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

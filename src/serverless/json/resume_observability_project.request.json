@@ -1,15 +1,1 @@
-{
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "resumeObservabilityProject",
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "string",
-      "description": "The ID of the project",
-      "x-found-in": "path"
-    }
-  },
-  "required": [
-    "id"
-  ]
-}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"resumeObservabilityProject","x-api":{"id":"observability-projects.resume-observability-project","name":"resume-observability-project","namespace":"observability-projects"},"x-method":"POST","x-path":"/api/v1/serverless/projects/observability/{id}/_resume","x-destructive":true,"type":"object","properties":{"id":{"type":"string","description":"The ID of the project","x-found-in":"path"}},"required":["id"]}

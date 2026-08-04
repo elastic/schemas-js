@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"rollup.get_jobs","type":"object","properties":{"jobs":{"type":"array","items":{"$ref":"./rollup.get_jobs.json#/$defs/rollup.get_jobs__RollupJob"}}},"required":["jobs"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"rollup.get_jobs","x-api":{"id":"rollup.get_jobs","name":"get-jobs","namespace":"rollup"},"type":"object","properties":{"jobs":{"type":"array","items":{"$ref":"./rollup.get_jobs.json#/$defs/rollup.get_jobs__RollupJob"}}},"required":["jobs"]}

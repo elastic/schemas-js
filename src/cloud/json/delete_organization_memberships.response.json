@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-organization-memberships","$ref":"_defs.json#/$defs/EmptyResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-organization-memberships","x-api":{"id":"organizations.delete-organization-memberships","name":"delete-organization-memberships","namespace":"organizations"},"$ref":"_defs.json#/$defs/EmptyResponse"}

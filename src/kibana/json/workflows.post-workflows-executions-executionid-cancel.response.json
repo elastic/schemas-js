@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-workflows-executions-executionid-cancel","x-api":{"id":"workflows.post-workflows-executions-executionid-cancel","name":"post-workflows-executions-executionid-cancel","namespace":"workflows"},"type":"object","properties":{}}

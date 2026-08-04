@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"query_rules.delete_ruleset","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"query_rules.delete_ruleset","x-api":{"id":"query-rules.delete_ruleset","name":"delete-ruleset","namespace":"query-rules"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

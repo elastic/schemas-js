@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.put","$ref":"./inference._types.json#/$defs/inference._types__InferenceEndpointInfo"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.put","x-api":{"id":"inference.put","name":"put","namespace":"inference"},"$ref":"./inference._types.json#/$defs/inference._types__InferenceEndpointInfo"}

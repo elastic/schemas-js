@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.get_jobs","type":"object","properties":{"count":{"type":"number"},"jobs":{"type":"array","items":{"$ref":"./ml._types.json#/$defs/ml._types__Job"}}},"required":["count","jobs"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.get_jobs","x-api":{"id":"ml.get_jobs","name":"get-jobs","namespace":"ml"},"type":"object","properties":{"count":{"type":"number"},"jobs":{"type":"array","items":{"$ref":"./ml._types.json#/$defs/ml._types__Job"}}},"required":["count","jobs"]}

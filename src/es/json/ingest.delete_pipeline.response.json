@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ingest.delete_pipeline","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ingest.delete_pipeline","x-api":{"id":"ingest.delete_pipeline","name":"delete-pipeline","namespace":"ingest"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

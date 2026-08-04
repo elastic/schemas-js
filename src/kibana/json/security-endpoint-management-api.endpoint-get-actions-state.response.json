@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"EndpointGetActionsState","x-api":{"id":"security-endpoint-management-api.endpoint-get-actions-state","name":"endpoint-get-actions-state","namespace":"security-endpoint-management-api"},"$ref":"./_defs.json#/$defs/Security_Endpoint_Management_API_ActionStateSuccessResponse"}

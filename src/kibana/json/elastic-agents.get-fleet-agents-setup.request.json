@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-agents-setup","x-api":{"id":"elastic-agents.get-fleet-agents-setup","name":"get-fleet-agents-setup","namespace":"elastic-agents"},"x-method":"GET","x-path":"/api/fleet/agents/setup","x-destructive":false,"type":"object","properties":{}}

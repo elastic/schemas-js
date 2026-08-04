@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-logstash-api-keys","x-api":{"id":"fleet-outputs.post-fleet-logstash-api-keys","name":"post-fleet-logstash-api-keys","namespace":"fleet-outputs"},"type":"object","properties":{"api_key":{"type":"string"}},"required":["api_key"]}

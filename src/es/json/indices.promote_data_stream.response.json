@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.promote_data_stream"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.promote_data_stream","x-api":{"id":"indices.promote_data_stream","name":"promote-data-stream","namespace":"indices"}}

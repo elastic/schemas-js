@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"rollup.start_job","type":"object","properties":{"started":{"type":"boolean"}},"required":["started"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"rollup.start_job","x-api":{"id":"rollup.start_job","name":"start-job","namespace":"rollup"},"type":"object","properties":{"started":{"type":"boolean"}},"required":["started"]}

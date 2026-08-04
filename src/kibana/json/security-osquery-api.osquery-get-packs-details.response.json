@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"OsqueryGetPacksDetails","x-api":{"id":"security-osquery-api.osquery-get-packs-details","name":"osquery-get-packs-details","namespace":"security-osquery-api"},"$ref":"./_defs.json#/$defs/Security_Osquery_API_FindPackResponse"}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.put_llama","$ref":"./inference._types.json#/$defs/inference._types__InferenceEndpointInfoLlama"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.put_llama","x-api":{"id":"inference.put_llama","name":"put-llama","namespace":"inference"},"$ref":"./inference._types.json#/$defs/inference._types__InferenceEndpointInfoLlama"}

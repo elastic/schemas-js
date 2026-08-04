@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"query_rules.get_ruleset","$ref":"./query_rules._types.json#/$defs/query_rules._types__QueryRuleset"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"query_rules.get_ruleset","x-api":{"id":"query-rules.get_ruleset","name":"get-ruleset","namespace":"query-rules"},"$ref":"./query_rules._types.json#/$defs/query_rules._types__QueryRuleset"}

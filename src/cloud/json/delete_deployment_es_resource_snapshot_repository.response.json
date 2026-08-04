@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-deployment-es-resource-snapshot-repository","$ref":"_defs.json#/$defs/EmptyResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-deployment-es-resource-snapshot-repository","x-api":{"id":"deployments.delete-deployment-es-resource-snapshot-repository","name":"delete-deployment-es-resource-snapshot-repository","namespace":"deployments"},"$ref":"_defs.json#/$defs/EmptyResponse"}

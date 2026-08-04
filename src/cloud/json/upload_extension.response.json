@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"upload-extension","$ref":"_defs.json#/$defs/Extension"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"upload-extension","x-api":{"id":"extensions.upload-extension","name":"upload-extension","namespace":"extensions"},"$ref":"_defs.json#/$defs/Extension"}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-costs-items-by-deployment","$ref":"_defs.json#/$defs/ItemsCosts"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-costs-items-by-deployment","x-api":{"id":"billing-costs-analysis.get-costs-items-by-deployment","name":"get-costs-items-by-deployment","namespace":"billing-costs-analysis"},"$ref":"_defs.json#/$defs/ItemsCosts"}

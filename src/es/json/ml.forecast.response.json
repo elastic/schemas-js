@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.forecast","type":"object","properties":{"acknowledged":{"type":"boolean"},"forecast_id":{"type":"string"}},"required":["acknowledged","forecast_id"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.forecast","x-api":{"id":"ml.forecast","name":"forecast","namespace":"ml"},"type":"object","properties":{"acknowledged":{"type":"boolean"},"forecast_id":{"type":"string"}},"required":["acknowledged","forecast_id"]}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"snapshot.repository_verify_integrity"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"snapshot.repository_verify_integrity","x-api":{"id":"snapshot.repository_verify_integrity","name":"repository-verify-integrity","namespace":"snapshot"}}

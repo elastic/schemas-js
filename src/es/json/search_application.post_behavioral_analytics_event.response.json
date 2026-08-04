@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"search_application.post_behavioral_analytics_event","type":"object","properties":{"accepted":{"type":"boolean"},"event":{}},"required":["accepted"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"search_application.post_behavioral_analytics_event","x-api":{"id":"search-application.post_behavioral_analytics_event","name":"post-behavioral-analytics-event","namespace":"search-application"},"type":"object","properties":{"accepted":{"type":"boolean"},"event":{}},"required":["accepted"]}

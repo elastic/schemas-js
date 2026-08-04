@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete_script","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete_script","x-api":{"id":"delete_script","name":"delete-script","namespace":null},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

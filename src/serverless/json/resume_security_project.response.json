@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"resumeSecurityProject","x-api":{"id":"security-projects.resume-security-project","name":"resume-security-project","namespace":"security-projects"},"type":"object","properties":{}}

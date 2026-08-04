@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-maintenance-window-id","x-api":{"id":"maintenance-window.delete-maintenance-window-id","name":"delete-maintenance-window-id","namespace":"maintenance-window"},"type":"object","properties":{}}

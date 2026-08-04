@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"searchable_snapshots.stats","type":"object","properties":{"stats":{},"total":{}},"required":["stats","total"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"searchable_snapshots.stats","x-api":{"id":"searchable-snapshots.stats","name":"stats","namespace":"searchable-snapshots"},"type":"object","properties":{"stats":{},"total":{}},"required":["stats","total"]}

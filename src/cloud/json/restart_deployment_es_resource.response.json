@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"restart-deployment-es-resource","x-api":{"id":"deployments.restart-deployment-es-resource","name":"restart-deployment-es-resource","namespace":"deployments"},"type":"object","properties":{}}

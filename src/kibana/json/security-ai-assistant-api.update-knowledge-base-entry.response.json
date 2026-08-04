@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"UpdateKnowledgeBaseEntry","x-api":{"id":"security-ai-assistant-api.update-knowledge-base-entry","name":"update-knowledge-base-entry","namespace":"security-ai-assistant-api"},"$ref":"./_defs.json#/$defs/Security_AI_Assistant_API_KnowledgeBaseEntryResponse"}

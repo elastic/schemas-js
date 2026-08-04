@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ingest.get_pipeline","type":"object","additionalProperties":{"$ref":"./ingest._types.json#/$defs/ingest._types__Pipeline"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ingest.get_pipeline","x-api":{"id":"ingest.get_pipeline","name":"get-pipeline","namespace":"ingest"},"type":"object","additionalProperties":{"$ref":"./ingest._types.json#/$defs/ingest._types__Pipeline"}}

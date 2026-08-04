@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"esql.async_query_stop","$ref":"./esql._types.json#/$defs/esql._types__EsqlResult"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"esql.async_query_stop","x-api":{"id":"esql.async_query_stop","name":"async-query-stop","namespace":"esql"},"$ref":"./esql._types.json#/$defs/esql._types__EsqlResult"}

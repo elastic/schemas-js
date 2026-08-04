@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-service-tokens","x-api":{"id":"fleet-service-tokens.post-fleet-service-tokens","name":"post-fleet-service-tokens","namespace":"fleet-service-tokens"},"type":"object","properties":{"name":{"type":"string"},"value":{"type":"string"}},"required":["name","value"]}

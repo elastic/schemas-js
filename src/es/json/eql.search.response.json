@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"eql.search","$ref":"./eql._types.json#/$defs/eql._types__EqlSearchResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"eql.search","x-api":{"id":"eql.search","name":"search","namespace":"eql"},"$ref":"./eql._types.json#/$defs/eql._types__EqlSearchResponseBase"}

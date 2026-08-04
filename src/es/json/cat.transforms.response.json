@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.transforms","type":"array","items":{"$ref":"./cat.transforms.json#/$defs/cat.transforms__TransformsRecord"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.transforms","x-api":{"id":"cat.transforms","name":"transforms","namespace":"cat"},"type":"array","items":{"$ref":"./cat.transforms.json#/$defs/cat.transforms__TransformsRecord"}}

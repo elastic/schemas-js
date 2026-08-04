@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"deleteRollupDataOp","x-api":{"id":"slo.delete-rollup-data-op","name":"delete-rollup-data-op","namespace":"slo"},"$ref":"./_defs.json#/$defs/SLOs_bulk_purge_rollup_response"}

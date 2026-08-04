@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-workflows-executions-executionid-logs","x-api":{"id":"workflows.get-workflows-executions-executionid-logs","name":"get-workflows-executions-executionid-logs","namespace":"workflows"},"type":"object","properties":{}}

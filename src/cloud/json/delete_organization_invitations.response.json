@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-organization-invitations","$ref":"_defs.json#/$defs/EmptyResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-organization-invitations","x-api":{"id":"organizations.delete-organization-invitations","name":"delete-organization-invitations","namespace":"organizations"},"$ref":"_defs.json#/$defs/EmptyResponse"}

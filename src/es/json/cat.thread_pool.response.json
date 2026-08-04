@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.thread_pool","type":"array","items":{"$ref":"./cat.thread_pool.json#/$defs/cat.thread_pool__ThreadPoolRecord"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.thread_pool","x-api":{"id":"cat.thread_pool","name":"thread-pool","namespace":"cat"},"type":"array","items":{"$ref":"./cat.thread_pool.json#/$defs/cat.thread_pool__ThreadPoolRecord"}}

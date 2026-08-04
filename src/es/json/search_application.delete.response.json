@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"search_application.delete","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"search_application.delete","x-api":{"id":"search-application.delete","name":"delete","namespace":"search-application"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

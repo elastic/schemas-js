@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"getAgentConfigurations","x-api":{"id":"apm-agent-configuration.get-agent-configurations","name":"get-agent-configurations","namespace":"apm-agent-configuration"},"x-method":"GET","x-path":"/api/apm/settings/agent-configuration","x-destructive":false,"type":"object","properties":{}}

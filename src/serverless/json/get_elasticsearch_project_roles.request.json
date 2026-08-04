@@ -1,15 +1,1 @@
-{
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "getElasticsearchProjectRoles",
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "string",
-      "description": "The ID of the project",
-      "x-found-in": "path"
-    }
-  },
-  "required": [
-    "id"
-  ]
-}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"getElasticsearchProjectRoles","x-api":{"id":"elasticsearch-projects.get-elasticsearch-project-roles","name":"get-elasticsearch-project-roles","namespace":"elasticsearch-projects"},"x-method":"GET","x-path":"/api/v1/serverless/projects/elasticsearch/{id}/roles","x-destructive":false,"type":"object","properties":{"id":{"type":"string","description":"The ID of the project","x-found-in":"path"}},"required":["id"]}

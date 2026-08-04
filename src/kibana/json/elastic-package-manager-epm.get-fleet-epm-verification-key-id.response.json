@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-epm-verification-key-id","x-api":{"id":"elastic-package-manager-epm.get-fleet-epm-verification-key-id","name":"get-fleet-epm-verification-key-id","namespace":"elastic-package-manager-epm"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_get_verification_key_id_response"}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.disable_user_profile","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.disable_user_profile","x-api":{"id":"security.disable_user_profile","name":"disable-user-profile","namespace":"security"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

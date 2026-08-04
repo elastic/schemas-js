@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-deployment-integrations-server-resource-info","$ref":"_defs.json#/$defs/IntegrationsServerResourceInfo"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-deployment-integrations-server-resource-info","x-api":{"id":"deployments.get-deployment-integrations-server-resource-info","name":"get-deployment-integrations-server-resource-info","namespace":"deployments"},"$ref":"_defs.json#/$defs/IntegrationsServerResourceInfo"}

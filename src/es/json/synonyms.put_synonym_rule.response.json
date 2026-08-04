@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"synonyms.put_synonym_rule","$ref":"./synonyms._types.json#/$defs/synonyms._types__SynonymsUpdateResult"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"synonyms.put_synonym_rule","x-api":{"id":"synonyms.put_synonym_rule","name":"put-synonym-rule","namespace":"synonyms"},"$ref":"./synonyms._types.json#/$defs/synonyms._types__SynonymsUpdateResult"}

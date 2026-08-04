@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ReadEndpointListItem","x-api":{"id":"security-endpoint-exceptions-api.read-endpoint-list-item","name":"read-endpoint-list-item","namespace":"security-endpoint-exceptions-api"},"$ref":"./_defs.json#/$defs/Security_Endpoint_Exceptions_API_ExceptionListItem"}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.disable_user","type":"object","properties":{}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.disable_user","x-api":{"id":"security.disable_user","name":"disable-user","namespace":"security"},"type":"object","properties":{}}

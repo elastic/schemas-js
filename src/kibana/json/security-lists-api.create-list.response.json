@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"CreateList","x-api":{"id":"security-lists-api.create-list","name":"create-list","namespace":"security-lists-api"},"$ref":"./_defs.json#/$defs/Security_Lists_API_List"}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.put_trained_model_definition_part","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.put_trained_model_definition_part","x-api":{"id":"ml.put_trained_model_definition_part","name":"put-trained-model-definition-part","namespace":"ml"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

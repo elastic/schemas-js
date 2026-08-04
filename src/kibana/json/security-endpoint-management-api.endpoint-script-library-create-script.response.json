@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"EndpointScriptLibraryCreateScript","x-api":{"id":"security-endpoint-management-api.endpoint-script-library-create-script","name":"endpoint-script-library-create-script","namespace":"security-endpoint-management-api"},"$ref":"./_defs.json#/$defs/Security_Endpoint_Management_API_ScriptsApiResponse"}

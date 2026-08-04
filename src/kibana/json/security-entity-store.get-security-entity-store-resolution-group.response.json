@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-security-entity-store-resolution-group","x-api":{"id":"security-entity-store.get-security-entity-store-resolution-group","name":"get-security-entity-store-resolution-group","namespace":"security-entity-store"},"type":"object","properties":{}}

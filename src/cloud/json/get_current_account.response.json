@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-current-account","$ref":"_defs.json#/$defs/AccountResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-current-account","x-api":{"id":"accounts.get-current-account","name":"get-current-account","namespace":"accounts"},"$ref":"_defs.json#/$defs/AccountResponse"}

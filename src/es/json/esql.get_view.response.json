@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"esql.get_view","type":"object","properties":{"views":{"type":"array","items":{"$ref":"./esql._types.json#/$defs/esql._types__ESQLView"}}},"required":["views"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"esql.get_view","x-api":{"id":"esql.get_view","name":"get-view","namespace":"esql"},"type":"object","properties":{"views":{"type":"array","items":{"$ref":"./esql._types.json#/$defs/esql._types__ESQLView"}}},"required":["views"]}

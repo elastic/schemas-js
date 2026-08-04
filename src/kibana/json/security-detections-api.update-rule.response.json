@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"UpdateRule","x-api":{"id":"security-detections-api.update-rule","name":"update-rule","namespace":"security-detections-api"},"$ref":"./_defs.json#/$defs/Security_Detections_API_RuleResponse"}

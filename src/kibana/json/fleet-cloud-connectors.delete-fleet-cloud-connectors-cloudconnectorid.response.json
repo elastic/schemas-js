@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-fleet-cloud-connectors-cloudconnectorid","x-api":{"id":"fleet-cloud-connectors.delete-fleet-cloud-connectors-cloudconnectorid","name":"delete-fleet-cloud-connectors-cloudconnectorid","namespace":"fleet-cloud-connectors"},"type":"object","properties":{"id":{"type":"string"}},"required":["id"]}

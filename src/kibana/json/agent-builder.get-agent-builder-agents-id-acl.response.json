@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-agent-builder-agents-id-acl","x-api":{"id":"agent-builder.get-agent-builder-agents-id-acl","name":"get-agent-builder-agents-id-acl","namespace":"agent-builder"},"type":"object","properties":{}}

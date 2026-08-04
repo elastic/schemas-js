@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-workflows-managed-workflow-id","x-api":{"id":"workflows.put-workflows-managed-workflow-id","name":"put-workflows-managed-workflow-id","namespace":"workflows"},"type":"object","properties":{}}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"task-manager-health","x-api":{"id":"task-manager.task-manager-health","name":"task-manager-health","namespace":"task-manager"},"$ref":"./_defs.json#/$defs/Task_manager_health_Serverless_APIs_health_response_serverless"}

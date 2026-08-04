@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-agents-available-versions","x-api":{"id":"elastic-agents.get-fleet-agents-available-versions","name":"get-fleet-agents-available-versions","namespace":"elastic-agents"},"type":"object","properties":{"items":{"type":"array","items":{"type":"string"}}},"required":["items"]}

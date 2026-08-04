@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-traffic-filter-ruleset-association","$ref":"_defs.json#/$defs/EmptyResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-traffic-filter-ruleset-association","x-api":{"id":"deployments-traffic-filter.delete-traffic-filter-ruleset-association","name":"delete-traffic-filter-ruleset-association","namespace":"deployments-traffic-filter"},"$ref":"_defs.json#/$defs/EmptyResponse"}

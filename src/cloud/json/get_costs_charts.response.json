@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-costs-charts","$ref":"_defs.json#/$defs/ChartItems"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-costs-charts","x-api":{"id":"billing-costs-analysis.get-costs-charts","name":"get-costs-charts","namespace":"billing-costs-analysis"},"$ref":"_defs.json#/$defs/ChartItems"}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"updateSloOp","x-api":{"id":"slo.update-slo-op","name":"update-slo-op","namespace":"slo"},"$ref":"./_defs.json#/$defs/SLOs_slo_definition_response"}

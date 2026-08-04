@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.delete_expired_data","type":"object","properties":{"deleted":{"type":"boolean"}},"required":["deleted"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.delete_expired_data","x-api":{"id":"ml.delete_expired_data","name":"delete-expired-data","namespace":"ml"},"type":"object","properties":{"deleted":{"type":"boolean"}},"required":["deleted"]}

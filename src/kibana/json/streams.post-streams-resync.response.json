@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-streams-resync","x-api":{"id":"streams.post-streams-resync","name":"post-streams-resync","namespace":"streams"},"type":"object","properties":{}}

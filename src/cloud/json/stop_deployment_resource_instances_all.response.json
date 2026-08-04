@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"stop-deployment-resource-instances-all","x-api":{"id":"deployments.stop-deployment-resource-instances-all","name":"stop-deployment-resource-instances-all","namespace":"deployments"},"type":"object","properties":{}}

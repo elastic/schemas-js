@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-actions-connector-id","x-api":{"id":"connectors.post-actions-connector-id","name":"post-actions-connector-id","namespace":"connectors"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_connector_response"}

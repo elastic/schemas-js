@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.put_alibabacloud","$ref":"./inference._types.json#/$defs/inference._types__InferenceEndpointInfoAlibabaCloudAI"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.put_alibabacloud","x-api":{"id":"inference.put_alibabacloud","name":"put-alibabacloud","namespace":"inference"},"$ref":"./inference._types.json#/$defs/inference._types__InferenceEndpointInfoAlibabaCloudAI"}

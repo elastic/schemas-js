@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.aliases","type":"array","items":{"$ref":"./cat.aliases.json#/$defs/cat.aliases__AliasesRecord"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.aliases","x-api":{"id":"cat.aliases","name":"aliases","namespace":"cat"},"type":"array","items":{"$ref":"./cat.aliases.json#/$defs/cat.aliases__AliasesRecord"}}

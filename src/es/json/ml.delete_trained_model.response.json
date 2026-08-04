@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.delete_trained_model","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.delete_trained_model","x-api":{"id":"ml.delete_trained_model","name":"delete-trained-model","namespace":"ml"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

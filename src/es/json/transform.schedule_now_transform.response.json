@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"transform.schedule_now_transform","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"transform.schedule_now_transform","x-api":{"id":"transform.schedule_now_transform","name":"schedule-now-transform","namespace":"transform"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

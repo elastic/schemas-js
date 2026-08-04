@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.put_mapping","$ref":"./_types.json#/$defs/_types__IndicesResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.put_mapping","x-api":{"id":"indices.put_mapping","name":"put-mapping","namespace":"indices"},"$ref":"./_types.json#/$defs/_types__IndicesResponseBase"}

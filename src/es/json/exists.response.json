@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"exists","type":"null"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"exists","x-api":{"id":"exists","name":"exists","namespace":null},"type":"null"}

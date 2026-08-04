@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.text_embedding","$ref":"./inference._types.json#/$defs/inference._types__TextEmbeddingInferenceResult"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.text_embedding","x-api":{"id":"inference.text_embedding","name":"text-embedding","namespace":"inference"},"$ref":"./inference._types.json#/$defs/inference._types__TextEmbeddingInferenceResult"}

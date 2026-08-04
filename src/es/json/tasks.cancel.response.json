@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"tasks.cancel","$ref":"./tasks._types.json#/$defs/tasks._types__TaskListResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"tasks.cancel","x-api":{"id":"tasks.cancel","name":"cancel","namespace":"tasks"},"$ref":"./tasks._types.json#/$defs/tasks._types__TaskListResponseBase"}

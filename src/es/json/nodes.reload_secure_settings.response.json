@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"nodes.reload_secure_settings","$ref":"./nodes.reload_secure_settings.json#/$defs/nodes.reload_secure_settings__ResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"nodes.reload_secure_settings","x-api":{"id":"nodes.reload_secure_settings","name":"reload-secure-settings","namespace":"nodes"},"$ref":"./nodes.reload_secure_settings.json#/$defs/nodes.reload_secure_settings__ResponseBase"}

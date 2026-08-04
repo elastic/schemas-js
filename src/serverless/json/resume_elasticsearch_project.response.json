@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"resumeElasticsearchProject","x-api":{"id":"elasticsearch-projects.resume-elasticsearch-project","name":"resume-elasticsearch-project","namespace":"elasticsearch-projects"},"type":"object","properties":{}}

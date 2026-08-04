@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-epm-categories","x-api":{"id":"elastic-package-manager-epm.get-fleet-epm-categories","name":"get-fleet-epm-categories","namespace":"elastic-package-manager-epm"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_get_categories_response"}

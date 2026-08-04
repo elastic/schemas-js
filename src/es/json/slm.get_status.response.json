@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"slm.get_status","type":"object","properties":{"operation_mode":{"$ref":"./_types.json#/$defs/_types__LifecycleOperationMode"}},"required":["operation_mode"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"slm.get_status","x-api":{"id":"slm.get_status","name":"get-status","namespace":"slm"},"type":"object","properties":{"operation_mode":{"$ref":"./_types.json#/$defs/_types__LifecycleOperationMode"}},"required":["operation_mode"]}

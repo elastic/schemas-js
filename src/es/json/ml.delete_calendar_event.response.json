@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.delete_calendar_event","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.delete_calendar_event","x-api":{"id":"ml.delete_calendar_event","name":"delete-calendar-event","namespace":"ml"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

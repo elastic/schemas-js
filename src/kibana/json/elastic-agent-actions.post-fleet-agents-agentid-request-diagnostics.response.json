@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-agents-agentid-request-diagnostics","x-api":{"id":"elastic-agent-actions.post-fleet-agents-agentid-request-diagnostics","name":"post-fleet-agents-agentid-request-diagnostics","namespace":"elastic-agent-actions"},"type":"object","properties":{"actionId":{"type":"string"}},"required":["actionId"]}

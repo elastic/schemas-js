@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"connector.delete","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"connector.delete","x-api":{"id":"connector.delete","name":"delete","namespace":"connector"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"search-deployments","$ref":"_defs.json#/$defs/DeploymentsSearchResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"search-deployments","x-api":{"id":"deployments.search-deployments","name":"search-deployments","namespace":"deployments"},"$ref":"_defs.json#/$defs/DeploymentsSearchResponse"}

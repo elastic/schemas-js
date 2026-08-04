@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.exists_template","type":"null"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.exists_template","x-api":{"id":"indices.exists_template","name":"exists-template","namespace":"indices"},"type":"null"}

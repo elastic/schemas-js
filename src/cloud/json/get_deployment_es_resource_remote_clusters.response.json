@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-deployment-es-resource-remote-clusters","$ref":"_defs.json#/$defs/RemoteResources"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-deployment-es-resource-remote-clusters","x-api":{"id":"deployments.get-deployment-es-resource-remote-clusters","name":"get-deployment-es-resource-remote-clusters","namespace":"deployments"},"$ref":"_defs.json#/$defs/RemoteResources"}

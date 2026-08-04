@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"project.create_routing","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"project.create_routing","x-api":{"id":"project.create_routing","name":"create-routing","namespace":"project"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
