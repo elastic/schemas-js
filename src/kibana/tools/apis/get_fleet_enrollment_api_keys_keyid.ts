@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/get_fleet_enrollment_api_keys_keyid.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/fleet-enrollment-api-keys.get-fleet-enrollment-api-keys-keyid.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject

@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/get_workflows_executions_executionid_step_stepexecutionid.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/workflows.get-workflows-executions-executionid-step-stepexecutionid.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject

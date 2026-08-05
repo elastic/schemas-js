@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/delete_fleet_epm_packages_pkgname_pkgversion.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/elastic-package-manager-epm.delete-fleet-epm-packages-pkgname-pkgversion.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject

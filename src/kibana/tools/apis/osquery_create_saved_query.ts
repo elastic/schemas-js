@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/osquery_create_saved_query.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/security-osquery-api.osquery-create-saved-query.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject

@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/delete_alerting_rule_ruleid_snooze_schedule_scheduleid.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/alerting.delete-alerting-rule-ruleid-snooze-schedule-scheduleid.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject

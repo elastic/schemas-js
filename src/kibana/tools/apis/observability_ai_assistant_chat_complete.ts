@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/observability_ai_assistant_chat_complete.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/observabilityaiassistant.observability-ai-assistant-chat-complete.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject

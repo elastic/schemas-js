@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/preview_swap_data_views_default.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/data-views.preview-swap-data-views-default.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject

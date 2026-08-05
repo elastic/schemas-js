@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/get_actions_connector_oauth_callback.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/connectors.get-actions-connector-oauth-callback.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
