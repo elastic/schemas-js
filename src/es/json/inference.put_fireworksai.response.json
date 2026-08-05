@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.put_fireworksai","$ref":"./inference._types.json#/$defs/inference._types__InferenceEndpointInfoFireworksAI"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.put_fireworksai","x-api":{"id":"inference.put_fireworksai","name":"put-fireworksai","namespace":"inference"},"$ref":"./inference._types.json#/$defs/inference._types__InferenceEndpointInfoFireworksAI"}

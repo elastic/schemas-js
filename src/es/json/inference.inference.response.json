@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.inference","$ref":"./inference._types.json#/$defs/inference._types__InferenceResult"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.inference","x-api":{"id":"inference.inference","name":"inference","namespace":"inference"},"$ref":"./inference._types.json#/$defs/inference._types__InferenceResult"}

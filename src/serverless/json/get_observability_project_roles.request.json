@@ -1,15 +1,1 @@
-{
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "getObservabilityProjectRoles",
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "string",
-      "description": "The ID of the project",
-      "x-found-in": "path"
-    }
-  },
-  "required": [
-    "id"
-  ]
-}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"getObservabilityProjectRoles","x-api":{"id":"observability-projects.get-observability-project-roles","name":"get-observability-project-roles","namespace":"observability-projects"},"x-method":"GET","x-path":"/api/v1/serverless/projects/observability/{id}/roles","x-destructive":false,"type":"object","properties":{"id":{"type":"string","description":"The ID of the project","x-found-in":"path"}},"required":["id"]}

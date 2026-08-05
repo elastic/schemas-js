@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"nodes.usage","$ref":"./nodes.usage.json#/$defs/nodes.usage__ResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"nodes.usage","x-api":{"id":"nodes.usage","name":"usage","namespace":"nodes"},"$ref":"./nodes.usage.json#/$defs/nodes.usage__ResponseBase"}

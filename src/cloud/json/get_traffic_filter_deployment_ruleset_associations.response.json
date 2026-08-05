@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-traffic-filter-deployment-ruleset-associations","$ref":"_defs.json#/$defs/TrafficFilterSettings"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-traffic-filter-deployment-ruleset-associations","x-api":{"id":"deployments-traffic-filter.get-traffic-filter-deployment-ruleset-associations","name":"get-traffic-filter-deployment-ruleset-associations","namespace":"deployments-traffic-filter"},"$ref":"_defs.json#/$defs/TrafficFilterSettings"}

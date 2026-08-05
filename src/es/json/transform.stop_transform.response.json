@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"transform.stop_transform","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"transform.stop_transform","x-api":{"id":"transform.stop_transform","name":"stop-transform","namespace":"transform"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

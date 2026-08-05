@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get_source"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get_source","x-api":{"id":"get_source","name":"get-source","namespace":null}}

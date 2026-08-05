@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"connector.sync_job_update_stats","type":"object","properties":{}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"connector.sync_job_update_stats","x-api":{"id":"connector.sync_job_update_stats","name":"sync-job-update-stats","namespace":"connector"},"type":"object","properties":{}}

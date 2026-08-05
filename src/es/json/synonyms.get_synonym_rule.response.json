@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"synonyms.get_synonym_rule","$ref":"./synonyms._types.json#/$defs/synonyms._types__SynonymRuleRead"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"synonyms.get_synonym_rule","x-api":{"id":"synonyms.get_synonym_rule","name":"get-synonym-rule","namespace":"synonyms"},"$ref":"./synonyms._types.json#/$defs/synonyms._types__SynonymRuleRead"}

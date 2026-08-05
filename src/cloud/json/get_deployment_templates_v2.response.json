@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-deployment-templates-v2","type":"array","items":{"$ref":"_defs.json#/$defs/DeploymentTemplateInfoV2"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-deployment-templates-v2","x-api":{"id":"deployment-templates.get-deployment-templates-v2","name":"get-deployment-templates-v2","namespace":"deployment-templates"},"type":"array","items":{"$ref":"_defs.json#/$defs/DeploymentTemplateInfoV2"}}

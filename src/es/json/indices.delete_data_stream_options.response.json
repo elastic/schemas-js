@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.delete_data_stream_options","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.delete_data_stream_options","x-api":{"id":"indices.delete_data_stream_options","name":"delete-data-stream-options","namespace":"indices"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

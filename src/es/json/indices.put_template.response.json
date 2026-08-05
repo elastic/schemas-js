@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.put_template","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.put_template","x-api":{"id":"indices.put_template","name":"put-template","namespace":"indices"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

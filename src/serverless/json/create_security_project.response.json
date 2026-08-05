@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"createSecurityProject","x-api":{"id":"security-projects.create-security-project","name":"create-security-project","namespace":"security-projects"},"type":"object","properties":{}}

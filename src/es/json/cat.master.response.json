@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.master","type":"array","items":{"$ref":"./cat.master.json#/$defs/cat.master__MasterRecord"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.master","x-api":{"id":"cat.master","name":"master","namespace":"cat"},"type":"array","items":{"$ref":"./cat.master.json#/$defs/cat.master__MasterRecord"}}

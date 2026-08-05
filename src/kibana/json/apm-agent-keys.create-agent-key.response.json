@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"createAgentKey","x-api":{"id":"apm-agent-keys.create-agent-key","name":"create-agent-key","namespace":"apm-agent-keys"},"$ref":"./_defs.json#/$defs/APM_UI_agent_keys_response"}

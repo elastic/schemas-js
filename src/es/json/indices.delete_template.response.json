@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.delete_template","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.delete_template","x-api":{"id":"indices.delete_template","name":"delete-template","namespace":"indices"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"OsqueryDeleteSavedQuery","x-api":{"id":"security-osquery-api.osquery-delete-saved-query","name":"osquery-delete-saved-query","namespace":"security-osquery-api"},"$ref":"./_defs.json#/$defs/Security_Osquery_API_DefaultSuccessResponse"}

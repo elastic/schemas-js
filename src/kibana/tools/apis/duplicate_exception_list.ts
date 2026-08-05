@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/duplicate_exception_list.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/security-exceptions-api.duplicate-exception-list.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject

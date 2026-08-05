@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.ml_trained_models","type":"array","items":{"$ref":"./cat.ml_trained_models.json#/$defs/cat.ml_trained_models__TrainedModelsRecord"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.ml_trained_models","x-api":{"id":"cat.ml_trained_models","name":"ml-trained-models","namespace":"cat"},"type":"array","items":{"$ref":"./cat.ml_trained_models.json#/$defs/cat.ml_trained_models__TrainedModelsRecord"}}

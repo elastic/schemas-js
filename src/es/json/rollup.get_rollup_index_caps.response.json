@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"rollup.get_rollup_index_caps","type":"object","additionalProperties":{"$ref":"./rollup.get_rollup_index_caps.json#/$defs/rollup.get_rollup_index_caps__IndexCapabilities"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"rollup.get_rollup_index_caps","x-api":{"id":"rollup.get_rollup_index_caps","name":"get-rollup-index-caps","namespace":"rollup"},"type":"object","additionalProperties":{"$ref":"./rollup.get_rollup_index_caps.json#/$defs/rollup.get_rollup_index_caps__IndexCapabilities"}}

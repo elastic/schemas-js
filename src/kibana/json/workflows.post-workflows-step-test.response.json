@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-workflows-step-test","x-api":{"id":"workflows.post-workflows-step-test","name":"post-workflows-step-test","namespace":"workflows"},"type":"object","properties":{}}

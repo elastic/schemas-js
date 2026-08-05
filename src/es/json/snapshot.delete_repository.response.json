@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"snapshot.delete_repository","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"snapshot.delete_repository","x-api":{"id":"snapshot.delete_repository","name":"delete-repository","namespace":"snapshot"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

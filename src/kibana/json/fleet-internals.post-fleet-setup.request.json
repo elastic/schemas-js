@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-setup","x-api":{"id":"fleet-internals.post-fleet-setup","name":"post-fleet-setup","namespace":"fleet-internals"},"x-method":"POST","x-path":"/api/fleet/setup","x-destructive":true,"type":"object","properties":{}}

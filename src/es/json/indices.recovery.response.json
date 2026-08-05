@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.recovery","type":"object","additionalProperties":{"$ref":"./indices.recovery.json#/$defs/indices.recovery__RecoveryStatus"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.recovery","x-api":{"id":"indices.recovery","name":"recovery","namespace":"indices"},"type":"object","additionalProperties":{"$ref":"./indices.recovery.json#/$defs/indices.recovery__RecoveryStatus"}}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"esql.async_query","$ref":"./esql._types.json#/$defs/esql._types__AsyncEsqlResult"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"esql.async_query","x-api":{"id":"esql.async_query","name":"async-query","namespace":"esql"},"$ref":"./esql._types.json#/$defs/esql._types__AsyncEsqlResult"}

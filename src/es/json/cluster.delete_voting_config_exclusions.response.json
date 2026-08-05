@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cluster.delete_voting_config_exclusions","type":"null"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cluster.delete_voting_config_exclusions","x-api":{"id":"cluster.delete_voting_config_exclusions","name":"delete-voting-config-exclusions","namespace":"cluster"},"type":"null"}

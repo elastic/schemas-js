@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"CreateEndpointList","x-api":{"id":"security-endpoint-exceptions-api.create-endpoint-list","name":"create-endpoint-list","namespace":"security-endpoint-exceptions-api"},"$ref":"./_defs.json#/$defs/Security_Endpoint_Exceptions_API_EndpointList"}

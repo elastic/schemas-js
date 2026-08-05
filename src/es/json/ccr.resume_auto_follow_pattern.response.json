@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ccr.resume_auto_follow_pattern","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ccr.resume_auto_follow_pattern","x-api":{"id":"ccr.resume_auto_follow_pattern","name":"resume-auto-follow-pattern","namespace":"ccr"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

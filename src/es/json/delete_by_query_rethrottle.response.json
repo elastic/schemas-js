@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete_by_query_rethrottle","$ref":"./tasks._types.json#/$defs/tasks._types__TaskListResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete_by_query_rethrottle","x-api":{"id":"delete_by_query_rethrottle","name":"delete-by-query-rethrottle","namespace":null},"$ref":"./tasks._types.json#/$defs/tasks._types__TaskListResponseBase"}

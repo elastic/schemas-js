@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"snapshot.clone","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"snapshot.clone","x-api":{"id":"snapshot.clone","name":"clone","namespace":"snapshot"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

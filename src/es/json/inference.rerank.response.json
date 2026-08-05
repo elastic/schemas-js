@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.rerank","$ref":"./inference._types.json#/$defs/inference._types__RerankedInferenceResult"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.rerank","x-api":{"id":"inference.rerank","name":"rerank","namespace":"inference"},"$ref":"./inference._types.json#/$defs/inference._types__RerankedInferenceResult"}

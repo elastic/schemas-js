@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-epm-packages-pkgname-pkgversion-filepath","x-api":{"id":"elastic-package-manager-epm.get-fleet-epm-packages-pkgname-pkgversion-filepath","name":"get-fleet-epm-packages-pkgname-pkgversion-filepath","namespace":"elastic-package-manager-epm"}}

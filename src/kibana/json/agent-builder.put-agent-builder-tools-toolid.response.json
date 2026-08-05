@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-agent-builder-tools-toolid","x-api":{"id":"agent-builder.put-agent-builder-tools-toolid","name":"put-agent-builder-tools-toolid","namespace":"agent-builder"},"type":"object","properties":{}}

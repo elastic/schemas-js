@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-deployment-es-resource-info","$ref":"_defs.json#/$defs/ElasticsearchResourceInfo"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-deployment-es-resource-info","x-api":{"id":"deployments.get-deployment-es-resource-info","name":"get-deployment-es-resource-info","namespace":"deployments"},"$ref":"_defs.json#/$defs/ElasticsearchResourceInfo"}

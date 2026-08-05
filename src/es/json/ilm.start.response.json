@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ilm.start","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ilm.start","x-api":{"id":"ilm.start","name":"start","namespace":"ilm"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

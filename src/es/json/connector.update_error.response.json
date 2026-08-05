@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"connector.update_error","type":"object","properties":{"result":{"$ref":"./_types.json#/$defs/_types__Result"}},"required":["result"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"connector.update_error","x-api":{"id":"connector.update_error","name":"update-error","namespace":"connector"},"type":"object","properties":{"result":{"$ref":"./_types.json#/$defs/_types__Result"}},"required":["result"]}

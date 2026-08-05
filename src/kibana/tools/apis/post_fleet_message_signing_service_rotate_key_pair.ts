@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/post_fleet_message_signing_service_rotate_key_pair.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/message-signing-service.post-fleet-message-signing-service-rotate-key-pair.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject

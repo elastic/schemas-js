@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.fielddata","type":"array","items":{"$ref":"./cat.fielddata.json#/$defs/cat.fielddata__FielddataRecord"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.fielddata","x-api":{"id":"cat.fielddata","name":"fielddata","namespace":"cat"},"type":"array","items":{"$ref":"./cat.fielddata.json#/$defs/cat.fielddata__FielddataRecord"}}

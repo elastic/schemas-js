@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-security-role-name","x-api":{"id":"roles.put-security-role-name","name":"put-security-role-name","namespace":"roles"},"type":"object","properties":{}}

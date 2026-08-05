@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"watcher.deactivate_watch","type":"object","properties":{"status":{"$ref":"./watcher._types.json#/$defs/watcher._types__ActivationStatus"}},"required":["status"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"watcher.deactivate_watch","x-api":{"id":"watcher.deactivate_watch","name":"deactivate-watch","namespace":"watcher"},"type":"object","properties":{"status":{"$ref":"./watcher._types.json#/$defs/watcher._types__ActivationStatus"}},"required":["status"]}

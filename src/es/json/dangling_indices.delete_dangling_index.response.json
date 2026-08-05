@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"dangling_indices.delete_dangling_index","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"dangling_indices.delete_dangling_index","x-api":{"id":"dangling-indices.delete_dangling_index","name":"delete-dangling-index","namespace":"dangling-indices"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

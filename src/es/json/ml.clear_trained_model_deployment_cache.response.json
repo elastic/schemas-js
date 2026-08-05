@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.clear_trained_model_deployment_cache","type":"object","properties":{"cleared":{"type":"boolean"}},"required":["cleared"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml.clear_trained_model_deployment_cache","x-api":{"id":"ml.clear_trained_model_deployment_cache","name":"clear-trained-model-deployment-cache","namespace":"ml"},"type":"object","properties":{"cleared":{"type":"boolean"}},"required":["cleared"]}

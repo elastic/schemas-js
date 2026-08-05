@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-settings","x-api":{"id":"fleet-internals.get-fleet-settings","name":"get-fleet-settings","namespace":"fleet-internals"},"x-method":"GET","x-path":"/api/fleet/settings","x-destructive":false,"type":"object","properties":{}}

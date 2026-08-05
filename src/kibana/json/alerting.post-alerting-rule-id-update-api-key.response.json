@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-alerting-rule-id-update-api-key","x-api":{"id":"alerting.post-alerting-rule-id-update-api-key","name":"post-alerting-rule-id-update-api-key","namespace":"alerting"},"type":"object","properties":{}}

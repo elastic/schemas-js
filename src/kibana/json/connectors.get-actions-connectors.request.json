@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-actions-connectors","x-api":{"id":"connectors.get-actions-connectors","name":"get-actions-connectors","namespace":"connectors"},"x-method":"GET","x-path":"/api/actions/connectors","x-destructive":false,"type":"object","properties":{}}

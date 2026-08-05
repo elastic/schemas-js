@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-agent-builder-plugins-install","x-api":{"id":"agent-builder.post-agent-builder-plugins-install","name":"post-agent-builder-plugins-install","namespace":"agent-builder"},"type":"object","properties":{}}

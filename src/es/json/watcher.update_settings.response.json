@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"watcher.update_settings","type":"object","properties":{"acknowledged":{"type":"boolean"}},"required":["acknowledged"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"watcher.update_settings","x-api":{"id":"watcher.update_settings","name":"update-settings","namespace":"watcher"},"type":"object","properties":{"acknowledged":{"type":"boolean"}},"required":["acknowledged"]}

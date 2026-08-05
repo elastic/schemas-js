@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.update_settings","type":"object","properties":{"acknowledged":{"type":"boolean"}},"required":["acknowledged"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.update_settings","x-api":{"id":"security.update_settings","name":"update-settings","namespace":"security"},"type":"object","properties":{"acknowledged":{"type":"boolean"}},"required":["acknowledged"]}

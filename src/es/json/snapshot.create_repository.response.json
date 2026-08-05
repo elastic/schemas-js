@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"snapshot.create_repository","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"snapshot.create_repository","x-api":{"id":"snapshot.create_repository","name":"create-repository","namespace":"snapshot"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

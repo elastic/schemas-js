@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ssl.certificates","type":"array","items":{"$ref":"./ssl.certificates.json#/$defs/ssl.certificates__CertificateInformation"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ssl.certificates","x-api":{"id":"ssl.certificates","name":"certificates","namespace":"ssl"},"type":"array","items":{"$ref":"./ssl.certificates.json#/$defs/ssl.certificates__CertificateInformation"}}

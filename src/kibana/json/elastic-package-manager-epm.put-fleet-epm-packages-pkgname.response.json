@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-fleet-epm-packages-pkgname","x-api":{"id":"elastic-package-manager-epm.put-fleet-epm-packages-pkgname","name":"put-fleet-epm-packages-pkgname","namespace":"elastic-package-manager-epm"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_update_package_response"}

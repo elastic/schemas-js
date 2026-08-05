@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"rollup.put_job","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"rollup.put_job","x-api":{"id":"rollup.put_job","name":"put-job","namespace":"rollup"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

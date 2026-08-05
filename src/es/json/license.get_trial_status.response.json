@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"license.get_trial_status","type":"object","properties":{"eligible_to_start_trial":{"type":"boolean"}},"required":["eligible_to_start_trial"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"license.get_trial_status","x-api":{"id":"license.get_trial_status","name":"get-trial-status","namespace":"license"},"type":"object","properties":{"eligible_to_start_trial":{"type":"boolean"}},"required":["eligible_to_start_trial"]}

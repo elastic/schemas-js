@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-health-check","x-api":{"id":"fleet-internals.post-fleet-health-check","name":"post-fleet-health-check","namespace":"fleet-internals"},"x-method":"POST","x-path":"/api/fleet/health_check","x-destructive":true,"type":"object","properties":{"id":{"type":"string","x-found-in":"body"}},"required":["id"]}

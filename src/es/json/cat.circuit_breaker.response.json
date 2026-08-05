@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.circuit_breaker","type":"array","items":{"$ref":"./cat.circuit_breaker.json#/$defs/cat.circuit_breaker__CircuitBreakerRecord"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.circuit_breaker","x-api":{"id":"cat.circuit_breaker","name":"circuit-breaker","namespace":"cat"},"type":"array","items":{"$ref":"./cat.circuit_breaker.json#/$defs/cat.circuit_breaker__CircuitBreakerRecord"}}

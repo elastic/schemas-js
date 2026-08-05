@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-package-policies","x-api":{"id":"fleet-package-policies.post-fleet-package-policies","name":"post-fleet-package-policies","namespace":"fleet-package-policies"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_create_package_policy_response"}

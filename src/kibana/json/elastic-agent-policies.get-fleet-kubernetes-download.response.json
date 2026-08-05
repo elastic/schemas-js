@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-kubernetes-download","x-api":{"id":"elastic-agent-policies.get-fleet-kubernetes-download","name":"get-fleet-kubernetes-download","namespace":"elastic-agent-policies"},"type":"string"}

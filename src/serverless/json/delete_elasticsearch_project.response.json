@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"deleteElasticsearchProject","x-api":{"id":"elasticsearch-projects.delete-elasticsearch-project","name":"delete-elasticsearch-project","namespace":"elasticsearch-projects"},"type":"object","properties":{}}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"create-dashboard-redirect","x-api":{"id":"dashboards.create-dashboard-redirect","name":"create-dashboard-redirect","namespace":"dashboards"},"type":"object","properties":{}}

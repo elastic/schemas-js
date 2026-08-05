@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"shutdown-deployment-es-resource","$ref":"_defs.json#/$defs/DeploymentResourceCommandResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"shutdown-deployment-es-resource","x-api":{"id":"deployments.shutdown-deployment-es-resource","name":"shutdown-deployment-es-resource","namespace":"deployments"},"$ref":"_defs.json#/$defs/DeploymentResourceCommandResponse"}

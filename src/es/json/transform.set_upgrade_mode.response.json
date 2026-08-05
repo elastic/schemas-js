@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"transform.set_upgrade_mode","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"transform.set_upgrade_mode","x-api":{"id":"transform.set_upgrade_mode","name":"set-upgrade-mode","namespace":"transform"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"DeleteTimelines","x-api":{"id":"security-timeline-api.delete-timelines","name":"delete-timelines","namespace":"security-timeline-api"},"type":"object","additionalProperties":true}

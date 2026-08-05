@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"deleteObservabilityProject","x-api":{"id":"observability-projects.delete-observability-project","name":"delete-observability-project","namespace":"observability-projects"},"type":"object","properties":{}}

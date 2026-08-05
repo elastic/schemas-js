@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.get_user","type":"object","additionalProperties":{"$ref":"./security._types.json#/$defs/security._types__User"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"security.get_user","x-api":{"id":"security.get_user","name":"get-user","namespace":"security"},"type":"object","additionalProperties":{"$ref":"./security._types.json#/$defs/security._types__User"}}

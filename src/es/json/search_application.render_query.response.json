@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"search_application.render_query","type":"object","properties":{}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"search_application.render_query","x-api":{"id":"search-application.render_query","name":"render-query","namespace":"search-application"},"type":"object","properties":{}}

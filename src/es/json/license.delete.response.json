@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"license.delete","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"license.delete","x-api":{"id":"license.delete","name":"delete","namespace":"license"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.get_settings","type":"object","additionalProperties":{"$ref":"./indices._types.json#/$defs/indices._types__IndexState"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.get_settings","x-api":{"id":"indices.get_settings","name":"get-settings","namespace":"indices"},"type":"object","additionalProperties":{"$ref":"./indices._types.json#/$defs/indices._types__IndexState"}}

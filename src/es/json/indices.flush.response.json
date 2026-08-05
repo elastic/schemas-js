@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.flush","$ref":"./_types.json#/$defs/_types__ShardsOperationResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.flush","x-api":{"id":"indices.flush","name":"flush","namespace":"indices"},"$ref":"./_types.json#/$defs/_types__ShardsOperationResponseBase"}

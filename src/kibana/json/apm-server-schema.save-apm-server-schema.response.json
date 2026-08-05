@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"saveApmServerSchema","x-api":{"id":"apm-server-schema.save-apm-server-schema","name":"save-apm-server-schema","namespace":"apm-server-schema"},"type":"object"}

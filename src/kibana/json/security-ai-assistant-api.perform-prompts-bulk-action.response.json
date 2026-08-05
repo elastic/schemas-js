@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"PerformPromptsBulkAction","x-api":{"id":"security-ai-assistant-api.perform-prompts-bulk-action","name":"perform-prompts-bulk-action","namespace":"security-ai-assistant-api"},"$ref":"./_defs.json#/$defs/Security_AI_Assistant_API_PromptsBulkCrudActionResponse"}

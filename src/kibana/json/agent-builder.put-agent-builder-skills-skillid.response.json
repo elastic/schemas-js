@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-agent-builder-skills-skillid","x-api":{"id":"agent-builder.put-agent-builder-skills-skillid","name":"put-agent-builder-skills-skillid","namespace":"agent-builder"},"type":"object","properties":{}}

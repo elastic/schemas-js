@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"connector.sync_job_post","type":"object","properties":{"id":{"type":"string"}},"required":["id"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"connector.sync_job_post","x-api":{"id":"connector.sync_job_post","name":"sync-job-post","namespace":"connector"},"type":"object","properties":{"id":{"type":"string"}},"required":["id"]}

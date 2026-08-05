@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"fleet.msearch","type":"object","properties":{"docs":{"type":"array","items":{"$ref":"./_global.msearch.json#/$defs/_global.msearch__ResponseItem"}}},"required":["docs"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"fleet.msearch","x-api":{"id":"fleet.msearch","name":"msearch","namespace":"fleet"},"type":"object","properties":{"docs":{"type":"array","items":{"$ref":"./_global.msearch.json#/$defs/_global.msearch__ResponseItem"}}},"required":["docs"]}

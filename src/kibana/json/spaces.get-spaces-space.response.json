@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-spaces-space","x-api":{"id":"spaces.get-spaces-space","name":"get-spaces-space","namespace":"spaces"},"type":"object","properties":{}}

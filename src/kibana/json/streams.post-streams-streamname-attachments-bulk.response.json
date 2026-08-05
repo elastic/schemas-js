@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-streams-streamname-attachments-bulk","x-api":{"id":"streams.post-streams-streamname-attachments-bulk","name":"post-streams-streamname-attachments-bulk","namespace":"streams"},"type":"object","properties":{}}

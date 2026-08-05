@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-fleet-enrollment-api-keys-keyid","x-api":{"id":"fleet-enrollment-api-keys.delete-fleet-enrollment-api-keys-keyid","name":"delete-fleet-enrollment-api-keys-keyid","namespace":"fleet-enrollment-api-keys"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_delete_enrollment_api_key_response"}

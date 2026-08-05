@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-epm-bulk-assets","x-api":{"id":"elastic-package-manager-epm.post-fleet-epm-bulk-assets","name":"post-fleet-epm-bulk-assets","namespace":"elastic-package-manager-epm"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_get_bulk_assets_response"}

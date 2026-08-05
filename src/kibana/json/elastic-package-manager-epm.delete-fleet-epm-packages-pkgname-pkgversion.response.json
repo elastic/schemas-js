@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-fleet-epm-packages-pkgname-pkgversion","x-api":{"id":"elastic-package-manager-epm.delete-fleet-epm-packages-pkgname-pkgversion","name":"delete-fleet-epm-packages-pkgname-pkgversion","namespace":"elastic-package-manager-epm"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_delete_package_response"}

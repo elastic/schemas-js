@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.field_usage_stats","$ref":"./indices.field_usage_stats.json#/$defs/indices.field_usage_stats__FieldsUsageBody"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.field_usage_stats","x-api":{"id":"indices.field_usage_stats","name":"field-usage-stats","namespace":"indices"},"$ref":"./indices.field_usage_stats.json#/$defs/indices.field_usage_stats__FieldsUsageBody"}

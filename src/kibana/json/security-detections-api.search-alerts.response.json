@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"SearchAlerts","x-api":{"id":"security-detections-api.search-alerts","name":"search-alerts","namespace":"security-detections-api"},"type":"object","additionalProperties":true}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"connector.sync_job_check_in","type":"object","properties":{}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"connector.sync_job_check_in","x-api":{"id":"connector.sync_job_check_in","name":"sync-job-check-in","namespace":"connector"},"type":"object","properties":{}}

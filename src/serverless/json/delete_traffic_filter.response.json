@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"deleteTrafficFilter","x-api":{"id":"traffic-filters.delete-traffic-filter","name":"delete-traffic-filter","namespace":"traffic-filters"},"type":"object","properties":{}}

@@ -1,15 +1,1 @@
-{
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "resumeElasticsearchProject",
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "string",
-      "description": "The ID of the project",
-      "x-found-in": "path"
-    }
-  },
-  "required": [
-    "id"
-  ]
-}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"resumeElasticsearchProject","x-api":{"id":"elasticsearch-projects.resume-elasticsearch-project","name":"resume-elasticsearch-project","namespace":"elasticsearch-projects"},"x-method":"POST","x-path":"/api/v1/serverless/projects/elasticsearch/{id}/_resume","x-destructive":true,"type":"object","properties":{"id":{"type":"string","description":"The ID of the project","x-found-in":"path"}},"required":["id"]}

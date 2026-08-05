@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-epm-data-streams","x-api":{"id":"data-streams.get-fleet-epm-data-streams","name":"get-fleet-epm-data-streams","namespace":"data-streams"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_get_data_streams_response"}

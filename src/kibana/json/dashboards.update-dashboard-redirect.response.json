@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"update-dashboard-redirect","x-api":{"id":"dashboards.update-dashboard-redirect","name":"update-dashboard-redirect","namespace":"dashboards"},"type":"object","properties":{}}

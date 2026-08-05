@@ -9,7 +9,11 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
+import type { JsonSchemaObject } from '../../../json-schema.ts'
+import _inputSchemaRaw from '../../../kibana/json/security-detections-api.create-rule.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
+
+const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const create_ruleDefinitions: KbApiDefinition[] = [
   {
@@ -19,5 +23,6 @@ export const create_ruleDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/detection_engine/rules',
     destructive: false,
+    input: _inputSchema,
   },
 ]

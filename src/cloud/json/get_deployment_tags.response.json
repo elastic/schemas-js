@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-deployment-tags","$ref":"_defs.json#/$defs/DeploymentTagsResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-deployment-tags","x-api":{"id":"deployments.get-deployment-tags","name":"get-deployment-tags","namespace":"deployments"},"$ref":"_defs.json#/$defs/DeploymentTagsResponse"}

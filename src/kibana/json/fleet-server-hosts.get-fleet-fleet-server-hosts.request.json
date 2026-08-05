@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-fleet-server-hosts","x-api":{"id":"fleet-server-hosts.get-fleet-fleet-server-hosts","name":"get-fleet-fleet-server-hosts","namespace":"fleet-server-hosts"},"x-method":"GET","x-path":"/api/fleet/fleet_server_hosts","x-destructive":false,"type":"object","properties":{}}

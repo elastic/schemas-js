@@ -1,1 +1,1 @@
-{"type":"string","description":"base64-encoded binary","$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.chat_completion_unified"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.chat_completion_unified","description":"base64-encoded binary","x-api":{"id":"inference.chat_completion_unified","name":"chat-completion-unified","namespace":"inference"},"type":"string"}

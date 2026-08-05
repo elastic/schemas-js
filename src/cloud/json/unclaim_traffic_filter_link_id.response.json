@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"unclaim-traffic-filter-link-id","$ref":"_defs.json#/$defs/EmptyResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"unclaim-traffic-filter-link-id","x-api":{"id":"deployments-traffic-filter.unclaim-traffic-filter-link-id","name":"unclaim-traffic-filter-link-id","namespace":"deployments-traffic-filter"},"$ref":"_defs.json#/$defs/EmptyResponse"}

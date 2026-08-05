@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"DeleteAllConversations","x-api":{"id":"security-ai-assistant-api.delete-all-conversations","name":"delete-all-conversations","namespace":"security-ai-assistant-api"},"type":"object","properties":{"failures":{"type":"array","items":{"type":"string"}},"success":{"type":"boolean"},"totalDeleted":{"type":"number"}}}

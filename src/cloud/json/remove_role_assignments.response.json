@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"remove-role-assignments","$ref":"_defs.json#/$defs/EmptyResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"remove-role-assignments","x-api":{"id":"user-role-assignments.remove-role-assignments","name":"remove-role-assignments","namespace":"user-role-assignments"},"$ref":"_defs.json#/$defs/EmptyResponse"}

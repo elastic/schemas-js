@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ilm.move_to_step","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ilm.move_to_step","x-api":{"id":"ilm.move_to_step","name":"move-to-step","namespace":"ilm"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

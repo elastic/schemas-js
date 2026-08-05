@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-extension","$ref":"_defs.json#/$defs/EmptyResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-extension","x-api":{"id":"extensions.delete-extension","name":"delete-extension","namespace":"extensions"},"$ref":"_defs.json#/$defs/EmptyResponse"}

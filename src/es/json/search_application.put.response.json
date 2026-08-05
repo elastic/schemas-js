@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"search_application.put","type":"object","properties":{"result":{"$ref":"./_types.json#/$defs/_types__Result"}},"required":["result"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"search_application.put","x-api":{"id":"search-application.put","name":"put","namespace":"search-application"},"type":"object","properties":{"result":{"$ref":"./_types.json#/$defs/_types__Result"}},"required":["result"]}

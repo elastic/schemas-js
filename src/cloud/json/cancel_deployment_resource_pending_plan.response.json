@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cancel-deployment-resource-pending-plan","$ref":"_defs.json#/$defs/DeploymentResourceCrudResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cancel-deployment-resource-pending-plan","x-api":{"id":"deployments.cancel-deployment-resource-pending-plan","name":"cancel-deployment-resource-pending-plan","namespace":"deployments"},"$ref":"_defs.json#/$defs/DeploymentResourceCrudResponse"}

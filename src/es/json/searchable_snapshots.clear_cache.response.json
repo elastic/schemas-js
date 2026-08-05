@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"searchable_snapshots.clear_cache"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"searchable_snapshots.clear_cache","x-api":{"id":"searchable-snapshots.clear_cache","name":"clear-cache","namespace":"searchable-snapshots"}}

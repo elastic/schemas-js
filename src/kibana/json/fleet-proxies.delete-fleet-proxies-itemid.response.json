@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-fleet-proxies-itemid","x-api":{"id":"fleet-proxies.delete-fleet-proxies-itemid","name":"delete-fleet-proxies-itemid","namespace":"fleet-proxies"},"type":"object","properties":{"id":{"type":"string"}},"required":["id"]}

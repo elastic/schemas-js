@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.nodeattrs","type":"array","items":{"$ref":"./cat.nodeattrs.json#/$defs/cat.nodeattrs__NodeAttributesRecord"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.nodeattrs","x-api":{"id":"cat.nodeattrs","name":"nodeattrs","namespace":"cat"},"type":"array","items":{"$ref":"./cat.nodeattrs.json#/$defs/cat.nodeattrs__NodeAttributesRecord"}}

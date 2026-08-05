@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-security-entity-store-resolution-link","x-api":{"id":"security-entity-store.post-security-entity-store-resolution-link","name":"post-security-entity-store-resolution-link","namespace":"security-entity-store"},"type":"object","properties":{}}

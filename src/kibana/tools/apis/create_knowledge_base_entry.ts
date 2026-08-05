@@ -9,7 +9,11 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
+import type { JsonSchemaObject } from '../../../json-schema.ts'
+import _inputSchemaRaw from '../../../kibana/json/security-ai-assistant-api.create-knowledge-base-entry.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
+
+const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const create_knowledge_base_entryDefinitions: KbApiDefinition[] = [
   {
@@ -19,5 +23,6 @@ export const create_knowledge_base_entryDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/security_ai_assistant/knowledge_base/entries',
     destructive: false,
+    input: _inputSchema,
   },
 ]

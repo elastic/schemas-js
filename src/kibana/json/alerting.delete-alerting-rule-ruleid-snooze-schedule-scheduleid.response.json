@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-alerting-rule-ruleid-snooze-schedule-scheduleid","x-api":{"id":"alerting.delete-alerting-rule-ruleid-snooze-schedule-scheduleid","name":"delete-alerting-rule-ruleid-snooze-schedule-scheduleid","namespace":"alerting"},"type":"object","properties":{}}

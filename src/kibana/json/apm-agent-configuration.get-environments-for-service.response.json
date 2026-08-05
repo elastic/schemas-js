@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"getEnvironmentsForService","x-api":{"id":"apm-agent-configuration.get-environments-for-service","name":"get-environments-for-service","namespace":"apm-agent-configuration"},"$ref":"./_defs.json#/$defs/APM_UI_service_environments_response"}

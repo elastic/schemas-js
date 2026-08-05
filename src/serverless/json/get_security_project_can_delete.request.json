@@ -1,15 +1,1 @@
-{
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "getSecurityProjectCanDelete",
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "string",
-      "description": "The ID of the project",
-      "x-found-in": "path"
-    }
-  },
-  "required": [
-    "id"
-  ]
-}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"getSecurityProjectCanDelete","x-api":{"id":"linked-projects.get-security-project-can-delete","name":"get-security-project-can-delete","namespace":"linked-projects"},"x-method":"GET","x-path":"/api/v1/serverless/projects/security/{id}/_can-delete","x-destructive":false,"type":"object","properties":{"id":{"type":"string","description":"The ID of the project","x-found-in":"path"}},"required":["id"]}

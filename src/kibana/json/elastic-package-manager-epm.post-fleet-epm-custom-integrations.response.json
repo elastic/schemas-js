@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-epm-custom-integrations","x-api":{"id":"elastic-package-manager-epm.post-fleet-epm-custom-integrations","name":"post-fleet-epm-custom-integrations","namespace":"elastic-package-manager-epm"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_install_package_response"}

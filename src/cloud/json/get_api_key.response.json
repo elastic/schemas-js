@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-api-key","$ref":"_defs.json#/$defs/ApiKeyResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-api-key","x-api":{"id":"authentication.get-api-key","name":"get-api-key","namespace":"authentication"},"$ref":"_defs.json#/$defs/ApiKeyResponse"}

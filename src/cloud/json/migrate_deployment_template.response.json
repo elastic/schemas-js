@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"migrate-deployment-template","$ref":"_defs.json#/$defs/DeploymentUpdateRequest"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"migrate-deployment-template","x-api":{"id":"deployments.migrate-deployment-template","name":"migrate-deployment-template","namespace":"deployments"},"$ref":"_defs.json#/$defs/DeploymentUpdateRequest"}

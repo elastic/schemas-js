@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-actions-connector-oauth-callback-script","x-api":{"id":"misc.get-actions-connector-oauth-callback-script","name":"get-actions-connector-oauth-callback-script","namespace":"misc"},"x-method":"GET","x-path":"/api/actions/connector/_oauth_callback_script","x-destructive":false,"type":"object","properties":{}}

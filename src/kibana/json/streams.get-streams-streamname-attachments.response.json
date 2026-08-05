@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-streams-streamname-attachments","x-api":{"id":"streams.get-streams-streamname-attachments","name":"get-streams-streamname-attachments","namespace":"streams"},"type":"object","properties":{}}

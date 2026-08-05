@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"stop-deployment-resource-maintenance-mode","x-api":{"id":"deployments.stop-deployment-resource-maintenance-mode","name":"stop-deployment-resource-maintenance-mode","namespace":"deployments"},"type":"object","properties":{}}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"upgrade-deployment","x-api":{"id":"deployments.upgrade-deployment","name":"upgrade-deployment","namespace":"deployments"},"type":"object","properties":{},"$defs":{"UpgradeDeploymentRequest":{"type":"object","properties":{"target_version":{"type":"string"}},"required":["target_version"]}}}

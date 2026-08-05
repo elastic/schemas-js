@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-outputs","x-api":{"id":"fleet-outputs.get-fleet-outputs","name":"get-fleet-outputs","namespace":"fleet-outputs"},"x-method":"GET","x-path":"/api/fleet/outputs","x-destructive":false,"type":"object","properties":{}}

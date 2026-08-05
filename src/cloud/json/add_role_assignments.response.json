@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"add-role-assignments","$ref":"_defs.json#/$defs/EmptyResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"add-role-assignments","x-api":{"id":"user-role-assignments.add-role-assignments","name":"add-role-assignments","namespace":"user-role-assignments"},"$ref":"_defs.json#/$defs/EmptyResponse"}

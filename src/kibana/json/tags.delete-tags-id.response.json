@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-tags-id","x-api":{"id":"tags.delete-tags-id","name":"delete-tags-id","namespace":"tags"},"type":"object","properties":{}}

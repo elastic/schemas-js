@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-trusted-envs","x-api":{"id":"trusted-environments.get-trusted-envs","name":"get-trusted-envs","namespace":"trusted-environments"},"x-method":"GET","x-path":"/api/v1/trusted-environments","x-destructive":false,"type":"object","properties":{}}

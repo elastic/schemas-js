@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"createTrafficFilter","x-api":{"id":"traffic-filters.create-traffic-filter","name":"create-traffic-filter","namespace":"traffic-filters"},"type":"object","properties":{}}

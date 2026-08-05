@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"getDataViewDefault","x-api":{"id":"data-views.get-data-view-default","name":"get-data-view-default","namespace":"data-views"},"$ref":"./_defs.json#/$defs/Data_views_data_view_response_object"}

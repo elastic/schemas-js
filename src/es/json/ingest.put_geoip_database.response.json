@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ingest.put_geoip_database","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ingest.put_geoip_database","x-api":{"id":"ingest.put_geoip_database","name":"put-geoip-database","namespace":"ingest"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

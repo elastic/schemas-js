@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.plugins","type":"array","items":{"$ref":"./cat.plugins.json#/$defs/cat.plugins__PluginsRecord"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.plugins","x-api":{"id":"cat.plugins","name":"plugins","namespace":"cat"},"type":"array","items":{"$ref":"./cat.plugins.json#/$defs/cat.plugins__PluginsRecord"}}

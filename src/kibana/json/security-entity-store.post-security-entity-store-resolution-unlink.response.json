@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-security-entity-store-resolution-unlink","x-api":{"id":"security-entity-store.post-security-entity-store-resolution-unlink","name":"post-security-entity-store-resolution-unlink","namespace":"security-entity-store"},"type":"object","properties":{}}

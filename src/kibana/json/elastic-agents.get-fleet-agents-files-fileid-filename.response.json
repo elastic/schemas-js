@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-agents-files-fileid-filename","x-api":{"id":"elastic-agents.get-fleet-agents-files-fileid-filename","name":"get-fleet-agents-files-fileid-filename","namespace":"elastic-agents"},"type":"object"}

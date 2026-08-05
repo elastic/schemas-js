@@ -1,15 +1,1 @@
-{
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "getRegion",
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "string",
-      "description": "ID of the region",
-      "x-found-in": "path"
-    }
-  },
-  "required": [
-    "id"
-  ]
-}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"getRegion","x-api":{"id":"regions.get-region","name":"get-region","namespace":"regions"},"x-method":"GET","x-path":"/api/v1/serverless/regions/{id}","x-destructive":false,"type":"object","properties":{"id":{"type":"string","description":"ID of the region","x-found-in":"path"}},"required":["id"]}

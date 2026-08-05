@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"watcher.delete_watch","type":"object","properties":{"found":{"type":"boolean"},"_id":{"type":"string"},"_version":{"type":"number"}},"required":["found","_id","_version"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"watcher.delete_watch","x-api":{"id":"watcher.delete_watch","name":"delete-watch","namespace":"watcher"},"type":"object","properties":{"found":{"type":"boolean"},"_id":{"type":"string"},"_version":{"type":"number"}},"required":["found","_id","_version"]}

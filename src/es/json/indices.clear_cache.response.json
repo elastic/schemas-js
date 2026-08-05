@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.clear_cache","$ref":"./_types.json#/$defs/_types__ShardsOperationResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"indices.clear_cache","x-api":{"id":"indices.clear_cache","name":"clear-cache","namespace":"indices"},"$ref":"./_types.json#/$defs/_types__ShardsOperationResponseBase"}

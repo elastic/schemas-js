@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.put_contextualai","$ref":"./inference._types.json#/$defs/inference._types__InferenceEndpointInfoContextualAi"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.put_contextualai","x-api":{"id":"inference.put_contextualai","name":"put-contextualai","namespace":"inference"},"$ref":"./inference._types.json#/$defs/inference._types__InferenceEndpointInfoContextualAi"}

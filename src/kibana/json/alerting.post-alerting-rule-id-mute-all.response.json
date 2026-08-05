@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-alerting-rule-id-mute-all","x-api":{"id":"alerting.post-alerting-rule-id-mute-all","name":"post-alerting-rule-id-mute-all","namespace":"alerting"},"type":"object","properties":{}}

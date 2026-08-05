@@ -1,15 +1,1 @@
-{
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "deleteObservabilityProject",
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "string",
-      "description": "The ID of the project",
-      "x-found-in": "path"
-    }
-  },
-  "required": [
-    "id"
-  ]
-}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"deleteObservabilityProject","x-api":{"id":"observability-projects.delete-observability-project","name":"delete-observability-project","namespace":"observability-projects"},"x-method":"DELETE","x-path":"/api/v1/serverless/projects/observability/{id}","x-destructive":true,"type":"object","properties":{"id":{"type":"string","description":"The ID of the project","x-found-in":"path"}},"required":["id"]}

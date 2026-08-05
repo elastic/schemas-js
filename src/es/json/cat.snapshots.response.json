@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.snapshots","type":"array","items":{"$ref":"./cat.snapshots.json#/$defs/cat.snapshots__SnapshotsRecord"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"cat.snapshots","x-api":{"id":"cat.snapshots","name":"snapshots","namespace":"cat"},"type":"array","items":{"$ref":"./cat.snapshots.json#/$defs/cat.snapshots__SnapshotsRecord"}}

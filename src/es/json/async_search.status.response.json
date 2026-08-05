@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"async_search.status","$ref":"./async_search.status.json#/$defs/async_search.status__StatusResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"async_search.status","x-api":{"id":"async-search.status","name":"status","namespace":"async-search"},"$ref":"./async_search.status.json#/$defs/async_search.status__StatusResponseBase"}

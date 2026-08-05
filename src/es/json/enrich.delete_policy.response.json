@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"enrich.delete_policy","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"enrich.delete_policy","x-api":{"id":"enrich.delete_policy","name":"delete-policy","namespace":"enrich"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

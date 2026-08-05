@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-dashboard-redirect","x-api":{"id":"dashboards.delete-dashboard-redirect","name":"delete-dashboard-redirect","namespace":"dashboards"},"type":"object","properties":{}}

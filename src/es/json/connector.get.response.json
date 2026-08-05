@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"connector.get","$ref":"./connector._types.json#/$defs/connector._types__Connector"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"connector.get","x-api":{"id":"connector.get","name":"get","namespace":"connector"},"$ref":"./connector._types.json#/$defs/connector._types__Connector"}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-actions-connector-id","x-api":{"id":"connectors.put-actions-connector-id","name":"put-actions-connector-id","namespace":"connectors"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_connector_response"}

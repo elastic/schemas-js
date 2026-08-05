@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-security-entity-store-entities","x-api":{"id":"security-entity-store.get-security-entity-store-entities","name":"get-security-entity-store-entities","namespace":"security-entity-store"},"type":"object","properties":{}}

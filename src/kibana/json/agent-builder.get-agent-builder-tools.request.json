@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-agent-builder-tools","x-api":{"id":"agent-builder.get-agent-builder-tools","name":"get-agent-builder-tools","namespace":"agent-builder"},"x-method":"GET","x-path":"/api/agent_builder/tools","x-destructive":false,"type":"object","properties":{}}

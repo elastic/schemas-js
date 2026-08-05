@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-saved-objects-resolve-import-errors","x-api":{"id":"saved-objects.post-saved-objects-resolve-import-errors","name":"post-saved-objects-resolve-import-errors","namespace":"saved-objects"},"type":"object","properties":{}}

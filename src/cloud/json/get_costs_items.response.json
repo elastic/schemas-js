@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-costs-items","$ref":"_defs.json#/$defs/ItemsCosts"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-costs-items","x-api":{"id":"billing-costs-analysis.get-costs-items","name":"get-costs-items","namespace":"billing-costs-analysis"},"$ref":"_defs.json#/$defs/ItemsCosts"}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"deleteSloOp","x-api":{"id":"slo.delete-slo-op","name":"delete-slo-op","namespace":"slo"},"type":"object","properties":{}}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"tasks.list","$ref":"./tasks._types.json#/$defs/tasks._types__TaskListResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"tasks.list","x-api":{"id":"tasks.list","name":"list","namespace":"tasks"},"$ref":"./tasks._types.json#/$defs/tasks._types__TaskListResponseBase"}

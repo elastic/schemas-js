@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-enrollment-api-keys-bulk-delete","x-api":{"id":"fleet-enrollment-api-keys.post-fleet-enrollment-api-keys-bulk-delete","name":"post-fleet-enrollment-api-keys-bulk-delete","namespace":"fleet-enrollment-api-keys"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_bulk_delete_enrollment_api_keys_response"}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"connector.put","type":"object","properties":{"result":{"$ref":"./_types.json#/$defs/_types__Result"},"id":{"type":"string"}},"required":["result","id"]}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"connector.put","x-api":{"id":"connector.put","name":"put","namespace":"connector"},"type":"object","properties":{"result":{"$ref":"./_types.json#/$defs/_types__Result"},"id":{"type":"string"}},"required":["result","id"]}

@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/delete_endpoint_list_item.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/security-endpoint-exceptions-api.delete-endpoint-list-item.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject

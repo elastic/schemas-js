@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ilm.get_lifecycle","type":"object","additionalProperties":{"$ref":"./ilm.get_lifecycle.json#/$defs/ilm.get_lifecycle__Lifecycle"}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ilm.get_lifecycle","x-api":{"id":"ilm.get_lifecycle","name":"get-lifecycle","namespace":"ilm"},"type":"object","additionalProperties":{"$ref":"./ilm.get_lifecycle.json#/$defs/ilm.get_lifecycle__Lifecycle"}}

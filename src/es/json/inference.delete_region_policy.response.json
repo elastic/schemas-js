@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.delete_region_policy","$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.delete_region_policy","x-api":{"id":"inference.delete_region_policy","name":"delete-region-policy","namespace":"inference"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}

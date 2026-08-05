@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.put_amazonbedrock","$ref":"./inference._types.json#/$defs/inference._types__InferenceEndpointInfoAmazonBedrock"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.put_amazonbedrock","x-api":{"id":"inference.put_amazonbedrock","name":"put-amazonbedrock","namespace":"inference"},"$ref":"./inference._types.json#/$defs/inference._types__InferenceEndpointInfoAmazonBedrock"}
