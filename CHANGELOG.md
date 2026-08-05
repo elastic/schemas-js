@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/elastic/schemas-js/compare/v0.5.0...v0.5.1) (2026-08-05)
+
+
+### Bug Fixes
+
+* updated JSON schemas ([#58](https://github.com/elastic/schemas-js/issues/58)) ([92252da](https://github.com/elastic/schemas-js/commit/92252da3badc98e4f9da71778ff1a9cfd8c6249b))
+
 ## [0.5.0](https://github.com/elastic/schemas-js/compare/v0.4.5...v0.5.0) (2026-08-03)
 
 
