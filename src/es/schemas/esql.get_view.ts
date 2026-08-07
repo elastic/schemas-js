@@ -26,7 +26,8 @@ export type RequestBase = z.infer<typeof RequestBase>
 /** A non-materialized ES|QL view. */
 export const EsqlESQLView = z.object({
   name: z.string().describe('The name of the ES|QL view'),
-  query: z.string().describe('The ES|QL query')
+  query: z.string().describe('The ES|QL query'),
+  description: z.string().describe('A free-text description of the view.').optional()
 }).meta({ id: 'EsqlESQLView' })
 export type EsqlESQLView = z.infer<typeof EsqlESQLView>
 

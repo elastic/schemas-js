@@ -16,24 +16,6 @@ import { z } from 'zod'
 export const TODO = z.record(z.string(), z.any())
 export type TODO = z.infer<typeof TODO>
 
-export const IndexName = z.string().meta({ id: 'IndexName' })
-export type IndexName = z.infer<typeof IndexName>
-
-export const OpType = z.enum(['index', 'create']).meta({ id: 'OpType' })
-export type OpType = z.infer<typeof OpType>
-
-export const VersionType = z.enum(['internal', 'external', 'external_gte']).meta({ id: 'VersionType' })
-export type VersionType = z.infer<typeof VersionType>
-
-export const ReindexDestination = z.object({
-  index: IndexName.describe('The name of the data stream, index, or index alias you are copying to.'),
-  op_type: OpType.describe('If it is `create`, the operation will only index documents that do not already exist (also known as "put if absent"). IMPORTANT: To reindex to a data stream destination, this argument must be `create`.').optional(),
-  pipeline: z.string().describe('The name of the pipeline to use.').optional(),
-  routing: z.string().describe('By default, a document\'s routing is preserved unless it\'s changed by the script. If it is `keep`, the routing on the bulk request sent for each match is set to the routing on the match. If it is `discard`, the routing on the bulk request sent for each match is set to `null`. If it is `=value`, the routing on the bulk request sent for each match is set to all value specified after the equals sign (`=`). Not allowed when `index.slice.enabled` is `true` for the destination index; use `_slice` instead.').optional(),
-  version_type: VersionType.describe('The versioning to use for the indexing operation.').optional()
-}).meta({ id: 'ReindexDestination' })
-export type ReindexDestination = z.infer<typeof ReindexDestination>
-
 /**
  * A duration. Units can be `nanos`, `micros`, `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours) and
  * `d` (days). Also accepts "0" without a unit and "-1" to indicate an unspecified value.
@@ -60,6 +42,9 @@ export const ReindexRemoteSource = z.object({
   socket_timeout: Duration.describe('The remote socket read timeout.').optional()
 }).meta({ id: 'ReindexRemoteSource' })
 export type ReindexRemoteSource = z.infer<typeof ReindexRemoteSource>
+
+export const IndexName = z.string().meta({ id: 'IndexName' })
+export type IndexName = z.infer<typeof IndexName>
 
 export const Indices = z.union([IndexName, z.array(IndexName)]).meta({ id: 'Indices' })
 export type Indices = z.infer<typeof Indices>
@@ -3371,6 +3356,9 @@ export type Routing = z.infer<typeof Routing>
 export const VersionNumber = long.meta({ id: 'VersionNumber' })
 export type VersionNumber = z.infer<typeof VersionNumber>
 
+export const VersionType = z.enum(['internal', 'external', 'external_gte']).meta({ id: 'VersionType' })
+export type VersionType = z.infer<typeof VersionType>
+
 export const QueryDslLikeDocument = z.object({
   doc: z.any().describe('A document not present in the index.').optional(),
   fields: z.array(Field).optional(),
@@ -4041,6 +4029,9 @@ export const ReindexSource = z.object({
 }).meta({ id: 'ReindexSource' })
 export type ReindexSource = z.infer<typeof ReindexSource>
 
+export const IndexAlias = z.string().meta({ id: 'IndexAlias' })
+export type IndexAlias = z.infer<typeof IndexAlias>
+
 export const RequestBase = z.object({
 }).meta({ id: 'RequestBase' })
 export type RequestBase = z.infer<typeof RequestBase>
@@ -4061,8 +4052,15 @@ export const MlTransformAuthorization = z.object({
 }).meta({ id: 'MlTransformAuthorization' })
 export type MlTransformAuthorization = z.infer<typeof MlTransformAuthorization>
 
+export const TransformDestinationAlias = z.object({
+  alias: IndexAlias.describe('The name of the alias.'),
+  move_on_creation: z.boolean().describe('Whether the destination index should be the only index in this alias. If `true`, all the other indices will be removed from this alias before adding the destination index to this alias. This does not delete the removed indices; it only removes them from the alias.').optional()
+}).meta({ id: 'TransformDestinationAlias' })
+export type TransformDestinationAlias = z.infer<typeof TransformDestinationAlias>
+
 export const TransformDestination = z.object({
   index: IndexName.describe('The destination index for the transform. The mappings of the destination index are deduced based on the source fields when possible. If alternate mappings are required, use the create index API prior to starting the transform.').optional(),
+  aliases: z.array(TransformDestinationAlias).describe('The aliases that the destination index for the transform should have. Aliases are manipulated using the stored credentials of the transform, which means the secondary credentials supplied at creation time (if both primary and secondary credentials are specified). The destination index is added to the aliases regardless of whether the destination index was created by the transform or pre-created by the user.').optional(),
   pipeline: z.string().describe('The unique identifier for an ingest pipeline.').optional()
 }).meta({ id: 'TransformDestination' })
 export type TransformDestination = z.infer<typeof TransformDestination>
@@ -4158,7 +4156,7 @@ export const TransformUpdateTransformResponse = z.object({
   authorization: MlTransformAuthorization.optional(),
   create_time: long,
   description: z.string(),
-  dest: ReindexDestination,
+  dest: TransformDestination,
   frequency: Duration.optional(),
   id: Id,
   latest: TransformLatest.optional(),
