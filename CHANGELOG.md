@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0](https://github.com/elastic/schemas-js/compare/v0.5.1...v0.6.0) (2026-08-07)
+
+
+### Features
+
+* regenerate schemas with wire names, behavior semantics, and multi-value formats ([#60](https://github.com/elastic/schemas-js/issues/60)) ([ba1d572](https://github.com/elastic/schemas-js/commit/ba1d5724cc4a98e376a0a6b709ff1730ad79eb4f))
+
 ## [0.5.1](https://github.com/elastic/schemas-js/compare/v0.5.0...v0.5.1) (2026-08-05)
 
 
