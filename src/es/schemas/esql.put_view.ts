@@ -32,7 +32,8 @@ export type RequestBase = z.infer<typeof RequestBase>
 export const EsqlPutViewRequest = z.object({
   ...RequestBase.shape,
   name: Id.describe('The view name to create or update.').meta({ found_in: 'path' }),
-  query: z.string().describe('The ES|QL query string from which to create a view.').meta({ found_in: 'body' })
+  query: z.string().describe('The ES|QL query string from which to create a view.').meta({ found_in: 'body' }),
+  description: z.string().describe('A free-text description of the view.').optional().meta({ found_in: 'body' })
 }).meta({ id: 'EsqlPutViewRequest' })
 export type EsqlPutViewRequest = z.infer<typeof EsqlPutViewRequest>
 

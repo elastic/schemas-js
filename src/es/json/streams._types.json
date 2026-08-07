@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"streams._types__StreamType":{"enum":["logs","logs_otel","logs_ecs"]}}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$defs":{"streams._types__StreamType":{"enum":["logs","logs.otel","logs.ecs"],"x-codegen-names":{"logs.otel":"logs_otel","logs.ecs":"logs_ecs"}}}}

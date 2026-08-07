@@ -4040,6 +4040,9 @@ export type IBDistribution = z.infer<typeof IBDistribution>
 export const IBLambda = z.enum(['df', 'ttf']).meta({ id: 'IBLambda' })
 export type IBLambda = z.infer<typeof IBLambda>
 
+export const IndexAlias = z.string().meta({ id: 'IndexAlias' })
+export type IndexAlias = z.infer<typeof IndexAlias>
+
 export const Indices = z.union([IndexName, z.array(IndexName)]).meta({ id: 'Indices' })
 export type Indices = z.infer<typeof Indices>
 
@@ -8054,8 +8057,15 @@ export const IndicesIndexState = z.object({
 }).meta({ id: 'IndicesIndexState' })
 export type IndicesIndexState = z.infer<typeof IndicesIndexState>
 
+export const TransformDestinationAlias = z.object({
+  alias: IndexAlias.describe('The name of the alias.'),
+  move_on_creation: z.boolean().describe('Whether the destination index should be the only index in this alias. If `true`, all the other indices will be removed from this alias before adding the destination index to this alias. This does not delete the removed indices; it only removes them from the alias.').optional()
+}).meta({ id: 'TransformDestinationAlias' })
+export type TransformDestinationAlias = z.infer<typeof TransformDestinationAlias>
+
 export const TransformDestination = z.object({
   index: IndexName.describe('The destination index for the transform. The mappings of the destination index are deduced based on the source fields when possible. If alternate mappings are required, use the create index API prior to starting the transform.').optional(),
+  aliases: z.array(TransformDestinationAlias).describe('The aliases that the destination index for the transform should have. Aliases are manipulated using the stored credentials of the transform, which means the secondary credentials supplied at creation time (if both primary and secondary credentials are specified). The destination index is added to the aliases regardless of whether the destination index was created by the transform or pre-created by the user.').optional(),
   pipeline: z.string().describe('The unique identifier for an ingest pipeline.').optional()
 }).meta({ id: 'TransformDestination' })
 export type TransformDestination = z.infer<typeof TransformDestination>
