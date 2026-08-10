@@ -1,1 +1,0 @@
-{"type":"object","properties":{"agentId":{"type":"string","description":"The agent ID","x-found-in":"path"}},"required":["agentId"],"allOf":[{"type":"object","properties":{"policy_id":{"type":"string"}},"required":["policy_id"]}],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-agents-agentid-reassign"}

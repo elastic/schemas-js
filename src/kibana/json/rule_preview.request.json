@@ -1,1 +1,0 @@
-{"type":"object","properties":{"enable_logged_requests":{"type":"boolean","description":"Enables logging and returning in response ES queries, performed during rule execution","x-found-in":"query"}},"allOf":[{"type":"object"}],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"RulePreview"}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ReadList","x-api":{"id":"security-lists-api.read-list","name":"read-list","namespace":"security-lists-api"},"$ref":"./_defs.json#/$defs/Security_Lists_API_List"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"read-list","x-api":{"id":"security-lists-api.read-list","name":"read-list","namespace":"security-lists-api"},"$ref":"./_defs.json#/$defs/Security_Lists_API_List"}

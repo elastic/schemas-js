@@ -1,1 +1,0 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-dashboards-redirect","x-api":{"id":"dashboards.get-dashboards-redirect","name":"get-dashboards-redirect","namespace":"dashboards"},"x-method":"GET","x-path":"/api/dashboards","x-destructive":false,"type":"object","properties":{}}

@@ -1,1 +1,0 @@
-{"type":"object","properties":{"entity_id":{"type":"string","description":"The entity identifier to look up the resolution group for.","x-found-in":"query"}},"required":["entity_id"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-security-entity-store-resolution-group"}

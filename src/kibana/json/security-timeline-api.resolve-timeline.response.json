@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ResolveTimeline","x-api":{"id":"security-timeline-api.resolve-timeline","name":"resolve-timeline","namespace":"security-timeline-api"},"$ref":"./_defs.json#/$defs/Security_Timeline_API_ResolvedTimeline"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"resolve-timeline","x-api":{"id":"security-timeline-api.resolve-timeline","name":"resolve-timeline","namespace":"security-timeline-api"},"$ref":"./_defs.json#/$defs/Security_Timeline_API_ResolvedTimeline"}

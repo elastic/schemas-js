@@ -1,1 +1,0 @@
-{"type":"object","properties":{"timelineType":{"type":"string","description":"Which draft to load (`default` investigation timeline or `template` timeline template).","x-found-in":"query"}},"required":["timelineType"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"GetDraftTimelines"}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"UpsertEntitiesBulk","x-api":{"id":"security-entity-analytics-api.upsert-entities-bulk","name":"upsert-entities-bulk","namespace":"security-entity-analytics-api"},"type":"object","properties":{}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"upsert-entities-bulk","x-api":{"id":"security-entity-analytics-api.upsert-entities-bulk","name":"upsert-entities-bulk","namespace":"security-entity-analytics-api"},"type":"object","properties":{}}

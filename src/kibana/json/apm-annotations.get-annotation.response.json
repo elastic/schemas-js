@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"getAnnotation","x-api":{"id":"apm-annotations.get-annotation","name":"get-annotation","namespace":"apm-annotations"},"$ref":"./_defs.json#/$defs/APM_UI_annotation_search_response"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-annotation","x-api":{"id":"apm-annotations.get-annotation","name":"get-annotation","namespace":"apm-annotations"},"$ref":"./_defs.json#/$defs/APM_UI_annotation_search_response"}

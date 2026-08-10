@@ -10,14 +10,14 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/visualizations.delete-visualization-redirect.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/visualizations.delete-visualization.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const delete_visualization_redirectDefinitions: KbApiDefinition[] = [
   {
-    name: 'delete-visualization-redirect',
+    name: 'delete-visualization',
     namespace: 'visualizations',
     description: 'Delete a visualization',
     method: 'DELETE',

@@ -1,1 +1,0 @@
-{"type":"object","properties":{"noteId":{"type":"string","description":"Saved object ID of the note to delete."},"noteIds":{"oneOf":[{"type":"array","items":{"type":"string"}},{"type":"null"}],"description":"Saved object IDs of the notes to delete."}},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"DeleteNote"}

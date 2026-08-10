@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"OsqueryCreatePacks","x-api":{"id":"security-osquery-api.osquery-create-packs","name":"osquery-create-packs","namespace":"security-osquery-api"},"$ref":"./_defs.json#/$defs/Security_Osquery_API_CreatePacksResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"osquery-create-packs","x-api":{"id":"security-osquery-api.osquery-create-packs","name":"osquery-create-packs","namespace":"security-osquery-api"},"$ref":"./_defs.json#/$defs/Security_Osquery_API_CreatePacksResponse"}

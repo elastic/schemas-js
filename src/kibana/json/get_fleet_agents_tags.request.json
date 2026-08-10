@@ -1,1 +1,0 @@
-{"type":"object","properties":{"kuery":{"type":"string","description":"A KQL query string to filter results","x-found-in":"query"},"showInactive":{"type":"boolean","description":"When true, include tags from inactive agents","x-found-in":"query"}},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-agents-tags"}

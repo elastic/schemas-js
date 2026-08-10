@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"setDefaultDatailViewDefault","x-api":{"id":"data-views.set-default-datail-view-default","name":"set-default-datail-view-default","namespace":"data-views"},"type":"object","properties":{"acknowledged":{"type":"boolean"}}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"set-default-datail-view-default","x-api":{"id":"data-views.set-default-datail-view-default","name":"set-default-datail-view-default","namespace":"data-views"},"type":"object","properties":{"acknowledged":{"type":"boolean"}}}

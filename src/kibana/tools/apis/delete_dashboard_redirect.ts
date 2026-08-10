@@ -10,14 +10,14 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/dashboards.delete-dashboard-redirect.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/dashboards.delete-dashboard.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const delete_dashboard_redirectDefinitions: KbApiDefinition[] = [
   {
-    name: 'delete-dashboard-redirect',
+    name: 'delete-dashboard',
     namespace: 'dashboards',
     description: 'Delete a dashboard',
     method: 'DELETE',

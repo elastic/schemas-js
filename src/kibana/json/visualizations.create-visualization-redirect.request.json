@@ -1,1 +1,0 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"create-visualization-redirect","x-api":{"id":"visualizations.create-visualization-redirect","name":"create-visualization-redirect","namespace":"visualizations"},"x-method":"POST","x-path":"/api/visualizations","x-destructive":false,"type":"object","properties":{}}

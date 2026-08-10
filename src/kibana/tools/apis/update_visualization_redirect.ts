@@ -10,14 +10,14 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/visualizations.update-visualization-redirect.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/visualizations.update-visualization.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const update_visualization_redirectDefinitions: KbApiDefinition[] = [
   {
-    name: 'update-visualization-redirect',
+    name: 'update-visualization',
     namespace: 'visualizations',
     description: 'Update a visualization',
     method: 'PUT',

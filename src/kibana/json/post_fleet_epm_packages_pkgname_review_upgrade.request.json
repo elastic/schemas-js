@@ -1,1 +1,0 @@
-{"type":"object","properties":{"pkgName":{"type":"string","description":"Package name to review upgrade for","x-found-in":"path"}},"required":["pkgName"],"allOf":[{"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_review_upgrade_request"}],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-epm-packages-pkgname-review-upgrade"}

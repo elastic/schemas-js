@@ -232,7 +232,7 @@ export { IndicesDataStreamVisibility, IndicesPutIndexTemplateRequest, IndicesPut
 export { IndicesPutMappingRequest, IndicesPutMappingResponse } from './indices.put_mapping.js'
 export { IndicesPutSettingsRequest, IndicesPutSettingsResponse } from './indices.put_settings.js'
 export { IndicesPutTemplateRequest, IndicesPutTemplateResponse } from './indices.put_template.js'
-export { IndicesRecoveryFileDetails, IndicesRecoveryRecoveryBytes, IndicesRecoveryRecoveryFiles, IndicesRecoveryRecoveryIndexStatus, IndicesRecoveryRecoveryOrigin, IndicesRecoveryRecoveryStage, IndicesRecoveryRecoveryStartStatus, IndicesRecoveryRecoveryStatus, IndicesRecoveryRecoveryType, IndicesRecoveryRequest, IndicesRecoveryResponse, IndicesRecoveryShardRecovery, IndicesRecoveryTranslogStatus, IndicesRecoveryVerifyIndex } from './indices.recovery.js'
+export { IndicesRecoveryFileDetails, IndicesRecoveryRecoveryBytes, IndicesRecoveryRecoveryFiles, IndicesRecoveryRecoveryIndexStatus, IndicesRecoveryRecoveryOrigin, IndicesRecoveryRecoveryPriority, IndicesRecoveryRecoveryStage, IndicesRecoveryRecoveryStartStatus, IndicesRecoveryRecoveryStatus, IndicesRecoveryRecoveryType, IndicesRecoveryRequest, IndicesRecoveryResponse, IndicesRecoveryShardRecovery, IndicesRecoveryTranslogStatus, IndicesRecoveryVerifyIndex } from './indices.recovery.js'
 export { IndicesRefreshRequest, IndicesRefreshResponse } from './indices.refresh.js'
 export { IndicesReloadSearchAnalyzersReloadDetails, IndicesReloadSearchAnalyzersReloadResult, IndicesReloadSearchAnalyzersRequest, IndicesReloadSearchAnalyzersResponse } from './indices.reload_search_analyzers.js'
 export { IndicesRemoveBlockRemoveIndicesBlockStatus, IndicesRemoveBlockRequest, IndicesRemoveBlockResponse } from './indices.remove_block.js'

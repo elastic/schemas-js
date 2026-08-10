@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"bulkDeleteStatusOp","x-api":{"id":"slo.bulk-delete-status-op","name":"bulk-delete-status-op","namespace":"slo"},"$ref":"./_defs.json#/$defs/SLOs_bulk_delete_status_response"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"bulk-delete-status-op","x-api":{"id":"slo.bulk-delete-status-op","name":"bulk-delete-status-op","namespace":"slo"},"$ref":"./_defs.json#/$defs/SLOs_bulk_delete_status_response"}

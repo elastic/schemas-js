@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"findSlosOp","x-api":{"id":"slo.find-slos-op","name":"find-slos-op","namespace":"slo"},"$ref":"./_defs.json#/$defs/SLOs_find_slo_response"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"find-slos-op","x-api":{"id":"slo.find-slos-op","name":"find-slos-op","namespace":"slo"},"$ref":"./_defs.json#/$defs/SLOs_find_slo_response"}

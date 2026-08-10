@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"DeleteRule","x-api":{"id":"security-detections-api.delete-rule","name":"delete-rule","namespace":"security-detections-api"},"$ref":"./_defs.json#/$defs/Security_Detections_API_RuleResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-rule","x-api":{"id":"security-detections-api.delete-rule","name":"delete-rule","namespace":"security-detections-api"},"$ref":"./_defs.json#/$defs/Security_Detections_API_RuleResponse"}

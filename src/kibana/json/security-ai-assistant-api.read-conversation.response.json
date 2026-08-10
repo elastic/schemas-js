@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ReadConversation","x-api":{"id":"security-ai-assistant-api.read-conversation","name":"read-conversation","namespace":"security-ai-assistant-api"},"$ref":"./_defs.json#/$defs/Security_AI_Assistant_API_ConversationResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"read-conversation","x-api":{"id":"security-ai-assistant-api.read-conversation","name":"read-conversation","namespace":"security-ai-assistant-api"},"$ref":"./_defs.json#/$defs/Security_AI_Assistant_API_ConversationResponse"}

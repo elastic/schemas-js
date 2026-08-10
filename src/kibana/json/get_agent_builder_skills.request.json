@@ -1,1 +1,0 @@
-{"type":"object","properties":{"include_plugins":{"type":"boolean","description":"Set to true to include skills from plugins.","x-found-in":"query"}},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-agent-builder-skills"}

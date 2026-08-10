@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ExportListItems","x-api":{"id":"security-lists-api.export-list-items","name":"export-list-items","namespace":"security-lists-api"},"type":"object","properties":{}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"export-list-items","x-api":{"id":"security-lists-api.export-list-items","name":"export-list-items","namespace":"security-lists-api"},"type":"object","properties":{}}

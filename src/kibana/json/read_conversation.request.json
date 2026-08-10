@@ -1,1 +1,0 @@
-{"type":"object","properties":{"id":{"type":"string","description":"The conversation's `id` value, a unique identifier for the conversation.","x-found-in":"path"}},"required":["id"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ReadConversation"}

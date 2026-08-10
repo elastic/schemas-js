@@ -1,1 +1,0 @@
-{"type":"object","properties":{"agentId":{"type":"string","description":"The unique identifier of the agent to get A2A metadata for.","x-found-in":"path"}},"required":["agentId"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-agent-builder-a2a-agentid.json"}

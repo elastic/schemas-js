@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"create-dashboard","x-api":{"id":"dashboards.create-dashboard","name":"create-dashboard","namespace":"dashboards"},"x-method":"POST","x-path":"/api/dashboards","x-destructive":true,"type":"object","properties":{}}

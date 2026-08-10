@@ -1,1 +1,0 @@
-{"type":"object","properties":{"id":{"type":"string","description":"The pack ID.","x-found-in":"path"}},"required":["id"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"OsqueryGetPacksDetails"}

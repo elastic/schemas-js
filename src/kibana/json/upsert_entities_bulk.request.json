@@ -1,1 +1,0 @@
-{"type":"object","properties":{"force":{"type":"boolean","description":"When true, allows updating protected fields.","x-found-in":"query"}},"allOf":[{"$ref":"./_defs.json#/$defs/Security_Entity_Analytics_API_EntitiesContainer"}],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"UpsertEntitiesBulk"}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"SetAlertTags","x-api":{"id":"security-detections-api.set-alert-tags","name":"set-alert-tags","namespace":"security-detections-api"},"type":"object","additionalProperties":true}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"set-alert-tags","x-api":{"id":"security-detections-api.set-alert-tags","name":"set-alert-tags","namespace":"security-detections-api"},"type":"object","additionalProperties":true}

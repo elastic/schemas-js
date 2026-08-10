@@ -1,1 +1,0 @@
-{"type":"object","properties":{"fileId":{"type":"string","description":"The ID of the uploaded file","x-found-in":"path"}},"required":["fileId"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-fleet-agents-files-fileid"}

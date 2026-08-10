@@ -1,1 +1,0 @@
-{"type":"object","properties":{"agentId":{"type":"string","description":"The agent ID","x-found-in":"path"},"withMetrics":{"type":"boolean","description":"When true, include CPU and memory metrics in the response","x-found-in":"query"}},"required":["agentId"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-agents-agentid"}

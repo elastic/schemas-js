@@ -1,1 +1,0 @@
-{"type":"object","properties":{"rule_id":{"type":"string","description":"The identifier for the rule.","x-found-in":"path"},"alert_id":{"type":"string","description":"The identifier for the alert.","x-found-in":"path"}},"required":["rule_id","alert_id"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-alerting-rule-rule-id-alert-alert-id-unmute"}

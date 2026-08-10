@@ -1,1 +1,0 @@
-{"type":"object","properties":{"outputId":{"type":"string","description":"The ID of the output","x-found-in":"path"}},"required":["outputId"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-outputs-outputid-health"}

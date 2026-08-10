@@ -1,1 +1,0 @@
-{"type":"object","properties":{"viewId":{"type":"string","description":"The viewId parameter","x-found-in":"path"},"fieldName":{"type":"string","description":"The fieldName parameter","x-found-in":"path"}},"required":["viewId","fieldName"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"deleteRuntimeFieldDefault"}

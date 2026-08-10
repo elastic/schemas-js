@@ -1,1 +1,0 @@
-{"type":"object","properties":{"list_id":{"type":"string","description":"Value list's `id` to export.","x-found-in":"query"}},"required":["list_id"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ExportListItems"}

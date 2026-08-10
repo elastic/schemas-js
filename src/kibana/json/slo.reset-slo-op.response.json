@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"resetSloOp","x-api":{"id":"slo.reset-slo-op","name":"reset-slo-op","namespace":"slo"},"$ref":"./_defs.json#/$defs/SLOs_slo_definition_response"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"reset-slo-op","x-api":{"id":"slo.reset-slo-op","name":"reset-slo-op","namespace":"slo"},"$ref":"./_defs.json#/$defs/SLOs_slo_definition_response"}
