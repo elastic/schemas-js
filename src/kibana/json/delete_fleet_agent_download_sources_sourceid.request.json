@@ -1,1 +1,0 @@
-{"type":"object","properties":{"sourceId":{"type":"string","description":"The ID of the download source","x-found-in":"path"}},"required":["sourceId"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-fleet-agent-download-sources-sourceid"}

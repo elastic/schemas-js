@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"PatchListItem","x-api":{"id":"security-lists-api.patch-list-item","name":"patch-list-item","namespace":"security-lists-api"},"$ref":"./_defs.json#/$defs/Security_Lists_API_ListItem"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"patch-list-item","x-api":{"id":"security-lists-api.patch-list-item","name":"patch-list-item","namespace":"security-lists-api"},"$ref":"./_defs.json#/$defs/Security_Lists_API_ListItem"}

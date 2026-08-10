@@ -13,11 +13,11 @@ import type { KbApiDefinition } from '../types.ts'
 
 export const create_visualization_redirectDefinitions: KbApiDefinition[] = [
   {
-    name: 'create-visualization-redirect',
+    name: 'create-visualization',
     namespace: 'visualizations',
     description: 'Create a visualization',
     method: 'POST',
     path: '/api/visualizations',
-    destructive: false,
+    destructive: true,
   },
 ]

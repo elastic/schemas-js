@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"CreateTimelines","x-api":{"id":"security-timeline-api.create-timelines","name":"create-timelines","namespace":"security-timeline-api"},"$ref":"./_defs.json#/$defs/Security_Timeline_API_TimelineResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"create-timelines","x-api":{"id":"security-timeline-api.create-timelines","name":"create-timelines","namespace":"security-timeline-api"},"$ref":"./_defs.json#/$defs/Security_Timeline_API_TimelineResponse"}

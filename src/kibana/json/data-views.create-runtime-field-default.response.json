@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"createRuntimeFieldDefault","x-api":{"id":"data-views.create-runtime-field-default","name":"create-runtime-field-default","namespace":"data-views"},"type":"object"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"create-runtime-field-default","x-api":{"id":"data-views.create-runtime-field-default","name":"create-runtime-field-default","namespace":"data-views"},"type":"object"}

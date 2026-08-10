@@ -1,1 +1,0 @@
-{"type":"object","properties":{"serviceName":{"type":"string","description":"The name of the service. If omitted, environments across all services are returned.","x-found-in":"query"}},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"getEnvironmentsForService"}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ExportRules","x-api":{"id":"security-detections-api.export-rules","name":"export-rules","namespace":"security-detections-api"},"type":"object","properties":{}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"export-rules","x-api":{"id":"security-detections-api.export-rules","name":"export-rules","namespace":"security-detections-api"},"type":"object","properties":{}}

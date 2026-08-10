@@ -144,6 +144,9 @@ export const IndicesRecoveryRecoveryOrigin = z.object({
 }).meta({ id: 'IndicesRecoveryRecoveryOrigin' })
 export type IndicesRecoveryRecoveryOrigin = z.infer<typeof IndicesRecoveryRecoveryOrigin>
 
+export const IndicesRecoveryRecoveryPriority = z.enum(['UNASSIGNED_NEW_PRIMARY', 'UNASSIGNED_UNEXPECTED', 'UNASSIGNED_EXPECTED', 'RELOCATION_CAN_REMAIN_NO', 'RELOCATION_CAN_REMAIN_NOT_PREFERRED', 'RELOCATE_REBALANCING', 'UNKNOWN']).meta({ id: 'IndicesRecoveryRecoveryPriority' })
+export type IndicesRecoveryRecoveryPriority = z.infer<typeof IndicesRecoveryRecoveryPriority>
+
 export const IndicesRecoveryRecoveryStage = z.enum(['INIT', 'INDEX', 'VERIFY_INDEX', 'TRANSLOG', 'FINALIZE', 'DONE']).meta({ id: 'IndicesRecoveryRecoveryStage' })
 export type IndicesRecoveryRecoveryStage = z.infer<typeof IndicesRecoveryRecoveryStage>
 
@@ -182,6 +185,7 @@ export const IndicesRecoveryShardRecovery = z.object({
   primary: z.boolean(),
   source: IndicesRecoveryRecoveryOrigin,
   stage: IndicesRecoveryRecoveryStage.describe('The recovery stage.'),
+  priority: IndicesRecoveryRecoveryPriority.describe('The recovery priority.').optional(),
   start: IndicesRecoveryRecoveryStartStatus.optional(),
   start_time: DateTime.optional(),
   start_time_in_millis: EpochTime,

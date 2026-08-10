@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"getDefinitionsOp","x-api":{"id":"slo.get-definitions-op","name":"get-definitions-op","namespace":"slo"},"$ref":"./_defs.json#/$defs/SLOs_find_slo_definitions_response"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-definitions-op","x-api":{"id":"slo.get-definitions-op","name":"get-definitions-op","namespace":"slo"},"$ref":"./_defs.json#/$defs/SLOs_find_slo_definitions_response"}

@@ -13,11 +13,11 @@ import type { KbApiDefinition } from '../types.ts'
 
 export const create_dashboard_redirectDefinitions: KbApiDefinition[] = [
   {
-    name: 'create-dashboard-redirect',
+    name: 'create-dashboard',
     namespace: 'dashboards',
     description: 'Create a dashboard',
     method: 'POST',
     path: '/api/dashboards',
-    destructive: false,
+    destructive: true,
   },
 ]

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"enableSloOp","x-api":{"id":"slo.enable-slo-op","name":"enable-slo-op","namespace":"slo"},"type":"object","properties":{}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"enable-slo-op","x-api":{"id":"slo.enable-slo-op","name":"enable-slo-op","namespace":"slo"},"type":"object","properties":{}}

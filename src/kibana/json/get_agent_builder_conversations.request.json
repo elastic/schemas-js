@@ -1,1 +1,0 @@
-{"type":"object","properties":{"agent_id":{"type":"string","description":"Optional agent ID to filter conversations by a specific agent.","x-found-in":"query"}},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-agent-builder-conversations"}

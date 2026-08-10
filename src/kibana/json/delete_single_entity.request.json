@@ -1,1 +1,0 @@
-{"type":"object","properties":{"entityType":{"type":"string","description":"","x-found-in":"path"}},"required":["entityType"],"allOf":[{"type":"object","properties":{"id":{"type":"string","description":"Identifier of the entity to be deleted, commonly entity.id value."}},"required":["id"]}],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"DeleteSingleEntity"}

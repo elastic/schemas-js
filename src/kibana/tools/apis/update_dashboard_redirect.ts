@@ -10,14 +10,14 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/dashboards.update-dashboard-redirect.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/dashboards.update-dashboard.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const update_dashboard_redirectDefinitions: KbApiDefinition[] = [
   {
-    name: 'update-dashboard-redirect',
+    name: 'update-dashboard',
     namespace: 'dashboards',
     description: 'Update a dashboard',
     method: 'PUT',

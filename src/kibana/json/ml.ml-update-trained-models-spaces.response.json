@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"mlUpdateTrainedModelsSpaces","x-api":{"id":"ml.ml-update-trained-models-spaces","name":"ml-update-trained-models-spaces","namespace":"ml"},"type":"object","properties":{}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ml-update-trained-models-spaces","x-api":{"id":"ml.ml-update-trained-models-spaces","name":"ml-update-trained-models-spaces","namespace":"ml"},"type":"object","properties":{}}

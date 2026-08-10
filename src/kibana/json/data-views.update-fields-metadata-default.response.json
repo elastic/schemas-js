@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"updateFieldsMetadataDefault","x-api":{"id":"data-views.update-fields-metadata-default","name":"update-fields-metadata-default","namespace":"data-views"},"type":"object","properties":{"acknowledged":{"type":"boolean"}}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"update-fields-metadata-default","x-api":{"id":"data-views.update-fields-metadata-default","name":"update-fields-metadata-default","namespace":"data-views"},"type":"object","properties":{"acknowledged":{"type":"boolean"}}}

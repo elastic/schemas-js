@@ -1,1 +1,0 @@
-{"type":"object","properties":{"include_components":{"type":"string","description":"If true, returns a detailed status of each engine including all its components.","x-found-in":"query"}},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-security-entity-store-status"}

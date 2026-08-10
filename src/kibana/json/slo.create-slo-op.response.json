@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"createSloOp","x-api":{"id":"slo.create-slo-op","name":"create-slo-op","namespace":"slo"},"$ref":"./_defs.json#/$defs/SLOs_create_slo_response"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"create-slo-op","x-api":{"id":"slo.create-slo-op","name":"create-slo-op","namespace":"slo"},"$ref":"./_defs.json#/$defs/SLOs_create_slo_response"}

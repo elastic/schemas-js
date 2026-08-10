@@ -1,1 +1,0 @@
-{"type":"object","properties":{"package_policy_id":{"type":"string","description":"The package policy ID to retrieve the protection updates note for.","x-found-in":"path"}},"required":["package_policy_id"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"GetProtectionUpdatesNote"}

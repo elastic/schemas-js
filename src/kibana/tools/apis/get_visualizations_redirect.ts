@@ -13,7 +13,7 @@ import type { KbApiDefinition } from '../types.ts'
 
 export const get_visualizations_redirectDefinitions: KbApiDefinition[] = [
   {
-    name: 'get-visualizations-redirect',
+    name: 'get-visualizations',
     namespace: 'visualizations',
     description: 'Get visualizations',
     method: 'GET',

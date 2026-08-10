@@ -1,1 +1,0 @@
-{"type":"object","properties":{"kql":{"type":"string","description":"KQL query to filter the list of monitored users","x-found-in":"query"}},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ListPrivMonUsers"}

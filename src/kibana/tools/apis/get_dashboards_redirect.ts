@@ -13,7 +13,7 @@ import type { KbApiDefinition } from '../types.ts'
 
 export const get_dashboards_redirectDefinitions: KbApiDefinition[] = [
   {
-    name: 'get-dashboards-redirect',
+    name: 'get-dashboards',
     namespace: 'dashboards',
     description: 'Get dashboards',
     method: 'GET',

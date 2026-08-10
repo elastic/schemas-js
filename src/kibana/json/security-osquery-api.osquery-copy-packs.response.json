@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"OsqueryCopyPacks","x-api":{"id":"security-osquery-api.osquery-copy-packs","name":"osquery-copy-packs","namespace":"security-osquery-api"},"$ref":"./_defs.json#/$defs/Security_Osquery_API_CopyPacksResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"osquery-copy-packs","x-api":{"id":"security-osquery-api.osquery-copy-packs","name":"osquery-copy-packs","namespace":"security-osquery-api"},"$ref":"./_defs.json#/$defs/Security_Osquery_API_CopyPacksResponse"}

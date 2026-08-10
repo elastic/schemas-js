@@ -1,1 +1,0 @@
-{"type":"object","properties":{"fleetServerSetup":{"type":"boolean","description":"When true, check Fleet Server setup privileges in addition to standard Fleet privileges","x-found-in":"query"}},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-check-permissions"}

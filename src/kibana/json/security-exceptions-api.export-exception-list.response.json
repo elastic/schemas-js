@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ExportExceptionList","x-api":{"id":"security-exceptions-api.export-exception-list","name":"export-exception-list","namespace":"security-exceptions-api"},"type":"object","properties":{}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"export-exception-list","x-api":{"id":"security-exceptions-api.export-exception-list","name":"export-exception-list","namespace":"security-exceptions-api"},"type":"object","properties":{}}

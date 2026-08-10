@@ -1,1 +1,0 @@
-{"type":"object","properties":{"id":{"type":"string","description":"The unique identifier (`id`) of the Knowledge Base Entry to update.","x-found-in":"path"}},"required":["id"],"allOf":[{"$ref":"./_defs.json#/$defs/Security_AI_Assistant_API_KnowledgeBaseEntryUpdateRouteProps"}],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"UpdateKnowledgeBaseEntry"}

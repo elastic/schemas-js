@@ -82,11 +82,11 @@ const PRESERVE = new Set([
   join(srcDir, 'registry.ts'),
 ])
 
-async function deleteGeneratedTs () {
+async function deleteGenerated () {
   const entries = await fs.readdir(srcDir, { recursive: true })
   await Promise.all(
     entries
-      .filter(f => f.endsWith('.ts'))
+      .filter(f => f.endsWith('.ts') || f.endsWith('.json'))
       .map(f => join(srcDir, f))
       .filter(f => !PRESERVE.has(f))
       .map(f => fs.rm(f, { force: true }))
@@ -182,7 +182,7 @@ export default async function generate (generatorPath) {
   await run('npm', ['install', '--include=dev'], generatorPath)
 
   log.text = 'Deleting generated .ts files'
-  await deleteGeneratedTs()
+  await deleteGenerated()
 
   for (const { name, npmScript, outputSubdir, srcSubdir, lint = true } of generators) {
     log.text = `Running ${name} generator`

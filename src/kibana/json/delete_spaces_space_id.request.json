@@ -1,1 +1,0 @@
-{"type":"object","properties":{"id":{"type":"string","description":"The space identifier.","x-found-in":"path"}},"required":["id"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-spaces-space-id"}

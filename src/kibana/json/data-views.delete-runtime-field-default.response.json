@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"deleteRuntimeFieldDefault","x-api":{"id":"data-views.delete-runtime-field-default","name":"delete-runtime-field-default","namespace":"data-views"},"type":"object","properties":{}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-runtime-field-default","x-api":{"id":"data-views.delete-runtime-field-default","name":"delete-runtime-field-default","namespace":"data-views"},"type":"object","properties":{}}

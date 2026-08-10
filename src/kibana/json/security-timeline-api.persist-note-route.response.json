@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"PersistNoteRoute","x-api":{"id":"security-timeline-api.persist-note-route","name":"persist-note-route","namespace":"security-timeline-api"},"$ref":"./_defs.json#/$defs/Security_Timeline_API_ResponseNote"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"persist-note-route","x-api":{"id":"security-timeline-api.persist-note-route","name":"persist-note-route","namespace":"security-timeline-api"},"$ref":"./_defs.json#/$defs/Security_Timeline_API_ResponseNote"}

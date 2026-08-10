@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ReadExceptionList","x-api":{"id":"security-exceptions-api.read-exception-list","name":"read-exception-list","namespace":"security-exceptions-api"},"$ref":"./_defs.json#/$defs/Security_Exceptions_API_ExceptionList"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"read-exception-list","x-api":{"id":"security-exceptions-api.read-exception-list","name":"read-exception-list","namespace":"security-exceptions-api"},"$ref":"./_defs.json#/$defs/Security_Exceptions_API_ExceptionList"}

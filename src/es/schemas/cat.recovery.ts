@@ -56,7 +56,7 @@ export const RequestBase = z.object({
 }).meta({ id: 'RequestBase' })
 export type RequestBase = z.infer<typeof RequestBase>
 
-export const CatCatRecoveryColumn = z.union([z.enum(['index', 'i', 'idx', 'shard', 's', 'sh', 'start_time', 'start', 'start_time_millis', 'start_millis', 'stop_time', 'stop', 'stop_time_millis', 'stop_millis', 'time', 't', 'ti', 'type', 'ty', 'stage', 'st', 'source_host', 'shost', 'source_node', 'snode', 'target_host', 'thost', 'target_node', 'tnode', 'repository', 'rep', 'snapshot', 'snap', 'files', 'f', 'files_recovered', 'fr', 'files_percent', 'fp', 'files_total', 'tf', 'bytes', 'b', 'bytes_recovered', 'br', 'bytes_percent', 'bp', 'bytes_total', 'tb', 'translog_ops', 'to', 'translog_ops_recovered', 'tor', 'translog_ops_percent', 'top']), z.string()]).meta({ id: 'CatCatRecoveryColumn' })
+export const CatCatRecoveryColumn = z.union([z.enum(['index', 'i', 'idx', 'shard', 's', 'sh', 'start_time', 'start', 'start_time_millis', 'start_millis', 'stop_time', 'stop', 'stop_time_millis', 'stop_millis', 'time', 't', 'ti', 'type', 'ty', 'stage', 'st', 'priority', 'pr', 'source_host', 'shost', 'source_node', 'snode', 'target_host', 'thost', 'target_node', 'tnode', 'repository', 'rep', 'snapshot', 'snap', 'files', 'f', 'files_recovered', 'fr', 'files_percent', 'fp', 'files_total', 'tf', 'bytes', 'b', 'bytes_recovered', 'br', 'bytes_percent', 'bp', 'bytes_total', 'tb', 'translog_ops', 'to', 'translog_ops_recovered', 'tor', 'translog_ops_percent', 'top']), z.string()]).meta({ id: 'CatCatRecoveryColumn' })
 export type CatCatRecoveryColumn = z.infer<typeof CatCatRecoveryColumn>
 
 export const CatCatRecoveryColumns = z.union([CatCatRecoveryColumn, z.array(CatCatRecoveryColumn)]).meta({ id: 'CatCatRecoveryColumns' })
@@ -89,6 +89,8 @@ export const CatRecoveryRecoveryRecord = z.object({
   ty: z.string().describe('The recovery type.').optional(),
   stage: z.string().describe('The recovery stage.').optional(),
   st: z.string().describe('The recovery stage.').optional(),
+  priority: z.string().describe('The recovery priority.').optional(),
+  pr: z.string().describe('The recovery priority.').optional(),
   source_host: z.string().describe('The source host.').optional(),
   shost: z.string().describe('The source host.').optional(),
   source_node: z.string().describe('The source node name.').optional(),

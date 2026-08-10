@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"DeleteExceptionList","x-api":{"id":"security-exceptions-api.delete-exception-list","name":"delete-exception-list","namespace":"security-exceptions-api"},"$ref":"./_defs.json#/$defs/Security_Exceptions_API_ExceptionList"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-exception-list","x-api":{"id":"security-exceptions-api.delete-exception-list","name":"delete-exception-list","namespace":"security-exceptions-api"},"$ref":"./_defs.json#/$defs/Security_Exceptions_API_ExceptionList"}

@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"OsqueryUpdatePacks","x-api":{"id":"security-osquery-api.osquery-update-packs","name":"osquery-update-packs","namespace":"security-osquery-api"},"$ref":"./_defs.json#/$defs/Security_Osquery_API_UpdatePacksResponse"}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"osquery-update-packs","x-api":{"id":"security-osquery-api.osquery-update-packs","name":"osquery-update-packs","namespace":"security-osquery-api"},"$ref":"./_defs.json#/$defs/Security_Osquery_API_UpdatePacksResponse"}

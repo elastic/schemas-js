@@ -1,1 +1,0 @@
-{"type":"object","properties":{"agentId":{"type":"string","description":"The agent ID to rollback","x-found-in":"path"}},"required":["agentId"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-fleet-agents-agentid-rollback"}

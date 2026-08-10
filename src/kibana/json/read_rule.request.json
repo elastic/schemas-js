@@ -1,1 +1,0 @@
-{"type":"object","properties":{"id":{"type":"string","description":"The rule's `id` value.","x-found-in":"query"},"rule_id":{"type":"string","description":"The rule's `rule_id` value.","x-found-in":"query"}},"$schema":"https://json-schema.org/draft/2020-12/schema","title":"ReadRule"}

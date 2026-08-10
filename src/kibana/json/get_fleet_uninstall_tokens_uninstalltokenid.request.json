@@ -1,1 +1,0 @@
-{"type":"object","properties":{"uninstallTokenId":{"type":"string","description":"The ID of the uninstall token","x-found-in":"path"}},"required":["uninstallTokenId"],"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-uninstall-tokens-uninstalltokenid"}
