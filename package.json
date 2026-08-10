@@ -1,6 +1,6 @@
 {
   "name": "@elastic/schemas",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Request and response schemas for all Elastic APIs",
   "main": "lib/cjs/index.js",
   "scripts": {

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.1](https://github.com/elastic/schemas-js/compare/v0.6.0...v0.6.1) (2026-08-10)
+
+
+### Bug Fixes
+
+* **json-schema:** clean up file renames, drop redirect suffixes ([#62](https://github.com/elastic/schemas-js/issues/62)) ([b55bea6](https://github.com/elastic/schemas-js/commit/b55bea6e851d2b7686fafd40b9f8e2e1bf319eb4))
+
 ## [0.6.0](https://github.com/elastic/schemas-js/compare/v0.5.1...v0.6.0) (2026-08-07)
 
 
