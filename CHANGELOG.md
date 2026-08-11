@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.2](https://github.com/elastic/schemas-js/compare/v0.6.1...v0.6.2) (2026-08-11)
+
+
+### Bug Fixes
+
+* update schemas from latest spec changes ([#65](https://github.com/elastic/schemas-js/issues/65)) ([bf7a070](https://github.com/elastic/schemas-js/commit/bf7a0707e2640f70bc21e374ae122b3bfa439b1b))
+
 ## [0.6.1](https://github.com/elastic/schemas-js/compare/v0.6.0...v0.6.1) (2026-08-10)
 
 
