@@ -479,9 +479,25 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
       const mod = await import('./apis/esql.async_query_stop.ts') as Record<string, unknown>
       return mod['esql_async_query_stop_definitions'] as EsApiDefinition[]
     }
+    case 'esql.delete_data_source': {
+      const mod = await import('./apis/esql.delete_data_source.ts') as Record<string, unknown>
+      return mod['esql_delete_data_source_definitions'] as EsApiDefinition[]
+    }
+    case 'esql.delete_dataset': {
+      const mod = await import('./apis/esql.delete_dataset.ts') as Record<string, unknown>
+      return mod['esql_delete_dataset_definitions'] as EsApiDefinition[]
+    }
     case 'esql.delete_view': {
       const mod = await import('./apis/esql.delete_view.ts') as Record<string, unknown>
       return mod['esql_delete_view_definitions'] as EsApiDefinition[]
+    }
+    case 'esql.get_data_source': {
+      const mod = await import('./apis/esql.get_data_source.ts') as Record<string, unknown>
+      return mod['esql_get_data_source_definitions'] as EsApiDefinition[]
+    }
+    case 'esql.get_dataset': {
+      const mod = await import('./apis/esql.get_dataset.ts') as Record<string, unknown>
+      return mod['esql_get_dataset_definitions'] as EsApiDefinition[]
     }
     case 'esql.get_query': {
       const mod = await import('./apis/esql.get_query.ts') as Record<string, unknown>
@@ -494,6 +510,14 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
     case 'esql.list_queries': {
       const mod = await import('./apis/esql.list_queries.ts') as Record<string, unknown>
       return mod['esql_list_queries_definitions'] as EsApiDefinition[]
+    }
+    case 'esql.put_data_source': {
+      const mod = await import('./apis/esql.put_data_source.ts') as Record<string, unknown>
+      return mod['esql_put_data_source_definitions'] as EsApiDefinition[]
+    }
+    case 'esql.put_dataset': {
+      const mod = await import('./apis/esql.put_dataset.ts') as Record<string, unknown>
+      return mod['esql_put_dataset_definitions'] as EsApiDefinition[]
     }
     case 'esql.put_view': {
       const mod = await import('./apis/esql.put_view.ts') as Record<string, unknown>
