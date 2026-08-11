@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"esql.delete_data_source","x-api":{"id":"esql.delete_data_source","name":"delete-data-source","namespace":"esql"},"$ref":"./_types.json#/$defs/_types__AcknowledgedResponseBase"}
