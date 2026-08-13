@@ -97,7 +97,7 @@ export const kibanaManifest: readonly ApiRegistryMeta[] = [
   { id: 'data-streams.get-fleet-data-streams', name: 'get-fleet-data-streams', namespace: 'data-streams', description: 'Get data streams', namespaceFile: 'get_fleet_data_streams' },
   { id: 'data-streams.get-fleet-epm-data-streams', name: 'get-fleet-epm-data-streams', namespace: 'data-streams', description: 'Get data streams', namespaceFile: 'get_fleet_epm_data_streams' },
   { id: 'data-views.get-all-data-views-default', name: 'get-all-data-views-default', namespace: 'data-views', description: 'Get all data views', namespaceFile: 'get_all_data_views_default' },
-  { id: 'data-views.create-data-view-defaultw', name: 'create-data-view-defaultw', namespace: 'data-views', description: 'Create a data view', namespaceFile: 'create_data_view_defaultw' },
+  { id: 'data-views.create-data-view-default', name: 'create-data-view-default', namespace: 'data-views', description: 'Create a data view', namespaceFile: 'create_data_view_default' },
   { id: 'data-views.delete-data-view-default', name: 'delete-data-view-default', namespace: 'data-views', description: 'Delete a data view', namespaceFile: 'delete_data_view_default' },
   { id: 'data-views.get-data-view-default', name: 'get-data-view-default', namespace: 'data-views', description: 'Get a data view', namespaceFile: 'get_data_view_default' },
   { id: 'data-views.update-data-view-default', name: 'update-data-view-default', namespace: 'data-views', description: 'Update a data view', namespaceFile: 'update_data_view_default' },

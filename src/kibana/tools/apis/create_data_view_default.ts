@@ -10,14 +10,14 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/data-views.create-data-view-defaultw.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/data-views.create-data-view-default.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
-export const create_data_view_defaultwDefinitions: KbApiDefinition[] = [
+export const create_data_view_defaultDefinitions: KbApiDefinition[] = [
   {
-    name: 'create-data-view-defaultw',
+    name: 'create-data-view-default',
     namespace: 'data-views',
     description: 'Create a data view',
     method: 'POST',
