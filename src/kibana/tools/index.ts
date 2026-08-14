@@ -99,9 +99,9 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/create_dashboard_redirect.ts') as Record<string, unknown>
       return mod['create_dashboard_redirectDefinitions'] as KbApiDefinition[]
     }
-    case 'create_data_view_defaultw': {
-      const mod = await import('./apis/create_data_view_defaultw.ts') as Record<string, unknown>
-      return mod['create_data_view_defaultwDefinitions'] as KbApiDefinition[]
+    case 'create_data_view_default': {
+      const mod = await import('./apis/create_data_view_default.ts') as Record<string, unknown>
+      return mod['create_data_view_defaultDefinitions'] as KbApiDefinition[]
     }
     case 'create_endpoint_list': {
       const mod = await import('./apis/create_endpoint_list.ts') as Record<string, unknown>

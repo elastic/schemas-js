@@ -1,1 +1,0 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"create-data-view-defaultw","x-api":{"id":"data-views.create-data-view-defaultw","name":"create-data-view-defaultw","namespace":"data-views"},"$ref":"./_defs.json#/$defs/Data_views_data_view_response_object"}
