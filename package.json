@@ -8,6 +8,7 @@
     "build:cjs": "node --max-old-space-size=8192 ./node_modules/.bin/tsc -p tsconfig.cjs.json --noCheck && node scripts/postbuild-cjs.mjs",
     "build": "npm run build:esm && npm run build:cjs",
     "generate": "node scripts/generate.mjs",
+    "generate:zip": "node scripts/generate-json-schema-archive.mjs",
     "test:lint": "eslint --cache src/",
     "test:unit": "vitest run",
     "lint:fix": "eslint --cache src/ --fix",
