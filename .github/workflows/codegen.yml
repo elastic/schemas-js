@@ -37,7 +37,7 @@ jobs:
         run: npm install -g @devcontainers/cli
 
       - name: Clone generator repo (devcontainer mount source must pre-exist)
-        run: git clone --depth 1 --branch "${GENERATOR_REF:-main}" "https://${GITHUB_TOKEN}@github.com/elastic/elastic-client-generator-js" ../elastic-client-generator-js
+        run: git clone --depth 1 --branch "${GENERATOR_REF:-main}" "https://x-access-token:${GITHUB_TOKEN}@github.com/elastic/elastic-client-generator-js" ../elastic-client-generator-js
         env:
           GENERATOR_REF: ${{ github.event.inputs.generator-ref || 'main' }}
           GITHUB_TOKEN: ${{ steps.fetch-token.outputs.token }}
