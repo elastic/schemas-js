@@ -14,6 +14,9 @@ import { z } from 'zod'
 
 export const PostAgentBuilderToolsRequest = z.object({
   configuration: z.record(z.string(), z.unknown().nullable()),
+  confirmation: z.object({
+    askUser: z.enum(['once', 'always', 'never']).optional()
+  }).optional(),
   description: z.string().optional(),
   id: z.string(),
   tags: z.array(z.string()).optional(),

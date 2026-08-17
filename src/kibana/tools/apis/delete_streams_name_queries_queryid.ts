@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/streams.delete-streams-name-queries-queryid.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/significantevents.delete-streams-name-queries-queryid.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
@@ -18,7 +18,7 @@ const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 export const delete_streams_name_queries_queryidDefinitions: KbApiDefinition[] = [
   {
     name: 'delete-streams-name-queries-queryid',
-    namespace: 'streams',
+    namespace: 'significantevents',
     description: 'Remove a query from a stream',
     method: 'DELETE',
     path: '/api/streams/{name}/queries/{queryId}',

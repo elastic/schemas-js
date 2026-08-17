@@ -69,6 +69,7 @@ export const GetFleetAgentsResponse = z.object({
     })).optional(),
     packages: z.array(z.string()),
     pipeline_config: z.string().optional(),
+    policy_base_id: z.string().optional(),
     policy_id: z.string().optional(),
     policy_revision: z.number().nullable().optional(),
     sequence_num: z.number().optional(),

@@ -12,16 +12,21 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
+export const Security_Entity_Analytics_API_EntityAnalyticsPrivilegesDetail = z.object({
+  elasticsearch: z.object({
+    cluster: z.record(z.string(), z.boolean()).optional(),
+    index: z.record(z.string(), z.record(z.string(), z.boolean())).optional()
+  }),
+  kibana: z.record(z.string(), z.boolean()).optional()
+}).meta({ id: 'Security_Entity_Analytics_API_EntityAnalyticsPrivilegesDetail' })
+export type Security_Entity_Analytics_API_EntityAnalyticsPrivilegesDetail = z.infer<typeof Security_Entity_Analytics_API_EntityAnalyticsPrivilegesDetail>
+
 export const Security_Entity_Analytics_API_EntityAnalyticsPrivileges = z.object({
   has_all_required: z.boolean(),
+  has_install_permissions: z.boolean().optional(),
   has_read_permissions: z.boolean().optional(),
   has_write_permissions: z.boolean().optional(),
-  privileges: z.object({
-    elasticsearch: z.object({
-      cluster: z.record(z.string(), z.boolean()).optional(),
-      index: z.record(z.string(), z.record(z.string(), z.boolean())).optional()
-    }),
-    kibana: z.record(z.string(), z.boolean()).optional()
-  })
+  install_privileges: Security_Entity_Analytics_API_EntityAnalyticsPrivilegesDetail.optional(),
+  privileges: Security_Entity_Analytics_API_EntityAnalyticsPrivilegesDetail
 }).meta({ id: 'Security_Entity_Analytics_API_EntityAnalyticsPrivileges' })
 export type Security_Entity_Analytics_API_EntityAnalyticsPrivileges = z.infer<typeof Security_Entity_Analytics_API_EntityAnalyticsPrivileges>

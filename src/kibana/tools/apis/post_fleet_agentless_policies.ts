@@ -19,7 +19,7 @@ export const post_fleet_agentless_policiesDefinitions: KbApiDefinition[] = [
   {
     name: 'post-fleet-agentless-policies',
     namespace: 'fleet-agentless-policies',
-    description: 'Create an agentless policy',
+    description: 'Deprecated: Create a managed integration',
     method: 'POST',
     path: '/api/fleet/agentless_policies',
     destructive: false,

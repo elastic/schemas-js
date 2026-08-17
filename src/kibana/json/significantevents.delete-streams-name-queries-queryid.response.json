@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-streams-name-queries-queryid","x-api":{"id":"significantevents.delete-streams-name-queries-queryid","name":"delete-streams-name-queries-queryid","namespace":"significantevents"},"type":"object","properties":{}}

@@ -15,11 +15,14 @@ import { z } from 'zod'
 export const PostFleetAgentsBulkRequestDiagnosticsRequest = z.object({
   additional_metrics: z.array(z.enum(['CPU'])).optional(),
   agents: z.union([z.array(z.string()), z.string()]),
-  batchSize: z.number().optional()
+  batchSize: z.number().optional(),
+  dryRun: z.boolean().optional()
 }).meta({ id: 'PostFleetAgentsBulkRequestDiagnosticsRequest' })
 export type PostFleetAgentsBulkRequestDiagnosticsRequest = z.infer<typeof PostFleetAgentsBulkRequestDiagnosticsRequest>
 
-export const PostFleetAgentsBulkRequestDiagnosticsResponse = z.object({
+export const PostFleetAgentsBulkRequestDiagnosticsResponse = z.union([z.object({
   actionId: z.string()
-}).meta({ id: 'PostFleetAgentsBulkRequestDiagnosticsResponse' })
+}), z.object({
+  count: z.number()
+})]).meta({ id: 'PostFleetAgentsBulkRequestDiagnosticsResponse' })
 export type PostFleetAgentsBulkRequestDiagnosticsResponse = z.infer<typeof PostFleetAgentsBulkRequestDiagnosticsResponse>

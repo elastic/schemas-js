@@ -12,12 +12,34 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
+export const Kibana_HTTP_APIs_output_response_ssl = z.object({
+  certificate: z.string().optional(),
+  certificate_authorities: z.array(z.string()).optional(),
+  key: z.string().optional(),
+  verification_mode: z.enum(['full', 'none', 'certificate', 'strict']).optional()
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_output_response_ssl' })
+export type Kibana_HTTP_APIs_output_response_ssl = z.infer<typeof Kibana_HTTP_APIs_output_response_ssl>
+
+export const Kibana_HTTP_APIs_output_response_shipper = z.object({
+  compression_level: z.number().nullable().optional(),
+  disk_queue_compression_enabled: z.boolean().nullable().optional(),
+  disk_queue_enabled: z.boolean().nullable().optional(),
+  disk_queue_encryption_enabled: z.boolean().nullable().optional(),
+  disk_queue_max_size: z.number().nullable().optional(),
+  disk_queue_path: z.string().nullable().optional(),
+  loadbalance: z.boolean().nullable().optional(),
+  max_batch_bytes: z.number().nullable().optional(),
+  mem_queue_events: z.number().nullable().optional(),
+  queue_flush_timeout: z.number().nullable().optional()
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_output_response_shipper' })
+export type Kibana_HTTP_APIs_output_response_shipper = z.infer<typeof Kibana_HTTP_APIs_output_response_shipper>
+
 export const Kibana_HTTP_APIs_output_ssl = z.object({
   certificate: z.string().optional(),
   certificate_authorities: z.array(z.string()).optional(),
   key: z.string().optional(),
   verification_mode: z.enum(['full', 'none', 'certificate', 'strict']).optional()
-}).passthrough().meta({ id: 'Kibana_HTTP_APIs_output_ssl' })
+}).meta({ id: 'Kibana_HTTP_APIs_output_ssl' })
 export type Kibana_HTTP_APIs_output_ssl = z.infer<typeof Kibana_HTTP_APIs_output_ssl>
 
 export const Kibana_HTTP_APIs_output_shipper = z.object({
@@ -31,10 +53,10 @@ export const Kibana_HTTP_APIs_output_shipper = z.object({
   max_batch_bytes: z.number().nullable().optional(),
   mem_queue_events: z.number().nullable().optional(),
   queue_flush_timeout: z.number().nullable().optional()
-}).passthrough().meta({ id: 'Kibana_HTTP_APIs_output_shipper' })
+}).meta({ id: 'Kibana_HTTP_APIs_output_shipper' })
 export type Kibana_HTTP_APIs_output_shipper = z.infer<typeof Kibana_HTTP_APIs_output_shipper>
 
-export const Kibana_HTTP_APIs_output_kafka = z.object({
+export const Kibana_HTTP_APIs_output_response_kafka = z.object({
   allow_edit: z.array(z.string()).optional(),
   auth_type: z.enum(['none', 'user_pass', 'ssl', 'kerberos']),
   broker_timeout: z.number().optional(),
@@ -88,17 +110,17 @@ export const Kibana_HTTP_APIs_output_kafka = z.object({
       }).passthrough(), z.string()])
     }).passthrough().optional()
   }).passthrough().optional(),
-  shipper: Kibana_HTTP_APIs_output_shipper.nullable().optional(),
-  ssl: Kibana_HTTP_APIs_output_ssl.nullable().optional(),
+  shipper: Kibana_HTTP_APIs_output_response_shipper.nullable().optional(),
+  ssl: Kibana_HTTP_APIs_output_response_ssl.nullable().optional(),
   timeout: z.number().optional(),
   topic: z.string().optional(),
   type: z.enum(['kafka']),
   username: z.string().nullable().optional(),
   version: z.string().optional()
-}).passthrough().meta({ id: 'Kibana_HTTP_APIs_output_kafka' })
-export type Kibana_HTTP_APIs_output_kafka = z.infer<typeof Kibana_HTTP_APIs_output_kafka>
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_output_response_kafka' })
+export type Kibana_HTTP_APIs_output_response_kafka = z.infer<typeof Kibana_HTTP_APIs_output_response_kafka>
 
-export const Kibana_HTTP_APIs_output_logstash = z.object({
+export const Kibana_HTTP_APIs_output_response_logstash = z.object({
   allow_edit: z.array(z.string()).optional(),
   ca_sha256: z.string().nullable().optional(),
   ca_trusted_fingerprint: z.string().nullable().optional(),
@@ -121,13 +143,13 @@ export const Kibana_HTTP_APIs_output_logstash = z.object({
       }).passthrough(), z.string()]).optional()
     }).passthrough().optional()
   }).passthrough().optional(),
-  shipper: Kibana_HTTP_APIs_output_shipper.nullable().optional(),
-  ssl: Kibana_HTTP_APIs_output_ssl.nullable().optional(),
+  shipper: Kibana_HTTP_APIs_output_response_shipper.nullable().optional(),
+  ssl: Kibana_HTTP_APIs_output_response_ssl.nullable().optional(),
   type: z.enum(['logstash'])
-}).passthrough().meta({ id: 'Kibana_HTTP_APIs_output_logstash' })
-export type Kibana_HTTP_APIs_output_logstash = z.infer<typeof Kibana_HTTP_APIs_output_logstash>
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_output_response_logstash' })
+export type Kibana_HTTP_APIs_output_response_logstash = z.infer<typeof Kibana_HTTP_APIs_output_response_logstash>
 
-export const Kibana_HTTP_APIs_output_remote_elasticsearch = z.object({
+export const Kibana_HTTP_APIs_output_response_remote_elasticsearch = z.object({
   allow_edit: z.array(z.string()).optional(),
   ca_sha256: z.string().nullable().optional(),
   ca_trusted_fingerprint: z.string().nullable().optional(),
@@ -158,16 +180,16 @@ export const Kibana_HTTP_APIs_output_remote_elasticsearch = z.object({
     }).passthrough().optional()
   }).passthrough().optional(),
   service_token: z.string().nullable().optional(),
-  shipper: Kibana_HTTP_APIs_output_shipper.nullable().optional(),
-  ssl: Kibana_HTTP_APIs_output_ssl.nullable().optional(),
+  shipper: Kibana_HTTP_APIs_output_response_shipper.nullable().optional(),
+  ssl: Kibana_HTTP_APIs_output_response_ssl.nullable().optional(),
   sync_integrations: z.boolean().optional(),
   sync_uninstalled_integrations: z.boolean().optional(),
   type: z.enum(['remote_elasticsearch']),
   write_to_logs_streams: z.boolean().nullable().optional()
-}).passthrough().meta({ id: 'Kibana_HTTP_APIs_output_remote_elasticsearch' })
-export type Kibana_HTTP_APIs_output_remote_elasticsearch = z.infer<typeof Kibana_HTTP_APIs_output_remote_elasticsearch>
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_output_response_remote_elasticsearch' })
+export type Kibana_HTTP_APIs_output_response_remote_elasticsearch = z.infer<typeof Kibana_HTTP_APIs_output_response_remote_elasticsearch>
 
-export const Kibana_HTTP_APIs_output_elasticsearch = z.object({
+export const Kibana_HTTP_APIs_output_response_elasticsearch = z.object({
   allow_edit: z.array(z.string()).optional(),
   ca_sha256: z.string().nullable().optional(),
   ca_trusted_fingerprint: z.string().nullable().optional(),
@@ -191,12 +213,12 @@ export const Kibana_HTTP_APIs_output_elasticsearch = z.object({
       }).passthrough(), z.string()]).optional()
     }).passthrough().optional()
   }).passthrough().optional(),
-  shipper: Kibana_HTTP_APIs_output_shipper.nullable().optional(),
-  ssl: Kibana_HTTP_APIs_output_ssl.nullable().optional(),
+  shipper: Kibana_HTTP_APIs_output_response_shipper.nullable().optional(),
+  ssl: Kibana_HTTP_APIs_output_response_ssl.nullable().optional(),
   type: z.enum(['elasticsearch']),
   write_to_logs_streams: z.boolean().nullable().optional()
-}).passthrough().meta({ id: 'Kibana_HTTP_APIs_output_elasticsearch' })
-export type Kibana_HTTP_APIs_output_elasticsearch = z.infer<typeof Kibana_HTTP_APIs_output_elasticsearch>
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_output_response_elasticsearch' })
+export type Kibana_HTTP_APIs_output_response_elasticsearch = z.infer<typeof Kibana_HTTP_APIs_output_response_elasticsearch>
 
 export const Kibana_HTTP_APIs_update_output_kafka = z.object({
   allow_edit: z.array(z.string()).optional(),
@@ -366,6 +388,6 @@ export const PutFleetOutputsOutputidRequest = z.union([Kibana_HTTP_APIs_update_o
 export type PutFleetOutputsOutputidRequest = z.infer<typeof PutFleetOutputsOutputidRequest>
 
 export const PutFleetOutputsOutputidResponse = z.object({
-  item: z.discriminatedUnion('type', [Kibana_HTTP_APIs_output_elasticsearch, Kibana_HTTP_APIs_output_remote_elasticsearch, Kibana_HTTP_APIs_output_logstash, Kibana_HTTP_APIs_output_kafka])
+  item: z.discriminatedUnion('type', [Kibana_HTTP_APIs_output_response_elasticsearch, Kibana_HTTP_APIs_output_response_remote_elasticsearch, Kibana_HTTP_APIs_output_response_logstash, Kibana_HTTP_APIs_output_response_kafka])
 }).meta({ id: 'PutFleetOutputsOutputidResponse' })
 export type PutFleetOutputsOutputidResponse = z.infer<typeof PutFleetOutputsOutputidResponse>

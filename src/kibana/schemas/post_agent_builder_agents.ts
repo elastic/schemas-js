@@ -13,9 +13,13 @@
 import { z } from 'zod'
 
 export const PostAgentBuilderAgentsRequest = z.object({
+  access_control: z.object({
+    access_mode: z.enum(['public', 'shared', 'private'])
+  }).optional(),
   avatar_color: z.string().optional(),
   avatar_symbol: z.string().optional(),
   configuration: z.object({
+    ai_indices: z.array(z.string()).optional(),
     connector_ids: z.array(z.string()).optional(),
     enable_elastic_capabilities: z.boolean().optional(),
     instructions: z.string().optional(),
@@ -29,7 +33,6 @@ export const PostAgentBuilderAgentsRequest = z.object({
   description: z.string(),
   id: z.string(),
   labels: z.array(z.string()).optional(),
-  name: z.string(),
-  visibility: z.enum(['public', 'shared', 'private']).optional()
+  name: z.string()
 }).meta({ id: 'PostAgentBuilderAgentsRequest' })
 export type PostAgentBuilderAgentsRequest = z.infer<typeof PostAgentBuilderAgentsRequest>

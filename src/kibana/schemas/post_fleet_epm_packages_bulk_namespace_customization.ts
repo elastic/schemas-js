@@ -17,7 +17,18 @@ export const Kibana_HTTP_APIs_bulk_namespace_customization_response = z.object({
     error: z.string().optional(),
     name: z.string(),
     namespace_customization_enabled_for: z.array(z.string()).optional(),
-    success: z.boolean()
+    success: z.boolean(),
+    warnings: z.array(z.object({
+      baseTemplateName: z.string(),
+      conflictingTemplates: z.array(z.object({
+        conflictType: z.enum(['overrides_fleet', 'blocked_by_same_priority', 'overridden_by_fleet']),
+        name: z.string(),
+        priority: z.number()
+      })),
+      dataStreamName: z.string(),
+      namespace: z.string(),
+      nsTemplateName: z.string()
+    })).optional()
   }))
 }).meta({ id: 'Kibana_HTTP_APIs_bulk_namespace_customization_response' })
 export type Kibana_HTTP_APIs_bulk_namespace_customization_response = z.infer<typeof Kibana_HTTP_APIs_bulk_namespace_customization_response>

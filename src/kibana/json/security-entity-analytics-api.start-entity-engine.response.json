@@ -1,1 +1,0 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"start-entity-engine","x-api":{"id":"security-entity-analytics-api.start-entity-engine","name":"start-entity-engine","namespace":"security-entity-analytics-api"},"type":"object","properties":{"started":{"type":"boolean","description":"Whether the engine was successfully started."}}}

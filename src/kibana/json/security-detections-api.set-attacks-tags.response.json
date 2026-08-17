@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"set-attacks-tags","x-api":{"id":"security-detections-api.set-attacks-tags","name":"set-attacks-tags","namespace":"security-detections-api"},"type":"object","additionalProperties":true}

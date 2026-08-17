@@ -14,5 +14,5 @@ import { z } from 'zod'
 
 export const PostStreamsResyncRequest = z.union([z.object({
 
-}), z.unknown().nullable(), z.unknown()]).meta({ id: 'PostStreamsResyncRequest' })
+}), z.unknown()]).nullable().meta({ id: 'PostStreamsResyncRequest' })
 export type PostStreamsResyncRequest = z.infer<typeof PostStreamsResyncRequest>

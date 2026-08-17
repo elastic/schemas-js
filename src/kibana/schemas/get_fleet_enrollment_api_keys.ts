@@ -17,6 +17,7 @@ export const Kibana_HTTP_APIs_enrollment_api_key = z.object({
   api_key: z.string(),
   api_key_id: z.string(),
   created_at: z.string(),
+  expire_at: z.string().optional(),
   hidden: z.boolean().optional(),
   id: z.string(),
   name: z.string().optional(),
@@ -24,11 +25,11 @@ export const Kibana_HTTP_APIs_enrollment_api_key = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_enrollment_api_key' })
 export type Kibana_HTTP_APIs_enrollment_api_key = z.infer<typeof Kibana_HTTP_APIs_enrollment_api_key>
 
-export const GetFleetEnrollmentApiKeysResponse = z.object({
+export const Kibana_HTTP_APIs_get_enrollment_api_keys_response = z.object({
   items: z.array(Kibana_HTTP_APIs_enrollment_api_key),
   list: z.array(Kibana_HTTP_APIs_enrollment_api_key),
   page: z.number(),
   perPage: z.number(),
   total: z.number()
-}).meta({ id: 'GetFleetEnrollmentApiKeysResponse' })
-export type GetFleetEnrollmentApiKeysResponse = z.infer<typeof GetFleetEnrollmentApiKeysResponse>
+}).meta({ id: 'Kibana_HTTP_APIs_get_enrollment_api_keys_response' })
+export type Kibana_HTTP_APIs_get_enrollment_api_keys_response = z.infer<typeof Kibana_HTTP_APIs_get_enrollment_api_keys_response>

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-links-id","x-api":{"id":"links.put-links-id","name":"put-links-id","namespace":"links"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_LinksItemResponse"}

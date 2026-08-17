@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/streams.put-streams-name-queries-queryid.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/significantevents.put-streams-name-queries-queryid.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
@@ -18,7 +18,7 @@ const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 export const put_streams_name_queries_queryidDefinitions: KbApiDefinition[] = [
   {
     name: 'put-streams-name-queries-queryid',
-    namespace: 'streams',
+    namespace: 'significantevents',
     description: 'Upsert a query to a stream',
     method: 'PUT',
     path: '/api/streams/{name}/queries/{queryId}',

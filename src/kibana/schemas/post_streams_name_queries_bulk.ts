@@ -20,6 +20,7 @@ export const PostStreamsNameQueriesBulkRequest = z.object({
         query: z.string()
       }),
       evidence: z.array(z.string()).optional(),
+      expires_at: z.string().optional(),
       id: z.string(),
       severity_score: z.number().optional(),
       title: z.string()

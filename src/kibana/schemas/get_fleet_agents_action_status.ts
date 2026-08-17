@@ -36,7 +36,7 @@ export const GetFleetAgentsActionStatusResponse = z.object({
     revision: z.number().optional(),
     startTime: z.string().optional(),
     status: z.enum(['COMPLETE', 'EXPIRED', 'CANCELLED', 'FAILED', 'IN_PROGRESS', 'ROLLOUT_PASSED']),
-    type: z.enum(['UPGRADE', 'UNENROLL', 'SETTINGS', 'POLICY_REASSIGN', 'CANCEL', 'FORCE_UNENROLL', 'REQUEST_DIAGNOSTICS', 'UPDATE_TAGS', 'POLICY_CHANGE', 'INPUT_ACTION', 'MIGRATE', 'PRIVILEGE_LEVEL_CHANGE', 'ROLLBACK']),
+    type: z.enum(['UPGRADE', 'UNENROLL', 'SETTINGS', 'POLICY_REASSIGN', 'CANCEL', 'FORCE_UNENROLL', 'REQUEST_DIAGNOSTICS', 'UPDATE_TAGS', 'POLICY_CHANGE', 'INPUT_ACTION', 'MIGRATE', 'PRIVILEGE_LEVEL_CHANGE', 'ROLLBACK', 'REMOVE_COLLECTOR']),
     version: z.string().optional()
   }))
 }).meta({ id: 'GetFleetAgentsActionStatusResponse' })

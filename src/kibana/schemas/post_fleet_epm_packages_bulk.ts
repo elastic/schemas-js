@@ -38,6 +38,7 @@ export const Kibana_HTTP_APIs_kibana_asset_reference = z.object({
 export type Kibana_HTTP_APIs_kibana_asset_reference = z.infer<typeof Kibana_HTTP_APIs_kibana_asset_reference>
 
 export const Kibana_HTTP_APIs_bulk_install_packages_from_registry_request = z.object({
+  allow_outdated_version: z.boolean().optional(),
   force: z.boolean().optional(),
   packages: z.array(z.union([z.string(), z.object({
     name: z.string(),

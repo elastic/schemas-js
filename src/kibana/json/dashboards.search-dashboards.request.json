@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"search-dashboards","x-api":{"id":"dashboards.search-dashboards","name":"search-dashboards","namespace":"dashboards"},"x-method":"GET","x-path":"/api/dashboards","x-destructive":false,"type":"object","properties":{}}

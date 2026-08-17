@@ -20,6 +20,7 @@ export type SLOs_time_window = z.infer<typeof SLOs_time_window>
 
 export const SLOs_settings = z.object({
   frequency: z.string().optional(),
+  preventCrossProjectSearch: z.boolean().optional(),
   preventInitialBackfill: z.boolean().optional(),
   syncDelay: z.string().optional(),
   syncField: z.string().optional()

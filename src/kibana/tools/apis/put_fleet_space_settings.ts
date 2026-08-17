@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/misc.put-fleet-space-settings.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/fleet-internals.put-fleet-space-settings.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
@@ -18,11 +18,11 @@ const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 export const put_fleet_space_settingsDefinitions: KbApiDefinition[] = [
   {
     name: 'put-fleet-space-settings',
-    namespace: 'misc',
+    namespace: 'fleet-internals',
     description: 'Create space settings',
     method: 'PUT',
     path: '/api/fleet/space_settings',
-    destructive: false,
+    destructive: true,
     input: _inputSchema,
   },
 ]

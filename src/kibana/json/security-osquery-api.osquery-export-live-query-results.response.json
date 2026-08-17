@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"osquery-export-live-query-results","x-api":{"id":"security-osquery-api.osquery-export-live-query-results","name":"osquery-export-live-query-results","namespace":"security-osquery-api"},"$ref":"./_defs.json#/$defs/Security_Osquery_API_ExportJsonResponse"}

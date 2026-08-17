@@ -14,5 +14,5 @@ import { z } from 'zod'
 
 export const PutStreamsStreamnameAttachmentsAttachmenttypeAttachmentidRequest = z.union([z.object({
 
-}), z.unknown().nullable(), z.unknown()]).meta({ id: 'PutStreamsStreamnameAttachmentsAttachmenttypeAttachmentidRequest' })
+}), z.unknown()]).nullable().meta({ id: 'PutStreamsStreamnameAttachmentsAttachmenttypeAttachmentidRequest' })
 export type PutStreamsStreamnameAttachmentsAttachmenttypeAttachmentidRequest = z.infer<typeof PutStreamsStreamnameAttachmentsAttachmenttypeAttachmentidRequest>

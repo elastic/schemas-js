@@ -18,7 +18,7 @@ export const PutSecurityEntityStoreEntitiesBulkRequest = z.object({
       '@timestamp': z.string().optional(),
       asset: z.object({
         business_unit: z.string().optional(),
-        criticality: z.union([z.enum(['low_impact', 'medium_impact', 'high_impact', 'extreme_impact']), z.unknown().nullable()]).optional(),
+        criticality: z.enum(['low_impact', 'medium_impact', 'high_impact', 'extreme_impact']).nullable().optional(),
         environment: z.string().optional(),
         id: z.string().optional(),
         model: z.string().optional(),
@@ -194,7 +194,7 @@ export const PutSecurityEntityStoreEntitiesBulkRequest = z.object({
       '@timestamp': z.string().optional(),
       asset: z.object({
         business_unit: z.string().optional(),
-        criticality: z.union([z.enum(['low_impact', 'medium_impact', 'high_impact', 'extreme_impact']), z.unknown().nullable()]).optional(),
+        criticality: z.enum(['low_impact', 'medium_impact', 'high_impact', 'extreme_impact']).nullable().optional(),
         environment: z.string().optional(),
         id: z.string().optional(),
         model: z.string().optional(),
@@ -380,7 +380,7 @@ export const PutSecurityEntityStoreEntitiesBulkRequest = z.object({
       '@timestamp': z.string().optional(),
       asset: z.object({
         business_unit: z.string().optional(),
-        criticality: z.union([z.enum(['low_impact', 'medium_impact', 'high_impact', 'extreme_impact']), z.unknown().nullable()]).optional(),
+        criticality: z.enum(['low_impact', 'medium_impact', 'high_impact', 'extreme_impact']).nullable().optional(),
         environment: z.string().optional(),
         id: z.string().optional(),
         model: z.string().optional(),
@@ -562,7 +562,7 @@ export const PutSecurityEntityStoreEntitiesBulkRequest = z.object({
       '@timestamp': z.string().optional(),
       asset: z.object({
         business_unit: z.string().optional(),
-        criticality: z.union([z.enum(['low_impact', 'medium_impact', 'high_impact', 'extreme_impact']), z.unknown().nullable()]).optional(),
+        criticality: z.enum(['low_impact', 'medium_impact', 'high_impact', 'extreme_impact']).nullable().optional(),
         environment: z.string().optional(),
         id: z.string().optional(),
         model: z.string().optional(),

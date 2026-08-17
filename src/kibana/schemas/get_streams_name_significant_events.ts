@@ -14,5 +14,5 @@ import { z } from 'zod'
 
 export const GetStreamsNameSignificantEventsRequest = z.union([z.object({
 
-}), z.unknown().nullable(), z.unknown()]).meta({ id: 'GetStreamsNameSignificantEventsRequest' })
+}), z.unknown()]).nullable().meta({ id: 'GetStreamsNameSignificantEventsRequest' })
 export type GetStreamsNameSignificantEventsRequest = z.infer<typeof GetStreamsNameSignificantEventsRequest>

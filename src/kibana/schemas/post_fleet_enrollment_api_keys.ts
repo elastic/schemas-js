@@ -17,6 +17,7 @@ export const Kibana_HTTP_APIs_enrollment_api_key = z.object({
   api_key: z.string(),
   api_key_id: z.string(),
   created_at: z.string(),
+  expire_at: z.string().optional(),
   hidden: z.boolean().optional(),
   id: z.string(),
   name: z.string().optional(),
@@ -31,8 +32,8 @@ export const Kibana_HTTP_APIs_new_enrollment_api_key = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_new_enrollment_api_key' })
 export type Kibana_HTTP_APIs_new_enrollment_api_key = z.infer<typeof Kibana_HTTP_APIs_new_enrollment_api_key>
 
-export const Kibana_HTTP_APIs_enrollment_api_key_response = z.object({
+export const Kibana_HTTP_APIs_create_enrollment_api_key_response = z.object({
   action: z.enum(['created']),
   item: Kibana_HTTP_APIs_enrollment_api_key
-}).meta({ id: 'Kibana_HTTP_APIs_enrollment_api_key_response' })
-export type Kibana_HTTP_APIs_enrollment_api_key_response = z.infer<typeof Kibana_HTTP_APIs_enrollment_api_key_response>
+}).meta({ id: 'Kibana_HTTP_APIs_create_enrollment_api_key_response' })
+export type Kibana_HTTP_APIs_create_enrollment_api_key_response = z.infer<typeof Kibana_HTTP_APIs_create_enrollment_api_key_response>

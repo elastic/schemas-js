@@ -22,39 +22,59 @@ export const Kibana_HTTP_APIs_package_icon = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_package_icon' })
 export type Kibana_HTTP_APIs_package_icon = z.infer<typeof Kibana_HTTP_APIs_package_icon>
 
-export const Kibana_HTTP_APIs_kibana_asset_reference = z.object({
+export const Kibana_HTTP_APIs_package_info_kibana_asset_reference = z.object({
   deferred: z.boolean().optional(),
   id: z.string(),
   originId: z.string().optional(),
   type: z.union([z.enum(['dashboard', 'lens', 'visualization', 'search', 'index-pattern', 'map', 'ml-module', 'security-rule', 'csp-rule-template', 'osquery-pack-asset', 'osquery-saved-query', 'tag']), z.string()])
-}).meta({ id: 'Kibana_HTTP_APIs_kibana_asset_reference' })
-export type Kibana_HTTP_APIs_kibana_asset_reference = z.infer<typeof Kibana_HTTP_APIs_kibana_asset_reference>
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_package_info_kibana_asset_reference' })
+export type Kibana_HTTP_APIs_package_info_kibana_asset_reference = z.infer<typeof Kibana_HTTP_APIs_package_info_kibana_asset_reference>
 
-export const Kibana_HTTP_APIs_es_asset_reference = z.object({
+export const Kibana_HTTP_APIs_package_info_es_asset_reference = z.object({
   customDataStreamOriginDataset: z.string().optional(),
   customDataStreamOriginType: z.string().optional(),
   deferred: z.boolean().optional(),
   id: z.string(),
   type: z.enum(['index', 'index_template', 'component_template', 'ingest_pipeline', 'ilm_policy', 'data_stream_ilm_policy', 'transform', 'ml_model', 'knowledge_base', 'esql_view']),
   version: z.string().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_es_asset_reference' })
-export type Kibana_HTTP_APIs_es_asset_reference = z.infer<typeof Kibana_HTTP_APIs_es_asset_reference>
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_package_info_es_asset_reference' })
+export type Kibana_HTTP_APIs_package_info_es_asset_reference = z.infer<typeof Kibana_HTTP_APIs_package_info_es_asset_reference>
 
-export const Kibana_HTTP_APIs_deprecation_info = z.object({
+export const Kibana_HTTP_APIs_package_info_icon = z.object({
+  dark_mode: z.boolean().optional(),
+  path: z.string().optional(),
+  size: z.string().optional(),
+  src: z.string(),
+  title: z.string().optional(),
+  type: z.string().optional()
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_package_info_icon' })
+export type Kibana_HTTP_APIs_package_info_icon = z.infer<typeof Kibana_HTTP_APIs_package_info_icon>
+
+export const Kibana_HTTP_APIs_package_info_deprecation_info = z.object({
   description: z.string(),
   replaced_by: z.record(z.string(), z.string()).optional(),
   since: z.string().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_deprecation_info' })
-export type Kibana_HTTP_APIs_deprecation_info = z.infer<typeof Kibana_HTTP_APIs_deprecation_info>
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_package_info_deprecation_info' })
+export type Kibana_HTTP_APIs_package_info_deprecation_info = z.infer<typeof Kibana_HTTP_APIs_package_info_deprecation_info>
+
+export const Kibana_HTTP_APIs_package_info_conditions_deprecation_info = z.object({
+  description: z.string(),
+  replaced_by: z.record(z.string(), z.string()).optional(),
+  since: z.string().optional()
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_package_info_conditions_deprecation_info' })
+export type Kibana_HTTP_APIs_package_info_conditions_deprecation_info = z.infer<typeof Kibana_HTTP_APIs_package_info_conditions_deprecation_info>
 
 export const Kibana_HTTP_APIs_update_package_request = z.object({
   keepPoliciesUpToDate: z.boolean().optional(),
-  namespace_customization_enabled_for: z.array(z.string()).optional()
+  namespace_customization_enabled_for: z.array(z.string()).optional(),
+  namespace_customization_settings: z.record(z.string(), z.object({
+    ilm_policy: z.string().optional()
+  }).passthrough()).optional()
 }).meta({ id: 'Kibana_HTTP_APIs_update_package_request' })
 export type Kibana_HTTP_APIs_update_package_request = z.infer<typeof Kibana_HTTP_APIs_update_package_request>
 
-export const Kibana_HTTP_APIs_installation_info = z.object({
-  additional_spaces_installed_kibana: z.record(z.string(), z.array(Kibana_HTTP_APIs_kibana_asset_reference)).optional(),
+export const Kibana_HTTP_APIs_package_info_installation_info = z.object({
+  additional_spaces_installed_kibana: z.record(z.string(), z.array(Kibana_HTTP_APIs_package_info_kibana_asset_reference)).optional(),
   created_at: z.string().optional(),
   experimental_data_stream_features: z.array(z.object({
     data_stream: z.string(),
@@ -68,8 +88,8 @@ export const Kibana_HTTP_APIs_installation_info = z.object({
   install_format_schema_version: z.string().optional(),
   install_source: z.enum(['registry', 'upload', 'bundled', 'custom']),
   install_status: z.enum(['installed', 'installing', 'install_failed']),
-  installed_es: z.array(Kibana_HTTP_APIs_es_asset_reference),
-  installed_kibana: z.array(Kibana_HTTP_APIs_kibana_asset_reference),
+  installed_es: z.array(Kibana_HTTP_APIs_package_info_es_asset_reference),
+  installed_kibana: z.array(Kibana_HTTP_APIs_package_info_kibana_asset_reference),
   installed_kibana_space_id: z.string().optional(),
   is_rollback_ttl_expired: z.boolean().optional(),
   latest_executed_state: z.object({
@@ -84,6 +104,10 @@ export const Kibana_HTTP_APIs_installation_info = z.object({
       name: z.string(),
       stack: z.string().optional()
     }).passthrough(),
+    missing_assets: z.array(z.object({
+      id: z.string(),
+      type: z.string()
+    }).passthrough()).optional(),
     target_version: z.string()
   }).passthrough()).optional(),
   name: z.string(),
@@ -95,8 +119,8 @@ export const Kibana_HTTP_APIs_installation_info = z.object({
   verification_key_id: z.string().nullable().optional(),
   verification_status: z.enum(['unverified', 'verified', 'unknown']),
   version: z.string()
-}).passthrough().meta({ id: 'Kibana_HTTP_APIs_installation_info' })
-export type Kibana_HTTP_APIs_installation_info = z.infer<typeof Kibana_HTTP_APIs_installation_info>
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_package_info_installation_info' })
+export type Kibana_HTTP_APIs_package_info_installation_info = z.infer<typeof Kibana_HTTP_APIs_package_info_installation_info>
 
 export const Kibana_HTTP_APIs_get_package_info = z.object({
   agent: z.object({
@@ -112,7 +136,7 @@ export const Kibana_HTTP_APIs_get_package_info = z.object({
   assets: z.record(z.string(), z.unknown().nullable()),
   categories: z.array(z.string()).optional(),
   conditions: z.object({
-    deprecated: Kibana_HTTP_APIs_deprecation_info.optional(),
+    deprecated: Kibana_HTTP_APIs_package_info_conditions_deprecation_info.optional(),
     elastic: z.object({
       capabilities: z.array(z.string()).optional(),
       subscription: z.string().optional()
@@ -122,7 +146,7 @@ export const Kibana_HTTP_APIs_get_package_info = z.object({
     }).passthrough().optional()
   }).passthrough().optional(),
   data_streams: z.array(z.record(z.string(), z.unknown().nullable())).optional(),
-  deprecated: Kibana_HTTP_APIs_deprecation_info.optional(),
+  deprecated: Kibana_HTTP_APIs_package_info_deprecation_info.optional(),
   description: z.string().optional(),
   discovery: z.object({
     datasets: z.array(z.object({
@@ -135,8 +159,8 @@ export const Kibana_HTTP_APIs_get_package_info = z.object({
   download: z.string().optional(),
   elasticsearch: z.record(z.string(), z.unknown().nullable()).optional(),
   format_version: z.string().optional(),
-  icons: z.array(Kibana_HTTP_APIs_package_icon).optional(),
-  installationInfo: Kibana_HTTP_APIs_installation_info.optional(),
+  icons: z.array(Kibana_HTTP_APIs_package_info_icon).optional(),
+  installationInfo: Kibana_HTTP_APIs_package_info_installation_info.optional(),
   internal: z.boolean().optional(),
   keepPoliciesUpToDate: z.boolean().optional(),
   latestVersion: z.string().optional(),
@@ -179,6 +203,17 @@ export const Kibana_HTTP_APIs_get_package_info = z.object({
 export type Kibana_HTTP_APIs_get_package_info = z.infer<typeof Kibana_HTTP_APIs_get_package_info>
 
 export const Kibana_HTTP_APIs_update_package_response = z.object({
-  item: Kibana_HTTP_APIs_get_package_info
+  item: Kibana_HTTP_APIs_get_package_info,
+  warnings: z.array(z.object({
+    baseTemplateName: z.string(),
+    conflictingTemplates: z.array(z.object({
+      conflictType: z.enum(['overrides_fleet', 'blocked_by_same_priority', 'overridden_by_fleet']),
+      name: z.string(),
+      priority: z.number()
+    })),
+    dataStreamName: z.string(),
+    namespace: z.string(),
+    nsTemplateName: z.string()
+  })).optional()
 }).meta({ id: 'Kibana_HTTP_APIs_update_package_response' })
 export type Kibana_HTTP_APIs_update_package_response = z.infer<typeof Kibana_HTTP_APIs_update_package_response>

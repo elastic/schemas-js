@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-markdowns-id","x-api":{"id":"markdowns.delete-markdowns-id","name":"delete-markdowns-id","namespace":"markdowns"},"type":"object","properties":{}}

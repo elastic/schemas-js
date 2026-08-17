@@ -15,6 +15,7 @@ import { z } from 'zod'
 export const PostFleetAgentsBulkPrivilegeLevelChangeRequest = z.object({
   agents: z.union([z.array(z.string()), z.string()]),
   batchSize: z.number().optional(),
+  dryRun: z.boolean().optional(),
   user_info: z.object({
     groupname: z.string().optional(),
     password: z.string().optional(),
@@ -23,7 +24,9 @@ export const PostFleetAgentsBulkPrivilegeLevelChangeRequest = z.object({
 }).meta({ id: 'PostFleetAgentsBulkPrivilegeLevelChangeRequest' })
 export type PostFleetAgentsBulkPrivilegeLevelChangeRequest = z.infer<typeof PostFleetAgentsBulkPrivilegeLevelChangeRequest>
 
-export const PostFleetAgentsBulkPrivilegeLevelChangeResponse = z.object({
+export const PostFleetAgentsBulkPrivilegeLevelChangeResponse = z.union([z.object({
   actionId: z.string()
-}).meta({ id: 'PostFleetAgentsBulkPrivilegeLevelChangeResponse' })
+}), z.object({
+  count: z.number()
+})]).meta({ id: 'PostFleetAgentsBulkPrivilegeLevelChangeResponse' })
 export type PostFleetAgentsBulkPrivilegeLevelChangeResponse = z.infer<typeof PostFleetAgentsBulkPrivilegeLevelChangeResponse>

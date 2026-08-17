@@ -14,5 +14,5 @@ import { z } from 'zod'
 
 export const GetStreamsNameIngestRequest = z.union([z.object({
 
-}), z.unknown().nullable(), z.unknown()]).meta({ id: 'GetStreamsNameIngestRequest' })
+}), z.unknown()]).nullable().meta({ id: 'GetStreamsNameIngestRequest' })
 export type GetStreamsNameIngestRequest = z.infer<typeof GetStreamsNameIngestRequest>

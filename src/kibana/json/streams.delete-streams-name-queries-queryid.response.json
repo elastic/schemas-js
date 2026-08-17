@@ -1,1 +1,0 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-streams-name-queries-queryid","x-api":{"id":"streams.delete-streams-name-queries-queryid","name":"delete-streams-name-queries-queryid","namespace":"streams"},"type":"object","properties":{}}

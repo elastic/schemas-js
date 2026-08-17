@@ -14,6 +14,7 @@ import { z } from 'zod'
 
 export const GetFleetFleetServerHostsResponse = z.object({
   items: z.array(z.object({
+    allow_edit: z.array(z.string()).optional(),
     host_urls: z.array(z.string()),
     id: z.string(),
     is_default: z.boolean().optional(),
@@ -25,13 +26,13 @@ export const GetFleetFleetServerHostsResponse = z.object({
       ssl: z.object({
         agent_key: z.union([z.object({
           id: z.string()
-        }), z.string()]).optional(),
+        }), z.string()]).nullable().optional(),
         es_key: z.union([z.object({
           id: z.string()
-        }), z.string()]).optional(),
+        }), z.string()]).nullable().optional(),
         key: z.union([z.object({
           id: z.string()
-        }), z.string()]).optional()
+        }), z.string()]).nullable().optional()
       }).optional()
     }).optional(),
     ssl: z.object({

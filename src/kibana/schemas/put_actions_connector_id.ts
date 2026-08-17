@@ -164,7 +164,7 @@ export type cert_type = z.infer<typeof cert_type>
 export const ca = z.string().meta({ id: 'ca' })
 export type ca = z.infer<typeof ca>
 
-export const auth_type = z.enum(['webhook-authentication-basic', 'webhook-authentication-ssl']).nullable().meta({ id: 'auth_type' })
+export const auth_type = z.enum(['webhook-authentication-basic', 'webhook-authentication-ssl', 'webhook-oauth2-client-credentials']).nullable().meta({ id: 'auth_type' })
 export type auth_type = z.infer<typeof auth_type>
 
 export const torq_config = z.object({
@@ -326,6 +326,7 @@ export const gemini_config = z.object({
 export type gemini_config = z.infer<typeof gemini_config>
 
 export const email_config = z.object({
+  allowHtml: z.boolean().optional(),
   clientId: z.string().nullable().optional(),
   from: z.string(),
   hasAuth: z.boolean().optional(),
@@ -365,6 +366,7 @@ export const cases_webhook_secrets = z.object({
 export type cases_webhook_secrets = z.infer<typeof cases_webhook_secrets>
 
 export const webhook_secrets = z.object({
+  clientSecret: z.string().optional(),
   crt: crt.optional(),
   key: key.optional(),
   pfx: pfx.optional(),
@@ -387,7 +389,7 @@ export const cases_webhook_config = z.object({
   getIncidentResponseExternalTitleKey: z.string(),
   getIncidentUrl: z.string(),
   hasAuth: has_auth.optional(),
-  headers: z.string().optional(),
+  headers: z.record(z.string(), z.string()).nullable().optional(),
   updateIncidentJson: z.string(),
   updateIncidentMethod: z.enum(['patch', 'post', 'put']).optional(),
   updateIncidentUrl: z.string(),
@@ -397,12 +399,16 @@ export const cases_webhook_config = z.object({
 export type cases_webhook_config = z.infer<typeof cases_webhook_config>
 
 export const webhook_config = z.object({
+  accessTokenUrl: z.string().optional(),
+  additionalFields: z.string().nullable().optional(),
   authType: auth_type.optional(),
   ca: ca.optional(),
   certType: cert_type.optional(),
+  clientId: z.string().optional(),
   hasAuth: has_auth.optional(),
   headers: z.object({}).nullable().optional(),
-  method: z.enum(['post', 'put']).optional(),
+  method: z.enum(['post', 'put', 'patch', 'get', 'delete']).optional(),
+  scope: z.string().optional(),
   url: z.string().optional(),
   verificationMode: verification_mode.optional()
 }).meta({ id: 'webhook_config' })

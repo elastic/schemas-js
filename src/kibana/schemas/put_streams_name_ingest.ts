@@ -121,7 +121,7 @@ export const Kibana_HTTP_APIs_StreamlangConditionBlock = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_StreamlangConditionBlock' })
 export type Kibana_HTTP_APIs_StreamlangConditionBlock = z.infer<typeof Kibana_HTTP_APIs_StreamlangConditionBlock>
 
-export const Kibana_HTTP_APIs_RecursiveRecord: z.ZodTypeAny = z.record(z.string(), z.union([z.union([z.string(), z.number(), z.boolean(), z.unknown().nullable(), z.unknown()]), z.array(z.union([z.string(), z.number(), z.boolean(), z.unknown().nullable(), z.unknown()])), z.array(z.unknown()), z.lazy(() => Kibana_HTTP_APIs_RecursiveRecord)])).meta({ id: 'Kibana_HTTP_APIs_RecursiveRecord' })
+export const Kibana_HTTP_APIs_RecursiveRecord: z.ZodTypeAny = z.record(z.string(), z.union([z.union([z.string(), z.number(), z.boolean(), z.unknown()]).nullable(), z.array(z.union([z.string(), z.number(), z.boolean(), z.unknown()]).nullable()), z.array(z.unknown()), z.lazy(() => Kibana_HTTP_APIs_RecursiveRecord)])).meta({ id: 'Kibana_HTTP_APIs_RecursiveRecord' })
 export type Kibana_HTTP_APIs_RecursiveRecord = z.infer<typeof Kibana_HTTP_APIs_RecursiveRecord>
 
 export const Kibana_HTTP_APIs_Condition: z.ZodTypeAny = z.union([Kibana_HTTP_APIs_FilterCondition, z.object({
@@ -423,8 +423,7 @@ export const PutStreamsNameIngestRequest = z.object({
     failure_store: Kibana_HTTP_APIs_FailureStore,
     lifecycle: Kibana_HTTP_APIs_IngestStreamLifecycle,
     processing: z.object({
-      steps: z.array(z.lazy(() => Kibana_HTTP_APIs_StreamlangStep)),
-      updated_at: z.unknown().optional()
+      steps: z.array(z.lazy(() => Kibana_HTTP_APIs_StreamlangStep))
     }),
     settings: z.object({
       'index.number_of_replicas': z.object({
@@ -453,10 +452,11 @@ export const PutStreamsNameIngestRequest = z.object({
     }),
     failure_store: Kibana_HTTP_APIs_FailureStore,
     lifecycle: Kibana_HTTP_APIs_IngestStreamLifecycle,
-    processing: z.object({
-      steps: z.array(z.lazy(() => Kibana_HTTP_APIs_StreamlangStep)),
-      updated_at: z.unknown().optional()
-    }),
+    processing: z.union([z.object({
+      steps: z.array(z.lazy(() => Kibana_HTTP_APIs_StreamlangStep))
+    }), z.object({
+      processors: z.array(z.record(z.string(), z.unknown()))
+    })]),
     settings: z.object({
       'index.number_of_replicas': z.object({
         value: z.number()

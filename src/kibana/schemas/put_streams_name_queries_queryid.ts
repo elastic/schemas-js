@@ -18,6 +18,7 @@ export const PutStreamsNameQueriesQueryidRequest = z.object({
     query: z.string()
   }),
   evidence: z.array(z.string()).optional(),
+  expires_at: z.string().optional(),
   severity_score: z.number().optional(),
   title: z.string()
 }).meta({ id: 'PutStreamsNameQueriesQueryidRequest' })

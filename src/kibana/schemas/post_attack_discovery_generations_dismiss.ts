@@ -22,7 +22,7 @@ export const PostAttackDiscoveryGenerationsDismissResponse = z.object({
   discoveries: z.number(),
   end: z.string().optional(),
   execution_uuid: z.string(),
-  loading_message: z.string(),
+  loading_message: z.string().optional(),
   reason: z.string().optional(),
   start: z.string(),
   status: z.enum(['canceled', 'dismissed', 'failed', 'started', 'succeeded'])

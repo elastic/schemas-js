@@ -30,18 +30,40 @@ export const Kibana_HTTP_APIs_package_policy_package = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_package_policy_package' })
 export type Kibana_HTTP_APIs_package_policy_package = z.infer<typeof Kibana_HTTP_APIs_package_policy_package>
 
-export const Kibana_HTTP_APIs_deprecation_info = z.object({
+export const Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info = z.object({
   description: z.string(),
   replaced_by: z.record(z.string(), z.string()).optional(),
   since: z.string().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_deprecation_info' })
-export type Kibana_HTTP_APIs_deprecation_info = z.infer<typeof Kibana_HTTP_APIs_deprecation_info>
+}).meta({ id: 'Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info' })
+export type Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info = z.infer<typeof Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info>
 
-export const Kibana_HTTP_APIs_new_agent_policy = z.object({
+export const Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info = z.object({
+  description: z.string(),
+  replaced_by: z.record(z.string(), z.string()).optional(),
+  since: z.string().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info' })
+export type Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info = z.infer<typeof Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info>
+
+export const Kibana_HTTP_APIs_package_policy_stream_deprecation_info = z.object({
+  description: z.string(),
+  replaced_by: z.record(z.string(), z.string()).optional(),
+  since: z.string().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_package_policy_stream_deprecation_info' })
+export type Kibana_HTTP_APIs_package_policy_stream_deprecation_info = z.infer<typeof Kibana_HTTP_APIs_package_policy_stream_deprecation_info>
+
+export const Kibana_HTTP_APIs_package_policy_input_deprecation_info = z.object({
+  description: z.string(),
+  replaced_by: z.record(z.string(), z.string()).optional(),
+  since: z.string().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_package_policy_input_deprecation_info' })
+export type Kibana_HTTP_APIs_package_policy_input_deprecation_info = z.infer<typeof Kibana_HTTP_APIs_package_policy_input_deprecation_info>
+
+export const Kibana_HTTP_APIs_update_agent_policy_request_body = z.object({
   advanced_settings: z.object({
     agent_download_target_directory: z.unknown().nullable().optional(),
     agent_download_timeout: z.unknown().nullable().optional(),
     agent_features_disable_policy_change_acks_enabled: z.unknown().nullable().optional(),
+    agent_features_include_tags_in_events_enabled: z.unknown().nullable().optional(),
     agent_internal: z.unknown().nullable().optional(),
     agent_limits_go_max_procs: z.unknown().nullable().optional(),
     agent_logging_files_interval: z.unknown().nullable().optional(),
@@ -127,8 +149,8 @@ export const Kibana_HTTP_APIs_new_agent_policy = z.object({
   space_ids: z.array(z.string()).optional(),
   supports_agentless: z.boolean().nullable().optional(),
   unenroll_timeout: z.number().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_new_agent_policy' })
-export type Kibana_HTTP_APIs_new_agent_policy = z.infer<typeof Kibana_HTTP_APIs_new_agent_policy>
+}).meta({ id: 'Kibana_HTTP_APIs_update_agent_policy_request_body' })
+export type Kibana_HTTP_APIs_update_agent_policy_request_body = z.infer<typeof Kibana_HTTP_APIs_update_agent_policy_request_body>
 
 export const Kibana_HTTP_APIs_package_policy_response = z.object({
   additional_datastreams_permissions: z.array(z.string()).nullable().optional(),
@@ -149,7 +171,7 @@ export const Kibana_HTTP_APIs_package_policy_response = z.object({
     name: z.string(),
     value: z.union([z.string(), z.number()])
   })).nullable().optional(),
-  id: z.string().optional(),
+  id: z.string(),
   inputs: z.union([z.array(z.object({
     compiled_input: z.unknown().nullable(),
     condition: z.string().nullable().optional(),
@@ -158,7 +180,7 @@ export const Kibana_HTTP_APIs_package_policy_response = z.object({
       type: z.string().optional(),
       value: z.unknown().nullable()
     })).optional(),
-    deprecated: Kibana_HTTP_APIs_deprecation_info.optional(),
+    deprecated: Kibana_HTTP_APIs_package_policy_input_deprecation_info.optional(),
     enabled: z.boolean(),
     id: z.string().optional(),
     keep_enabled: z.boolean().optional(),
@@ -184,7 +206,7 @@ export const Kibana_HTTP_APIs_package_policy_response = z.object({
         }).optional(),
         type: z.string().optional()
       }),
-      deprecated: Kibana_HTTP_APIs_deprecation_info.optional(),
+      deprecated: Kibana_HTTP_APIs_package_policy_stream_deprecation_info.optional(),
       enabled: z.boolean(),
       id: z.string().optional(),
       keep_enabled: z.boolean().optional(),
@@ -206,11 +228,11 @@ export const Kibana_HTTP_APIs_package_policy_response = z.object({
     })).optional()
   })), z.record(z.string(), z.object({
     condition: z.string().nullable().optional(),
-    deprecated: Kibana_HTTP_APIs_deprecation_info.optional(),
+    deprecated: Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info.optional(),
     enabled: z.boolean().optional(),
     streams: z.record(z.string(), z.object({
       condition: z.string().nullable().optional(),
-      deprecated: Kibana_HTTP_APIs_deprecation_info.optional(),
+      deprecated: Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info.optional(),
       enabled: z.boolean().optional(),
       var_group_selections: z.record(z.string(), z.string()).optional(),
       vars: z.record(z.string(), z.union([z.string(), z.number(), z.boolean(), z.array(z.string()), z.array(z.number()), z.object({
@@ -261,6 +283,7 @@ export const Kibana_HTTP_APIs_agent_policy_response = z.object({
     agent_download_target_directory: z.unknown().nullable().optional(),
     agent_download_timeout: z.unknown().nullable().optional(),
     agent_features_disable_policy_change_acks_enabled: z.unknown().nullable().optional(),
+    agent_features_include_tags_in_events_enabled: z.unknown().nullable().optional(),
     agent_internal: z.unknown().nullable().optional(),
     agent_limits_go_max_procs: z.unknown().nullable().optional(),
     agent_logging_files_interval: z.unknown().nullable().optional(),

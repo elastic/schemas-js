@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-security-entity-store-resolution-rules-id-enable","x-api":{"id":"security-entity-store.put-security-entity-store-resolution-rules-id-enable","name":"put-security-entity-store-resolution-rules-id-enable","namespace":"security-entity-store"},"type":"object","properties":{}}
