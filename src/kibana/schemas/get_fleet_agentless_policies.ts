@@ -11,76 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Kibana_HTTP_APIs_managed_integration_package = z.object({
-  name: z.string(),
-  title: z.string(),
-  version: z.string()
-}).meta({ id: 'Kibana_HTTP_APIs_managed_integration_package' })
-export type Kibana_HTTP_APIs_managed_integration_package = z.infer<typeof Kibana_HTTP_APIs_managed_integration_package>
-
-export const Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info = z.object({
-  description: z.string(),
-  replaced_by: z.record(z.string(), z.string()).optional(),
-  since: z.string().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info' })
-export type Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info = z.infer<typeof Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info>
-
-export const Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info = z.object({
-  description: z.string(),
-  replaced_by: z.record(z.string(), z.string()).optional(),
-  since: z.string().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info' })
-export type Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info = z.infer<typeof Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info>
-
-export const Kibana_HTTP_APIs_managed_integration_cloud_connector = z.object({
-  cloud_connector_id: z.string(),
-  enabled: z.boolean()
-}).meta({ id: 'Kibana_HTTP_APIs_managed_integration_cloud_connector' })
-export type Kibana_HTTP_APIs_managed_integration_cloud_connector = z.infer<typeof Kibana_HTTP_APIs_managed_integration_cloud_connector>
-
-export const Kibana_HTTP_APIs_managed_integration = z.object({
-  additional_datastreams_permissions: z.array(z.string()).optional(),
-  cloud_connector: Kibana_HTTP_APIs_managed_integration_cloud_connector.nullable().optional(),
-  created_at: z.string(),
-  created_by: z.string(),
-  description: z.string().optional(),
-  global_data_tags: z.array(z.object({
-    name: z.string(),
-    value: z.union([z.string(), z.number()])
-  })).optional(),
-  id: z.string(),
-  inputs: z.record(z.string(), z.object({
-    condition: z.string().nullable().optional(),
-    deprecated: Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info.optional(),
-    enabled: z.boolean().optional(),
-    streams: z.record(z.string(), z.object({
-      condition: z.string().nullable().optional(),
-      deprecated: Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info.optional(),
-      enabled: z.boolean().optional(),
-      var_group_selections: z.record(z.string(), z.string()).optional(),
-      vars: z.record(z.string(), z.union([z.string(), z.number(), z.boolean(), z.array(z.string()), z.array(z.number()), z.object({
-        id: z.string(),
-        isSecretRef: z.boolean()
-      })]).nullable()).optional()
-    })).optional(),
-    vars: z.record(z.string(), z.union([z.string(), z.number(), z.boolean(), z.array(z.string()), z.array(z.number()), z.object({
-      id: z.string(),
-      isSecretRef: z.boolean()
-    })]).nullable()).optional()
-  })),
-  name: z.string(),
-  namespace: z.string().optional(),
-  package: Kibana_HTTP_APIs_managed_integration_package,
-  updated_at: z.string(),
-  updated_by: z.string(),
-  var_group_selections: z.record(z.string(), z.string()).optional(),
-  vars: z.record(z.string(), z.union([z.string(), z.number(), z.boolean(), z.array(z.string()), z.array(z.number()), z.object({
-    id: z.string(),
-    isSecretRef: z.boolean()
-  })]).nullable()).optional()
-}).meta({ id: 'Kibana_HTTP_APIs_managed_integration' })
-export type Kibana_HTTP_APIs_managed_integration = z.infer<typeof Kibana_HTTP_APIs_managed_integration>
+import { Kibana_HTTP_APIs_managed_integration } from './schemas/kibana.js'
 
 export const GetFleetAgentlessPoliciesResponse = z.object({
   items: z.array(Kibana_HTTP_APIs_managed_integration),
@@ -89,3 +20,9 @@ export const GetFleetAgentlessPoliciesResponse = z.object({
   total: z.number()
 }).meta({ id: 'GetFleetAgentlessPoliciesResponse' })
 export type GetFleetAgentlessPoliciesResponse = z.infer<typeof GetFleetAgentlessPoliciesResponse>
+
+export { Kibana_HTTP_APIs_managed_integration } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_managed_integration_package } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_managed_integration_cloud_connector } from './schemas/kibana.js'

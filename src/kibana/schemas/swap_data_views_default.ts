@@ -12,16 +12,6 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Data_views_swap_data_view_request_object = z.object({
-  delete: z.boolean().optional(),
-  forId: z.union([z.string(), z.array(z.string())]).optional(),
-  forType: z.string().optional(),
-  fromId: z.string(),
-  fromType: z.string().optional(),
-  toId: z.string()
-}).meta({ id: 'Data_views_swap_data_view_request_object' })
-export type Data_views_swap_data_view_request_object = z.infer<typeof Data_views_swap_data_view_request_object>
-
 export const SwapDataViewsDefaultResponse = z.object({
   deleteStatus: z.object({
     deletePerformed: z.boolean().optional(),
@@ -33,3 +23,5 @@ export const SwapDataViewsDefaultResponse = z.object({
   })).optional()
 }).meta({ id: 'SwapDataViewsDefaultResponse' })
 export type SwapDataViewsDefaultResponse = z.infer<typeof SwapDataViewsDefaultResponse>
+
+export { Data_views_swap_data_view_request_object } from './schemas/data.js'

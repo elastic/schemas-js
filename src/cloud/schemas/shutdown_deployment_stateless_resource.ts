@@ -12,16 +12,8 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const ReplyWarning = z.object({
-  code: z.string(),
-  message: z.string().optional()
-}).meta({ id: 'ReplyWarning' })
-export type ReplyWarning = z.infer<typeof ReplyWarning>
-
-export const DeploymentResourceCommandResponse = z.object({
-  warnings: z.array(ReplyWarning).optional()
-}).meta({ id: 'DeploymentResourceCommandResponse' })
-export type DeploymentResourceCommandResponse = z.infer<typeof DeploymentResourceCommandResponse>
+import { DeploymentResourceCommandResponse } from './definitions/deployment.js'
+import { ReplyWarning } from './definitions/misc.js'
 
 export const ShutdownDeploymentStatelessResourceResponse = DeploymentResourceCommandResponse
 export type ShutdownDeploymentStatelessResourceResponse = DeploymentResourceCommandResponse

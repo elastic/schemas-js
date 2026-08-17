@@ -12,73 +12,10 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const EmptyResponse = z.object({}).meta({ id: 'EmptyResponse' })
-export type EmptyResponse = z.infer<typeof EmptyResponse>
-
-export const ProjectRoleAssignment = z.object({
-  role_id: z.string(),
-  organization_id: z.string(),
-  all: z.boolean().optional(),
-  project_ids: z.array(z.string()).optional(),
-  application_roles: z.array(z.string()).optional()
-}).meta({ id: 'ProjectRoleAssignment' })
-export type ProjectRoleAssignment = z.infer<typeof ProjectRoleAssignment>
-
-export const DeploymentRoleAssignment = z.object({
-  role_id: z.string(),
-  organization_id: z.string(),
-  all: z.boolean().optional(),
-  deployment_ids: z.array(z.string()).optional(),
-  application_roles: z.array(z.string()).optional()
-}).meta({ id: 'DeploymentRoleAssignment' })
-export type DeploymentRoleAssignment = z.infer<typeof DeploymentRoleAssignment>
-
-export const OrganizationRoleAssignment = z.object({
-  role_id: z.string(),
-  organization_id: z.string(),
-  application_roles: z.array(z.string()).optional()
-}).meta({ id: 'OrganizationRoleAssignment' })
-export type OrganizationRoleAssignment = z.infer<typeof OrganizationRoleAssignment>
-
-export const PlatformRoleAssignment = z.object({
-  role_id: z.string()
-}).meta({ id: 'PlatformRoleAssignment' })
-export type PlatformRoleAssignment = z.infer<typeof PlatformRoleAssignment>
-
-export const RoleMappingGroupRule = z.object({
-  group: z.string()
-}).meta({ id: 'RoleMappingGroupRule' })
-export type RoleMappingGroupRule = z.infer<typeof RoleMappingGroupRule>
-
-export const ProjectRoleAssignments = z.object({
-  elasticsearch: z.array(ProjectRoleAssignment).optional(),
-  observability: z.array(ProjectRoleAssignment).optional(),
-  security: z.array(ProjectRoleAssignment).optional(),
-  workplaceai: z.array(ProjectRoleAssignment).optional()
-}).meta({ id: 'ProjectRoleAssignments' })
-export type ProjectRoleAssignments = z.infer<typeof ProjectRoleAssignments>
-
-export const RoleMappingRule = z.object({
-  any: z.array(RoleMappingGroupRule).optional(),
-  all: z.array(RoleMappingGroupRule).optional()
-}).meta({ id: 'RoleMappingRule' })
-export type RoleMappingRule = z.infer<typeof RoleMappingRule>
-
-export const RoleAssignments = z.object({
-  platform: z.array(PlatformRoleAssignment).optional(),
-  organization: z.array(OrganizationRoleAssignment).optional(),
-  deployment: z.array(DeploymentRoleAssignment).optional(),
-  project: ProjectRoleAssignments.optional()
-}).meta({ id: 'RoleAssignments' })
-export type RoleAssignments = z.infer<typeof RoleAssignments>
-
-export const RoleMapping = z.object({
-  enabled: z.boolean(),
-  name: z.string(),
-  rule: RoleMappingRule,
-  role_assignments: RoleAssignments
-}).meta({ id: 'RoleMapping' })
-export type RoleMapping = z.infer<typeof RoleMapping>
+import { DeploymentRoleAssignment } from './definitions/deployment.js'
+import { EmptyResponse, PlatformRoleAssignment, ProjectRoleAssignment, ProjectRoleAssignments } from './definitions/misc.js'
+import { OrganizationRoleAssignment } from './definitions/organization.js'
+import { RoleAssignments, RoleMapping, RoleMappingPropertyRule, RoleMappingRule } from './definitions/role.js'
 
 export const UpdateOrganizationRoleMappingRequest = z.object({
   mappings: z.array(RoleMapping)

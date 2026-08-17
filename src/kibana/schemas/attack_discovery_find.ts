@@ -11,48 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Attack_discovery_API_User = z.object({
-  id: z.string().optional(),
-  name: z.string().optional()
-}).meta({ id: 'Security_Attack_discovery_API_User' })
-export type Security_Attack_discovery_API_User = z.infer<typeof Security_Attack_discovery_API_User>
-
-export const Security_Attack_discovery_API_NonEmptyTimestamp = z.string().meta({ id: 'Security_Attack_discovery_API_NonEmptyTimestamp' })
-export type Security_Attack_discovery_API_NonEmptyTimestamp = z.infer<typeof Security_Attack_discovery_API_NonEmptyTimestamp>
-
-export const Security_Attack_discovery_API_Replacements = z.record(z.string(), z.string()).meta({ id: 'Security_Attack_discovery_API_Replacements' })
-export type Security_Attack_discovery_API_Replacements = z.infer<typeof Security_Attack_discovery_API_Replacements>
-
-export const Security_Attack_discovery_API_AttackDiscoveryApiAlert = z.object({
-  alert_ids: z.array(z.string()),
-  alert_rule_uuid: z.string().optional(),
-  alert_start: z.string().optional(),
-  alert_updated_at: z.string().optional(),
-  alert_updated_by_user_id: z.string().optional(),
-  alert_updated_by_user_name: z.string().optional(),
-  alert_workflow_status: z.string().optional(),
-  alert_workflow_status_updated_at: z.string().optional(),
-  assignees: z.array(z.string()).optional(),
-  connector_id: z.string(),
-  connector_name: z.string(),
-  details_markdown: z.string(),
-  entity_summary_markdown: z.string().optional(),
-  generation_uuid: z.string(),
-  id: z.string(),
-  index: z.string().optional(),
-  mitre_attack_tactics: z.array(z.string()).optional(),
-  replacements: Security_Attack_discovery_API_Replacements.optional(),
-  risk_score: z.number().optional(),
-  summary_markdown: z.string(),
-  tags: z.array(z.string()).optional(),
-  timestamp: Security_Attack_discovery_API_NonEmptyTimestamp,
-  title: z.string(),
-  user_id: z.string().optional(),
-  user_name: z.string().optional(),
-  users: z.array(Security_Attack_discovery_API_User).optional()
-}).meta({ id: 'Security_Attack_discovery_API_AttackDiscoveryApiAlert' })
-export type Security_Attack_discovery_API_AttackDiscoveryApiAlert = z.infer<typeof Security_Attack_discovery_API_AttackDiscoveryApiAlert>
+import { Security_Attack_discovery_API_AttackDiscoveryApiAlert } from './schemas/security.js'
 
 export const AttackDiscoveryFindResponse = z.object({
   connector_names: z.array(z.string()),
@@ -64,3 +23,8 @@ export const AttackDiscoveryFindResponse = z.object({
   unique_alert_ids_count: z.number()
 }).meta({ id: 'AttackDiscoveryFindResponse' })
 export type AttackDiscoveryFindResponse = z.infer<typeof AttackDiscoveryFindResponse>
+
+export { Security_Attack_discovery_API_AttackDiscoveryApiAlert } from './schemas/security.js'
+export { Security_Attack_discovery_API_User } from './schemas/security.js'
+export { Security_Attack_discovery_API_NonEmptyTimestamp } from './schemas/security.js'
+export { Security_Attack_discovery_API_Replacements } from './schemas/security.js'

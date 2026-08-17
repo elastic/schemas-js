@@ -3,25 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const Name = z.string().meta({ id: 'Name' })
-export type Name = z.infer<typeof Name>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
+import { Name } from './_types.js'
 
 /**
  * Create SAML service provider metadata.
@@ -32,8 +17,7 @@ export type RequestBase = z.infer<typeof RequestBase>
  * This API generates Service Provider metadata based on the configuration of a SAML realm in Elasticsearch.
  */
 export const SecuritySamlServiceProviderMetadataRequest = z.object({
-  ...RequestBase.shape,
-  realm_name: Name.describe('The name of the SAML realm in Elasticsearch.').meta({ found_in: 'path' })
+  realm_name: z.lazy(() => Name).describe('The name of the SAML realm in Elasticsearch.').meta({ found_in: 'path' })
 }).meta({ id: 'SecuritySamlServiceProviderMetadataRequest' })
 export type SecuritySamlServiceProviderMetadataRequest = z.infer<typeof SecuritySamlServiceProviderMetadataRequest>
 

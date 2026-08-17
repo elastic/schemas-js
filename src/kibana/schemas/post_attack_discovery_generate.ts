@@ -11,27 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Attack_discovery_API_NonEmptyString = z.string().meta({ id: 'Security_Attack_discovery_API_NonEmptyString' })
-export type Security_Attack_discovery_API_NonEmptyString = z.infer<typeof Security_Attack_discovery_API_NonEmptyString>
-
-export const Security_Attack_discovery_API_Replacements = z.record(z.string(), z.string()).meta({ id: 'Security_Attack_discovery_API_Replacements' })
-export type Security_Attack_discovery_API_Replacements = z.infer<typeof Security_Attack_discovery_API_Replacements>
-
-export const Security_Attack_discovery_API_Provider = z.enum(['OpenAI', 'Azure OpenAI', 'Other']).meta({ id: 'Security_Attack_discovery_API_Provider' })
-export type Security_Attack_discovery_API_Provider = z.infer<typeof Security_Attack_discovery_API_Provider>
-
-export const Security_Attack_discovery_API_NonEmptyTimestamp = z.string().meta({ id: 'Security_Attack_discovery_API_NonEmptyTimestamp' })
-export type Security_Attack_discovery_API_NonEmptyTimestamp = z.infer<typeof Security_Attack_discovery_API_NonEmptyTimestamp>
-
-export const Security_Attack_discovery_API_ApiConfig = z.object({
-  actionTypeId: z.string(),
-  connectorId: z.string(),
-  defaultSystemPromptId: z.string().optional(),
-  model: z.string().optional(),
-  provider: Security_Attack_discovery_API_Provider.optional()
-}).meta({ id: 'Security_Attack_discovery_API_ApiConfig' })
-export type Security_Attack_discovery_API_ApiConfig = z.infer<typeof Security_Attack_discovery_API_ApiConfig>
+import { Security_Attack_discovery_API_ApiConfig, Security_Attack_discovery_API_NonEmptyString, Security_Attack_discovery_API_NonEmptyTimestamp, Security_Attack_discovery_API_Replacements } from './schemas/security.js'
 
 export const Security_Attack_discovery_API_AnonymizationFieldResponse = z.object({
   allowed: z.boolean().optional(),
@@ -66,3 +46,9 @@ export const PostAttackDiscoveryGenerateResponse = z.object({
   execution_uuid: Security_Attack_discovery_API_NonEmptyString
 }).meta({ id: 'PostAttackDiscoveryGenerateResponse' })
 export type PostAttackDiscoveryGenerateResponse = z.infer<typeof PostAttackDiscoveryGenerateResponse>
+
+export { Security_Attack_discovery_API_NonEmptyString } from './schemas/security.js'
+export { Security_Attack_discovery_API_Replacements } from './schemas/security.js'
+export { Security_Attack_discovery_API_ApiConfig } from './schemas/security.js'
+export { Security_Attack_discovery_API_Provider } from './schemas/security.js'
+export { Security_Attack_discovery_API_NonEmptyTimestamp } from './schemas/security.js'

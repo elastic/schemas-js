@@ -9,16 +9,5 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
-/* eslint-disable @typescript-eslint/no-redeclare */
-import { z } from 'zod'
-
-export const Security_Entity_Analytics_API_PrivilegeMonitoringEngineStatus = z.enum(['started', 'error', 'disabled', 'not_installed']).meta({ id: 'Security_Entity_Analytics_API_PrivilegeMonitoringEngineStatus' })
-export type Security_Entity_Analytics_API_PrivilegeMonitoringEngineStatus = z.infer<typeof Security_Entity_Analytics_API_PrivilegeMonitoringEngineStatus>
-
-export const Security_Entity_Analytics_API_MonitoringEngineDescriptor = z.object({
-  error: z.object({
-    message: z.string().optional()
-  }).optional(),
-  status: Security_Entity_Analytics_API_PrivilegeMonitoringEngineStatus
-}).meta({ id: 'Security_Entity_Analytics_API_MonitoringEngineDescriptor' })
-export type Security_Entity_Analytics_API_MonitoringEngineDescriptor = z.infer<typeof Security_Entity_Analytics_API_MonitoringEngineDescriptor>
+export { Security_Entity_Analytics_API_MonitoringEngineDescriptor } from './schemas/security.js'
+export { Security_Entity_Analytics_API_PrivilegeMonitoringEngineStatus } from './schemas/security.js'

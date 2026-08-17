@@ -12,11 +12,6 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const SLOs_bulk_purge_rollup_response = z.object({
-  taskId: z.string().optional()
-}).meta({ id: 'SLOs_bulk_purge_rollup_response' })
-export type SLOs_bulk_purge_rollup_response = z.infer<typeof SLOs_bulk_purge_rollup_response>
-
 export const SLOs_bulk_purge_rollup_request = z.object({
   list: z.array(z.string()),
   purgePolicy: z.union([z.object({
@@ -28,3 +23,8 @@ export const SLOs_bulk_purge_rollup_request = z.object({
   })])
 }).meta({ id: 'SLOs_bulk_purge_rollup_request' })
 export type SLOs_bulk_purge_rollup_request = z.infer<typeof SLOs_bulk_purge_rollup_request>
+
+export const SLOs_bulk_purge_rollup_response = z.object({
+  taskId: z.string().optional()
+}).meta({ id: 'SLOs_bulk_purge_rollup_response' })
+export type SLOs_bulk_purge_rollup_response = z.infer<typeof SLOs_bulk_purge_rollup_response>

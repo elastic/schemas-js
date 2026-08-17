@@ -12,11 +12,8 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const ReplyWarning = z.object({
-  code: z.string(),
-  message: z.string().optional()
-}).meta({ id: 'ReplyWarning' })
-export type ReplyWarning = z.infer<typeof ReplyWarning>
+import { DeploymentResourceCommandResponse } from './definitions/deployment.js'
+import { ReplyWarning } from './definitions/misc.js'
 
 export const IndexPattern = z.object({
   index_pattern: z.string(),
@@ -24,11 +21,6 @@ export const IndexPattern = z.object({
   node_attributes: z.record(z.string(), z.string()).optional()
 }).meta({ id: 'IndexPattern' })
 export type IndexPattern = z.infer<typeof IndexPattern>
-
-export const DeploymentResourceCommandResponse = z.object({
-  warnings: z.array(ReplyWarning).optional()
-}).meta({ id: 'DeploymentResourceCommandResponse' })
-export type DeploymentResourceCommandResponse = z.infer<typeof DeploymentResourceCommandResponse>
 
 export const EnableIlmRequest = z.object({
   index_patterns: z.array(IndexPattern)

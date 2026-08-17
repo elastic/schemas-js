@@ -9,10 +9,4 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
-/* eslint-disable @typescript-eslint/no-redeclare */
-import { z } from 'zod'
-
-export const Security_Endpoint_Management_API_ProtectionUpdatesNoteResponse = z.object({
-  note: z.string().optional()
-}).meta({ id: 'Security_Endpoint_Management_API_ProtectionUpdatesNoteResponse' })
-export type Security_Endpoint_Management_API_ProtectionUpdatesNoteResponse = z.infer<typeof Security_Endpoint_Management_API_ProtectionUpdatesNoteResponse>
+export { Security_Endpoint_Management_API_ProtectionUpdatesNoteResponse } from './schemas/security.js'

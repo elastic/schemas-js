@@ -3,52 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const EpochTime = z.any().meta({ id: 'EpochTime' })
-export type EpochTime = z.infer<typeof EpochTime>
-
-/**
- * A date and time, either as a string whose format can depend on the context (defaulting to ISO 8601), or a
- * number of milliseconds since the Epoch. Elasticsearch accepts both as input, but will generally output a string
- * representation.
- */
-export const DateTime = z.union([z.string(), EpochTime]).meta({ id: 'DateTime' })
-export type DateTime = z.infer<typeof DateTime>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
-
-export const VersionString = z.string().meta({ id: 'VersionString' })
-export type VersionString = z.infer<typeof VersionString>
-
-export const LicenseLicenseStatus = z.enum(['active', 'valid', 'invalid', 'expired']).meta({ id: 'LicenseLicenseStatus' })
-export type LicenseLicenseStatus = z.infer<typeof LicenseLicenseStatus>
-
-export const LicenseLicenseType = z.enum(['missing', 'trial', 'basic', 'standard', 'dev', 'silver', 'gold', 'platinum', 'enterprise']).meta({ id: 'LicenseLicenseType' })
-export type LicenseLicenseType = z.infer<typeof LicenseLicenseType>
+import { DateTime, EpochTime, VersionString } from './_types.js'
+import { LicenseLicenseStatus, LicenseLicenseType } from './license.js'
 
 export const XpackInfoBuildInformation = z.object({
-  date: DateTime,
+  date: z.lazy(() => DateTime),
   hash: z.string()
 }).meta({ id: 'XpackInfoBuildInformation' })
 export type XpackInfoBuildInformation = z.infer<typeof XpackInfoBuildInformation>
 
 export const XpackInfoNativeCodeInformation = z.object({
   build_hash: z.string(),
-  version: VersionString
+  version: z.lazy(() => VersionString)
 }).meta({ id: 'XpackInfoNativeCodeInformation' })
 export type XpackInfoNativeCodeInformation = z.infer<typeof XpackInfoNativeCodeInformation>
 
@@ -88,7 +57,7 @@ export const XpackInfoFeatures = z.object({
 export type XpackInfoFeatures = z.infer<typeof XpackInfoFeatures>
 
 export const XpackInfoMinimalLicenseInformation = z.object({
-  expiry_date_in_millis: EpochTime,
+  expiry_date_in_millis: z.lazy(() => EpochTime),
   mode: LicenseLicenseType,
   status: LicenseLicenseStatus,
   type: LicenseLicenseType,
@@ -109,7 +78,6 @@ export type XpackInfoXPackCategory = z.infer<typeof XpackInfoXPackCategory>
  * * Feature information for the features that are currently enabled and available under the current license.
  */
 export const XpackInfoRequest = z.object({
-  ...RequestBase.shape,
   categories: z.array(XpackInfoXPackCategory).describe('A comma-separated list of the information categories to include in the response. For example, `build,license,features`.').optional().meta({ found_in: 'query' }),
   accept_enterprise: z.boolean().describe('If used, this otherwise ignored parameter must be set to true').optional().meta({ found_in: 'query' }),
   human: z.boolean().describe('Defines whether additional human-readable information is included in the response. In particular, it adds descriptions and a tag line.').optional().meta({ found_in: 'query' })

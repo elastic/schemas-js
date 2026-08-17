@@ -12,6 +12,13 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
+export const Kibana_HTTP_APIs_bulk_namespace_customization_request = z.object({
+  disable: z.array(z.string()).optional(),
+  enable: z.array(z.string()).optional(),
+  packages: z.array(z.string())
+}).meta({ id: 'Kibana_HTTP_APIs_bulk_namespace_customization_request' })
+export type Kibana_HTTP_APIs_bulk_namespace_customization_request = z.infer<typeof Kibana_HTTP_APIs_bulk_namespace_customization_request>
+
 export const Kibana_HTTP_APIs_bulk_namespace_customization_response = z.object({
   items: z.array(z.object({
     error: z.string().optional(),
@@ -32,10 +39,3 @@ export const Kibana_HTTP_APIs_bulk_namespace_customization_response = z.object({
   }))
 }).meta({ id: 'Kibana_HTTP_APIs_bulk_namespace_customization_response' })
 export type Kibana_HTTP_APIs_bulk_namespace_customization_response = z.infer<typeof Kibana_HTTP_APIs_bulk_namespace_customization_response>
-
-export const Kibana_HTTP_APIs_bulk_namespace_customization_request = z.object({
-  disable: z.array(z.string()).optional(),
-  enable: z.array(z.string()).optional(),
-  packages: z.array(z.string())
-}).meta({ id: 'Kibana_HTTP_APIs_bulk_namespace_customization_request' })
-export type Kibana_HTTP_APIs_bulk_namespace_customization_request = z.infer<typeof Kibana_HTTP_APIs_bulk_namespace_customization_request>

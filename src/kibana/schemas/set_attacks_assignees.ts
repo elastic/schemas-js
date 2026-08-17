@@ -11,18 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Detections_API_UpdateRelatedAlerts = z.boolean().meta({ id: 'Security_Detections_API_UpdateRelatedAlerts' })
-export type Security_Detections_API_UpdateRelatedAlerts = z.infer<typeof Security_Detections_API_UpdateRelatedAlerts>
-
-export const Security_Detections_API_AlertIds = z.array(z.string()).meta({ id: 'Security_Detections_API_AlertIds' })
-export type Security_Detections_API_AlertIds = z.infer<typeof Security_Detections_API_AlertIds>
-
-export const Security_Detections_API_AlertAssignees = z.object({
-  add: z.array(z.string()),
-  remove: z.array(z.string())
-}).meta({ id: 'Security_Detections_API_AlertAssignees' })
-export type Security_Detections_API_AlertAssignees = z.infer<typeof Security_Detections_API_AlertAssignees>
+import { Security_Detections_API_AlertAssignees, Security_Detections_API_AlertIds, Security_Detections_API_UpdateRelatedAlerts } from './schemas/security.js'
 
 export const Security_Detections_API_SetAttacksAssigneesByIds = z.object({
   assignees: Security_Detections_API_AlertAssignees,
@@ -33,3 +22,7 @@ export type Security_Detections_API_SetAttacksAssigneesByIds = z.infer<typeof Se
 
 export const SetAttacksAssigneesResponse = z.record(z.string(), z.unknown()).meta({ id: 'SetAttacksAssigneesResponse' })
 export type SetAttacksAssigneesResponse = z.infer<typeof SetAttacksAssigneesResponse>
+
+export { Security_Detections_API_UpdateRelatedAlerts } from './schemas/security.js'
+export { Security_Detections_API_AlertIds } from './schemas/security.js'
+export { Security_Detections_API_AlertAssignees } from './schemas/security.js'

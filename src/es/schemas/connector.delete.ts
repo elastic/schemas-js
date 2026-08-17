@@ -3,30 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const AcknowledgedResponseBase = z.object({
-  acknowledged: z.boolean().describe('For a successful response, this value is always true. On failure, an exception is returned instead.')
-}).meta({ id: 'AcknowledgedResponseBase' })
-export type AcknowledgedResponseBase = z.infer<typeof AcknowledgedResponseBase>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
+import { AcknowledgedResponseBase, Id } from './_types.js'
 
 /**
  * Delete a connector.
@@ -37,12 +17,11 @@ export type RequestBase = z.infer<typeof RequestBase>
  * These need to be removed manually.
  */
 export const ConnectorDeleteRequest = z.object({
-  ...RequestBase.shape,
-  connector_id: Id.describe('The unique identifier of the connector to be deleted').meta({ found_in: 'path' }),
+  connector_id: z.lazy(() => Id).describe('The unique identifier of the connector to be deleted').meta({ found_in: 'path' }),
   delete_sync_jobs: z.boolean().describe('A flag indicating if associated sync jobs should be also removed.').optional().meta({ found_in: 'query' }),
   hard: z.boolean().describe('A flag indicating if the connector should be hard deleted.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'ConnectorDeleteRequest' })
 export type ConnectorDeleteRequest = z.infer<typeof ConnectorDeleteRequest>
 
-export const ConnectorDeleteResponse = AcknowledgedResponseBase.meta({ id: 'ConnectorDeleteResponse' })
+export const ConnectorDeleteResponse = z.lazy(() => AcknowledgedResponseBase).meta({ id: 'ConnectorDeleteResponse' })
 export type ConnectorDeleteResponse = z.infer<typeof ConnectorDeleteResponse>

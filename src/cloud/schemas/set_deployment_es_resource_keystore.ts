@@ -12,18 +12,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const KeystoreSecret = z.object({
-  value: z.object({}).optional(),
-  as_file: z.boolean().optional(),
-  is_allowlisted: z.boolean().optional(),
-  is_reloadable: z.boolean().optional()
-}).meta({ id: 'KeystoreSecret' })
-export type KeystoreSecret = z.infer<typeof KeystoreSecret>
-
-export const KeystoreContents = z.object({
-  secrets: z.record(z.string(), KeystoreSecret)
-}).meta({ id: 'KeystoreContents' })
-export type KeystoreContents = z.infer<typeof KeystoreContents>
+import { KeystoreContents, KeystoreSecret } from './definitions/misc.js'
 
 export const SetDeploymentEsResourceKeystoreRequest = KeystoreContents
 export type SetDeploymentEsResourceKeystoreRequest = KeystoreContents

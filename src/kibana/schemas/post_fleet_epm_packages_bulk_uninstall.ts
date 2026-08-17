@@ -12,11 +12,6 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Kibana_HTTP_APIs_bulk_upgrade_packages_response = z.object({
-  taskId: z.string()
-}).meta({ id: 'Kibana_HTTP_APIs_bulk_upgrade_packages_response' })
-export type Kibana_HTTP_APIs_bulk_upgrade_packages_response = z.infer<typeof Kibana_HTTP_APIs_bulk_upgrade_packages_response>
-
 export const Kibana_HTTP_APIs_bulk_uninstall_packages_request = z.object({
   force: z.boolean().optional(),
   packages: z.array(z.object({
@@ -25,3 +20,5 @@ export const Kibana_HTTP_APIs_bulk_uninstall_packages_request = z.object({
   }))
 }).meta({ id: 'Kibana_HTTP_APIs_bulk_uninstall_packages_request' })
 export type Kibana_HTTP_APIs_bulk_uninstall_packages_request = z.infer<typeof Kibana_HTTP_APIs_bulk_uninstall_packages_request>
+
+export { Kibana_HTTP_APIs_bulk_upgrade_packages_response } from './schemas/kibana.js'

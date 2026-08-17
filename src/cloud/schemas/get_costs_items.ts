@@ -12,64 +12,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Period = z.object({
-  start: z.string(),
-  end: z.string()
-}).meta({ id: 'Period' })
-export type Period = z.infer<typeof Period>
-
-export const DtsRate = z.object({
-  value: z.number(),
-  formatted_value: z.string()
-}).meta({ id: 'DtsRate' })
-export type DtsRate = z.infer<typeof DtsRate>
-
-export const DtsQuantity = z.object({
-  value: z.number(),
-  formatted_value: z.string()
-}).meta({ id: 'DtsQuantity' })
-export type DtsQuantity = z.infer<typeof DtsQuantity>
-
-export const Dimension = z.object({
-  type: z.enum(['capacity', 'data_in', 'data_internode', 'data_out', 'storage_api', 'storage_bytes']),
-  cost: z.number()
-}).meta({ id: 'Dimension' })
-export type Dimension = z.infer<typeof Dimension>
-
-export const ItemCosts = z.object({
-  hours: z.number(),
-  instance_count: z.number(),
-  period: Period,
-  kind: z.enum(['elasticsearch', 'kibana', 'apm', 'integrations_server', 'appsearch', 'enterprise_search']),
-  price: z.number(),
-  price_per_hour: z.number(),
-  name: z.string(),
-  sku: z.string()
-}).meta({ id: 'ItemCosts' })
-export type ItemCosts = z.infer<typeof ItemCosts>
-
-export const DtsDimensionCosts = z.object({
-  cost: z.number(),
-  name: z.string(),
-  quantity: DtsQuantity,
-  rate: DtsRate,
-  sku: z.string(),
-  type: z.string()
-}).meta({ id: 'DtsDimensionCosts' })
-export type DtsDimensionCosts = z.infer<typeof DtsDimensionCosts>
-
-export const Costs = z.object({
-  total: z.number(),
-  dimensions: z.array(Dimension)
-}).meta({ id: 'Costs' })
-export type Costs = z.infer<typeof Costs>
-
-export const ItemsCosts = z.object({
-  costs: Costs,
-  data_transfer_and_storage: z.array(DtsDimensionCosts),
-  resources: z.array(ItemCosts)
-}).meta({ id: 'ItemsCosts' })
-export type ItemsCosts = z.infer<typeof ItemsCosts>
+import { Costs, Dimension, DtsDimensionCosts, DtsQuantity, DtsRate, ItemCosts, ItemsCosts, Period } from './definitions/misc.js'
 
 export const GetCostsItemsResponse = ItemsCosts
 export type GetCostsItemsResponse = ItemsCosts

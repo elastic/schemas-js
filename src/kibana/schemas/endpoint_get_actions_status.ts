@@ -12,11 +12,11 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Security_Endpoint_Management_API_PendingActionDataType = z.number().meta({ id: 'Security_Endpoint_Management_API_PendingActionDataType' })
-export type Security_Endpoint_Management_API_PendingActionDataType = z.infer<typeof Security_Endpoint_Management_API_PendingActionDataType>
-
 export const Security_Endpoint_Management_API_AgentId = z.string().meta({ id: 'Security_Endpoint_Management_API_AgentId' })
 export type Security_Endpoint_Management_API_AgentId = z.infer<typeof Security_Endpoint_Management_API_AgentId>
+
+export const Security_Endpoint_Management_API_PendingActionDataType = z.number().meta({ id: 'Security_Endpoint_Management_API_PendingActionDataType' })
+export type Security_Endpoint_Management_API_PendingActionDataType = z.infer<typeof Security_Endpoint_Management_API_PendingActionDataType>
 
 export const Security_Endpoint_Management_API_PendingActionsSchema = z.union([z.object({
   execute: Security_Endpoint_Management_API_PendingActionDataType.optional(),

@@ -9,30 +9,7 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
-/* eslint-disable @typescript-eslint/no-redeclare */
-import { z } from 'zod'
-
-export const Security_Attack_discovery_API_NonEmptyString = z.string().meta({ id: 'Security_Attack_discovery_API_NonEmptyString' })
-export type Security_Attack_discovery_API_NonEmptyString = z.infer<typeof Security_Attack_discovery_API_NonEmptyString>
-
-export const Security_Attack_discovery_API_BulkActionAttackDiscoverySchedulesError = z.object({
-  message: z.string(),
-  rule: z.object({
-    id: Security_Attack_discovery_API_NonEmptyString,
-    name: z.string()
-  }),
-  status: z.number().optional()
-}).meta({ id: 'Security_Attack_discovery_API_BulkActionAttackDiscoverySchedulesError' })
-export type Security_Attack_discovery_API_BulkActionAttackDiscoverySchedulesError = z.infer<typeof Security_Attack_discovery_API_BulkActionAttackDiscoverySchedulesError>
-
-export const Security_Attack_discovery_API_BulkActionAttackDiscoverySchedulesRequestBody = z.object({
-  ids: z.array(Security_Attack_discovery_API_NonEmptyString)
-}).meta({ id: 'Security_Attack_discovery_API_BulkActionAttackDiscoverySchedulesRequestBody' })
-export type Security_Attack_discovery_API_BulkActionAttackDiscoverySchedulesRequestBody = z.infer<typeof Security_Attack_discovery_API_BulkActionAttackDiscoverySchedulesRequestBody>
-
-export const Security_Attack_discovery_API_BulkActionAttackDiscoverySchedulesResponse = z.object({
-  errors: z.array(Security_Attack_discovery_API_BulkActionAttackDiscoverySchedulesError),
-  ids: z.array(Security_Attack_discovery_API_NonEmptyString),
-  total: z.number()
-}).meta({ id: 'Security_Attack_discovery_API_BulkActionAttackDiscoverySchedulesResponse' })
-export type Security_Attack_discovery_API_BulkActionAttackDiscoverySchedulesResponse = z.infer<typeof Security_Attack_discovery_API_BulkActionAttackDiscoverySchedulesResponse>
+export { Security_Attack_discovery_API_BulkActionAttackDiscoverySchedulesResponse } from './schemas/security.js'
+export { Security_Attack_discovery_API_NonEmptyString } from './schemas/security.js'
+export { Security_Attack_discovery_API_BulkActionAttackDiscoverySchedulesError } from './schemas/security.js'
+export { Security_Attack_discovery_API_BulkActionAttackDiscoverySchedulesRequestBody } from './schemas/security.js'

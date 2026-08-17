@@ -11,40 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Kibana_HTTP_APIs_kbn_as_code_meta = z.object({
-  created_at: z.string().optional(),
-  created_by: z.string().optional(),
-  managed: z.boolean().optional(),
-  owner: z.string().optional(),
-  updated_at: z.string().optional(),
-  updated_by: z.string().optional(),
-  version: z.string().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_kbn_as_code_meta' })
-export type Kibana_HTTP_APIs_kbn_as_code_meta = z.infer<typeof Kibana_HTTP_APIs_kbn_as_code_meta>
-
-export const Kibana_HTTP_APIs_kbn_link_type_externalLink = z.object({
-  destination: z.string(),
-  label: z.string().optional(),
-  options: z.object({
-    encode_url: z.boolean().optional(),
-    open_in_new_tab: z.boolean().optional()
-  }).optional(),
-  type: z.enum(['externalLink'])
-}).meta({ id: 'Kibana_HTTP_APIs_kbn_link_type_externalLink' })
-export type Kibana_HTTP_APIs_kbn_link_type_externalLink = z.infer<typeof Kibana_HTTP_APIs_kbn_link_type_externalLink>
-
-export const Kibana_HTTP_APIs_kbn_link_panel_type_dashboardLink = z.object({
-  destination: z.string(),
-  label: z.string().optional(),
-  options: z.object({
-    open_in_new_tab: z.boolean().optional(),
-    use_filters: z.boolean().optional(),
-    use_time_range: z.boolean().optional()
-  }).optional(),
-  type: z.enum(['dashboardLink'])
-}).meta({ id: 'Kibana_HTTP_APIs_kbn_link_panel_type_dashboardLink' })
-export type Kibana_HTTP_APIs_kbn_link_panel_type_dashboardLink = z.infer<typeof Kibana_HTTP_APIs_kbn_link_panel_type_dashboardLink>
+import { Kibana_HTTP_APIs_kbn_as_code_meta, Kibana_HTTP_APIs_kbn_link_panel_type_dashboardLink, Kibana_HTTP_APIs_kbn_link_type_externalLink } from './schemas/kibana.js'
 
 export const Kibana_HTTP_APIs_LinksItemResponse = z.object({
   data: z.object({
@@ -67,3 +34,7 @@ export const PutLinksIdRequest = z.object({
   title: z.string()
 }).meta({ id: 'PutLinksIdRequest' })
 export type PutLinksIdRequest = z.infer<typeof PutLinksIdRequest>
+
+export { Kibana_HTTP_APIs_kbn_as_code_meta } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_kbn_link_type_externalLink } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_kbn_link_panel_type_dashboardLink } from './schemas/kibana.js'

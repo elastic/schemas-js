@@ -11,22 +11,10 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Kibana_HTTP_APIs_bulk_upgrade_managed_integration_result = z.object({
-  body: z.object({
-    message: z.string()
-  }).optional(),
-  id: z.string(),
-  name: z.string().optional(),
-  statusCode: z.number().optional(),
-  success: z.boolean()
-}).meta({ id: 'Kibana_HTTP_APIs_bulk_upgrade_managed_integration_result' })
-export type Kibana_HTTP_APIs_bulk_upgrade_managed_integration_result = z.infer<typeof Kibana_HTTP_APIs_bulk_upgrade_managed_integration_result>
-
-export const Kibana_HTTP_APIs_bulk_upgrade_managed_integrations_request = z.object({
-  policyIds: z.array(z.string())
-}).meta({ id: 'Kibana_HTTP_APIs_bulk_upgrade_managed_integrations_request' })
-export type Kibana_HTTP_APIs_bulk_upgrade_managed_integrations_request = z.infer<typeof Kibana_HTTP_APIs_bulk_upgrade_managed_integrations_request>
+import { Kibana_HTTP_APIs_bulk_upgrade_managed_integration_result } from './schemas/kibana.js'
 
 export const PostFleetManagedIntegrationsUpgradeResponse = z.array(Kibana_HTTP_APIs_bulk_upgrade_managed_integration_result).meta({ id: 'PostFleetManagedIntegrationsUpgradeResponse' })
 export type PostFleetManagedIntegrationsUpgradeResponse = z.infer<typeof PostFleetManagedIntegrationsUpgradeResponse>
+
+export { Kibana_HTTP_APIs_bulk_upgrade_managed_integration_result } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_bulk_upgrade_managed_integrations_request } from './schemas/kibana.js'

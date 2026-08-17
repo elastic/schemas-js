@@ -12,23 +12,9 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Security_Detections_API_AlertsSortCombinations = z.union([z.string(), z.record(z.string(), z.unknown())]).meta({ id: 'Security_Detections_API_AlertsSortCombinations' })
-export type Security_Detections_API_AlertsSortCombinations = z.infer<typeof Security_Detections_API_AlertsSortCombinations>
-
-export const Security_Detections_API_AlertsSort = z.union([Security_Detections_API_AlertsSortCombinations, z.array(Security_Detections_API_AlertsSortCombinations)]).meta({ id: 'Security_Detections_API_AlertsSort' })
-export type Security_Detections_API_AlertsSort = z.infer<typeof Security_Detections_API_AlertsSort>
-
-export const Security_Detections_API_QueryAlertsBodyParams = z.object({
-  _source: z.union([z.boolean(), z.string(), z.array(z.string())]).optional(),
-  aggs: z.record(z.string(), z.unknown()).optional(),
-  fields: z.array(z.string()).optional(),
-  query: z.record(z.string(), z.unknown()).optional(),
-  runtime_mappings: z.record(z.string(), z.unknown()).optional(),
-  size: z.number().optional(),
-  sort: Security_Detections_API_AlertsSort.optional(),
-  track_total_hits: z.boolean().optional()
-}).meta({ id: 'Security_Detections_API_QueryAlertsBodyParams' })
-export type Security_Detections_API_QueryAlertsBodyParams = z.infer<typeof Security_Detections_API_QueryAlertsBodyParams>
-
 export const SearchAttacksResponse = z.record(z.string(), z.unknown()).meta({ id: 'SearchAttacksResponse' })
 export type SearchAttacksResponse = z.infer<typeof SearchAttacksResponse>
+
+export { Security_Detections_API_QueryAlertsBodyParams } from './schemas/security.js'
+export { Security_Detections_API_AlertsSort } from './schemas/security.js'
+export { Security_Detections_API_AlertsSortCombinations } from './schemas/security.js'

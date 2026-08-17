@@ -12,54 +12,9 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const CertificateMetaData = z.object({
-  fingerprint: z.string(),
-  valid_to: z.string(),
-  valid_from: z.string(),
-  also_trusted_by: z.array(z.string()).optional()
-}).meta({ id: 'CertificateMetaData' })
-export type CertificateMetaData = z.infer<typeof CertificateMetaData>
-
-export const ExternalTrustRelationship = z.object({
-  trust_relationship_id: z.string(),
-  name: z.string().optional(),
-  trust_all: z.boolean(),
-  trust_allowlist: z.array(z.string()).optional()
-}).meta({ id: 'ExternalTrustRelationship' })
-export type ExternalTrustRelationship = z.infer<typeof ExternalTrustRelationship>
-
-export const AccountTrustRelationship = z.object({
-  account_id: z.string(),
-  name: z.string().optional(),
-  trust_all: z.boolean(),
-  trust_allowlist: z.array(z.string()).optional()
-}).meta({ id: 'AccountTrustRelationship' })
-export type AccountTrustRelationship = z.infer<typeof AccountTrustRelationship>
-
-export const TrustedCertificate = z.object({
-  pem: z.string(),
-  metadata: CertificateMetaData.optional()
-}).meta({ id: 'TrustedCertificate' })
-export type TrustedCertificate = z.infer<typeof TrustedCertificate>
-
-export const DirectTrustRelationship = z.object({
-  uid: z.string().optional(),
-  name: z.string(),
-  type: z.enum(['ECE', 'ESS', 'generic', 'proxy']).optional(),
-  trust_all: z.boolean(),
-  trust_allowlist: z.array(z.string()).optional(),
-  scope_id: z.string().optional(),
-  additional_node_names: z.array(z.string()).optional(),
-  certificates: z.array(TrustedCertificate)
-}).meta({ id: 'DirectTrustRelationship' })
-export type DirectTrustRelationship = z.infer<typeof DirectTrustRelationship>
-
-export const ElasticsearchClusterTrustSettings = z.object({
-  accounts: z.array(AccountTrustRelationship).optional(),
-  external: z.array(ExternalTrustRelationship).optional(),
-  direct: z.array(DirectTrustRelationship).optional()
-}).meta({ id: 'ElasticsearchClusterTrustSettings' })
-export type ElasticsearchClusterTrustSettings = z.infer<typeof ElasticsearchClusterTrustSettings>
+import { AccountTrustRelationship } from './definitions/account.js'
+import { ElasticsearchClusterTrustSettings } from './definitions/elasticsearch.js'
+import { CertificateMetaData, DirectTrustRelationship, ExternalTrustRelationship, TrustedCertificate } from './definitions/misc.js'
 
 export const GetTrustedEnvsResponse = ElasticsearchClusterTrustSettings
 export type GetTrustedEnvsResponse = ElasticsearchClusterTrustSettings

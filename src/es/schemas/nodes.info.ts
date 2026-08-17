@@ -3,133 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const long = z.number().meta({ id: 'long' })
-export type long = z.infer<typeof long>
-
-export const ByteSize = z.union([long, z.string()]).meta({ id: 'ByteSize' })
-export type ByteSize = z.infer<typeof ByteSize>
-
-/**
- * A duration. Units can be `nanos`, `micros`, `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours) and
- * `d` (days). Also accepts "0" without a unit and "-1" to indicate an unspecified value.
- */
-export const Duration = z.union([z.string(), z.literal(-1), z.literal(0)]).meta({ id: 'Duration' })
-export type Duration = z.infer<typeof Duration>
-
-export const DurationValue = z.any().meta({ id: 'DurationValue' })
-export type DurationValue = z.infer<typeof DurationValue>
-
-export const EpochTime = z.any().meta({ id: 'EpochTime' })
-export type EpochTime = z.infer<typeof EpochTime>
-
-export interface ErrorCauseShape {
-  type: string
-  reason?: string | null | undefined
-  stack_trace?: string | undefined
-  caused_by?: ErrorCauseShape | undefined
-  root_cause?: ErrorCauseShape[] | undefined
-  suppressed?: ErrorCauseShape[] | undefined
-}
-/**
- * Cause and details about a request failure. This class defines the properties common to all error types.
- * Additional details are also provided, that depend on the error type.
- */
-export const ErrorCause = z.looseObject({
-  type: z.string().describe('The type of error'),
-  reason: z.union([z.string(), z.null()]).describe('A human-readable explanation of the error, in English.').optional(),
-  stack_trace: z.string().describe('The server stack trace. Present only if the `error_trace=true` parameter was sent with the request.').optional(),
-  get caused_by () { return ErrorCause.optional() },
-  get root_cause () { return ErrorCause.array().optional() },
-  get suppressed () { return ErrorCause.array().optional() }
-}).meta({ id: 'ErrorCause' })
-export type ErrorCause = z.infer<typeof ErrorCause>
-
-export const Host = z.string().meta({ id: 'Host' })
-export type Host = z.infer<typeof Host>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const Ip = z.string().meta({ id: 'Ip' })
-export type Ip = z.infer<typeof Ip>
-
-export const Name = z.string().meta({ id: 'Name' })
-export type Name = z.infer<typeof Name>
-
-export const NodeId = z.string().meta({ id: 'NodeId' })
-export type NodeId = z.infer<typeof NodeId>
-
-export const NodeIds = z.union([NodeId, z.array(NodeId)]).meta({ id: 'NodeIds' })
-export type NodeIds = z.infer<typeof NodeIds>
-
-export const NodeRole = z.enum(['master', 'data', 'data_cold', 'data_content', 'data_frozen', 'data_hot', 'data_warm', 'client', 'ingest', 'ml', 'voting_only', 'transform', 'remote_cluster_client', 'coordinating_only']).meta({ id: 'NodeRole' })
-export type NodeRole = z.infer<typeof NodeRole>
-
-export const NodeRoles = z.array(NodeRole).meta({ id: 'NodeRoles' })
-export type NodeRoles = z.infer<typeof NodeRoles>
-
-export const integer = z.number().meta({ id: 'integer' })
-export type integer = z.infer<typeof integer>
-
-/** Contains statistics about the number of nodes selected by the request. */
-export const NodeStatistics = z.object({
-  failures: z.array(z.lazy(() => ErrorCause)).optional(),
-  total: integer.describe('Total number of nodes selected by the request.'),
-  successful: integer.describe('Number of nodes that responded successfully to the request.'),
-  failed: integer.describe('Number of nodes that rejected the request or failed to respond. If this value is not 0, a reason for the rejection or failure is included in the response.')
-}).meta({ id: 'NodeStatistics' })
-export type NodeStatistics = z.infer<typeof NodeStatistics>
-
-export const VersionString = z.string().meta({ id: 'VersionString' })
-export type VersionString = z.infer<typeof VersionString>
-
-export const PluginStats = z.object({
-  classname: z.string(),
-  description: z.string(),
-  elasticsearch_version: VersionString,
-  extended_plugins: z.array(z.string()),
-  has_native_controller: z.boolean(),
-  java_version: VersionString,
-  name: Name,
-  version: VersionString,
-  licensed: z.boolean()
-}).meta({ id: 'PluginStats' })
-export type PluginStats = z.infer<typeof PluginStats>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
-
-export const TransportAddress = z.string().meta({ id: 'TransportAddress' })
-export type TransportAddress = z.infer<typeof TransportAddress>
-
-export const VersionNumber = long.meta({ id: 'VersionNumber' })
-export type VersionNumber = z.infer<typeof VersionNumber>
+import { ByteSize, Duration, DurationValue, EpochTime, Host, Id, Ip, Name, NodeIds, NodeRoles, NodeStatistics, PluginStats, TransportAddress, VersionNumber, VersionString, integer, long } from './_types.js'
 
 export const IndicesIndexRoutingAllocationOptions = z.enum(['all', 'primaries', 'new_primaries', 'none']).meta({ id: 'IndicesIndexRoutingAllocationOptions' })
 export type IndicesIndexRoutingAllocationOptions = z.infer<typeof IndicesIndexRoutingAllocationOptions>
 
 export const IndicesIndexRoutingAllocationInclude = z.object({
   _tier_preference: z.string().optional(),
-  _id: Id.optional()
+  _id: z.lazy(() => Id).optional()
 }).meta({ id: 'IndicesIndexRoutingAllocationInclude' })
 export type IndicesIndexRoutingAllocationInclude = z.infer<typeof IndicesIndexRoutingAllocationInclude>
 
 export const IndicesIndexRoutingAllocationInitialRecovery = z.object({
-  _id: Id.optional()
+  _id: z.lazy(() => Id).optional()
 }).meta({ id: 'IndicesIndexRoutingAllocationInitialRecovery' })
 export type IndicesIndexRoutingAllocationInitialRecovery = z.infer<typeof IndicesIndexRoutingAllocationInitialRecovery>
 
@@ -160,11 +49,6 @@ export const IndicesIndexRouting = z.object({
 }).meta({ id: 'IndicesIndexRouting' })
 export type IndicesIndexRouting = z.infer<typeof IndicesIndexRouting>
 
-export const NodesNodesResponseBase = z.object({
-  node_stats: NodeStatistics.describe('Contains statistics about the number of nodes selected by the request’s node filters.').optional()
-}).meta({ id: 'NodesNodesResponseBase' })
-export type NodesNodesResponseBase = z.infer<typeof NodesNodesResponseBase>
-
 export const NodesInfoDeprecationIndexing = z.object({
   enabled: z.union([z.boolean(), z.string()])
 }).meta({ id: 'NodesInfoDeprecationIndexing' })
@@ -172,23 +56,23 @@ export type NodesInfoDeprecationIndexing = z.infer<typeof NodesInfoDeprecationIn
 
 export const NodesInfoNodeInfoHttp = z.object({
   bound_address: z.array(z.string()),
-  max_content_length: ByteSize.optional(),
-  max_content_length_in_bytes: long,
+  max_content_length: z.lazy(() => ByteSize).optional(),
+  max_content_length_in_bytes: z.lazy(() => long),
   publish_address: z.string()
 }).meta({ id: 'NodesInfoNodeInfoHttp' })
 export type NodesInfoNodeInfoHttp = z.infer<typeof NodesInfoNodeInfoHttp>
 
 export const NodesInfoNodeInfoJvmMemory = z.object({
-  direct_max: ByteSize.optional(),
-  direct_max_in_bytes: long,
-  heap_init: ByteSize.optional(),
-  heap_init_in_bytes: long,
-  heap_max: ByteSize.optional(),
-  heap_max_in_bytes: long,
-  non_heap_init: ByteSize.optional(),
-  non_heap_init_in_bytes: long,
-  non_heap_max: ByteSize.optional(),
-  non_heap_max_in_bytes: long
+  direct_max: z.lazy(() => ByteSize).optional(),
+  direct_max_in_bytes: z.lazy(() => long),
+  heap_init: z.lazy(() => ByteSize).optional(),
+  heap_init_in_bytes: z.lazy(() => long),
+  heap_max: z.lazy(() => ByteSize).optional(),
+  heap_max_in_bytes: z.lazy(() => long),
+  non_heap_init: z.lazy(() => ByteSize).optional(),
+  non_heap_init_in_bytes: z.lazy(() => long),
+  non_heap_max: z.lazy(() => ByteSize).optional(),
+  non_heap_max_in_bytes: z.lazy(() => long)
 }).meta({ id: 'NodesInfoNodeInfoJvmMemory' })
 export type NodesInfoNodeInfoJvmMemory = z.infer<typeof NodesInfoNodeInfoJvmMemory>
 
@@ -196,12 +80,12 @@ export const NodesInfoNodeJvmInfo = z.object({
   gc_collectors: z.array(z.string()),
   mem: NodesInfoNodeInfoJvmMemory,
   memory_pools: z.array(z.string()),
-  pid: integer,
-  start_time_in_millis: EpochTime,
-  version: VersionString,
-  vm_name: Name,
+  pid: z.lazy(() => integer),
+  start_time_in_millis: z.lazy(() => EpochTime),
+  version: z.lazy(() => VersionString),
+  vm_name: z.lazy(() => Name),
   vm_vendor: z.string(),
-  vm_version: VersionString,
+  vm_version: z.lazy(() => VersionString),
   using_bundled_jdk: z.boolean(),
   using_compressed_ordinary_object_pointers: z.union([z.boolean(), z.string()]).optional(),
   input_arguments: z.array(z.string())
@@ -210,30 +94,30 @@ export type NodesInfoNodeJvmInfo = z.infer<typeof NodesInfoNodeJvmInfo>
 
 export const NodesInfoNodeInfoOSCPU = z.object({
   cache_size: z.string(),
-  cache_size_in_bytes: integer,
-  cores_per_socket: integer,
-  mhz: integer,
+  cache_size_in_bytes: z.lazy(() => integer),
+  cores_per_socket: z.lazy(() => integer),
+  mhz: z.lazy(() => integer),
   model: z.string(),
-  total_cores: integer,
-  total_sockets: integer,
+  total_cores: z.lazy(() => integer),
+  total_sockets: z.lazy(() => integer),
   vendor: z.string()
 }).meta({ id: 'NodesInfoNodeInfoOSCPU' })
 export type NodesInfoNodeInfoOSCPU = z.infer<typeof NodesInfoNodeInfoOSCPU>
 
 export const NodesInfoNodeInfoMemory = z.object({
   total: z.string(),
-  total_in_bytes: long
+  total_in_bytes: z.lazy(() => long)
 }).meta({ id: 'NodesInfoNodeInfoMemory' })
 export type NodesInfoNodeInfoMemory = z.infer<typeof NodesInfoNodeInfoMemory>
 
 export const NodesInfoNodeOperatingSystemInfo = z.object({
   arch: z.string().describe('Name of the JVM architecture (ex: amd64, x86)'),
-  available_processors: integer.describe('Number of processors available to the Java virtual machine'),
-  allocated_processors: integer.describe('The number of processors actually used to calculate thread pool size. This number can be set with the node.processors setting of a node and defaults to the number of processors reported by the OS.').optional(),
-  name: Name.describe('Name of the operating system (ex: Linux, Windows, Mac OS X)'),
-  pretty_name: Name,
-  refresh_interval_in_millis: DurationValue.describe('Refresh interval for the OS statistics'),
-  version: VersionString.describe('Version of the operating system'),
+  available_processors: z.lazy(() => integer).describe('Number of processors available to the Java virtual machine'),
+  allocated_processors: z.lazy(() => integer).describe('The number of processors actually used to calculate thread pool size. This number can be set with the node.processors setting of a node and defaults to the number of processors reported by the OS.').optional(),
+  name: z.lazy(() => Name).describe('Name of the operating system (ex: Linux, Windows, Mac OS X)'),
+  pretty_name: z.lazy(() => Name),
+  refresh_interval_in_millis: z.lazy(() => DurationValue).describe('Refresh interval for the OS statistics'),
+  version: z.lazy(() => VersionString).describe('Version of the operating system'),
   cpu: NodesInfoNodeInfoOSCPU.optional(),
   mem: NodesInfoNodeInfoMemory.optional(),
   swap: NodesInfoNodeInfoMemory.optional()
@@ -241,20 +125,20 @@ export const NodesInfoNodeOperatingSystemInfo = z.object({
 export type NodesInfoNodeOperatingSystemInfo = z.infer<typeof NodesInfoNodeOperatingSystemInfo>
 
 export const NodesInfoNodeProcessInfo = z.object({
-  id: long.describe('Process identifier (PID)'),
+  id: z.lazy(() => long).describe('Process identifier (PID)'),
   mlockall: z.boolean().describe('Indicates if the process address space has been successfully locked in memory'),
-  refresh_interval_in_millis: DurationValue.describe('Refresh interval for the process statistics')
+  refresh_interval_in_millis: z.lazy(() => DurationValue).describe('Refresh interval for the process statistics')
 }).meta({ id: 'NodesInfoNodeProcessInfo' })
 export type NodesInfoNodeProcessInfo = z.infer<typeof NodesInfoNodeProcessInfo>
 
 export const NodesInfoNodeInfoSettingsClusterElection = z.object({
-  strategy: Name
+  strategy: z.lazy(() => Name)
 }).meta({ id: 'NodesInfoNodeInfoSettingsClusterElection' })
 export type NodesInfoNodeInfoSettingsClusterElection = z.infer<typeof NodesInfoNodeInfoSettingsClusterElection>
 
 export const NodesInfoNodeInfoSettingsCluster = z.object({
-  name: Name,
-  routing: IndicesIndexRouting.optional(),
+  name: z.lazy(() => Name),
+  routing: z.lazy(() => IndicesIndexRouting).optional(),
   election: NodesInfoNodeInfoSettingsClusterElection,
   initial_master_nodes: z.union([z.array(z.string()), z.string()]).optional(),
   deprecation_indexing: NodesInfoDeprecationIndexing.optional()
@@ -262,7 +146,7 @@ export const NodesInfoNodeInfoSettingsCluster = z.object({
 export type NodesInfoNodeInfoSettingsCluster = z.infer<typeof NodesInfoNodeInfoSettingsCluster>
 
 export const NodesInfoNodeInfoSettingsNode = z.object({
-  name: Name,
+  name: z.lazy(() => Name),
   attr: z.record(z.string(), z.any()),
   max_local_storage_nodes: z.string().optional()
 }).meta({ id: 'NodesInfoNodeInfoSettingsNode' })
@@ -312,7 +196,7 @@ export const NodesInfoNodeInfoSettingsHttp = z.object({
   type: z.union([NodesInfoNodeInfoSettingsHttpType, z.string()]),
   'type.default': z.string().optional(),
   compression: z.union([z.boolean(), z.string()]).optional(),
-  port: z.union([integer, z.string()]).optional()
+  port: z.union([z.lazy(() => integer), z.string()]).optional()
 }).meta({ id: 'NodesInfoNodeInfoSettingsHttp' })
 export type NodesInfoNodeInfoSettingsHttp = z.infer<typeof NodesInfoNodeInfoSettingsHttp>
 
@@ -339,7 +223,7 @@ export const NodesInfoNodeInfoSettingsTransport = z.object({
 export type NodesInfoNodeInfoSettingsTransport = z.infer<typeof NodesInfoNodeInfoSettingsTransport>
 
 export const NodesInfoNodeInfoSettingsNetwork = z.object({
-  host: z.union([Host, z.array(Host)]).optional()
+  host: z.union([z.lazy(() => Host), z.array(z.lazy(() => Host))]).optional()
 }).meta({ id: 'NodesInfoNodeInfoSettingsNetwork' })
 export type NodesInfoNodeInfoSettingsNetwork = z.infer<typeof NodesInfoNodeInfoSettingsNetwork>
 
@@ -487,11 +371,11 @@ export const NodesInfoNodeInfoSettings = z.object({
 export type NodesInfoNodeInfoSettings = z.infer<typeof NodesInfoNodeInfoSettings>
 
 export const NodesInfoNodeThreadPoolInfo = z.object({
-  core: integer.optional(),
-  keep_alive: Duration.optional(),
-  max: integer.optional(),
-  queue_size: integer,
-  size: integer.optional(),
+  core: z.lazy(() => integer).optional(),
+  keep_alive: z.lazy(() => Duration).optional(),
+  max: z.lazy(() => integer).optional(),
+  queue_size: z.lazy(() => integer),
+  size: z.lazy(() => integer).optional(),
   type: z.string()
 }).meta({ id: 'NodesInfoNodeThreadPoolInfo' })
 export type NodesInfoNodeThreadPoolInfo = z.infer<typeof NodesInfoNodeThreadPoolInfo>
@@ -519,8 +403,8 @@ export const NodesInfoNodeInfoAggregation = z.object({
 export type NodesInfoNodeInfoAggregation = z.infer<typeof NodesInfoNodeInfoAggregation>
 
 export const NodesInfoRemoveClusterServer = z.object({
-  bound_address: z.array(TransportAddress),
-  publish_address: TransportAddress
+  bound_address: z.array(z.lazy(() => TransportAddress)),
+  publish_address: z.lazy(() => TransportAddress)
 }).meta({ id: 'NodesInfoRemoveClusterServer' })
 export type NodesInfoRemoveClusterServer = z.infer<typeof NodesInfoRemoveClusterServer>
 
@@ -529,26 +413,26 @@ export const NodesInfoNodeInfo = z.object({
   build_flavor: z.string(),
   build_hash: z.string().describe('Short hash of the last git commit in this release.'),
   build_type: z.string(),
-  component_versions: z.record(Name, integer),
-  host: Host.describe('The node’s host name.'),
+  component_versions: z.record(z.lazy(() => Name), z.lazy(() => integer)),
+  host: z.lazy(() => Host).describe('The node’s host name.'),
   http: NodesInfoNodeInfoHttp.optional(),
-  index_version: VersionNumber,
-  ip: Ip.describe('The node’s IP address.'),
+  index_version: z.lazy(() => VersionNumber),
+  ip: z.lazy(() => Ip).describe('The node’s IP address.'),
   jvm: NodesInfoNodeJvmInfo.optional(),
-  name: Name.describe('The node\'s name'),
+  name: z.lazy(() => Name).describe('The node\'s name'),
   os: NodesInfoNodeOperatingSystemInfo.optional(),
-  plugins: z.array(PluginStats).optional(),
+  plugins: z.array(z.lazy(() => PluginStats)).optional(),
   process: NodesInfoNodeProcessInfo.optional(),
-  roles: NodeRoles,
+  roles: z.lazy(() => NodeRoles),
   settings: NodesInfoNodeInfoSettings.optional(),
   thread_pool: z.record(z.string(), NodesInfoNodeThreadPoolInfo).optional(),
-  total_indexing_buffer: long.describe('Total heap allowed to be used to hold recently indexed documents before they must be written to disk. This size is a shared pool across all shards on this node, and is controlled by Indexing Buffer settings.').optional(),
-  total_indexing_buffer_in_bytes: ByteSize.describe('Same as total_indexing_buffer, but expressed in bytes.').optional(),
+  total_indexing_buffer: z.lazy(() => long).describe('Total heap allowed to be used to hold recently indexed documents before they must be written to disk. This size is a shared pool across all shards on this node, and is controlled by Indexing Buffer settings.').optional(),
+  total_indexing_buffer_in_bytes: z.lazy(() => ByteSize).describe('Same as total_indexing_buffer, but expressed in bytes.').optional(),
   transport: NodesInfoNodeInfoTransport.optional(),
-  transport_address: TransportAddress.describe('Host and port where transport HTTP connections are accepted.'),
-  transport_version: VersionNumber,
-  version: VersionString.describe('Elasticsearch version running on this node.'),
-  modules: z.array(PluginStats).optional(),
+  transport_address: z.lazy(() => TransportAddress).describe('Host and port where transport HTTP connections are accepted.'),
+  transport_version: z.lazy(() => VersionNumber),
+  version: z.lazy(() => VersionString).describe('Elasticsearch version running on this node.'),
+  modules: z.array(z.lazy(() => PluginStats)).optional(),
   ingest: NodesInfoNodeInfoIngest.optional(),
   aggregations: z.record(z.string(), NodesInfoNodeInfoAggregation).optional(),
   remote_cluster_server: NodesInfoRemoveClusterServer.optional()
@@ -567,17 +451,16 @@ export type NodesInfoNodesInfoMetrics = z.infer<typeof NodesInfoNodesInfoMetrics
  * By default, the API returns all attributes and core settings for cluster nodes.
  */
 export const NodesInfoRequest = z.object({
-  ...RequestBase.shape,
-  node_id: NodeIds.describe('Comma-separated list of node IDs or names used to limit returned information.').optional().meta({ found_in: 'path' }),
+  node_id: z.lazy(() => NodeIds).describe('Comma-separated list of node IDs or names used to limit returned information.').optional().meta({ found_in: 'path' }),
   metric: NodesInfoNodesInfoMetrics.describe('Limits the information returned to the specific metrics. Supports a comma-separated list, such as http,ingest.').optional().meta({ found_in: 'path' }),
   flat_settings: z.boolean().describe('If true, returns settings in flat format.').optional().meta({ found_in: 'query' }),
-  timeout: Duration.describe('Period to wait for a response. If no response is received before the timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' })
+  timeout: z.lazy(() => Duration).describe('Period to wait for a response. If no response is received before the timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'NodesInfoRequest' })
 export type NodesInfoRequest = z.infer<typeof NodesInfoRequest>
 
 export const NodesInfoResponseBase = z.object({
-  ...NodesNodesResponseBase.shape,
-  cluster_name: Name,
+  node_stats: z.lazy(() => NodeStatistics).describe('Contains statistics about the number of nodes selected by the request’s node filters.').optional(),
+  cluster_name: z.lazy(() => Name),
   nodes: z.record(z.string(), NodesInfoNodeInfo)
 }).meta({ id: 'NodesInfoResponseBase' })
 export type NodesInfoResponseBase = z.infer<typeof NodesInfoResponseBase>

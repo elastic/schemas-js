@@ -12,6 +12,8 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
+import { Costs, Dimension } from './definitions/misc.js'
+
 export const SimplifiedLineItem = z.object({
   id: z.string(),
   ecu_quantity: z.number(),
@@ -21,24 +23,12 @@ export const SimplifiedLineItem = z.object({
 }).meta({ id: 'SimplifiedLineItem' })
 export type SimplifiedLineItem = z.infer<typeof SimplifiedLineItem>
 
-export const Dimension = z.object({
-  type: z.enum(['capacity', 'data_in', 'data_internode', 'data_out', 'storage_api', 'storage_bytes']),
-  cost: z.number()
-}).meta({ id: 'Dimension' })
-export type Dimension = z.infer<typeof Dimension>
-
 export const Balance = z.object({
   available: z.number(),
   remaining: z.number(),
   line_items: z.array(SimplifiedLineItem)
 }).meta({ id: 'Balance' })
 export type Balance = z.infer<typeof Balance>
-
-export const Costs = z.object({
-  total: z.number(),
-  dimensions: z.array(Dimension)
-}).meta({ id: 'Costs' })
-export type Costs = z.infer<typeof Costs>
 
 export const CostsOverview = z.object({
   costs: Costs,

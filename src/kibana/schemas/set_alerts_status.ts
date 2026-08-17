@@ -11,15 +11,10 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Detections_API_AlertStatusExceptClosed = z.enum(['open', 'acknowledged', 'in-progress']).meta({ id: 'Security_Detections_API_AlertStatusExceptClosed' })
-export type Security_Detections_API_AlertStatusExceptClosed = z.infer<typeof Security_Detections_API_AlertStatusExceptClosed>
+import { Security_Detections_API_AlertStatusExceptClosed, Security_Detections_API_Reason } from './schemas/security.js'
 
 export const Security_Detections_API_RuntimeFieldType = z.enum(['keyword', 'long', 'double', 'date', 'ip', 'boolean', 'geo_point']).meta({ id: 'Security_Detections_API_RuntimeFieldType' })
 export type Security_Detections_API_RuntimeFieldType = z.infer<typeof Security_Detections_API_RuntimeFieldType>
-
-export const Security_Detections_API_ReasonEnum = z.enum(['false_positive', 'duplicate', 'true_positive', 'benign_positive', 'automated_closure', 'other']).meta({ id: 'Security_Detections_API_ReasonEnum' })
-export type Security_Detections_API_ReasonEnum = z.infer<typeof Security_Detections_API_ReasonEnum>
 
 export const Security_Detections_API_SetAlertsStatusByIdsBase = z.object({
   signal_ids: z.array(z.string()),
@@ -35,8 +30,12 @@ export const Security_Detections_API_SetAlertsStatusByQueryBase = z.object({
 }).meta({ id: 'Security_Detections_API_SetAlertsStatusByQueryBase' })
 export type Security_Detections_API_SetAlertsStatusByQueryBase = z.infer<typeof Security_Detections_API_SetAlertsStatusByQueryBase>
 
-export const Security_Detections_API_Reason = z.union([Security_Detections_API_ReasonEnum, z.string()]).meta({ id: 'Security_Detections_API_Reason' })
-export type Security_Detections_API_Reason = z.infer<typeof Security_Detections_API_Reason>
+export const Security_Detections_API_CloseAlertsByIds = z.object({
+  reason: Security_Detections_API_Reason.optional(),
+  signal_ids: z.array(z.string()),
+  status: z.enum(['closed'])
+}).meta({ id: 'Security_Detections_API_CloseAlertsByIds' })
+export type Security_Detections_API_CloseAlertsByIds = z.infer<typeof Security_Detections_API_CloseAlertsByIds>
 
 export const Security_Detections_API_CloseAlertsByQuery = z.object({
   conflicts: z.enum(['abort', 'proceed']).optional(),
@@ -47,21 +46,18 @@ export const Security_Detections_API_CloseAlertsByQuery = z.object({
 }).meta({ id: 'Security_Detections_API_CloseAlertsByQuery' })
 export type Security_Detections_API_CloseAlertsByQuery = z.infer<typeof Security_Detections_API_CloseAlertsByQuery>
 
-export const Security_Detections_API_CloseAlertsByIds = z.object({
-  reason: Security_Detections_API_Reason.optional(),
-  signal_ids: z.array(z.string()),
-  status: z.enum(['closed'])
-}).meta({ id: 'Security_Detections_API_CloseAlertsByIds' })
-export type Security_Detections_API_CloseAlertsByIds = z.infer<typeof Security_Detections_API_CloseAlertsByIds>
+export const Security_Detections_API_SetAlertsStatusByIds = z.discriminatedUnion('status', [Security_Detections_API_CloseAlertsByIds, Security_Detections_API_SetAlertsStatusByIdsBase]).meta({ id: 'Security_Detections_API_SetAlertsStatusByIds' })
+export type Security_Detections_API_SetAlertsStatusByIds = z.infer<typeof Security_Detections_API_SetAlertsStatusByIds>
 
 export const Security_Detections_API_SetAlertsStatusByQuery = z.discriminatedUnion('status', [Security_Detections_API_CloseAlertsByQuery, Security_Detections_API_SetAlertsStatusByQueryBase]).meta({ id: 'Security_Detections_API_SetAlertsStatusByQuery' })
 export type Security_Detections_API_SetAlertsStatusByQuery = z.infer<typeof Security_Detections_API_SetAlertsStatusByQuery>
-
-export const Security_Detections_API_SetAlertsStatusByIds = z.discriminatedUnion('status', [Security_Detections_API_CloseAlertsByIds, Security_Detections_API_SetAlertsStatusByIdsBase]).meta({ id: 'Security_Detections_API_SetAlertsStatusByIds' })
-export type Security_Detections_API_SetAlertsStatusByIds = z.infer<typeof Security_Detections_API_SetAlertsStatusByIds>
 
 export const SetAlertsStatusRequest = z.union([Security_Detections_API_SetAlertsStatusByIds, Security_Detections_API_SetAlertsStatusByQuery]).meta({ id: 'SetAlertsStatusRequest' })
 export type SetAlertsStatusRequest = z.infer<typeof SetAlertsStatusRequest>
 
 export const SetAlertsStatusResponse = z.record(z.string(), z.unknown()).meta({ id: 'SetAlertsStatusResponse' })
 export type SetAlertsStatusResponse = z.infer<typeof SetAlertsStatusResponse>
+
+export { Security_Detections_API_AlertStatusExceptClosed } from './schemas/security.js'
+export { Security_Detections_API_Reason } from './schemas/security.js'
+export { Security_Detections_API_ReasonEnum } from './schemas/security.js'

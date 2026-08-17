@@ -3,54 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const BulkFailureStoreStatus = z.enum(['not_applicable_or_unknown', 'used', 'not_enabled', 'failed']).meta({ id: 'BulkFailureStoreStatus' })
-export type BulkFailureStoreStatus = z.infer<typeof BulkFailureStoreStatus>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const IndexName = z.string().meta({ id: 'IndexName' })
-export type IndexName = z.infer<typeof IndexName>
-
-export const Refresh = z.union([z.boolean(), z.enum(['true', 'false', 'wait_for'])]).meta({ id: 'Refresh' })
-export type Refresh = z.infer<typeof Refresh>
-
-/** Only to be used in query and path parameters, as the array form is actually a csv */
-export const Routing = z.union([z.string(), z.array(z.string())]).meta({ id: 'Routing' })
-export type Routing = z.infer<typeof Routing>
-
-/**
- * A duration. Units can be `nanos`, `micros`, `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours) and
- * `d` (days). Also accepts "0" without a unit and "-1" to indicate an unspecified value.
- */
-export const Duration = z.union([z.string(), z.literal(-1), z.literal(0)]).meta({ id: 'Duration' })
-export type Duration = z.infer<typeof Duration>
-
-export const long = z.number().meta({ id: 'long' })
-export type long = z.infer<typeof long>
-
-export const VersionNumber = long.meta({ id: 'VersionNumber' })
-export type VersionNumber = z.infer<typeof VersionNumber>
-
-export const VersionType = z.enum(['internal', 'external', 'external_gte']).meta({ id: 'VersionType' })
-export type VersionType = z.infer<typeof VersionType>
+import { Duration, Id, IndexName, Refresh, Routing, VersionNumber, VersionType, WriteResponseBase } from './_types.js'
 
 /**
  * Create a new document in the index.
@@ -127,90 +83,20 @@ export type VersionType = z.infer<typeof VersionType>
  * The `_shards` section of the API response reveals the number of shard copies on which replication succeeded and failed.
  */
 export const CreateRequest = z.object({
-  ...RequestBase.shape,
-  id: Id.describe('A unique identifier for the document. To automatically generate a document ID, use the `POST /<target>/_doc/` request format.').meta({ found_in: 'path' }),
-  index: IndexName.describe('The name of the data stream or index to target. If the target doesn\'t exist and matches the name or wildcard (`*`) pattern of an index template with a `data_stream` definition, this request creates the data stream. If the target doesn\'t exist and doesn’t match a data stream template, this request creates the index.').meta({ found_in: 'path' }),
+  id: z.lazy(() => Id).describe('A unique identifier for the document. To automatically generate a document ID, use the `POST /<target>/_doc/` request format.').meta({ found_in: 'path' }),
+  index: z.lazy(() => IndexName).describe('The name of the data stream or index to target. If the target doesn\'t exist and matches the name or wildcard (`*`) pattern of an index template with a `data_stream` definition, this request creates the data stream. If the target doesn\'t exist and doesn’t match a data stream template, this request creates the index.').meta({ found_in: 'path' }),
   include_source_on_error: z.boolean().describe('True or false if to include the document source in the error message in case of parsing errors.').optional().meta({ found_in: 'query' }),
   pipeline: z.string().describe('The ID of the pipeline to use to preprocess incoming documents. If the index has a default ingest pipeline specified, setting the value to `_none` turns off the default ingest pipeline for this request. If a final pipeline is configured, it will always run regardless of the value of this parameter.').optional().meta({ found_in: 'query' }),
-  refresh: Refresh.describe('If `true`, Elasticsearch refreshes the affected shards to make this operation visible to search. If `wait_for`, it waits for a refresh to make this operation visible to search. If `false`, it does nothing with refreshes.').optional().meta({ found_in: 'query' }),
+  refresh: z.lazy(() => Refresh).describe('If `true`, Elasticsearch refreshes the affected shards to make this operation visible to search. If `wait_for`, it waits for a refresh to make this operation visible to search. If `false`, it does nothing with refreshes.').optional().meta({ found_in: 'query' }),
   require_alias: z.boolean().describe('If `true`, the destination must be an index alias.').optional().meta({ found_in: 'query' }),
   require_data_stream: z.boolean().describe('If `true`, the request\'s actions must target a data stream (existing or to be created).').optional().meta({ found_in: 'query' }),
-  routing: Routing.describe('A custom value that is used to route operations to a specific shard.').optional().meta({ found_in: 'query' }),
-  timeout: Duration.describe('The period the request waits for the following operations: automatic index creation, dynamic mapping updates, waiting for active shards. Elasticsearch waits for at least the specified timeout period before failing. The actual wait time could be longer, particularly when multiple waits occur. This parameter is useful for situations where the primary shard assigned to perform the operation might not be available when the operation runs. Some reasons for this might be that the primary shard is currently recovering from a gateway or undergoing relocation. By default, the operation will wait on the primary shard to become available for at least 1 minute before failing and responding with an error. The actual wait time could be longer, particularly when multiple waits occur.').optional().meta({ found_in: 'query' }),
-  version: VersionNumber.describe('The explicit version number for concurrency control. It must be a non-negative long number.').optional().meta({ found_in: 'query' }),
-  version_type: VersionType.describe('The version type.').optional().meta({ found_in: 'query' }),
-  document: z.any().meta({ found_in: 'body' })
+  routing: z.lazy(() => Routing).describe('A custom value that is used to route operations to a specific shard.').optional().meta({ found_in: 'query' }),
+  timeout: z.lazy(() => Duration).describe('The period the request waits for the following operations: automatic index creation, dynamic mapping updates, waiting for active shards. Elasticsearch waits for at least the specified timeout period before failing. The actual wait time could be longer, particularly when multiple waits occur. This parameter is useful for situations where the primary shard assigned to perform the operation might not be available when the operation runs. Some reasons for this might be that the primary shard is currently recovering from a gateway or undergoing relocation. By default, the operation will wait on the primary shard to become available for at least 1 minute before failing and responding with an error. The actual wait time could be longer, particularly when multiple waits occur.').optional().meta({ found_in: 'query' }),
+  version: z.lazy(() => VersionNumber).describe('The explicit version number for concurrency control. It must be a non-negative long number.').optional().meta({ found_in: 'query' }),
+  version_type: z.lazy(() => VersionType).describe('The version type.').optional().meta({ found_in: 'query' }),
+  document: z.any().optional().meta({ found_in: 'body' })
 }).meta({ id: 'CreateRequest' })
 export type CreateRequest = z.infer<typeof CreateRequest>
-
-export const Result = z.enum(['created', 'updated', 'deleted', 'not_found', 'noop']).meta({ id: 'Result' })
-export type Result = z.infer<typeof Result>
-
-export const SequenceNumber = long.meta({ id: 'SequenceNumber' })
-export type SequenceNumber = z.infer<typeof SequenceNumber>
-
-export const uint = z.number().meta({ id: 'uint' })
-export type uint = z.infer<typeof uint>
-
-export interface ErrorCauseShape {
-  type: string
-  reason?: string | null | undefined
-  stack_trace?: string | undefined
-  caused_by?: ErrorCauseShape | undefined
-  root_cause?: ErrorCauseShape[] | undefined
-  suppressed?: ErrorCauseShape[] | undefined
-}
-/**
- * Cause and details about a request failure. This class defines the properties common to all error types.
- * Additional details are also provided, that depend on the error type.
- */
-export const ErrorCause = z.looseObject({
-  type: z.string().describe('The type of error'),
-  reason: z.union([z.string(), z.null()]).describe('A human-readable explanation of the error, in English.').optional(),
-  stack_trace: z.string().describe('The server stack trace. Present only if the `error_trace=true` parameter was sent with the request.').optional(),
-  get caused_by () { return ErrorCause.optional() },
-  get root_cause () { return ErrorCause.array().optional() },
-  get suppressed () { return ErrorCause.array().optional() }
-}).meta({ id: 'ErrorCause' })
-export type ErrorCause = z.infer<typeof ErrorCause>
-
-export const integer = z.number().meta({ id: 'integer' })
-export type integer = z.infer<typeof integer>
-
-export const ShardFailure = z.object({
-  index: IndexName.optional(),
-  _index: IndexName.optional(),
-  node: z.string().optional(),
-  _node: z.string().optional(),
-  reason: z.lazy(() => ErrorCause),
-  shard: integer.optional(),
-  _shard: integer.optional(),
-  status: z.string().optional(),
-  primary: z.boolean().optional()
-}).meta({ id: 'ShardFailure' })
-export type ShardFailure = z.infer<typeof ShardFailure>
-
-export const ShardStatistics = z.object({
-  failed: uint.describe('The number of shards the operation or search attempted to run on but failed.'),
-  successful: uint.describe('The number of shards the operation or search succeeded on.'),
-  total: uint.describe('The number of shards the operation or search will run on overall.'),
-  failures: z.array(ShardFailure).optional(),
-  skipped: uint.optional()
-}).meta({ id: 'ShardStatistics' })
-export type ShardStatistics = z.infer<typeof ShardStatistics>
-
-export const WriteResponseBase = z.object({
-  _id: Id.describe('The unique identifier for the added document.'),
-  _index: IndexName.describe('The name of the index the document was added to.'),
-  _primary_term: long.describe('The primary term assigned to the document for the indexing operation.').optional(),
-  result: Result.describe('The result of the indexing operation: `created` or `updated`.'),
-  _seq_no: SequenceNumber.describe('The sequence number assigned to the document for the indexing operation. Sequence numbers are used to ensure an older version of a document doesn\'t overwrite a newer version.').optional(),
-  _shards: ShardStatistics.describe('Information about the replication process of the operation.'),
-  _version: VersionNumber.describe('The document version, which is incremented each time the document is updated.'),
-  failure_store: BulkFailureStoreStatus.describe('The role of the failure store in this document response').optional(),
-  forced_refresh: z.boolean().optional()
-}).meta({ id: 'WriteResponseBase' })
-export type WriteResponseBase = z.infer<typeof WriteResponseBase>
 
 export const CreateResponse = WriteResponseBase.meta({ id: 'CreateResponse' })
 export type CreateResponse = z.infer<typeof CreateResponse>

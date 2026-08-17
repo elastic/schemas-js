@@ -3,22 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
 
 /**
  * Logout of SAML.
@@ -32,7 +18,6 @@ export type RequestBase = z.infer<typeof RequestBase>
  * If the SAML realm in Elasticsearch is configured accordingly and the SAML IdP supports this, the Elasticsearch response contains a URL to redirect the user to the IdP that contains a SAML logout request (starting an SP-initiated SAML Single Logout).
  */
 export const SecuritySamlLogoutRequest = z.object({
-  ...RequestBase.shape,
   token: z.string().describe('The access token that was returned as a response to calling the SAML authenticate API. Alternatively, the most recent token that was received after refreshing the original one by using a `refresh_token`.').meta({ found_in: 'body' }),
   refresh_token: z.string().describe('The refresh token that was returned as a response to calling the SAML authenticate API. Alternatively, the most recent refresh token that was received after refreshing the original access token.').optional().meta({ found_in: 'body' })
 }).meta({ id: 'SecuritySamlLogoutRequest' })

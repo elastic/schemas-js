@@ -11,12 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Endpoint_Management_API_Command = z.enum(['isolate', 'unisolate', 'kill-process', 'suspend-process', 'running-processes', 'get-file', 'execute', 'upload', 'scan', 'runscript', 'cancel', 'memory-dump']).meta({ id: 'Security_Endpoint_Management_API_Command' })
-export type Security_Endpoint_Management_API_Command = z.infer<typeof Security_Endpoint_Management_API_Command>
-
-export const Security_Endpoint_Management_API_AgentTypes = z.enum(['endpoint', 'sentinel_one', 'crowdstrike', 'microsoft_defender_endpoint']).meta({ id: 'Security_Endpoint_Management_API_AgentTypes' })
-export type Security_Endpoint_Management_API_AgentTypes = z.infer<typeof Security_Endpoint_Management_API_AgentTypes>
+import { Security_Endpoint_Management_API_ResponseActionDetails } from './schemas/security.js'
 
 export const Security_Endpoint_Management_API_DownloadUri = z.object({
   downloadUri: z.string().optional()
@@ -34,18 +29,6 @@ export const Security_Endpoint_Management_API_RunningProcessesOutputEndpoint = z
 }).meta({ id: 'Security_Endpoint_Management_API_RunningProcessesOutputEndpoint' })
 export type Security_Endpoint_Management_API_RunningProcessesOutputEndpoint = z.infer<typeof Security_Endpoint_Management_API_RunningProcessesOutputEndpoint>
 
-export const Security_Endpoint_Management_API_RunscriptParamsSentinelOne = z.object({
-  scriptId: z.string().optional(),
-  scriptInput: z.string().optional()
-}).meta({ id: 'Security_Endpoint_Management_API_RunscriptParamsSentinelOne' })
-export type Security_Endpoint_Management_API_RunscriptParamsSentinelOne = z.infer<typeof Security_Endpoint_Management_API_RunscriptParamsSentinelOne>
-
-export const Security_Endpoint_Management_API_RunscriptParamsMicrosoft = z.object({
-  args: z.string().optional(),
-  scriptName: z.string().optional()
-}).meta({ id: 'Security_Endpoint_Management_API_RunscriptParamsMicrosoft' })
-export type Security_Endpoint_Management_API_RunscriptParamsMicrosoft = z.infer<typeof Security_Endpoint_Management_API_RunscriptParamsMicrosoft>
-
 export const Security_Endpoint_Management_API_RunscriptParamsCrowdStrike = z.object({
   cloudFile: z.string().optional(),
   commandLine: z.string().optional(),
@@ -55,87 +38,22 @@ export const Security_Endpoint_Management_API_RunscriptParamsCrowdStrike = z.obj
 }).meta({ id: 'Security_Endpoint_Management_API_RunscriptParamsCrowdStrike' })
 export type Security_Endpoint_Management_API_RunscriptParamsCrowdStrike = z.infer<typeof Security_Endpoint_Management_API_RunscriptParamsCrowdStrike>
 
-export const Security_Endpoint_Management_API_ResponseActionDetails = z.object({
-  agents: z.array(z.string()).optional(),
-  agentState: z.record(z.string(), z.object({
-    completedAt: z.string().optional(),
-    isCompleted: z.boolean().optional(),
-    wasCanceled: z.boolean().optional(),
-    wasSuccessful: z.boolean().optional()
-  })).optional(),
-  agentType: Security_Endpoint_Management_API_AgentTypes.optional(),
-  command: Security_Endpoint_Management_API_Command,
-  completedAt: z.string().optional(),
-  createdBy: z.string().optional(),
-  hosts: z.record(z.string(), z.object({
-    name: z.string().optional()
-  })).optional(),
-  id: z.string().optional(),
-  isComplete: z.boolean().optional(),
-  isExpired: z.boolean().optional(),
-  outputs: z.record(z.string(), z.object({
-    content: z.union([z.object({}), z.string()]),
-    type: z.enum(['json', 'text'])
-  })).optional(),
-  parameters: z.object({}).optional(),
-  startedAt: z.string().optional(),
-  status: z.string().optional(),
-  wasCanceled: z.boolean().optional(),
-  wasSuccessful: z.boolean().optional()
-}).meta({ id: 'Security_Endpoint_Management_API_ResponseActionDetails' })
-export type Security_Endpoint_Management_API_ResponseActionDetails = z.infer<typeof Security_Endpoint_Management_API_ResponseActionDetails>
+export const Security_Endpoint_Management_API_RunscriptParamsMicrosoft = z.object({
+  args: z.string().optional(),
+  scriptName: z.string().optional()
+}).meta({ id: 'Security_Endpoint_Management_API_RunscriptParamsMicrosoft' })
+export type Security_Endpoint_Management_API_RunscriptParamsMicrosoft = z.infer<typeof Security_Endpoint_Management_API_RunscriptParamsMicrosoft>
+
+export const Security_Endpoint_Management_API_RunscriptParamsSentinelOne = z.object({
+  scriptId: z.string().optional(),
+  scriptInput: z.string().optional()
+}).meta({ id: 'Security_Endpoint_Management_API_RunscriptParamsSentinelOne' })
+export type Security_Endpoint_Management_API_RunscriptParamsSentinelOne = z.infer<typeof Security_Endpoint_Management_API_RunscriptParamsSentinelOne>
 
 export const Security_Endpoint_Management_API_RunningProcessesOutputSentinelOne = Security_Endpoint_Management_API_DownloadUri.merge(z.object({
   code: z.string().optional()
 })).meta({ id: 'Security_Endpoint_Management_API_RunningProcessesOutputSentinelOne' })
 export type Security_Endpoint_Management_API_RunningProcessesOutputSentinelOne = z.infer<typeof Security_Endpoint_Management_API_RunningProcessesOutputSentinelOne>
-
-export const Security_Endpoint_Management_API_MemoryDump = Security_Endpoint_Management_API_ResponseActionDetails.merge(z.object({
-  outputs: z.record(z.string(), z.object({
-    content: z.object({
-      code: z.string().optional(),
-      disk_free_space: z.number().optional(),
-      file_size: z.string().optional(),
-      path: z.string().optional()
-    }).optional()
-  })).optional(),
-  parameters: z.union([z.object({
-    type: z.enum(['kernel'])
-  }), z.object({
-    pid: z.number(),
-    type: z.enum(['process'])
-  }), z.object({
-    entity_id: z.string(),
-    type: z.enum(['process'])
-  })])
-})).meta({ id: 'Security_Endpoint_Management_API_MemoryDump' })
-export type Security_Endpoint_Management_API_MemoryDump = z.infer<typeof Security_Endpoint_Management_API_MemoryDump>
-
-export const Security_Endpoint_Management_API_SuspendProcess = Security_Endpoint_Management_API_ResponseActionDetails.merge(z.object({
-  outputs: z.record(z.string(), z.object({
-    content: z.union([z.object({
-      code: z.string().optional(),
-      command: z.string().optional(),
-      pid: z.number().optional()
-    }), z.object({
-      code: z.string().optional(),
-      command: z.string().optional(),
-      entity_id: z.string().optional()
-    })]).optional()
-  })).optional(),
-  parameters: z.union([z.object({
-    pid: z.number().optional()
-  }), z.object({
-    entity_id: z.string().optional()
-  })]).optional()
-})).meta({ id: 'Security_Endpoint_Management_API_SuspendProcess' })
-export type Security_Endpoint_Management_API_SuspendProcess = z.infer<typeof Security_Endpoint_Management_API_SuspendProcess>
-
-export const Security_Endpoint_Management_API_Unisolate = Security_Endpoint_Management_API_ResponseActionDetails.merge(z.object({})).meta({ id: 'Security_Endpoint_Management_API_Unisolate' })
-export type Security_Endpoint_Management_API_Unisolate = z.infer<typeof Security_Endpoint_Management_API_Unisolate>
-
-export const Security_Endpoint_Management_API_Isolate = Security_Endpoint_Management_API_ResponseActionDetails.merge(z.object({})).meta({ id: 'Security_Endpoint_Management_API_Isolate' })
-export type Security_Endpoint_Management_API_Isolate = z.infer<typeof Security_Endpoint_Management_API_Isolate>
 
 export const Security_Endpoint_Management_API_Cancel = Security_Endpoint_Management_API_ResponseActionDetails.merge(z.object({
   outputs: z.record(z.string(), z.object({
@@ -148,47 +66,6 @@ export const Security_Endpoint_Management_API_Cancel = Security_Endpoint_Managem
   }).optional()
 })).meta({ id: 'Security_Endpoint_Management_API_Cancel' })
 export type Security_Endpoint_Management_API_Cancel = z.infer<typeof Security_Endpoint_Management_API_Cancel>
-
-export const Security_Endpoint_Management_API_Scan = Security_Endpoint_Management_API_ResponseActionDetails.merge(z.object({
-  outputs: z.record(z.string(), z.object({
-    content: z.object({
-      code: z.string().optional()
-    }).optional()
-  })).optional(),
-  parameters: z.object({
-    path: z.string().optional()
-  }).optional()
-})).meta({ id: 'Security_Endpoint_Management_API_Scan' })
-export type Security_Endpoint_Management_API_Scan = z.infer<typeof Security_Endpoint_Management_API_Scan>
-
-export const Security_Endpoint_Management_API_Upload = Security_Endpoint_Management_API_ResponseActionDetails.merge(z.object({
-  outputs: z.record(z.string(), z.object({
-    content: z.object({
-      code: z.string().optional(),
-      disk_free_space: z.number().optional(),
-      path: z.string().optional()
-    }).optional()
-  })).optional(),
-  parameters: z.object({
-    file_id: z.string().optional(),
-    file_name: z.string().optional(),
-    file_sha256: z.string().optional(),
-    file_size: z.number().optional()
-  }).optional()
-})).meta({ id: 'Security_Endpoint_Management_API_Upload' })
-export type Security_Endpoint_Management_API_Upload = z.infer<typeof Security_Endpoint_Management_API_Upload>
-
-export const Security_Endpoint_Management_API_Runscript = Security_Endpoint_Management_API_ResponseActionDetails.merge(z.object({
-  outputs: z.record(z.string(), z.object({
-    content: Security_Endpoint_Management_API_DownloadUri.merge(z.object({
-      code: z.string().optional(),
-      stderr: z.string().optional(),
-      stdout: z.string().optional()
-    })).optional()
-  })).optional(),
-  parameters: z.union([Security_Endpoint_Management_API_RunscriptParamsCrowdStrike, Security_Endpoint_Management_API_RunscriptParamsMicrosoft, Security_Endpoint_Management_API_RunscriptParamsSentinelOne]).optional()
-})).meta({ id: 'Security_Endpoint_Management_API_Runscript' })
-export type Security_Endpoint_Management_API_Runscript = z.infer<typeof Security_Endpoint_Management_API_Runscript>
 
 export const Security_Endpoint_Management_API_Execute = Security_Endpoint_Management_API_ResponseActionDetails.merge(z.object({
   outputs: z.record(z.string(), z.object({
@@ -232,6 +109,9 @@ export const Security_Endpoint_Management_API_GetFile = Security_Endpoint_Manage
 })).meta({ id: 'Security_Endpoint_Management_API_GetFile' })
 export type Security_Endpoint_Management_API_GetFile = z.infer<typeof Security_Endpoint_Management_API_GetFile>
 
+export const Security_Endpoint_Management_API_Isolate = Security_Endpoint_Management_API_ResponseActionDetails.merge(z.object({})).meta({ id: 'Security_Endpoint_Management_API_Isolate' })
+export type Security_Endpoint_Management_API_Isolate = z.infer<typeof Security_Endpoint_Management_API_Isolate>
+
 export const Security_Endpoint_Management_API_KillProcess = Security_Endpoint_Management_API_ResponseActionDetails.merge(z.object({
   outputs: z.record(z.string(), z.object({
     content: z.union([z.object({
@@ -258,6 +138,91 @@ export const Security_Endpoint_Management_API_KillProcess = Security_Endpoint_Ma
 })).meta({ id: 'Security_Endpoint_Management_API_KillProcess' })
 export type Security_Endpoint_Management_API_KillProcess = z.infer<typeof Security_Endpoint_Management_API_KillProcess>
 
+export const Security_Endpoint_Management_API_MemoryDump = Security_Endpoint_Management_API_ResponseActionDetails.merge(z.object({
+  outputs: z.record(z.string(), z.object({
+    content: z.object({
+      code: z.string().optional(),
+      disk_free_space: z.number().optional(),
+      file_size: z.string().optional(),
+      path: z.string().optional()
+    }).optional()
+  })).optional(),
+  parameters: z.union([z.object({
+    type: z.enum(['kernel'])
+  }), z.object({
+    pid: z.number(),
+    type: z.enum(['process'])
+  }), z.object({
+    entity_id: z.string(),
+    type: z.enum(['process'])
+  })])
+})).meta({ id: 'Security_Endpoint_Management_API_MemoryDump' })
+export type Security_Endpoint_Management_API_MemoryDump = z.infer<typeof Security_Endpoint_Management_API_MemoryDump>
+
+export const Security_Endpoint_Management_API_Runscript = Security_Endpoint_Management_API_ResponseActionDetails.merge(z.object({
+  outputs: z.record(z.string(), z.object({
+    content: Security_Endpoint_Management_API_DownloadUri.merge(z.object({
+      code: z.string().optional(),
+      stderr: z.string().optional(),
+      stdout: z.string().optional()
+    })).optional()
+  })).optional(),
+  parameters: z.union([Security_Endpoint_Management_API_RunscriptParamsCrowdStrike, Security_Endpoint_Management_API_RunscriptParamsMicrosoft, Security_Endpoint_Management_API_RunscriptParamsSentinelOne]).optional()
+})).meta({ id: 'Security_Endpoint_Management_API_Runscript' })
+export type Security_Endpoint_Management_API_Runscript = z.infer<typeof Security_Endpoint_Management_API_Runscript>
+
+export const Security_Endpoint_Management_API_Scan = Security_Endpoint_Management_API_ResponseActionDetails.merge(z.object({
+  outputs: z.record(z.string(), z.object({
+    content: z.object({
+      code: z.string().optional()
+    }).optional()
+  })).optional(),
+  parameters: z.object({
+    path: z.string().optional()
+  }).optional()
+})).meta({ id: 'Security_Endpoint_Management_API_Scan' })
+export type Security_Endpoint_Management_API_Scan = z.infer<typeof Security_Endpoint_Management_API_Scan>
+
+export const Security_Endpoint_Management_API_SuspendProcess = Security_Endpoint_Management_API_ResponseActionDetails.merge(z.object({
+  outputs: z.record(z.string(), z.object({
+    content: z.union([z.object({
+      code: z.string().optional(),
+      command: z.string().optional(),
+      pid: z.number().optional()
+    }), z.object({
+      code: z.string().optional(),
+      command: z.string().optional(),
+      entity_id: z.string().optional()
+    })]).optional()
+  })).optional(),
+  parameters: z.union([z.object({
+    pid: z.number().optional()
+  }), z.object({
+    entity_id: z.string().optional()
+  })]).optional()
+})).meta({ id: 'Security_Endpoint_Management_API_SuspendProcess' })
+export type Security_Endpoint_Management_API_SuspendProcess = z.infer<typeof Security_Endpoint_Management_API_SuspendProcess>
+
+export const Security_Endpoint_Management_API_Unisolate = Security_Endpoint_Management_API_ResponseActionDetails.merge(z.object({})).meta({ id: 'Security_Endpoint_Management_API_Unisolate' })
+export type Security_Endpoint_Management_API_Unisolate = z.infer<typeof Security_Endpoint_Management_API_Unisolate>
+
+export const Security_Endpoint_Management_API_Upload = Security_Endpoint_Management_API_ResponseActionDetails.merge(z.object({
+  outputs: z.record(z.string(), z.object({
+    content: z.object({
+      code: z.string().optional(),
+      disk_free_space: z.number().optional(),
+      path: z.string().optional()
+    }).optional()
+  })).optional(),
+  parameters: z.object({
+    file_id: z.string().optional(),
+    file_name: z.string().optional(),
+    file_sha256: z.string().optional(),
+    file_size: z.number().optional()
+  }).optional()
+})).meta({ id: 'Security_Endpoint_Management_API_Upload' })
+export type Security_Endpoint_Management_API_Upload = z.infer<typeof Security_Endpoint_Management_API_Upload>
+
 export const Security_Endpoint_Management_API_RunningProcesses = Security_Endpoint_Management_API_ResponseActionDetails.merge(z.object({
   outputs: z.record(z.string(), z.object({
     content: z.union([Security_Endpoint_Management_API_RunningProcessesOutputEndpoint, Security_Endpoint_Management_API_RunningProcessesOutputSentinelOne]).optional()
@@ -267,3 +232,7 @@ export type Security_Endpoint_Management_API_RunningProcesses = z.infer<typeof S
 
 export const Security_Endpoint_Management_API_ActionDetailsResponse = z.union([Security_Endpoint_Management_API_KillProcess, Security_Endpoint_Management_API_GetFile, Security_Endpoint_Management_API_Execute, Security_Endpoint_Management_API_Runscript, Security_Endpoint_Management_API_Upload, Security_Endpoint_Management_API_Scan, Security_Endpoint_Management_API_Cancel, Security_Endpoint_Management_API_Isolate, Security_Endpoint_Management_API_Unisolate, Security_Endpoint_Management_API_SuspendProcess, Security_Endpoint_Management_API_RunningProcesses, Security_Endpoint_Management_API_MemoryDump]).meta({ id: 'Security_Endpoint_Management_API_ActionDetailsResponse' })
 export type Security_Endpoint_Management_API_ActionDetailsResponse = z.infer<typeof Security_Endpoint_Management_API_ActionDetailsResponse>
+
+export { Security_Endpoint_Management_API_ResponseActionDetails } from './schemas/security.js'
+export { Security_Endpoint_Management_API_Command } from './schemas/security.js'
+export { Security_Endpoint_Management_API_AgentTypes } from './schemas/security.js'

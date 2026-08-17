@@ -12,14 +12,6 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Kibana_HTTP_APIs_bulk_delete_enrollment_api_keys_response = z.object({
-  action: z.string(),
-  count: z.number(),
-  errorCount: z.number(),
-  successCount: z.number()
-}).meta({ id: 'Kibana_HTTP_APIs_bulk_delete_enrollment_api_keys_response' })
-export type Kibana_HTTP_APIs_bulk_delete_enrollment_api_keys_response = z.infer<typeof Kibana_HTTP_APIs_bulk_delete_enrollment_api_keys_response>
-
 export const Kibana_HTTP_APIs_bulk_delete_enrollment_api_keys_request = z.object({
   forceDelete: z.boolean().optional(),
   includeHidden: z.boolean().optional(),
@@ -27,3 +19,11 @@ export const Kibana_HTTP_APIs_bulk_delete_enrollment_api_keys_request = z.object
   tokenIds: z.array(z.string()).optional()
 }).meta({ id: 'Kibana_HTTP_APIs_bulk_delete_enrollment_api_keys_request' })
 export type Kibana_HTTP_APIs_bulk_delete_enrollment_api_keys_request = z.infer<typeof Kibana_HTTP_APIs_bulk_delete_enrollment_api_keys_request>
+
+export const Kibana_HTTP_APIs_bulk_delete_enrollment_api_keys_response = z.object({
+  action: z.string(),
+  count: z.number(),
+  errorCount: z.number(),
+  successCount: z.number()
+}).meta({ id: 'Kibana_HTTP_APIs_bulk_delete_enrollment_api_keys_response' })
+export type Kibana_HTTP_APIs_bulk_delete_enrollment_api_keys_response = z.infer<typeof Kibana_HTTP_APIs_bulk_delete_enrollment_api_keys_response>

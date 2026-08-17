@@ -11,25 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const APM_UI_settings_object = z.record(z.string(), z.string()).meta({ id: 'APM_UI_settings_object' })
-export type APM_UI_settings_object = z.infer<typeof APM_UI_settings_object>
-
-export const APM_UI_service_object = z.object({
-  environment: z.string().optional(),
-  name: z.string().optional()
-}).meta({ id: 'APM_UI_service_object' })
-export type APM_UI_service_object = z.infer<typeof APM_UI_service_object>
-
-export const APM_UI_agent_configuration_object = z.object({
-  '@timestamp': z.number(),
-  agent_name: z.string().optional(),
-  applied_by_agent: z.boolean().optional(),
-  etag: z.string(),
-  service: APM_UI_service_object,
-  settings: APM_UI_settings_object
-}).meta({ id: 'APM_UI_agent_configuration_object' })
-export type APM_UI_agent_configuration_object = z.infer<typeof APM_UI_agent_configuration_object>
+import { APM_UI_agent_configuration_object, APM_UI_service_object } from './schemas/apm_ui.js'
 
 export const APM_UI_search_agent_configuration_object = z.object({
   error: z.string().optional(),
@@ -46,3 +28,7 @@ export const APM_UI_search_agent_configuration_response = z.object({
   _source: APM_UI_agent_configuration_object.optional()
 }).meta({ id: 'APM_UI_search_agent_configuration_response' })
 export type APM_UI_search_agent_configuration_response = z.infer<typeof APM_UI_search_agent_configuration_response>
+
+export { APM_UI_agent_configuration_object } from './schemas/apm_ui.js'
+export { APM_UI_settings_object } from './schemas/apm_ui.js'
+export { APM_UI_service_object } from './schemas/apm_ui.js'

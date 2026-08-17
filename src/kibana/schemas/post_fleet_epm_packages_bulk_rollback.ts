@@ -12,14 +12,14 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Kibana_HTTP_APIs_bulk_rollback_packages_response = z.object({
-  taskId: z.string()
-}).meta({ id: 'Kibana_HTTP_APIs_bulk_rollback_packages_response' })
-export type Kibana_HTTP_APIs_bulk_rollback_packages_response = z.infer<typeof Kibana_HTTP_APIs_bulk_rollback_packages_response>
-
 export const Kibana_HTTP_APIs_bulk_rollback_packages_request = z.object({
   packages: z.array(z.object({
     name: z.string()
   }))
 }).meta({ id: 'Kibana_HTTP_APIs_bulk_rollback_packages_request' })
 export type Kibana_HTTP_APIs_bulk_rollback_packages_request = z.infer<typeof Kibana_HTTP_APIs_bulk_rollback_packages_request>
+
+export const Kibana_HTTP_APIs_bulk_rollback_packages_response = z.object({
+  taskId: z.string()
+}).meta({ id: 'Kibana_HTTP_APIs_bulk_rollback_packages_response' })
+export type Kibana_HTTP_APIs_bulk_rollback_packages_response = z.infer<typeof Kibana_HTTP_APIs_bulk_rollback_packages_response>

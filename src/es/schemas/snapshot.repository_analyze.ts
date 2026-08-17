@@ -3,67 +3,27 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const long = z.number().meta({ id: 'long' })
-export type long = z.infer<typeof long>
-
-export const ByteSize = z.union([long, z.string()]).meta({ id: 'ByteSize' })
-export type ByteSize = z.infer<typeof ByteSize>
-
-/**
- * A duration. Units can be `nanos`, `micros`, `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours) and
- * `d` (days). Also accepts "0" without a unit and "-1" to indicate an unspecified value.
- */
-export const Duration = z.union([z.string(), z.literal(-1), z.literal(0)]).meta({ id: 'Duration' })
-export type Duration = z.infer<typeof Duration>
-
-export const DurationValue = z.any().meta({ id: 'DurationValue' })
-export type DurationValue = z.infer<typeof DurationValue>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const Name = z.string().meta({ id: 'Name' })
-export type Name = z.infer<typeof Name>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
-
-export const double = z.number().meta({ id: 'double' })
-export type double = z.infer<typeof double>
-
-export const integer = z.number().meta({ id: 'integer' })
-export type integer = z.infer<typeof integer>
+import { ByteSize, Duration, DurationValue, Id, Name, double, integer, long } from './_types.js'
 
 export const SnapshotRepositoryAnalyzeSnapshotNodeInfo = z.object({
-  id: Id,
-  name: Name
+  id: z.lazy(() => Id),
+  name: z.lazy(() => Name)
 }).meta({ id: 'SnapshotRepositoryAnalyzeSnapshotNodeInfo' })
 export type SnapshotRepositoryAnalyzeSnapshotNodeInfo = z.infer<typeof SnapshotRepositoryAnalyzeSnapshotNodeInfo>
 
 export const SnapshotRepositoryAnalyzeReadBlobDetails = z.object({
   before_write_complete: z.boolean().describe('Indicates whether the read operation may have started before the write operation was complete.').optional(),
-  elapsed: Duration.describe('The length of time spent reading the blob. If the blob was not found, this detail is omitted.').optional(),
-  elapsed_nanos: DurationValue.describe('The length of time spent reading the blob, in nanoseconds. If the blob was not found, this detail is omitted.').optional(),
-  first_byte_time: Duration.describe('The length of time waiting for the first byte of the read operation to be received. If the blob was not found, this detail is omitted.').optional(),
-  first_byte_time_nanos: DurationValue.describe('The length of time waiting for the first byte of the read operation to be received, in nanoseconds. If the blob was not found, this detail is omitted.'),
+  elapsed: z.lazy(() => Duration).describe('The length of time spent reading the blob. If the blob was not found, this detail is omitted.').optional(),
+  elapsed_nanos: z.lazy(() => DurationValue).describe('The length of time spent reading the blob, in nanoseconds. If the blob was not found, this detail is omitted.').optional(),
+  first_byte_time: z.lazy(() => Duration).describe('The length of time waiting for the first byte of the read operation to be received. If the blob was not found, this detail is omitted.').optional(),
+  first_byte_time_nanos: z.lazy(() => DurationValue).describe('The length of time waiting for the first byte of the read operation to be received, in nanoseconds. If the blob was not found, this detail is omitted.'),
   found: z.boolean().describe('Indicates whether the blob was found by the read operation. If the read was started before the write completed or the write was ended before completion, it might be false.'),
   node: SnapshotRepositoryAnalyzeSnapshotNodeInfo.describe('The node that performed the read operation.'),
-  throttled: Duration.describe('The length of time spent waiting due to the `max_restore_bytes_per_sec` or `indices.recovery.max_bytes_per_sec` throttles during the read of the blob. If the blob was not found, this detail is omitted.').optional(),
-  throttled_nanos: DurationValue.describe('The length of time spent waiting due to the `max_restore_bytes_per_sec` or `indices.recovery.max_bytes_per_sec` throttles during the read of the blob, in nanoseconds. If the blob was not found, this detail is omitted.').optional()
+  throttled: z.lazy(() => Duration).describe('The length of time spent waiting due to the `max_restore_bytes_per_sec` or `indices.recovery.max_bytes_per_sec` throttles during the read of the blob. If the blob was not found, this detail is omitted.').optional(),
+  throttled_nanos: z.lazy(() => DurationValue).describe('The length of time spent waiting due to the `max_restore_bytes_per_sec` or `indices.recovery.max_bytes_per_sec` throttles during the read of the blob, in nanoseconds. If the blob was not found, this detail is omitted.').optional()
 }).meta({ id: 'SnapshotRepositoryAnalyzeReadBlobDetails' })
 export type SnapshotRepositoryAnalyzeReadBlobDetails = z.infer<typeof SnapshotRepositoryAnalyzeReadBlobDetails>
 
@@ -71,38 +31,38 @@ export const SnapshotRepositoryAnalyzeBlobDetails = z.object({
   name: z.string().describe('The name of the blob.'),
   overwritten: z.boolean().describe('Indicates whether the blob was overwritten while the read operations were ongoing.   /**'),
   read_early: z.boolean(),
-  read_end: long.describe('The position, in bytes, at which read operations completed.'),
-  read_start: long.describe('The position, in bytes, at which read operations started.'),
+  read_end: z.lazy(() => long).describe('The position, in bytes, at which read operations completed.'),
+  read_start: z.lazy(() => long).describe('The position, in bytes, at which read operations started.'),
   reads: SnapshotRepositoryAnalyzeReadBlobDetails.describe('A description of every read operation performed on the blob.'),
-  size: ByteSize.describe('The size of the blob.'),
-  size_bytes: long.describe('The size of the blob in bytes.')
+  size: z.lazy(() => ByteSize).describe('The size of the blob.'),
+  size_bytes: z.lazy(() => long).describe('The size of the blob in bytes.')
 }).meta({ id: 'SnapshotRepositoryAnalyzeBlobDetails' })
 export type SnapshotRepositoryAnalyzeBlobDetails = z.infer<typeof SnapshotRepositoryAnalyzeBlobDetails>
 
 export const SnapshotRepositoryAnalyzeDetailsInfo = z.object({
   blob: SnapshotRepositoryAnalyzeBlobDetails.describe('A description of the blob that was written and read.'),
-  overwrite_elapsed: Duration.describe('The elapsed time spent overwriting the blob. If the blob was not overwritten, this information is omitted.').optional(),
-  overwrite_elapsed_nanos: DurationValue.describe('The elapsed time spent overwriting the blob, in nanoseconds. If the blob was not overwritten, this information is omitted.').optional(),
-  write_elapsed: Duration.describe('The elapsed time spent writing the blob.'),
-  write_elapsed_nanos: DurationValue.describe('The elapsed time spent writing the blob, in nanoseconds.'),
-  write_throttled: Duration.describe('The length of time spent waiting for the `max_snapshot_bytes_per_sec` (or `indices.recovery.max_bytes_per_sec` if the recovery settings for managed services are set) throttle while writing the blob.'),
-  write_throttled_nanos: DurationValue.describe('The length of time spent waiting for the `max_snapshot_bytes_per_sec` (or `indices.recovery.max_bytes_per_sec` if the recovery settings for managed services are set) throttle while writing the blob, in nanoseconds.'),
+  overwrite_elapsed: z.lazy(() => Duration).describe('The elapsed time spent overwriting the blob. If the blob was not overwritten, this information is omitted.').optional(),
+  overwrite_elapsed_nanos: z.lazy(() => DurationValue).describe('The elapsed time spent overwriting the blob, in nanoseconds. If the blob was not overwritten, this information is omitted.').optional(),
+  write_elapsed: z.lazy(() => Duration).describe('The elapsed time spent writing the blob.'),
+  write_elapsed_nanos: z.lazy(() => DurationValue).describe('The elapsed time spent writing the blob, in nanoseconds.'),
+  write_throttled: z.lazy(() => Duration).describe('The length of time spent waiting for the `max_snapshot_bytes_per_sec` (or `indices.recovery.max_bytes_per_sec` if the recovery settings for managed services are set) throttle while writing the blob.'),
+  write_throttled_nanos: z.lazy(() => DurationValue).describe('The length of time spent waiting for the `max_snapshot_bytes_per_sec` (or `indices.recovery.max_bytes_per_sec` if the recovery settings for managed services are set) throttle while writing the blob, in nanoseconds.'),
   writer_node: SnapshotRepositoryAnalyzeSnapshotNodeInfo.describe('The node which wrote the blob and coordinated the read operations.')
 }).meta({ id: 'SnapshotRepositoryAnalyzeDetailsInfo' })
 export type SnapshotRepositoryAnalyzeDetailsInfo = z.infer<typeof SnapshotRepositoryAnalyzeDetailsInfo>
 
 export const SnapshotRepositoryAnalyzeReadSummaryInfo = z.object({
-  count: integer.describe('The number of read operations performed in the test.'),
-  max_wait: Duration.describe('The maximum time spent waiting for the first byte of any read request to be received.'),
-  max_wait_nanos: DurationValue.describe('The maximum time spent waiting for the first byte of any read request to be received, in nanoseconds.'),
-  total_elapsed: Duration.describe('The total elapsed time spent on reading blobs in the test.'),
-  total_elapsed_nanos: DurationValue.describe('The total elapsed time spent on reading blobs in the test, in nanoseconds.'),
-  total_size: ByteSize.describe('The total size of all the blobs or partial blobs read in the test.'),
-  total_size_bytes: long.describe('The total size of all the blobs or partial blobs read in the test, in bytes.'),
-  total_throttled: Duration.describe('The total time spent waiting due to the `max_restore_bytes_per_sec` or `indices.recovery.max_bytes_per_sec` throttles.'),
-  total_throttled_nanos: DurationValue.describe('The total time spent waiting due to the `max_restore_bytes_per_sec` or `indices.recovery.max_bytes_per_sec` throttles, in nanoseconds.'),
-  total_wait: Duration.describe('The total time spent waiting for the first byte of each read request to be received.'),
-  total_wait_nanos: DurationValue.describe('The total time spent waiting for the first byte of each read request to be received, in nanoseconds.')
+  count: z.lazy(() => integer).describe('The number of read operations performed in the test.'),
+  max_wait: z.lazy(() => Duration).describe('The maximum time spent waiting for the first byte of any read request to be received.'),
+  max_wait_nanos: z.lazy(() => DurationValue).describe('The maximum time spent waiting for the first byte of any read request to be received, in nanoseconds.'),
+  total_elapsed: z.lazy(() => Duration).describe('The total elapsed time spent on reading blobs in the test.'),
+  total_elapsed_nanos: z.lazy(() => DurationValue).describe('The total elapsed time spent on reading blobs in the test, in nanoseconds.'),
+  total_size: z.lazy(() => ByteSize).describe('The total size of all the blobs or partial blobs read in the test.'),
+  total_size_bytes: z.lazy(() => long).describe('The total size of all the blobs or partial blobs read in the test, in bytes.'),
+  total_throttled: z.lazy(() => Duration).describe('The total time spent waiting due to the `max_restore_bytes_per_sec` or `indices.recovery.max_bytes_per_sec` throttles.'),
+  total_throttled_nanos: z.lazy(() => DurationValue).describe('The total time spent waiting due to the `max_restore_bytes_per_sec` or `indices.recovery.max_bytes_per_sec` throttles, in nanoseconds.'),
+  total_wait: z.lazy(() => Duration).describe('The total time spent waiting for the first byte of each read request to be received.'),
+  total_wait_nanos: z.lazy(() => DurationValue).describe('The total time spent waiting for the first byte of each read request to be received, in nanoseconds.')
 }).meta({ id: 'SnapshotRepositoryAnalyzeReadSummaryInfo' })
 export type SnapshotRepositoryAnalyzeReadSummaryInfo = z.infer<typeof SnapshotRepositoryAnalyzeReadSummaryInfo>
 
@@ -218,31 +178,30 @@ export type SnapshotRepositoryAnalyzeReadSummaryInfo = z.infer<typeof SnapshotRe
  * Some operations also verify the behavior on small blobs with sizes other than 8 bytes.
  */
 export const SnapshotRepositoryAnalyzeRequest = z.object({
-  ...RequestBase.shape,
-  name: Name.describe('The name of the repository.').meta({ found_in: 'path' }),
-  blob_count: integer.describe('The total number of blobs to write to the repository during the test. For realistic experiments, set this parameter to at least `2000`.').optional().meta({ found_in: 'query' }),
-  concurrency: integer.describe('The number of operations to run concurrently during the test. For realistic experiments, leave this parameter unset.').optional().meta({ found_in: 'query' }),
+  name: z.lazy(() => Name).describe('The name of the repository.').meta({ found_in: 'path' }),
+  blob_count: z.lazy(() => integer).describe('The total number of blobs to write to the repository during the test. For realistic experiments, set this parameter to at least `2000`.').optional().meta({ found_in: 'query' }),
+  concurrency: z.lazy(() => integer).describe('The number of operations to run concurrently during the test. For realistic experiments, leave this parameter unset.').optional().meta({ found_in: 'query' }),
   detailed: z.boolean().describe('Indicates whether to return detailed results, including timing information for every operation performed during the analysis. If false, it returns only a summary of the analysis.').optional().meta({ found_in: 'query' }),
-  early_read_node_count: integer.describe('The number of nodes on which to perform an early read operation while writing each blob. Early read operations are only rarely performed. For realistic experiments, leave this parameter unset.').optional().meta({ found_in: 'query' }),
-  max_blob_size: ByteSize.describe('The maximum size of a blob to be written during the test. For realistic experiments, set this parameter to at least `2gb`.').optional().meta({ found_in: 'query' }),
-  max_total_data_size: ByteSize.describe('An upper limit on the total size of all the blobs written during the test. For realistic experiments, set this parameter to at least `1tb`.').optional().meta({ found_in: 'query' }),
-  rare_action_probability: double.describe('The probability of performing a rare action such as an early read, an overwrite, or an aborted write on each blob. For realistic experiments, leave this parameter unset.').optional().meta({ found_in: 'query' }),
+  early_read_node_count: z.lazy(() => integer).describe('The number of nodes on which to perform an early read operation while writing each blob. Early read operations are only rarely performed. For realistic experiments, leave this parameter unset.').optional().meta({ found_in: 'query' }),
+  max_blob_size: z.lazy(() => ByteSize).describe('The maximum size of a blob to be written during the test. For realistic experiments, set this parameter to at least `2gb`.').optional().meta({ found_in: 'query' }),
+  max_total_data_size: z.lazy(() => ByteSize).describe('An upper limit on the total size of all the blobs written during the test. For realistic experiments, set this parameter to at least `1tb`.').optional().meta({ found_in: 'query' }),
+  rare_action_probability: z.lazy(() => double).describe('The probability of performing a rare action such as an early read, an overwrite, or an aborted write on each blob. For realistic experiments, leave this parameter unset.').optional().meta({ found_in: 'query' }),
   rarely_abort_writes: z.boolean().describe('Indicates whether to rarely cancel writes before they complete. For realistic experiments, leave this parameter unset.').optional().meta({ found_in: 'query' }),
-  read_node_count: integer.describe('The number of nodes on which to read a blob after writing. For realistic experiments, leave this parameter unset.').optional().meta({ found_in: 'query' }),
-  register_operation_count: integer.describe('The minimum number of linearizable register operations to perform in total. For realistic experiments, set this parameter to at least `100`.').optional().meta({ found_in: 'query' }),
-  seed: integer.describe('The seed for the pseudo-random number generator used to generate the list of operations performed during the test. To repeat the same set of operations in multiple experiments, use the same seed in each experiment. Note that the operations are performed concurrently so might not always happen in the same order on each run. For realistic experiments, leave this parameter unset.').optional().meta({ found_in: 'query' }),
-  timeout: Duration.describe('The period of time to wait for the test to complete. If no response is received before the timeout expires, the test is cancelled and returns an error. For realistic experiments, set this parameter sufficiently long to allow the test to complete.').optional().meta({ found_in: 'query' })
+  read_node_count: z.lazy(() => integer).describe('The number of nodes on which to read a blob after writing. For realistic experiments, leave this parameter unset.').optional().meta({ found_in: 'query' }),
+  register_operation_count: z.lazy(() => integer).describe('The minimum number of linearizable register operations to perform in total. For realistic experiments, set this parameter to at least `100`.').optional().meta({ found_in: 'query' }),
+  seed: z.lazy(() => integer).describe('The seed for the pseudo-random number generator used to generate the list of operations performed during the test. To repeat the same set of operations in multiple experiments, use the same seed in each experiment. Note that the operations are performed concurrently so might not always happen in the same order on each run. For realistic experiments, leave this parameter unset.').optional().meta({ found_in: 'query' }),
+  timeout: z.lazy(() => Duration).describe('The period of time to wait for the test to complete. If no response is received before the timeout expires, the test is cancelled and returns an error. For realistic experiments, set this parameter sufficiently long to allow the test to complete.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'SnapshotRepositoryAnalyzeRequest' })
 export type SnapshotRepositoryAnalyzeRequest = z.infer<typeof SnapshotRepositoryAnalyzeRequest>
 
 export const SnapshotRepositoryAnalyzeWriteSummaryInfo = z.object({
-  count: integer.describe('The number of write operations performed in the test.'),
-  total_elapsed: Duration.describe('The total elapsed time spent on writing blobs in the test.'),
-  total_elapsed_nanos: DurationValue.describe('The total elapsed time spent on writing blobs in the test, in nanoseconds.'),
-  total_size: ByteSize.describe('The total size of all the blobs written in the test.'),
-  total_size_bytes: long.describe('The total size of all the blobs written in the test, in bytes.'),
-  total_throttled: Duration.describe('The total time spent waiting due to the `max_snapshot_bytes_per_sec` throttle.'),
-  total_throttled_nanos: long.describe('The total time spent waiting due to the `max_snapshot_bytes_per_sec` throttle, in nanoseconds.')
+  count: z.lazy(() => integer).describe('The number of write operations performed in the test.'),
+  total_elapsed: z.lazy(() => Duration).describe('The total elapsed time spent on writing blobs in the test.'),
+  total_elapsed_nanos: z.lazy(() => DurationValue).describe('The total elapsed time spent on writing blobs in the test, in nanoseconds.'),
+  total_size: z.lazy(() => ByteSize).describe('The total size of all the blobs written in the test.'),
+  total_size_bytes: z.lazy(() => long).describe('The total size of all the blobs written in the test, in bytes.'),
+  total_throttled: z.lazy(() => Duration).describe('The total time spent waiting due to the `max_snapshot_bytes_per_sec` throttle.'),
+  total_throttled_nanos: z.lazy(() => long).describe('The total time spent waiting due to the `max_snapshot_bytes_per_sec` throttle, in nanoseconds.')
 }).meta({ id: 'SnapshotRepositoryAnalyzeWriteSummaryInfo' })
 export type SnapshotRepositoryAnalyzeWriteSummaryInfo = z.infer<typeof SnapshotRepositoryAnalyzeWriteSummaryInfo>
 
@@ -253,25 +212,25 @@ export const SnapshotRepositoryAnalyzeSummaryInfo = z.object({
 export type SnapshotRepositoryAnalyzeSummaryInfo = z.infer<typeof SnapshotRepositoryAnalyzeSummaryInfo>
 
 export const SnapshotRepositoryAnalyzeResponse = z.object({
-  blob_count: integer.describe('The number of blobs written to the repository during the test.'),
+  blob_count: z.lazy(() => integer).describe('The number of blobs written to the repository during the test.'),
   blob_path: z.string().describe('The path in the repository under which all the blobs were written during the test.'),
-  concurrency: integer.describe('The number of write operations performed concurrently during the test.'),
+  concurrency: z.lazy(() => integer).describe('The number of write operations performed concurrently during the test.'),
   coordinating_node: SnapshotRepositoryAnalyzeSnapshotNodeInfo.describe('The node that coordinated the analysis and performed the final cleanup.'),
-  delete_elapsed: Duration.describe('The time it took to delete all the blobs in the container.'),
-  delete_elapsed_nanos: DurationValue.describe('The time it took to delete all the blobs in the container, in nanoseconds.'),
+  delete_elapsed: z.lazy(() => Duration).describe('The time it took to delete all the blobs in the container.'),
+  delete_elapsed_nanos: z.lazy(() => DurationValue).describe('The time it took to delete all the blobs in the container, in nanoseconds.'),
   details: SnapshotRepositoryAnalyzeDetailsInfo.describe('A description of every read and write operation performed during the test.'),
-  early_read_node_count: integer.describe('The limit on the number of nodes on which early read operations were performed after writing each blob.'),
+  early_read_node_count: z.lazy(() => integer).describe('The limit on the number of nodes on which early read operations were performed after writing each blob.'),
   issues_detected: z.array(z.string()).describe('A list of correctness issues detected, which is empty if the API succeeded. It is included to emphasize that a successful response does not guarantee correct behaviour in future.'),
-  listing_elapsed: Duration.describe('The time it took to retrieve a list of all the blobs in the container.'),
-  listing_elapsed_nanos: DurationValue.describe('The time it took to retrieve a list of all the blobs in the container, in nanoseconds.'),
-  max_blob_size: ByteSize.describe('The limit on the size of a blob written during the test.'),
-  max_blob_size_bytes: long.describe('The limit, in bytes, on the size of a blob written during the test.'),
-  max_total_data_size: ByteSize.describe('The limit on the total size of all blob written during the test.'),
-  max_total_data_size_bytes: long.describe('The limit, in bytes, on the total size of all blob written during the test.'),
-  rare_action_probability: double.describe('The probability of performing rare actions during the test.'),
-  read_node_count: integer.describe('The limit on the number of nodes on which read operations were performed after writing each blob.'),
+  listing_elapsed: z.lazy(() => Duration).describe('The time it took to retrieve a list of all the blobs in the container.'),
+  listing_elapsed_nanos: z.lazy(() => DurationValue).describe('The time it took to retrieve a list of all the blobs in the container, in nanoseconds.'),
+  max_blob_size: z.lazy(() => ByteSize).describe('The limit on the size of a blob written during the test.'),
+  max_blob_size_bytes: z.lazy(() => long).describe('The limit, in bytes, on the size of a blob written during the test.'),
+  max_total_data_size: z.lazy(() => ByteSize).describe('The limit on the total size of all blob written during the test.'),
+  max_total_data_size_bytes: z.lazy(() => long).describe('The limit, in bytes, on the total size of all blob written during the test.'),
+  rare_action_probability: z.lazy(() => double).describe('The probability of performing rare actions during the test.'),
+  read_node_count: z.lazy(() => integer).describe('The limit on the number of nodes on which read operations were performed after writing each blob.'),
   repository: z.string().describe('The name of the repository that was the subject of the analysis.'),
-  seed: long.describe('The seed for the pseudo-random number generator used to generate the operations used during the test.'),
+  seed: z.lazy(() => long).describe('The seed for the pseudo-random number generator used to generate the operations used during the test.'),
   summary: SnapshotRepositoryAnalyzeSummaryInfo.describe('A collection of statistics that summarize the results of the test.')
 }).meta({ id: 'SnapshotRepositoryAnalyzeResponse' })
 export type SnapshotRepositoryAnalyzeResponse = z.infer<typeof SnapshotRepositoryAnalyzeResponse>

@@ -11,16 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Kibana_HTTP_APIs_package_icon = z.object({
-  dark_mode: z.boolean().optional(),
-  path: z.string().optional(),
-  size: z.string().optional(),
-  src: z.string(),
-  title: z.string().optional(),
-  type: z.string().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_package_icon' })
-export type Kibana_HTTP_APIs_package_icon = z.infer<typeof Kibana_HTTP_APIs_package_icon>
+import { Kibana_HTTP_APIs_package_icon } from './schemas/kibana.js'
 
 export const Kibana_HTTP_APIs_installed_package = z.object({
   dataStreams: z.array(z.object({
@@ -43,3 +34,5 @@ export const Kibana_HTTP_APIs_get_installed_packages_response = z.object({
   total: z.number()
 }).meta({ id: 'Kibana_HTTP_APIs_get_installed_packages_response' })
 export type Kibana_HTTP_APIs_get_installed_packages_response = z.infer<typeof Kibana_HTTP_APIs_get_installed_packages_response>
+
+export { Kibana_HTTP_APIs_package_icon } from './schemas/kibana.js'

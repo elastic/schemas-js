@@ -12,15 +12,15 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const VerificationCodeResponse = z.object({
-  verification: z.string()
-}).meta({ id: 'VerificationCodeResponse' })
-export type VerificationCodeResponse = z.infer<typeof VerificationCodeResponse>
-
 export const VerificationCodeRequest = z.object({
   domain_claim_request: z.string()
 }).meta({ id: 'VerificationCodeRequest' })
 export type VerificationCodeRequest = z.infer<typeof VerificationCodeRequest>
+
+export const VerificationCodeResponse = z.object({
+  verification: z.string()
+}).meta({ id: 'VerificationCodeResponse' })
+export type VerificationCodeResponse = z.infer<typeof VerificationCodeResponse>
 
 export const DomainClaimGenerateVerificationCodeRequest = VerificationCodeRequest
 export type DomainClaimGenerateVerificationCodeRequest = VerificationCodeRequest

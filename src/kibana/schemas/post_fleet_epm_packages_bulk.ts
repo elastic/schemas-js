@@ -11,31 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Kibana_HTTP_APIs_bulk_install_packages_response_item_error = z.object({
-  error: z.union([z.string(), z.unknown().nullable()]).optional(),
-  name: z.string(),
-  statusCode: z.number()
-}).meta({ id: 'Kibana_HTTP_APIs_bulk_install_packages_response_item_error' })
-export type Kibana_HTTP_APIs_bulk_install_packages_response_item_error = z.infer<typeof Kibana_HTTP_APIs_bulk_install_packages_response_item_error>
-
-export const Kibana_HTTP_APIs_es_asset_reference = z.object({
-  customDataStreamOriginDataset: z.string().optional(),
-  customDataStreamOriginType: z.string().optional(),
-  deferred: z.boolean().optional(),
-  id: z.string(),
-  type: z.enum(['index', 'index_template', 'component_template', 'ingest_pipeline', 'ilm_policy', 'data_stream_ilm_policy', 'transform', 'ml_model', 'knowledge_base', 'esql_view']),
-  version: z.string().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_es_asset_reference' })
-export type Kibana_HTTP_APIs_es_asset_reference = z.infer<typeof Kibana_HTTP_APIs_es_asset_reference>
-
-export const Kibana_HTTP_APIs_kibana_asset_reference = z.object({
-  deferred: z.boolean().optional(),
-  id: z.string(),
-  originId: z.string().optional(),
-  type: z.union([z.enum(['dashboard', 'lens', 'visualization', 'search', 'index-pattern', 'map', 'ml-module', 'security-rule', 'csp-rule-template', 'osquery-pack-asset', 'osquery-saved-query', 'tag']), z.string()])
-}).meta({ id: 'Kibana_HTTP_APIs_kibana_asset_reference' })
-export type Kibana_HTTP_APIs_kibana_asset_reference = z.infer<typeof Kibana_HTTP_APIs_kibana_asset_reference>
+import { Kibana_HTTP_APIs_es_asset_reference, Kibana_HTTP_APIs_kibana_asset_reference } from './schemas/kibana.js'
 
 export const Kibana_HTTP_APIs_bulk_install_packages_from_registry_request = z.object({
   allow_outdated_version: z.boolean().optional(),
@@ -47,6 +23,13 @@ export const Kibana_HTTP_APIs_bulk_install_packages_from_registry_request = z.ob
   })]))
 }).meta({ id: 'Kibana_HTTP_APIs_bulk_install_packages_from_registry_request' })
 export type Kibana_HTTP_APIs_bulk_install_packages_from_registry_request = z.infer<typeof Kibana_HTTP_APIs_bulk_install_packages_from_registry_request>
+
+export const Kibana_HTTP_APIs_bulk_install_packages_response_item_error = z.object({
+  error: z.union([z.string(), z.unknown().nullable()]).optional(),
+  name: z.string(),
+  statusCode: z.number()
+}).meta({ id: 'Kibana_HTTP_APIs_bulk_install_packages_response_item_error' })
+export type Kibana_HTTP_APIs_bulk_install_packages_response_item_error = z.infer<typeof Kibana_HTTP_APIs_bulk_install_packages_response_item_error>
 
 export const Kibana_HTTP_APIs_bulk_install_packages_response_item_success = z.object({
   name: z.string(),
@@ -65,3 +48,6 @@ export const Kibana_HTTP_APIs_bulk_install_packages_from_registry_response = z.o
   items: z.array(z.union([Kibana_HTTP_APIs_bulk_install_packages_response_item_success, Kibana_HTTP_APIs_bulk_install_packages_response_item_error]))
 }).meta({ id: 'Kibana_HTTP_APIs_bulk_install_packages_from_registry_response' })
 export type Kibana_HTTP_APIs_bulk_install_packages_from_registry_response = z.infer<typeof Kibana_HTTP_APIs_bulk_install_packages_from_registry_response>
+
+export { Kibana_HTTP_APIs_es_asset_reference } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_kibana_asset_reference } from './schemas/kibana.js'

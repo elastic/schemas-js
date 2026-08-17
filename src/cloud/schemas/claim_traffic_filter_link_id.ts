@@ -12,21 +12,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const TrafficFilterClaimedLinkIdInfo = z.object({
-  link_id: z.string().optional(),
-  azure_endpoint_name: z.string().optional(),
-  azure_endpoint_guid: z.string().optional(),
-  region: z.string()
-}).meta({ id: 'TrafficFilterClaimedLinkIdInfo' })
-export type TrafficFilterClaimedLinkIdInfo = z.infer<typeof TrafficFilterClaimedLinkIdInfo>
-
-export const TrafficFilterClaimedLinkIdRequest = z.object({
-  link_id: z.string().optional(),
-  azure_endpoint_name: z.string().optional(),
-  azure_endpoint_guid: z.string().optional(),
-  region: z.string()
-}).meta({ id: 'TrafficFilterClaimedLinkIdRequest' })
-export type TrafficFilterClaimedLinkIdRequest = z.infer<typeof TrafficFilterClaimedLinkIdRequest>
+import { TrafficFilterClaimedLinkIdInfo, TrafficFilterClaimedLinkIdRequest } from './definitions/traffic.js'
 
 export const ClaimTrafficFilterLinkIdRequest = TrafficFilterClaimedLinkIdRequest
 export type ClaimTrafficFilterLinkIdRequest = TrafficFilterClaimedLinkIdRequest

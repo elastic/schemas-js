@@ -11,11 +11,11 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_AI_Assistant_API_NonEmptyString = z.string().meta({ id: 'Security_AI_Assistant_API_NonEmptyString' })
-export type Security_AI_Assistant_API_NonEmptyString = z.infer<typeof Security_AI_Assistant_API_NonEmptyString>
+import { Security_AI_Assistant_API_NonEmptyString } from './schemas/security.js'
 
 export const Security_AI_Assistant_API_DeleteResponseFields = z.object({
   id: Security_AI_Assistant_API_NonEmptyString
 }).meta({ id: 'Security_AI_Assistant_API_DeleteResponseFields' })
 export type Security_AI_Assistant_API_DeleteResponseFields = z.infer<typeof Security_AI_Assistant_API_DeleteResponseFields>
+
+export { Security_AI_Assistant_API_NonEmptyString } from './schemas/security.js'

@@ -12,16 +12,8 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const MetadataItem = z.object({
-  key: z.string(),
-  value: z.string()
-}).meta({ id: 'MetadataItem' })
-export type MetadataItem = z.infer<typeof MetadataItem>
-
-export const DeploymentTagsResponse = z.object({
-  tags: z.array(MetadataItem).optional()
-}).meta({ id: 'DeploymentTagsResponse' })
-export type DeploymentTagsResponse = z.infer<typeof DeploymentTagsResponse>
+import { DeploymentTagsResponse } from './definitions/deployment.js'
+import { MetadataItem } from './definitions/misc.js'
 
 export const SetDeploymentTagsRequest = DeploymentTagsResponse
 export type SetDeploymentTagsRequest = DeploymentTagsResponse

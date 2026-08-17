@@ -11,75 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Data_views_typemeta_response = z.object({
-  aggs: z.object({}).optional(),
-  params: z.object({}).optional()
-}).nullable().meta({ id: 'Data_views_typemeta_response' })
-export type Data_views_typemeta_response = z.infer<typeof Data_views_typemeta_response>
-
-export const Data_views_title = z.string().meta({ id: 'Data_views_title' })
-export type Data_views_title = z.infer<typeof Data_views_title>
-
-export const Data_views_timefieldname = z.string().meta({ id: 'Data_views_timefieldname' })
-export type Data_views_timefieldname = z.infer<typeof Data_views_timefieldname>
-
-export const Data_views_sourcefilters = z.array(z.object({
-  value: z.string()
-})).meta({ id: 'Data_views_sourcefilters' })
-export type Data_views_sourcefilters = z.infer<typeof Data_views_sourcefilters>
-
-export const Data_views_runtimefieldmap = z.object({
-  script: z.object({
-    source: z.string().optional()
-  }),
-  type: z.string()
-}).meta({ id: 'Data_views_runtimefieldmap' })
-export type Data_views_runtimefieldmap = z.infer<typeof Data_views_runtimefieldmap>
-
-export const Data_views_namespaces = z.array(z.string()).meta({ id: 'Data_views_namespaces' })
-export type Data_views_namespaces = z.infer<typeof Data_views_namespaces>
-
-export const Data_views_fieldformats = z.object({}).meta({ id: 'Data_views_fieldformats' })
-export type Data_views_fieldformats = z.infer<typeof Data_views_fieldformats>
-
-export const Data_views_fieldattrs = z.object({
-  count: z.number().optional(),
-  customDescription: z.string().optional(),
-  customLabel: z.string().optional()
-}).meta({ id: 'Data_views_fieldattrs' })
-export type Data_views_fieldattrs = z.infer<typeof Data_views_fieldattrs>
-
-export const Data_views_allownoindex = z.boolean().meta({ id: 'Data_views_allownoindex' })
-export type Data_views_allownoindex = z.infer<typeof Data_views_allownoindex>
-
-export const Data_views_typemeta = z.object({
-  aggs: z.object({}),
-  params: z.object({})
-}).meta({ id: 'Data_views_typemeta' })
-export type Data_views_typemeta = z.infer<typeof Data_views_typemeta>
-
-export const Data_views_type = z.string().meta({ id: 'Data_views_type' })
-export type Data_views_type = z.infer<typeof Data_views_type>
-
-export const Data_views_data_view_response_object = z.object({
-  data_view: z.object({
-    allowNoIndex: Data_views_allownoindex.optional(),
-    fieldAttrs: z.record(z.string(), Data_views_fieldattrs).optional(),
-    fieldFormats: Data_views_fieldformats.optional(),
-    fields: z.object({}).optional(),
-    id: z.string().optional(),
-    name: z.string().optional(),
-    namespaces: Data_views_namespaces.optional(),
-    runtimeFieldMap: z.record(z.string(), Data_views_runtimefieldmap).optional(),
-    sourceFilters: Data_views_sourcefilters.optional(),
-    timeFieldName: Data_views_timefieldname.optional(),
-    title: Data_views_title.optional(),
-    typeMeta: Data_views_typemeta_response.optional(),
-    version: z.string().optional()
-  }).optional()
-}).meta({ id: 'Data_views_data_view_response_object' })
-export type Data_views_data_view_response_object = z.infer<typeof Data_views_data_view_response_object>
+import { Data_views_allownoindex, Data_views_fieldattrs, Data_views_fieldformats, Data_views_namespaces, Data_views_runtimefieldmap, Data_views_sourcefilters, Data_views_timefieldname, Data_views_title, Data_views_type, Data_views_typemeta } from './schemas/data.js'
 
 export const Data_views_create_data_view_request_object = z.object({
   data_view: z.object({
@@ -101,3 +33,16 @@ export const Data_views_create_data_view_request_object = z.object({
   override: z.boolean().optional()
 }).meta({ id: 'Data_views_create_data_view_request_object' })
 export type Data_views_create_data_view_request_object = z.infer<typeof Data_views_create_data_view_request_object>
+
+export { Data_views_data_view_response_object } from './schemas/data.js'
+export { Data_views_typemeta_response } from './schemas/data.js'
+export { Data_views_title } from './schemas/data.js'
+export { Data_views_timefieldname } from './schemas/data.js'
+export { Data_views_sourcefilters } from './schemas/data.js'
+export { Data_views_runtimefieldmap } from './schemas/data.js'
+export { Data_views_namespaces } from './schemas/data.js'
+export { Data_views_fieldformats } from './schemas/data.js'
+export { Data_views_fieldattrs } from './schemas/data.js'
+export { Data_views_allownoindex } from './schemas/data.js'
+export { Data_views_typemeta } from './schemas/data.js'
+export { Data_views_type } from './schemas/data.js'

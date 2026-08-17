@@ -27,15 +27,6 @@ export const Security_Osquery_API_UnifiedHistoryRowBase = z.object({
 }).meta({ id: 'Security_Osquery_API_UnifiedHistoryRowBase' })
 export type Security_Osquery_API_UnifiedHistoryRowBase = z.infer<typeof Security_Osquery_API_UnifiedHistoryRowBase>
 
-export const Security_Osquery_API_ScheduledHistoryRow = Security_Osquery_API_UnifiedHistoryRowBase.merge(z.object({
-  executionCount: z.number().optional(),
-  plannedTime: z.string().optional(),
-  scheduleId: z.string().optional(),
-  source: z.enum(['Scheduled']),
-  sourceType: z.enum(['scheduled'])
-})).meta({ id: 'Security_Osquery_API_ScheduledHistoryRow' })
-export type Security_Osquery_API_ScheduledHistoryRow = z.infer<typeof Security_Osquery_API_ScheduledHistoryRow>
-
 export const Security_Osquery_API_LiveHistoryRow = Security_Osquery_API_UnifiedHistoryRowBase.merge(z.object({
   actionId: z.string().optional(),
   agentAll: z.boolean().optional(),
@@ -53,6 +44,15 @@ export const Security_Osquery_API_LiveHistoryRow = Security_Osquery_API_UnifiedH
   userProfileUid: z.string().optional()
 })).meta({ id: 'Security_Osquery_API_LiveHistoryRow' })
 export type Security_Osquery_API_LiveHistoryRow = z.infer<typeof Security_Osquery_API_LiveHistoryRow>
+
+export const Security_Osquery_API_ScheduledHistoryRow = Security_Osquery_API_UnifiedHistoryRowBase.merge(z.object({
+  executionCount: z.number().optional(),
+  plannedTime: z.string().optional(),
+  scheduleId: z.string().optional(),
+  source: z.enum(['Scheduled']),
+  sourceType: z.enum(['scheduled'])
+})).meta({ id: 'Security_Osquery_API_ScheduledHistoryRow' })
+export type Security_Osquery_API_ScheduledHistoryRow = z.infer<typeof Security_Osquery_API_ScheduledHistoryRow>
 
 export const Security_Osquery_API_UnifiedHistoryRow = z.union([Security_Osquery_API_LiveHistoryRow, Security_Osquery_API_ScheduledHistoryRow]).meta({ id: 'Security_Osquery_API_UnifiedHistoryRow' })
 export type Security_Osquery_API_UnifiedHistoryRow = z.infer<typeof Security_Osquery_API_UnifiedHistoryRow>

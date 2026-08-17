@@ -12,63 +12,10 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const ProjectRoleAssignment = z.object({
-  role_id: z.string(),
-  organization_id: z.string(),
-  all: z.boolean().optional(),
-  project_ids: z.array(z.string()).optional(),
-  application_roles: z.array(z.string()).optional()
-}).meta({ id: 'ProjectRoleAssignment' })
-export type ProjectRoleAssignment = z.infer<typeof ProjectRoleAssignment>
-
-export const DeploymentRoleAssignment = z.object({
-  role_id: z.string(),
-  organization_id: z.string(),
-  all: z.boolean().optional(),
-  deployment_ids: z.array(z.string()).optional(),
-  application_roles: z.array(z.string()).optional()
-}).meta({ id: 'DeploymentRoleAssignment' })
-export type DeploymentRoleAssignment = z.infer<typeof DeploymentRoleAssignment>
-
-export const OrganizationRoleAssignment = z.object({
-  role_id: z.string(),
-  organization_id: z.string(),
-  application_roles: z.array(z.string()).optional()
-}).meta({ id: 'OrganizationRoleAssignment' })
-export type OrganizationRoleAssignment = z.infer<typeof OrganizationRoleAssignment>
-
-export const PlatformRoleAssignment = z.object({
-  role_id: z.string()
-}).meta({ id: 'PlatformRoleAssignment' })
-export type PlatformRoleAssignment = z.infer<typeof PlatformRoleAssignment>
-
-export const ProjectRoleAssignments = z.object({
-  elasticsearch: z.array(ProjectRoleAssignment).optional(),
-  observability: z.array(ProjectRoleAssignment).optional(),
-  security: z.array(ProjectRoleAssignment).optional(),
-  workplaceai: z.array(ProjectRoleAssignment).optional()
-}).meta({ id: 'ProjectRoleAssignments' })
-export type ProjectRoleAssignments = z.infer<typeof ProjectRoleAssignments>
-
-export const RoleAssignments = z.object({
-  platform: z.array(PlatformRoleAssignment).optional(),
-  organization: z.array(OrganizationRoleAssignment).optional(),
-  deployment: z.array(DeploymentRoleAssignment).optional(),
-  project: ProjectRoleAssignments.optional()
-}).meta({ id: 'RoleAssignments' })
-export type RoleAssignments = z.infer<typeof RoleAssignments>
-
-export const ApiKeyResponse = z.object({
-  id: z.string(),
-  user_id: z.string().optional(),
-  organization_id: z.string().optional(),
-  description: z.string(),
-  key: z.string().optional(),
-  creation_date: z.string(),
-  expiration_date: z.string().optional(),
-  role_assignments: RoleAssignments.optional()
-}).meta({ id: 'ApiKeyResponse' })
-export type ApiKeyResponse = z.infer<typeof ApiKeyResponse>
+import { DeploymentRoleAssignment } from './definitions/deployment.js'
+import { ApiKeyResponse, PlatformRoleAssignment, ProjectRoleAssignment, ProjectRoleAssignments } from './definitions/misc.js'
+import { OrganizationRoleAssignment } from './definitions/organization.js'
+import { RoleAssignments } from './definitions/role.js'
 
 export const ApiKeysResponse = z.object({
   keys: z.array(ApiKeyResponse),

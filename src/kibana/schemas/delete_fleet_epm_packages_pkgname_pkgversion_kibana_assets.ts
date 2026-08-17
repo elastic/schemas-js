@@ -9,10 +9,4 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
-/* eslint-disable @typescript-eslint/no-redeclare */
-import { z } from 'zod'
-
-export const Kibana_HTTP_APIs_install_kibana_assets_response = z.object({
-  success: z.boolean()
-}).meta({ id: 'Kibana_HTTP_APIs_install_kibana_assets_response' })
-export type Kibana_HTTP_APIs_install_kibana_assets_response = z.infer<typeof Kibana_HTTP_APIs_install_kibana_assets_response>
+export { Kibana_HTTP_APIs_install_kibana_assets_response } from './schemas/kibana.js'

@@ -11,56 +11,13 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Attack_discovery_API_WorkflowExecutionReference = z.object({
-  workflowId: z.string(),
-  workflowName: z.string().optional(),
-  workflowRunId: z.string()
-}).meta({ id: 'Security_Attack_discovery_API_WorkflowExecutionReference' })
-export type Security_Attack_discovery_API_WorkflowExecutionReference = z.infer<typeof Security_Attack_discovery_API_WorkflowExecutionReference>
-
-export const Security_Attack_discovery_API_WorkflowExecutionsTracking = z.object({
-  alertRetrieval: z.array(Security_Attack_discovery_API_WorkflowExecutionReference).nullable().optional(),
-  gate: z.array(Security_Attack_discovery_API_WorkflowExecutionReference).nullable().optional(),
-  generation: Security_Attack_discovery_API_WorkflowExecutionReference.optional(),
-  validation: Security_Attack_discovery_API_WorkflowExecutionReference.optional()
-}).meta({ id: 'Security_Attack_discovery_API_WorkflowExecutionsTracking' })
-export type Security_Attack_discovery_API_WorkflowExecutionsTracking = z.infer<typeof Security_Attack_discovery_API_WorkflowExecutionsTracking>
-
-export const Security_Attack_discovery_API_AttackDiscoveryGeneration = z.object({
-  alerts_context_count: z.number().optional(),
-  connector_id: z.string(),
-  connector_stats: z.object({
-    average_successful_duration_nanoseconds: z.number().optional(),
-    successful_generations: z.number().optional()
-  }).optional(),
-  conversation_id: z.string().optional(),
-  discoveries: z.number(),
-  duplicates_dropped_count: z.number().optional(),
-  end: z.string().optional(),
-  error_category: z.string().optional(),
-  execution_uuid: z.string(),
-  failed_workflow_id: z.string().optional(),
-  generated_count: z.number().optional(),
-  hallucinations_filtered_count: z.number().optional(),
-  loading_message: z.string().optional(),
-  persisted_count: z.number().optional(),
-  reason: z.string().optional(),
-  source_metadata: z.object({
-    action_execution_uuid: z.string().optional(),
-    rule_id: z.string().optional(),
-    rule_name: z.string().optional()
-  }).nullable().optional(),
-  start: z.string(),
-  status: z.enum(['canceled', 'dismissed', 'failed', 'started', 'succeeded']),
-  step_event_actions: z.array(z.string()).optional(),
-  workflow_executions: Security_Attack_discovery_API_WorkflowExecutionsTracking.optional(),
-  workflow_id: z.string().optional(),
-  workflow_run_id: z.string().optional()
-}).meta({ id: 'Security_Attack_discovery_API_AttackDiscoveryGeneration' })
-export type Security_Attack_discovery_API_AttackDiscoveryGeneration = z.infer<typeof Security_Attack_discovery_API_AttackDiscoveryGeneration>
+import { Security_Attack_discovery_API_AttackDiscoveryGeneration } from './schemas/security.js'
 
 export const GetAttackDiscoveryGenerationsResponse = z.object({
   generations: z.array(Security_Attack_discovery_API_AttackDiscoveryGeneration)
 }).meta({ id: 'GetAttackDiscoveryGenerationsResponse' })
 export type GetAttackDiscoveryGenerationsResponse = z.infer<typeof GetAttackDiscoveryGenerationsResponse>
+
+export { Security_Attack_discovery_API_AttackDiscoveryGeneration } from './schemas/security.js'
+export { Security_Attack_discovery_API_WorkflowExecutionsTracking } from './schemas/security.js'
+export { Security_Attack_discovery_API_WorkflowExecutionReference } from './schemas/security.js'

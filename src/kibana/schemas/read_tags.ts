@@ -9,8 +9,4 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
-/* eslint-disable @typescript-eslint/no-redeclare */
-import { z } from 'zod'
-
-export const Security_Detections_API_RuleTagArray = z.array(z.string()).meta({ id: 'Security_Detections_API_RuleTagArray' })
-export type Security_Detections_API_RuleTagArray = z.infer<typeof Security_Detections_API_RuleTagArray>
+export { Security_Detections_API_RuleTagArray } from './schemas/security.js'

@@ -3,72 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const IndexName = z.string().meta({ id: 'IndexName' })
-export type IndexName = z.infer<typeof IndexName>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const long = z.number().meta({ id: 'long' })
-export type long = z.infer<typeof long>
-
-export const SequenceNumber = long.meta({ id: 'SequenceNumber' })
-export type SequenceNumber = z.infer<typeof SequenceNumber>
-
-export const VersionNumber = long.meta({ id: 'VersionNumber' })
-export type VersionNumber = z.infer<typeof VersionNumber>
+import { Fields, Id, IndexName, Routing, SequenceNumber, VersionNumber, VersionType, long } from './_types.js'
+import { SearchSourceConfigParam } from './search.js'
 
 export const GetGetResult = z.object({
-  _index: IndexName.describe('The name of the index the document belongs to.'),
+  _index: z.lazy(() => IndexName).describe('The name of the index the document belongs to.'),
   fields: z.record(z.string(), z.any()).describe('If the `stored_fields` parameter is set to `true` and `found` is `true`, it contains the document fields stored in the index.').optional(),
   _ignored: z.array(z.string()).optional(),
   found: z.boolean().describe('Indicates whether the document exists.'),
-  _id: Id.describe('The unique identifier for the document.'),
-  _primary_term: long.describe('The primary term assigned to the document for the indexing operation.').optional(),
+  _id: z.lazy(() => Id).describe('The unique identifier for the document.'),
+  _primary_term: z.lazy(() => long).describe('The primary term assigned to the document for the indexing operation.').optional(),
   _routing: z.string().describe('The explicit routing, if set.').optional(),
-  _seq_no: SequenceNumber.describe('The sequence number assigned to the document for the indexing operation. Sequence numbers are used to ensure an older version of a document doesn\'t overwrite a newer version.').optional(),
+  _seq_no: z.lazy(() => SequenceNumber).describe('The sequence number assigned to the document for the indexing operation. Sequence numbers are used to ensure an older version of a document doesn\'t overwrite a newer version.').optional(),
   _source: z.any().describe('If `found` is `true`, it contains the document data formatted in JSON. If the `_source` parameter is set to `false` or the `stored_fields` parameter is set to `true`, it is excluded.').optional(),
-  _version: VersionNumber.describe('The document version, which is ncremented each time the document is updated.').optional()
+  _version: z.lazy(() => VersionNumber).describe('The document version, which is ncremented each time the document is updated.').optional()
 }).meta({ id: 'GetGetResult' })
 export type GetGetResult = z.infer<typeof GetGetResult>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
-
-/** Only to be used in query and path parameters, as the array form is actually a csv */
-export const Routing = z.union([z.string(), z.array(z.string())]).meta({ id: 'Routing' })
-export type Routing = z.infer<typeof Routing>
-
-/** Path to field or array of paths. Some API's support wildcards in the path to select multiple fields. */
-export const Field = z.string().meta({ id: 'Field' })
-export type Field = z.infer<typeof Field>
-
-export const Fields = z.union([Field, z.array(Field)]).meta({ id: 'Fields' })
-export type Fields = z.infer<typeof Fields>
-
-/**
- * Defines how to fetch a source. Fetching can be disabled entirely, or the source can be filtered.
- * Used as a query parameter along with the `_source_includes` and `_source_excludes` parameters.
- */
-export const SearchSourceConfigParam = z.union([z.boolean(), Fields]).meta({ id: 'SearchSourceConfigParam' })
-export type SearchSourceConfigParam = z.infer<typeof SearchSourceConfigParam>
-
-export const VersionType = z.enum(['internal', 'external', 'external_gte']).meta({ id: 'VersionType' })
-export type VersionType = z.infer<typeof VersionType>
 
 /**
  * Get a document by its ID.
@@ -131,20 +84,19 @@ export type VersionType = z.infer<typeof VersionType>
  * Elasticsearch cleans up deleted documents in the background as you continue to index more data.
  */
 export const GetRequest = z.object({
-  ...RequestBase.shape,
-  id: Id.describe('A unique document identifier.').meta({ found_in: 'path' }),
-  index: IndexName.describe('The name of the index that contains the document.').meta({ found_in: 'path' }),
+  id: z.lazy(() => Id).describe('A unique document identifier.').meta({ found_in: 'path' }),
+  index: z.lazy(() => IndexName).describe('The name of the index that contains the document.').meta({ found_in: 'path' }),
   preference: z.string().describe('The node or shard the operation should be performed on. By default, the operation is randomized between the shard replicas. If it is set to `_local`, the operation will prefer to be run on a local allocated shard when possible. If it is set to a custom value, the value is used to guarantee that the same shards will be used for the same custom value. This can help with "jumping values" when hitting different shards in different refresh states. A sample value can be something like the web session ID or the user name.').optional().meta({ found_in: 'query' }),
   realtime: z.boolean().describe('If `true`, the request is real-time as opposed to near-real-time.').optional().meta({ found_in: 'query' }),
   refresh: z.boolean().describe('If `true`, the request refreshes the relevant shards before retrieving the document. Setting it to `true` should be done after careful thought and verification that this does not cause a heavy load on the system (and slow down indexing).').optional().meta({ found_in: 'query' }),
-  routing: Routing.describe('A custom value used to route operations to a specific shard. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional().meta({ found_in: 'query' }),
-  _source: SearchSourceConfigParam.describe('Indicates whether to return the `_source` field (`true` or `false`) or lists the fields to return.').optional().meta({ found_in: 'query' }),
-  _source_excludes: Fields.describe('A comma-separated list of source fields to exclude from the response. You can also use this parameter to exclude fields from the subset specified in `_source_includes` query parameter. If the `_source` parameter is `false`, this parameter is ignored.').optional().meta({ found_in: 'query' }),
+  routing: z.lazy(() => Routing).describe('A custom value used to route operations to a specific shard. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional().meta({ found_in: 'query' }),
+  _source: z.lazy(() => SearchSourceConfigParam).describe('Indicates whether to return the `_source` field (`true` or `false`) or lists the fields to return.').optional().meta({ found_in: 'query' }),
+  _source_excludes: z.lazy(() => Fields).describe('A comma-separated list of source fields to exclude from the response. You can also use this parameter to exclude fields from the subset specified in `_source_includes` query parameter. If the `_source` parameter is `false`, this parameter is ignored.').optional().meta({ found_in: 'query' }),
   _source_exclude_vectors: z.boolean().describe('Whether vectors should be excluded from _source').optional().meta({ found_in: 'query' }),
-  _source_includes: Fields.describe('A comma-separated list of source fields to include in the response. If this parameter is specified, only these source fields are returned. You can exclude fields from this subset using the `_source_excludes` query parameter. If the `_source` parameter is `false`, this parameter is ignored.').optional().meta({ found_in: 'query' }),
-  stored_fields: Fields.describe('A comma-separated list of stored fields to return as part of a hit. If no fields are specified, no stored fields are included in the response. If this field is specified, the `_source` parameter defaults to `false`. Only leaf fields can be retrieved with the `stored_fields` option. Object fields can\'t be returned; if specified, the request fails.').optional().meta({ found_in: 'query' }),
-  version: VersionNumber.describe('The version number for concurrency control. It must match the current version of the document for the request to succeed.').optional().meta({ found_in: 'query' }),
-  version_type: VersionType.describe('The version type.').optional().meta({ found_in: 'query' })
+  _source_includes: z.lazy(() => Fields).describe('A comma-separated list of source fields to include in the response. If this parameter is specified, only these source fields are returned. You can exclude fields from this subset using the `_source_excludes` query parameter. If the `_source` parameter is `false`, this parameter is ignored.').optional().meta({ found_in: 'query' }),
+  stored_fields: z.lazy(() => Fields).describe('A comma-separated list of stored fields to return as part of a hit. If no fields are specified, no stored fields are included in the response. If this field is specified, the `_source` parameter defaults to `false`. Only leaf fields can be retrieved with the `stored_fields` option. Object fields can\'t be returned; if specified, the request fails.').optional().meta({ found_in: 'query' }),
+  version: z.lazy(() => VersionNumber).describe('The version number for concurrency control. It must match the current version of the document for the request to succeed.').optional().meta({ found_in: 'query' }),
+  version_type: z.lazy(() => VersionType).describe('The version type.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'GetRequest' })
 export type GetRequest = z.infer<typeof GetRequest>
 

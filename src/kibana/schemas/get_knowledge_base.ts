@@ -9,16 +9,4 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
-/* eslint-disable @typescript-eslint/no-redeclare */
-import { z } from 'zod'
-
-export const Security_AI_Assistant_API_KnowledgeBaseReadResponse200 = z.object({
-  defend_insights_exists: z.boolean().optional(),
-  elser_exists: z.boolean().optional(),
-  is_setup_available: z.boolean().optional(),
-  is_setup_in_progress: z.boolean().optional(),
-  product_documentation_status: z.string().optional(),
-  security_labs_exists: z.boolean().optional(),
-  user_data_exists: z.boolean().optional()
-}).meta({ id: 'Security_AI_Assistant_API_KnowledgeBaseReadResponse200' })
-export type Security_AI_Assistant_API_KnowledgeBaseReadResponse200 = z.infer<typeof Security_AI_Assistant_API_KnowledgeBaseReadResponse200>
+export { Security_AI_Assistant_API_KnowledgeBaseReadResponse200 } from './schemas/security.js'

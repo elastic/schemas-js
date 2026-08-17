@@ -9,32 +9,5 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
-/* eslint-disable @typescript-eslint/no-redeclare */
-import { z } from 'zod'
-
-export const SLOs_snapshot_result = z.object({
-  error: z.object({
-    message: z.string(),
-    statusCode: z.number()
-  }).optional(),
-  id: z.string(),
-  instanceId: z.string(),
-  summary: z.object({
-    errorBudget: z.object({
-      consumed: z.number().nullable(),
-      initial: z.number(),
-      remaining: z.number().nullable()
-    }),
-    good: z.number(),
-    sliValue: z.number().nullable(),
-    status: z.enum(['NO_DATA', 'HEALTHY', 'DEGRADING', 'VIOLATED']),
-    total: z.number()
-  }).optional()
-}).meta({ id: 'SLOs_snapshot_result' })
-export type SLOs_snapshot_result = z.infer<typeof SLOs_snapshot_result>
-
-export const SLOs_snapshot_response = z.object({
-  at: z.string(),
-  results: z.array(SLOs_snapshot_result)
-}).meta({ id: 'SLOs_snapshot_response' })
-export type SLOs_snapshot_response = z.infer<typeof SLOs_snapshot_response>
+export { SLOs_snapshot_response } from './schemas/slos.js'
+export { SLOs_snapshot_result } from './schemas/slos.js'

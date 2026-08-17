@@ -11,62 +11,17 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Entity_Analytics_API_AssetCriticalityLevel = z.enum(['low_impact', 'medium_impact', 'high_impact', 'extreme_impact']).meta({ id: 'Security_Entity_Analytics_API_AssetCriticalityLevel' })
-export type Security_Entity_Analytics_API_AssetCriticalityLevel = z.infer<typeof Security_Entity_Analytics_API_AssetCriticalityLevel>
-
-export const Security_Entity_Analytics_API_IdField = z.enum(['host.name', 'user.name', 'service.name', 'entity.id']).meta({ id: 'Security_Entity_Analytics_API_IdField' })
-export type Security_Entity_Analytics_API_IdField = z.infer<typeof Security_Entity_Analytics_API_IdField>
-
-export const Security_Entity_Analytics_API_AssetCriticalityRecordEcsParts = z.object({
-  asset: z.object({
-    criticality: Security_Entity_Analytics_API_AssetCriticalityLevel.optional()
-  }),
-  entity: z.object({
-    asset: z.object({
-      criticality: Security_Entity_Analytics_API_AssetCriticalityLevel
-    }).optional(),
-    id: z.string()
-  }).optional(),
-  host: z.object({
-    asset: z.object({
-      criticality: Security_Entity_Analytics_API_AssetCriticalityLevel
-    }).optional(),
-    name: z.string()
-  }).optional(),
-  service: z.object({
-    asset: z.object({
-      criticality: Security_Entity_Analytics_API_AssetCriticalityLevel
-    }).optional(),
-    name: z.string()
-  }).optional(),
-  user: z.object({
-    asset: z.object({
-      criticality: Security_Entity_Analytics_API_AssetCriticalityLevel
-    }).optional(),
-    name: z.string()
-  }).optional()
-}).meta({ id: 'Security_Entity_Analytics_API_AssetCriticalityRecordEcsParts' })
-export type Security_Entity_Analytics_API_AssetCriticalityRecordEcsParts = z.infer<typeof Security_Entity_Analytics_API_AssetCriticalityRecordEcsParts>
-
-export const Security_Entity_Analytics_API_AssetCriticalityRecordIdParts = z.object({
-  id_field: Security_Entity_Analytics_API_IdField,
-  id_value: z.string()
-}).meta({ id: 'Security_Entity_Analytics_API_AssetCriticalityRecordIdParts' })
-export type Security_Entity_Analytics_API_AssetCriticalityRecordIdParts = z.infer<typeof Security_Entity_Analytics_API_AssetCriticalityRecordIdParts>
-
-export const Security_Entity_Analytics_API_CreateAssetCriticalityRecord = Security_Entity_Analytics_API_AssetCriticalityRecordIdParts.merge(z.object({
-  criticality_level: Security_Entity_Analytics_API_AssetCriticalityLevel
-})).meta({ id: 'Security_Entity_Analytics_API_CreateAssetCriticalityRecord' })
-export type Security_Entity_Analytics_API_CreateAssetCriticalityRecord = z.infer<typeof Security_Entity_Analytics_API_CreateAssetCriticalityRecord>
-
-export const Security_Entity_Analytics_API_AssetCriticalityRecord = z.intersection(z.intersection(Security_Entity_Analytics_API_CreateAssetCriticalityRecord, Security_Entity_Analytics_API_AssetCriticalityRecordEcsParts), z.object({
-  '@timestamp': z.string()
-})).meta({ id: 'Security_Entity_Analytics_API_AssetCriticalityRecord' })
-export type Security_Entity_Analytics_API_AssetCriticalityRecord = z.infer<typeof Security_Entity_Analytics_API_AssetCriticalityRecord>
+import { Security_Entity_Analytics_API_AssetCriticalityRecord } from './schemas/security.js'
 
 export const DeleteAssetCriticalityRecordResponse = z.object({
   deleted: z.boolean(),
   record: Security_Entity_Analytics_API_AssetCriticalityRecord.optional()
 }).meta({ id: 'DeleteAssetCriticalityRecordResponse' })
 export type DeleteAssetCriticalityRecordResponse = z.infer<typeof DeleteAssetCriticalityRecordResponse>
+
+export { Security_Entity_Analytics_API_AssetCriticalityRecord } from './schemas/security.js'
+export { Security_Entity_Analytics_API_AssetCriticalityRecordEcsParts } from './schemas/security.js'
+export { Security_Entity_Analytics_API_AssetCriticalityLevel } from './schemas/security.js'
+export { Security_Entity_Analytics_API_CreateAssetCriticalityRecord } from './schemas/security.js'
+export { Security_Entity_Analytics_API_AssetCriticalityRecordIdParts } from './schemas/security.js'
+export { Security_Entity_Analytics_API_IdField } from './schemas/security.js'

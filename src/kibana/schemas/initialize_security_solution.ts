@@ -12,11 +12,10 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Security_Solution_Initialization_API_InitializationFlowErrorResult = z.object({
-  error: z.string().nullable(),
-  status: z.enum(['error'])
-}).meta({ id: 'Security_Solution_Initialization_API_InitializationFlowErrorResult' })
-export type Security_Solution_Initialization_API_InitializationFlowErrorResult = z.infer<typeof Security_Solution_Initialization_API_InitializationFlowErrorResult>
+export const Security_Solution_Initialization_API_CreateListIndicesReadyResult = z.object({
+  status: z.enum(['ready'])
+}).meta({ id: 'Security_Solution_Initialization_API_CreateListIndicesReadyResult' })
+export type Security_Solution_Initialization_API_CreateListIndicesReadyResult = z.infer<typeof Security_Solution_Initialization_API_CreateListIndicesReadyResult>
 
 export const Security_Solution_Initialization_API_DataViewPayload = z.object({
   id: z.string(),
@@ -24,6 +23,20 @@ export const Security_Solution_Initialization_API_DataViewPayload = z.object({
   title: z.string()
 }).meta({ id: 'Security_Solution_Initialization_API_DataViewPayload' })
 export type Security_Solution_Initialization_API_DataViewPayload = z.infer<typeof Security_Solution_Initialization_API_DataViewPayload>
+
+export const Security_Solution_Initialization_API_InitializationFlowErrorResult = z.object({
+  error: z.string().nullable(),
+  status: z.enum(['error'])
+}).meta({ id: 'Security_Solution_Initialization_API_InitializationFlowErrorResult' })
+export type Security_Solution_Initialization_API_InitializationFlowErrorResult = z.infer<typeof Security_Solution_Initialization_API_InitializationFlowErrorResult>
+
+export const Security_Solution_Initialization_API_InitializationFlowId = z.enum(['create-list-indices', 'security-data-views', 'init-prebuilt-rules', 'init-endpoint-protection', 'init-ai-prompts', 'init-detection-rule-monitoring']).meta({ id: 'Security_Solution_Initialization_API_InitializationFlowId' })
+export type Security_Solution_Initialization_API_InitializationFlowId = z.infer<typeof Security_Solution_Initialization_API_InitializationFlowId>
+
+export const Security_Solution_Initialization_API_InstallDetectionEngineRuleMonitoringAssetsReadyResult = z.object({
+  status: z.enum(['ready'])
+}).meta({ id: 'Security_Solution_Initialization_API_InstallDetectionEngineRuleMonitoringAssetsReadyResult' })
+export type Security_Solution_Initialization_API_InstallDetectionEngineRuleMonitoringAssetsReadyResult = z.infer<typeof Security_Solution_Initialization_API_InstallDetectionEngineRuleMonitoringAssetsReadyResult>
 
 export const Security_Solution_Initialization_API_PackageInstallReadyResult = z.object({
   payload: z.object({
@@ -34,19 +47,6 @@ export const Security_Solution_Initialization_API_PackageInstallReadyResult = z.
   status: z.enum(['ready'])
 }).meta({ id: 'Security_Solution_Initialization_API_PackageInstallReadyResult' })
 export type Security_Solution_Initialization_API_PackageInstallReadyResult = z.infer<typeof Security_Solution_Initialization_API_PackageInstallReadyResult>
-
-export const Security_Solution_Initialization_API_InstallDetectionEngineRuleMonitoringAssetsReadyResult = z.object({
-  status: z.enum(['ready'])
-}).meta({ id: 'Security_Solution_Initialization_API_InstallDetectionEngineRuleMonitoringAssetsReadyResult' })
-export type Security_Solution_Initialization_API_InstallDetectionEngineRuleMonitoringAssetsReadyResult = z.infer<typeof Security_Solution_Initialization_API_InstallDetectionEngineRuleMonitoringAssetsReadyResult>
-
-export const Security_Solution_Initialization_API_CreateListIndicesReadyResult = z.object({
-  status: z.enum(['ready'])
-}).meta({ id: 'Security_Solution_Initialization_API_CreateListIndicesReadyResult' })
-export type Security_Solution_Initialization_API_CreateListIndicesReadyResult = z.infer<typeof Security_Solution_Initialization_API_CreateListIndicesReadyResult>
-
-export const Security_Solution_Initialization_API_InitializationFlowId = z.enum(['create-list-indices', 'security-data-views', 'init-prebuilt-rules', 'init-endpoint-protection', 'init-ai-prompts', 'init-detection-rule-monitoring']).meta({ id: 'Security_Solution_Initialization_API_InitializationFlowId' })
-export type Security_Solution_Initialization_API_InitializationFlowId = z.infer<typeof Security_Solution_Initialization_API_InitializationFlowId>
 
 export const Security_Solution_Initialization_API_SecurityDataViewsReadyResult = z.object({
   payload: z.object({

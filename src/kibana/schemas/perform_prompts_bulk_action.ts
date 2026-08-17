@@ -11,38 +11,16 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_AI_Assistant_API_BulkCrudActionSummary = z.object({
-  failed: z.number(),
-  skipped: z.number(),
-  succeeded: z.number(),
-  total: z.number()
-}).meta({ id: 'Security_AI_Assistant_API_BulkCrudActionSummary' })
-export type Security_AI_Assistant_API_BulkCrudActionSummary = z.infer<typeof Security_AI_Assistant_API_BulkCrudActionSummary>
-
-export const Security_AI_Assistant_API_User = z.object({
-  id: z.string().optional(),
-  name: z.string().optional()
-}).meta({ id: 'Security_AI_Assistant_API_User' })
-export type Security_AI_Assistant_API_User = z.infer<typeof Security_AI_Assistant_API_User>
-
-export const Security_AI_Assistant_API_NonEmptyTimestamp = z.string().meta({ id: 'Security_AI_Assistant_API_NonEmptyTimestamp' })
-export type Security_AI_Assistant_API_NonEmptyTimestamp = z.infer<typeof Security_AI_Assistant_API_NonEmptyTimestamp>
-
-export const Security_AI_Assistant_API_PromptType = z.enum(['system', 'quick']).meta({ id: 'Security_AI_Assistant_API_PromptType' })
-export type Security_AI_Assistant_API_PromptType = z.infer<typeof Security_AI_Assistant_API_PromptType>
-
-export const Security_AI_Assistant_API_NonEmptyString = z.string().meta({ id: 'Security_AI_Assistant_API_NonEmptyString' })
-export type Security_AI_Assistant_API_NonEmptyString = z.infer<typeof Security_AI_Assistant_API_NonEmptyString>
-
-export const Security_AI_Assistant_API_PromptsBulkActionSkipReason = z.enum(['PROMPT_FIELD_NOT_MODIFIED']).meta({ id: 'Security_AI_Assistant_API_PromptsBulkActionSkipReason' })
-export type Security_AI_Assistant_API_PromptsBulkActionSkipReason = z.infer<typeof Security_AI_Assistant_API_PromptsBulkActionSkipReason>
+import { Security_AI_Assistant_API_BulkCrudActionSummary, Security_AI_Assistant_API_PromptResponse, Security_AI_Assistant_API_PromptType } from './schemas/security.js'
 
 export const Security_AI_Assistant_API_PromptDetailsInError = z.object({
   id: z.string(),
   name: z.string().optional()
 }).meta({ id: 'Security_AI_Assistant_API_PromptDetailsInError' })
 export type Security_AI_Assistant_API_PromptDetailsInError = z.infer<typeof Security_AI_Assistant_API_PromptDetailsInError>
+
+export const Security_AI_Assistant_API_PromptsBulkActionSkipReason = z.enum(['PROMPT_FIELD_NOT_MODIFIED']).meta({ id: 'Security_AI_Assistant_API_PromptsBulkActionSkipReason' })
+export type Security_AI_Assistant_API_PromptsBulkActionSkipReason = z.infer<typeof Security_AI_Assistant_API_PromptsBulkActionSkipReason>
 
 export const Security_AI_Assistant_API_PromptUpdateProps = z.object({
   categories: z.array(z.string()).optional(),
@@ -55,6 +33,21 @@ export const Security_AI_Assistant_API_PromptUpdateProps = z.object({
 }).meta({ id: 'Security_AI_Assistant_API_PromptUpdateProps' })
 export type Security_AI_Assistant_API_PromptUpdateProps = z.infer<typeof Security_AI_Assistant_API_PromptUpdateProps>
 
+export const Security_AI_Assistant_API_NormalizedPromptError = z.object({
+  err_code: z.string().optional(),
+  message: z.string(),
+  prompts: z.array(Security_AI_Assistant_API_PromptDetailsInError),
+  status_code: z.number()
+}).meta({ id: 'Security_AI_Assistant_API_NormalizedPromptError' })
+export type Security_AI_Assistant_API_NormalizedPromptError = z.infer<typeof Security_AI_Assistant_API_NormalizedPromptError>
+
+export const Security_AI_Assistant_API_PromptsBulkActionSkipResult = z.object({
+  id: z.string(),
+  name: z.string().optional(),
+  skip_reason: Security_AI_Assistant_API_PromptsBulkActionSkipReason
+}).meta({ id: 'Security_AI_Assistant_API_PromptsBulkActionSkipResult' })
+export type Security_AI_Assistant_API_PromptsBulkActionSkipResult = z.infer<typeof Security_AI_Assistant_API_PromptsBulkActionSkipResult>
+
 export const Security_AI_Assistant_API_PromptCreateProps = z.object({
   categories: z.array(z.string()).optional(),
   color: z.string().optional(),
@@ -66,41 +59,6 @@ export const Security_AI_Assistant_API_PromptCreateProps = z.object({
   promptType: Security_AI_Assistant_API_PromptType
 }).meta({ id: 'Security_AI_Assistant_API_PromptCreateProps' })
 export type Security_AI_Assistant_API_PromptCreateProps = z.infer<typeof Security_AI_Assistant_API_PromptCreateProps>
-
-export const Security_AI_Assistant_API_PromptResponse = z.object({
-  categories: z.array(z.string()).optional(),
-  color: z.string().optional(),
-  consumer: z.string().optional(),
-  content: z.string(),
-  createdAt: z.string().optional(),
-  createdBy: z.string().optional(),
-  id: Security_AI_Assistant_API_NonEmptyString,
-  isDefault: z.boolean().optional(),
-  isNewConversationDefault: z.boolean().optional(),
-  name: z.string(),
-  namespace: z.string().optional(),
-  promptType: Security_AI_Assistant_API_PromptType,
-  timestamp: Security_AI_Assistant_API_NonEmptyTimestamp.optional(),
-  updatedAt: z.string().optional(),
-  updatedBy: z.string().optional(),
-  users: z.array(Security_AI_Assistant_API_User).optional()
-}).meta({ id: 'Security_AI_Assistant_API_PromptResponse' })
-export type Security_AI_Assistant_API_PromptResponse = z.infer<typeof Security_AI_Assistant_API_PromptResponse>
-
-export const Security_AI_Assistant_API_PromptsBulkActionSkipResult = z.object({
-  id: z.string(),
-  name: z.string().optional(),
-  skip_reason: Security_AI_Assistant_API_PromptsBulkActionSkipReason
-}).meta({ id: 'Security_AI_Assistant_API_PromptsBulkActionSkipResult' })
-export type Security_AI_Assistant_API_PromptsBulkActionSkipResult = z.infer<typeof Security_AI_Assistant_API_PromptsBulkActionSkipResult>
-
-export const Security_AI_Assistant_API_NormalizedPromptError = z.object({
-  err_code: z.string().optional(),
-  message: z.string(),
-  prompts: z.array(Security_AI_Assistant_API_PromptDetailsInError),
-  status_code: z.number()
-}).meta({ id: 'Security_AI_Assistant_API_NormalizedPromptError' })
-export type Security_AI_Assistant_API_NormalizedPromptError = z.infer<typeof Security_AI_Assistant_API_NormalizedPromptError>
 
 export const Security_AI_Assistant_API_PromptsBulkCrudActionResults = z.object({
   created: z.array(Security_AI_Assistant_API_PromptResponse),
@@ -132,3 +90,10 @@ export const PerformPromptsBulkActionRequest = z.object({
   update: z.array(Security_AI_Assistant_API_PromptUpdateProps).optional()
 }).meta({ id: 'PerformPromptsBulkActionRequest' })
 export type PerformPromptsBulkActionRequest = z.infer<typeof PerformPromptsBulkActionRequest>
+
+export { Security_AI_Assistant_API_BulkCrudActionSummary } from './schemas/security.js'
+export { Security_AI_Assistant_API_PromptResponse } from './schemas/security.js'
+export { Security_AI_Assistant_API_User } from './schemas/security.js'
+export { Security_AI_Assistant_API_NonEmptyTimestamp } from './schemas/security.js'
+export { Security_AI_Assistant_API_PromptType } from './schemas/security.js'
+export { Security_AI_Assistant_API_NonEmptyString } from './schemas/security.js'

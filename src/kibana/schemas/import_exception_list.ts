@@ -11,15 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Exceptions_API_ExceptionListHumanId = z.string().meta({ id: 'Security_Exceptions_API_ExceptionListHumanId' })
-export type Security_Exceptions_API_ExceptionListHumanId = z.infer<typeof Security_Exceptions_API_ExceptionListHumanId>
-
-export const Security_Exceptions_API_ExceptionListItemHumanId = z.string().meta({ id: 'Security_Exceptions_API_ExceptionListItemHumanId' })
-export type Security_Exceptions_API_ExceptionListItemHumanId = z.infer<typeof Security_Exceptions_API_ExceptionListItemHumanId>
-
-export const Security_Exceptions_API_ExceptionListId = z.string().meta({ id: 'Security_Exceptions_API_ExceptionListId' })
-export type Security_Exceptions_API_ExceptionListId = z.infer<typeof Security_Exceptions_API_ExceptionListId>
+import { Security_Exceptions_API_ExceptionListHumanId, Security_Exceptions_API_ExceptionListId, Security_Exceptions_API_ExceptionListItemHumanId } from './schemas/security.js'
 
 export const Security_Exceptions_API_ExceptionListsImportBulkError = z.object({
   error: z.object({
@@ -45,3 +37,7 @@ export const ImportExceptionListResponse = z.object({
   success_exception_lists: z.boolean()
 }).meta({ id: 'ImportExceptionListResponse' })
 export type ImportExceptionListResponse = z.infer<typeof ImportExceptionListResponse>
+
+export { Security_Exceptions_API_ExceptionListHumanId } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemHumanId } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListId } from './schemas/security.js'

@@ -11,9 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Detections_API_RuleSignatureId = z.string().meta({ id: 'Security_Detections_API_RuleSignatureId' })
-export type Security_Detections_API_RuleSignatureId = z.infer<typeof Security_Detections_API_RuleSignatureId>
+import { Security_Detections_API_RuleSignatureId } from './schemas/security.js'
 
 export const ExportRulesRequest = z.object({
   objects: z.array(z.object({
@@ -21,3 +19,5 @@ export const ExportRulesRequest = z.object({
   }))
 }).nullable().meta({ id: 'ExportRulesRequest' })
 export type ExportRulesRequest = z.infer<typeof ExportRulesRequest>
+
+export { Security_Detections_API_RuleSignatureId } from './schemas/security.js'

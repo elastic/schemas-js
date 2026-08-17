@@ -11,19 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Kibana_HTTP_APIs_enrollment_api_key = z.object({
-  active: z.boolean(),
-  api_key: z.string(),
-  api_key_id: z.string(),
-  created_at: z.string(),
-  expire_at: z.string().optional(),
-  hidden: z.boolean().optional(),
-  id: z.string(),
-  name: z.string().optional(),
-  policy_id: z.string().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_enrollment_api_key' })
-export type Kibana_HTTP_APIs_enrollment_api_key = z.infer<typeof Kibana_HTTP_APIs_enrollment_api_key>
+import { Kibana_HTTP_APIs_enrollment_api_key } from './schemas/kibana.js'
 
 export const Kibana_HTTP_APIs_get_enrollment_api_keys_response = z.object({
   items: z.array(Kibana_HTTP_APIs_enrollment_api_key),
@@ -33,3 +21,5 @@ export const Kibana_HTTP_APIs_get_enrollment_api_keys_response = z.object({
   total: z.number()
 }).meta({ id: 'Kibana_HTTP_APIs_get_enrollment_api_keys_response' })
 export type Kibana_HTTP_APIs_get_enrollment_api_keys_response = z.infer<typeof Kibana_HTTP_APIs_get_enrollment_api_keys_response>
+
+export { Kibana_HTTP_APIs_enrollment_api_key } from './schemas/kibana.js'

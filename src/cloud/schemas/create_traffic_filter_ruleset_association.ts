@@ -12,14 +12,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const EmptyResponse = z.object({}).meta({ id: 'EmptyResponse' })
-export type EmptyResponse = z.infer<typeof EmptyResponse>
-
-export const FilterAssociation = z.object({
-  entity_type: z.string(),
-  id: z.string()
-}).meta({ id: 'FilterAssociation' })
-export type FilterAssociation = z.infer<typeof FilterAssociation>
+import { EmptyResponse, FilterAssociation } from './definitions/misc.js'
 
 export const CreateTrafficFilterRulesetAssociationRequest = FilterAssociation
 export type CreateTrafficFilterRulesetAssociationRequest = FilterAssociation

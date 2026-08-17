@@ -12,13 +12,13 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Kibana_HTTP_APIs_review_upgrade_response = z.object({
-  success: z.boolean()
-}).meta({ id: 'Kibana_HTTP_APIs_review_upgrade_response' })
-export type Kibana_HTTP_APIs_review_upgrade_response = z.infer<typeof Kibana_HTTP_APIs_review_upgrade_response>
-
 export const Kibana_HTTP_APIs_review_upgrade_request = z.object({
   action: z.enum(['accept', 'decline', 'pending']),
   target_version: z.string()
 }).meta({ id: 'Kibana_HTTP_APIs_review_upgrade_request' })
 export type Kibana_HTTP_APIs_review_upgrade_request = z.infer<typeof Kibana_HTTP_APIs_review_upgrade_request>
+
+export const Kibana_HTTP_APIs_review_upgrade_response = z.object({
+  success: z.boolean()
+}).meta({ id: 'Kibana_HTTP_APIs_review_upgrade_response' })
+export type Kibana_HTTP_APIs_review_upgrade_response = z.infer<typeof Kibana_HTTP_APIs_review_upgrade_response>

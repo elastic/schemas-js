@@ -11,293 +11,15 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Exceptions_API_ExceptionListItemType = z.enum(['simple']).meta({ id: 'Security_Exceptions_API_ExceptionListItemType' })
-export type Security_Exceptions_API_ExceptionListItemType = z.infer<typeof Security_Exceptions_API_ExceptionListItemType>
-
-export const Security_Exceptions_API_ExceptionListItemTags = z.array(z.string()).meta({ id: 'Security_Exceptions_API_ExceptionListItemTags' })
-export type Security_Exceptions_API_ExceptionListItemTags = z.infer<typeof Security_Exceptions_API_ExceptionListItemTags>
-
-export const Security_Exceptions_API_ExceptionListOsType = z.enum(['linux', 'macos', 'windows']).meta({ id: 'Security_Exceptions_API_ExceptionListOsType' })
-export type Security_Exceptions_API_ExceptionListOsType = z.infer<typeof Security_Exceptions_API_ExceptionListOsType>
-
-export const Security_Exceptions_API_ExceptionNamespaceType = z.enum(['agnostic', 'single']).meta({ id: 'Security_Exceptions_API_ExceptionNamespaceType' })
-export type Security_Exceptions_API_ExceptionNamespaceType = z.infer<typeof Security_Exceptions_API_ExceptionNamespaceType>
-
-export const Security_Exceptions_API_ExceptionListItemName = z.string().meta({ id: 'Security_Exceptions_API_ExceptionListItemName' })
-export type Security_Exceptions_API_ExceptionListItemName = z.infer<typeof Security_Exceptions_API_ExceptionListItemName>
-
-export const Security_Exceptions_API_ExceptionListItemMeta = z.record(z.string(), z.unknown()).meta({ id: 'Security_Exceptions_API_ExceptionListItemMeta' })
-export type Security_Exceptions_API_ExceptionListItemMeta = z.infer<typeof Security_Exceptions_API_ExceptionListItemMeta>
-
-export const Security_Exceptions_API_ExceptionListHumanId = z.string().meta({ id: 'Security_Exceptions_API_ExceptionListHumanId' })
-export type Security_Exceptions_API_ExceptionListHumanId = z.infer<typeof Security_Exceptions_API_ExceptionListHumanId>
-
-export const Security_Exceptions_API_ExceptionListItemHumanId = z.string().meta({ id: 'Security_Exceptions_API_ExceptionListItemHumanId' })
-export type Security_Exceptions_API_ExceptionListItemHumanId = z.infer<typeof Security_Exceptions_API_ExceptionListItemHumanId>
-
-export const Security_Exceptions_API_ExceptionListItemId = z.string().meta({ id: 'Security_Exceptions_API_ExceptionListItemId' })
-export type Security_Exceptions_API_ExceptionListItemId = z.infer<typeof Security_Exceptions_API_ExceptionListItemId>
-
-export const Security_Exceptions_API_ExceptionListItemExpireTime = z.string().meta({ id: 'Security_Exceptions_API_ExceptionListItemExpireTime' })
-export type Security_Exceptions_API_ExceptionListItemExpireTime = z.infer<typeof Security_Exceptions_API_ExceptionListItemExpireTime>
-
-export const Security_Exceptions_API_NonEmptyString = z.string().meta({ id: 'Security_Exceptions_API_NonEmptyString' })
-export type Security_Exceptions_API_NonEmptyString = z.infer<typeof Security_Exceptions_API_NonEmptyString>
-
-export const Security_Exceptions_API_ExceptionListItemEntryOperator = z.enum(['excluded', 'included']).meta({ id: 'Security_Exceptions_API_ExceptionListItemEntryOperator' })
-export type Security_Exceptions_API_ExceptionListItemEntryOperator = z.infer<typeof Security_Exceptions_API_ExceptionListItemEntryOperator>
-
-export const Security_Exceptions_API_ListType = z.enum(['binary', 'boolean', 'byte', 'date', 'date_nanos', 'date_range', 'double', 'double_range', 'float', 'float_range', 'geo_point', 'geo_shape', 'half_float', 'integer', 'integer_range', 'ip', 'ip_range', 'keyword', 'long', 'long_range', 'shape', 'short', 'text']).meta({ id: 'Security_Exceptions_API_ListType' })
-export type Security_Exceptions_API_ListType = z.infer<typeof Security_Exceptions_API_ListType>
-
-export const Security_Exceptions_API_ListId = z.string().meta({ id: 'Security_Exceptions_API_ListId' })
-export type Security_Exceptions_API_ListId = z.infer<typeof Security_Exceptions_API_ListId>
-
-export const Security_Exceptions_API_ExceptionListItemDescription = z.string().meta({ id: 'Security_Exceptions_API_ExceptionListItemDescription' })
-export type Security_Exceptions_API_ExceptionListItemDescription = z.infer<typeof Security_Exceptions_API_ExceptionListItemDescription>
-
-export const Security_Exceptions_API_EndpointArtifactTags = z.array(z.string()).meta({ id: 'Security_Exceptions_API_EndpointArtifactTags' })
-export type Security_Exceptions_API_EndpointArtifactTags = z.infer<typeof Security_Exceptions_API_EndpointArtifactTags>
-
-export const Security_Exceptions_API_BlocklistHashOrPathEntry = z.object({
-  field: z.enum(['file.hash.md5', 'file.hash.sha1', 'file.hash.sha256', 'file.path', 'file.path.caseless']),
-  operator: z.enum(['included']),
-  type: z.enum(['match_any']),
-  value: z.array(z.string())
-}).meta({ id: 'Security_Exceptions_API_BlocklistHashOrPathEntry' })
-export type Security_Exceptions_API_BlocklistHashOrPathEntry = z.infer<typeof Security_Exceptions_API_BlocklistHashOrPathEntry>
-
-export const Security_Exceptions_API_BlocklistWindowsCodeSignatureEntry = z.object({
-  entries: z.array(z.object({
-    field: z.enum(['subject_name']),
-    operator: z.enum(['included']),
-    type: z.enum(['match', 'match_any']),
-    value: z.union([z.string(), z.array(z.string())])
-  })),
-  field: z.enum(['file.Ext.code_signature']),
-  type: z.enum(['nested'])
-}).meta({ id: 'Security_Exceptions_API_BlocklistWindowsCodeSignatureEntry' })
-export type Security_Exceptions_API_BlocklistWindowsCodeSignatureEntry = z.infer<typeof Security_Exceptions_API_BlocklistWindowsCodeSignatureEntry>
-
-export const Security_Exceptions_API_TrustedAppPathEntry = z.object({
-  field: z.enum(['process.executable.caseless']),
-  operator: z.enum(['included']),
-  type: z.enum(['match', 'wildcard']),
-  value: z.string()
-}).meta({ id: 'Security_Exceptions_API_TrustedAppPathEntry' })
-export type Security_Exceptions_API_TrustedAppPathEntry = z.infer<typeof Security_Exceptions_API_TrustedAppPathEntry>
-
-export const Security_Exceptions_API_TrustedAppHashEntry = z.object({
-  field: z.enum(['process.hash.md5', 'process.hash.sha1', 'process.hash.sha256']),
-  operator: z.enum(['included']),
-  type: z.enum(['match']),
-  value: z.string()
-}).meta({ id: 'Security_Exceptions_API_TrustedAppHashEntry' })
-export type Security_Exceptions_API_TrustedAppHashEntry = z.infer<typeof Security_Exceptions_API_TrustedAppHashEntry>
-
-export const Security_Exceptions_API_TrustedAppMacCodeSignatureEntry = z.object({
-  entries: z.array(z.union([z.object({
-    field: z.enum(['subject_name']),
-    operator: z.enum(['included']),
-    type: z.enum(['match']),
-    value: z.string()
-  }), z.object({
-    field: z.enum(['trusted']),
-    operator: z.enum(['included']),
-    type: z.enum(['match']),
-    value: z.enum(['true'])
-  })])),
-  field: z.enum(['process.code_signature']),
-  type: z.enum(['nested'])
-}).meta({ id: 'Security_Exceptions_API_TrustedAppMacCodeSignatureEntry' })
-export type Security_Exceptions_API_TrustedAppMacCodeSignatureEntry = z.infer<typeof Security_Exceptions_API_TrustedAppMacCodeSignatureEntry>
-
-export const Security_Exceptions_API_TrustedAppWindowsCodeSignatureEntry = z.object({
-  entries: z.array(z.union([z.object({
-    field: z.enum(['subject_name']),
-    operator: z.enum(['included']),
-    type: z.enum(['match']),
-    value: z.string()
-  }), z.object({
-    field: z.enum(['trusted']),
-    operator: z.enum(['included']),
-    type: z.enum(['match']),
-    value: z.enum(['true'])
-  })])),
-  field: z.enum(['process.Ext.code_signature']),
-  type: z.enum(['nested'])
-}).meta({ id: 'Security_Exceptions_API_TrustedAppWindowsCodeSignatureEntry' })
-export type Security_Exceptions_API_TrustedAppWindowsCodeSignatureEntry = z.infer<typeof Security_Exceptions_API_TrustedAppWindowsCodeSignatureEntry>
-
-export const Security_Exceptions_API_ExceptionListItemOsTypeArray = z.array(Security_Exceptions_API_ExceptionListOsType).meta({ id: 'Security_Exceptions_API_ExceptionListItemOsTypeArray' })
-export type Security_Exceptions_API_ExceptionListItemOsTypeArray = z.infer<typeof Security_Exceptions_API_ExceptionListItemOsTypeArray>
-
-export const Security_Exceptions_API_ExceptionListItemComment = z.object({
-  comment: Security_Exceptions_API_NonEmptyString,
-  created_at: z.string(),
-  created_by: Security_Exceptions_API_NonEmptyString,
-  id: Security_Exceptions_API_NonEmptyString,
-  updated_at: z.string().optional(),
-  updated_by: Security_Exceptions_API_NonEmptyString.optional()
-}).meta({ id: 'Security_Exceptions_API_ExceptionListItemComment' })
-export type Security_Exceptions_API_ExceptionListItemComment = z.infer<typeof Security_Exceptions_API_ExceptionListItemComment>
+import { Security_Exceptions_API_BlocklistLinuxProperties, Security_Exceptions_API_BlocklistMacProperties, Security_Exceptions_API_BlocklistWindowsProperties, Security_Exceptions_API_EndpointListProperties, Security_Exceptions_API_EventFiltersProperties, Security_Exceptions_API_ExceptionListHumanId, Security_Exceptions_API_ExceptionListItemDescription, Security_Exceptions_API_ExceptionListItemEntryArray, Security_Exceptions_API_ExceptionListItemExpireTime, Security_Exceptions_API_ExceptionListItemHumanId, Security_Exceptions_API_ExceptionListItemMeta, Security_Exceptions_API_ExceptionListItemName, Security_Exceptions_API_ExceptionListItemOsTypeArray, Security_Exceptions_API_ExceptionListItemTags, Security_Exceptions_API_ExceptionListItemType, Security_Exceptions_API_ExceptionNamespaceType, Security_Exceptions_API_HostIsolationProperties, Security_Exceptions_API_NonEmptyString, Security_Exceptions_API_TrustedAppsLinuxProperties, Security_Exceptions_API_TrustedAppsMacProperties, Security_Exceptions_API_TrustedAppsWindowsProperties, Security_Exceptions_API_TrustedDevicesMacProperties, Security_Exceptions_API_TrustedDevicesWindowsMacProperties, Security_Exceptions_API_TrustedDevicesWindowsProperties } from './schemas/security.js'
 
 export const Security_Exceptions_API_CreateExceptionListItemComment = z.object({
   comment: Security_Exceptions_API_NonEmptyString
 }).meta({ id: 'Security_Exceptions_API_CreateExceptionListItemComment' })
 export type Security_Exceptions_API_CreateExceptionListItemComment = z.infer<typeof Security_Exceptions_API_CreateExceptionListItemComment>
 
-export const Security_Exceptions_API_ExceptionListItemEntryMatchWildcard = z.object({
-  field: Security_Exceptions_API_NonEmptyString,
-  operator: Security_Exceptions_API_ExceptionListItemEntryOperator,
-  type: z.enum(['wildcard']),
-  value: Security_Exceptions_API_NonEmptyString
-}).meta({ id: 'Security_Exceptions_API_ExceptionListItemEntryMatchWildcard' })
-export type Security_Exceptions_API_ExceptionListItemEntryMatchWildcard = z.infer<typeof Security_Exceptions_API_ExceptionListItemEntryMatchWildcard>
-
-export const Security_Exceptions_API_ExceptionListItemEntryExists = z.object({
-  field: Security_Exceptions_API_NonEmptyString,
-  operator: Security_Exceptions_API_ExceptionListItemEntryOperator,
-  type: z.enum(['exists'])
-}).meta({ id: 'Security_Exceptions_API_ExceptionListItemEntryExists' })
-export type Security_Exceptions_API_ExceptionListItemEntryExists = z.infer<typeof Security_Exceptions_API_ExceptionListItemEntryExists>
-
-export const Security_Exceptions_API_ExceptionListItemEntryMatchAny = z.object({
-  field: Security_Exceptions_API_NonEmptyString,
-  operator: Security_Exceptions_API_ExceptionListItemEntryOperator,
-  type: z.enum(['match_any']),
-  value: z.array(Security_Exceptions_API_NonEmptyString)
-}).meta({ id: 'Security_Exceptions_API_ExceptionListItemEntryMatchAny' })
-export type Security_Exceptions_API_ExceptionListItemEntryMatchAny = z.infer<typeof Security_Exceptions_API_ExceptionListItemEntryMatchAny>
-
-export const Security_Exceptions_API_ExceptionListItemEntryMatch = z.object({
-  field: Security_Exceptions_API_NonEmptyString,
-  operator: Security_Exceptions_API_ExceptionListItemEntryOperator,
-  type: z.enum(['match']),
-  value: Security_Exceptions_API_NonEmptyString
-}).meta({ id: 'Security_Exceptions_API_ExceptionListItemEntryMatch' })
-export type Security_Exceptions_API_ExceptionListItemEntryMatch = z.infer<typeof Security_Exceptions_API_ExceptionListItemEntryMatch>
-
-export const Security_Exceptions_API_ExceptionListItemEntryList = z.object({
-  field: Security_Exceptions_API_NonEmptyString,
-  list: z.object({
-    id: Security_Exceptions_API_ListId,
-    type: Security_Exceptions_API_ListType
-  }),
-  operator: Security_Exceptions_API_ExceptionListItemEntryOperator,
-  type: z.enum(['list'])
-}).meta({ id: 'Security_Exceptions_API_ExceptionListItemEntryList' })
-export type Security_Exceptions_API_ExceptionListItemEntryList = z.infer<typeof Security_Exceptions_API_ExceptionListItemEntryList>
-
-export const Security_Exceptions_API_HostIsolationProperties = z.object({
-  entries: z.array(z.object({
-    field: z.enum(['destination.ip']),
-    operator: z.enum(['included']),
-    type: z.enum(['match']),
-    value: z.string()
-  })).optional(),
-  list_id: z.enum(['endpoint_host_isolation_exceptions']),
-  os_types: z.array(z.enum(['windows', 'linux', 'macos'])).optional(),
-  tags: Security_Exceptions_API_EndpointArtifactTags.optional()
-}).meta({ id: 'Security_Exceptions_API_HostIsolationProperties' })
-export type Security_Exceptions_API_HostIsolationProperties = z.infer<typeof Security_Exceptions_API_HostIsolationProperties>
-
-export const Security_Exceptions_API_TrustedDevicesWindowsMacProperties = z.object({
-  entries: z.array(z.object({
-    field: z.enum(['device.serial_number', 'device.type', 'host.name', 'device.vendor.name', 'device.vendor.id', 'device.product.id', 'device.product.name']),
-    operator: z.enum(['included']),
-    type: z.enum(['match', 'wildcard', 'match_any']),
-    value: z.union([z.string(), z.array(z.string())])
-  })).optional(),
-  list_id: z.enum(['endpoint_trusted_devices']),
-  os_types: z.array(z.enum(['windows', 'macos'])).optional(),
-  tags: Security_Exceptions_API_EndpointArtifactTags.optional()
-}).meta({ id: 'Security_Exceptions_API_TrustedDevicesWindowsMacProperties' })
-export type Security_Exceptions_API_TrustedDevicesWindowsMacProperties = z.infer<typeof Security_Exceptions_API_TrustedDevicesWindowsMacProperties>
-
-export const Security_Exceptions_API_TrustedDevicesMacProperties = z.object({
-  entries: z.array(z.object({
-    field: z.enum(['device.serial_number', 'device.type', 'host.name', 'device.vendor.name', 'device.vendor.id', 'device.product.id', 'device.product.name']),
-    operator: z.enum(['included']),
-    type: z.enum(['match', 'wildcard', 'match_any']),
-    value: z.union([z.string(), z.array(z.string())])
-  })).optional(),
-  list_id: z.enum(['endpoint_trusted_devices']),
-  os_types: z.array(z.enum(['macos'])).optional(),
-  tags: Security_Exceptions_API_EndpointArtifactTags.optional()
-}).meta({ id: 'Security_Exceptions_API_TrustedDevicesMacProperties' })
-export type Security_Exceptions_API_TrustedDevicesMacProperties = z.infer<typeof Security_Exceptions_API_TrustedDevicesMacProperties>
-
-export const Security_Exceptions_API_TrustedDevicesWindowsProperties = z.object({
-  entries: z.array(z.object({
-    field: z.enum(['device.serial_number', 'device.type', 'host.name', 'device.vendor.name', 'device.vendor.id', 'device.product.id', 'device.product.name', 'user.name']),
-    operator: z.enum(['included']),
-    type: z.enum(['match', 'wildcard', 'match_any']),
-    value: z.union([z.string(), z.array(z.string())])
-  })).optional(),
-  list_id: z.enum(['endpoint_trusted_devices']),
-  os_types: z.array(z.enum(['windows'])).optional(),
-  tags: Security_Exceptions_API_EndpointArtifactTags.optional()
-}).meta({ id: 'Security_Exceptions_API_TrustedDevicesWindowsProperties' })
-export type Security_Exceptions_API_TrustedDevicesWindowsProperties = z.infer<typeof Security_Exceptions_API_TrustedDevicesWindowsProperties>
-
-export const Security_Exceptions_API_BlocklistMacProperties = z.object({
-  entries: z.array(Security_Exceptions_API_BlocklistHashOrPathEntry).optional(),
-  list_id: z.enum(['endpoint_blocklists']),
-  os_types: z.array(z.enum(['macos'])).optional(),
-  tags: Security_Exceptions_API_EndpointArtifactTags.optional()
-}).meta({ id: 'Security_Exceptions_API_BlocklistMacProperties' })
-export type Security_Exceptions_API_BlocklistMacProperties = z.infer<typeof Security_Exceptions_API_BlocklistMacProperties>
-
-export const Security_Exceptions_API_BlocklistLinuxProperties = z.object({
-  entries: z.array(Security_Exceptions_API_BlocklistHashOrPathEntry).optional(),
-  list_id: z.enum(['endpoint_blocklists']),
-  os_types: z.array(z.enum(['linux'])).optional(),
-  tags: Security_Exceptions_API_EndpointArtifactTags.optional()
-}).meta({ id: 'Security_Exceptions_API_BlocklistLinuxProperties' })
-export type Security_Exceptions_API_BlocklistLinuxProperties = z.infer<typeof Security_Exceptions_API_BlocklistLinuxProperties>
-
-export const Security_Exceptions_API_BlocklistWindowsProperties = z.object({
-  entries: z.array(z.union([Security_Exceptions_API_BlocklistHashOrPathEntry, Security_Exceptions_API_BlocklistWindowsCodeSignatureEntry])).optional(),
-  list_id: z.enum(['endpoint_blocklists']),
-  os_types: z.array(z.enum(['windows'])).optional(),
-  tags: Security_Exceptions_API_EndpointArtifactTags.optional()
-}).meta({ id: 'Security_Exceptions_API_BlocklistWindowsProperties' })
-export type Security_Exceptions_API_BlocklistWindowsProperties = z.infer<typeof Security_Exceptions_API_BlocklistWindowsProperties>
-
-export const Security_Exceptions_API_TrustedAppsLinuxProperties = z.object({
-  entries: z.array(z.union([Security_Exceptions_API_TrustedAppHashEntry, Security_Exceptions_API_TrustedAppPathEntry])).optional(),
-  list_id: z.enum(['endpoint_trusted_apps']),
-  os_types: z.array(z.enum(['linux'])).optional(),
-  tags: Security_Exceptions_API_EndpointArtifactTags.optional()
-}).meta({ id: 'Security_Exceptions_API_TrustedAppsLinuxProperties' })
-export type Security_Exceptions_API_TrustedAppsLinuxProperties = z.infer<typeof Security_Exceptions_API_TrustedAppsLinuxProperties>
-
-export const Security_Exceptions_API_TrustedAppsMacProperties = z.object({
-  entries: z.array(z.union([Security_Exceptions_API_TrustedAppHashEntry, Security_Exceptions_API_TrustedAppPathEntry, Security_Exceptions_API_TrustedAppMacCodeSignatureEntry])).optional(),
-  list_id: z.enum(['endpoint_trusted_apps']),
-  os_types: z.array(z.enum(['macos'])).optional(),
-  tags: Security_Exceptions_API_EndpointArtifactTags.optional()
-}).meta({ id: 'Security_Exceptions_API_TrustedAppsMacProperties' })
-export type Security_Exceptions_API_TrustedAppsMacProperties = z.infer<typeof Security_Exceptions_API_TrustedAppsMacProperties>
-
-export const Security_Exceptions_API_TrustedAppsWindowsProperties = z.object({
-  entries: z.array(z.union([Security_Exceptions_API_TrustedAppHashEntry, Security_Exceptions_API_TrustedAppPathEntry, Security_Exceptions_API_TrustedAppWindowsCodeSignatureEntry])).optional(),
-  list_id: z.enum(['endpoint_trusted_apps']),
-  os_types: z.array(z.enum(['windows'])).optional(),
-  tags: Security_Exceptions_API_EndpointArtifactTags.optional()
-}).meta({ id: 'Security_Exceptions_API_TrustedAppsWindowsProperties' })
-export type Security_Exceptions_API_TrustedAppsWindowsProperties = z.infer<typeof Security_Exceptions_API_TrustedAppsWindowsProperties>
-
-export const Security_Exceptions_API_ExceptionListItemCommentArray = z.array(Security_Exceptions_API_ExceptionListItemComment).meta({ id: 'Security_Exceptions_API_ExceptionListItemCommentArray' })
-export type Security_Exceptions_API_ExceptionListItemCommentArray = z.infer<typeof Security_Exceptions_API_ExceptionListItemCommentArray>
-
 export const Security_Exceptions_API_CreateExceptionListItemCommentArray = z.array(Security_Exceptions_API_CreateExceptionListItemComment).meta({ id: 'Security_Exceptions_API_CreateExceptionListItemCommentArray' })
 export type Security_Exceptions_API_CreateExceptionListItemCommentArray = z.infer<typeof Security_Exceptions_API_CreateExceptionListItemCommentArray>
-
-export const Security_Exceptions_API_ExceptionListItemEntryNestedEntryItem = z.union([Security_Exceptions_API_ExceptionListItemEntryMatch, Security_Exceptions_API_ExceptionListItemEntryMatchAny, Security_Exceptions_API_ExceptionListItemEntryExists]).meta({ id: 'Security_Exceptions_API_ExceptionListItemEntryNestedEntryItem' })
-export type Security_Exceptions_API_ExceptionListItemEntryNestedEntryItem = z.infer<typeof Security_Exceptions_API_ExceptionListItemEntryNestedEntryItem>
 
 export const Security_Exceptions_API_CreateExceptionListItemBase = z.object({
   comments: Security_Exceptions_API_CreateExceptionListItemCommentArray.optional(),
@@ -311,33 +33,17 @@ export const Security_Exceptions_API_CreateExceptionListItemBase = z.object({
 }).meta({ id: 'Security_Exceptions_API_CreateExceptionListItemBase' })
 export type Security_Exceptions_API_CreateExceptionListItemBase = z.infer<typeof Security_Exceptions_API_CreateExceptionListItemBase>
 
-export const Security_Exceptions_API_ExceptionListItemEntryNested = z.object({
-  entries: z.array(Security_Exceptions_API_ExceptionListItemEntryNestedEntryItem),
-  field: Security_Exceptions_API_NonEmptyString,
-  type: z.enum(['nested'])
-}).meta({ id: 'Security_Exceptions_API_ExceptionListItemEntryNested' })
-export type Security_Exceptions_API_ExceptionListItemEntryNested = z.infer<typeof Security_Exceptions_API_ExceptionListItemEntryNested>
+export const Security_Exceptions_API_CreateExceptionListItemBlocklistLinux = Security_Exceptions_API_CreateExceptionListItemBase.merge(Security_Exceptions_API_BlocklistLinuxProperties).meta({ id: 'Security_Exceptions_API_CreateExceptionListItemBlocklistLinux' })
+export type Security_Exceptions_API_CreateExceptionListItemBlocklistLinux = z.infer<typeof Security_Exceptions_API_CreateExceptionListItemBlocklistLinux>
 
 export const Security_Exceptions_API_CreateExceptionListItemBlocklistMac = Security_Exceptions_API_CreateExceptionListItemBase.merge(Security_Exceptions_API_BlocklistMacProperties).meta({ id: 'Security_Exceptions_API_CreateExceptionListItemBlocklistMac' })
 export type Security_Exceptions_API_CreateExceptionListItemBlocklistMac = z.infer<typeof Security_Exceptions_API_CreateExceptionListItemBlocklistMac>
-
-export const Security_Exceptions_API_CreateExceptionListItemBlocklistLinux = Security_Exceptions_API_CreateExceptionListItemBase.merge(Security_Exceptions_API_BlocklistLinuxProperties).meta({ id: 'Security_Exceptions_API_CreateExceptionListItemBlocklistLinux' })
-export type Security_Exceptions_API_CreateExceptionListItemBlocklistLinux = z.infer<typeof Security_Exceptions_API_CreateExceptionListItemBlocklistLinux>
 
 export const Security_Exceptions_API_CreateExceptionListItemBlocklistWindows = Security_Exceptions_API_CreateExceptionListItemBase.merge(Security_Exceptions_API_BlocklistWindowsProperties).meta({ id: 'Security_Exceptions_API_CreateExceptionListItemBlocklistWindows' })
 export type Security_Exceptions_API_CreateExceptionListItemBlocklistWindows = z.infer<typeof Security_Exceptions_API_CreateExceptionListItemBlocklistWindows>
 
 export const Security_Exceptions_API_CreateExceptionListItemHostIsolation = Security_Exceptions_API_CreateExceptionListItemBase.merge(Security_Exceptions_API_HostIsolationProperties).meta({ id: 'Security_Exceptions_API_CreateExceptionListItemHostIsolation' })
 export type Security_Exceptions_API_CreateExceptionListItemHostIsolation = z.infer<typeof Security_Exceptions_API_CreateExceptionListItemHostIsolation>
-
-export const Security_Exceptions_API_CreateExceptionListItemTrustedDevicesWindowsMac = Security_Exceptions_API_CreateExceptionListItemBase.merge(Security_Exceptions_API_TrustedDevicesWindowsMacProperties).meta({ id: 'Security_Exceptions_API_CreateExceptionListItemTrustedDevicesWindowsMac' })
-export type Security_Exceptions_API_CreateExceptionListItemTrustedDevicesWindowsMac = z.infer<typeof Security_Exceptions_API_CreateExceptionListItemTrustedDevicesWindowsMac>
-
-export const Security_Exceptions_API_CreateExceptionListItemTrustedDevicesMac = Security_Exceptions_API_CreateExceptionListItemBase.merge(Security_Exceptions_API_TrustedDevicesMacProperties).meta({ id: 'Security_Exceptions_API_CreateExceptionListItemTrustedDevicesMac' })
-export type Security_Exceptions_API_CreateExceptionListItemTrustedDevicesMac = z.infer<typeof Security_Exceptions_API_CreateExceptionListItemTrustedDevicesMac>
-
-export const Security_Exceptions_API_CreateExceptionListItemTrustedDevicesWindows = Security_Exceptions_API_CreateExceptionListItemBase.merge(Security_Exceptions_API_TrustedDevicesWindowsProperties).meta({ id: 'Security_Exceptions_API_CreateExceptionListItemTrustedDevicesWindows' })
-export type Security_Exceptions_API_CreateExceptionListItemTrustedDevicesWindows = z.infer<typeof Security_Exceptions_API_CreateExceptionListItemTrustedDevicesWindows>
 
 export const Security_Exceptions_API_CreateExceptionListItemTrustedAppsLinux = Security_Exceptions_API_CreateExceptionListItemBase.merge(Security_Exceptions_API_TrustedAppsLinuxProperties).meta({ id: 'Security_Exceptions_API_CreateExceptionListItemTrustedAppsLinux' })
 export type Security_Exceptions_API_CreateExceptionListItemTrustedAppsLinux = z.infer<typeof Security_Exceptions_API_CreateExceptionListItemTrustedAppsLinux>
@@ -348,50 +54,14 @@ export type Security_Exceptions_API_CreateExceptionListItemTrustedAppsMac = z.in
 export const Security_Exceptions_API_CreateExceptionListItemTrustedAppsWindows = Security_Exceptions_API_CreateExceptionListItemBase.merge(Security_Exceptions_API_TrustedAppsWindowsProperties).meta({ id: 'Security_Exceptions_API_CreateExceptionListItemTrustedAppsWindows' })
 export type Security_Exceptions_API_CreateExceptionListItemTrustedAppsWindows = z.infer<typeof Security_Exceptions_API_CreateExceptionListItemTrustedAppsWindows>
 
-export const Security_Exceptions_API_ExceptionListItemEntry = z.discriminatedUnion('type', [Security_Exceptions_API_ExceptionListItemEntryMatch, Security_Exceptions_API_ExceptionListItemEntryMatchAny, Security_Exceptions_API_ExceptionListItemEntryList, Security_Exceptions_API_ExceptionListItemEntryExists, Security_Exceptions_API_ExceptionListItemEntryNested, Security_Exceptions_API_ExceptionListItemEntryMatchWildcard]).meta({ id: 'Security_Exceptions_API_ExceptionListItemEntry' })
-export type Security_Exceptions_API_ExceptionListItemEntry = z.infer<typeof Security_Exceptions_API_ExceptionListItemEntry>
+export const Security_Exceptions_API_CreateExceptionListItemTrustedDevicesMac = Security_Exceptions_API_CreateExceptionListItemBase.merge(Security_Exceptions_API_TrustedDevicesMacProperties).meta({ id: 'Security_Exceptions_API_CreateExceptionListItemTrustedDevicesMac' })
+export type Security_Exceptions_API_CreateExceptionListItemTrustedDevicesMac = z.infer<typeof Security_Exceptions_API_CreateExceptionListItemTrustedDevicesMac>
 
-export const Security_Exceptions_API_ExceptionListItemEntryArray = z.array(Security_Exceptions_API_ExceptionListItemEntry).meta({ id: 'Security_Exceptions_API_ExceptionListItemEntryArray' })
-export type Security_Exceptions_API_ExceptionListItemEntryArray = z.infer<typeof Security_Exceptions_API_ExceptionListItemEntryArray>
+export const Security_Exceptions_API_CreateExceptionListItemTrustedDevicesWindows = Security_Exceptions_API_CreateExceptionListItemBase.merge(Security_Exceptions_API_TrustedDevicesWindowsProperties).meta({ id: 'Security_Exceptions_API_CreateExceptionListItemTrustedDevicesWindows' })
+export type Security_Exceptions_API_CreateExceptionListItemTrustedDevicesWindows = z.infer<typeof Security_Exceptions_API_CreateExceptionListItemTrustedDevicesWindows>
 
-export const Security_Exceptions_API_ExceptionListItem = z.object({
-  _version: z.string().optional(),
-  comments: Security_Exceptions_API_ExceptionListItemCommentArray,
-  created_at: z.string(),
-  created_by: z.string(),
-  description: Security_Exceptions_API_ExceptionListItemDescription,
-  entries: Security_Exceptions_API_ExceptionListItemEntryArray,
-  expire_time: Security_Exceptions_API_ExceptionListItemExpireTime.optional(),
-  id: Security_Exceptions_API_ExceptionListItemId,
-  item_id: Security_Exceptions_API_ExceptionListItemHumanId,
-  list_id: Security_Exceptions_API_ExceptionListHumanId,
-  meta: Security_Exceptions_API_ExceptionListItemMeta.optional(),
-  name: Security_Exceptions_API_ExceptionListItemName,
-  namespace_type: Security_Exceptions_API_ExceptionNamespaceType,
-  os_types: Security_Exceptions_API_ExceptionListItemOsTypeArray.optional(),
-  tags: Security_Exceptions_API_ExceptionListItemTags.optional(),
-  tie_breaker_id: z.string(),
-  type: Security_Exceptions_API_ExceptionListItemType,
-  updated_at: z.string(),
-  updated_by: z.string()
-}).meta({ id: 'Security_Exceptions_API_ExceptionListItem' })
-export type Security_Exceptions_API_ExceptionListItem = z.infer<typeof Security_Exceptions_API_ExceptionListItem>
-
-export const Security_Exceptions_API_EventFiltersProperties = z.object({
-  entries: Security_Exceptions_API_ExceptionListItemEntryArray.optional(),
-  list_id: z.enum(['endpoint_event_filters']),
-  os_types: Security_Exceptions_API_ExceptionListItemOsTypeArray.optional(),
-  tags: Security_Exceptions_API_EndpointArtifactTags.optional()
-}).meta({ id: 'Security_Exceptions_API_EventFiltersProperties' })
-export type Security_Exceptions_API_EventFiltersProperties = z.infer<typeof Security_Exceptions_API_EventFiltersProperties>
-
-export const Security_Exceptions_API_EndpointListProperties = z.object({
-  entries: Security_Exceptions_API_ExceptionListItemEntryArray.optional(),
-  list_id: z.enum(['endpoint_list']),
-  os_types: Security_Exceptions_API_ExceptionListItemOsTypeArray.optional(),
-  tags: Security_Exceptions_API_EndpointArtifactTags.optional()
-}).meta({ id: 'Security_Exceptions_API_EndpointListProperties' })
-export type Security_Exceptions_API_EndpointListProperties = z.infer<typeof Security_Exceptions_API_EndpointListProperties>
+export const Security_Exceptions_API_CreateExceptionListItemTrustedDevicesWindowsMac = Security_Exceptions_API_CreateExceptionListItemBase.merge(Security_Exceptions_API_TrustedDevicesWindowsMacProperties).meta({ id: 'Security_Exceptions_API_CreateExceptionListItemTrustedDevicesWindowsMac' })
+export type Security_Exceptions_API_CreateExceptionListItemTrustedDevicesWindowsMac = z.infer<typeof Security_Exceptions_API_CreateExceptionListItemTrustedDevicesWindowsMac>
 
 export const Security_Exceptions_API_CreateExceptionListItemGeneric = Security_Exceptions_API_CreateExceptionListItemBase.merge(z.object({
   entries: Security_Exceptions_API_ExceptionListItemEntryArray,
@@ -401,11 +71,59 @@ export const Security_Exceptions_API_CreateExceptionListItemGeneric = Security_E
 })).meta({ id: 'Security_Exceptions_API_CreateExceptionListItemGeneric' })
 export type Security_Exceptions_API_CreateExceptionListItemGeneric = z.infer<typeof Security_Exceptions_API_CreateExceptionListItemGeneric>
 
-export const Security_Exceptions_API_CreateExceptionListItemEventFilters = Security_Exceptions_API_CreateExceptionListItemBase.merge(Security_Exceptions_API_EventFiltersProperties).meta({ id: 'Security_Exceptions_API_CreateExceptionListItemEventFilters' })
-export type Security_Exceptions_API_CreateExceptionListItemEventFilters = z.infer<typeof Security_Exceptions_API_CreateExceptionListItemEventFilters>
-
 export const Security_Exceptions_API_CreateExceptionListItemEndpointList = Security_Exceptions_API_CreateExceptionListItemBase.merge(Security_Exceptions_API_EndpointListProperties).meta({ id: 'Security_Exceptions_API_CreateExceptionListItemEndpointList' })
 export type Security_Exceptions_API_CreateExceptionListItemEndpointList = z.infer<typeof Security_Exceptions_API_CreateExceptionListItemEndpointList>
 
+export const Security_Exceptions_API_CreateExceptionListItemEventFilters = Security_Exceptions_API_CreateExceptionListItemBase.merge(Security_Exceptions_API_EventFiltersProperties).meta({ id: 'Security_Exceptions_API_CreateExceptionListItemEventFilters' })
+export type Security_Exceptions_API_CreateExceptionListItemEventFilters = z.infer<typeof Security_Exceptions_API_CreateExceptionListItemEventFilters>
+
 export const CreateExceptionListItemRequest = z.union([Security_Exceptions_API_CreateExceptionListItemGeneric, Security_Exceptions_API_CreateExceptionListItemEndpointList, Security_Exceptions_API_CreateExceptionListItemTrustedAppsWindows, Security_Exceptions_API_CreateExceptionListItemTrustedAppsMac, Security_Exceptions_API_CreateExceptionListItemTrustedAppsLinux, Security_Exceptions_API_CreateExceptionListItemTrustedDevicesWindows, Security_Exceptions_API_CreateExceptionListItemTrustedDevicesMac, Security_Exceptions_API_CreateExceptionListItemTrustedDevicesWindowsMac, Security_Exceptions_API_CreateExceptionListItemEventFilters, Security_Exceptions_API_CreateExceptionListItemHostIsolation, Security_Exceptions_API_CreateExceptionListItemBlocklistWindows, Security_Exceptions_API_CreateExceptionListItemBlocklistLinux, Security_Exceptions_API_CreateExceptionListItemBlocklistMac]).meta({ id: 'CreateExceptionListItemRequest' })
 export type CreateExceptionListItemRequest = z.infer<typeof CreateExceptionListItemRequest>
+
+export { Security_Exceptions_API_ExceptionListItem } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemType } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemTags } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemOsTypeArray } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListOsType } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionNamespaceType } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemName } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemMeta } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListHumanId } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemHumanId } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemId } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemExpireTime } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemEntryArray } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemEntry } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemEntryMatchWildcard } from './schemas/security.js'
+export { Security_Exceptions_API_NonEmptyString } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemEntryOperator } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemEntryNested } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemEntryNestedEntryItem } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemEntryExists } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemEntryMatchAny } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemEntryMatch } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemEntryList } from './schemas/security.js'
+export { Security_Exceptions_API_ListType } from './schemas/security.js'
+export { Security_Exceptions_API_ListId } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemDescription } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemCommentArray } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListItemComment } from './schemas/security.js'
+export { Security_Exceptions_API_BlocklistMacProperties } from './schemas/security.js'
+export { Security_Exceptions_API_EndpointArtifactTags } from './schemas/security.js'
+export { Security_Exceptions_API_BlocklistHashOrPathEntry } from './schemas/security.js'
+export { Security_Exceptions_API_BlocklistLinuxProperties } from './schemas/security.js'
+export { Security_Exceptions_API_BlocklistWindowsProperties } from './schemas/security.js'
+export { Security_Exceptions_API_BlocklistWindowsCodeSignatureEntry } from './schemas/security.js'
+export { Security_Exceptions_API_HostIsolationProperties } from './schemas/security.js'
+export { Security_Exceptions_API_EventFiltersProperties } from './schemas/security.js'
+export { Security_Exceptions_API_TrustedDevicesWindowsMacProperties } from './schemas/security.js'
+export { Security_Exceptions_API_TrustedDevicesMacProperties } from './schemas/security.js'
+export { Security_Exceptions_API_TrustedDevicesWindowsProperties } from './schemas/security.js'
+export { Security_Exceptions_API_TrustedAppsLinuxProperties } from './schemas/security.js'
+export { Security_Exceptions_API_TrustedAppPathEntry } from './schemas/security.js'
+export { Security_Exceptions_API_TrustedAppHashEntry } from './schemas/security.js'
+export { Security_Exceptions_API_TrustedAppsMacProperties } from './schemas/security.js'
+export { Security_Exceptions_API_TrustedAppMacCodeSignatureEntry } from './schemas/security.js'
+export { Security_Exceptions_API_TrustedAppsWindowsProperties } from './schemas/security.js'
+export { Security_Exceptions_API_TrustedAppWindowsCodeSignatureEntry } from './schemas/security.js'
+export { Security_Exceptions_API_EndpointListProperties } from './schemas/security.js'

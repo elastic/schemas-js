@@ -3,18 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
+import { Duration, IndexName, Indices, LifecycleOperationMode, integer, long } from './_types.js'
 
 export const HealthReportIndicatorHealthStatus = z.enum(['green', 'yellow', 'red', 'unknown', 'unavailable']).meta({ id: 'HealthReportIndicatorHealthStatus' })
 export type HealthReportIndicatorHealthStatus = z.infer<typeof HealthReportIndicatorHealthStatus>
@@ -22,22 +14,13 @@ export type HealthReportIndicatorHealthStatus = z.infer<typeof HealthReportIndic
 export const HealthReportImpactArea = z.enum(['search', 'ingest', 'backup', 'deployment_management']).meta({ id: 'HealthReportImpactArea' })
 export type HealthReportImpactArea = z.infer<typeof HealthReportImpactArea>
 
-export const integer = z.number().meta({ id: 'integer' })
-export type integer = z.infer<typeof integer>
-
 export const HealthReportImpact = z.object({
   description: z.string(),
   id: z.string(),
   impact_areas: z.array(HealthReportImpactArea),
-  severity: integer
+  severity: z.lazy(() => integer)
 }).meta({ id: 'HealthReportImpact' })
 export type HealthReportImpact = z.infer<typeof HealthReportImpact>
-
-export const IndexName = z.string().meta({ id: 'IndexName' })
-export type IndexName = z.infer<typeof IndexName>
-
-export const Indices = z.union([IndexName, z.array(IndexName)]).meta({ id: 'Indices' })
-export type Indices = z.infer<typeof Indices>
 
 export const HealthReportIndicatorNode = z.object({
   name: z.union([z.string(), z.null()]),
@@ -46,7 +29,7 @@ export const HealthReportIndicatorNode = z.object({
 export type HealthReportIndicatorNode = z.infer<typeof HealthReportIndicatorNode>
 
 export const HealthReportDiagnosisAffectedResources = z.object({
-  indices: Indices.optional(),
+  indices: z.lazy(() => Indices).optional(),
   nodes: z.array(HealthReportIndicatorNode).optional(),
   slm_policies: z.array(z.string()).optional(),
   feature_states: z.array(z.string()).optional(),
@@ -71,19 +54,16 @@ export const HealthReportBaseIndicator = z.object({
 }).meta({ id: 'HealthReportBaseIndicator' })
 export type HealthReportBaseIndicator = z.infer<typeof HealthReportBaseIndicator>
 
-export const long = z.number().meta({ id: 'long' })
-export type long = z.infer<typeof long>
-
 export const HealthReportStagnatingBackingIndices = z.object({
-  index_name: IndexName,
-  first_occurrence_timestamp: long,
-  retry_count: integer
+  index_name: z.lazy(() => IndexName),
+  first_occurrence_timestamp: z.lazy(() => long),
+  retry_count: z.lazy(() => integer)
 }).meta({ id: 'HealthReportStagnatingBackingIndices' })
 export type HealthReportStagnatingBackingIndices = z.infer<typeof HealthReportStagnatingBackingIndices>
 
 export const HealthReportDataStreamLifecycleDetails = z.object({
-  stagnating_backing_indices_count: integer,
-  total_backing_indices_in_error: integer,
+  stagnating_backing_indices_count: z.lazy(() => integer),
+  total_backing_indices_in_error: z.lazy(() => integer),
   stagnating_backing_indices: z.array(HealthReportStagnatingBackingIndices).optional()
 }).meta({ id: 'HealthReportDataStreamLifecycleDetails' })
 export type HealthReportDataStreamLifecycleDetails = z.infer<typeof HealthReportDataStreamLifecycleDetails>
@@ -96,11 +76,11 @@ export const HealthReportDataStreamLifecycleIndicator = z.object({
 export type HealthReportDataStreamLifecycleIndicator = z.infer<typeof HealthReportDataStreamLifecycleIndicator>
 
 export const HealthReportDiskIndicatorDetails = z.object({
-  indices_with_readonly_block: long,
-  nodes_with_enough_disk_space: long,
-  nodes_over_high_watermark: long,
-  nodes_over_flood_stage_watermark: long,
-  nodes_with_unknown_disk_status: long
+  indices_with_readonly_block: z.lazy(() => long),
+  nodes_with_enough_disk_space: z.lazy(() => long),
+  nodes_over_high_watermark: z.lazy(() => long),
+  nodes_over_flood_stage_watermark: z.lazy(() => long),
+  nodes_with_unknown_disk_status: z.lazy(() => long)
 }).meta({ id: 'HealthReportDiskIndicatorDetails' })
 export type HealthReportDiskIndicatorDetails = z.infer<typeof HealthReportDiskIndicatorDetails>
 
@@ -112,7 +92,7 @@ export const HealthReportDiskIndicator = z.object({
 export type HealthReportDiskIndicator = z.infer<typeof HealthReportDiskIndicator>
 
 export const HealthReportFileSettingsIndicatorDetails = z.object({
-  failure_streak: long,
+  failure_streak: z.lazy(() => long),
   most_recent_failure: z.string()
 }).meta({ id: 'HealthReportFileSettingsIndicatorDetails' })
 export type HealthReportFileSettingsIndicatorDetails = z.infer<typeof HealthReportFileSettingsIndicatorDetails>
@@ -124,13 +104,10 @@ export const HealthReportFileSettingsIndicator = z.object({
 }).meta({ id: 'HealthReportFileSettingsIndicator' })
 export type HealthReportFileSettingsIndicator = z.infer<typeof HealthReportFileSettingsIndicator>
 
-export const LifecycleOperationMode = z.enum(['RUNNING', 'STOPPING', 'STOPPED']).meta({ id: 'LifecycleOperationMode' })
-export type LifecycleOperationMode = z.infer<typeof LifecycleOperationMode>
-
 export const HealthReportIlmIndicatorDetails = z.object({
   ilm_status: LifecycleOperationMode,
-  policies: long,
-  stagnating_indices: integer
+  policies: z.lazy(() => long),
+  stagnating_indices: z.lazy(() => integer)
 }).meta({ id: 'HealthReportIlmIndicatorDetails' })
 export type HealthReportIlmIndicatorDetails = z.infer<typeof HealthReportIlmIndicatorDetails>
 
@@ -170,16 +147,16 @@ export const HealthReportMasterIsStableIndicator = z.object({
 export type HealthReportMasterIsStableIndicator = z.infer<typeof HealthReportMasterIsStableIndicator>
 
 export const HealthReportShardsAvailabilityIndicatorDetails = z.object({
-  creating_primaries: long,
-  creating_replicas: long,
-  initializing_primaries: long,
-  initializing_replicas: long,
-  restarting_primaries: long,
-  restarting_replicas: long,
-  started_primaries: long,
-  started_replicas: long,
-  unassigned_primaries: long,
-  unassigned_replicas: long
+  creating_primaries: z.lazy(() => long),
+  creating_replicas: z.lazy(() => long),
+  initializing_primaries: z.lazy(() => long),
+  initializing_replicas: z.lazy(() => long),
+  restarting_primaries: z.lazy(() => long),
+  restarting_replicas: z.lazy(() => long),
+  started_primaries: z.lazy(() => long),
+  started_replicas: z.lazy(() => long),
+  unassigned_primaries: z.lazy(() => long),
+  unassigned_replicas: z.lazy(() => long)
 }).meta({ id: 'HealthReportShardsAvailabilityIndicatorDetails' })
 export type HealthReportShardsAvailabilityIndicatorDetails = z.infer<typeof HealthReportShardsAvailabilityIndicatorDetails>
 
@@ -191,8 +168,8 @@ export const HealthReportShardsAvailabilityIndicator = z.object({
 export type HealthReportShardsAvailabilityIndicator = z.infer<typeof HealthReportShardsAvailabilityIndicator>
 
 export const HealthReportRepositoryIntegrityIndicatorDetails = z.object({
-  total_repositories: long.optional(),
-  corrupted_repositories: long.optional(),
+  total_repositories: z.lazy(() => long).optional(),
+  corrupted_repositories: z.lazy(() => long).optional(),
   corrupted: z.array(z.string()).optional()
 }).meta({ id: 'HealthReportRepositoryIntegrityIndicatorDetails' })
 export type HealthReportRepositoryIntegrityIndicatorDetails = z.infer<typeof HealthReportRepositoryIntegrityIndicatorDetails>
@@ -205,14 +182,14 @@ export const HealthReportRepositoryIntegrityIndicator = z.object({
 export type HealthReportRepositoryIntegrityIndicator = z.infer<typeof HealthReportRepositoryIntegrityIndicator>
 
 export const HealthReportSlmIndicatorUnhealthyPolicies = z.object({
-  count: long,
-  invocations_since_last_success: z.record(z.string(), long).optional()
+  count: z.lazy(() => long),
+  invocations_since_last_success: z.record(z.string(), z.lazy(() => long)).optional()
 }).meta({ id: 'HealthReportSlmIndicatorUnhealthyPolicies' })
 export type HealthReportSlmIndicatorUnhealthyPolicies = z.infer<typeof HealthReportSlmIndicatorUnhealthyPolicies>
 
 export const HealthReportSlmIndicatorDetails = z.object({
   slm_status: LifecycleOperationMode,
-  policies: long,
+  policies: z.lazy(() => long),
   unhealthy_policies: HealthReportSlmIndicatorUnhealthyPolicies.optional()
 }).meta({ id: 'HealthReportSlmIndicatorDetails' })
 export type HealthReportSlmIndicatorDetails = z.infer<typeof HealthReportSlmIndicatorDetails>
@@ -225,8 +202,8 @@ export const HealthReportSlmIndicator = z.object({
 export type HealthReportSlmIndicator = z.infer<typeof HealthReportSlmIndicator>
 
 export const HealthReportShardsCapacityIndicatorTierDetail = z.object({
-  max_shards_in_cluster: integer,
-  current_used_shards: integer.optional()
+  max_shards_in_cluster: z.lazy(() => integer),
+  current_used_shards: z.lazy(() => integer).optional()
 }).meta({ id: 'HealthReportShardsCapacityIndicatorTierDetail' })
 export type HealthReportShardsCapacityIndicatorTierDetail = z.infer<typeof HealthReportShardsCapacityIndicatorTierDetail>
 
@@ -247,7 +224,7 @@ export const HealthReportProjectEncryptionKeyDetails = z.object({
   active_key_id: z.string().optional(),
   active_password_id: z.string(),
   encryption_required: z.boolean().describe('Whether callers must refuse to store secrets when the service is not ready. If `false`, callers may fall back to storing secrets in plaintext (with a warning).'),
-  key_count: integer.optional(),
+  key_count: z.lazy(() => integer).optional(),
   metadata_password_id: z.string().optional(),
   state: z.string()
 }).meta({ id: 'HealthReportProjectEncryptionKeyDetails' })
@@ -274,17 +251,6 @@ export const HealthReportIndicators = z.object({
 }).meta({ id: 'HealthReportIndicators' })
 export type HealthReportIndicators = z.infer<typeof HealthReportIndicators>
 
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
-
-/**
- * A duration. Units can be `nanos`, `micros`, `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours) and
- * `d` (days). Also accepts "0" without a unit and "-1" to indicate an unspecified value.
- */
-export const Duration = z.union([z.string(), z.literal(-1), z.literal(0)]).meta({ id: 'Duration' })
-export type Duration = z.infer<typeof Duration>
-
 /**
  * Get the cluster health.
  *
@@ -307,11 +273,10 @@ export type Duration = z.infer<typeof Duration>
  * When setting up automated polling of the API for health status, set verbose to false to disable the more expensive analysis logic.
  */
 export const HealthReportRequest = z.object({
-  ...RequestBase.shape,
   feature: z.union([z.string(), z.array(z.string())]).describe('A feature of the cluster, as returned by the top-level health report API.').optional().meta({ found_in: 'path' }),
-  timeout: Duration.describe('Explicit operation timeout.').optional().meta({ found_in: 'query' }),
+  timeout: z.lazy(() => Duration).describe('Explicit operation timeout.').optional().meta({ found_in: 'query' }),
   verbose: z.boolean().describe('Opt-in for more information about the health of the system.').optional().meta({ found_in: 'query' }),
-  size: integer.describe('Limit the number of affected resources the health report API returns.').optional().meta({ found_in: 'query' })
+  size: z.lazy(() => integer).describe('Limit the number of affected resources the health report API returns.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'HealthReportRequest' })
 export type HealthReportRequest = z.infer<typeof HealthReportRequest>
 

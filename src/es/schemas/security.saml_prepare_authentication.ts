@@ -3,25 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
+import { Id } from './_types.js'
 
 /**
  * Prepare SAML authentication.
@@ -40,7 +25,6 @@ export type RequestBase = z.infer<typeof RequestBase>
  * The caller of this API needs to store this identifier as it needs to be used in a following step of the authentication process.
  */
 export const SecuritySamlPrepareAuthenticationRequest = z.object({
-  ...RequestBase.shape,
   acs: z.string().describe('The Assertion Consumer Service URL that matches the one of the SAML realms in Elasticsearch. The realm is used to generate the authentication request. You must specify either this parameter or the `realm` parameter.').optional().meta({ found_in: 'body' }),
   realm: z.string().describe('The name of the SAML realm in Elasticsearch for which the configuration is used to generate the authentication request. You must specify either this parameter or the `acs` parameter.').optional().meta({ found_in: 'body' }),
   relay_state: z.string().describe('A string that will be included in the redirect URL that this API returns as the `RelayState` query parameter. If the Authentication Request is signed, this value is used as part of the signature computation.').optional().meta({ found_in: 'body' })
@@ -48,7 +32,7 @@ export const SecuritySamlPrepareAuthenticationRequest = z.object({
 export type SecuritySamlPrepareAuthenticationRequest = z.infer<typeof SecuritySamlPrepareAuthenticationRequest>
 
 export const SecuritySamlPrepareAuthenticationResponse = z.object({
-  id: Id.describe('A unique identifier for the SAML Request to be stored by the caller of the API.'),
+  id: z.lazy(() => Id).describe('A unique identifier for the SAML Request to be stored by the caller of the API.'),
   realm: z.string().describe('The name of the Elasticsearch realm that was used to construct the authentication request.'),
   redirect: z.string().describe('The URL to redirect the user to.')
 }).meta({ id: 'SecuritySamlPrepareAuthenticationResponse' })

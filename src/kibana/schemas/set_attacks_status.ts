@@ -11,18 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Detections_API_UpdateRelatedAlerts = z.boolean().meta({ id: 'Security_Detections_API_UpdateRelatedAlerts' })
-export type Security_Detections_API_UpdateRelatedAlerts = z.infer<typeof Security_Detections_API_UpdateRelatedAlerts>
-
-export const Security_Detections_API_AlertStatusExceptClosed = z.enum(['open', 'acknowledged', 'in-progress']).meta({ id: 'Security_Detections_API_AlertStatusExceptClosed' })
-export type Security_Detections_API_AlertStatusExceptClosed = z.infer<typeof Security_Detections_API_AlertStatusExceptClosed>
-
-export const Security_Detections_API_AlertIds = z.array(z.string()).meta({ id: 'Security_Detections_API_AlertIds' })
-export type Security_Detections_API_AlertIds = z.infer<typeof Security_Detections_API_AlertIds>
-
-export const Security_Detections_API_ReasonEnum = z.enum(['false_positive', 'duplicate', 'true_positive', 'benign_positive', 'automated_closure', 'other']).meta({ id: 'Security_Detections_API_ReasonEnum' })
-export type Security_Detections_API_ReasonEnum = z.infer<typeof Security_Detections_API_ReasonEnum>
+import { Security_Detections_API_AlertIds, Security_Detections_API_AlertStatusExceptClosed, Security_Detections_API_Reason, Security_Detections_API_UpdateRelatedAlerts } from './schemas/security.js'
 
 export const Security_Detections_API_SetAttacksStatusByIdsBase = z.object({
   ids: Security_Detections_API_AlertIds,
@@ -30,9 +19,6 @@ export const Security_Detections_API_SetAttacksStatusByIdsBase = z.object({
   update_related_alerts: Security_Detections_API_UpdateRelatedAlerts.optional()
 }).meta({ id: 'Security_Detections_API_SetAttacksStatusByIdsBase' })
 export type Security_Detections_API_SetAttacksStatusByIdsBase = z.infer<typeof Security_Detections_API_SetAttacksStatusByIdsBase>
-
-export const Security_Detections_API_Reason = z.union([Security_Detections_API_ReasonEnum, z.string()]).meta({ id: 'Security_Detections_API_Reason' })
-export type Security_Detections_API_Reason = z.infer<typeof Security_Detections_API_Reason>
 
 export const Security_Detections_API_CloseAttacksByIds = z.object({
   ids: Security_Detections_API_AlertIds,
@@ -47,3 +33,9 @@ export type Security_Detections_API_SetAttacksStatusByIds = z.infer<typeof Secur
 
 export const SetAttacksStatusResponse = z.record(z.string(), z.unknown()).meta({ id: 'SetAttacksStatusResponse' })
 export type SetAttacksStatusResponse = z.infer<typeof SetAttacksStatusResponse>
+
+export { Security_Detections_API_UpdateRelatedAlerts } from './schemas/security.js'
+export { Security_Detections_API_AlertStatusExceptClosed } from './schemas/security.js'
+export { Security_Detections_API_AlertIds } from './schemas/security.js'
+export { Security_Detections_API_Reason } from './schemas/security.js'
+export { Security_Detections_API_ReasonEnum } from './schemas/security.js'

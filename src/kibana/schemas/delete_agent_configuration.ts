@@ -11,19 +11,16 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
+import { APM_UI_service_object } from './schemas/apm_ui.js'
 
 export const APM_UI_delete_agent_configurations_response = z.object({
   result: z.string().optional()
 }).meta({ id: 'APM_UI_delete_agent_configurations_response' })
 export type APM_UI_delete_agent_configurations_response = z.infer<typeof APM_UI_delete_agent_configurations_response>
 
-export const APM_UI_service_object = z.object({
-  environment: z.string().optional(),
-  name: z.string().optional()
-}).meta({ id: 'APM_UI_service_object' })
-export type APM_UI_service_object = z.infer<typeof APM_UI_service_object>
-
 export const APM_UI_delete_service_object = z.object({
   service: APM_UI_service_object
 }).meta({ id: 'APM_UI_delete_service_object' })
 export type APM_UI_delete_service_object = z.infer<typeof APM_UI_delete_service_object>
+
+export { APM_UI_service_object } from './schemas/apm_ui.js'

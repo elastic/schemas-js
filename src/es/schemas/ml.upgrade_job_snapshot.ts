@@ -3,35 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-/**
- * A duration. Units can be `nanos`, `micros`, `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours) and
- * `d` (days). Also accepts "0" without a unit and "-1" to indicate an unspecified value.
- */
-export const Duration = z.union([z.string(), z.literal(-1), z.literal(0)]).meta({ id: 'Duration' })
-export type Duration = z.infer<typeof Duration>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const NodeId = z.string().meta({ id: 'NodeId' })
-export type NodeId = z.infer<typeof NodeId>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
+import { Duration, Id, NodeId } from './_types.js'
 
 /**
  * Upgrade a snapshot.
@@ -47,16 +22,15 @@ export type RequestBase = z.infer<typeof RequestBase>
  * job.
  */
 export const MlUpgradeJobSnapshotRequest = z.object({
-  ...RequestBase.shape,
-  job_id: Id.describe('Identifier for the anomaly detection job.').meta({ found_in: 'path' }),
-  snapshot_id: Id.describe('A numerical character string that uniquely identifies the model snapshot.').meta({ found_in: 'path' }),
+  job_id: z.lazy(() => Id).describe('Identifier for the anomaly detection job.').meta({ found_in: 'path' }),
+  snapshot_id: z.lazy(() => Id).describe('A numerical character string that uniquely identifies the model snapshot.').meta({ found_in: 'path' }),
   wait_for_completion: z.boolean().describe('When true, the API won’t respond until the upgrade is complete. Otherwise, it responds as soon as the upgrade task is assigned to a node.').optional().meta({ found_in: 'query' }),
-  timeout: Duration.describe('Controls the time to wait for the request to complete.').optional().meta({ found_in: 'query' })
+  timeout: z.lazy(() => Duration).describe('Controls the time to wait for the request to complete.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'MlUpgradeJobSnapshotRequest' })
 export type MlUpgradeJobSnapshotRequest = z.infer<typeof MlUpgradeJobSnapshotRequest>
 
 export const MlUpgradeJobSnapshotResponse = z.object({
-  node: NodeId.describe('The ID of the node that the upgrade task was started on if it is still running. In serverless this will be the "serverless".'),
+  node: z.lazy(() => NodeId).describe('The ID of the node that the upgrade task was started on if it is still running. In serverless this will be the "serverless".'),
   completed: z.boolean().describe('When true, this means the task is complete. When false, it is still running.')
 }).meta({ id: 'MlUpgradeJobSnapshotResponse' })
 export type MlUpgradeJobSnapshotResponse = z.infer<typeof MlUpgradeJobSnapshotResponse>

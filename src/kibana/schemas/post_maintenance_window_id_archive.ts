@@ -9,48 +9,7 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
-/* eslint-disable @typescript-eslint/no-redeclare */
-import { z } from 'zod'
-
-export const Kibana_HTTP_APIs_maintenance_window_scope = z.object({
-  alerting: z.object({
-    query: z.object({
-      kql: z.string()
-    })
-  })
-}).meta({ id: 'Kibana_HTTP_APIs_maintenance_window_scope' })
-export type Kibana_HTTP_APIs_maintenance_window_scope = z.infer<typeof Kibana_HTTP_APIs_maintenance_window_scope>
-
-export const Kibana_HTTP_APIs_maintenance_window_schedule_recurring_response = z.object({
-  end: z.string().optional(),
-  every: z.string().optional(),
-  occurrences: z.number().optional(),
-  onMonth: z.array(z.number()).optional(),
-  onMonthDay: z.array(z.number()).optional(),
-  onWeekDay: z.array(z.string()).optional()
-}).meta({ id: 'Kibana_HTTP_APIs_maintenance_window_schedule_recurring_response' })
-export type Kibana_HTTP_APIs_maintenance_window_schedule_recurring_response = z.infer<typeof Kibana_HTTP_APIs_maintenance_window_schedule_recurring_response>
-
-export const Kibana_HTTP_APIs_maintenance_window_schedule_response = z.object({
-  duration: z.string(),
-  recurring: Kibana_HTTP_APIs_maintenance_window_schedule_recurring_response.optional(),
-  start: z.string(),
-  timezone: z.string().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_maintenance_window_schedule_response' })
-export type Kibana_HTTP_APIs_maintenance_window_schedule_response = z.infer<typeof Kibana_HTTP_APIs_maintenance_window_schedule_response>
-
-export const Kibana_HTTP_APIs_maintenance_window_response = z.object({
-  created_at: z.string(),
-  created_by: z.string().nullable().optional(),
-  enabled: z.boolean(),
-  id: z.string(),
-  schedule: z.object({
-    custom: Kibana_HTTP_APIs_maintenance_window_schedule_response
-  }),
-  scope: Kibana_HTTP_APIs_maintenance_window_scope.optional(),
-  status: z.enum(['running', 'upcoming', 'finished', 'archived', 'disabled']),
-  title: z.string(),
-  updated_at: z.string(),
-  updated_by: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_maintenance_window_response' })
-export type Kibana_HTTP_APIs_maintenance_window_response = z.infer<typeof Kibana_HTTP_APIs_maintenance_window_response>
+export { Kibana_HTTP_APIs_maintenance_window_response } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_maintenance_window_scope } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_maintenance_window_schedule_response } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_maintenance_window_schedule_recurring_response } from './schemas/kibana.js'

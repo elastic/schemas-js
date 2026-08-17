@@ -12,14 +12,14 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Kibana_HTTP_APIs_delete_agent_policy_response = z.object({
-  id: z.string(),
-  name: z.string()
-}).meta({ id: 'Kibana_HTTP_APIs_delete_agent_policy_response' })
-export type Kibana_HTTP_APIs_delete_agent_policy_response = z.infer<typeof Kibana_HTTP_APIs_delete_agent_policy_response>
-
 export const Kibana_HTTP_APIs_delete_agent_policy_request = z.object({
   agentPolicyId: z.string(),
   force: z.boolean().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_delete_agent_policy_request' })
 export type Kibana_HTTP_APIs_delete_agent_policy_request = z.infer<typeof Kibana_HTTP_APIs_delete_agent_policy_request>
+
+export const Kibana_HTTP_APIs_delete_agent_policy_response = z.object({
+  id: z.string(),
+  name: z.string()
+}).meta({ id: 'Kibana_HTTP_APIs_delete_agent_policy_response' })
+export type Kibana_HTTP_APIs_delete_agent_policy_response = z.infer<typeof Kibana_HTTP_APIs_delete_agent_policy_response>

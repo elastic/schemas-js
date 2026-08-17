@@ -12,30 +12,9 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const ReplyWarning = z.object({
-  code: z.string(),
-  message: z.string().optional()
-}).meta({ id: 'ReplyWarning' })
-export type ReplyWarning = z.infer<typeof ReplyWarning>
-
-export const ClusterCredentials = z.object({
-  username: z.string(),
-  password: z.string()
-}).meta({ id: 'ClusterCredentials' })
-export type ClusterCredentials = z.infer<typeof ClusterCredentials>
-
-export const DeploymentResource = z.object({
-  ref_id: z.string(),
-  elasticsearch_cluster_ref_id: z.string().optional(),
-  id: z.string(),
-  kind: z.string(),
-  region: z.string(),
-  cloud_id: z.string().optional(),
-  credentials: ClusterCredentials.optional(),
-  secret_token: z.string().optional(),
-  warnings: z.array(ReplyWarning).optional()
-}).meta({ id: 'DeploymentResource' })
-export type DeploymentResource = z.infer<typeof DeploymentResource>
+import { ClusterCredentials } from './definitions/cluster.js'
+import { DeploymentResource } from './definitions/deployment.js'
+import { ReplyWarning } from './definitions/misc.js'
 
 export const DeploymentsListingData = z.object({
   id: z.string(),

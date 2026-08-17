@@ -9,20 +9,4 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
-/* eslint-disable @typescript-eslint/no-redeclare */
-import { z } from 'zod'
-
-export const Kibana_HTTP_APIs_get_one_bulk_operation_packages_response = z.object({
-  error: z.object({
-    message: z.string()
-  }).optional(),
-  results: z.array(z.object({
-    error: z.object({
-      message: z.string()
-    }).optional(),
-    name: z.string(),
-    success: z.boolean()
-  })).optional(),
-  status: z.string()
-}).meta({ id: 'Kibana_HTTP_APIs_get_one_bulk_operation_packages_response' })
-export type Kibana_HTTP_APIs_get_one_bulk_operation_packages_response = z.infer<typeof Kibana_HTTP_APIs_get_one_bulk_operation_packages_response>
+export { Kibana_HTTP_APIs_get_one_bulk_operation_packages_response } from './schemas/kibana.js'

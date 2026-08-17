@@ -12,6 +12,14 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
+export const Kibana_HTTP_APIs_get_bulk_assets_request = z.object({
+  assetIds: z.array(z.object({
+    id: z.string(),
+    type: z.string()
+  }))
+}).meta({ id: 'Kibana_HTTP_APIs_get_bulk_assets_request' })
+export type Kibana_HTTP_APIs_get_bulk_assets_request = z.infer<typeof Kibana_HTTP_APIs_get_bulk_assets_request>
+
 export const Kibana_HTTP_APIs_get_bulk_assets_response = z.object({
   items: z.array(z.object({
     appLink: z.string().optional(),
@@ -26,11 +34,3 @@ export const Kibana_HTTP_APIs_get_bulk_assets_response = z.object({
   }))
 }).meta({ id: 'Kibana_HTTP_APIs_get_bulk_assets_response' })
 export type Kibana_HTTP_APIs_get_bulk_assets_response = z.infer<typeof Kibana_HTTP_APIs_get_bulk_assets_response>
-
-export const Kibana_HTTP_APIs_get_bulk_assets_request = z.object({
-  assetIds: z.array(z.object({
-    id: z.string(),
-    type: z.string()
-  }))
-}).meta({ id: 'Kibana_HTTP_APIs_get_bulk_assets_request' })
-export type Kibana_HTTP_APIs_get_bulk_assets_request = z.infer<typeof Kibana_HTTP_APIs_get_bulk_assets_request>

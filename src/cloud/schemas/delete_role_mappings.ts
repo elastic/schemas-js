@@ -12,8 +12,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const EmptyResponse = z.object({}).meta({ id: 'EmptyResponse' })
-export type EmptyResponse = z.infer<typeof EmptyResponse>
+import { EmptyResponse } from './definitions/misc.js'
 
 export const DeleteRoleMappingsResponse = EmptyResponse
 export type DeleteRoleMappingsResponse = EmptyResponse

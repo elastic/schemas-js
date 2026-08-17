@@ -11,99 +11,18 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Attack_discovery_API_WorkflowExecutionReference = z.object({
-  workflowId: z.string(),
-  workflowName: z.string().optional(),
-  workflowRunId: z.string()
-}).meta({ id: 'Security_Attack_discovery_API_WorkflowExecutionReference' })
-export type Security_Attack_discovery_API_WorkflowExecutionReference = z.infer<typeof Security_Attack_discovery_API_WorkflowExecutionReference>
-
-export const Security_Attack_discovery_API_User = z.object({
-  id: z.string().optional(),
-  name: z.string().optional()
-}).meta({ id: 'Security_Attack_discovery_API_User' })
-export type Security_Attack_discovery_API_User = z.infer<typeof Security_Attack_discovery_API_User>
-
-export const Security_Attack_discovery_API_NonEmptyTimestamp = z.string().meta({ id: 'Security_Attack_discovery_API_NonEmptyTimestamp' })
-export type Security_Attack_discovery_API_NonEmptyTimestamp = z.infer<typeof Security_Attack_discovery_API_NonEmptyTimestamp>
-
-export const Security_Attack_discovery_API_Replacements = z.record(z.string(), z.string()).meta({ id: 'Security_Attack_discovery_API_Replacements' })
-export type Security_Attack_discovery_API_Replacements = z.infer<typeof Security_Attack_discovery_API_Replacements>
-
-export const Security_Attack_discovery_API_WorkflowExecutionsTracking = z.object({
-  alertRetrieval: z.array(Security_Attack_discovery_API_WorkflowExecutionReference).nullable().optional(),
-  gate: z.array(Security_Attack_discovery_API_WorkflowExecutionReference).nullable().optional(),
-  generation: Security_Attack_discovery_API_WorkflowExecutionReference.optional(),
-  validation: Security_Attack_discovery_API_WorkflowExecutionReference.optional()
-}).meta({ id: 'Security_Attack_discovery_API_WorkflowExecutionsTracking' })
-export type Security_Attack_discovery_API_WorkflowExecutionsTracking = z.infer<typeof Security_Attack_discovery_API_WorkflowExecutionsTracking>
-
-export const Security_Attack_discovery_API_AttackDiscoveryApiAlert = z.object({
-  alert_ids: z.array(z.string()),
-  alert_rule_uuid: z.string().optional(),
-  alert_start: z.string().optional(),
-  alert_updated_at: z.string().optional(),
-  alert_updated_by_user_id: z.string().optional(),
-  alert_updated_by_user_name: z.string().optional(),
-  alert_workflow_status: z.string().optional(),
-  alert_workflow_status_updated_at: z.string().optional(),
-  assignees: z.array(z.string()).optional(),
-  connector_id: z.string(),
-  connector_name: z.string(),
-  details_markdown: z.string(),
-  entity_summary_markdown: z.string().optional(),
-  generation_uuid: z.string(),
-  id: z.string(),
-  index: z.string().optional(),
-  mitre_attack_tactics: z.array(z.string()).optional(),
-  replacements: Security_Attack_discovery_API_Replacements.optional(),
-  risk_score: z.number().optional(),
-  summary_markdown: z.string(),
-  tags: z.array(z.string()).optional(),
-  timestamp: Security_Attack_discovery_API_NonEmptyTimestamp,
-  title: z.string(),
-  user_id: z.string().optional(),
-  user_name: z.string().optional(),
-  users: z.array(Security_Attack_discovery_API_User).optional()
-}).meta({ id: 'Security_Attack_discovery_API_AttackDiscoveryApiAlert' })
-export type Security_Attack_discovery_API_AttackDiscoveryApiAlert = z.infer<typeof Security_Attack_discovery_API_AttackDiscoveryApiAlert>
-
-export const Security_Attack_discovery_API_AttackDiscoveryGeneration = z.object({
-  alerts_context_count: z.number().optional(),
-  connector_id: z.string(),
-  connector_stats: z.object({
-    average_successful_duration_nanoseconds: z.number().optional(),
-    successful_generations: z.number().optional()
-  }).optional(),
-  conversation_id: z.string().optional(),
-  discoveries: z.number(),
-  duplicates_dropped_count: z.number().optional(),
-  end: z.string().optional(),
-  error_category: z.string().optional(),
-  execution_uuid: z.string(),
-  failed_workflow_id: z.string().optional(),
-  generated_count: z.number().optional(),
-  hallucinations_filtered_count: z.number().optional(),
-  loading_message: z.string().optional(),
-  persisted_count: z.number().optional(),
-  reason: z.string().optional(),
-  source_metadata: z.object({
-    action_execution_uuid: z.string().optional(),
-    rule_id: z.string().optional(),
-    rule_name: z.string().optional()
-  }).nullable().optional(),
-  start: z.string(),
-  status: z.enum(['canceled', 'dismissed', 'failed', 'started', 'succeeded']),
-  step_event_actions: z.array(z.string()).optional(),
-  workflow_executions: Security_Attack_discovery_API_WorkflowExecutionsTracking.optional(),
-  workflow_id: z.string().optional(),
-  workflow_run_id: z.string().optional()
-}).meta({ id: 'Security_Attack_discovery_API_AttackDiscoveryGeneration' })
-export type Security_Attack_discovery_API_AttackDiscoveryGeneration = z.infer<typeof Security_Attack_discovery_API_AttackDiscoveryGeneration>
+import { Security_Attack_discovery_API_AttackDiscoveryApiAlert, Security_Attack_discovery_API_AttackDiscoveryGeneration } from './schemas/security.js'
 
 export const GetAttackDiscoveryGenerationResponse = z.object({
   data: z.array(Security_Attack_discovery_API_AttackDiscoveryApiAlert),
   generation: Security_Attack_discovery_API_AttackDiscoveryGeneration.optional()
 }).meta({ id: 'GetAttackDiscoveryGenerationResponse' })
 export type GetAttackDiscoveryGenerationResponse = z.infer<typeof GetAttackDiscoveryGenerationResponse>
+
+export { Security_Attack_discovery_API_AttackDiscoveryGeneration } from './schemas/security.js'
+export { Security_Attack_discovery_API_WorkflowExecutionsTracking } from './schemas/security.js'
+export { Security_Attack_discovery_API_WorkflowExecutionReference } from './schemas/security.js'
+export { Security_Attack_discovery_API_AttackDiscoveryApiAlert } from './schemas/security.js'
+export { Security_Attack_discovery_API_User } from './schemas/security.js'
+export { Security_Attack_discovery_API_NonEmptyTimestamp } from './schemas/security.js'
+export { Security_Attack_discovery_API_Replacements } from './schemas/security.js'

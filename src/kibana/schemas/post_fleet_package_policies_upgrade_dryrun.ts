@@ -11,52 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Kibana_HTTP_APIs_package_policy_package = z.object({
-  experimental_data_stream_features: z.array(z.object({
-    data_stream: z.string(),
-    features: z.object({
-      doc_value_only_numeric: z.boolean().optional(),
-      doc_value_only_other: z.boolean().optional(),
-      synthetic_source: z.boolean().optional(),
-      tsdb: z.boolean().optional()
-    })
-  })).optional(),
-  fips_compatible: z.boolean().optional(),
-  name: z.string(),
-  requires_root: z.boolean().optional(),
-  title: z.string().optional(),
-  version: z.string()
-}).meta({ id: 'Kibana_HTTP_APIs_package_policy_package' })
-export type Kibana_HTTP_APIs_package_policy_package = z.infer<typeof Kibana_HTTP_APIs_package_policy_package>
-
-export const Kibana_HTTP_APIs_package_policy_stream_deprecation_info = z.object({
-  description: z.string(),
-  replaced_by: z.record(z.string(), z.string()).optional(),
-  since: z.string().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_package_policy_stream_deprecation_info' })
-export type Kibana_HTTP_APIs_package_policy_stream_deprecation_info = z.infer<typeof Kibana_HTTP_APIs_package_policy_stream_deprecation_info>
-
-export const Kibana_HTTP_APIs_package_policy_input_deprecation_info = z.object({
-  description: z.string(),
-  replaced_by: z.record(z.string(), z.string()).optional(),
-  since: z.string().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_package_policy_input_deprecation_info' })
-export type Kibana_HTTP_APIs_package_policy_input_deprecation_info = z.infer<typeof Kibana_HTTP_APIs_package_policy_input_deprecation_info>
-
-export const Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info = z.object({
-  description: z.string(),
-  replaced_by: z.record(z.string(), z.string()).optional(),
-  since: z.string().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info' })
-export type Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info = z.infer<typeof Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info>
-
-export const Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info = z.object({
-  description: z.string(),
-  replaced_by: z.record(z.string(), z.string()).optional(),
-  since: z.string().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info' })
-export type Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info = z.infer<typeof Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info>
+import { Kibana_HTTP_APIs_package_policy_input_deprecation_info, Kibana_HTTP_APIs_package_policy_package, Kibana_HTTP_APIs_package_policy_stream_deprecation_info, Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info, Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info } from './schemas/kibana.js'
 
 export const Kibana_HTTP_APIs_dry_run_package_policies_request = z.object({
   packagePolicyIds: z.array(z.string()),
@@ -339,3 +294,9 @@ export const PostFleetPackagePoliciesUpgradeDryrunResponse = z.array(z.object({
   statusCode: z.number().optional()
 })).meta({ id: 'PostFleetPackagePoliciesUpgradeDryrunResponse' })
 export type PostFleetPackagePoliciesUpgradeDryrunResponse = z.infer<typeof PostFleetPackagePoliciesUpgradeDryrunResponse>
+
+export { Kibana_HTTP_APIs_package_policy_package } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_package_policy_stream_deprecation_info } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_package_policy_input_deprecation_info } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info } from './schemas/kibana.js'

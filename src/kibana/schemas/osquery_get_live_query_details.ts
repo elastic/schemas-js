@@ -11,15 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Osquery_API_ECSMappingItem = z.object({
-  field: z.string().optional(),
-  value: z.union([z.string(), z.array(z.string())]).optional()
-}).meta({ id: 'Security_Osquery_API_ECSMappingItem' })
-export type Security_Osquery_API_ECSMappingItem = z.infer<typeof Security_Osquery_API_ECSMappingItem>
-
-export const Security_Osquery_API_ECSMapping = z.record(z.string(), Security_Osquery_API_ECSMappingItem).meta({ id: 'Security_Osquery_API_ECSMapping' })
-export type Security_Osquery_API_ECSMapping = z.infer<typeof Security_Osquery_API_ECSMapping>
+import { Security_Osquery_API_ECSMapping } from './schemas/security.js'
 
 export const Security_Osquery_API_FindLiveQueryDetailsResponse = z.object({
   data: z.object({
@@ -51,3 +43,6 @@ export const Security_Osquery_API_FindLiveQueryDetailsResponse = z.object({
   }).optional()
 }).meta({ id: 'Security_Osquery_API_FindLiveQueryDetailsResponse' })
 export type Security_Osquery_API_FindLiveQueryDetailsResponse = z.infer<typeof Security_Osquery_API_FindLiveQueryDetailsResponse>
+
+export { Security_Osquery_API_ECSMapping } from './schemas/security.js'
+export { Security_Osquery_API_ECSMappingItem } from './schemas/security.js'

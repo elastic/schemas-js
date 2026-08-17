@@ -12,15 +12,15 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const CreateSnapshotDependencyResponse = z.object({
-  message: z.string()
-}).meta({ id: 'CreateSnapshotDependencyResponse' })
-export type CreateSnapshotDependencyResponse = z.infer<typeof CreateSnapshotDependencyResponse>
-
 export const CreateSnapshotDependencyRequest = z.object({
   source_deployment_id: z.string()
 }).meta({ id: 'CreateSnapshotDependencyRequest' })
 export type CreateSnapshotDependencyRequest = z.infer<typeof CreateSnapshotDependencyRequest>
+
+export const CreateSnapshotDependencyResponse = z.object({
+  message: z.string()
+}).meta({ id: 'CreateSnapshotDependencyResponse' })
+export type CreateSnapshotDependencyResponse = z.infer<typeof CreateSnapshotDependencyResponse>
 
 export const CreateDeploymentEsResourceSnapshotRepositoryRequest = CreateSnapshotDependencyRequest
 export type CreateDeploymentEsResourceSnapshotRepositoryRequest = CreateSnapshotDependencyRequest

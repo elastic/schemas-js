@@ -12,31 +12,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const EmptyResponse = z.object({}).meta({ id: 'EmptyResponse' })
-export type EmptyResponse = z.infer<typeof EmptyResponse>
-
-export const RemoteResourceInfo = z.object({
-  healthy: z.boolean(),
-  connected: z.boolean(),
-  compatible: z.boolean(),
-  trusted: z.boolean(),
-  trusted_back: z.boolean()
-}).meta({ id: 'RemoteResourceInfo' })
-export type RemoteResourceInfo = z.infer<typeof RemoteResourceInfo>
-
-export const RemoteResourceRef = z.object({
-  deployment_id: z.string(),
-  elasticsearch_ref_id: z.string(),
-  alias: z.string(),
-  skip_unavailable: z.boolean().optional(),
-  info: RemoteResourceInfo.optional()
-}).meta({ id: 'RemoteResourceRef' })
-export type RemoteResourceRef = z.infer<typeof RemoteResourceRef>
-
-export const RemoteResources = z.object({
-  resources: z.array(RemoteResourceRef)
-}).meta({ id: 'RemoteResources' })
-export type RemoteResources = z.infer<typeof RemoteResources>
+import { EmptyResponse, RemoteResourceInfo, RemoteResourceRef, RemoteResources } from './definitions/misc.js'
 
 export const SetDeploymentEsResourceRemoteClustersRequest = RemoteResources
 export type SetDeploymentEsResourceRemoteClustersRequest = RemoteResources

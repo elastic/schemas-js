@@ -11,17 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Detections_API_WarningSchema = z.object({
-  actionPath: z.string(),
-  buttonLabel: z.string().optional(),
-  message: z.string(),
-  type: z.string()
-}).meta({ id: 'Security_Detections_API_WarningSchema' })
-export type Security_Detections_API_WarningSchema = z.infer<typeof Security_Detections_API_WarningSchema>
-
-export const Security_Detections_API_RuleSignatureId = z.string().meta({ id: 'Security_Detections_API_RuleSignatureId' })
-export type Security_Detections_API_RuleSignatureId = z.infer<typeof Security_Detections_API_RuleSignatureId>
+import { Security_Detections_API_RuleSignatureId, Security_Detections_API_WarningSchema } from './schemas/security.js'
 
 export const Security_Detections_API_ErrorSchema = z.object({
   error: z.object({
@@ -49,3 +39,6 @@ export const ImportRulesResponse = z.object({
   success_count: z.number()
 }).meta({ id: 'ImportRulesResponse' })
 export type ImportRulesResponse = z.infer<typeof ImportRulesResponse>
+
+export { Security_Detections_API_WarningSchema } from './schemas/security.js'
+export { Security_Detections_API_RuleSignatureId } from './schemas/security.js'

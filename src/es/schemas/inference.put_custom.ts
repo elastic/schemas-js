@@ -3,34 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
-
-export const double = z.number().meta({ id: 'double' })
-export type double = z.infer<typeof double>
-
-export const float = z.number().meta({ id: 'float' })
-export type float = z.infer<typeof float>
-
-export const integer = z.number().meta({ id: 'integer' })
-export type integer = z.infer<typeof integer>
+import { Id, double, float, integer } from './_types.js'
+import { InferenceInferenceChunkingSettings, InferenceInferenceEndpoint } from './inference.js'
 
 export const InferenceCustomRequestParams = z.object({
   content: z.string().describe('The body structure of the request. It requires passing in the string-escaped result of the JSON format HTTP request body. For example: ``` "request": "{"input":{input}}" ``` > info > The content string needs to be a single line except when using the Kibana console.')
@@ -49,7 +26,7 @@ export const InferenceCustomServiceQueryParameter = z.array(z.string()).meta({ i
 export type InferenceCustomServiceQueryParameter = z.infer<typeof InferenceCustomServiceQueryParameter>
 
 export const InferenceCustomServiceSettings = z.object({
-  batch_size: integer.describe('Specifies the batch size used for the semantic_text field. If the field is not provided, the default is 10. The batch size is the maximum number of inputs in a single request to the upstream service. The chunk within the batch are controlled by the selected chunking strategy for the semantic_text field.').optional(),
+  batch_size: z.lazy(() => integer).describe('Specifies the batch size used for the semantic_text field. If the field is not provided, the default is 10. The batch size is the maximum number of inputs in a single request to the upstream service. The chunk within the batch are controlled by the selected chunking strategy for the semantic_text field.').optional(),
   headers: z.record(z.string(), z.string()).describe('Specifies the HTTP header parameters – such as `Authorization` or `Content-Type` – that are required to access the custom service. For example: ``` "headers": {   "Authorization": "Bearer {api_key}",   "Content-Type": "application/json;charset=utf-8" } ```').optional(),
   input_type: z.record(InferenceCustomServiceInputType, z.string()).describe('Specifies the input type translation values that are used to replace the `{input_type}` template in the request body. For example: ``` "input_type": {   "translation": {     "ingest": "do_ingest",     "search": "do_search"   },   "default": "a_default" }, ``` If the subsequent inference requests come from a search context, the `search` key will be used and the template will be replaced with `do_search`. If it comes from the ingest context `do_ingest` is used. If it\'s a different context that is not specified, the default value will be used. If no default is specified an empty string is used. `translation` can be: * `classification` * `clustering` * `ingest` * `search`').optional(),
   query_parameters: z.array(InferenceCustomServiceQueryParameter).describe('Specifies the query parameters as a list of tuples. The arrays inside the `query_parameters` must have two items, a key and a value. For example: ``` "query_parameters":[   ["param_key", "some_value"],   ["param_key", "another_value"],   ["other_key", "other_value"] ] ``` If the base url is `https://www.elastic.co` it results in: `https://www.elastic.co?param_key=some_value&param_key=another_value&other_key=other_value`.').optional(),
@@ -63,7 +40,7 @@ export type InferenceCustomServiceSettings = z.infer<typeof InferenceCustomServi
 export const InferenceCustomServiceType = z.enum(['custom']).meta({ id: 'InferenceCustomServiceType' })
 export type InferenceCustomServiceType = z.infer<typeof InferenceCustomServiceType>
 
-export const InferenceCustomTaskParameter = z.union([z.string(), integer, double, float, z.boolean()]).meta({ id: 'InferenceCustomTaskParameter' })
+export const InferenceCustomTaskParameter = z.union([z.string(), z.lazy(() => integer), z.lazy(() => double), z.lazy(() => float), z.boolean()]).meta({ id: 'InferenceCustomTaskParameter' })
 export type InferenceCustomTaskParameter = z.infer<typeof InferenceCustomTaskParameter>
 
 export const InferenceCustomTaskSettings = z.object({
@@ -73,32 +50,6 @@ export type InferenceCustomTaskSettings = z.infer<typeof InferenceCustomTaskSett
 
 export const InferenceCustomTaskType = z.enum(['text_embedding', 'sparse_embedding', 'rerank', 'completion']).meta({ id: 'InferenceCustomTaskType' })
 export type InferenceCustomTaskType = z.infer<typeof InferenceCustomTaskType>
-
-/** Chunking configuration object */
-export const InferenceInferenceChunkingSettings = z.object({
-  max_chunk_size: integer.describe('The maximum size of a chunk in words. This value cannot be lower than `20` (for `sentence` strategy) or `10` (for `word` strategy). This value should not exceed the window size for the associated model.').optional(),
-  overlap: integer.describe('The number of overlapping words for chunks. It is applicable only to a `word` chunking strategy. This value cannot be higher than half the `max_chunk_size` value.').optional(),
-  sentence_overlap: integer.describe('The number of overlapping sentences for chunks. It is applicable only for a `sentence` chunking strategy. It can be either `1` or `0`.').optional(),
-  separator_group: z.string().describe('Only applicable to the `recursive` strategy and required when using it. Sets a predefined list of separators in the saved chunking settings based on the selected text type. Values can be `markdown` or `plaintext`. Using this parameter is an alternative to manually specifying a custom `separators` list.').optional(),
-  separators: z.array(z.string()).describe('Only applicable to the `recursive` strategy and required when using it. A list of strings used as possible split points when chunking text. Each string can be a plain string or a regular expression (regex) pattern. The system tries each separator in order to split the text, starting from the first item in the list. After splitting, it attempts to recombine smaller pieces into larger chunks that stay within the `max_chunk_size` limit, to reduce the total number of chunks generated.').optional(),
-  strategy: z.string().describe('The chunking strategy: `sentence`, `word`, `none` or `recursive`.  * If `strategy` is set to `recursive`, you must also specify: - `max_chunk_size` - either `separators` or`separator_group` Learn more about different chunking strategies in the linked documentation.').optional()
-}).meta({ id: 'InferenceInferenceChunkingSettings' })
-export type InferenceInferenceChunkingSettings = z.infer<typeof InferenceInferenceChunkingSettings>
-
-export const InferenceServiceSettings = z.any().meta({ id: 'InferenceServiceSettings' })
-export type InferenceServiceSettings = z.infer<typeof InferenceServiceSettings>
-
-export const InferenceTaskSettings = z.any().meta({ id: 'InferenceTaskSettings' })
-export type InferenceTaskSettings = z.infer<typeof InferenceTaskSettings>
-
-/** Configuration options when storing the inference endpoint */
-export const InferenceInferenceEndpoint = z.object({
-  chunking_settings: InferenceInferenceChunkingSettings.describe('The chunking configuration object. Applies only to the `embedding`, `sparse_embedding` and `text_embedding` task types. Not applicable to the `rerank`, `completion`, or `chat_completion` task types.').optional(),
-  service: z.string().describe('The service type'),
-  service_settings: InferenceServiceSettings.describe('Settings specific to the service'),
-  task_settings: InferenceTaskSettings.describe('Task settings specific to the service and task type').optional()
-}).meta({ id: 'InferenceInferenceEndpoint' })
-export type InferenceInferenceEndpoint = z.infer<typeof InferenceInferenceEndpoint>
 
 export const InferenceTaskTypeCustom = z.enum(['text_embedding', 'sparse_embedding', 'rerank', 'completion']).meta({ id: 'InferenceTaskTypeCustom' })
 export type InferenceTaskTypeCustom = z.infer<typeof InferenceTaskTypeCustom>
@@ -155,9 +106,8 @@ export type InferenceInferenceEndpointInfoCustom = z.infer<typeof InferenceInfer
  * * `${return_documents}` refers to the `return_documents` field available when performing rerank requests.
  */
 export const InferencePutCustomRequest = z.object({
-  ...RequestBase.shape,
   task_type: InferenceCustomTaskType.describe('The type of the inference task that the model will perform.').meta({ found_in: 'path' }),
-  custom_inference_id: Id.describe('The unique identifier of the inference endpoint.').meta({ found_in: 'path' }),
+  custom_inference_id: z.lazy(() => Id).describe('The unique identifier of the inference endpoint.').meta({ found_in: 'path' }),
   chunking_settings: InferenceInferenceChunkingSettings.describe('The chunking configuration object. Applies only to the `sparse_embedding` or `text_embedding` task types. Not applicable to the `rerank` or `completion` task types.').optional().meta({ found_in: 'body' }),
   service: InferenceCustomServiceType.describe('The type of service supported for the specified task type. In this case, `custom`.').meta({ found_in: 'body' }),
   service_settings: InferenceCustomServiceSettings.describe('Settings used to install the inference model. These settings are specific to the `custom` service.').meta({ found_in: 'body' }),

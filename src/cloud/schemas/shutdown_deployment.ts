@@ -12,27 +12,8 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const ElasticsearchDependant = z.object({
-  id: z.string(),
-  kind: z.string()
-}).meta({ id: 'ElasticsearchDependant' })
-export type ElasticsearchDependant = z.infer<typeof ElasticsearchDependant>
-
-export const OrphanedElasticsearch = z.object({
-  id: z.string(),
-  dependents: z.array(ElasticsearchDependant)
-}).meta({ id: 'OrphanedElasticsearch' })
-export type OrphanedElasticsearch = z.infer<typeof OrphanedElasticsearch>
-
-export const Orphaned = z.object({
-  elasticsearch: z.array(OrphanedElasticsearch),
-  kibana: z.array(z.string()),
-  apm: z.array(z.string()),
-  appsearch: z.array(z.string()),
-  enterprise_search: z.array(z.string()),
-  integrations_server: z.array(z.string())
-}).meta({ id: 'Orphaned' })
-export type Orphaned = z.infer<typeof Orphaned>
+import { ElasticsearchDependant } from './definitions/elasticsearch.js'
+import { Orphaned, OrphanedElasticsearch } from './definitions/misc.js'
 
 export const DeploymentShutdownResponse = z.object({
   id: z.string(),

@@ -12,6 +12,11 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
+export const Kibana_HTTP_APIs_get_list_agent_policy_outputs_request = z.object({
+  ids: z.array(z.string())
+}).meta({ id: 'Kibana_HTTP_APIs_get_list_agent_policy_outputs_request' })
+export type Kibana_HTTP_APIs_get_list_agent_policy_outputs_request = z.infer<typeof Kibana_HTTP_APIs_get_list_agent_policy_outputs_request>
+
 export const Kibana_HTTP_APIs_get_list_agent_policy_outputs_response = z.object({
   items: z.array(z.object({
     agentPolicyId: z.string().optional(),
@@ -36,8 +41,3 @@ export const Kibana_HTTP_APIs_get_list_agent_policy_outputs_response = z.object(
   }))
 }).meta({ id: 'Kibana_HTTP_APIs_get_list_agent_policy_outputs_response' })
 export type Kibana_HTTP_APIs_get_list_agent_policy_outputs_response = z.infer<typeof Kibana_HTTP_APIs_get_list_agent_policy_outputs_response>
-
-export const Kibana_HTTP_APIs_get_list_agent_policy_outputs_request = z.object({
-  ids: z.array(z.string())
-}).meta({ id: 'Kibana_HTTP_APIs_get_list_agent_policy_outputs_request' })
-export type Kibana_HTTP_APIs_get_list_agent_policy_outputs_request = z.infer<typeof Kibana_HTTP_APIs_get_list_agent_policy_outputs_request>

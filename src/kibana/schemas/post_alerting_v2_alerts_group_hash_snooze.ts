@@ -12,8 +12,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const EmptyResponse = z.object({}).meta({ id: 'EmptyResponse' })
-export type EmptyResponse = z.infer<typeof EmptyResponse>
-
-export const AcceptOrganizationInvitationResponse = EmptyResponse
-export type AcceptOrganizationInvitationResponse = EmptyResponse
+export const Kibana_HTTP_APIs_alerting_new_snooze_alert_action = z.object({
+  expiry: z.string().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_new_snooze_alert_action' })
+export type Kibana_HTTP_APIs_alerting_new_snooze_alert_action = z.infer<typeof Kibana_HTTP_APIs_alerting_new_snooze_alert_action>

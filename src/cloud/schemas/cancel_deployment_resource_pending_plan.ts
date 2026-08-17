@@ -12,12 +12,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const DeploymentResourceCrudResponse = z.object({
-  id: z.string(),
-  kind: z.string(),
-  ref_id: z.string()
-}).meta({ id: 'DeploymentResourceCrudResponse' })
-export type DeploymentResourceCrudResponse = z.infer<typeof DeploymentResourceCrudResponse>
+import { DeploymentResourceCrudResponse } from './definitions/deployment.js'
 
 export const CancelDeploymentResourcePendingPlanResponse = DeploymentResourceCrudResponse
 export type CancelDeploymentResourcePendingPlanResponse = DeploymentResourceCrudResponse

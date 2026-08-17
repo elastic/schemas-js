@@ -12,10 +12,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const ReadOnlyResponse = z.object({
-  enabled: z.boolean()
-}).meta({ id: 'ReadOnlyResponse' })
-export type ReadOnlyResponse = z.infer<typeof ReadOnlyResponse>
+import { ReadOnlyResponse } from './definitions/misc.js'
 
 export const ReadOnlyRequest = z.object({
   enabled: z.boolean()

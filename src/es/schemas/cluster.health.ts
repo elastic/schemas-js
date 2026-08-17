@@ -3,112 +3,63 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-/**
- * A duration. Units can be `nanos`, `micros`, `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours) and
- * `d` (days). Also accepts "0" without a unit and "-1" to indicate an unspecified value.
- */
-export const Duration = z.union([z.string(), z.literal(-1), z.literal(0)]).meta({ id: 'Duration' })
-export type Duration = z.infer<typeof Duration>
-
-export const DurationValue = z.any().meta({ id: 'DurationValue' })
-export type DurationValue = z.infer<typeof DurationValue>
-
-export const ExpandWildcard = z.enum(['all', 'open', 'closed', 'hidden', 'none']).meta({ id: 'ExpandWildcard' })
-export type ExpandWildcard = z.infer<typeof ExpandWildcard>
-
-export const ExpandWildcards = z.union([ExpandWildcard, z.array(ExpandWildcard)]).meta({ id: 'ExpandWildcards' })
-export type ExpandWildcards = z.infer<typeof ExpandWildcards>
-
-export const HealthStatus = z.enum(['green', 'GREEN', 'yellow', 'YELLOW', 'red', 'RED', 'unknown', 'unavailable']).meta({ id: 'HealthStatus' })
-export type HealthStatus = z.infer<typeof HealthStatus>
-
-export const IndexName = z.string().meta({ id: 'IndexName' })
-export type IndexName = z.infer<typeof IndexName>
-
-export const Indices = z.union([IndexName, z.array(IndexName)]).meta({ id: 'Indices' })
-export type Indices = z.infer<typeof Indices>
-
-export const Level = z.enum(['cluster', 'indices', 'shards']).meta({ id: 'Level' })
-export type Level = z.infer<typeof Level>
-
-export const Name = z.string().meta({ id: 'Name' })
-export type Name = z.infer<typeof Name>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
+import { Duration, DurationValue, ExpandWildcards, HealthStatus, IndexName, Indices, Level, Name, double, integer } from './_types.js'
 
 export const WaitForEvents = z.enum(['immediate', 'urgent', 'high', 'normal', 'low', 'languid']).meta({ id: 'WaitForEvents' })
 export type WaitForEvents = z.infer<typeof WaitForEvents>
 
-export const double = z.number().meta({ id: 'double' })
-export type double = z.infer<typeof double>
-
-export const integer = z.number().meta({ id: 'integer' })
-export type integer = z.infer<typeof integer>
-
 export const ClusterHealthShardHealthStats = z.object({
-  active_shards: integer,
-  initializing_shards: integer,
+  active_shards: z.lazy(() => integer),
+  initializing_shards: z.lazy(() => integer),
   primary_active: z.boolean(),
-  relocating_shards: integer,
-  status: HealthStatus,
-  unassigned_shards: integer,
-  unassigned_primary_shards: integer
+  relocating_shards: z.lazy(() => integer),
+  status: z.lazy(() => HealthStatus),
+  unassigned_shards: z.lazy(() => integer),
+  unassigned_primary_shards: z.lazy(() => integer)
 }).meta({ id: 'ClusterHealthShardHealthStats' })
 export type ClusterHealthShardHealthStats = z.infer<typeof ClusterHealthShardHealthStats>
 
 export const ClusterHealthIndexHealthStats = z.object({
-  active_primary_shards: integer,
-  active_shards: integer,
-  initializing_shards: integer,
-  number_of_replicas: integer,
-  number_of_shards: integer,
-  relocating_shards: integer,
+  active_primary_shards: z.lazy(() => integer),
+  active_shards: z.lazy(() => integer),
+  initializing_shards: z.lazy(() => integer),
+  number_of_replicas: z.lazy(() => integer),
+  number_of_shards: z.lazy(() => integer),
+  relocating_shards: z.lazy(() => integer),
   shards: z.record(z.string(), ClusterHealthShardHealthStats).optional(),
-  status: HealthStatus,
-  unassigned_shards: integer,
-  unassigned_primary_shards: integer
+  status: z.lazy(() => HealthStatus),
+  unassigned_shards: z.lazy(() => integer),
+  unassigned_primary_shards: z.lazy(() => integer)
 }).meta({ id: 'ClusterHealthIndexHealthStats' })
 export type ClusterHealthIndexHealthStats = z.infer<typeof ClusterHealthIndexHealthStats>
 
 export const ClusterHealthHealthResponseBody = z.object({
-  active_primary_shards: integer.describe('The number of active primary shards.'),
-  active_shards: integer.describe('The total number of active primary and replica shards.'),
+  active_primary_shards: z.lazy(() => integer).describe('The number of active primary shards.'),
+  active_shards: z.lazy(() => integer).describe('The total number of active primary and replica shards.'),
   active_shards_percent: z.string().describe('The ratio of active shards in the cluster expressed as a string formatted percentage.').optional(),
-  active_shards_percent_as_number: double.describe('The ratio of active shards in the cluster expressed as a percentage.'),
-  cluster_name: Name.describe('The name of the cluster.'),
-  delayed_unassigned_shards: integer.describe('The number of shards whose allocation has been delayed by the timeout settings.'),
-  indices: z.record(IndexName, ClusterHealthIndexHealthStats).optional(),
-  initializing_shards: integer.describe('The number of shards that are under initialization.'),
-  number_of_data_nodes: integer.describe('The number of nodes that are dedicated data nodes.'),
-  number_of_in_flight_fetch: integer.describe('The number of unfinished fetches.'),
-  number_of_nodes: integer.describe('The number of nodes within the cluster.'),
-  number_of_pending_tasks: integer.describe('The number of cluster-level changes that have not yet been executed.'),
-  relocating_shards: integer.describe('The number of shards that are under relocation.'),
-  status: HealthStatus,
-  task_max_waiting_in_queue: Duration.describe('The time since the earliest initiated task is waiting for being performed.').optional(),
-  task_max_waiting_in_queue_millis: DurationValue.describe('The time expressed in milliseconds since the earliest initiated task is waiting for being performed.'),
+  active_shards_percent_as_number: z.lazy(() => double).describe('The ratio of active shards in the cluster expressed as a percentage.'),
+  cluster_name: z.lazy(() => Name).describe('The name of the cluster.'),
+  delayed_unassigned_shards: z.lazy(() => integer).describe('The number of shards whose allocation has been delayed by the timeout settings.'),
+  indices: z.record(z.lazy(() => IndexName), ClusterHealthIndexHealthStats).optional(),
+  initializing_shards: z.lazy(() => integer).describe('The number of shards that are under initialization.'),
+  number_of_data_nodes: z.lazy(() => integer).describe('The number of nodes that are dedicated data nodes.'),
+  number_of_in_flight_fetch: z.lazy(() => integer).describe('The number of unfinished fetches.'),
+  number_of_nodes: z.lazy(() => integer).describe('The number of nodes within the cluster.'),
+  number_of_pending_tasks: z.lazy(() => integer).describe('The number of cluster-level changes that have not yet been executed.'),
+  relocating_shards: z.lazy(() => integer).describe('The number of shards that are under relocation.'),
+  status: z.lazy(() => HealthStatus),
+  task_max_waiting_in_queue: z.lazy(() => Duration).describe('The time since the earliest initiated task is waiting for being performed.').optional(),
+  task_max_waiting_in_queue_millis: z.lazy(() => DurationValue).describe('The time expressed in milliseconds since the earliest initiated task is waiting for being performed.'),
   timed_out: z.boolean().describe('If false the response returned within the period of time that is specified by the timeout parameter (30s by default)'),
-  unassigned_primary_shards: integer.describe('The number of primary shards that are not allocated.'),
-  unassigned_shards: integer.describe('The number of shards that are not allocated.')
+  unassigned_primary_shards: z.lazy(() => integer).describe('The number of primary shards that are not allocated.'),
+  unassigned_shards: z.lazy(() => integer).describe('The number of shards that are not allocated.')
 }).meta({ id: 'ClusterHealthHealthResponseBody' })
 export type ClusterHealthHealthResponseBody = z.infer<typeof ClusterHealthHealthResponseBody>
 
-export const ClusterHealthWaitForNodes = z.union([z.string(), integer]).meta({ id: 'ClusterHealthWaitForNodes' })
+export const ClusterHealthWaitForNodes = z.union([z.string(), z.lazy(() => integer)]).meta({ id: 'ClusterHealthWaitForNodes' })
 export type ClusterHealthWaitForNodes = z.infer<typeof ClusterHealthWaitForNodes>
 
 /**
@@ -125,18 +76,17 @@ export type ClusterHealthWaitForNodes = z.infer<typeof ClusterHealthWaitForNodes
  * The cluster status is controlled by the worst index status.
  */
 export const ClusterHealthRequest = z.object({
-  ...RequestBase.shape,
-  index: Indices.describe('A comma-separated list of data streams, indices, and index aliases that limit the request. Wildcard expressions (`*`) are supported. To target all data streams and indices in a cluster, omit this parameter or use _all or `*`.').optional().meta({ found_in: 'path' }),
-  expand_wildcards: ExpandWildcards.describe('Expand wildcard expression to concrete indices that are open, closed or both.').optional().meta({ found_in: 'query' }),
-  level: Level.describe('Return health information at a specific level of detail.').optional().meta({ found_in: 'query' }),
+  index: z.lazy(() => Indices).describe('A comma-separated list of data streams, indices, and index aliases that limit the request. Wildcard expressions (`*`) are supported. To target all data streams and indices in a cluster, omit this parameter or use _all or `*`.').optional().meta({ found_in: 'path' }),
+  expand_wildcards: z.lazy(() => ExpandWildcards).describe('Expand wildcard expression to concrete indices that are open, closed or both.').optional().meta({ found_in: 'query' }),
+  level: z.lazy(() => Level).describe('Return health information at a specific level of detail.').optional().meta({ found_in: 'query' }),
   local: z.boolean().describe('If true, retrieve information from the local node only. If false, retrieve information from the master node.').optional().meta({ found_in: 'query' }),
-  master_timeout: Duration.describe('The period to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' }),
-  timeout: Duration.describe('The period to wait for a response. If no response is received before the timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' }),
+  master_timeout: z.lazy(() => Duration).describe('The period to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' }),
+  timeout: z.lazy(() => Duration).describe('The period to wait for a response. If no response is received before the timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' }),
   wait_for_events: WaitForEvents.describe('Wait until all currently queued events with the given priority are processed.').optional().meta({ found_in: 'query' }),
   wait_for_nodes: ClusterHealthWaitForNodes.describe('Wait until the specified number (N) of nodes is available. It also accepts `>=N`, `<=N`, `>N` and `<N`. Alternatively, use the notations `ge(N)`, `le(N)`, `gt(N)`, and `lt(N)`.').optional().meta({ found_in: 'query' }),
   wait_for_no_initializing_shards: z.boolean().describe('Wait (until the timeout expires) for the cluster to have no shard initializations. If false, the request does not wait for initializing shards.').optional().meta({ found_in: 'query' }),
   wait_for_no_relocating_shards: z.boolean().describe('Wait (until the timeout expires) for the cluster to have no shard relocations. If false, the request not wait for relocating shards.').optional().meta({ found_in: 'query' }),
-  wait_for_status: HealthStatus.describe('Wait (until the timeout expires) for the cluster to reach a specific health status (or a better status). A green status is better than yellow and yellow is better than red. By default, the request does not wait for a particular status.').optional().meta({ found_in: 'query' })
+  wait_for_status: z.lazy(() => HealthStatus).describe('Wait (until the timeout expires) for the cluster to reach a specific health status (or a better status). A green status is better than yellow and yellow is better than red. By default, the request does not wait for a particular status.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'ClusterHealthRequest' })
 export type ClusterHealthRequest = z.infer<typeof ClusterHealthRequest>
 

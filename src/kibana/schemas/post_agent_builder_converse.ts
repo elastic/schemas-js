@@ -49,6 +49,7 @@ export const PostAgentBuilderConverseRequest = z.object({
   execution_id: z.string().optional(),
   inference_id: z.string().nullable().optional(),
   input: z.string().optional(),
+  project_routing: z.string().optional(),
   prompts: z.record(z.string(), z.union([z.object({
     allow: z.boolean()
   }), z.object({

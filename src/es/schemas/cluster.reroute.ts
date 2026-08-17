@@ -3,65 +3,37 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-/**
- * A duration. Units can be `nanos`, `micros`, `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours) and
- * `d` (days). Also accepts "0" without a unit and "-1" to indicate an unspecified value.
- */
-export const Duration = z.union([z.string(), z.literal(-1), z.literal(0)]).meta({ id: 'Duration' })
-export type Duration = z.infer<typeof Duration>
-
-export const IndexName = z.string().meta({ id: 'IndexName' })
-export type IndexName = z.infer<typeof IndexName>
-
-export const NodeName = z.string().meta({ id: 'NodeName' })
-export type NodeName = z.infer<typeof NodeName>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
-
-export const integer = z.number().meta({ id: 'integer' })
-export type integer = z.infer<typeof integer>
+import { Duration, IndexName, NodeName, integer } from './_types.js'
 
 export const ClusterRerouteCommandCancelAction = z.object({
-  index: IndexName,
-  shard: integer,
+  index: z.lazy(() => IndexName),
+  shard: z.lazy(() => integer),
   node: z.string(),
   allow_primary: z.boolean().optional()
 }).meta({ id: 'ClusterRerouteCommandCancelAction' })
 export type ClusterRerouteCommandCancelAction = z.infer<typeof ClusterRerouteCommandCancelAction>
 
 export const ClusterRerouteCommandMoveAction = z.object({
-  index: IndexName,
-  shard: integer,
+  index: z.lazy(() => IndexName),
+  shard: z.lazy(() => integer),
   from_node: z.string().describe('The node to move the shard from'),
   to_node: z.string().describe('The node to move the shard to')
 }).meta({ id: 'ClusterRerouteCommandMoveAction' })
 export type ClusterRerouteCommandMoveAction = z.infer<typeof ClusterRerouteCommandMoveAction>
 
 export const ClusterRerouteCommandAllocateReplicaAction = z.object({
-  index: IndexName,
-  shard: integer,
+  index: z.lazy(() => IndexName),
+  shard: z.lazy(() => integer),
   node: z.string()
 }).meta({ id: 'ClusterRerouteCommandAllocateReplicaAction' })
 export type ClusterRerouteCommandAllocateReplicaAction = z.infer<typeof ClusterRerouteCommandAllocateReplicaAction>
 
 export const ClusterRerouteCommandAllocatePrimaryAction = z.object({
-  index: IndexName,
-  shard: integer,
+  index: z.lazy(() => IndexName),
+  shard: z.lazy(() => integer),
   node: z.string(),
   accept_data_loss: z.boolean().describe('If a node which has a copy of the data rejoins the cluster later on, that data will be deleted. To ensure that these implications are well-understood, this command requires the flag accept_data_loss to be explicitly set to true')
 }).meta({ id: 'ClusterRerouteCommandAllocatePrimaryAction' })
@@ -94,13 +66,12 @@ export type ClusterRerouteCommand = z.infer<typeof ClusterRerouteCommand>
  * Once the problem has been corrected, allocation can be manually retried by calling the reroute API with the `?retry_failed` URI query parameter, which will attempt a single retry round for these shards.
  */
 export const ClusterRerouteRequest = z.object({
-  ...RequestBase.shape,
   dry_run: z.boolean().describe('If true, then the request simulates the operation. It will calculate the result of applying the commands to the current cluster state and return the resulting cluster state after the commands (and rebalancing) have been applied; it will not actually perform the requested changes.').optional().meta({ found_in: 'query' }),
   explain: z.boolean().describe('If true, then the response contains an explanation of why the commands can or cannot run.').optional().meta({ found_in: 'query' }),
   metric: z.union([z.string(), z.array(z.string())]).describe('Limits the information returned to the specified metrics.').optional().meta({ found_in: 'query' }),
   retry_failed: z.boolean().describe('If true, then retries allocation of shards that are blocked due to too many subsequent allocation failures.').optional().meta({ found_in: 'query' }),
-  master_timeout: Duration.describe('Period to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' }),
-  timeout: Duration.describe('Period to wait for a response. If no response is received before the timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' }),
+  master_timeout: z.lazy(() => Duration).describe('Period to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' }),
+  timeout: z.lazy(() => Duration).describe('Period to wait for a response. If no response is received before the timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' }),
   commands: z.array(ClusterRerouteCommand).describe('Defines the commands to perform.').optional().meta({ found_in: 'body' })
 }).meta({ id: 'ClusterRerouteRequest' })
 export type ClusterRerouteRequest = z.infer<typeof ClusterRerouteRequest>
@@ -114,9 +85,9 @@ export type ClusterRerouteRerouteDecision = z.infer<typeof ClusterRerouteReroute
 
 export const ClusterRerouteRerouteParameters = z.object({
   allow_primary: z.boolean(),
-  index: IndexName,
+  index: z.lazy(() => IndexName),
   node: NodeName,
-  shard: integer,
+  shard: z.lazy(() => integer),
   from_node: NodeName.optional(),
   to_node: NodeName.optional()
 }).meta({ id: 'ClusterRerouteRerouteParameters' })

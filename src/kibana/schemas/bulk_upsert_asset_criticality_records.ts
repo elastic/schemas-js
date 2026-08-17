@@ -11,6 +11,13 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
+import { Security_Entity_Analytics_API_AssetCriticalityRecordIdParts } from './schemas/security.js'
+
+export const Security_Entity_Analytics_API_AssetCriticalityBulkUploadErrorItem = z.object({
+  index: z.number(),
+  message: z.string()
+}).meta({ id: 'Security_Entity_Analytics_API_AssetCriticalityBulkUploadErrorItem' })
+export type Security_Entity_Analytics_API_AssetCriticalityBulkUploadErrorItem = z.infer<typeof Security_Entity_Analytics_API_AssetCriticalityBulkUploadErrorItem>
 
 export const Security_Entity_Analytics_API_AssetCriticalityBulkUploadStats = z.object({
   failed: z.number(),
@@ -19,23 +26,8 @@ export const Security_Entity_Analytics_API_AssetCriticalityBulkUploadStats = z.o
 }).meta({ id: 'Security_Entity_Analytics_API_AssetCriticalityBulkUploadStats' })
 export type Security_Entity_Analytics_API_AssetCriticalityBulkUploadStats = z.infer<typeof Security_Entity_Analytics_API_AssetCriticalityBulkUploadStats>
 
-export const Security_Entity_Analytics_API_AssetCriticalityBulkUploadErrorItem = z.object({
-  index: z.number(),
-  message: z.string()
-}).meta({ id: 'Security_Entity_Analytics_API_AssetCriticalityBulkUploadErrorItem' })
-export type Security_Entity_Analytics_API_AssetCriticalityBulkUploadErrorItem = z.infer<typeof Security_Entity_Analytics_API_AssetCriticalityBulkUploadErrorItem>
-
 export const Security_Entity_Analytics_API_AssetCriticalityLevelsForBulkUpload = z.enum(['low_impact', 'medium_impact', 'high_impact', 'extreme_impact', 'unassigned']).meta({ id: 'Security_Entity_Analytics_API_AssetCriticalityLevelsForBulkUpload' })
 export type Security_Entity_Analytics_API_AssetCriticalityLevelsForBulkUpload = z.infer<typeof Security_Entity_Analytics_API_AssetCriticalityLevelsForBulkUpload>
-
-export const Security_Entity_Analytics_API_IdField = z.enum(['host.name', 'user.name', 'service.name', 'entity.id']).meta({ id: 'Security_Entity_Analytics_API_IdField' })
-export type Security_Entity_Analytics_API_IdField = z.infer<typeof Security_Entity_Analytics_API_IdField>
-
-export const Security_Entity_Analytics_API_AssetCriticalityRecordIdParts = z.object({
-  id_field: Security_Entity_Analytics_API_IdField,
-  id_value: z.string()
-}).meta({ id: 'Security_Entity_Analytics_API_AssetCriticalityRecordIdParts' })
-export type Security_Entity_Analytics_API_AssetCriticalityRecordIdParts = z.infer<typeof Security_Entity_Analytics_API_AssetCriticalityRecordIdParts>
 
 export const BulkUpsertAssetCriticalityRecordsRequest = z.object({
   records: z.array(Security_Entity_Analytics_API_AssetCriticalityRecordIdParts.merge(z.object({
@@ -49,3 +41,6 @@ export const BulkUpsertAssetCriticalityRecordsResponse = z.object({
   stats: Security_Entity_Analytics_API_AssetCriticalityBulkUploadStats
 }).meta({ id: 'BulkUpsertAssetCriticalityRecordsResponse' })
 export type BulkUpsertAssetCriticalityRecordsResponse = z.infer<typeof BulkUpsertAssetCriticalityRecordsResponse>
+
+export { Security_Entity_Analytics_API_AssetCriticalityRecordIdParts } from './schemas/security.js'
+export { Security_Entity_Analytics_API_IdField } from './schemas/security.js'

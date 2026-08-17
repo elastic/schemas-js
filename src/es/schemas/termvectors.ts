@@ -3,69 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const integer = z.number().meta({ id: 'integer' })
-export type integer = z.infer<typeof integer>
-
-export const long = z.number().meta({ id: 'long' })
-export type long = z.infer<typeof long>
-
-export const TermvectorsFieldStatistics = z.object({
-  doc_count: integer,
-  sum_doc_freq: long,
-  sum_ttf: long
-}).meta({ id: 'TermvectorsFieldStatistics' })
-export type TermvectorsFieldStatistics = z.infer<typeof TermvectorsFieldStatistics>
+import { Field, Id, IndexName, Routing, VersionNumber, VersionType, double, integer, long } from './_types.js'
 
 export const TermvectorsFilter = z.object({
-  max_doc_freq: integer.describe('Ignore words which occur in more than this many docs. Defaults to unbounded.').optional(),
-  max_num_terms: integer.describe('The maximum number of terms that must be returned per field.').optional(),
-  max_term_freq: integer.describe('Ignore words with more than this frequency in the source doc. It defaults to unbounded.').optional(),
-  max_word_length: integer.describe('The maximum word length above which words will be ignored. Defaults to unbounded.').optional(),
-  min_doc_freq: integer.describe('Ignore terms which do not occur in at least this many docs.').optional(),
-  min_term_freq: integer.describe('Ignore words with less than this frequency in the source doc.').optional(),
-  min_word_length: integer.describe('The minimum word length below which words will be ignored.').optional()
+  max_doc_freq: z.lazy(() => integer).describe('Ignore words which occur in more than this many docs. Defaults to unbounded.').optional(),
+  max_num_terms: z.lazy(() => integer).describe('The maximum number of terms that must be returned per field.').optional(),
+  max_term_freq: z.lazy(() => integer).describe('Ignore words with more than this frequency in the source doc. It defaults to unbounded.').optional(),
+  max_word_length: z.lazy(() => integer).describe('The maximum word length above which words will be ignored. Defaults to unbounded.').optional(),
+  min_doc_freq: z.lazy(() => integer).describe('Ignore terms which do not occur in at least this many docs.').optional(),
+  min_term_freq: z.lazy(() => integer).describe('Ignore words with less than this frequency in the source doc.').optional(),
+  min_word_length: z.lazy(() => integer).describe('The minimum word length below which words will be ignored.').optional()
 }).meta({ id: 'TermvectorsFilter' })
 export type TermvectorsFilter = z.infer<typeof TermvectorsFilter>
 
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
+export const TermvectorsFieldStatistics = z.object({
+  doc_count: z.lazy(() => integer),
+  sum_doc_freq: z.lazy(() => long),
+  sum_ttf: z.lazy(() => long)
+}).meta({ id: 'TermvectorsFieldStatistics' })
+export type TermvectorsFieldStatistics = z.infer<typeof TermvectorsFieldStatistics>
 
-export const IndexName = z.string().meta({ id: 'IndexName' })
-export type IndexName = z.infer<typeof IndexName>
+export const TermvectorsToken = z.object({
+  end_offset: z.lazy(() => integer).optional(),
+  payload: z.string().optional(),
+  position: z.lazy(() => integer),
+  start_offset: z.lazy(() => integer).optional()
+}).meta({ id: 'TermvectorsToken' })
+export type TermvectorsToken = z.infer<typeof TermvectorsToken>
 
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
+export const TermvectorsTerm = z.object({
+  doc_freq: z.lazy(() => integer).optional(),
+  score: z.lazy(() => double).optional(),
+  term_freq: z.lazy(() => integer),
+  tokens: z.array(TermvectorsToken).optional(),
+  ttf: z.lazy(() => integer).optional()
+}).meta({ id: 'TermvectorsTerm' })
+export type TermvectorsTerm = z.infer<typeof TermvectorsTerm>
 
-/** Path to field or array of paths. Some API's support wildcards in the path to select multiple fields. */
-export const Field = z.string().meta({ id: 'Field' })
-export type Field = z.infer<typeof Field>
-
-export const Fields = z.union([Field, z.array(Field)]).meta({ id: 'Fields' })
-export type Fields = z.infer<typeof Fields>
-
-/** Only to be used in query and path parameters, as the array form is actually a csv */
-export const Routing = z.union([z.string(), z.array(z.string())]).meta({ id: 'Routing' })
-export type Routing = z.infer<typeof Routing>
-
-export const VersionNumber = long.meta({ id: 'VersionNumber' })
-export type VersionNumber = z.infer<typeof VersionNumber>
-
-export const VersionType = z.enum(['internal', 'external', 'external_gte']).meta({ id: 'VersionType' })
-export type VersionType = z.infer<typeof VersionType>
+export const TermvectorsTermVector = z.object({
+  field_statistics: TermvectorsFieldStatistics.optional(),
+  terms: z.record(z.string(), TermvectorsTerm)
+}).meta({ id: 'TermvectorsTermVector' })
+export type TermvectorsTermVector = z.infer<typeof TermvectorsTermVector>
 
 /**
  * Get term vector information.
@@ -112,58 +94,31 @@ export type VersionType = z.infer<typeof VersionType>
  * Refer to the linked documentation for detailed examples of how to use this API.
  */
 export const TermvectorsRequest = z.object({
-  ...RequestBase.shape,
-  index: IndexName.describe('The name of the index that contains the document.').meta({ found_in: 'path' }),
-  id: Id.describe('A unique identifier for the document.').optional().meta({ found_in: 'path' }),
+  index: z.lazy(() => IndexName).describe('The name of the index that contains the document.').meta({ found_in: 'path' }),
+  id: z.lazy(() => Id).describe('A unique identifier for the document.').optional().meta({ found_in: 'path' }),
   preference: z.string().describe('The node or shard the operation should be performed on. It is random by default.').optional().meta({ found_in: 'query' }),
   realtime: z.boolean().describe('If true, the request is real-time as opposed to near-real-time.').optional().meta({ found_in: 'query' }),
   doc: z.any().describe('An artificial document (a document not present in the index) for which you want to retrieve term vectors.').optional().meta({ found_in: 'body' }),
   filter: TermvectorsFilter.describe('Filter terms based on their tf-idf scores. This could be useful in order find out a good characteristic vector of a document. This feature works in a similar manner to the second phase of the More Like This Query.').optional().meta({ found_in: 'body' }),
-  per_field_analyzer: z.record(Field, z.string()).describe('Override the default per-field analyzer. This is useful in order to generate term vectors in any fashion, especially when using artificial documents. When providing an analyzer for a field that already stores term vectors, the term vectors will be regenerated.').optional().meta({ found_in: 'body' }),
-  fields: z.array(Field).describe('A list of fields to include in the statistics. It is used as the default list unless a specific field list is provided in the `completion_fields` or `fielddata_fields` parameters.').optional().meta({ found_in: 'body' }),
+  per_field_analyzer: z.record(z.lazy(() => Field), z.string()).describe('Override the default per-field analyzer. This is useful in order to generate term vectors in any fashion, especially when using artificial documents. When providing an analyzer for a field that already stores term vectors, the term vectors will be regenerated.').optional().meta({ found_in: 'body' }),
+  fields: z.array(z.lazy(() => Field)).describe('A list of fields to include in the statistics. It is used as the default list unless a specific field list is provided in the `completion_fields` or `fielddata_fields` parameters.').optional().meta({ found_in: 'body' }),
   field_statistics: z.boolean().describe('If `true`, the response includes: * The document count (how many documents contain this field). * The sum of document frequencies (the sum of document frequencies for all terms in this field). * The sum of total term frequencies (the sum of total term frequencies of each term in this field).').optional().meta({ found_in: 'body' }),
   offsets: z.boolean().describe('If `true`, the response includes term offsets.').optional().meta({ found_in: 'body' }),
   payloads: z.boolean().describe('If `true`, the response includes term payloads.').optional().meta({ found_in: 'body' }),
   positions: z.boolean().describe('If `true`, the response includes term positions.').optional().meta({ found_in: 'body' }),
   term_statistics: z.boolean().describe('If `true`, the response includes: * The total term frequency (how often a term occurs in all documents). * The document frequency (the number of documents containing the current term). By default these values are not returned since term statistics can have a serious performance impact.').optional().meta({ found_in: 'body' }),
-  routing: Routing.describe('A custom value that is used to route operations to a specific shard.').optional().meta({ found_in: 'body' }),
-  version: VersionNumber.describe('If `true`, returns the document version as part of a hit.').optional().meta({ found_in: 'body' }),
-  version_type: VersionType.describe('The version type.').optional().meta({ found_in: 'body' })
+  routing: z.lazy(() => Routing).describe('A custom value that is used to route operations to a specific shard.').optional().meta({ found_in: 'body' }),
+  version: z.lazy(() => VersionNumber).describe('If `true`, returns the document version as part of a hit.').optional().meta({ found_in: 'body' }),
+  version_type: z.lazy(() => VersionType).describe('The version type.').optional().meta({ found_in: 'body' })
 }).meta({ id: 'TermvectorsRequest' })
 export type TermvectorsRequest = z.infer<typeof TermvectorsRequest>
 
-export const double = z.number().meta({ id: 'double' })
-export type double = z.infer<typeof double>
-
-export const TermvectorsToken = z.object({
-  end_offset: integer.optional(),
-  payload: z.string().optional(),
-  position: integer,
-  start_offset: integer.optional()
-}).meta({ id: 'TermvectorsToken' })
-export type TermvectorsToken = z.infer<typeof TermvectorsToken>
-
-export const TermvectorsTerm = z.object({
-  doc_freq: integer.optional(),
-  score: double.optional(),
-  term_freq: integer,
-  tokens: z.array(TermvectorsToken).optional(),
-  ttf: integer.optional()
-}).meta({ id: 'TermvectorsTerm' })
-export type TermvectorsTerm = z.infer<typeof TermvectorsTerm>
-
-export const TermvectorsTermVector = z.object({
-  field_statistics: TermvectorsFieldStatistics.optional(),
-  terms: z.record(z.string(), TermvectorsTerm)
-}).meta({ id: 'TermvectorsTermVector' })
-export type TermvectorsTermVector = z.infer<typeof TermvectorsTermVector>
-
 export const TermvectorsResponse = z.object({
   found: z.boolean(),
-  _id: Id.optional(),
-  _index: IndexName,
-  term_vectors: z.record(Field, TermvectorsTermVector).optional(),
-  took: long,
-  _version: VersionNumber
+  _id: z.lazy(() => Id).optional(),
+  _index: z.lazy(() => IndexName),
+  term_vectors: z.record(z.lazy(() => Field), TermvectorsTermVector).optional(),
+  took: z.lazy(() => long),
+  _version: z.lazy(() => VersionNumber)
 }).meta({ id: 'TermvectorsResponse' })
 export type TermvectorsResponse = z.infer<typeof TermvectorsResponse>

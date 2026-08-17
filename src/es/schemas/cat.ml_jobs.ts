@@ -3,45 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const long = z.number().meta({ id: 'long' })
-export type long = z.infer<typeof long>
-
-export const ByteSize = z.union([long, z.string()]).meta({ id: 'ByteSize' })
-export type ByteSize = z.infer<typeof ByteSize>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const NodeId = z.string().meta({ id: 'NodeId' })
-export type NodeId = z.infer<typeof NodeId>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
+import { ByteSize, Id, NodeId } from './_types.js'
 
 export const CatCatAnomalyDetectorColumn = z.enum(['assignment_explanation', 'ae', 'buckets.count', 'bc', 'bucketsCount', 'buckets.time.exp_avg', 'btea', 'bucketsTimeExpAvg', 'buckets.time.exp_avg_hour', 'bteah', 'bucketsTimeExpAvgHour', 'buckets.time.max', 'btmax', 'bucketsTimeMax', 'buckets.time.min', 'btmin', 'bucketsTimeMin', 'buckets.time.total', 'btt', 'bucketsTimeTotal', 'data.buckets', 'db', 'dataBuckets', 'data.earliest_record', 'der', 'dataEarliestRecord', 'data.empty_buckets', 'deb', 'dataEmptyBuckets', 'data.input_bytes', 'dib', 'dataInputBytes', 'data.input_fields', 'dif', 'dataInputFields', 'data.input_records', 'dir', 'dataInputRecords', 'data.invalid_dates', 'did', 'dataInvalidDates', 'data.last', 'dl', 'dataLast', 'data.last_empty_bucket', 'dleb', 'dataLastEmptyBucket', 'data.last_sparse_bucket', 'dlsb', 'dataLastSparseBucket', 'data.latest_record', 'dlr', 'dataLatestRecord', 'data.missing_fields', 'dmf', 'dataMissingFields', 'data.out_of_order_timestamps', 'doot', 'dataOutOfOrderTimestamps', 'data.processed_fields', 'dpf', 'dataProcessedFields', 'data.processed_records', 'dpr', 'dataProcessedRecords', 'data.sparse_buckets', 'dsb', 'dataSparseBuckets', 'forecasts.memory.avg', 'fmavg', 'forecastsMemoryAvg', 'forecasts.memory.max', 'fmmax', 'forecastsMemoryMax', 'forecasts.memory.min', 'fmmin', 'forecastsMemoryMin', 'forecasts.memory.total', 'fmt', 'forecastsMemoryTotal', 'forecasts.records.avg', 'fravg', 'forecastsRecordsAvg', 'forecasts.records.max', 'frmax', 'forecastsRecordsMax', 'forecasts.records.min', 'frmin', 'forecastsRecordsMin', 'forecasts.records.total', 'frt', 'forecastsRecordsTotal', 'forecasts.time.avg', 'ftavg', 'forecastsTimeAvg', 'forecasts.time.max', 'ftmax', 'forecastsTimeMax', 'forecasts.time.min', 'ftmin', 'forecastsTimeMin', 'forecasts.time.total', 'ftt', 'forecastsTimeTotal', 'forecasts.total', 'ft', 'forecastsTotal', 'id', 'model.bucket_allocation_failures', 'mbaf', 'modelBucketAllocationFailures', 'model.by_fields', 'mbf', 'modelByFields', 'model.bytes', 'mb', 'modelBytes', 'model.bytes_exceeded', 'mbe', 'modelBytesExceeded', 'model.categorization_status', 'mcs', 'modelCategorizationStatus', 'model.categorized_doc_count', 'mcdc', 'modelCategorizedDocCount', 'model.dead_category_count', 'mdcc', 'modelDeadCategoryCount', 'model.failed_category_count', 'mdcc', 'modelFailedCategoryCount', 'model.frequent_category_count', 'mfcc', 'modelFrequentCategoryCount', 'model.log_time', 'mlt', 'modelLogTime', 'model.memory_limit', 'mml', 'modelMemoryLimit', 'model.memory_status', 'mms', 'modelMemoryStatus', 'model.over_fields', 'mof', 'modelOverFields', 'model.partition_fields', 'mpf', 'modelPartitionFields', 'model.rare_category_count', 'mrcc', 'modelRareCategoryCount', 'model.timestamp', 'mt', 'modelTimestamp', 'model.total_category_count', 'mtcc', 'modelTotalCategoryCount', 'node.address', 'na', 'nodeAddress', 'node.ephemeral_id', 'ne', 'nodeEphemeralId', 'node.id', 'ni', 'nodeId', 'node.name', 'nn', 'nodeName', 'opened_time', 'ot', 'state', 's']).meta({ id: 'CatCatAnomalyDetectorColumn' })
 export type CatCatAnomalyDetectorColumn = z.infer<typeof CatCatAnomalyDetectorColumn>
 
 export const CatCatAnomalyDetectorColumns = z.union([CatCatAnomalyDetectorColumn, z.array(CatCatAnomalyDetectorColumn)]).meta({ id: 'CatCatAnomalyDetectorColumns' })
 export type CatCatAnomalyDetectorColumns = z.infer<typeof CatCatAnomalyDetectorColumns>
-
-export const CatCatRequestBase = z.object({
-  ...RequestBase.shape
-}).meta({ id: 'CatCatRequestBase' })
-export type CatCatRequestBase = z.infer<typeof CatCatRequestBase>
 
 export const MlJobState = z.enum(['closing', 'closed', 'opened', 'failed', 'opening']).meta({ id: 'MlJobState' })
 export type MlJobState = z.infer<typeof MlJobState>
@@ -53,9 +24,9 @@ export const MlCategorizationStatus = z.enum(['ok', 'warn']).meta({ id: 'MlCateg
 export type MlCategorizationStatus = z.infer<typeof MlCategorizationStatus>
 
 export const CatMlJobsJobsRecord = z.object({
-  id: Id.describe('The anomaly detection job identifier.').optional(),
-  state: MlJobState.describe('The status of the anomaly detection job.').optional(),
-  s: MlJobState.describe('The status of the anomaly detection job.').optional(),
+  id: z.lazy(() => Id).describe('The anomaly detection job identifier.').optional(),
+  state: z.lazy(() => MlJobState).describe('The status of the anomaly detection job.').optional(),
+  s: z.lazy(() => MlJobState).describe('The status of the anomaly detection job.').optional(),
   opened_time: z.string().describe('For open jobs only, the amount of time the job has been opened.').optional(),
   ot: z.string().describe('For open jobs only, the amount of time the job has been opened.').optional(),
   assignment_explanation: z.string().describe('For open anomaly detection jobs only, contains messages relating to the selection of a node to run the job.').optional(),
@@ -66,9 +37,9 @@ export const CatMlJobsJobsRecord = z.object({
   'data.processed_fields': z.string().describe('The total number of fields in all the documents that have been processed by the anomaly detection job. Only fields that are specified in the detector configuration object contribute to this count. The timestamp is not included in this count.').optional(),
   dpf: z.string().describe('The total number of fields in all the documents that have been processed by the anomaly detection job. Only fields that are specified in the detector configuration object contribute to this count. The timestamp is not included in this count.').optional(),
   dataProcessedFields: z.string().describe('The total number of fields in all the documents that have been processed by the anomaly detection job. Only fields that are specified in the detector configuration object contribute to this count. The timestamp is not included in this count.').optional(),
-  'data.input_bytes': ByteSize.describe('The number of bytes of input data posted to the anomaly detection job.').optional(),
-  dib: ByteSize.describe('The number of bytes of input data posted to the anomaly detection job.').optional(),
-  dataInputBytes: ByteSize.describe('The number of bytes of input data posted to the anomaly detection job.').optional(),
+  'data.input_bytes': z.lazy(() => ByteSize).describe('The number of bytes of input data posted to the anomaly detection job.').optional(),
+  dib: z.lazy(() => ByteSize).describe('The number of bytes of input data posted to the anomaly detection job.').optional(),
+  dataInputBytes: z.lazy(() => ByteSize).describe('The number of bytes of input data posted to the anomaly detection job.').optional(),
   'data.input_records': z.string().describe('The number of input documents posted to the anomaly detection job.').optional(),
   dir: z.string().describe('The number of input documents posted to the anomaly detection job.').optional(),
   dataInputRecords: z.string().describe('The number of input documents posted to the anomaly detection job.').optional(),
@@ -108,15 +79,15 @@ export const CatMlJobsJobsRecord = z.object({
   'data.last_sparse_bucket': z.string().describe('The timestamp of the last bucket that was considered sparse.').optional(),
   dlsb: z.string().describe('The timestamp of the last bucket that was considered sparse.').optional(),
   dataLastSparseBucket: z.string().describe('The timestamp of the last bucket that was considered sparse.').optional(),
-  'model.bytes': ByteSize.describe('The number of bytes of memory used by the models. This is the maximum value since the last time the model was persisted. If the job is closed, this value indicates the latest size.').optional(),
-  mb: ByteSize.describe('The number of bytes of memory used by the models. This is the maximum value since the last time the model was persisted. If the job is closed, this value indicates the latest size.').optional(),
-  modelBytes: ByteSize.describe('The number of bytes of memory used by the models. This is the maximum value since the last time the model was persisted. If the job is closed, this value indicates the latest size.').optional(),
-  'model.memory_status': MlMemoryStatus.describe('The status of the mathematical models.').optional(),
-  mms: MlMemoryStatus.describe('The status of the mathematical models.').optional(),
-  modelMemoryStatus: MlMemoryStatus.describe('The status of the mathematical models.').optional(),
-  'model.bytes_exceeded': ByteSize.describe('The number of bytes over the high limit for memory usage at the last allocation failure.').optional(),
-  mbe: ByteSize.describe('The number of bytes over the high limit for memory usage at the last allocation failure.').optional(),
-  modelBytesExceeded: ByteSize.describe('The number of bytes over the high limit for memory usage at the last allocation failure.').optional(),
+  'model.bytes': z.lazy(() => ByteSize).describe('The number of bytes of memory used by the models. This is the maximum value since the last time the model was persisted. If the job is closed, this value indicates the latest size.').optional(),
+  mb: z.lazy(() => ByteSize).describe('The number of bytes of memory used by the models. This is the maximum value since the last time the model was persisted. If the job is closed, this value indicates the latest size.').optional(),
+  modelBytes: z.lazy(() => ByteSize).describe('The number of bytes of memory used by the models. This is the maximum value since the last time the model was persisted. If the job is closed, this value indicates the latest size.').optional(),
+  'model.memory_status': z.lazy(() => MlMemoryStatus).describe('The status of the mathematical models.').optional(),
+  mms: z.lazy(() => MlMemoryStatus).describe('The status of the mathematical models.').optional(),
+  modelMemoryStatus: z.lazy(() => MlMemoryStatus).describe('The status of the mathematical models.').optional(),
+  'model.bytes_exceeded': z.lazy(() => ByteSize).describe('The number of bytes over the high limit for memory usage at the last allocation failure.').optional(),
+  mbe: z.lazy(() => ByteSize).describe('The number of bytes over the high limit for memory usage at the last allocation failure.').optional(),
+  modelBytesExceeded: z.lazy(() => ByteSize).describe('The number of bytes over the high limit for memory usage at the last allocation failure.').optional(),
   'model.memory_limit': z.string().describe('The upper limit for model memory usage, checked on increasing values.').optional(),
   mml: z.string().describe('The upper limit for model memory usage, checked on increasing values.').optional(),
   modelMemoryLimit: z.string().describe('The upper limit for model memory usage, checked on increasing values.').optional(),
@@ -132,9 +103,9 @@ export const CatMlJobsJobsRecord = z.object({
   'model.bucket_allocation_failures': z.string().describe('The number of buckets for which new entities in incoming data were not processed due to insufficient model memory. This situation is also signified by a `hard_limit: memory_status` property value.').optional(),
   mbaf: z.string().describe('The number of buckets for which new entities in incoming data were not processed due to insufficient model memory. This situation is also signified by a `hard_limit: memory_status` property value.').optional(),
   modelBucketAllocationFailures: z.string().describe('The number of buckets for which new entities in incoming data were not processed due to insufficient model memory. This situation is also signified by a `hard_limit: memory_status` property value.').optional(),
-  'model.categorization_status': MlCategorizationStatus.describe('The status of categorization for the job.').optional(),
-  mcs: MlCategorizationStatus.describe('The status of categorization for the job.').optional(),
-  modelCategorizationStatus: MlCategorizationStatus.describe('The status of categorization for the job.').optional(),
+  'model.categorization_status': z.lazy(() => MlCategorizationStatus).describe('The status of categorization for the job.').optional(),
+  mcs: z.lazy(() => MlCategorizationStatus).describe('The status of categorization for the job.').optional(),
+  modelCategorizationStatus: z.lazy(() => MlCategorizationStatus).describe('The status of categorization for the job.').optional(),
   'model.categorized_doc_count': z.string().describe('The number of documents that have had a field categorized.').optional(),
   mcdc: z.string().describe('The number of documents that have had a field categorized.').optional(),
   modelCategorizedDocCount: z.string().describe('The number of documents that have had a field categorized.').optional(),
@@ -197,15 +168,15 @@ export const CatMlJobsJobsRecord = z.object({
   'forecasts.time.total': z.string().describe('The total runtime in milliseconds for forecasts related to the anomaly detection job.').optional(),
   ftt: z.string().describe('The total runtime in milliseconds for forecasts related to the anomaly detection job.').optional(),
   forecastsTimeTotal: z.string().describe('The total runtime in milliseconds for forecasts related to the anomaly detection job.').optional(),
-  'node.id': NodeId.describe('The uniqe identifier of the assigned node.').optional(),
-  ni: NodeId.describe('The uniqe identifier of the assigned node.').optional(),
-  nodeId: NodeId.describe('The uniqe identifier of the assigned node.').optional(),
+  'node.id': z.lazy(() => NodeId).describe('The uniqe identifier of the assigned node.').optional(),
+  ni: z.lazy(() => NodeId).describe('The uniqe identifier of the assigned node.').optional(),
+  nodeId: z.lazy(() => NodeId).describe('The uniqe identifier of the assigned node.').optional(),
   'node.name': z.string().describe('The name of the assigned node.').optional(),
   nn: z.string().describe('The name of the assigned node.').optional(),
   nodeName: z.string().describe('The name of the assigned node.').optional(),
-  'node.ephemeral_id': NodeId.describe('The ephemeral identifier of the assigned node.').optional(),
-  ne: NodeId.describe('The ephemeral identifier of the assigned node.').optional(),
-  nodeEphemeralId: NodeId.describe('The ephemeral identifier of the assigned node.').optional(),
+  'node.ephemeral_id': z.lazy(() => NodeId).describe('The ephemeral identifier of the assigned node.').optional(),
+  ne: z.lazy(() => NodeId).describe('The ephemeral identifier of the assigned node.').optional(),
+  nodeEphemeralId: z.lazy(() => NodeId).describe('The ephemeral identifier of the assigned node.').optional(),
   'node.address': z.string().describe('The network address of the assigned node.').optional(),
   na: z.string().describe('The network address of the assigned node.').optional(),
   nodeAddress: z.string().describe('The network address of the assigned node.').optional(),
@@ -243,8 +214,7 @@ export type CatMlJobsJobsRecord = z.infer<typeof CatMlJobsJobsRecord>
  * application consumption, use the get anomaly detection job statistics API.
  */
 export const CatMlJobsRequest = z.object({
-  ...CatCatRequestBase.shape,
-  job_id: Id.describe('Identifier for the anomaly detection job.').optional().meta({ found_in: 'path' }),
+  job_id: z.lazy(() => Id).describe('Identifier for the anomaly detection job.').optional().meta({ found_in: 'path' }),
   allow_no_match: z.boolean().describe('Specifies what to do when the request: * Contains wildcard expressions and there are no jobs that match. * Contains the `_all` string or no identifiers and there are no matches. * Contains wildcard expressions and there are only partial matches. If `true`, the API returns an empty jobs array when there are no matches and the subset of results when there are partial matches. If `false`, the API returns a 404 status code when there are no matches or only partial matches.').optional().meta({ found_in: 'query' }),
   h: CatCatAnomalyDetectorColumns.describe('Comma-separated list of column names to display.').optional().meta({ found_in: 'query' }),
   s: CatCatAnomalyDetectorColumns.describe('Comma-separated list of column names or column aliases used to sort the response.').optional().meta({ found_in: 'query' })

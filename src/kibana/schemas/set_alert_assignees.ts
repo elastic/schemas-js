@@ -11,15 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Detections_API_AlertIds = z.array(z.string()).meta({ id: 'Security_Detections_API_AlertIds' })
-export type Security_Detections_API_AlertIds = z.infer<typeof Security_Detections_API_AlertIds>
-
-export const Security_Detections_API_AlertAssignees = z.object({
-  add: z.array(z.string()),
-  remove: z.array(z.string())
-}).meta({ id: 'Security_Detections_API_AlertAssignees' })
-export type Security_Detections_API_AlertAssignees = z.infer<typeof Security_Detections_API_AlertAssignees>
+import { Security_Detections_API_AlertAssignees, Security_Detections_API_AlertIds } from './schemas/security.js'
 
 export const Security_Detections_API_SetAlertAssigneesBody = z.object({
   assignees: Security_Detections_API_AlertAssignees,
@@ -29,3 +21,6 @@ export type Security_Detections_API_SetAlertAssigneesBody = z.infer<typeof Secur
 
 export const SetAlertAssigneesResponse = z.record(z.string(), z.unknown()).meta({ id: 'SetAlertAssigneesResponse' })
 export type SetAlertAssigneesResponse = z.infer<typeof SetAlertAssigneesResponse>
+
+export { Security_Detections_API_AlertIds } from './schemas/security.js'
+export { Security_Detections_API_AlertAssignees } from './schemas/security.js'

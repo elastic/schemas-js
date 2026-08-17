@@ -12,6 +12,17 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
+export const APM_UI_create_annotation_object = z.object({
+  '@timestamp': z.string(),
+  message: z.string().optional(),
+  service: z.object({
+    environment: z.string().optional(),
+    version: z.string()
+  }),
+  tags: z.array(z.string()).optional()
+}).meta({ id: 'APM_UI_create_annotation_object' })
+export type APM_UI_create_annotation_object = z.infer<typeof APM_UI_create_annotation_object>
+
 export const APM_UI_create_annotation_response = z.object({
   _id: z.string().optional(),
   _index: z.string().optional(),
@@ -34,14 +45,3 @@ export const APM_UI_create_annotation_response = z.object({
   }).optional()
 }).meta({ id: 'APM_UI_create_annotation_response' })
 export type APM_UI_create_annotation_response = z.infer<typeof APM_UI_create_annotation_response>
-
-export const APM_UI_create_annotation_object = z.object({
-  '@timestamp': z.string(),
-  message: z.string().optional(),
-  service: z.object({
-    environment: z.string().optional(),
-    version: z.string()
-  }),
-  tags: z.array(z.string()).optional()
-}).meta({ id: 'APM_UI_create_annotation_object' })
-export type APM_UI_create_annotation_object = z.infer<typeof APM_UI_create_annotation_object>

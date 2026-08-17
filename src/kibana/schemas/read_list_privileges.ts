@@ -12,15 +12,6 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Security_Lists_API_ListPrivileges = z.object({
-  application: z.record(z.string(), z.boolean()),
-  cluster: z.record(z.string(), z.boolean()),
-  has_all_requested: z.boolean(),
-  index: z.record(z.string(), z.record(z.string(), z.boolean())),
-  username: z.string()
-}).meta({ id: 'Security_Lists_API_ListPrivileges' })
-export type Security_Lists_API_ListPrivileges = z.infer<typeof Security_Lists_API_ListPrivileges>
-
 export const Security_Lists_API_ListItemPrivileges = z.object({
   application: z.record(z.string(), z.boolean()),
   cluster: z.record(z.string(), z.boolean()),
@@ -29,6 +20,15 @@ export const Security_Lists_API_ListItemPrivileges = z.object({
   username: z.string()
 }).meta({ id: 'Security_Lists_API_ListItemPrivileges' })
 export type Security_Lists_API_ListItemPrivileges = z.infer<typeof Security_Lists_API_ListItemPrivileges>
+
+export const Security_Lists_API_ListPrivileges = z.object({
+  application: z.record(z.string(), z.boolean()),
+  cluster: z.record(z.string(), z.boolean()),
+  has_all_requested: z.boolean(),
+  index: z.record(z.string(), z.record(z.string(), z.boolean())),
+  username: z.string()
+}).meta({ id: 'Security_Lists_API_ListPrivileges' })
+export type Security_Lists_API_ListPrivileges = z.infer<typeof Security_Lists_API_ListPrivileges>
 
 export const ReadListPrivilegesResponse = z.object({
   is_authenticated: z.boolean(),

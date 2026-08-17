@@ -12,6 +12,13 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
+export const Security_Entity_Analytics_API_PrivmonUserCsvUploadErrorItem = z.object({
+  index: z.number().nullable(),
+  message: z.string(),
+  username: z.string().nullable()
+}).meta({ id: 'Security_Entity_Analytics_API_PrivmonUserCsvUploadErrorItem' })
+export type Security_Entity_Analytics_API_PrivmonUserCsvUploadErrorItem = z.infer<typeof Security_Entity_Analytics_API_PrivmonUserCsvUploadErrorItem>
+
 export const Security_Entity_Analytics_API_PrivmonUserCsvUploadStats = z.object({
   failedOperations: z.number(),
   successfulOperations: z.number(),
@@ -19,13 +26,6 @@ export const Security_Entity_Analytics_API_PrivmonUserCsvUploadStats = z.object(
   uploaded: z.number()
 }).meta({ id: 'Security_Entity_Analytics_API_PrivmonUserCsvUploadStats' })
 export type Security_Entity_Analytics_API_PrivmonUserCsvUploadStats = z.infer<typeof Security_Entity_Analytics_API_PrivmonUserCsvUploadStats>
-
-export const Security_Entity_Analytics_API_PrivmonUserCsvUploadErrorItem = z.object({
-  index: z.number().nullable(),
-  message: z.string(),
-  username: z.string().nullable()
-}).meta({ id: 'Security_Entity_Analytics_API_PrivmonUserCsvUploadErrorItem' })
-export type Security_Entity_Analytics_API_PrivmonUserCsvUploadErrorItem = z.infer<typeof Security_Entity_Analytics_API_PrivmonUserCsvUploadErrorItem>
 
 export const PrivmonBulkUploadUsersCSVResponse = z.object({
   errors: z.array(Security_Entity_Analytics_API_PrivmonUserCsvUploadErrorItem),
