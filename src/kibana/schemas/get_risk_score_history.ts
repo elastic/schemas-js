@@ -12,6 +12,30 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
+export const Security_Entity_Analytics_API_RiskScoreModifier = z.object({
+  contribution: z.number(),
+  metadata: z.record(z.string(), z.unknown()).optional(),
+  modifier_value: z.number().optional(),
+  subtype: z.string().optional(),
+  type: z.string()
+}).meta({ id: 'Security_Entity_Analytics_API_RiskScoreModifier' })
+export type Security_Entity_Analytics_API_RiskScoreModifier = z.infer<typeof Security_Entity_Analytics_API_RiskScoreModifier>
+
+export const Security_Entity_Analytics_API_RiskScoreInput = z.object({
+  category: z.string(),
+  contribution_score: z.number().optional(),
+  description: z.string(),
+  entity_id: z.string().optional(),
+  id: z.string(),
+  index: z.string(),
+  risk_score: z.number().optional(),
+  timestamp: z.string().optional()
+}).meta({ id: 'Security_Entity_Analytics_API_RiskScoreInput' })
+export type Security_Entity_Analytics_API_RiskScoreInput = z.infer<typeof Security_Entity_Analytics_API_RiskScoreInput>
+
+export const Security_Entity_Analytics_API_AssetCriticalityLevel = z.enum(['low_impact', 'medium_impact', 'high_impact', 'extreme_impact']).meta({ id: 'Security_Entity_Analytics_API_AssetCriticalityLevel' })
+export type Security_Entity_Analytics_API_AssetCriticalityLevel = z.infer<typeof Security_Entity_Analytics_API_AssetCriticalityLevel>
+
 export const Security_Entity_Analytics_API_EntityRiskLevels = z.enum(['Unknown', 'Low', 'Moderate', 'High', 'Critical']).meta({ id: 'Security_Entity_Analytics_API_EntityRiskLevels' })
 export type Security_Entity_Analytics_API_EntityRiskLevels = z.infer<typeof Security_Entity_Analytics_API_EntityRiskLevels>
 
@@ -25,6 +49,11 @@ export const Security_Entity_Analytics_API_RiskScoreHistoryEntry = z.object({
   calculated_score_norm: z.number(),
   category_1_count: z.number().optional(),
   category_1_score: z.number().optional(),
+  category_2_count: z.number().optional(),
+  category_2_score: z.number().optional(),
+  criticality_level: Security_Entity_Analytics_API_AssetCriticalityLevel.optional(),
+  inputs: z.array(Security_Entity_Analytics_API_RiskScoreInput).optional(),
+  modifiers: z.array(Security_Entity_Analytics_API_RiskScoreModifier).optional(),
   score_type: z.enum(['base', 'propagated', 'resolution']).optional()
 }).meta({ id: 'Security_Entity_Analytics_API_RiskScoreHistoryEntry' })
 export type Security_Entity_Analytics_API_RiskScoreHistoryEntry = z.infer<typeof Security_Entity_Analytics_API_RiskScoreHistoryEntry>
@@ -32,6 +61,7 @@ export type Security_Entity_Analytics_API_RiskScoreHistoryEntry = z.infer<typeof
 export const Security_Entity_Analytics_API_RiskScoreHistoryResponse = z.object({
   entity_id: z.string(),
   entity_type: Security_Entity_Analytics_API_IdentifierType,
-  entries: z.array(Security_Entity_Analytics_API_RiskScoreHistoryEntry)
+  entries: z.array(Security_Entity_Analytics_API_RiskScoreHistoryEntry),
+  interval: z.string()
 }).meta({ id: 'Security_Entity_Analytics_API_RiskScoreHistoryResponse' })
 export type Security_Entity_Analytics_API_RiskScoreHistoryResponse = z.infer<typeof Security_Entity_Analytics_API_RiskScoreHistoryResponse>

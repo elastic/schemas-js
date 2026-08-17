@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"upsert-dashboard","x-api":{"id":"dashboards.upsert-dashboard","name":"upsert-dashboard","namespace":"dashboards"},"type":"object","properties":{}}

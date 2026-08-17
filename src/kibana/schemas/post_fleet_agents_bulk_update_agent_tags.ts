@@ -15,13 +15,16 @@ import { z } from 'zod'
 export const PostFleetAgentsBulkUpdateAgentTagsRequest = z.object({
   agents: z.union([z.array(z.string()), z.string()]),
   batchSize: z.number().optional(),
+  dryRun: z.boolean().optional(),
   includeInactive: z.boolean().optional(),
   tagsToAdd: z.array(z.string()).optional(),
   tagsToRemove: z.array(z.string()).optional()
 }).meta({ id: 'PostFleetAgentsBulkUpdateAgentTagsRequest' })
 export type PostFleetAgentsBulkUpdateAgentTagsRequest = z.infer<typeof PostFleetAgentsBulkUpdateAgentTagsRequest>
 
-export const PostFleetAgentsBulkUpdateAgentTagsResponse = z.object({
+export const PostFleetAgentsBulkUpdateAgentTagsResponse = z.union([z.object({
   actionId: z.string()
-}).meta({ id: 'PostFleetAgentsBulkUpdateAgentTagsResponse' })
+}), z.object({
+  count: z.number()
+})]).meta({ id: 'PostFleetAgentsBulkUpdateAgentTagsResponse' })
 export type PostFleetAgentsBulkUpdateAgentTagsResponse = z.infer<typeof PostFleetAgentsBulkUpdateAgentTagsResponse>

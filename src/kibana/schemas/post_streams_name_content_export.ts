@@ -21,9 +21,6 @@ export const Kibana_HTTP_APIs_ContentPackIncludedObjects: z.ZodTypeAny = z.union
 }), z.object({
   objects: z.object({
     mappings: z.boolean(),
-    queries: z.array(z.object({
-      id: z.string()
-    })),
     routing: z.array(z.intersection(z.lazy(() => Kibana_HTTP_APIs_ContentPackIncludedObjects), z.object({
       destination: z.string()
     })))

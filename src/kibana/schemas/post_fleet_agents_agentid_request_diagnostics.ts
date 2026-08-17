@@ -17,7 +17,9 @@ export const PostFleetAgentsAgentidRequestDiagnosticsRequest = z.object({
 }).nullable().meta({ id: 'PostFleetAgentsAgentidRequestDiagnosticsRequest' })
 export type PostFleetAgentsAgentidRequestDiagnosticsRequest = z.infer<typeof PostFleetAgentsAgentidRequestDiagnosticsRequest>
 
-export const PostFleetAgentsAgentidRequestDiagnosticsResponse = z.object({
+export const PostFleetAgentsAgentidRequestDiagnosticsResponse = z.union([z.object({
   actionId: z.string()
-}).meta({ id: 'PostFleetAgentsAgentidRequestDiagnosticsResponse' })
+}), z.object({
+  count: z.number()
+})]).meta({ id: 'PostFleetAgentsAgentidRequestDiagnosticsResponse' })
 export type PostFleetAgentsAgentidRequestDiagnosticsResponse = z.infer<typeof PostFleetAgentsAgentidRequestDiagnosticsResponse>

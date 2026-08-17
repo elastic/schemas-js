@@ -13,9 +13,13 @@
 import { z } from 'zod'
 
 export const PutAgentBuilderAgentsIdRequest = z.object({
+  access_control: z.object({
+    access_mode: z.enum(['public', 'shared', 'private'])
+  }).optional(),
   avatar_color: z.string().optional(),
   avatar_symbol: z.string().optional(),
   configuration: z.object({
+    ai_indices: z.array(z.string()).optional(),
     connector_ids: z.array(z.string()).optional(),
     enable_elastic_capabilities: z.boolean().optional(),
     instructions: z.string().optional(),
@@ -28,7 +32,6 @@ export const PutAgentBuilderAgentsIdRequest = z.object({
   }).optional(),
   description: z.string().optional(),
   labels: z.array(z.string()).optional(),
-  name: z.string().optional(),
-  visibility: z.enum(['public', 'shared', 'private']).optional()
+  name: z.string().optional()
 }).meta({ id: 'PutAgentBuilderAgentsIdRequest' })
 export type PutAgentBuilderAgentsIdRequest = z.infer<typeof PutAgentBuilderAgentsIdRequest>

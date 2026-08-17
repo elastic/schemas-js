@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-agentless-policies-policyid","x-api":{"id":"fleet-agentless-policies.get-fleet-agentless-policies-policyid","name":"get-fleet-agentless-policies-policyid","namespace":"fleet-agentless-policies"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_managed_integration_response"}

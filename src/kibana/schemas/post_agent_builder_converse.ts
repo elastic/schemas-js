@@ -14,6 +14,9 @@ import { z } from 'zod'
 
 export const PostAgentBuilderConverseRequest = z.object({
   _execution_mode: z.enum(['local', 'task_manager']).optional(),
+  access_control: z.object({
+    access_mode: z.enum(['private', 'public'])
+  }).optional(),
   action: z.enum(['regenerate']).optional(),
   agent_id: z.string().optional(),
   attachments: z.array(z.object({
@@ -34,7 +37,9 @@ export const PostAgentBuilderConverseRequest = z.object({
     visualizations: z.boolean().optional()
   }).optional(),
   configuration_overrides: z.object({
+    enable_elastic_capabilities: z.boolean().optional(),
     instructions: z.string().optional(),
+    skill_ids: z.array(z.string()).optional(),
     tools: z.array(z.object({
       tool_ids: z.array(z.string())
     })).optional()
@@ -54,6 +59,7 @@ export const PostAgentBuilderConverseRequest = z.object({
       custom: z.string().optional(),
       skipped: z.boolean().optional()
     }))
-  })])).optional()
+  })])).optional(),
+  read_only: z.boolean().optional()
 }).meta({ id: 'PostAgentBuilderConverseRequest' })
 export type PostAgentBuilderConverseRequest = z.infer<typeof PostAgentBuilderConverseRequest>

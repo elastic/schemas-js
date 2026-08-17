@@ -31,6 +31,7 @@ export type SLOs_error_budget = z.infer<typeof SLOs_error_budget>
 
 export const SLOs_settings = z.object({
   frequency: z.string().optional(),
+  preventCrossProjectSearch: z.boolean().optional(),
   preventInitialBackfill: z.boolean().optional(),
   syncDelay: z.string().optional(),
   syncField: z.string().optional()

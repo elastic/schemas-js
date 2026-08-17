@@ -30,12 +30,33 @@ export const Kibana_HTTP_APIs_package_policy_package = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_package_policy_package' })
 export type Kibana_HTTP_APIs_package_policy_package = z.infer<typeof Kibana_HTTP_APIs_package_policy_package>
 
-export const Kibana_HTTP_APIs_deprecation_info = z.object({
+export const Kibana_HTTP_APIs_package_policy_stream_deprecation_info = z.object({
   description: z.string(),
   replaced_by: z.record(z.string(), z.string()).optional(),
   since: z.string().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_deprecation_info' })
-export type Kibana_HTTP_APIs_deprecation_info = z.infer<typeof Kibana_HTTP_APIs_deprecation_info>
+}).meta({ id: 'Kibana_HTTP_APIs_package_policy_stream_deprecation_info' })
+export type Kibana_HTTP_APIs_package_policy_stream_deprecation_info = z.infer<typeof Kibana_HTTP_APIs_package_policy_stream_deprecation_info>
+
+export const Kibana_HTTP_APIs_package_policy_input_deprecation_info = z.object({
+  description: z.string(),
+  replaced_by: z.record(z.string(), z.string()).optional(),
+  since: z.string().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_package_policy_input_deprecation_info' })
+export type Kibana_HTTP_APIs_package_policy_input_deprecation_info = z.infer<typeof Kibana_HTTP_APIs_package_policy_input_deprecation_info>
+
+export const Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info = z.object({
+  description: z.string(),
+  replaced_by: z.record(z.string(), z.string()).optional(),
+  since: z.string().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info' })
+export type Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info = z.infer<typeof Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info>
+
+export const Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info = z.object({
+  description: z.string(),
+  replaced_by: z.record(z.string(), z.string()).optional(),
+  since: z.string().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info' })
+export type Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info = z.infer<typeof Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info>
 
 export const Kibana_HTTP_APIs_dry_run_package_policies_request = z.object({
   packagePolicyIds: z.array(z.string()),
@@ -75,7 +96,7 @@ export const Kibana_HTTP_APIs_dry_run_package_policy = z.object({
       type: z.string().optional(),
       value: z.unknown().nullable()
     })).optional(),
-    deprecated: Kibana_HTTP_APIs_deprecation_info.optional(),
+    deprecated: Kibana_HTTP_APIs_package_policy_input_deprecation_info.optional(),
     enabled: z.boolean(),
     id: z.string().optional(),
     keep_enabled: z.boolean().optional(),
@@ -101,7 +122,7 @@ export const Kibana_HTTP_APIs_dry_run_package_policy = z.object({
         }).optional(),
         type: z.string().optional()
       }),
-      deprecated: Kibana_HTTP_APIs_deprecation_info.optional(),
+      deprecated: Kibana_HTTP_APIs_package_policy_stream_deprecation_info.optional(),
       enabled: z.boolean(),
       id: z.string().optional(),
       keep_enabled: z.boolean().optional(),
@@ -152,7 +173,7 @@ export const Kibana_HTTP_APIs_dry_run_package_policy = z.object({
 }).passthrough().meta({ id: 'Kibana_HTTP_APIs_dry_run_package_policy' })
 export type Kibana_HTTP_APIs_dry_run_package_policy = z.infer<typeof Kibana_HTTP_APIs_dry_run_package_policy>
 
-export const Kibana_HTTP_APIs_package_policy_response = z.object({
+export const Kibana_HTTP_APIs_dry_run_package_policy_response = z.object({
   additional_datastreams_permissions: z.array(z.string()).nullable().optional(),
   agents: z.number().optional(),
   cloud_connector_id: z.string().nullable().optional(),
@@ -180,7 +201,7 @@ export const Kibana_HTTP_APIs_package_policy_response = z.object({
       type: z.string().optional(),
       value: z.unknown().nullable()
     })).optional(),
-    deprecated: Kibana_HTTP_APIs_deprecation_info.optional(),
+    deprecated: Kibana_HTTP_APIs_package_policy_input_deprecation_info.optional(),
     enabled: z.boolean(),
     id: z.string().optional(),
     keep_enabled: z.boolean().optional(),
@@ -206,7 +227,7 @@ export const Kibana_HTTP_APIs_package_policy_response = z.object({
         }).optional(),
         type: z.string().optional()
       }),
-      deprecated: Kibana_HTTP_APIs_deprecation_info.optional(),
+      deprecated: Kibana_HTTP_APIs_package_policy_stream_deprecation_info.optional(),
       enabled: z.boolean(),
       id: z.string().optional(),
       keep_enabled: z.boolean().optional(),
@@ -228,11 +249,11 @@ export const Kibana_HTTP_APIs_package_policy_response = z.object({
     })).optional()
   })), z.record(z.string(), z.object({
     condition: z.string().nullable().optional(),
-    deprecated: Kibana_HTTP_APIs_deprecation_info.optional(),
+    deprecated: Kibana_HTTP_APIs_simplified_package_policy_input_deprecation_info.optional(),
     enabled: z.boolean().optional(),
     streams: z.record(z.string(), z.object({
       condition: z.string().nullable().optional(),
-      deprecated: Kibana_HTTP_APIs_deprecation_info.optional(),
+      deprecated: Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info.optional(),
       enabled: z.boolean().optional(),
       var_group_selections: z.record(z.string(), z.string()).optional(),
       vars: z.record(z.string(), z.union([z.string(), z.number(), z.boolean(), z.array(z.string()), z.array(z.number()), z.object({
@@ -275,8 +296,8 @@ export const Kibana_HTTP_APIs_package_policy_response = z.object({
     isSecretRef: z.boolean()
   })]).nullable())]).optional(),
   version: z.string().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_package_policy_response' })
-export type Kibana_HTTP_APIs_package_policy_response = z.infer<typeof Kibana_HTTP_APIs_package_policy_response>
+}).meta({ id: 'Kibana_HTTP_APIs_dry_run_package_policy_response' })
+export type Kibana_HTTP_APIs_dry_run_package_policy_response = z.infer<typeof Kibana_HTTP_APIs_dry_run_package_policy_response>
 
 export const PostFleetPackagePoliciesUpgradeDryrunResponse = z.array(z.object({
   agent_diff: z.array(z.array(z.object({
@@ -312,7 +333,7 @@ export const PostFleetPackagePoliciesUpgradeDryrunResponse = z.array(z.object({
   body: z.object({
     message: z.string()
   }).optional(),
-  diff: z.array(z.union([Kibana_HTTP_APIs_package_policy_response, Kibana_HTTP_APIs_dry_run_package_policy])).optional(),
+  diff: z.array(z.union([Kibana_HTTP_APIs_dry_run_package_policy_response, Kibana_HTTP_APIs_dry_run_package_policy])).optional(),
   hasErrors: z.boolean(),
   name: z.string().optional(),
   statusCode: z.number().optional()

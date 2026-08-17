@@ -14,5 +14,5 @@ import { z } from 'zod'
 
 export const DeleteStreamsNameQueriesQueryidRequest = z.union([z.object({
 
-}), z.unknown().nullable(), z.unknown()]).meta({ id: 'DeleteStreamsNameQueriesQueryidRequest' })
+}), z.unknown()]).nullable().meta({ id: 'DeleteStreamsNameQueriesQueryidRequest' })
 export type DeleteStreamsNameQueriesQueryidRequest = z.infer<typeof DeleteStreamsNameQueriesQueryidRequest>

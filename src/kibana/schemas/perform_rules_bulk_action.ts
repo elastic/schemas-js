@@ -152,15 +152,26 @@ export const Security_Detections_API_RunScriptOsConfigValues = z.object({
 }).meta({ id: 'Security_Detections_API_RunScriptOsConfigValues' })
 export type Security_Detections_API_RunScriptOsConfigValues = z.infer<typeof Security_Detections_API_RunScriptOsConfigValues>
 
-export const Security_Detections_API_ProcessesParams = z.object({
-  command: z.enum(['kill-process', 'suspend-process']),
+export const Security_Detections_API_SuspendProcessParams = z.object({
+  command: z.enum(['suspend-process']),
   comment: z.string().optional(),
   config: z.object({
     field: z.string(),
     overwrite: z.boolean().optional()
   })
-}).meta({ id: 'Security_Detections_API_ProcessesParams' })
-export type Security_Detections_API_ProcessesParams = z.infer<typeof Security_Detections_API_ProcessesParams>
+}).meta({ id: 'Security_Detections_API_SuspendProcessParams' })
+export type Security_Detections_API_SuspendProcessParams = z.infer<typeof Security_Detections_API_SuspendProcessParams>
+
+export const Security_Detections_API_KillProcessParams = z.object({
+  command: z.enum(['kill-process']),
+  comment: z.string().optional(),
+  config: z.object({
+    field: z.string(),
+    kill_descendants: z.boolean().optional(),
+    overwrite: z.boolean().optional()
+  })
+}).meta({ id: 'Security_Detections_API_KillProcessParams' })
+export type Security_Detections_API_KillProcessParams = z.infer<typeof Security_Detections_API_KillProcessParams>
 
 export const Security_Detections_API_DefaultParams = z.object({
   command: z.enum(['isolate']),
@@ -219,7 +230,7 @@ export type Security_Detections_API_RuleIntervalFrom = z.infer<typeof Security_D
 export const Security_Detections_API_RuleFalsePositiveArray = z.array(z.string()).meta({ id: 'Security_Detections_API_RuleFalsePositiveArray' })
 export type Security_Detections_API_RuleFalsePositiveArray = z.infer<typeof Security_Detections_API_RuleFalsePositiveArray>
 
-export const Security_Detections_API_ExceptionListType = z.enum(['detection', 'rule_default', 'endpoint', 'endpoint_trusted_apps', 'endpoint_trusted_devices', 'endpoint_events', 'endpoint_host_isolation_exceptions', 'endpoint_blocklists']).meta({ id: 'Security_Detections_API_ExceptionListType' })
+export const Security_Detections_API_ExceptionListType = z.enum(['detection', 'rule_default', 'endpoint', 'endpoint_trusted_apps', 'endpoint_trusted_devices', 'endpoint_events', 'endpoint_host_isolation_exceptions', 'endpoint_blocklists', 'endpoint_custom_yara_signatures']).meta({ id: 'Security_Detections_API_ExceptionListType' })
 export type Security_Detections_API_ExceptionListType = z.infer<typeof Security_Detections_API_ExceptionListType>
 
 export const Security_Detections_API_IsRuleEnabled = z.boolean().meta({ id: 'Security_Detections_API_IsRuleEnabled' })
@@ -448,6 +459,9 @@ export const Security_Detections_API_RunscriptParams = z.object({
   }).optional()
 }).meta({ id: 'Security_Detections_API_RunscriptParams' })
 export type Security_Detections_API_RunscriptParams = z.infer<typeof Security_Detections_API_RunscriptParams>
+
+export const Security_Detections_API_ProcessesParams = z.discriminatedUnion('command', [Security_Detections_API_KillProcessParams, Security_Detections_API_SuspendProcessParams]).meta({ id: 'Security_Detections_API_ProcessesParams' })
+export type Security_Detections_API_ProcessesParams = z.infer<typeof Security_Detections_API_ProcessesParams>
 
 export const Security_Detections_API_OsqueryQuery = z.object({
   ecs_mapping: Security_Detections_API_EcsMapping.optional(),

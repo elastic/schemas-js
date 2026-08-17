@@ -18,6 +18,17 @@ export type Security_Endpoint_Management_API_Command = z.infer<typeof Security_E
 export const Security_Endpoint_Management_API_AgentTypes = z.enum(['endpoint', 'sentinel_one', 'crowdstrike', 'microsoft_defender_endpoint']).meta({ id: 'Security_Endpoint_Management_API_AgentTypes' })
 export type Security_Endpoint_Management_API_AgentTypes = z.infer<typeof Security_Endpoint_Management_API_AgentTypes>
 
+export const Security_Endpoint_Management_API_MDECancelParameters = z.object({
+  id: z.string()
+}).meta({ id: 'Security_Endpoint_Management_API_MDECancelParameters' })
+export type Security_Endpoint_Management_API_MDECancelParameters = z.infer<typeof Security_Endpoint_Management_API_MDECancelParameters>
+
+export const Security_Endpoint_Management_API_ElasticDefendCancelParameters = z.object({
+  force: z.boolean().optional(),
+  id: z.string()
+}).meta({ id: 'Security_Endpoint_Management_API_ElasticDefendCancelParameters' })
+export type Security_Endpoint_Management_API_ElasticDefendCancelParameters = z.infer<typeof Security_Endpoint_Management_API_ElasticDefendCancelParameters>
+
 export const Security_Endpoint_Management_API_Parameters = z.object({}).meta({ id: 'Security_Endpoint_Management_API_Parameters' })
 export type Security_Endpoint_Management_API_Parameters = z.infer<typeof Security_Endpoint_Management_API_Parameters>
 
@@ -65,9 +76,7 @@ export const Security_Endpoint_Management_API_CancelRouteRequestBody = z.object(
   endpoint_ids: Security_Endpoint_Management_API_EndpointIds,
   parameters: Security_Endpoint_Management_API_Parameters.optional()
 }).merge(z.object({
-  parameters: z.object({
-    id: z.string()
-  })
+  parameters: z.union([Security_Endpoint_Management_API_ElasticDefendCancelParameters, Security_Endpoint_Management_API_MDECancelParameters])
 })).meta({ id: 'Security_Endpoint_Management_API_CancelRouteRequestBody' })
 export type Security_Endpoint_Management_API_CancelRouteRequestBody = z.infer<typeof Security_Endpoint_Management_API_CancelRouteRequestBody>
 

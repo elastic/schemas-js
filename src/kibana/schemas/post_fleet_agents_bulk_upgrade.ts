@@ -15,6 +15,7 @@ import { z } from 'zod'
 export const PostFleetAgentsBulkUpgradeRequest = z.object({
   agents: z.union([z.array(z.string()), z.string()]),
   batchSize: z.number().optional(),
+  dryRun: z.boolean().optional(),
   force: z.boolean().optional(),
   includeInactive: z.boolean().optional(),
   rollout_duration_seconds: z.number().optional(),
@@ -25,7 +26,9 @@ export const PostFleetAgentsBulkUpgradeRequest = z.object({
 }).meta({ id: 'PostFleetAgentsBulkUpgradeRequest' })
 export type PostFleetAgentsBulkUpgradeRequest = z.infer<typeof PostFleetAgentsBulkUpgradeRequest>
 
-export const PostFleetAgentsBulkUpgradeResponse = z.object({
+export const PostFleetAgentsBulkUpgradeResponse = z.union([z.object({
   actionId: z.string()
-}).meta({ id: 'PostFleetAgentsBulkUpgradeResponse' })
+}), z.object({
+  count: z.number()
+})]).meta({ id: 'PostFleetAgentsBulkUpgradeResponse' })
 export type PostFleetAgentsBulkUpgradeResponse = z.infer<typeof PostFleetAgentsBulkUpgradeResponse>

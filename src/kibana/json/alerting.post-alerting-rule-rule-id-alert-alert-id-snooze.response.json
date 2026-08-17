@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-alerting-rule-rule-id-alert-alert-id-snooze","x-api":{"id":"alerting.post-alerting-rule-rule-id-alert-alert-id-snooze","name":"post-alerting-rule-rule-id-alert-alert-id-snooze","namespace":"alerting"},"type":"object","properties":{}}

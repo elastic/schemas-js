@@ -14,5 +14,5 @@ import { z } from 'zod'
 
 export const PostStreamsEnableRequest = z.union([z.object({
 
-}), z.unknown().nullable(), z.unknown()]).meta({ id: 'PostStreamsEnableRequest' })
+}), z.unknown()]).nullable().meta({ id: 'PostStreamsEnableRequest' })
 export type PostStreamsEnableRequest = z.infer<typeof PostStreamsEnableRequest>

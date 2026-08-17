@@ -22,6 +22,7 @@ export const Kibana_HTTP_APIs_connector_type_response = z.object({
   is_deprecated: z.boolean(),
   is_experimental: z.boolean().optional(),
   is_system_action_type: z.boolean(),
+  is_testable: z.boolean(),
   minimum_license_required: z.enum(['basic', 'standard', 'gold', 'platinum', 'enterprise', 'trial']),
   name: z.string(),
   source: z.enum(['yml', 'spec', 'stack']),

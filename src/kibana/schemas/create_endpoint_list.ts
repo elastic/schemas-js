@@ -15,7 +15,7 @@ import { z } from 'zod'
 export const Security_Endpoint_Exceptions_API_ExceptionListVersion = z.number().meta({ id: 'Security_Endpoint_Exceptions_API_ExceptionListVersion' })
 export type Security_Endpoint_Exceptions_API_ExceptionListVersion = z.infer<typeof Security_Endpoint_Exceptions_API_ExceptionListVersion>
 
-export const Security_Endpoint_Exceptions_API_ExceptionListType = z.enum(['detection', 'rule_default', 'endpoint', 'endpoint_trusted_apps', 'endpoint_trusted_devices', 'endpoint_events', 'endpoint_host_isolation_exceptions', 'endpoint_blocklists']).meta({ id: 'Security_Endpoint_Exceptions_API_ExceptionListType' })
+export const Security_Endpoint_Exceptions_API_ExceptionListType = z.enum(['detection', 'rule_default', 'endpoint', 'endpoint_trusted_apps', 'endpoint_trusted_devices', 'endpoint_events', 'endpoint_host_isolation_exceptions', 'endpoint_blocklists', 'endpoint_custom_yara_signatures']).meta({ id: 'Security_Endpoint_Exceptions_API_ExceptionListType' })
 export type Security_Endpoint_Exceptions_API_ExceptionListType = z.infer<typeof Security_Endpoint_Exceptions_API_ExceptionListType>
 
 export const Security_Endpoint_Exceptions_API_ExceptionListTags = z.array(z.string()).meta({ id: 'Security_Endpoint_Exceptions_API_ExceptionListTags' })

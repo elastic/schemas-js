@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"search-visualizations","x-api":{"id":"visualizations.search-visualizations","name":"search-visualizations","namespace":"visualizations"},"x-method":"GET","x-path":"/api/visualizations","x-destructive":false,"type":"object","properties":{}}

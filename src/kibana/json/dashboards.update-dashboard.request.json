@@ -1,1 +1,0 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"update-dashboard","x-api":{"id":"dashboards.update-dashboard","name":"update-dashboard","namespace":"dashboards"},"x-method":"PUT","x-path":"/api/dashboards/{id}","x-destructive":true,"type":"object","properties":{"id":{"type":"string","description":"The id parameter","x-found-in":"path"}},"required":["id"]}

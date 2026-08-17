@@ -13,6 +13,7 @@
 import { z } from 'zod'
 
 export const PostFleetFleetServerHostsRequest = z.object({
+  allow_edit: z.array(z.string()).optional(),
   host_urls: z.array(z.string()),
   id: z.string().optional(),
   is_default: z.boolean().optional(),
@@ -24,13 +25,13 @@ export const PostFleetFleetServerHostsRequest = z.object({
     ssl: z.object({
       agent_key: z.union([z.object({
         id: z.string()
-      }), z.string()]).optional(),
+      }), z.string()]).nullable().optional(),
       es_key: z.union([z.object({
         id: z.string()
-      }), z.string()]).optional(),
+      }), z.string()]).nullable().optional(),
       key: z.union([z.object({
         id: z.string()
-      }), z.string()]).optional()
+      }), z.string()]).nullable().optional()
     }).optional()
   }).optional(),
   ssl: z.object({
@@ -50,6 +51,7 @@ export type PostFleetFleetServerHostsRequest = z.infer<typeof PostFleetFleetServ
 
 export const PostFleetFleetServerHostsResponse = z.object({
   item: z.object({
+    allow_edit: z.array(z.string()).optional(),
     host_urls: z.array(z.string()),
     id: z.string(),
     is_default: z.boolean().optional(),
@@ -61,13 +63,13 @@ export const PostFleetFleetServerHostsResponse = z.object({
       ssl: z.object({
         agent_key: z.union([z.object({
           id: z.string()
-        }), z.string()]).optional(),
+        }), z.string()]).nullable().optional(),
         es_key: z.union([z.object({
           id: z.string()
-        }), z.string()]).optional(),
+        }), z.string()]).nullable().optional(),
         key: z.union([z.object({
           id: z.string()
-        }), z.string()]).optional()
+        }), z.string()]).nullable().optional()
       }).optional()
     }).optional(),
     ssl: z.object({

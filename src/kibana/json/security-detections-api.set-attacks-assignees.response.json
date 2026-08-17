@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"set-attacks-assignees","x-api":{"id":"security-detections-api.set-attacks-assignees","name":"set-attacks-assignees","namespace":"security-detections-api"},"type":"object","additionalProperties":true}

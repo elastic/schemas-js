@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-streams-name-significant-events","x-api":{"id":"significantevents.get-streams-name-significant-events","name":"get-streams-name-significant-events","namespace":"significantevents"},"type":"object","properties":{}}

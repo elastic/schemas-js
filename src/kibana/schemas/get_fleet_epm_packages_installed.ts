@@ -30,6 +30,7 @@ export const Kibana_HTTP_APIs_installed_package = z.object({
   description: z.string().optional(),
   icons: z.array(Kibana_HTTP_APIs_package_icon).optional(),
   name: z.string(),
+  rolledBack: z.boolean().optional(),
   status: z.string(),
   title: z.string().optional(),
   version: z.string()

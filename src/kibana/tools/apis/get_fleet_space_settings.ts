@@ -14,7 +14,7 @@ import type { KbApiDefinition } from '../types.ts'
 export const get_fleet_space_settingsDefinitions: KbApiDefinition[] = [
   {
     name: 'get-fleet-space-settings',
-    namespace: 'misc',
+    namespace: 'fleet-internals',
     description: 'Get space settings',
     method: 'GET',
     path: '/api/fleet/space_settings',

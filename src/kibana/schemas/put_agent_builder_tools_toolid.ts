@@ -14,6 +14,9 @@ import { z } from 'zod'
 
 export const PutAgentBuilderToolsToolidRequest = z.object({
   configuration: z.record(z.string(), z.unknown().nullable()).optional(),
+  confirmation: z.object({
+    askUser: z.enum(['once', 'always', 'never']).optional()
+  }).optional(),
   description: z.string().optional(),
   tags: z.array(z.string()).optional()
 }).meta({ id: 'PutAgentBuilderToolsToolidRequest' })

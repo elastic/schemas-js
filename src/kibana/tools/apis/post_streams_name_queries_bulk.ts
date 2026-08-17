@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/streams.post-streams-name-queries-bulk.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/significantevents.post-streams-name-queries-bulk.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
@@ -18,7 +18,7 @@ const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 export const post_streams_name_queries_bulkDefinitions: KbApiDefinition[] = [
   {
     name: 'post-streams-name-queries-bulk',
-    namespace: 'streams',
+    namespace: 'significantevents',
     description: 'Bulk update queries',
     method: 'POST',
     path: '/api/streams/{name}/queries/_bulk',

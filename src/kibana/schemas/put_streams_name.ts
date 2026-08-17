@@ -14,21 +14,6 @@ import { z } from 'zod'
 
 export const Kibana_HTTP_APIs_QueryStreamUpsertRequest = z.object({
   dashboards: z.array(z.string()),
-  queries: z.array(z.object({
-    description: z.string(),
-    esql: z.object({
-      query: z.string()
-    }),
-    evidence: z.array(z.string()).optional(),
-    features: z.array(z.object({
-      id: z.string(),
-      run_id: z.string().optional()
-    })).optional(),
-    id: z.string(),
-    severity_score: z.number().optional(),
-    title: z.string(),
-    type: z.enum(['match', 'stats']).optional()
-  })),
   rules: z.array(z.string()),
   stream: z.object({
     description: z.string(),
@@ -156,21 +141,6 @@ export type Kibana_HTTP_APIs_FieldDefinition = z.infer<typeof Kibana_HTTP_APIs_F
 
 export const Kibana_HTTP_APIs_ClassicStreamUpsertRequest = z.object({
   dashboards: z.array(z.string()),
-  queries: z.array(z.object({
-    description: z.string(),
-    esql: z.object({
-      query: z.string()
-    }),
-    evidence: z.array(z.string()).optional(),
-    features: z.array(z.object({
-      id: z.string(),
-      run_id: z.string().optional()
-    })).optional(),
-    id: z.string(),
-    severity_score: z.number().optional(),
-    title: z.string(),
-    type: z.enum(['match', 'stats']).optional()
-  })),
   rules: z.array(z.string()),
   stream: z.object({
     description: z.string(),
@@ -180,10 +150,11 @@ export const Kibana_HTTP_APIs_ClassicStreamUpsertRequest = z.object({
       }),
       failure_store: Kibana_HTTP_APIs_FailureStore,
       lifecycle: Kibana_HTTP_APIs_IngestStreamLifecycle,
-      processing: z.object({
-        steps: z.array(z.lazy(() => Kibana_HTTP_APIs_StreamlangStep)),
-        updated_at: z.unknown().optional()
-      }),
+      processing: z.union([z.object({
+        steps: z.array(z.lazy(() => Kibana_HTTP_APIs_StreamlangStep))
+      }), z.object({
+        processors: z.array(z.record(z.string(), z.unknown()))
+      })]),
       settings: z.object({
         'index.number_of_replicas': z.object({
           value: z.number()
@@ -206,21 +177,6 @@ export type Kibana_HTTP_APIs_ClassicStreamUpsertRequest = z.infer<typeof Kibana_
 
 export const Kibana_HTTP_APIs_WiredStreamUpsertRequest = z.object({
   dashboards: z.array(z.string()),
-  queries: z.array(z.object({
-    description: z.string(),
-    esql: z.object({
-      query: z.string()
-    }),
-    evidence: z.array(z.string()).optional(),
-    features: z.array(z.object({
-      id: z.string(),
-      run_id: z.string().optional()
-    })).optional(),
-    id: z.string(),
-    severity_score: z.number().optional(),
-    title: z.string(),
-    type: z.enum(['match', 'stats']).optional()
-  })),
   rules: z.array(z.string()),
   stream: z.object({
     description: z.string(),
@@ -228,8 +184,7 @@ export const Kibana_HTTP_APIs_WiredStreamUpsertRequest = z.object({
       failure_store: Kibana_HTTP_APIs_FailureStore,
       lifecycle: Kibana_HTTP_APIs_IngestStreamLifecycle,
       processing: z.object({
-        steps: z.array(z.lazy(() => Kibana_HTTP_APIs_StreamlangStep)),
-        updated_at: z.unknown().optional()
+        steps: z.array(z.lazy(() => Kibana_HTTP_APIs_StreamlangStep))
       }),
       settings: z.object({
         'index.number_of_replicas': z.object({
@@ -558,5 +513,5 @@ export const Kibana_HTTP_APIs_StreamlangStep: z.ZodTypeAny = z.union([z.union([z
 })]), Kibana_HTTP_APIs_StreamlangConditionBlock]).meta({ id: 'Kibana_HTTP_APIs_StreamlangStep' })
 export type Kibana_HTTP_APIs_StreamlangStep = z.infer<typeof Kibana_HTTP_APIs_StreamlangStep>
 
-export const Kibana_HTTP_APIs_RecursiveRecord: z.ZodTypeAny = z.record(z.string(), z.union([z.union([z.string(), z.number(), z.boolean(), z.unknown().nullable(), z.unknown()]), z.array(z.union([z.string(), z.number(), z.boolean(), z.unknown().nullable(), z.unknown()])), z.array(z.unknown()), z.lazy(() => Kibana_HTTP_APIs_RecursiveRecord)])).meta({ id: 'Kibana_HTTP_APIs_RecursiveRecord' })
+export const Kibana_HTTP_APIs_RecursiveRecord: z.ZodTypeAny = z.record(z.string(), z.union([z.union([z.string(), z.number(), z.boolean(), z.unknown()]).nullable(), z.array(z.union([z.string(), z.number(), z.boolean(), z.unknown()]).nullable()), z.array(z.unknown()), z.lazy(() => Kibana_HTTP_APIs_RecursiveRecord)])).meta({ id: 'Kibana_HTTP_APIs_RecursiveRecord' })
 export type Kibana_HTTP_APIs_RecursiveRecord = z.infer<typeof Kibana_HTTP_APIs_RecursiveRecord>

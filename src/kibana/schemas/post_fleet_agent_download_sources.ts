@@ -64,6 +64,7 @@ export const PostFleetAgentDownloadSourcesResponse = z.object({
     host: z.string(),
     id: z.string(),
     is_default: z.boolean().optional(),
+    is_preconfigured: z.boolean().optional(),
     name: z.string(),
     proxy_id: z.string().nullable().optional(),
     secrets: z.object({

@@ -13,6 +13,7 @@
 import { z } from 'zod'
 
 export const PutFleetFleetServerHostsItemidRequest = z.object({
+  allow_edit: z.array(z.string()).optional(),
   host_urls: z.array(z.string()).optional(),
   is_default: z.boolean().optional(),
   is_internal: z.boolean().optional(),
@@ -22,13 +23,13 @@ export const PutFleetFleetServerHostsItemidRequest = z.object({
     ssl: z.object({
       agent_key: z.union([z.object({
         id: z.string()
-      }), z.string()]).optional(),
+      }), z.string()]).nullable().optional(),
       es_key: z.union([z.object({
         id: z.string()
-      }), z.string()]).optional(),
+      }), z.string()]).nullable().optional(),
       key: z.union([z.object({
         id: z.string()
-      }), z.string()]).optional()
+      }), z.string()]).nullable().optional()
     }).optional()
   }).optional(),
   ssl: z.object({
@@ -48,6 +49,7 @@ export type PutFleetFleetServerHostsItemidRequest = z.infer<typeof PutFleetFleet
 
 export const PutFleetFleetServerHostsItemidResponse = z.object({
   item: z.object({
+    allow_edit: z.array(z.string()).optional(),
     host_urls: z.array(z.string()),
     id: z.string(),
     is_default: z.boolean().optional(),
@@ -59,13 +61,13 @@ export const PutFleetFleetServerHostsItemidResponse = z.object({
       ssl: z.object({
         agent_key: z.union([z.object({
           id: z.string()
-        }), z.string()]).optional(),
+        }), z.string()]).nullable().optional(),
         es_key: z.union([z.object({
           id: z.string()
-        }), z.string()]).optional(),
+        }), z.string()]).nullable().optional(),
         key: z.union([z.object({
           id: z.string()
-        }), z.string()]).optional()
+        }), z.string()]).nullable().optional()
       }).optional()
     }).optional(),
     ssl: z.object({

@@ -15,6 +15,7 @@ import { z } from 'zod'
 export const PostFleetAgentsBulkMigrateRequest = z.object({
   agents: z.union([z.array(z.string()), z.string()]),
   batchSize: z.number().optional(),
+  dryRun: z.boolean().optional(),
   enrollment_token: z.string(),
   settings: z.object({
     ca_sha256: z.string().optional(),
@@ -34,7 +35,9 @@ export const PostFleetAgentsBulkMigrateRequest = z.object({
 }).meta({ id: 'PostFleetAgentsBulkMigrateRequest' })
 export type PostFleetAgentsBulkMigrateRequest = z.infer<typeof PostFleetAgentsBulkMigrateRequest>
 
-export const PostFleetAgentsBulkMigrateResponse = z.object({
+export const PostFleetAgentsBulkMigrateResponse = z.union([z.object({
   actionId: z.string()
-}).meta({ id: 'PostFleetAgentsBulkMigrateResponse' })
+}), z.object({
+  count: z.number()
+})]).meta({ id: 'PostFleetAgentsBulkMigrateResponse' })
 export type PostFleetAgentsBulkMigrateResponse = z.infer<typeof PostFleetAgentsBulkMigrateResponse>

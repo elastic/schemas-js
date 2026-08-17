@@ -19,7 +19,7 @@ export const delete_fleet_agentless_policies_policyidDefinitions: KbApiDefinitio
   {
     name: 'delete-fleet-agentless-policies-policyid',
     namespace: 'fleet-agentless-policies',
-    description: 'Delete an agentless policy',
+    description: 'Deprecated: Delete a managed integration',
     method: 'DELETE',
     path: '/api/fleet/agentless_policies/{policyId}',
     destructive: true,

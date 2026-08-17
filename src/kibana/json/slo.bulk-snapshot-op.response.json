@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"bulk-snapshot-op","x-api":{"id":"slo.bulk-snapshot-op","name":"bulk-snapshot-op","namespace":"slo"},"$ref":"./_defs.json#/$defs/SLOs_snapshot_response"}

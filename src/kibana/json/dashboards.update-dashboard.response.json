@@ -1,1 +1,0 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"update-dashboard","x-api":{"id":"dashboards.update-dashboard","name":"update-dashboard","namespace":"dashboards"},"type":"object","properties":{}}

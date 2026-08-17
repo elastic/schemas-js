@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-workflows-executions-executionid-steps-stepid-resume-external","x-api":{"id":"workflows.post-workflows-executions-executionid-steps-stepid-resume-external","name":"post-workflows-executions-executionid-steps-stepid-resume-external","namespace":"workflows"},"type":"object","properties":{}}

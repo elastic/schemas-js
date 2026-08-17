@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-fleet-managed-integrations-policyid","x-api":{"id":"fleet-managed-integrations.get-fleet-managed-integrations-policyid","name":"get-fleet-managed-integrations-policyid","namespace":"fleet-managed-integrations"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_managed_integration_response"}

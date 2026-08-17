@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/streams.get-streams-name-significant-events.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/significantevents.get-streams-name-significant-events.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
@@ -18,7 +18,7 @@ const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 export const get_streams_name_significant_eventsDefinitions: KbApiDefinition[] = [
   {
     name: 'get-streams-name-significant-events',
-    namespace: 'streams',
+    namespace: 'significantevents',
     description: 'Read the significant events',
     method: 'GET',
     path: '/api/streams/{name}/significant_events',

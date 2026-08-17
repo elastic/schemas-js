@@ -75,6 +75,7 @@ export type Security_Osquery_API_ECSMapping = z.infer<typeof Security_Osquery_AP
 export const Security_Osquery_API_ObjectQueriesItem = z.object({
   ecs_mapping: Security_Osquery_API_ECSMapping.optional(),
   id: Security_Osquery_API_QueryId.optional(),
+  interval: z.number().nullable().optional(),
   platform: Security_Osquery_API_Platform.optional(),
   query: Security_Osquery_API_Query.optional(),
   removed: Security_Osquery_API_Removed.optional(),

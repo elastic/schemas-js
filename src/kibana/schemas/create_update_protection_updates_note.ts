@@ -18,6 +18,6 @@ export const Security_Endpoint_Management_API_ProtectionUpdatesNoteResponse = z.
 export type Security_Endpoint_Management_API_ProtectionUpdatesNoteResponse = z.infer<typeof Security_Endpoint_Management_API_ProtectionUpdatesNoteResponse>
 
 export const CreateUpdateProtectionUpdatesNoteRequest = z.object({
-  note: z.string().optional()
+  note: z.string()
 }).meta({ id: 'CreateUpdateProtectionUpdatesNoteRequest' })
 export type CreateUpdateProtectionUpdatesNoteRequest = z.infer<typeof CreateUpdateProtectionUpdatesNoteRequest>

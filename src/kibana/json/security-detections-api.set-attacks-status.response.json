@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"set-attacks-status","x-api":{"id":"security-detections-api.set-attacks-status","name":"set-attacks-status","namespace":"security-detections-api"},"type":"object","additionalProperties":true}

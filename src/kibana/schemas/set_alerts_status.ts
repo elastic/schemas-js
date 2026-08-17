@@ -15,21 +15,25 @@ import { z } from 'zod'
 export const Security_Detections_API_AlertStatusExceptClosed = z.enum(['open', 'acknowledged', 'in-progress']).meta({ id: 'Security_Detections_API_AlertStatusExceptClosed' })
 export type Security_Detections_API_AlertStatusExceptClosed = z.infer<typeof Security_Detections_API_AlertStatusExceptClosed>
 
+export const Security_Detections_API_RuntimeFieldType = z.enum(['keyword', 'long', 'double', 'date', 'ip', 'boolean', 'geo_point']).meta({ id: 'Security_Detections_API_RuntimeFieldType' })
+export type Security_Detections_API_RuntimeFieldType = z.infer<typeof Security_Detections_API_RuntimeFieldType>
+
 export const Security_Detections_API_ReasonEnum = z.enum(['false_positive', 'duplicate', 'true_positive', 'benign_positive', 'automated_closure', 'other']).meta({ id: 'Security_Detections_API_ReasonEnum' })
 export type Security_Detections_API_ReasonEnum = z.infer<typeof Security_Detections_API_ReasonEnum>
-
-export const Security_Detections_API_SetAlertsStatusByQueryBase = z.object({
-  conflicts: z.enum(['abort', 'proceed']).optional(),
-  query: z.record(z.string(), z.unknown()),
-  status: Security_Detections_API_AlertStatusExceptClosed
-}).meta({ id: 'Security_Detections_API_SetAlertsStatusByQueryBase' })
-export type Security_Detections_API_SetAlertsStatusByQueryBase = z.infer<typeof Security_Detections_API_SetAlertsStatusByQueryBase>
 
 export const Security_Detections_API_SetAlertsStatusByIdsBase = z.object({
   signal_ids: z.array(z.string()),
   status: Security_Detections_API_AlertStatusExceptClosed
 }).meta({ id: 'Security_Detections_API_SetAlertsStatusByIdsBase' })
 export type Security_Detections_API_SetAlertsStatusByIdsBase = z.infer<typeof Security_Detections_API_SetAlertsStatusByIdsBase>
+
+export const Security_Detections_API_SetAlertsStatusByQueryBase = z.object({
+  conflicts: z.enum(['abort', 'proceed']).optional(),
+  query: z.record(z.string(), z.unknown()),
+  runtime_fields: z.record(z.string(), Security_Detections_API_RuntimeFieldType).optional(),
+  status: Security_Detections_API_AlertStatusExceptClosed
+}).meta({ id: 'Security_Detections_API_SetAlertsStatusByQueryBase' })
+export type Security_Detections_API_SetAlertsStatusByQueryBase = z.infer<typeof Security_Detections_API_SetAlertsStatusByQueryBase>
 
 export const Security_Detections_API_Reason = z.union([Security_Detections_API_ReasonEnum, z.string()]).meta({ id: 'Security_Detections_API_Reason' })
 export type Security_Detections_API_Reason = z.infer<typeof Security_Detections_API_Reason>
@@ -38,6 +42,7 @@ export const Security_Detections_API_CloseAlertsByQuery = z.object({
   conflicts: z.enum(['abort', 'proceed']).optional(),
   query: z.record(z.string(), z.unknown()),
   reason: Security_Detections_API_Reason.optional(),
+  runtime_fields: z.record(z.string(), Security_Detections_API_RuntimeFieldType).optional(),
   status: z.enum(['closed'])
 }).meta({ id: 'Security_Detections_API_CloseAlertsByQuery' })
 export type Security_Detections_API_CloseAlertsByQuery = z.infer<typeof Security_Detections_API_CloseAlertsByQuery>

@@ -14,11 +14,14 @@ import { z } from 'zod'
 
 export const PostFleetAgentsBulkRemoveCollectorsRequest = z.object({
   agents: z.union([z.array(z.string()), z.string()]),
+  dryRun: z.boolean().optional(),
   includeInactive: z.boolean().optional()
 }).meta({ id: 'PostFleetAgentsBulkRemoveCollectorsRequest' })
 export type PostFleetAgentsBulkRemoveCollectorsRequest = z.infer<typeof PostFleetAgentsBulkRemoveCollectorsRequest>
 
-export const PostFleetAgentsBulkRemoveCollectorsResponse = z.object({
+export const PostFleetAgentsBulkRemoveCollectorsResponse = z.union([z.object({
   actionId: z.string()
-}).meta({ id: 'PostFleetAgentsBulkRemoveCollectorsResponse' })
+}), z.object({
+  count: z.number()
+})]).meta({ id: 'PostFleetAgentsBulkRemoveCollectorsResponse' })
 export type PostFleetAgentsBulkRemoveCollectorsResponse = z.infer<typeof PostFleetAgentsBulkRemoveCollectorsResponse>

@@ -177,6 +177,7 @@ export const Kibana_HTTP_APIs_new_rule = z.object({
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_new_rule' })
 export type Kibana_HTTP_APIs_new_rule = z.infer<typeof Kibana_HTTP_APIs_new_rule>
@@ -225,6 +226,7 @@ export const Kibana_HTTP_APIs_slo_rules_burnrate_create_rule_body_alerting = z.o
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_slo_rules_burnrate_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_slo_rules_burnrate_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_slo_rules_burnrate_create_rule_body_alerting>
@@ -287,6 +289,7 @@ export const Kibana_HTTP_APIs_logs_alert_document_count_create_rule_body_alertin
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_logs_alert_document_count_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_logs_alert_document_count_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_logs_alert_document_count_create_rule_body_alerting>
@@ -329,7 +332,9 @@ export const Kibana_HTTP_APIs_observability_rules_custom_threshold_create_rule_b
       })])),
       threshold: z.array(z.number()),
       timeSize: z.number(),
-      timeUnit: z.string()
+      timeUnit: z.string(),
+      warningComparator: z.string().optional(),
+      warningThreshold: z.array(z.number()).optional()
     })),
     groupBy: z.union([z.string(), z.array(z.string())]).optional(),
     noDataBehavior: z.enum(['recover', 'remainActive', 'alertOnNoData']).optional(),
@@ -459,6 +464,7 @@ export const Kibana_HTTP_APIs_observability_rules_custom_threshold_create_rule_b
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_observability_rules_custom_threshold_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_observability_rules_custom_threshold_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_observability_rules_custom_threshold_create_rule_body_alerting>
@@ -530,6 +536,7 @@ export const Kibana_HTTP_APIs_metrics_alert_threshold_create_rule_body_alerting 
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_metrics_alert_threshold_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_metrics_alert_threshold_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_metrics_alert_threshold_create_rule_body_alerting>
@@ -580,6 +587,7 @@ export const Kibana_HTTP_APIs_metrics_alert_inventory_threshold_create_rule_body
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_metrics_alert_inventory_threshold_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_metrics_alert_inventory_threshold_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_metrics_alert_inventory_threshold_create_rule_body_alerting>
@@ -612,6 +620,7 @@ export const Kibana_HTTP_APIs_xpack_uptime_alerts_durationanomaly_create_rule_bo
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_xpack_uptime_alerts_durationanomaly_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_xpack_uptime_alerts_durationanomaly_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_xpack_uptime_alerts_durationanomaly_create_rule_body_alerting>
@@ -645,6 +654,7 @@ export const Kibana_HTTP_APIs_xpack_uptime_alerts_tlscertificate_create_rule_bod
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_xpack_uptime_alerts_tlscertificate_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_xpack_uptime_alerts_tlscertificate_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_xpack_uptime_alerts_tlscertificate_create_rule_body_alerting>
@@ -699,6 +709,7 @@ export const Kibana_HTTP_APIs_xpack_uptime_alerts_monitorstatus_create_rule_body
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_xpack_uptime_alerts_monitorstatus_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_xpack_uptime_alerts_monitorstatus_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_xpack_uptime_alerts_monitorstatus_create_rule_body_alerting>
@@ -722,8 +733,12 @@ export const Kibana_HTTP_APIs_xpack_synthetics_alerts_tls_create_rule_body_alert
   name: z.string(),
   notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
   params: z.object({
+    browserResourceTypes: z.array(z.string()).optional(),
     certAgeThreshold: z.number().optional(),
     certExpirationThreshold: z.number().optional(),
+    certOrigin: z.array(z.string()).optional(),
+    includeBrowserCerts: z.boolean().optional(),
+    issuers: z.array(z.string()).optional(),
     kqlQuery: z.string().optional(),
     locations: z.array(z.string()).optional(),
     monitorIds: z.array(z.string()).optional(),
@@ -737,6 +752,7 @@ export const Kibana_HTTP_APIs_xpack_synthetics_alerts_tls_create_rule_body_alert
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_xpack_synthetics_alerts_tls_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_xpack_synthetics_alerts_tls_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_xpack_synthetics_alerts_tls_create_rule_body_alerting>
@@ -788,6 +804,7 @@ export const Kibana_HTTP_APIs_xpack_synthetics_alerts_monitorstatus_create_rule_
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_xpack_synthetics_alerts_monitorstatus_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_xpack_synthetics_alerts_monitorstatus_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_xpack_synthetics_alerts_monitorstatus_create_rule_body_alerting>
@@ -833,6 +850,7 @@ export const Kibana_HTTP_APIs_apm_transaction_duration_create_rule_body_alerting
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_apm_transaction_duration_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_apm_transaction_duration_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_apm_transaction_duration_create_rule_body_alerting>
@@ -877,6 +895,7 @@ export const Kibana_HTTP_APIs_apm_transaction_error_rate_create_rule_body_alerti
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_apm_transaction_error_rate_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_apm_transaction_error_rate_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_apm_transaction_error_rate_create_rule_body_alerting>
@@ -920,6 +939,7 @@ export const Kibana_HTTP_APIs_apm_error_rate_create_rule_body_alerting = z.objec
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_apm_error_rate_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_apm_error_rate_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_apm_error_rate_create_rule_body_alerting>
@@ -956,6 +976,7 @@ export const Kibana_HTTP_APIs_apm_anomaly_create_rule_body_alerting = z.object({
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_apm_anomaly_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_apm_anomaly_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_apm_anomaly_create_rule_body_alerting>
@@ -998,6 +1019,7 @@ export const Kibana_HTTP_APIs_transform_health_create_rule_body_alerting = z.obj
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_transform_health_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_transform_health_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_transform_health_create_rule_body_alerting>
@@ -1039,6 +1061,7 @@ export const Kibana_HTTP_APIs_geo_containment_create_rule_body_alerting = z.obje
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_geo_containment_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_geo_containment_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_geo_containment_create_rule_body_alerting>
@@ -1080,6 +1103,7 @@ export const Kibana_HTTP_APIs_index_threshold_create_rule_body_alerting = z.obje
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_index_threshold_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_index_threshold_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_index_threshold_create_rule_body_alerting>
@@ -1130,6 +1154,7 @@ export const Kibana_HTTP_APIs_es_query_create_rule_body_alerting = z.object({
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_es_query_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_es_query_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_es_query_create_rule_body_alerting>
@@ -1167,6 +1192,7 @@ export const Kibana_HTTP_APIs_datasetquality_degradeddocs_create_rule_body_alert
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_datasetquality_degradeddocs_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_datasetquality_degradeddocs_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_datasetquality_degradeddocs_create_rule_body_alerting>
@@ -1208,7 +1234,9 @@ export const Kibana_HTTP_APIs_xpack_ml_anomaly_detection_jobs_health_create_rule
       }).nullable().optional(),
       delayedData: z.object({
         docsCount: z.number().nullable().optional(),
+        docsCountPercentage: z.number().nullable().optional(),
         enabled: z.boolean().optional(),
+        thresholdType: z.enum(['count', 'percentage']).optional(),
         timeInterval: z.string().nullable().optional()
       }).nullable().optional(),
       errorMessages: z.object({
@@ -1224,6 +1252,7 @@ export const Kibana_HTTP_APIs_xpack_ml_anomaly_detection_jobs_health_create_rule
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_xpack_ml_anomaly_detection_jobs_health_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_xpack_ml_anomaly_detection_jobs_health_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_xpack_ml_anomaly_detection_jobs_health_create_rule_body_alerting>
@@ -1263,6 +1292,7 @@ export const Kibana_HTTP_APIs_xpack_ml_anomaly_detection_alert_create_rule_body_
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_xpack_ml_anomaly_detection_alert_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_xpack_ml_anomaly_detection_alert_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_xpack_ml_anomaly_detection_alert_create_rule_body_alerting>
@@ -1296,6 +1326,7 @@ export const Kibana_HTTP_APIs_monitoring_alert_thread_pool_write_rejections_crea
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_thread_pool_write_rejections_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_monitoring_alert_thread_pool_write_rejections_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_thread_pool_write_rejections_create_rule_body_alerting>
@@ -1329,6 +1360,7 @@ export const Kibana_HTTP_APIs_monitoring_alert_thread_pool_search_rejections_cre
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_thread_pool_search_rejections_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_monitoring_alert_thread_pool_search_rejections_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_thread_pool_search_rejections_create_rule_body_alerting>
@@ -1364,6 +1396,7 @@ export const Kibana_HTTP_APIs_monitoring_shard_size_create_rule_body_alerting = 
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_monitoring_shard_size_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_monitoring_shard_size_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_shard_size_create_rule_body_alerting>
@@ -1398,6 +1431,7 @@ export const Kibana_HTTP_APIs_monitoring_alert_nodes_changed_create_rule_body_al
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_nodes_changed_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_monitoring_alert_nodes_changed_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_nodes_changed_create_rule_body_alerting>
@@ -1432,6 +1466,7 @@ export const Kibana_HTTP_APIs_monitoring_alert_missing_monitoring_data_create_ru
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_missing_monitoring_data_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_monitoring_alert_missing_monitoring_data_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_missing_monitoring_data_create_rule_body_alerting>
@@ -1466,6 +1501,7 @@ export const Kibana_HTTP_APIs_monitoring_alert_jvm_memory_usage_create_rule_body
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_jvm_memory_usage_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_monitoring_alert_jvm_memory_usage_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_jvm_memory_usage_create_rule_body_alerting>
@@ -1500,6 +1536,7 @@ export const Kibana_HTTP_APIs_monitoring_alert_logstash_version_mismatch_create_
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_logstash_version_mismatch_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_monitoring_alert_logstash_version_mismatch_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_logstash_version_mismatch_create_rule_body_alerting>
@@ -1534,6 +1571,7 @@ export const Kibana_HTTP_APIs_monitoring_alert_license_expiration_create_rule_bo
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_license_expiration_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_monitoring_alert_license_expiration_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_license_expiration_create_rule_body_alerting>
@@ -1568,6 +1606,7 @@ export const Kibana_HTTP_APIs_monitoring_alert_kibana_version_mismatch_create_ru
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_kibana_version_mismatch_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_monitoring_alert_kibana_version_mismatch_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_kibana_version_mismatch_create_rule_body_alerting>
@@ -1602,6 +1641,7 @@ export const Kibana_HTTP_APIs_monitoring_alert_elasticsearch_version_mismatch_cr
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_elasticsearch_version_mismatch_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_monitoring_alert_elasticsearch_version_mismatch_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_elasticsearch_version_mismatch_create_rule_body_alerting>
@@ -1636,6 +1676,7 @@ export const Kibana_HTTP_APIs_monitoring_alert_disk_usage_create_rule_body_alert
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_disk_usage_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_monitoring_alert_disk_usage_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_disk_usage_create_rule_body_alerting>
@@ -1670,6 +1711,7 @@ export const Kibana_HTTP_APIs_monitoring_alert_cpu_usage_create_rule_body_alerti
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_cpu_usage_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_monitoring_alert_cpu_usage_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_cpu_usage_create_rule_body_alerting>
@@ -1704,6 +1746,7 @@ export const Kibana_HTTP_APIs_monitoring_alert_cluster_health_create_rule_body_a
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_cluster_health_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_monitoring_alert_cluster_health_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_cluster_health_create_rule_body_alerting>
@@ -1738,6 +1781,7 @@ export const Kibana_HTTP_APIs_monitoring_ccr_read_exceptions_create_rule_body_al
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_monitoring_ccr_read_exceptions_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_monitoring_ccr_read_exceptions_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_ccr_read_exceptions_create_rule_body_alerting>

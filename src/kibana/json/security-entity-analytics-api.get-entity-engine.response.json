@@ -1,1 +1,0 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-entity-engine","x-api":{"id":"security-entity-analytics-api.get-entity-engine","name":"get-entity-engine","namespace":"security-entity-analytics-api"},"$ref":"./_defs.json#/$defs/Security_Entity_Analytics_API_EngineDescriptor"}

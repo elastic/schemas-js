@@ -17,6 +17,7 @@ export const Security_Entity_Analytics_API_WatchlistObject = z.object({
   description: z.string().optional(),
   entityCount: z.number().optional(),
   entitySourceIds: z.array(z.string()).optional(),
+  hasManualEntities: z.boolean().optional(),
   id: z.string().optional(),
   managed: z.boolean(),
   name: z.string(),

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-links-id","x-api":{"id":"links.delete-links-id","name":"delete-links-id","namespace":"links"},"type":"object","properties":{}}

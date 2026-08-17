@@ -15,11 +15,14 @@ import { z } from 'zod'
 export const PostFleetAgentsBulkRollbackRequest = z.object({
   agents: z.union([z.array(z.string()), z.string()]),
   batchSize: z.number().optional(),
+  dryRun: z.boolean().optional(),
   includeInactive: z.boolean().optional()
 }).meta({ id: 'PostFleetAgentsBulkRollbackRequest' })
 export type PostFleetAgentsBulkRollbackRequest = z.infer<typeof PostFleetAgentsBulkRollbackRequest>
 
-export const PostFleetAgentsBulkRollbackResponse = z.object({
+export const PostFleetAgentsBulkRollbackResponse = z.union([z.object({
   actionIds: z.array(z.string())
-}).meta({ id: 'PostFleetAgentsBulkRollbackResponse' })
+}), z.object({
+  count: z.number()
+})]).meta({ id: 'PostFleetAgentsBulkRollbackResponse' })
 export type PostFleetAgentsBulkRollbackResponse = z.infer<typeof PostFleetAgentsBulkRollbackResponse>
