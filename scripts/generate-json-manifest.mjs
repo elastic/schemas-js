@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 /*
  * Copyright Elasticsearch B.V. and contributors
  * SPDX-License-Identifier: Apache-2.0
@@ -24,7 +23,7 @@ const srcDir = join(repoRoot, 'src')
 
 export const JSON_MANIFEST_CATEGORIES = ['es', 'kibana', 'cloud', 'serverless']
 
-function quoteFilename (file) {
+export function quoteFilename (file) {
   return `'${file.replace(/\\/g, '\\\\').replace(/'/g, "\\'")}'`
 }
 
