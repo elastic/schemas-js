@@ -139,6 +139,7 @@ const generators = [
     outputSubdir: join('json-schema', 'elasticsearch'),
     srcSubdir: join('es', 'json'),
     lint: false,
+    jsonManifest: true,
   },
   {
     name: 'JSON Schema: Kibana',
@@ -146,6 +147,7 @@ const generators = [
     outputSubdir: join('json-schema', 'kibana'),
     srcSubdir: join('kibana', 'json'),
     lint: false,
+    jsonManifest: true,
   },
   {
     name: 'JSON Schema: Cloud',
@@ -153,6 +155,7 @@ const generators = [
     outputSubdir: join('json-schema', 'cloud'),
     srcSubdir: join('cloud', 'json'),
     lint: false,
+    jsonManifest: true,
   },
   {
     name: 'Zod: Serverless',
@@ -172,6 +175,7 @@ const generators = [
     outputSubdir: join('json-schema', 'serverless'),
     srcSubdir: join('serverless', 'json'),
     lint: false,
+    jsonManifest: true,
   },
 ]
 
@@ -184,13 +188,21 @@ export default async function generate (generatorPath) {
   log.text = 'Deleting generated .ts files'
   await deleteGenerated()
 
-  for (const { name, npmScript, outputSubdir, srcSubdir, lint = true } of generators) {
+  for (const { name, npmScript, outputSubdir, srcSubdir, lint = true, jsonManifest = false } of generators) {
     log.text = `Running ${name} generator`
     await run('npm', ['run', npmScript], generatorPath)
 
     const dest = join(srcDir, srcSubdir)
     log.text = `Syncing ${name} output → src/${srcSubdir}/`
     await syncDir(join(generatorPath, 'output', outputSubdir), dest)
+
+    if (jsonManifest) {
+      const from = join(dest, 'json-manifest.ts')
+      const to = join(dest, '..', 'tools', 'json-manifest.ts')
+      log.text = `Moving json-manifest.ts → ${to}`
+      await fs.rename(from, to)
+      await run('node_modules/.bin/eslint', ['--cache', '--fix', to], repoRoot)
+    }
 
     if (lint) {
       log.text = `Lint-fixing ${name} output`
