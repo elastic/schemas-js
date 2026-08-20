@@ -24,8 +24,7 @@ const srcDir = join(repoRoot, 'src')
 
 export const JSON_MANIFEST_CATEGORIES = ['es', 'kibana', 'cloud', 'serverless']
 
-/** Quotes a filename as a single-quoted string literal, matching this repo's lint style. */
-export function quoteFilename (file) {
+function quoteFilename (file) {
   return `'${file.replace(/\\/g, '\\\\').replace(/'/g, "\\'")}'`
 }
 
