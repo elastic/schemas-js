@@ -20,6 +20,7 @@ import { promises as fs } from 'node:fs'
 import { spawn } from 'node:child_process'
 import { parseArgs } from 'node:util'
 import ora from 'ora'
+import { writeAllJsonManifests } from './generate-json-manifest.mjs'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 export const repoRoot = join(__dirname, '..')
@@ -197,6 +198,9 @@ export default async function generate (generatorPath) {
       await run('node_modules/.bin/eslint', ['--cache', '--fix', dest], repoRoot)
     }
   }
+
+  log.text = 'Writing JSON schema manifests'
+  await writeAllJsonManifests()
 
   log.succeed('Codegen complete. src/ updated.')
 }
