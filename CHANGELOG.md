@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.7.0](https://github.com/elastic/schemas-js/compare/v0.6.2...v0.7.0) (2026-08-21)
+
+
+### Features
+
+* generate json schema filename manifests ([#74](https://github.com/elastic/schemas-js/issues/74)) ([6ce02bc](https://github.com/elastic/schemas-js/commit/6ce02bc72e6419b2a28365eacc8dc62ce9c837a5))
+* **zod:** type deduplication ([#75](https://github.com/elastic/schemas-js/issues/75)) ([edd30e2](https://github.com/elastic/schemas-js/commit/edd30e2f02113eaabb7203cef360ea7017723c28))
+
+
+### Bug Fixes
+
+* correct misnamed Kibana API ([#69](https://github.com/elastic/schemas-js/issues/69)) ([4a61cb2](https://github.com/elastic/schemas-js/commit/4a61cb2bad9039bdf0cdb7e7f2230208aa372bf7))
+* update Kibana API definitions to use a fresher source spec ([#73](https://github.com/elastic/schemas-js/issues/73)) ([72433aa](https://github.com/elastic/schemas-js/commit/72433aad4459957ea7c70f0e3a037a9b428e6981))
+
 ## [0.6.2](https://github.com/elastic/schemas-js/compare/v0.6.1...v0.6.2) (2026-08-11)
 
 
