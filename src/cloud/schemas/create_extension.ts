@@ -12,12 +12,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const ExtensionFileMetadata = z.object({
-  last_modified_date: z.string().optional(),
-  size: z.number().optional(),
-  url: z.string().optional()
-}).meta({ id: 'ExtensionFileMetadata' })
-export type ExtensionFileMetadata = z.infer<typeof ExtensionFileMetadata>
+import { Extension, ExtensionFileMetadata } from './definitions/misc.js'
 
 export const CreateExtensionRequest = z.object({
   name: z.string(),
@@ -27,19 +22,6 @@ export const CreateExtensionRequest = z.object({
   version: z.string()
 }).meta({ id: 'CreateExtensionRequest' })
 export type CreateExtensionRequest = z.infer<typeof CreateExtensionRequest>
-
-export const Extension = z.object({
-  id: z.string(),
-  name: z.string(),
-  description: z.string().optional(),
-  url: z.string(),
-  download_url: z.string().optional(),
-  extension_type: z.enum(['plugin', 'bundle']),
-  version: z.string(),
-  deployments: z.array(z.string()).optional(),
-  file_metadata: ExtensionFileMetadata.optional()
-}).meta({ id: 'Extension' })
-export type Extension = z.infer<typeof Extension>
 
 export const CreateExtensionResponse = Extension
 export type CreateExtensionResponse = Extension

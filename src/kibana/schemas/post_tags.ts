@@ -11,31 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Kibana_HTTP_APIs_kbn_as_code_meta = z.object({
-  created_at: z.string().optional(),
-  created_by: z.string().optional(),
-  managed: z.boolean().optional(),
-  owner: z.string().optional(),
-  updated_at: z.string().optional(),
-  updated_by: z.string().optional(),
-  version: z.string().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_kbn_as_code_meta' })
-export type Kibana_HTTP_APIs_kbn_as_code_meta = z.infer<typeof Kibana_HTTP_APIs_kbn_as_code_meta>
-
-export const Kibana_HTTP_APIs_kbn_tags_attributes = z.object({
-  color: z.string(),
-  description: z.string().optional(),
-  name: z.string()
-}).meta({ id: 'Kibana_HTTP_APIs_kbn_tags_attributes' })
-export type Kibana_HTTP_APIs_kbn_tags_attributes = z.infer<typeof Kibana_HTTP_APIs_kbn_tags_attributes>
-
-export const Kibana_HTTP_APIs_kbn_tags_request_attributes = z.object({
-  color: z.string().optional(),
-  description: z.string().optional(),
-  name: z.string()
-}).meta({ id: 'Kibana_HTTP_APIs_kbn_tags_request_attributes' })
-export type Kibana_HTTP_APIs_kbn_tags_request_attributes = z.infer<typeof Kibana_HTTP_APIs_kbn_tags_request_attributes>
+import { Kibana_HTTP_APIs_kbn_as_code_meta, Kibana_HTTP_APIs_kbn_tags_attributes } from './schemas/kibana.js'
 
 export const PostTagsResponse = z.object({
   data: Kibana_HTTP_APIs_kbn_tags_attributes,
@@ -43,3 +19,7 @@ export const PostTagsResponse = z.object({
   meta: Kibana_HTTP_APIs_kbn_as_code_meta
 }).meta({ id: 'PostTagsResponse' })
 export type PostTagsResponse = z.infer<typeof PostTagsResponse>
+
+export { Kibana_HTTP_APIs_kbn_as_code_meta } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_kbn_tags_attributes } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_kbn_tags_request_attributes } from './schemas/kibana.js'

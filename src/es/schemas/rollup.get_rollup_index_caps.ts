@@ -3,58 +3,23 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-/**
- * A duration. Units can be `nanos`, `micros`, `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours) and
- * `d` (days). Also accepts "0" without a unit and "-1" to indicate an unspecified value.
- */
-export const Duration = z.union([z.string(), z.literal(-1), z.literal(0)]).meta({ id: 'Duration' })
-export type Duration = z.infer<typeof Duration>
-
-/** Path to field or array of paths. Some API's support wildcards in the path to select multiple fields. */
-export const Field = z.string().meta({ id: 'Field' })
-export type Field = z.infer<typeof Field>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const Ids = z.union([Id, z.array(Id)]).meta({ id: 'Ids' })
-export type Ids = z.infer<typeof Ids>
-
-export const IndexName = z.string().meta({ id: 'IndexName' })
-export type IndexName = z.infer<typeof IndexName>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
-
-export const TimeZone = z.string().meta({ id: 'TimeZone' })
-export type TimeZone = z.infer<typeof TimeZone>
+import { Duration, Field, Id, Ids, IndexName, TimeZone } from './_types.js'
 
 export const RollupGetRollupIndexCapsRollupJobSummaryField = z.object({
   agg: z.string(),
-  time_zone: TimeZone.optional(),
-  calendar_interval: Duration.optional()
+  time_zone: z.lazy(() => TimeZone).optional(),
+  calendar_interval: z.lazy(() => Duration).optional()
 }).meta({ id: 'RollupGetRollupIndexCapsRollupJobSummaryField' })
 export type RollupGetRollupIndexCapsRollupJobSummaryField = z.infer<typeof RollupGetRollupIndexCapsRollupJobSummaryField>
 
 export const RollupGetRollupIndexCapsRollupJobSummary = z.object({
-  fields: z.record(Field, z.array(RollupGetRollupIndexCapsRollupJobSummaryField)),
+  fields: z.record(z.lazy(() => Field), z.array(RollupGetRollupIndexCapsRollupJobSummaryField)),
   index_pattern: z.string(),
-  job_id: Id,
-  rollup_index: IndexName
+  job_id: z.lazy(() => Id),
+  rollup_index: z.lazy(() => IndexName)
 }).meta({ id: 'RollupGetRollupIndexCapsRollupJobSummary' })
 export type RollupGetRollupIndexCapsRollupJobSummary = z.infer<typeof RollupGetRollupIndexCapsRollupJobSummary>
 
@@ -74,10 +39,9 @@ export type RollupGetRollupIndexCapsIndexCapabilities = z.infer<typeof RollupGet
  * @deprecated
  */
 export const RollupGetRollupIndexCapsRequest = z.object({
-  ...RequestBase.shape,
-  index: Ids.describe('Data stream or index to check for rollup capabilities. Wildcard (`*`) expressions are supported.').meta({ found_in: 'path' })
+  index: z.lazy(() => Ids).describe('Data stream or index to check for rollup capabilities. Wildcard (`*`) expressions are supported.').meta({ found_in: 'path' })
 }).meta({ id: 'RollupGetRollupIndexCapsRequest' })
 export type RollupGetRollupIndexCapsRequest = z.infer<typeof RollupGetRollupIndexCapsRequest>
 
-export const RollupGetRollupIndexCapsResponse = z.record(IndexName, RollupGetRollupIndexCapsIndexCapabilities).meta({ id: 'RollupGetRollupIndexCapsResponse' })
+export const RollupGetRollupIndexCapsResponse = z.record(z.lazy(() => IndexName), RollupGetRollupIndexCapsIndexCapabilities).meta({ id: 'RollupGetRollupIndexCapsResponse' })
 export type RollupGetRollupIndexCapsResponse = z.infer<typeof RollupGetRollupIndexCapsResponse>

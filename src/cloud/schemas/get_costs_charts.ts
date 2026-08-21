@@ -12,23 +12,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const ChartItemValue = z.object({
-  id: z.string(),
-  name: z.string(),
-  value: z.number()
-}).meta({ id: 'ChartItemValue' })
-export type ChartItemValue = z.infer<typeof ChartItemValue>
-
-export const ChartItem = z.object({
-  timestamp: z.number(),
-  values: z.array(ChartItemValue)
-}).meta({ id: 'ChartItem' })
-export type ChartItem = z.infer<typeof ChartItem>
-
-export const ChartItems = z.object({
-  data: z.array(ChartItem)
-}).meta({ id: 'ChartItems' })
-export type ChartItems = z.infer<typeof ChartItems>
+import { ChartItem, ChartItemValue, ChartItems } from './definitions/misc.js'
 
 export const GetCostsChartsResponse = ChartItems
 export type GetCostsChartsResponse = ChartItems

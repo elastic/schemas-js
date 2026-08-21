@@ -11,16 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Timeline_API_TimelineType = z.enum(['default', 'template']).meta({ id: 'Security_Timeline_API_TimelineType' })
-export type Security_Timeline_API_TimelineType = z.infer<typeof Security_Timeline_API_TimelineType>
-
-export const Security_Timeline_API_FavoriteTimelineResult = z.object({
-  favoriteDate: z.number().nullable().optional(),
-  fullName: z.string().nullable().optional(),
-  userName: z.string().nullable().optional()
-}).meta({ id: 'Security_Timeline_API_FavoriteTimelineResult' })
-export type Security_Timeline_API_FavoriteTimelineResult = z.infer<typeof Security_Timeline_API_FavoriteTimelineResult>
+import { Security_Timeline_API_FavoriteTimelineResult, Security_Timeline_API_TimelineType } from './schemas/security.js'
 
 export const Security_Timeline_API_FavoriteTimelineResponse = z.object({
   favorite: z.array(Security_Timeline_API_FavoriteTimelineResult).optional(),
@@ -39,3 +30,6 @@ export const PersistFavoriteRouteRequest = z.object({
   timelineType: Security_Timeline_API_TimelineType
 }).meta({ id: 'PersistFavoriteRouteRequest' })
 export type PersistFavoriteRouteRequest = z.infer<typeof PersistFavoriteRouteRequest>
+
+export { Security_Timeline_API_TimelineType } from './schemas/security.js'
+export { Security_Timeline_API_FavoriteTimelineResult } from './schemas/security.js'

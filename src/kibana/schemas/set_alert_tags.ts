@@ -11,21 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Detections_API_AlertTag = z.string().meta({ id: 'Security_Detections_API_AlertTag' })
-export type Security_Detections_API_AlertTag = z.infer<typeof Security_Detections_API_AlertTag>
-
-export const Security_Detections_API_AlertIds = z.array(z.string()).meta({ id: 'Security_Detections_API_AlertIds' })
-export type Security_Detections_API_AlertIds = z.infer<typeof Security_Detections_API_AlertIds>
-
-export const Security_Detections_API_AlertTags = z.array(Security_Detections_API_AlertTag).meta({ id: 'Security_Detections_API_AlertTags' })
-export type Security_Detections_API_AlertTags = z.infer<typeof Security_Detections_API_AlertTags>
-
-export const Security_Detections_API_SetAlertTags = z.object({
-  tags_to_add: Security_Detections_API_AlertTags,
-  tags_to_remove: Security_Detections_API_AlertTags
-}).meta({ id: 'Security_Detections_API_SetAlertTags' })
-export type Security_Detections_API_SetAlertTags = z.infer<typeof Security_Detections_API_SetAlertTags>
+import { Security_Detections_API_AlertIds, Security_Detections_API_SetAlertTags } from './schemas/security.js'
 
 export const Security_Detections_API_SetAlertTagsBody = z.object({
   ids: Security_Detections_API_AlertIds,
@@ -35,3 +21,8 @@ export type Security_Detections_API_SetAlertTagsBody = z.infer<typeof Security_D
 
 export const SetAlertTagsResponse = z.record(z.string(), z.unknown()).meta({ id: 'SetAlertTagsResponse' })
 export type SetAlertTagsResponse = z.infer<typeof SetAlertTagsResponse>
+
+export { Security_Detections_API_SetAlertTags } from './schemas/security.js'
+export { Security_Detections_API_AlertTags } from './schemas/security.js'
+export { Security_Detections_API_AlertTag } from './schemas/security.js'
+export { Security_Detections_API_AlertIds } from './schemas/security.js'

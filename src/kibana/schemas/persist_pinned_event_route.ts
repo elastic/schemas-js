@@ -11,26 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Timeline_API_PinnedEventCreatedAndUpdatedMetadata = z.object({
-  created: z.number().nullable().optional(),
-  createdBy: z.string().nullable().optional(),
-  updated: z.number().nullable().optional(),
-  updatedBy: z.string().nullable().optional()
-}).meta({ id: 'Security_Timeline_API_PinnedEventCreatedAndUpdatedMetadata' })
-export type Security_Timeline_API_PinnedEventCreatedAndUpdatedMetadata = z.infer<typeof Security_Timeline_API_PinnedEventCreatedAndUpdatedMetadata>
-
-export const Security_Timeline_API_BarePinnedEvent = Security_Timeline_API_PinnedEventCreatedAndUpdatedMetadata.merge(z.object({
-  eventId: z.string(),
-  timelineId: z.string()
-})).meta({ id: 'Security_Timeline_API_BarePinnedEvent' })
-export type Security_Timeline_API_BarePinnedEvent = z.infer<typeof Security_Timeline_API_BarePinnedEvent>
-
-export const Security_Timeline_API_PinnedEvent = z.intersection(Security_Timeline_API_BarePinnedEvent, z.object({
-  pinnedEventId: z.string(),
-  version: z.string()
-})).meta({ id: 'Security_Timeline_API_PinnedEvent' })
-export type Security_Timeline_API_PinnedEvent = z.infer<typeof Security_Timeline_API_PinnedEvent>
+import { Security_Timeline_API_PinnedEvent } from './schemas/security.js'
 
 export const Security_Timeline_API_PersistPinnedEventResponse = z.union([Security_Timeline_API_PinnedEvent, z.object({
   unpinned: z.boolean()
@@ -43,3 +24,7 @@ export const PersistPinnedEventRouteRequest = z.object({
   timelineId: z.string()
 }).meta({ id: 'PersistPinnedEventRouteRequest' })
 export type PersistPinnedEventRouteRequest = z.infer<typeof PersistPinnedEventRouteRequest>
+
+export { Security_Timeline_API_PinnedEvent } from './schemas/security.js'
+export { Security_Timeline_API_BarePinnedEvent } from './schemas/security.js'
+export { Security_Timeline_API_PinnedEventCreatedAndUpdatedMetadata } from './schemas/security.js'

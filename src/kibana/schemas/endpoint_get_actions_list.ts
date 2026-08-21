@@ -11,42 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Endpoint_Management_API_Command = z.enum(['isolate', 'unisolate', 'kill-process', 'suspend-process', 'running-processes', 'get-file', 'execute', 'upload', 'scan', 'runscript', 'cancel', 'memory-dump']).meta({ id: 'Security_Endpoint_Management_API_Command' })
-export type Security_Endpoint_Management_API_Command = z.infer<typeof Security_Endpoint_Management_API_Command>
-
-export const Security_Endpoint_Management_API_AgentTypes = z.enum(['endpoint', 'sentinel_one', 'crowdstrike', 'microsoft_defender_endpoint']).meta({ id: 'Security_Endpoint_Management_API_AgentTypes' })
-export type Security_Endpoint_Management_API_AgentTypes = z.infer<typeof Security_Endpoint_Management_API_AgentTypes>
-
-export const Security_Endpoint_Management_API_ResponseActionDetails = z.object({
-  agents: z.array(z.string()).optional(),
-  agentState: z.record(z.string(), z.object({
-    completedAt: z.string().optional(),
-    isCompleted: z.boolean().optional(),
-    wasCanceled: z.boolean().optional(),
-    wasSuccessful: z.boolean().optional()
-  })).optional(),
-  agentType: Security_Endpoint_Management_API_AgentTypes.optional(),
-  command: Security_Endpoint_Management_API_Command,
-  completedAt: z.string().optional(),
-  createdBy: z.string().optional(),
-  hosts: z.record(z.string(), z.object({
-    name: z.string().optional()
-  })).optional(),
-  id: z.string().optional(),
-  isComplete: z.boolean().optional(),
-  isExpired: z.boolean().optional(),
-  outputs: z.record(z.string(), z.object({
-    content: z.union([z.object({}), z.string()]),
-    type: z.enum(['json', 'text'])
-  })).optional(),
-  parameters: z.object({}).optional(),
-  startedAt: z.string().optional(),
-  status: z.string().optional(),
-  wasCanceled: z.boolean().optional(),
-  wasSuccessful: z.boolean().optional()
-}).meta({ id: 'Security_Endpoint_Management_API_ResponseActionDetails' })
-export type Security_Endpoint_Management_API_ResponseActionDetails = z.infer<typeof Security_Endpoint_Management_API_ResponseActionDetails>
+import { Security_Endpoint_Management_API_ResponseActionDetails } from './schemas/security.js'
 
 export const Security_Endpoint_Management_API_GetEndpointActionListResponse = z.object({
   agentTypes: z.array(z.string()).optional(),
@@ -62,3 +27,7 @@ export const Security_Endpoint_Management_API_GetEndpointActionListResponse = z.
   userIds: z.array(z.string()).optional()
 }).meta({ id: 'Security_Endpoint_Management_API_GetEndpointActionListResponse' })
 export type Security_Endpoint_Management_API_GetEndpointActionListResponse = z.infer<typeof Security_Endpoint_Management_API_GetEndpointActionListResponse>
+
+export { Security_Endpoint_Management_API_ResponseActionDetails } from './schemas/security.js'
+export { Security_Endpoint_Management_API_Command } from './schemas/security.js'
+export { Security_Endpoint_Management_API_AgentTypes } from './schemas/security.js'

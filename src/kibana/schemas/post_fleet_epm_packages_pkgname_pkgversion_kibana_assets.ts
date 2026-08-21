@@ -12,11 +12,6 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Kibana_HTTP_APIs_install_kibana_assets_response = z.object({
-  success: z.boolean()
-}).meta({ id: 'Kibana_HTTP_APIs_install_kibana_assets_response' })
-export type Kibana_HTTP_APIs_install_kibana_assets_response = z.infer<typeof Kibana_HTTP_APIs_install_kibana_assets_response>
-
 export const Kibana_HTTP_APIs_install_kibana_assets_request = z.object({
   force: z.boolean().optional(),
   space_ids: z.array(z.string()).optional()
@@ -25,3 +20,5 @@ export type Kibana_HTTP_APIs_install_kibana_assets_request = z.infer<typeof Kiba
 
 export const PostFleetEpmPackagesPkgnamePkgversionKibanaAssetsRequest = Kibana_HTTP_APIs_install_kibana_assets_request.nullable().meta({ id: 'PostFleetEpmPackagesPkgnamePkgversionKibanaAssetsRequest' })
 export type PostFleetEpmPackagesPkgnamePkgversionKibanaAssetsRequest = z.infer<typeof PostFleetEpmPackagesPkgnamePkgversionKibanaAssetsRequest>
+
+export { Kibana_HTTP_APIs_install_kibana_assets_response } from './schemas/kibana.js'

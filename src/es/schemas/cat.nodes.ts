@@ -3,53 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const long = z.number().meta({ id: 'long' })
-export type long = z.infer<typeof long>
-
-export const ByteSize = z.union([long, z.string()]).meta({ id: 'ByteSize' })
-export type ByteSize = z.infer<typeof ByteSize>
-
-/**
- * A duration. Units can be `nanos`, `micros`, `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours) and
- * `d` (days). Also accepts "0" without a unit and "-1" to indicate an unspecified value.
- */
-export const Duration = z.union([z.string(), z.literal(-1), z.literal(0)]).meta({ id: 'Duration' })
-export type Duration = z.infer<typeof Duration>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const Name = z.string().meta({ id: 'Name' })
-export type Name = z.infer<typeof Name>
-
-export const Names = z.union([Name, z.array(Name)]).meta({ id: 'Names' })
-export type Names = z.infer<typeof Names>
-
-export const float = z.number().meta({ id: 'float' })
-export type float = z.infer<typeof float>
-
-export const Percentage = z.union([z.string(), float]).meta({ id: 'Percentage' })
-export type Percentage = z.infer<typeof Percentage>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
-
-export const VersionString = z.string().meta({ id: 'VersionString' })
-export type VersionString = z.infer<typeof VersionString>
+import { ByteSize, Duration, Id, Name, Names, Percentage, VersionString } from './_types.js'
 
 export const CatCatNodeColumn = z.union([z.enum(['build', 'b', 'completion.size', 'cs', 'completionSize', 'cpu', 'disk.avail', 'd', 'disk', 'diskAvail', 'disk.total', 'dt', 'diskTotal', 'disk.used', 'du', 'diskUsed', 'disk.used_percent', 'dup', 'diskUsedPercent', 'fielddata.evictions', 'fe', 'fielddataEvictions', 'fielddata.memory_size', 'fm', 'fielddataMemory', 'file_desc.current', 'fdc', 'fileDescriptorCurrent', 'file_desc.max', 'fdm', 'fileDescriptorMax', 'file_desc.percent', 'fdp', 'fileDescriptorPercent', 'flush.total', 'ft', 'flushTotal', 'flush.total_time', 'ftt', 'flushTotalTime', 'get.current', 'gc', 'getCurrent', 'get.exists_time', 'geti', 'getExistsTime', 'get.exists_total', 'geto', 'getExistsTotal', 'get.missing_time', 'gmti', 'getMissingTime', 'get.missing_total', 'gmto', 'getMissingTotal', 'get.time', 'gti', 'getTime', 'get.total', 'gto', 'getTotal', 'heap.current', 'hc', 'heapCurrent', 'heap.max', 'hm', 'heapMax', 'heap.percent', 'hp', 'heapPercent', 'http_address', 'http', 'id', 'nodeId', 'indexing.delete_current', 'idc', 'indexingDeleteCurrent', 'indexing.delete_time', 'idti', 'indexingDeleteTime', 'indexing.delete_total', 'idto', 'indexingDeleteTotal', 'indexing.index_current', 'iic', 'indexingIndexCurrent', 'indexing.index_failed', 'iif', 'indexingIndexFailed', 'indexing.index_failed_due_to_version_conflict', 'iifvc', 'indexingIndexFailedDueToVersionConflict', 'indexing.index_time', 'iiti', 'indexingIndexTime', 'indexing.index_total', 'iito', 'indexingIndexTotal', 'ip', 'i', 'jdk', 'j', 'load_1m', 'l', 'load_5m', 'l', 'load_15m', 'l', 'available_processors', 'ap', 'mappings.total_count', 'mtc', 'mappingsTotalCount', 'mappings.total_estimated_overhead_in_bytes', 'mteo', 'mappingsTotalEstimatedOverheadInBytes', 'master', 'm', 'merges.current', 'mc', 'mergesCurrent', 'merges.current_docs', 'mcd', 'mergesCurrentDocs', 'merges.current_size', 'mcs', 'mergesCurrentSize', 'merges.total', 'mt', 'mergesTotal', 'merges.total_docs', 'mtd', 'mergesTotalDocs', 'merges.total_size', 'mts', 'mergesTotalSize', 'merges.total_time', 'mtt', 'mergesTotalTime', 'name', 'n', 'node.role', 'r', 'role', 'nodeRole', 'pid', 'p', 'port', 'po', 'query_cache.memory_size', 'qcm', 'queryCacheMemory', 'query_cache.evictions', 'qce', 'queryCacheEvictions', 'query_cache.hit_count', 'qchc', 'queryCacheHitCount', 'query_cache.miss_count', 'qcmc', 'queryCacheMissCount', 'ram.current', 'rc', 'ramCurrent', 'ram.max', 'rm', 'ramMax', 'ram.percent', 'rp', 'ramPercent', 'refresh.total', 'rto', 'refreshTotal', 'refresh.time', 'rti', 'refreshTime', 'request_cache.memory_size', 'rcm', 'requestCacheMemory', 'request_cache.evictions', 'rce', 'requestCacheEvictions', 'request_cache.hit_count', 'rchc', 'requestCacheHitCount', 'request_cache.miss_count', 'rcmc', 'requestCacheMissCount', 'script.compilations', 'scrcc', 'scriptCompilations', 'script.cache_evictions', 'scrce', 'scriptCacheEvictions', 'search.fetch_current', 'sfc', 'searchFetchCurrent', 'search.fetch_time', 'sfti', 'searchFetchTime', 'search.fetch_total', 'sfto', 'searchFetchTotal', 'search.open_contexts', 'so', 'searchOpenContexts', 'search.query_current', 'sqc', 'searchQueryCurrent', 'search.query_time', 'sqti', 'searchQueryTime', 'search.query_total', 'sqto', 'searchQueryTotal', 'search.scroll_current', 'scc', 'searchScrollCurrent', 'search.scroll_time', 'scti', 'searchScrollTime', 'search.scroll_total', 'scto', 'searchScrollTotal', 'segments.count', 'sc', 'segmentsCount', 'segments.fixed_bitset_memory', 'sfbm', 'fixedBitsetMemory', 'segments.index_writer_memory', 'siwm', 'segmentsIndexWriterMemory', 'segments.memory', 'sm', 'segmentsMemory', 'segments.version_map_memory', 'svmm', 'segmentsVersionMapMemory', 'shard_stats.total_count', 'sstc', 'shards', 'shardStatsTotalCount', 'suggest.current', 'suc', 'suggestCurrent', 'suggest.time', 'suti', 'suggestTime', 'suggest.total', 'suto', 'suggestTotal', 'uptime', 'u', 'version', 'v']), z.string()]).meta({ id: 'CatCatNodeColumn' })
 export type CatCatNodeColumn = z.infer<typeof CatCatNodeColumn>
@@ -57,14 +14,9 @@ export type CatCatNodeColumn = z.infer<typeof CatCatNodeColumn>
 export const CatCatNodeColumns = z.union([CatCatNodeColumn, z.array(CatCatNodeColumn)]).meta({ id: 'CatCatNodeColumns' })
 export type CatCatNodeColumns = z.infer<typeof CatCatNodeColumns>
 
-export const CatCatRequestBase = z.object({
-  ...RequestBase.shape
-}).meta({ id: 'CatCatRequestBase' })
-export type CatCatRequestBase = z.infer<typeof CatCatRequestBase>
-
 export const CatNodesNodesRecord = z.object({
-  id: Id.describe('The unique node identifier.').optional(),
-  nodeId: Id.describe('The unique node identifier.').optional(),
+  id: z.lazy(() => Id).describe('The unique node identifier.').optional(),
+  nodeId: z.lazy(() => Id).describe('The unique node identifier.').optional(),
   pid: z.string().describe('The process identifier.').optional(),
   p: z.string().describe('The process identifier.').optional(),
   ip: z.string().describe('The IP address.').optional(),
@@ -73,8 +25,8 @@ export const CatNodesNodesRecord = z.object({
   po: z.string().describe('The bound transport port.').optional(),
   http_address: z.string().describe('The bound HTTP address.').optional(),
   http: z.string().describe('The bound HTTP address.').optional(),
-  version: VersionString.describe('The Elasticsearch version.').optional(),
-  v: VersionString.describe('The Elasticsearch version.').optional(),
+  version: z.lazy(() => VersionString).describe('The Elasticsearch version.').optional(),
+  v: z.lazy(() => VersionString).describe('The Elasticsearch version.').optional(),
   flavor: z.string().describe('The Elasticsearch distribution flavor.').optional(),
   f: z.string().describe('The Elasticsearch distribution flavor.').optional(),
   type: z.string().describe('The Elasticsearch distribution type.').optional(),
@@ -83,44 +35,44 @@ export const CatNodesNodesRecord = z.object({
   b: z.string().describe('The Elasticsearch build hash.').optional(),
   jdk: z.string().describe('The Java version.').optional(),
   j: z.string().describe('The Java version.').optional(),
-  'disk.total': ByteSize.describe('The total disk space.').optional(),
-  dt: ByteSize.describe('The total disk space.').optional(),
-  diskTotal: ByteSize.describe('The total disk space.').optional(),
-  'disk.used': ByteSize.describe('The used disk space.').optional(),
-  du: ByteSize.describe('The used disk space.').optional(),
-  diskUsed: ByteSize.describe('The used disk space.').optional(),
-  'disk.avail': ByteSize.describe('The available disk space.').optional(),
-  d: ByteSize.describe('The available disk space.').optional(),
-  da: ByteSize.describe('The available disk space.').optional(),
-  disk: ByteSize.describe('The available disk space.').optional(),
-  diskAvail: ByteSize.describe('The available disk space.').optional(),
-  'disk.used_percent': Percentage.describe('The used disk space percentage.').optional(),
-  dup: Percentage.describe('The used disk space percentage.').optional(),
-  diskUsedPercent: Percentage.describe('The used disk space percentage.').optional(),
+  'disk.total': z.lazy(() => ByteSize).describe('The total disk space.').optional(),
+  dt: z.lazy(() => ByteSize).describe('The total disk space.').optional(),
+  diskTotal: z.lazy(() => ByteSize).describe('The total disk space.').optional(),
+  'disk.used': z.lazy(() => ByteSize).describe('The used disk space.').optional(),
+  du: z.lazy(() => ByteSize).describe('The used disk space.').optional(),
+  diskUsed: z.lazy(() => ByteSize).describe('The used disk space.').optional(),
+  'disk.avail': z.lazy(() => ByteSize).describe('The available disk space.').optional(),
+  d: z.lazy(() => ByteSize).describe('The available disk space.').optional(),
+  da: z.lazy(() => ByteSize).describe('The available disk space.').optional(),
+  disk: z.lazy(() => ByteSize).describe('The available disk space.').optional(),
+  diskAvail: z.lazy(() => ByteSize).describe('The available disk space.').optional(),
+  'disk.used_percent': z.lazy(() => Percentage).describe('The used disk space percentage.').optional(),
+  dup: z.lazy(() => Percentage).describe('The used disk space percentage.').optional(),
+  diskUsedPercent: z.lazy(() => Percentage).describe('The used disk space percentage.').optional(),
   'heap.current': z.string().describe('The used heap.').optional(),
   hc: z.string().describe('The used heap.').optional(),
   heapCurrent: z.string().describe('The used heap.').optional(),
-  'heap.percent': Percentage.describe('The used heap ratio.').optional(),
-  hp: Percentage.describe('The used heap ratio.').optional(),
-  heapPercent: Percentage.describe('The used heap ratio.').optional(),
+  'heap.percent': z.lazy(() => Percentage).describe('The used heap ratio.').optional(),
+  hp: z.lazy(() => Percentage).describe('The used heap ratio.').optional(),
+  heapPercent: z.lazy(() => Percentage).describe('The used heap ratio.').optional(),
   'heap.max': z.string().describe('The maximum configured heap.').optional(),
   hm: z.string().describe('The maximum configured heap.').optional(),
   heapMax: z.string().describe('The maximum configured heap.').optional(),
   'ram.current': z.string().describe('The used machine memory.').optional(),
   rc: z.string().describe('The used machine memory.').optional(),
   ramCurrent: z.string().describe('The used machine memory.').optional(),
-  'ram.percent': Percentage.describe('The used machine memory ratio.').optional(),
-  rp: Percentage.describe('The used machine memory ratio.').optional(),
-  ramPercent: Percentage.describe('The used machine memory ratio.').optional(),
+  'ram.percent': z.lazy(() => Percentage).describe('The used machine memory ratio.').optional(),
+  rp: z.lazy(() => Percentage).describe('The used machine memory ratio.').optional(),
+  ramPercent: z.lazy(() => Percentage).describe('The used machine memory ratio.').optional(),
   'ram.max': z.string().describe('The total machine memory.').optional(),
   rn: z.string().describe('The total machine memory.').optional(),
   ramMax: z.string().describe('The total machine memory.').optional(),
   'file_desc.current': z.string().describe('The used file descriptors.').optional(),
   fdc: z.string().describe('The used file descriptors.').optional(),
   fileDescriptorCurrent: z.string().describe('The used file descriptors.').optional(),
-  'file_desc.percent': Percentage.describe('The used file descriptor ratio.').optional(),
-  fdp: Percentage.describe('The used file descriptor ratio.').optional(),
-  fileDescriptorPercent: Percentage.describe('The used file descriptor ratio.').optional(),
+  'file_desc.percent': z.lazy(() => Percentage).describe('The used file descriptor ratio.').optional(),
+  fdp: z.lazy(() => Percentage).describe('The used file descriptor ratio.').optional(),
+  fileDescriptorPercent: z.lazy(() => Percentage).describe('The used file descriptor ratio.').optional(),
   'file_desc.max': z.string().describe('The maximum number of file descriptors.').optional(),
   fdm: z.string().describe('The maximum number of file descriptors.').optional(),
   fileDescriptorMax: z.string().describe('The maximum number of file descriptors.').optional(),
@@ -139,8 +91,8 @@ export const CatNodesNodesRecord = z.object({
   nodeRole: z.string().describe('The roles of the node. Returned values include `c`(cold node), `d`(data node), `f`(frozen node), `h`(hot node), `i`(ingest node), `l`(machine learning node), `m` (master eligible node), `r`(remote cluster client node), `s`(content node), `t`(transform node), `v`(voting-only node), `w`(warm node),and `-`(coordinating node only).').optional(),
   master: z.string().describe('Indicates whether the node is the elected master node. Returned values include `*`(elected master) and `-`(not elected master).').optional(),
   m: z.string().describe('Indicates whether the node is the elected master node. Returned values include `*`(elected master) and `-`(not elected master).').optional(),
-  name: Name.describe('The node name.').optional(),
-  n: Name.describe('The node name.').optional(),
+  name: z.lazy(() => Name).describe('The node name.').optional(),
+  n: z.lazy(() => Name).describe('The node name.').optional(),
   'completion.size': z.string().describe('The size of completion.').optional(),
   cs: z.string().describe('The size of completion.').optional(),
   completionSize: z.string().describe('The size of completion.').optional(),
@@ -342,12 +294,11 @@ export type CatNodesNodesRecord = z.infer<typeof CatNodesNodesRecord>
  * IMPORTANT: cat APIs are only intended for human consumption using the command line or Kibana console. They are not intended for use by applications. For application consumption, use the nodes info API.
  */
 export const CatNodesRequest = z.object({
-  ...CatCatRequestBase.shape,
   full_id: z.boolean().describe('If `true`, return the full node ID. If `false`, return the shortened node ID.').optional().meta({ found_in: 'query' }),
   include_unloaded_segments: z.boolean().describe('If true, the response includes information from segments that are not loaded into memory.').optional().meta({ found_in: 'query' }),
   h: CatCatNodeColumns.describe('A comma-separated list of columns names to display. It supports simple wildcards.').optional().meta({ found_in: 'query' }),
-  s: Names.describe('A comma-separated list of column names or aliases that determines the sort order. Sorting defaults to ascending and can be changed by setting `:asc` or `:desc` as a suffix to the column name.').optional().meta({ found_in: 'query' }),
-  master_timeout: Duration.describe('The period to wait for a connection to the master node.').optional().meta({ found_in: 'query' })
+  s: z.lazy(() => Names).describe('A comma-separated list of column names or aliases that determines the sort order. Sorting defaults to ascending and can be changed by setting `:asc` or `:desc` as a suffix to the column name.').optional().meta({ found_in: 'query' }),
+  master_timeout: z.lazy(() => Duration).describe('The period to wait for a connection to the master node.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'CatNodesRequest' })
 export type CatNodesRequest = z.infer<typeof CatNodesRequest>
 

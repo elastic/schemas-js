@@ -11,39 +11,18 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
+import { Security_Osquery_API_ECSMapping, Security_Osquery_API_PackId, Security_Osquery_API_Platform, Security_Osquery_API_Query, Security_Osquery_API_QueryId, Security_Osquery_API_Removed, Security_Osquery_API_SavedQueryId, Security_Osquery_API_Snapshot, Security_Osquery_API_Version } from './schemas/security.js'
 
-export const Security_Osquery_API_ECSMappingItem = z.object({
-  field: z.string().optional(),
-  value: z.union([z.string(), z.array(z.string())]).optional()
-}).meta({ id: 'Security_Osquery_API_ECSMappingItem' })
-export type Security_Osquery_API_ECSMappingItem = z.infer<typeof Security_Osquery_API_ECSMappingItem>
-
-export const Security_Osquery_API_SavedQueryId = z.string().meta({ id: 'Security_Osquery_API_SavedQueryId' })
-export type Security_Osquery_API_SavedQueryId = z.infer<typeof Security_Osquery_API_SavedQueryId>
-
-export const Security_Osquery_API_Query = z.string().meta({ id: 'Security_Osquery_API_Query' })
-export type Security_Osquery_API_Query = z.infer<typeof Security_Osquery_API_Query>
-
-export const Security_Osquery_API_Version = z.string().meta({ id: 'Security_Osquery_API_Version' })
-export type Security_Osquery_API_Version = z.infer<typeof Security_Osquery_API_Version>
-
-export const Security_Osquery_API_Snapshot = z.boolean().meta({ id: 'Security_Osquery_API_Snapshot' })
-export type Security_Osquery_API_Snapshot = z.infer<typeof Security_Osquery_API_Snapshot>
-
-export const Security_Osquery_API_Removed = z.boolean().meta({ id: 'Security_Osquery_API_Removed' })
-export type Security_Osquery_API_Removed = z.infer<typeof Security_Osquery_API_Removed>
-
-export const Security_Osquery_API_Platform = z.string().meta({ id: 'Security_Osquery_API_Platform' })
-export type Security_Osquery_API_Platform = z.infer<typeof Security_Osquery_API_Platform>
-
-export const Security_Osquery_API_QueryId = z.string().meta({ id: 'Security_Osquery_API_QueryId' })
-export type Security_Osquery_API_QueryId = z.infer<typeof Security_Osquery_API_QueryId>
-
-export const Security_Osquery_API_PackId = z.string().meta({ id: 'Security_Osquery_API_PackId' })
-export type Security_Osquery_API_PackId = z.infer<typeof Security_Osquery_API_PackId>
-
-export const Security_Osquery_API_ECSMapping = z.record(z.string(), Security_Osquery_API_ECSMappingItem).meta({ id: 'Security_Osquery_API_ECSMapping' })
-export type Security_Osquery_API_ECSMapping = z.infer<typeof Security_Osquery_API_ECSMapping>
+export const Security_Osquery_API_ArrayQueriesItem = z.object({
+  ecs_mapping: Security_Osquery_API_ECSMapping.optional(),
+  id: Security_Osquery_API_QueryId.optional(),
+  platform: Security_Osquery_API_Platform.optional(),
+  query: Security_Osquery_API_Query.optional(),
+  removed: Security_Osquery_API_Removed.optional(),
+  snapshot: Security_Osquery_API_Snapshot.optional(),
+  version: Security_Osquery_API_Version.optional()
+}).meta({ id: 'Security_Osquery_API_ArrayQueriesItem' })
+export type Security_Osquery_API_ArrayQueriesItem = z.infer<typeof Security_Osquery_API_ArrayQueriesItem>
 
 export const Security_Osquery_API_CreateLiveQueryResponse = z.object({
   data: z.object({
@@ -75,17 +54,6 @@ export const Security_Osquery_API_CreateLiveQueryResponse = z.object({
 }).meta({ id: 'Security_Osquery_API_CreateLiveQueryResponse' })
 export type Security_Osquery_API_CreateLiveQueryResponse = z.infer<typeof Security_Osquery_API_CreateLiveQueryResponse>
 
-export const Security_Osquery_API_ArrayQueriesItem = z.object({
-  ecs_mapping: Security_Osquery_API_ECSMapping.optional(),
-  id: Security_Osquery_API_QueryId.optional(),
-  platform: Security_Osquery_API_Platform.optional(),
-  query: Security_Osquery_API_Query.optional(),
-  removed: Security_Osquery_API_Removed.optional(),
-  snapshot: Security_Osquery_API_Snapshot.optional(),
-  version: Security_Osquery_API_Version.optional()
-}).meta({ id: 'Security_Osquery_API_ArrayQueriesItem' })
-export type Security_Osquery_API_ArrayQueriesItem = z.infer<typeof Security_Osquery_API_ArrayQueriesItem>
-
 export const Security_Osquery_API_ArrayQueries = z.array(Security_Osquery_API_ArrayQueriesItem).meta({ id: 'Security_Osquery_API_ArrayQueries' })
 export type Security_Osquery_API_ArrayQueries = z.infer<typeof Security_Osquery_API_ArrayQueries>
 
@@ -105,3 +73,14 @@ export const Security_Osquery_API_CreateLiveQueryRequestBody = z.object({
   saved_query_id: Security_Osquery_API_SavedQueryId.optional()
 }).meta({ id: 'Security_Osquery_API_CreateLiveQueryRequestBody' })
 export type Security_Osquery_API_CreateLiveQueryRequestBody = z.infer<typeof Security_Osquery_API_CreateLiveQueryRequestBody>
+
+export { Security_Osquery_API_ECSMapping } from './schemas/security.js'
+export { Security_Osquery_API_ECSMappingItem } from './schemas/security.js'
+export { Security_Osquery_API_SavedQueryId } from './schemas/security.js'
+export { Security_Osquery_API_Query } from './schemas/security.js'
+export { Security_Osquery_API_Version } from './schemas/security.js'
+export { Security_Osquery_API_Snapshot } from './schemas/security.js'
+export { Security_Osquery_API_Removed } from './schemas/security.js'
+export { Security_Osquery_API_Platform } from './schemas/security.js'
+export { Security_Osquery_API_QueryId } from './schemas/security.js'
+export { Security_Osquery_API_PackId } from './schemas/security.js'

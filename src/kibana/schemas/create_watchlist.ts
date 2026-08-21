@@ -11,9 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Entity_Analytics_API_EntitySourceType = z.enum(['index', 'entity_analytics_integration', 'store']).meta({ id: 'Security_Entity_Analytics_API_EntitySourceType' })
-export type Security_Entity_Analytics_API_EntitySourceType = z.infer<typeof Security_Entity_Analytics_API_EntitySourceType>
+import { Security_Entity_Analytics_API_WatchlistObject } from './schemas/security.js'
 
 export const Security_Entity_Analytics_API_DateRange = z.object({
   end: z.string(),
@@ -21,11 +19,13 @@ export const Security_Entity_Analytics_API_DateRange = z.object({
 }).meta({ id: 'Security_Entity_Analytics_API_DateRange' })
 export type Security_Entity_Analytics_API_DateRange = z.infer<typeof Security_Entity_Analytics_API_DateRange>
 
-export const Security_Entity_Analytics_API_Matcher = z.object({
-  fields: z.array(z.string()),
-  values: z.union([z.array(z.string()), z.array(z.boolean())])
-}).meta({ id: 'Security_Entity_Analytics_API_Matcher' })
-export type Security_Entity_Analytics_API_Matcher = z.infer<typeof Security_Entity_Analytics_API_Matcher>
+export const Security_Entity_Analytics_API_EntitySourceType = z.enum(['index', 'entity_analytics_integration', 'store']).meta({ id: 'Security_Entity_Analytics_API_EntitySourceType' })
+export type Security_Entity_Analytics_API_EntitySourceType = z.infer<typeof Security_Entity_Analytics_API_EntitySourceType>
+
+export const Security_Entity_Analytics_API_Filter = z.object({
+  kuery: z.union([z.string(), z.object({})]).optional()
+}).meta({ id: 'Security_Entity_Analytics_API_Filter' })
+export type Security_Entity_Analytics_API_Filter = z.infer<typeof Security_Entity_Analytics_API_Filter>
 
 export const Security_Entity_Analytics_API_Integrations = z.object({
   syncData: z.object({
@@ -36,24 +36,11 @@ export const Security_Entity_Analytics_API_Integrations = z.object({
 }).meta({ id: 'Security_Entity_Analytics_API_Integrations' })
 export type Security_Entity_Analytics_API_Integrations = z.infer<typeof Security_Entity_Analytics_API_Integrations>
 
-export const Security_Entity_Analytics_API_Filter = z.object({
-  kuery: z.union([z.string(), z.object({})]).optional()
-}).meta({ id: 'Security_Entity_Analytics_API_Filter' })
-export type Security_Entity_Analytics_API_Filter = z.infer<typeof Security_Entity_Analytics_API_Filter>
-
-export const Security_Entity_Analytics_API_WatchlistObject = z.object({
-  createdAt: z.string().optional(),
-  description: z.string().optional(),
-  entityCount: z.number().optional(),
-  entitySourceIds: z.array(z.string()).optional(),
-  hasManualEntities: z.boolean().optional(),
-  id: z.string().optional(),
-  managed: z.boolean(),
-  name: z.string(),
-  riskModifier: z.number(),
-  updatedAt: z.string().optional()
-}).meta({ id: 'Security_Entity_Analytics_API_WatchlistObject' })
-export type Security_Entity_Analytics_API_WatchlistObject = z.infer<typeof Security_Entity_Analytics_API_WatchlistObject>
+export const Security_Entity_Analytics_API_Matcher = z.object({
+  fields: z.array(z.string()),
+  values: z.union([z.array(z.string()), z.array(z.boolean())])
+}).meta({ id: 'Security_Entity_Analytics_API_Matcher' })
+export type Security_Entity_Analytics_API_Matcher = z.infer<typeof Security_Entity_Analytics_API_Matcher>
 
 export const Security_Entity_Analytics_API_UpdateableMonitoringEntitySourceProperties = z.object({
   enabled: z.boolean().optional(),
@@ -105,3 +92,5 @@ export const CreateWatchlistResponse = Security_Entity_Analytics_API_WatchlistOb
   entitySources: z.array(Security_Entity_Analytics_API_MonitoringEntitySource).optional()
 })).meta({ id: 'CreateWatchlistResponse' })
 export type CreateWatchlistResponse = z.infer<typeof CreateWatchlistResponse>
+
+export { Security_Entity_Analytics_API_WatchlistObject } from './schemas/security.js'

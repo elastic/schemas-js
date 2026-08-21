@@ -11,15 +11,13 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
+import { Security_Entity_Analytics_API_AssetCriticalityLevel } from './schemas/security.js'
 
-export const Security_Entity_Analytics_API_RiskScoreModifier = z.object({
-  contribution: z.number(),
-  metadata: z.record(z.string(), z.unknown()).optional(),
-  modifier_value: z.number().optional(),
-  subtype: z.string().optional(),
-  type: z.string()
-}).meta({ id: 'Security_Entity_Analytics_API_RiskScoreModifier' })
-export type Security_Entity_Analytics_API_RiskScoreModifier = z.infer<typeof Security_Entity_Analytics_API_RiskScoreModifier>
+export const Security_Entity_Analytics_API_EntityRiskLevels = z.enum(['Unknown', 'Low', 'Moderate', 'High', 'Critical']).meta({ id: 'Security_Entity_Analytics_API_EntityRiskLevels' })
+export type Security_Entity_Analytics_API_EntityRiskLevels = z.infer<typeof Security_Entity_Analytics_API_EntityRiskLevels>
+
+export const Security_Entity_Analytics_API_IdentifierType = z.enum(['host', 'user', 'service', 'generic']).meta({ id: 'Security_Entity_Analytics_API_IdentifierType' })
+export type Security_Entity_Analytics_API_IdentifierType = z.infer<typeof Security_Entity_Analytics_API_IdentifierType>
 
 export const Security_Entity_Analytics_API_RiskScoreInput = z.object({
   category: z.string(),
@@ -33,14 +31,14 @@ export const Security_Entity_Analytics_API_RiskScoreInput = z.object({
 }).meta({ id: 'Security_Entity_Analytics_API_RiskScoreInput' })
 export type Security_Entity_Analytics_API_RiskScoreInput = z.infer<typeof Security_Entity_Analytics_API_RiskScoreInput>
 
-export const Security_Entity_Analytics_API_AssetCriticalityLevel = z.enum(['low_impact', 'medium_impact', 'high_impact', 'extreme_impact']).meta({ id: 'Security_Entity_Analytics_API_AssetCriticalityLevel' })
-export type Security_Entity_Analytics_API_AssetCriticalityLevel = z.infer<typeof Security_Entity_Analytics_API_AssetCriticalityLevel>
-
-export const Security_Entity_Analytics_API_EntityRiskLevels = z.enum(['Unknown', 'Low', 'Moderate', 'High', 'Critical']).meta({ id: 'Security_Entity_Analytics_API_EntityRiskLevels' })
-export type Security_Entity_Analytics_API_EntityRiskLevels = z.infer<typeof Security_Entity_Analytics_API_EntityRiskLevels>
-
-export const Security_Entity_Analytics_API_IdentifierType = z.enum(['host', 'user', 'service', 'generic']).meta({ id: 'Security_Entity_Analytics_API_IdentifierType' })
-export type Security_Entity_Analytics_API_IdentifierType = z.infer<typeof Security_Entity_Analytics_API_IdentifierType>
+export const Security_Entity_Analytics_API_RiskScoreModifier = z.object({
+  contribution: z.number(),
+  metadata: z.record(z.string(), z.unknown()).optional(),
+  modifier_value: z.number().optional(),
+  subtype: z.string().optional(),
+  type: z.string()
+}).meta({ id: 'Security_Entity_Analytics_API_RiskScoreModifier' })
+export type Security_Entity_Analytics_API_RiskScoreModifier = z.infer<typeof Security_Entity_Analytics_API_RiskScoreModifier>
 
 export const Security_Entity_Analytics_API_RiskScoreHistoryEntry = z.object({
   '@timestamp': z.string(),
@@ -65,3 +63,5 @@ export const Security_Entity_Analytics_API_RiskScoreHistoryResponse = z.object({
   interval: z.string()
 }).meta({ id: 'Security_Entity_Analytics_API_RiskScoreHistoryResponse' })
 export type Security_Entity_Analytics_API_RiskScoreHistoryResponse = z.infer<typeof Security_Entity_Analytics_API_RiskScoreHistoryResponse>
+
+export { Security_Entity_Analytics_API_AssetCriticalityLevel } from './schemas/security.js'

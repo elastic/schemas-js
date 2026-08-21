@@ -11,46 +11,19 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Endpoint_Management_API_ApiSortField = z.enum(['name', 'createdAt', 'createdBy', 'updatedAt', 'updatedBy', 'fileSize']).meta({ id: 'Security_Endpoint_Management_API_ApiSortField' })
-export type Security_Endpoint_Management_API_ApiSortField = z.infer<typeof Security_Endpoint_Management_API_ApiSortField>
-
-export const Security_Endpoint_Management_API_SortDirection = z.enum(['asc', 'desc']).meta({ id: 'Security_Endpoint_Management_API_SortDirection' })
-export type Security_Endpoint_Management_API_SortDirection = z.infer<typeof Security_Endpoint_Management_API_SortDirection>
+import { Security_Endpoint_Management_API_EndpointScript } from './schemas/security.js'
 
 export const Security_Endpoint_Management_API_ApiPageSize = z.number().meta({ id: 'Security_Endpoint_Management_API_ApiPageSize' })
 export type Security_Endpoint_Management_API_ApiPageSize = z.infer<typeof Security_Endpoint_Management_API_ApiPageSize>
 
+export const Security_Endpoint_Management_API_ApiSortField = z.enum(['name', 'createdAt', 'createdBy', 'updatedAt', 'updatedBy', 'fileSize']).meta({ id: 'Security_Endpoint_Management_API_ApiSortField' })
+export type Security_Endpoint_Management_API_ApiSortField = z.infer<typeof Security_Endpoint_Management_API_ApiSortField>
+
 export const Security_Endpoint_Management_API_Page = z.number().meta({ id: 'Security_Endpoint_Management_API_Page' })
 export type Security_Endpoint_Management_API_Page = z.infer<typeof Security_Endpoint_Management_API_Page>
 
-export const Security_Endpoint_Management_API_EndpointScriptTags = z.enum(['remediationAction', 'dataCollection', 'networkDiagnostics', 'networkAction', 'systemInventory', 'forensicCollection', 'threatHunting', 'discovery', 'systemManagement', 'userManagement', 'troubleshooting']).meta({ id: 'Security_Endpoint_Management_API_EndpointScriptTags' })
-export type Security_Endpoint_Management_API_EndpointScriptTags = z.infer<typeof Security_Endpoint_Management_API_EndpointScriptTags>
-
-export const Security_Endpoint_Management_API_EndpointScriptPlatform = z.enum(['linux', 'macos', 'windows']).meta({ id: 'Security_Endpoint_Management_API_EndpointScriptPlatform' })
-export type Security_Endpoint_Management_API_EndpointScriptPlatform = z.infer<typeof Security_Endpoint_Management_API_EndpointScriptPlatform>
-
-export const Security_Endpoint_Management_API_EndpointScript = z.object({
-  createdAt: z.string().optional(),
-  createdBy: z.string().optional(),
-  description: z.string().optional(),
-  downloadUri: z.string().optional(),
-  example: z.string().optional(),
-  fileHash: z.string().optional(),
-  fileName: z.string().optional(),
-  fileSize: z.number().optional(),
-  id: z.string().optional(),
-  instructions: z.string().optional(),
-  name: z.string().optional(),
-  pathToExecutable: z.string().optional(),
-  platform: z.array(Security_Endpoint_Management_API_EndpointScriptPlatform).optional(),
-  requiresInput: z.boolean().optional(),
-  tags: z.array(Security_Endpoint_Management_API_EndpointScriptTags).optional(),
-  updatedAt: z.string().optional(),
-  updatedBy: z.string().optional(),
-  version: z.string().optional()
-}).meta({ id: 'Security_Endpoint_Management_API_EndpointScript' })
-export type Security_Endpoint_Management_API_EndpointScript = z.infer<typeof Security_Endpoint_Management_API_EndpointScript>
+export const Security_Endpoint_Management_API_SortDirection = z.enum(['asc', 'desc']).meta({ id: 'Security_Endpoint_Management_API_SortDirection' })
+export type Security_Endpoint_Management_API_SortDirection = z.infer<typeof Security_Endpoint_Management_API_SortDirection>
 
 export const EndpointScriptLibraryListScriptsResponse = z.object({
   data: z.array(Security_Endpoint_Management_API_EndpointScript).optional(),
@@ -61,3 +34,7 @@ export const EndpointScriptLibraryListScriptsResponse = z.object({
   total: z.number().optional()
 }).meta({ id: 'EndpointScriptLibraryListScriptsResponse' })
 export type EndpointScriptLibraryListScriptsResponse = z.infer<typeof EndpointScriptLibraryListScriptsResponse>
+
+export { Security_Endpoint_Management_API_EndpointScript } from './schemas/security.js'
+export { Security_Endpoint_Management_API_EndpointScriptTags } from './schemas/security.js'
+export { Security_Endpoint_Management_API_EndpointScriptPlatform } from './schemas/security.js'

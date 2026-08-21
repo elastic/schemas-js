@@ -12,11 +12,11 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Task_manager_health_Serverless_APIs_workload = z.object({}).meta({ id: 'Task_manager_health_Serverless_APIs_workload' })
-export type Task_manager_health_Serverless_APIs_workload = z.infer<typeof Task_manager_health_Serverless_APIs_workload>
-
 export const Task_manager_health_Serverless_APIs_configuration = z.object({}).meta({ id: 'Task_manager_health_Serverless_APIs_configuration' })
 export type Task_manager_health_Serverless_APIs_configuration = z.infer<typeof Task_manager_health_Serverless_APIs_configuration>
+
+export const Task_manager_health_Serverless_APIs_workload = z.object({}).meta({ id: 'Task_manager_health_Serverless_APIs_workload' })
+export type Task_manager_health_Serverless_APIs_workload = z.infer<typeof Task_manager_health_Serverless_APIs_workload>
 
 export const Task_manager_health_Serverless_APIs_health_response_serverless = z.object({
   id: z.string().optional(),

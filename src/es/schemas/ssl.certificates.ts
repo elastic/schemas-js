@@ -3,37 +3,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const EpochTime = z.any().meta({ id: 'EpochTime' })
-export type EpochTime = z.infer<typeof EpochTime>
-
-/**
- * A date and time, either as a string whose format can depend on the context (defaulting to ISO 8601), or a
- * number of milliseconds since the Epoch. Elasticsearch accepts both as input, but will generally output a string
- * representation.
- */
-export const DateTime = z.union([z.string(), EpochTime]).meta({ id: 'DateTime' })
-export type DateTime = z.infer<typeof DateTime>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
+import { DateTime } from './_types.js'
 
 export const SslCertificatesCertificateInformation = z.object({
   alias: z.union([z.string(), z.null()]).describe('If the path refers to a container file (a jks keystore, or a PKCS#12 file), it is the alias of the certificate. Otherwise, it is null.'),
-  expiry: DateTime.describe('The ISO formatted date of the certificate\'s expiry (not-after) date.'),
+  expiry: z.lazy(() => DateTime).describe('The ISO formatted date of the certificate\'s expiry (not-after) date.'),
   format: z.string().describe('The format of the file. Valid values include `jks`, `PKCS12`, and `PEM`.'),
   has_private_key: z.boolean().describe('Indicates whether Elasticsearch has access to the private key for this certificate.'),
   issuer: z.string().describe('The Distinguished Name of the certificate\'s issuer.').optional(),
@@ -63,7 +40,6 @@ export type SslCertificatesCertificateInformation = z.infer<typeof SslCertificat
  * If Elasticsearch is configured to use a keystore or truststore, the API output includes all certificates in that store, even though some of the certificates might not be in active use within the cluster.
  */
 export const SslCertificatesRequest = z.object({
-  ...RequestBase.shape
 }).meta({ id: 'SslCertificatesRequest' })
 export type SslCertificatesRequest = z.infer<typeof SslCertificatesRequest>
 

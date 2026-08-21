@@ -3,28 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const Metadata = z.record(z.string(), z.any()).meta({ id: 'Metadata' })
-export type Metadata = z.infer<typeof Metadata>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
-
-export const long = z.number().meta({ id: 'long' })
-export type long = z.infer<typeof long>
+import { Metadata, long } from './_types.js'
 
 export const SecurityDelegatePkiAuthenticationRealm = z.object({
   name: z.string(),
@@ -39,7 +21,7 @@ export const SecurityDelegatePkiAuthentication = z.object({
   full_name: z.union([z.string(), z.null()]),
   email: z.union([z.string(), z.null()]),
   token: z.record(z.string(), z.string()).optional(),
-  metadata: Metadata,
+  metadata: z.lazy(() => Metadata),
   enabled: z.boolean(),
   authentication_realm: SecurityDelegatePkiAuthenticationRealm,
   lookup_realm: SecurityDelegatePkiAuthenticationRealm,
@@ -62,14 +44,13 @@ export type SecurityDelegatePkiAuthentication = z.infer<typeof SecurityDelegateP
  * The proxy is trusted to have performed the TLS authentication and this API translates that authentication into an Elasticsearch access token.
  */
 export const SecurityDelegatePkiRequest = z.object({
-  ...RequestBase.shape,
   x509_certificate_chain: z.array(z.string()).describe('The X509Certificate chain, which is represented as an ordered string array. Each string in the array is a base64-encoded (Section 4 of RFC4648 - not base64url-encoded) of the certificate\'s DER encoding. The first element is the target certificate that contains the subject distinguished name that is requesting access. This may be followed by additional certificates; each subsequent certificate is used to certify the previous one.').meta({ found_in: 'body' })
 }).meta({ id: 'SecurityDelegatePkiRequest' })
 export type SecurityDelegatePkiRequest = z.infer<typeof SecurityDelegatePkiRequest>
 
 export const SecurityDelegatePkiResponse = z.object({
   access_token: z.string().describe('An access token associated with the subject distinguished name of the client\'s certificate.'),
-  expires_in: long.describe('The amount of time (in seconds) before the token expires.'),
+  expires_in: z.lazy(() => long).describe('The amount of time (in seconds) before the token expires.'),
   type: z.string().describe('The type of token.'),
   authentication: SecurityDelegatePkiAuthentication.optional()
 }).meta({ id: 'SecurityDelegatePkiResponse' })

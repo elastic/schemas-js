@@ -11,60 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Exceptions_API_ExceptionListVersion = z.number().meta({ id: 'Security_Exceptions_API_ExceptionListVersion' })
-export type Security_Exceptions_API_ExceptionListVersion = z.infer<typeof Security_Exceptions_API_ExceptionListVersion>
-
-export const Security_Exceptions_API_ExceptionListType = z.enum(['detection', 'rule_default', 'endpoint', 'endpoint_trusted_apps', 'endpoint_trusted_devices', 'endpoint_events', 'endpoint_host_isolation_exceptions', 'endpoint_blocklists', 'endpoint_custom_yara_signatures']).meta({ id: 'Security_Exceptions_API_ExceptionListType' })
-export type Security_Exceptions_API_ExceptionListType = z.infer<typeof Security_Exceptions_API_ExceptionListType>
-
-export const Security_Exceptions_API_ExceptionListTags = z.array(z.string()).meta({ id: 'Security_Exceptions_API_ExceptionListTags' })
-export type Security_Exceptions_API_ExceptionListTags = z.infer<typeof Security_Exceptions_API_ExceptionListTags>
-
-export const Security_Exceptions_API_ExceptionListOsType = z.enum(['linux', 'macos', 'windows']).meta({ id: 'Security_Exceptions_API_ExceptionListOsType' })
-export type Security_Exceptions_API_ExceptionListOsType = z.infer<typeof Security_Exceptions_API_ExceptionListOsType>
-
-export const Security_Exceptions_API_ExceptionNamespaceType = z.enum(['agnostic', 'single']).meta({ id: 'Security_Exceptions_API_ExceptionNamespaceType' })
-export type Security_Exceptions_API_ExceptionNamespaceType = z.infer<typeof Security_Exceptions_API_ExceptionNamespaceType>
-
-export const Security_Exceptions_API_ExceptionListName = z.string().meta({ id: 'Security_Exceptions_API_ExceptionListName' })
-export type Security_Exceptions_API_ExceptionListName = z.infer<typeof Security_Exceptions_API_ExceptionListName>
-
-export const Security_Exceptions_API_ExceptionListMeta = z.record(z.string(), z.unknown()).meta({ id: 'Security_Exceptions_API_ExceptionListMeta' })
-export type Security_Exceptions_API_ExceptionListMeta = z.infer<typeof Security_Exceptions_API_ExceptionListMeta>
-
-export const Security_Exceptions_API_ExceptionListHumanId = z.string().meta({ id: 'Security_Exceptions_API_ExceptionListHumanId' })
-export type Security_Exceptions_API_ExceptionListHumanId = z.infer<typeof Security_Exceptions_API_ExceptionListHumanId>
-
-export const Security_Exceptions_API_ExceptionListId = z.string().meta({ id: 'Security_Exceptions_API_ExceptionListId' })
-export type Security_Exceptions_API_ExceptionListId = z.infer<typeof Security_Exceptions_API_ExceptionListId>
-
-export const Security_Exceptions_API_ExceptionListDescription = z.string().meta({ id: 'Security_Exceptions_API_ExceptionListDescription' })
-export type Security_Exceptions_API_ExceptionListDescription = z.infer<typeof Security_Exceptions_API_ExceptionListDescription>
-
-export const Security_Exceptions_API_ExceptionListOsTypeArray = z.array(Security_Exceptions_API_ExceptionListOsType).meta({ id: 'Security_Exceptions_API_ExceptionListOsTypeArray' })
-export type Security_Exceptions_API_ExceptionListOsTypeArray = z.infer<typeof Security_Exceptions_API_ExceptionListOsTypeArray>
-
-export const Security_Exceptions_API_ExceptionList = z.object({
-  _version: z.string().optional(),
-  created_at: z.string(),
-  created_by: z.string(),
-  description: Security_Exceptions_API_ExceptionListDescription,
-  id: Security_Exceptions_API_ExceptionListId,
-  immutable: z.boolean(),
-  list_id: Security_Exceptions_API_ExceptionListHumanId,
-  meta: Security_Exceptions_API_ExceptionListMeta.optional(),
-  name: Security_Exceptions_API_ExceptionListName,
-  namespace_type: Security_Exceptions_API_ExceptionNamespaceType,
-  os_types: Security_Exceptions_API_ExceptionListOsTypeArray.optional(),
-  tags: Security_Exceptions_API_ExceptionListTags.optional(),
-  tie_breaker_id: z.string(),
-  type: Security_Exceptions_API_ExceptionListType,
-  updated_at: z.string(),
-  updated_by: z.string(),
-  version: Security_Exceptions_API_ExceptionListVersion
-}).meta({ id: 'Security_Exceptions_API_ExceptionList' })
-export type Security_Exceptions_API_ExceptionList = z.infer<typeof Security_Exceptions_API_ExceptionList>
+import { Security_Exceptions_API_ExceptionListDescription, Security_Exceptions_API_ExceptionListHumanId, Security_Exceptions_API_ExceptionListMeta, Security_Exceptions_API_ExceptionListName, Security_Exceptions_API_ExceptionListOsTypeArray, Security_Exceptions_API_ExceptionListTags, Security_Exceptions_API_ExceptionListType, Security_Exceptions_API_ExceptionListVersion, Security_Exceptions_API_ExceptionNamespaceType } from './schemas/security.js'
 
 export const CreateExceptionListRequest = z.object({
   description: Security_Exceptions_API_ExceptionListDescription,
@@ -78,3 +25,16 @@ export const CreateExceptionListRequest = z.object({
   version: Security_Exceptions_API_ExceptionListVersion.optional()
 }).meta({ id: 'CreateExceptionListRequest' })
 export type CreateExceptionListRequest = z.infer<typeof CreateExceptionListRequest>
+
+export { Security_Exceptions_API_ExceptionList } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListVersion } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListType } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListTags } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListOsTypeArray } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListOsType } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionNamespaceType } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListName } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListMeta } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListHumanId } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListId } from './schemas/security.js'
+export { Security_Exceptions_API_ExceptionListDescription } from './schemas/security.js'

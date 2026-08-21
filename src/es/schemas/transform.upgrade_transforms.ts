@@ -3,32 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-/**
- * A duration. Units can be `nanos`, `micros`, `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours) and
- * `d` (days). Also accepts "0" without a unit and "-1" to indicate an unspecified value.
- */
-export const Duration = z.union([z.string(), z.literal(-1), z.literal(0)]).meta({ id: 'Duration' })
-export type Duration = z.infer<typeof Duration>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
-
-export const integer = z.number().meta({ id: 'integer' })
-export type integer = z.infer<typeof integer>
+import { Duration, integer } from './_types.js'
 
 /**
  * Upgrade all transforms.
@@ -48,15 +26,14 @@ export type integer = z.infer<typeof integer>
  * You may want to perform a recent cluster backup prior to the upgrade.
  */
 export const TransformUpgradeTransformsRequest = z.object({
-  ...RequestBase.shape,
   dry_run: z.boolean().describe('When true, the request checks for updates but does not run them.').optional().meta({ found_in: 'query' }),
-  timeout: Duration.describe('Period to wait for a response. If no response is received before the timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' })
+  timeout: z.lazy(() => Duration).describe('Period to wait for a response. If no response is received before the timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'TransformUpgradeTransformsRequest' })
 export type TransformUpgradeTransformsRequest = z.infer<typeof TransformUpgradeTransformsRequest>
 
 export const TransformUpgradeTransformsResponse = z.object({
-  needs_update: integer.describe('The number of transforms that need to be upgraded.'),
-  no_action: integer.describe('The number of transforms that don’t require upgrading.'),
-  updated: integer.describe('The number of transforms that have been upgraded.')
+  needs_update: z.lazy(() => integer).describe('The number of transforms that need to be upgraded.'),
+  no_action: z.lazy(() => integer).describe('The number of transforms that don’t require upgrading.'),
+  updated: z.lazy(() => integer).describe('The number of transforms that have been upgraded.')
 }).meta({ id: 'TransformUpgradeTransformsResponse' })
 export type TransformUpgradeTransformsResponse = z.infer<typeof TransformUpgradeTransformsResponse>

@@ -12,6 +12,12 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
+export const APM_UI_agent_keys_object = z.object({
+  name: z.string(),
+  privileges: z.array(z.enum(['event:write', 'config_agent:read']))
+}).meta({ id: 'APM_UI_agent_keys_object' })
+export type APM_UI_agent_keys_object = z.infer<typeof APM_UI_agent_keys_object>
+
 export const APM_UI_agent_keys_response = z.object({
   agentKey: z.object({
     api_key: z.string(),
@@ -22,9 +28,3 @@ export const APM_UI_agent_keys_response = z.object({
   }).optional()
 }).meta({ id: 'APM_UI_agent_keys_response' })
 export type APM_UI_agent_keys_response = z.infer<typeof APM_UI_agent_keys_response>
-
-export const APM_UI_agent_keys_object = z.object({
-  name: z.string(),
-  privileges: z.array(z.enum(['event:write', 'config_agent:read']))
-}).meta({ id: 'APM_UI_agent_keys_object' })
-export type APM_UI_agent_keys_object = z.infer<typeof APM_UI_agent_keys_object>

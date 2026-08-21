@@ -11,15 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const APM_UI_settings_object = z.record(z.string(), z.string()).meta({ id: 'APM_UI_settings_object' })
-export type APM_UI_settings_object = z.infer<typeof APM_UI_settings_object>
-
-export const APM_UI_service_object = z.object({
-  environment: z.string().optional(),
-  name: z.string().optional()
-}).meta({ id: 'APM_UI_service_object' })
-export type APM_UI_service_object = z.infer<typeof APM_UI_service_object>
+import { APM_UI_service_object, APM_UI_settings_object } from './schemas/apm_ui.js'
 
 export const APM_UI_agent_configuration_intake_object = z.object({
   agent_name: z.string().optional(),
@@ -30,3 +22,6 @@ export type APM_UI_agent_configuration_intake_object = z.infer<typeof APM_UI_age
 
 export const CreateUpdateAgentConfigurationResponse = z.object({}).meta({ id: 'CreateUpdateAgentConfigurationResponse' })
 export type CreateUpdateAgentConfigurationResponse = z.infer<typeof CreateUpdateAgentConfigurationResponse>
+
+export { APM_UI_settings_object } from './schemas/apm_ui.js'
+export { APM_UI_service_object } from './schemas/apm_ui.js'

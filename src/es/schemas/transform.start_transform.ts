@@ -3,37 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const AcknowledgedResponseBase = z.object({
-  acknowledged: z.boolean().describe('For a successful response, this value is always true. On failure, an exception is returned instead.')
-}).meta({ id: 'AcknowledgedResponseBase' })
-export type AcknowledgedResponseBase = z.infer<typeof AcknowledgedResponseBase>
-
-/**
- * A duration. Units can be `nanos`, `micros`, `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours) and
- * `d` (days). Also accepts "0" without a unit and "-1" to indicate an unspecified value.
- */
-export const Duration = z.union([z.string(), z.literal(-1), z.literal(0)]).meta({ id: 'Duration' })
-export type Duration = z.infer<typeof Duration>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
+import { AcknowledgedResponseBase, Duration, Id } from './_types.js'
 
 /**
  * Start a transform.
@@ -54,12 +27,11 @@ export type RequestBase = z.infer<typeof RequestBase>
  * destination indices, the transform fails when it attempts unauthorized operations.
  */
 export const TransformStartTransformRequest = z.object({
-  ...RequestBase.shape,
-  transform_id: Id.describe('Identifier for the transform.').meta({ found_in: 'path' }),
-  timeout: Duration.describe('Period to wait for a response. If no response is received before the timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' }),
+  transform_id: z.lazy(() => Id).describe('Identifier for the transform.').meta({ found_in: 'path' }),
+  timeout: z.lazy(() => Duration).describe('Period to wait for a response. If no response is received before the timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' }),
   from: z.string().describe('Restricts the set of transformed entities to those changed after this time. Relative times like now-30d are supported. Only applicable for continuous transforms.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'TransformStartTransformRequest' })
 export type TransformStartTransformRequest = z.infer<typeof TransformStartTransformRequest>
 
-export const TransformStartTransformResponse = AcknowledgedResponseBase.meta({ id: 'TransformStartTransformResponse' })
+export const TransformStartTransformResponse = z.lazy(() => AcknowledgedResponseBase).meta({ id: 'TransformStartTransformResponse' })
 export type TransformStartTransformResponse = z.infer<typeof TransformStartTransformResponse>

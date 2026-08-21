@@ -12,24 +12,6 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Kibana_HTTP_APIs_es_asset_reference = z.object({
-  customDataStreamOriginDataset: z.string().optional(),
-  customDataStreamOriginType: z.string().optional(),
-  deferred: z.boolean().optional(),
-  id: z.string(),
-  type: z.enum(['index', 'index_template', 'component_template', 'ingest_pipeline', 'ilm_policy', 'data_stream_ilm_policy', 'transform', 'ml_model', 'knowledge_base', 'esql_view']),
-  version: z.string().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_es_asset_reference' })
-export type Kibana_HTTP_APIs_es_asset_reference = z.infer<typeof Kibana_HTTP_APIs_es_asset_reference>
-
-export const Kibana_HTTP_APIs_kibana_asset_reference = z.object({
-  deferred: z.boolean().optional(),
-  id: z.string(),
-  originId: z.string().optional(),
-  type: z.union([z.enum(['dashboard', 'lens', 'visualization', 'search', 'index-pattern', 'map', 'ml-module', 'security-rule', 'csp-rule-template', 'osquery-pack-asset', 'osquery-saved-query', 'tag']), z.string()])
-}).meta({ id: 'Kibana_HTTP_APIs_kibana_asset_reference' })
-export type Kibana_HTTP_APIs_kibana_asset_reference = z.infer<typeof Kibana_HTTP_APIs_kibana_asset_reference>
-
 export const Kibana_HTTP_APIs_create_custom_integration_request = z.object({
   datasets: z.array(z.object({
     name: z.string(),
@@ -40,11 +22,6 @@ export const Kibana_HTTP_APIs_create_custom_integration_request = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_create_custom_integration_request' })
 export type Kibana_HTTP_APIs_create_custom_integration_request = z.infer<typeof Kibana_HTTP_APIs_create_custom_integration_request>
 
-export const Kibana_HTTP_APIs_install_package_response = z.object({
-  _meta: z.object({
-    install_source: z.string(),
-    name: z.string()
-  }),
-  items: z.array(z.union([Kibana_HTTP_APIs_kibana_asset_reference, Kibana_HTTP_APIs_es_asset_reference]))
-}).meta({ id: 'Kibana_HTTP_APIs_install_package_response' })
-export type Kibana_HTTP_APIs_install_package_response = z.infer<typeof Kibana_HTTP_APIs_install_package_response>
+export { Kibana_HTTP_APIs_install_package_response } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_es_asset_reference } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_kibana_asset_reference } from './schemas/kibana.js'

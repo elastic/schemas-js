@@ -3,34 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const AcknowledgedResponseBase = z.object({
-  acknowledged: z.boolean().describe('For a successful response, this value is always true. On failure, an exception is returned instead.')
-}).meta({ id: 'AcknowledgedResponseBase' })
-export type AcknowledgedResponseBase = z.infer<typeof AcknowledgedResponseBase>
-
-/**
- * A duration. Units can be `nanos`, `micros`, `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours) and
- * `d` (days). Also accepts "0" without a unit and "-1" to indicate an unspecified value.
- */
-export const Duration = z.union([z.string(), z.literal(-1), z.literal(0)]).meta({ id: 'Duration' })
-export type Duration = z.infer<typeof Duration>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
+import { AcknowledgedResponseBase, Duration } from './_types.js'
 
 /**
  * Set upgrade_mode for ML indices.
@@ -49,11 +25,10 @@ export type RequestBase = z.infer<typeof RequestBase>
  * machine learning info API.
  */
 export const MlSetUpgradeModeRequest = z.object({
-  ...RequestBase.shape,
   enabled: z.boolean().describe('When `true`, it enables `upgrade_mode` which temporarily halts all job and datafeed tasks and prohibits new job and datafeed tasks from starting.').optional().meta({ found_in: 'query' }),
-  timeout: Duration.describe('The time to wait for the request to be completed.').optional().meta({ found_in: 'query' })
+  timeout: z.lazy(() => Duration).describe('The time to wait for the request to be completed.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'MlSetUpgradeModeRequest' })
 export type MlSetUpgradeModeRequest = z.infer<typeof MlSetUpgradeModeRequest>
 
-export const MlSetUpgradeModeResponse = AcknowledgedResponseBase.meta({ id: 'MlSetUpgradeModeResponse' })
+export const MlSetUpgradeModeResponse = z.lazy(() => AcknowledgedResponseBase).meta({ id: 'MlSetUpgradeModeResponse' })
 export type MlSetUpgradeModeResponse = z.infer<typeof MlSetUpgradeModeResponse>

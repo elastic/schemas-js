@@ -12,8 +12,12 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Observability_AI_Assistant_API_MessageRoleEnum = z.enum(['system', 'assistant', 'function', 'user', 'elastic']).meta({ id: 'Observability_AI_Assistant_API_MessageRoleEnum' })
-export type Observability_AI_Assistant_API_MessageRoleEnum = z.infer<typeof Observability_AI_Assistant_API_MessageRoleEnum>
+export const Observability_AI_Assistant_API_Function = z.object({
+  description: z.string().optional(),
+  name: z.string().optional(),
+  parameters: z.object({}).optional()
+}).meta({ id: 'Observability_AI_Assistant_API_Function' })
+export type Observability_AI_Assistant_API_Function = z.infer<typeof Observability_AI_Assistant_API_Function>
 
 export const Observability_AI_Assistant_API_FunctionCall = z.object({
   arguments: z.string().optional(),
@@ -28,12 +32,8 @@ export const Observability_AI_Assistant_API_Instruction = z.union([z.string(), z
 })]).meta({ id: 'Observability_AI_Assistant_API_Instruction' })
 export type Observability_AI_Assistant_API_Instruction = z.infer<typeof Observability_AI_Assistant_API_Instruction>
 
-export const Observability_AI_Assistant_API_Function = z.object({
-  description: z.string().optional(),
-  name: z.string().optional(),
-  parameters: z.object({}).optional()
-}).meta({ id: 'Observability_AI_Assistant_API_Function' })
-export type Observability_AI_Assistant_API_Function = z.infer<typeof Observability_AI_Assistant_API_Function>
+export const Observability_AI_Assistant_API_MessageRoleEnum = z.enum(['system', 'assistant', 'function', 'user', 'elastic']).meta({ id: 'Observability_AI_Assistant_API_MessageRoleEnum' })
+export type Observability_AI_Assistant_API_MessageRoleEnum = z.infer<typeof Observability_AI_Assistant_API_MessageRoleEnum>
 
 export const Observability_AI_Assistant_API_Message = z.object({
   '@timestamp': z.string(),

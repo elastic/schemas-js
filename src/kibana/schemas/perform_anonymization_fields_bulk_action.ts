@@ -11,36 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_AI_Assistant_API_BulkCrudActionSummary = z.object({
-  failed: z.number(),
-  skipped: z.number(),
-  succeeded: z.number(),
-  total: z.number()
-}).meta({ id: 'Security_AI_Assistant_API_BulkCrudActionSummary' })
-export type Security_AI_Assistant_API_BulkCrudActionSummary = z.infer<typeof Security_AI_Assistant_API_BulkCrudActionSummary>
-
-export const Security_AI_Assistant_API_NonEmptyTimestamp = z.string().meta({ id: 'Security_AI_Assistant_API_NonEmptyTimestamp' })
-export type Security_AI_Assistant_API_NonEmptyTimestamp = z.infer<typeof Security_AI_Assistant_API_NonEmptyTimestamp>
-
-export const Security_AI_Assistant_API_NonEmptyString = z.string().meta({ id: 'Security_AI_Assistant_API_NonEmptyString' })
-export type Security_AI_Assistant_API_NonEmptyString = z.infer<typeof Security_AI_Assistant_API_NonEmptyString>
-
-export const Security_AI_Assistant_API_AnonymizationFieldsBulkActionSkipReason = z.enum(['ANONYMIZATION_FIELD_NOT_MODIFIED']).meta({ id: 'Security_AI_Assistant_API_AnonymizationFieldsBulkActionSkipReason' })
-export type Security_AI_Assistant_API_AnonymizationFieldsBulkActionSkipReason = z.infer<typeof Security_AI_Assistant_API_AnonymizationFieldsBulkActionSkipReason>
-
-export const Security_AI_Assistant_API_AnonymizationFieldDetailsInError = z.object({
-  id: z.string(),
-  name: z.string().optional()
-}).meta({ id: 'Security_AI_Assistant_API_AnonymizationFieldDetailsInError' })
-export type Security_AI_Assistant_API_AnonymizationFieldDetailsInError = z.infer<typeof Security_AI_Assistant_API_AnonymizationFieldDetailsInError>
-
-export const Security_AI_Assistant_API_AnonymizationFieldUpdateProps = z.object({
-  allowed: z.boolean().optional(),
-  anonymized: z.boolean().optional(),
-  id: z.string()
-}).meta({ id: 'Security_AI_Assistant_API_AnonymizationFieldUpdateProps' })
-export type Security_AI_Assistant_API_AnonymizationFieldUpdateProps = z.infer<typeof Security_AI_Assistant_API_AnonymizationFieldUpdateProps>
+import { Security_AI_Assistant_API_AnonymizationFieldResponse, Security_AI_Assistant_API_BulkCrudActionSummary } from './schemas/security.js'
 
 export const Security_AI_Assistant_API_AnonymizationFieldCreateProps = z.object({
   allowed: z.boolean().optional(),
@@ -49,26 +20,21 @@ export const Security_AI_Assistant_API_AnonymizationFieldCreateProps = z.object(
 }).meta({ id: 'Security_AI_Assistant_API_AnonymizationFieldCreateProps' })
 export type Security_AI_Assistant_API_AnonymizationFieldCreateProps = z.infer<typeof Security_AI_Assistant_API_AnonymizationFieldCreateProps>
 
-export const Security_AI_Assistant_API_AnonymizationFieldResponse = z.object({
+export const Security_AI_Assistant_API_AnonymizationFieldDetailsInError = z.object({
+  id: z.string(),
+  name: z.string().optional()
+}).meta({ id: 'Security_AI_Assistant_API_AnonymizationFieldDetailsInError' })
+export type Security_AI_Assistant_API_AnonymizationFieldDetailsInError = z.infer<typeof Security_AI_Assistant_API_AnonymizationFieldDetailsInError>
+
+export const Security_AI_Assistant_API_AnonymizationFieldsBulkActionSkipReason = z.enum(['ANONYMIZATION_FIELD_NOT_MODIFIED']).meta({ id: 'Security_AI_Assistant_API_AnonymizationFieldsBulkActionSkipReason' })
+export type Security_AI_Assistant_API_AnonymizationFieldsBulkActionSkipReason = z.infer<typeof Security_AI_Assistant_API_AnonymizationFieldsBulkActionSkipReason>
+
+export const Security_AI_Assistant_API_AnonymizationFieldUpdateProps = z.object({
   allowed: z.boolean().optional(),
   anonymized: z.boolean().optional(),
-  createdAt: z.string().optional(),
-  createdBy: z.string().optional(),
-  field: z.string(),
-  id: Security_AI_Assistant_API_NonEmptyString,
-  namespace: z.string().optional(),
-  timestamp: Security_AI_Assistant_API_NonEmptyTimestamp.optional(),
-  updatedAt: z.string().optional(),
-  updatedBy: z.string().optional()
-}).meta({ id: 'Security_AI_Assistant_API_AnonymizationFieldResponse' })
-export type Security_AI_Assistant_API_AnonymizationFieldResponse = z.infer<typeof Security_AI_Assistant_API_AnonymizationFieldResponse>
-
-export const Security_AI_Assistant_API_AnonymizationFieldsBulkActionSkipResult = z.object({
-  id: z.string(),
-  name: z.string().optional(),
-  skip_reason: Security_AI_Assistant_API_AnonymizationFieldsBulkActionSkipReason
-}).meta({ id: 'Security_AI_Assistant_API_AnonymizationFieldsBulkActionSkipResult' })
-export type Security_AI_Assistant_API_AnonymizationFieldsBulkActionSkipResult = z.infer<typeof Security_AI_Assistant_API_AnonymizationFieldsBulkActionSkipResult>
+  id: z.string()
+}).meta({ id: 'Security_AI_Assistant_API_AnonymizationFieldUpdateProps' })
+export type Security_AI_Assistant_API_AnonymizationFieldUpdateProps = z.infer<typeof Security_AI_Assistant_API_AnonymizationFieldUpdateProps>
 
 export const Security_AI_Assistant_API_NormalizedAnonymizationFieldError = z.object({
   anonymization_fields: z.array(Security_AI_Assistant_API_AnonymizationFieldDetailsInError),
@@ -77,6 +43,13 @@ export const Security_AI_Assistant_API_NormalizedAnonymizationFieldError = z.obj
   status_code: z.number()
 }).meta({ id: 'Security_AI_Assistant_API_NormalizedAnonymizationFieldError' })
 export type Security_AI_Assistant_API_NormalizedAnonymizationFieldError = z.infer<typeof Security_AI_Assistant_API_NormalizedAnonymizationFieldError>
+
+export const Security_AI_Assistant_API_AnonymizationFieldsBulkActionSkipResult = z.object({
+  id: z.string(),
+  name: z.string().optional(),
+  skip_reason: Security_AI_Assistant_API_AnonymizationFieldsBulkActionSkipReason
+}).meta({ id: 'Security_AI_Assistant_API_AnonymizationFieldsBulkActionSkipResult' })
+export type Security_AI_Assistant_API_AnonymizationFieldsBulkActionSkipResult = z.infer<typeof Security_AI_Assistant_API_AnonymizationFieldsBulkActionSkipResult>
 
 export const Security_AI_Assistant_API_AnonymizationFieldsBulkCrudActionResults = z.object({
   created: z.array(Security_AI_Assistant_API_AnonymizationFieldResponse),
@@ -108,3 +81,8 @@ export const PerformAnonymizationFieldsBulkActionRequest = z.object({
   update: z.array(Security_AI_Assistant_API_AnonymizationFieldUpdateProps).optional()
 }).meta({ id: 'PerformAnonymizationFieldsBulkActionRequest' })
 export type PerformAnonymizationFieldsBulkActionRequest = z.infer<typeof PerformAnonymizationFieldsBulkActionRequest>
+
+export { Security_AI_Assistant_API_BulkCrudActionSummary } from './schemas/security.js'
+export { Security_AI_Assistant_API_AnonymizationFieldResponse } from './schemas/security.js'
+export { Security_AI_Assistant_API_NonEmptyTimestamp } from './schemas/security.js'
+export { Security_AI_Assistant_API_NonEmptyString } from './schemas/security.js'

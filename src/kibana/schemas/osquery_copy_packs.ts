@@ -11,48 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Osquery_API_ScheduleType = z.enum(['interval', 'rrule']).meta({ id: 'Security_Osquery_API_ScheduleType' })
-export type Security_Osquery_API_ScheduleType = z.infer<typeof Security_Osquery_API_ScheduleType>
-
-export const Security_Osquery_API_RRuleScheduleConfig = z.object({
-  end_date: z.string().optional(),
-  rrule: z.string(),
-  splay: z.string().optional(),
-  start_date: z.string(),
-  timeout: z.number().optional()
-}).meta({ id: 'Security_Osquery_API_RRuleScheduleConfig' })
-export type Security_Osquery_API_RRuleScheduleConfig = z.infer<typeof Security_Osquery_API_RRuleScheduleConfig>
-
-export const Security_Osquery_API_ECSMappingItem = z.object({
-  field: z.string().optional(),
-  value: z.union([z.string(), z.array(z.string())]).optional()
-}).meta({ id: 'Security_Osquery_API_ECSMappingItem' })
-export type Security_Osquery_API_ECSMappingItem = z.infer<typeof Security_Osquery_API_ECSMappingItem>
-
-export const Security_Osquery_API_PolicyIds = z.array(z.string()).meta({ id: 'Security_Osquery_API_PolicyIds' })
-export type Security_Osquery_API_PolicyIds = z.infer<typeof Security_Osquery_API_PolicyIds>
-
-export const Security_Osquery_API_PackName = z.string().meta({ id: 'Security_Osquery_API_PackName' })
-export type Security_Osquery_API_PackName = z.infer<typeof Security_Osquery_API_PackName>
-
-export const Security_Osquery_API_PackInterval = z.number().meta({ id: 'Security_Osquery_API_PackInterval' })
-export type Security_Osquery_API_PackInterval = z.infer<typeof Security_Osquery_API_PackInterval>
-
-export const Security_Osquery_API_Enabled = z.boolean().meta({ id: 'Security_Osquery_API_Enabled' })
-export type Security_Osquery_API_Enabled = z.infer<typeof Security_Osquery_API_Enabled>
-
-export const Security_Osquery_API_PackDescription = z.string().meta({ id: 'Security_Osquery_API_PackDescription' })
-export type Security_Osquery_API_PackDescription = z.infer<typeof Security_Osquery_API_PackDescription>
-
-export const Security_Osquery_API_ECSMappingArrayItem = z.object({
-  key: z.string().optional(),
-  value: Security_Osquery_API_ECSMappingItem.optional()
-}).meta({ id: 'Security_Osquery_API_ECSMappingArrayItem' })
-export type Security_Osquery_API_ECSMappingArrayItem = z.infer<typeof Security_Osquery_API_ECSMappingArrayItem>
-
-export const Security_Osquery_API_ECSMappingArray = z.array(Security_Osquery_API_ECSMappingArrayItem).meta({ id: 'Security_Osquery_API_ECSMappingArray' })
-export type Security_Osquery_API_ECSMappingArray = z.infer<typeof Security_Osquery_API_ECSMappingArray>
+import { Security_Osquery_API_ECSMappingArray, Security_Osquery_API_Enabled, Security_Osquery_API_PackDescription, Security_Osquery_API_PackInterval, Security_Osquery_API_PackName, Security_Osquery_API_PolicyIds, Security_Osquery_API_RRuleScheduleConfig, Security_Osquery_API_ScheduleType } from './schemas/security.js'
 
 export const Security_Osquery_API_CopyPacksResponse = z.object({
   data: z.object({
@@ -91,3 +50,14 @@ export const Security_Osquery_API_CopyPacksResponse = z.object({
   })
 }).meta({ id: 'Security_Osquery_API_CopyPacksResponse' })
 export type Security_Osquery_API_CopyPacksResponse = z.infer<typeof Security_Osquery_API_CopyPacksResponse>
+
+export { Security_Osquery_API_ScheduleType } from './schemas/security.js'
+export { Security_Osquery_API_RRuleScheduleConfig } from './schemas/security.js'
+export { Security_Osquery_API_ECSMappingArray } from './schemas/security.js'
+export { Security_Osquery_API_ECSMappingArrayItem } from './schemas/security.js'
+export { Security_Osquery_API_ECSMappingItem } from './schemas/security.js'
+export { Security_Osquery_API_PolicyIds } from './schemas/security.js'
+export { Security_Osquery_API_PackName } from './schemas/security.js'
+export { Security_Osquery_API_PackInterval } from './schemas/security.js'
+export { Security_Osquery_API_Enabled } from './schemas/security.js'
+export { Security_Osquery_API_PackDescription } from './schemas/security.js'

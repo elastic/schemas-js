@@ -12,16 +12,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const AccountTrustSettings = z.object({
-  trust_all: z.boolean()
-}).meta({ id: 'AccountTrustSettings' })
-export type AccountTrustSettings = z.infer<typeof AccountTrustSettings>
-
-export const AccountResponse = z.object({
-  id: z.string(),
-  trust: AccountTrustSettings.optional()
-}).meta({ id: 'AccountResponse' })
-export type AccountResponse = z.infer<typeof AccountResponse>
+import { AccountResponse, AccountTrustSettings } from './definitions/account.js'
 
 export const AccountUpdateRequest = z.object({
   trust: AccountTrustSettings.optional()

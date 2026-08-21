@@ -11,6 +11,10 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
+import { Security_AI_Assistant_API_DocumentEntryCreateFields, Security_AI_Assistant_API_IndexEntryCreateFields, Security_AI_Assistant_API_KnowledgeBaseEntryCreateProps, Security_AI_Assistant_API_KnowledgeBaseEntryResponse, Security_AI_Assistant_API_NonEmptyString, Security_AI_Assistant_API_User } from './schemas/security.js'
+
+export const Security_AI_Assistant_API_KnowledgeBaseEntryBulkActionSkipReason = z.enum(['KNOWLEDGE_BASE_ENTRY_NOT_MODIFIED']).meta({ id: 'Security_AI_Assistant_API_KnowledgeBaseEntryBulkActionSkipReason' })
+export type Security_AI_Assistant_API_KnowledgeBaseEntryBulkActionSkipReason = z.infer<typeof Security_AI_Assistant_API_KnowledgeBaseEntryBulkActionSkipReason>
 
 export const Security_AI_Assistant_API_KnowledgeBaseEntryBulkCrudActionSummary = z.object({
   failed: z.number(),
@@ -20,77 +24,11 @@ export const Security_AI_Assistant_API_KnowledgeBaseEntryBulkCrudActionSummary =
 }).meta({ id: 'Security_AI_Assistant_API_KnowledgeBaseEntryBulkCrudActionSummary' })
 export type Security_AI_Assistant_API_KnowledgeBaseEntryBulkCrudActionSummary = z.infer<typeof Security_AI_Assistant_API_KnowledgeBaseEntryBulkCrudActionSummary>
 
-export const Security_AI_Assistant_API_InputSchema = z.array(z.object({
-  description: z.string(),
-  fieldName: z.string(),
-  fieldType: z.string()
-})).meta({ id: 'Security_AI_Assistant_API_InputSchema' })
-export type Security_AI_Assistant_API_InputSchema = z.infer<typeof Security_AI_Assistant_API_InputSchema>
-
-export const Security_AI_Assistant_API_IndexEntryRequiredFields = z.object({
-  description: z.string(),
-  field: z.string(),
-  index: z.string(),
-  queryDescription: z.string(),
-  type: z.enum(['index'])
-}).meta({ id: 'Security_AI_Assistant_API_IndexEntryRequiredFields' })
-export type Security_AI_Assistant_API_IndexEntryRequiredFields = z.infer<typeof Security_AI_Assistant_API_IndexEntryRequiredFields>
-
-export const Security_AI_Assistant_API_NonEmptyString = z.string().meta({ id: 'Security_AI_Assistant_API_NonEmptyString' })
-export type Security_AI_Assistant_API_NonEmptyString = z.infer<typeof Security_AI_Assistant_API_NonEmptyString>
-
-export const Security_AI_Assistant_API_User = z.object({
-  id: z.string().optional(),
-  name: z.string().optional()
-}).meta({ id: 'Security_AI_Assistant_API_User' })
-export type Security_AI_Assistant_API_User = z.infer<typeof Security_AI_Assistant_API_User>
-
-export const Security_AI_Assistant_API_Vector = z.object({
-  modelId: z.string(),
-  tokens: z.record(z.string(), z.number())
-}).meta({ id: 'Security_AI_Assistant_API_Vector' })
-export type Security_AI_Assistant_API_Vector = z.infer<typeof Security_AI_Assistant_API_Vector>
-
-export const Security_AI_Assistant_API_KnowledgeBaseResource = z.enum(['security_labs', 'defend_insights', 'user']).meta({ id: 'Security_AI_Assistant_API_KnowledgeBaseResource' })
-export type Security_AI_Assistant_API_KnowledgeBaseResource = z.infer<typeof Security_AI_Assistant_API_KnowledgeBaseResource>
-
-export const Security_AI_Assistant_API_KnowledgeBaseEntryBulkActionSkipReason = z.enum(['KNOWLEDGE_BASE_ENTRY_NOT_MODIFIED']).meta({ id: 'Security_AI_Assistant_API_KnowledgeBaseEntryBulkActionSkipReason' })
-export type Security_AI_Assistant_API_KnowledgeBaseEntryBulkActionSkipReason = z.infer<typeof Security_AI_Assistant_API_KnowledgeBaseEntryBulkActionSkipReason>
-
 export const Security_AI_Assistant_API_KnowledgeBaseEntryDetailsInError = z.object({
   id: z.string(),
   name: z.string().optional()
 }).meta({ id: 'Security_AI_Assistant_API_KnowledgeBaseEntryDetailsInError' })
 export type Security_AI_Assistant_API_KnowledgeBaseEntryDetailsInError = z.infer<typeof Security_AI_Assistant_API_KnowledgeBaseEntryDetailsInError>
-
-export const Security_AI_Assistant_API_IndexEntryOptionalFields = z.object({
-  inputSchema: Security_AI_Assistant_API_InputSchema.optional(),
-  outputFields: z.array(z.string()).optional()
-}).meta({ id: 'Security_AI_Assistant_API_IndexEntryOptionalFields' })
-export type Security_AI_Assistant_API_IndexEntryOptionalFields = z.infer<typeof Security_AI_Assistant_API_IndexEntryOptionalFields>
-
-export const Security_AI_Assistant_API_ResponseFields = z.object({
-  createdAt: z.string(),
-  createdBy: z.string(),
-  id: Security_AI_Assistant_API_NonEmptyString,
-  updatedAt: z.string(),
-  updatedBy: z.string()
-}).meta({ id: 'Security_AI_Assistant_API_ResponseFields' })
-export type Security_AI_Assistant_API_ResponseFields = z.infer<typeof Security_AI_Assistant_API_ResponseFields>
-
-export const Security_AI_Assistant_API_DocumentEntryOptionalFields = z.object({
-  required: z.boolean().optional(),
-  vector: Security_AI_Assistant_API_Vector.optional()
-}).meta({ id: 'Security_AI_Assistant_API_DocumentEntryOptionalFields' })
-export type Security_AI_Assistant_API_DocumentEntryOptionalFields = z.infer<typeof Security_AI_Assistant_API_DocumentEntryOptionalFields>
-
-export const Security_AI_Assistant_API_DocumentEntryRequiredFields = z.object({
-  kbResource: Security_AI_Assistant_API_KnowledgeBaseResource,
-  source: z.string(),
-  text: z.string(),
-  type: z.enum(['document'])
-}).meta({ id: 'Security_AI_Assistant_API_DocumentEntryRequiredFields' })
-export type Security_AI_Assistant_API_DocumentEntryRequiredFields = z.infer<typeof Security_AI_Assistant_API_DocumentEntryRequiredFields>
 
 export const Security_AI_Assistant_API_KnowledgeBaseEntryBulkActionSkipResult = z.object({
   id: z.string(),
@@ -107,36 +45,6 @@ export const Security_AI_Assistant_API_NormalizedKnowledgeBaseEntryError = z.obj
 }).meta({ id: 'Security_AI_Assistant_API_NormalizedKnowledgeBaseEntryError' })
 export type Security_AI_Assistant_API_NormalizedKnowledgeBaseEntryError = z.infer<typeof Security_AI_Assistant_API_NormalizedKnowledgeBaseEntryError>
 
-export const Security_AI_Assistant_API_IndexEntryResponseFields = Security_AI_Assistant_API_IndexEntryRequiredFields.merge(Security_AI_Assistant_API_IndexEntryOptionalFields).meta({ id: 'Security_AI_Assistant_API_IndexEntryResponseFields' })
-export type Security_AI_Assistant_API_IndexEntryResponseFields = z.infer<typeof Security_AI_Assistant_API_IndexEntryResponseFields>
-
-export const Security_AI_Assistant_API_IndexEntryCreateFields = z.object({
-  global: z.boolean().optional(),
-  name: z.string(),
-  namespace: z.string().optional(),
-  users: z.array(Security_AI_Assistant_API_User).optional()
-}).merge(Security_AI_Assistant_API_IndexEntryRequiredFields).merge(Security_AI_Assistant_API_IndexEntryOptionalFields).meta({ id: 'Security_AI_Assistant_API_IndexEntryCreateFields' })
-export type Security_AI_Assistant_API_IndexEntryCreateFields = z.infer<typeof Security_AI_Assistant_API_IndexEntryCreateFields>
-
-export const Security_AI_Assistant_API_DocumentEntryResponseFields = Security_AI_Assistant_API_DocumentEntryRequiredFields.merge(Security_AI_Assistant_API_DocumentEntryOptionalFields).meta({ id: 'Security_AI_Assistant_API_DocumentEntryResponseFields' })
-export type Security_AI_Assistant_API_DocumentEntryResponseFields = z.infer<typeof Security_AI_Assistant_API_DocumentEntryResponseFields>
-
-export const Security_AI_Assistant_API_DocumentEntryCreateFields = z.object({
-  global: z.boolean().optional(),
-  name: z.string(),
-  namespace: z.string().optional(),
-  users: z.array(Security_AI_Assistant_API_User).optional()
-}).merge(Security_AI_Assistant_API_DocumentEntryRequiredFields).merge(Security_AI_Assistant_API_DocumentEntryOptionalFields).meta({ id: 'Security_AI_Assistant_API_DocumentEntryCreateFields' })
-export type Security_AI_Assistant_API_DocumentEntryCreateFields = z.infer<typeof Security_AI_Assistant_API_DocumentEntryCreateFields>
-
-export const Security_AI_Assistant_API_IndexEntry = z.intersection(z.intersection(z.object({
-  global: z.boolean(),
-  name: z.string(),
-  namespace: z.string(),
-  users: z.array(Security_AI_Assistant_API_User)
-}), Security_AI_Assistant_API_ResponseFields), Security_AI_Assistant_API_IndexEntryResponseFields).meta({ id: 'Security_AI_Assistant_API_IndexEntry' })
-export type Security_AI_Assistant_API_IndexEntry = z.infer<typeof Security_AI_Assistant_API_IndexEntry>
-
 export const Security_AI_Assistant_API_IndexEntryUpdateFields = z.intersection(z.object({
   global: z.boolean().optional(),
   id: Security_AI_Assistant_API_NonEmptyString,
@@ -146,14 +54,6 @@ export const Security_AI_Assistant_API_IndexEntryUpdateFields = z.intersection(z
 }), Security_AI_Assistant_API_IndexEntryCreateFields).meta({ id: 'Security_AI_Assistant_API_IndexEntryUpdateFields' })
 export type Security_AI_Assistant_API_IndexEntryUpdateFields = z.infer<typeof Security_AI_Assistant_API_IndexEntryUpdateFields>
 
-export const Security_AI_Assistant_API_DocumentEntry = z.intersection(z.intersection(z.object({
-  global: z.boolean(),
-  name: z.string(),
-  namespace: z.string(),
-  users: z.array(Security_AI_Assistant_API_User)
-}), Security_AI_Assistant_API_ResponseFields), Security_AI_Assistant_API_DocumentEntryResponseFields).meta({ id: 'Security_AI_Assistant_API_DocumentEntry' })
-export type Security_AI_Assistant_API_DocumentEntry = z.infer<typeof Security_AI_Assistant_API_DocumentEntry>
-
 export const Security_AI_Assistant_API_DocumentEntryUpdateFields = z.intersection(z.object({
   global: z.boolean().optional(),
   id: Security_AI_Assistant_API_NonEmptyString,
@@ -162,12 +62,6 @@ export const Security_AI_Assistant_API_DocumentEntryUpdateFields = z.intersectio
   users: z.array(Security_AI_Assistant_API_User).optional()
 }), Security_AI_Assistant_API_DocumentEntryCreateFields).meta({ id: 'Security_AI_Assistant_API_DocumentEntryUpdateFields' })
 export type Security_AI_Assistant_API_DocumentEntryUpdateFields = z.infer<typeof Security_AI_Assistant_API_DocumentEntryUpdateFields>
-
-export const Security_AI_Assistant_API_KnowledgeBaseEntryCreateProps = z.union([Security_AI_Assistant_API_DocumentEntryCreateFields, Security_AI_Assistant_API_IndexEntryCreateFields]).meta({ id: 'Security_AI_Assistant_API_KnowledgeBaseEntryCreateProps' })
-export type Security_AI_Assistant_API_KnowledgeBaseEntryCreateProps = z.infer<typeof Security_AI_Assistant_API_KnowledgeBaseEntryCreateProps>
-
-export const Security_AI_Assistant_API_KnowledgeBaseEntryResponse = z.union([Security_AI_Assistant_API_DocumentEntry, Security_AI_Assistant_API_IndexEntry]).meta({ id: 'Security_AI_Assistant_API_KnowledgeBaseEntryResponse' })
-export type Security_AI_Assistant_API_KnowledgeBaseEntryResponse = z.infer<typeof Security_AI_Assistant_API_KnowledgeBaseEntryResponse>
 
 export const Security_AI_Assistant_API_KnowledgeBaseEntryUpdateProps = z.union([Security_AI_Assistant_API_DocumentEntryUpdateFields, Security_AI_Assistant_API_IndexEntryUpdateFields]).meta({ id: 'Security_AI_Assistant_API_KnowledgeBaseEntryUpdateProps' })
 export type Security_AI_Assistant_API_KnowledgeBaseEntryUpdateProps = z.infer<typeof Security_AI_Assistant_API_KnowledgeBaseEntryUpdateProps>
@@ -202,3 +96,22 @@ export const PerformKnowledgeBaseEntryBulkActionRequest = z.object({
   update: z.array(Security_AI_Assistant_API_KnowledgeBaseEntryUpdateProps).optional()
 }).meta({ id: 'PerformKnowledgeBaseEntryBulkActionRequest' })
 export type PerformKnowledgeBaseEntryBulkActionRequest = z.infer<typeof PerformKnowledgeBaseEntryBulkActionRequest>
+
+export { Security_AI_Assistant_API_KnowledgeBaseEntryResponse } from './schemas/security.js'
+export { Security_AI_Assistant_API_IndexEntry } from './schemas/security.js'
+export { Security_AI_Assistant_API_IndexEntryResponseFields } from './schemas/security.js'
+export { Security_AI_Assistant_API_IndexEntryOptionalFields } from './schemas/security.js'
+export { Security_AI_Assistant_API_InputSchema } from './schemas/security.js'
+export { Security_AI_Assistant_API_IndexEntryRequiredFields } from './schemas/security.js'
+export { Security_AI_Assistant_API_ResponseFields } from './schemas/security.js'
+export { Security_AI_Assistant_API_NonEmptyString } from './schemas/security.js'
+export { Security_AI_Assistant_API_User } from './schemas/security.js'
+export { Security_AI_Assistant_API_DocumentEntry } from './schemas/security.js'
+export { Security_AI_Assistant_API_DocumentEntryResponseFields } from './schemas/security.js'
+export { Security_AI_Assistant_API_DocumentEntryOptionalFields } from './schemas/security.js'
+export { Security_AI_Assistant_API_Vector } from './schemas/security.js'
+export { Security_AI_Assistant_API_DocumentEntryRequiredFields } from './schemas/security.js'
+export { Security_AI_Assistant_API_KnowledgeBaseResource } from './schemas/security.js'
+export { Security_AI_Assistant_API_IndexEntryCreateFields } from './schemas/security.js'
+export { Security_AI_Assistant_API_DocumentEntryCreateFields } from './schemas/security.js'
+export { Security_AI_Assistant_API_KnowledgeBaseEntryCreateProps } from './schemas/security.js'

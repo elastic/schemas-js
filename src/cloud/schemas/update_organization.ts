@@ -12,19 +12,11 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Organization = z.object({
-  id: z.string(),
-  name: z.string(),
-  default_disk_usage_alerts_enabled: z.boolean().optional(),
-  notifications_allowed_email_domains: z.array(z.string()).optional(),
-  billing_contacts: z.array(z.string()).optional(),
-  operational_contacts: z.array(z.string()).optional(),
-  sso_login_identifier: z.string().optional()
-}).meta({ id: 'Organization' })
-export type Organization = z.infer<typeof Organization>
+import { Organization } from './definitions/organization.js'
 
 export const OrganizationRequest = z.object({
   name: z.string().optional(),
+  enforce_authentication_method: z.enum(['sso']).optional(),
   default_disk_usage_alerts_enabled: z.boolean().optional(),
   notifications_allowed_email_domains: z.array(z.string()).optional(),
   billing_contacts: z.array(z.string()).optional(),

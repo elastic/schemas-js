@@ -11,17 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Kibana_HTTP_APIs_kbn_as_code_meta = z.object({
-  created_at: z.string().optional(),
-  created_by: z.string().optional(),
-  managed: z.boolean().optional(),
-  owner: z.string().optional(),
-  updated_at: z.string().optional(),
-  updated_by: z.string().optional(),
-  version: z.string().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_kbn_as_code_meta' })
-export type Kibana_HTTP_APIs_kbn_as_code_meta = z.infer<typeof Kibana_HTTP_APIs_kbn_as_code_meta>
+import { Kibana_HTTP_APIs_kbn_as_code_meta } from './schemas/kibana.js'
 
 export const PutMarkdownsIdRequest = z.object({
   content: z.string(),
@@ -60,3 +50,5 @@ export const PutMarkdownsIdResponse201 = z.object({
   meta: Kibana_HTTP_APIs_kbn_as_code_meta
 }).meta({ id: 'PutMarkdownsIdResponse201' })
 export type PutMarkdownsIdResponse201 = z.infer<typeof PutMarkdownsIdResponse201>
+
+export { Kibana_HTTP_APIs_kbn_as_code_meta } from './schemas/kibana.js'

@@ -11,11 +11,11 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Attack_discovery_API_NonEmptyString = z.string().meta({ id: 'Security_Attack_discovery_API_NonEmptyString' })
-export type Security_Attack_discovery_API_NonEmptyString = z.infer<typeof Security_Attack_discovery_API_NonEmptyString>
+import { Security_Attack_discovery_API_NonEmptyString } from './schemas/security.js'
 
 export const DeleteAttackDiscoverySchedulesResponse = z.object({
   id: Security_Attack_discovery_API_NonEmptyString
 }).meta({ id: 'DeleteAttackDiscoverySchedulesResponse' })
 export type DeleteAttackDiscoverySchedulesResponse = z.infer<typeof DeleteAttackDiscoverySchedulesResponse>
+
+export { Security_Attack_discovery_API_NonEmptyString } from './schemas/security.js'

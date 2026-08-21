@@ -12,11 +12,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const FilterAssociation = z.object({
-  entity_type: z.string(),
-  id: z.string()
-}).meta({ id: 'FilterAssociation' })
-export type FilterAssociation = z.infer<typeof FilterAssociation>
+import { FilterAssociation } from './definitions/misc.js'
 
 export const RulesetAssociations = z.object({
   associations: z.array(FilterAssociation),

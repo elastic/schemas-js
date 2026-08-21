@@ -11,15 +11,13 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
+import { Security_AI_Assistant_API_NonEmptyString } from './schemas/security.js'
 
 export const Security_AI_Assistant_API_ChatMessageRole = z.enum(['system', 'user', 'assistant']).meta({ id: 'Security_AI_Assistant_API_ChatMessageRole' })
 export type Security_AI_Assistant_API_ChatMessageRole = z.infer<typeof Security_AI_Assistant_API_ChatMessageRole>
 
 export const Security_AI_Assistant_API_MessageData = z.record(z.string(), z.unknown()).meta({ id: 'Security_AI_Assistant_API_MessageData' })
 export type Security_AI_Assistant_API_MessageData = z.infer<typeof Security_AI_Assistant_API_MessageData>
-
-export const Security_AI_Assistant_API_NonEmptyString = z.string().meta({ id: 'Security_AI_Assistant_API_NonEmptyString' })
-export type Security_AI_Assistant_API_NonEmptyString = z.infer<typeof Security_AI_Assistant_API_NonEmptyString>
 
 export const Security_AI_Assistant_API_ChatMessage = z.object({
   content: z.string().optional(),
@@ -42,3 +40,5 @@ export const Security_AI_Assistant_API_ChatCompleteProps = z.object({
   responseLanguage: z.string().optional()
 }).meta({ id: 'Security_AI_Assistant_API_ChatCompleteProps' })
 export type Security_AI_Assistant_API_ChatCompleteProps = z.infer<typeof Security_AI_Assistant_API_ChatCompleteProps>
+
+export { Security_AI_Assistant_API_NonEmptyString } from './schemas/security.js'

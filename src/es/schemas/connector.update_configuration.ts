@@ -3,45 +3,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
-
-export const Result = z.enum(['created', 'updated', 'deleted', 'not_found', 'noop']).meta({ id: 'Result' })
-export type Result = z.infer<typeof Result>
-
-export const long = z.number().meta({ id: 'long' })
-export type long = z.infer<typeof long>
-
-export const double = z.number().meta({ id: 'double' })
-export type double = z.infer<typeof double>
-
-/** A scalar value. */
-export const ScalarValue = z.union([long, double, z.string(), z.boolean(), z.null()]).meta({ id: 'ScalarValue' })
-export type ScalarValue = z.infer<typeof ScalarValue>
-
-export const integer = z.number().meta({ id: 'integer' })
-export type integer = z.infer<typeof integer>
+import { Id, Result, ScalarValue, double, integer } from './_types.js'
 
 export const ConnectorDependency = z.object({
   field: z.string(),
-  value: ScalarValue
+  value: z.lazy(() => ScalarValue)
 }).meta({ id: 'ConnectorDependency' })
 export type ConnectorDependency = z.infer<typeof ConnectorDependency>
 
@@ -50,7 +19,7 @@ export type ConnectorDisplayType = z.infer<typeof ConnectorDisplayType>
 
 export const ConnectorSelectOption = z.object({
   label: z.string(),
-  value: ScalarValue
+  value: z.lazy(() => ScalarValue)
 }).meta({ id: 'ConnectorSelectOption' })
 export type ConnectorSelectOption = z.infer<typeof ConnectorSelectOption>
 
@@ -59,13 +28,13 @@ export type ConnectorConnectorFieldType = z.infer<typeof ConnectorConnectorField
 
 export const ConnectorLessThanValidation = z.object({
   type: z.literal('less_than'),
-  constraint: double
+  constraint: z.lazy(() => double)
 }).meta({ id: 'ConnectorLessThanValidation' })
 export type ConnectorLessThanValidation = z.infer<typeof ConnectorLessThanValidation>
 
 export const ConnectorGreaterThanValidation = z.object({
   type: z.literal('greater_than'),
-  constraint: double
+  constraint: z.lazy(() => double)
 }).meta({ id: 'ConnectorGreaterThanValidation' })
 export type ConnectorGreaterThanValidation = z.infer<typeof ConnectorGreaterThanValidation>
 
@@ -77,7 +46,7 @@ export type ConnectorListTypeValidation = z.infer<typeof ConnectorListTypeValida
 
 export const ConnectorIncludedInValidation = z.object({
   type: z.literal('included_in'),
-  constraint: z.array(ScalarValue)
+  constraint: z.array(z.lazy(() => ScalarValue))
 }).meta({ id: 'ConnectorIncludedInValidation' })
 export type ConnectorIncludedInValidation = z.infer<typeof ConnectorIncludedInValidation>
 
@@ -92,12 +61,12 @@ export type ConnectorValidation = z.infer<typeof ConnectorValidation>
 
 export const ConnectorConnectorConfigProperties = z.object({
   category: z.string().optional(),
-  default_value: ScalarValue,
+  default_value: z.lazy(() => ScalarValue),
   depends_on: z.array(ConnectorDependency),
   display: ConnectorDisplayType,
   label: z.string(),
   options: z.array(ConnectorSelectOption),
-  order: integer.optional(),
+  order: z.lazy(() => integer).optional(),
   placeholder: z.string().optional(),
   required: z.boolean(),
   sensitive: z.boolean(),
@@ -118,14 +87,13 @@ export type ConnectorConnectorConfiguration = z.infer<typeof ConnectorConnectorC
  * Update the configuration field in the connector document.
  */
 export const ConnectorUpdateConfigurationRequest = z.object({
-  ...RequestBase.shape,
-  connector_id: Id.describe('The unique identifier of the connector to be updated').meta({ found_in: 'path' }),
+  connector_id: z.lazy(() => Id).describe('The unique identifier of the connector to be updated').meta({ found_in: 'path' }),
   configuration: ConnectorConnectorConfiguration.optional().meta({ found_in: 'body' }),
   values: z.record(z.string(), z.any()).optional().meta({ found_in: 'body' })
 }).meta({ id: 'ConnectorUpdateConfigurationRequest' })
 export type ConnectorUpdateConfigurationRequest = z.infer<typeof ConnectorUpdateConfigurationRequest>
 
 export const ConnectorUpdateConfigurationResponse = z.object({
-  result: Result
+  result: z.lazy(() => Result)
 }).meta({ id: 'ConnectorUpdateConfigurationResponse' })
 export type ConnectorUpdateConfigurationResponse = z.infer<typeof ConnectorUpdateConfigurationResponse>

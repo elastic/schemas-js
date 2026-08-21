@@ -11,24 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Kibana_HTTP_APIs_package_policy_package = z.object({
-  experimental_data_stream_features: z.array(z.object({
-    data_stream: z.string(),
-    features: z.object({
-      doc_value_only_numeric: z.boolean().optional(),
-      doc_value_only_other: z.boolean().optional(),
-      synthetic_source: z.boolean().optional(),
-      tsdb: z.boolean().optional()
-    })
-  })).optional(),
-  fips_compatible: z.boolean().optional(),
-  name: z.string(),
-  requires_root: z.boolean().optional(),
-  title: z.string().optional(),
-  version: z.string()
-}).meta({ id: 'Kibana_HTTP_APIs_package_policy_package' })
-export type Kibana_HTTP_APIs_package_policy_package = z.infer<typeof Kibana_HTTP_APIs_package_policy_package>
+import { Kibana_HTTP_APIs_package_policy_package } from './schemas/kibana.js'
 
 export const Kibana_HTTP_APIs_delete_package_policies_request = z.object({
   force: z.boolean().optional(),
@@ -53,3 +36,5 @@ export type Kibana_HTTP_APIs_delete_package_policies_response_item = z.infer<typ
 
 export const PostFleetPackagePoliciesDeleteResponse = z.array(Kibana_HTTP_APIs_delete_package_policies_response_item).meta({ id: 'PostFleetPackagePoliciesDeleteResponse' })
 export type PostFleetPackagePoliciesDeleteResponse = z.infer<typeof PostFleetPackagePoliciesDeleteResponse>
+
+export { Kibana_HTTP_APIs_package_policy_package } from './schemas/kibana.js'

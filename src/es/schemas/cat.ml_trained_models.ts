@@ -3,53 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const long = z.number().meta({ id: 'long' })
-export type long = z.infer<typeof long>
-
-export const ByteSize = z.union([long, z.string()]).meta({ id: 'ByteSize' })
-export type ByteSize = z.infer<typeof ByteSize>
-
-export const EpochTime = z.any().meta({ id: 'EpochTime' })
-export type EpochTime = z.infer<typeof EpochTime>
-
-/**
- * A date and time, either as a string whose format can depend on the context (defaulting to ISO 8601), or a
- * number of milliseconds since the Epoch. Elasticsearch accepts both as input, but will generally output a string
- * representation.
- */
-export const DateTime = z.union([z.string(), EpochTime]).meta({ id: 'DateTime' })
-export type DateTime = z.infer<typeof DateTime>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
-
-export const VersionString = z.string().meta({ id: 'VersionString' })
-export type VersionString = z.infer<typeof VersionString>
-
-export const integer = z.number().meta({ id: 'integer' })
-export type integer = z.infer<typeof integer>
-
-export const CatCatRequestBase = z.object({
-  ...RequestBase.shape
-}).meta({ id: 'CatCatRequestBase' })
-export type CatCatRequestBase = z.infer<typeof CatCatRequestBase>
+import { ByteSize, DateTime, Id, VersionString, integer } from './_types.js'
 
 export const CatCatTrainedModelsColumn = z.enum(['create_time', 'ct', 'created_by', 'c', 'createdBy', 'data_frame_analytics_id', 'df', 'dataFrameAnalytics', 'dfid', 'description', 'd', 'heap_size', 'hs', 'modelHeapSize', 'id', 'ingest.count', 'ic', 'ingestCount', 'ingest.current', 'icurr', 'ingestCurrent', 'ingest.failed', 'if', 'ingestFailed', 'ingest.pipelines', 'ip', 'ingestPipelines', 'ingest.time', 'it', 'ingestTime', 'license', 'l', 'operations', 'o', 'modelOperations', 'version', 'v']).meta({ id: 'CatCatTrainedModelsColumn' })
 export type CatCatTrainedModelsColumn = z.infer<typeof CatCatTrainedModelsColumn>
@@ -67,33 +24,32 @@ export type CatCatTrainedModelsColumns = z.infer<typeof CatCatTrainedModelsColum
  * application consumption, use the get trained models statistics API.
  */
 export const CatMlTrainedModelsRequest = z.object({
-  ...CatCatRequestBase.shape,
-  model_id: Id.describe('A unique identifier for the trained model.').optional().meta({ found_in: 'path' }),
+  model_id: z.lazy(() => Id).describe('A unique identifier for the trained model.').optional().meta({ found_in: 'path' }),
   allow_no_match: z.boolean().describe('Specifies what to do when the request: contains wildcard expressions and there are no models that match; contains the `_all` string or no identifiers and there are no matches; contains wildcard expressions and there are only partial matches. If `true`, the API returns an empty array when there are no matches and the subset of results when there are partial matches. If `false`, the API returns a 404 status code when there are no matches or only partial matches.').optional().meta({ found_in: 'query' }),
   h: CatCatTrainedModelsColumns.describe('A comma-separated list of column names to display.').optional().meta({ found_in: 'query' }),
   s: CatCatTrainedModelsColumns.describe('A comma-separated list of column names or aliases used to sort the response.').optional().meta({ found_in: 'query' }),
-  from: integer.describe('Skips the specified number of transforms.').optional().meta({ found_in: 'query' }),
-  size: integer.describe('The maximum number of transforms to display.').optional().meta({ found_in: 'query' })
+  from: z.lazy(() => integer).describe('Skips the specified number of transforms.').optional().meta({ found_in: 'query' }),
+  size: z.lazy(() => integer).describe('The maximum number of transforms to display.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'CatMlTrainedModelsRequest' })
 export type CatMlTrainedModelsRequest = z.infer<typeof CatMlTrainedModelsRequest>
 
 export const CatMlTrainedModelsTrainedModelsRecord = z.object({
-  id: Id.describe('The model identifier.').optional(),
+  id: z.lazy(() => Id).describe('The model identifier.').optional(),
   created_by: z.string().describe('Information about the creator of the model.').optional(),
   c: z.string().describe('Information about the creator of the model.').optional(),
   createdBy: z.string().describe('Information about the creator of the model.').optional(),
-  heap_size: ByteSize.describe('The estimated heap size to keep the model in memory.').optional(),
-  hs: ByteSize.describe('The estimated heap size to keep the model in memory.').optional(),
-  modelHeapSize: ByteSize.describe('The estimated heap size to keep the model in memory.').optional(),
+  heap_size: z.lazy(() => ByteSize).describe('The estimated heap size to keep the model in memory.').optional(),
+  hs: z.lazy(() => ByteSize).describe('The estimated heap size to keep the model in memory.').optional(),
+  modelHeapSize: z.lazy(() => ByteSize).describe('The estimated heap size to keep the model in memory.').optional(),
   operations: z.string().describe('The estimated number of operations to use the model. This number helps to measure the computational complexity of the model.').optional(),
   o: z.string().describe('The estimated number of operations to use the model. This number helps to measure the computational complexity of the model.').optional(),
   modelOperations: z.string().describe('The estimated number of operations to use the model. This number helps to measure the computational complexity of the model.').optional(),
   license: z.string().describe('The license level of the model.').optional(),
   l: z.string().describe('The license level of the model.').optional(),
-  create_time: DateTime.describe('The time the model was created.').optional(),
-  ct: DateTime.describe('The time the model was created.').optional(),
-  version: VersionString.describe('The version of Elasticsearch when the model was created.').optional(),
-  v: VersionString.describe('The version of Elasticsearch when the model was created.').optional(),
+  create_time: z.lazy(() => DateTime).describe('The time the model was created.').optional(),
+  ct: z.lazy(() => DateTime).describe('The time the model was created.').optional(),
+  version: z.lazy(() => VersionString).describe('The version of Elasticsearch when the model was created.').optional(),
+  v: z.lazy(() => VersionString).describe('The version of Elasticsearch when the model was created.').optional(),
   description: z.string().describe('A description of the model.').optional(),
   d: z.string().describe('A description of the model.').optional(),
   'ingest.pipelines': z.string().describe('The number of pipelines that are referencing the model.').optional(),

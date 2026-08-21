@@ -12,16 +12,8 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const EmptyResponse = z.object({}).meta({ id: 'EmptyResponse' })
-export type EmptyResponse = z.infer<typeof EmptyResponse>
-
-export const TrafficFilterClaimedLinkIdRequest = z.object({
-  link_id: z.string().optional(),
-  azure_endpoint_name: z.string().optional(),
-  azure_endpoint_guid: z.string().optional(),
-  region: z.string()
-}).meta({ id: 'TrafficFilterClaimedLinkIdRequest' })
-export type TrafficFilterClaimedLinkIdRequest = z.infer<typeof TrafficFilterClaimedLinkIdRequest>
+import { EmptyResponse } from './definitions/misc.js'
+import { TrafficFilterClaimedLinkIdRequest } from './definitions/traffic.js'
 
 export const UnclaimTrafficFilterLinkIdRequest = TrafficFilterClaimedLinkIdRequest
 export type UnclaimTrafficFilterLinkIdRequest = TrafficFilterClaimedLinkIdRequest

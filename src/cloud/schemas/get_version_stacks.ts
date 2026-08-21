@@ -12,6 +12,12 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
+export const StackVersionInstanceCapacityConstraint = z.object({
+  min: z.number(),
+  max: z.number()
+}).meta({ id: 'StackVersionInstanceCapacityConstraint' })
+export type StackVersionInstanceCapacityConstraint = z.infer<typeof StackVersionInstanceCapacityConstraint>
+
 export const StackVersionMetadata = z.object({
   notes: z.string().optional(),
   pre_release: z.boolean().optional(),
@@ -23,28 +29,11 @@ export const StackVersionMetadata = z.object({
 }).meta({ id: 'StackVersionMetadata' })
 export type StackVersionMetadata = z.infer<typeof StackVersionMetadata>
 
-export const StackVersionInstanceCapacityConstraint = z.object({
-  min: z.number(),
-  max: z.number()
-}).meta({ id: 'StackVersionInstanceCapacityConstraint' })
-export type StackVersionInstanceCapacityConstraint = z.infer<typeof StackVersionInstanceCapacityConstraint>
-
 export const StackVersionTemplateFileHash = z.object({
   path: z.string(),
   hash: z.string()
 }).meta({ id: 'StackVersionTemplateFileHash' })
 export type StackVersionTemplateFileHash = z.infer<typeof StackVersionTemplateFileHash>
-
-export const StackVersionNodeType = z.object({
-  node_type: z.string(),
-  name: z.string(),
-  description: z.string(),
-  settings: z.object({}).optional(),
-  capacity_constraints: StackVersionInstanceCapacityConstraint.optional(),
-  compatible_node_types: z.array(z.string()).optional(),
-  mandatory: z.boolean().optional()
-}).meta({ id: 'StackVersionNodeType' })
-export type StackVersionNodeType = z.infer<typeof StackVersionNodeType>
 
 export const StackVersionApmConfig = z.object({
   version: z.string().optional(),
@@ -65,6 +54,17 @@ export const StackVersionKibanaConfig = z.object({
   compatible_node_types: z.array(z.string()).optional()
 }).meta({ id: 'StackVersionKibanaConfig' })
 export type StackVersionKibanaConfig = z.infer<typeof StackVersionKibanaConfig>
+
+export const StackVersionNodeType = z.object({
+  node_type: z.string(),
+  name: z.string(),
+  description: z.string(),
+  settings: z.object({}).optional(),
+  capacity_constraints: StackVersionInstanceCapacityConstraint.optional(),
+  compatible_node_types: z.array(z.string()).optional(),
+  mandatory: z.boolean().optional()
+}).meta({ id: 'StackVersionNodeType' })
+export type StackVersionNodeType = z.infer<typeof StackVersionNodeType>
 
 export const StackVersionTemplateInfo = z.object({
   template_version: z.string().optional(),

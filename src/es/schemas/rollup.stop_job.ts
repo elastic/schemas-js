@@ -3,32 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-/**
- * A duration. Units can be `nanos`, `micros`, `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours) and
- * `d` (days). Also accepts "0" without a unit and "-1" to indicate an unspecified value.
- */
-export const Duration = z.union([z.string(), z.literal(-1), z.literal(0)]).meta({ id: 'Duration' })
-export type Duration = z.infer<typeof Duration>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
+import { Duration, Id } from './_types.js'
 
 /**
  * Stop rollup jobs.
@@ -47,9 +25,8 @@ export type RequestBase = z.infer<typeof RequestBase>
  * @deprecated
  */
 export const RollupStopJobRequest = z.object({
-  ...RequestBase.shape,
-  id: Id.describe('Identifier for the rollup job.').meta({ found_in: 'path' }),
-  timeout: Duration.describe('If `wait_for_completion` is `true`, the API blocks for (at maximum) the specified duration while waiting for the job to stop. If more than `timeout` time has passed, the API throws a timeout exception. NOTE: Even if a timeout occurs, the stop request is still processing and eventually moves the job to STOPPED. The timeout simply means the API call itself timed out while waiting for the status change.').optional().meta({ found_in: 'query' }),
+  id: z.lazy(() => Id).describe('Identifier for the rollup job.').meta({ found_in: 'path' }),
+  timeout: z.lazy(() => Duration).describe('If `wait_for_completion` is `true`, the API blocks for (at maximum) the specified duration while waiting for the job to stop. If more than `timeout` time has passed, the API throws a timeout exception. NOTE: Even if a timeout occurs, the stop request is still processing and eventually moves the job to STOPPED. The timeout simply means the API call itself timed out while waiting for the status change.').optional().meta({ found_in: 'query' }),
   wait_for_completion: z.boolean().describe('If set to `true`, causes the API to block until the indexer state completely stops. If set to `false`, the API returns immediately and the indexer is stopped asynchronously in the background.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'RollupStopJobRequest' })
 export type RollupStopJobRequest = z.infer<typeof RollupStopJobRequest>

@@ -11,36 +11,28 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
+import { Security_Endpoint_Exceptions_API_ExceptionListHumanId, Security_Endpoint_Exceptions_API_ExceptionListOsType, Security_Endpoint_Exceptions_API_ExceptionNamespaceType } from './schemas/security.js'
 
-export const Security_Endpoint_Exceptions_API_ExceptionListVersion = z.number().meta({ id: 'Security_Endpoint_Exceptions_API_ExceptionListVersion' })
-export type Security_Endpoint_Exceptions_API_ExceptionListVersion = z.infer<typeof Security_Endpoint_Exceptions_API_ExceptionListVersion>
-
-export const Security_Endpoint_Exceptions_API_ExceptionListType = z.enum(['detection', 'rule_default', 'endpoint', 'endpoint_trusted_apps', 'endpoint_trusted_devices', 'endpoint_events', 'endpoint_host_isolation_exceptions', 'endpoint_blocklists', 'endpoint_custom_yara_signatures']).meta({ id: 'Security_Endpoint_Exceptions_API_ExceptionListType' })
-export type Security_Endpoint_Exceptions_API_ExceptionListType = z.infer<typeof Security_Endpoint_Exceptions_API_ExceptionListType>
-
-export const Security_Endpoint_Exceptions_API_ExceptionListTags = z.array(z.string()).meta({ id: 'Security_Endpoint_Exceptions_API_ExceptionListTags' })
-export type Security_Endpoint_Exceptions_API_ExceptionListTags = z.infer<typeof Security_Endpoint_Exceptions_API_ExceptionListTags>
-
-export const Security_Endpoint_Exceptions_API_ExceptionListOsType = z.enum(['linux', 'macos', 'windows']).meta({ id: 'Security_Endpoint_Exceptions_API_ExceptionListOsType' })
-export type Security_Endpoint_Exceptions_API_ExceptionListOsType = z.infer<typeof Security_Endpoint_Exceptions_API_ExceptionListOsType>
-
-export const Security_Endpoint_Exceptions_API_ExceptionNamespaceType = z.enum(['agnostic', 'single']).meta({ id: 'Security_Endpoint_Exceptions_API_ExceptionNamespaceType' })
-export type Security_Endpoint_Exceptions_API_ExceptionNamespaceType = z.infer<typeof Security_Endpoint_Exceptions_API_ExceptionNamespaceType>
-
-export const Security_Endpoint_Exceptions_API_ExceptionListName = z.string().meta({ id: 'Security_Endpoint_Exceptions_API_ExceptionListName' })
-export type Security_Endpoint_Exceptions_API_ExceptionListName = z.infer<typeof Security_Endpoint_Exceptions_API_ExceptionListName>
-
-export const Security_Endpoint_Exceptions_API_ExceptionListMeta = z.record(z.string(), z.unknown()).meta({ id: 'Security_Endpoint_Exceptions_API_ExceptionListMeta' })
-export type Security_Endpoint_Exceptions_API_ExceptionListMeta = z.infer<typeof Security_Endpoint_Exceptions_API_ExceptionListMeta>
-
-export const Security_Endpoint_Exceptions_API_ExceptionListHumanId = z.string().meta({ id: 'Security_Endpoint_Exceptions_API_ExceptionListHumanId' })
-export type Security_Endpoint_Exceptions_API_ExceptionListHumanId = z.infer<typeof Security_Endpoint_Exceptions_API_ExceptionListHumanId>
+export const Security_Endpoint_Exceptions_API_ExceptionListDescription = z.string().meta({ id: 'Security_Endpoint_Exceptions_API_ExceptionListDescription' })
+export type Security_Endpoint_Exceptions_API_ExceptionListDescription = z.infer<typeof Security_Endpoint_Exceptions_API_ExceptionListDescription>
 
 export const Security_Endpoint_Exceptions_API_ExceptionListId = z.string().meta({ id: 'Security_Endpoint_Exceptions_API_ExceptionListId' })
 export type Security_Endpoint_Exceptions_API_ExceptionListId = z.infer<typeof Security_Endpoint_Exceptions_API_ExceptionListId>
 
-export const Security_Endpoint_Exceptions_API_ExceptionListDescription = z.string().meta({ id: 'Security_Endpoint_Exceptions_API_ExceptionListDescription' })
-export type Security_Endpoint_Exceptions_API_ExceptionListDescription = z.infer<typeof Security_Endpoint_Exceptions_API_ExceptionListDescription>
+export const Security_Endpoint_Exceptions_API_ExceptionListMeta = z.record(z.string(), z.unknown()).meta({ id: 'Security_Endpoint_Exceptions_API_ExceptionListMeta' })
+export type Security_Endpoint_Exceptions_API_ExceptionListMeta = z.infer<typeof Security_Endpoint_Exceptions_API_ExceptionListMeta>
+
+export const Security_Endpoint_Exceptions_API_ExceptionListName = z.string().meta({ id: 'Security_Endpoint_Exceptions_API_ExceptionListName' })
+export type Security_Endpoint_Exceptions_API_ExceptionListName = z.infer<typeof Security_Endpoint_Exceptions_API_ExceptionListName>
+
+export const Security_Endpoint_Exceptions_API_ExceptionListTags = z.array(z.string()).meta({ id: 'Security_Endpoint_Exceptions_API_ExceptionListTags' })
+export type Security_Endpoint_Exceptions_API_ExceptionListTags = z.infer<typeof Security_Endpoint_Exceptions_API_ExceptionListTags>
+
+export const Security_Endpoint_Exceptions_API_ExceptionListType = z.enum(['detection', 'rule_default', 'endpoint', 'endpoint_trusted_apps', 'endpoint_trusted_devices', 'endpoint_events', 'endpoint_host_isolation_exceptions', 'endpoint_blocklists', 'endpoint_custom_yara_signatures']).meta({ id: 'Security_Endpoint_Exceptions_API_ExceptionListType' })
+export type Security_Endpoint_Exceptions_API_ExceptionListType = z.infer<typeof Security_Endpoint_Exceptions_API_ExceptionListType>
+
+export const Security_Endpoint_Exceptions_API_ExceptionListVersion = z.number().meta({ id: 'Security_Endpoint_Exceptions_API_ExceptionListVersion' })
+export type Security_Endpoint_Exceptions_API_ExceptionListVersion = z.infer<typeof Security_Endpoint_Exceptions_API_ExceptionListVersion>
 
 export const Security_Endpoint_Exceptions_API_ExceptionListOsTypeArray = z.array(Security_Endpoint_Exceptions_API_ExceptionListOsType).meta({ id: 'Security_Endpoint_Exceptions_API_ExceptionListOsTypeArray' })
 export type Security_Endpoint_Exceptions_API_ExceptionListOsTypeArray = z.infer<typeof Security_Endpoint_Exceptions_API_ExceptionListOsTypeArray>
@@ -68,3 +60,7 @@ export type Security_Endpoint_Exceptions_API_ExceptionList = z.infer<typeof Secu
 
 export const Security_Endpoint_Exceptions_API_EndpointList = z.union([Security_Endpoint_Exceptions_API_ExceptionList, z.object({})]).meta({ id: 'Security_Endpoint_Exceptions_API_EndpointList' })
 export type Security_Endpoint_Exceptions_API_EndpointList = z.infer<typeof Security_Endpoint_Exceptions_API_EndpointList>
+
+export { Security_Endpoint_Exceptions_API_ExceptionListOsType } from './schemas/security.js'
+export { Security_Endpoint_Exceptions_API_ExceptionNamespaceType } from './schemas/security.js'
+export { Security_Endpoint_Exceptions_API_ExceptionListHumanId } from './schemas/security.js'

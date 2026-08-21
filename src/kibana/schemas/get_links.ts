@@ -11,17 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Kibana_HTTP_APIs_kbn_as_code_meta = z.object({
-  created_at: z.string().optional(),
-  created_by: z.string().optional(),
-  managed: z.boolean().optional(),
-  owner: z.string().optional(),
-  updated_at: z.string().optional(),
-  updated_by: z.string().optional(),
-  version: z.string().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_kbn_as_code_meta' })
-export type Kibana_HTTP_APIs_kbn_as_code_meta = z.infer<typeof Kibana_HTTP_APIs_kbn_as_code_meta>
+import { Kibana_HTTP_APIs_kbn_as_code_meta } from './schemas/kibana.js'
 
 export const GetLinksResponse = z.object({
   data: z.array(z.object({
@@ -39,3 +29,5 @@ export const GetLinksResponse = z.object({
   })
 }).meta({ id: 'GetLinksResponse' })
 export type GetLinksResponse = z.infer<typeof GetLinksResponse>
+
+export { Kibana_HTTP_APIs_kbn_as_code_meta } from './schemas/kibana.js'

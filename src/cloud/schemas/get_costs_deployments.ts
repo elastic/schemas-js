@@ -12,23 +12,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Period = z.object({
-  start: z.string(),
-  end: z.string()
-}).meta({ id: 'Period' })
-export type Period = z.infer<typeof Period>
-
-export const Dimension = z.object({
-  type: z.enum(['capacity', 'data_in', 'data_internode', 'data_out', 'storage_api', 'storage_bytes']),
-  cost: z.number()
-}).meta({ id: 'Dimension' })
-export type Dimension = z.infer<typeof Dimension>
-
-export const Costs = z.object({
-  total: z.number(),
-  dimensions: z.array(Dimension)
-}).meta({ id: 'Costs' })
-export type Costs = z.infer<typeof Costs>
+import { Costs, Dimension, Period } from './definitions/misc.js'
 
 export const DeploymentCosts = z.object({
   deployment_id: z.string(),

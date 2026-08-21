@@ -12,13 +12,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const CertificateMetaData = z.object({
-  fingerprint: z.string(),
-  valid_to: z.string(),
-  valid_from: z.string(),
-  also_trusted_by: z.array(z.string()).optional()
-}).meta({ id: 'CertificateMetaData' })
-export type CertificateMetaData = z.infer<typeof CertificateMetaData>
+import { CertificateMetaData } from './definitions/misc.js'
 
 export const PublicCertificate = z.object({
   active: z.boolean(),

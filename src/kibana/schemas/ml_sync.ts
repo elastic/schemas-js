@@ -15,16 +15,6 @@ import { z } from 'zod'
 export const Machine_learning_APIs_mlSyncResponseSuccess = z.boolean().meta({ id: 'Machine_learning_APIs_mlSyncResponseSuccess' })
 export type Machine_learning_APIs_mlSyncResponseSuccess = z.infer<typeof Machine_learning_APIs_mlSyncResponseSuccess>
 
-export const Machine_learning_APIs_mlSyncResponseTrainedModels = z.object({
-  success: Machine_learning_APIs_mlSyncResponseSuccess.optional()
-}).meta({ id: 'Machine_learning_APIs_mlSyncResponseTrainedModels' })
-export type Machine_learning_APIs_mlSyncResponseTrainedModels = z.infer<typeof Machine_learning_APIs_mlSyncResponseTrainedModels>
-
-export const Machine_learning_APIs_mlSyncResponseDataFrameAnalytics = z.object({
-  success: Machine_learning_APIs_mlSyncResponseSuccess.optional()
-}).meta({ id: 'Machine_learning_APIs_mlSyncResponseDataFrameAnalytics' })
-export type Machine_learning_APIs_mlSyncResponseDataFrameAnalytics = z.infer<typeof Machine_learning_APIs_mlSyncResponseDataFrameAnalytics>
-
 export const Machine_learning_APIs_mlSyncResponseAnomalyDetectors = z.object({
   success: Machine_learning_APIs_mlSyncResponseSuccess.optional()
 }).meta({ id: 'Machine_learning_APIs_mlSyncResponseAnomalyDetectors' })
@@ -35,12 +25,15 @@ export const Machine_learning_APIs_mlSyncResponseDatafeeds = z.object({
 }).meta({ id: 'Machine_learning_APIs_mlSyncResponseDatafeeds' })
 export type Machine_learning_APIs_mlSyncResponseDatafeeds = z.infer<typeof Machine_learning_APIs_mlSyncResponseDatafeeds>
 
-export const Machine_learning_APIs_mlSyncResponseSavedObjectsDeleted = z.object({
-  'anomaly-detector': z.record(z.string(), Machine_learning_APIs_mlSyncResponseAnomalyDetectors).optional(),
-  'data-frame-analytics': z.record(z.string(), Machine_learning_APIs_mlSyncResponseDataFrameAnalytics).optional(),
-  'trained-model': z.record(z.string(), Machine_learning_APIs_mlSyncResponseTrainedModels).optional()
-}).meta({ id: 'Machine_learning_APIs_mlSyncResponseSavedObjectsDeleted' })
-export type Machine_learning_APIs_mlSyncResponseSavedObjectsDeleted = z.infer<typeof Machine_learning_APIs_mlSyncResponseSavedObjectsDeleted>
+export const Machine_learning_APIs_mlSyncResponseDataFrameAnalytics = z.object({
+  success: Machine_learning_APIs_mlSyncResponseSuccess.optional()
+}).meta({ id: 'Machine_learning_APIs_mlSyncResponseDataFrameAnalytics' })
+export type Machine_learning_APIs_mlSyncResponseDataFrameAnalytics = z.infer<typeof Machine_learning_APIs_mlSyncResponseDataFrameAnalytics>
+
+export const Machine_learning_APIs_mlSyncResponseTrainedModels = z.object({
+  success: Machine_learning_APIs_mlSyncResponseSuccess.optional()
+}).meta({ id: 'Machine_learning_APIs_mlSyncResponseTrainedModels' })
+export type Machine_learning_APIs_mlSyncResponseTrainedModels = z.infer<typeof Machine_learning_APIs_mlSyncResponseTrainedModels>
 
 export const Machine_learning_APIs_mlSyncResponseSavedObjectsCreated = z.object({
   'anomaly-detector': z.record(z.string(), Machine_learning_APIs_mlSyncResponseAnomalyDetectors).optional(),
@@ -48,6 +41,13 @@ export const Machine_learning_APIs_mlSyncResponseSavedObjectsCreated = z.object(
   'trained-model': z.record(z.string(), Machine_learning_APIs_mlSyncResponseTrainedModels).optional()
 }).meta({ id: 'Machine_learning_APIs_mlSyncResponseSavedObjectsCreated' })
 export type Machine_learning_APIs_mlSyncResponseSavedObjectsCreated = z.infer<typeof Machine_learning_APIs_mlSyncResponseSavedObjectsCreated>
+
+export const Machine_learning_APIs_mlSyncResponseSavedObjectsDeleted = z.object({
+  'anomaly-detector': z.record(z.string(), Machine_learning_APIs_mlSyncResponseAnomalyDetectors).optional(),
+  'data-frame-analytics': z.record(z.string(), Machine_learning_APIs_mlSyncResponseDataFrameAnalytics).optional(),
+  'trained-model': z.record(z.string(), Machine_learning_APIs_mlSyncResponseTrainedModels).optional()
+}).meta({ id: 'Machine_learning_APIs_mlSyncResponseSavedObjectsDeleted' })
+export type Machine_learning_APIs_mlSyncResponseSavedObjectsDeleted = z.infer<typeof Machine_learning_APIs_mlSyncResponseSavedObjectsDeleted>
 
 export const Machine_learning_APIs_mlSync200Response = z.object({
   datafeedsAdded: z.record(z.string(), Machine_learning_APIs_mlSyncResponseDatafeeds).optional(),

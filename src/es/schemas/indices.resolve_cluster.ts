@@ -3,56 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
+import { Duration, ExpandWildcards, Names, VersionString } from './_types.js'
 
 export const ClusterAlias = z.string().meta({ id: 'ClusterAlias' })
 export type ClusterAlias = z.infer<typeof ClusterAlias>
 
-/**
- * A duration. Units can be `nanos`, `micros`, `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours) and
- * `d` (days). Also accepts "0" without a unit and "-1" to indicate an unspecified value.
- */
-export const Duration = z.union([z.string(), z.literal(-1), z.literal(0)]).meta({ id: 'Duration' })
-export type Duration = z.infer<typeof Duration>
-
-export const VersionString = z.string().meta({ id: 'VersionString' })
-export type VersionString = z.infer<typeof VersionString>
-
 /** Reduced (minimal) info ElasticsearchVersion */
 export const ElasticsearchVersionMinInfo = z.object({
   build_flavor: z.string(),
-  minimum_index_compatibility_version: VersionString,
-  minimum_wire_compatibility_version: VersionString,
+  minimum_index_compatibility_version: z.lazy(() => VersionString),
+  minimum_wire_compatibility_version: z.lazy(() => VersionString),
   number: z.string()
 }).meta({ id: 'ElasticsearchVersionMinInfo' })
 export type ElasticsearchVersionMinInfo = z.infer<typeof ElasticsearchVersionMinInfo>
-
-export const ExpandWildcard = z.enum(['all', 'open', 'closed', 'hidden', 'none']).meta({ id: 'ExpandWildcard' })
-export type ExpandWildcard = z.infer<typeof ExpandWildcard>
-
-export const ExpandWildcards = z.union([ExpandWildcard, z.array(ExpandWildcard)]).meta({ id: 'ExpandWildcards' })
-export type ExpandWildcards = z.infer<typeof ExpandWildcards>
-
-export const Name = z.string().meta({ id: 'Name' })
-export type Name = z.infer<typeof Name>
-
-export const Names = z.union([Name, z.array(Name)]).meta({ id: 'Names' })
-export type Names = z.infer<typeof Names>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
 
 /**
  * Resolve the cluster.
@@ -103,13 +69,12 @@ export type RequestBase = z.infer<typeof RequestBase>
  * If a connection was (re-)established, this will also cause the `remote/info` endpoint to now indicate a connected status.
  */
 export const IndicesResolveClusterRequest = z.object({
-  ...RequestBase.shape,
-  name: Names.describe('A comma-separated list of names or index patterns for the indices, aliases, and data streams to resolve. Resources on remote clusters can be specified using the `<cluster>`:`<name>` syntax. Index and cluster exclusions (e.g., `-cluster1:*`) are also supported. If no index expression is specified, information about all remote clusters configured on the local cluster is returned without doing any index matching').optional().meta({ found_in: 'path' }),
+  name: z.lazy(() => Names).describe('A comma-separated list of names or index patterns for the indices, aliases, and data streams to resolve. Resources on remote clusters can be specified using the `<cluster>`:`<name>` syntax. Index and cluster exclusions (e.g., `-cluster1:*`) are also supported. If no index expression is specified, information about all remote clusters configured on the local cluster is returned without doing any index matching').optional().meta({ found_in: 'path' }),
   allow_no_indices: z.boolean().describe('A setting that does two separate checks on the index expression. If `false`, the request returns an error (1) if any wildcard expression (including `_all` and `*`) resolves to zero matching indices or (2) if the complete set of resolved indices, aliases or data streams is empty after all expressions are evaluated. If `true`, index expressions that resolve to no indices are allowed and the request returns an empty result. NOTE: This option is only supported when specifying an index expression. You will get an error if you specify index options to the `_resolve/cluster` API endpoint that takes no index expression.').optional().meta({ found_in: 'query' }),
-  expand_wildcards: ExpandWildcards.describe('Type of index that wildcard patterns can match. If the request can target data streams, this argument determines whether wildcard expressions match hidden data streams. Supports comma-separated values, such as `open,hidden`. NOTE: This option is only supported when specifying an index expression. You will get an error if you specify index options to the `_resolve/cluster` API endpoint that takes no index expression.').optional().meta({ found_in: 'query' }),
+  expand_wildcards: z.lazy(() => ExpandWildcards).describe('Type of index that wildcard patterns can match. If the request can target data streams, this argument determines whether wildcard expressions match hidden data streams. Supports comma-separated values, such as `open,hidden`. NOTE: This option is only supported when specifying an index expression. You will get an error if you specify index options to the `_resolve/cluster` API endpoint that takes no index expression.').optional().meta({ found_in: 'query' }),
   ignore_throttled: z.boolean().describe('If true, concrete, expanded, or aliased indices are ignored when frozen. NOTE: This option is only supported when specifying an index expression. You will get an error if you specify index options to the `_resolve/cluster` API endpoint that takes no index expression.').optional().meta({ found_in: 'query' }),
   ignore_unavailable: z.boolean().describe('If `false`, the request returns an error if it targets a concrete (non-wildcarded) index, alias, or data stream that is missing, closed, or otherwise unavailable. If `true`, unavailable concrete targets are silently ignored. NOTE: This option is only supported when specifying an index expression. You will get an error if you specify index options to the `_resolve/cluster` API endpoint that takes no index expression.').optional().meta({ found_in: 'query' }),
-  timeout: Duration.describe('The maximum time to wait for remote clusters to respond. If a remote cluster does not respond within this timeout period, the API response will show the cluster as not connected and include an error message that the request timed out. The default timeout is unset and the query can take as long as the networking layer is configured to wait for remote clusters that are not responding (typically 30 seconds).').optional().meta({ found_in: 'query' })
+  timeout: z.lazy(() => Duration).describe('The maximum time to wait for remote clusters to respond. If a remote cluster does not respond within this timeout period, the API response will show the cluster as not connected and include an error message that the request timed out. The default timeout is unset and the query can take as long as the networking layer is configured to wait for remote clusters that are not responding (typically 30 seconds).').optional().meta({ found_in: 'query' })
 }).meta({ id: 'IndicesResolveClusterRequest' })
 export type IndicesResolveClusterRequest = z.infer<typeof IndicesResolveClusterRequest>
 
@@ -123,5 +88,5 @@ export const IndicesResolveClusterResolveClusterInfo = z.object({
 }).meta({ id: 'IndicesResolveClusterResolveClusterInfo' })
 export type IndicesResolveClusterResolveClusterInfo = z.infer<typeof IndicesResolveClusterResolveClusterInfo>
 
-export const IndicesResolveClusterResponse = z.record(ClusterAlias, IndicesResolveClusterResolveClusterInfo).meta({ id: 'IndicesResolveClusterResponse' })
+export const IndicesResolveClusterResponse = z.record(z.lazy(() => ClusterAlias), IndicesResolveClusterResolveClusterInfo).meta({ id: 'IndicesResolveClusterResponse' })
 export type IndicesResolveClusterResponse = z.infer<typeof IndicesResolveClusterResponse>

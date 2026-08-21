@@ -11,678 +11,21 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Detections_API_RuleQuery = z.string().meta({ id: 'Security_Detections_API_RuleQuery' })
-export type Security_Detections_API_RuleQuery = z.infer<typeof Security_Detections_API_RuleQuery>
-
-export const Security_Detections_API_EsqlQueryLanguage = z.enum(['esql']).meta({ id: 'Security_Detections_API_EsqlQueryLanguage' })
-export type Security_Detections_API_EsqlQueryLanguage = z.infer<typeof Security_Detections_API_EsqlQueryLanguage>
-
-export const Security_Detections_API_AlertSuppressionMissingFieldsStrategy = z.enum(['doNotSuppress', 'suppress']).meta({ id: 'Security_Detections_API_AlertSuppressionMissingFieldsStrategy' })
-export type Security_Detections_API_AlertSuppressionMissingFieldsStrategy = z.infer<typeof Security_Detections_API_AlertSuppressionMissingFieldsStrategy>
-
-export const Security_Detections_API_AlertSuppressionGroupBy = z.array(z.string()).meta({ id: 'Security_Detections_API_AlertSuppressionGroupBy' })
-export type Security_Detections_API_AlertSuppressionGroupBy = z.infer<typeof Security_Detections_API_AlertSuppressionGroupBy>
-
-export const Security_Detections_API_AlertSuppressionDurationUnit = z.enum(['s', 'm', 'h']).meta({ id: 'Security_Detections_API_AlertSuppressionDurationUnit' })
-export type Security_Detections_API_AlertSuppressionDurationUnit = z.infer<typeof Security_Detections_API_AlertSuppressionDurationUnit>
-
-export const Security_Detections_API_InternalRuleSource = z.object({
-  type: z.enum(['internal'])
-}).meta({ id: 'Security_Detections_API_InternalRuleSource' })
-export type Security_Detections_API_InternalRuleSource = z.infer<typeof Security_Detections_API_InternalRuleSource>
-
-export const Security_Detections_API_IsExternalRuleCustomized = z.boolean().meta({ id: 'Security_Detections_API_IsExternalRuleCustomized' })
-export type Security_Detections_API_IsExternalRuleCustomized = z.infer<typeof Security_Detections_API_IsExternalRuleCustomized>
-
-export const Security_Detections_API_ExternalRuleHasBaseVersion = z.boolean().meta({ id: 'Security_Detections_API_ExternalRuleHasBaseVersion' })
-export type Security_Detections_API_ExternalRuleHasBaseVersion = z.infer<typeof Security_Detections_API_ExternalRuleHasBaseVersion>
-
-export const Security_Detections_API_ExternalRuleCustomizedFields = z.array(z.object({
-  field_name: z.string()
-})).meta({ id: 'Security_Detections_API_ExternalRuleCustomizedFields' })
-export type Security_Detections_API_ExternalRuleCustomizedFields = z.infer<typeof Security_Detections_API_ExternalRuleCustomizedFields>
-
-export const Security_Detections_API_RuleSignatureId = z.string().meta({ id: 'Security_Detections_API_RuleSignatureId' })
-export type Security_Detections_API_RuleSignatureId = z.infer<typeof Security_Detections_API_RuleSignatureId>
-
-export const Security_Detections_API_RuleRevision = z.number().meta({ id: 'Security_Detections_API_RuleRevision' })
-export type Security_Detections_API_RuleRevision = z.infer<typeof Security_Detections_API_RuleRevision>
-
-export const Security_Detections_API_RequiredField = z.object({
-  ecs: z.boolean(),
-  name: z.string(),
-  type: z.string()
-}).meta({ id: 'Security_Detections_API_RequiredField' })
-export type Security_Detections_API_RequiredField = z.infer<typeof Security_Detections_API_RequiredField>
-
-export const Security_Detections_API_IsRuleImmutable = z.boolean().meta({ id: 'Security_Detections_API_IsRuleImmutable' })
-export type Security_Detections_API_IsRuleImmutable = z.infer<typeof Security_Detections_API_IsRuleImmutable>
-
-export const Security_Detections_API_UUID = z.string().meta({ id: 'Security_Detections_API_UUID' })
-export type Security_Detections_API_UUID = z.infer<typeof Security_Detections_API_UUID>
-
-export const Security_Detections_API_RuleExecutionStatusOrder = z.number().meta({ id: 'Security_Detections_API_RuleExecutionStatusOrder' })
-export type Security_Detections_API_RuleExecutionStatusOrder = z.infer<typeof Security_Detections_API_RuleExecutionStatusOrder>
-
-export const Security_Detections_API_RuleExecutionStatus = z.enum(['going to run', 'running', 'partial failure', 'failed', 'succeeded']).meta({ id: 'Security_Detections_API_RuleExecutionStatus' })
-export type Security_Detections_API_RuleExecutionStatus = z.infer<typeof Security_Detections_API_RuleExecutionStatus>
-
-export const Security_Detections_API_RuleExecutionMetrics = z.object({
-  execution_gap_duration_s: z.number().optional(),
-  frozen_indices_queried_count: z.number().optional(),
-  gap_range: z.object({
-    gte: z.string(),
-    lte: z.string()
-  }).optional(),
-  gap_reason: z.object({
-    type: z.enum(['rule_disabled', 'rule_did_not_run'])
-  }).optional(),
-  total_enrichment_duration_ms: z.number().optional(),
-  total_indexing_duration_ms: z.number().optional(),
-  total_search_duration_ms: z.number().optional()
-}).meta({ id: 'Security_Detections_API_RuleExecutionMetrics' })
-export type Security_Detections_API_RuleExecutionMetrics = z.infer<typeof Security_Detections_API_RuleExecutionMetrics>
-
-export const Security_Detections_API_RuleVersion = z.number().meta({ id: 'Security_Detections_API_RuleVersion' })
-export type Security_Detections_API_RuleVersion = z.infer<typeof Security_Detections_API_RuleVersion>
-
-export const Security_Detections_API_RuleIntervalTo = z.string().meta({ id: 'Security_Detections_API_RuleIntervalTo' })
-export type Security_Detections_API_RuleIntervalTo = z.infer<typeof Security_Detections_API_RuleIntervalTo>
-
-export const Security_Detections_API_TimestampOverrideFallbackDisabled = z.boolean().meta({ id: 'Security_Detections_API_TimestampOverrideFallbackDisabled' })
-export type Security_Detections_API_TimestampOverrideFallbackDisabled = z.infer<typeof Security_Detections_API_TimestampOverrideFallbackDisabled>
-
-export const Security_Detections_API_TimestampOverride = z.string().meta({ id: 'Security_Detections_API_TimestampOverride' })
-export type Security_Detections_API_TimestampOverride = z.infer<typeof Security_Detections_API_TimestampOverride>
-
-export const Security_Detections_API_TimelineTemplateTitle = z.string().meta({ id: 'Security_Detections_API_TimelineTemplateTitle' })
-export type Security_Detections_API_TimelineTemplateTitle = z.infer<typeof Security_Detections_API_TimelineTemplateTitle>
-
-export const Security_Detections_API_TimelineTemplateId = z.string().meta({ id: 'Security_Detections_API_TimelineTemplateId' })
-export type Security_Detections_API_TimelineTemplateId = z.infer<typeof Security_Detections_API_TimelineTemplateId>
-
-export const Security_Detections_API_RuleActionThrottle = z.union([z.enum(['no_actions', 'rule']), z.string()]).meta({ id: 'Security_Detections_API_RuleActionThrottle' })
-export type Security_Detections_API_RuleActionThrottle = z.infer<typeof Security_Detections_API_RuleActionThrottle>
-
-export const Security_Detections_API_ThreatSubtechnique = z.object({
-  id: z.string(),
-  name: z.string(),
-  reference: z.string()
-}).meta({ id: 'Security_Detections_API_ThreatSubtechnique' })
-export type Security_Detections_API_ThreatSubtechnique = z.infer<typeof Security_Detections_API_ThreatSubtechnique>
-
-export const Security_Detections_API_ThreatTactic = z.object({
-  id: z.string(),
-  name: z.string(),
-  reference: z.string()
-}).meta({ id: 'Security_Detections_API_ThreatTactic' })
-export type Security_Detections_API_ThreatTactic = z.infer<typeof Security_Detections_API_ThreatTactic>
-
-export const Security_Detections_API_RuleTagArray = z.array(z.string()).meta({ id: 'Security_Detections_API_RuleTagArray' })
-export type Security_Detections_API_RuleTagArray = z.infer<typeof Security_Detections_API_RuleTagArray>
-
-export const Security_Detections_API_Severity = z.enum(['low', 'medium', 'high', 'critical']).meta({ id: 'Security_Detections_API_Severity' })
-export type Security_Detections_API_Severity = z.infer<typeof Security_Detections_API_Severity>
-
-export const Security_Detections_API_SetupGuide = z.string().meta({ id: 'Security_Detections_API_SetupGuide' })
-export type Security_Detections_API_SetupGuide = z.infer<typeof Security_Detections_API_SetupGuide>
-
-export const Security_Detections_API_RuleNameOverride = z.string().meta({ id: 'Security_Detections_API_RuleNameOverride' })
-export type Security_Detections_API_RuleNameOverride = z.infer<typeof Security_Detections_API_RuleNameOverride>
-
-export const Security_Detections_API_RiskScore = z.number().meta({ id: 'Security_Detections_API_RiskScore' })
-export type Security_Detections_API_RiskScore = z.infer<typeof Security_Detections_API_RiskScore>
-
-export const Security_Detections_API_RunScriptOsConfigValues = z.object({
-  scriptId: z.string().optional(),
-  scriptInput: z.string().optional(),
-  timeout: z.number().optional()
-}).meta({ id: 'Security_Detections_API_RunScriptOsConfigValues' })
-export type Security_Detections_API_RunScriptOsConfigValues = z.infer<typeof Security_Detections_API_RunScriptOsConfigValues>
-
-export const Security_Detections_API_SuspendProcessParams = z.object({
-  command: z.enum(['suspend-process']),
-  comment: z.string().optional(),
-  config: z.object({
-    field: z.string(),
-    overwrite: z.boolean().optional()
-  })
-}).meta({ id: 'Security_Detections_API_SuspendProcessParams' })
-export type Security_Detections_API_SuspendProcessParams = z.infer<typeof Security_Detections_API_SuspendProcessParams>
-
-export const Security_Detections_API_KillProcessParams = z.object({
-  command: z.enum(['kill-process']),
-  comment: z.string().optional(),
-  config: z.object({
-    field: z.string(),
-    kill_descendants: z.boolean().optional(),
-    overwrite: z.boolean().optional()
-  })
-}).meta({ id: 'Security_Detections_API_KillProcessParams' })
-export type Security_Detections_API_KillProcessParams = z.infer<typeof Security_Detections_API_KillProcessParams>
-
-export const Security_Detections_API_DefaultParams = z.object({
-  command: z.enum(['isolate']),
-  comment: z.string().optional()
-}).meta({ id: 'Security_Detections_API_DefaultParams' })
-export type Security_Detections_API_DefaultParams = z.infer<typeof Security_Detections_API_DefaultParams>
-
-export const Security_Detections_API_EcsMapping = z.record(z.string(), z.object({
-  field: z.string().optional(),
-  value: z.union([z.string(), z.array(z.string())]).optional()
-})).meta({ id: 'Security_Detections_API_EcsMapping' })
-export type Security_Detections_API_EcsMapping = z.infer<typeof Security_Detections_API_EcsMapping>
-
-export const Security_Detections_API_RequiredFieldInput = z.object({
-  name: z.string(),
-  type: z.string()
-}).meta({ id: 'Security_Detections_API_RequiredFieldInput' })
-export type Security_Detections_API_RequiredFieldInput = z.infer<typeof Security_Detections_API_RequiredFieldInput>
-
-export const Security_Detections_API_NonEmptyString = z.string().meta({ id: 'Security_Detections_API_NonEmptyString' })
-export type Security_Detections_API_NonEmptyString = z.infer<typeof Security_Detections_API_NonEmptyString>
-
-export const Security_Detections_API_RuleReferenceArray = z.array(z.string()).meta({ id: 'Security_Detections_API_RuleReferenceArray' })
-export type Security_Detections_API_RuleReferenceArray = z.infer<typeof Security_Detections_API_RuleReferenceArray>
-
-export const Security_Detections_API_AlertsIndex = z.string().meta({ id: 'Security_Detections_API_AlertsIndex' })
-export type Security_Detections_API_AlertsIndex = z.infer<typeof Security_Detections_API_AlertsIndex>
-
-export const Security_Detections_API_SavedObjectResolveOutcome = z.enum(['exactMatch', 'aliasMatch', 'conflict']).meta({ id: 'Security_Detections_API_SavedObjectResolveOutcome' })
-export type Security_Detections_API_SavedObjectResolveOutcome = z.infer<typeof Security_Detections_API_SavedObjectResolveOutcome>
-
-export const Security_Detections_API_InvestigationGuide = z.string().meta({ id: 'Security_Detections_API_InvestigationGuide' })
-export type Security_Detections_API_InvestigationGuide = z.infer<typeof Security_Detections_API_InvestigationGuide>
-
-export const Security_Detections_API_AlertsIndexNamespace = z.string().meta({ id: 'Security_Detections_API_AlertsIndexNamespace' })
-export type Security_Detections_API_AlertsIndexNamespace = z.infer<typeof Security_Detections_API_AlertsIndexNamespace>
-
-export const Security_Detections_API_RuleName = z.string().meta({ id: 'Security_Detections_API_RuleName' })
-export type Security_Detections_API_RuleName = z.infer<typeof Security_Detections_API_RuleName>
-
-export const Security_Detections_API_RuleMetadata = z.record(z.string(), z.unknown()).meta({ id: 'Security_Detections_API_RuleMetadata' })
-export type Security_Detections_API_RuleMetadata = z.infer<typeof Security_Detections_API_RuleMetadata>
-
-export const Security_Detections_API_MaxSignals = z.number().meta({ id: 'Security_Detections_API_MaxSignals' })
-export type Security_Detections_API_MaxSignals = z.infer<typeof Security_Detections_API_MaxSignals>
-
-export const Security_Detections_API_RuleLicense = z.string().meta({ id: 'Security_Detections_API_RuleLicense' })
-export type Security_Detections_API_RuleLicense = z.infer<typeof Security_Detections_API_RuleLicense>
-
-export const Security_Detections_API_RuleInterval = z.string().meta({ id: 'Security_Detections_API_RuleInterval' })
-export type Security_Detections_API_RuleInterval = z.infer<typeof Security_Detections_API_RuleInterval>
-
-export const Security_Detections_API_RuleIntervalFrom = z.string().meta({ id: 'Security_Detections_API_RuleIntervalFrom' })
-export type Security_Detections_API_RuleIntervalFrom = z.infer<typeof Security_Detections_API_RuleIntervalFrom>
-
-export const Security_Detections_API_RuleFalsePositiveArray = z.array(z.string()).meta({ id: 'Security_Detections_API_RuleFalsePositiveArray' })
-export type Security_Detections_API_RuleFalsePositiveArray = z.infer<typeof Security_Detections_API_RuleFalsePositiveArray>
-
-export const Security_Detections_API_ExceptionListType = z.enum(['detection', 'rule_default', 'endpoint', 'endpoint_trusted_apps', 'endpoint_trusted_devices', 'endpoint_events', 'endpoint_host_isolation_exceptions', 'endpoint_blocklists', 'endpoint_custom_yara_signatures']).meta({ id: 'Security_Detections_API_ExceptionListType' })
-export type Security_Detections_API_ExceptionListType = z.infer<typeof Security_Detections_API_ExceptionListType>
-
-export const Security_Detections_API_IsRuleEnabled = z.boolean().meta({ id: 'Security_Detections_API_IsRuleEnabled' })
-export type Security_Detections_API_IsRuleEnabled = z.infer<typeof Security_Detections_API_IsRuleEnabled>
-
-export const Security_Detections_API_RuleDescription = z.string().meta({ id: 'Security_Detections_API_RuleDescription' })
-export type Security_Detections_API_RuleDescription = z.infer<typeof Security_Detections_API_RuleDescription>
-
-export const Security_Detections_API_BuildingBlockType = z.string().meta({ id: 'Security_Detections_API_BuildingBlockType' })
-export type Security_Detections_API_BuildingBlockType = z.infer<typeof Security_Detections_API_BuildingBlockType>
-
-export const Security_Detections_API_RuleAuthorArray = z.array(z.string()).meta({ id: 'Security_Detections_API_RuleAuthorArray' })
-export type Security_Detections_API_RuleAuthorArray = z.infer<typeof Security_Detections_API_RuleAuthorArray>
-
-export const Security_Detections_API_SavedObjectResolveAliasTargetId = z.string().meta({ id: 'Security_Detections_API_SavedObjectResolveAliasTargetId' })
-export type Security_Detections_API_SavedObjectResolveAliasTargetId = z.infer<typeof Security_Detections_API_SavedObjectResolveAliasTargetId>
-
-export const Security_Detections_API_SavedObjectResolveAliasPurpose = z.enum(['savedObjectConversion', 'savedObjectImport']).meta({ id: 'Security_Detections_API_SavedObjectResolveAliasPurpose' })
-export type Security_Detections_API_SavedObjectResolveAliasPurpose = z.infer<typeof Security_Detections_API_SavedObjectResolveAliasPurpose>
-
-export const Security_Detections_API_RuleActionParams = z.record(z.string(), z.unknown()).meta({ id: 'Security_Detections_API_RuleActionParams' })
-export type Security_Detections_API_RuleActionParams = z.infer<typeof Security_Detections_API_RuleActionParams>
-
-export const Security_Detections_API_RuleActionId = z.string().meta({ id: 'Security_Detections_API_RuleActionId' })
-export type Security_Detections_API_RuleActionId = z.infer<typeof Security_Detections_API_RuleActionId>
-
-export const Security_Detections_API_RuleActionGroup = z.string().meta({ id: 'Security_Detections_API_RuleActionGroup' })
-export type Security_Detections_API_RuleActionGroup = z.infer<typeof Security_Detections_API_RuleActionGroup>
-
-export const Security_Detections_API_RuleActionNotifyWhen = z.enum(['onActiveAlert', 'onThrottleInterval', 'onActionGroupChange']).meta({ id: 'Security_Detections_API_RuleActionNotifyWhen' })
-export type Security_Detections_API_RuleActionNotifyWhen = z.infer<typeof Security_Detections_API_RuleActionNotifyWhen>
-
-export const Security_Detections_API_RuleActionAlertsFilter = z.record(z.string(), z.unknown()).meta({ id: 'Security_Detections_API_RuleActionAlertsFilter' })
-export type Security_Detections_API_RuleActionAlertsFilter = z.infer<typeof Security_Detections_API_RuleActionAlertsFilter>
-
-export const Security_Detections_API_KqlQueryLanguage = z.enum(['kuery', 'lucene']).meta({ id: 'Security_Detections_API_KqlQueryLanguage' })
-export type Security_Detections_API_KqlQueryLanguage = z.infer<typeof Security_Detections_API_KqlQueryLanguage>
-
-export const Security_Detections_API_IndexPatternArray = z.array(z.string()).meta({ id: 'Security_Detections_API_IndexPatternArray' })
-export type Security_Detections_API_IndexPatternArray = z.infer<typeof Security_Detections_API_IndexPatternArray>
-
-export const Security_Detections_API_RuleFilterArray = z.array(z.unknown()).meta({ id: 'Security_Detections_API_RuleFilterArray' })
-export type Security_Detections_API_RuleFilterArray = z.infer<typeof Security_Detections_API_RuleFilterArray>
-
-export const Security_Detections_API_DataViewId = z.string().meta({ id: 'Security_Detections_API_DataViewId' })
-export type Security_Detections_API_DataViewId = z.infer<typeof Security_Detections_API_DataViewId>
-
-export const Security_Detections_API_NewTermsFields = z.array(z.string()).meta({ id: 'Security_Detections_API_NewTermsFields' })
-export type Security_Detections_API_NewTermsFields = z.infer<typeof Security_Detections_API_NewTermsFields>
-
-export const Security_Detections_API_HistoryWindowStart = z.string().meta({ id: 'Security_Detections_API_HistoryWindowStart' })
-export type Security_Detections_API_HistoryWindowStart = z.infer<typeof Security_Detections_API_HistoryWindowStart>
-
-export const Security_Detections_API_MachineLearningJobId = z.union([z.string(), z.array(z.string())]).meta({ id: 'Security_Detections_API_MachineLearningJobId' })
-export type Security_Detections_API_MachineLearningJobId = z.infer<typeof Security_Detections_API_MachineLearningJobId>
-
-export const Security_Detections_API_AnomalyThreshold = z.number().meta({ id: 'Security_Detections_API_AnomalyThreshold' })
-export type Security_Detections_API_AnomalyThreshold = z.infer<typeof Security_Detections_API_AnomalyThreshold>
-
-export const Security_Detections_API_ThreatIndicatorPath = z.string().meta({ id: 'Security_Detections_API_ThreatIndicatorPath' })
-export type Security_Detections_API_ThreatIndicatorPath = z.infer<typeof Security_Detections_API_ThreatIndicatorPath>
-
-export const Security_Detections_API_ThreatFilters = z.array(z.unknown()).meta({ id: 'Security_Detections_API_ThreatFilters' })
-export type Security_Detections_API_ThreatFilters = z.infer<typeof Security_Detections_API_ThreatFilters>
-
-export const Security_Detections_API_SavedQueryId = z.string().meta({ id: 'Security_Detections_API_SavedQueryId' })
-export type Security_Detections_API_SavedQueryId = z.infer<typeof Security_Detections_API_SavedQueryId>
-
-export const Security_Detections_API_ItemsPerSearch = z.number().meta({ id: 'Security_Detections_API_ItemsPerSearch' })
-export type Security_Detections_API_ItemsPerSearch = z.infer<typeof Security_Detections_API_ItemsPerSearch>
-
-export const Security_Detections_API_ConcurrentSearches = z.number().meta({ id: 'Security_Detections_API_ConcurrentSearches' })
-export type Security_Detections_API_ConcurrentSearches = z.infer<typeof Security_Detections_API_ConcurrentSearches>
-
-export const Security_Detections_API_ThreatQuery = z.string().meta({ id: 'Security_Detections_API_ThreatQuery' })
-export type Security_Detections_API_ThreatQuery = z.infer<typeof Security_Detections_API_ThreatQuery>
-
-export const Security_Detections_API_ThreatIndex = z.array(z.string()).meta({ id: 'Security_Detections_API_ThreatIndex' })
-export type Security_Detections_API_ThreatIndex = z.infer<typeof Security_Detections_API_ThreatIndex>
-
-export const Security_Detections_API_ThresholdValue = z.number().meta({ id: 'Security_Detections_API_ThresholdValue' })
-export type Security_Detections_API_ThresholdValue = z.infer<typeof Security_Detections_API_ThresholdValue>
-
-export const Security_Detections_API_ThresholdField = z.union([z.string(), z.array(z.string())]).meta({ id: 'Security_Detections_API_ThresholdField' })
-export type Security_Detections_API_ThresholdField = z.infer<typeof Security_Detections_API_ThresholdField>
-
-export const Security_Detections_API_ThresholdCardinality = z.array(z.object({
-  field: z.string(),
-  value: z.number()
-})).meta({ id: 'Security_Detections_API_ThresholdCardinality' })
-export type Security_Detections_API_ThresholdCardinality = z.infer<typeof Security_Detections_API_ThresholdCardinality>
-
-export const Security_Detections_API_QueryRuleRequiredFields = z.object({
-  type: z.enum(['query'])
-}).meta({ id: 'Security_Detections_API_QueryRuleRequiredFields' })
-export type Security_Detections_API_QueryRuleRequiredFields = z.infer<typeof Security_Detections_API_QueryRuleRequiredFields>
-
-export const Security_Detections_API_TimestampField = z.string().meta({ id: 'Security_Detections_API_TimestampField' })
-export type Security_Detections_API_TimestampField = z.infer<typeof Security_Detections_API_TimestampField>
-
-export const Security_Detections_API_TiebreakerField = z.string().meta({ id: 'Security_Detections_API_TiebreakerField' })
-export type Security_Detections_API_TiebreakerField = z.infer<typeof Security_Detections_API_TiebreakerField>
-
-export const Security_Detections_API_EventCategoryOverride = z.string().meta({ id: 'Security_Detections_API_EventCategoryOverride' })
-export type Security_Detections_API_EventCategoryOverride = z.infer<typeof Security_Detections_API_EventCategoryOverride>
-
-export const Security_Detections_API_EqlQueryLanguage = z.enum(['eql']).meta({ id: 'Security_Detections_API_EqlQueryLanguage' })
-export type Security_Detections_API_EqlQueryLanguage = z.infer<typeof Security_Detections_API_EqlQueryLanguage>
-
-export const Security_Detections_API_EsqlRuleRequiredFields = z.object({
-  language: Security_Detections_API_EsqlQueryLanguage,
-  query: Security_Detections_API_RuleQuery,
-  type: z.enum(['esql'])
-}).meta({ id: 'Security_Detections_API_EsqlRuleRequiredFields' })
-export type Security_Detections_API_EsqlRuleRequiredFields = z.infer<typeof Security_Detections_API_EsqlRuleRequiredFields>
-
-export const Security_Detections_API_AlertSuppressionDuration = z.object({
-  unit: Security_Detections_API_AlertSuppressionDurationUnit,
-  value: z.number()
-}).meta({ id: 'Security_Detections_API_AlertSuppressionDuration' })
-export type Security_Detections_API_AlertSuppressionDuration = z.infer<typeof Security_Detections_API_AlertSuppressionDuration>
-
-export const Security_Detections_API_ExternalRuleSource = z.object({
-  customized_fields: Security_Detections_API_ExternalRuleCustomizedFields,
-  has_base_version: Security_Detections_API_ExternalRuleHasBaseVersion,
-  is_customized: Security_Detections_API_IsExternalRuleCustomized,
-  type: z.enum(['external'])
-}).meta({ id: 'Security_Detections_API_ExternalRuleSource' })
-export type Security_Detections_API_ExternalRuleSource = z.infer<typeof Security_Detections_API_ExternalRuleSource>
-
-export const Security_Detections_API_RequiredFieldArray = z.array(Security_Detections_API_RequiredField).meta({ id: 'Security_Detections_API_RequiredFieldArray' })
-export type Security_Detections_API_RequiredFieldArray = z.infer<typeof Security_Detections_API_RequiredFieldArray>
-
-export const Security_Detections_API_RuleExecutionSummary = z.object({
-  last_execution: z.object({
-    date: z.string(),
-    message: z.string(),
-    metrics: Security_Detections_API_RuleExecutionMetrics,
-    status: Security_Detections_API_RuleExecutionStatus,
-    status_order: Security_Detections_API_RuleExecutionStatusOrder
-  })
-}).meta({ id: 'Security_Detections_API_RuleExecutionSummary' })
-export type Security_Detections_API_RuleExecutionSummary = z.infer<typeof Security_Detections_API_RuleExecutionSummary>
-
-export const Security_Detections_API_ThreatTechnique = z.object({
-  id: z.string(),
-  name: z.string(),
-  reference: z.string(),
-  subtechnique: z.array(Security_Detections_API_ThreatSubtechnique).optional()
-}).meta({ id: 'Security_Detections_API_ThreatTechnique' })
-export type Security_Detections_API_ThreatTechnique = z.infer<typeof Security_Detections_API_ThreatTechnique>
-
-export const Security_Detections_API_SeverityMapping = z.array(z.object({
-  field: z.string(),
-  operator: z.enum(['equals']),
-  severity: Security_Detections_API_Severity,
-  value: z.string()
-})).meta({ id: 'Security_Detections_API_SeverityMapping' })
-export type Security_Detections_API_SeverityMapping = z.infer<typeof Security_Detections_API_SeverityMapping>
-
-export const Security_Detections_API_RiskScoreMapping = z.array(z.object({
-  field: z.string(),
-  operator: z.enum(['equals']),
-  risk_score: Security_Detections_API_RiskScore.optional(),
-  value: z.string()
-})).meta({ id: 'Security_Detections_API_RiskScoreMapping' })
-export type Security_Detections_API_RiskScoreMapping = z.infer<typeof Security_Detections_API_RiskScoreMapping>
-
-export const Security_Detections_API_RunscriptParams = z.object({
-  command: z.enum(['runscript']),
-  comment: z.string().optional(),
-  config: z.object({
-    linux: Security_Detections_API_RunScriptOsConfigValues.optional(),
-    macos: Security_Detections_API_RunScriptOsConfigValues.optional(),
-    windows: Security_Detections_API_RunScriptOsConfigValues.optional()
-  }).optional()
-}).meta({ id: 'Security_Detections_API_RunscriptParams' })
-export type Security_Detections_API_RunscriptParams = z.infer<typeof Security_Detections_API_RunscriptParams>
-
-export const Security_Detections_API_ProcessesParams = z.discriminatedUnion('command', [Security_Detections_API_KillProcessParams, Security_Detections_API_SuspendProcessParams]).meta({ id: 'Security_Detections_API_ProcessesParams' })
-export type Security_Detections_API_ProcessesParams = z.infer<typeof Security_Detections_API_ProcessesParams>
-
-export const Security_Detections_API_OsqueryQuery = z.object({
-  ecs_mapping: Security_Detections_API_EcsMapping.optional(),
-  id: z.string(),
-  platform: z.string().optional(),
-  query: z.string(),
-  removed: z.boolean().optional(),
-  snapshot: z.boolean().optional(),
-  version: z.string().optional()
-}).meta({ id: 'Security_Detections_API_OsqueryQuery' })
-export type Security_Detections_API_OsqueryQuery = z.infer<typeof Security_Detections_API_OsqueryQuery>
-
-export const Security_Detections_API_RelatedIntegration = z.object({
-  integration: Security_Detections_API_NonEmptyString.optional(),
-  package: Security_Detections_API_NonEmptyString,
-  version: Security_Detections_API_NonEmptyString
-}).meta({ id: 'Security_Detections_API_RelatedIntegration' })
-export type Security_Detections_API_RelatedIntegration = z.infer<typeof Security_Detections_API_RelatedIntegration>
-
-export const Security_Detections_API_InvestigationFields = z.object({
-  field_names: z.array(Security_Detections_API_NonEmptyString)
-}).meta({ id: 'Security_Detections_API_InvestigationFields' })
-export type Security_Detections_API_InvestigationFields = z.infer<typeof Security_Detections_API_InvestigationFields>
-
-export const Security_Detections_API_ThreatMappingEntry = z.object({
-  field: Security_Detections_API_NonEmptyString,
-  negate: z.boolean().optional(),
-  type: z.enum(['mapping']),
-  value: Security_Detections_API_NonEmptyString
-}).meta({ id: 'Security_Detections_API_ThreatMappingEntry' })
-export type Security_Detections_API_ThreatMappingEntry = z.infer<typeof Security_Detections_API_ThreatMappingEntry>
-
-export const Security_Detections_API_RuleExceptionList = z.object({
-  id: z.string(),
-  list_id: z.string(),
-  namespace_type: z.enum(['agnostic', 'single']),
-  type: Security_Detections_API_ExceptionListType
-}).meta({ id: 'Security_Detections_API_RuleExceptionList' })
-export type Security_Detections_API_RuleExceptionList = z.infer<typeof Security_Detections_API_RuleExceptionList>
-
-export const Security_Detections_API_RuleActionFrequency = z.object({
-  notifyWhen: Security_Detections_API_RuleActionNotifyWhen,
-  summary: z.boolean(),
-  throttle: Security_Detections_API_RuleActionThrottle
-}).meta({ id: 'Security_Detections_API_RuleActionFrequency' })
-export type Security_Detections_API_RuleActionFrequency = z.infer<typeof Security_Detections_API_RuleActionFrequency>
-
-export const Security_Detections_API_NewTermsRuleDefaultableFields = z.object({
-  language: Security_Detections_API_KqlQueryLanguage.optional()
-}).meta({ id: 'Security_Detections_API_NewTermsRuleDefaultableFields' })
-export type Security_Detections_API_NewTermsRuleDefaultableFields = z.infer<typeof Security_Detections_API_NewTermsRuleDefaultableFields>
-
-export const Security_Detections_API_ThreatMatchRuleDefaultableFields = z.object({
-  language: Security_Detections_API_KqlQueryLanguage.optional()
-}).meta({ id: 'Security_Detections_API_ThreatMatchRuleDefaultableFields' })
-export type Security_Detections_API_ThreatMatchRuleDefaultableFields = z.infer<typeof Security_Detections_API_ThreatMatchRuleDefaultableFields>
-
-export const Security_Detections_API_ThresholdRuleDefaultableFields = z.object({
-  language: Security_Detections_API_KqlQueryLanguage.optional()
-}).meta({ id: 'Security_Detections_API_ThresholdRuleDefaultableFields' })
-export type Security_Detections_API_ThresholdRuleDefaultableFields = z.infer<typeof Security_Detections_API_ThresholdRuleDefaultableFields>
-
-export const Security_Detections_API_SavedQueryRuleDefaultableFields = z.object({
-  language: Security_Detections_API_KqlQueryLanguage.optional()
-}).meta({ id: 'Security_Detections_API_SavedQueryRuleDefaultableFields' })
-export type Security_Detections_API_SavedQueryRuleDefaultableFields = z.infer<typeof Security_Detections_API_SavedQueryRuleDefaultableFields>
-
-export const Security_Detections_API_QueryRuleDefaultableFields = z.object({
-  language: Security_Detections_API_KqlQueryLanguage.optional(),
-  query: Security_Detections_API_RuleQuery.optional()
-}).meta({ id: 'Security_Detections_API_QueryRuleDefaultableFields' })
-export type Security_Detections_API_QueryRuleDefaultableFields = z.infer<typeof Security_Detections_API_QueryRuleDefaultableFields>
-
-export const Security_Detections_API_NewTermsRuleRequiredFields = z.object({
-  history_window_start: Security_Detections_API_HistoryWindowStart,
-  new_terms_fields: Security_Detections_API_NewTermsFields,
-  query: Security_Detections_API_RuleQuery,
-  type: z.enum(['new_terms'])
-}).meta({ id: 'Security_Detections_API_NewTermsRuleRequiredFields' })
-export type Security_Detections_API_NewTermsRuleRequiredFields = z.infer<typeof Security_Detections_API_NewTermsRuleRequiredFields>
-
-export const Security_Detections_API_MachineLearningRuleRequiredFields = z.object({
-  anomaly_threshold: Security_Detections_API_AnomalyThreshold,
-  machine_learning_job_id: Security_Detections_API_MachineLearningJobId,
-  type: z.enum(['machine_learning'])
-}).meta({ id: 'Security_Detections_API_MachineLearningRuleRequiredFields' })
-export type Security_Detections_API_MachineLearningRuleRequiredFields = z.infer<typeof Security_Detections_API_MachineLearningRuleRequiredFields>
-
-export const Security_Detections_API_SavedQueryRuleRequiredFields = z.object({
-  saved_id: Security_Detections_API_SavedQueryId,
-  type: z.enum(['saved_query'])
-}).meta({ id: 'Security_Detections_API_SavedQueryRuleRequiredFields' })
-export type Security_Detections_API_SavedQueryRuleRequiredFields = z.infer<typeof Security_Detections_API_SavedQueryRuleRequiredFields>
-
-export const Security_Detections_API_Threshold = z.object({
-  cardinality: Security_Detections_API_ThresholdCardinality.optional(),
-  field: Security_Detections_API_ThresholdField,
-  value: Security_Detections_API_ThresholdValue
-}).meta({ id: 'Security_Detections_API_Threshold' })
-export type Security_Detections_API_Threshold = z.infer<typeof Security_Detections_API_Threshold>
-
-export const Security_Detections_API_EqlRequiredFields = z.object({
-  language: Security_Detections_API_EqlQueryLanguage,
-  query: Security_Detections_API_RuleQuery,
-  type: z.enum(['eql'])
-}).meta({ id: 'Security_Detections_API_EqlRequiredFields' })
-export type Security_Detections_API_EqlRequiredFields = z.infer<typeof Security_Detections_API_EqlRequiredFields>
-
-export const Security_Detections_API_AlertSuppression = z.object({
-  duration: Security_Detections_API_AlertSuppressionDuration.optional(),
-  group_by: Security_Detections_API_AlertSuppressionGroupBy,
-  missing_fields_strategy: Security_Detections_API_AlertSuppressionMissingFieldsStrategy.optional()
-}).meta({ id: 'Security_Detections_API_AlertSuppression' })
-export type Security_Detections_API_AlertSuppression = z.infer<typeof Security_Detections_API_AlertSuppression>
-
-export const Security_Detections_API_ThresholdAlertSuppression = z.object({
-  duration: Security_Detections_API_AlertSuppressionDuration
-}).meta({ id: 'Security_Detections_API_ThresholdAlertSuppression' })
-export type Security_Detections_API_ThresholdAlertSuppression = z.infer<typeof Security_Detections_API_ThresholdAlertSuppression>
-
-export const Security_Detections_API_RuleSource = z.discriminatedUnion('type', [Security_Detections_API_ExternalRuleSource, Security_Detections_API_InternalRuleSource]).meta({ id: 'Security_Detections_API_RuleSource' })
-export type Security_Detections_API_RuleSource = z.infer<typeof Security_Detections_API_RuleSource>
-
-export const Security_Detections_API_Threat = z.object({
-  framework: z.string(),
-  tactic: Security_Detections_API_ThreatTactic,
-  technique: z.array(Security_Detections_API_ThreatTechnique).optional()
-}).meta({ id: 'Security_Detections_API_Threat' })
-export type Security_Detections_API_Threat = z.infer<typeof Security_Detections_API_Threat>
-
-export const Security_Detections_API_EndpointResponseAction = z.object({
-  action_type_id: z.enum(['.endpoint']),
-  params: z.union([Security_Detections_API_DefaultParams, Security_Detections_API_ProcessesParams, Security_Detections_API_RunscriptParams])
-}).meta({ id: 'Security_Detections_API_EndpointResponseAction' })
-export type Security_Detections_API_EndpointResponseAction = z.infer<typeof Security_Detections_API_EndpointResponseAction>
-
-export const Security_Detections_API_OsqueryParams = z.object({
-  ecs_mapping: Security_Detections_API_EcsMapping.optional(),
-  pack_id: z.string().optional(),
-  queries: z.array(Security_Detections_API_OsqueryQuery).optional(),
-  query: z.string().optional(),
-  saved_query_id: z.string().optional(),
-  timeout: z.number().optional()
-}).meta({ id: 'Security_Detections_API_OsqueryParams' })
-export type Security_Detections_API_OsqueryParams = z.infer<typeof Security_Detections_API_OsqueryParams>
-
-export const Security_Detections_API_RelatedIntegrationArray = z.array(Security_Detections_API_RelatedIntegration).meta({ id: 'Security_Detections_API_RelatedIntegrationArray' })
-export type Security_Detections_API_RelatedIntegrationArray = z.infer<typeof Security_Detections_API_RelatedIntegrationArray>
-
-export const Security_Detections_API_ThreatMapping = z.array(z.object({
-  entries: z.array(Security_Detections_API_ThreatMappingEntry)
-})).meta({ id: 'Security_Detections_API_ThreatMapping' })
-export type Security_Detections_API_ThreatMapping = z.infer<typeof Security_Detections_API_ThreatMapping>
-
-export const Security_Detections_API_RuleAction = z.object({
-  action_type_id: z.string(),
-  alerts_filter: Security_Detections_API_RuleActionAlertsFilter.optional(),
-  frequency: Security_Detections_API_RuleActionFrequency.optional(),
-  group: Security_Detections_API_RuleActionGroup.optional(),
-  id: Security_Detections_API_RuleActionId,
-  params: Security_Detections_API_RuleActionParams,
-  uuid: Security_Detections_API_NonEmptyString.optional()
-}).meta({ id: 'Security_Detections_API_RuleAction' })
-export type Security_Detections_API_RuleAction = z.infer<typeof Security_Detections_API_RuleAction>
-
-export const Security_Detections_API_ThresholdRuleRequiredFields = z.object({
-  query: Security_Detections_API_RuleQuery,
-  threshold: Security_Detections_API_Threshold,
-  type: z.enum(['threshold'])
-}).meta({ id: 'Security_Detections_API_ThresholdRuleRequiredFields' })
-export type Security_Detections_API_ThresholdRuleRequiredFields = z.infer<typeof Security_Detections_API_ThresholdRuleRequiredFields>
-
-export const Security_Detections_API_EsqlRuleOptionalFields = z.object({
-  alert_suppression: Security_Detections_API_AlertSuppression.optional()
-}).meta({ id: 'Security_Detections_API_EsqlRuleOptionalFields' })
-export type Security_Detections_API_EsqlRuleOptionalFields = z.infer<typeof Security_Detections_API_EsqlRuleOptionalFields>
-
-export const Security_Detections_API_NewTermsRuleOptionalFields = z.object({
-  alert_suppression: Security_Detections_API_AlertSuppression.optional(),
-  data_view_id: Security_Detections_API_DataViewId.optional(),
-  filters: Security_Detections_API_RuleFilterArray.optional(),
-  index: Security_Detections_API_IndexPatternArray.optional()
-}).meta({ id: 'Security_Detections_API_NewTermsRuleOptionalFields' })
-export type Security_Detections_API_NewTermsRuleOptionalFields = z.infer<typeof Security_Detections_API_NewTermsRuleOptionalFields>
-
-export const Security_Detections_API_MachineLearningRuleOptionalFields = z.object({
-  alert_suppression: Security_Detections_API_AlertSuppression.optional()
-}).meta({ id: 'Security_Detections_API_MachineLearningRuleOptionalFields' })
-export type Security_Detections_API_MachineLearningRuleOptionalFields = z.infer<typeof Security_Detections_API_MachineLearningRuleOptionalFields>
-
-export const Security_Detections_API_ThreatMatchRuleOptionalFields = z.object({
-  alert_suppression: Security_Detections_API_AlertSuppression.optional(),
-  concurrent_searches: Security_Detections_API_ConcurrentSearches.optional(),
-  data_view_id: Security_Detections_API_DataViewId.optional(),
-  filters: Security_Detections_API_RuleFilterArray.optional(),
-  index: Security_Detections_API_IndexPatternArray.optional(),
-  items_per_search: Security_Detections_API_ItemsPerSearch.optional(),
-  saved_id: Security_Detections_API_SavedQueryId.optional(),
-  threat_filters: Security_Detections_API_ThreatFilters.optional(),
-  threat_indicator_path: Security_Detections_API_ThreatIndicatorPath.optional(),
-  threat_language: Security_Detections_API_KqlQueryLanguage.optional()
-}).meta({ id: 'Security_Detections_API_ThreatMatchRuleOptionalFields' })
-export type Security_Detections_API_ThreatMatchRuleOptionalFields = z.infer<typeof Security_Detections_API_ThreatMatchRuleOptionalFields>
-
-export const Security_Detections_API_SavedQueryRuleOptionalFields = z.object({
-  alert_suppression: Security_Detections_API_AlertSuppression.optional(),
-  data_view_id: Security_Detections_API_DataViewId.optional(),
-  filters: Security_Detections_API_RuleFilterArray.optional(),
-  index: Security_Detections_API_IndexPatternArray.optional(),
-  query: Security_Detections_API_RuleQuery.optional()
-}).meta({ id: 'Security_Detections_API_SavedQueryRuleOptionalFields' })
-export type Security_Detections_API_SavedQueryRuleOptionalFields = z.infer<typeof Security_Detections_API_SavedQueryRuleOptionalFields>
-
-export const Security_Detections_API_QueryRuleOptionalFields = z.object({
-  alert_suppression: Security_Detections_API_AlertSuppression.optional(),
-  data_view_id: Security_Detections_API_DataViewId.optional(),
-  filters: Security_Detections_API_RuleFilterArray.optional(),
-  index: Security_Detections_API_IndexPatternArray.optional(),
-  saved_id: Security_Detections_API_SavedQueryId.optional()
-}).meta({ id: 'Security_Detections_API_QueryRuleOptionalFields' })
-export type Security_Detections_API_QueryRuleOptionalFields = z.infer<typeof Security_Detections_API_QueryRuleOptionalFields>
-
-export const Security_Detections_API_EqlOptionalFields = z.object({
-  alert_suppression: Security_Detections_API_AlertSuppression.optional(),
-  data_view_id: Security_Detections_API_DataViewId.optional(),
-  event_category_override: Security_Detections_API_EventCategoryOverride.optional(),
-  filters: Security_Detections_API_RuleFilterArray.optional(),
-  index: Security_Detections_API_IndexPatternArray.optional(),
-  tiebreaker_field: Security_Detections_API_TiebreakerField.optional(),
-  timestamp_field: Security_Detections_API_TimestampField.optional()
-}).meta({ id: 'Security_Detections_API_EqlOptionalFields' })
-export type Security_Detections_API_EqlOptionalFields = z.infer<typeof Security_Detections_API_EqlOptionalFields>
-
-export const Security_Detections_API_ThresholdRuleOptionalFields = z.object({
-  alert_suppression: Security_Detections_API_ThresholdAlertSuppression.optional(),
-  data_view_id: Security_Detections_API_DataViewId.optional(),
-  filters: Security_Detections_API_RuleFilterArray.optional(),
-  index: Security_Detections_API_IndexPatternArray.optional(),
-  saved_id: Security_Detections_API_SavedQueryId.optional()
-}).meta({ id: 'Security_Detections_API_ThresholdRuleOptionalFields' })
-export type Security_Detections_API_ThresholdRuleOptionalFields = z.infer<typeof Security_Detections_API_ThresholdRuleOptionalFields>
-
-export const Security_Detections_API_ResponseFields = z.object({
-  created_at: z.string(),
-  created_by: z.string(),
-  execution_summary: Security_Detections_API_RuleExecutionSummary.optional(),
-  id: Security_Detections_API_UUID,
-  immutable: Security_Detections_API_IsRuleImmutable,
-  required_fields: Security_Detections_API_RequiredFieldArray,
-  revision: Security_Detections_API_RuleRevision,
-  rule_id: Security_Detections_API_RuleSignatureId,
-  rule_source: Security_Detections_API_RuleSource,
-  updated_at: z.string(),
-  updated_by: z.string()
-}).meta({ id: 'Security_Detections_API_ResponseFields' })
-export type Security_Detections_API_ResponseFields = z.infer<typeof Security_Detections_API_ResponseFields>
-
-export const Security_Detections_API_ThreatArray = z.array(Security_Detections_API_Threat).meta({ id: 'Security_Detections_API_ThreatArray' })
-export type Security_Detections_API_ThreatArray = z.infer<typeof Security_Detections_API_ThreatArray>
-
-export const Security_Detections_API_OsqueryResponseAction = z.object({
-  action_type_id: z.enum(['.osquery']),
-  params: Security_Detections_API_OsqueryParams
-}).meta({ id: 'Security_Detections_API_OsqueryResponseAction' })
-export type Security_Detections_API_OsqueryResponseAction = z.infer<typeof Security_Detections_API_OsqueryResponseAction>
-
-export const Security_Detections_API_ThreatMatchRuleRequiredFields = z.object({
-  query: Security_Detections_API_RuleQuery,
-  threat_index: Security_Detections_API_ThreatIndex,
-  threat_mapping: Security_Detections_API_ThreatMapping,
-  threat_query: Security_Detections_API_ThreatQuery,
-  type: z.enum(['threat_match'])
-}).meta({ id: 'Security_Detections_API_ThreatMatchRuleRequiredFields' })
-export type Security_Detections_API_ThreatMatchRuleRequiredFields = z.infer<typeof Security_Detections_API_ThreatMatchRuleRequiredFields>
-
-export const Security_Detections_API_EsqlRuleResponseFields = Security_Detections_API_EsqlRuleOptionalFields.merge(Security_Detections_API_EsqlRuleRequiredFields).meta({ id: 'Security_Detections_API_EsqlRuleResponseFields' })
-export type Security_Detections_API_EsqlRuleResponseFields = z.infer<typeof Security_Detections_API_EsqlRuleResponseFields>
-
-export const Security_Detections_API_NewTermsRuleResponseFields = Security_Detections_API_NewTermsRuleRequiredFields.merge(Security_Detections_API_NewTermsRuleOptionalFields).merge(z.object({
-  language: Security_Detections_API_KqlQueryLanguage
-})).meta({ id: 'Security_Detections_API_NewTermsRuleResponseFields' })
-export type Security_Detections_API_NewTermsRuleResponseFields = z.infer<typeof Security_Detections_API_NewTermsRuleResponseFields>
+import { Security_Detections_API_AlertsIndex, Security_Detections_API_AlertsIndexNamespace, Security_Detections_API_AnomalyThreshold, Security_Detections_API_BuildingBlockType, Security_Detections_API_EqlOptionalFields, Security_Detections_API_EqlQueryLanguage, Security_Detections_API_EsqlQueryLanguage, Security_Detections_API_EsqlRuleOptionalFields, Security_Detections_API_HistoryWindowStart, Security_Detections_API_InvestigationFields, Security_Detections_API_InvestigationGuide, Security_Detections_API_IsRuleEnabled, Security_Detections_API_MachineLearningJobId, Security_Detections_API_MachineLearningRuleOptionalFields, Security_Detections_API_MaxSignals, Security_Detections_API_NewTermsFields, Security_Detections_API_NewTermsRuleDefaultableFields, Security_Detections_API_NewTermsRuleOptionalFields, Security_Detections_API_QueryRuleDefaultableFields, Security_Detections_API_QueryRuleOptionalFields, Security_Detections_API_RelatedIntegrationArray, Security_Detections_API_RequiredFieldInput, Security_Detections_API_ResponseAction, Security_Detections_API_RiskScore, Security_Detections_API_RiskScoreMapping, Security_Detections_API_RuleAction, Security_Detections_API_RuleActionThrottle, Security_Detections_API_RuleAuthorArray, Security_Detections_API_RuleDescription, Security_Detections_API_RuleExceptionList, Security_Detections_API_RuleFalsePositiveArray, Security_Detections_API_RuleInterval, Security_Detections_API_RuleIntervalFrom, Security_Detections_API_RuleIntervalTo, Security_Detections_API_RuleLicense, Security_Detections_API_RuleMetadata, Security_Detections_API_RuleName, Security_Detections_API_RuleNameOverride, Security_Detections_API_RuleQuery, Security_Detections_API_RuleReferenceArray, Security_Detections_API_RuleSignatureId, Security_Detections_API_RuleTagArray, Security_Detections_API_RuleVersion, Security_Detections_API_SavedObjectResolveAliasPurpose, Security_Detections_API_SavedObjectResolveAliasTargetId, Security_Detections_API_SavedObjectResolveOutcome, Security_Detections_API_SavedQueryId, Security_Detections_API_SavedQueryRuleDefaultableFields, Security_Detections_API_SavedQueryRuleOptionalFields, Security_Detections_API_SetupGuide, Security_Detections_API_Severity, Security_Detections_API_SeverityMapping, Security_Detections_API_ThreatArray, Security_Detections_API_ThreatIndex, Security_Detections_API_ThreatMapping, Security_Detections_API_ThreatMatchRuleDefaultableFields, Security_Detections_API_ThreatMatchRuleOptionalFields, Security_Detections_API_ThreatQuery, Security_Detections_API_Threshold, Security_Detections_API_ThresholdRuleDefaultableFields, Security_Detections_API_ThresholdRuleOptionalFields, Security_Detections_API_TimelineTemplateId, Security_Detections_API_TimelineTemplateTitle, Security_Detections_API_TimestampOverride, Security_Detections_API_TimestampOverrideFallbackDisabled, Security_Detections_API_UUID } from './schemas/security.js'
+
+export const Security_Detections_API_EqlRulePatchFields = z.object({
+  language: Security_Detections_API_EqlQueryLanguage.optional(),
+  query: Security_Detections_API_RuleQuery.optional(),
+  type: z.enum(['eql']).optional()
+}).merge(Security_Detections_API_EqlOptionalFields).meta({ id: 'Security_Detections_API_EqlRulePatchFields' })
+export type Security_Detections_API_EqlRulePatchFields = z.infer<typeof Security_Detections_API_EqlRulePatchFields>
+
+export const Security_Detections_API_MachineLearningRulePatchFields = z.object({
+  anomaly_threshold: Security_Detections_API_AnomalyThreshold.optional(),
+  machine_learning_job_id: Security_Detections_API_MachineLearningJobId.optional(),
+  type: z.enum(['machine_learning']).optional()
+}).merge(Security_Detections_API_MachineLearningRuleOptionalFields).meta({ id: 'Security_Detections_API_MachineLearningRulePatchFields' })
+export type Security_Detections_API_MachineLearningRulePatchFields = z.infer<typeof Security_Detections_API_MachineLearningRulePatchFields>
 
 export const Security_Detections_API_NewTermsRulePatchFields = z.object({
   history_window_start: Security_Detections_API_HistoryWindowStart.optional(),
@@ -692,15 +35,16 @@ export const Security_Detections_API_NewTermsRulePatchFields = z.object({
 }).merge(Security_Detections_API_NewTermsRuleOptionalFields).merge(Security_Detections_API_NewTermsRuleDefaultableFields).meta({ id: 'Security_Detections_API_NewTermsRulePatchFields' })
 export type Security_Detections_API_NewTermsRulePatchFields = z.infer<typeof Security_Detections_API_NewTermsRulePatchFields>
 
-export const Security_Detections_API_MachineLearningRuleResponseFields = Security_Detections_API_MachineLearningRuleRequiredFields.merge(Security_Detections_API_MachineLearningRuleOptionalFields).meta({ id: 'Security_Detections_API_MachineLearningRuleResponseFields' })
-export type Security_Detections_API_MachineLearningRuleResponseFields = z.infer<typeof Security_Detections_API_MachineLearningRuleResponseFields>
+export const Security_Detections_API_QueryRulePatchFields = z.object({
+  type: z.enum(['query']).optional()
+}).merge(Security_Detections_API_QueryRuleOptionalFields).merge(Security_Detections_API_QueryRuleDefaultableFields).meta({ id: 'Security_Detections_API_QueryRulePatchFields' })
+export type Security_Detections_API_QueryRulePatchFields = z.infer<typeof Security_Detections_API_QueryRulePatchFields>
 
-export const Security_Detections_API_MachineLearningRulePatchFields = z.object({
-  anomaly_threshold: Security_Detections_API_AnomalyThreshold.optional(),
-  machine_learning_job_id: Security_Detections_API_MachineLearningJobId.optional(),
-  type: z.enum(['machine_learning']).optional()
-}).merge(Security_Detections_API_MachineLearningRuleOptionalFields).meta({ id: 'Security_Detections_API_MachineLearningRulePatchFields' })
-export type Security_Detections_API_MachineLearningRulePatchFields = z.infer<typeof Security_Detections_API_MachineLearningRulePatchFields>
+export const Security_Detections_API_SavedQueryRulePatchFields = z.object({
+  saved_id: Security_Detections_API_SavedQueryId.optional(),
+  type: z.enum(['saved_query']).optional()
+}).merge(Security_Detections_API_SavedQueryRuleOptionalFields).merge(Security_Detections_API_SavedQueryRuleDefaultableFields).meta({ id: 'Security_Detections_API_SavedQueryRulePatchFields' })
+export type Security_Detections_API_SavedQueryRulePatchFields = z.infer<typeof Security_Detections_API_SavedQueryRulePatchFields>
 
 export const Security_Detections_API_ThreatMatchRulePatchFields = z.object({
   query: Security_Detections_API_RuleQuery.optional(),
@@ -711,43 +55,6 @@ export const Security_Detections_API_ThreatMatchRulePatchFields = z.object({
 }).merge(Security_Detections_API_ThreatMatchRuleOptionalFields).merge(Security_Detections_API_ThreatMatchRuleDefaultableFields).meta({ id: 'Security_Detections_API_ThreatMatchRulePatchFields' })
 export type Security_Detections_API_ThreatMatchRulePatchFields = z.infer<typeof Security_Detections_API_ThreatMatchRulePatchFields>
 
-export const Security_Detections_API_SavedQueryRuleResponseFields = Security_Detections_API_SavedQueryRuleRequiredFields.merge(Security_Detections_API_SavedQueryRuleOptionalFields).merge(z.object({
-  language: Security_Detections_API_KqlQueryLanguage
-})).meta({ id: 'Security_Detections_API_SavedQueryRuleResponseFields' })
-export type Security_Detections_API_SavedQueryRuleResponseFields = z.infer<typeof Security_Detections_API_SavedQueryRuleResponseFields>
-
-export const Security_Detections_API_SavedQueryRulePatchFields = z.object({
-  saved_id: Security_Detections_API_SavedQueryId.optional(),
-  type: z.enum(['saved_query']).optional()
-}).merge(Security_Detections_API_SavedQueryRuleOptionalFields).merge(Security_Detections_API_SavedQueryRuleDefaultableFields).meta({ id: 'Security_Detections_API_SavedQueryRulePatchFields' })
-export type Security_Detections_API_SavedQueryRulePatchFields = z.infer<typeof Security_Detections_API_SavedQueryRulePatchFields>
-
-export const Security_Detections_API_QueryRuleResponseFields = Security_Detections_API_QueryRuleRequiredFields.merge(Security_Detections_API_QueryRuleOptionalFields).merge(z.object({
-  language: Security_Detections_API_KqlQueryLanguage,
-  query: Security_Detections_API_RuleQuery
-})).meta({ id: 'Security_Detections_API_QueryRuleResponseFields' })
-export type Security_Detections_API_QueryRuleResponseFields = z.infer<typeof Security_Detections_API_QueryRuleResponseFields>
-
-export const Security_Detections_API_QueryRulePatchFields = z.object({
-  type: z.enum(['query']).optional()
-}).merge(Security_Detections_API_QueryRuleOptionalFields).merge(Security_Detections_API_QueryRuleDefaultableFields).meta({ id: 'Security_Detections_API_QueryRulePatchFields' })
-export type Security_Detections_API_QueryRulePatchFields = z.infer<typeof Security_Detections_API_QueryRulePatchFields>
-
-export const Security_Detections_API_EqlRuleResponseFields = Security_Detections_API_EqlRequiredFields.merge(Security_Detections_API_EqlOptionalFields).meta({ id: 'Security_Detections_API_EqlRuleResponseFields' })
-export type Security_Detections_API_EqlRuleResponseFields = z.infer<typeof Security_Detections_API_EqlRuleResponseFields>
-
-export const Security_Detections_API_EqlRulePatchFields = z.object({
-  language: Security_Detections_API_EqlQueryLanguage.optional(),
-  query: Security_Detections_API_RuleQuery.optional(),
-  type: z.enum(['eql']).optional()
-}).merge(Security_Detections_API_EqlOptionalFields).meta({ id: 'Security_Detections_API_EqlRulePatchFields' })
-export type Security_Detections_API_EqlRulePatchFields = z.infer<typeof Security_Detections_API_EqlRulePatchFields>
-
-export const Security_Detections_API_ThresholdRuleResponseFields = Security_Detections_API_ThresholdRuleRequiredFields.merge(Security_Detections_API_ThresholdRuleOptionalFields).merge(z.object({
-  language: Security_Detections_API_KqlQueryLanguage
-})).meta({ id: 'Security_Detections_API_ThresholdRuleResponseFields' })
-export type Security_Detections_API_ThresholdRuleResponseFields = z.infer<typeof Security_Detections_API_ThresholdRuleResponseFields>
-
 export const Security_Detections_API_ThresholdRulePatchFields = z.object({
   query: Security_Detections_API_RuleQuery.optional(),
   threshold: Security_Detections_API_Threshold.optional(),
@@ -755,314 +62,50 @@ export const Security_Detections_API_ThresholdRulePatchFields = z.object({
 }).merge(Security_Detections_API_ThresholdRuleOptionalFields).merge(Security_Detections_API_ThresholdRuleDefaultableFields).meta({ id: 'Security_Detections_API_ThresholdRulePatchFields' })
 export type Security_Detections_API_ThresholdRulePatchFields = z.infer<typeof Security_Detections_API_ThresholdRulePatchFields>
 
-export const Security_Detections_API_ResponseAction = z.discriminatedUnion('action_type_id', [Security_Detections_API_OsqueryResponseAction, Security_Detections_API_EndpointResponseAction]).meta({ id: 'Security_Detections_API_ResponseAction' })
-export type Security_Detections_API_ResponseAction = z.infer<typeof Security_Detections_API_ResponseAction>
-
-export const Security_Detections_API_ThreatMatchRuleResponseFields = Security_Detections_API_ThreatMatchRuleRequiredFields.merge(Security_Detections_API_ThreatMatchRuleOptionalFields).merge(z.object({
-  language: Security_Detections_API_KqlQueryLanguage
-})).meta({ id: 'Security_Detections_API_ThreatMatchRuleResponseFields' })
-export type Security_Detections_API_ThreatMatchRuleResponseFields = z.infer<typeof Security_Detections_API_ThreatMatchRuleResponseFields>
-
-export const Security_Detections_API_EsqlRule = z.intersection(z.intersection(z.object({
-  actions: z.array(Security_Detections_API_RuleAction),
+export const Security_Detections_API_EqlRulePatchProps = z.intersection(z.object({
+  actions: z.array(Security_Detections_API_RuleAction).optional(),
   alias_purpose: Security_Detections_API_SavedObjectResolveAliasPurpose.optional(),
   alias_target_id: Security_Detections_API_SavedObjectResolveAliasTargetId.optional(),
-  author: Security_Detections_API_RuleAuthorArray,
+  author: Security_Detections_API_RuleAuthorArray.optional(),
   building_block_type: Security_Detections_API_BuildingBlockType.optional(),
-  description: Security_Detections_API_RuleDescription,
-  enabled: Security_Detections_API_IsRuleEnabled,
-  exceptions_list: z.array(Security_Detections_API_RuleExceptionList),
-  false_positives: Security_Detections_API_RuleFalsePositiveArray,
-  from: Security_Detections_API_RuleIntervalFrom,
-  interval: Security_Detections_API_RuleInterval,
+  description: Security_Detections_API_RuleDescription.optional(),
+  enabled: Security_Detections_API_IsRuleEnabled.optional(),
+  exceptions_list: z.array(Security_Detections_API_RuleExceptionList).optional(),
+  false_positives: Security_Detections_API_RuleFalsePositiveArray.optional(),
+  from: Security_Detections_API_RuleIntervalFrom.optional(),
+  id: Security_Detections_API_UUID.optional(),
+  interval: Security_Detections_API_RuleInterval.optional(),
   investigation_fields: Security_Detections_API_InvestigationFields.optional(),
   license: Security_Detections_API_RuleLicense.optional(),
-  max_signals: Security_Detections_API_MaxSignals,
+  max_signals: Security_Detections_API_MaxSignals.optional(),
   meta: Security_Detections_API_RuleMetadata.optional(),
-  name: Security_Detections_API_RuleName,
+  name: Security_Detections_API_RuleName.optional(),
   namespace: Security_Detections_API_AlertsIndexNamespace.optional(),
   note: Security_Detections_API_InvestigationGuide.optional(),
   outcome: Security_Detections_API_SavedObjectResolveOutcome.optional(),
   output_index: Security_Detections_API_AlertsIndex.optional(),
-  references: Security_Detections_API_RuleReferenceArray,
-  related_integrations: Security_Detections_API_RelatedIntegrationArray,
-  required_fields: z.array(Security_Detections_API_RequiredFieldInput),
+  references: Security_Detections_API_RuleReferenceArray.optional(),
+  related_integrations: Security_Detections_API_RelatedIntegrationArray.optional(),
+  required_fields: z.array(Security_Detections_API_RequiredFieldInput).optional(),
   response_actions: z.array(Security_Detections_API_ResponseAction).optional(),
-  risk_score: Security_Detections_API_RiskScore,
-  risk_score_mapping: Security_Detections_API_RiskScoreMapping,
+  risk_score: Security_Detections_API_RiskScore.optional(),
+  risk_score_mapping: Security_Detections_API_RiskScoreMapping.optional(),
+  rule_id: Security_Detections_API_RuleSignatureId.optional(),
   rule_name_override: Security_Detections_API_RuleNameOverride.optional(),
-  setup: Security_Detections_API_SetupGuide,
-  severity: Security_Detections_API_Severity,
-  severity_mapping: Security_Detections_API_SeverityMapping,
-  tags: Security_Detections_API_RuleTagArray,
-  threat: Security_Detections_API_ThreatArray,
+  setup: Security_Detections_API_SetupGuide.optional(),
+  severity: Security_Detections_API_Severity.optional(),
+  severity_mapping: Security_Detections_API_SeverityMapping.optional(),
+  tags: Security_Detections_API_RuleTagArray.optional(),
+  threat: Security_Detections_API_ThreatArray.optional(),
   throttle: Security_Detections_API_RuleActionThrottle.optional(),
   timeline_id: Security_Detections_API_TimelineTemplateId.optional(),
   timeline_title: Security_Detections_API_TimelineTemplateTitle.optional(),
   timestamp_override: Security_Detections_API_TimestampOverride.optional(),
   timestamp_override_fallback_disabled: Security_Detections_API_TimestampOverrideFallbackDisabled.optional(),
-  to: Security_Detections_API_RuleIntervalTo,
-  version: Security_Detections_API_RuleVersion
-}), Security_Detections_API_ResponseFields), Security_Detections_API_EsqlRuleResponseFields).meta({ id: 'Security_Detections_API_EsqlRule' })
-export type Security_Detections_API_EsqlRule = z.infer<typeof Security_Detections_API_EsqlRule>
-
-export const Security_Detections_API_NewTermsRule = z.intersection(z.intersection(z.object({
-  actions: z.array(Security_Detections_API_RuleAction),
-  alias_purpose: Security_Detections_API_SavedObjectResolveAliasPurpose.optional(),
-  alias_target_id: Security_Detections_API_SavedObjectResolveAliasTargetId.optional(),
-  author: Security_Detections_API_RuleAuthorArray,
-  building_block_type: Security_Detections_API_BuildingBlockType.optional(),
-  description: Security_Detections_API_RuleDescription,
-  enabled: Security_Detections_API_IsRuleEnabled,
-  exceptions_list: z.array(Security_Detections_API_RuleExceptionList),
-  false_positives: Security_Detections_API_RuleFalsePositiveArray,
-  from: Security_Detections_API_RuleIntervalFrom,
-  interval: Security_Detections_API_RuleInterval,
-  investigation_fields: Security_Detections_API_InvestigationFields.optional(),
-  license: Security_Detections_API_RuleLicense.optional(),
-  max_signals: Security_Detections_API_MaxSignals,
-  meta: Security_Detections_API_RuleMetadata.optional(),
-  name: Security_Detections_API_RuleName,
-  namespace: Security_Detections_API_AlertsIndexNamespace.optional(),
-  note: Security_Detections_API_InvestigationGuide.optional(),
-  outcome: Security_Detections_API_SavedObjectResolveOutcome.optional(),
-  output_index: Security_Detections_API_AlertsIndex.optional(),
-  references: Security_Detections_API_RuleReferenceArray,
-  related_integrations: Security_Detections_API_RelatedIntegrationArray,
-  required_fields: z.array(Security_Detections_API_RequiredFieldInput),
-  response_actions: z.array(Security_Detections_API_ResponseAction).optional(),
-  risk_score: Security_Detections_API_RiskScore,
-  risk_score_mapping: Security_Detections_API_RiskScoreMapping,
-  rule_name_override: Security_Detections_API_RuleNameOverride.optional(),
-  setup: Security_Detections_API_SetupGuide,
-  severity: Security_Detections_API_Severity,
-  severity_mapping: Security_Detections_API_SeverityMapping,
-  tags: Security_Detections_API_RuleTagArray,
-  threat: Security_Detections_API_ThreatArray,
-  throttle: Security_Detections_API_RuleActionThrottle.optional(),
-  timeline_id: Security_Detections_API_TimelineTemplateId.optional(),
-  timeline_title: Security_Detections_API_TimelineTemplateTitle.optional(),
-  timestamp_override: Security_Detections_API_TimestampOverride.optional(),
-  timestamp_override_fallback_disabled: Security_Detections_API_TimestampOverrideFallbackDisabled.optional(),
-  to: Security_Detections_API_RuleIntervalTo,
-  version: Security_Detections_API_RuleVersion
-}), Security_Detections_API_ResponseFields), Security_Detections_API_NewTermsRuleResponseFields).meta({ id: 'Security_Detections_API_NewTermsRule' })
-export type Security_Detections_API_NewTermsRule = z.infer<typeof Security_Detections_API_NewTermsRule>
-
-export const Security_Detections_API_MachineLearningRule = z.intersection(z.intersection(z.object({
-  actions: z.array(Security_Detections_API_RuleAction),
-  alias_purpose: Security_Detections_API_SavedObjectResolveAliasPurpose.optional(),
-  alias_target_id: Security_Detections_API_SavedObjectResolveAliasTargetId.optional(),
-  author: Security_Detections_API_RuleAuthorArray,
-  building_block_type: Security_Detections_API_BuildingBlockType.optional(),
-  description: Security_Detections_API_RuleDescription,
-  enabled: Security_Detections_API_IsRuleEnabled,
-  exceptions_list: z.array(Security_Detections_API_RuleExceptionList),
-  false_positives: Security_Detections_API_RuleFalsePositiveArray,
-  from: Security_Detections_API_RuleIntervalFrom,
-  interval: Security_Detections_API_RuleInterval,
-  investigation_fields: Security_Detections_API_InvestigationFields.optional(),
-  license: Security_Detections_API_RuleLicense.optional(),
-  max_signals: Security_Detections_API_MaxSignals,
-  meta: Security_Detections_API_RuleMetadata.optional(),
-  name: Security_Detections_API_RuleName,
-  namespace: Security_Detections_API_AlertsIndexNamespace.optional(),
-  note: Security_Detections_API_InvestigationGuide.optional(),
-  outcome: Security_Detections_API_SavedObjectResolveOutcome.optional(),
-  output_index: Security_Detections_API_AlertsIndex.optional(),
-  references: Security_Detections_API_RuleReferenceArray,
-  related_integrations: Security_Detections_API_RelatedIntegrationArray,
-  required_fields: z.array(Security_Detections_API_RequiredFieldInput),
-  response_actions: z.array(Security_Detections_API_ResponseAction).optional(),
-  risk_score: Security_Detections_API_RiskScore,
-  risk_score_mapping: Security_Detections_API_RiskScoreMapping,
-  rule_name_override: Security_Detections_API_RuleNameOverride.optional(),
-  setup: Security_Detections_API_SetupGuide,
-  severity: Security_Detections_API_Severity,
-  severity_mapping: Security_Detections_API_SeverityMapping,
-  tags: Security_Detections_API_RuleTagArray,
-  threat: Security_Detections_API_ThreatArray,
-  throttle: Security_Detections_API_RuleActionThrottle.optional(),
-  timeline_id: Security_Detections_API_TimelineTemplateId.optional(),
-  timeline_title: Security_Detections_API_TimelineTemplateTitle.optional(),
-  timestamp_override: Security_Detections_API_TimestampOverride.optional(),
-  timestamp_override_fallback_disabled: Security_Detections_API_TimestampOverrideFallbackDisabled.optional(),
-  to: Security_Detections_API_RuleIntervalTo,
-  version: Security_Detections_API_RuleVersion
-}), Security_Detections_API_ResponseFields), Security_Detections_API_MachineLearningRuleResponseFields).meta({ id: 'Security_Detections_API_MachineLearningRule' })
-export type Security_Detections_API_MachineLearningRule = z.infer<typeof Security_Detections_API_MachineLearningRule>
-
-export const Security_Detections_API_ThresholdRule = z.intersection(z.intersection(z.object({
-  actions: z.array(Security_Detections_API_RuleAction),
-  alias_purpose: Security_Detections_API_SavedObjectResolveAliasPurpose.optional(),
-  alias_target_id: Security_Detections_API_SavedObjectResolveAliasTargetId.optional(),
-  author: Security_Detections_API_RuleAuthorArray,
-  building_block_type: Security_Detections_API_BuildingBlockType.optional(),
-  description: Security_Detections_API_RuleDescription,
-  enabled: Security_Detections_API_IsRuleEnabled,
-  exceptions_list: z.array(Security_Detections_API_RuleExceptionList),
-  false_positives: Security_Detections_API_RuleFalsePositiveArray,
-  from: Security_Detections_API_RuleIntervalFrom,
-  interval: Security_Detections_API_RuleInterval,
-  investigation_fields: Security_Detections_API_InvestigationFields.optional(),
-  license: Security_Detections_API_RuleLicense.optional(),
-  max_signals: Security_Detections_API_MaxSignals,
-  meta: Security_Detections_API_RuleMetadata.optional(),
-  name: Security_Detections_API_RuleName,
-  namespace: Security_Detections_API_AlertsIndexNamespace.optional(),
-  note: Security_Detections_API_InvestigationGuide.optional(),
-  outcome: Security_Detections_API_SavedObjectResolveOutcome.optional(),
-  output_index: Security_Detections_API_AlertsIndex.optional(),
-  references: Security_Detections_API_RuleReferenceArray,
-  related_integrations: Security_Detections_API_RelatedIntegrationArray,
-  required_fields: z.array(Security_Detections_API_RequiredFieldInput),
-  response_actions: z.array(Security_Detections_API_ResponseAction).optional(),
-  risk_score: Security_Detections_API_RiskScore,
-  risk_score_mapping: Security_Detections_API_RiskScoreMapping,
-  rule_name_override: Security_Detections_API_RuleNameOverride.optional(),
-  setup: Security_Detections_API_SetupGuide,
-  severity: Security_Detections_API_Severity,
-  severity_mapping: Security_Detections_API_SeverityMapping,
-  tags: Security_Detections_API_RuleTagArray,
-  threat: Security_Detections_API_ThreatArray,
-  throttle: Security_Detections_API_RuleActionThrottle.optional(),
-  timeline_id: Security_Detections_API_TimelineTemplateId.optional(),
-  timeline_title: Security_Detections_API_TimelineTemplateTitle.optional(),
-  timestamp_override: Security_Detections_API_TimestampOverride.optional(),
-  timestamp_override_fallback_disabled: Security_Detections_API_TimestampOverrideFallbackDisabled.optional(),
-  to: Security_Detections_API_RuleIntervalTo,
-  version: Security_Detections_API_RuleVersion
-}), Security_Detections_API_ResponseFields), Security_Detections_API_ThresholdRuleResponseFields).meta({ id: 'Security_Detections_API_ThresholdRule' })
-export type Security_Detections_API_ThresholdRule = z.infer<typeof Security_Detections_API_ThresholdRule>
-
-export const Security_Detections_API_SavedQueryRule = z.intersection(z.intersection(z.object({
-  actions: z.array(Security_Detections_API_RuleAction),
-  alias_purpose: Security_Detections_API_SavedObjectResolveAliasPurpose.optional(),
-  alias_target_id: Security_Detections_API_SavedObjectResolveAliasTargetId.optional(),
-  author: Security_Detections_API_RuleAuthorArray,
-  building_block_type: Security_Detections_API_BuildingBlockType.optional(),
-  description: Security_Detections_API_RuleDescription,
-  enabled: Security_Detections_API_IsRuleEnabled,
-  exceptions_list: z.array(Security_Detections_API_RuleExceptionList),
-  false_positives: Security_Detections_API_RuleFalsePositiveArray,
-  from: Security_Detections_API_RuleIntervalFrom,
-  interval: Security_Detections_API_RuleInterval,
-  investigation_fields: Security_Detections_API_InvestigationFields.optional(),
-  license: Security_Detections_API_RuleLicense.optional(),
-  max_signals: Security_Detections_API_MaxSignals,
-  meta: Security_Detections_API_RuleMetadata.optional(),
-  name: Security_Detections_API_RuleName,
-  namespace: Security_Detections_API_AlertsIndexNamespace.optional(),
-  note: Security_Detections_API_InvestigationGuide.optional(),
-  outcome: Security_Detections_API_SavedObjectResolveOutcome.optional(),
-  output_index: Security_Detections_API_AlertsIndex.optional(),
-  references: Security_Detections_API_RuleReferenceArray,
-  related_integrations: Security_Detections_API_RelatedIntegrationArray,
-  required_fields: z.array(Security_Detections_API_RequiredFieldInput),
-  response_actions: z.array(Security_Detections_API_ResponseAction).optional(),
-  risk_score: Security_Detections_API_RiskScore,
-  risk_score_mapping: Security_Detections_API_RiskScoreMapping,
-  rule_name_override: Security_Detections_API_RuleNameOverride.optional(),
-  setup: Security_Detections_API_SetupGuide,
-  severity: Security_Detections_API_Severity,
-  severity_mapping: Security_Detections_API_SeverityMapping,
-  tags: Security_Detections_API_RuleTagArray,
-  threat: Security_Detections_API_ThreatArray,
-  throttle: Security_Detections_API_RuleActionThrottle.optional(),
-  timeline_id: Security_Detections_API_TimelineTemplateId.optional(),
-  timeline_title: Security_Detections_API_TimelineTemplateTitle.optional(),
-  timestamp_override: Security_Detections_API_TimestampOverride.optional(),
-  timestamp_override_fallback_disabled: Security_Detections_API_TimestampOverrideFallbackDisabled.optional(),
-  to: Security_Detections_API_RuleIntervalTo,
-  version: Security_Detections_API_RuleVersion
-}), Security_Detections_API_ResponseFields), Security_Detections_API_SavedQueryRuleResponseFields).meta({ id: 'Security_Detections_API_SavedQueryRule' })
-export type Security_Detections_API_SavedQueryRule = z.infer<typeof Security_Detections_API_SavedQueryRule>
-
-export const Security_Detections_API_QueryRule = z.intersection(z.intersection(z.object({
-  actions: z.array(Security_Detections_API_RuleAction),
-  alias_purpose: Security_Detections_API_SavedObjectResolveAliasPurpose.optional(),
-  alias_target_id: Security_Detections_API_SavedObjectResolveAliasTargetId.optional(),
-  author: Security_Detections_API_RuleAuthorArray,
-  building_block_type: Security_Detections_API_BuildingBlockType.optional(),
-  description: Security_Detections_API_RuleDescription,
-  enabled: Security_Detections_API_IsRuleEnabled,
-  exceptions_list: z.array(Security_Detections_API_RuleExceptionList),
-  false_positives: Security_Detections_API_RuleFalsePositiveArray,
-  from: Security_Detections_API_RuleIntervalFrom,
-  interval: Security_Detections_API_RuleInterval,
-  investigation_fields: Security_Detections_API_InvestigationFields.optional(),
-  license: Security_Detections_API_RuleLicense.optional(),
-  max_signals: Security_Detections_API_MaxSignals,
-  meta: Security_Detections_API_RuleMetadata.optional(),
-  name: Security_Detections_API_RuleName,
-  namespace: Security_Detections_API_AlertsIndexNamespace.optional(),
-  note: Security_Detections_API_InvestigationGuide.optional(),
-  outcome: Security_Detections_API_SavedObjectResolveOutcome.optional(),
-  output_index: Security_Detections_API_AlertsIndex.optional(),
-  references: Security_Detections_API_RuleReferenceArray,
-  related_integrations: Security_Detections_API_RelatedIntegrationArray,
-  required_fields: z.array(Security_Detections_API_RequiredFieldInput),
-  response_actions: z.array(Security_Detections_API_ResponseAction).optional(),
-  risk_score: Security_Detections_API_RiskScore,
-  risk_score_mapping: Security_Detections_API_RiskScoreMapping,
-  rule_name_override: Security_Detections_API_RuleNameOverride.optional(),
-  setup: Security_Detections_API_SetupGuide,
-  severity: Security_Detections_API_Severity,
-  severity_mapping: Security_Detections_API_SeverityMapping,
-  tags: Security_Detections_API_RuleTagArray,
-  threat: Security_Detections_API_ThreatArray,
-  throttle: Security_Detections_API_RuleActionThrottle.optional(),
-  timeline_id: Security_Detections_API_TimelineTemplateId.optional(),
-  timeline_title: Security_Detections_API_TimelineTemplateTitle.optional(),
-  timestamp_override: Security_Detections_API_TimestampOverride.optional(),
-  timestamp_override_fallback_disabled: Security_Detections_API_TimestampOverrideFallbackDisabled.optional(),
-  to: Security_Detections_API_RuleIntervalTo,
-  version: Security_Detections_API_RuleVersion
-}), Security_Detections_API_ResponseFields), Security_Detections_API_QueryRuleResponseFields).meta({ id: 'Security_Detections_API_QueryRule' })
-export type Security_Detections_API_QueryRule = z.infer<typeof Security_Detections_API_QueryRule>
-
-export const Security_Detections_API_EqlRule = z.intersection(z.intersection(z.object({
-  actions: z.array(Security_Detections_API_RuleAction),
-  alias_purpose: Security_Detections_API_SavedObjectResolveAliasPurpose.optional(),
-  alias_target_id: Security_Detections_API_SavedObjectResolveAliasTargetId.optional(),
-  author: Security_Detections_API_RuleAuthorArray,
-  building_block_type: Security_Detections_API_BuildingBlockType.optional(),
-  description: Security_Detections_API_RuleDescription,
-  enabled: Security_Detections_API_IsRuleEnabled,
-  exceptions_list: z.array(Security_Detections_API_RuleExceptionList),
-  false_positives: Security_Detections_API_RuleFalsePositiveArray,
-  from: Security_Detections_API_RuleIntervalFrom,
-  interval: Security_Detections_API_RuleInterval,
-  investigation_fields: Security_Detections_API_InvestigationFields.optional(),
-  license: Security_Detections_API_RuleLicense.optional(),
-  max_signals: Security_Detections_API_MaxSignals,
-  meta: Security_Detections_API_RuleMetadata.optional(),
-  name: Security_Detections_API_RuleName,
-  namespace: Security_Detections_API_AlertsIndexNamespace.optional(),
-  note: Security_Detections_API_InvestigationGuide.optional(),
-  outcome: Security_Detections_API_SavedObjectResolveOutcome.optional(),
-  output_index: Security_Detections_API_AlertsIndex.optional(),
-  references: Security_Detections_API_RuleReferenceArray,
-  related_integrations: Security_Detections_API_RelatedIntegrationArray,
-  required_fields: z.array(Security_Detections_API_RequiredFieldInput),
-  response_actions: z.array(Security_Detections_API_ResponseAction).optional(),
-  risk_score: Security_Detections_API_RiskScore,
-  risk_score_mapping: Security_Detections_API_RiskScoreMapping,
-  rule_name_override: Security_Detections_API_RuleNameOverride.optional(),
-  setup: Security_Detections_API_SetupGuide,
-  severity: Security_Detections_API_Severity,
-  severity_mapping: Security_Detections_API_SeverityMapping,
-  tags: Security_Detections_API_RuleTagArray,
-  threat: Security_Detections_API_ThreatArray,
-  throttle: Security_Detections_API_RuleActionThrottle.optional(),
-  timeline_id: Security_Detections_API_TimelineTemplateId.optional(),
-  timeline_title: Security_Detections_API_TimelineTemplateTitle.optional(),
-  timestamp_override: Security_Detections_API_TimestampOverride.optional(),
-  timestamp_override_fallback_disabled: Security_Detections_API_TimestampOverrideFallbackDisabled.optional(),
-  to: Security_Detections_API_RuleIntervalTo,
-  version: Security_Detections_API_RuleVersion
-}), Security_Detections_API_ResponseFields), Security_Detections_API_EqlRuleResponseFields).meta({ id: 'Security_Detections_API_EqlRule' })
-export type Security_Detections_API_EqlRule = z.infer<typeof Security_Detections_API_EqlRule>
+  to: Security_Detections_API_RuleIntervalTo.optional(),
+  version: Security_Detections_API_RuleVersion.optional()
+}), Security_Detections_API_EqlRulePatchFields).meta({ id: 'Security_Detections_API_EqlRulePatchProps' })
+export type Security_Detections_API_EqlRulePatchProps = z.infer<typeof Security_Detections_API_EqlRulePatchProps>
 
 export const Security_Detections_API_EsqlRulePatchProps = z.object({
   actions: z.array(Security_Detections_API_RuleAction).optional(),
@@ -1112,6 +155,51 @@ export const Security_Detections_API_EsqlRulePatchProps = z.object({
 }).merge(Security_Detections_API_EsqlRuleOptionalFields).meta({ id: 'Security_Detections_API_EsqlRulePatchProps' })
 export type Security_Detections_API_EsqlRulePatchProps = z.infer<typeof Security_Detections_API_EsqlRulePatchProps>
 
+export const Security_Detections_API_MachineLearningRulePatchProps = z.intersection(z.object({
+  actions: z.array(Security_Detections_API_RuleAction).optional(),
+  alias_purpose: Security_Detections_API_SavedObjectResolveAliasPurpose.optional(),
+  alias_target_id: Security_Detections_API_SavedObjectResolveAliasTargetId.optional(),
+  author: Security_Detections_API_RuleAuthorArray.optional(),
+  building_block_type: Security_Detections_API_BuildingBlockType.optional(),
+  description: Security_Detections_API_RuleDescription.optional(),
+  enabled: Security_Detections_API_IsRuleEnabled.optional(),
+  exceptions_list: z.array(Security_Detections_API_RuleExceptionList).optional(),
+  false_positives: Security_Detections_API_RuleFalsePositiveArray.optional(),
+  from: Security_Detections_API_RuleIntervalFrom.optional(),
+  id: Security_Detections_API_UUID.optional(),
+  interval: Security_Detections_API_RuleInterval.optional(),
+  investigation_fields: Security_Detections_API_InvestigationFields.optional(),
+  license: Security_Detections_API_RuleLicense.optional(),
+  max_signals: Security_Detections_API_MaxSignals.optional(),
+  meta: Security_Detections_API_RuleMetadata.optional(),
+  name: Security_Detections_API_RuleName.optional(),
+  namespace: Security_Detections_API_AlertsIndexNamespace.optional(),
+  note: Security_Detections_API_InvestigationGuide.optional(),
+  outcome: Security_Detections_API_SavedObjectResolveOutcome.optional(),
+  output_index: Security_Detections_API_AlertsIndex.optional(),
+  references: Security_Detections_API_RuleReferenceArray.optional(),
+  related_integrations: Security_Detections_API_RelatedIntegrationArray.optional(),
+  required_fields: z.array(Security_Detections_API_RequiredFieldInput).optional(),
+  response_actions: z.array(Security_Detections_API_ResponseAction).optional(),
+  risk_score: Security_Detections_API_RiskScore.optional(),
+  risk_score_mapping: Security_Detections_API_RiskScoreMapping.optional(),
+  rule_id: Security_Detections_API_RuleSignatureId.optional(),
+  rule_name_override: Security_Detections_API_RuleNameOverride.optional(),
+  setup: Security_Detections_API_SetupGuide.optional(),
+  severity: Security_Detections_API_Severity.optional(),
+  severity_mapping: Security_Detections_API_SeverityMapping.optional(),
+  tags: Security_Detections_API_RuleTagArray.optional(),
+  threat: Security_Detections_API_ThreatArray.optional(),
+  throttle: Security_Detections_API_RuleActionThrottle.optional(),
+  timeline_id: Security_Detections_API_TimelineTemplateId.optional(),
+  timeline_title: Security_Detections_API_TimelineTemplateTitle.optional(),
+  timestamp_override: Security_Detections_API_TimestampOverride.optional(),
+  timestamp_override_fallback_disabled: Security_Detections_API_TimestampOverrideFallbackDisabled.optional(),
+  to: Security_Detections_API_RuleIntervalTo.optional(),
+  version: Security_Detections_API_RuleVersion.optional()
+}), Security_Detections_API_MachineLearningRulePatchFields).meta({ id: 'Security_Detections_API_MachineLearningRulePatchProps' })
+export type Security_Detections_API_MachineLearningRulePatchProps = z.infer<typeof Security_Detections_API_MachineLearningRulePatchProps>
+
 export const Security_Detections_API_NewTermsRulePatchProps = z.intersection(z.object({
   actions: z.array(Security_Detections_API_RuleAction).optional(),
   alias_purpose: Security_Detections_API_SavedObjectResolveAliasPurpose.optional(),
@@ -1157,7 +245,7 @@ export const Security_Detections_API_NewTermsRulePatchProps = z.intersection(z.o
 }), Security_Detections_API_NewTermsRulePatchFields).meta({ id: 'Security_Detections_API_NewTermsRulePatchProps' })
 export type Security_Detections_API_NewTermsRulePatchProps = z.infer<typeof Security_Detections_API_NewTermsRulePatchProps>
 
-export const Security_Detections_API_MachineLearningRulePatchProps = z.intersection(z.object({
+export const Security_Detections_API_QueryRulePatchProps = z.intersection(z.object({
   actions: z.array(Security_Detections_API_RuleAction).optional(),
   alias_purpose: Security_Detections_API_SavedObjectResolveAliasPurpose.optional(),
   alias_target_id: Security_Detections_API_SavedObjectResolveAliasTargetId.optional(),
@@ -1199,8 +287,53 @@ export const Security_Detections_API_MachineLearningRulePatchProps = z.intersect
   timestamp_override_fallback_disabled: Security_Detections_API_TimestampOverrideFallbackDisabled.optional(),
   to: Security_Detections_API_RuleIntervalTo.optional(),
   version: Security_Detections_API_RuleVersion.optional()
-}), Security_Detections_API_MachineLearningRulePatchFields).meta({ id: 'Security_Detections_API_MachineLearningRulePatchProps' })
-export type Security_Detections_API_MachineLearningRulePatchProps = z.infer<typeof Security_Detections_API_MachineLearningRulePatchProps>
+}), Security_Detections_API_QueryRulePatchFields).meta({ id: 'Security_Detections_API_QueryRulePatchProps' })
+export type Security_Detections_API_QueryRulePatchProps = z.infer<typeof Security_Detections_API_QueryRulePatchProps>
+
+export const Security_Detections_API_SavedQueryRulePatchProps = z.intersection(z.object({
+  actions: z.array(Security_Detections_API_RuleAction).optional(),
+  alias_purpose: Security_Detections_API_SavedObjectResolveAliasPurpose.optional(),
+  alias_target_id: Security_Detections_API_SavedObjectResolveAliasTargetId.optional(),
+  author: Security_Detections_API_RuleAuthorArray.optional(),
+  building_block_type: Security_Detections_API_BuildingBlockType.optional(),
+  description: Security_Detections_API_RuleDescription.optional(),
+  enabled: Security_Detections_API_IsRuleEnabled.optional(),
+  exceptions_list: z.array(Security_Detections_API_RuleExceptionList).optional(),
+  false_positives: Security_Detections_API_RuleFalsePositiveArray.optional(),
+  from: Security_Detections_API_RuleIntervalFrom.optional(),
+  id: Security_Detections_API_UUID.optional(),
+  interval: Security_Detections_API_RuleInterval.optional(),
+  investigation_fields: Security_Detections_API_InvestigationFields.optional(),
+  license: Security_Detections_API_RuleLicense.optional(),
+  max_signals: Security_Detections_API_MaxSignals.optional(),
+  meta: Security_Detections_API_RuleMetadata.optional(),
+  name: Security_Detections_API_RuleName.optional(),
+  namespace: Security_Detections_API_AlertsIndexNamespace.optional(),
+  note: Security_Detections_API_InvestigationGuide.optional(),
+  outcome: Security_Detections_API_SavedObjectResolveOutcome.optional(),
+  output_index: Security_Detections_API_AlertsIndex.optional(),
+  references: Security_Detections_API_RuleReferenceArray.optional(),
+  related_integrations: Security_Detections_API_RelatedIntegrationArray.optional(),
+  required_fields: z.array(Security_Detections_API_RequiredFieldInput).optional(),
+  response_actions: z.array(Security_Detections_API_ResponseAction).optional(),
+  risk_score: Security_Detections_API_RiskScore.optional(),
+  risk_score_mapping: Security_Detections_API_RiskScoreMapping.optional(),
+  rule_id: Security_Detections_API_RuleSignatureId.optional(),
+  rule_name_override: Security_Detections_API_RuleNameOverride.optional(),
+  setup: Security_Detections_API_SetupGuide.optional(),
+  severity: Security_Detections_API_Severity.optional(),
+  severity_mapping: Security_Detections_API_SeverityMapping.optional(),
+  tags: Security_Detections_API_RuleTagArray.optional(),
+  threat: Security_Detections_API_ThreatArray.optional(),
+  throttle: Security_Detections_API_RuleActionThrottle.optional(),
+  timeline_id: Security_Detections_API_TimelineTemplateId.optional(),
+  timeline_title: Security_Detections_API_TimelineTemplateTitle.optional(),
+  timestamp_override: Security_Detections_API_TimestampOverride.optional(),
+  timestamp_override_fallback_disabled: Security_Detections_API_TimestampOverrideFallbackDisabled.optional(),
+  to: Security_Detections_API_RuleIntervalTo.optional(),
+  version: Security_Detections_API_RuleVersion.optional()
+}), Security_Detections_API_SavedQueryRulePatchFields).meta({ id: 'Security_Detections_API_SavedQueryRulePatchProps' })
+export type Security_Detections_API_SavedQueryRulePatchProps = z.infer<typeof Security_Detections_API_SavedQueryRulePatchProps>
 
 export const Security_Detections_API_ThreatMatchRulePatchProps = z.intersection(z.object({
   actions: z.array(Security_Detections_API_RuleAction).optional(),
@@ -1292,186 +425,157 @@ export const Security_Detections_API_ThresholdRulePatchProps = z.intersection(z.
 }), Security_Detections_API_ThresholdRulePatchFields).meta({ id: 'Security_Detections_API_ThresholdRulePatchProps' })
 export type Security_Detections_API_ThresholdRulePatchProps = z.infer<typeof Security_Detections_API_ThresholdRulePatchProps>
 
-export const Security_Detections_API_SavedQueryRulePatchProps = z.intersection(z.object({
-  actions: z.array(Security_Detections_API_RuleAction).optional(),
-  alias_purpose: Security_Detections_API_SavedObjectResolveAliasPurpose.optional(),
-  alias_target_id: Security_Detections_API_SavedObjectResolveAliasTargetId.optional(),
-  author: Security_Detections_API_RuleAuthorArray.optional(),
-  building_block_type: Security_Detections_API_BuildingBlockType.optional(),
-  description: Security_Detections_API_RuleDescription.optional(),
-  enabled: Security_Detections_API_IsRuleEnabled.optional(),
-  exceptions_list: z.array(Security_Detections_API_RuleExceptionList).optional(),
-  false_positives: Security_Detections_API_RuleFalsePositiveArray.optional(),
-  from: Security_Detections_API_RuleIntervalFrom.optional(),
-  id: Security_Detections_API_UUID.optional(),
-  interval: Security_Detections_API_RuleInterval.optional(),
-  investigation_fields: Security_Detections_API_InvestigationFields.optional(),
-  license: Security_Detections_API_RuleLicense.optional(),
-  max_signals: Security_Detections_API_MaxSignals.optional(),
-  meta: Security_Detections_API_RuleMetadata.optional(),
-  name: Security_Detections_API_RuleName.optional(),
-  namespace: Security_Detections_API_AlertsIndexNamespace.optional(),
-  note: Security_Detections_API_InvestigationGuide.optional(),
-  outcome: Security_Detections_API_SavedObjectResolveOutcome.optional(),
-  output_index: Security_Detections_API_AlertsIndex.optional(),
-  references: Security_Detections_API_RuleReferenceArray.optional(),
-  related_integrations: Security_Detections_API_RelatedIntegrationArray.optional(),
-  required_fields: z.array(Security_Detections_API_RequiredFieldInput).optional(),
-  response_actions: z.array(Security_Detections_API_ResponseAction).optional(),
-  risk_score: Security_Detections_API_RiskScore.optional(),
-  risk_score_mapping: Security_Detections_API_RiskScoreMapping.optional(),
-  rule_id: Security_Detections_API_RuleSignatureId.optional(),
-  rule_name_override: Security_Detections_API_RuleNameOverride.optional(),
-  setup: Security_Detections_API_SetupGuide.optional(),
-  severity: Security_Detections_API_Severity.optional(),
-  severity_mapping: Security_Detections_API_SeverityMapping.optional(),
-  tags: Security_Detections_API_RuleTagArray.optional(),
-  threat: Security_Detections_API_ThreatArray.optional(),
-  throttle: Security_Detections_API_RuleActionThrottle.optional(),
-  timeline_id: Security_Detections_API_TimelineTemplateId.optional(),
-  timeline_title: Security_Detections_API_TimelineTemplateTitle.optional(),
-  timestamp_override: Security_Detections_API_TimestampOverride.optional(),
-  timestamp_override_fallback_disabled: Security_Detections_API_TimestampOverrideFallbackDisabled.optional(),
-  to: Security_Detections_API_RuleIntervalTo.optional(),
-  version: Security_Detections_API_RuleVersion.optional()
-}), Security_Detections_API_SavedQueryRulePatchFields).meta({ id: 'Security_Detections_API_SavedQueryRulePatchProps' })
-export type Security_Detections_API_SavedQueryRulePatchProps = z.infer<typeof Security_Detections_API_SavedQueryRulePatchProps>
-
-export const Security_Detections_API_QueryRulePatchProps = z.intersection(z.object({
-  actions: z.array(Security_Detections_API_RuleAction).optional(),
-  alias_purpose: Security_Detections_API_SavedObjectResolveAliasPurpose.optional(),
-  alias_target_id: Security_Detections_API_SavedObjectResolveAliasTargetId.optional(),
-  author: Security_Detections_API_RuleAuthorArray.optional(),
-  building_block_type: Security_Detections_API_BuildingBlockType.optional(),
-  description: Security_Detections_API_RuleDescription.optional(),
-  enabled: Security_Detections_API_IsRuleEnabled.optional(),
-  exceptions_list: z.array(Security_Detections_API_RuleExceptionList).optional(),
-  false_positives: Security_Detections_API_RuleFalsePositiveArray.optional(),
-  from: Security_Detections_API_RuleIntervalFrom.optional(),
-  id: Security_Detections_API_UUID.optional(),
-  interval: Security_Detections_API_RuleInterval.optional(),
-  investigation_fields: Security_Detections_API_InvestigationFields.optional(),
-  license: Security_Detections_API_RuleLicense.optional(),
-  max_signals: Security_Detections_API_MaxSignals.optional(),
-  meta: Security_Detections_API_RuleMetadata.optional(),
-  name: Security_Detections_API_RuleName.optional(),
-  namespace: Security_Detections_API_AlertsIndexNamespace.optional(),
-  note: Security_Detections_API_InvestigationGuide.optional(),
-  outcome: Security_Detections_API_SavedObjectResolveOutcome.optional(),
-  output_index: Security_Detections_API_AlertsIndex.optional(),
-  references: Security_Detections_API_RuleReferenceArray.optional(),
-  related_integrations: Security_Detections_API_RelatedIntegrationArray.optional(),
-  required_fields: z.array(Security_Detections_API_RequiredFieldInput).optional(),
-  response_actions: z.array(Security_Detections_API_ResponseAction).optional(),
-  risk_score: Security_Detections_API_RiskScore.optional(),
-  risk_score_mapping: Security_Detections_API_RiskScoreMapping.optional(),
-  rule_id: Security_Detections_API_RuleSignatureId.optional(),
-  rule_name_override: Security_Detections_API_RuleNameOverride.optional(),
-  setup: Security_Detections_API_SetupGuide.optional(),
-  severity: Security_Detections_API_Severity.optional(),
-  severity_mapping: Security_Detections_API_SeverityMapping.optional(),
-  tags: Security_Detections_API_RuleTagArray.optional(),
-  threat: Security_Detections_API_ThreatArray.optional(),
-  throttle: Security_Detections_API_RuleActionThrottle.optional(),
-  timeline_id: Security_Detections_API_TimelineTemplateId.optional(),
-  timeline_title: Security_Detections_API_TimelineTemplateTitle.optional(),
-  timestamp_override: Security_Detections_API_TimestampOverride.optional(),
-  timestamp_override_fallback_disabled: Security_Detections_API_TimestampOverrideFallbackDisabled.optional(),
-  to: Security_Detections_API_RuleIntervalTo.optional(),
-  version: Security_Detections_API_RuleVersion.optional()
-}), Security_Detections_API_QueryRulePatchFields).meta({ id: 'Security_Detections_API_QueryRulePatchProps' })
-export type Security_Detections_API_QueryRulePatchProps = z.infer<typeof Security_Detections_API_QueryRulePatchProps>
-
-export const Security_Detections_API_EqlRulePatchProps = z.intersection(z.object({
-  actions: z.array(Security_Detections_API_RuleAction).optional(),
-  alias_purpose: Security_Detections_API_SavedObjectResolveAliasPurpose.optional(),
-  alias_target_id: Security_Detections_API_SavedObjectResolveAliasTargetId.optional(),
-  author: Security_Detections_API_RuleAuthorArray.optional(),
-  building_block_type: Security_Detections_API_BuildingBlockType.optional(),
-  description: Security_Detections_API_RuleDescription.optional(),
-  enabled: Security_Detections_API_IsRuleEnabled.optional(),
-  exceptions_list: z.array(Security_Detections_API_RuleExceptionList).optional(),
-  false_positives: Security_Detections_API_RuleFalsePositiveArray.optional(),
-  from: Security_Detections_API_RuleIntervalFrom.optional(),
-  id: Security_Detections_API_UUID.optional(),
-  interval: Security_Detections_API_RuleInterval.optional(),
-  investigation_fields: Security_Detections_API_InvestigationFields.optional(),
-  license: Security_Detections_API_RuleLicense.optional(),
-  max_signals: Security_Detections_API_MaxSignals.optional(),
-  meta: Security_Detections_API_RuleMetadata.optional(),
-  name: Security_Detections_API_RuleName.optional(),
-  namespace: Security_Detections_API_AlertsIndexNamespace.optional(),
-  note: Security_Detections_API_InvestigationGuide.optional(),
-  outcome: Security_Detections_API_SavedObjectResolveOutcome.optional(),
-  output_index: Security_Detections_API_AlertsIndex.optional(),
-  references: Security_Detections_API_RuleReferenceArray.optional(),
-  related_integrations: Security_Detections_API_RelatedIntegrationArray.optional(),
-  required_fields: z.array(Security_Detections_API_RequiredFieldInput).optional(),
-  response_actions: z.array(Security_Detections_API_ResponseAction).optional(),
-  risk_score: Security_Detections_API_RiskScore.optional(),
-  risk_score_mapping: Security_Detections_API_RiskScoreMapping.optional(),
-  rule_id: Security_Detections_API_RuleSignatureId.optional(),
-  rule_name_override: Security_Detections_API_RuleNameOverride.optional(),
-  setup: Security_Detections_API_SetupGuide.optional(),
-  severity: Security_Detections_API_Severity.optional(),
-  severity_mapping: Security_Detections_API_SeverityMapping.optional(),
-  tags: Security_Detections_API_RuleTagArray.optional(),
-  threat: Security_Detections_API_ThreatArray.optional(),
-  throttle: Security_Detections_API_RuleActionThrottle.optional(),
-  timeline_id: Security_Detections_API_TimelineTemplateId.optional(),
-  timeline_title: Security_Detections_API_TimelineTemplateTitle.optional(),
-  timestamp_override: Security_Detections_API_TimestampOverride.optional(),
-  timestamp_override_fallback_disabled: Security_Detections_API_TimestampOverrideFallbackDisabled.optional(),
-  to: Security_Detections_API_RuleIntervalTo.optional(),
-  version: Security_Detections_API_RuleVersion.optional()
-}), Security_Detections_API_EqlRulePatchFields).meta({ id: 'Security_Detections_API_EqlRulePatchProps' })
-export type Security_Detections_API_EqlRulePatchProps = z.infer<typeof Security_Detections_API_EqlRulePatchProps>
-
-export const Security_Detections_API_ThreatMatchRule = z.intersection(z.intersection(z.object({
-  actions: z.array(Security_Detections_API_RuleAction),
-  alias_purpose: Security_Detections_API_SavedObjectResolveAliasPurpose.optional(),
-  alias_target_id: Security_Detections_API_SavedObjectResolveAliasTargetId.optional(),
-  author: Security_Detections_API_RuleAuthorArray,
-  building_block_type: Security_Detections_API_BuildingBlockType.optional(),
-  description: Security_Detections_API_RuleDescription,
-  enabled: Security_Detections_API_IsRuleEnabled,
-  exceptions_list: z.array(Security_Detections_API_RuleExceptionList),
-  false_positives: Security_Detections_API_RuleFalsePositiveArray,
-  from: Security_Detections_API_RuleIntervalFrom,
-  interval: Security_Detections_API_RuleInterval,
-  investigation_fields: Security_Detections_API_InvestigationFields.optional(),
-  license: Security_Detections_API_RuleLicense.optional(),
-  max_signals: Security_Detections_API_MaxSignals,
-  meta: Security_Detections_API_RuleMetadata.optional(),
-  name: Security_Detections_API_RuleName,
-  namespace: Security_Detections_API_AlertsIndexNamespace.optional(),
-  note: Security_Detections_API_InvestigationGuide.optional(),
-  outcome: Security_Detections_API_SavedObjectResolveOutcome.optional(),
-  output_index: Security_Detections_API_AlertsIndex.optional(),
-  references: Security_Detections_API_RuleReferenceArray,
-  related_integrations: Security_Detections_API_RelatedIntegrationArray,
-  required_fields: z.array(Security_Detections_API_RequiredFieldInput),
-  response_actions: z.array(Security_Detections_API_ResponseAction).optional(),
-  risk_score: Security_Detections_API_RiskScore,
-  risk_score_mapping: Security_Detections_API_RiskScoreMapping,
-  rule_name_override: Security_Detections_API_RuleNameOverride.optional(),
-  setup: Security_Detections_API_SetupGuide,
-  severity: Security_Detections_API_Severity,
-  severity_mapping: Security_Detections_API_SeverityMapping,
-  tags: Security_Detections_API_RuleTagArray,
-  threat: Security_Detections_API_ThreatArray,
-  throttle: Security_Detections_API_RuleActionThrottle.optional(),
-  timeline_id: Security_Detections_API_TimelineTemplateId.optional(),
-  timeline_title: Security_Detections_API_TimelineTemplateTitle.optional(),
-  timestamp_override: Security_Detections_API_TimestampOverride.optional(),
-  timestamp_override_fallback_disabled: Security_Detections_API_TimestampOverrideFallbackDisabled.optional(),
-  to: Security_Detections_API_RuleIntervalTo,
-  version: Security_Detections_API_RuleVersion
-}), Security_Detections_API_ResponseFields), Security_Detections_API_ThreatMatchRuleResponseFields).meta({ id: 'Security_Detections_API_ThreatMatchRule' })
-export type Security_Detections_API_ThreatMatchRule = z.infer<typeof Security_Detections_API_ThreatMatchRule>
-
 export const Security_Detections_API_RulePatchProps = z.union([Security_Detections_API_EqlRulePatchProps, Security_Detections_API_QueryRulePatchProps, Security_Detections_API_SavedQueryRulePatchProps, Security_Detections_API_ThresholdRulePatchProps, Security_Detections_API_ThreatMatchRulePatchProps, Security_Detections_API_MachineLearningRulePatchProps, Security_Detections_API_NewTermsRulePatchProps, Security_Detections_API_EsqlRulePatchProps]).meta({ id: 'Security_Detections_API_RulePatchProps' })
 export type Security_Detections_API_RulePatchProps = z.infer<typeof Security_Detections_API_RulePatchProps>
 
-export const Security_Detections_API_RuleResponse = z.union([Security_Detections_API_EqlRule, Security_Detections_API_QueryRule, Security_Detections_API_SavedQueryRule, Security_Detections_API_ThresholdRule, Security_Detections_API_ThreatMatchRule, Security_Detections_API_MachineLearningRule, Security_Detections_API_NewTermsRule, Security_Detections_API_EsqlRule]).meta({ id: 'Security_Detections_API_RuleResponse' })
-export type Security_Detections_API_RuleResponse = z.infer<typeof Security_Detections_API_RuleResponse>
+export { Security_Detections_API_RuleResponse } from './schemas/security.js'
+export { Security_Detections_API_EsqlRule } from './schemas/security.js'
+export { Security_Detections_API_EsqlRuleResponseFields } from './schemas/security.js'
+export { Security_Detections_API_EsqlRuleRequiredFields } from './schemas/security.js'
+export { Security_Detections_API_RuleQuery } from './schemas/security.js'
+export { Security_Detections_API_EsqlQueryLanguage } from './schemas/security.js'
+export { Security_Detections_API_EsqlRuleOptionalFields } from './schemas/security.js'
+export { Security_Detections_API_AlertSuppression } from './schemas/security.js'
+export { Security_Detections_API_AlertSuppressionMissingFieldsStrategy } from './schemas/security.js'
+export { Security_Detections_API_AlertSuppressionGroupBy } from './schemas/security.js'
+export { Security_Detections_API_AlertSuppressionDuration } from './schemas/security.js'
+export { Security_Detections_API_AlertSuppressionDurationUnit } from './schemas/security.js'
+export { Security_Detections_API_ResponseFields } from './schemas/security.js'
+export { Security_Detections_API_RuleSource } from './schemas/security.js'
+export { Security_Detections_API_InternalRuleSource } from './schemas/security.js'
+export { Security_Detections_API_ExternalRuleSource } from './schemas/security.js'
+export { Security_Detections_API_IsExternalRuleCustomized } from './schemas/security.js'
+export { Security_Detections_API_ExternalRuleHasBaseVersion } from './schemas/security.js'
+export { Security_Detections_API_ExternalRuleCustomizedFields } from './schemas/security.js'
+export { Security_Detections_API_RuleSignatureId } from './schemas/security.js'
+export { Security_Detections_API_RuleRevision } from './schemas/security.js'
+export { Security_Detections_API_RequiredFieldArray } from './schemas/security.js'
+export { Security_Detections_API_RequiredField } from './schemas/security.js'
+export { Security_Detections_API_IsRuleImmutable } from './schemas/security.js'
+export { Security_Detections_API_UUID } from './schemas/security.js'
+export { Security_Detections_API_RuleExecutionSummary } from './schemas/security.js'
+export { Security_Detections_API_RuleExecutionStatusOrder } from './schemas/security.js'
+export { Security_Detections_API_RuleExecutionStatus } from './schemas/security.js'
+export { Security_Detections_API_RuleExecutionMetrics } from './schemas/security.js'
+export { Security_Detections_API_RuleVersion } from './schemas/security.js'
+export { Security_Detections_API_RuleIntervalTo } from './schemas/security.js'
+export { Security_Detections_API_TimestampOverrideFallbackDisabled } from './schemas/security.js'
+export { Security_Detections_API_TimestampOverride } from './schemas/security.js'
+export { Security_Detections_API_TimelineTemplateTitle } from './schemas/security.js'
+export { Security_Detections_API_TimelineTemplateId } from './schemas/security.js'
+export { Security_Detections_API_RuleActionThrottle } from './schemas/security.js'
+export { Security_Detections_API_ThreatArray } from './schemas/security.js'
+export { Security_Detections_API_Threat } from './schemas/security.js'
+export { Security_Detections_API_ThreatTechnique } from './schemas/security.js'
+export { Security_Detections_API_ThreatSubtechnique } from './schemas/security.js'
+export { Security_Detections_API_ThreatTactic } from './schemas/security.js'
+export { Security_Detections_API_RuleTagArray } from './schemas/security.js'
+export { Security_Detections_API_SeverityMapping } from './schemas/security.js'
+export { Security_Detections_API_Severity } from './schemas/security.js'
+export { Security_Detections_API_SetupGuide } from './schemas/security.js'
+export { Security_Detections_API_RuleNameOverride } from './schemas/security.js'
+export { Security_Detections_API_RiskScoreMapping } from './schemas/security.js'
+export { Security_Detections_API_RiskScore } from './schemas/security.js'
+export { Security_Detections_API_ResponseAction } from './schemas/security.js'
+export { Security_Detections_API_EndpointResponseAction } from './schemas/security.js'
+export { Security_Detections_API_RunscriptParams } from './schemas/security.js'
+export { Security_Detections_API_RunScriptOsConfigValues } from './schemas/security.js'
+export { Security_Detections_API_ProcessesParams } from './schemas/security.js'
+export { Security_Detections_API_SuspendProcessParams } from './schemas/security.js'
+export { Security_Detections_API_KillProcessParams } from './schemas/security.js'
+export { Security_Detections_API_DefaultParams } from './schemas/security.js'
+export { Security_Detections_API_OsqueryResponseAction } from './schemas/security.js'
+export { Security_Detections_API_OsqueryParams } from './schemas/security.js'
+export { Security_Detections_API_OsqueryQuery } from './schemas/security.js'
+export { Security_Detections_API_EcsMapping } from './schemas/security.js'
+export { Security_Detections_API_RequiredFieldInput } from './schemas/security.js'
+export { Security_Detections_API_RelatedIntegrationArray } from './schemas/security.js'
+export { Security_Detections_API_RelatedIntegration } from './schemas/security.js'
+export { Security_Detections_API_NonEmptyString } from './schemas/security.js'
+export { Security_Detections_API_RuleReferenceArray } from './schemas/security.js'
+export { Security_Detections_API_AlertsIndex } from './schemas/security.js'
+export { Security_Detections_API_SavedObjectResolveOutcome } from './schemas/security.js'
+export { Security_Detections_API_InvestigationGuide } from './schemas/security.js'
+export { Security_Detections_API_AlertsIndexNamespace } from './schemas/security.js'
+export { Security_Detections_API_RuleName } from './schemas/security.js'
+export { Security_Detections_API_RuleMetadata } from './schemas/security.js'
+export { Security_Detections_API_MaxSignals } from './schemas/security.js'
+export { Security_Detections_API_RuleLicense } from './schemas/security.js'
+export { Security_Detections_API_InvestigationFields } from './schemas/security.js'
+export { Security_Detections_API_RuleInterval } from './schemas/security.js'
+export { Security_Detections_API_RuleIntervalFrom } from './schemas/security.js'
+export { Security_Detections_API_RuleFalsePositiveArray } from './schemas/security.js'
+export { Security_Detections_API_RuleExceptionList } from './schemas/security.js'
+export { Security_Detections_API_ExceptionListType } from './schemas/security.js'
+export { Security_Detections_API_IsRuleEnabled } from './schemas/security.js'
+export { Security_Detections_API_RuleDescription } from './schemas/security.js'
+export { Security_Detections_API_BuildingBlockType } from './schemas/security.js'
+export { Security_Detections_API_RuleAuthorArray } from './schemas/security.js'
+export { Security_Detections_API_SavedObjectResolveAliasTargetId } from './schemas/security.js'
+export { Security_Detections_API_SavedObjectResolveAliasPurpose } from './schemas/security.js'
+export { Security_Detections_API_RuleAction } from './schemas/security.js'
+export { Security_Detections_API_RuleActionParams } from './schemas/security.js'
+export { Security_Detections_API_RuleActionId } from './schemas/security.js'
+export { Security_Detections_API_RuleActionGroup } from './schemas/security.js'
+export { Security_Detections_API_RuleActionFrequency } from './schemas/security.js'
+export { Security_Detections_API_RuleActionNotifyWhen } from './schemas/security.js'
+export { Security_Detections_API_RuleActionAlertsFilter } from './schemas/security.js'
+export { Security_Detections_API_NewTermsRule } from './schemas/security.js'
+export { Security_Detections_API_NewTermsRuleResponseFields } from './schemas/security.js'
+export { Security_Detections_API_KqlQueryLanguage } from './schemas/security.js'
+export { Security_Detections_API_NewTermsRuleOptionalFields } from './schemas/security.js'
+export { Security_Detections_API_IndexPatternArray } from './schemas/security.js'
+export { Security_Detections_API_RuleFilterArray } from './schemas/security.js'
+export { Security_Detections_API_DataViewId } from './schemas/security.js'
+export { Security_Detections_API_NewTermsRuleRequiredFields } from './schemas/security.js'
+export { Security_Detections_API_NewTermsFields } from './schemas/security.js'
+export { Security_Detections_API_HistoryWindowStart } from './schemas/security.js'
+export { Security_Detections_API_MachineLearningRule } from './schemas/security.js'
+export { Security_Detections_API_MachineLearningRuleResponseFields } from './schemas/security.js'
+export { Security_Detections_API_MachineLearningRuleOptionalFields } from './schemas/security.js'
+export { Security_Detections_API_MachineLearningRuleRequiredFields } from './schemas/security.js'
+export { Security_Detections_API_MachineLearningJobId } from './schemas/security.js'
+export { Security_Detections_API_AnomalyThreshold } from './schemas/security.js'
+export { Security_Detections_API_ThreatMatchRule } from './schemas/security.js'
+export { Security_Detections_API_ThreatMatchRuleResponseFields } from './schemas/security.js'
+export { Security_Detections_API_ThreatMatchRuleOptionalFields } from './schemas/security.js'
+export { Security_Detections_API_ThreatIndicatorPath } from './schemas/security.js'
+export { Security_Detections_API_ThreatFilters } from './schemas/security.js'
+export { Security_Detections_API_SavedQueryId } from './schemas/security.js'
+export { Security_Detections_API_ItemsPerSearch } from './schemas/security.js'
+export { Security_Detections_API_ConcurrentSearches } from './schemas/security.js'
+export { Security_Detections_API_ThreatMatchRuleRequiredFields } from './schemas/security.js'
+export { Security_Detections_API_ThreatQuery } from './schemas/security.js'
+export { Security_Detections_API_ThreatMapping } from './schemas/security.js'
+export { Security_Detections_API_ThreatMappingEntry } from './schemas/security.js'
+export { Security_Detections_API_ThreatIndex } from './schemas/security.js'
+export { Security_Detections_API_ThresholdRule } from './schemas/security.js'
+export { Security_Detections_API_ThresholdRuleResponseFields } from './schemas/security.js'
+export { Security_Detections_API_ThresholdRuleOptionalFields } from './schemas/security.js'
+export { Security_Detections_API_ThresholdAlertSuppression } from './schemas/security.js'
+export { Security_Detections_API_ThresholdRuleRequiredFields } from './schemas/security.js'
+export { Security_Detections_API_Threshold } from './schemas/security.js'
+export { Security_Detections_API_ThresholdValue } from './schemas/security.js'
+export { Security_Detections_API_ThresholdField } from './schemas/security.js'
+export { Security_Detections_API_ThresholdCardinality } from './schemas/security.js'
+export { Security_Detections_API_SavedQueryRule } from './schemas/security.js'
+export { Security_Detections_API_SavedQueryRuleResponseFields } from './schemas/security.js'
+export { Security_Detections_API_SavedQueryRuleOptionalFields } from './schemas/security.js'
+export { Security_Detections_API_SavedQueryRuleRequiredFields } from './schemas/security.js'
+export { Security_Detections_API_QueryRule } from './schemas/security.js'
+export { Security_Detections_API_QueryRuleResponseFields } from './schemas/security.js'
+export { Security_Detections_API_QueryRuleOptionalFields } from './schemas/security.js'
+export { Security_Detections_API_QueryRuleRequiredFields } from './schemas/security.js'
+export { Security_Detections_API_EqlRule } from './schemas/security.js'
+export { Security_Detections_API_EqlRuleResponseFields } from './schemas/security.js'
+export { Security_Detections_API_EqlOptionalFields } from './schemas/security.js'
+export { Security_Detections_API_TimestampField } from './schemas/security.js'
+export { Security_Detections_API_TiebreakerField } from './schemas/security.js'
+export { Security_Detections_API_EventCategoryOverride } from './schemas/security.js'
+export { Security_Detections_API_EqlRequiredFields } from './schemas/security.js'
+export { Security_Detections_API_EqlQueryLanguage } from './schemas/security.js'
+export { Security_Detections_API_NewTermsRuleDefaultableFields } from './schemas/security.js'
+export { Security_Detections_API_ThreatMatchRuleDefaultableFields } from './schemas/security.js'
+export { Security_Detections_API_ThresholdRuleDefaultableFields } from './schemas/security.js'
+export { Security_Detections_API_SavedQueryRuleDefaultableFields } from './schemas/security.js'
+export { Security_Detections_API_QueryRuleDefaultableFields } from './schemas/security.js'

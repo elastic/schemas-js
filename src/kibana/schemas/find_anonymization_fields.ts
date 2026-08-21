@@ -11,26 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_AI_Assistant_API_NonEmptyTimestamp = z.string().meta({ id: 'Security_AI_Assistant_API_NonEmptyTimestamp' })
-export type Security_AI_Assistant_API_NonEmptyTimestamp = z.infer<typeof Security_AI_Assistant_API_NonEmptyTimestamp>
-
-export const Security_AI_Assistant_API_NonEmptyString = z.string().meta({ id: 'Security_AI_Assistant_API_NonEmptyString' })
-export type Security_AI_Assistant_API_NonEmptyString = z.infer<typeof Security_AI_Assistant_API_NonEmptyString>
-
-export const Security_AI_Assistant_API_AnonymizationFieldResponse = z.object({
-  allowed: z.boolean().optional(),
-  anonymized: z.boolean().optional(),
-  createdAt: z.string().optional(),
-  createdBy: z.string().optional(),
-  field: z.string(),
-  id: Security_AI_Assistant_API_NonEmptyString,
-  namespace: z.string().optional(),
-  timestamp: Security_AI_Assistant_API_NonEmptyTimestamp.optional(),
-  updatedAt: z.string().optional(),
-  updatedBy: z.string().optional()
-}).meta({ id: 'Security_AI_Assistant_API_AnonymizationFieldResponse' })
-export type Security_AI_Assistant_API_AnonymizationFieldResponse = z.infer<typeof Security_AI_Assistant_API_AnonymizationFieldResponse>
+import { Security_AI_Assistant_API_AnonymizationFieldResponse } from './schemas/security.js'
 
 export const FindAnonymizationFieldsResponse = z.object({
   aggregations: z.object({
@@ -55,3 +36,7 @@ export const FindAnonymizationFieldsResponse = z.object({
   total: z.number()
 }).meta({ id: 'FindAnonymizationFieldsResponse' })
 export type FindAnonymizationFieldsResponse = z.infer<typeof FindAnonymizationFieldsResponse>
+
+export { Security_AI_Assistant_API_AnonymizationFieldResponse } from './schemas/security.js'
+export { Security_AI_Assistant_API_NonEmptyTimestamp } from './schemas/security.js'
+export { Security_AI_Assistant_API_NonEmptyString } from './schemas/security.js'

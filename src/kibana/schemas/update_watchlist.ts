@@ -12,20 +12,6 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Security_Entity_Analytics_API_WatchlistObject = z.object({
-  createdAt: z.string().optional(),
-  description: z.string().optional(),
-  entityCount: z.number().optional(),
-  entitySourceIds: z.array(z.string()).optional(),
-  hasManualEntities: z.boolean().optional(),
-  id: z.string().optional(),
-  managed: z.boolean(),
-  name: z.string(),
-  riskModifier: z.number(),
-  updatedAt: z.string().optional()
-}).meta({ id: 'Security_Entity_Analytics_API_WatchlistObject' })
-export type Security_Entity_Analytics_API_WatchlistObject = z.infer<typeof Security_Entity_Analytics_API_WatchlistObject>
-
 export const UpdateWatchlistRequest = z.object({
   description: z.string().optional(),
   managed: z.boolean().optional(),
@@ -33,3 +19,5 @@ export const UpdateWatchlistRequest = z.object({
   riskModifier: z.number()
 }).meta({ id: 'UpdateWatchlistRequest' })
 export type UpdateWatchlistRequest = z.infer<typeof UpdateWatchlistRequest>
+
+export { Security_Entity_Analytics_API_WatchlistObject } from './schemas/security.js'

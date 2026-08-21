@@ -11,84 +11,20 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
+import { Security_Osquery_API_Enabled, Security_Osquery_API_ObjectQueries, Security_Osquery_API_PackDescription, Security_Osquery_API_PackInterval, Security_Osquery_API_PackName, Security_Osquery_API_PolicyIds, Security_Osquery_API_RRuleScheduleConfig, Security_Osquery_API_ScheduleType, Security_Osquery_API_Shards } from './schemas/security.js'
 
-export const Security_Osquery_API_ScheduleType = z.enum(['interval', 'rrule']).meta({ id: 'Security_Osquery_API_ScheduleType' })
-export type Security_Osquery_API_ScheduleType = z.infer<typeof Security_Osquery_API_ScheduleType>
-
-export const Security_Osquery_API_RRuleScheduleConfig = z.object({
-  end_date: z.string().optional(),
-  rrule: z.string(),
-  splay: z.string().optional(),
-  start_date: z.string(),
-  timeout: z.number().optional()
-}).meta({ id: 'Security_Osquery_API_RRuleScheduleConfig' })
-export type Security_Osquery_API_RRuleScheduleConfig = z.infer<typeof Security_Osquery_API_RRuleScheduleConfig>
-
-export const Security_Osquery_API_Version = z.string().meta({ id: 'Security_Osquery_API_Version' })
-export type Security_Osquery_API_Version = z.infer<typeof Security_Osquery_API_Version>
-
-export const Security_Osquery_API_Snapshot = z.boolean().meta({ id: 'Security_Osquery_API_Snapshot' })
-export type Security_Osquery_API_Snapshot = z.infer<typeof Security_Osquery_API_Snapshot>
-
-export const Security_Osquery_API_SavedQueryId = z.string().meta({ id: 'Security_Osquery_API_SavedQueryId' })
-export type Security_Osquery_API_SavedQueryId = z.infer<typeof Security_Osquery_API_SavedQueryId>
-
-export const Security_Osquery_API_Removed = z.boolean().meta({ id: 'Security_Osquery_API_Removed' })
-export type Security_Osquery_API_Removed = z.infer<typeof Security_Osquery_API_Removed>
-
-export const Security_Osquery_API_Query = z.string().meta({ id: 'Security_Osquery_API_Query' })
-export type Security_Osquery_API_Query = z.infer<typeof Security_Osquery_API_Query>
-
-export const Security_Osquery_API_Platform = z.string().meta({ id: 'Security_Osquery_API_Platform' })
-export type Security_Osquery_API_Platform = z.infer<typeof Security_Osquery_API_Platform>
-
-export const Security_Osquery_API_QueryId = z.string().meta({ id: 'Security_Osquery_API_QueryId' })
-export type Security_Osquery_API_QueryId = z.infer<typeof Security_Osquery_API_QueryId>
-
-export const Security_Osquery_API_ECSMappingItem = z.object({
-  field: z.string().optional(),
-  value: z.union([z.string(), z.array(z.string())]).optional()
-}).meta({ id: 'Security_Osquery_API_ECSMappingItem' })
-export type Security_Osquery_API_ECSMappingItem = z.infer<typeof Security_Osquery_API_ECSMappingItem>
-
-export const Security_Osquery_API_PolicyIds = z.array(z.string()).meta({ id: 'Security_Osquery_API_PolicyIds' })
-export type Security_Osquery_API_PolicyIds = z.infer<typeof Security_Osquery_API_PolicyIds>
-
-export const Security_Osquery_API_PackName = z.string().meta({ id: 'Security_Osquery_API_PackName' })
-export type Security_Osquery_API_PackName = z.infer<typeof Security_Osquery_API_PackName>
-
-export const Security_Osquery_API_PackInterval = z.number().meta({ id: 'Security_Osquery_API_PackInterval' })
-export type Security_Osquery_API_PackInterval = z.infer<typeof Security_Osquery_API_PackInterval>
-
-export const Security_Osquery_API_Enabled = z.boolean().meta({ id: 'Security_Osquery_API_Enabled' })
-export type Security_Osquery_API_Enabled = z.infer<typeof Security_Osquery_API_Enabled>
-
-export const Security_Osquery_API_PackDescription = z.string().meta({ id: 'Security_Osquery_API_PackDescription' })
-export type Security_Osquery_API_PackDescription = z.infer<typeof Security_Osquery_API_PackDescription>
-
-export const Security_Osquery_API_Shards = z.record(z.string(), z.number()).meta({ id: 'Security_Osquery_API_Shards' })
-export type Security_Osquery_API_Shards = z.infer<typeof Security_Osquery_API_Shards>
-
-export const Security_Osquery_API_ECSMapping = z.record(z.string(), Security_Osquery_API_ECSMappingItem).meta({ id: 'Security_Osquery_API_ECSMapping' })
-export type Security_Osquery_API_ECSMapping = z.infer<typeof Security_Osquery_API_ECSMapping>
-
-export const Security_Osquery_API_ObjectQueriesItem = z.object({
-  ecs_mapping: Security_Osquery_API_ECSMapping.optional(),
-  id: Security_Osquery_API_QueryId.optional(),
-  interval: z.number().nullable().optional(),
-  platform: Security_Osquery_API_Platform.optional(),
-  query: Security_Osquery_API_Query.optional(),
-  removed: Security_Osquery_API_Removed.optional(),
+export const Security_Osquery_API_CreatePacksRequestBody = z.object({
+  description: Security_Osquery_API_PackDescription.optional(),
+  enabled: Security_Osquery_API_Enabled.optional(),
+  interval: Security_Osquery_API_PackInterval.optional(),
+  name: Security_Osquery_API_PackName.optional(),
+  policy_ids: Security_Osquery_API_PolicyIds.optional(),
+  queries: Security_Osquery_API_ObjectQueries.optional(),
   rrule_schedule: Security_Osquery_API_RRuleScheduleConfig.optional(),
-  saved_query_id: Security_Osquery_API_SavedQueryId.optional(),
   schedule_type: Security_Osquery_API_ScheduleType.optional(),
-  snapshot: Security_Osquery_API_Snapshot.optional(),
-  version: Security_Osquery_API_Version.optional()
-}).meta({ id: 'Security_Osquery_API_ObjectQueriesItem' })
-export type Security_Osquery_API_ObjectQueriesItem = z.infer<typeof Security_Osquery_API_ObjectQueriesItem>
-
-export const Security_Osquery_API_ObjectQueries = z.record(z.string(), Security_Osquery_API_ObjectQueriesItem).meta({ id: 'Security_Osquery_API_ObjectQueries' })
-export type Security_Osquery_API_ObjectQueries = z.infer<typeof Security_Osquery_API_ObjectQueries>
+  shards: Security_Osquery_API_Shards.optional()
+}).meta({ id: 'Security_Osquery_API_CreatePacksRequestBody' })
+export type Security_Osquery_API_CreatePacksRequestBody = z.infer<typeof Security_Osquery_API_CreatePacksRequestBody>
 
 export const Security_Osquery_API_CreatePacksResponse = z.object({
   data: z.object({
@@ -116,15 +52,22 @@ export const Security_Osquery_API_CreatePacksResponse = z.object({
 }).meta({ id: 'Security_Osquery_API_CreatePacksResponse' })
 export type Security_Osquery_API_CreatePacksResponse = z.infer<typeof Security_Osquery_API_CreatePacksResponse>
 
-export const Security_Osquery_API_CreatePacksRequestBody = z.object({
-  description: Security_Osquery_API_PackDescription.optional(),
-  enabled: Security_Osquery_API_Enabled.optional(),
-  interval: Security_Osquery_API_PackInterval.optional(),
-  name: Security_Osquery_API_PackName.optional(),
-  policy_ids: Security_Osquery_API_PolicyIds.optional(),
-  queries: Security_Osquery_API_ObjectQueries.optional(),
-  rrule_schedule: Security_Osquery_API_RRuleScheduleConfig.optional(),
-  schedule_type: Security_Osquery_API_ScheduleType.optional(),
-  shards: Security_Osquery_API_Shards.optional()
-}).meta({ id: 'Security_Osquery_API_CreatePacksRequestBody' })
-export type Security_Osquery_API_CreatePacksRequestBody = z.infer<typeof Security_Osquery_API_CreatePacksRequestBody>
+export { Security_Osquery_API_ScheduleType } from './schemas/security.js'
+export { Security_Osquery_API_RRuleScheduleConfig } from './schemas/security.js'
+export { Security_Osquery_API_ObjectQueries } from './schemas/security.js'
+export { Security_Osquery_API_ObjectQueriesItem } from './schemas/security.js'
+export { Security_Osquery_API_Version } from './schemas/security.js'
+export { Security_Osquery_API_Snapshot } from './schemas/security.js'
+export { Security_Osquery_API_SavedQueryId } from './schemas/security.js'
+export { Security_Osquery_API_Removed } from './schemas/security.js'
+export { Security_Osquery_API_Query } from './schemas/security.js'
+export { Security_Osquery_API_Platform } from './schemas/security.js'
+export { Security_Osquery_API_QueryId } from './schemas/security.js'
+export { Security_Osquery_API_ECSMapping } from './schemas/security.js'
+export { Security_Osquery_API_ECSMappingItem } from './schemas/security.js'
+export { Security_Osquery_API_PolicyIds } from './schemas/security.js'
+export { Security_Osquery_API_PackName } from './schemas/security.js'
+export { Security_Osquery_API_PackInterval } from './schemas/security.js'
+export { Security_Osquery_API_Enabled } from './schemas/security.js'
+export { Security_Osquery_API_PackDescription } from './schemas/security.js'
+export { Security_Osquery_API_Shards } from './schemas/security.js'

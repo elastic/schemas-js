@@ -11,97 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Kibana_HTTP_APIs_package_info_kibana_asset_reference = z.object({
-  deferred: z.boolean().optional(),
-  id: z.string(),
-  originId: z.string().optional(),
-  type: z.union([z.enum(['dashboard', 'lens', 'visualization', 'search', 'index-pattern', 'map', 'ml-module', 'security-rule', 'csp-rule-template', 'osquery-pack-asset', 'osquery-saved-query', 'tag']), z.string()])
-}).passthrough().meta({ id: 'Kibana_HTTP_APIs_package_info_kibana_asset_reference' })
-export type Kibana_HTTP_APIs_package_info_kibana_asset_reference = z.infer<typeof Kibana_HTTP_APIs_package_info_kibana_asset_reference>
-
-export const Kibana_HTTP_APIs_package_info_es_asset_reference = z.object({
-  customDataStreamOriginDataset: z.string().optional(),
-  customDataStreamOriginType: z.string().optional(),
-  deferred: z.boolean().optional(),
-  id: z.string(),
-  type: z.enum(['index', 'index_template', 'component_template', 'ingest_pipeline', 'ilm_policy', 'data_stream_ilm_policy', 'transform', 'ml_model', 'knowledge_base', 'esql_view']),
-  version: z.string().optional()
-}).passthrough().meta({ id: 'Kibana_HTTP_APIs_package_info_es_asset_reference' })
-export type Kibana_HTTP_APIs_package_info_es_asset_reference = z.infer<typeof Kibana_HTTP_APIs_package_info_es_asset_reference>
-
-export const Kibana_HTTP_APIs_package_info_icon = z.object({
-  dark_mode: z.boolean().optional(),
-  path: z.string().optional(),
-  size: z.string().optional(),
-  src: z.string(),
-  title: z.string().optional(),
-  type: z.string().optional()
-}).passthrough().meta({ id: 'Kibana_HTTP_APIs_package_info_icon' })
-export type Kibana_HTTP_APIs_package_info_icon = z.infer<typeof Kibana_HTTP_APIs_package_info_icon>
-
-export const Kibana_HTTP_APIs_package_info_deprecation_info = z.object({
-  description: z.string(),
-  replaced_by: z.record(z.string(), z.string()).optional(),
-  since: z.string().optional()
-}).passthrough().meta({ id: 'Kibana_HTTP_APIs_package_info_deprecation_info' })
-export type Kibana_HTTP_APIs_package_info_deprecation_info = z.infer<typeof Kibana_HTTP_APIs_package_info_deprecation_info>
-
-export const Kibana_HTTP_APIs_package_info_conditions_deprecation_info = z.object({
-  description: z.string(),
-  replaced_by: z.record(z.string(), z.string()).optional(),
-  since: z.string().optional()
-}).passthrough().meta({ id: 'Kibana_HTTP_APIs_package_info_conditions_deprecation_info' })
-export type Kibana_HTTP_APIs_package_info_conditions_deprecation_info = z.infer<typeof Kibana_HTTP_APIs_package_info_conditions_deprecation_info>
-
-export const Kibana_HTTP_APIs_package_info_installation_info = z.object({
-  additional_spaces_installed_kibana: z.record(z.string(), z.array(Kibana_HTTP_APIs_package_info_kibana_asset_reference)).optional(),
-  created_at: z.string().optional(),
-  experimental_data_stream_features: z.array(z.object({
-    data_stream: z.string(),
-    features: z.object({
-      doc_value_only_numeric: z.boolean().optional(),
-      doc_value_only_other: z.boolean().optional(),
-      synthetic_source: z.boolean().optional(),
-      tsdb: z.boolean().optional()
-    }).passthrough()
-  }).passthrough()).optional(),
-  install_format_schema_version: z.string().optional(),
-  install_source: z.enum(['registry', 'upload', 'bundled', 'custom']),
-  install_status: z.enum(['installed', 'installing', 'install_failed']),
-  installed_es: z.array(Kibana_HTTP_APIs_package_info_es_asset_reference),
-  installed_kibana: z.array(Kibana_HTTP_APIs_package_info_kibana_asset_reference),
-  installed_kibana_space_id: z.string().optional(),
-  is_rollback_ttl_expired: z.boolean().optional(),
-  latest_executed_state: z.object({
-    error: z.string().optional(),
-    name: z.string().optional(),
-    started_at: z.string().optional()
-  }).passthrough().optional(),
-  latest_install_failed_attempts: z.array(z.object({
-    created_at: z.string(),
-    error: z.object({
-      message: z.string(),
-      name: z.string(),
-      stack: z.string().optional()
-    }).passthrough(),
-    missing_assets: z.array(z.object({
-      id: z.string(),
-      type: z.string()
-    }).passthrough()).optional(),
-    target_version: z.string()
-  }).passthrough()).optional(),
-  name: z.string(),
-  namespaces: z.array(z.string()).optional(),
-  previous_version: z.string().nullable().optional(),
-  rolled_back: z.boolean().optional(),
-  type: z.string(),
-  updated_at: z.string().optional(),
-  verification_key_id: z.string().nullable().optional(),
-  verification_status: z.enum(['unverified', 'verified', 'unknown']),
-  version: z.string()
-}).passthrough().meta({ id: 'Kibana_HTTP_APIs_package_info_installation_info' })
-export type Kibana_HTTP_APIs_package_info_installation_info = z.infer<typeof Kibana_HTTP_APIs_package_info_installation_info>
+import { Kibana_HTTP_APIs_package_info_conditions_deprecation_info, Kibana_HTTP_APIs_package_info_deprecation_info, Kibana_HTTP_APIs_package_info_icon, Kibana_HTTP_APIs_package_info_installation_info } from './schemas/kibana.js'
 
 export const Kibana_HTTP_APIs_package_list_item = z.object({
   categories: z.array(z.string()).optional(),
@@ -172,3 +82,10 @@ export const Kibana_HTTP_APIs_get_packages_response = z.object({
   items: z.array(Kibana_HTTP_APIs_package_list_item)
 }).meta({ id: 'Kibana_HTTP_APIs_get_packages_response' })
 export type Kibana_HTTP_APIs_get_packages_response = z.infer<typeof Kibana_HTTP_APIs_get_packages_response>
+
+export { Kibana_HTTP_APIs_package_info_installation_info } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_package_info_kibana_asset_reference } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_package_info_es_asset_reference } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_package_info_icon } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_package_info_deprecation_info } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_package_info_conditions_deprecation_info } from './schemas/kibana.js'

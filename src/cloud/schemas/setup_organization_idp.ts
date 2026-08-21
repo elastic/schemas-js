@@ -12,19 +12,8 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const SamlIdp = z.object({
-  public_certificate: z.array(z.string()),
-  issuer: z.string(),
-  sso_url: z.string()
-}).meta({ id: 'SamlIdp' })
-export type SamlIdp = z.infer<typeof SamlIdp>
-
-export const OrganizationIdpConfiguration = z.object({
-  enabled: z.boolean(),
-  login_identifier_prefix: z.string(),
-  saml_idp: SamlIdp
-}).meta({ id: 'OrganizationIdpConfiguration' })
-export type OrganizationIdpConfiguration = z.infer<typeof OrganizationIdpConfiguration>
+import { SamlIdp } from './definitions/misc.js'
+import { OrganizationIdp, OrganizationIdpConfiguration } from './definitions/organization.js'
 
 export const IdpConfigurationRequest = z.object({
   enabled: z.boolean(),
@@ -32,17 +21,6 @@ export const IdpConfigurationRequest = z.object({
   saml_idp: SamlIdp
 }).meta({ id: 'IdpConfigurationRequest' })
 export type IdpConfigurationRequest = z.infer<typeof IdpConfigurationRequest>
-
-export const OrganizationIdp = z.object({
-  login_identifier: z.string(),
-  sso_login_url: z.string(),
-  metadata_url: z.string(),
-  acs: z.string(),
-  sp_entity_id: z.string(),
-  signing_certificate: z.array(z.string()),
-  configuration: OrganizationIdpConfiguration
-}).meta({ id: 'OrganizationIdp' })
-export type OrganizationIdp = z.infer<typeof OrganizationIdp>
 
 export const SetupOrganizationIdpRequest = IdpConfigurationRequest
 export type SetupOrganizationIdpRequest = IdpConfigurationRequest

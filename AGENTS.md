@@ -1,6 +1,6 @@
 ## Most code is generated
 
-The majority of code in this repo is generated from API specs. Whenever a change is needed to a generated file, the actual fix should be made upstream in the elastic-client-generator-js repo and then codegen should be rerun. The repo is very likely available in an adjacent directory to this repo in most dev environments. Make edits there if it's available and won't clobber other in-progress work. Otherwise, respond with instructions for what changes must be made there.
+The majority of code in this repo is generated from API specs. Whenever a change is needed to a generated file, the actual fix should be made upstream in the elastic-client-generator-js repo and then codegen should be rerun. The repo is very likely available in an adjacent directory to this repo in most dev environments. **Always** check if `../elastic-client-generator-js` exists and make edits there if it's available, and the changes don't clobber other in-progress work. Otherwise, respond with instructions for what changes must be made there.
 
 ## Slow commands
 

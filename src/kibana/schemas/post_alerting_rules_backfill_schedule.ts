@@ -11,6 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
+import { Kibana_HTTP_APIs_backfill_response } from './schemas/kibana.js'
 
 export const Kibana_HTTP_APIs_backfill_error_response = z.object({
   error: z.object({
@@ -24,44 +25,6 @@ export const Kibana_HTTP_APIs_backfill_error_response = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_backfill_error_response' })
 export type Kibana_HTTP_APIs_backfill_error_response = z.infer<typeof Kibana_HTTP_APIs_backfill_error_response>
 
-export const Kibana_HTTP_APIs_backfill_response = z.object({
-  created_at: z.string(),
-  duration: z.string(),
-  enabled: z.boolean(),
-  end: z.string().optional(),
-  id: z.string(),
-  initiator: z.enum(['user', 'system']),
-  initiator_id: z.string().optional(),
-  rule: z.object({
-    api_key_created_by_user: z.boolean().nullable().optional(),
-    api_key_owner: z.string().nullable().optional(),
-    consumer: z.string(),
-    created_at: z.string(),
-    created_by: z.string().nullable().optional(),
-    enabled: z.boolean(),
-    id: z.string(),
-    name: z.string(),
-    params: z.record(z.string(), z.unknown().nullable()),
-    revision: z.number(),
-    rule_type_id: z.string(),
-    schedule: z.object({
-      interval: z.string()
-    }),
-    tags: z.array(z.string()),
-    updated_at: z.string(),
-    updated_by: z.string().nullable().optional()
-  }),
-  schedule: z.array(z.object({
-    interval: z.string(),
-    run_at: z.string(),
-    status: z.enum(['complete', 'pending', 'running', 'error', 'timeout'])
-  })),
-  space_id: z.string(),
-  start: z.string(),
-  status: z.enum(['complete', 'pending', 'running', 'error', 'timeout'])
-}).meta({ id: 'Kibana_HTTP_APIs_backfill_response' })
-export type Kibana_HTTP_APIs_backfill_response = z.infer<typeof Kibana_HTTP_APIs_backfill_response>
-
 export const PostAlertingRulesBackfillScheduleRequest = z.array(z.object({
   ranges: z.array(z.object({
     end: z.string(),
@@ -74,3 +37,5 @@ export type PostAlertingRulesBackfillScheduleRequest = z.infer<typeof PostAlerti
 
 export const PostAlertingRulesBackfillScheduleResponse = z.array(z.union([Kibana_HTTP_APIs_backfill_response, Kibana_HTTP_APIs_backfill_error_response])).meta({ id: 'PostAlertingRulesBackfillScheduleResponse' })
 export type PostAlertingRulesBackfillScheduleResponse = z.infer<typeof PostAlertingRulesBackfillScheduleResponse>
+
+export { Kibana_HTTP_APIs_backfill_response } from './schemas/kibana.js'

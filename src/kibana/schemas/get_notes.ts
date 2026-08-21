@@ -11,30 +11,14 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Timeline_API_NoteCreatedAndUpdatedMetadata = z.object({
-  created: z.number().nullable().optional(),
-  createdBy: z.string().nullable().optional(),
-  updated: z.number().nullable().optional(),
-  updatedBy: z.string().nullable().optional()
-}).meta({ id: 'Security_Timeline_API_NoteCreatedAndUpdatedMetadata' })
-export type Security_Timeline_API_NoteCreatedAndUpdatedMetadata = z.infer<typeof Security_Timeline_API_NoteCreatedAndUpdatedMetadata>
-
-export const Security_Timeline_API_BareNote = Security_Timeline_API_NoteCreatedAndUpdatedMetadata.merge(z.object({
-  eventId: z.string().nullable().optional(),
-  note: z.string().nullable().optional(),
-  timelineId: z.string()
-})).meta({ id: 'Security_Timeline_API_BareNote' })
-export type Security_Timeline_API_BareNote = z.infer<typeof Security_Timeline_API_BareNote>
-
-export const Security_Timeline_API_Note = z.intersection(Security_Timeline_API_BareNote, z.object({
-  noteId: z.string(),
-  version: z.string()
-})).meta({ id: 'Security_Timeline_API_Note' })
-export type Security_Timeline_API_Note = z.infer<typeof Security_Timeline_API_Note>
+import { Security_Timeline_API_Note } from './schemas/security.js'
 
 export const Security_Timeline_API_GetNotesResult = z.object({
   notes: z.array(Security_Timeline_API_Note),
   totalCount: z.number()
 }).meta({ id: 'Security_Timeline_API_GetNotesResult' })
 export type Security_Timeline_API_GetNotesResult = z.infer<typeof Security_Timeline_API_GetNotesResult>
+
+export { Security_Timeline_API_Note } from './schemas/security.js'
+export { Security_Timeline_API_BareNote } from './schemas/security.js'
+export { Security_Timeline_API_NoteCreatedAndUpdatedMetadata } from './schemas/security.js'

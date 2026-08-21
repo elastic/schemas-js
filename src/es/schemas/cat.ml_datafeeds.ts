@@ -3,36 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
+import { Id } from './_types.js'
 
 export const CatCatDatafeedColumn = z.enum(['ae', 'assignment_explanation', 'bc', 'buckets.count', 'bucketsCount', 'id', 'na', 'node.address', 'nodeAddress', 'ne', 'node.ephemeral_id', 'nodeEphemeralId', 'ni', 'node.id', 'nodeId', 'nn', 'node.name', 'nodeName', 'sba', 'search.bucket_avg', 'searchBucketAvg', 'sc', 'search.count', 'searchCount', 'seah', 'search.exp_avg_hour', 'searchExpAvgHour', 'st', 'search.time', 'searchTime', 's', 'state']).meta({ id: 'CatCatDatafeedColumn' })
 export type CatCatDatafeedColumn = z.infer<typeof CatCatDatafeedColumn>
 
 export const CatCatDatafeedColumns = z.union([CatCatDatafeedColumn, z.array(CatCatDatafeedColumn)]).meta({ id: 'CatCatDatafeedColumns' })
 export type CatCatDatafeedColumns = z.infer<typeof CatCatDatafeedColumns>
-
-export const CatCatRequestBase = z.object({
-  ...RequestBase.shape
-}).meta({ id: 'CatCatRequestBase' })
-export type CatCatRequestBase = z.infer<typeof CatCatRequestBase>
 
 export const MlDatafeedState = z.enum(['started', 'stopped', 'starting', 'stopping']).meta({ id: 'MlDatafeedState' })
 export type MlDatafeedState = z.infer<typeof MlDatafeedState>
@@ -86,8 +66,7 @@ export type CatMlDatafeedsDatafeedsRecord = z.infer<typeof CatMlDatafeedsDatafee
  * application consumption, use the get datafeed statistics API.
  */
 export const CatMlDatafeedsRequest = z.object({
-  ...CatCatRequestBase.shape,
-  datafeed_id: Id.describe('A numerical character string that uniquely identifies the datafeed.').optional().meta({ found_in: 'path' }),
+  datafeed_id: z.lazy(() => Id).describe('A numerical character string that uniquely identifies the datafeed.').optional().meta({ found_in: 'path' }),
   allow_no_match: z.boolean().describe('Specifies what to do when the request: * Contains wildcard expressions and there are no datafeeds that match. * Contains the `_all` string or no identifiers and there are no matches. * Contains wildcard expressions and there are only partial matches. If `true`, the API returns an empty datafeeds array when there are no matches and the subset of results when there are partial matches. If `false`, the API returns a 404 status code when there are no matches or only partial matches.').optional().meta({ found_in: 'query' }),
   h: CatCatDatafeedColumns.describe('Comma-separated list of column names to display.').optional().meta({ found_in: 'query' }),
   s: CatCatDatafeedColumns.describe('Comma-separated list of column names or column aliases used to sort the response.').optional().meta({ found_in: 'query' })

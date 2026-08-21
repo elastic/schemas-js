@@ -3,32 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-/**
- * A duration. Units can be `nanos`, `micros`, `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours) and
- * `d` (days). Also accepts "0" without a unit and "-1" to indicate an unspecified value.
- */
-export const Duration = z.union([z.string(), z.literal(-1), z.literal(0)]).meta({ id: 'Duration' })
-export type Duration = z.infer<typeof Duration>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
+import { Duration, Id } from './_types.js'
 
 /**
  * Close anomaly detection jobs.
@@ -39,11 +17,10 @@ export type RequestBase = z.infer<typeof RequestBase>
  * When a datafeed that has a specified end date stops, it automatically closes its associated job.
  */
 export const MlCloseJobRequest = z.object({
-  ...RequestBase.shape,
-  job_id: Id.describe('Identifier for the anomaly detection job. It can be a job identifier, a group name, or a wildcard expression. You can close multiple anomaly detection jobs in a single API request by using a group name, a comma-separated list of jobs, or a wildcard expression. You can close all jobs by using `_all` or by specifying `*` as the job identifier.').meta({ found_in: 'path' }),
+  job_id: z.lazy(() => Id).describe('Identifier for the anomaly detection job. It can be a job identifier, a group name, or a wildcard expression. You can close multiple anomaly detection jobs in a single API request by using a group name, a comma-separated list of jobs, or a wildcard expression. You can close all jobs by using `_all` or by specifying `*` as the job identifier.').meta({ found_in: 'path' }),
   allow_no_match: z.boolean().describe('Refer to the description for the `allow_no_match` query parameter.').optional().meta({ found_in: 'body' }),
   force: z.boolean().describe('Refer to the descriptiion for the `force` query parameter.').optional().meta({ found_in: 'body' }),
-  timeout: Duration.describe('Refer to the description for the `timeout` query parameter.').optional().meta({ found_in: 'body' })
+  timeout: z.lazy(() => Duration).describe('Refer to the description for the `timeout` query parameter.').optional().meta({ found_in: 'body' })
 }).meta({ id: 'MlCloseJobRequest' })
 export type MlCloseJobRequest = z.infer<typeof MlCloseJobRequest>
 

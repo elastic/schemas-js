@@ -3,30 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const AcknowledgedResponseBase = z.object({
-  acknowledged: z.boolean().describe('For a successful response, this value is always true. On failure, an exception is returned instead.')
-}).meta({ id: 'AcknowledgedResponseBase' })
-export type AcknowledgedResponseBase = z.infer<typeof AcknowledgedResponseBase>
-
-export const IndexName = z.string().meta({ id: 'IndexName' })
-export type IndexName = z.infer<typeof IndexName>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
+import { AcknowledgedResponseBase, IndexName } from './_types.js'
 
 export const IlmMoveToStepStepKey = z.object({
   action: z.string().describe('The optional action to which the index will be moved.').optional(),
@@ -53,12 +33,11 @@ export type IlmMoveToStepStepKey = z.infer<typeof IlmMoveToStepStepKey>
  * An index cannot move to a step that is not part of its policy.
  */
 export const IlmMoveToStepRequest = z.object({
-  ...RequestBase.shape,
-  index: IndexName.describe('The name of the index whose lifecycle step is to change').meta({ found_in: 'path' }),
+  index: z.lazy(() => IndexName).describe('The name of the index whose lifecycle step is to change').meta({ found_in: 'path' }),
   current_step: IlmMoveToStepStepKey.describe('The step that the index is expected to be in.').meta({ found_in: 'body' }),
   next_step: IlmMoveToStepStepKey.describe('The step that you want to run.').meta({ found_in: 'body' })
 }).meta({ id: 'IlmMoveToStepRequest' })
 export type IlmMoveToStepRequest = z.infer<typeof IlmMoveToStepRequest>
 
-export const IlmMoveToStepResponse = AcknowledgedResponseBase.meta({ id: 'IlmMoveToStepResponse' })
+export const IlmMoveToStepResponse = z.lazy(() => AcknowledgedResponseBase).meta({ id: 'IlmMoveToStepResponse' })
 export type IlmMoveToStepResponse = z.infer<typeof IlmMoveToStepResponse>

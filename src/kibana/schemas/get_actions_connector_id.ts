@@ -9,19 +9,4 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
-/* eslint-disable @typescript-eslint/no-redeclare */
-import { z } from 'zod'
-
-export const Kibana_HTTP_APIs_connector_response = z.object({
-  auth_mode: z.enum(['shared', 'per-user']).optional(),
-  config: z.record(z.string(), z.unknown().nullable()).optional(),
-  connector_type_id: z.string(),
-  id: z.string(),
-  is_connector_type_deprecated: z.boolean(),
-  is_deprecated: z.boolean(),
-  is_missing_secrets: z.boolean().optional(),
-  is_preconfigured: z.boolean(),
-  is_system_action: z.boolean(),
-  name: z.string()
-}).meta({ id: 'Kibana_HTTP_APIs_connector_response' })
-export type Kibana_HTTP_APIs_connector_response = z.infer<typeof Kibana_HTTP_APIs_connector_response>
+export { Kibana_HTTP_APIs_connector_response } from './schemas/kibana.js'

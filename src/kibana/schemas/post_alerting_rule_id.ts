@@ -11,26 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Kibana_HTTP_APIs_rule_flapping = z.object({
-  enabled: z.boolean().optional(),
-  look_back_window: z.number(),
-  status_change_threshold: z.number()
-}).meta({ id: 'Kibana_HTTP_APIs_rule_flapping' })
-export type Kibana_HTTP_APIs_rule_flapping = z.infer<typeof Kibana_HTTP_APIs_rule_flapping>
-
-export const Kibana_HTTP_APIs_alerts_filter_query = z.object({
-  dsl: z.string().optional(),
-  filters: z.array(z.object({
-    $state: z.object({
-      store: z.enum(['appState', 'globalState'])
-    }).optional(),
-    meta: z.record(z.string(), z.unknown().nullable()),
-    query: z.record(z.string(), z.unknown().nullable()).optional()
-  })),
-  kql: z.string()
-}).meta({ id: 'Kibana_HTTP_APIs_alerts_filter_query' })
-export type Kibana_HTTP_APIs_alerts_filter_query = z.infer<typeof Kibana_HTTP_APIs_alerts_filter_query>
+import { Kibana_HTTP_APIs_alerts_filter_query, Kibana_HTTP_APIs_rule_flapping } from './schemas/kibana.js'
 
 export const Kibana_HTTP_APIs_new_rule_action_frequency = z.object({
   notify_when: z.enum(['onActionGroupChange', 'onActiveAlert', 'onThrottleInterval']),
@@ -38,96 +19,6 @@ export const Kibana_HTTP_APIs_new_rule_action_frequency = z.object({
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_new_rule_action_frequency' })
 export type Kibana_HTTP_APIs_new_rule_action_frequency = z.infer<typeof Kibana_HTTP_APIs_new_rule_action_frequency>
-
-export const Kibana_HTTP_APIs_rule_response = z.object({
-  actions: z.array(z.object({
-    alerts_filter: z.object({
-      query: Kibana_HTTP_APIs_alerts_filter_query.optional(),
-      timeframe: z.object({
-        days: z.array(z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5), z.literal(6), z.literal(7)])),
-        hours: z.object({
-          end: z.string(),
-          start: z.string()
-        }),
-        timezone: z.string()
-      }).optional()
-    }).optional(),
-    connector_type_id: z.string(),
-    frequency: z.object({
-      notify_when: z.enum(['onActionGroupChange', 'onActiveAlert', 'onThrottleInterval']),
-      summary: z.boolean(),
-      throttle: z.string().nullable().optional()
-    }).optional(),
-    group: z.string().optional(),
-    id: z.string(),
-    params: z.record(z.string(), z.unknown().nullable()),
-    use_alert_data_for_template: z.boolean().optional(),
-    uuid: z.string().optional()
-  })),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  api_key_created_by_user: z.boolean().nullable().optional(),
-  api_key_owner: z.string().nullable().optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  created_at: z.string(),
-  created_by: z.string().nullable().optional(),
-  enabled: z.boolean(),
-  execution_status: z.object({
-    error: z.object({
-      message: z.string(),
-      reason: z.enum(['read', 'decrypt', 'execute', 'unknown', 'license', 'timeout', 'disabled', 'validate'])
-    }).optional(),
-    last_duration: z.number().optional(),
-    last_execution_date: z.string(),
-    status: z.enum(['ok', 'active', 'error', 'warning', 'pending', 'unknown']),
-    warning: z.object({
-      message: z.string(),
-      reason: z.enum(['maxExecutableActions', 'maxAlerts', 'maxQueuedActions', 'ruleExecution'])
-    }).optional()
-  }),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  id: z.string(),
-  last_run: z.object({
-    alerts_count: z.object({
-      active: z.number().nullable().optional(),
-      ignored: z.number().nullable().optional(),
-      new: z.number().nullable().optional(),
-      recovered: z.number().nullable().optional()
-    }),
-    outcome: z.enum(['succeeded', 'warning', 'failed']),
-    outcome_msg: z.array(z.string()).nullable().optional(),
-    outcome_order: z.number().optional(),
-    warning: z.union([z.literal('read'), z.literal('decrypt'), z.literal('execute'), z.literal('unknown'), z.literal('license'), z.literal('timeout'), z.literal('disabled'), z.literal('validate'), z.literal('maxExecutableActions'), z.literal('maxAlerts'), z.literal('maxQueuedActions'), z.literal('ruleExecution'), z.literal(null)]).nullable().optional()
-  }).nullable().optional(),
-  mapped_params: z.record(z.string(), z.unknown().nullable()).optional(),
-  mute_all: z.boolean(),
-  muted_alert_ids: z.array(z.string()),
-  name: z.string(),
-  next_run: z.string().nullable().optional(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.record(z.string(), z.unknown().nullable()),
-  revision: z.number(),
-  rule_type_id: z.string(),
-  running: z.boolean().nullable().optional(),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  scheduled_task_id: z.string().optional(),
-  tags: z.array(z.string()),
-  throttle: z.string().nullable().optional(),
-  updated_at: z.string(),
-  updated_by: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_rule_response' })
-export type Kibana_HTTP_APIs_rule_response = z.infer<typeof Kibana_HTTP_APIs_rule_response>
 
 export const Kibana_HTTP_APIs_new_rule_action_alerts_filter = z.object({
   query: Kibana_HTTP_APIs_alerts_filter_query.optional(),
@@ -153,36 +44,7 @@ export const Kibana_HTTP_APIs_new_rule_action = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_new_rule_action' })
 export type Kibana_HTTP_APIs_new_rule_action = z.infer<typeof Kibana_HTTP_APIs_new_rule_action>
 
-export const Kibana_HTTP_APIs_new_rule = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.record(z.string(), z.unknown().nullable()).optional(),
-  rule_type_id: z.string(),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_new_rule' })
-export type Kibana_HTTP_APIs_new_rule = z.infer<typeof Kibana_HTTP_APIs_new_rule>
-
-export const Kibana_HTTP_APIs_slo_rules_burnrate_create_rule_body_alerting = z.object({
+export const Kibana_HTTP_APIs_apm_anomaly_create_rule_body_alerting = z.object({
   actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
   alert_delay: z.object({
     active: z.number()
@@ -201,35 +63,331 @@ export const Kibana_HTTP_APIs_slo_rules_burnrate_create_rule_body_alerting = z.o
   name: z.string(),
   notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
   params: z.object({
-    dependencies: z.array(z.object({
-      actionGroupsToSuppressOn: z.array(z.string()),
-      ruleId: z.string()
-    })).optional(),
-    sloId: z.string(),
-    windows: z.array(z.object({
-      actionGroup: z.string(),
-      burnRateThreshold: z.number(),
-      id: z.string(),
-      longWindow: z.object({
-        unit: z.string(),
-        value: z.number()
-      }),
-      maxBurnRateThreshold: z.number().nullable().optional(),
-      shortWindow: z.object({
-        unit: z.string(),
-        value: z.number()
-      })
-    }))
+    anomalyDetectorTypes: z.array(z.enum(['txLatency', 'txThroughput', 'txFailureRate', 'txLowCount'])).optional(),
+    anomalySeverityType: z.enum(['critical', 'major', 'minor', 'warning']),
+    environment: z.string(),
+    serviceName: z.string().optional(),
+    transactionType: z.string().optional(),
+    windowSize: z.number(),
+    windowUnit: z.string()
   }),
-  rule_type_id: z.enum(['slo.rules.burnRate']),
+  rule_type_id: z.enum(['apm.anomaly']),
   schedule: z.object({
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
   template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_slo_rules_burnrate_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_slo_rules_burnrate_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_slo_rules_burnrate_create_rule_body_alerting>
+}).meta({ id: 'Kibana_HTTP_APIs_apm_anomaly_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_apm_anomaly_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_apm_anomaly_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_apm_error_rate_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    environment: z.string(),
+    errorGroupingKey: z.string().optional(),
+    groupBy: z.array(z.string()).optional(),
+    searchConfiguration: z.object({
+      query: z.object({
+        language: z.string(),
+        query: z.union([z.string(), z.record(z.string(), z.unknown().nullable())])
+      })
+    }).optional(),
+    serviceName: z.string().optional(),
+    threshold: z.number(),
+    useKqlFilter: z.boolean().optional(),
+    windowSize: z.number(),
+    windowUnit: z.string()
+  }),
+  rule_type_id: z.enum(['apm.error_rate']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_apm_error_rate_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_apm_error_rate_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_apm_error_rate_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_apm_transaction_duration_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    aggregationType: z.enum(['avg', '95th', '99th']),
+    environment: z.string(),
+    groupBy: z.array(z.string()).optional(),
+    searchConfiguration: z.object({
+      query: z.object({
+        language: z.string(),
+        query: z.union([z.string(), z.record(z.string(), z.unknown().nullable())])
+      })
+    }).optional(),
+    serviceName: z.string().optional(),
+    threshold: z.number(),
+    transactionName: z.string().optional(),
+    transactionType: z.string().optional(),
+    useKqlFilter: z.boolean().optional(),
+    windowSize: z.number(),
+    windowUnit: z.string()
+  }),
+  rule_type_id: z.enum(['apm.transaction_duration']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_apm_transaction_duration_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_apm_transaction_duration_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_apm_transaction_duration_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_apm_transaction_error_rate_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    environment: z.string(),
+    groupBy: z.array(z.string()).optional(),
+    searchConfiguration: z.object({
+      query: z.object({
+        language: z.string(),
+        query: z.union([z.string(), z.record(z.string(), z.unknown().nullable())])
+      })
+    }).optional(),
+    serviceName: z.string().optional(),
+    threshold: z.number(),
+    transactionName: z.string().optional(),
+    transactionType: z.string().optional(),
+    useKqlFilter: z.boolean().optional(),
+    windowSize: z.number(),
+    windowUnit: z.string()
+  }),
+  rule_type_id: z.enum(['apm.transaction_error_rate']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_apm_transaction_error_rate_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_apm_transaction_error_rate_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_apm_transaction_error_rate_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_datasetquality_degradeddocs_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    comparator: z.string(),
+    groupBy: z.array(z.string()).optional(),
+    searchConfiguration: z.object({
+      index: z.string()
+    }),
+    threshold: z.array(z.number()),
+    timeSize: z.number(),
+    timeUnit: z.string()
+  }),
+  rule_type_id: z.enum(['datasetQuality.degradedDocs']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_datasetquality_degradeddocs_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_datasetquality_degradeddocs_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_datasetquality_degradeddocs_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_es_query_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    aggField: z.string().optional(),
+    aggType: z.string().optional(),
+    esqlQuery: z.union([z.array(z.unknown()), z.boolean(), z.number(), z.object({}), z.string()]).nullable(),
+    esQuery: z.union([z.array(z.unknown()), z.boolean(), z.number(), z.object({}), z.string()]).nullable(),
+    excludeHitsFromPreviousRun: z.boolean().optional(),
+    groupBy: z.string().optional(),
+    index: z.union([z.array(z.unknown()), z.boolean(), z.number(), z.object({}), z.string()]).nullable(),
+    searchConfiguration: z.union([z.array(z.unknown()), z.boolean(), z.number(), z.object({}), z.string()]).nullable(),
+    searchType: z.enum(['searchSource', 'esQuery', 'esqlQuery']).optional(),
+    size: z.number(),
+    sourceFields: z.array(z.object({
+      label: z.string(),
+      searchPath: z.string()
+    })).optional(),
+    termField: z.union([z.string(), z.array(z.string())]).optional(),
+    termSize: z.number().optional(),
+    threshold: z.array(z.number()),
+    thresholdComparator: z.enum(['>', '<', '>=', '<=', 'between', 'notBetween']),
+    timeField: z.union([z.array(z.unknown()), z.boolean(), z.number(), z.object({}), z.string()]).nullable(),
+    timeWindowSize: z.number(),
+    timeWindowUnit: z.string()
+  }),
+  rule_type_id: z.enum(['.es-query']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_es_query_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_es_query_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_es_query_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_geo_containment_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    boundaryGeoField: z.string(),
+    boundaryIndexId: z.string(),
+    boundaryIndexQuery: z.unknown().nullable(),
+    boundaryIndexTitle: z.string(),
+    boundaryNameField: z.string().optional(),
+    boundaryType: z.string(),
+    dateField: z.string(),
+    entity: z.string(),
+    geoField: z.string(),
+    index: z.string(),
+    indexId: z.string(),
+    indexQuery: z.unknown().nullable()
+  }),
+  rule_type_id: z.enum(['.geo-containment']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_geo_containment_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_geo_containment_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_geo_containment_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_index_threshold_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    aggField: z.string().optional(),
+    aggType: z.string().optional(),
+    filterKuery: z.string().optional(),
+    groupBy: z.string().optional(),
+    index: z.union([z.string(), z.array(z.string())]),
+    termField: z.string().optional(),
+    termSize: z.number().optional(),
+    threshold: z.array(z.number()),
+    thresholdComparator: z.enum(['>', '<', '>=', '<=', 'between', 'notBetween']),
+    timeField: z.string(),
+    timeWindowSize: z.number(),
+    timeWindowUnit: z.string()
+  }),
+  rule_type_id: z.enum(['.index-threshold']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_index_threshold_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_index_threshold_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_index_threshold_create_rule_body_alerting>
 
 export const Kibana_HTTP_APIs_logs_alert_document_count_create_rule_body_alerting = z.object({
   actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
@@ -293,6 +451,647 @@ export const Kibana_HTTP_APIs_logs_alert_document_count_create_rule_body_alertin
   throttle: z.string().nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_logs_alert_document_count_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_logs_alert_document_count_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_logs_alert_document_count_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_metrics_alert_inventory_threshold_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    alertOnNoData: z.boolean().optional(),
+    criteria: z.array(z.object({
+      comparator: z.string(),
+      customMetric: z.object({
+        aggregation: z.string(),
+        field: z.string(),
+        id: z.string(),
+        label: z.string().optional(),
+        type: z.enum(['custom'])
+      }).optional(),
+      metric: z.string(),
+      threshold: z.array(z.number()),
+      timeSize: z.number(),
+      timeUnit: z.string(),
+      warningComparator: z.string().optional(),
+      warningThreshold: z.array(z.number()).optional()
+    })),
+    filterQuery: z.string().optional(),
+    nodeType: z.string(),
+    schema: z.string().optional(),
+    sourceId: z.string()
+  }).passthrough(),
+  rule_type_id: z.enum(['metrics.alert.inventory.threshold']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_metrics_alert_inventory_threshold_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_metrics_alert_inventory_threshold_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_metrics_alert_inventory_threshold_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_metrics_alert_threshold_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    alertOnGroupDisappear: z.boolean().optional(),
+    alertOnNoData: z.boolean().optional(),
+    criteria: z.array(z.union([z.object({
+      aggType: z.enum(['count']),
+      comparator: z.string(),
+      threshold: z.array(z.number()),
+      timeSize: z.number(),
+      timeUnit: z.string(),
+      warningComparator: z.string().optional(),
+      warningThreshold: z.array(z.number()).optional()
+    }), z.object({
+      aggType: z.string(),
+      comparator: z.string(),
+      metric: z.string(),
+      threshold: z.array(z.number()),
+      timeSize: z.number(),
+      timeUnit: z.string(),
+      warningComparator: z.string().optional(),
+      warningThreshold: z.array(z.number()).optional()
+    }), z.object({
+      aggType: z.enum(['custom']),
+      comparator: z.string(),
+      customMetrics: z.array(z.union([z.object({
+        aggType: z.string(),
+        field: z.string(),
+        name: z.string()
+      }), z.object({
+        aggType: z.enum(['count']),
+        filter: z.string().optional(),
+        name: z.string()
+      })])),
+      equation: z.string().optional(),
+      label: z.string().optional(),
+      threshold: z.array(z.number()),
+      timeSize: z.number(),
+      timeUnit: z.string(),
+      warningComparator: z.string().optional(),
+      warningThreshold: z.array(z.number()).optional()
+    })])),
+    filterQuery: z.string().optional(),
+    groupBy: z.union([z.string(), z.array(z.string())]).optional(),
+    sourceId: z.string()
+  }).passthrough(),
+  rule_type_id: z.enum(['metrics.alert.threshold']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_metrics_alert_threshold_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_metrics_alert_threshold_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_metrics_alert_threshold_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_monitoring_alert_cluster_health_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    duration: z.string(),
+    filterQuery: z.string().optional(),
+    filterQueryText: z.string().optional(),
+    limit: z.string().optional(),
+    threshold: z.number().optional()
+  }).passthrough(),
+  rule_type_id: z.enum(['monitoring_alert_cluster_health']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_cluster_health_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_monitoring_alert_cluster_health_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_cluster_health_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_monitoring_alert_cpu_usage_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    duration: z.string(),
+    filterQuery: z.string().optional(),
+    filterQueryText: z.string().optional(),
+    limit: z.string().optional(),
+    threshold: z.number().optional()
+  }).passthrough(),
+  rule_type_id: z.enum(['monitoring_alert_cpu_usage']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_cpu_usage_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_monitoring_alert_cpu_usage_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_cpu_usage_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_monitoring_alert_disk_usage_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    duration: z.string(),
+    filterQuery: z.string().optional(),
+    filterQueryText: z.string().optional(),
+    limit: z.string().optional(),
+    threshold: z.number().optional()
+  }).passthrough(),
+  rule_type_id: z.enum(['monitoring_alert_disk_usage']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_disk_usage_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_monitoring_alert_disk_usage_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_disk_usage_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_monitoring_alert_elasticsearch_version_mismatch_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    duration: z.string(),
+    filterQuery: z.string().optional(),
+    filterQueryText: z.string().optional(),
+    limit: z.string().optional(),
+    threshold: z.number().optional()
+  }).passthrough(),
+  rule_type_id: z.enum(['monitoring_alert_elasticsearch_version_mismatch']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_elasticsearch_version_mismatch_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_monitoring_alert_elasticsearch_version_mismatch_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_elasticsearch_version_mismatch_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_monitoring_alert_jvm_memory_usage_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    duration: z.string(),
+    filterQuery: z.string().optional(),
+    filterQueryText: z.string().optional(),
+    limit: z.string().optional(),
+    threshold: z.number().optional()
+  }).passthrough(),
+  rule_type_id: z.enum(['monitoring_alert_jvm_memory_usage']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_jvm_memory_usage_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_monitoring_alert_jvm_memory_usage_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_jvm_memory_usage_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_monitoring_alert_kibana_version_mismatch_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    duration: z.string(),
+    filterQuery: z.string().optional(),
+    filterQueryText: z.string().optional(),
+    limit: z.string().optional(),
+    threshold: z.number().optional()
+  }).passthrough(),
+  rule_type_id: z.enum(['monitoring_alert_kibana_version_mismatch']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_kibana_version_mismatch_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_monitoring_alert_kibana_version_mismatch_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_kibana_version_mismatch_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_monitoring_alert_license_expiration_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    duration: z.string(),
+    filterQuery: z.string().optional(),
+    filterQueryText: z.string().optional(),
+    limit: z.string().optional(),
+    threshold: z.number().optional()
+  }).passthrough(),
+  rule_type_id: z.enum(['monitoring_alert_license_expiration']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_license_expiration_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_monitoring_alert_license_expiration_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_license_expiration_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_monitoring_alert_logstash_version_mismatch_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    duration: z.string(),
+    filterQuery: z.string().optional(),
+    filterQueryText: z.string().optional(),
+    limit: z.string().optional(),
+    threshold: z.number().optional()
+  }).passthrough(),
+  rule_type_id: z.enum(['monitoring_alert_logstash_version_mismatch']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_logstash_version_mismatch_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_monitoring_alert_logstash_version_mismatch_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_logstash_version_mismatch_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_monitoring_alert_missing_monitoring_data_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    duration: z.string(),
+    filterQuery: z.string().optional(),
+    filterQueryText: z.string().optional(),
+    limit: z.string().optional(),
+    threshold: z.number().optional()
+  }).passthrough(),
+  rule_type_id: z.enum(['monitoring_alert_missing_monitoring_data']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_missing_monitoring_data_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_monitoring_alert_missing_monitoring_data_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_missing_monitoring_data_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_monitoring_alert_nodes_changed_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    duration: z.string(),
+    filterQuery: z.string().optional(),
+    filterQueryText: z.string().optional(),
+    limit: z.string().optional(),
+    threshold: z.number().optional()
+  }).passthrough(),
+  rule_type_id: z.enum(['monitoring_alert_nodes_changed']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_nodes_changed_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_monitoring_alert_nodes_changed_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_nodes_changed_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_monitoring_alert_thread_pool_search_rejections_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    duration: z.string(),
+    filterQuery: z.string().optional(),
+    filterQueryText: z.string().optional(),
+    threshold: z.number().optional()
+  }),
+  rule_type_id: z.enum(['monitoring_alert_thread_pool_search_rejections']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_thread_pool_search_rejections_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_monitoring_alert_thread_pool_search_rejections_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_thread_pool_search_rejections_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_monitoring_alert_thread_pool_write_rejections_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    duration: z.string(),
+    filterQuery: z.string().optional(),
+    filterQueryText: z.string().optional(),
+    threshold: z.number().optional()
+  }),
+  rule_type_id: z.enum(['monitoring_alert_thread_pool_write_rejections']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_thread_pool_write_rejections_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_monitoring_alert_thread_pool_write_rejections_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_thread_pool_write_rejections_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_monitoring_ccr_read_exceptions_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    duration: z.string(),
+    filterQuery: z.string().optional(),
+    filterQueryText: z.string().optional(),
+    limit: z.string().optional(),
+    threshold: z.number().optional()
+  }).passthrough(),
+  rule_type_id: z.enum(['monitoring_ccr_read_exceptions']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_monitoring_ccr_read_exceptions_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_monitoring_ccr_read_exceptions_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_ccr_read_exceptions_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_monitoring_shard_size_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    duration: z.string(),
+    filterQuery: z.string().optional(),
+    filterQueryText: z.string().optional(),
+    indexPattern: z.string(),
+    limit: z.string().optional(),
+    threshold: z.number().optional()
+  }).passthrough(),
+  rule_type_id: z.enum(['monitoring_shard_size']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_monitoring_shard_size_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_monitoring_shard_size_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_shard_size_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_new_rule = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.record(z.string(), z.unknown().nullable()).optional(),
+  rule_type_id: z.string(),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_new_rule' })
+export type Kibana_HTTP_APIs_new_rule = z.infer<typeof Kibana_HTTP_APIs_new_rule>
 
 export const Kibana_HTTP_APIs_observability_rules_custom_threshold_create_rule_body_alerting = z.object({
   actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
@@ -469,7 +1268,7 @@ export const Kibana_HTTP_APIs_observability_rules_custom_threshold_create_rule_b
 }).meta({ id: 'Kibana_HTTP_APIs_observability_rules_custom_threshold_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_observability_rules_custom_threshold_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_observability_rules_custom_threshold_create_rule_body_alerting>
 
-export const Kibana_HTTP_APIs_metrics_alert_threshold_create_rule_body_alerting = z.object({
+export const Kibana_HTTP_APIs_slo_rules_burnrate_create_rule_body_alerting = z.object({
   actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
   alert_delay: z.object({
     active: z.number()
@@ -488,498 +1287,35 @@ export const Kibana_HTTP_APIs_metrics_alert_threshold_create_rule_body_alerting 
   name: z.string(),
   notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
   params: z.object({
-    alertOnGroupDisappear: z.boolean().optional(),
-    alertOnNoData: z.boolean().optional(),
-    criteria: z.array(z.union([z.object({
-      aggType: z.enum(['count']),
-      comparator: z.string(),
-      threshold: z.array(z.number()),
-      timeSize: z.number(),
-      timeUnit: z.string(),
-      warningComparator: z.string().optional(),
-      warningThreshold: z.array(z.number()).optional()
-    }), z.object({
-      aggType: z.string(),
-      comparator: z.string(),
-      metric: z.string(),
-      threshold: z.array(z.number()),
-      timeSize: z.number(),
-      timeUnit: z.string(),
-      warningComparator: z.string().optional(),
-      warningThreshold: z.array(z.number()).optional()
-    }), z.object({
-      aggType: z.enum(['custom']),
-      comparator: z.string(),
-      customMetrics: z.array(z.union([z.object({
-        aggType: z.string(),
-        field: z.string(),
-        name: z.string()
-      }), z.object({
-        aggType: z.enum(['count']),
-        filter: z.string().optional(),
-        name: z.string()
-      })])),
-      equation: z.string().optional(),
-      label: z.string().optional(),
-      threshold: z.array(z.number()),
-      timeSize: z.number(),
-      timeUnit: z.string(),
-      warningComparator: z.string().optional(),
-      warningThreshold: z.array(z.number()).optional()
-    })])),
-    filterQuery: z.string().optional(),
-    groupBy: z.union([z.string(), z.array(z.string())]).optional(),
-    sourceId: z.string()
-  }).passthrough(),
-  rule_type_id: z.enum(['metrics.alert.threshold']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_metrics_alert_threshold_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_metrics_alert_threshold_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_metrics_alert_threshold_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_metrics_alert_inventory_threshold_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
+    dependencies: z.array(z.object({
+      actionGroupsToSuppressOn: z.array(z.string()),
+      ruleId: z.string()
     })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    alertOnNoData: z.boolean().optional(),
-    criteria: z.array(z.object({
-      comparator: z.string(),
-      customMetric: z.object({
-        aggregation: z.string(),
-        field: z.string(),
-        id: z.string(),
-        label: z.string().optional(),
-        type: z.enum(['custom'])
-      }).optional(),
-      metric: z.string(),
-      threshold: z.array(z.number()),
-      timeSize: z.number(),
-      timeUnit: z.string(),
-      warningComparator: z.string().optional(),
-      warningThreshold: z.array(z.number()).optional()
-    })),
-    filterQuery: z.string().optional(),
-    nodeType: z.string(),
-    schema: z.string().optional(),
-    sourceId: z.string()
-  }).passthrough(),
-  rule_type_id: z.enum(['metrics.alert.inventory.threshold']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_metrics_alert_inventory_threshold_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_metrics_alert_inventory_threshold_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_metrics_alert_inventory_threshold_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_xpack_uptime_alerts_durationanomaly_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    monitorId: z.string(),
-    severity: z.number(),
-    stackVersion: z.string().optional()
-  }),
-  rule_type_id: z.enum(['xpack.uptime.alerts.durationAnomaly']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_xpack_uptime_alerts_durationanomaly_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_xpack_uptime_alerts_durationanomaly_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_xpack_uptime_alerts_durationanomaly_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_xpack_uptime_alerts_tlscertificate_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    certAgeThreshold: z.number().optional(),
-    certExpirationThreshold: z.number().optional(),
-    search: z.string().optional(),
-    stackVersion: z.string().optional()
-  }),
-  rule_type_id: z.enum(['xpack.uptime.alerts.tlsCertificate']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_xpack_uptime_alerts_tlscertificate_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_xpack_uptime_alerts_tlscertificate_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_xpack_uptime_alerts_tlscertificate_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_xpack_uptime_alerts_monitorstatus_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    availability: z.object({
-      range: z.number(),
-      rangeUnit: z.string(),
-      threshold: z.string()
-    }).optional(),
-    filters: z.union([z.object({
-      'monitor.type': z.array(z.string()).optional(),
-      'observer.geo.name': z.array(z.string()).optional(),
-      tags: z.array(z.string()).optional(),
-      'url.port': z.array(z.string()).optional()
-    }), z.string()]).optional(),
-    isAutoGenerated: z.boolean().optional(),
-    locations: z.array(z.string()).optional(),
-    numTimes: z.number(),
-    search: z.string().optional(),
-    shouldCheckAvailability: z.boolean(),
-    shouldCheckStatus: z.boolean(),
-    stackVersion: z.string().optional(),
-    timerange: z.object({
-      from: z.string(),
-      to: z.string()
-    }).optional(),
-    timerangeCount: z.number().optional(),
-    timerangeUnit: z.string().optional(),
-    version: z.number().optional()
-  }),
-  rule_type_id: z.enum(['xpack.uptime.alerts.monitorStatus']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_xpack_uptime_alerts_monitorstatus_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_xpack_uptime_alerts_monitorstatus_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_xpack_uptime_alerts_monitorstatus_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_xpack_synthetics_alerts_tls_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    browserResourceTypes: z.array(z.string()).optional(),
-    certAgeThreshold: z.number().optional(),
-    certExpirationThreshold: z.number().optional(),
-    certOrigin: z.array(z.string()).optional(),
-    includeBrowserCerts: z.boolean().optional(),
-    issuers: z.array(z.string()).optional(),
-    kqlQuery: z.string().optional(),
-    locations: z.array(z.string()).optional(),
-    monitorIds: z.array(z.string()).optional(),
-    monitorTypes: z.array(z.string()).optional(),
-    projects: z.array(z.string()).optional(),
-    search: z.string().optional(),
-    tags: z.array(z.string()).optional()
-  }),
-  rule_type_id: z.enum(['xpack.synthetics.alerts.tls']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_xpack_synthetics_alerts_tls_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_xpack_synthetics_alerts_tls_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_xpack_synthetics_alerts_tls_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_xpack_synthetics_alerts_monitorstatus_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    condition: z.object({
-      alertOnNoData: z.boolean().optional(),
-      downThreshold: z.number().optional(),
-      groupBy: z.string().optional(),
-      includeRetests: z.boolean().optional(),
-      locationsThreshold: z.number().optional(),
-      recoveryStrategy: z.enum(['firstUp', 'conditionNotMet']).optional(),
-      window: z.union([z.object({
-        time: z.object({
-          size: z.number().optional(),
-          unit: z.enum(['s', 'm', 'h', 'd']).optional()
-        })
-      }), z.object({
-        numberOfChecks: z.number().optional()
-      })])
-    }).optional(),
-    kqlQuery: z.string().optional(),
-    locations: z.array(z.string()).optional(),
-    monitorIds: z.array(z.string()).optional(),
-    monitorTypes: z.array(z.string()).optional(),
-    projects: z.array(z.string()).optional(),
-    tags: z.array(z.string()).optional()
-  }),
-  rule_type_id: z.enum(['xpack.synthetics.alerts.monitorStatus']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_xpack_synthetics_alerts_monitorstatus_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_xpack_synthetics_alerts_monitorstatus_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_xpack_synthetics_alerts_monitorstatus_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_apm_transaction_duration_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    aggregationType: z.enum(['avg', '95th', '99th']),
-    environment: z.string(),
-    groupBy: z.array(z.string()).optional(),
-    searchConfiguration: z.object({
-      query: z.object({
-        language: z.string(),
-        query: z.union([z.string(), z.record(z.string(), z.unknown().nullable())])
+    sloId: z.string(),
+    windows: z.array(z.object({
+      actionGroup: z.string(),
+      burnRateThreshold: z.number(),
+      id: z.string(),
+      longWindow: z.object({
+        unit: z.string(),
+        value: z.number()
+      }),
+      maxBurnRateThreshold: z.number().nullable().optional(),
+      shortWindow: z.object({
+        unit: z.string(),
+        value: z.number()
       })
-    }).optional(),
-    serviceName: z.string().optional(),
-    threshold: z.number(),
-    transactionName: z.string().optional(),
-    transactionType: z.string().optional(),
-    useKqlFilter: z.boolean().optional(),
-    windowSize: z.number(),
-    windowUnit: z.string()
+    }))
   }),
-  rule_type_id: z.enum(['apm.transaction_duration']),
+  rule_type_id: z.enum(['slo.rules.burnRate']),
   schedule: z.object({
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
   template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_apm_transaction_duration_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_apm_transaction_duration_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_apm_transaction_duration_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_apm_transaction_error_rate_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    environment: z.string(),
-    groupBy: z.array(z.string()).optional(),
-    searchConfiguration: z.object({
-      query: z.object({
-        language: z.string(),
-        query: z.union([z.string(), z.record(z.string(), z.unknown().nullable())])
-      })
-    }).optional(),
-    serviceName: z.string().optional(),
-    threshold: z.number(),
-    transactionName: z.string().optional(),
-    transactionType: z.string().optional(),
-    useKqlFilter: z.boolean().optional(),
-    windowSize: z.number(),
-    windowUnit: z.string()
-  }),
-  rule_type_id: z.enum(['apm.transaction_error_rate']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_apm_transaction_error_rate_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_apm_transaction_error_rate_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_apm_transaction_error_rate_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_apm_error_rate_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    environment: z.string(),
-    errorGroupingKey: z.string().optional(),
-    groupBy: z.array(z.string()).optional(),
-    searchConfiguration: z.object({
-      query: z.object({
-        language: z.string(),
-        query: z.union([z.string(), z.record(z.string(), z.unknown().nullable())])
-      })
-    }).optional(),
-    serviceName: z.string().optional(),
-    threshold: z.number(),
-    useKqlFilter: z.boolean().optional(),
-    windowSize: z.number(),
-    windowUnit: z.string()
-  }),
-  rule_type_id: z.enum(['apm.error_rate']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_apm_error_rate_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_apm_error_rate_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_apm_error_rate_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_apm_anomaly_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    anomalyDetectorTypes: z.array(z.enum(['txLatency', 'txThroughput', 'txFailureRate'])).optional(),
-    anomalySeverityType: z.enum(['critical', 'major', 'minor', 'warning']),
-    environment: z.string(),
-    serviceName: z.string().optional(),
-    transactionType: z.string().optional(),
-    windowSize: z.number(),
-    windowUnit: z.string()
-  }),
-  rule_type_id: z.enum(['apm.anomaly']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_apm_anomaly_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_apm_anomaly_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_apm_anomaly_create_rule_body_alerting>
+}).meta({ id: 'Kibana_HTTP_APIs_slo_rules_burnrate_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_slo_rules_burnrate_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_slo_rules_burnrate_create_rule_body_alerting>
 
 export const Kibana_HTTP_APIs_transform_health_create_rule_body_alerting = z.object({
   actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
@@ -1024,7 +1360,7 @@ export const Kibana_HTTP_APIs_transform_health_create_rule_body_alerting = z.obj
 }).meta({ id: 'Kibana_HTTP_APIs_transform_health_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_transform_health_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_transform_health_create_rule_body_alerting>
 
-export const Kibana_HTTP_APIs_geo_containment_create_rule_body_alerting = z.object({
+export const Kibana_HTTP_APIs_xpack_ml_anomaly_detection_alert_create_rule_body_alerting = z.object({
   actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
   alert_delay: z.object({
     active: z.number()
@@ -1043,159 +1379,26 @@ export const Kibana_HTTP_APIs_geo_containment_create_rule_body_alerting = z.obje
   name: z.string(),
   notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
   params: z.object({
-    boundaryGeoField: z.string(),
-    boundaryIndexId: z.string(),
-    boundaryIndexQuery: z.unknown().nullable(),
-    boundaryIndexTitle: z.string(),
-    boundaryNameField: z.string().optional(),
-    boundaryType: z.string(),
-    dateField: z.string(),
-    entity: z.string(),
-    geoField: z.string(),
-    index: z.string(),
-    indexId: z.string(),
-    indexQuery: z.unknown().nullable()
-  }),
-  rule_type_id: z.enum(['.geo-containment']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_geo_containment_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_geo_containment_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_geo_containment_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_index_threshold_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    aggField: z.string().optional(),
-    aggType: z.string().optional(),
-    filterKuery: z.string().optional(),
-    groupBy: z.string().optional(),
-    index: z.union([z.string(), z.array(z.string())]),
-    termField: z.string().optional(),
-    termSize: z.number().optional(),
-    threshold: z.array(z.number()),
-    thresholdComparator: z.enum(['>', '<', '>=', '<=', 'between', 'notBetween']),
-    timeField: z.string(),
-    timeWindowSize: z.number(),
-    timeWindowUnit: z.string()
-  }),
-  rule_type_id: z.enum(['.index-threshold']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_index_threshold_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_index_threshold_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_index_threshold_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_es_query_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    aggField: z.string().optional(),
-    aggType: z.string().optional(),
-    esqlQuery: z.union([z.array(z.unknown()), z.boolean(), z.number(), z.object({}), z.string()]).nullable(),
-    esQuery: z.union([z.array(z.unknown()), z.boolean(), z.number(), z.object({}), z.string()]).nullable(),
-    excludeHitsFromPreviousRun: z.boolean().optional(),
-    groupBy: z.string().optional(),
-    index: z.union([z.array(z.unknown()), z.boolean(), z.number(), z.object({}), z.string()]).nullable(),
-    searchConfiguration: z.union([z.array(z.unknown()), z.boolean(), z.number(), z.object({}), z.string()]).nullable(),
-    searchType: z.enum(['searchSource', 'esQuery', 'esqlQuery']).optional(),
-    size: z.number(),
-    sourceFields: z.array(z.object({
-      label: z.string(),
-      searchPath: z.string()
-    })).optional(),
-    termField: z.union([z.string(), z.array(z.string())]).optional(),
-    termSize: z.number().optional(),
-    threshold: z.array(z.number()),
-    thresholdComparator: z.enum(['>', '<', '>=', '<=', 'between', 'notBetween']),
-    timeField: z.union([z.array(z.unknown()), z.boolean(), z.number(), z.object({}), z.string()]).nullable(),
-    timeWindowSize: z.number(),
-    timeWindowUnit: z.string()
-  }),
-  rule_type_id: z.enum(['.es-query']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_es_query_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_es_query_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_es_query_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_datasetquality_degradeddocs_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    comparator: z.string(),
-    groupBy: z.array(z.string()).optional(),
-    searchConfiguration: z.object({
-      index: z.string()
+    includeInterim: z.boolean().optional(),
+    jobSelection: z.object({
+      groupIds: z.array(z.string()).optional(),
+      jobIds: z.array(z.string()).optional()
     }),
-    threshold: z.array(z.number()),
-    timeSize: z.number(),
-    timeUnit: z.string()
+    kqlQueryString: z.string().nullable().optional(),
+    lookbackInterval: z.string().nullable().optional(),
+    resultType: z.enum(['record', 'bucket', 'influencer']),
+    severity: z.number(),
+    topNBuckets: z.number().nullable().optional()
   }),
-  rule_type_id: z.enum(['datasetQuality.degradedDocs']),
+  rule_type_id: z.enum(['xpack.ml.anomaly_detection_alert']),
   schedule: z.object({
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
   template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_datasetquality_degradeddocs_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_datasetquality_degradeddocs_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_datasetquality_degradeddocs_create_rule_body_alerting>
+}).meta({ id: 'Kibana_HTTP_APIs_xpack_ml_anomaly_detection_alert_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_xpack_ml_anomaly_detection_alert_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_xpack_ml_anomaly_detection_alert_create_rule_body_alerting>
 
 export const Kibana_HTTP_APIs_xpack_ml_anomaly_detection_jobs_health_create_rule_body_alerting = z.object({
   actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
@@ -1257,7 +1460,7 @@ export const Kibana_HTTP_APIs_xpack_ml_anomaly_detection_jobs_health_create_rule
 }).meta({ id: 'Kibana_HTTP_APIs_xpack_ml_anomaly_detection_jobs_health_create_rule_body_alerting' })
 export type Kibana_HTTP_APIs_xpack_ml_anomaly_detection_jobs_health_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_xpack_ml_anomaly_detection_jobs_health_create_rule_body_alerting>
 
-export const Kibana_HTTP_APIs_xpack_ml_anomaly_detection_alert_create_rule_body_alerting = z.object({
+export const Kibana_HTTP_APIs_xpack_synthetics_alerts_monitorstatus_create_rule_body_alerting = z.object({
   actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
   alert_delay: z.object({
     active: z.number()
@@ -1276,28 +1479,116 @@ export const Kibana_HTTP_APIs_xpack_ml_anomaly_detection_alert_create_rule_body_
   name: z.string(),
   notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
   params: z.object({
-    includeInterim: z.boolean().optional(),
-    jobSelection: z.object({
-      groupIds: z.array(z.string()).optional(),
-      jobIds: z.array(z.string()).optional()
-    }),
-    kqlQueryString: z.string().nullable().optional(),
-    lookbackInterval: z.string().nullable().optional(),
-    resultType: z.enum(['record', 'bucket', 'influencer']),
+    condition: z.object({
+      alertOnNoData: z.boolean().optional(),
+      downThreshold: z.number().optional(),
+      groupBy: z.string().optional(),
+      includeRetests: z.boolean().optional(),
+      locationsThreshold: z.number().optional(),
+      recoveryStrategy: z.enum(['firstUp', 'conditionNotMet']).optional(),
+      window: z.union([z.object({
+        time: z.object({
+          size: z.number().optional(),
+          unit: z.enum(['s', 'm', 'h', 'd']).optional()
+        })
+      }), z.object({
+        numberOfChecks: z.number().optional()
+      })])
+    }).optional(),
+    kqlQuery: z.string().optional(),
+    locations: z.array(z.string()).optional(),
+    monitorIds: z.array(z.string()).optional(),
+    monitorTypes: z.array(z.string()).optional(),
+    projects: z.array(z.string()).optional(),
+    tags: z.array(z.string()).optional()
+  }),
+  rule_type_id: z.enum(['xpack.synthetics.alerts.monitorStatus']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_xpack_synthetics_alerts_monitorstatus_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_xpack_synthetics_alerts_monitorstatus_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_xpack_synthetics_alerts_monitorstatus_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_xpack_synthetics_alerts_tls_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    browserResourceTypes: z.array(z.string()).optional(),
+    certAgeThreshold: z.number().optional(),
+    certExpirationThreshold: z.number().optional(),
+    certOrigin: z.array(z.string()).optional(),
+    includeBrowserCerts: z.boolean().optional(),
+    issuers: z.array(z.string()).optional(),
+    kqlQuery: z.string().optional(),
+    locations: z.array(z.string()).optional(),
+    monitorIds: z.array(z.string()).optional(),
+    monitorTypes: z.array(z.string()).optional(),
+    projects: z.array(z.string()).optional(),
+    search: z.string().optional(),
+    tags: z.array(z.string()).optional()
+  }),
+  rule_type_id: z.enum(['xpack.synthetics.alerts.tls']),
+  schedule: z.object({
+    interval: z.string()
+  }),
+  tags: z.array(z.string()).optional(),
+  template_id: z.string().optional(),
+  throttle: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_xpack_synthetics_alerts_tls_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_xpack_synthetics_alerts_tls_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_xpack_synthetics_alerts_tls_create_rule_body_alerting>
+
+export const Kibana_HTTP_APIs_xpack_uptime_alerts_durationanomaly_create_rule_body_alerting = z.object({
+  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
+  alert_delay: z.object({
+    active: z.number()
+  }).optional(),
+  artifacts: z.object({
+    dashboards: z.array(z.object({
+      id: z.string()
+    })).optional(),
+    investigation_guide: z.object({
+      blob: z.string()
+    }).optional()
+  }).optional(),
+  consumer: z.string(),
+  enabled: z.boolean().optional(),
+  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
+  name: z.string(),
+  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
+  params: z.object({
+    monitorId: z.string(),
     severity: z.number(),
-    topNBuckets: z.number().nullable().optional()
+    stackVersion: z.string().optional()
   }),
-  rule_type_id: z.enum(['xpack.ml.anomaly_detection_alert']),
+  rule_type_id: z.enum(['xpack.uptime.alerts.durationAnomaly']),
   schedule: z.object({
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
   template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_xpack_ml_anomaly_detection_alert_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_xpack_ml_anomaly_detection_alert_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_xpack_ml_anomaly_detection_alert_create_rule_body_alerting>
+}).meta({ id: 'Kibana_HTTP_APIs_xpack_uptime_alerts_durationanomaly_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_xpack_uptime_alerts_durationanomaly_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_xpack_uptime_alerts_durationanomaly_create_rule_body_alerting>
 
-export const Kibana_HTTP_APIs_monitoring_alert_thread_pool_write_rejections_create_rule_body_alerting = z.object({
+export const Kibana_HTTP_APIs_xpack_uptime_alerts_monitorstatus_create_rule_body_alerting = z.object({
   actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
   alert_delay: z.object({
     active: z.number()
@@ -1316,22 +1607,43 @@ export const Kibana_HTTP_APIs_monitoring_alert_thread_pool_write_rejections_crea
   name: z.string(),
   notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
   params: z.object({
-    duration: z.string(),
-    filterQuery: z.string().optional(),
-    filterQueryText: z.string().optional(),
-    threshold: z.number().optional()
+    availability: z.object({
+      range: z.number(),
+      rangeUnit: z.string(),
+      threshold: z.string()
+    }).optional(),
+    filters: z.union([z.object({
+      'monitor.type': z.array(z.string()).optional(),
+      'observer.geo.name': z.array(z.string()).optional(),
+      tags: z.array(z.string()).optional(),
+      'url.port': z.array(z.string()).optional()
+    }), z.string()]).optional(),
+    isAutoGenerated: z.boolean().optional(),
+    locations: z.array(z.string()).optional(),
+    numTimes: z.number(),
+    search: z.string().optional(),
+    shouldCheckAvailability: z.boolean(),
+    shouldCheckStatus: z.boolean(),
+    stackVersion: z.string().optional(),
+    timerange: z.object({
+      from: z.string(),
+      to: z.string()
+    }).optional(),
+    timerangeCount: z.number().optional(),
+    timerangeUnit: z.string().optional(),
+    version: z.number().optional()
   }),
-  rule_type_id: z.enum(['monitoring_alert_thread_pool_write_rejections']),
+  rule_type_id: z.enum(['xpack.uptime.alerts.monitorStatus']),
   schedule: z.object({
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
   template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_thread_pool_write_rejections_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_monitoring_alert_thread_pool_write_rejections_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_thread_pool_write_rejections_create_rule_body_alerting>
+}).meta({ id: 'Kibana_HTTP_APIs_xpack_uptime_alerts_monitorstatus_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_xpack_uptime_alerts_monitorstatus_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_xpack_uptime_alerts_monitorstatus_create_rule_body_alerting>
 
-export const Kibana_HTTP_APIs_monitoring_alert_thread_pool_search_rejections_create_rule_body_alerting = z.object({
+export const Kibana_HTTP_APIs_xpack_uptime_alerts_tlscertificate_create_rule_body_alerting = z.object({
   actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
   alert_delay: z.object({
     active: z.number()
@@ -1350,441 +1662,24 @@ export const Kibana_HTTP_APIs_monitoring_alert_thread_pool_search_rejections_cre
   name: z.string(),
   notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
   params: z.object({
-    duration: z.string(),
-    filterQuery: z.string().optional(),
-    filterQueryText: z.string().optional(),
-    threshold: z.number().optional()
+    certAgeThreshold: z.number().optional(),
+    certExpirationThreshold: z.number().optional(),
+    search: z.string().optional(),
+    stackVersion: z.string().optional()
   }),
-  rule_type_id: z.enum(['monitoring_alert_thread_pool_search_rejections']),
+  rule_type_id: z.enum(['xpack.uptime.alerts.tlsCertificate']),
   schedule: z.object({
     interval: z.string()
   }),
   tags: z.array(z.string()).optional(),
   template_id: z.string().optional(),
   throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_thread_pool_search_rejections_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_monitoring_alert_thread_pool_search_rejections_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_thread_pool_search_rejections_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_monitoring_shard_size_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    duration: z.string(),
-    filterQuery: z.string().optional(),
-    filterQueryText: z.string().optional(),
-    indexPattern: z.string(),
-    limit: z.string().optional(),
-    threshold: z.number().optional()
-  }).passthrough(),
-  rule_type_id: z.enum(['monitoring_shard_size']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_monitoring_shard_size_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_monitoring_shard_size_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_shard_size_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_monitoring_alert_nodes_changed_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    duration: z.string(),
-    filterQuery: z.string().optional(),
-    filterQueryText: z.string().optional(),
-    limit: z.string().optional(),
-    threshold: z.number().optional()
-  }).passthrough(),
-  rule_type_id: z.enum(['monitoring_alert_nodes_changed']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_nodes_changed_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_monitoring_alert_nodes_changed_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_nodes_changed_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_monitoring_alert_missing_monitoring_data_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    duration: z.string(),
-    filterQuery: z.string().optional(),
-    filterQueryText: z.string().optional(),
-    limit: z.string().optional(),
-    threshold: z.number().optional()
-  }).passthrough(),
-  rule_type_id: z.enum(['monitoring_alert_missing_monitoring_data']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_missing_monitoring_data_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_monitoring_alert_missing_monitoring_data_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_missing_monitoring_data_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_monitoring_alert_jvm_memory_usage_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    duration: z.string(),
-    filterQuery: z.string().optional(),
-    filterQueryText: z.string().optional(),
-    limit: z.string().optional(),
-    threshold: z.number().optional()
-  }).passthrough(),
-  rule_type_id: z.enum(['monitoring_alert_jvm_memory_usage']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_jvm_memory_usage_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_monitoring_alert_jvm_memory_usage_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_jvm_memory_usage_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_monitoring_alert_logstash_version_mismatch_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    duration: z.string(),
-    filterQuery: z.string().optional(),
-    filterQueryText: z.string().optional(),
-    limit: z.string().optional(),
-    threshold: z.number().optional()
-  }).passthrough(),
-  rule_type_id: z.enum(['monitoring_alert_logstash_version_mismatch']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_logstash_version_mismatch_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_monitoring_alert_logstash_version_mismatch_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_logstash_version_mismatch_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_monitoring_alert_license_expiration_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    duration: z.string(),
-    filterQuery: z.string().optional(),
-    filterQueryText: z.string().optional(),
-    limit: z.string().optional(),
-    threshold: z.number().optional()
-  }).passthrough(),
-  rule_type_id: z.enum(['monitoring_alert_license_expiration']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_license_expiration_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_monitoring_alert_license_expiration_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_license_expiration_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_monitoring_alert_kibana_version_mismatch_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    duration: z.string(),
-    filterQuery: z.string().optional(),
-    filterQueryText: z.string().optional(),
-    limit: z.string().optional(),
-    threshold: z.number().optional()
-  }).passthrough(),
-  rule_type_id: z.enum(['monitoring_alert_kibana_version_mismatch']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_kibana_version_mismatch_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_monitoring_alert_kibana_version_mismatch_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_kibana_version_mismatch_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_monitoring_alert_elasticsearch_version_mismatch_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    duration: z.string(),
-    filterQuery: z.string().optional(),
-    filterQueryText: z.string().optional(),
-    limit: z.string().optional(),
-    threshold: z.number().optional()
-  }).passthrough(),
-  rule_type_id: z.enum(['monitoring_alert_elasticsearch_version_mismatch']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_elasticsearch_version_mismatch_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_monitoring_alert_elasticsearch_version_mismatch_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_elasticsearch_version_mismatch_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_monitoring_alert_disk_usage_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    duration: z.string(),
-    filterQuery: z.string().optional(),
-    filterQueryText: z.string().optional(),
-    limit: z.string().optional(),
-    threshold: z.number().optional()
-  }).passthrough(),
-  rule_type_id: z.enum(['monitoring_alert_disk_usage']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_disk_usage_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_monitoring_alert_disk_usage_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_disk_usage_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_monitoring_alert_cpu_usage_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    duration: z.string(),
-    filterQuery: z.string().optional(),
-    filterQueryText: z.string().optional(),
-    limit: z.string().optional(),
-    threshold: z.number().optional()
-  }).passthrough(),
-  rule_type_id: z.enum(['monitoring_alert_cpu_usage']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_cpu_usage_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_monitoring_alert_cpu_usage_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_cpu_usage_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_monitoring_alert_cluster_health_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    duration: z.string(),
-    filterQuery: z.string().optional(),
-    filterQueryText: z.string().optional(),
-    limit: z.string().optional(),
-    threshold: z.number().optional()
-  }).passthrough(),
-  rule_type_id: z.enum(['monitoring_alert_cluster_health']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_monitoring_alert_cluster_health_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_monitoring_alert_cluster_health_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_alert_cluster_health_create_rule_body_alerting>
-
-export const Kibana_HTTP_APIs_monitoring_ccr_read_exceptions_create_rule_body_alerting = z.object({
-  actions: z.array(Kibana_HTTP_APIs_new_rule_action).optional(),
-  alert_delay: z.object({
-    active: z.number()
-  }).optional(),
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional(),
-    investigation_guide: z.object({
-      blob: z.string()
-    }).optional()
-  }).optional(),
-  consumer: z.string(),
-  enabled: z.boolean().optional(),
-  flapping: Kibana_HTTP_APIs_rule_flapping.nullable().optional(),
-  name: z.string(),
-  notify_when: z.union([z.literal('onActionGroupChange'), z.literal('onActiveAlert'), z.literal('onThrottleInterval'), z.literal(null)]).nullable().optional(),
-  params: z.object({
-    duration: z.string(),
-    filterQuery: z.string().optional(),
-    filterQueryText: z.string().optional(),
-    limit: z.string().optional(),
-    threshold: z.number().optional()
-  }).passthrough(),
-  rule_type_id: z.enum(['monitoring_ccr_read_exceptions']),
-  schedule: z.object({
-    interval: z.string()
-  }),
-  tags: z.array(z.string()).optional(),
-  template_id: z.string().optional(),
-  throttle: z.string().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_monitoring_ccr_read_exceptions_create_rule_body_alerting' })
-export type Kibana_HTTP_APIs_monitoring_ccr_read_exceptions_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_monitoring_ccr_read_exceptions_create_rule_body_alerting>
+}).meta({ id: 'Kibana_HTTP_APIs_xpack_uptime_alerts_tlscertificate_create_rule_body_alerting' })
+export type Kibana_HTTP_APIs_xpack_uptime_alerts_tlscertificate_create_rule_body_alerting = z.infer<typeof Kibana_HTTP_APIs_xpack_uptime_alerts_tlscertificate_create_rule_body_alerting>
 
 export const PostAlertingRuleIdRequest = z.union([z.discriminatedUnion('rule_type_id', [Kibana_HTTP_APIs_monitoring_ccr_read_exceptions_create_rule_body_alerting, Kibana_HTTP_APIs_monitoring_alert_cluster_health_create_rule_body_alerting, Kibana_HTTP_APIs_monitoring_alert_cpu_usage_create_rule_body_alerting, Kibana_HTTP_APIs_monitoring_alert_disk_usage_create_rule_body_alerting, Kibana_HTTP_APIs_monitoring_alert_elasticsearch_version_mismatch_create_rule_body_alerting, Kibana_HTTP_APIs_monitoring_alert_kibana_version_mismatch_create_rule_body_alerting, Kibana_HTTP_APIs_monitoring_alert_license_expiration_create_rule_body_alerting, Kibana_HTTP_APIs_monitoring_alert_logstash_version_mismatch_create_rule_body_alerting, Kibana_HTTP_APIs_monitoring_alert_jvm_memory_usage_create_rule_body_alerting, Kibana_HTTP_APIs_monitoring_alert_missing_monitoring_data_create_rule_body_alerting, Kibana_HTTP_APIs_monitoring_alert_nodes_changed_create_rule_body_alerting, Kibana_HTTP_APIs_monitoring_shard_size_create_rule_body_alerting, Kibana_HTTP_APIs_monitoring_alert_thread_pool_search_rejections_create_rule_body_alerting, Kibana_HTTP_APIs_monitoring_alert_thread_pool_write_rejections_create_rule_body_alerting, Kibana_HTTP_APIs_xpack_ml_anomaly_detection_alert_create_rule_body_alerting, Kibana_HTTP_APIs_xpack_ml_anomaly_detection_jobs_health_create_rule_body_alerting, Kibana_HTTP_APIs_datasetquality_degradeddocs_create_rule_body_alerting, Kibana_HTTP_APIs_es_query_create_rule_body_alerting, Kibana_HTTP_APIs_index_threshold_create_rule_body_alerting, Kibana_HTTP_APIs_geo_containment_create_rule_body_alerting, Kibana_HTTP_APIs_transform_health_create_rule_body_alerting, Kibana_HTTP_APIs_apm_anomaly_create_rule_body_alerting, Kibana_HTTP_APIs_apm_error_rate_create_rule_body_alerting, Kibana_HTTP_APIs_apm_transaction_error_rate_create_rule_body_alerting, Kibana_HTTP_APIs_apm_transaction_duration_create_rule_body_alerting, Kibana_HTTP_APIs_xpack_synthetics_alerts_monitorstatus_create_rule_body_alerting, Kibana_HTTP_APIs_xpack_synthetics_alerts_tls_create_rule_body_alerting, Kibana_HTTP_APIs_xpack_uptime_alerts_monitorstatus_create_rule_body_alerting, Kibana_HTTP_APIs_xpack_uptime_alerts_tlscertificate_create_rule_body_alerting, Kibana_HTTP_APIs_xpack_uptime_alerts_durationanomaly_create_rule_body_alerting, Kibana_HTTP_APIs_metrics_alert_inventory_threshold_create_rule_body_alerting, Kibana_HTTP_APIs_metrics_alert_threshold_create_rule_body_alerting, Kibana_HTTP_APIs_observability_rules_custom_threshold_create_rule_body_alerting, Kibana_HTTP_APIs_logs_alert_document_count_create_rule_body_alerting, Kibana_HTTP_APIs_slo_rules_burnrate_create_rule_body_alerting]), Kibana_HTTP_APIs_new_rule]).meta({ id: 'PostAlertingRuleIdRequest' })
 export type PostAlertingRuleIdRequest = z.infer<typeof PostAlertingRuleIdRequest>
+
+export { Kibana_HTTP_APIs_rule_response } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_rule_flapping } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerts_filter_query } from './schemas/kibana.js'

@@ -3,35 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-/**
- * A duration. Units can be `nanos`, `micros`, `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours) and
- * `d` (days). Also accepts "0" without a unit and "-1" to indicate an unspecified value.
- */
-export const Duration = z.union([z.string(), z.literal(-1), z.literal(0)]).meta({ id: 'Duration' })
-export type Duration = z.infer<typeof Duration>
-
-export const IndexName = z.string().meta({ id: 'IndexName' })
-export type IndexName = z.infer<typeof IndexName>
-
-export const Indices = z.union([IndexName, z.array(IndexName)]).meta({ id: 'Indices' })
-export type Indices = z.infer<typeof Indices>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
+import { Duration, Indices } from './_types.js'
 
 /**
  * Migrate to data tiers routing.
@@ -51,9 +26,8 @@ export type RequestBase = z.infer<typeof RequestBase>
  * Use the stop ILM and get ILM status APIs to wait until the reported operation mode is `STOPPED`.
  */
 export const IlmMigrateToDataTiersRequest = z.object({
-  ...RequestBase.shape,
   dry_run: z.boolean().describe('If true, simulates the migration from node attributes based allocation filters to data tiers, but does not perform the migration. This provides a way to retrieve the indices and ILM policies that need to be migrated.').optional().meta({ found_in: 'query' }),
-  master_timeout: Duration.describe('The period to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. It can also be set to `-1` to indicate that the request should never timeout.').optional().meta({ found_in: 'query' }),
+  master_timeout: z.lazy(() => Duration).describe('The period to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. It can also be set to `-1` to indicate that the request should never timeout.').optional().meta({ found_in: 'query' }),
   legacy_template_to_delete: z.string().optional().meta({ found_in: 'body' }),
   node_attribute: z.string().optional().meta({ found_in: 'body' })
 }).meta({ id: 'IlmMigrateToDataTiersRequest' })
@@ -63,7 +37,7 @@ export const IlmMigrateToDataTiersResponse = z.object({
   dry_run: z.boolean(),
   removed_legacy_template: z.string().describe('The name of the legacy index template that was deleted. This information is missing if no legacy index templates were deleted.'),
   migrated_ilm_policies: z.array(z.string()).describe('The ILM policies that were updated.'),
-  migrated_indices: Indices.describe('The indices that were migrated to tier preference routing.'),
+  migrated_indices: z.lazy(() => Indices).describe('The indices that were migrated to tier preference routing.'),
   migrated_legacy_templates: z.array(z.string()).describe('The legacy index templates that were updated to not contain custom routing settings for the provided data attribute.'),
   migrated_composable_templates: z.array(z.string()).describe('The composable index templates that were updated to not contain custom routing settings for the provided data attribute.'),
   migrated_component_templates: z.array(z.string()).describe('The component templates that were updated to not contain custom routing settings for the provided data attribute.')

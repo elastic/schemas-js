@@ -3,29 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-/**
- * A duration. Units can be `nanos`, `micros`, `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours) and
- * `d` (days). Also accepts "0" without a unit and "-1" to indicate an unspecified value.
- */
-export const Duration = z.union([z.string(), z.literal(-1), z.literal(0)]).meta({ id: 'Duration' })
-export type Duration = z.infer<typeof Duration>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
+import { Duration } from './_types.js'
 
 /**
  * Update the cluster settings.
@@ -49,10 +30,9 @@ export type RequestBase = z.infer<typeof RequestBase>
  * If a cluster becomes unstable, transient settings can clear unexpectedly, resulting in a potentially undesired cluster configuration.
  */
 export const ClusterPutSettingsRequest = z.object({
-  ...RequestBase.shape,
   flat_settings: z.boolean().describe('Return settings in flat format').optional().meta({ found_in: 'query' }),
-  master_timeout: Duration.describe('The period to wait for a connection to the master node.').optional().meta({ found_in: 'query' }),
-  timeout: Duration.describe('The period to wait for a response.').optional().meta({ found_in: 'query' }),
+  master_timeout: z.lazy(() => Duration).describe('The period to wait for a connection to the master node.').optional().meta({ found_in: 'query' }),
+  timeout: z.lazy(() => Duration).describe('The period to wait for a response.').optional().meta({ found_in: 'query' }),
   persistent: z.record(z.string(), z.any()).describe('The settings that persist after the cluster restarts.').optional().meta({ found_in: 'body' }),
   transient: z.record(z.string(), z.any()).describe('The settings that do not persist after the cluster restarts.').optional().meta({ found_in: 'body' })
 }).meta({ id: 'ClusterPutSettingsRequest' })

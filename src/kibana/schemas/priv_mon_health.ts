@@ -11,9 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Entity_Analytics_API_PrivilegeMonitoringEngineStatus = z.enum(['started', 'error', 'disabled', 'not_installed']).meta({ id: 'Security_Entity_Analytics_API_PrivilegeMonitoringEngineStatus' })
-export type Security_Entity_Analytics_API_PrivilegeMonitoringEngineStatus = z.infer<typeof Security_Entity_Analytics_API_PrivilegeMonitoringEngineStatus>
+import { Security_Entity_Analytics_API_PrivilegeMonitoringEngineStatus } from './schemas/security.js'
 
 export const PrivMonHealthResponse = z.object({
   error: z.object({
@@ -26,3 +24,5 @@ export const PrivMonHealthResponse = z.object({
   }).optional()
 }).meta({ id: 'PrivMonHealthResponse' })
 export type PrivMonHealthResponse = z.infer<typeof PrivMonHealthResponse>
+
+export { Security_Entity_Analytics_API_PrivilegeMonitoringEngineStatus } from './schemas/security.js'

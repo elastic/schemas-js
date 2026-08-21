@@ -9,36 +9,8 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
-/* eslint-disable @typescript-eslint/no-redeclare */
-import { z } from 'zod'
-
-export const Security_Osquery_API_ExportResultRow = z.record(z.string(), z.unknown()).meta({ id: 'Security_Osquery_API_ExportResultRow' })
-export type Security_Osquery_API_ExportResultRow = z.infer<typeof Security_Osquery_API_ExportResultRow>
-
-export const Security_Osquery_API_ExportFormat = z.enum(['ndjson', 'json', 'csv']).meta({ id: 'Security_Osquery_API_ExportFormat' })
-export type Security_Osquery_API_ExportFormat = z.infer<typeof Security_Osquery_API_ExportFormat>
-
-export const Security_Osquery_API_ExportRequestBody = z.object({
-  agentIds: z.array(z.string()).nullable().optional(),
-  esFilters: z.array(z.record(z.string(), z.unknown())).nullable().optional(),
-  kuery: z.string().nullable().optional()
-}).nullable().meta({ id: 'Security_Osquery_API_ExportRequestBody' })
-export type Security_Osquery_API_ExportRequestBody = z.infer<typeof Security_Osquery_API_ExportRequestBody>
-
-export const Security_Osquery_API_ExportMetadata = z.object({
-  action_id: z.string(),
-  csv_columns: z.array(z.string()).nullable().optional(),
-  execution_count: z.number().nullable().optional(),
-  exported_by: z.string(),
-  format: Security_Osquery_API_ExportFormat,
-  query: z.string().nullable().optional(),
-  timestamp: z.string(),
-  total_results: z.number().nullable().optional()
-}).meta({ id: 'Security_Osquery_API_ExportMetadata' })
-export type Security_Osquery_API_ExportMetadata = z.infer<typeof Security_Osquery_API_ExportMetadata>
-
-export const Security_Osquery_API_ExportJsonResponse = z.object({
-  _meta: Security_Osquery_API_ExportMetadata,
-  results: z.array(Security_Osquery_API_ExportResultRow)
-}).meta({ id: 'Security_Osquery_API_ExportJsonResponse' })
-export type Security_Osquery_API_ExportJsonResponse = z.infer<typeof Security_Osquery_API_ExportJsonResponse>
+export { Security_Osquery_API_ExportJsonResponse } from './schemas/security.js'
+export { Security_Osquery_API_ExportResultRow } from './schemas/security.js'
+export { Security_Osquery_API_ExportMetadata } from './schemas/security.js'
+export { Security_Osquery_API_ExportFormat } from './schemas/security.js'
+export { Security_Osquery_API_ExportRequestBody } from './schemas/security.js'

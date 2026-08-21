@@ -3,25 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
+import { Id } from './_types.js'
 
 /**
  * Clear trained model deployment cache.
@@ -32,8 +17,7 @@ export type RequestBase = z.infer<typeof RequestBase>
  * Calling this API clears the caches without restarting the deployment.
  */
 export const MlClearTrainedModelDeploymentCacheRequest = z.object({
-  ...RequestBase.shape,
-  model_id: Id.describe('The unique identifier of the trained model.').meta({ found_in: 'path' })
+  model_id: z.lazy(() => Id).describe('The unique identifier of the trained model.').meta({ found_in: 'path' })
 }).meta({ id: 'MlClearTrainedModelDeploymentCacheRequest' })
 export type MlClearTrainedModelDeploymentCacheRequest = z.infer<typeof MlClearTrainedModelDeploymentCacheRequest>
 

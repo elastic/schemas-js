@@ -11,47 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Kibana_HTTP_APIs_FilterCondition = z.union([z.object({
-  contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
-  endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
-  eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
-  field: z.string(),
-  gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
-  gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
-  includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
-  lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
-  lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
-  neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
-  range: z.object({
-    gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
-    gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
-    lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
-    lte: z.union([z.string(), z.number(), z.boolean()]).optional()
-  }).optional(),
-  startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
-}), z.object({
-  exists: z.boolean().optional(),
-  field: z.string()
-})]).meta({ id: 'Kibana_HTTP_APIs_FilterCondition' })
-export type Kibana_HTTP_APIs_FilterCondition = z.infer<typeof Kibana_HTTP_APIs_FilterCondition>
-
-export const Kibana_HTTP_APIs_Condition: z.ZodTypeAny = z.union([Kibana_HTTP_APIs_FilterCondition, z.object({
-  and: z.array(z.lazy(() => Kibana_HTTP_APIs_Condition))
-}), z.object({
-  or: z.array(z.lazy(() => Kibana_HTTP_APIs_Condition))
-}), z.object({
-  not: z.lazy(() => Kibana_HTTP_APIs_Condition)
-}), z.object({
-  never: z.object({
-
-  })
-}), z.object({
-  always: z.object({
-
-  })
-})]).meta({ id: 'Kibana_HTTP_APIs_Condition' })
-export type Kibana_HTTP_APIs_Condition = z.infer<typeof Kibana_HTTP_APIs_Condition>
+import { Kibana_HTTP_APIs_Condition } from './schemas/kibana.js'
 
 export const PostStreamsNameForkRequest = z.object({
   draft: z.boolean().optional(),
@@ -62,3 +22,6 @@ export const PostStreamsNameForkRequest = z.object({
   where: z.lazy(() => Kibana_HTTP_APIs_Condition)
 }).meta({ id: 'PostStreamsNameForkRequest' })
 export type PostStreamsNameForkRequest = z.infer<typeof PostStreamsNameForkRequest>
+
+export { Kibana_HTTP_APIs_Condition } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_FilterCondition } from './schemas/kibana.js'

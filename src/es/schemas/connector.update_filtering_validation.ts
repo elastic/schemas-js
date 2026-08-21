@@ -3,31 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
-
-export const Result = z.enum(['created', 'updated', 'deleted', 'not_found', 'noop']).meta({ id: 'Result' })
-export type Result = z.infer<typeof Result>
+import { Id, Result } from './_types.js'
 
 export const ConnectorFilteringValidation = z.object({
-  ids: z.array(Id),
+  ids: z.array(z.lazy(() => Id)),
   messages: z.array(z.string())
 }).meta({ id: 'ConnectorFilteringValidation' })
 export type ConnectorFilteringValidation = z.infer<typeof ConnectorFilteringValidation>
@@ -47,13 +29,12 @@ export type ConnectorFilteringRulesValidation = z.infer<typeof ConnectorFilterin
  * Update the draft filtering validation info for a connector.
  */
 export const ConnectorUpdateFilteringValidationRequest = z.object({
-  ...RequestBase.shape,
-  connector_id: Id.describe('The unique identifier of the connector to be updated').meta({ found_in: 'path' }),
+  connector_id: z.lazy(() => Id).describe('The unique identifier of the connector to be updated').meta({ found_in: 'path' }),
   validation: ConnectorFilteringRulesValidation.meta({ found_in: 'body' })
 }).meta({ id: 'ConnectorUpdateFilteringValidationRequest' })
 export type ConnectorUpdateFilteringValidationRequest = z.infer<typeof ConnectorUpdateFilteringValidationRequest>
 
 export const ConnectorUpdateFilteringValidationResponse = z.object({
-  result: Result
+  result: z.lazy(() => Result)
 }).meta({ id: 'ConnectorUpdateFilteringValidationResponse' })
 export type ConnectorUpdateFilteringValidationResponse = z.infer<typeof ConnectorUpdateFilteringValidationResponse>

@@ -3,43 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-/**
- * A duration. Units can be `nanos`, `micros`, `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours) and
- * `d` (days). Also accepts "0" without a unit and "-1" to indicate an unspecified value.
- */
-export const Duration = z.union([z.string(), z.literal(-1), z.literal(0)]).meta({ id: 'Duration' })
-export type Duration = z.infer<typeof Duration>
-
-export const Name = z.string().meta({ id: 'Name' })
-export type Name = z.infer<typeof Name>
-
-export const Names = z.union([Name, z.array(Name)]).meta({ id: 'Names' })
-export type Names = z.infer<typeof Names>
-
-export const NodeId = z.string().meta({ id: 'NodeId' })
-export type NodeId = z.infer<typeof NodeId>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
-
-export const CatCatRequestBase = z.object({
-  ...RequestBase.shape
-}).meta({ id: 'CatCatRequestBase' })
-export type CatCatRequestBase = z.infer<typeof CatCatRequestBase>
+import { Duration, Names, NodeId } from './_types.js'
 
 export const CatCatThreadPoolColumn = z.union([z.enum(['active', 'a', 'completed', 'c', 'core', 'cr', 'ephemeral_id', 'eid', 'host', 'h', 'ip', 'i', 'keep_alive', 'k', 'largest', 'l', 'max', 'mx', 'name', 'node_id', 'id', 'node_name', 'pid', 'p', 'pool_size', 'psz', 'port', 'po', 'queue', 'q', 'queue_size', 'qs', 'rejected', 'r', 'size', 'sz', 'type', 't']), z.string()]).meta({ id: 'CatCatThreadPoolColumn' })
 export type CatCatThreadPoolColumn = z.infer<typeof CatCatThreadPoolColumn>
@@ -55,20 +22,19 @@ export type CatCatThreadPoolColumns = z.infer<typeof CatCatThreadPoolColumns>
  * IMPORTANT: cat APIs are only intended for human consumption using the command line or Kibana console. They are not intended for use by applications. For application consumption, use the nodes info API.
  */
 export const CatThreadPoolRequest = z.object({
-  ...CatCatRequestBase.shape,
-  thread_pool_patterns: Names.describe('A comma-separated list of thread pool names used to limit the request. Accepts wildcard expressions.').optional().meta({ found_in: 'path' }),
+  thread_pool_patterns: z.lazy(() => Names).describe('A comma-separated list of thread pool names used to limit the request. Accepts wildcard expressions.').optional().meta({ found_in: 'path' }),
   h: CatCatThreadPoolColumns.describe('List of columns to appear in the response. Supports simple wildcards.').optional().meta({ found_in: 'query' }),
-  s: Names.describe('A comma-separated list of column names or aliases that determines the sort order. Sorting defaults to ascending and can be changed by setting `:asc` or `:desc` as a suffix to the column name.').optional().meta({ found_in: 'query' }),
+  s: z.lazy(() => Names).describe('A comma-separated list of column names or aliases that determines the sort order. Sorting defaults to ascending and can be changed by setting `:asc` or `:desc` as a suffix to the column name.').optional().meta({ found_in: 'query' }),
   local: z.boolean().describe('If `true`, the request computes the list of selected nodes from the local cluster state. If `false` the list of selected nodes are computed from the cluster state of the master node. In both cases the coordinating node will send requests for further information to each selected node.').optional().meta({ found_in: 'query' }),
-  master_timeout: Duration.describe('The period to wait for a connection to the master node.').optional().meta({ found_in: 'query' })
+  master_timeout: z.lazy(() => Duration).describe('The period to wait for a connection to the master node.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'CatThreadPoolRequest' })
 export type CatThreadPoolRequest = z.infer<typeof CatThreadPoolRequest>
 
 export const CatThreadPoolThreadPoolRecord = z.object({
   node_name: z.string().describe('The node name.').optional(),
   nn: z.string().describe('The node name.').optional(),
-  node_id: NodeId.describe('The persistent node identifier.').optional(),
-  id: NodeId.describe('The persistent node identifier.').optional(),
+  node_id: z.lazy(() => NodeId).describe('The persistent node identifier.').optional(),
+  id: z.lazy(() => NodeId).describe('The persistent node identifier.').optional(),
   ephemeral_node_id: z.string().describe('The ephemeral node identifier.').optional(),
   eid: z.string().describe('The ephemeral node identifier.').optional(),
   pid: z.string().describe('The process identifier.').optional(),

@@ -3,43 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-/**
- * A `null` value that is to be interpreted as an actual value, unless other uses of `null` that are equivalent
- * to a missing value. It is used for exemple in settings, where using the `NullValue` for a setting will reset
- * it to its default value.
- */
-export const SpecUtilsNullValue = z.null().meta({ id: 'SpecUtilsNullValue' })
-export type SpecUtilsNullValue = z.infer<typeof SpecUtilsNullValue>
-
-/**
- * `WithNullValue<T>` allows for explicit null assignments in contexts where `null` should be interpreted as an
- * actual value.
- */
-export const SpecUtilsWithNullValue = z.union([z.any(), SpecUtilsNullValue]).meta({ id: 'SpecUtilsWithNullValue' })
-export type SpecUtilsWithNullValue = z.infer<typeof SpecUtilsWithNullValue>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
-
-export const Result = z.enum(['created', 'updated', 'deleted', 'not_found', 'noop']).meta({ id: 'Result' })
-export type Result = z.infer<typeof Result>
+import { SpecUtilsWithNullValue } from './_spec_utils.js'
+import { Id, Result } from './_types.js'
 
 /**
  * Update the connector error field.
@@ -49,13 +17,12 @@ export type Result = z.infer<typeof Result>
  * Otherwise, if the error is reset to null, the connector status is updated to connected.
  */
 export const ConnectorUpdateErrorRequest = z.object({
-  ...RequestBase.shape,
-  connector_id: Id.describe('The unique identifier of the connector to be updated').meta({ found_in: 'path' }),
-  error: SpecUtilsWithNullValue.meta({ found_in: 'body' })
+  connector_id: z.lazy(() => Id).describe('The unique identifier of the connector to be updated').meta({ found_in: 'path' }),
+  error: z.lazy(() => SpecUtilsWithNullValue).meta({ found_in: 'body' })
 }).meta({ id: 'ConnectorUpdateErrorRequest' })
 export type ConnectorUpdateErrorRequest = z.infer<typeof ConnectorUpdateErrorRequest>
 
 export const ConnectorUpdateErrorResponse = z.object({
-  result: Result
+  result: z.lazy(() => Result)
 }).meta({ id: 'ConnectorUpdateErrorResponse' })
 export type ConnectorUpdateErrorResponse = z.infer<typeof ConnectorUpdateErrorResponse>

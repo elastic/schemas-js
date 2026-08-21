@@ -3,46 +3,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const IndexName = z.string().meta({ id: 'IndexName' })
-export type IndexName = z.infer<typeof IndexName>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
-
-export const Result = z.enum(['created', 'updated', 'deleted', 'not_found', 'noop']).meta({ id: 'Result' })
-export type Result = z.infer<typeof Result>
-
-export const integer = z.number().meta({ id: 'integer' })
-export type integer = z.infer<typeof integer>
+import { Id, IndexName, Result, integer } from './_types.js'
 
 export const QueryDslPinnedDoc = z.object({
-  _id: Id.describe('The unique document ID.'),
-  _index: IndexName.describe('The index that contains the document.').optional()
+  _id: z.lazy(() => Id).describe('The unique document ID.'),
+  _index: z.lazy(() => IndexName).describe('The index that contains the document.').optional()
 }).meta({ id: 'QueryDslPinnedDoc' })
 export type QueryDslPinnedDoc = z.infer<typeof QueryDslPinnedDoc>
 
-export const QueryRulesQueryRuleActions = z.object({
-  ids: z.array(Id).describe('The unique document IDs of the documents to apply the rule to. Only one of `ids` or `docs` may be specified and at least one must be specified.').optional(),
-  docs: z.array(QueryDslPinnedDoc).describe('The documents to apply the rule to. Only one of `ids` or `docs` may be specified and at least one must be specified. There is a maximum value of 100 documents in a rule. You can specify the following attributes for each document: * `_index`: The index of the document to pin. * `_id`: The unique document ID.').optional()
-}).meta({ id: 'QueryRulesQueryRuleActions' })
-export type QueryRulesQueryRuleActions = z.infer<typeof QueryRulesQueryRuleActions>
+export const QueryRulesQueryRuleType = z.enum(['pinned', 'exclude']).meta({ id: 'QueryRulesQueryRuleType' })
+export type QueryRulesQueryRuleType = z.infer<typeof QueryRulesQueryRuleType>
 
 export const QueryRulesQueryRuleCriteriaType = z.enum(['global', 'exact', 'fuzzy', 'prefix', 'suffix', 'contains', 'lt', 'lte', 'gt', 'gte', 'always']).meta({ id: 'QueryRulesQueryRuleCriteriaType' })
 export type QueryRulesQueryRuleCriteriaType = z.infer<typeof QueryRulesQueryRuleCriteriaType>
@@ -54,8 +27,11 @@ export const QueryRulesQueryRuleCriteria = z.object({
 }).meta({ id: 'QueryRulesQueryRuleCriteria' })
 export type QueryRulesQueryRuleCriteria = z.infer<typeof QueryRulesQueryRuleCriteria>
 
-export const QueryRulesQueryRuleType = z.enum(['pinned', 'exclude']).meta({ id: 'QueryRulesQueryRuleType' })
-export type QueryRulesQueryRuleType = z.infer<typeof QueryRulesQueryRuleType>
+export const QueryRulesQueryRuleActions = z.object({
+  ids: z.array(z.lazy(() => Id)).describe('The unique document IDs of the documents to apply the rule to. Only one of `ids` or `docs` may be specified and at least one must be specified.').optional(),
+  docs: z.array(z.lazy(() => QueryDslPinnedDoc)).describe('The documents to apply the rule to. Only one of `ids` or `docs` may be specified and at least one must be specified. There is a maximum value of 100 documents in a rule. You can specify the following attributes for each document: * `_index`: The index of the document to pin. * `_id`: The unique document ID.').optional()
+}).meta({ id: 'QueryRulesQueryRuleActions' })
+export type QueryRulesQueryRuleActions = z.infer<typeof QueryRulesQueryRuleActions>
 
 /**
  * Create or update a query rule.
@@ -68,17 +44,16 @@ export type QueryRulesQueryRuleType = z.infer<typeof QueryRulesQueryRuleType>
  * If multiple matching rules pin more than 100 documents, only the first 100 documents are pinned in the order they are specified in the ruleset.
  */
 export const QueryRulesPutRuleRequest = z.object({
-  ...RequestBase.shape,
-  ruleset_id: Id.describe('The unique identifier of the query ruleset containing the rule to be created or updated.').meta({ found_in: 'path' }),
-  rule_id: Id.describe('The unique identifier of the query rule within the specified ruleset to be created or updated.').meta({ found_in: 'path' }),
+  ruleset_id: z.lazy(() => Id).describe('The unique identifier of the query ruleset containing the rule to be created or updated.').meta({ found_in: 'path' }),
+  rule_id: z.lazy(() => Id).describe('The unique identifier of the query rule within the specified ruleset to be created or updated.').meta({ found_in: 'path' }),
   type: QueryRulesQueryRuleType.describe('The type of rule.').meta({ found_in: 'body' }),
   criteria: z.union([QueryRulesQueryRuleCriteria, z.array(QueryRulesQueryRuleCriteria)]).describe('The criteria that must be met for the rule to be applied. If multiple criteria are specified for a rule, all criteria must be met for the rule to be applied.').meta({ found_in: 'body' }),
   actions: QueryRulesQueryRuleActions.describe('The actions to take when the rule is matched. The format of this action depends on the rule type.').meta({ found_in: 'body' }),
-  priority: integer.optional().meta({ found_in: 'body' })
+  priority: z.lazy(() => integer).optional().meta({ found_in: 'body' })
 }).meta({ id: 'QueryRulesPutRuleRequest' })
 export type QueryRulesPutRuleRequest = z.infer<typeof QueryRulesPutRuleRequest>
 
 export const QueryRulesPutRuleResponse = z.object({
-  result: Result
+  result: z.lazy(() => Result)
 }).meta({ id: 'QueryRulesPutRuleResponse' })
 export type QueryRulesPutRuleResponse = z.infer<typeof QueryRulesPutRuleResponse>

@@ -11,16 +11,10 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Kibana_HTTP_APIs_action_message_response = z.object({
-  message: z.string()
-}).meta({ id: 'Kibana_HTTP_APIs_action_message_response' })
-export type Kibana_HTTP_APIs_action_message_response = z.infer<typeof Kibana_HTTP_APIs_action_message_response>
-
-export const Kibana_HTTP_APIs_action_id_response = z.object({
-  actionId: z.string()
-}).meta({ id: 'Kibana_HTTP_APIs_action_id_response' })
-export type Kibana_HTTP_APIs_action_id_response = z.infer<typeof Kibana_HTTP_APIs_action_id_response>
+import { Kibana_HTTP_APIs_action_id_response, Kibana_HTTP_APIs_action_message_response } from './schemas/kibana.js'
 
 export const PostFleetAgentsAgentidRollbackResponse = z.union([Kibana_HTTP_APIs_action_id_response, Kibana_HTTP_APIs_action_message_response]).meta({ id: 'PostFleetAgentsAgentidRollbackResponse' })
 export type PostFleetAgentsAgentidRollbackResponse = z.infer<typeof PostFleetAgentsAgentidRollbackResponse>
+
+export { Kibana_HTTP_APIs_action_message_response } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_action_id_response } from './schemas/kibana.js'

@@ -12,10 +12,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const TrafficFilterSettings = z.object({
-  rulesets: z.array(z.string())
-}).meta({ id: 'TrafficFilterSettings' })
-export type TrafficFilterSettings = z.infer<typeof TrafficFilterSettings>
+import { TrafficFilterSettings } from './definitions/traffic.js'
 
 export const GetTrafficFilterDeploymentRulesetAssociationsResponse = TrafficFilterSettings
 export type GetTrafficFilterDeploymentRulesetAssociationsResponse = TrafficFilterSettings

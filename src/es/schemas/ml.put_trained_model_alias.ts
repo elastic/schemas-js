@@ -3,33 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const AcknowledgedResponseBase = z.object({
-  acknowledged: z.boolean().describe('For a successful response, this value is always true. On failure, an exception is returned instead.')
-}).meta({ id: 'AcknowledgedResponseBase' })
-export type AcknowledgedResponseBase = z.infer<typeof AcknowledgedResponseBase>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const Name = z.string().meta({ id: 'Name' })
-export type Name = z.infer<typeof Name>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
+import { AcknowledgedResponseBase, Id, Name } from './_types.js'
 
 /**
  * Create or update a trained model alias.
@@ -52,12 +29,11 @@ export type RequestBase = z.infer<typeof RequestBase>
  * returns a warning.
  */
 export const MlPutTrainedModelAliasRequest = z.object({
-  ...RequestBase.shape,
-  model_alias: Name.describe('The alias to create or update. This value cannot end in numbers.').meta({ found_in: 'path' }),
-  model_id: Id.describe('The identifier for the trained model that the alias refers to.').meta({ found_in: 'path' }),
+  model_alias: z.lazy(() => Name).describe('The alias to create or update. This value cannot end in numbers.').meta({ found_in: 'path' }),
+  model_id: z.lazy(() => Id).describe('The identifier for the trained model that the alias refers to.').meta({ found_in: 'path' }),
   reassign: z.boolean().describe('Specifies whether the alias gets reassigned to the specified trained model if it is already assigned to a different model. If the alias is already assigned and this parameter is false, the API returns an error.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'MlPutTrainedModelAliasRequest' })
 export type MlPutTrainedModelAliasRequest = z.infer<typeof MlPutTrainedModelAliasRequest>
 
-export const MlPutTrainedModelAliasResponse = AcknowledgedResponseBase.meta({ id: 'MlPutTrainedModelAliasResponse' })
+export const MlPutTrainedModelAliasResponse = z.lazy(() => AcknowledgedResponseBase).meta({ id: 'MlPutTrainedModelAliasResponse' })
 export type MlPutTrainedModelAliasResponse = z.infer<typeof MlPutTrainedModelAliasResponse>

@@ -11,51 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-
-export const Security_Endpoint_Management_API_Command = z.enum(['isolate', 'unisolate', 'kill-process', 'suspend-process', 'running-processes', 'get-file', 'execute', 'upload', 'scan', 'runscript', 'cancel', 'memory-dump']).meta({ id: 'Security_Endpoint_Management_API_Command' })
-export type Security_Endpoint_Management_API_Command = z.infer<typeof Security_Endpoint_Management_API_Command>
-
-export const Security_Endpoint_Management_API_AgentTypes = z.enum(['endpoint', 'sentinel_one', 'crowdstrike', 'microsoft_defender_endpoint']).meta({ id: 'Security_Endpoint_Management_API_AgentTypes' })
-export type Security_Endpoint_Management_API_AgentTypes = z.infer<typeof Security_Endpoint_Management_API_AgentTypes>
-
-export const Security_Endpoint_Management_API_Parameters = z.object({}).meta({ id: 'Security_Endpoint_Management_API_Parameters' })
-export type Security_Endpoint_Management_API_Parameters = z.infer<typeof Security_Endpoint_Management_API_Parameters>
-
-export const Security_Endpoint_Management_API_EndpointIds = z.array(z.string()).meta({ id: 'Security_Endpoint_Management_API_EndpointIds' })
-export type Security_Endpoint_Management_API_EndpointIds = z.infer<typeof Security_Endpoint_Management_API_EndpointIds>
-
-export const Security_Endpoint_Management_API_Comment = z.string().meta({ id: 'Security_Endpoint_Management_API_Comment' })
-export type Security_Endpoint_Management_API_Comment = z.infer<typeof Security_Endpoint_Management_API_Comment>
-
-export const Security_Endpoint_Management_API_ResponseActionDetails = z.object({
-  agents: z.array(z.string()).optional(),
-  agentState: z.record(z.string(), z.object({
-    completedAt: z.string().optional(),
-    isCompleted: z.boolean().optional(),
-    wasCanceled: z.boolean().optional(),
-    wasSuccessful: z.boolean().optional()
-  })).optional(),
-  agentType: Security_Endpoint_Management_API_AgentTypes.optional(),
-  command: Security_Endpoint_Management_API_Command,
-  completedAt: z.string().optional(),
-  createdBy: z.string().optional(),
-  hosts: z.record(z.string(), z.object({
-    name: z.string().optional()
-  })).optional(),
-  id: z.string().optional(),
-  isComplete: z.boolean().optional(),
-  isExpired: z.boolean().optional(),
-  outputs: z.record(z.string(), z.object({
-    content: z.union([z.object({}), z.string()]),
-    type: z.enum(['json', 'text'])
-  })).optional(),
-  parameters: z.object({}).optional(),
-  startedAt: z.string().optional(),
-  status: z.string().optional(),
-  wasCanceled: z.boolean().optional(),
-  wasSuccessful: z.boolean().optional()
-}).meta({ id: 'Security_Endpoint_Management_API_ResponseActionDetails' })
-export type Security_Endpoint_Management_API_ResponseActionDetails = z.infer<typeof Security_Endpoint_Management_API_ResponseActionDetails>
+import { Security_Endpoint_Management_API_AgentTypes, Security_Endpoint_Management_API_Comment, Security_Endpoint_Management_API_EndpointIds, Security_Endpoint_Management_API_Parameters } from './schemas/security.js'
 
 export const Security_Endpoint_Management_API_ExecuteRouteRequestBody = z.object({
   agent_type: Security_Endpoint_Management_API_AgentTypes.optional(),
@@ -72,7 +28,10 @@ export const Security_Endpoint_Management_API_ExecuteRouteRequestBody = z.object
 })).meta({ id: 'Security_Endpoint_Management_API_ExecuteRouteRequestBody' })
 export type Security_Endpoint_Management_API_ExecuteRouteRequestBody = z.infer<typeof Security_Endpoint_Management_API_ExecuteRouteRequestBody>
 
-export const Security_Endpoint_Management_API_ResponseActionCreateSuccessResponse = z.object({
-  data: Security_Endpoint_Management_API_ResponseActionDetails.optional()
-}).meta({ id: 'Security_Endpoint_Management_API_ResponseActionCreateSuccessResponse' })
-export type Security_Endpoint_Management_API_ResponseActionCreateSuccessResponse = z.infer<typeof Security_Endpoint_Management_API_ResponseActionCreateSuccessResponse>
+export { Security_Endpoint_Management_API_ResponseActionCreateSuccessResponse } from './schemas/security.js'
+export { Security_Endpoint_Management_API_ResponseActionDetails } from './schemas/security.js'
+export { Security_Endpoint_Management_API_Command } from './schemas/security.js'
+export { Security_Endpoint_Management_API_AgentTypes } from './schemas/security.js'
+export { Security_Endpoint_Management_API_Parameters } from './schemas/security.js'
+export { Security_Endpoint_Management_API_EndpointIds } from './schemas/security.js'
+export { Security_Endpoint_Management_API_Comment } from './schemas/security.js'

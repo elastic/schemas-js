@@ -11,196 +11,20 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
+import { Kibana_HTTP_APIs_output_response_elasticsearch, Kibana_HTTP_APIs_output_response_kafka, Kibana_HTTP_APIs_output_response_logstash, Kibana_HTTP_APIs_output_response_remote_elasticsearch, Kibana_HTTP_APIs_output_shipper, Kibana_HTTP_APIs_output_ssl } from './schemas/kibana.js'
 
-export const Kibana_HTTP_APIs_output_response_ssl = z.object({
-  certificate: z.string().optional(),
-  certificate_authorities: z.array(z.string()).optional(),
-  key: z.string().optional(),
-  verification_mode: z.enum(['full', 'none', 'certificate', 'strict']).optional()
-}).passthrough().meta({ id: 'Kibana_HTTP_APIs_output_response_ssl' })
-export type Kibana_HTTP_APIs_output_response_ssl = z.infer<typeof Kibana_HTTP_APIs_output_response_ssl>
-
-export const Kibana_HTTP_APIs_output_response_shipper = z.object({
-  compression_level: z.number().nullable().optional(),
-  disk_queue_compression_enabled: z.boolean().nullable().optional(),
-  disk_queue_enabled: z.boolean().nullable().optional(),
-  disk_queue_encryption_enabled: z.boolean().nullable().optional(),
-  disk_queue_max_size: z.number().nullable().optional(),
-  disk_queue_path: z.string().nullable().optional(),
-  loadbalance: z.boolean().nullable().optional(),
-  max_batch_bytes: z.number().nullable().optional(),
-  mem_queue_events: z.number().nullable().optional(),
-  queue_flush_timeout: z.number().nullable().optional()
-}).passthrough().meta({ id: 'Kibana_HTTP_APIs_output_response_shipper' })
-export type Kibana_HTTP_APIs_output_response_shipper = z.infer<typeof Kibana_HTTP_APIs_output_response_shipper>
-
-export const Kibana_HTTP_APIs_output_ssl = z.object({
-  certificate: z.string().optional(),
-  certificate_authorities: z.array(z.string()).optional(),
-  key: z.string().optional(),
-  verification_mode: z.enum(['full', 'none', 'certificate', 'strict']).optional()
-}).meta({ id: 'Kibana_HTTP_APIs_output_ssl' })
-export type Kibana_HTTP_APIs_output_ssl = z.infer<typeof Kibana_HTTP_APIs_output_ssl>
-
-export const Kibana_HTTP_APIs_output_shipper = z.object({
-  compression_level: z.number().nullable().optional(),
-  disk_queue_compression_enabled: z.boolean().nullable().optional(),
-  disk_queue_enabled: z.boolean().nullable().optional(),
-  disk_queue_encryption_enabled: z.boolean().nullable().optional(),
-  disk_queue_max_size: z.number().nullable().optional(),
-  disk_queue_path: z.string().nullable().optional(),
-  loadbalance: z.boolean().nullable().optional(),
-  max_batch_bytes: z.number().nullable().optional(),
-  mem_queue_events: z.number().nullable().optional(),
-  queue_flush_timeout: z.number().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_output_shipper' })
-export type Kibana_HTTP_APIs_output_shipper = z.infer<typeof Kibana_HTTP_APIs_output_shipper>
-
-export const Kibana_HTTP_APIs_output_response_kafka = z.object({
+export const Kibana_HTTP_APIs_update_output_elasticsearch = z.object({
   allow_edit: z.array(z.string()).optional(),
-  auth_type: z.enum(['none', 'user_pass', 'ssl', 'kerberos']),
-  broker_timeout: z.number().optional(),
   ca_sha256: z.string().nullable().optional(),
   ca_trusted_fingerprint: z.string().nullable().optional(),
-  client_id: z.string().optional(),
-  compression: z.enum(['gzip', 'snappy', 'lz4', 'none']).optional(),
-  compression_level: z.number().nullable().optional(),
   config_yaml: z.string().nullable().optional(),
-  connection_type: z.enum(['plaintext', 'encryption']).optional(),
-  hash: z.object({
-    hash: z.string().optional(),
-    random: z.boolean().optional()
-  }).passthrough().optional(),
-  headers: z.array(z.object({
-    key: z.string(),
-    value: z.string()
-  }).passthrough()).optional(),
-  hosts: z.array(z.string()),
+  hosts: z.array(z.string()).optional(),
   id: z.string().optional(),
   is_default: z.boolean().optional(),
   is_default_monitoring: z.boolean().optional(),
   is_internal: z.boolean().optional(),
   is_preconfigured: z.boolean().optional(),
-  key: z.string().optional(),
-  name: z.string(),
-  otel_disable_beatsauth: z.boolean().nullable().optional(),
-  otel_exporter_config_yaml: z.string().nullable().optional(),
-  partition: z.enum(['random', 'round_robin', 'hash']).optional(),
-  password: z.string().nullable().optional(),
-  proxy_id: z.string().nullable().optional(),
-  random: z.object({
-    group_events: z.number().optional()
-  }).passthrough().optional(),
-  required_acks: z.union([z.literal(1), z.literal(0), z.literal(-1)]).optional(),
-  round_robin: z.object({
-    group_events: z.number().optional()
-  }).passthrough().optional(),
-  sasl: z.object({
-    mechanism: z.enum(['PLAIN', 'SCRAM-SHA-256', 'SCRAM-SHA-512']).optional()
-  }).passthrough().nullable().optional(),
-  secrets: z.object({
-    password: z.union([z.object({
-      hash: z.string().optional(),
-      id: z.string()
-    }).passthrough(), z.string()]).optional(),
-    ssl: z.object({
-      key: z.union([z.object({
-        hash: z.string().optional(),
-        id: z.string()
-      }).passthrough(), z.string()])
-    }).passthrough().optional()
-  }).passthrough().optional(),
-  shipper: Kibana_HTTP_APIs_output_response_shipper.nullable().optional(),
-  ssl: Kibana_HTTP_APIs_output_response_ssl.nullable().optional(),
-  timeout: z.number().optional(),
-  topic: z.string().optional(),
-  type: z.enum(['kafka']),
-  username: z.string().nullable().optional(),
-  version: z.string().optional()
-}).passthrough().meta({ id: 'Kibana_HTTP_APIs_output_response_kafka' })
-export type Kibana_HTTP_APIs_output_response_kafka = z.infer<typeof Kibana_HTTP_APIs_output_response_kafka>
-
-export const Kibana_HTTP_APIs_output_response_logstash = z.object({
-  allow_edit: z.array(z.string()).optional(),
-  ca_sha256: z.string().nullable().optional(),
-  ca_trusted_fingerprint: z.string().nullable().optional(),
-  config_yaml: z.string().nullable().optional(),
-  hosts: z.array(z.string()),
-  id: z.string().optional(),
-  is_default: z.boolean().optional(),
-  is_default_monitoring: z.boolean().optional(),
-  is_internal: z.boolean().optional(),
-  is_preconfigured: z.boolean().optional(),
-  name: z.string(),
-  otel_disable_beatsauth: z.boolean().nullable().optional(),
-  otel_exporter_config_yaml: z.string().nullable().optional(),
-  proxy_id: z.string().nullable().optional(),
-  secrets: z.object({
-    ssl: z.object({
-      key: z.union([z.object({
-        hash: z.string().optional(),
-        id: z.string()
-      }).passthrough(), z.string()]).optional()
-    }).passthrough().optional()
-  }).passthrough().optional(),
-  shipper: Kibana_HTTP_APIs_output_response_shipper.nullable().optional(),
-  ssl: Kibana_HTTP_APIs_output_response_ssl.nullable().optional(),
-  type: z.enum(['logstash'])
-}).passthrough().meta({ id: 'Kibana_HTTP_APIs_output_response_logstash' })
-export type Kibana_HTTP_APIs_output_response_logstash = z.infer<typeof Kibana_HTTP_APIs_output_response_logstash>
-
-export const Kibana_HTTP_APIs_output_response_remote_elasticsearch = z.object({
-  allow_edit: z.array(z.string()).optional(),
-  ca_sha256: z.string().nullable().optional(),
-  ca_trusted_fingerprint: z.string().nullable().optional(),
-  config_yaml: z.string().nullable().optional(),
-  hosts: z.array(z.string()),
-  id: z.string().optional(),
-  is_default: z.boolean().optional(),
-  is_default_monitoring: z.boolean().optional(),
-  is_internal: z.boolean().optional(),
-  is_preconfigured: z.boolean().optional(),
-  kibana_api_key: z.string().nullable().optional(),
-  kibana_url: z.string().nullable().optional(),
-  name: z.string(),
-  otel_disable_beatsauth: z.boolean().nullable().optional(),
-  otel_exporter_config_yaml: z.string().nullable().optional(),
-  preset: z.enum(['balanced', 'custom', 'throughput', 'scale', 'latency']).optional(),
-  proxy_id: z.string().nullable().optional(),
-  secrets: z.object({
-    service_token: z.union([z.object({
-      hash: z.string().optional(),
-      id: z.string()
-    }).passthrough(), z.string()]).optional(),
-    ssl: z.object({
-      key: z.union([z.object({
-        hash: z.string().optional(),
-        id: z.string()
-      }).passthrough(), z.string()]).optional()
-    }).passthrough().optional()
-  }).passthrough().optional(),
-  service_token: z.string().nullable().optional(),
-  shipper: Kibana_HTTP_APIs_output_response_shipper.nullable().optional(),
-  ssl: Kibana_HTTP_APIs_output_response_ssl.nullable().optional(),
-  sync_integrations: z.boolean().optional(),
-  sync_uninstalled_integrations: z.boolean().optional(),
-  type: z.enum(['remote_elasticsearch']),
-  write_to_logs_streams: z.boolean().nullable().optional()
-}).passthrough().meta({ id: 'Kibana_HTTP_APIs_output_response_remote_elasticsearch' })
-export type Kibana_HTTP_APIs_output_response_remote_elasticsearch = z.infer<typeof Kibana_HTTP_APIs_output_response_remote_elasticsearch>
-
-export const Kibana_HTTP_APIs_output_response_elasticsearch = z.object({
-  allow_edit: z.array(z.string()).optional(),
-  ca_sha256: z.string().nullable().optional(),
-  ca_trusted_fingerprint: z.string().nullable().optional(),
-  config_yaml: z.string().nullable().optional(),
-  hosts: z.array(z.string()),
-  id: z.string().optional(),
-  is_default: z.boolean().optional(),
-  is_default_monitoring: z.boolean().optional(),
-  is_internal: z.boolean().optional(),
-  is_preconfigured: z.boolean().optional(),
-  name: z.string(),
+  name: z.string().optional(),
   otel_disable_beatsauth: z.boolean().nullable().optional(),
   otel_exporter_config_yaml: z.string().nullable().optional(),
   preset: z.enum(['balanced', 'custom', 'throughput', 'scale', 'latency']).optional(),
@@ -210,15 +34,15 @@ export const Kibana_HTTP_APIs_output_response_elasticsearch = z.object({
       key: z.union([z.object({
         hash: z.string().optional(),
         id: z.string()
-      }).passthrough(), z.string()]).optional()
-    }).passthrough().optional()
-  }).passthrough().optional(),
-  shipper: Kibana_HTTP_APIs_output_response_shipper.nullable().optional(),
-  ssl: Kibana_HTTP_APIs_output_response_ssl.nullable().optional(),
-  type: z.enum(['elasticsearch']),
+      }), z.string()]).optional()
+    }).optional()
+  }).optional(),
+  shipper: Kibana_HTTP_APIs_output_shipper.nullable().optional(),
+  ssl: Kibana_HTTP_APIs_output_ssl.nullable().optional(),
+  type: z.enum(['elasticsearch']).optional(),
   write_to_logs_streams: z.boolean().nullable().optional()
-}).passthrough().meta({ id: 'Kibana_HTTP_APIs_output_response_elasticsearch' })
-export type Kibana_HTTP_APIs_output_response_elasticsearch = z.infer<typeof Kibana_HTTP_APIs_output_response_elasticsearch>
+}).meta({ id: 'Kibana_HTTP_APIs_update_output_elasticsearch' })
+export type Kibana_HTTP_APIs_update_output_elasticsearch = z.infer<typeof Kibana_HTTP_APIs_update_output_elasticsearch>
 
 export const Kibana_HTTP_APIs_update_output_kafka = z.object({
   allow_edit: z.array(z.string()).optional(),
@@ -353,37 +177,6 @@ export const Kibana_HTTP_APIs_update_output_remote_elasticsearch = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_update_output_remote_elasticsearch' })
 export type Kibana_HTTP_APIs_update_output_remote_elasticsearch = z.infer<typeof Kibana_HTTP_APIs_update_output_remote_elasticsearch>
 
-export const Kibana_HTTP_APIs_update_output_elasticsearch = z.object({
-  allow_edit: z.array(z.string()).optional(),
-  ca_sha256: z.string().nullable().optional(),
-  ca_trusted_fingerprint: z.string().nullable().optional(),
-  config_yaml: z.string().nullable().optional(),
-  hosts: z.array(z.string()).optional(),
-  id: z.string().optional(),
-  is_default: z.boolean().optional(),
-  is_default_monitoring: z.boolean().optional(),
-  is_internal: z.boolean().optional(),
-  is_preconfigured: z.boolean().optional(),
-  name: z.string().optional(),
-  otel_disable_beatsauth: z.boolean().nullable().optional(),
-  otel_exporter_config_yaml: z.string().nullable().optional(),
-  preset: z.enum(['balanced', 'custom', 'throughput', 'scale', 'latency']).optional(),
-  proxy_id: z.string().nullable().optional(),
-  secrets: z.object({
-    ssl: z.object({
-      key: z.union([z.object({
-        hash: z.string().optional(),
-        id: z.string()
-      }), z.string()]).optional()
-    }).optional()
-  }).optional(),
-  shipper: Kibana_HTTP_APIs_output_shipper.nullable().optional(),
-  ssl: Kibana_HTTP_APIs_output_ssl.nullable().optional(),
-  type: z.enum(['elasticsearch']).optional(),
-  write_to_logs_streams: z.boolean().nullable().optional()
-}).meta({ id: 'Kibana_HTTP_APIs_update_output_elasticsearch' })
-export type Kibana_HTTP_APIs_update_output_elasticsearch = z.infer<typeof Kibana_HTTP_APIs_update_output_elasticsearch>
-
 export const PutFleetOutputsOutputidRequest = z.union([Kibana_HTTP_APIs_update_output_elasticsearch, Kibana_HTTP_APIs_update_output_remote_elasticsearch, Kibana_HTTP_APIs_update_output_logstash, Kibana_HTTP_APIs_update_output_kafka]).meta({ id: 'PutFleetOutputsOutputidRequest' })
 export type PutFleetOutputsOutputidRequest = z.infer<typeof PutFleetOutputsOutputidRequest>
 
@@ -391,3 +184,12 @@ export const PutFleetOutputsOutputidResponse = z.object({
   item: z.discriminatedUnion('type', [Kibana_HTTP_APIs_output_response_elasticsearch, Kibana_HTTP_APIs_output_response_remote_elasticsearch, Kibana_HTTP_APIs_output_response_logstash, Kibana_HTTP_APIs_output_response_kafka])
 }).meta({ id: 'PutFleetOutputsOutputidResponse' })
 export type PutFleetOutputsOutputidResponse = z.infer<typeof PutFleetOutputsOutputidResponse>
+
+export { Kibana_HTTP_APIs_output_response_kafka } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_output_response_ssl } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_output_response_shipper } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_output_response_logstash } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_output_response_remote_elasticsearch } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_output_response_elasticsearch } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_output_ssl } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_output_shipper } from './schemas/kibana.js'

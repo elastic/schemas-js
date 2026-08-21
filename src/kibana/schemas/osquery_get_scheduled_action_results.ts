@@ -12,6 +12,15 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
+export const Security_Osquery_API_ScheduledActionResultsAggregations = z.object({
+  failed: z.number().optional(),
+  pending: z.number().optional(),
+  successful: z.number().optional(),
+  totalResponded: z.number().optional(),
+  totalRowCount: z.number().optional()
+}).meta({ id: 'Security_Osquery_API_ScheduledActionResultsAggregations' })
+export type Security_Osquery_API_ScheduledActionResultsAggregations = z.infer<typeof Security_Osquery_API_ScheduledActionResultsAggregations>
+
 export const Security_Osquery_API_ScheduledExecutionMetadata = z.object({
   executionCount: z.number().optional(),
   packId: z.string().optional(),
@@ -22,15 +31,6 @@ export const Security_Osquery_API_ScheduledExecutionMetadata = z.object({
   timestamp: z.string().optional()
 }).meta({ id: 'Security_Osquery_API_ScheduledExecutionMetadata' })
 export type Security_Osquery_API_ScheduledExecutionMetadata = z.infer<typeof Security_Osquery_API_ScheduledExecutionMetadata>
-
-export const Security_Osquery_API_ScheduledActionResultsAggregations = z.object({
-  failed: z.number().optional(),
-  pending: z.number().optional(),
-  successful: z.number().optional(),
-  totalResponded: z.number().optional(),
-  totalRowCount: z.number().optional()
-}).meta({ id: 'Security_Osquery_API_ScheduledActionResultsAggregations' })
-export type Security_Osquery_API_ScheduledActionResultsAggregations = z.infer<typeof Security_Osquery_API_ScheduledActionResultsAggregations>
 
 export const Security_Osquery_API_GetScheduledActionResultsResponse = z.object({
   aggregations: Security_Osquery_API_ScheduledActionResultsAggregations.optional(),

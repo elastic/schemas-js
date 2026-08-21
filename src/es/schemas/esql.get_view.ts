@@ -3,25 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// @ts-nocheck
-
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-/**
- * We are still working on this type, it will arrive soon.
- * If it's critical for you, please open an issue.
- * https://github.com/elastic/elasticsearch-specification
- */
-export const TODO = z.record(z.string(), z.any())
-export type TODO = z.infer<typeof TODO>
-
-export const Id = z.string().meta({ id: 'Id' })
-export type Id = z.infer<typeof Id>
-
-export const RequestBase = z.object({
-}).meta({ id: 'RequestBase' })
-export type RequestBase = z.infer<typeof RequestBase>
+import { Id } from './_types.js'
 
 /** A non-materialized ES|QL view. */
 export const EsqlESQLView = z.object({
@@ -37,8 +22,7 @@ export type EsqlESQLView = z.infer<typeof EsqlESQLView>
  * Returns a stored ES|QL view.
  */
 export const EsqlGetViewRequest = z.object({
-  ...RequestBase.shape,
-  name: Id.describe('The comma-separated view names to retrieve.').optional().meta({ found_in: 'path' })
+  name: z.lazy(() => Id).describe('The comma-separated view names to retrieve.').optional().meta({ found_in: 'path' })
 }).meta({ id: 'EsqlGetViewRequest' })
 export type EsqlGetViewRequest = z.infer<typeof EsqlGetViewRequest>
 
