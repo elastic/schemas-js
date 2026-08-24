@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-alerting-v2-rules-id-disable","x-api":{"id":"alerting-v2.post-alerting-v2-rules-id-disable","name":"post-alerting-v2-rules-id-disable","namespace":"alerting-v2"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_alerting_rule_response"}

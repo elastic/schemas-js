@@ -67,7 +67,7 @@ export const Kibana_HTTP_APIs_alerting_composed_rule_query = z.object({
   base: z.string(),
   breach: z.object({
     segment: z.string()
-  }),
+  }).optional(),
   format: z.enum(['composed']),
   recovery: z.object({
     segment: z.string()

@@ -231,6 +231,14 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/delete_alerting_rules_backfill_id.ts') as Record<string, unknown>
       return mod['delete_alerting_rules_backfill_idDefinitions'] as KbApiDefinition[]
     }
+    case 'delete_alerting_v2_action_policies_id': {
+      const mod = await import('./apis/delete_alerting_v2_action_policies_id.ts') as Record<string, unknown>
+      return mod['delete_alerting_v2_action_policies_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_alerting_v2_rules_id': {
+      const mod = await import('./apis/delete_alerting_v2_rules_id.ts') as Record<string, unknown>
+      return mod['delete_alerting_v2_rules_idDefinitions'] as KbApiDefinition[]
+    }
     case 'delete_all_conversations': {
       const mod = await import('./apis/delete_all_conversations.ts') as Record<string, unknown>
       return mod['delete_all_conversationsDefinitions'] as KbApiDefinition[]
@@ -714,6 +722,50 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'get_alerting_rules_find': {
       const mod = await import('./apis/get_alerting_rules_find.ts') as Record<string, unknown>
       return mod['get_alerting_rules_findDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_alerting_v2_action_policies': {
+      const mod = await import('./apis/get_alerting_v2_action_policies.ts') as Record<string, unknown>
+      return mod['get_alerting_v2_action_policiesDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_alerting_v2_action_policies_id': {
+      const mod = await import('./apis/get_alerting_v2_action_policies_id.ts') as Record<string, unknown>
+      return mod['get_alerting_v2_action_policies_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_alerting_v2_action_policies_tags': {
+      const mod = await import('./apis/get_alerting_v2_action_policies_tags.ts') as Record<string, unknown>
+      return mod['get_alerting_v2_action_policies_tagsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_alerting_v2_execution_history_action_policies': {
+      const mod = await import('./apis/get_alerting_v2_execution_history_action_policies.ts') as Record<string, unknown>
+      return mod['get_alerting_v2_execution_history_action_policiesDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_alerting_v2_execution_history_rules': {
+      const mod = await import('./apis/get_alerting_v2_execution_history_rules.ts') as Record<string, unknown>
+      return mod['get_alerting_v2_execution_history_rulesDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_alerting_v2_rules': {
+      const mod = await import('./apis/get_alerting_v2_rules.ts') as Record<string, unknown>
+      return mod['get_alerting_v2_rulesDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_alerting_v2_rules_id': {
+      const mod = await import('./apis/get_alerting_v2_rules_id.ts') as Record<string, unknown>
+      return mod['get_alerting_v2_rules_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_alerting_v2_rules_id_history': {
+      const mod = await import('./apis/get_alerting_v2_rules_id_history.ts') as Record<string, unknown>
+      return mod['get_alerting_v2_rules_id_historyDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_alerting_v2_rules_id_history_eventid': {
+      const mod = await import('./apis/get_alerting_v2_rules_id_history_eventid.ts') as Record<string, unknown>
+      return mod['get_alerting_v2_rules_id_history_eventidDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_alerting_v2_rules_tags': {
+      const mod = await import('./apis/get_alerting_v2_rules_tags.ts') as Record<string, unknown>
+      return mod['get_alerting_v2_rules_tagsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_alerting_v2_suggestions_rule_event_fields': {
+      const mod = await import('./apis/get_alerting_v2_suggestions_rule_event_fields.ts') as Record<string, unknown>
+      return mod['get_alerting_v2_suggestions_rule_event_fieldsDefinitions'] as KbApiDefinition[]
     }
     case 'get_all_data_views_default': {
       const mod = await import('./apis/get_all_data_views_default.ts') as Record<string, unknown>
@@ -1367,6 +1419,14 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/patch_agent_builder_conversations_conversation_id_attachments_attachment_id.ts') as Record<string, unknown>
       return mod['patch_agent_builder_conversations_conversation_id_attachments_attachment_idDefinitions'] as KbApiDefinition[]
     }
+    case 'patch_alerting_v2_action_policies_id': {
+      const mod = await import('./apis/patch_alerting_v2_action_policies_id.ts') as Record<string, unknown>
+      return mod['patch_alerting_v2_action_policies_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'patch_alerting_v2_rules_id': {
+      const mod = await import('./apis/patch_alerting_v2_rules_id.ts') as Record<string, unknown>
+      return mod['patch_alerting_v2_rules_idDefinitions'] as KbApiDefinition[]
+    }
     case 'patch_list': {
       const mod = await import('./apis/patch_list.ts') as Record<string, unknown>
       return mod['patch_listDefinitions'] as KbApiDefinition[]
@@ -1434,6 +1494,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'post_agent_builder_agents_agent_id_consumption': {
       const mod = await import('./apis/post_agent_builder_agents_agent_id_consumption.ts') as Record<string, unknown>
       return mod['post_agent_builder_agents_agent_id_consumptionDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_agent_builder_conversations': {
+      const mod = await import('./apis/post_agent_builder_conversations.ts') as Record<string, unknown>
+      return mod['post_agent_builder_conversationsDefinitions'] as KbApiDefinition[]
     }
     case 'post_agent_builder_conversations_conversation_id_attachments': {
       const mod = await import('./apis/post_agent_builder_conversations_conversation_id_attachments.ts') as Record<string, unknown>
@@ -1522,6 +1586,146 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'post_alerting_rules_backfill_schedule': {
       const mod = await import('./apis/post_alerting_rules_backfill_schedule.ts') as Record<string, unknown>
       return mod['post_alerting_rules_backfill_scheduleDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_action_policies': {
+      const mod = await import('./apis/post_alerting_v2_action_policies.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_action_policiesDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_action_policies_bulk_delete': {
+      const mod = await import('./apis/post_alerting_v2_action_policies_bulk_delete.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_action_policies_bulk_deleteDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_action_policies_bulk_disable': {
+      const mod = await import('./apis/post_alerting_v2_action_policies_bulk_disable.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_action_policies_bulk_disableDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_action_policies_bulk_enable': {
+      const mod = await import('./apis/post_alerting_v2_action_policies_bulk_enable.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_action_policies_bulk_enableDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_action_policies_bulk_snooze': {
+      const mod = await import('./apis/post_alerting_v2_action_policies_bulk_snooze.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_action_policies_bulk_snoozeDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_action_policies_bulk_unsnooze': {
+      const mod = await import('./apis/post_alerting_v2_action_policies_bulk_unsnooze.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_action_policies_bulk_unsnoozeDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_action_policies_bulk_update_api_key': {
+      const mod = await import('./apis/post_alerting_v2_action_policies_bulk_update_api_key.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_action_policies_bulk_update_api_keyDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_action_policies_id_disable': {
+      const mod = await import('./apis/post_alerting_v2_action_policies_id_disable.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_action_policies_id_disableDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_action_policies_id_enable': {
+      const mod = await import('./apis/post_alerting_v2_action_policies_id_enable.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_action_policies_id_enableDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_action_policies_id_snooze': {
+      const mod = await import('./apis/post_alerting_v2_action_policies_id_snooze.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_action_policies_id_snoozeDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_action_policies_id_unsnooze': {
+      const mod = await import('./apis/post_alerting_v2_action_policies_id_unsnooze.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_action_policies_id_unsnoozeDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_action_policies_id_update_api_key': {
+      const mod = await import('./apis/post_alerting_v2_action_policies_id_update_api_key.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_action_policies_id_update_api_keyDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_action_policies_match_for_rule': {
+      const mod = await import('./apis/post_alerting_v2_action_policies_match_for_rule.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_action_policies_match_for_ruleDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_alerts_bulk_action': {
+      const mod = await import('./apis/post_alerting_v2_alerts_bulk_action.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_alerts_bulk_actionDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_alerts_group_hash_ack': {
+      const mod = await import('./apis/post_alerting_v2_alerts_group_hash_ack.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_alerts_group_hash_ackDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_alerts_group_hash_activate': {
+      const mod = await import('./apis/post_alerting_v2_alerts_group_hash_activate.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_alerts_group_hash_activateDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_alerts_group_hash_assign': {
+      const mod = await import('./apis/post_alerting_v2_alerts_group_hash_assign.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_alerts_group_hash_assignDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_alerts_group_hash_deactivate': {
+      const mod = await import('./apis/post_alerting_v2_alerts_group_hash_deactivate.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_alerts_group_hash_deactivateDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_alerts_group_hash_snooze': {
+      const mod = await import('./apis/post_alerting_v2_alerts_group_hash_snooze.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_alerts_group_hash_snoozeDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_alerts_group_hash_tag': {
+      const mod = await import('./apis/post_alerting_v2_alerts_group_hash_tag.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_alerts_group_hash_tagDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_alerts_group_hash_unack': {
+      const mod = await import('./apis/post_alerting_v2_alerts_group_hash_unack.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_alerts_group_hash_unackDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_alerts_group_hash_unsnooze': {
+      const mod = await import('./apis/post_alerting_v2_alerts_group_hash_unsnooze.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_alerts_group_hash_unsnoozeDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_rules': {
+      const mod = await import('./apis/post_alerting_v2_rules.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_rulesDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_rules_bulk_delete': {
+      const mod = await import('./apis/post_alerting_v2_rules_bulk_delete.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_rules_bulk_deleteDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_rules_bulk_disable': {
+      const mod = await import('./apis/post_alerting_v2_rules_bulk_disable.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_rules_bulk_disableDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_rules_bulk_enable': {
+      const mod = await import('./apis/post_alerting_v2_rules_bulk_enable.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_rules_bulk_enableDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_rules_bulk_get': {
+      const mod = await import('./apis/post_alerting_v2_rules_bulk_get.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_rules_bulk_getDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_rules_bulk_update_api_key': {
+      const mod = await import('./apis/post_alerting_v2_rules_bulk_update_api_key.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_rules_bulk_update_api_keyDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_rules_delete_by_query': {
+      const mod = await import('./apis/post_alerting_v2_rules_delete_by_query.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_rules_delete_by_queryDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_rules_disable_by_query': {
+      const mod = await import('./apis/post_alerting_v2_rules_disable_by_query.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_rules_disable_by_queryDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_rules_enable_by_query': {
+      const mod = await import('./apis/post_alerting_v2_rules_enable_by_query.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_rules_enable_by_queryDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_rules_id_disable': {
+      const mod = await import('./apis/post_alerting_v2_rules_id_disable.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_rules_id_disableDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_rules_id_enable': {
+      const mod = await import('./apis/post_alerting_v2_rules_id_enable.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_rules_id_enableDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_rules_id_run': {
+      const mod = await import('./apis/post_alerting_v2_rules_id_run.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_rules_id_runDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_alerting_v2_rules_update_api_key_by_query': {
+      const mod = await import('./apis/post_alerting_v2_rules_update_api_key_by_query.ts') as Record<string, unknown>
+      return mod['post_alerting_v2_rules_update_api_key_by_queryDefinitions'] as KbApiDefinition[]
     }
     case 'post_attack_discovery_bulk': {
       const mod = await import('./apis/post_attack_discovery_bulk.ts') as Record<string, unknown>
@@ -1975,6 +2179,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/put_agent_builder_agents_id_access_control.ts') as Record<string, unknown>
       return mod['put_agent_builder_agents_id_access_controlDefinitions'] as KbApiDefinition[]
     }
+    case 'put_agent_builder_conversations_conversation_id_access_control': {
+      const mod = await import('./apis/put_agent_builder_conversations_conversation_id_access_control.ts') as Record<string, unknown>
+      return mod['put_agent_builder_conversations_conversation_id_access_controlDefinitions'] as KbApiDefinition[]
+    }
     case 'put_agent_builder_conversations_conversation_id_attachments_attachment_id': {
       const mod = await import('./apis/put_agent_builder_conversations_conversation_id_attachments_attachment_id.ts') as Record<string, unknown>
       return mod['put_agent_builder_conversations_conversation_id_attachments_attachment_idDefinitions'] as KbApiDefinition[]
@@ -1994,6 +2202,14 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'put_alerting_rule_id': {
       const mod = await import('./apis/put_alerting_rule_id.ts') as Record<string, unknown>
       return mod['put_alerting_rule_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_alerting_v2_action_policies_id': {
+      const mod = await import('./apis/put_alerting_v2_action_policies_id.ts') as Record<string, unknown>
+      return mod['put_alerting_v2_action_policies_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_alerting_v2_rules_id': {
+      const mod = await import('./apis/put_alerting_v2_rules_id.ts') as Record<string, unknown>
+      return mod['put_alerting_v2_rules_idDefinitions'] as KbApiDefinition[]
     }
     case 'put_fleet_agent_download_sources_sourceid': {
       const mod = await import('./apis/put_fleet_agent_download_sources_sourceid.ts') as Record<string, unknown>

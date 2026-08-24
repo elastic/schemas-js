@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-alerting-v2-alerts-group-hash-snooze","x-api":{"id":"alerting-v2.post-alerting-v2-alerts-group-hash-snooze","name":"post-alerting-v2-alerts-group-hash-snooze","namespace":"alerting-v2"},"type":"object","properties":{}}

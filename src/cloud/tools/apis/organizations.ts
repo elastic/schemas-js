@@ -13,7 +13,6 @@ import type { JsonSchemaObject } from '../../../json-schema.ts'
 import type { CloudApiDefinition } from '../types.ts'
 
 import _get_organization_invitationSchemaRaw from '../../../cloud/json/get_organization_invitation.request.json' with { type: 'json' }
-import _accept_organization_invitationSchemaRaw from '../../../cloud/json/accept_organization_invitation.request.json' with { type: 'json' }
 import _get_organizationSchemaRaw from '../../../cloud/json/get_organization.request.json' with { type: 'json' }
 import _update_organizationSchemaRaw from '../../../cloud/json/update_organization.request.json' with { type: 'json' }
 import _domain_claim_get_domain_claimsSchemaRaw from '../../../cloud/json/domain_claim_get_domain_claims.request.json' with { type: 'json' }
@@ -30,11 +29,13 @@ import _delete_organization_invitationsSchemaRaw from '../../../cloud/json/delet
 import _list_organization_membersSchemaRaw from '../../../cloud/json/list_organization_members.request.json' with { type: 'json' }
 import _delete_organization_membershipsSchemaRaw from '../../../cloud/json/delete_organization_memberships.request.json' with { type: 'json' }
 import _get_role_mappingsSchemaRaw from '../../../cloud/json/get_role_mappings.request.json' with { type: 'json' }
+import _add_role_mappings_individuallySchemaRaw from '../../../cloud/json/add_role_mappings_individually.request.json' with { type: 'json' }
 import _update_role_mappingsSchemaRaw from '../../../cloud/json/update_role_mappings.request.json' with { type: 'json' }
 import _delete_role_mappingsSchemaRaw from '../../../cloud/json/delete_role_mappings.request.json' with { type: 'json' }
+import _delete_role_mappings_individuallySchemaRaw from '../../../cloud/json/delete_role_mappings_individually.request.json' with { type: 'json' }
+import _update_role_mappingSchemaRaw from '../../../cloud/json/update_role_mapping.request.json' with { type: 'json' }
 
 const _get_organization_invitationSchema = _get_organization_invitationSchemaRaw as unknown as JsonSchemaObject
-const _accept_organization_invitationSchema = _accept_organization_invitationSchemaRaw as unknown as JsonSchemaObject
 const _get_organizationSchema = _get_organizationSchemaRaw as unknown as JsonSchemaObject
 const _update_organizationSchema = _update_organizationSchemaRaw as unknown as JsonSchemaObject
 const _domain_claim_get_domain_claimsSchema = _domain_claim_get_domain_claimsSchemaRaw as unknown as JsonSchemaObject
@@ -51,8 +52,11 @@ const _delete_organization_invitationsSchema = _delete_organization_invitationsS
 const _list_organization_membersSchema = _list_organization_membersSchemaRaw as unknown as JsonSchemaObject
 const _delete_organization_membershipsSchema = _delete_organization_membershipsSchemaRaw as unknown as JsonSchemaObject
 const _get_role_mappingsSchema = _get_role_mappingsSchemaRaw as unknown as JsonSchemaObject
+const _add_role_mappings_individuallySchema = _add_role_mappings_individuallySchemaRaw as unknown as JsonSchemaObject
 const _update_role_mappingsSchema = _update_role_mappingsSchemaRaw as unknown as JsonSchemaObject
 const _delete_role_mappingsSchema = _delete_role_mappingsSchemaRaw as unknown as JsonSchemaObject
+const _delete_role_mappings_individuallySchema = _delete_role_mappings_individuallySchemaRaw as unknown as JsonSchemaObject
+const _update_role_mappingSchema = _update_role_mappingSchemaRaw as unknown as JsonSchemaObject
 
 export const organizationsDefinitions: CloudApiDefinition[] = [
   {
@@ -71,15 +75,6 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     path: '/api/v1/organizations/invitations/{invitation_token}',
     destructive: false,
     input: _get_organization_invitationSchema,
-  },
-  {
-    name: 'accept-organization-invitation',
-    namespace: 'organizations',
-    description: 'Accept an organization invitation',
-    method: 'POST',
-    path: '/api/v1/organizations/invitations/{invitation_token}/_accept',
-    destructive: true,
-    input: _accept_organization_invitationSchema,
   },
   {
     name: 'get-organization',
@@ -226,6 +221,15 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     input: _get_role_mappingsSchema,
   },
   {
+    name: 'add-role-mappings-individually',
+    namespace: 'organizations',
+    description: 'Adds role mapping',
+    method: 'POST',
+    path: '/api/v1/organizations/{organization_id}/role_mappings',
+    destructive: true,
+    input: _add_role_mappings_individuallySchema,
+  },
+  {
     name: 'update-role-mappings',
     namespace: 'organizations',
     description: 'Updates role mappings',
@@ -242,5 +246,23 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     path: '/api/v1/organizations/{organization_id}/role_mappings',
     destructive: true,
     input: _delete_role_mappingsSchema,
+  },
+  {
+    name: 'delete-role-mappings-individually',
+    namespace: 'organizations',
+    description: 'Delete role mapping',
+    method: 'DELETE',
+    path: '/api/v1/organizations/{organization_id}/role_mappings/{role_names}',
+    destructive: true,
+    input: _delete_role_mappings_individuallySchema,
+  },
+  {
+    name: 'update-role-mapping',
+    namespace: 'organizations',
+    description: 'Update role mapping',
+    method: 'PUT',
+    path: '/api/v1/organizations/{organization_id}/role_mappings/{role_name}',
+    destructive: true,
+    input: _update_role_mappingSchema,
   },
 ]
