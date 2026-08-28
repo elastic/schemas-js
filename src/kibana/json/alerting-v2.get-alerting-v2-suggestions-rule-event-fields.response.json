@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-alerting-v2-suggestions-rule-event-fields","x-api":{"id":"alerting-v2.get-alerting-v2-suggestions-rule-event-fields","name":"get-alerting-v2-suggestions-rule-event-fields","namespace":"alerting-v2"},"type":"array","items":{"type":"string"}}

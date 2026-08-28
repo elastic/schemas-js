@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-case-comment-default-space","x-api":{"id":"cases.delete-case-comment-default-space","name":"delete-case-comment-default-space","namespace":"cases"},"type":"object","properties":{}}

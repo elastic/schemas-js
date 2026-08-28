@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"update-role-mapping","x-api":{"id":"organizations.update-role-mapping","name":"update-role-mapping","namespace":"organizations"},"$ref":"_defs.json#/$defs/EmptyResponse","$defs":{"UpdateRoleMappingRequest":{"type":"object","properties":{"mapping":{"$ref":"_defs.json#/$defs/RoleMapping"}},"required":["mapping"]}}}

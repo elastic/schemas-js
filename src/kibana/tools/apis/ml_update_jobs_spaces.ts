@@ -9,7 +9,11 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
+import type { JsonSchemaObject } from '../../../json-schema.ts'
+import _inputSchemaRaw from '../../../kibana/json/ml.ml-update-jobs-spaces.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
+
+const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const ml_update_jobs_spacesDefinitions: KbApiDefinition[] = [
   {
@@ -19,5 +23,6 @@ export const ml_update_jobs_spacesDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/ml/saved_objects/update_jobs_spaces',
     destructive: true,
+    input: _inputSchema,
   },
 ]

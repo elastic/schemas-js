@@ -12,6 +12,9 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
+export const PostFleetAgentsActionsActionidCancelRequest = z.record(z.string(), z.unknown()).meta({ id: 'PostFleetAgentsActionsActionidCancelRequest' })
+export type PostFleetAgentsActionsActionidCancelRequest = z.infer<typeof PostFleetAgentsActionsActionidCancelRequest>
+
 export const PostFleetAgentsActionsActionidCancelResponse = z.object({
   item: z.object({
     ack_data: z.unknown().nullable(),

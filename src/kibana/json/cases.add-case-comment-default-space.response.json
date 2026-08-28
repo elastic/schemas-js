@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"add-case-comment-default-space","x-api":{"id":"cases.add-case-comment-default-space","name":"add-case-comment-default-space","namespace":"cases"},"$ref":"./_defs.json#/$defs/Cases_case_response_properties"}
