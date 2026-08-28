@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.1](https://github.com/elastic/schemas-js/compare/v0.7.0...v0.7.1) (2026-08-28)
+
+
+### Bug Fixes
+
+* regenerate API schemas ([#81](https://github.com/elastic/schemas-js/issues/81)) ([1e8e4c2](https://github.com/elastic/schemas-js/commit/1e8e4c229cdb1c80dde592c7f7172e63f9f5fc86))
+
 ## [0.7.0](https://github.com/elastic/schemas-js/compare/v0.6.2...v0.7.0) (2026-08-21)
 
 
