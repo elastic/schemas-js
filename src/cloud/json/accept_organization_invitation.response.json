@@ -1,1 +1,0 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"accept-organization-invitation","x-api":{"id":"organizations.accept-organization-invitation","name":"accept-organization-invitation","namespace":"organizations"},"$ref":"_defs.json#/$defs/EmptyResponse"}

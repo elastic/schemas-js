@@ -12,6 +12,238 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
+export const Cases_add_case_file_request = z.object({
+  file: z.string(),
+  filename: z.string().optional()
+}).meta({ id: 'Cases_add_case_file_request' })
+export type Cases_add_case_file_request = z.infer<typeof Cases_add_case_file_request>
+
+export const Cases_alert_identifiers = z.union([z.string(), z.array(z.string())]).meta({ id: 'Cases_alert_identifiers' })
+export type Cases_alert_identifiers = z.infer<typeof Cases_alert_identifiers>
+
+export const Cases_alert_indices = z.union([z.string(), z.array(z.string())]).meta({ id: 'Cases_alert_indices' })
+export type Cases_alert_indices = z.infer<typeof Cases_alert_indices>
+
+export const Cases_applicable_fields_response = z.object({
+  fields: z.array(z.object({
+    control: z.string(),
+    defaultValue: z.string().optional(),
+    displayOnly: z.boolean(),
+    isGlobal: z.boolean(),
+    key: z.string(),
+    label: z.string(),
+    name: z.string(),
+    options: z.array(z.string()).optional(),
+    type: z.string(),
+    required: z.boolean(),
+    requiredOnClose: z.boolean(),
+    source: z.enum(['global', 'template'])
+  }))
+}).meta({ id: 'Cases_applicable_fields_response' })
+export type Cases_applicable_fields_response = z.infer<typeof Cases_applicable_fields_response>
+
+export const Cases_assignees = z.array(z.object({
+  uid: z.string()
+})).nullable().meta({ id: 'Cases_assignees' })
+export type Cases_assignees = z.infer<typeof Cases_assignees>
+
+export const Cases_case_category = z.string().meta({ id: 'Cases_case_category' })
+export type Cases_case_category = z.infer<typeof Cases_case_category>
+
+export const Cases_case_description = z.string().meta({ id: 'Cases_case_description' })
+export type Cases_case_description = z.infer<typeof Cases_case_description>
+
+export const Cases_case_observable = z.object({
+  createdAt: z.string(),
+  description: z.string().nullable(),
+  id: z.string(),
+  typeKey: z.string(),
+  updatedAt: z.string().nullable(),
+  value: z.string()
+}).meta({ id: 'Cases_case_observable' })
+export type Cases_case_observable = z.infer<typeof Cases_case_observable>
+
+export const Cases_case_response_closed_by_properties = z.object({
+  email: z.string().nullable(),
+  full_name: z.string().nullable(),
+  profile_uid: z.string().optional(),
+  username: z.string().nullable()
+}).nullable().meta({ id: 'Cases_case_response_closed_by_properties' })
+export type Cases_case_response_closed_by_properties = z.infer<typeof Cases_case_response_closed_by_properties>
+
+export const Cases_case_response_created_by_properties = z.object({
+  email: z.string().nullable(),
+  full_name: z.string().nullable(),
+  profile_uid: z.string().optional(),
+  username: z.string().nullable()
+}).meta({ id: 'Cases_case_response_created_by_properties' })
+export type Cases_case_response_created_by_properties = z.infer<typeof Cases_case_response_created_by_properties>
+
+export const Cases_case_response_pushed_by_properties = z.object({
+  email: z.string().nullable(),
+  full_name: z.string().nullable(),
+  profile_uid: z.string().optional(),
+  username: z.string().nullable()
+}).nullable().meta({ id: 'Cases_case_response_pushed_by_properties' })
+export type Cases_case_response_pushed_by_properties = z.infer<typeof Cases_case_response_pushed_by_properties>
+
+export const Cases_case_response_updated_by_properties = z.object({
+  email: z.string().nullable(),
+  full_name: z.string().nullable(),
+  profile_uid: z.string().optional(),
+  username: z.string().nullable()
+}).nullable().meta({ id: 'Cases_case_response_updated_by_properties' })
+export type Cases_case_response_updated_by_properties = z.infer<typeof Cases_case_response_updated_by_properties>
+
+export const Cases_case_severity = z.enum(['critical', 'high', 'low', 'medium']).meta({ id: 'Cases_case_severity' })
+export type Cases_case_severity = z.infer<typeof Cases_case_severity>
+
+export const Cases_case_status = z.enum(['closed', 'in-progress', 'open']).meta({ id: 'Cases_case_status' })
+export type Cases_case_status = z.infer<typeof Cases_case_status>
+
+export const Cases_case_tags = z.array(z.string()).meta({ id: 'Cases_case_tags' })
+export type Cases_case_tags = z.infer<typeof Cases_case_tags>
+
+export const Cases_case_title = z.string().meta({ id: 'Cases_case_title' })
+export type Cases_case_title = z.infer<typeof Cases_case_title>
+
+export const Cases_closure_types = z.enum(['close-by-pushing', 'close-by-user']).meta({ id: 'Cases_closure_types' })
+export type Cases_closure_types = z.infer<typeof Cases_closure_types>
+
+export const Cases_connector_properties_cases_webhook = z.object({
+  fields: z.string().nullable(),
+  id: z.string(),
+  name: z.string(),
+  type: z.enum(['.cases-webhook'])
+}).meta({ id: 'Cases_connector_properties_cases_webhook' })
+export type Cases_connector_properties_cases_webhook = z.infer<typeof Cases_connector_properties_cases_webhook>
+
+export const Cases_connector_properties_jira = z.object({
+  fields: z.object({
+    issueType: z.string().nullable(),
+    parent: z.string().nullable(),
+    priority: z.string().nullable()
+  }),
+  id: z.string(),
+  name: z.string(),
+  type: z.enum(['.jira'])
+}).meta({ id: 'Cases_connector_properties_jira' })
+export type Cases_connector_properties_jira = z.infer<typeof Cases_connector_properties_jira>
+
+export const Cases_connector_properties_none = z.object({
+  fields: z.string().nullable(),
+  id: z.string(),
+  name: z.string(),
+  type: z.enum(['.none'])
+}).meta({ id: 'Cases_connector_properties_none' })
+export type Cases_connector_properties_none = z.infer<typeof Cases_connector_properties_none>
+
+export const Cases_connector_properties_resilient = z.object({
+  fields: z.object({
+    issueTypes: z.array(z.string()),
+    severityCode: z.string()
+  }).nullable(),
+  id: z.string(),
+  name: z.string(),
+  type: z.enum(['.resilient'])
+}).meta({ id: 'Cases_connector_properties_resilient' })
+export type Cases_connector_properties_resilient = z.infer<typeof Cases_connector_properties_resilient>
+
+export const Cases_connector_properties_servicenow = z.object({
+  fields: z.object({
+    category: z.string().nullable(),
+    impact: z.string().nullable(),
+    severity: z.string().nullable(),
+    subcategory: z.string().nullable(),
+    urgency: z.string().nullable()
+  }),
+  id: z.string(),
+  name: z.string(),
+  type: z.enum(['.servicenow'])
+}).meta({ id: 'Cases_connector_properties_servicenow' })
+export type Cases_connector_properties_servicenow = z.infer<typeof Cases_connector_properties_servicenow>
+
+export const Cases_connector_properties_servicenow_sir = z.object({
+  fields: z.object({
+    category: z.string().nullable(),
+    destIp: z.boolean().nullable(),
+    malwareHash: z.boolean().nullable(),
+    malwareUrl: z.boolean().nullable(),
+    priority: z.string().nullable(),
+    sourceIp: z.boolean().nullable(),
+    subcategory: z.string().nullable()
+  }),
+  id: z.string(),
+  name: z.string(),
+  type: z.enum(['.servicenow-sir'])
+}).meta({ id: 'Cases_connector_properties_servicenow_sir' })
+export type Cases_connector_properties_servicenow_sir = z.infer<typeof Cases_connector_properties_servicenow_sir>
+
+export const Cases_connector_properties_swimlane = z.object({
+  fields: z.object({
+    caseId: z.string().nullable()
+  }),
+  id: z.string(),
+  name: z.string(),
+  type: z.enum(['.swimlane'])
+}).meta({ id: 'Cases_connector_properties_swimlane' })
+export type Cases_connector_properties_swimlane = z.infer<typeof Cases_connector_properties_swimlane>
+
+export const Cases_connector_types = z.enum(['.cases-webhook', '.jira', '.none', '.resilient', '.servicenow', '.servicenow-sir', '.swimlane']).meta({ id: 'Cases_connector_types' })
+export type Cases_connector_types = z.infer<typeof Cases_connector_types>
+
+export const Cases_external_service = z.object({
+  connector_id: z.string().optional(),
+  connector_name: z.string().optional(),
+  external_id: z.string().optional(),
+  external_title: z.string().optional(),
+  external_url: z.string().optional(),
+  pushed_at: z.string().optional(),
+  pushed_by: z.object({
+    email: z.string().nullable().optional(),
+    full_name: z.string().nullable().optional(),
+    profile_uid: z.string().optional(),
+    username: z.string().nullable().optional()
+  }).nullable().optional()
+}).nullable().meta({ id: 'Cases_external_service' })
+export type Cases_external_service = z.infer<typeof Cases_external_service>
+
+export const Cases_owner = z.enum(['cases', 'observability', 'securitySolution']).meta({ id: 'Cases_owner' })
+export type Cases_owner = z.infer<typeof Cases_owner>
+
+export const Cases_response_4xx = z.object({
+  error: z.string().optional(),
+  message: z.string().optional(),
+  statusCode: z.number().optional()
+}).meta({ id: 'Cases_response_4xx' })
+export type Cases_response_4xx = z.infer<typeof Cases_response_4xx>
+
+export const Cases_rule = z.object({
+  id: z.string().optional(),
+  name: z.string().optional()
+}).meta({ id: 'Cases_rule' })
+export type Cases_rule = z.infer<typeof Cases_rule>
+
+export const Cases_searchFieldsType = z.enum(['description', 'title']).meta({ id: 'Cases_searchFieldsType' })
+export type Cases_searchFieldsType = z.infer<typeof Cases_searchFieldsType>
+
+export const Cases_settings = z.object({
+  extractObservables: z.boolean().optional(),
+  syncAlerts: z.boolean()
+}).meta({ id: 'Cases_settings' })
+export type Cases_settings = z.infer<typeof Cases_settings>
+
+export const Cases_string = z.string().meta({ id: 'Cases_string' })
+export type Cases_string = z.infer<typeof Cases_string>
+
+export const Cases_template_dry_run_response = z.object({
+  valid: z.literal(true)
+}).meta({ id: 'Cases_template_dry_run_response' })
+export type Cases_template_dry_run_response = z.infer<typeof Cases_template_dry_run_response>
+
+export const Cases_template_tags = z.array(z.string()).meta({ id: 'Cases_template_tags' })
+export type Cases_template_tags = z.infer<typeof Cases_template_tags>
+
 export const bedrock_config = z.object({
   apiUrl: z.string(),
   region: z.string().optional(),
@@ -333,6 +565,149 @@ export const xmatters_secrets = z.object({
 }).meta({ id: 'xmatters_secrets' })
 export type xmatters_secrets = z.infer<typeof xmatters_secrets>
 
+export const Cases_case_categories = z.array(Cases_case_category).meta({ id: 'Cases_case_categories' })
+export type Cases_case_categories = z.infer<typeof Cases_case_categories>
+
+export const Cases_alert_comment_response_properties = z.object({
+  alertId: z.array(z.string()).optional(),
+  created_at: z.string().optional(),
+  created_by: z.object({
+    email: z.string().nullable(),
+    full_name: z.string().nullable(),
+    profile_uid: z.string().optional(),
+    username: z.string().nullable()
+  }).optional(),
+  id: z.string().optional(),
+  index: z.array(z.string()).optional(),
+  owner: Cases_owner.optional(),
+  pushed_at: z.string().nullable().optional(),
+  pushed_by: z.object({
+    email: z.string().nullable(),
+    full_name: z.string().nullable(),
+    profile_uid: z.string().optional(),
+    username: z.string().nullable()
+  }).nullable().optional(),
+  rule: z.object({
+    id: z.string().nullable().optional(),
+    name: z.string().nullable().optional()
+  }).optional(),
+  type: z.enum(['alert']),
+  updated_at: z.string().nullable().optional(),
+  updated_by: z.object({
+    email: z.string().nullable(),
+    full_name: z.string().nullable(),
+    profile_uid: z.string().optional(),
+    username: z.string().nullable()
+  }).nullable().optional(),
+  version: z.string().optional()
+}).meta({ id: 'Cases_alert_comment_response_properties' })
+export type Cases_alert_comment_response_properties = z.infer<typeof Cases_alert_comment_response_properties>
+
+export const Cases_event_comment_response_properties = z.object({
+  created_at: z.string().optional(),
+  created_by: Cases_case_response_created_by_properties.optional(),
+  eventId: z.array(z.string()).optional(),
+  id: z.string().optional(),
+  index: z.array(z.string()).optional(),
+  owner: Cases_owner.optional(),
+  pushed_at: z.string().nullable().optional(),
+  pushed_by: Cases_case_response_pushed_by_properties.optional(),
+  type: z.enum(['event']),
+  updated_at: z.string().nullable().optional(),
+  updated_by: Cases_case_response_updated_by_properties.optional(),
+  version: z.string().optional()
+}).meta({ id: 'Cases_event_comment_response_properties' })
+export type Cases_event_comment_response_properties = z.infer<typeof Cases_event_comment_response_properties>
+
+export const Cases_owners = z.array(Cases_owner).meta({ id: 'Cases_owners' })
+export type Cases_owners = z.infer<typeof Cases_owners>
+
+export const Cases_user_comment_response_properties = z.object({
+  comment: z.string().optional(),
+  created_at: z.string().optional(),
+  created_by: Cases_case_response_created_by_properties.optional(),
+  id: z.string().optional(),
+  owner: Cases_owner.optional(),
+  pushed_at: z.string().nullable().optional(),
+  pushed_by: Cases_case_response_pushed_by_properties.optional(),
+  type: z.enum(['user']),
+  updated_at: z.string().nullable().optional(),
+  updated_by: Cases_case_response_updated_by_properties.optional(),
+  version: z.string().optional()
+}).meta({ id: 'Cases_user_comment_response_properties' })
+export type Cases_user_comment_response_properties = z.infer<typeof Cases_user_comment_response_properties>
+
+export const Cases_searchFieldsTypeArray = z.array(Cases_searchFieldsType).meta({ id: 'Cases_searchFieldsTypeArray' })
+export type Cases_searchFieldsTypeArray = z.infer<typeof Cases_searchFieldsTypeArray>
+
+export const Cases_string_array = z.array(Cases_string).meta({ id: 'Cases_string_array' })
+export type Cases_string_array = z.infer<typeof Cases_string_array>
+
+export const Cases_template_v2_response = z.object({
+  author: z.string().optional(),
+  definition: z.unknown(),
+  definitionString: z.string(),
+  deletedAt: z.string().nullable(),
+  description: z.string().optional(),
+  fieldCount: z.number().optional(),
+  fieldDefinitions: z.array(z.object({
+    control: z.string(),
+    label: z.string(),
+    name: z.string(),
+    type: z.string()
+  })).optional(),
+  isDefault: z.boolean().optional(),
+  isEnabled: z.boolean().optional(),
+  isLatest: z.boolean(),
+  lastUsedAt: z.string().optional(),
+  latestVersion: z.number(),
+  name: z.string(),
+  owner: z.string(),
+  tags: Cases_template_tags.optional(),
+  templateId: z.string(),
+  templateVersion: z.number(),
+  usageCount: z.number().optional()
+}).meta({ id: 'Cases_template_v2_response' })
+export type Cases_template_v2_response = z.infer<typeof Cases_template_v2_response>
+
+export const Cases_template_write_request = z.object({
+  definition: z.string(),
+  description: z.string().optional(),
+  isEnabled: z.boolean().optional(),
+  name: z.string().optional(),
+  owner: Cases_owner,
+  tags: Cases_template_tags.optional()
+}).meta({ id: 'Cases_template_write_request' })
+export type Cases_template_write_request = z.infer<typeof Cases_template_write_request>
+
+export const Cases_templates = z.array(z.object({
+  caseFields: z.object({
+    assignees: Cases_assignees.optional(),
+    category: Cases_case_category.optional(),
+    connector: z.object({
+      fields: z.object({}).nullable().optional(),
+      id: z.string().optional(),
+      name: z.string().optional(),
+      type: Cases_connector_types.optional()
+    }).optional(),
+    customFields: z.array(z.object({
+      key: z.string().optional(),
+      type: z.enum(['text', 'toggle']).optional(),
+      value: z.union([z.string(), z.boolean()]).optional()
+    })).optional(),
+    description: Cases_case_description.optional(),
+    settings: Cases_settings.optional(),
+    severity: Cases_case_severity.optional(),
+    tags: Cases_case_tags.optional(),
+    title: Cases_case_title.optional()
+  }).optional(),
+  description: z.string().optional(),
+  key: z.string().optional(),
+  name: z.string().optional(),
+  tags: Cases_template_tags.optional()
+})).meta({ id: 'Cases_templates' })
+export type Cases_templates = z.infer<typeof Cases_templates>
+
 export const webhook_config = z.object({
   accessTokenUrl: z.string().optional(),
   additionalFields: z.string().nullable().optional(),
@@ -390,3 +765,39 @@ export const cases_webhook_secrets = z.object({
   user: z.string().optional()
 }).meta({ id: 'cases_webhook_secrets' })
 export type cases_webhook_secrets = z.infer<typeof cases_webhook_secrets>
+
+export const Cases_case_response_properties = z.object({
+  assignees: Cases_assignees.optional(),
+  category: z.string().nullable().optional(),
+  closed_at: z.string().nullable(),
+  closed_by: Cases_case_response_closed_by_properties,
+  comments: z.array(z.discriminatedUnion('type', [Cases_alert_comment_response_properties, Cases_event_comment_response_properties, Cases_user_comment_response_properties])),
+  connector: z.discriminatedUnion('type', [Cases_connector_properties_none, Cases_connector_properties_cases_webhook, Cases_connector_properties_jira, Cases_connector_properties_resilient, Cases_connector_properties_servicenow, Cases_connector_properties_servicenow_sir, Cases_connector_properties_swimlane]),
+  created_at: z.string(),
+  created_by: Cases_case_response_created_by_properties,
+  customFields: z.array(z.object({
+    key: z.string().optional(),
+    type: z.enum(['text', 'toggle']).optional(),
+    value: z.union([z.string().nullable(), z.boolean()]).optional()
+  })).optional(),
+  description: z.string(),
+  duration: z.number().nullable(),
+  external_service: Cases_external_service,
+  id: z.string(),
+  incremental_id: z.number().nullable().optional(),
+  observables: z.array(Cases_case_observable),
+  owner: Cases_owner,
+  settings: Cases_settings,
+  severity: Cases_case_severity,
+  status: Cases_case_status,
+  tags: z.array(z.string()),
+  title: z.string(),
+  total_observables: z.number().nullable(),
+  totalAlerts: z.number(),
+  totalComment: z.number(),
+  totalEvents: z.number().optional(),
+  updated_at: z.string().nullable(),
+  updated_by: Cases_case_response_updated_by_properties,
+  version: z.string()
+}).meta({ id: 'Cases_case_response_properties' })
+export type Cases_case_response_properties = z.infer<typeof Cases_case_response_properties>

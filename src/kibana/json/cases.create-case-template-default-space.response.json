@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"create-case-template-default-space","x-api":{"id":"cases.create-case-template-default-space","name":"create-case-template-default-space","namespace":"cases"},"oneOf":[{"$ref":"./_defs.json#/$defs/Cases_template_v2_response"},{"$ref":"./_defs.json#/$defs/Cases_template_dry_run_response"}]}

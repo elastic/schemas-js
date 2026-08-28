@@ -33,9 +33,6 @@ export const PostAgentBuilderConverseRequest = z.object({
     id: z.string(),
     schema: z.unknown().nullable()
   })).optional(),
-  capabilities: z.object({
-    visualizations: z.boolean().optional()
-  }).optional(),
   configuration_overrides: z.object({
     enable_elastic_capabilities: z.boolean().optional(),
     instructions: z.string().optional(),

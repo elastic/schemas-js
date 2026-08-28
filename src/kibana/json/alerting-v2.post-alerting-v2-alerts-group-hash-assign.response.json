@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-alerting-v2-alerts-group-hash-assign","x-api":{"id":"alerting-v2.post-alerting-v2-alerts-group-hash-assign","name":"post-alerting-v2-alerts-group-hash-assign","namespace":"alerting-v2"},"type":"object","properties":{}}

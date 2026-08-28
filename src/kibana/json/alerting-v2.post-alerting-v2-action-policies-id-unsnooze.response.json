@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-alerting-v2-action-policies-id-unsnooze","x-api":{"id":"alerting-v2.post-alerting-v2-action-policies-id-unsnooze","name":"post-alerting-v2-action-policies-id-unsnooze","namespace":"alerting-v2"},"$ref":"./_defs.json#/$defs/Kibana_HTTP_APIs_alerting_action_policy_response"}

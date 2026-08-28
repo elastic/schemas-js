@@ -184,6 +184,7 @@ export const SLOs_settings = z.object({
   frequency: z.string().optional(),
   preventCrossProjectSearch: z.boolean().optional(),
   preventInitialBackfill: z.boolean().optional(),
+  projectRoutings: z.string().nullable().optional(),
   syncDelay: z.string().optional(),
   syncField: z.string().optional()
 }).meta({ id: 'SLOs_settings' })

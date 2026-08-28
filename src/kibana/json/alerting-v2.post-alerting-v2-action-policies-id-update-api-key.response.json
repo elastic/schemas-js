@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-alerting-v2-action-policies-id-update-api-key","x-api":{"id":"alerting-v2.post-alerting-v2-action-policies-id-update-api-key","name":"post-alerting-v2-action-policies-id-update-api-key","namespace":"alerting-v2"},"type":"object","properties":{}}

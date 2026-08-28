@@ -25,6 +25,7 @@ export const Kibana_HTTP_APIs_get_bulk_assets_response = z.object({
     appLink: z.string().optional(),
     attributes: z.object({
       description: z.string().optional(),
+      engine: z.enum(['v1', 'v2']).optional(),
       service: z.string().optional(),
       title: z.string().optional()
     }),

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-alerting-v2-rules-id","x-api":{"id":"alerting-v2.delete-alerting-v2-rules-id","name":"delete-alerting-v2-rules-id","namespace":"alerting-v2"},"type":"object","properties":{}}
