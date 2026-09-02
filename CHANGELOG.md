@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.7.2](https://github.com/elastic/schemas-js/compare/v0.7.1...v0.7.2) (2026-09-02)
+
+
+### Bug Fixes
+
+* add missing organization_id param to Kibana APIs ([#88](https://github.com/elastic/schemas-js/issues/88)) ([98e2934](https://github.com/elastic/schemas-js/commit/98e2934e14a1ff3dc8559f8eba858b12f824c312))
+* fix Kibana cases API naming ([#86](https://github.com/elastic/schemas-js/issues/86)) ([c3ede2a](https://github.com/elastic/schemas-js/commit/c3ede2acaaf899624182cc9c2b8b39deac4d910a))
+
 ## [0.7.1](https://github.com/elastic/schemas-js/compare/v0.7.0...v0.7.1) (2026-08-28)
 
 
