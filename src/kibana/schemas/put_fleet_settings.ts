@@ -42,6 +42,7 @@ export const PutFleetSettingsResponse = z.object({
       synthetics: z.union([z.literal('success'), z.literal(null)]).nullable().optional()
     }).optional(),
     integration_knowledge_enabled: z.boolean().optional(),
+    otlp_output_requirements_met: z.boolean().optional(),
     output_secret_storage_requirements_met: z.boolean().optional(),
     preconfigured_fields: z.array(z.enum(['fleet_server_hosts'])).optional(),
     prerelease_integrations_enabled: z.boolean().optional(),
