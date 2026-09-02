@@ -6,7 +6,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { Duration, Id, IndexName, Refresh, Routing, SequenceNumber, VersionNumber, VersionType, WriteResponseBase, long } from './_types.js'
+import { Duration, Id, IndexName, Refresh, SequenceNumber, VersionNumber, VersionType, WriteResponseBase, long } from './_types.js'
 
 /**
  * Delete a document.
@@ -55,7 +55,6 @@ export const DeleteRequest = z.object({
   if_primary_term: z.lazy(() => long).describe('Only perform the operation if the document has this primary term.').optional().meta({ found_in: 'query' }),
   if_seq_no: z.lazy(() => SequenceNumber).describe('Only perform the operation if the document has this sequence number.').optional().meta({ found_in: 'query' }),
   refresh: z.lazy(() => Refresh).describe('If `true`, Elasticsearch refreshes the affected shards to make this operation visible to search. If `wait_for`, it waits for a refresh to make this operation visible to search. If `false`, it does nothing with refreshes.').optional().meta({ found_in: 'query' }),
-  routing: z.lazy(() => Routing).describe('A custom value used to route operations to a specific shard. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional().meta({ found_in: 'query' }),
   timeout: z.lazy(() => Duration).describe('The period to wait for active shards. This parameter is useful for situations where the primary shard assigned to perform the delete operation might not be available when the delete operation runs. Some reasons for this might be that the primary shard is currently recovering from a store or undergoing relocation. By default, the delete operation will wait on the primary shard to become available for up to 1 minute before failing and responding with an error.').optional().meta({ found_in: 'query' }),
   version: z.lazy(() => VersionNumber).describe('An explicit version number for concurrency control. It must match the current version of the document for the request to succeed.').optional().meta({ found_in: 'query' }),
   version_type: z.lazy(() => VersionType).describe('The version type.').optional().meta({ found_in: 'query' })

@@ -10,14 +10,14 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/cases.get-case-applicable-fields-default-space.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/cases.get-case-applicable-fields.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const get_case_applicable_fields_default_spaceDefinitions: KbApiDefinition[] = [
   {
-    name: 'get-case-applicable-fields-default-space',
+    name: 'get-case-applicable-fields',
     namespace: 'cases',
     description: 'Get the fields applicable to an existing case',
     method: 'GET',

@@ -10,14 +10,14 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/cases.delete-case-comments-default-space.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/cases.delete-case-comments.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const delete_case_comments_default_spaceDefinitions: KbApiDefinition[] = [
   {
-    name: 'delete-case-comments-default-space',
+    name: 'delete-case-comments',
     namespace: 'cases',
     description: 'Delete all case comments and alerts',
     method: 'DELETE',

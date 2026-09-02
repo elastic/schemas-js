@@ -6,7 +6,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { Duration, Fields, Id, IndexName, InlineGet, Refresh, Routing, Script, ScriptSource, SequenceNumber, WriteResponseBase, integer, long } from './_types.js'
+import { Duration, Fields, Id, IndexName, InlineGet, Refresh, Script, ScriptSource, SequenceNumber, WriteResponseBase, integer, long } from './_types.js'
 import type { ScriptSourceShape } from './_types.js'
 import { SearchSourceConfig } from './search.js'
 
@@ -42,7 +42,6 @@ export const UpdateRequest = z.object({
   refresh: z.lazy(() => Refresh).describe('If \'true\', Elasticsearch refreshes the affected shards to make this operation visible to search. If \'wait_for\', it waits for a refresh to make this operation visible to search. If \'false\', it does nothing with refreshes.').optional().meta({ found_in: 'query' }),
   require_alias: z.boolean().describe('If `true`, the destination must be an index alias.').optional().meta({ found_in: 'query' }),
   retry_on_conflict: z.lazy(() => integer).describe('The number of times the operation should be retried when a conflict occurs.').optional().meta({ found_in: 'query' }),
-  routing: z.lazy(() => Routing).describe('A custom value used to route operations to a specific shard. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional().meta({ found_in: 'query' }),
   timeout: z.lazy(() => Duration).describe('The period to wait for the following operations: dynamic mapping updates and waiting for active shards. Elasticsearch waits for at least the timeout period before failing. The actual wait time could be longer, particularly when multiple waits occur.').optional().meta({ found_in: 'query' }),
   _source_excludes: z.lazy(() => Fields).describe('The source fields you want to exclude.').optional().meta({ found_in: 'query' }),
   _source_includes: z.lazy(() => Fields).describe('The source fields you want to retrieve.').optional().meta({ found_in: 'query' }),

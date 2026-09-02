@@ -1019,6 +1019,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/get_fleet_data_streams.ts') as Record<string, unknown>
       return mod['get_fleet_data_streamsDefinitions'] as KbApiDefinition[]
     }
+    case 'get_fleet_data_streams_data': {
+      const mod = await import('./apis/get_fleet_data_streams_data.ts') as Record<string, unknown>
+      return mod['get_fleet_data_streams_dataDefinitions'] as KbApiDefinition[]
+    }
     case 'get_fleet_enrollment_api_keys': {
       const mod = await import('./apis/get_fleet_enrollment_api_keys.ts') as Record<string, unknown>
       return mod['get_fleet_enrollment_api_keysDefinitions'] as KbApiDefinition[]

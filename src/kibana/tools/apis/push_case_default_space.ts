@@ -10,14 +10,14 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/cases.push-case-default-space.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/cases.push-case.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const push_case_default_spaceDefinitions: KbApiDefinition[] = [
   {
-    name: 'push-case-default-space',
+    name: 'push-case',
     namespace: 'cases',
     description: 'Push a case to an external service',
     method: 'POST',

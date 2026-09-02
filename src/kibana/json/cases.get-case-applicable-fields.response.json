@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-case-applicable-fields","x-api":{"id":"cases.get-case-applicable-fields","name":"get-case-applicable-fields","namespace":"cases"},"$ref":"./_defs.json#/$defs/Cases_applicable_fields_response"}

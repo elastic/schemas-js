@@ -534,13 +534,13 @@ export type ScoreNormalizer = z.infer<typeof ScoreNormalizer>
 
 export interface InnerRetrieverShape {
   retriever: RetrieverContainerShape
-  weight: float
-  normalizer: ScoreNormalizer
+  weight?: float | undefined
+  normalizer?: ScoreNormalizer | undefined
 }
 export const InnerRetriever = z.object({
-  get retriever () { return RetrieverContainer },
-  weight: z.lazy(() => float),
-  normalizer: ScoreNormalizer
+  get retriever () { return RetrieverContainer.describe('The nested retriever configuration.') },
+  weight: z.lazy(() => float).describe('Weight multiplier for this retriever\'s contribution to the linear combination. Must be non-negative.').optional(),
+  normalizer: ScoreNormalizer.describe('Score normalizer to apply to this retriever\'s results before weighting. Falls back to the top-level `normalizer` on the linear retriever if unset, then to `none` (identity) if neither is set.').optional()
 }).meta({ id: 'InnerRetriever' })
 export type InnerRetriever = z.infer<typeof InnerRetriever>
 

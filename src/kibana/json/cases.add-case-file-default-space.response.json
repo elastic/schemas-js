@@ -1,1 +1,0 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"add-case-file-default-space","x-api":{"id":"cases.add-case-file-default-space","name":"add-case-file-default-space","namespace":"cases"},"$ref":"./_defs.json#/$defs/Cases_case_response_properties"}

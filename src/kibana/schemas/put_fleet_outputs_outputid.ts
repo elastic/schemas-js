@@ -11,7 +11,40 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Kibana_HTTP_APIs_output_response_elasticsearch, Kibana_HTTP_APIs_output_response_kafka, Kibana_HTTP_APIs_output_response_logstash, Kibana_HTTP_APIs_output_response_remote_elasticsearch, Kibana_HTTP_APIs_output_shipper, Kibana_HTTP_APIs_output_ssl } from './schemas/kibana.js'
+import { Kibana_HTTP_APIs_otlp_grpc_exporter, Kibana_HTTP_APIs_otlp_http_exporter, Kibana_HTTP_APIs_output_response_elasticsearch, Kibana_HTTP_APIs_output_response_kafka, Kibana_HTTP_APIs_output_response_logstash, Kibana_HTTP_APIs_output_response_otlp, Kibana_HTTP_APIs_output_response_remote_elasticsearch, Kibana_HTTP_APIs_output_shipper, Kibana_HTTP_APIs_output_ssl } from './schemas/kibana.js'
+
+export const Kibana_HTTP_APIs_update_output_otlp = z.object({
+  allow_edit: z.array(z.string()).optional(),
+  id: z.string().optional(),
+  is_default: z.boolean().optional(),
+  is_default_monitoring: z.boolean().optional(),
+  is_internal: z.boolean().optional(),
+  is_preconfigured: z.boolean().optional(),
+  name: z.string().optional(),
+  otlp_exporter: z.discriminatedUnion('protocol', [Kibana_HTTP_APIs_otlp_grpc_exporter, Kibana_HTTP_APIs_otlp_http_exporter]),
+  secrets: z.object({
+    otlp_exporter: z.object({
+      tls: z.object({
+        key_pem: z.union([z.object({
+          hash: z.string().optional(),
+          id: z.string()
+        }), z.string()]).optional(),
+        tpm: z.object({
+          auth: z.union([z.object({
+            hash: z.string().optional(),
+            id: z.string()
+          }), z.string()]).optional(),
+          owner_auth: z.union([z.object({
+            hash: z.string().optional(),
+            id: z.string()
+          }), z.string()]).optional()
+        }).optional()
+      }).optional()
+    }).optional()
+  }).optional(),
+  type: z.enum(['otlp']).optional()
+}).meta({ id: 'Kibana_HTTP_APIs_update_output_otlp' })
+export type Kibana_HTTP_APIs_update_output_otlp = z.infer<typeof Kibana_HTTP_APIs_update_output_otlp>
 
 export const Kibana_HTTP_APIs_update_output_elasticsearch = z.object({
   allow_edit: z.array(z.string()).optional(),
@@ -177,19 +210,24 @@ export const Kibana_HTTP_APIs_update_output_remote_elasticsearch = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_update_output_remote_elasticsearch' })
 export type Kibana_HTTP_APIs_update_output_remote_elasticsearch = z.infer<typeof Kibana_HTTP_APIs_update_output_remote_elasticsearch>
 
-export const PutFleetOutputsOutputidRequest = z.union([Kibana_HTTP_APIs_update_output_elasticsearch, Kibana_HTTP_APIs_update_output_remote_elasticsearch, Kibana_HTTP_APIs_update_output_logstash, Kibana_HTTP_APIs_update_output_kafka]).meta({ id: 'PutFleetOutputsOutputidRequest' })
+export const PutFleetOutputsOutputidRequest = z.union([Kibana_HTTP_APIs_update_output_elasticsearch, Kibana_HTTP_APIs_update_output_remote_elasticsearch, Kibana_HTTP_APIs_update_output_logstash, Kibana_HTTP_APIs_update_output_kafka, Kibana_HTTP_APIs_update_output_otlp]).meta({ id: 'PutFleetOutputsOutputidRequest' })
 export type PutFleetOutputsOutputidRequest = z.infer<typeof PutFleetOutputsOutputidRequest>
 
 export const PutFleetOutputsOutputidResponse = z.object({
-  item: z.discriminatedUnion('type', [Kibana_HTTP_APIs_output_response_elasticsearch, Kibana_HTTP_APIs_output_response_remote_elasticsearch, Kibana_HTTP_APIs_output_response_logstash, Kibana_HTTP_APIs_output_response_kafka])
+  item: z.discriminatedUnion('type', [Kibana_HTTP_APIs_output_response_elasticsearch, Kibana_HTTP_APIs_output_response_remote_elasticsearch, Kibana_HTTP_APIs_output_response_logstash, Kibana_HTTP_APIs_output_response_kafka, Kibana_HTTP_APIs_output_response_otlp])
 }).meta({ id: 'PutFleetOutputsOutputidResponse' })
 export type PutFleetOutputsOutputidResponse = z.infer<typeof PutFleetOutputsOutputidResponse>
 
+export { Kibana_HTTP_APIs_output_response_otlp } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_otlp_response_http_exporter } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_otlp_response_grpc_exporter } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_output_response_kafka } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_output_response_ssl } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_output_response_shipper } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_output_response_logstash } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_output_response_remote_elasticsearch } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_output_response_elasticsearch } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_otlp_http_exporter } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_otlp_grpc_exporter } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_output_ssl } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_output_shipper } from './schemas/kibana.js'

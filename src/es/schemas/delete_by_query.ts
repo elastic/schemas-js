@@ -6,7 +6,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { BulkIndexByScrollFailure, Conflicts, Duration, DurationValue, ExpandWildcards, Indices, ReindexStatus, Retries, Routing, SearchType, SlicedScroll, Slices, Sort, TaskId, float, integer, long } from './_types.js'
+import { BulkIndexByScrollFailure, Conflicts, Duration, DurationValue, ExpandWildcards, Indices, ReindexStatus, Retries, SearchType, SlicedScroll, Slices, Sort, TaskId, float, integer, long } from './_types.js'
 import { QueryDslOperator, QueryDslQueryContainer } from './_types.query_dsl.js'
 
 /**
@@ -107,7 +107,6 @@ export const DeleteByQueryRequest = z.object({
   refresh: z.boolean().describe('If `true`, Elasticsearch refreshes all shards involved in the delete by query after the request completes. This is different than the delete API\'s `refresh` parameter, which causes just the shard that received the delete request to be refreshed. Unlike the delete API, it does not support `wait_for`.').optional().meta({ found_in: 'query' }),
   request_cache: z.boolean().describe('If `true`, the request cache is used for this request. Defaults to the index-level setting.').optional().meta({ found_in: 'query' }),
   requests_per_second: z.lazy(() => float).describe('The maximum number of documents to delete per second, across the entire delete-by-query operation (including slices). It can be either `-1` to turn off throttling or any decimal number like `1.7` or `12` to throttle to that level.').optional().meta({ found_in: 'query' }),
-  routing: z.lazy(() => Routing).describe('A custom value used to route operations to a specific shard. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional().meta({ found_in: 'query' }),
   q: z.string().describe('A query in the Lucene query string syntax.').optional().meta({ found_in: 'query' }),
   scroll: z.lazy(() => Duration).describe('The period to retain the search context for scrolling.').optional().meta({ found_in: 'query' }),
   scroll_size: z.lazy(() => long).describe('The size of the scroll request that powers the operation.').optional().meta({ found_in: 'query' }),

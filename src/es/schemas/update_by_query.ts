@@ -6,7 +6,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { BulkIndexByScrollFailure, Conflicts, Duration, DurationValue, ExpandWildcards, Indices, ReindexStatus, Retries, Routing, Script, ScriptSource, SearchType, SlicedScroll, Slices, TaskId, float, long } from './_types.js'
+import { BulkIndexByScrollFailure, Conflicts, Duration, DurationValue, ExpandWildcards, Indices, ReindexStatus, Retries, Script, ScriptSource, SearchType, SlicedScroll, Slices, TaskId, float, long } from './_types.js'
 import type { ScriptSourceShape } from './_types.js'
 import { QueryDslOperator, QueryDslQueryContainer } from './_types.query_dsl.js'
 
@@ -113,7 +113,6 @@ export const UpdateByQueryRequest = z.object({
   refresh: z.boolean().describe('If `true`, Elasticsearch refreshes affected shards to make the operation visible to search after the request completes. This is different than the update API\'s `refresh` parameter, which causes just the shard that received the request to be refreshed.').optional().meta({ found_in: 'query' }),
   request_cache: z.boolean().describe('If `true`, the request cache is used for this request. It defaults to the index-level setting.').optional().meta({ found_in: 'query' }),
   requests_per_second: z.lazy(() => float).describe('The maximum number of documents to update per second, across the entire update_by_query operation (including slices). It can be either `-1` to turn off throttling or any decimal number like `1.7` or `12` to throttle to that level.').optional().meta({ found_in: 'query' }),
-  routing: z.lazy(() => Routing).describe('A custom value used to route operations to a specific shard. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional().meta({ found_in: 'query' }),
   scroll: z.lazy(() => Duration).describe('The period to retain the search context for scrolling.').optional().meta({ found_in: 'query' }),
   scroll_size: z.lazy(() => long).describe('The size of the scroll request that powers the operation.').optional().meta({ found_in: 'query' }),
   search_timeout: z.lazy(() => Duration).describe('An explicit timeout for each search request. By default, there is no timeout.').optional().meta({ found_in: 'query' }),

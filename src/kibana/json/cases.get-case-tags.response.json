@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-case-tags","x-api":{"id":"cases.get-case-tags","name":"get-case-tags","namespace":"cases"},"type":"array","items":{"type":"string"}}

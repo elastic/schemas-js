@@ -11,16 +11,19 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Kibana_HTTP_APIs_output_response_elasticsearch, Kibana_HTTP_APIs_output_response_kafka, Kibana_HTTP_APIs_output_response_logstash, Kibana_HTTP_APIs_output_response_remote_elasticsearch } from './schemas/kibana.js'
+import { Kibana_HTTP_APIs_output_response_elasticsearch, Kibana_HTTP_APIs_output_response_kafka, Kibana_HTTP_APIs_output_response_logstash, Kibana_HTTP_APIs_output_response_otlp, Kibana_HTTP_APIs_output_response_remote_elasticsearch } from './schemas/kibana.js'
 
 export const GetFleetOutputsResponse = z.object({
-  items: z.array(z.discriminatedUnion('type', [Kibana_HTTP_APIs_output_response_elasticsearch, Kibana_HTTP_APIs_output_response_remote_elasticsearch, Kibana_HTTP_APIs_output_response_logstash, Kibana_HTTP_APIs_output_response_kafka])),
+  items: z.array(z.discriminatedUnion('type', [Kibana_HTTP_APIs_output_response_elasticsearch, Kibana_HTTP_APIs_output_response_remote_elasticsearch, Kibana_HTTP_APIs_output_response_logstash, Kibana_HTTP_APIs_output_response_kafka, Kibana_HTTP_APIs_output_response_otlp])),
   page: z.number(),
   perPage: z.number(),
   total: z.number()
 }).meta({ id: 'GetFleetOutputsResponse' })
 export type GetFleetOutputsResponse = z.infer<typeof GetFleetOutputsResponse>
 
+export { Kibana_HTTP_APIs_output_response_otlp } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_otlp_response_http_exporter } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_otlp_response_grpc_exporter } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_output_response_kafka } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_output_response_ssl } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_output_response_shipper } from './schemas/kibana.js'

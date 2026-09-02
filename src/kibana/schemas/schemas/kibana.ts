@@ -794,6 +794,9 @@ export type Kibana_HTTP_APIs_kbn_field_custom_description = z.infer<typeof Kiban
 export const Kibana_HTTP_APIs_kbn_field_custom_label = z.string().meta({ id: 'Kibana_HTTP_APIs_kbn_field_custom_label' })
 export type Kibana_HTTP_APIs_kbn_field_custom_label = z.infer<typeof Kibana_HTTP_APIs_kbn_field_custom_label>
 
+export const Kibana_HTTP_APIs_kbn_field_filters_schema = z.array(z.string()).meta({ id: 'Kibana_HTTP_APIs_kbn_field_filters_schema' })
+export type Kibana_HTTP_APIs_kbn_field_filters_schema = z.infer<typeof Kibana_HTTP_APIs_kbn_field_filters_schema>
+
 export const Kibana_HTTP_APIs_kbn_field_format = z.object({
   params: z.unknown().optional(),
   type: z.string()
@@ -997,6 +1000,292 @@ export type Kibana_HTTP_APIs_operationTimeScaleSetting = z.infer<typeof Kibana_H
 
 export const Kibana_HTTP_APIs_operationTimeShiftSetting = z.string().meta({ id: 'Kibana_HTTP_APIs_operationTimeShiftSetting' })
 export type Kibana_HTTP_APIs_operationTimeShiftSetting = z.infer<typeof Kibana_HTTP_APIs_operationTimeShiftSetting>
+
+export const Kibana_HTTP_APIs_otlp_grpc_exporter = z.object({
+  authority: z.string().nullable().optional(),
+  balancer_name: z.string().nullable().optional(),
+  compression: z.enum(['gzip', 'snappy', 'zstd', 'none']).optional(),
+  endpoint: z.string(),
+  headers: z.record(z.string(), z.string()).nullable().optional(),
+  keepalive: z.object({
+    permit_without_stream: z.boolean().optional(),
+    time: z.string().nullable().optional(),
+    timeout: z.string().nullable().optional()
+  }).nullable().optional(),
+  protocol: z.enum(['grpc']),
+  read_buffer_size: z.number().nullable().optional(),
+  retry_on_failure: z.object({
+    enabled: z.boolean().optional(),
+    initial_interval: z.string().nullable().optional(),
+    max_elapsed_time: z.string().nullable().optional(),
+    max_interval: z.string().nullable().optional(),
+    multiplier: z.number().nullable().optional(),
+    randomization_factor: z.number().nullable().optional()
+  }).nullable().optional(),
+  sending_queue: z.object({
+    batch: z.object({
+      flush_timeout: z.string().nullable().optional(),
+      max_size: z.number().nullable().optional(),
+      min_size: z.number().nullable().optional(),
+      partition: z.object({
+        metadata_keys: z.array(z.string()).nullable().optional()
+      }).nullable().optional(),
+      sizer: z.enum(['items', 'bytes']).optional()
+    }).nullable().optional(),
+    block_on_overflow: z.boolean().optional(),
+    enabled: z.boolean().optional(),
+    num_consumers: z.number().nullable().optional(),
+    queue_size: z.number().nullable().optional(),
+    sizer: z.enum(['requests', 'items', 'bytes']).optional(),
+    wait_for_result: z.boolean().optional()
+  }).nullable().optional(),
+  timeout: z.string().nullable().optional(),
+  tls: z.object({
+    ca_file: z.string().nullable().optional(),
+    ca_pem: z.string().nullable().optional(),
+    cert_file: z.string().nullable().optional(),
+    cert_pem: z.string().nullable().optional(),
+    cipher_suites: z.array(z.string()).nullable().optional(),
+    curve_preferences: z.array(z.enum(['X25519', 'P521', 'P256', 'P384'])).nullable().optional(),
+    include_insecure_cipher_suites: z.boolean().optional(),
+    include_system_ca_certs_pool: z.boolean().optional(),
+    insecure: z.boolean().optional(),
+    insecure_skip_verify: z.boolean().optional(),
+    key_file: z.string().nullable().optional(),
+    max_version: z.string().nullable().optional(),
+    min_version: z.string().nullable().optional(),
+    reload_interval: z.string().nullable().optional(),
+    server_name_override: z.string().nullable().optional(),
+    tpm: z.object({
+      enabled: z.boolean().optional(),
+      path: z.string().nullable().optional()
+    }).nullable().optional()
+  }).nullable().optional(),
+  user_agent: z.string().nullable().optional(),
+  wait_for_ready: z.boolean().optional(),
+  write_buffer_size: z.number().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_otlp_grpc_exporter' })
+export type Kibana_HTTP_APIs_otlp_grpc_exporter = z.infer<typeof Kibana_HTTP_APIs_otlp_grpc_exporter>
+
+export const Kibana_HTTP_APIs_otlp_http_exporter = z.object({
+  compression: z.enum(['gzip', 'none']).optional(),
+  compression_params: z.object({
+    level: z.number().optional()
+  }).nullable().optional(),
+  cookies: z.object({
+    enabled: z.boolean().optional()
+  }).nullable().optional(),
+  disable_keep_alives: z.boolean().optional(),
+  encoding: z.enum(['proto', 'json']).optional(),
+  endpoint: z.string(),
+  force_attempt_http2: z.boolean().optional(),
+  headers: z.record(z.string(), z.string()).nullable().optional(),
+  http2_ping_timeout: z.string().nullable().optional(),
+  http2_read_idle_timeout: z.string().nullable().optional(),
+  idle_conn_timeout: z.string().nullable().optional(),
+  logs_endpoint: z.string().nullable().optional(),
+  max_conns_per_host: z.number().nullable().optional(),
+  max_idle_conns: z.number().nullable().optional(),
+  max_idle_conns_per_host: z.number().nullable().optional(),
+  metrics_endpoint: z.string().nullable().optional(),
+  profiles_endpoint: z.string().nullable().optional(),
+  protocol: z.enum(['http/protobuf']),
+  proxy_url: z.string().nullable().optional(),
+  read_buffer_size: z.number().nullable().optional(),
+  retry_on_failure: z.object({
+    enabled: z.boolean().optional(),
+    initial_interval: z.string().nullable().optional(),
+    max_elapsed_time: z.string().nullable().optional(),
+    max_interval: z.string().nullable().optional(),
+    multiplier: z.number().nullable().optional(),
+    randomization_factor: z.number().nullable().optional()
+  }).nullable().optional(),
+  sending_queue: z.object({
+    batch: z.object({
+      flush_timeout: z.string().nullable().optional(),
+      max_size: z.number().nullable().optional(),
+      min_size: z.number().nullable().optional(),
+      partition: z.object({
+        metadata_keys: z.array(z.string()).nullable().optional()
+      }).nullable().optional(),
+      sizer: z.enum(['items', 'bytes']).optional()
+    }).nullable().optional(),
+    block_on_overflow: z.boolean().optional(),
+    enabled: z.boolean().optional(),
+    num_consumers: z.number().nullable().optional(),
+    queue_size: z.number().nullable().optional(),
+    sizer: z.enum(['requests', 'items', 'bytes']).optional(),
+    wait_for_result: z.boolean().optional()
+  }).nullable().optional(),
+  timeout: z.string().nullable().optional(),
+  tls: z.object({
+    ca_file: z.string().nullable().optional(),
+    ca_pem: z.string().nullable().optional(),
+    cert_file: z.string().nullable().optional(),
+    cert_pem: z.string().nullable().optional(),
+    cipher_suites: z.array(z.string()).nullable().optional(),
+    curve_preferences: z.array(z.enum(['X25519', 'P521', 'P256', 'P384'])).nullable().optional(),
+    include_insecure_cipher_suites: z.boolean().optional(),
+    include_system_ca_certs_pool: z.boolean().optional(),
+    insecure: z.boolean().optional(),
+    insecure_skip_verify: z.boolean().optional(),
+    key_file: z.string().nullable().optional(),
+    max_version: z.string().nullable().optional(),
+    min_version: z.string().nullable().optional(),
+    reload_interval: z.string().nullable().optional(),
+    server_name_override: z.string().nullable().optional(),
+    tpm: z.object({
+      enabled: z.boolean().optional(),
+      path: z.string().nullable().optional()
+    }).nullable().optional()
+  }).nullable().optional(),
+  traces_endpoint: z.string().nullable().optional(),
+  write_buffer_size: z.number().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_otlp_http_exporter' })
+export type Kibana_HTTP_APIs_otlp_http_exporter = z.infer<typeof Kibana_HTTP_APIs_otlp_http_exporter>
+
+export const Kibana_HTTP_APIs_otlp_response_grpc_exporter = z.object({
+  authority: z.string().nullable().optional(),
+  balancer_name: z.string().nullable().optional(),
+  compression: z.enum(['gzip', 'snappy', 'zstd', 'none']).optional(),
+  endpoint: z.string(),
+  headers: z.record(z.string(), z.string()).nullable().optional(),
+  keepalive: z.object({
+    permit_without_stream: z.boolean().optional(),
+    time: z.string().nullable().optional(),
+    timeout: z.string().nullable().optional()
+  }).passthrough().nullable().optional(),
+  protocol: z.enum(['grpc']),
+  read_buffer_size: z.number().nullable().optional(),
+  retry_on_failure: z.object({
+    enabled: z.boolean().optional(),
+    initial_interval: z.string().nullable().optional(),
+    max_elapsed_time: z.string().nullable().optional(),
+    max_interval: z.string().nullable().optional(),
+    multiplier: z.number().nullable().optional(),
+    randomization_factor: z.number().nullable().optional()
+  }).passthrough().nullable().optional(),
+  sending_queue: z.object({
+    batch: z.object({
+      flush_timeout: z.string().nullable().optional(),
+      max_size: z.number().nullable().optional(),
+      min_size: z.number().nullable().optional(),
+      partition: z.object({
+        metadata_keys: z.array(z.string()).nullable().optional()
+      }).passthrough().nullable().optional(),
+      sizer: z.enum(['items', 'bytes']).optional()
+    }).passthrough().nullable().optional(),
+    block_on_overflow: z.boolean().optional(),
+    enabled: z.boolean().optional(),
+    num_consumers: z.number().nullable().optional(),
+    queue_size: z.number().nullable().optional(),
+    sizer: z.enum(['requests', 'items', 'bytes']).optional(),
+    wait_for_result: z.boolean().optional()
+  }).passthrough().nullable().optional(),
+  timeout: z.string().nullable().optional(),
+  tls: z.object({
+    ca_file: z.string().nullable().optional(),
+    ca_pem: z.string().nullable().optional(),
+    cert_file: z.string().nullable().optional(),
+    cert_pem: z.string().nullable().optional(),
+    cipher_suites: z.array(z.string()).nullable().optional(),
+    curve_preferences: z.array(z.enum(['X25519', 'P521', 'P256', 'P384'])).nullable().optional(),
+    include_insecure_cipher_suites: z.boolean().optional(),
+    include_system_ca_certs_pool: z.boolean().optional(),
+    insecure: z.boolean().optional(),
+    insecure_skip_verify: z.boolean().optional(),
+    key_file: z.string().nullable().optional(),
+    max_version: z.string().nullable().optional(),
+    min_version: z.string().nullable().optional(),
+    reload_interval: z.string().nullable().optional(),
+    server_name_override: z.string().nullable().optional(),
+    tpm: z.object({
+      enabled: z.boolean().optional(),
+      path: z.string().nullable().optional()
+    }).passthrough().nullable().optional()
+  }).passthrough().nullable().optional(),
+  user_agent: z.string().nullable().optional(),
+  wait_for_ready: z.boolean().optional(),
+  write_buffer_size: z.number().nullable().optional()
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_otlp_response_grpc_exporter' })
+export type Kibana_HTTP_APIs_otlp_response_grpc_exporter = z.infer<typeof Kibana_HTTP_APIs_otlp_response_grpc_exporter>
+
+export const Kibana_HTTP_APIs_otlp_response_http_exporter = z.object({
+  compression: z.enum(['gzip', 'none']).optional(),
+  compression_params: z.object({
+    level: z.number().optional()
+  }).passthrough().nullable().optional(),
+  cookies: z.object({
+    enabled: z.boolean().optional()
+  }).passthrough().nullable().optional(),
+  disable_keep_alives: z.boolean().optional(),
+  encoding: z.enum(['proto', 'json']).optional(),
+  endpoint: z.string(),
+  force_attempt_http2: z.boolean().optional(),
+  headers: z.record(z.string(), z.string()).nullable().optional(),
+  http2_ping_timeout: z.string().nullable().optional(),
+  http2_read_idle_timeout: z.string().nullable().optional(),
+  idle_conn_timeout: z.string().nullable().optional(),
+  logs_endpoint: z.string().nullable().optional(),
+  max_conns_per_host: z.number().nullable().optional(),
+  max_idle_conns: z.number().nullable().optional(),
+  max_idle_conns_per_host: z.number().nullable().optional(),
+  metrics_endpoint: z.string().nullable().optional(),
+  profiles_endpoint: z.string().nullable().optional(),
+  protocol: z.enum(['http/protobuf']),
+  proxy_url: z.string().nullable().optional(),
+  read_buffer_size: z.number().nullable().optional(),
+  retry_on_failure: z.object({
+    enabled: z.boolean().optional(),
+    initial_interval: z.string().nullable().optional(),
+    max_elapsed_time: z.string().nullable().optional(),
+    max_interval: z.string().nullable().optional(),
+    multiplier: z.number().nullable().optional(),
+    randomization_factor: z.number().nullable().optional()
+  }).passthrough().nullable().optional(),
+  sending_queue: z.object({
+    batch: z.object({
+      flush_timeout: z.string().nullable().optional(),
+      max_size: z.number().nullable().optional(),
+      min_size: z.number().nullable().optional(),
+      partition: z.object({
+        metadata_keys: z.array(z.string()).nullable().optional()
+      }).passthrough().nullable().optional(),
+      sizer: z.enum(['items', 'bytes']).optional()
+    }).passthrough().nullable().optional(),
+    block_on_overflow: z.boolean().optional(),
+    enabled: z.boolean().optional(),
+    num_consumers: z.number().nullable().optional(),
+    queue_size: z.number().nullable().optional(),
+    sizer: z.enum(['requests', 'items', 'bytes']).optional(),
+    wait_for_result: z.boolean().optional()
+  }).passthrough().nullable().optional(),
+  timeout: z.string().nullable().optional(),
+  tls: z.object({
+    ca_file: z.string().nullable().optional(),
+    ca_pem: z.string().nullable().optional(),
+    cert_file: z.string().nullable().optional(),
+    cert_pem: z.string().nullable().optional(),
+    cipher_suites: z.array(z.string()).nullable().optional(),
+    curve_preferences: z.array(z.enum(['X25519', 'P521', 'P256', 'P384'])).nullable().optional(),
+    include_insecure_cipher_suites: z.boolean().optional(),
+    include_system_ca_certs_pool: z.boolean().optional(),
+    insecure: z.boolean().optional(),
+    insecure_skip_verify: z.boolean().optional(),
+    key_file: z.string().nullable().optional(),
+    max_version: z.string().nullable().optional(),
+    min_version: z.string().nullable().optional(),
+    reload_interval: z.string().nullable().optional(),
+    server_name_override: z.string().nullable().optional(),
+    tpm: z.object({
+      enabled: z.boolean().optional(),
+      path: z.string().nullable().optional()
+    }).passthrough().nullable().optional()
+  }).passthrough().nullable().optional(),
+  traces_endpoint: z.string().nullable().optional(),
+  write_buffer_size: z.number().nullable().optional()
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_otlp_response_http_exporter' })
+export type Kibana_HTTP_APIs_otlp_response_http_exporter = z.infer<typeof Kibana_HTTP_APIs_otlp_response_http_exporter>
 
 export const Kibana_HTTP_APIs_output_response_shipper = z.object({
   compression_level: z.number().nullable().optional(),
@@ -1983,6 +2272,39 @@ export type Kibana_HTTP_APIs_metricStyling = z.infer<typeof Kibana_HTTP_APIs_met
 
 export const Kibana_HTTP_APIs_formatType = z.union([Kibana_HTTP_APIs_numericFormat, Kibana_HTTP_APIs_byteFormat, Kibana_HTTP_APIs_durationFormat, Kibana_HTTP_APIs_customFormat]).meta({ id: 'Kibana_HTTP_APIs_formatType' })
 export type Kibana_HTTP_APIs_formatType = z.infer<typeof Kibana_HTTP_APIs_formatType>
+
+export const Kibana_HTTP_APIs_output_response_otlp = z.object({
+  allow_edit: z.array(z.string()).optional(),
+  id: z.string().optional(),
+  is_default: z.boolean().optional(),
+  is_default_monitoring: z.boolean().optional(),
+  is_internal: z.boolean().optional(),
+  is_preconfigured: z.boolean().optional(),
+  name: z.string(),
+  otlp_exporter: z.discriminatedUnion('protocol', [Kibana_HTTP_APIs_otlp_response_grpc_exporter, Kibana_HTTP_APIs_otlp_response_http_exporter]),
+  secrets: z.object({
+    otlp_exporter: z.object({
+      tls: z.object({
+        key_pem: z.union([z.object({
+          hash: z.string().optional(),
+          id: z.string()
+        }).passthrough(), z.string()]).optional(),
+        tpm: z.object({
+          auth: z.union([z.object({
+            hash: z.string().optional(),
+            id: z.string()
+          }).passthrough(), z.string()]).optional(),
+          owner_auth: z.union([z.object({
+            hash: z.string().optional(),
+            id: z.string()
+          }).passthrough(), z.string()]).optional()
+        }).passthrough().optional()
+      }).passthrough().optional()
+    }).passthrough().optional()
+  }).passthrough().optional(),
+  type: z.enum(['otlp'])
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_output_response_otlp' })
+export type Kibana_HTTP_APIs_output_response_otlp = z.infer<typeof Kibana_HTTP_APIs_output_response_otlp>
 
 export const Kibana_HTTP_APIs_output_response_elasticsearch = z.object({
   allow_edit: z.array(z.string()).optional(),
@@ -4176,6 +4498,7 @@ export type Kibana_HTTP_APIs_slo_group_overview_embeddable = z.infer<typeof Kiba
 
 export const Kibana_HTTP_APIs_kbn_data_view_spec_schema = z.object({
   allow_hidden_indices: z.boolean().optional(),
+  field_filters: Kibana_HTTP_APIs_kbn_field_filters_schema.optional(),
   field_settings: z.record(z.string(), Kibana_HTTP_APIs_kbn_field_settings_entry).optional(),
   index_pattern: Kibana_HTTP_APIs_kbn_index_pattern_schema,
   name: z.string().optional(),
@@ -4573,13 +4896,8 @@ export const Kibana_HTTP_APIs_kbn_dashboard_panel_type_discover_session = z.obje
       })).optional(),
       data_source: z.discriminatedUnion('type', [Kibana_HTTP_APIs_kbn_data_view_reference_schema, Kibana_HTTP_APIs_kbn_data_view_spec_schema]),
       density: z.union([z.enum(['compact']), z.enum(['expanded']), z.enum(['normal'])]).optional(),
-      documents_display_mode: z.union([z.enum(['table']), z.enum(['json'])]).optional(),
       filters: z.array(Kibana_HTTP_APIs_kbn_as_code_filters_schema_asCodeFilterSchema).optional(),
       header_row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
-      json_mode_settings: z.object({
-        hide_nulls: z.boolean().optional(),
-        wrap_lines: z.boolean().optional()
-      }).optional(),
       query: Kibana_HTTP_APIs_kbn_as_code_query.optional(),
       row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
       rows_per_page: z.number().optional(),
@@ -4596,12 +4914,7 @@ export const Kibana_HTTP_APIs_kbn_dashboard_panel_type_discover_session = z.obje
       })).optional(),
       data_source: Kibana_HTTP_APIs_esqlDataSource,
       density: z.union([z.enum(['compact']), z.enum(['expanded']), z.enum(['normal'])]).optional(),
-      documents_display_mode: z.union([z.enum(['table']), z.enum(['json'])]).optional(),
       header_row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
-      json_mode_settings: z.object({
-        hide_nulls: z.boolean().optional(),
-        wrap_lines: z.boolean().optional()
-      }).optional(),
       row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
       rows_per_page: z.number().optional(),
       sample_size: z.number().optional(),
@@ -4631,12 +4944,7 @@ export const Kibana_HTTP_APIs_kbn_dashboard_panel_type_discover_session = z.obje
         width: z.number().optional()
       })).optional(),
       density: z.union([z.enum(['compact']), z.enum(['expanded']), z.enum(['normal'])]).optional(),
-      documents_display_mode: z.union([z.enum(['table']), z.enum(['json'])]).optional(),
       header_row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
-      json_mode_settings: z.object({
-        hide_nulls: z.boolean().optional(),
-        wrap_lines: z.boolean().optional()
-      }).optional(),
       row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
       rows_per_page: z.number().optional(),
       sample_size: z.number().optional(),

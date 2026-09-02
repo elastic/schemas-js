@@ -10,14 +10,14 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/cases.update-case-template-default-space.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/cases.update-case-template.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const update_case_template_default_spaceDefinitions: KbApiDefinition[] = [
   {
-    name: 'update-case-template-default-space',
+    name: 'update-case-template',
     namespace: 'cases',
     description: 'Update a case template',
     method: 'PUT',

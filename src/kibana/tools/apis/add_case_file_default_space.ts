@@ -13,7 +13,7 @@ import type { KbApiDefinition } from '../types.ts'
 
 export const add_case_file_default_spaceDefinitions: KbApiDefinition[] = [
   {
-    name: 'add-case-file-default-space',
+    name: 'add-case-file',
     namespace: 'cases',
     description: 'Attach a file to a case',
     method: 'POST',

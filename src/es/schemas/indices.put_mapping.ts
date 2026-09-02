@@ -1848,7 +1848,7 @@ export const MappingShortNumberProperty = z.object({
 }).meta({ id: 'MappingShortNumberProperty' })
 export type MappingShortNumberProperty = z.infer<typeof MappingShortNumberProperty>
 
-export const MappingSourceFieldMode = z.enum(['disabled', 'stored', 'synthetic']).meta({ id: 'MappingSourceFieldMode' })
+export const MappingSourceFieldMode = z.enum(['disabled', 'stored', 'columnar_stored', 'synthetic']).meta({ id: 'MappingSourceFieldMode' })
 export type MappingSourceFieldMode = z.infer<typeof MappingSourceFieldMode>
 
 export const MappingSourceField = z.object({

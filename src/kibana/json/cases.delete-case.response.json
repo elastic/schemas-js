@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-case","x-api":{"id":"cases.delete-case","name":"delete-case","namespace":"cases"},"type":"object","properties":{}}
