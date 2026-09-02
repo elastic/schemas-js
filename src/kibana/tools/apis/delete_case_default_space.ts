@@ -13,7 +13,7 @@ import type { KbApiDefinition } from '../types.ts'
 
 export const delete_case_default_spaceDefinitions: KbApiDefinition[] = [
   {
-    name: 'delete-case-default-space',
+    name: 'delete-case',
     namespace: 'cases',
     description: 'Delete cases',
     method: 'DELETE',

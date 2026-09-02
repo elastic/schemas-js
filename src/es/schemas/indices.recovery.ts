@@ -69,7 +69,7 @@ export type IndicesRecoveryRecoveryOrigin = z.infer<typeof IndicesRecoveryRecove
 export const IndicesRecoveryRecoveryPriority = z.enum(['UNASSIGNED_NEW_PRIMARY', 'UNASSIGNED_UNEXPECTED', 'UNASSIGNED_EXPECTED', 'RELOCATION_CAN_REMAIN_NO', 'RELOCATION_CAN_REMAIN_NOT_PREFERRED', 'RELOCATE_REBALANCING', 'UNKNOWN']).meta({ id: 'IndicesRecoveryRecoveryPriority' })
 export type IndicesRecoveryRecoveryPriority = z.infer<typeof IndicesRecoveryRecoveryPriority>
 
-export const IndicesRecoveryRecoveryStage = z.enum(['INIT', 'INDEX', 'VERIFY_INDEX', 'TRANSLOG', 'FINALIZE', 'DONE']).meta({ id: 'IndicesRecoveryRecoveryStage' })
+export const IndicesRecoveryRecoveryStage = z.enum(['CREATED', 'INIT', 'INDEX', 'VERIFY_INDEX', 'TRANSLOG', 'FINALIZE', 'DONE']).meta({ id: 'IndicesRecoveryRecoveryStage' })
 export type IndicesRecoveryRecoveryStage = z.infer<typeof IndicesRecoveryRecoveryStage>
 
 export const IndicesRecoveryRecoveryStartStatus = z.object({
@@ -109,13 +109,13 @@ export const IndicesRecoveryShardRecovery = z.object({
   stage: IndicesRecoveryRecoveryStage.describe('The recovery stage.'),
   priority: IndicesRecoveryRecoveryPriority.describe('The recovery priority.').optional(),
   start: IndicesRecoveryRecoveryStartStatus.optional(),
-  start_time: z.lazy(() => DateTime).optional(),
-  start_time_in_millis: z.lazy(() => EpochTime),
-  stop_time: z.lazy(() => DateTime).optional(),
-  stop_time_in_millis: z.lazy(() => EpochTime).optional(),
+  start_time: z.lazy(() => DateTime).describe('The time the recovery started. For recoveries in the `CREATED` stage (not yet started), this value is the Unix epoch (1970-01-01T00:00:00.000Z).').optional(),
+  start_time_in_millis: z.lazy(() => EpochTime).describe('The time the recovery started, in milliseconds since the Unix epoch. For recoveries in the `CREATED` stage (not yet started), this value is 0.'),
+  stop_time: z.lazy(() => DateTime).describe('The time the recovery completed. Only present for completed recoveries (`DONE` stage).').optional(),
+  stop_time_in_millis: z.lazy(() => EpochTime).describe('The time the recovery completed, in milliseconds since the Unix epoch. Only present for completed recoveries (`DONE` stage).').optional(),
   target: IndicesRecoveryRecoveryOrigin,
   total_time: z.lazy(() => Duration).optional(),
-  total_time_in_millis: z.lazy(() => DurationValue),
+  total_time_in_millis: z.lazy(() => DurationValue).describe('The total elapsed recovery time in milliseconds. For recoveries in the `CREATED` stage (not yet started), this value is 0.'),
   translog: IndicesRecoveryTranslogStatus,
   type: IndicesRecoveryRecoveryType.describe('The recovery source type.'),
   verify_index: IndicesRecoveryVerifyIndex
@@ -155,7 +155,7 @@ export type IndicesRecoveryRecoveryStatus = z.infer<typeof IndicesRecoveryRecove
  */
 export const IndicesRecoveryRequest = z.object({
   index: z.lazy(() => Indices).describe('Comma-separated list of data streams, indices, and aliases used to limit the request. Supports wildcards (`*`). To target all data streams and indices, omit this parameter or use `*` or `_all`.').optional().meta({ found_in: 'path' }),
-  active_only: z.boolean().describe('If `true`, the response only includes ongoing shard recoveries.').optional().meta({ found_in: 'query' }),
+  active_only: z.boolean().describe('If `true`, the response only includes shard recoveries that have not yet completed (excludes `DONE` stage).').optional().meta({ found_in: 'query' }),
   detailed: z.boolean().describe('If `true`, the response includes detailed information about shard recoveries.').optional().meta({ found_in: 'query' }),
   allow_no_indices: z.boolean().describe('A setting that does two separate checks on the index expression. If `false`, the request returns an error (1) if any wildcard expression (including `_all` and `*`) resolves to zero matching indices or (2) if the complete set of resolved indices, aliases or data streams is empty after all expressions are evaluated. If `true`, index expressions that resolve to no indices are allowed and the request returns an empty result.').optional().meta({ found_in: 'query' }),
   expand_wildcards: z.lazy(() => ExpandWildcards).describe('Type of index that wildcard patterns can match. If the request can target data streams, this argument determines whether wildcard expressions match hidden data streams. Supports comma-separated values, such as `open,hidden`.').optional().meta({ found_in: 'query' }),

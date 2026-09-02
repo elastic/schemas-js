@@ -13,7 +13,7 @@ import type { KbApiDefinition } from '../types.ts'
 
 export const find_cases_default_spaceDefinitions: KbApiDefinition[] = [
   {
-    name: 'find-cases-default-space',
+    name: 'find-cases',
     namespace: 'cases',
     description: 'Search cases',
     method: 'GET',

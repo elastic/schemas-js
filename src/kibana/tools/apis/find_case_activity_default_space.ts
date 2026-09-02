@@ -10,14 +10,14 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/cases.find-case-activity-default-space.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/cases.find-case-activity.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const find_case_activity_default_spaceDefinitions: KbApiDefinition[] = [
   {
-    name: 'find-case-activity-default-space',
+    name: 'find-case-activity',
     namespace: 'cases',
     description: 'Find case activity',
     method: 'GET',

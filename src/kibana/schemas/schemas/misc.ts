@@ -53,6 +53,9 @@ export type Cases_case_category = z.infer<typeof Cases_case_category>
 export const Cases_case_description = z.string().meta({ id: 'Cases_case_description' })
 export type Cases_case_description = z.infer<typeof Cases_case_description>
 
+export const Cases_case_extended_fields = z.record(z.string(), z.string()).meta({ id: 'Cases_case_extended_fields' })
+export type Cases_case_extended_fields = z.infer<typeof Cases_case_extended_fields>
+
 export const Cases_case_observable = z.object({
   createdAt: z.string(),
   description: z.string().nullable(),
@@ -782,6 +785,7 @@ export const Cases_case_response_properties = z.object({
   })).optional(),
   description: z.string(),
   duration: z.number().nullable(),
+  extended_fields: z.record(z.string(), z.string()).optional(),
   external_service: Cases_external_service,
   id: z.string(),
   incremental_id: z.number().nullable().optional(),

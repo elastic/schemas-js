@@ -13,7 +13,7 @@ import type { KbApiDefinition } from '../types.ts'
 
 export const find_case_connectors_default_spaceDefinitions: KbApiDefinition[] = [
   {
-    name: 'find-case-connectors-default-space',
+    name: 'find-case-connectors',
     namespace: 'cases',
     description: 'Get case connectors',
     method: 'GET',

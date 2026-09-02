@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"update-case-comment","x-api":{"id":"cases.update-case-comment","name":"update-case-comment","namespace":"cases"},"$ref":"./_defs.json#/$defs/Cases_case_response_properties"}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-case-alerts","x-api":{"id":"cases.get-case-alerts","name":"get-case-alerts","namespace":"cases"},"type":"array","items":{"$ref":"./_defs.json#/$defs/Cases_alert_response_properties"}}

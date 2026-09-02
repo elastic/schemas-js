@@ -10,14 +10,14 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/cases.find-case-comments-default-space.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/cases.find-case-comments.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const find_case_comments_default_spaceDefinitions: KbApiDefinition[] = [
   {
-    name: 'find-case-comments-default-space',
+    name: 'find-case-comments',
     namespace: 'cases',
     description: 'Find case comments',
     method: 'GET',

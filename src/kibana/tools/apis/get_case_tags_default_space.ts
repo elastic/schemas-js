@@ -13,7 +13,7 @@ import type { KbApiDefinition } from '../types.ts'
 
 export const get_case_tags_default_spaceDefinitions: KbApiDefinition[] = [
   {
-    name: 'get-case-tags-default-space',
+    name: 'get-case-tags',
     namespace: 'cases',
     description: 'Get case tags',
     method: 'GET',

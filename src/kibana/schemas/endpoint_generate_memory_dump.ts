@@ -24,6 +24,8 @@ export const Security_Endpoint_Management_API_MemoryDumpRouteRequestBody = z.obj
   parameters: z.union([z.object({
     type: z.enum(['kernel'])
   }), z.object({
+    type: z.enum(['raw'])
+  }), z.object({
     pid: z.number(),
     type: z.enum(['process'])
   }), z.object({

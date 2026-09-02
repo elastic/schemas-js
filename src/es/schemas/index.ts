@@ -6,7 +6,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { Duration, Id, IndexName, OpType, Refresh, Routing, SequenceNumber, VersionNumber, VersionType, WriteResponseBase, long } from './_types.js'
+import { Duration, Id, IndexName, OpType, Refresh, SequenceNumber, VersionNumber, VersionType, WriteResponseBase, long } from './_types.js'
 
 /**
  * Create or update a document in an index.
@@ -139,7 +139,6 @@ export const IndexRequest = z.object({
   op_type: z.lazy(() => OpType).describe('Set to `create` to only index the document if it does not already exist (put if absent). If a document with the specified `_id` already exists, the indexing operation will fail. The behavior is the same as using the `<index>/_create` endpoint. If a document ID is specified, this paramater defaults to `index`. Otherwise, it defaults to `create`. If the request targets a data stream, an `op_type` of `create` is required.').optional().meta({ found_in: 'query' }),
   pipeline: z.string().describe('The ID of the pipeline to use to preprocess incoming documents. If the index has a default ingest pipeline specified, then setting the value to `_none` disables the default ingest pipeline for this request. If a final pipeline is configured it will always run, regardless of the value of this parameter.').optional().meta({ found_in: 'query' }),
   refresh: z.lazy(() => Refresh).describe('If `true`, Elasticsearch refreshes the affected shards to make this operation visible to search. If `wait_for`, it waits for a refresh to make this operation visible to search. If `false`, it does nothing with refreshes.').optional().meta({ found_in: 'query' }),
-  routing: z.lazy(() => Routing).describe('A custom value that is used to route operations to a specific shard. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional().meta({ found_in: 'query' }),
   timeout: z.lazy(() => Duration).describe('The period the request waits for the following operations: automatic index creation, dynamic mapping updates, waiting for active shards. This parameter is useful for situations where the primary shard assigned to perform the operation might not be available when the operation runs. Some reasons for this might be that the primary shard is currently recovering from a gateway or undergoing relocation. By default, the operation will wait on the primary shard to become available for at least 1 minute before failing and responding with an error. The actual wait time could be longer, particularly when multiple waits occur.').optional().meta({ found_in: 'query' }),
   version: z.lazy(() => VersionNumber).describe('An explicit version number for concurrency control. It must be a non-negative long number.').optional().meta({ found_in: 'query' }),
   version_type: z.lazy(() => VersionType).describe('The version type.').optional().meta({ found_in: 'query' }),

@@ -6,14 +6,13 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { Duration, ErrorCause, Fields, Id, IndexName, InlineGet, Refresh, Routing, Script, ScriptSource, SequenceNumber, ShardStatistics, VersionNumber, VersionType, integer, long } from './_types.js'
+import { Duration, ErrorCause, Fields, Id, IndexName, InlineGet, Refresh, Script, ScriptSource, SequenceNumber, ShardStatistics, VersionNumber, VersionType, integer, long } from './_types.js'
 import type { ScriptSourceShape } from './_types.js'
 import { SearchSourceConfig, SearchSourceConfigParam } from './search.js'
 
 export const BulkOperationBase = z.object({
   _id: z.lazy(() => Id).describe('The document ID.').optional(),
   _index: z.lazy(() => IndexName).describe('The name of the index or index alias to perform the action on.').optional(),
-  routing: z.string().describe('A custom value used to route operations to a specific shard, or multiple comma separated values.').optional(),
   if_primary_term: z.lazy(() => long).optional(),
   if_seq_no: z.lazy(() => SequenceNumber).optional(),
   version: z.lazy(() => VersionNumber).optional(),
@@ -202,7 +201,6 @@ export const BulkRequest = z.object({
   list_executed_pipelines: z.boolean().describe('If `true`, the response will include the ingest pipelines that were run for each index or create.').optional().meta({ found_in: 'query' }),
   pipeline: z.string().describe('The pipeline identifier to use to preprocess incoming documents. If the index has a default ingest pipeline specified, setting the value to `_none` turns off the default ingest pipeline for this request. If a final pipeline is configured, it will always run regardless of the value of this parameter.').optional().meta({ found_in: 'query' }),
   refresh: z.lazy(() => Refresh).describe('If `true`, Elasticsearch refreshes the affected shards to make this operation visible to search. If `wait_for`, wait for a refresh to make this operation visible to search. If `false`, do nothing with refreshes. Valid values: `true`, `false`, `wait_for`.').optional().meta({ found_in: 'query' }),
-  routing: z.lazy(() => Routing).describe('A custom value that is used to route operations to a specific shard. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional().meta({ found_in: 'query' }),
   _source: z.lazy(() => SearchSourceConfigParam).describe('Indicates whether to return the `_source` field (`true` or `false`) or contains a list of fields to return.').optional().meta({ found_in: 'query' }),
   _source_excludes: z.lazy(() => Fields).describe('A comma-separated list of source fields to exclude from the response. You can also use this parameter to exclude fields from the subset specified in `_source_includes` query parameter. If the `_source` parameter is `false`, this parameter is ignored.').optional().meta({ found_in: 'query' }),
   _source_includes: z.lazy(() => Fields).describe('A comma-separated list of source fields to include in the response. If this parameter is specified, only these source fields are returned. You can exclude fields from this subset using the `_source_excludes` query parameter. If the `_source` parameter is `false`, this parameter is ignored.').optional().meta({ found_in: 'query' }),

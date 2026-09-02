@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-case-comment","x-api":{"id":"cases.delete-case-comment","name":"delete-case-comment","namespace":"cases"},"type":"object","properties":{}}

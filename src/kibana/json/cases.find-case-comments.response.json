@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"find-case-comments","x-api":{"id":"cases.find-case-comments","name":"find-case-comments","namespace":"cases"},"$ref":"./_defs.json#/$defs/Cases_find_comments_response"}

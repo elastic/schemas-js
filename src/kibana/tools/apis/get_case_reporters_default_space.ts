@@ -13,7 +13,7 @@ import type { KbApiDefinition } from '../types.ts'
 
 export const get_case_reporters_default_spaceDefinitions: KbApiDefinition[] = [
   {
-    name: 'get-case-reporters-default-space',
+    name: 'get-case-reporters',
     namespace: 'cases',
     description: 'Get case creators',
     method: 'GET',
