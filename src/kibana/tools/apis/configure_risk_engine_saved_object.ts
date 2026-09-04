@@ -20,7 +20,7 @@ export const configure_risk_engine_saved_objectDefinitions: KbApiDefinition[] = 
     name: 'configure-risk-engine-saved-object',
     namespace: 'security-entity-analytics-api',
     description: 'Configure the Risk Engine Saved Object',
-    method: 'PATCH',
+    method: 'PUT',
     path: '/api/risk_score/engine/saved_object/configure',
     destructive: true,
     input: _inputSchema,
