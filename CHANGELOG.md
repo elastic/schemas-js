@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.3](https://github.com/elastic/schemas-js/compare/v0.7.2...v0.7.3) (2026-09-04)
+
+
+### Bug Fixes
+
+* send PUT for risk engine configure ([#90](https://github.com/elastic/schemas-js/issues/90)) ([46a0905](https://github.com/elastic/schemas-js/commit/46a0905fb66680928c545c489381c6ed098257c4))
+
 ## [0.7.2](https://github.com/elastic/schemas-js/compare/v0.7.1...v0.7.2) (2026-09-02)
 
 
