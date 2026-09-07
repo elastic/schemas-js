@@ -15,6 +15,10 @@ import type { ApiRegistry, CloudApiDefinition } from './types.ts'
 
 async function loadDefinitions (namespaceFile: string): Promise<CloudApiDefinition[]> {
   switch (namespaceFile) {
+    case 'capabilities': {
+      const mod = await import('./apis/capabilities.ts') as Record<string, unknown>
+      return mod['capabilitiesDefinitions'] as CloudApiDefinition[]
+    }
     case 'elasticsearch-projects': {
       const mod = await import('./apis/elasticsearch-projects.ts') as Record<string, unknown>
       return mod['elasticsearchProjectsDefinitions'] as CloudApiDefinition[]

@@ -42,6 +42,7 @@ export const PutSecurityEntityStoreEntitiesBulkRequest = z.object({
           anomaly_job_ids: z.array(z.string()).optional(),
           rule_names: z.array(z.string()).optional()
         }).optional(),
+        created_by: z.string().optional(),
         EngineMetadata: z.object({
           Type: z.string().optional()
         }).optional(),
@@ -218,6 +219,7 @@ export const PutSecurityEntityStoreEntitiesBulkRequest = z.object({
           anomaly_job_ids: z.array(z.string()).optional(),
           rule_names: z.array(z.string()).optional()
         }).optional(),
+        created_by: z.string().optional(),
         EngineMetadata: z.object({
           Type: z.string().optional()
         }).optional(),
@@ -404,6 +406,7 @@ export const PutSecurityEntityStoreEntitiesBulkRequest = z.object({
           anomaly_job_ids: z.array(z.string()).optional(),
           rule_names: z.array(z.string()).optional()
         }).optional(),
+        created_by: z.string().optional(),
         EngineMetadata: z.object({
           Type: z.string().optional()
         }).optional(),
@@ -609,6 +612,7 @@ export const PutSecurityEntityStoreEntitiesBulkRequest = z.object({
           anomaly_job_ids: z.array(z.string()).optional(),
           rule_names: z.array(z.string()).optional()
         }).optional(),
+        created_by: z.string().optional(),
         EngineMetadata: z.object({
           Type: z.string().optional()
         }).optional(),

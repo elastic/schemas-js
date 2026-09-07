@@ -1780,21 +1780,6 @@ export const Kibana_HTTP_APIs_kbn_controls_schemas_controls_group_schema_range_s
 }).meta({ id: 'Kibana_HTTP_APIs_kbn_controls_schemas_controls_group_schema_range_slider_control' })
 export type Kibana_HTTP_APIs_kbn_controls_schemas_controls_group_schema_range_slider_control = z.infer<typeof Kibana_HTTP_APIs_kbn_controls_schemas_controls_group_schema_range_slider_control>
 
-export const Kibana_HTTP_APIs_kbn_dashboard_panel_type_custom_content = z.object({
-  config: z.object({
-    description: z.string().optional(),
-    esql_query: z.array(z.string()).optional(),
-    hide_border: z.boolean().optional(),
-    hide_title: z.boolean().optional(),
-    template: z.string().optional(),
-    title: z.string().optional()
-  }),
-  grid: Kibana_HTTP_APIs_kbn_dashboard_panel_grid,
-  id: z.string().optional(),
-  type: z.enum(['custom_content'])
-}).meta({ id: 'Kibana_HTTP_APIs_kbn_dashboard_panel_type_custom_content' })
-export type Kibana_HTTP_APIs_kbn_dashboard_panel_type_custom_content = z.infer<typeof Kibana_HTTP_APIs_kbn_dashboard_panel_type_custom_content>
-
 export const Kibana_HTTP_APIs_kbn_dashboard_panel_type_esql_control = z.object({
   config: z.discriminatedUnion('control_type', [Kibana_HTTP_APIs_kbn_controls_schemas_options_list_esql_control_schema_static_values, Kibana_HTTP_APIs_kbn_controls_schemas_options_list_esql_control_schema_values_from_query]),
   grid: Kibana_HTTP_APIs_kbn_dashboard_panel_grid,
@@ -2060,6 +2045,22 @@ export const Kibana_HTTP_APIs_data_visualizer_field_stats = z.discriminatedUnion
   view_type: z.enum(['esql'])
 })]).meta({ id: 'Kibana_HTTP_APIs_data_visualizer_field_stats' })
 export type Kibana_HTTP_APIs_data_visualizer_field_stats = z.infer<typeof Kibana_HTTP_APIs_data_visualizer_field_stats>
+
+export const Kibana_HTTP_APIs_kbn_dashboard_panel_type_custom_content = z.object({
+  config: z.object({
+    description: z.string().optional(),
+    esql_query: z.array(z.string()).optional(),
+    hide_border: z.boolean().optional(),
+    hide_title: z.boolean().optional(),
+    template: z.string().optional(),
+    time_range: Kibana_HTTP_APIs_kbn_es_query_server_timeRangeSchema.optional(),
+    title: z.string().optional()
+  }),
+  grid: Kibana_HTTP_APIs_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['custom_content'])
+}).meta({ id: 'Kibana_HTTP_APIs_kbn_dashboard_panel_type_custom_content' })
+export type Kibana_HTTP_APIs_kbn_dashboard_panel_type_custom_content = z.infer<typeof Kibana_HTTP_APIs_kbn_dashboard_panel_type_custom_content>
 
 export const Kibana_HTTP_APIs_ml_anomaly_charts = z.object({
   description: z.string().optional(),

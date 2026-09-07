@@ -17,6 +17,7 @@ export { GetObservabilityProjectCanDeleteResponse } from './get_observability_pr
 export { GetObservabilityProjectLinkCandidatesResponse } from './get_observability_project_link_candidates.js'
 export { GetObservabilityProjectRolesResponse } from './get_observability_project_roles.js'
 export { GetObservabilityProjectStatusResponse } from './get_observability_project_status.js'
+export { GetOrganizationCapabilitiesResponse } from './get_organization_capabilities.js'
 export { GetRegionResponse } from './get_region.js'
 export { GetSecurityProjectResponse } from './get_security_project.js'
 export { GetSecurityProjectCanDeleteResponse } from './get_security_project_can_delete.js'
