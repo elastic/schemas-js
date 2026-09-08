@@ -6,7 +6,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { ByteSize, DateTime, Duration, DurationValue, EpochTime, ExpandWildcards, Host, Id, IndexName, Indices, Ip, Name, Percentage, TransportAddress, Uuid, VersionString, long } from './_types.js'
+import { ByteSize, DateTime, Duration, DurationValue, EpochTime, ExpandWildcards, Host, Id, IndexName, Indices, Ip, Name, Percentage, TransportAddress, Uuid, VersionString, integer, long } from './_types.js'
 
 export const IndicesRecoveryFileDetails = z.object({
   length: z.lazy(() => long),
@@ -107,6 +107,7 @@ export const IndicesRecoveryShardRecovery = z.object({
   primary: z.boolean(),
   source: IndicesRecoveryRecoveryOrigin,
   stage: IndicesRecoveryRecoveryStage.describe('The recovery stage.'),
+  local_retries: z.lazy(() => integer).describe('The number of times this recovery has failed in a way which is retried locally (i.e. on the data node).').optional(),
   priority: IndicesRecoveryRecoveryPriority.describe('The recovery priority.').optional(),
   start: IndicesRecoveryRecoveryStartStatus.optional(),
   start_time: z.lazy(() => DateTime).describe('The time the recovery started. For recoveries in the `CREATED` stage (not yet started), this value is the Unix epoch (1970-01-01T00:00:00.000Z).').optional(),

@@ -46,6 +46,8 @@ export const serverlessJsonManifest: readonly string[] = [
   'get_observability_project_roles.response.json',
   'get_observability_project_status.request.json',
   'get_observability_project_status.response.json',
+  'get_organization_capabilities.request.json',
+  'get_organization_capabilities.response.json',
   'get_region.request.json',
   'get_region.response.json',
   'get_security_project.request.json',

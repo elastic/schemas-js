@@ -21,7 +21,7 @@ export const Kibana_HTTP_APIs_alerting_update_rule = z.object({
     description: z.string().optional(),
     name: z.string().optional(),
     owner: z.string().optional(),
-    tags: z.array(z.string()).optional()
+    tags: z.array(z.string()).nullable().optional()
   }).optional(),
   no_data_strategy: z.union([z.enum(['last_known_status']), z.enum(['emit']), z.enum(['recover']), z.enum(['none'])]).nullable().optional(),
   query: Kibana_HTTP_APIs_alerting_rule_query.optional(),

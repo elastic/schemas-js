@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"getOrganizationCapabilities","x-api":{"id":"capabilities.get-organization-capabilities","name":"get-organization-capabilities","namespace":"capabilities"},"x-method":"GET","x-path":"/api/v1/serverless/capabilities","x-destructive":false,"type":"object","properties":{}}

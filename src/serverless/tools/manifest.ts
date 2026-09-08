@@ -12,6 +12,7 @@
 import type { ApiRegistryMeta } from './types.ts'
 
 export const serverlessManifest: readonly ApiRegistryMeta[] = [
+  { id: 'capabilities.get-organization-capabilities', name: 'get-organization-capabilities', namespace: 'capabilities', description: 'Get organization capabilities', namespaceFile: 'capabilities' },
   { id: 'elasticsearch-projects.list-elasticsearch-projects', name: 'list-elasticsearch-projects', namespace: 'elasticsearch-projects', description: 'Get Elasticsearch projects', namespaceFile: 'elasticsearch-projects' },
   { id: 'elasticsearch-projects.create-elasticsearch-project', name: 'create-elasticsearch-project', namespace: 'elasticsearch-projects', description: 'Create an Elasticsearch project', namespaceFile: 'elasticsearch-projects' },
   { id: 'elasticsearch-projects.get-elasticsearch-project', name: 'get-elasticsearch-project', namespace: 'elasticsearch-projects', description: 'Get an Elasticsearch project', namespaceFile: 'elasticsearch-projects' },

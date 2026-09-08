@@ -13,6 +13,12 @@
 import { z } from 'zod'
 
 export const PostAgentBuilderToolsExecuteRequest = z.object({
+  approvals: z.object({
+    auto_approved_apis: z.object({
+      elasticsearch: z.array(z.string()).optional(),
+      kibana: z.array(z.string()).optional()
+    }).optional()
+  }).optional(),
   connector_id: z.string().optional(),
   tool_id: z.string(),
   tool_params: z.record(z.string(), z.unknown().nullable())
