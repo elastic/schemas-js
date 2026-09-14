@@ -46,5 +46,7 @@ export { Kibana_HTTP_APIs_security_role_elasticsearch } from './schemas/kibana.j
 export { Kibana_HTTP_APIs_security_role_remote_indices_privileges } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_security_role_remote_cluster_privileges } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_security_role_indices_privileges } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_security_role_global_privileges } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_security_role_data_source_privileges } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_security_role_transform_error } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_security_role_kibana_application } from './schemas/kibana.js'

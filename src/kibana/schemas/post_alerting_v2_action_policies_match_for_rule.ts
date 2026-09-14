@@ -15,8 +15,6 @@ import { Kibana_HTTP_APIs_alerting_action_policy_response } from './schemas/kiba
 
 export const Kibana_HTTP_APIs_alerting_match_action_policies_for_rule_request = z.object({
   rule: z.object({
-    id: z.string().optional(),
-    name: z.string().optional(),
     tags: z.array(z.string()).optional()
   }).optional()
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_match_action_policies_for_rule_request' })
@@ -24,7 +22,7 @@ export type Kibana_HTTP_APIs_alerting_match_action_policies_for_rule_request = z
 
 export const Kibana_HTTP_APIs_alerting_matched_action_policy = z.object({
   actionPolicy: Kibana_HTTP_APIs_alerting_action_policy_response,
-  category: z.enum(['global', 'global-filtered'])
+  category: z.enum(['catch-all', 'tags'])
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_matched_action_policy' })
 export type Kibana_HTTP_APIs_alerting_matched_action_policy = z.infer<typeof Kibana_HTTP_APIs_alerting_matched_action_policy>
 

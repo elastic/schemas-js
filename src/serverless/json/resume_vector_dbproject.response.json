@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"resumeVectorDBProject","x-api":{"id":"vectordb-projects.resume-vector-dbproject","name":"resume-vector-dbproject","namespace":"vectordb-projects"},"type":"object","properties":{}}

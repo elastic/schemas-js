@@ -1375,6 +1375,7 @@ export const Security_Attack_discovery_API_AttackDiscoveryApiAlert = z.object({
   alert_updated_at: z.string().optional(),
   alert_updated_by_user_id: z.string().optional(),
   alert_updated_by_user_name: z.string().optional(),
+  alert_workflow_reason: z.string().optional(),
   alert_workflow_status: z.string().optional(),
   alert_workflow_status_updated_at: z.string().optional(),
   assignees: z.array(z.string()).optional(),

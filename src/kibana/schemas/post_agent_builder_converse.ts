@@ -58,6 +58,7 @@ export const PostAgentBuilderConverseRequest = z.object({
       skipped: z.boolean().optional()
     }))
   })])).optional(),
-  read_only: z.boolean().optional()
+  read_only: z.boolean().optional(),
+  reasoning_level: z.enum(['none', 'minimal', 'low', 'medium', 'high', 'xhigh']).optional()
 }).meta({ id: 'PostAgentBuilderConverseRequest' })
 export type PostAgentBuilderConverseRequest = z.infer<typeof PostAgentBuilderConverseRequest>

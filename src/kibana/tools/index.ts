@@ -327,6 +327,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/delete_fleet_cloud_connectors_cloudconnectorid.ts') as Record<string, unknown>
       return mod['delete_fleet_cloud_connectors_cloudconnectoridDefinitions'] as KbApiDefinition[]
     }
+    case 'delete_fleet_cloud_onboarding_deployments_id': {
+      const mod = await import('./apis/delete_fleet_cloud_onboarding_deployments_id.ts') as Record<string, unknown>
+      return mod['delete_fleet_cloud_onboarding_deployments_idDefinitions'] as KbApiDefinition[]
+    }
     case 'delete_fleet_enrollment_api_keys_keyid': {
       const mod = await import('./apis/delete_fleet_enrollment_api_keys_keyid.ts') as Record<string, unknown>
       return mod['delete_fleet_enrollment_api_keys_keyidDefinitions'] as KbApiDefinition[]
@@ -719,6 +723,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/get_agent_builder_conversations_conversation_id_attachments.ts') as Record<string, unknown>
       return mod['get_agent_builder_conversations_conversation_id_attachmentsDefinitions'] as KbApiDefinition[]
     }
+    case 'get_agent_builder_conversations_conversation_id_attachments_attachment_id': {
+      const mod = await import('./apis/get_agent_builder_conversations_conversation_id_attachments_attachment_id.ts') as Record<string, unknown>
+      return mod['get_agent_builder_conversations_conversation_id_attachments_attachment_idDefinitions'] as KbApiDefinition[]
+    }
     case 'get_agent_builder_conversations_conversation_id_attachments_stale': {
       const mod = await import('./apis/get_agent_builder_conversations_conversation_id_attachments_stale.ts') as Record<string, unknown>
       return mod['get_agent_builder_conversations_conversation_id_attachments_staleDefinitions'] as KbApiDefinition[]
@@ -1014,6 +1022,14 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'get_fleet_cloud_connectors_cloudconnectorid_usage': {
       const mod = await import('./apis/get_fleet_cloud_connectors_cloudconnectorid_usage.ts') as Record<string, unknown>
       return mod['get_fleet_cloud_connectors_cloudconnectorid_usageDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_cloud_onboarding_deployments_connector_connectorid': {
+      const mod = await import('./apis/get_fleet_cloud_onboarding_deployments_connector_connectorid.ts') as Record<string, unknown>
+      return mod['get_fleet_cloud_onboarding_deployments_connector_connectoridDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_cloud_onboarding_deployments_id': {
+      const mod = await import('./apis/get_fleet_cloud_onboarding_deployments_id.ts') as Record<string, unknown>
+      return mod['get_fleet_cloud_onboarding_deployments_idDefinitions'] as KbApiDefinition[]
     }
     case 'get_fleet_data_streams': {
       const mod = await import('./apis/get_fleet_data_streams.ts') as Record<string, unknown>
@@ -1959,6 +1975,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/post_fleet_cloud_connectors.ts') as Record<string, unknown>
       return mod['post_fleet_cloud_connectorsDefinitions'] as KbApiDefinition[]
     }
+    case 'post_fleet_cloud_onboarding_deployments': {
+      const mod = await import('./apis/post_fleet_cloud_onboarding_deployments.ts') as Record<string, unknown>
+      return mod['post_fleet_cloud_onboarding_deploymentsDefinitions'] as KbApiDefinition[]
+    }
     case 'post_fleet_enrollment_api_keys': {
       const mod = await import('./apis/post_fleet_enrollment_api_keys.ts') as Record<string, unknown>
       return mod['post_fleet_enrollment_api_keysDefinitions'] as KbApiDefinition[]
@@ -2330,6 +2350,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'put_fleet_cloud_connectors_cloudconnectorid': {
       const mod = await import('./apis/put_fleet_cloud_connectors_cloudconnectorid.ts') as Record<string, unknown>
       return mod['put_fleet_cloud_connectors_cloudconnectoridDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_fleet_cloud_onboarding_deployments_id': {
+      const mod = await import('./apis/put_fleet_cloud_onboarding_deployments_id.ts') as Record<string, unknown>
+      return mod['put_fleet_cloud_onboarding_deployments_idDefinitions'] as KbApiDefinition[]
     }
     case 'put_fleet_epm_custom_integrations_pkgname': {
       const mod = await import('./apis/put_fleet_epm_custom_integrations_pkgname.ts') as Record<string, unknown>

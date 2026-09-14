@@ -31,7 +31,7 @@ export const SecurityApplicationGlobalUserPrivileges = z.object({
 export type SecurityApplicationGlobalUserPrivileges = z.infer<typeof SecurityApplicationGlobalUserPrivileges>
 
 export const SecurityGlobalPrivilege = z.object({
-  application: SecurityApplicationGlobalUserPrivileges
+  application: SecurityApplicationGlobalUserPrivileges.optional()
 }).meta({ id: 'SecurityGlobalPrivilege' })
 export type SecurityGlobalPrivilege = z.infer<typeof SecurityGlobalPrivilege>
 

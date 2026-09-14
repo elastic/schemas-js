@@ -23,6 +23,8 @@ export const PostAgentBuilderConversationsRequest = z.object({
   }).optional(),
   agent_id: z.string().optional(),
   conversation_id: z.string().optional(),
+  metadata: z.record(z.string(), z.union([z.string(), z.number(), z.boolean(), z.array(z.string())])).optional(),
+  template_id: z.string().optional(),
   title: z.string().optional()
 }).meta({ id: 'PostAgentBuilderConversationsRequest' })
 export type PostAgentBuilderConversationsRequest = z.infer<typeof PostAgentBuilderConversationsRequest>
