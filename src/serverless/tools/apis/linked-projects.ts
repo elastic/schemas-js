@@ -15,10 +15,12 @@ import type { CloudApiDefinition } from '../types.ts'
 import _get_elasticsearch_project_can_deleteSchemaRaw from '../../../serverless/json/get_elasticsearch_project_can_delete.request.json' with { type: 'json' }
 import _get_observability_project_can_deleteSchemaRaw from '../../../serverless/json/get_observability_project_can_delete.request.json' with { type: 'json' }
 import _get_security_project_can_deleteSchemaRaw from '../../../serverless/json/get_security_project_can_delete.request.json' with { type: 'json' }
+import _get_vector_dbproject_can_deleteSchemaRaw from '../../../serverless/json/get_vector_dbproject_can_delete.request.json' with { type: 'json' }
 
 const _get_elasticsearch_project_can_deleteSchema = _get_elasticsearch_project_can_deleteSchemaRaw as unknown as JsonSchemaObject
 const _get_observability_project_can_deleteSchema = _get_observability_project_can_deleteSchemaRaw as unknown as JsonSchemaObject
 const _get_security_project_can_deleteSchema = _get_security_project_can_deleteSchemaRaw as unknown as JsonSchemaObject
+const _get_vector_dbproject_can_deleteSchema = _get_vector_dbproject_can_deleteSchemaRaw as unknown as JsonSchemaObject
 
 export const linkedProjectsDefinitions: CloudApiDefinition[] = [
   {
@@ -47,5 +49,14 @@ export const linkedProjectsDefinitions: CloudApiDefinition[] = [
     path: '/api/v1/serverless/projects/security/{id}/_can-delete',
     destructive: false,
     input: _get_security_project_can_deleteSchema,
+  },
+  {
+    name: 'get-vector-dbproject-can-delete',
+    namespace: 'linked-projects',
+    description: 'Get VectorDB project delete status',
+    method: 'GET',
+    path: '/api/v1/serverless/projects/vectordb/{id}/_can-delete',
+    destructive: false,
+    input: _get_vector_dbproject_can_deleteSchema,
   },
 ]

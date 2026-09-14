@@ -14,17 +14,17 @@ import { z } from 'zod'
 
 export const PutSecurityEntityStoreRequest = z.object({
   logExtraction: z.object({
-    additionalIndexPatterns: z.array(z.string()).optional(),
-    delay: z.string().optional(),
-    docsLimit: z.number().optional(),
-    excludedIndexPatterns: z.array(z.string()).optional(),
-    fieldHistoryLength: z.number().optional(),
-    frequency: z.string().optional(),
-    lookbackPeriod: z.string().optional(),
-    maxLogsPerPage: z.number().optional(),
-    maxLogsPerWindow: z.number().optional(),
-    maxLogsPerWindowCapBehavior: z.enum(['defer', 'drop']).optional(),
-    maxTimeWindowSize: z.string().optional()
+    additionalIndexPatterns: z.array(z.string()).nullable().optional(),
+    delay: z.string().nullable().optional(),
+    docsLimit: z.number().nullable().optional(),
+    excludedIndexPatterns: z.array(z.string()).nullable().optional(),
+    fieldHistoryLength: z.number().nullable().optional(),
+    frequency: z.string().nullable().optional(),
+    lookbackPeriod: z.string().nullable().optional(),
+    maxLogsPerPage: z.number().nullable().optional(),
+    maxLogsPerWindow: z.number().nullable().optional(),
+    maxLogsPerWindowCapBehavior: z.enum(['defer', 'drop']).nullable().optional(),
+    maxTimeWindowSize: z.string().nullable().optional()
   })
 }).meta({ id: 'PutSecurityEntityStoreRequest' })
 export type PutSecurityEntityStoreRequest = z.infer<typeof PutSecurityEntityStoreRequest>

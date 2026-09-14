@@ -18,7 +18,10 @@ export const Kibana_HTTP_APIs_alerting_update_action_policy = z.object({
   destinations: z.array(Kibana_HTTP_APIs_alerting_action_policy_destination).optional(),
   group_by: z.array(z.string()).nullable().optional(),
   grouping_mode: Kibana_HTTP_APIs_alerting_action_policy_grouping_mode.nullable().optional(),
-  matcher: z.string().nullable().optional(),
+  matcher: z.object({
+    expression: z.string().nullable().optional(),
+    tags: z.array(z.string()).nullable().optional()
+  }).nullable().optional(),
   name: z.string().optional(),
   tags: z.array(z.string()).nullable().optional(),
   throttle: Kibana_HTTP_APIs_alerting_action_policy_throttle.nullable().optional(),

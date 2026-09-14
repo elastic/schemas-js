@@ -1485,6 +1485,7 @@ export const Kibana_HTTP_APIs_xpack_synthetics_alerts_monitorstatus_create_rule_
       groupBy: z.string().optional(),
       includeRetests: z.boolean().optional(),
       locationsThreshold: z.number().optional(),
+      pendingThreshold: z.number().optional(),
       recoveryStrategy: z.enum(['firstUp', 'conditionNotMet']).optional(),
       window: z.union([z.object({
         time: z.object({

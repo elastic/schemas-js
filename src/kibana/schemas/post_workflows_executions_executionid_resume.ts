@@ -13,6 +13,7 @@
 import { z } from 'zod'
 
 export const PostWorkflowsExecutionsExecutionidResumeRequest = z.object({
-  input: z.record(z.string(), z.unknown().nullable())
+  input: z.record(z.string(), z.unknown().nullable()),
+  stepExecutionId: z.string().optional()
 }).meta({ id: 'PostWorkflowsExecutionsExecutionidResumeRequest' })
 export type PostWorkflowsExecutionsExecutionidResumeRequest = z.infer<typeof PostWorkflowsExecutionsExecutionidResumeRequest>

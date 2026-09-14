@@ -47,6 +47,10 @@ async function loadDefinitions (namespaceFile: string): Promise<CloudApiDefiniti
       const mod = await import('./apis/traffic-filters.ts') as Record<string, unknown>
       return mod['trafficFiltersDefinitions'] as CloudApiDefinition[]
     }
+    case 'vectordb-projects': {
+      const mod = await import('./apis/vectordb-projects.ts') as Record<string, unknown>
+      return mod['vectordbProjectsDefinitions'] as CloudApiDefinition[]
+    }
     default: return []
   }
 }
