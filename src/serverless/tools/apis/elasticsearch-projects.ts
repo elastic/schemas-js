@@ -17,8 +17,10 @@ import _create_elasticsearch_projectSchemaRaw from '../../../serverless/json/cre
 import _get_elasticsearch_projectSchemaRaw from '../../../serverless/json/get_elasticsearch_project.request.json' with { type: 'json' }
 import _delete_elasticsearch_projectSchemaRaw from '../../../serverless/json/delete_elasticsearch_project.request.json' with { type: 'json' }
 import _patch_elasticsearch_projectSchemaRaw from '../../../serverless/json/patch_elasticsearch_project.request.json' with { type: 'json' }
+import _get_elasticsearch_project_can_deleteSchemaRaw from '../../../serverless/json/get_elasticsearch_project_can_delete.request.json' with { type: 'json' }
 import _reset_elasticsearch_project_credentialsSchemaRaw from '../../../serverless/json/reset_elasticsearch_project_credentials.request.json' with { type: 'json' }
 import _resume_elasticsearch_projectSchemaRaw from '../../../serverless/json/resume_elasticsearch_project.request.json' with { type: 'json' }
+import _get_elasticsearch_project_link_candidatesSchemaRaw from '../../../serverless/json/get_elasticsearch_project_link_candidates.request.json' with { type: 'json' }
 import _get_elasticsearch_project_rolesSchemaRaw from '../../../serverless/json/get_elasticsearch_project_roles.request.json' with { type: 'json' }
 import _get_elasticsearch_project_statusSchemaRaw from '../../../serverless/json/get_elasticsearch_project_status.request.json' with { type: 'json' }
 
@@ -27,8 +29,10 @@ const _create_elasticsearch_projectSchema = _create_elasticsearch_projectSchemaR
 const _get_elasticsearch_projectSchema = _get_elasticsearch_projectSchemaRaw as unknown as JsonSchemaObject
 const _delete_elasticsearch_projectSchema = _delete_elasticsearch_projectSchemaRaw as unknown as JsonSchemaObject
 const _patch_elasticsearch_projectSchema = _patch_elasticsearch_projectSchemaRaw as unknown as JsonSchemaObject
+const _get_elasticsearch_project_can_deleteSchema = _get_elasticsearch_project_can_deleteSchemaRaw as unknown as JsonSchemaObject
 const _reset_elasticsearch_project_credentialsSchema = _reset_elasticsearch_project_credentialsSchemaRaw as unknown as JsonSchemaObject
 const _resume_elasticsearch_projectSchema = _resume_elasticsearch_projectSchemaRaw as unknown as JsonSchemaObject
+const _get_elasticsearch_project_link_candidatesSchema = _get_elasticsearch_project_link_candidatesSchemaRaw as unknown as JsonSchemaObject
 const _get_elasticsearch_project_rolesSchema = _get_elasticsearch_project_rolesSchemaRaw as unknown as JsonSchemaObject
 const _get_elasticsearch_project_statusSchema = _get_elasticsearch_project_statusSchemaRaw as unknown as JsonSchemaObject
 
@@ -79,6 +83,15 @@ export const elasticsearchProjectsDefinitions: CloudApiDefinition[] = [
     input: _patch_elasticsearch_projectSchema,
   },
   {
+    name: 'get-elasticsearch-project-can-delete',
+    namespace: 'elasticsearch-projects',
+    description: 'Get Elasticsearch project delete status',
+    method: 'GET',
+    path: '/api/v1/serverless/projects/elasticsearch/{id}/_can-delete',
+    destructive: false,
+    input: _get_elasticsearch_project_can_deleteSchema,
+  },
+  {
     name: 'reset-elasticsearch-project-credentials',
     namespace: 'elasticsearch-projects',
     description: 'Reset the project credentials',
@@ -95,6 +108,15 @@ export const elasticsearchProjectsDefinitions: CloudApiDefinition[] = [
     path: '/api/v1/serverless/projects/elasticsearch/{id}/_resume',
     destructive: true,
     input: _resume_elasticsearch_projectSchema,
+  },
+  {
+    name: 'get-elasticsearch-project-link-candidates',
+    namespace: 'elasticsearch-projects',
+    description: 'Get Elasticsearch project link candidates',
+    method: 'GET',
+    path: '/api/v1/serverless/projects/elasticsearch/{id}/link-candidates',
+    destructive: false,
+    input: _get_elasticsearch_project_link_candidatesSchema,
   },
   {
     name: 'get-elasticsearch-project-roles',

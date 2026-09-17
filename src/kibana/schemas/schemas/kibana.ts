@@ -1840,6 +1840,754 @@ export const Kibana_HTTP_APIs_visXyStylingPoints = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_visXyStylingPoints' })
 export type Kibana_HTTP_APIs_visXyStylingPoints = z.infer<typeof Kibana_HTTP_APIs_visXyStylingPoints>
 
+export const Kibana_Dashboards_API_autoColor = z.object({
+  type: z.enum(['auto'])
+}).meta({ id: 'Kibana_Dashboards_API_autoColor' })
+export type Kibana_Dashboards_API_autoColor = z.infer<typeof Kibana_Dashboards_API_autoColor>
+
+export const Kibana_Dashboards_API_byteFormat = z.object({
+  decimals: z.number().optional(),
+  suffix: z.string().optional(),
+  type: z.enum(['bits', 'bytes'])
+}).meta({ id: 'Kibana_Dashboards_API_byteFormat' })
+export type Kibana_Dashboards_API_byteFormat = z.infer<typeof Kibana_Dashboards_API_byteFormat>
+
+export const Kibana_Dashboards_API_collapseBy = z.enum(['avg', 'sum', 'max', 'min']).meta({ id: 'Kibana_Dashboards_API_collapseBy' })
+export type Kibana_Dashboards_API_collapseBy = z.infer<typeof Kibana_Dashboards_API_collapseBy>
+
+export const Kibana_Dashboards_API_color_code = z.object({
+  type: z.enum(['color_code']),
+  value: z.string()
+}).meta({ id: 'Kibana_Dashboards_API_color_code' })
+export type Kibana_Dashboards_API_color_code = z.infer<typeof Kibana_Dashboards_API_color_code>
+
+export const Kibana_Dashboards_API_colorByValueAbsolute = z.object({
+  range: z.enum(['absolute']),
+  steps: z.array(z.object({
+    color: z.string(),
+    gte: z.number().nullable().optional(),
+    lt: z.number().nullable().optional(),
+    lte: z.number().nullable().optional()
+  })),
+  type: z.enum(['dynamic'])
+}).meta({ id: 'Kibana_Dashboards_API_colorByValueAbsolute' })
+export type Kibana_Dashboards_API_colorByValueAbsolute = z.infer<typeof Kibana_Dashboards_API_colorByValueAbsolute>
+
+export const Kibana_Dashboards_API_colorByValuePalette = z.object({
+  palette: z.enum(['status', 'temperature', 'complementary', 'negative', 'positive', 'cool', 'warm', 'gray']),
+  type: z.enum(['distributed_palette'])
+}).meta({ id: 'Kibana_Dashboards_API_colorByValuePalette' })
+export type Kibana_Dashboards_API_colorByValuePalette = z.infer<typeof Kibana_Dashboards_API_colorByValuePalette>
+
+export const Kibana_Dashboards_API_colorByValuePercentage = z.object({
+  range: z.enum(['percentage']),
+  steps: z.array(z.object({
+    color: z.string(),
+    gte: z.number().nullable().optional(),
+    lt: z.number().nullable().optional(),
+    lte: z.number().nullable().optional()
+  })),
+  type: z.enum(['dynamic'])
+}).meta({ id: 'Kibana_Dashboards_API_colorByValuePercentage' })
+export type Kibana_Dashboards_API_colorByValuePercentage = z.infer<typeof Kibana_Dashboards_API_colorByValuePercentage>
+
+export const Kibana_Dashboards_API_colorFromPalette = z.object({
+  index: z.number(),
+  palette: z.string().optional(),
+  type: z.enum(['from_palette'])
+}).meta({ id: 'Kibana_Dashboards_API_colorFromPalette' })
+export type Kibana_Dashboards_API_colorFromPalette = z.infer<typeof Kibana_Dashboards_API_colorFromPalette>
+
+export const Kibana_Dashboards_API_customFormat = z.object({
+  pattern: z.string(),
+  type: z.enum(['custom'])
+}).meta({ id: 'Kibana_Dashboards_API_customFormat' })
+export type Kibana_Dashboards_API_customFormat = z.infer<typeof Kibana_Dashboards_API_customFormat>
+
+export const Kibana_Dashboards_API_datatableDensity = z.object({
+  height: z.object({
+    header: z.union([z.object({
+      type: z.enum(['auto'])
+    }), z.object({
+      max_lines: z.number().optional(),
+      type: z.enum(['custom'])
+    })]).optional(),
+    value: z.union([z.object({
+      type: z.enum(['auto'])
+    }), z.object({
+      lines: z.number().optional(),
+      type: z.enum(['custom'])
+    })]).optional()
+  }).optional(),
+  mode: z.enum(['compact', 'default', 'expanded']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_datatableDensity' })
+export type Kibana_Dashboards_API_datatableDensity = z.infer<typeof Kibana_Dashboards_API_datatableDensity>
+
+export const Kibana_Dashboards_API_dateHistogramOperation = z.object({
+  drop_partial_intervals: z.boolean().optional(),
+  field: z.string(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['date_histogram']),
+  suggested_interval: z.string().optional(),
+  use_original_time_range: z.boolean().optional()
+}).meta({ id: 'Kibana_Dashboards_API_dateHistogramOperation' })
+export type Kibana_Dashboards_API_dateHistogramOperation = z.infer<typeof Kibana_Dashboards_API_dateHistogramOperation>
+
+export const Kibana_Dashboards_API_durationFormat = z.object({
+  from: z.enum(['ps', 'ns', 'us', 'ms', 's', 'min', 'h', 'd', 'w', 'mo', 'y']),
+  suffix: z.string().optional(),
+  to: z.enum(['auto', 'auto-approximate', 'ms', 's', 'min', 'h', 'd', 'w', 'mo', 'y']),
+  type: z.enum(['duration'])
+}).meta({ id: 'Kibana_Dashboards_API_durationFormat' })
+export type Kibana_Dashboards_API_durationFormat = z.infer<typeof Kibana_Dashboards_API_durationFormat>
+
+export const Kibana_Dashboards_API_esqlDataSource = z.object({
+  query: z.string(),
+  type: z.enum(['esql'])
+}).meta({ id: 'Kibana_Dashboards_API_esqlDataSource' })
+export type Kibana_Dashboards_API_esqlDataSource = z.infer<typeof Kibana_Dashboards_API_esqlDataSource>
+
+export const Kibana_Dashboards_API_filterSimple = z.object({
+  expression: z.string(),
+  language: z.enum(['kql', 'lucene']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_filterSimple' })
+export type Kibana_Dashboards_API_filterSimple = z.infer<typeof Kibana_Dashboards_API_filterSimple>
+
+export const Kibana_Dashboards_API_gaugeShapeCircular = z.object({
+  type: z.enum(['circle', 'semi_circle', 'arc'])
+}).meta({ id: 'Kibana_Dashboards_API_gaugeShapeCircular' })
+export type Kibana_Dashboards_API_gaugeShapeCircular = z.infer<typeof Kibana_Dashboards_API_gaugeShapeCircular>
+
+export const Kibana_Dashboards_API_heatmapCells = z.object({
+  labels: z.object({
+    visible: z.boolean().optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_heatmapCells' })
+export type Kibana_Dashboards_API_heatmapCells = z.infer<typeof Kibana_Dashboards_API_heatmapCells>
+
+export const Kibana_Dashboards_API_heatmapYAxis = z.object({
+  labels: z.object({
+    visible: z.boolean().optional()
+  }).optional(),
+  sort: z.enum(['asc', 'desc']).optional(),
+  title: z.object({
+    text: z.string().optional(),
+    visible: z.boolean().optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_heatmapYAxis' })
+export type Kibana_Dashboards_API_heatmapYAxis = z.infer<typeof Kibana_Dashboards_API_heatmapYAxis>
+
+export const Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeDSLFilterSchema = z.object({
+  controlled_by: z.string().optional(),
+  data_view_id: z.string().optional(),
+  disabled: z.boolean().optional(),
+  dsl: z.record(z.string(), z.unknown().nullable()),
+  field: z.string().optional(),
+  is_multi_index: z.boolean().optional(),
+  label: z.string().optional(),
+  negate: z.boolean().optional(),
+  params: z.unknown().nullable(),
+  type: z.enum(['dsl'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeDSLFilterSchema' })
+export type Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeDSLFilterSchema = z.infer<typeof Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeDSLFilterSchema>
+
+export const Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeGroupFilterSchema = z.object({
+  controlled_by: z.string().optional(),
+  data_view_id: z.string().optional(),
+  disabled: z.boolean().optional(),
+  group: z.lazy(() => Kibana_Dashboards_API_kbn_as_code_filters_schema_groupFilter),
+  is_multi_index: z.boolean().optional(),
+  label: z.string().optional(),
+  negate: z.boolean().optional(),
+  type: z.enum(['group'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeGroupFilterSchema' })
+export type Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeGroupFilterSchema = z.infer<typeof Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeGroupFilterSchema>
+
+export const Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeSpatialFilterSchema = z.object({
+  controlled_by: z.string().optional(),
+  data_view_id: z.string().optional(),
+  disabled: z.boolean().optional(),
+  dsl: z.record(z.string(), z.unknown().nullable()),
+  is_multi_index: z.boolean().optional(),
+  label: z.string().optional(),
+  negate: z.boolean().optional(),
+  type: z.enum(['spatial'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeSpatialFilterSchema' })
+export type Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeSpatialFilterSchema = z.infer<typeof Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeSpatialFilterSchema>
+
+export const Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_exists = z.object({
+  field: z.string(),
+  negate: z.boolean().optional(),
+  operator: z.enum(['exists'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_exists' })
+export type Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_exists = z.infer<typeof Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_exists>
+
+export const Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_is = z.object({
+  field: z.string(),
+  negate: z.boolean().optional(),
+  operator: z.enum(['is']),
+  value: z.union([z.string(), z.number(), z.boolean()])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_is' })
+export type Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_is = z.infer<typeof Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_is>
+
+export const Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_is_one_of = z.object({
+  field: z.string(),
+  negate: z.boolean().optional(),
+  operator: z.enum(['is_one_of']),
+  value: z.union([z.array(z.string()), z.array(z.number()), z.array(z.boolean())])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_is_one_of' })
+export type Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_is_one_of = z.infer<typeof Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_is_one_of>
+
+export const Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_range = z.object({
+  field: z.string(),
+  negate: z.boolean().optional(),
+  operator: z.enum(['range']),
+  value: z.object({
+    format: z.string().optional(),
+    gt: z.union([z.number(), z.string()]).optional(),
+    gte: z.union([z.number(), z.string()]).optional(),
+    lt: z.union([z.number(), z.string()]).optional(),
+    lte: z.union([z.number(), z.string()]).optional()
+  })
+}).meta({ id: 'Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_range' })
+export type Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_range = z.infer<typeof Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_range>
+
+export const Kibana_Dashboards_API_kbn_as_code_meta = z.object({
+  created_at: z.string().optional(),
+  created_by: z.string().optional(),
+  managed: z.boolean().optional(),
+  owner: z.string().optional(),
+  updated_at: z.string().optional(),
+  updated_by: z.string().optional(),
+  version: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_kbn_as_code_meta' })
+export type Kibana_Dashboards_API_kbn_as_code_meta = z.infer<typeof Kibana_Dashboards_API_kbn_as_code_meta>
+
+export const Kibana_Dashboards_API_kbn_as_code_query = z.object({
+  expression: z.string(),
+  language: z.enum(['kql', 'lucene'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_as_code_query' })
+export type Kibana_Dashboards_API_kbn_as_code_query = z.infer<typeof Kibana_Dashboards_API_kbn_as_code_query>
+
+export const Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  type: z.string()
+}).meta({ id: 'Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema' })
+export type Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema = z.infer<typeof Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema>
+
+export const Kibana_Dashboards_API_kbn_controls_schemas_controls_group_schema_time_slider_control = z.object({
+  config: z.object({
+    end_percentage_of_time_range: z.number().optional(),
+    is_anchored: z.boolean().optional(),
+    start_percentage_of_time_range: z.number().optional()
+  }),
+  grow: z.boolean().optional(),
+  id: z.string().optional(),
+  type: z.enum(['time_slider_control']),
+  width: z.enum(['small', 'medium', 'large']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_kbn_controls_schemas_controls_group_schema_time_slider_control' })
+export type Kibana_Dashboards_API_kbn_controls_schemas_controls_group_schema_time_slider_control = z.infer<typeof Kibana_Dashboards_API_kbn_controls_schemas_controls_group_schema_time_slider_control>
+
+export const Kibana_Dashboards_API_kbn_controls_schemas_options_list_dsl_control_schema_esql = z.object({
+  display_settings: z.object({
+    hide_action_bar: z.boolean().optional(),
+    hide_exclude: z.boolean().optional(),
+    hide_exists: z.boolean().optional(),
+    hide_sort: z.boolean().optional(),
+    placeholder: z.string().optional()
+  }).optional(),
+  esql_query: z.string(),
+  exclude: z.boolean().optional(),
+  exists_selected: z.boolean().optional(),
+  ignore_validations: z.boolean().optional(),
+  run_past_timeout: z.boolean().optional(),
+  search_technique: z.enum(['prefix', 'wildcard', 'exact']).optional(),
+  selected_options: z.array(z.union([z.string(), z.number()])).optional(),
+  single_select: z.boolean().optional(),
+  sort: z.object({
+    by: z.enum(['_count', '_key']),
+    direction: z.enum(['asc', 'desc'])
+  }).optional(),
+  title: z.string().optional(),
+  use_global_filters: z.boolean().optional(),
+  values_source: z.enum(['esql'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_controls_schemas_options_list_dsl_control_schema_esql' })
+export type Kibana_Dashboards_API_kbn_controls_schemas_options_list_dsl_control_schema_esql = z.infer<typeof Kibana_Dashboards_API_kbn_controls_schemas_options_list_dsl_control_schema_esql>
+
+export const Kibana_Dashboards_API_kbn_controls_schemas_options_list_dsl_control_schema_field = z.object({
+  data_view_id: z.string(),
+  display_settings: z.object({
+    hide_action_bar: z.boolean().optional(),
+    hide_exclude: z.boolean().optional(),
+    hide_exists: z.boolean().optional(),
+    hide_sort: z.boolean().optional(),
+    placeholder: z.string().optional()
+  }).optional(),
+  exclude: z.boolean().optional(),
+  exists_selected: z.boolean().optional(),
+  field_name: z.string(),
+  ignore_validations: z.boolean().optional(),
+  run_past_timeout: z.boolean().optional(),
+  search_technique: z.enum(['prefix', 'wildcard', 'exact']).optional(),
+  selected_options: z.array(z.union([z.string(), z.number()])).optional(),
+  single_select: z.boolean().optional(),
+  sort: z.object({
+    by: z.enum(['_count', '_key']),
+    direction: z.enum(['asc', 'desc'])
+  }).optional(),
+  title: z.string().optional(),
+  use_global_filters: z.boolean().optional(),
+  values_source: z.enum(['field']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_kbn_controls_schemas_options_list_dsl_control_schema_field' })
+export type Kibana_Dashboards_API_kbn_controls_schemas_options_list_dsl_control_schema_field = z.infer<typeof Kibana_Dashboards_API_kbn_controls_schemas_options_list_dsl_control_schema_field>
+
+export const Kibana_Dashboards_API_kbn_controls_schemas_options_list_esql_control_schema_static_values = z.object({
+  available_options: z.array(z.string()),
+  control_type: z.enum(['STATIC_VALUES']),
+  display_settings: z.object({
+    hide_action_bar: z.boolean().optional(),
+    hide_exclude: z.boolean().optional(),
+    hide_exists: z.boolean().optional(),
+    hide_sort: z.boolean().optional(),
+    placeholder: z.string().optional()
+  }).optional(),
+  selected_options: z.array(z.string()),
+  single_select: z.boolean().optional(),
+  title: z.string().optional(),
+  variable_name: z.string(),
+  variable_type: z.enum(['fields', 'values', 'functions', 'time_literal', 'multi_values'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_controls_schemas_options_list_esql_control_schema_static_values' })
+export type Kibana_Dashboards_API_kbn_controls_schemas_options_list_esql_control_schema_static_values = z.infer<typeof Kibana_Dashboards_API_kbn_controls_schemas_options_list_esql_control_schema_static_values>
+
+export const Kibana_Dashboards_API_kbn_controls_schemas_options_list_esql_control_schema_values_from_query = z.object({
+  control_type: z.enum(['VALUES_FROM_QUERY']),
+  display_settings: z.object({
+    hide_action_bar: z.boolean().optional(),
+    hide_exclude: z.boolean().optional(),
+    hide_exists: z.boolean().optional(),
+    hide_sort: z.boolean().optional(),
+    placeholder: z.string().optional()
+  }).optional(),
+  esql_query: z.string(),
+  selected_options: z.array(z.string()),
+  single_select: z.boolean().optional(),
+  title: z.string().optional(),
+  variable_name: z.string(),
+  variable_type: z.enum(['fields', 'values', 'functions', 'time_literal', 'multi_values'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_controls_schemas_options_list_esql_control_schema_values_from_query' })
+export type Kibana_Dashboards_API_kbn_controls_schemas_options_list_esql_control_schema_values_from_query = z.infer<typeof Kibana_Dashboards_API_kbn_controls_schemas_options_list_esql_control_schema_values_from_query>
+
+export const Kibana_Dashboards_API_kbn_controls_schemas_range_slider_control_schema_esql = z.object({
+  esql_query: z.string(),
+  ignore_validations: z.boolean().optional(),
+  step: z.number().optional(),
+  title: z.string().optional(),
+  use_global_filters: z.boolean().optional(),
+  value: z.array(z.string()).optional(),
+  values_source: z.enum(['esql'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_controls_schemas_range_slider_control_schema_esql' })
+export type Kibana_Dashboards_API_kbn_controls_schemas_range_slider_control_schema_esql = z.infer<typeof Kibana_Dashboards_API_kbn_controls_schemas_range_slider_control_schema_esql>
+
+export const Kibana_Dashboards_API_kbn_controls_schemas_range_slider_control_schema_field = z.object({
+  data_view_id: z.string(),
+  field_name: z.string(),
+  ignore_validations: z.boolean().optional(),
+  step: z.number().optional(),
+  title: z.string().optional(),
+  use_global_filters: z.boolean().optional(),
+  value: z.array(z.string()).optional(),
+  values_source: z.enum(['field']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_kbn_controls_schemas_range_slider_control_schema_field' })
+export type Kibana_Dashboards_API_kbn_controls_schemas_range_slider_control_schema_field = z.infer<typeof Kibana_Dashboards_API_kbn_controls_schemas_range_slider_control_schema_field>
+
+export const Kibana_Dashboards_API_kbn_dashboard_access_control = z.object({
+  access_mode: z.enum(['write_restricted', 'default']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_access_control' })
+export type Kibana_Dashboards_API_kbn_dashboard_access_control = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_access_control>
+
+export const Kibana_Dashboards_API_kbn_dashboard_options = z.object({
+  auto_apply_filters: z.boolean().optional(),
+  hide_panel_borders: z.boolean().optional(),
+  hide_panel_titles: z.boolean().optional(),
+  sync_colors: z.boolean().optional(),
+  sync_cursor: z.boolean().optional(),
+  sync_tooltips: z.boolean().optional(),
+  use_margins: z.boolean().optional()
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_options' })
+export type Kibana_Dashboards_API_kbn_dashboard_options = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_options>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_grid = z.object({
+  h: z.number().optional(),
+  w: z.number().optional(),
+  x: z.number(),
+  y: z.number()
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_grid' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_grid = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_grid>
+
+export const Kibana_Dashboards_API_kbn_data_service_server_refreshIntervalSchema = z.object({
+  pause: z.boolean(),
+  value: z.number()
+}).meta({ id: 'Kibana_Dashboards_API_kbn_data_service_server_refreshIntervalSchema' })
+export type Kibana_Dashboards_API_kbn_data_service_server_refreshIntervalSchema = z.infer<typeof Kibana_Dashboards_API_kbn_data_service_server_refreshIntervalSchema>
+
+export const Kibana_Dashboards_API_kbn_data_view_reference_schema = z.object({
+  ref_id: z.string(),
+  type: z.enum(['data_view_reference'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_data_view_reference_schema' })
+export type Kibana_Dashboards_API_kbn_data_view_reference_schema = z.infer<typeof Kibana_Dashboards_API_kbn_data_view_reference_schema>
+
+export const Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema = z.object({
+  from: z.string(),
+  mode: z.enum(['absolute', 'relative']).optional(),
+  to: z.string()
+}).meta({ id: 'Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema' })
+export type Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema = z.infer<typeof Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema>
+
+export const Kibana_Dashboards_API_kbn_field_format = z.object({
+  params: z.unknown().nullable(),
+  type: z.string()
+}).meta({ id: 'Kibana_Dashboards_API_kbn_field_format' })
+export type Kibana_Dashboards_API_kbn_field_format = z.infer<typeof Kibana_Dashboards_API_kbn_field_format>
+
+export const Kibana_Dashboards_API_kbn_link_panel_type_dashboardLink = z.object({
+  destination: z.string(),
+  label: z.string().optional(),
+  options: z.object({
+    open_in_new_tab: z.boolean().optional(),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }).optional(),
+  type: z.enum(['dashboardLink'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_link_panel_type_dashboardLink' })
+export type Kibana_Dashboards_API_kbn_link_panel_type_dashboardLink = z.infer<typeof Kibana_Dashboards_API_kbn_link_panel_type_dashboardLink>
+
+export const Kibana_Dashboards_API_kbn_link_type_externalLink = z.object({
+  destination: z.string(),
+  label: z.string().optional(),
+  options: z.object({
+    encode_url: z.boolean().optional(),
+    open_in_new_tab: z.boolean().optional()
+  }).optional(),
+  type: z.enum(['externalLink'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_link_type_externalLink' })
+export type Kibana_Dashboards_API_kbn_link_type_externalLink = z.infer<typeof Kibana_Dashboards_API_kbn_link_type_externalLink>
+
+export const Kibana_Dashboards_API_kbn_runtime_field_type = z.enum(['keyword', 'long', 'double', 'date', 'ip', 'boolean', 'geo_point']).meta({ id: 'Kibana_Dashboards_API_kbn_runtime_field_type' })
+export type Kibana_Dashboards_API_kbn_runtime_field_type = z.infer<typeof Kibana_Dashboards_API_kbn_runtime_field_type>
+
+export const Kibana_Dashboards_API_legacyColorByValue = z.object({
+  palette: z.string(),
+  range: z.enum(['absolute', 'percentage']),
+  shift: z.boolean(),
+  steps: z.array(z.object({
+    color: z.string(),
+    gte: z.number().nullable().optional(),
+    lt: z.number().nullable().optional(),
+    lte: z.number().nullable().optional()
+  })),
+  type: z.enum(['legacy_dynamic'])
+}).meta({ id: 'Kibana_Dashboards_API_legacyColorByValue' })
+export type Kibana_Dashboards_API_legacyColorByValue = z.infer<typeof Kibana_Dashboards_API_legacyColorByValue>
+
+export const Kibana_Dashboards_API_legacyColorByValueAbsolute = z.object({
+  palette: z.string(),
+  range: z.enum(['absolute']),
+  shift: z.boolean(),
+  steps: z.array(z.object({
+    color: z.string(),
+    gte: z.number().nullable().optional(),
+    lt: z.number().nullable().optional(),
+    lte: z.number().nullable().optional()
+  })),
+  type: z.enum(['legacy_dynamic'])
+}).meta({ id: 'Kibana_Dashboards_API_legacyColorByValueAbsolute' })
+export type Kibana_Dashboards_API_legacyColorByValueAbsolute = z.infer<typeof Kibana_Dashboards_API_legacyColorByValueAbsolute>
+
+export const Kibana_Dashboards_API_legacyDurationFormat = z.object({
+  from: z.string(),
+  suffix: z.string().optional(),
+  to: z.string(),
+  type: z.enum(['duration'])
+}).meta({ id: 'Kibana_Dashboards_API_legacyDurationFormat' })
+export type Kibana_Dashboards_API_legacyDurationFormat = z.infer<typeof Kibana_Dashboards_API_legacyDurationFormat>
+
+export const Kibana_Dashboards_API_legendPosition = z.enum(['top', 'bottom', 'left', 'right']).meta({ id: 'Kibana_Dashboards_API_legendPosition' })
+export type Kibana_Dashboards_API_legendPosition = z.infer<typeof Kibana_Dashboards_API_legendPosition>
+
+export const Kibana_Dashboards_API_legendSize = z.enum(['auto', 's', 'm', 'l', 'xl']).meta({ id: 'Kibana_Dashboards_API_legendSize' })
+export type Kibana_Dashboards_API_legendSize = z.infer<typeof Kibana_Dashboards_API_legendSize>
+
+export const Kibana_Dashboards_API_metricCompareToBaseline = z.object({
+  baseline: z.number().optional(),
+  icon: z.boolean().optional(),
+  palette: z.string().optional(),
+  to: z.enum(['baseline']),
+  value: z.boolean().optional()
+}).meta({ id: 'Kibana_Dashboards_API_metricCompareToBaseline' })
+export type Kibana_Dashboards_API_metricCompareToBaseline = z.infer<typeof Kibana_Dashboards_API_metricCompareToBaseline>
+
+export const Kibana_Dashboards_API_metricCompareToPrimary = z.object({
+  icon: z.boolean().optional(),
+  palette: z.string().optional(),
+  to: z.enum(['primary']),
+  value: z.boolean().optional()
+}).meta({ id: 'Kibana_Dashboards_API_metricCompareToPrimary' })
+export type Kibana_Dashboards_API_metricCompareToPrimary = z.infer<typeof Kibana_Dashboards_API_metricCompareToPrimary>
+
+export const Kibana_Dashboards_API_metricIconConfig = z.object({
+  alignment: z.enum(['left', 'right']).optional(),
+  name: z.enum(['alert', 'asterisk', 'bell', 'bolt', 'bug', 'compute', 'editor_comment', 'flag', 'globe', 'heart', 'map_marker', 'pin', 'sort_down', 'sort_up', 'star_empty', 'tag', 'temperature'])
+}).meta({ id: 'Kibana_Dashboards_API_metricIconConfig' })
+export type Kibana_Dashboards_API_metricIconConfig = z.infer<typeof Kibana_Dashboards_API_metricIconConfig>
+
+export const Kibana_Dashboards_API_multi_field_key = z.object({
+  keys: z.array(z.string()),
+  type: z.enum(['multi_field_key'])
+}).meta({ id: 'Kibana_Dashboards_API_multi_field_key' })
+export type Kibana_Dashboards_API_multi_field_key = z.infer<typeof Kibana_Dashboards_API_multi_field_key>
+
+export const Kibana_Dashboards_API_noColor = z.object({
+  type: z.enum(['none'])
+}).meta({ id: 'Kibana_Dashboards_API_noColor' })
+export type Kibana_Dashboards_API_noColor = z.infer<typeof Kibana_Dashboards_API_noColor>
+
+export const Kibana_Dashboards_API_numericFormat = z.object({
+  compact: z.boolean().optional(),
+  decimals: z.number().optional(),
+  suffix: z.string().optional(),
+  type: z.enum(['number', 'percent'])
+}).meta({ id: 'Kibana_Dashboards_API_numericFormat' })
+export type Kibana_Dashboards_API_numericFormat = z.infer<typeof Kibana_Dashboards_API_numericFormat>
+
+export const Kibana_Dashboards_API_operationTimeScaleSetting = z.enum(['s', 'm', 'h', 'd']).meta({ id: 'Kibana_Dashboards_API_operationTimeScaleSetting' })
+export type Kibana_Dashboards_API_operationTimeScaleSetting = z.infer<typeof Kibana_Dashboards_API_operationTimeScaleSetting>
+
+export const Kibana_Dashboards_API_range_key = z.object({
+  from: z.union([z.string(), z.number()]),
+  ranges: z.array(z.object({
+    from: z.union([z.string(), z.number()]),
+    label: z.string(),
+    to: z.union([z.string(), z.number()])
+  })),
+  to: z.union([z.string(), z.number()]),
+  type: z.enum(['range_key'])
+}).meta({ id: 'Kibana_Dashboards_API_range_key' })
+export type Kibana_Dashboards_API_range_key = z.infer<typeof Kibana_Dashboards_API_range_key>
+
+export const Kibana_Dashboards_API_regionMapRegionDateHistogram = z.object({
+  drop_partial_intervals: z.boolean().optional(),
+  ems: z.object({
+    boundaries: z.string(),
+    join: z.string()
+  }).optional(),
+  field: z.string(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['date_histogram']),
+  suggested_interval: z.string().optional(),
+  use_original_time_range: z.boolean().optional()
+}).meta({ id: 'Kibana_Dashboards_API_regionMapRegionDateHistogram' })
+export type Kibana_Dashboards_API_regionMapRegionDateHistogram = z.infer<typeof Kibana_Dashboards_API_regionMapRegionDateHistogram>
+
+export const Kibana_Dashboards_API_slo_alerts_embeddable = z.object({
+  description: z.string().optional(),
+  drilldowns: z.array(z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_open_panel_menu']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })).optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  slos: z.array(z.object({
+    slo_id: z.string(),
+    slo_instance_id: z.string().optional()
+  })).optional(),
+  title: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_slo_alerts_embeddable' })
+export type Kibana_Dashboards_API_slo_alerts_embeddable = z.infer<typeof Kibana_Dashboards_API_slo_alerts_embeddable>
+
+export const Kibana_Dashboards_API_slo_burn_rate_embeddable = z.object({
+  description: z.string().optional(),
+  drilldowns: z.array(z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_open_panel_menu']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })).optional(),
+  duration: z.string(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  slo_id: z.string(),
+  slo_instance_id: z.string().optional(),
+  title: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_slo_burn_rate_embeddable' })
+export type Kibana_Dashboards_API_slo_burn_rate_embeddable = z.infer<typeof Kibana_Dashboards_API_slo_burn_rate_embeddable>
+
+export const Kibana_Dashboards_API_slo_error_budget_embeddable = z.object({
+  description: z.string().optional(),
+  drilldowns: z.array(z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_open_panel_menu']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })).optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  slo_id: z.string(),
+  slo_instance_id: z.string().optional(),
+  title: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_slo_error_budget_embeddable' })
+export type Kibana_Dashboards_API_slo_error_budget_embeddable = z.infer<typeof Kibana_Dashboards_API_slo_error_budget_embeddable>
+
+export const Kibana_Dashboards_API_slo_single_overview_embeddable = z.object({
+  description: z.string().optional(),
+  drilldowns: z.array(z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_open_panel_menu']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })).optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  overview_mode: z.enum(['single']),
+  remote_name: z.string().optional(),
+  slo_id: z.string(),
+  slo_instance_id: z.string().optional(),
+  title: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_slo_single_overview_embeddable' })
+export type Kibana_Dashboards_API_slo_single_overview_embeddable = z.infer<typeof Kibana_Dashboards_API_slo_single_overview_embeddable>
+
+export const Kibana_Dashboards_API_staticColor = z.object({
+  color: z.string(),
+  type: z.enum(['static'])
+}).meta({ id: 'Kibana_Dashboards_API_staticColor' })
+export type Kibana_Dashboards_API_staticColor = z.infer<typeof Kibana_Dashboards_API_staticColor>
+
+export const Kibana_Dashboards_API_termsRankByAlphabeticalDirection = z.enum(['asc', 'desc']).meta({ id: 'Kibana_Dashboards_API_termsRankByAlphabeticalDirection' })
+export type Kibana_Dashboards_API_termsRankByAlphabeticalDirection = z.infer<typeof Kibana_Dashboards_API_termsRankByAlphabeticalDirection>
+
+export const Kibana_Dashboards_API_termsRankByCustomDirection = z.enum(['asc', 'desc']).meta({ id: 'Kibana_Dashboards_API_termsRankByCustomDirection' })
+export type Kibana_Dashboards_API_termsRankByCustomDirection = z.infer<typeof Kibana_Dashboards_API_termsRankByCustomDirection>
+
+export const Kibana_Dashboards_API_termsRankByMetricDirection = z.enum(['asc', 'desc']).meta({ id: 'Kibana_Dashboards_API_termsRankByMetricDirection' })
+export type Kibana_Dashboards_API_termsRankByMetricDirection = z.infer<typeof Kibana_Dashboards_API_termsRankByMetricDirection>
+
+export const Kibana_Dashboards_API_termsRankByRare = z.object({
+  max: z.number(),
+  type: z.enum(['rare'])
+}).meta({ id: 'Kibana_Dashboards_API_termsRankByRare' })
+export type Kibana_Dashboards_API_termsRankByRare = z.infer<typeof Kibana_Dashboards_API_termsRankByRare>
+
+export const Kibana_Dashboards_API_termsRankBySignificant = z.object({
+  type: z.enum(['significant'])
+}).meta({ id: 'Kibana_Dashboards_API_termsRankBySignificant' })
+export type Kibana_Dashboards_API_termsRankBySignificant = z.infer<typeof Kibana_Dashboards_API_termsRankBySignificant>
+
+export const Kibana_Dashboards_API_valueDisplay = z.object({
+  mode: z.enum(['absolute', 'percentage']).optional(),
+  percent_decimals: z.number().optional(),
+  visible: z.boolean().optional()
+}).meta({ id: 'Kibana_Dashboards_API_valueDisplay' })
+export type Kibana_Dashboards_API_valueDisplay = z.infer<typeof Kibana_Dashboards_API_valueDisplay>
+
+export const Kibana_Dashboards_API_vis_api_direction = z.enum(['asc', 'desc']).meta({ id: 'Kibana_Dashboards_API_vis_api_direction' })
+export type Kibana_Dashboards_API_vis_api_direction = z.infer<typeof Kibana_Dashboards_API_vis_api_direction>
+
+export const Kibana_Dashboards_API_vis_api_domain_custom = z.object({
+  max: z.number(),
+  min: z.number(),
+  rounding: z.boolean().optional(),
+  type: z.enum(['custom'])
+}).meta({ id: 'Kibana_Dashboards_API_vis_api_domain_custom' })
+export type Kibana_Dashboards_API_vis_api_domain_custom = z.infer<typeof Kibana_Dashboards_API_vis_api_domain_custom>
+
+export const Kibana_Dashboards_API_vis_api_domain_fit = z.object({
+  rounding: z.boolean().optional(),
+  type: z.enum(['fit'])
+}).meta({ id: 'Kibana_Dashboards_API_vis_api_domain_fit' })
+export type Kibana_Dashboards_API_vis_api_domain_fit = z.infer<typeof Kibana_Dashboards_API_vis_api_domain_fit>
+
+export const Kibana_Dashboards_API_vis_api_domain_full = z.object({
+  rounding: z.boolean().optional(),
+  type: z.enum(['full'])
+}).meta({ id: 'Kibana_Dashboards_API_vis_api_domain_full' })
+export type Kibana_Dashboards_API_vis_api_domain_full = z.infer<typeof Kibana_Dashboards_API_vis_api_domain_full>
+
+export const Kibana_Dashboards_API_vis_api_orientation = z.enum(['horizontal', 'vertical', 'angled']).meta({ id: 'Kibana_Dashboards_API_vis_api_orientation' })
+export type Kibana_Dashboards_API_vis_api_orientation = z.infer<typeof Kibana_Dashboards_API_vis_api_orientation>
+
+export const Kibana_Dashboards_API_vis_api_simple_orientation = z.enum(['horizontal', 'vertical']).meta({ id: 'Kibana_Dashboards_API_vis_api_simple_orientation' })
+export type Kibana_Dashboards_API_vis_api_simple_orientation = z.infer<typeof Kibana_Dashboards_API_vis_api_simple_orientation>
+
+export const Kibana_Dashboards_API_xyAnnotationByRefLayer = z.object({
+  group_id: z.string(),
+  type: z.enum(['annotation_group'])
+}).meta({ id: 'Kibana_Dashboards_API_xyAnnotationByRefLayer' })
+export type Kibana_Dashboards_API_xyAnnotationByRefLayer = z.infer<typeof Kibana_Dashboards_API_xyAnnotationByRefLayer>
+
+export const Kibana_Dashboards_API_xyFitting = z.object({
+  emphasize: z.boolean().optional(),
+  extend: z.enum(['none', 'zero', 'nearest']).optional(),
+  type: z.enum(['none', 'zero', 'linear', 'carry', 'lookahead', 'average', 'nearest'])
+}).meta({ id: 'Kibana_Dashboards_API_xyFitting' })
+export type Kibana_Dashboards_API_xyFitting = z.infer<typeof Kibana_Dashboards_API_xyFitting>
+
+export const Kibana_Dashboards_API_xyLegendSeriesHeader = z.object({
+  text: z.string().optional(),
+  visible: z.boolean().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyLegendSeriesHeader' })
+export type Kibana_Dashboards_API_xyLegendSeriesHeader = z.infer<typeof Kibana_Dashboards_API_xyLegendSeriesHeader>
+
+export const Kibana_Dashboards_API_xyStylingAreas = z.object({
+  fill_opacity: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyStylingAreas' })
+export type Kibana_Dashboards_API_xyStylingAreas = z.infer<typeof Kibana_Dashboards_API_xyStylingAreas>
+
+export const Kibana_Dashboards_API_xyStylingBars = z.object({
+  data_labels: z.object({
+    visible: z.boolean().optional()
+  }).optional(),
+  minimum_height: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyStylingBars' })
+export type Kibana_Dashboards_API_xyStylingBars = z.infer<typeof Kibana_Dashboards_API_xyStylingBars>
+
+export const Kibana_Dashboards_API_xyStylingOverlays = z.object({
+  current_time_marker: z.object({
+    visible: z.boolean().optional()
+  }).optional(),
+  partial_buckets: z.object({
+    visible: z.boolean().optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyStylingOverlays' })
+export type Kibana_Dashboards_API_xyStylingOverlays = z.infer<typeof Kibana_Dashboards_API_xyStylingOverlays>
+
+export const Kibana_Dashboards_API_xyStylingPoints = z.object({
+  visibility: z.enum(['auto', 'visible', 'hidden']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyStylingPoints' })
+export type Kibana_Dashboards_API_xyStylingPoints = z.infer<typeof Kibana_Dashboards_API_xyStylingPoints>
+
+export const Kibana_Dashboards_API_xyXDateHistogram = z.object({
+  drop_partial_intervals: z.boolean().optional(),
+  field: z.string(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['date_histogram']),
+  suggested_interval: z.string().optional(),
+  use_original_time_range: z.boolean().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyXDateHistogram' })
+export type Kibana_Dashboards_API_xyXDateHistogram = z.infer<typeof Kibana_Dashboards_API_xyXDateHistogram>
+
 export const Kibana_HTTP_APIs_alerting_rule_query = z.discriminatedUnion('format', [Kibana_HTTP_APIs_alerting_composed_rule_query, Kibana_HTTP_APIs_alerting_standalone_rule_query]).meta({ id: 'Kibana_HTTP_APIs_alerting_rule_query' })
 export type Kibana_HTTP_APIs_alerting_rule_query = z.infer<typeof Kibana_HTTP_APIs_alerting_rule_query>
 
@@ -3340,6 +4088,855 @@ export const Kibana_HTTP_APIs_visXyStyling = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_visXyStyling' })
 export type Kibana_HTTP_APIs_visXyStyling = z.infer<typeof Kibana_HTTP_APIs_visXyStyling>
 
+export const Kibana_Dashboards_API_metricBreakdownDateHistogram = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  columns: z.number().optional(),
+  drop_partial_intervals: z.boolean().optional(),
+  field: z.string(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['date_histogram']),
+  suggested_interval: z.string().optional(),
+  use_original_time_range: z.boolean().optional()
+}).meta({ id: 'Kibana_Dashboards_API_metricBreakdownDateHistogram' })
+export type Kibana_Dashboards_API_metricBreakdownDateHistogram = z.infer<typeof Kibana_Dashboards_API_metricBreakdownDateHistogram>
+
+export const Kibana_Dashboards_API_mosaicGroupBreakdownByDateHistogram = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  drop_partial_intervals: z.boolean().optional(),
+  field: z.string(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['date_histogram']),
+  suggested_interval: z.string().optional(),
+  use_original_time_range: z.boolean().optional()
+}).meta({ id: 'Kibana_Dashboards_API_mosaicGroupBreakdownByDateHistogram' })
+export type Kibana_Dashboards_API_mosaicGroupBreakdownByDateHistogram = z.infer<typeof Kibana_Dashboards_API_mosaicGroupBreakdownByDateHistogram>
+
+export const Kibana_Dashboards_API_unassignedColorSchema = z.union([Kibana_Dashboards_API_colorFromPalette, Kibana_Dashboards_API_color_code]).meta({ id: 'Kibana_Dashboards_API_unassignedColorSchema' })
+export type Kibana_Dashboards_API_unassignedColorSchema = z.infer<typeof Kibana_Dashboards_API_unassignedColorSchema>
+
+export const Kibana_Dashboards_API_filterWithLabel = z.object({
+  filter: Kibana_Dashboards_API_filterSimple,
+  label: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_filterWithLabel' })
+export type Kibana_Dashboards_API_filterWithLabel = z.infer<typeof Kibana_Dashboards_API_filterWithLabel>
+
+export const Kibana_Dashboards_API_heatmapStyling = z.object({
+  cells: Kibana_Dashboards_API_heatmapCells.optional()
+}).meta({ id: 'Kibana_Dashboards_API_heatmapStyling' })
+export type Kibana_Dashboards_API_heatmapStyling = z.infer<typeof Kibana_Dashboards_API_heatmapStyling>
+
+export const Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeConditionFilterSchema = z.object({
+  condition: z.discriminatedUnion('operator', [Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_is, Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_is_one_of, Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_range, Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_exists]),
+  controlled_by: z.string().optional(),
+  data_view_id: z.string().optional(),
+  disabled: z.boolean().optional(),
+  is_multi_index: z.boolean().optional(),
+  label: z.string().optional(),
+  negate: z.boolean().optional(),
+  type: z.enum(['condition'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeConditionFilterSchema' })
+export type Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeConditionFilterSchema = z.infer<typeof Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeConditionFilterSchema>
+
+export const Kibana_Dashboards_API_kbn_controls_schemas_controls_group_schema_options_list_control = z.object({
+  config: Kibana_Dashboards_API_kbn_controls_schemas_options_list_dsl_control_schema_esql,
+  grow: z.boolean().optional(),
+  id: z.string().optional(),
+  type: z.enum(['options_list_control']),
+  width: z.enum(['small', 'medium', 'large']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_kbn_controls_schemas_controls_group_schema_options_list_control' })
+export type Kibana_Dashboards_API_kbn_controls_schemas_controls_group_schema_options_list_control = z.infer<typeof Kibana_Dashboards_API_kbn_controls_schemas_controls_group_schema_options_list_control>
+
+export const Kibana_Dashboards_API_kbn_controls_schemas_controls_group_schema_esql_control = z.object({
+  config: z.discriminatedUnion('control_type', [Kibana_Dashboards_API_kbn_controls_schemas_options_list_esql_control_schema_static_values, Kibana_Dashboards_API_kbn_controls_schemas_options_list_esql_control_schema_values_from_query]),
+  grow: z.boolean().optional(),
+  id: z.string().optional(),
+  type: z.enum(['esql_control']),
+  width: z.enum(['small', 'medium', 'large']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_kbn_controls_schemas_controls_group_schema_esql_control' })
+export type Kibana_Dashboards_API_kbn_controls_schemas_controls_group_schema_esql_control = z.infer<typeof Kibana_Dashboards_API_kbn_controls_schemas_controls_group_schema_esql_control>
+
+export const Kibana_Dashboards_API_kbn_controls_schemas_controls_group_schema_range_slider_control = z.object({
+  config: Kibana_Dashboards_API_kbn_controls_schemas_range_slider_control_schema_esql,
+  grow: z.boolean().optional(),
+  id: z.string().optional(),
+  type: z.enum(['range_slider_control']),
+  width: z.enum(['small', 'medium', 'large']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_kbn_controls_schemas_controls_group_schema_range_slider_control' })
+export type Kibana_Dashboards_API_kbn_controls_schemas_controls_group_schema_range_slider_control = z.infer<typeof Kibana_Dashboards_API_kbn_controls_schemas_controls_group_schema_range_slider_control>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_esql_control = z.object({
+  config: z.union([Kibana_Dashboards_API_kbn_controls_schemas_options_list_esql_control_schema_static_values, Kibana_Dashboards_API_kbn_controls_schemas_options_list_esql_control_schema_values_from_query]),
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['esql_control'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_esql_control' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_esql_control = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_esql_control>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_image = z.object({
+  config: z.object({
+    description: z.string().optional(),
+    drilldowns: z.array(z.union([z.object({
+      dashboard_id: z.string(),
+      label: z.string(),
+      open_in_new_tab: z.boolean().optional(),
+      trigger: z.enum(['on_click_image']),
+      type: z.enum(['dashboard_drilldown']),
+      use_filters: z.boolean().optional(),
+      use_time_range: z.boolean().optional()
+    }), z.object({
+      encode_url: z.boolean().optional(),
+      label: z.string(),
+      open_in_new_tab: z.boolean().optional(),
+      trigger: z.enum(['on_click_image', 'on_open_panel_menu']),
+      type: z.enum(['url_drilldown']),
+      url: z.string()
+    })])).optional(),
+    hide_border: z.boolean().optional(),
+    hide_title: z.boolean().optional(),
+    image_config: z.object({
+      alt_text: z.string().optional(),
+      background_color: z.string().optional(),
+      object_fit: z.enum(['fill', 'contain', 'cover', 'none']).optional(),
+      src: z.union([z.object({
+        file_id: z.string(),
+        type: z.enum(['file'])
+      }), z.object({
+        type: z.enum(['url']),
+        url: z.string()
+      })])
+    }),
+    title: z.string().optional()
+  }),
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['image'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_image' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_image = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_image>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_markdown = z.object({
+  config: z.union([z.object({
+    content: z.string(),
+    description: z.string().optional(),
+    hide_border: z.boolean().optional(),
+    hide_title: z.boolean().optional(),
+    settings: z.object({
+      open_links_in_new_tab: z.boolean().optional()
+    }),
+    title: z.string().optional()
+  }), z.object({
+    description: z.string().optional(),
+    hide_border: z.boolean().optional(),
+    hide_title: z.boolean().optional(),
+    ref_id: z.string(),
+    title: z.string().optional()
+  })]),
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['markdown'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_markdown' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_markdown = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_markdown>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_options_list_control = z.object({
+  config: z.union([Kibana_Dashboards_API_kbn_controls_schemas_options_list_dsl_control_schema_esql, Kibana_Dashboards_API_kbn_controls_schemas_options_list_dsl_control_schema_field]),
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['options_list_control'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_options_list_control' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_options_list_control = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_options_list_control>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_range_slider_control = z.object({
+  config: z.union([Kibana_Dashboards_API_kbn_controls_schemas_range_slider_control_schema_esql, Kibana_Dashboards_API_kbn_controls_schemas_range_slider_control_schema_field]),
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['range_slider_control'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_range_slider_control' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_range_slider_control = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_range_slider_control>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_synthetics_monitors = z.object({
+  config: z.object({
+    description: z.string().optional(),
+    filters: z.object({
+      locations: z.array(z.object({
+        label: z.string(),
+        value: z.string()
+      })).optional(),
+      monitor_ids: z.array(z.object({
+        label: z.string(),
+        value: z.string()
+      })).optional(),
+      monitor_types: z.array(z.object({
+        label: z.string(),
+        value: z.string()
+      })).optional(),
+      projects: z.array(z.object({
+        label: z.string(),
+        value: z.string()
+      })).optional(),
+      tags: z.array(z.object({
+        label: z.string(),
+        value: z.string()
+      })).optional()
+    }).optional(),
+    hide_border: z.boolean().optional(),
+    hide_title: z.boolean().optional(),
+    title: z.string().optional(),
+    view: z.enum(['cardView', 'compactView']).optional()
+  }),
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['synthetics_monitors'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_synthetics_monitors' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_synthetics_monitors = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_synthetics_monitors>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_synthetics_stats_overview = z.object({
+  config: z.object({
+    description: z.string().optional(),
+    drilldowns: z.array(z.object({
+      encode_url: z.boolean().optional(),
+      label: z.string(),
+      open_in_new_tab: z.boolean().optional(),
+      trigger: z.enum(['on_open_panel_menu']),
+      type: z.enum(['url_drilldown']),
+      url: z.string()
+    })).optional(),
+    filters: z.object({
+      locations: z.array(z.object({
+        label: z.string(),
+        value: z.string()
+      })).optional(),
+      monitor_ids: z.array(z.object({
+        label: z.string(),
+        value: z.string()
+      })).optional(),
+      monitor_types: z.array(z.object({
+        label: z.string(),
+        value: z.string()
+      })).optional(),
+      projects: z.array(z.object({
+        label: z.string(),
+        value: z.string()
+      })).optional(),
+      tags: z.array(z.object({
+        label: z.string(),
+        value: z.string()
+      })).optional()
+    }).optional(),
+    hide_border: z.boolean().optional(),
+    hide_title: z.boolean().optional(),
+    title: z.string().optional()
+  }),
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['synthetics_stats_overview'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_synthetics_stats_overview' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_synthetics_stats_overview = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_synthetics_stats_overview>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_time_slider_control = z.object({
+  config: z.object({
+    end_percentage_of_time_range: z.number().optional(),
+    is_anchored: z.boolean().optional(),
+    start_percentage_of_time_range: z.number().optional()
+  }),
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['time_slider_control'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_time_slider_control' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_time_slider_control = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_time_slider_control>
+
+export const Kibana_Dashboards_API_aiops_change_point_chart = z.object({
+  aggregation_function: z.enum(['avg', 'sum', 'min', 'max']).optional(),
+  data_view_id: z.string(),
+  description: z.string().optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  max_series_to_plot: z.number().optional(),
+  metric_field: z.string(),
+  partitions: z.array(z.string()).optional(),
+  split_field: z.string().optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  view_type: z.enum(['charts', 'table']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_aiops_change_point_chart' })
+export type Kibana_Dashboards_API_aiops_change_point_chart = z.infer<typeof Kibana_Dashboards_API_aiops_change_point_chart>
+
+export const Kibana_Dashboards_API_aiops_log_rate_analysis = z.object({
+  data_view_id: z.string(),
+  description: z.string().optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_aiops_log_rate_analysis' })
+export type Kibana_Dashboards_API_aiops_log_rate_analysis = z.infer<typeof Kibana_Dashboards_API_aiops_log_rate_analysis>
+
+export const Kibana_Dashboards_API_aiops_pattern_analysis = z.object({
+  data_view_id: z.string(),
+  description: z.string().optional(),
+  field_name: z.string(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  minimum_time_range: z.enum(['no_minimum', '1_week', '1_month', '3_months', '6_months']).optional(),
+  random_sampler_mode: z.enum(['on_automatic', 'on_manual', 'off']).optional(),
+  random_sampler_probability: z.number().nullable().optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_aiops_pattern_analysis' })
+export type Kibana_Dashboards_API_aiops_pattern_analysis = z.infer<typeof Kibana_Dashboards_API_aiops_pattern_analysis>
+
+export const Kibana_Dashboards_API_apm_service_map_embeddable = z.object({
+  alert_status_filter: z.array(z.enum(['active', 'recovered', 'untracked', 'delayed'])).optional(),
+  anomaly_severity_filter: z.array(z.enum(['critical', 'major', 'minor', 'warning', 'low', 'unknown'])).optional(),
+  connection_filter: z.array(z.enum(['orphaned', 'connected'])).optional(),
+  description: z.string().optional(),
+  environment: z.string().optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  highlighted_service_names: z.array(z.string()).optional(),
+  kuery: z.string().optional(),
+  map_orientation: z.enum(['horizontal', 'vertical']).optional(),
+  service_group_id: z.string().optional(),
+  service_name: z.string().optional(),
+  slo_status_filter: z.array(z.enum(['healthy', 'degrading', 'violated', 'noData'])).optional(),
+  sync_with_dashboard_filters: z.boolean().optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_apm_service_map_embeddable' })
+export type Kibana_Dashboards_API_apm_service_map_embeddable = z.infer<typeof Kibana_Dashboards_API_apm_service_map_embeddable>
+
+export const Kibana_Dashboards_API_data_visualizer_field_stats = z.union([z.object({
+  data_view_id: z.string(),
+  description: z.string().optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  show_distributions: z.boolean().optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  view_type: z.enum(['dataview'])
+}), z.object({
+  description: z.string().optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  query: z.object({
+    esql: z.string()
+  }),
+  show_distributions: z.boolean().optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  view_type: z.enum(['esql'])
+})]).meta({ id: 'Kibana_Dashboards_API_data_visualizer_field_stats' })
+export type Kibana_Dashboards_API_data_visualizer_field_stats = z.infer<typeof Kibana_Dashboards_API_data_visualizer_field_stats>
+
+export const Kibana_Dashboards_API_ml_anomaly_charts = z.object({
+  description: z.string().optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  job_ids: z.array(z.string()),
+  max_series_to_plot: z.number().optional(),
+  severity_threshold: z.array(z.union([z.object({
+    max: z.literal(3),
+    min: z.literal(0)
+  }), z.object({
+    max: z.literal(25),
+    min: z.literal(3)
+  }), z.object({
+    max: z.literal(50),
+    min: z.literal(25)
+  }), z.object({
+    max: z.literal(75),
+    min: z.literal(50)
+  }), z.object({
+    min: z.literal(75)
+  })])).optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_ml_anomaly_charts' })
+export type Kibana_Dashboards_API_ml_anomaly_charts = z.infer<typeof Kibana_Dashboards_API_ml_anomaly_charts>
+
+export const Kibana_Dashboards_API_ml_anomaly_swimlane = z.union([z.object({
+  description: z.string().optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  job_ids: z.array(z.string()),
+  per_page: z.number().optional(),
+  swimlane_type: z.enum(['overall']),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional()
+}), z.object({
+  description: z.string().optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  job_ids: z.array(z.string()),
+  per_page: z.number().optional(),
+  swimlane_type: z.enum(['viewBy']),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  view_by: z.string()
+})]).meta({ id: 'Kibana_Dashboards_API_ml_anomaly_swimlane' })
+export type Kibana_Dashboards_API_ml_anomaly_swimlane = z.infer<typeof Kibana_Dashboards_API_ml_anomaly_swimlane>
+
+export const Kibana_Dashboards_API_ml_single_metric_viewer = z.object({
+  description: z.string().optional(),
+  forecast_id: z.string().optional(),
+  function_description: z.string().optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  job_ids: z.array(z.string()),
+  selected_detector_index: z.number().optional(),
+  selected_entities: z.record(z.string(), z.union([z.string(), z.number()])).optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_ml_single_metric_viewer' })
+export type Kibana_Dashboards_API_ml_single_metric_viewer = z.infer<typeof Kibana_Dashboards_API_ml_single_metric_viewer>
+
+export const Kibana_Dashboards_API_kbn_data_view_field_setting = z.object({
+  custom_description: z.string().optional(),
+  custom_label: z.string().optional(),
+  format: Kibana_Dashboards_API_kbn_field_format.optional()
+}).meta({ id: 'Kibana_Dashboards_API_kbn_data_view_field_setting' })
+export type Kibana_Dashboards_API_kbn_data_view_field_setting = z.infer<typeof Kibana_Dashboards_API_kbn_data_view_field_setting>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_links = z.object({
+  config: z.union([z.object({
+    description: z.string().optional(),
+    hide_border: z.boolean().optional(),
+    hide_title: z.boolean().optional(),
+    layout: z.enum(['horizontal', 'vertical']).optional(),
+    links: z.array(z.discriminatedUnion('type', [Kibana_Dashboards_API_kbn_link_panel_type_dashboardLink, Kibana_Dashboards_API_kbn_link_type_externalLink])),
+    title: z.string().optional()
+  }), z.object({
+    description: z.string().optional(),
+    hide_border: z.boolean().optional(),
+    hide_title: z.boolean().optional(),
+    ref_id: z.string(),
+    title: z.string().optional()
+  })]),
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['links'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_links' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_links = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_links>
+
+export const Kibana_Dashboards_API_kbn_runtime_field_base_schema = z.object({
+  custom_description: z.string().optional(),
+  custom_label: z.string().optional(),
+  format: Kibana_Dashboards_API_kbn_field_format.optional(),
+  type: Kibana_Dashboards_API_kbn_runtime_field_type
+}).meta({ id: 'Kibana_Dashboards_API_kbn_runtime_field_base_schema' })
+export type Kibana_Dashboards_API_kbn_runtime_field_base_schema = z.infer<typeof Kibana_Dashboards_API_kbn_runtime_field_base_schema>
+
+export const Kibana_Dashboards_API_kbn_runtime_field_schema = z.object({
+  custom_description: z.string().optional(),
+  custom_label: z.string().optional(),
+  format: Kibana_Dashboards_API_kbn_field_format.optional(),
+  script: z.string().optional(),
+  type: Kibana_Dashboards_API_kbn_runtime_field_type
+}).meta({ id: 'Kibana_Dashboards_API_kbn_runtime_field_schema' })
+export type Kibana_Dashboards_API_kbn_runtime_field_schema = z.infer<typeof Kibana_Dashboards_API_kbn_runtime_field_schema>
+
+export const Kibana_Dashboards_API_colorByValue = z.union([Kibana_Dashboards_API_colorByValueAbsolute, Kibana_Dashboards_API_colorByValuePercentage, Kibana_Dashboards_API_colorByValuePalette, Kibana_Dashboards_API_legacyColorByValue]).meta({ id: 'Kibana_Dashboards_API_colorByValue' })
+export type Kibana_Dashboards_API_colorByValue = z.infer<typeof Kibana_Dashboards_API_colorByValue>
+
+export const Kibana_Dashboards_API_heatmapLegend = z.object({
+  position: z.enum(['top', 'bottom', 'left', 'right']).optional(),
+  size: Kibana_Dashboards_API_legendSize.optional(),
+  truncate_after_lines: z.number().optional(),
+  visibility: z.enum(['visible', 'hidden']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_heatmapLegend' })
+export type Kibana_Dashboards_API_heatmapLegend = z.infer<typeof Kibana_Dashboards_API_heatmapLegend>
+
+export const Kibana_Dashboards_API_mosaicLegend = z.object({
+  nested: z.boolean().optional(),
+  position: Kibana_Dashboards_API_legendPosition.optional(),
+  size: Kibana_Dashboards_API_legendSize.optional(),
+  truncate_after_lines: z.number().optional(),
+  visibility: z.enum(['auto', 'visible', 'hidden']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_mosaicLegend' })
+export type Kibana_Dashboards_API_mosaicLegend = z.infer<typeof Kibana_Dashboards_API_mosaicLegend>
+
+export const Kibana_Dashboards_API_pieLegend = z.object({
+  nested: z.boolean().optional(),
+  position: Kibana_Dashboards_API_legendPosition.optional(),
+  size: Kibana_Dashboards_API_legendSize.optional(),
+  truncate_after_lines: z.number().optional(),
+  visibility: z.enum(['auto', 'visible', 'hidden']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_pieLegend' })
+export type Kibana_Dashboards_API_pieLegend = z.infer<typeof Kibana_Dashboards_API_pieLegend>
+
+export const Kibana_Dashboards_API_treemapLegend = z.object({
+  nested: z.boolean().optional(),
+  position: Kibana_Dashboards_API_legendPosition.optional(),
+  size: Kibana_Dashboards_API_legendSize.optional(),
+  truncate_after_lines: z.number().optional(),
+  visibility: z.enum(['auto', 'visible', 'hidden']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_treemapLegend' })
+export type Kibana_Dashboards_API_treemapLegend = z.infer<typeof Kibana_Dashboards_API_treemapLegend>
+
+export const Kibana_Dashboards_API_waffleLegend = z.object({
+  position: Kibana_Dashboards_API_legendPosition.optional(),
+  size: Kibana_Dashboards_API_legendSize.optional(),
+  truncate_after_lines: z.number().optional(),
+  values: z.array(z.enum(['absolute'])).optional(),
+  visibility: z.enum(['auto', 'visible', 'hidden']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_waffleLegend' })
+export type Kibana_Dashboards_API_waffleLegend = z.infer<typeof Kibana_Dashboards_API_waffleLegend>
+
+export const Kibana_Dashboards_API_metricStyling = z.object({
+  density: z.enum(['compact', 'default']).optional(),
+  icon: Kibana_Dashboards_API_metricIconConfig.optional(),
+  primary: z.object({
+    labels: z.object({
+      alignment: z.enum(['left', 'center', 'right']).optional()
+    }).optional(),
+    position: z.enum(['top', 'middle', 'bottom']).optional(),
+    value: z.object({
+      alignment: z.enum(['left', 'center', 'right']).optional(),
+      sizing: z.enum(['auto', 'fill']).optional()
+    }).optional()
+  }).optional(),
+  secondary: z.object({
+    label: z.object({
+      placement: z.enum(['before', 'after']).optional(),
+      visible: z.boolean().optional()
+    }).optional(),
+    value: z.object({
+      alignment: z.enum(['left', 'center', 'right']).optional()
+    }).optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_metricStyling' })
+export type Kibana_Dashboards_API_metricStyling = z.infer<typeof Kibana_Dashboards_API_metricStyling>
+
+export const Kibana_Dashboards_API_formatType = z.union([Kibana_Dashboards_API_numericFormat, Kibana_Dashboards_API_byteFormat, Kibana_Dashboards_API_durationFormat, Kibana_Dashboards_API_legacyDurationFormat, Kibana_Dashboards_API_customFormat]).meta({ id: 'Kibana_Dashboards_API_formatType' })
+export type Kibana_Dashboards_API_formatType = z.infer<typeof Kibana_Dashboards_API_formatType>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_alerts = z.object({
+  config: Kibana_Dashboards_API_slo_alerts_embeddable,
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['slo_alerts'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_alerts' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_alerts = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_alerts>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_burn_rate = z.object({
+  config: Kibana_Dashboards_API_slo_burn_rate_embeddable,
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['slo_burn_rate'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_burn_rate' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_burn_rate = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_burn_rate>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_error_budget = z.object({
+  config: Kibana_Dashboards_API_slo_error_budget_embeddable,
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['slo_error_budget'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_error_budget' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_error_budget = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_error_budget>
+
+export const Kibana_Dashboards_API_xyAnnotationManualEvent = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  icon: z.enum(['asterisk', 'alert', 'bell', 'bolt', 'bug', 'circle', 'editor_comment', 'flag', 'heart', 'map_marker', 'pin_filled', 'star_empty', 'star_filled', 'tag', 'triangle']).optional(),
+  label: z.string().optional(),
+  line: z.object({
+    stroke_dash: z.enum(['solid', 'dashed', 'dotted']),
+    stroke_width: z.number()
+  }).optional(),
+  text: z.object({
+    visible: z.boolean()
+  }).optional(),
+  timestamp: z.union([z.number(), z.string()]),
+  type: z.enum(['point']),
+  visible: z.boolean().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyAnnotationManualEvent' })
+export type Kibana_Dashboards_API_xyAnnotationManualEvent = z.infer<typeof Kibana_Dashboards_API_xyAnnotationManualEvent>
+
+export const Kibana_Dashboards_API_xyAnnotationManualRange = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  fill: z.enum(['inside', 'outside']).optional(),
+  interval: z.object({
+    from: z.union([z.number(), z.string()]),
+    to: z.union([z.number(), z.string()])
+  }),
+  label: z.string().optional(),
+  type: z.enum(['range']),
+  visible: z.boolean().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyAnnotationManualRange' })
+export type Kibana_Dashboards_API_xyAnnotationManualRange = z.infer<typeof Kibana_Dashboards_API_xyAnnotationManualRange>
+
+export const Kibana_Dashboards_API_xyAnnotationQuery = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  extra_fields: z.array(z.string()).optional(),
+  icon: z.enum(['asterisk', 'alert', 'bell', 'bolt', 'bug', 'circle', 'editor_comment', 'flag', 'heart', 'map_marker', 'pin_filled', 'star_empty', 'star_filled', 'tag', 'triangle']).optional(),
+  label: z.string().optional(),
+  line: z.object({
+    stroke_dash: z.enum(['solid', 'dashed', 'dotted']),
+    stroke_width: z.number()
+  }).optional(),
+  query: Kibana_Dashboards_API_filterSimple,
+  text: z.object({
+    field: z.string().optional(),
+    visible: z.boolean()
+  }).optional(),
+  time_field: z.string(),
+  type: z.enum(['query']),
+  visible: z.boolean().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyAnnotationQuery' })
+export type Kibana_Dashboards_API_xyAnnotationQuery = z.infer<typeof Kibana_Dashboards_API_xyAnnotationQuery>
+
+export const Kibana_Dashboards_API_termsRankByAlphabetical = z.object({
+  direction: Kibana_Dashboards_API_termsRankByAlphabeticalDirection,
+  type: z.enum(['alphabetical'])
+}).meta({ id: 'Kibana_Dashboards_API_termsRankByAlphabetical' })
+export type Kibana_Dashboards_API_termsRankByAlphabetical = z.infer<typeof Kibana_Dashboards_API_termsRankByAlphabetical>
+
+export const Kibana_Dashboards_API_termsRankByCustomCountOperation = z.object({
+  direction: Kibana_Dashboards_API_termsRankByCustomDirection,
+  field: z.string().optional(),
+  operation: z.enum(['count']),
+  type: z.enum(['custom'])
+}).meta({ id: 'Kibana_Dashboards_API_termsRankByCustomCountOperation' })
+export type Kibana_Dashboards_API_termsRankByCustomCountOperation = z.infer<typeof Kibana_Dashboards_API_termsRankByCustomCountOperation>
+
+export const Kibana_Dashboards_API_termsRankByCustomOperation = z.object({
+  direction: Kibana_Dashboards_API_termsRankByCustomDirection,
+  field: z.string(),
+  operation: z.enum(['min', 'max', 'average', 'median', 'standard_deviation', 'unique_count', 'sum', 'last_value']),
+  type: z.enum(['custom'])
+}).meta({ id: 'Kibana_Dashboards_API_termsRankByCustomOperation' })
+export type Kibana_Dashboards_API_termsRankByCustomOperation = z.infer<typeof Kibana_Dashboards_API_termsRankByCustomOperation>
+
+export const Kibana_Dashboards_API_termsRankByPercentileOperation = z.object({
+  direction: Kibana_Dashboards_API_termsRankByCustomDirection,
+  field: z.string(),
+  operation: z.enum(['percentile']),
+  percentile: z.number().optional(),
+  type: z.enum(['custom'])
+}).meta({ id: 'Kibana_Dashboards_API_termsRankByPercentileOperation' })
+export type Kibana_Dashboards_API_termsRankByPercentileOperation = z.infer<typeof Kibana_Dashboards_API_termsRankByPercentileOperation>
+
+export const Kibana_Dashboards_API_termsRankByPercentileRankOperation = z.object({
+  direction: Kibana_Dashboards_API_termsRankByCustomDirection,
+  field: z.string(),
+  operation: z.enum(['percentile_rank']),
+  rank: z.number().optional(),
+  type: z.enum(['custom'])
+}).meta({ id: 'Kibana_Dashboards_API_termsRankByPercentileRankOperation' })
+export type Kibana_Dashboards_API_termsRankByPercentileRankOperation = z.infer<typeof Kibana_Dashboards_API_termsRankByPercentileRankOperation>
+
+export const Kibana_Dashboards_API_termsRankByMetric = z.object({
+  direction: Kibana_Dashboards_API_termsRankByMetricDirection,
+  metric_index: z.number().optional(),
+  type: z.enum(['metric'])
+}).meta({ id: 'Kibana_Dashboards_API_termsRankByMetric' })
+export type Kibana_Dashboards_API_termsRankByMetric = z.infer<typeof Kibana_Dashboards_API_termsRankByMetric>
+
+export const Kibana_Dashboards_API_mosaicStyling = z.object({
+  values: Kibana_Dashboards_API_valueDisplay.optional()
+}).meta({ id: 'Kibana_Dashboards_API_mosaicStyling' })
+export type Kibana_Dashboards_API_mosaicStyling = z.infer<typeof Kibana_Dashboards_API_mosaicStyling>
+
+export const Kibana_Dashboards_API_pieStyling = z.object({
+  donut_hole: z.enum(['none', 's', 'm', 'l']).optional(),
+  labels: z.object({
+    position: z.enum(['inside', 'outside']).optional(),
+    visible: z.boolean().optional()
+  }).optional(),
+  values: Kibana_Dashboards_API_valueDisplay.optional()
+}).meta({ id: 'Kibana_Dashboards_API_pieStyling' })
+export type Kibana_Dashboards_API_pieStyling = z.infer<typeof Kibana_Dashboards_API_pieStyling>
+
+export const Kibana_Dashboards_API_treemapStyling = z.object({
+  labels: z.object({
+    visible: z.boolean().optional()
+  }).optional(),
+  values: Kibana_Dashboards_API_valueDisplay.optional()
+}).meta({ id: 'Kibana_Dashboards_API_treemapStyling' })
+export type Kibana_Dashboards_API_treemapStyling = z.infer<typeof Kibana_Dashboards_API_treemapStyling>
+
+export const Kibana_Dashboards_API_waffleStyling = z.object({
+  values: Kibana_Dashboards_API_valueDisplay.optional()
+}).meta({ id: 'Kibana_Dashboards_API_waffleStyling' })
+export type Kibana_Dashboards_API_waffleStyling = z.infer<typeof Kibana_Dashboards_API_waffleStyling>
+
+export const Kibana_Dashboards_API_datatableStyling = z.object({
+  density: Kibana_Dashboards_API_datatableDensity.optional(),
+  paging: z.union([z.literal(10), z.literal(20), z.literal(30), z.literal(50), z.literal(100)]).optional(),
+  row_numbers: z.object({
+    visible: z.boolean()
+  }).optional(),
+  sort_by: z.union([z.object({
+    column_type: z.enum(['metric', 'row']),
+    direction: Kibana_Dashboards_API_vis_api_direction,
+    index: z.number()
+  }), z.object({
+    column_type: z.enum(['pivoted_metric']),
+    direction: Kibana_Dashboards_API_vis_api_direction,
+    index: z.number(),
+    values: z.array(z.string())
+  })]).optional()
+}).meta({ id: 'Kibana_Dashboards_API_datatableStyling' })
+export type Kibana_Dashboards_API_datatableStyling = z.infer<typeof Kibana_Dashboards_API_datatableStyling>
+
+export const Kibana_Dashboards_API_heatmapXAxis = z.object({
+  labels: z.object({
+    orientation: Kibana_Dashboards_API_vis_api_orientation.optional(),
+    visible: z.boolean().optional()
+  }).optional(),
+  scale: z.enum(['ordinal', 'temporal', 'linear']),
+  sort: z.enum(['asc', 'desc']).optional(),
+  title: z.object({
+    text: z.string().optional(),
+    visible: z.boolean().optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_heatmapXAxis' })
+export type Kibana_Dashboards_API_heatmapXAxis = z.infer<typeof Kibana_Dashboards_API_heatmapXAxis>
+
+export const Kibana_Dashboards_API_tagcloudStyling = z.object({
+  caption: z.object({
+    visible: z.boolean().optional()
+  }).optional(),
+  font_size: z.object({
+    max: z.number().optional(),
+    min: z.number().optional()
+  }).optional(),
+  orientation: Kibana_Dashboards_API_vis_api_orientation.optional()
+}).meta({ id: 'Kibana_Dashboards_API_tagcloudStyling' })
+export type Kibana_Dashboards_API_tagcloudStyling = z.infer<typeof Kibana_Dashboards_API_tagcloudStyling>
+
+export const Kibana_Dashboards_API_vis_api_xy_axis_config = z.object({
+  x: z.object({
+    domain: z.union([Kibana_Dashboards_API_vis_api_domain_fit, Kibana_Dashboards_API_vis_api_domain_custom]).optional(),
+    grid: z.object({
+      visible: z.boolean()
+    }).optional(),
+    labels: z.object({
+      orientation: Kibana_Dashboards_API_vis_api_orientation.optional()
+    }).optional(),
+    scale: z.enum(['ordinal', 'temporal', 'linear']).optional(),
+    ticks: z.object({
+      visible: z.boolean()
+    }).optional(),
+    title: z.object({
+      text: z.string().optional(),
+      visible: z.boolean().optional()
+    }).optional()
+  }).optional(),
+  y: z.object({
+    domain: z.discriminatedUnion('type', [Kibana_Dashboards_API_vis_api_domain_full, Kibana_Dashboards_API_vis_api_domain_fit, Kibana_Dashboards_API_vis_api_domain_custom]),
+    grid: z.object({
+      visible: z.boolean()
+    }).optional(),
+    labels: z.object({
+      orientation: Kibana_Dashboards_API_vis_api_orientation.optional()
+    }).optional(),
+    scale: z.enum(['linear', 'log', 'sqrt']).optional(),
+    ticks: z.object({
+      visible: z.boolean()
+    }).optional(),
+    title: z.object({
+      text: z.string().optional(),
+      visible: z.boolean().optional()
+    }).optional()
+  }).optional(),
+  y2: z.object({
+    domain: z.union([Kibana_Dashboards_API_vis_api_domain_full, Kibana_Dashboards_API_vis_api_domain_fit, Kibana_Dashboards_API_vis_api_domain_custom]),
+    grid: z.object({
+      visible: z.boolean()
+    }).optional(),
+    labels: z.object({
+      orientation: Kibana_Dashboards_API_vis_api_orientation.optional()
+    }).optional(),
+    scale: z.enum(['linear', 'log', 'sqrt']).optional(),
+    ticks: z.object({
+      visible: z.boolean()
+    }).optional(),
+    title: z.object({
+      text: z.string().optional(),
+      visible: z.boolean().optional()
+    }).optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_vis_api_xy_axis_config' })
+export type Kibana_Dashboards_API_vis_api_xy_axis_config = z.infer<typeof Kibana_Dashboards_API_vis_api_xy_axis_config>
+
+export const Kibana_Dashboards_API_gaugeShapeBullet = z.object({
+  orientation: Kibana_Dashboards_API_vis_api_simple_orientation.optional(),
+  type: z.enum(['bullet'])
+}).meta({ id: 'Kibana_Dashboards_API_gaugeShapeBullet' })
+export type Kibana_Dashboards_API_gaugeShapeBullet = z.infer<typeof Kibana_Dashboards_API_gaugeShapeBullet>
+
+export const Kibana_Dashboards_API_metricComplementaryBar = z.object({
+  max_value: z.object({
+    column: z.string(),
+    label: z.string().optional()
+  }),
+  orientation: Kibana_Dashboards_API_vis_api_simple_orientation.optional(),
+  type: z.enum(['bar'])
+}).meta({ id: 'Kibana_Dashboards_API_metricComplementaryBar' })
+export type Kibana_Dashboards_API_metricComplementaryBar = z.infer<typeof Kibana_Dashboards_API_metricComplementaryBar>
+
+export const Kibana_Dashboards_API_xyLegendInside = z.object({
+  columns: z.number().optional(),
+  layout: z.object({
+    truncate: z.object({
+      enabled: z.boolean().optional(),
+      max_lines: z.number().optional()
+    }).optional(),
+    type: z.enum(['grid'])
+  }).optional(),
+  placement: z.enum(['inside']),
+  position: z.enum(['top_left', 'top_right', 'bottom_left', 'bottom_right']).optional(),
+  series_header: Kibana_Dashboards_API_xyLegendSeriesHeader.optional(),
+  statistics: z.array(z.enum(['min', 'max', 'avg', 'median', 'range', 'last_value', 'last_non_null_value', 'first_value', 'first_non_null_value', 'difference', 'difference_percentage', 'count', 'total', 'standard_deviation', 'variance', 'distinct_count', 'current_and_last_value'])).optional(),
+  visibility: z.enum(['auto', 'visible', 'hidden']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyLegendInside' })
+export type Kibana_Dashboards_API_xyLegendInside = z.infer<typeof Kibana_Dashboards_API_xyLegendInside>
+
+export const Kibana_Dashboards_API_xyLegendOutsideHorizontal = z.object({
+  layout: z.union([z.object({
+    truncate: z.object({
+      enabled: z.boolean().optional(),
+      max_lines: z.number().optional()
+    }).optional(),
+    type: z.enum(['grid'])
+  }), z.object({
+    type: z.enum(['list'])
+  })]).optional(),
+  placement: z.enum(['outside']).optional(),
+  position: z.enum(['top', 'bottom']).optional(),
+  series_header: Kibana_Dashboards_API_xyLegendSeriesHeader.optional(),
+  statistics: z.array(z.enum(['min', 'max', 'avg', 'median', 'range', 'last_value', 'last_non_null_value', 'first_value', 'first_non_null_value', 'difference', 'difference_percentage', 'count', 'total', 'standard_deviation', 'variance', 'distinct_count', 'current_and_last_value'])).optional(),
+  visibility: z.enum(['auto', 'visible', 'hidden']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyLegendOutsideHorizontal' })
+export type Kibana_Dashboards_API_xyLegendOutsideHorizontal = z.infer<typeof Kibana_Dashboards_API_xyLegendOutsideHorizontal>
+
+export const Kibana_Dashboards_API_xyLegendOutsideVertical = z.object({
+  layout: z.object({
+    truncate: z.object({
+      enabled: z.boolean().optional(),
+      max_lines: z.number().optional()
+    }).optional(),
+    type: z.enum(['grid'])
+  }).optional(),
+  placement: z.enum(['outside']).optional(),
+  position: z.enum(['left', 'right']).optional(),
+  series_header: Kibana_Dashboards_API_xyLegendSeriesHeader.optional(),
+  size: Kibana_Dashboards_API_legendSize.optional(),
+  statistics: z.array(z.enum(['min', 'max', 'avg', 'median', 'range', 'last_value', 'last_non_null_value', 'first_value', 'first_non_null_value', 'difference', 'difference_percentage', 'count', 'total', 'standard_deviation', 'variance', 'distinct_count', 'current_and_last_value'])).optional(),
+  visibility: z.enum(['auto', 'visible', 'hidden']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyLegendOutsideVertical' })
+export type Kibana_Dashboards_API_xyLegendOutsideVertical = z.infer<typeof Kibana_Dashboards_API_xyLegendOutsideVertical>
+
+export const Kibana_Dashboards_API_xyStyling = z.object({
+  areas: Kibana_Dashboards_API_xyStylingAreas.optional(),
+  bars: Kibana_Dashboards_API_xyStylingBars.optional(),
+  fitting: Kibana_Dashboards_API_xyFitting.optional(),
+  interpolation: z.enum(['linear', 'smooth', 'stepped']).optional(),
+  overlays: Kibana_Dashboards_API_xyStylingOverlays.optional(),
+  points: Kibana_Dashboards_API_xyStylingPoints.optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyStyling' })
+export type Kibana_Dashboards_API_xyStyling = z.infer<typeof Kibana_Dashboards_API_xyStyling>
+
 export const Kibana_HTTP_APIs_alerting_new_rule = z.object({
   artifacts: z.array(Kibana_HTTP_APIs_alerting_rule_artifact).optional(),
   grouping: Kibana_HTTP_APIs_alerting_rule_grouping.optional(),
@@ -3408,7 +5005,6 @@ export const Kibana_HTTP_APIs_alerting_action_policy_response = z.object({
   }).nullable(),
   name: z.string(),
   snoozed_until: z.string().nullable(),
-  tags: z.array(z.string()).nullable(),
   throttle: z.object({
     interval: z.string().nullable(),
     strategy: z.union([z.enum(['on_status_change']), z.enum(['per_status_interval']), z.enum(['time_interval']), z.enum(['every_time'])]).optional()
@@ -3429,7 +5025,6 @@ export const Kibana_HTTP_APIs_alerting_new_action_policy = z.object({
     tags: z.array(z.string()).nullable().optional()
   }).optional(),
   name: z.string(),
-  tags: z.array(z.string()).optional(),
   throttle: Kibana_HTTP_APIs_alerting_action_policy_throttle.optional()
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_new_action_policy' })
 export type Kibana_HTTP_APIs_alerting_new_action_policy = z.infer<typeof Kibana_HTTP_APIs_alerting_new_action_policy>
@@ -4051,6 +5646,2039 @@ export type Kibana_HTTP_APIs_visUniqueCountMetricOperation = z.infer<typeof Kiba
 export const Kibana_HTTP_APIs_visXyLegend: z.ZodTypeAny = z.union([Kibana_HTTP_APIs_visXyLegendOutsideHorizontal, Kibana_HTTP_APIs_visXyLegendOutsideVertical, Kibana_HTTP_APIs_visXyLegendInside]).meta({ id: 'Kibana_HTTP_APIs_visXyLegend' })
 export type Kibana_HTTP_APIs_visXyLegend = z.infer<typeof Kibana_HTTP_APIs_visXyLegend>
 
+export const Kibana_Dashboards_API_categoricalColorMapping = z.object({
+  mapping: z.array(z.object({
+    color: z.union([Kibana_Dashboards_API_colorFromPalette, Kibana_Dashboards_API_color_code]),
+    values: z.array(z.union([z.string(), z.number(), Kibana_Dashboards_API_range_key, Kibana_Dashboards_API_multi_field_key]))
+  })),
+  mode: z.enum(['categorical']),
+  palette: z.string(),
+  unassigned: Kibana_Dashboards_API_unassignedColorSchema.optional()
+}).meta({ id: 'Kibana_Dashboards_API_categoricalColorMapping' })
+export type Kibana_Dashboards_API_categoricalColorMapping = z.infer<typeof Kibana_Dashboards_API_categoricalColorMapping>
+
+export const Kibana_Dashboards_API_gradientColorMapping = z.object({
+  gradient: z.array(z.union([Kibana_Dashboards_API_colorFromPalette, Kibana_Dashboards_API_color_code])).optional(),
+  mapping: z.array(z.object({
+    values: z.array(z.union([z.string(), z.number(), Kibana_Dashboards_API_range_key, Kibana_Dashboards_API_multi_field_key]))
+  })).optional(),
+  mode: z.enum(['gradient']),
+  palette: z.string(),
+  sort: z.enum(['asc', 'desc']).optional(),
+  unassigned: Kibana_Dashboards_API_unassignedColorSchema.optional()
+}).meta({ id: 'Kibana_Dashboards_API_gradientColorMapping' })
+export type Kibana_Dashboards_API_gradientColorMapping = z.infer<typeof Kibana_Dashboards_API_gradientColorMapping>
+
+export const Kibana_Dashboards_API_filtersOperation = z.object({
+  filters: z.array(Kibana_Dashboards_API_filterWithLabel),
+  label: z.string().optional(),
+  operation: z.enum(['filters'])
+}).meta({ id: 'Kibana_Dashboards_API_filtersOperation' })
+export type Kibana_Dashboards_API_filtersOperation = z.infer<typeof Kibana_Dashboards_API_filtersOperation>
+
+export const Kibana_Dashboards_API_metricBreakdownFilters = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  columns: z.number().optional(),
+  filters: z.array(Kibana_Dashboards_API_filterWithLabel),
+  label: z.string().optional(),
+  operation: z.enum(['filters'])
+}).meta({ id: 'Kibana_Dashboards_API_metricBreakdownFilters' })
+export type Kibana_Dashboards_API_metricBreakdownFilters = z.infer<typeof Kibana_Dashboards_API_metricBreakdownFilters>
+
+export const Kibana_Dashboards_API_mosaicGroupBreakdownByFilters = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  filters: z.array(Kibana_Dashboards_API_filterWithLabel),
+  label: z.string().optional(),
+  operation: z.enum(['filters'])
+}).meta({ id: 'Kibana_Dashboards_API_mosaicGroupBreakdownByFilters' })
+export type Kibana_Dashboards_API_mosaicGroupBreakdownByFilters = z.infer<typeof Kibana_Dashboards_API_mosaicGroupBreakdownByFilters>
+
+export const Kibana_Dashboards_API_regionMapRegionFilters = z.object({
+  ems: z.object({
+    boundaries: z.string(),
+    join: z.string()
+  }).optional(),
+  filters: z.array(Kibana_Dashboards_API_filterWithLabel),
+  label: z.string().optional(),
+  operation: z.enum(['filters'])
+}).meta({ id: 'Kibana_Dashboards_API_regionMapRegionFilters' })
+export type Kibana_Dashboards_API_regionMapRegionFilters = z.infer<typeof Kibana_Dashboards_API_regionMapRegionFilters>
+
+export const Kibana_Dashboards_API_xyXFilters = z.object({
+  filters: z.array(Kibana_Dashboards_API_filterWithLabel),
+  label: z.string().optional(),
+  operation: z.enum(['filters'])
+}).meta({ id: 'Kibana_Dashboards_API_xyXFilters' })
+export type Kibana_Dashboards_API_xyXFilters = z.infer<typeof Kibana_Dashboards_API_xyXFilters>
+
+export const Kibana_Dashboards_API_lensPanelFilters = z.array(z.union([Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeConditionFilterSchema, Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeGroupFilterSchema, Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeDSLFilterSchema, Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeSpatialFilterSchema])).meta({ id: 'Kibana_Dashboards_API_lensPanelFilters' })
+export type Kibana_Dashboards_API_lensPanelFilters = z.infer<typeof Kibana_Dashboards_API_lensPanelFilters>
+
+export const Kibana_Dashboards_API_slo_group_overview_embeddable = z.object({
+  description: z.string().optional(),
+  drilldowns: z.array(z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_open_panel_menu']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })).optional(),
+  group_filters: z.object({
+    filters: z.array(z.union([Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeConditionFilterSchema, Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeGroupFilterSchema, Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeDSLFilterSchema, Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeSpatialFilterSchema])).optional(),
+    group_by: z.enum(['slo.tags', 'status', 'slo.indicator.type', '_index']).optional(),
+    groups: z.array(z.string()).optional(),
+    kql_query: z.string().optional()
+  }).optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  overview_mode: z.enum(['groups']),
+  title: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_slo_group_overview_embeddable' })
+export type Kibana_Dashboards_API_slo_group_overview_embeddable = z.infer<typeof Kibana_Dashboards_API_slo_group_overview_embeddable>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_aiops_change_point_chart = z.object({
+  config: Kibana_Dashboards_API_aiops_change_point_chart,
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['aiops_change_point_chart'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_aiops_change_point_chart' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_aiops_change_point_chart = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_aiops_change_point_chart>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_aiops_log_rate_analysis = z.object({
+  config: Kibana_Dashboards_API_aiops_log_rate_analysis,
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['aiops_log_rate_analysis'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_aiops_log_rate_analysis' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_aiops_log_rate_analysis = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_aiops_log_rate_analysis>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_aiops_pattern_analysis = z.object({
+  config: Kibana_Dashboards_API_aiops_pattern_analysis,
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['aiops_pattern_analysis'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_aiops_pattern_analysis' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_aiops_pattern_analysis = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_aiops_pattern_analysis>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_apm_service_map = z.object({
+  config: Kibana_Dashboards_API_apm_service_map_embeddable,
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['apm_service_map'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_apm_service_map' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_apm_service_map = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_apm_service_map>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_field_stats_table = z.object({
+  config: Kibana_Dashboards_API_data_visualizer_field_stats,
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['field_stats_table'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_field_stats_table' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_field_stats_table = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_field_stats_table>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_ml_anomaly_charts = z.object({
+  config: Kibana_Dashboards_API_ml_anomaly_charts,
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['ml_anomaly_charts'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_ml_anomaly_charts' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_ml_anomaly_charts = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_ml_anomaly_charts>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_ml_anomaly_swimlane = z.object({
+  config: Kibana_Dashboards_API_ml_anomaly_swimlane,
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['ml_anomaly_swimlane'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_ml_anomaly_swimlane' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_ml_anomaly_swimlane = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_ml_anomaly_swimlane>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_ml_single_metric_viewer = z.object({
+  config: Kibana_Dashboards_API_ml_single_metric_viewer,
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['ml_single_metric_viewer'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_ml_single_metric_viewer' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_ml_single_metric_viewer = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_ml_single_metric_viewer>
+
+export const Kibana_Dashboards_API_kbn_composite_runtime_field_schema = z.object({
+  fields: z.record(z.string(), Kibana_Dashboards_API_kbn_runtime_field_base_schema),
+  script: z.string().optional(),
+  type: z.enum(['composite'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_composite_runtime_field_schema' })
+export type Kibana_Dashboards_API_kbn_composite_runtime_field_schema = z.infer<typeof Kibana_Dashboards_API_kbn_composite_runtime_field_schema>
+
+export const Kibana_Dashboards_API_counterRateOperation = z.object({
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['counter_rate']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_counterRateOperation' })
+export type Kibana_Dashboards_API_counterRateOperation = z.infer<typeof Kibana_Dashboards_API_counterRateOperation>
+
+export const Kibana_Dashboards_API_countMetricOperation = z.object({
+  empty_as_null: z.boolean().optional(),
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['count']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_countMetricOperation' })
+export type Kibana_Dashboards_API_countMetricOperation = z.infer<typeof Kibana_Dashboards_API_countMetricOperation>
+
+export const Kibana_Dashboards_API_cumulativeSumOperation = z.object({
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['cumulative_sum']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_cumulativeSumOperation' })
+export type Kibana_Dashboards_API_cumulativeSumOperation = z.infer<typeof Kibana_Dashboards_API_cumulativeSumOperation>
+
+export const Kibana_Dashboards_API_formulaOperation = z.object({
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  formula: z.string(),
+  label: z.string().optional(),
+  operation: z.enum(['formula']),
+  reduced_time_range: z.string().optional(),
+  time_scale: z.enum(['s', 'm', 'h', 'd']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_formulaOperation' })
+export type Kibana_Dashboards_API_formulaOperation = z.infer<typeof Kibana_Dashboards_API_formulaOperation>
+
+export const Kibana_Dashboards_API_heatmapMetricCounterRate = z.object({
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['counter_rate']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_heatmapMetricCounterRate' })
+export type Kibana_Dashboards_API_heatmapMetricCounterRate = z.infer<typeof Kibana_Dashboards_API_heatmapMetricCounterRate>
+
+export const Kibana_Dashboards_API_heatmapMetricCountMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['count']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_heatmapMetricCountMetric' })
+export type Kibana_Dashboards_API_heatmapMetricCountMetric = z.infer<typeof Kibana_Dashboards_API_heatmapMetricCountMetric>
+
+export const Kibana_Dashboards_API_heatmapMetricCumulativeSum = z.object({
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['cumulative_sum']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_heatmapMetricCumulativeSum' })
+export type Kibana_Dashboards_API_heatmapMetricCumulativeSum = z.infer<typeof Kibana_Dashboards_API_heatmapMetricCumulativeSum>
+
+export const Kibana_Dashboards_API_heatmapMetricFormula = z.object({
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  formula: z.string(),
+  label: z.string().optional(),
+  operation: z.enum(['formula']),
+  reduced_time_range: z.string().optional(),
+  time_scale: z.enum(['s', 'm', 'h', 'd']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_heatmapMetricFormula' })
+export type Kibana_Dashboards_API_heatmapMetricFormula = z.infer<typeof Kibana_Dashboards_API_heatmapMetricFormula>
+
+export const Kibana_Dashboards_API_heatmapMetricLastValue = z.object({
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  multi_value: z.boolean().optional(),
+  operation: z.enum(['last_value']),
+  reduced_time_range: z.string().optional(),
+  time_field: z.string(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_heatmapMetricLastValue' })
+export type Kibana_Dashboards_API_heatmapMetricLastValue = z.infer<typeof Kibana_Dashboards_API_heatmapMetricLastValue>
+
+export const Kibana_Dashboards_API_heatmapMetricPercentile = z.object({
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile']),
+  percentile: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_heatmapMetricPercentile' })
+export type Kibana_Dashboards_API_heatmapMetricPercentile = z.infer<typeof Kibana_Dashboards_API_heatmapMetricPercentile>
+
+export const Kibana_Dashboards_API_heatmapMetricPercentileRanks = z.object({
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile_rank']),
+  rank: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_heatmapMetricPercentileRanks' })
+export type Kibana_Dashboards_API_heatmapMetricPercentileRanks = z.infer<typeof Kibana_Dashboards_API_heatmapMetricPercentileRanks>
+
+export const Kibana_Dashboards_API_heatmapMetricStatsMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['min', 'max', 'average', 'median', 'standard_deviation']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_heatmapMetricStatsMetric' })
+export type Kibana_Dashboards_API_heatmapMetricStatsMetric = z.infer<typeof Kibana_Dashboards_API_heatmapMetricStatsMetric>
+
+export const Kibana_Dashboards_API_heatmapMetricSumMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['sum']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_heatmapMetricSumMetric' })
+export type Kibana_Dashboards_API_heatmapMetricSumMetric = z.infer<typeof Kibana_Dashboards_API_heatmapMetricSumMetric>
+
+export const Kibana_Dashboards_API_heatmapMetricUniqueCountMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['unique_count']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_heatmapMetricUniqueCountMetric' })
+export type Kibana_Dashboards_API_heatmapMetricUniqueCountMetric = z.infer<typeof Kibana_Dashboards_API_heatmapMetricUniqueCountMetric>
+
+export const Kibana_Dashboards_API_histogramOperation = z.object({
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  granularity: z.union([z.number(), z.enum(['auto'])]).optional(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['histogram'])
+}).meta({ id: 'Kibana_Dashboards_API_histogramOperation' })
+export type Kibana_Dashboards_API_histogramOperation = z.infer<typeof Kibana_Dashboards_API_histogramOperation>
+
+export const Kibana_Dashboards_API_lastValueOperation = z.object({
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  multi_value: z.boolean().optional(),
+  operation: z.enum(['last_value']),
+  reduced_time_range: z.string().optional(),
+  time_field: z.string(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_lastValueOperation' })
+export type Kibana_Dashboards_API_lastValueOperation = z.infer<typeof Kibana_Dashboards_API_lastValueOperation>
+
+export const Kibana_Dashboards_API_legacyMetricCountMetric = z.object({
+  apply_color_to: z.enum(['value', 'background']).optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValueAbsolute, Kibana_Dashboards_API_colorByValuePalette, Kibana_Dashboards_API_legacyColorByValueAbsolute, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  labels: z.object({
+    alignment: z.enum(['top', 'bottom']).optional()
+  }).optional(),
+  operation: z.enum(['count']),
+  reduced_time_range: z.string().optional(),
+  size: z.enum(['xs', 's', 'm', 'l', 'xl', 'xxl']).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  values: z.object({
+    alignment: z.enum(['left', 'center', 'right']).optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_legacyMetricCountMetric' })
+export type Kibana_Dashboards_API_legacyMetricCountMetric = z.infer<typeof Kibana_Dashboards_API_legacyMetricCountMetric>
+
+export const Kibana_Dashboards_API_legacyMetricFormula = z.object({
+  apply_color_to: z.enum(['value', 'background']).optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValueAbsolute, Kibana_Dashboards_API_colorByValuePalette, Kibana_Dashboards_API_legacyColorByValueAbsolute, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  formula: z.string(),
+  label: z.string().optional(),
+  labels: z.object({
+    alignment: z.enum(['top', 'bottom']).optional()
+  }).optional(),
+  operation: z.enum(['formula']),
+  reduced_time_range: z.string().optional(),
+  size: z.enum(['xs', 's', 'm', 'l', 'xl', 'xxl']).optional(),
+  time_scale: z.enum(['s', 'm', 'h', 'd']).optional(),
+  values: z.object({
+    alignment: z.enum(['left', 'center', 'right']).optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_legacyMetricFormula' })
+export type Kibana_Dashboards_API_legacyMetricFormula = z.infer<typeof Kibana_Dashboards_API_legacyMetricFormula>
+
+export const Kibana_Dashboards_API_legacyMetricLastValue = z.object({
+  apply_color_to: z.enum(['value', 'background']).optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValueAbsolute, Kibana_Dashboards_API_colorByValuePalette, Kibana_Dashboards_API_legacyColorByValueAbsolute, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  labels: z.object({
+    alignment: z.enum(['top', 'bottom']).optional()
+  }).optional(),
+  multi_value: z.boolean().optional(),
+  operation: z.enum(['last_value']),
+  reduced_time_range: z.string().optional(),
+  size: z.enum(['xs', 's', 'm', 'l', 'xl', 'xxl']).optional(),
+  time_field: z.string(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  values: z.object({
+    alignment: z.enum(['left', 'center', 'right']).optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_legacyMetricLastValue' })
+export type Kibana_Dashboards_API_legacyMetricLastValue = z.infer<typeof Kibana_Dashboards_API_legacyMetricLastValue>
+
+export const Kibana_Dashboards_API_legacyMetricPercentile = z.object({
+  apply_color_to: z.enum(['value', 'background']).optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValueAbsolute, Kibana_Dashboards_API_colorByValuePalette, Kibana_Dashboards_API_legacyColorByValueAbsolute, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  labels: z.object({
+    alignment: z.enum(['top', 'bottom']).optional()
+  }).optional(),
+  operation: z.enum(['percentile']),
+  percentile: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  size: z.enum(['xs', 's', 'm', 'l', 'xl', 'xxl']).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  values: z.object({
+    alignment: z.enum(['left', 'center', 'right']).optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_legacyMetricPercentile' })
+export type Kibana_Dashboards_API_legacyMetricPercentile = z.infer<typeof Kibana_Dashboards_API_legacyMetricPercentile>
+
+export const Kibana_Dashboards_API_legacyMetricPercentileRanks = z.object({
+  apply_color_to: z.enum(['value', 'background']).optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValueAbsolute, Kibana_Dashboards_API_colorByValuePalette, Kibana_Dashboards_API_legacyColorByValueAbsolute, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  labels: z.object({
+    alignment: z.enum(['top', 'bottom']).optional()
+  }).optional(),
+  operation: z.enum(['percentile_rank']),
+  rank: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  size: z.enum(['xs', 's', 'm', 'l', 'xl', 'xxl']).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  values: z.object({
+    alignment: z.enum(['left', 'center', 'right']).optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_legacyMetricPercentileRanks' })
+export type Kibana_Dashboards_API_legacyMetricPercentileRanks = z.infer<typeof Kibana_Dashboards_API_legacyMetricPercentileRanks>
+
+export const Kibana_Dashboards_API_legacyMetricStatsMetric = z.object({
+  apply_color_to: z.enum(['value', 'background']).optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValueAbsolute, Kibana_Dashboards_API_colorByValuePalette, Kibana_Dashboards_API_legacyColorByValueAbsolute, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  labels: z.object({
+    alignment: z.enum(['top', 'bottom']).optional()
+  }).optional(),
+  operation: z.enum(['min', 'max', 'average', 'median', 'standard_deviation']),
+  reduced_time_range: z.string().optional(),
+  size: z.enum(['xs', 's', 'm', 'l', 'xl', 'xxl']).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  values: z.object({
+    alignment: z.enum(['left', 'center', 'right']).optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_legacyMetricStatsMetric' })
+export type Kibana_Dashboards_API_legacyMetricStatsMetric = z.infer<typeof Kibana_Dashboards_API_legacyMetricStatsMetric>
+
+export const Kibana_Dashboards_API_legacyMetricSumMetric = z.object({
+  apply_color_to: z.enum(['value', 'background']).optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValueAbsolute, Kibana_Dashboards_API_colorByValuePalette, Kibana_Dashboards_API_legacyColorByValueAbsolute, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  labels: z.object({
+    alignment: z.enum(['top', 'bottom']).optional()
+  }).optional(),
+  operation: z.enum(['sum']),
+  reduced_time_range: z.string().optional(),
+  size: z.enum(['xs', 's', 'm', 'l', 'xl', 'xxl']).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  values: z.object({
+    alignment: z.enum(['left', 'center', 'right']).optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_legacyMetricSumMetric' })
+export type Kibana_Dashboards_API_legacyMetricSumMetric = z.infer<typeof Kibana_Dashboards_API_legacyMetricSumMetric>
+
+export const Kibana_Dashboards_API_legacyMetricUniqueCountMetric = z.object({
+  apply_color_to: z.enum(['value', 'background']).optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValueAbsolute, Kibana_Dashboards_API_colorByValuePalette, Kibana_Dashboards_API_legacyColorByValueAbsolute, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  labels: z.object({
+    alignment: z.enum(['top', 'bottom']).optional()
+  }).optional(),
+  operation: z.enum(['unique_count']),
+  reduced_time_range: z.string().optional(),
+  size: z.enum(['xs', 's', 'm', 'l', 'xl', 'xxl']).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  values: z.object({
+    alignment: z.enum(['left', 'center', 'right']).optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_legacyMetricUniqueCountMetric' })
+export type Kibana_Dashboards_API_legacyMetricUniqueCountMetric = z.infer<typeof Kibana_Dashboards_API_legacyMetricUniqueCountMetric>
+
+export const Kibana_Dashboards_API_metricBreakdownHistogram = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  columns: z.number().optional(),
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  granularity: z.union([z.number(), z.enum(['auto'])]).optional(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['histogram'])
+}).meta({ id: 'Kibana_Dashboards_API_metricBreakdownHistogram' })
+export type Kibana_Dashboards_API_metricBreakdownHistogram = z.infer<typeof Kibana_Dashboards_API_metricBreakdownHistogram>
+
+export const Kibana_Dashboards_API_metricBreakdownRanges = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  columns: z.number().optional(),
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['range']),
+  ranges: z.array(z.object({
+    gt: z.number().optional(),
+    label: z.string().optional(),
+    lte: z.number().optional()
+  }))
+}).meta({ id: 'Kibana_Dashboards_API_metricBreakdownRanges' })
+export type Kibana_Dashboards_API_metricBreakdownRanges = z.infer<typeof Kibana_Dashboards_API_metricBreakdownRanges>
+
+export const Kibana_Dashboards_API_metricSecondaryCounterRate = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_noColor]).optional(),
+  compare: z.union([Kibana_Dashboards_API_metricCompareToBaseline, Kibana_Dashboards_API_metricCompareToPrimary]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['counter_rate']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['secondary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricSecondaryCounterRate' })
+export type Kibana_Dashboards_API_metricSecondaryCounterRate = z.infer<typeof Kibana_Dashboards_API_metricSecondaryCounterRate>
+
+export const Kibana_Dashboards_API_metricSecondaryCountMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_noColor]).optional(),
+  compare: z.union([Kibana_Dashboards_API_metricCompareToBaseline, Kibana_Dashboards_API_metricCompareToPrimary]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['count']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['secondary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricSecondaryCountMetric' })
+export type Kibana_Dashboards_API_metricSecondaryCountMetric = z.infer<typeof Kibana_Dashboards_API_metricSecondaryCountMetric>
+
+export const Kibana_Dashboards_API_metricSecondaryCumulativeSum = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_noColor]).optional(),
+  compare: z.union([Kibana_Dashboards_API_metricCompareToBaseline, Kibana_Dashboards_API_metricCompareToPrimary]).optional(),
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['cumulative_sum']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['secondary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricSecondaryCumulativeSum' })
+export type Kibana_Dashboards_API_metricSecondaryCumulativeSum = z.infer<typeof Kibana_Dashboards_API_metricSecondaryCumulativeSum>
+
+export const Kibana_Dashboards_API_metricSecondaryFormula = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_noColor]).optional(),
+  compare: z.union([Kibana_Dashboards_API_metricCompareToBaseline, Kibana_Dashboards_API_metricCompareToPrimary]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  formula: z.string(),
+  label: z.string().optional(),
+  operation: z.enum(['formula']),
+  reduced_time_range: z.string().optional(),
+  time_scale: z.enum(['s', 'm', 'h', 'd']).optional(),
+  type: z.enum(['secondary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricSecondaryFormula' })
+export type Kibana_Dashboards_API_metricSecondaryFormula = z.infer<typeof Kibana_Dashboards_API_metricSecondaryFormula>
+
+export const Kibana_Dashboards_API_metricSecondaryLastValue = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_noColor]).optional(),
+  compare: z.union([Kibana_Dashboards_API_metricCompareToBaseline, Kibana_Dashboards_API_metricCompareToPrimary]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  multi_value: z.boolean().optional(),
+  operation: z.enum(['last_value']),
+  reduced_time_range: z.string().optional(),
+  time_field: z.string(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['secondary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricSecondaryLastValue' })
+export type Kibana_Dashboards_API_metricSecondaryLastValue = z.infer<typeof Kibana_Dashboards_API_metricSecondaryLastValue>
+
+export const Kibana_Dashboards_API_metricSecondaryPercentile = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_noColor]).optional(),
+  compare: z.union([Kibana_Dashboards_API_metricCompareToBaseline, Kibana_Dashboards_API_metricCompareToPrimary]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile']),
+  percentile: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['secondary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricSecondaryPercentile' })
+export type Kibana_Dashboards_API_metricSecondaryPercentile = z.infer<typeof Kibana_Dashboards_API_metricSecondaryPercentile>
+
+export const Kibana_Dashboards_API_metricSecondaryPercentileRanks = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_noColor]).optional(),
+  compare: z.union([Kibana_Dashboards_API_metricCompareToBaseline, Kibana_Dashboards_API_metricCompareToPrimary]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile_rank']),
+  rank: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['secondary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricSecondaryPercentileRanks' })
+export type Kibana_Dashboards_API_metricSecondaryPercentileRanks = z.infer<typeof Kibana_Dashboards_API_metricSecondaryPercentileRanks>
+
+export const Kibana_Dashboards_API_metricSecondaryStatsMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_noColor]).optional(),
+  compare: z.union([Kibana_Dashboards_API_metricCompareToBaseline, Kibana_Dashboards_API_metricCompareToPrimary]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['min', 'max', 'average', 'median', 'standard_deviation']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['secondary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricSecondaryStatsMetric' })
+export type Kibana_Dashboards_API_metricSecondaryStatsMetric = z.infer<typeof Kibana_Dashboards_API_metricSecondaryStatsMetric>
+
+export const Kibana_Dashboards_API_metricSecondarySumMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_noColor]).optional(),
+  compare: z.union([Kibana_Dashboards_API_metricCompareToBaseline, Kibana_Dashboards_API_metricCompareToPrimary]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['sum']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['secondary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricSecondarySumMetric' })
+export type Kibana_Dashboards_API_metricSecondarySumMetric = z.infer<typeof Kibana_Dashboards_API_metricSecondarySumMetric>
+
+export const Kibana_Dashboards_API_metricSecondaryUniqueCountMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_noColor]).optional(),
+  compare: z.union([Kibana_Dashboards_API_metricCompareToBaseline, Kibana_Dashboards_API_metricCompareToPrimary]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['unique_count']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['secondary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricSecondaryUniqueCountMetric' })
+export type Kibana_Dashboards_API_metricSecondaryUniqueCountMetric = z.infer<typeof Kibana_Dashboards_API_metricSecondaryUniqueCountMetric>
+
+export const Kibana_Dashboards_API_minMaxAvgMedianStdDevMetricOperation = z.object({
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['min', 'max', 'average', 'median', 'standard_deviation']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_minMaxAvgMedianStdDevMetricOperation' })
+export type Kibana_Dashboards_API_minMaxAvgMedianStdDevMetricOperation = z.infer<typeof Kibana_Dashboards_API_minMaxAvgMedianStdDevMetricOperation>
+
+export const Kibana_Dashboards_API_mosaicGroupBreakdownByHistogram = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  granularity: z.union([z.number(), z.enum(['auto'])]).optional(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['histogram'])
+}).meta({ id: 'Kibana_Dashboards_API_mosaicGroupBreakdownByHistogram' })
+export type Kibana_Dashboards_API_mosaicGroupBreakdownByHistogram = z.infer<typeof Kibana_Dashboards_API_mosaicGroupBreakdownByHistogram>
+
+export const Kibana_Dashboards_API_mosaicGroupBreakdownByRanges = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['range']),
+  ranges: z.array(z.object({
+    gt: z.number().optional(),
+    label: z.string().optional(),
+    lte: z.number().optional()
+  }))
+}).meta({ id: 'Kibana_Dashboards_API_mosaicGroupBreakdownByRanges' })
+export type Kibana_Dashboards_API_mosaicGroupBreakdownByRanges = z.infer<typeof Kibana_Dashboards_API_mosaicGroupBreakdownByRanges>
+
+export const Kibana_Dashboards_API_mosaicMetricCounterRate = z.object({
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['counter_rate']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_mosaicMetricCounterRate' })
+export type Kibana_Dashboards_API_mosaicMetricCounterRate = z.infer<typeof Kibana_Dashboards_API_mosaicMetricCounterRate>
+
+export const Kibana_Dashboards_API_mosaicMetricCountMetric = z.object({
+  empty_as_null: z.boolean().optional(),
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['count']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_mosaicMetricCountMetric' })
+export type Kibana_Dashboards_API_mosaicMetricCountMetric = z.infer<typeof Kibana_Dashboards_API_mosaicMetricCountMetric>
+
+export const Kibana_Dashboards_API_mosaicMetricCumulativeSum = z.object({
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['cumulative_sum']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_mosaicMetricCumulativeSum' })
+export type Kibana_Dashboards_API_mosaicMetricCumulativeSum = z.infer<typeof Kibana_Dashboards_API_mosaicMetricCumulativeSum>
+
+export const Kibana_Dashboards_API_mosaicMetricFormula = z.object({
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  formula: z.string(),
+  label: z.string().optional(),
+  operation: z.enum(['formula']),
+  reduced_time_range: z.string().optional(),
+  time_scale: z.enum(['s', 'm', 'h', 'd']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_mosaicMetricFormula' })
+export type Kibana_Dashboards_API_mosaicMetricFormula = z.infer<typeof Kibana_Dashboards_API_mosaicMetricFormula>
+
+export const Kibana_Dashboards_API_mosaicMetricLastValue = z.object({
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  multi_value: z.boolean().optional(),
+  operation: z.enum(['last_value']),
+  reduced_time_range: z.string().optional(),
+  time_field: z.string(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_mosaicMetricLastValue' })
+export type Kibana_Dashboards_API_mosaicMetricLastValue = z.infer<typeof Kibana_Dashboards_API_mosaicMetricLastValue>
+
+export const Kibana_Dashboards_API_mosaicMetricPercentile = z.object({
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile']),
+  percentile: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_mosaicMetricPercentile' })
+export type Kibana_Dashboards_API_mosaicMetricPercentile = z.infer<typeof Kibana_Dashboards_API_mosaicMetricPercentile>
+
+export const Kibana_Dashboards_API_mosaicMetricPercentileRanks = z.object({
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile_rank']),
+  rank: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_mosaicMetricPercentileRanks' })
+export type Kibana_Dashboards_API_mosaicMetricPercentileRanks = z.infer<typeof Kibana_Dashboards_API_mosaicMetricPercentileRanks>
+
+export const Kibana_Dashboards_API_mosaicMetricStatsMetric = z.object({
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['min', 'max', 'average', 'median', 'standard_deviation']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_mosaicMetricStatsMetric' })
+export type Kibana_Dashboards_API_mosaicMetricStatsMetric = z.infer<typeof Kibana_Dashboards_API_mosaicMetricStatsMetric>
+
+export const Kibana_Dashboards_API_mosaicMetricSumMetric = z.object({
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['sum']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_mosaicMetricSumMetric' })
+export type Kibana_Dashboards_API_mosaicMetricSumMetric = z.infer<typeof Kibana_Dashboards_API_mosaicMetricSumMetric>
+
+export const Kibana_Dashboards_API_mosaicMetricUniqueCountMetric = z.object({
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['unique_count']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_mosaicMetricUniqueCountMetric' })
+export type Kibana_Dashboards_API_mosaicMetricUniqueCountMetric = z.infer<typeof Kibana_Dashboards_API_mosaicMetricUniqueCountMetric>
+
+export const Kibana_Dashboards_API_percentileOperation = z.object({
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile']),
+  percentile: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_percentileOperation' })
+export type Kibana_Dashboards_API_percentileOperation = z.infer<typeof Kibana_Dashboards_API_percentileOperation>
+
+export const Kibana_Dashboards_API_percentileRanksOperation = z.object({
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile_rank']),
+  rank: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_percentileRanksOperation' })
+export type Kibana_Dashboards_API_percentileRanksOperation = z.infer<typeof Kibana_Dashboards_API_percentileRanksOperation>
+
+export const Kibana_Dashboards_API_pieMetricCounterRate = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['counter_rate']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_pieMetricCounterRate' })
+export type Kibana_Dashboards_API_pieMetricCounterRate = z.infer<typeof Kibana_Dashboards_API_pieMetricCounterRate>
+
+export const Kibana_Dashboards_API_pieMetricCountMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['count']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_pieMetricCountMetric' })
+export type Kibana_Dashboards_API_pieMetricCountMetric = z.infer<typeof Kibana_Dashboards_API_pieMetricCountMetric>
+
+export const Kibana_Dashboards_API_pieMetricCumulativeSum = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['cumulative_sum']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_pieMetricCumulativeSum' })
+export type Kibana_Dashboards_API_pieMetricCumulativeSum = z.infer<typeof Kibana_Dashboards_API_pieMetricCumulativeSum>
+
+export const Kibana_Dashboards_API_pieMetricFormula = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  formula: z.string(),
+  label: z.string().optional(),
+  operation: z.enum(['formula']),
+  reduced_time_range: z.string().optional(),
+  time_scale: z.enum(['s', 'm', 'h', 'd']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_pieMetricFormula' })
+export type Kibana_Dashboards_API_pieMetricFormula = z.infer<typeof Kibana_Dashboards_API_pieMetricFormula>
+
+export const Kibana_Dashboards_API_pieMetricLastValue = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  multi_value: z.boolean().optional(),
+  operation: z.enum(['last_value']),
+  reduced_time_range: z.string().optional(),
+  time_field: z.string(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_pieMetricLastValue' })
+export type Kibana_Dashboards_API_pieMetricLastValue = z.infer<typeof Kibana_Dashboards_API_pieMetricLastValue>
+
+export const Kibana_Dashboards_API_pieMetricPercentile = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile']),
+  percentile: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_pieMetricPercentile' })
+export type Kibana_Dashboards_API_pieMetricPercentile = z.infer<typeof Kibana_Dashboards_API_pieMetricPercentile>
+
+export const Kibana_Dashboards_API_pieMetricPercentileRanks = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile_rank']),
+  rank: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_pieMetricPercentileRanks' })
+export type Kibana_Dashboards_API_pieMetricPercentileRanks = z.infer<typeof Kibana_Dashboards_API_pieMetricPercentileRanks>
+
+export const Kibana_Dashboards_API_pieMetricStatsMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['min', 'max', 'average', 'median', 'standard_deviation']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_pieMetricStatsMetric' })
+export type Kibana_Dashboards_API_pieMetricStatsMetric = z.infer<typeof Kibana_Dashboards_API_pieMetricStatsMetric>
+
+export const Kibana_Dashboards_API_pieMetricSumMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['sum']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_pieMetricSumMetric' })
+export type Kibana_Dashboards_API_pieMetricSumMetric = z.infer<typeof Kibana_Dashboards_API_pieMetricSumMetric>
+
+export const Kibana_Dashboards_API_pieMetricUniqueCountMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['unique_count']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_pieMetricUniqueCountMetric' })
+export type Kibana_Dashboards_API_pieMetricUniqueCountMetric = z.infer<typeof Kibana_Dashboards_API_pieMetricUniqueCountMetric>
+
+export const Kibana_Dashboards_API_rangesOperation = z.object({
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['range']),
+  ranges: z.array(z.object({
+    gt: z.number().optional(),
+    label: z.string().optional(),
+    lte: z.number().optional()
+  }))
+}).meta({ id: 'Kibana_Dashboards_API_rangesOperation' })
+export type Kibana_Dashboards_API_rangesOperation = z.infer<typeof Kibana_Dashboards_API_rangesOperation>
+
+export const Kibana_Dashboards_API_regionMapRegionHistogram = z.object({
+  ems: z.object({
+    boundaries: z.string(),
+    join: z.string()
+  }).optional(),
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  granularity: z.union([z.number(), z.enum(['auto'])]).optional(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['histogram'])
+}).meta({ id: 'Kibana_Dashboards_API_regionMapRegionHistogram' })
+export type Kibana_Dashboards_API_regionMapRegionHistogram = z.infer<typeof Kibana_Dashboards_API_regionMapRegionHistogram>
+
+export const Kibana_Dashboards_API_regionMapRegionRanges = z.object({
+  ems: z.object({
+    boundaries: z.string(),
+    join: z.string()
+  }).optional(),
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['range']),
+  ranges: z.array(z.object({
+    gt: z.number().optional(),
+    label: z.string().optional(),
+    lte: z.number().optional()
+  }))
+}).meta({ id: 'Kibana_Dashboards_API_regionMapRegionRanges' })
+export type Kibana_Dashboards_API_regionMapRegionRanges = z.infer<typeof Kibana_Dashboards_API_regionMapRegionRanges>
+
+export const Kibana_Dashboards_API_staticOperationDefinition = z.object({
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['static_value']),
+  value: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_staticOperationDefinition' })
+export type Kibana_Dashboards_API_staticOperationDefinition = z.infer<typeof Kibana_Dashboards_API_staticOperationDefinition>
+
+export const Kibana_Dashboards_API_sumMetricOperation = z.object({
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['sum']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_sumMetricOperation' })
+export type Kibana_Dashboards_API_sumMetricOperation = z.infer<typeof Kibana_Dashboards_API_sumMetricOperation>
+
+export const Kibana_Dashboards_API_tagcloudMetricCounterRate = z.object({
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['counter_rate']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_tagcloudMetricCounterRate' })
+export type Kibana_Dashboards_API_tagcloudMetricCounterRate = z.infer<typeof Kibana_Dashboards_API_tagcloudMetricCounterRate>
+
+export const Kibana_Dashboards_API_tagcloudMetricCountMetric = z.object({
+  empty_as_null: z.boolean().optional(),
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['count']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_tagcloudMetricCountMetric' })
+export type Kibana_Dashboards_API_tagcloudMetricCountMetric = z.infer<typeof Kibana_Dashboards_API_tagcloudMetricCountMetric>
+
+export const Kibana_Dashboards_API_tagcloudMetricCumulativeSum = z.object({
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['cumulative_sum']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_tagcloudMetricCumulativeSum' })
+export type Kibana_Dashboards_API_tagcloudMetricCumulativeSum = z.infer<typeof Kibana_Dashboards_API_tagcloudMetricCumulativeSum>
+
+export const Kibana_Dashboards_API_tagcloudMetricFormula = z.object({
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  formula: z.string(),
+  label: z.string().optional(),
+  operation: z.enum(['formula']),
+  reduced_time_range: z.string().optional(),
+  time_scale: z.enum(['s', 'm', 'h', 'd']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_tagcloudMetricFormula' })
+export type Kibana_Dashboards_API_tagcloudMetricFormula = z.infer<typeof Kibana_Dashboards_API_tagcloudMetricFormula>
+
+export const Kibana_Dashboards_API_tagcloudMetricLastValue = z.object({
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  multi_value: z.boolean().optional(),
+  operation: z.enum(['last_value']),
+  reduced_time_range: z.string().optional(),
+  time_field: z.string(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_tagcloudMetricLastValue' })
+export type Kibana_Dashboards_API_tagcloudMetricLastValue = z.infer<typeof Kibana_Dashboards_API_tagcloudMetricLastValue>
+
+export const Kibana_Dashboards_API_tagcloudMetricPercentile = z.object({
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile']),
+  percentile: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_tagcloudMetricPercentile' })
+export type Kibana_Dashboards_API_tagcloudMetricPercentile = z.infer<typeof Kibana_Dashboards_API_tagcloudMetricPercentile>
+
+export const Kibana_Dashboards_API_tagcloudMetricPercentileRanks = z.object({
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile_rank']),
+  rank: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_tagcloudMetricPercentileRanks' })
+export type Kibana_Dashboards_API_tagcloudMetricPercentileRanks = z.infer<typeof Kibana_Dashboards_API_tagcloudMetricPercentileRanks>
+
+export const Kibana_Dashboards_API_tagcloudMetricStatsMetric = z.object({
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['min', 'max', 'average', 'median', 'standard_deviation']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_tagcloudMetricStatsMetric' })
+export type Kibana_Dashboards_API_tagcloudMetricStatsMetric = z.infer<typeof Kibana_Dashboards_API_tagcloudMetricStatsMetric>
+
+export const Kibana_Dashboards_API_tagcloudMetricSumMetric = z.object({
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['sum']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_tagcloudMetricSumMetric' })
+export type Kibana_Dashboards_API_tagcloudMetricSumMetric = z.infer<typeof Kibana_Dashboards_API_tagcloudMetricSumMetric>
+
+export const Kibana_Dashboards_API_tagcloudMetricUniqueCountMetric = z.object({
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['unique_count']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_tagcloudMetricUniqueCountMetric' })
+export type Kibana_Dashboards_API_tagcloudMetricUniqueCountMetric = z.infer<typeof Kibana_Dashboards_API_tagcloudMetricUniqueCountMetric>
+
+export const Kibana_Dashboards_API_treemapMetricCounterRate = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['counter_rate']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_treemapMetricCounterRate' })
+export type Kibana_Dashboards_API_treemapMetricCounterRate = z.infer<typeof Kibana_Dashboards_API_treemapMetricCounterRate>
+
+export const Kibana_Dashboards_API_treemapMetricCountMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['count']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_treemapMetricCountMetric' })
+export type Kibana_Dashboards_API_treemapMetricCountMetric = z.infer<typeof Kibana_Dashboards_API_treemapMetricCountMetric>
+
+export const Kibana_Dashboards_API_treemapMetricCumulativeSum = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['cumulative_sum']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_treemapMetricCumulativeSum' })
+export type Kibana_Dashboards_API_treemapMetricCumulativeSum = z.infer<typeof Kibana_Dashboards_API_treemapMetricCumulativeSum>
+
+export const Kibana_Dashboards_API_treemapMetricFormula = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  formula: z.string(),
+  label: z.string().optional(),
+  operation: z.enum(['formula']),
+  reduced_time_range: z.string().optional(),
+  time_scale: z.enum(['s', 'm', 'h', 'd']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_treemapMetricFormula' })
+export type Kibana_Dashboards_API_treemapMetricFormula = z.infer<typeof Kibana_Dashboards_API_treemapMetricFormula>
+
+export const Kibana_Dashboards_API_treemapMetricLastValue = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  multi_value: z.boolean().optional(),
+  operation: z.enum(['last_value']),
+  reduced_time_range: z.string().optional(),
+  time_field: z.string(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_treemapMetricLastValue' })
+export type Kibana_Dashboards_API_treemapMetricLastValue = z.infer<typeof Kibana_Dashboards_API_treemapMetricLastValue>
+
+export const Kibana_Dashboards_API_treemapMetricPercentile = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile']),
+  percentile: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_treemapMetricPercentile' })
+export type Kibana_Dashboards_API_treemapMetricPercentile = z.infer<typeof Kibana_Dashboards_API_treemapMetricPercentile>
+
+export const Kibana_Dashboards_API_treemapMetricPercentileRanks = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile_rank']),
+  rank: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_treemapMetricPercentileRanks' })
+export type Kibana_Dashboards_API_treemapMetricPercentileRanks = z.infer<typeof Kibana_Dashboards_API_treemapMetricPercentileRanks>
+
+export const Kibana_Dashboards_API_treemapMetricStatsMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['min', 'max', 'average', 'median', 'standard_deviation']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_treemapMetricStatsMetric' })
+export type Kibana_Dashboards_API_treemapMetricStatsMetric = z.infer<typeof Kibana_Dashboards_API_treemapMetricStatsMetric>
+
+export const Kibana_Dashboards_API_treemapMetricSumMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['sum']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_treemapMetricSumMetric' })
+export type Kibana_Dashboards_API_treemapMetricSumMetric = z.infer<typeof Kibana_Dashboards_API_treemapMetricSumMetric>
+
+export const Kibana_Dashboards_API_treemapMetricUniqueCountMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['unique_count']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_treemapMetricUniqueCountMetric' })
+export type Kibana_Dashboards_API_treemapMetricUniqueCountMetric = z.infer<typeof Kibana_Dashboards_API_treemapMetricUniqueCountMetric>
+
+export const Kibana_Dashboards_API_uniqueCountMetricOperation = z.object({
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['unique_count']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_uniqueCountMetricOperation' })
+export type Kibana_Dashboards_API_uniqueCountMetricOperation = z.infer<typeof Kibana_Dashboards_API_uniqueCountMetricOperation>
+
+export const Kibana_Dashboards_API_waffleMetricCounterRate = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['counter_rate']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_waffleMetricCounterRate' })
+export type Kibana_Dashboards_API_waffleMetricCounterRate = z.infer<typeof Kibana_Dashboards_API_waffleMetricCounterRate>
+
+export const Kibana_Dashboards_API_waffleMetricCountMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['count']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_waffleMetricCountMetric' })
+export type Kibana_Dashboards_API_waffleMetricCountMetric = z.infer<typeof Kibana_Dashboards_API_waffleMetricCountMetric>
+
+export const Kibana_Dashboards_API_waffleMetricCumulativeSum = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['cumulative_sum']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_waffleMetricCumulativeSum' })
+export type Kibana_Dashboards_API_waffleMetricCumulativeSum = z.infer<typeof Kibana_Dashboards_API_waffleMetricCumulativeSum>
+
+export const Kibana_Dashboards_API_waffleMetricFormula = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  formula: z.string(),
+  label: z.string().optional(),
+  operation: z.enum(['formula']),
+  reduced_time_range: z.string().optional(),
+  time_scale: z.enum(['s', 'm', 'h', 'd']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_waffleMetricFormula' })
+export type Kibana_Dashboards_API_waffleMetricFormula = z.infer<typeof Kibana_Dashboards_API_waffleMetricFormula>
+
+export const Kibana_Dashboards_API_waffleMetricLastValue = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  multi_value: z.boolean().optional(),
+  operation: z.enum(['last_value']),
+  reduced_time_range: z.string().optional(),
+  time_field: z.string(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_waffleMetricLastValue' })
+export type Kibana_Dashboards_API_waffleMetricLastValue = z.infer<typeof Kibana_Dashboards_API_waffleMetricLastValue>
+
+export const Kibana_Dashboards_API_waffleMetricPercentile = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile']),
+  percentile: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_waffleMetricPercentile' })
+export type Kibana_Dashboards_API_waffleMetricPercentile = z.infer<typeof Kibana_Dashboards_API_waffleMetricPercentile>
+
+export const Kibana_Dashboards_API_waffleMetricPercentileRanks = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile_rank']),
+  rank: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_waffleMetricPercentileRanks' })
+export type Kibana_Dashboards_API_waffleMetricPercentileRanks = z.infer<typeof Kibana_Dashboards_API_waffleMetricPercentileRanks>
+
+export const Kibana_Dashboards_API_waffleMetricStatsMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['min', 'max', 'average', 'median', 'standard_deviation']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_waffleMetricStatsMetric' })
+export type Kibana_Dashboards_API_waffleMetricStatsMetric = z.infer<typeof Kibana_Dashboards_API_waffleMetricStatsMetric>
+
+export const Kibana_Dashboards_API_waffleMetricSumMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['sum']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_waffleMetricSumMetric' })
+export type Kibana_Dashboards_API_waffleMetricSumMetric = z.infer<typeof Kibana_Dashboards_API_waffleMetricSumMetric>
+
+export const Kibana_Dashboards_API_waffleMetricUniqueCountMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['unique_count']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_waffleMetricUniqueCountMetric' })
+export type Kibana_Dashboards_API_waffleMetricUniqueCountMetric = z.infer<typeof Kibana_Dashboards_API_waffleMetricUniqueCountMetric>
+
+export const Kibana_Dashboards_API_xyRefLineCountMetric = z.object({
+  axis: z.enum(['x', 'y', 'y2']).optional(),
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string().optional(),
+  fill: z.enum(['above', 'below']).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  icon: z.enum(['asterisk', 'alert', 'bell', 'bolt', 'bug', 'circle', 'editor_comment', 'flag', 'heart', 'map_marker', 'pin_filled', 'star_empty', 'star_filled', 'tag', 'triangle']).optional(),
+  label: z.string().optional(),
+  operation: z.enum(['count']),
+  position: z.enum(['auto', 'left', 'right']).optional(),
+  reduced_time_range: z.string().optional(),
+  stroke_dash: z.enum(['solid', 'dashed', 'dotted']).optional(),
+  stroke_width: z.number().optional(),
+  text: z.object({
+    visible: z.boolean()
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyRefLineCountMetric' })
+export type Kibana_Dashboards_API_xyRefLineCountMetric = z.infer<typeof Kibana_Dashboards_API_xyRefLineCountMetric>
+
+export const Kibana_Dashboards_API_xyRefLineFormula = z.object({
+  axis: z.enum(['x', 'y', 'y2']).optional(),
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  fill: z.enum(['above', 'below']).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  formula: z.string(),
+  icon: z.enum(['asterisk', 'alert', 'bell', 'bolt', 'bug', 'circle', 'editor_comment', 'flag', 'heart', 'map_marker', 'pin_filled', 'star_empty', 'star_filled', 'tag', 'triangle']).optional(),
+  label: z.string().optional(),
+  operation: z.enum(['formula']),
+  position: z.enum(['auto', 'left', 'right']).optional(),
+  reduced_time_range: z.string().optional(),
+  stroke_dash: z.enum(['solid', 'dashed', 'dotted']).optional(),
+  stroke_width: z.number().optional(),
+  text: z.object({
+    visible: z.boolean()
+  }).optional(),
+  time_scale: z.enum(['s', 'm', 'h', 'd']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyRefLineFormula' })
+export type Kibana_Dashboards_API_xyRefLineFormula = z.infer<typeof Kibana_Dashboards_API_xyRefLineFormula>
+
+export const Kibana_Dashboards_API_xyRefLineLastValue = z.object({
+  axis: z.enum(['x', 'y', 'y2']).optional(),
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  fill: z.enum(['above', 'below']).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  icon: z.enum(['asterisk', 'alert', 'bell', 'bolt', 'bug', 'circle', 'editor_comment', 'flag', 'heart', 'map_marker', 'pin_filled', 'star_empty', 'star_filled', 'tag', 'triangle']).optional(),
+  label: z.string().optional(),
+  multi_value: z.boolean().optional(),
+  operation: z.enum(['last_value']),
+  position: z.enum(['auto', 'left', 'right']).optional(),
+  reduced_time_range: z.string().optional(),
+  stroke_dash: z.enum(['solid', 'dashed', 'dotted']).optional(),
+  stroke_width: z.number().optional(),
+  text: z.object({
+    visible: z.boolean()
+  }).optional(),
+  time_field: z.string(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyRefLineLastValue' })
+export type Kibana_Dashboards_API_xyRefLineLastValue = z.infer<typeof Kibana_Dashboards_API_xyRefLineLastValue>
+
+export const Kibana_Dashboards_API_xyRefLinePercentile = z.object({
+  axis: z.enum(['x', 'y', 'y2']).optional(),
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  fill: z.enum(['above', 'below']).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  icon: z.enum(['asterisk', 'alert', 'bell', 'bolt', 'bug', 'circle', 'editor_comment', 'flag', 'heart', 'map_marker', 'pin_filled', 'star_empty', 'star_filled', 'tag', 'triangle']).optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile']),
+  percentile: z.number().optional(),
+  position: z.enum(['auto', 'left', 'right']).optional(),
+  reduced_time_range: z.string().optional(),
+  stroke_dash: z.enum(['solid', 'dashed', 'dotted']).optional(),
+  stroke_width: z.number().optional(),
+  text: z.object({
+    visible: z.boolean()
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyRefLinePercentile' })
+export type Kibana_Dashboards_API_xyRefLinePercentile = z.infer<typeof Kibana_Dashboards_API_xyRefLinePercentile>
+
+export const Kibana_Dashboards_API_xyRefLinePercentileRanks = z.object({
+  axis: z.enum(['x', 'y', 'y2']).optional(),
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  fill: z.enum(['above', 'below']).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  icon: z.enum(['asterisk', 'alert', 'bell', 'bolt', 'bug', 'circle', 'editor_comment', 'flag', 'heart', 'map_marker', 'pin_filled', 'star_empty', 'star_filled', 'tag', 'triangle']).optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile_rank']),
+  position: z.enum(['auto', 'left', 'right']).optional(),
+  rank: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  stroke_dash: z.enum(['solid', 'dashed', 'dotted']).optional(),
+  stroke_width: z.number().optional(),
+  text: z.object({
+    visible: z.boolean()
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyRefLinePercentileRanks' })
+export type Kibana_Dashboards_API_xyRefLinePercentileRanks = z.infer<typeof Kibana_Dashboards_API_xyRefLinePercentileRanks>
+
+export const Kibana_Dashboards_API_xyRefLineStatic = z.object({
+  axis: z.enum(['x', 'y', 'y2']).optional(),
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  fill: z.enum(['above', 'below']).optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  icon: z.enum(['asterisk', 'alert', 'bell', 'bolt', 'bug', 'circle', 'editor_comment', 'flag', 'heart', 'map_marker', 'pin_filled', 'star_empty', 'star_filled', 'tag', 'triangle']).optional(),
+  label: z.string().optional(),
+  operation: z.enum(['static_value']),
+  position: z.enum(['auto', 'left', 'right']).optional(),
+  stroke_dash: z.enum(['solid', 'dashed', 'dotted']).optional(),
+  stroke_width: z.number().optional(),
+  text: z.object({
+    visible: z.boolean()
+  }).optional(),
+  value: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyRefLineStatic' })
+export type Kibana_Dashboards_API_xyRefLineStatic = z.infer<typeof Kibana_Dashboards_API_xyRefLineStatic>
+
+export const Kibana_Dashboards_API_xyRefLineStatsMetric = z.object({
+  axis: z.enum(['x', 'y', 'y2']).optional(),
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  fill: z.enum(['above', 'below']).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  icon: z.enum(['asterisk', 'alert', 'bell', 'bolt', 'bug', 'circle', 'editor_comment', 'flag', 'heart', 'map_marker', 'pin_filled', 'star_empty', 'star_filled', 'tag', 'triangle']).optional(),
+  label: z.string().optional(),
+  operation: z.enum(['min', 'max', 'average', 'median', 'standard_deviation']),
+  position: z.enum(['auto', 'left', 'right']).optional(),
+  reduced_time_range: z.string().optional(),
+  stroke_dash: z.enum(['solid', 'dashed', 'dotted']).optional(),
+  stroke_width: z.number().optional(),
+  text: z.object({
+    visible: z.boolean()
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyRefLineStatsMetric' })
+export type Kibana_Dashboards_API_xyRefLineStatsMetric = z.infer<typeof Kibana_Dashboards_API_xyRefLineStatsMetric>
+
+export const Kibana_Dashboards_API_xyRefLineSumMetric = z.object({
+  axis: z.enum(['x', 'y', 'y2']).optional(),
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  fill: z.enum(['above', 'below']).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  icon: z.enum(['asterisk', 'alert', 'bell', 'bolt', 'bug', 'circle', 'editor_comment', 'flag', 'heart', 'map_marker', 'pin_filled', 'star_empty', 'star_filled', 'tag', 'triangle']).optional(),
+  label: z.string().optional(),
+  operation: z.enum(['sum']),
+  position: z.enum(['auto', 'left', 'right']).optional(),
+  reduced_time_range: z.string().optional(),
+  stroke_dash: z.enum(['solid', 'dashed', 'dotted']).optional(),
+  stroke_width: z.number().optional(),
+  text: z.object({
+    visible: z.boolean()
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyRefLineSumMetric' })
+export type Kibana_Dashboards_API_xyRefLineSumMetric = z.infer<typeof Kibana_Dashboards_API_xyRefLineSumMetric>
+
+export const Kibana_Dashboards_API_xyRefLineUniqueCountMetric = z.object({
+  axis: z.enum(['x', 'y', 'y2']).optional(),
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  fill: z.enum(['above', 'below']).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  icon: z.enum(['asterisk', 'alert', 'bell', 'bolt', 'bug', 'circle', 'editor_comment', 'flag', 'heart', 'map_marker', 'pin_filled', 'star_empty', 'star_filled', 'tag', 'triangle']).optional(),
+  label: z.string().optional(),
+  operation: z.enum(['unique_count']),
+  position: z.enum(['auto', 'left', 'right']).optional(),
+  reduced_time_range: z.string().optional(),
+  stroke_dash: z.enum(['solid', 'dashed', 'dotted']).optional(),
+  stroke_width: z.number().optional(),
+  text: z.object({
+    visible: z.boolean()
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyRefLineUniqueCountMetric' })
+export type Kibana_Dashboards_API_xyRefLineUniqueCountMetric = z.infer<typeof Kibana_Dashboards_API_xyRefLineUniqueCountMetric>
+
+export const Kibana_Dashboards_API_xyXHistogram = z.object({
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  granularity: z.union([z.number(), z.enum(['auto'])]).optional(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['histogram'])
+}).meta({ id: 'Kibana_Dashboards_API_xyXHistogram' })
+export type Kibana_Dashboards_API_xyXHistogram = z.infer<typeof Kibana_Dashboards_API_xyXHistogram>
+
+export const Kibana_Dashboards_API_xyXRanges = z.object({
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['range']),
+  ranges: z.array(z.object({
+    gt: z.number().optional(),
+    label: z.string().optional(),
+    lte: z.number().optional()
+  }))
+}).meta({ id: 'Kibana_Dashboards_API_xyXRanges' })
+export type Kibana_Dashboards_API_xyXRanges = z.infer<typeof Kibana_Dashboards_API_xyXRanges>
+
+export const Kibana_Dashboards_API_xyYCounterRate = z.object({
+  axis: z.enum(['y', 'y2']).optional(),
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['counter_rate']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyYCounterRate' })
+export type Kibana_Dashboards_API_xyYCounterRate = z.infer<typeof Kibana_Dashboards_API_xyYCounterRate>
+
+export const Kibana_Dashboards_API_xyYCountMetric = z.object({
+  axis: z.enum(['y', 'y2']).optional(),
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['count']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyYCountMetric' })
+export type Kibana_Dashboards_API_xyYCountMetric = z.infer<typeof Kibana_Dashboards_API_xyYCountMetric>
+
+export const Kibana_Dashboards_API_xyYCumulativeSum = z.object({
+  axis: z.enum(['y', 'y2']).optional(),
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['cumulative_sum']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyYCumulativeSum' })
+export type Kibana_Dashboards_API_xyYCumulativeSum = z.infer<typeof Kibana_Dashboards_API_xyYCumulativeSum>
+
+export const Kibana_Dashboards_API_xyYFormula = z.object({
+  axis: z.enum(['y', 'y2']).optional(),
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  formula: z.string(),
+  label: z.string().optional(),
+  operation: z.enum(['formula']),
+  reduced_time_range: z.string().optional(),
+  time_scale: z.enum(['s', 'm', 'h', 'd']).optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyYFormula' })
+export type Kibana_Dashboards_API_xyYFormula = z.infer<typeof Kibana_Dashboards_API_xyYFormula>
+
+export const Kibana_Dashboards_API_xyYLastValue = z.object({
+  axis: z.enum(['y', 'y2']).optional(),
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  multi_value: z.boolean().optional(),
+  operation: z.enum(['last_value']),
+  reduced_time_range: z.string().optional(),
+  time_field: z.string(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyYLastValue' })
+export type Kibana_Dashboards_API_xyYLastValue = z.infer<typeof Kibana_Dashboards_API_xyYLastValue>
+
+export const Kibana_Dashboards_API_xyYPercentile = z.object({
+  axis: z.enum(['y', 'y2']).optional(),
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile']),
+  percentile: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyYPercentile' })
+export type Kibana_Dashboards_API_xyYPercentile = z.infer<typeof Kibana_Dashboards_API_xyYPercentile>
+
+export const Kibana_Dashboards_API_xyYPercentileRanks = z.object({
+  axis: z.enum(['y', 'y2']).optional(),
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile_rank']),
+  rank: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyYPercentileRanks' })
+export type Kibana_Dashboards_API_xyYPercentileRanks = z.infer<typeof Kibana_Dashboards_API_xyYPercentileRanks>
+
+export const Kibana_Dashboards_API_xyYStatsMetric = z.object({
+  axis: z.enum(['y', 'y2']).optional(),
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['min', 'max', 'average', 'median', 'standard_deviation']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyYStatsMetric' })
+export type Kibana_Dashboards_API_xyYStatsMetric = z.infer<typeof Kibana_Dashboards_API_xyYStatsMetric>
+
+export const Kibana_Dashboards_API_xyYSumMetric = z.object({
+  axis: z.enum(['y', 'y2']).optional(),
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['sum']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyYSumMetric' })
+export type Kibana_Dashboards_API_xyYSumMetric = z.infer<typeof Kibana_Dashboards_API_xyYSumMetric>
+
+export const Kibana_Dashboards_API_xyYUniqueCountMetric = z.object({
+  axis: z.enum(['y', 'y2']).optional(),
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['unique_count']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyYUniqueCountMetric' })
+export type Kibana_Dashboards_API_xyYUniqueCountMetric = z.infer<typeof Kibana_Dashboards_API_xyYUniqueCountMetric>
+
+export const Kibana_Dashboards_API_metricBreakdownTerms = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  columns: z.number().optional(),
+  excludes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  fields: z.array(z.string()),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  includes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  increase_accuracy: z.boolean().optional(),
+  label: z.string().optional(),
+  limit: z.number().optional(),
+  operation: z.enum(['terms']),
+  other_bucket: z.object({
+    include_documents_without_field: z.boolean()
+  }).optional(),
+  rank_by: z.union([Kibana_Dashboards_API_termsRankByAlphabetical, Kibana_Dashboards_API_termsRankByRare, Kibana_Dashboards_API_termsRankBySignificant, Kibana_Dashboards_API_termsRankByMetric, Kibana_Dashboards_API_termsRankByCustomOperation, Kibana_Dashboards_API_termsRankByCustomCountOperation, Kibana_Dashboards_API_termsRankByPercentileOperation, Kibana_Dashboards_API_termsRankByPercentileRankOperation]).optional()
+}).meta({ id: 'Kibana_Dashboards_API_metricBreakdownTerms' })
+export type Kibana_Dashboards_API_metricBreakdownTerms = z.infer<typeof Kibana_Dashboards_API_metricBreakdownTerms>
+
+export const Kibana_Dashboards_API_mosaicGroupBreakdownByTerms = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  excludes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  fields: z.array(z.string()),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  includes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  increase_accuracy: z.boolean().optional(),
+  label: z.string().optional(),
+  limit: z.number().optional(),
+  operation: z.enum(['terms']),
+  other_bucket: z.object({
+    include_documents_without_field: z.boolean()
+  }).optional(),
+  rank_by: z.union([Kibana_Dashboards_API_termsRankByAlphabetical, Kibana_Dashboards_API_termsRankByRare, Kibana_Dashboards_API_termsRankBySignificant, Kibana_Dashboards_API_termsRankByMetric, Kibana_Dashboards_API_termsRankByCustomOperation, Kibana_Dashboards_API_termsRankByCustomCountOperation, Kibana_Dashboards_API_termsRankByPercentileOperation, Kibana_Dashboards_API_termsRankByPercentileRankOperation]).optional()
+}).meta({ id: 'Kibana_Dashboards_API_mosaicGroupBreakdownByTerms' })
+export type Kibana_Dashboards_API_mosaicGroupBreakdownByTerms = z.infer<typeof Kibana_Dashboards_API_mosaicGroupBreakdownByTerms>
+
+export const Kibana_Dashboards_API_regionMapRegionTerms = z.object({
+  ems: z.object({
+    boundaries: z.string(),
+    join: z.string()
+  }).optional(),
+  excludes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  fields: z.array(z.string()),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  includes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  increase_accuracy: z.boolean().optional(),
+  label: z.string().optional(),
+  limit: z.number().optional(),
+  operation: z.enum(['terms']),
+  other_bucket: z.object({
+    include_documents_without_field: z.boolean()
+  }).optional(),
+  rank_by: z.union([Kibana_Dashboards_API_termsRankByAlphabetical, Kibana_Dashboards_API_termsRankByRare, Kibana_Dashboards_API_termsRankBySignificant, Kibana_Dashboards_API_termsRankByMetric, Kibana_Dashboards_API_termsRankByCustomOperation, Kibana_Dashboards_API_termsRankByCustomCountOperation, Kibana_Dashboards_API_termsRankByPercentileOperation, Kibana_Dashboards_API_termsRankByPercentileRankOperation]).optional()
+}).meta({ id: 'Kibana_Dashboards_API_regionMapRegionTerms' })
+export type Kibana_Dashboards_API_regionMapRegionTerms = z.infer<typeof Kibana_Dashboards_API_regionMapRegionTerms>
+
+export const Kibana_Dashboards_API_termsOperation = z.object({
+  excludes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  fields: z.array(z.string()),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  includes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  increase_accuracy: z.boolean().optional(),
+  label: z.string().optional(),
+  limit: z.number().optional(),
+  operation: z.enum(['terms']),
+  other_bucket: z.object({
+    include_documents_without_field: z.boolean()
+  }).optional(),
+  rank_by: z.union([Kibana_Dashboards_API_termsRankByAlphabetical, Kibana_Dashboards_API_termsRankByRare, Kibana_Dashboards_API_termsRankBySignificant, Kibana_Dashboards_API_termsRankByMetric, Kibana_Dashboards_API_termsRankByCustomOperation, Kibana_Dashboards_API_termsRankByCustomCountOperation, Kibana_Dashboards_API_termsRankByPercentileOperation, Kibana_Dashboards_API_termsRankByPercentileRankOperation]).optional()
+}).meta({ id: 'Kibana_Dashboards_API_termsOperation' })
+export type Kibana_Dashboards_API_termsOperation = z.infer<typeof Kibana_Dashboards_API_termsOperation>
+
+export const Kibana_Dashboards_API_xyXTerms = z.object({
+  excludes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  fields: z.array(z.string()),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  includes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  increase_accuracy: z.boolean().optional(),
+  label: z.string().optional(),
+  limit: z.number().optional(),
+  operation: z.enum(['terms']),
+  other_bucket: z.object({
+    include_documents_without_field: z.boolean()
+  }).optional(),
+  rank_by: z.union([Kibana_Dashboards_API_termsRankByAlphabetical, Kibana_Dashboards_API_termsRankByRare, Kibana_Dashboards_API_termsRankBySignificant, Kibana_Dashboards_API_termsRankByMetric, Kibana_Dashboards_API_termsRankByCustomOperation, Kibana_Dashboards_API_termsRankByCustomCountOperation, Kibana_Dashboards_API_termsRankByPercentileOperation, Kibana_Dashboards_API_termsRankByPercentileRankOperation]).optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyXTerms' })
+export type Kibana_Dashboards_API_xyXTerms = z.infer<typeof Kibana_Dashboards_API_xyXTerms>
+
+export const Kibana_Dashboards_API_heatmapAxes = z.object({
+  x: Kibana_Dashboards_API_heatmapXAxis.optional(),
+  y: Kibana_Dashboards_API_heatmapYAxis.optional()
+}).meta({ id: 'Kibana_Dashboards_API_heatmapAxes' })
+export type Kibana_Dashboards_API_heatmapAxes = z.infer<typeof Kibana_Dashboards_API_heatmapAxes>
+
+export const Kibana_Dashboards_API_gaugeStyling = z.object({
+  shape: z.union([Kibana_Dashboards_API_gaugeShapeBullet, Kibana_Dashboards_API_gaugeShapeCircular]).optional()
+}).meta({ id: 'Kibana_Dashboards_API_gaugeStyling' })
+export type Kibana_Dashboards_API_gaugeStyling = z.infer<typeof Kibana_Dashboards_API_gaugeStyling>
+
+export const Kibana_Dashboards_API_metricComplementaryVizESQL = z.union([Kibana_Dashboards_API_metricComplementaryBar, z.object({
+  type: z.enum(['trend'])
+})]).meta({ id: 'Kibana_Dashboards_API_metricComplementaryVizESQL' })
+export type Kibana_Dashboards_API_metricComplementaryVizESQL = z.infer<typeof Kibana_Dashboards_API_metricComplementaryVizESQL>
+
+export const Kibana_Dashboards_API_xyLegend = z.union([Kibana_Dashboards_API_xyLegendOutsideHorizontal, Kibana_Dashboards_API_xyLegendOutsideVertical, Kibana_Dashboards_API_xyLegendInside]).meta({ id: 'Kibana_Dashboards_API_xyLegend' })
+export type Kibana_Dashboards_API_xyLegend = z.infer<typeof Kibana_Dashboards_API_xyLegend>
+
 export const Kibana_HTTP_APIs_kbn_as_code_filters_schema_asCodeFilterSchema = z.discriminatedUnion('type', [Kibana_HTTP_APIs_kbn_as_code_filters_schema_asCodeConditionFilterSchema, Kibana_HTTP_APIs_kbn_as_code_filters_schema_asCodeGroupFilterSchema, Kibana_HTTP_APIs_kbn_as_code_filters_schema_asCodeDSLFilterSchema, Kibana_HTTP_APIs_kbn_as_code_filters_schema_asCodeSpatialFilterSchema]).meta({ id: 'Kibana_HTTP_APIs_kbn_as_code_filters_schema_asCodeFilterSchema' })
 export type Kibana_HTTP_APIs_kbn_as_code_filters_schema_asCodeFilterSchema = z.infer<typeof Kibana_HTTP_APIs_kbn_as_code_filters_schema_asCodeFilterSchema>
 
@@ -4621,6 +8249,252 @@ export type Kibana_HTTP_APIs_visXyRefLineUniqueCountMetric = z.infer<typeof Kiba
 export const Kibana_HTTP_APIs_visXyYUniqueCountMetric = Kibana_HTTP_APIs_visUniqueCountMetricOperation.meta({ id: 'Kibana_HTTP_APIs_visXyYUniqueCountMetric' })
 export type Kibana_HTTP_APIs_visXyYUniqueCountMetric = z.infer<typeof Kibana_HTTP_APIs_visXyYUniqueCountMetric>
 
+export const Kibana_Dashboards_API_colorMapping = z.union([Kibana_Dashboards_API_categoricalColorMapping, Kibana_Dashboards_API_gradientColorMapping]).meta({ id: 'Kibana_Dashboards_API_colorMapping' })
+export type Kibana_Dashboards_API_colorMapping = z.infer<typeof Kibana_Dashboards_API_colorMapping>
+
+export const Kibana_Dashboards_API_regionMapESQLByValuePanel = z.object({
+  data_source: Kibana_Dashboards_API_esqlDataSource,
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  ignore_global_filters: z.boolean().optional(),
+  metric: z.object({
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional()
+  }),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  region: z.object({
+    column: z.string(),
+    ems: z.object({
+      boundaries: z.string(),
+      join: z.string()
+    }).optional(),
+    label: z.string().optional()
+  }),
+  sampling: z.number().optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['region_map'])
+}).meta({ id: 'Kibana_Dashboards_API_regionMapESQLByValuePanel' })
+export type Kibana_Dashboards_API_regionMapESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_regionMapESQLByValuePanel>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_overview = z.object({
+  config: z.discriminatedUnion('overview_mode', [Kibana_Dashboards_API_slo_single_overview_embeddable, Kibana_Dashboards_API_slo_group_overview_embeddable]),
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['slo_overview'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_overview' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_overview = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_overview>
+
+export const Kibana_Dashboards_API_kbn_field_settings_entry = z.union([Kibana_Dashboards_API_kbn_composite_runtime_field_schema, Kibana_Dashboards_API_kbn_runtime_field_schema, Kibana_Dashboards_API_kbn_data_view_field_setting]).meta({ id: 'Kibana_Dashboards_API_kbn_field_settings_entry' })
+export type Kibana_Dashboards_API_kbn_field_settings_entry = z.infer<typeof Kibana_Dashboards_API_kbn_field_settings_entry>
+
+export const Kibana_Dashboards_API_fieldMetricOperations = z.union([Kibana_Dashboards_API_countMetricOperation, Kibana_Dashboards_API_uniqueCountMetricOperation, Kibana_Dashboards_API_minMaxAvgMedianStdDevMetricOperation, Kibana_Dashboards_API_sumMetricOperation, Kibana_Dashboards_API_lastValueOperation, Kibana_Dashboards_API_percentileOperation, Kibana_Dashboards_API_percentileRanksOperation]).meta({ id: 'Kibana_Dashboards_API_fieldMetricOperations' })
+export type Kibana_Dashboards_API_fieldMetricOperations = z.infer<typeof Kibana_Dashboards_API_fieldMetricOperations>
+
+export const Kibana_Dashboards_API_heatmapESQLByValuePanel: z.ZodTypeAny = z.object({
+  axis: Kibana_Dashboards_API_heatmapAxes.optional(),
+  data_source: Kibana_Dashboards_API_esqlDataSource,
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  ignore_global_filters: z.boolean().optional(),
+  legend: Kibana_Dashboards_API_heatmapLegend.optional(),
+  metric: z.object({
+    color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_autoColor]).optional(),
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional()
+  }),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_heatmapStyling.optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['heatmap']),
+  x: z.object({
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional()
+  }),
+  y: z.object({
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_heatmapESQLByValuePanel' })
+export type Kibana_Dashboards_API_heatmapESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_heatmapESQLByValuePanel>
+
+export const Kibana_Dashboards_API_gaugeESQLByValuePanel: z.ZodTypeAny = z.object({
+  data_source: Kibana_Dashboards_API_esqlDataSource,
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  ignore_global_filters: z.boolean().optional(),
+  metric: z.object({
+    color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_noColor, Kibana_Dashboards_API_autoColor]).optional(),
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    goal: z.object({
+      column: z.string(),
+      label: z.string().optional()
+    }).optional(),
+    label: z.string().optional(),
+    max: z.object({
+      column: z.string(),
+      label: z.string().optional()
+    }).optional(),
+    min: z.object({
+      column: z.string(),
+      label: z.string().optional()
+    }).optional(),
+    subtitle: z.string().optional(),
+    ticks: z.object({
+      mode: z.enum(['auto', 'bands']).optional(),
+      visible: z.boolean().optional()
+    }).optional(),
+    title: z.object({
+      text: z.string().optional(),
+      visible: z.boolean().optional()
+    }).optional()
+  }),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_gaugeStyling.optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['gauge'])
+}).meta({ id: 'Kibana_Dashboards_API_gaugeESQLByValuePanel' })
+export type Kibana_Dashboards_API_gaugeESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_gaugeESQLByValuePanel>
+
+export const Kibana_Dashboards_API_metricESQLByValuePanel: z.ZodTypeAny = z.object({
+  breakdown_by: z.object({
+    collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+    column: z.string(),
+    columns: z.number().optional(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional()
+  }).optional(),
+  data_source: Kibana_Dashboards_API_esqlDataSource,
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  ignore_global_filters: z.boolean().optional(),
+  metrics: z.array(z.union([z.object({
+    apply_color_to: z.enum(['value', 'background']).optional(),
+    background_chart: Kibana_Dashboards_API_metricComplementaryVizESQL.optional(),
+    color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional(),
+    subtitle: z.string().optional(),
+    type: z.enum(['primary'])
+  }), z.object({
+    color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_noColor]).optional(),
+    column: z.string(),
+    compare: z.union([Kibana_Dashboards_API_metricCompareToBaseline, Kibana_Dashboards_API_metricCompareToPrimary]).optional(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional(),
+    type: z.enum(['secondary'])
+  })])),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_metricStyling.optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['metric'])
+}).meta({ id: 'Kibana_Dashboards_API_metricESQLByValuePanel' })
+export type Kibana_Dashboards_API_metricESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_metricESQLByValuePanel>
+
 export const Kibana_HTTP_APIs_slo_group_overview_embeddable = z.object({
   description: z.string().optional(),
   drilldowns: z.array(z.object({
@@ -4718,6 +8592,1561 @@ export const Kibana_HTTP_APIs_visMovingAverageOperation = z.object({
   window: z.number().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_visMovingAverageOperation' })
 export type Kibana_HTTP_APIs_visMovingAverageOperation = z.infer<typeof Kibana_HTTP_APIs_visMovingAverageOperation>
+
+export const Kibana_Dashboards_API_datatableESQLMetric = z.object({
+  alignment: z.enum(['left', 'center', 'right']).optional(),
+  apply_color_to: z.enum(['value', 'background', 'badge']).optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_colorMapping, Kibana_Dashboards_API_autoColor]).optional(),
+  column: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  summary: z.object({
+    label: z.string().optional(),
+    type: z.enum(['sum', 'avg', 'count', 'min', 'max'])
+  }).optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_datatableESQLMetric' })
+export type Kibana_Dashboards_API_datatableESQLMetric = z.infer<typeof Kibana_Dashboards_API_datatableESQLMetric>
+
+export const Kibana_Dashboards_API_datatableMetricCounterRate = z.object({
+  alignment: z.enum(['left', 'center', 'right']).optional(),
+  apply_color_to: z.enum(['value', 'background', 'badge']).optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_colorMapping, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['counter_rate']),
+  reduced_time_range: z.string().optional(),
+  summary: z.object({
+    label: z.string().optional(),
+    type: z.enum(['sum', 'avg', 'count', 'min', 'max'])
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_datatableMetricCounterRate' })
+export type Kibana_Dashboards_API_datatableMetricCounterRate = z.infer<typeof Kibana_Dashboards_API_datatableMetricCounterRate>
+
+export const Kibana_Dashboards_API_datatableMetricCountMetric = z.object({
+  alignment: z.enum(['left', 'center', 'right']).optional(),
+  apply_color_to: z.enum(['value', 'background', 'badge']).optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_colorMapping, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['count']),
+  reduced_time_range: z.string().optional(),
+  summary: z.object({
+    label: z.string().optional(),
+    type: z.enum(['sum', 'avg', 'count', 'min', 'max'])
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_datatableMetricCountMetric' })
+export type Kibana_Dashboards_API_datatableMetricCountMetric = z.infer<typeof Kibana_Dashboards_API_datatableMetricCountMetric>
+
+export const Kibana_Dashboards_API_datatableMetricCumulativeSum = z.object({
+  alignment: z.enum(['left', 'center', 'right']).optional(),
+  apply_color_to: z.enum(['value', 'background', 'badge']).optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_colorMapping, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['cumulative_sum']),
+  reduced_time_range: z.string().optional(),
+  summary: z.object({
+    label: z.string().optional(),
+    type: z.enum(['sum', 'avg', 'count', 'min', 'max'])
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_datatableMetricCumulativeSum' })
+export type Kibana_Dashboards_API_datatableMetricCumulativeSum = z.infer<typeof Kibana_Dashboards_API_datatableMetricCumulativeSum>
+
+export const Kibana_Dashboards_API_datatableMetricFormula = z.object({
+  alignment: z.enum(['left', 'center', 'right']).optional(),
+  apply_color_to: z.enum(['value', 'background', 'badge']).optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_colorMapping, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  formula: z.string(),
+  label: z.string().optional(),
+  operation: z.enum(['formula']),
+  reduced_time_range: z.string().optional(),
+  summary: z.object({
+    label: z.string().optional(),
+    type: z.enum(['sum', 'avg', 'count', 'min', 'max'])
+  }).optional(),
+  time_scale: z.enum(['s', 'm', 'h', 'd']).optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_datatableMetricFormula' })
+export type Kibana_Dashboards_API_datatableMetricFormula = z.infer<typeof Kibana_Dashboards_API_datatableMetricFormula>
+
+export const Kibana_Dashboards_API_datatableMetricLastValue = z.object({
+  alignment: z.enum(['left', 'center', 'right']).optional(),
+  apply_color_to: z.enum(['value', 'background', 'badge']).optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_colorMapping, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  multi_value: z.boolean().optional(),
+  operation: z.enum(['last_value']),
+  reduced_time_range: z.string().optional(),
+  summary: z.object({
+    label: z.string().optional(),
+    type: z.enum(['sum', 'avg', 'count', 'min', 'max'])
+  }).optional(),
+  time_field: z.string(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_datatableMetricLastValue' })
+export type Kibana_Dashboards_API_datatableMetricLastValue = z.infer<typeof Kibana_Dashboards_API_datatableMetricLastValue>
+
+export const Kibana_Dashboards_API_datatableMetricPercentile = z.object({
+  alignment: z.enum(['left', 'center', 'right']).optional(),
+  apply_color_to: z.enum(['value', 'background', 'badge']).optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_colorMapping, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile']),
+  percentile: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  summary: z.object({
+    label: z.string().optional(),
+    type: z.enum(['sum', 'avg', 'count', 'min', 'max'])
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_datatableMetricPercentile' })
+export type Kibana_Dashboards_API_datatableMetricPercentile = z.infer<typeof Kibana_Dashboards_API_datatableMetricPercentile>
+
+export const Kibana_Dashboards_API_datatableMetricPercentileRanks = z.object({
+  alignment: z.enum(['left', 'center', 'right']).optional(),
+  apply_color_to: z.enum(['value', 'background', 'badge']).optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_colorMapping, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile_rank']),
+  rank: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  summary: z.object({
+    label: z.string().optional(),
+    type: z.enum(['sum', 'avg', 'count', 'min', 'max'])
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_datatableMetricPercentileRanks' })
+export type Kibana_Dashboards_API_datatableMetricPercentileRanks = z.infer<typeof Kibana_Dashboards_API_datatableMetricPercentileRanks>
+
+export const Kibana_Dashboards_API_datatableMetricStatsMetric = z.object({
+  alignment: z.enum(['left', 'center', 'right']).optional(),
+  apply_color_to: z.enum(['value', 'background', 'badge']).optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_colorMapping, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['min', 'max', 'average', 'median', 'standard_deviation']),
+  reduced_time_range: z.string().optional(),
+  summary: z.object({
+    label: z.string().optional(),
+    type: z.enum(['sum', 'avg', 'count', 'min', 'max'])
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_datatableMetricStatsMetric' })
+export type Kibana_Dashboards_API_datatableMetricStatsMetric = z.infer<typeof Kibana_Dashboards_API_datatableMetricStatsMetric>
+
+export const Kibana_Dashboards_API_datatableMetricSumMetric = z.object({
+  alignment: z.enum(['left', 'center', 'right']).optional(),
+  apply_color_to: z.enum(['value', 'background', 'badge']).optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_colorMapping, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['sum']),
+  reduced_time_range: z.string().optional(),
+  summary: z.object({
+    label: z.string().optional(),
+    type: z.enum(['sum', 'avg', 'count', 'min', 'max'])
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_datatableMetricSumMetric' })
+export type Kibana_Dashboards_API_datatableMetricSumMetric = z.infer<typeof Kibana_Dashboards_API_datatableMetricSumMetric>
+
+export const Kibana_Dashboards_API_datatableMetricUniqueCountMetric = z.object({
+  alignment: z.enum(['left', 'center', 'right']).optional(),
+  apply_color_to: z.enum(['value', 'background', 'badge']).optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_colorMapping, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['unique_count']),
+  reduced_time_range: z.string().optional(),
+  summary: z.object({
+    label: z.string().optional(),
+    type: z.enum(['sum', 'avg', 'count', 'min', 'max'])
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_datatableMetricUniqueCountMetric' })
+export type Kibana_Dashboards_API_datatableMetricUniqueCountMetric = z.infer<typeof Kibana_Dashboards_API_datatableMetricUniqueCountMetric>
+
+export const Kibana_Dashboards_API_datatableRowDateHistogram = z.object({
+  alignment: z.enum(['left', 'center', 'right']).optional(),
+  apply_color_to: z.enum(['value', 'background', 'badge']).optional(),
+  click_filter: z.boolean().optional(),
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: z.union([Kibana_Dashboards_API_colorMapping, Kibana_Dashboards_API_autoColor]).optional(),
+  drop_partial_intervals: z.boolean().optional(),
+  field: z.string(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['date_histogram']),
+  suggested_interval: z.string().optional(),
+  use_original_time_range: z.boolean().optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_datatableRowDateHistogram' })
+export type Kibana_Dashboards_API_datatableRowDateHistogram = z.infer<typeof Kibana_Dashboards_API_datatableRowDateHistogram>
+
+export const Kibana_Dashboards_API_datatableRowFilters = z.object({
+  alignment: z.enum(['left', 'center', 'right']).optional(),
+  apply_color_to: z.enum(['value', 'background', 'badge']).optional(),
+  click_filter: z.boolean().optional(),
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: z.union([Kibana_Dashboards_API_colorMapping, Kibana_Dashboards_API_autoColor]).optional(),
+  filters: z.array(Kibana_Dashboards_API_filterWithLabel),
+  label: z.string().optional(),
+  operation: z.enum(['filters']),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_datatableRowFilters' })
+export type Kibana_Dashboards_API_datatableRowFilters = z.infer<typeof Kibana_Dashboards_API_datatableRowFilters>
+
+export const Kibana_Dashboards_API_datatableRowHistogram = z.object({
+  alignment: z.enum(['left', 'center', 'right']).optional(),
+  apply_color_to: z.enum(['value', 'background', 'badge']).optional(),
+  click_filter: z.boolean().optional(),
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: z.union([Kibana_Dashboards_API_colorMapping, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  granularity: z.union([z.number(), z.enum(['auto'])]).optional(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['histogram']),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_datatableRowHistogram' })
+export type Kibana_Dashboards_API_datatableRowHistogram = z.infer<typeof Kibana_Dashboards_API_datatableRowHistogram>
+
+export const Kibana_Dashboards_API_datatableRowRanges = z.object({
+  alignment: z.enum(['left', 'center', 'right']).optional(),
+  apply_color_to: z.enum(['value', 'background', 'badge']).optional(),
+  click_filter: z.boolean().optional(),
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: z.union([Kibana_Dashboards_API_colorMapping, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['range']),
+  ranges: z.array(z.object({
+    gt: z.number().optional(),
+    label: z.string().optional(),
+    lte: z.number().optional()
+  })),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_datatableRowRanges' })
+export type Kibana_Dashboards_API_datatableRowRanges = z.infer<typeof Kibana_Dashboards_API_datatableRowRanges>
+
+export const Kibana_Dashboards_API_datatableRowTerms = z.object({
+  alignment: z.enum(['left', 'center', 'right']).optional(),
+  apply_color_to: z.enum(['value', 'background', 'badge']).optional(),
+  click_filter: z.boolean().optional(),
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: z.union([Kibana_Dashboards_API_colorMapping, Kibana_Dashboards_API_autoColor]).optional(),
+  excludes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  fields: z.array(z.string()),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  includes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  increase_accuracy: z.boolean().optional(),
+  label: z.string().optional(),
+  limit: z.number().optional(),
+  operation: z.enum(['terms']),
+  other_bucket: z.object({
+    include_documents_without_field: z.boolean()
+  }).optional(),
+  rank_by: z.union([Kibana_Dashboards_API_termsRankByAlphabetical, Kibana_Dashboards_API_termsRankByRare, Kibana_Dashboards_API_termsRankBySignificant, Kibana_Dashboards_API_termsRankByMetric, Kibana_Dashboards_API_termsRankByCustomOperation, Kibana_Dashboards_API_termsRankByCustomCountOperation, Kibana_Dashboards_API_termsRankByPercentileOperation, Kibana_Dashboards_API_termsRankByPercentileRankOperation]).optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_datatableRowTerms' })
+export type Kibana_Dashboards_API_datatableRowTerms = z.infer<typeof Kibana_Dashboards_API_datatableRowTerms>
+
+export const Kibana_Dashboards_API_mosaicESQLByValuePanel: z.ZodTypeAny = z.object({
+  data_source: Kibana_Dashboards_API_esqlDataSource,
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  group_breakdown_by: z.array(z.object({
+    collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+    color: Kibana_Dashboards_API_colorMapping.optional(),
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional()
+  })).optional(),
+  group_by: z.array(z.object({
+    collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+    color: Kibana_Dashboards_API_colorMapping.optional(),
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional()
+  })).optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  ignore_global_filters: z.boolean().optional(),
+  legend: Kibana_Dashboards_API_mosaicLegend.optional(),
+  metric: z.object({
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional()
+  }),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_mosaicStyling.optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['mosaic'])
+}).meta({ id: 'Kibana_Dashboards_API_mosaicESQLByValuePanel' })
+export type Kibana_Dashboards_API_mosaicESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_mosaicESQLByValuePanel>
+
+export const Kibana_Dashboards_API_mosaicGroupByDateHistogram = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  drop_partial_intervals: z.boolean().optional(),
+  field: z.string(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['date_histogram']),
+  suggested_interval: z.string().optional(),
+  use_original_time_range: z.boolean().optional()
+}).meta({ id: 'Kibana_Dashboards_API_mosaicGroupByDateHistogram' })
+export type Kibana_Dashboards_API_mosaicGroupByDateHistogram = z.infer<typeof Kibana_Dashboards_API_mosaicGroupByDateHistogram>
+
+export const Kibana_Dashboards_API_mosaicGroupByFilters = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  filters: z.array(Kibana_Dashboards_API_filterWithLabel),
+  label: z.string().optional(),
+  operation: z.enum(['filters'])
+}).meta({ id: 'Kibana_Dashboards_API_mosaicGroupByFilters' })
+export type Kibana_Dashboards_API_mosaicGroupByFilters = z.infer<typeof Kibana_Dashboards_API_mosaicGroupByFilters>
+
+export const Kibana_Dashboards_API_mosaicGroupByHistogram = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  granularity: z.union([z.number(), z.enum(['auto'])]).optional(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['histogram'])
+}).meta({ id: 'Kibana_Dashboards_API_mosaicGroupByHistogram' })
+export type Kibana_Dashboards_API_mosaicGroupByHistogram = z.infer<typeof Kibana_Dashboards_API_mosaicGroupByHistogram>
+
+export const Kibana_Dashboards_API_mosaicGroupByRanges = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['range']),
+  ranges: z.array(z.object({
+    gt: z.number().optional(),
+    label: z.string().optional(),
+    lte: z.number().optional()
+  }))
+}).meta({ id: 'Kibana_Dashboards_API_mosaicGroupByRanges' })
+export type Kibana_Dashboards_API_mosaicGroupByRanges = z.infer<typeof Kibana_Dashboards_API_mosaicGroupByRanges>
+
+export const Kibana_Dashboards_API_mosaicGroupByTerms = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  excludes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  fields: z.array(z.string()),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  includes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  increase_accuracy: z.boolean().optional(),
+  label: z.string().optional(),
+  limit: z.number().optional(),
+  operation: z.enum(['terms']),
+  other_bucket: z.object({
+    include_documents_without_field: z.boolean()
+  }).optional(),
+  rank_by: z.union([Kibana_Dashboards_API_termsRankByAlphabetical, Kibana_Dashboards_API_termsRankByRare, Kibana_Dashboards_API_termsRankBySignificant, Kibana_Dashboards_API_termsRankByMetric, Kibana_Dashboards_API_termsRankByCustomOperation, Kibana_Dashboards_API_termsRankByCustomCountOperation, Kibana_Dashboards_API_termsRankByPercentileOperation, Kibana_Dashboards_API_termsRankByPercentileRankOperation]).optional()
+}).meta({ id: 'Kibana_Dashboards_API_mosaicGroupByTerms' })
+export type Kibana_Dashboards_API_mosaicGroupByTerms = z.infer<typeof Kibana_Dashboards_API_mosaicGroupByTerms>
+
+export const Kibana_Dashboards_API_pieESQLByValuePanel: z.ZodTypeAny = z.object({
+  data_source: Kibana_Dashboards_API_esqlDataSource,
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  group_by: z.array(z.object({
+    collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+    color: Kibana_Dashboards_API_colorMapping.optional(),
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional()
+  })).optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  ignore_global_filters: z.boolean().optional(),
+  legend: Kibana_Dashboards_API_pieLegend.optional(),
+  metrics: z.array(z.object({
+    color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional()
+  })),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_pieStyling.optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['pie'])
+}).meta({ id: 'Kibana_Dashboards_API_pieESQLByValuePanel' })
+export type Kibana_Dashboards_API_pieESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_pieESQLByValuePanel>
+
+export const Kibana_Dashboards_API_pieGroupByDateHistogram = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  drop_partial_intervals: z.boolean().optional(),
+  field: z.string(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['date_histogram']),
+  suggested_interval: z.string().optional(),
+  use_original_time_range: z.boolean().optional()
+}).meta({ id: 'Kibana_Dashboards_API_pieGroupByDateHistogram' })
+export type Kibana_Dashboards_API_pieGroupByDateHistogram = z.infer<typeof Kibana_Dashboards_API_pieGroupByDateHistogram>
+
+export const Kibana_Dashboards_API_pieGroupByFilters = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  filters: z.array(Kibana_Dashboards_API_filterWithLabel),
+  label: z.string().optional(),
+  operation: z.enum(['filters'])
+}).meta({ id: 'Kibana_Dashboards_API_pieGroupByFilters' })
+export type Kibana_Dashboards_API_pieGroupByFilters = z.infer<typeof Kibana_Dashboards_API_pieGroupByFilters>
+
+export const Kibana_Dashboards_API_pieGroupByHistogram = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  granularity: z.union([z.number(), z.enum(['auto'])]).optional(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['histogram'])
+}).meta({ id: 'Kibana_Dashboards_API_pieGroupByHistogram' })
+export type Kibana_Dashboards_API_pieGroupByHistogram = z.infer<typeof Kibana_Dashboards_API_pieGroupByHistogram>
+
+export const Kibana_Dashboards_API_pieGroupByRanges = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['range']),
+  ranges: z.array(z.object({
+    gt: z.number().optional(),
+    label: z.string().optional(),
+    lte: z.number().optional()
+  }))
+}).meta({ id: 'Kibana_Dashboards_API_pieGroupByRanges' })
+export type Kibana_Dashboards_API_pieGroupByRanges = z.infer<typeof Kibana_Dashboards_API_pieGroupByRanges>
+
+export const Kibana_Dashboards_API_pieGroupByTerms = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  excludes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  fields: z.array(z.string()),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  includes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  increase_accuracy: z.boolean().optional(),
+  label: z.string().optional(),
+  limit: z.number().optional(),
+  operation: z.enum(['terms']),
+  other_bucket: z.object({
+    include_documents_without_field: z.boolean()
+  }).optional(),
+  rank_by: z.union([Kibana_Dashboards_API_termsRankByAlphabetical, Kibana_Dashboards_API_termsRankByRare, Kibana_Dashboards_API_termsRankBySignificant, Kibana_Dashboards_API_termsRankByMetric, Kibana_Dashboards_API_termsRankByCustomOperation, Kibana_Dashboards_API_termsRankByCustomCountOperation, Kibana_Dashboards_API_termsRankByPercentileOperation, Kibana_Dashboards_API_termsRankByPercentileRankOperation]).optional()
+}).meta({ id: 'Kibana_Dashboards_API_pieGroupByTerms' })
+export type Kibana_Dashboards_API_pieGroupByTerms = z.infer<typeof Kibana_Dashboards_API_pieGroupByTerms>
+
+export const Kibana_Dashboards_API_tagcloudESQLByValuePanel: z.ZodTypeAny = z.object({
+  data_source: Kibana_Dashboards_API_esqlDataSource,
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  ignore_global_filters: z.boolean().optional(),
+  metric: z.object({
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional()
+  }),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_tagcloudStyling.optional(),
+  tag_by: z.object({
+    color: Kibana_Dashboards_API_colorMapping.optional(),
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional()
+  }),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['tag_cloud'])
+}).meta({ id: 'Kibana_Dashboards_API_tagcloudESQLByValuePanel' })
+export type Kibana_Dashboards_API_tagcloudESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_tagcloudESQLByValuePanel>
+
+export const Kibana_Dashboards_API_tagcloudTagDateHistogram = z.object({
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  drop_partial_intervals: z.boolean().optional(),
+  field: z.string(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['date_histogram']),
+  suggested_interval: z.string().optional(),
+  use_original_time_range: z.boolean().optional()
+}).meta({ id: 'Kibana_Dashboards_API_tagcloudTagDateHistogram' })
+export type Kibana_Dashboards_API_tagcloudTagDateHistogram = z.infer<typeof Kibana_Dashboards_API_tagcloudTagDateHistogram>
+
+export const Kibana_Dashboards_API_tagcloudTagFilters = z.object({
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  filters: z.array(Kibana_Dashboards_API_filterWithLabel),
+  label: z.string().optional(),
+  operation: z.enum(['filters'])
+}).meta({ id: 'Kibana_Dashboards_API_tagcloudTagFilters' })
+export type Kibana_Dashboards_API_tagcloudTagFilters = z.infer<typeof Kibana_Dashboards_API_tagcloudTagFilters>
+
+export const Kibana_Dashboards_API_tagcloudTagHistogram = z.object({
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  granularity: z.union([z.number(), z.enum(['auto'])]).optional(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['histogram'])
+}).meta({ id: 'Kibana_Dashboards_API_tagcloudTagHistogram' })
+export type Kibana_Dashboards_API_tagcloudTagHistogram = z.infer<typeof Kibana_Dashboards_API_tagcloudTagHistogram>
+
+export const Kibana_Dashboards_API_tagcloudTagRanges = z.object({
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['range']),
+  ranges: z.array(z.object({
+    gt: z.number().optional(),
+    label: z.string().optional(),
+    lte: z.number().optional()
+  }))
+}).meta({ id: 'Kibana_Dashboards_API_tagcloudTagRanges' })
+export type Kibana_Dashboards_API_tagcloudTagRanges = z.infer<typeof Kibana_Dashboards_API_tagcloudTagRanges>
+
+export const Kibana_Dashboards_API_tagcloudTagTerms = z.object({
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  excludes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  fields: z.array(z.string()),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  includes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  increase_accuracy: z.boolean().optional(),
+  label: z.string().optional(),
+  limit: z.number().optional(),
+  operation: z.enum(['terms']),
+  other_bucket: z.object({
+    include_documents_without_field: z.boolean()
+  }).optional(),
+  rank_by: z.union([Kibana_Dashboards_API_termsRankByAlphabetical, Kibana_Dashboards_API_termsRankByRare, Kibana_Dashboards_API_termsRankBySignificant, Kibana_Dashboards_API_termsRankByMetric, Kibana_Dashboards_API_termsRankByCustomOperation, Kibana_Dashboards_API_termsRankByCustomCountOperation, Kibana_Dashboards_API_termsRankByPercentileOperation, Kibana_Dashboards_API_termsRankByPercentileRankOperation]).optional()
+}).meta({ id: 'Kibana_Dashboards_API_tagcloudTagTerms' })
+export type Kibana_Dashboards_API_tagcloudTagTerms = z.infer<typeof Kibana_Dashboards_API_tagcloudTagTerms>
+
+export const Kibana_Dashboards_API_treemapESQLByValuePanel: z.ZodTypeAny = z.object({
+  data_source: Kibana_Dashboards_API_esqlDataSource,
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  group_by: z.array(z.object({
+    collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+    color: Kibana_Dashboards_API_colorMapping.optional(),
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional()
+  })).optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  ignore_global_filters: z.boolean().optional(),
+  legend: Kibana_Dashboards_API_treemapLegend.optional(),
+  metrics: z.array(z.object({
+    color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional()
+  })),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_treemapStyling.optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['treemap'])
+}).meta({ id: 'Kibana_Dashboards_API_treemapESQLByValuePanel' })
+export type Kibana_Dashboards_API_treemapESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_treemapESQLByValuePanel>
+
+export const Kibana_Dashboards_API_treemapGroupByDateHistogram = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  drop_partial_intervals: z.boolean().optional(),
+  field: z.string(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['date_histogram']),
+  suggested_interval: z.string().optional(),
+  use_original_time_range: z.boolean().optional()
+}).meta({ id: 'Kibana_Dashboards_API_treemapGroupByDateHistogram' })
+export type Kibana_Dashboards_API_treemapGroupByDateHistogram = z.infer<typeof Kibana_Dashboards_API_treemapGroupByDateHistogram>
+
+export const Kibana_Dashboards_API_treemapGroupByFilters = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  filters: z.array(Kibana_Dashboards_API_filterWithLabel),
+  label: z.string().optional(),
+  operation: z.enum(['filters'])
+}).meta({ id: 'Kibana_Dashboards_API_treemapGroupByFilters' })
+export type Kibana_Dashboards_API_treemapGroupByFilters = z.infer<typeof Kibana_Dashboards_API_treemapGroupByFilters>
+
+export const Kibana_Dashboards_API_treemapGroupByHistogram = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  granularity: z.union([z.number(), z.enum(['auto'])]).optional(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['histogram'])
+}).meta({ id: 'Kibana_Dashboards_API_treemapGroupByHistogram' })
+export type Kibana_Dashboards_API_treemapGroupByHistogram = z.infer<typeof Kibana_Dashboards_API_treemapGroupByHistogram>
+
+export const Kibana_Dashboards_API_treemapGroupByRanges = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['range']),
+  ranges: z.array(z.object({
+    gt: z.number().optional(),
+    label: z.string().optional(),
+    lte: z.number().optional()
+  }))
+}).meta({ id: 'Kibana_Dashboards_API_treemapGroupByRanges' })
+export type Kibana_Dashboards_API_treemapGroupByRanges = z.infer<typeof Kibana_Dashboards_API_treemapGroupByRanges>
+
+export const Kibana_Dashboards_API_treemapGroupByTerms = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  excludes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  fields: z.array(z.string()),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  includes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  increase_accuracy: z.boolean().optional(),
+  label: z.string().optional(),
+  limit: z.number().optional(),
+  operation: z.enum(['terms']),
+  other_bucket: z.object({
+    include_documents_without_field: z.boolean()
+  }).optional(),
+  rank_by: z.union([Kibana_Dashboards_API_termsRankByAlphabetical, Kibana_Dashboards_API_termsRankByRare, Kibana_Dashboards_API_termsRankBySignificant, Kibana_Dashboards_API_termsRankByMetric, Kibana_Dashboards_API_termsRankByCustomOperation, Kibana_Dashboards_API_termsRankByCustomCountOperation, Kibana_Dashboards_API_termsRankByPercentileOperation, Kibana_Dashboards_API_termsRankByPercentileRankOperation]).optional()
+}).meta({ id: 'Kibana_Dashboards_API_treemapGroupByTerms' })
+export type Kibana_Dashboards_API_treemapGroupByTerms = z.infer<typeof Kibana_Dashboards_API_treemapGroupByTerms>
+
+export const Kibana_Dashboards_API_waffleESQLByValuePanel: z.ZodTypeAny = z.object({
+  data_source: Kibana_Dashboards_API_esqlDataSource,
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  group_by: z.array(z.object({
+    collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+    color: Kibana_Dashboards_API_colorMapping.optional(),
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional()
+  })).optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  ignore_global_filters: z.boolean().optional(),
+  legend: Kibana_Dashboards_API_waffleLegend.optional(),
+  metrics: z.array(z.object({
+    color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional()
+  })),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_waffleStyling.optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['waffle'])
+}).meta({ id: 'Kibana_Dashboards_API_waffleESQLByValuePanel' })
+export type Kibana_Dashboards_API_waffleESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_waffleESQLByValuePanel>
+
+export const Kibana_Dashboards_API_waffleGroupByDateHistogram = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  drop_partial_intervals: z.boolean().optional(),
+  field: z.string(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['date_histogram']),
+  suggested_interval: z.string().optional(),
+  use_original_time_range: z.boolean().optional()
+}).meta({ id: 'Kibana_Dashboards_API_waffleGroupByDateHistogram' })
+export type Kibana_Dashboards_API_waffleGroupByDateHistogram = z.infer<typeof Kibana_Dashboards_API_waffleGroupByDateHistogram>
+
+export const Kibana_Dashboards_API_waffleGroupByFilters = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  filters: z.array(Kibana_Dashboards_API_filterWithLabel),
+  label: z.string().optional(),
+  operation: z.enum(['filters'])
+}).meta({ id: 'Kibana_Dashboards_API_waffleGroupByFilters' })
+export type Kibana_Dashboards_API_waffleGroupByFilters = z.infer<typeof Kibana_Dashboards_API_waffleGroupByFilters>
+
+export const Kibana_Dashboards_API_waffleGroupByHistogram = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  granularity: z.union([z.number(), z.enum(['auto'])]).optional(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['histogram'])
+}).meta({ id: 'Kibana_Dashboards_API_waffleGroupByHistogram' })
+export type Kibana_Dashboards_API_waffleGroupByHistogram = z.infer<typeof Kibana_Dashboards_API_waffleGroupByHistogram>
+
+export const Kibana_Dashboards_API_waffleGroupByRanges = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['range']),
+  ranges: z.array(z.object({
+    gt: z.number().optional(),
+    label: z.string().optional(),
+    lte: z.number().optional()
+  }))
+}).meta({ id: 'Kibana_Dashboards_API_waffleGroupByRanges' })
+export type Kibana_Dashboards_API_waffleGroupByRanges = z.infer<typeof Kibana_Dashboards_API_waffleGroupByRanges>
+
+export const Kibana_Dashboards_API_waffleGroupByTerms = z.object({
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  excludes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  fields: z.array(z.string()),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  includes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  increase_accuracy: z.boolean().optional(),
+  label: z.string().optional(),
+  limit: z.number().optional(),
+  operation: z.enum(['terms']),
+  other_bucket: z.object({
+    include_documents_without_field: z.boolean()
+  }).optional(),
+  rank_by: z.union([Kibana_Dashboards_API_termsRankByAlphabetical, Kibana_Dashboards_API_termsRankByRare, Kibana_Dashboards_API_termsRankBySignificant, Kibana_Dashboards_API_termsRankByMetric, Kibana_Dashboards_API_termsRankByCustomOperation, Kibana_Dashboards_API_termsRankByCustomCountOperation, Kibana_Dashboards_API_termsRankByPercentileOperation, Kibana_Dashboards_API_termsRankByPercentileRankOperation]).optional()
+}).meta({ id: 'Kibana_Dashboards_API_waffleGroupByTerms' })
+export type Kibana_Dashboards_API_waffleGroupByTerms = z.infer<typeof Kibana_Dashboards_API_waffleGroupByTerms>
+
+export const Kibana_Dashboards_API_xyBreakdownDateHistogram = z.object({
+  aggregate_first: z.boolean().optional(),
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  drop_partial_intervals: z.boolean().optional(),
+  field: z.string(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['date_histogram']),
+  suggested_interval: z.string().optional(),
+  use_original_time_range: z.boolean().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyBreakdownDateHistogram' })
+export type Kibana_Dashboards_API_xyBreakdownDateHistogram = z.infer<typeof Kibana_Dashboards_API_xyBreakdownDateHistogram>
+
+export const Kibana_Dashboards_API_xyBreakdownFilters = z.object({
+  aggregate_first: z.boolean().optional(),
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  filters: z.array(Kibana_Dashboards_API_filterWithLabel),
+  label: z.string().optional(),
+  operation: z.enum(['filters'])
+}).meta({ id: 'Kibana_Dashboards_API_xyBreakdownFilters' })
+export type Kibana_Dashboards_API_xyBreakdownFilters = z.infer<typeof Kibana_Dashboards_API_xyBreakdownFilters>
+
+export const Kibana_Dashboards_API_xyBreakdownHistogram = z.object({
+  aggregate_first: z.boolean().optional(),
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  granularity: z.union([z.number(), z.enum(['auto'])]).optional(),
+  include_empty_rows: z.boolean().optional(),
+  label: z.string().optional(),
+  operation: z.enum(['histogram'])
+}).meta({ id: 'Kibana_Dashboards_API_xyBreakdownHistogram' })
+export type Kibana_Dashboards_API_xyBreakdownHistogram = z.infer<typeof Kibana_Dashboards_API_xyBreakdownHistogram>
+
+export const Kibana_Dashboards_API_xyBreakdownRanges = z.object({
+  aggregate_first: z.boolean().optional(),
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  field: z.string(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['range']),
+  ranges: z.array(z.object({
+    gt: z.number().optional(),
+    label: z.string().optional(),
+    lte: z.number().optional()
+  }))
+}).meta({ id: 'Kibana_Dashboards_API_xyBreakdownRanges' })
+export type Kibana_Dashboards_API_xyBreakdownRanges = z.infer<typeof Kibana_Dashboards_API_xyBreakdownRanges>
+
+export const Kibana_Dashboards_API_xyBreakdownTerms = z.object({
+  aggregate_first: z.boolean().optional(),
+  collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+  color: Kibana_Dashboards_API_colorMapping.optional(),
+  excludes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  fields: z.array(z.string()),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  includes: z.object({
+    as_regex: z.boolean().optional(),
+    values: z.array(z.string())
+  }).optional(),
+  increase_accuracy: z.boolean().optional(),
+  label: z.string().optional(),
+  limit: z.number().optional(),
+  operation: z.enum(['terms']),
+  other_bucket: z.object({
+    include_documents_without_field: z.boolean()
+  }).optional(),
+  rank_by: z.union([Kibana_Dashboards_API_termsRankByAlphabetical, Kibana_Dashboards_API_termsRankByRare, Kibana_Dashboards_API_termsRankBySignificant, Kibana_Dashboards_API_termsRankByMetric, Kibana_Dashboards_API_termsRankByCustomOperation, Kibana_Dashboards_API_termsRankByCustomCountOperation, Kibana_Dashboards_API_termsRankByPercentileOperation, Kibana_Dashboards_API_termsRankByPercentileRankOperation]).optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyBreakdownTerms' })
+export type Kibana_Dashboards_API_xyBreakdownTerms = z.infer<typeof Kibana_Dashboards_API_xyBreakdownTerms>
+
+export const Kibana_Dashboards_API_xyLayerESQL = z.object({
+  breakdown_by: z.object({
+    collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+    color: Kibana_Dashboards_API_colorMapping.optional(),
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional()
+  }).optional(),
+  data_source: Kibana_Dashboards_API_esqlDataSource,
+  ignore_global_filters: z.boolean().optional(),
+  sampling: z.number().optional(),
+  type: z.enum(['area', 'area_percentage', 'area_stacked', 'bar', 'bar_horizontal', 'bar_horizontal_stacked', 'bar_horizontal_percentage', 'bar_percentage', 'bar_stacked', 'line']),
+  x: z.object({
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional()
+  }).optional(),
+  y: z.array(z.object({
+    axis: z.enum(['y', 'y2']).optional(),
+    color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional()
+  }))
+}).meta({ id: 'Kibana_Dashboards_API_xyLayerESQL' })
+export type Kibana_Dashboards_API_xyLayerESQL = z.infer<typeof Kibana_Dashboards_API_xyLayerESQL>
+
+export const Kibana_Dashboards_API_kbn_data_view_spec_schema = z.object({
+  allow_hidden_indices: z.boolean().optional(),
+  field_settings: z.record(z.string(), Kibana_Dashboards_API_kbn_field_settings_entry).optional(),
+  index_pattern: z.string(),
+  name: z.string().optional(),
+  time_field: z.string().optional(),
+  type: z.enum(['data_view_spec'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_data_view_spec_schema' })
+export type Kibana_Dashboards_API_kbn_data_view_spec_schema = z.infer<typeof Kibana_Dashboards_API_kbn_data_view_spec_schema>
+
+export const Kibana_Dashboards_API_datatableMetricDifferences: z.ZodTypeAny = z.object({
+  alignment: z.enum(['left', 'center', 'right']).optional(),
+  apply_color_to: z.enum(['value', 'background', 'badge']).optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_colorMapping, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['differences']),
+  reduced_time_range: z.string().optional(),
+  summary: z.object({
+    label: z.string().optional(),
+    type: z.enum(['sum', 'avg', 'count', 'min', 'max'])
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_datatableMetricDifferences' })
+export type Kibana_Dashboards_API_datatableMetricDifferences = z.infer<typeof Kibana_Dashboards_API_datatableMetricDifferences>
+
+export const Kibana_Dashboards_API_datatableMetricMovingAverage: z.ZodTypeAny = z.object({
+  alignment: z.enum(['left', 'center', 'right']).optional(),
+  apply_color_to: z.enum(['value', 'background', 'badge']).optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_colorMapping, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['moving_average']),
+  reduced_time_range: z.string().optional(),
+  summary: z.object({
+    label: z.string().optional(),
+    type: z.enum(['sum', 'avg', 'count', 'min', 'max'])
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional(),
+  window: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_datatableMetricMovingAverage' })
+export type Kibana_Dashboards_API_datatableMetricMovingAverage = z.infer<typeof Kibana_Dashboards_API_datatableMetricMovingAverage>
+
+export const Kibana_Dashboards_API_differencesOperation = z.object({
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['differences']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_differencesOperation' })
+export type Kibana_Dashboards_API_differencesOperation = z.infer<typeof Kibana_Dashboards_API_differencesOperation>
+
+export const Kibana_Dashboards_API_gaugeMetricCountMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_noColor, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  goal: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  label: z.string().optional(),
+  max: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  min: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  operation: z.enum(['count']),
+  reduced_time_range: z.string().optional(),
+  subtitle: z.string().optional(),
+  ticks: z.object({
+    mode: z.enum(['auto', 'bands']).optional(),
+    visible: z.boolean().optional()
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  title: z.object({
+    text: z.string().optional(),
+    visible: z.boolean().optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_gaugeMetricCountMetric' })
+export type Kibana_Dashboards_API_gaugeMetricCountMetric = z.infer<typeof Kibana_Dashboards_API_gaugeMetricCountMetric>
+
+export const Kibana_Dashboards_API_gaugeMetricFormula = z.object({
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_noColor, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  formula: z.string(),
+  goal: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  label: z.string().optional(),
+  max: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  min: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  operation: z.enum(['formula']),
+  reduced_time_range: z.string().optional(),
+  subtitle: z.string().optional(),
+  ticks: z.object({
+    mode: z.enum(['auto', 'bands']).optional(),
+    visible: z.boolean().optional()
+  }).optional(),
+  time_scale: z.enum(['s', 'm', 'h', 'd']).optional(),
+  title: z.object({
+    text: z.string().optional(),
+    visible: z.boolean().optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_gaugeMetricFormula' })
+export type Kibana_Dashboards_API_gaugeMetricFormula = z.infer<typeof Kibana_Dashboards_API_gaugeMetricFormula>
+
+export const Kibana_Dashboards_API_gaugeMetricLastValue = z.object({
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_noColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  goal: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  label: z.string().optional(),
+  max: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  min: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  multi_value: z.boolean().optional(),
+  operation: z.enum(['last_value']),
+  reduced_time_range: z.string().optional(),
+  subtitle: z.string().optional(),
+  ticks: z.object({
+    mode: z.enum(['auto', 'bands']).optional(),
+    visible: z.boolean().optional()
+  }).optional(),
+  time_field: z.string(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  title: z.object({
+    text: z.string().optional(),
+    visible: z.boolean().optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_gaugeMetricLastValue' })
+export type Kibana_Dashboards_API_gaugeMetricLastValue = z.infer<typeof Kibana_Dashboards_API_gaugeMetricLastValue>
+
+export const Kibana_Dashboards_API_gaugeMetricPercentile = z.object({
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_noColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  goal: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  label: z.string().optional(),
+  max: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  min: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  operation: z.enum(['percentile']),
+  percentile: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  subtitle: z.string().optional(),
+  ticks: z.object({
+    mode: z.enum(['auto', 'bands']).optional(),
+    visible: z.boolean().optional()
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  title: z.object({
+    text: z.string().optional(),
+    visible: z.boolean().optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_gaugeMetricPercentile' })
+export type Kibana_Dashboards_API_gaugeMetricPercentile = z.infer<typeof Kibana_Dashboards_API_gaugeMetricPercentile>
+
+export const Kibana_Dashboards_API_gaugeMetricPercentileRanks = z.object({
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_noColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  goal: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  label: z.string().optional(),
+  max: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  min: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  operation: z.enum(['percentile_rank']),
+  rank: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  subtitle: z.string().optional(),
+  ticks: z.object({
+    mode: z.enum(['auto', 'bands']).optional(),
+    visible: z.boolean().optional()
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  title: z.object({
+    text: z.string().optional(),
+    visible: z.boolean().optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_gaugeMetricPercentileRanks' })
+export type Kibana_Dashboards_API_gaugeMetricPercentileRanks = z.infer<typeof Kibana_Dashboards_API_gaugeMetricPercentileRanks>
+
+export const Kibana_Dashboards_API_gaugeMetricStatsMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_noColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  goal: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  label: z.string().optional(),
+  max: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  min: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  operation: z.enum(['min', 'max', 'average', 'median', 'standard_deviation']),
+  reduced_time_range: z.string().optional(),
+  subtitle: z.string().optional(),
+  ticks: z.object({
+    mode: z.enum(['auto', 'bands']).optional(),
+    visible: z.boolean().optional()
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  title: z.object({
+    text: z.string().optional(),
+    visible: z.boolean().optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_gaugeMetricStatsMetric' })
+export type Kibana_Dashboards_API_gaugeMetricStatsMetric = z.infer<typeof Kibana_Dashboards_API_gaugeMetricStatsMetric>
+
+export const Kibana_Dashboards_API_gaugeMetricSumMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_noColor, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  goal: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  label: z.string().optional(),
+  max: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  min: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  operation: z.enum(['sum']),
+  reduced_time_range: z.string().optional(),
+  subtitle: z.string().optional(),
+  ticks: z.object({
+    mode: z.enum(['auto', 'bands']).optional(),
+    visible: z.boolean().optional()
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  title: z.object({
+    text: z.string().optional(),
+    visible: z.boolean().optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_gaugeMetricSumMetric' })
+export type Kibana_Dashboards_API_gaugeMetricSumMetric = z.infer<typeof Kibana_Dashboards_API_gaugeMetricSumMetric>
+
+export const Kibana_Dashboards_API_gaugeMetricUniqueCountMetric = z.object({
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_noColor, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  goal: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  label: z.string().optional(),
+  max: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  min: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_formulaOperation]).optional(),
+  operation: z.enum(['unique_count']),
+  reduced_time_range: z.string().optional(),
+  subtitle: z.string().optional(),
+  ticks: z.object({
+    mode: z.enum(['auto', 'bands']).optional(),
+    visible: z.boolean().optional()
+  }).optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  title: z.object({
+    text: z.string().optional(),
+    visible: z.boolean().optional()
+  }).optional()
+}).meta({ id: 'Kibana_Dashboards_API_gaugeMetricUniqueCountMetric' })
+export type Kibana_Dashboards_API_gaugeMetricUniqueCountMetric = z.infer<typeof Kibana_Dashboards_API_gaugeMetricUniqueCountMetric>
+
+export const Kibana_Dashboards_API_heatmapMetricDifferences = z.object({
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['differences']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_heatmapMetricDifferences' })
+export type Kibana_Dashboards_API_heatmapMetricDifferences = z.infer<typeof Kibana_Dashboards_API_heatmapMetricDifferences>
+
+export const Kibana_Dashboards_API_heatmapMetricMovingAverage = z.object({
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['moving_average']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  window: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_heatmapMetricMovingAverage' })
+export type Kibana_Dashboards_API_heatmapMetricMovingAverage = z.infer<typeof Kibana_Dashboards_API_heatmapMetricMovingAverage>
+
+export const Kibana_Dashboards_API_metricSecondaryDifferences = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_noColor]).optional(),
+  compare: z.union([Kibana_Dashboards_API_metricCompareToBaseline, Kibana_Dashboards_API_metricCompareToPrimary]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['differences']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['secondary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricSecondaryDifferences' })
+export type Kibana_Dashboards_API_metricSecondaryDifferences = z.infer<typeof Kibana_Dashboards_API_metricSecondaryDifferences>
+
+export const Kibana_Dashboards_API_metricSecondaryMovingAverage = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_noColor]).optional(),
+  compare: z.union([Kibana_Dashboards_API_metricCompareToBaseline, Kibana_Dashboards_API_metricCompareToPrimary]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['moving_average']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['secondary']),
+  window: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_metricSecondaryMovingAverage' })
+export type Kibana_Dashboards_API_metricSecondaryMovingAverage = z.infer<typeof Kibana_Dashboards_API_metricSecondaryMovingAverage>
+
+export const Kibana_Dashboards_API_mosaicMetricDifferences = z.object({
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['differences']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_mosaicMetricDifferences' })
+export type Kibana_Dashboards_API_mosaicMetricDifferences = z.infer<typeof Kibana_Dashboards_API_mosaicMetricDifferences>
+
+export const Kibana_Dashboards_API_mosaicMetricMovingAverage = z.object({
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['moving_average']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  window: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_mosaicMetricMovingAverage' })
+export type Kibana_Dashboards_API_mosaicMetricMovingAverage = z.infer<typeof Kibana_Dashboards_API_mosaicMetricMovingAverage>
+
+export const Kibana_Dashboards_API_movingAverageOperation = z.object({
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['moving_average']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  window: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_movingAverageOperation' })
+export type Kibana_Dashboards_API_movingAverageOperation = z.infer<typeof Kibana_Dashboards_API_movingAverageOperation>
+
+export const Kibana_Dashboards_API_pieMetricDifferences = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['differences']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_pieMetricDifferences' })
+export type Kibana_Dashboards_API_pieMetricDifferences = z.infer<typeof Kibana_Dashboards_API_pieMetricDifferences>
+
+export const Kibana_Dashboards_API_pieMetricMovingAverage = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['moving_average']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  window: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_pieMetricMovingAverage' })
+export type Kibana_Dashboards_API_pieMetricMovingAverage = z.infer<typeof Kibana_Dashboards_API_pieMetricMovingAverage>
+
+export const Kibana_Dashboards_API_tagcloudMetricDifferences = z.object({
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['differences']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_tagcloudMetricDifferences' })
+export type Kibana_Dashboards_API_tagcloudMetricDifferences = z.infer<typeof Kibana_Dashboards_API_tagcloudMetricDifferences>
+
+export const Kibana_Dashboards_API_tagcloudMetricMovingAverage = z.object({
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['moving_average']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  window: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_tagcloudMetricMovingAverage' })
+export type Kibana_Dashboards_API_tagcloudMetricMovingAverage = z.infer<typeof Kibana_Dashboards_API_tagcloudMetricMovingAverage>
+
+export const Kibana_Dashboards_API_treemapMetricDifferences = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['differences']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_treemapMetricDifferences' })
+export type Kibana_Dashboards_API_treemapMetricDifferences = z.infer<typeof Kibana_Dashboards_API_treemapMetricDifferences>
+
+export const Kibana_Dashboards_API_treemapMetricMovingAverage = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['moving_average']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  window: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_treemapMetricMovingAverage' })
+export type Kibana_Dashboards_API_treemapMetricMovingAverage = z.infer<typeof Kibana_Dashboards_API_treemapMetricMovingAverage>
+
+export const Kibana_Dashboards_API_waffleMetricDifferences = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['differences']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_waffleMetricDifferences' })
+export type Kibana_Dashboards_API_waffleMetricDifferences = z.infer<typeof Kibana_Dashboards_API_waffleMetricDifferences>
+
+export const Kibana_Dashboards_API_waffleMetricMovingAverage = z.object({
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['moving_average']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  window: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_waffleMetricMovingAverage' })
+export type Kibana_Dashboards_API_waffleMetricMovingAverage = z.infer<typeof Kibana_Dashboards_API_waffleMetricMovingAverage>
+
+export const Kibana_Dashboards_API_xyYDifferences = z.object({
+  axis: z.enum(['y', 'y2']).optional(),
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['differences']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyYDifferences' })
+export type Kibana_Dashboards_API_xyYDifferences = z.infer<typeof Kibana_Dashboards_API_xyYDifferences>
+
+export const Kibana_Dashboards_API_xyYMovingAverage = z.object({
+  axis: z.enum(['y', 'y2']).optional(),
+  color: z.union([Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['moving_average']),
+  reduced_time_range: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  window: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_xyYMovingAverage' })
+export type Kibana_Dashboards_API_xyYMovingAverage = z.infer<typeof Kibana_Dashboards_API_xyYMovingAverage>
 
 export const Kibana_HTTP_APIs_kbn_dashboard_panel_type_slo_overview = z.object({
   config: z.discriminatedUnion('overview_mode', [Kibana_HTTP_APIs_slo_single_overview_embeddable, Kibana_HTTP_APIs_slo_group_overview_embeddable]),
@@ -5114,6 +10543,780 @@ export type Kibana_HTTP_APIs_visWaffleMetricMovingAverage = z.infer<typeof Kiban
 export const Kibana_HTTP_APIs_visXyYMovingAverage = Kibana_HTTP_APIs_visMovingAverageOperation.meta({ id: 'Kibana_HTTP_APIs_visXyYMovingAverage' })
 export type Kibana_HTTP_APIs_visXyYMovingAverage = z.infer<typeof Kibana_HTTP_APIs_visXyYMovingAverage>
 
+export const Kibana_Dashboards_API_datatableESQLByValuePanel: z.ZodTypeAny = z.object({
+  data_source: Kibana_Dashboards_API_esqlDataSource,
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  ignore_global_filters: z.boolean().optional(),
+  metrics: z.array(Kibana_Dashboards_API_datatableESQLMetric).optional(),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  rows: z.array(z.object({
+    alignment: z.enum(['left', 'center', 'right']).optional(),
+    apply_color_to: z.enum(['value', 'background', 'badge']).optional(),
+    click_filter: z.boolean().optional(),
+    collapse_by: Kibana_Dashboards_API_collapseBy.optional(),
+    color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_colorMapping, Kibana_Dashboards_API_autoColor]).optional(),
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional(),
+    visible: z.boolean().optional(),
+    width: z.number().optional()
+  })).optional(),
+  sampling: z.number().optional(),
+  split_metrics_by: z.array(z.object({
+    column: z.string(),
+    format: Kibana_Dashboards_API_formatType.optional(),
+    label: z.string().optional()
+  })).optional(),
+  styling: Kibana_Dashboards_API_datatableStyling.optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['data_table'])
+}).meta({ id: 'Kibana_Dashboards_API_datatableESQLByValuePanel' })
+export type Kibana_Dashboards_API_datatableESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_datatableESQLByValuePanel>
+
+export const Kibana_Dashboards_API_xyChartESQLByValuePanel: z.ZodTypeAny = z.object({
+  axis: Kibana_Dashboards_API_vis_api_xy_axis_config.optional(),
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  layers: z.array(Kibana_Dashboards_API_xyLayerESQL),
+  legend: Kibana_Dashboards_API_xyLegend.optional(),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  styling: Kibana_Dashboards_API_xyStyling.optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['xy'])
+}).meta({ id: 'Kibana_Dashboards_API_xyChartESQLByValuePanel' })
+export type Kibana_Dashboards_API_xyChartESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_xyChartESQLByValuePanel>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_discover_session = z.object({
+  config: z.union([z.object({
+    description: z.string().optional(),
+    drilldowns: z.array(z.object({
+      encode_url: z.boolean().optional(),
+      label: z.string(),
+      open_in_new_tab: z.boolean().optional(),
+      trigger: z.enum(['on_open_panel_menu']),
+      type: z.enum(['url_drilldown']),
+      url: z.string()
+    })).optional(),
+    hide_border: z.boolean().optional(),
+    hide_title: z.boolean().optional(),
+    tabs: z.array(z.union([z.object({
+      column_order: z.array(z.string()).optional(),
+      column_settings: z.record(z.string(), z.object({
+        width: z.number().optional()
+      })).optional(),
+      data_source: z.discriminatedUnion('type', [Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+      density: z.enum(['compact', 'expanded', 'normal']).optional(),
+      filters: z.array(z.discriminatedUnion('type', [Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeConditionFilterSchema, Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeGroupFilterSchema, Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeDSLFilterSchema, Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeSpatialFilterSchema])).optional(),
+      header_row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
+      query: Kibana_Dashboards_API_kbn_as_code_query.optional(),
+      row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
+      rows_per_page: z.number().optional(),
+      sample_size: z.number().optional(),
+      sort: z.array(z.object({
+        direction: z.enum(['asc', 'desc']),
+        name: z.string()
+      })).optional(),
+      view_mode: z.enum(['documents', 'patterns', 'aggregated']).optional()
+    }), z.object({
+      column_order: z.array(z.string()).optional(),
+      column_settings: z.record(z.string(), z.object({
+        width: z.number().optional()
+      })).optional(),
+      data_source: Kibana_Dashboards_API_esqlDataSource,
+      density: z.enum(['compact', 'expanded', 'normal']).optional(),
+      header_row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
+      row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
+      rows_per_page: z.number().optional(),
+      sample_size: z.number().optional(),
+      sort: z.array(z.object({
+        direction: z.enum(['asc', 'desc']),
+        name: z.string()
+      })).optional()
+    })])),
+    time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+    title: z.string().optional()
+  }), z.object({
+    description: z.string().optional(),
+    drilldowns: z.array(z.object({
+      encode_url: z.boolean().optional(),
+      label: z.string(),
+      open_in_new_tab: z.boolean().optional(),
+      trigger: z.enum(['on_open_panel_menu']),
+      type: z.enum(['url_drilldown']),
+      url: z.string()
+    })).optional(),
+    hide_border: z.boolean().optional(),
+    hide_title: z.boolean().optional(),
+    overrides: z.object({
+      column_order: z.array(z.string()).optional(),
+      column_settings: z.record(z.string(), z.object({
+        width: z.number().optional()
+      })).optional(),
+      density: z.enum(['compact', 'expanded', 'normal']).optional(),
+      header_row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
+      row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
+      rows_per_page: z.number().optional(),
+      sample_size: z.number().optional(),
+      sort: z.array(z.object({
+        direction: z.enum(['asc', 'desc']),
+        name: z.string()
+      })).optional()
+    }).optional(),
+    ref_id: z.string(),
+    selected_tab_id: z.string().optional(),
+    time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+    title: z.string().optional()
+  })]),
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['discover_session'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_discover_session' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_discover_session = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_discover_session>
+
+export const Kibana_Dashboards_API_legacyMetricNoESQLByValuePanel: z.ZodTypeAny = z.object({
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  ignore_global_filters: z.boolean().optional(),
+  metric: z.union([z.union([Kibana_Dashboards_API_legacyMetricCountMetric, Kibana_Dashboards_API_legacyMetricUniqueCountMetric, Kibana_Dashboards_API_legacyMetricStatsMetric, Kibana_Dashboards_API_legacyMetricSumMetric, Kibana_Dashboards_API_legacyMetricLastValue, Kibana_Dashboards_API_legacyMetricPercentile, Kibana_Dashboards_API_legacyMetricPercentileRanks]), Kibana_Dashboards_API_legacyMetricFormula]),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  sampling: z.number().optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['legacy_metric'])
+}).meta({ id: 'Kibana_Dashboards_API_legacyMetricNoESQLByValuePanel' })
+export type Kibana_Dashboards_API_legacyMetricNoESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_legacyMetricNoESQLByValuePanel>
+
+export const Kibana_Dashboards_API_regionMapNoESQLByValuePanel: z.ZodTypeAny = z.object({
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  ignore_global_filters: z.boolean().optional(),
+  metric: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_formulaOperation]),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  region: z.union([Kibana_Dashboards_API_regionMapRegionDateHistogram, Kibana_Dashboards_API_regionMapRegionTerms, Kibana_Dashboards_API_regionMapRegionHistogram, Kibana_Dashboards_API_regionMapRegionRanges, Kibana_Dashboards_API_regionMapRegionFilters]),
+  sampling: z.number().optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['region_map'])
+}).meta({ id: 'Kibana_Dashboards_API_regionMapNoESQLByValuePanel' })
+export type Kibana_Dashboards_API_regionMapNoESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_regionMapNoESQLByValuePanel>
+
+export const Kibana_Dashboards_API_xyAnnotationLayerNoESQL = z.object({
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  events: z.array(z.union([Kibana_Dashboards_API_xyAnnotationQuery, Kibana_Dashboards_API_xyAnnotationManualEvent, Kibana_Dashboards_API_xyAnnotationManualRange])),
+  ignore_global_filters: z.boolean().optional(),
+  type: z.enum(['annotations'])
+}).meta({ id: 'Kibana_Dashboards_API_xyAnnotationLayerNoESQL' })
+export type Kibana_Dashboards_API_xyAnnotationLayerNoESQL = z.infer<typeof Kibana_Dashboards_API_xyAnnotationLayerNoESQL>
+
+export const Kibana_Dashboards_API_xyReferenceLineLayerNoESQL = z.object({
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  ignore_global_filters: z.boolean().optional(),
+  sampling: z.number().optional(),
+  thresholds: z.array(z.union([z.union([Kibana_Dashboards_API_xyRefLineCountMetric, Kibana_Dashboards_API_xyRefLineUniqueCountMetric, Kibana_Dashboards_API_xyRefLineStatsMetric, Kibana_Dashboards_API_xyRefLineSumMetric, Kibana_Dashboards_API_xyRefLineLastValue, Kibana_Dashboards_API_xyRefLinePercentile, Kibana_Dashboards_API_xyRefLinePercentileRanks]), Kibana_Dashboards_API_xyRefLineStatic, Kibana_Dashboards_API_xyRefLineFormula])),
+  type: z.enum(['reference_lines'])
+}).meta({ id: 'Kibana_Dashboards_API_xyReferenceLineLayerNoESQL' })
+export type Kibana_Dashboards_API_xyReferenceLineLayerNoESQL = z.infer<typeof Kibana_Dashboards_API_xyReferenceLineLayerNoESQL>
+
+export const Kibana_Dashboards_API_legacyMetricNoESQL: z.ZodTypeAny = z.object({
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  ignore_global_filters: z.boolean().optional(),
+  metric: z.union([z.union([Kibana_Dashboards_API_legacyMetricCountMetric, Kibana_Dashboards_API_legacyMetricUniqueCountMetric, Kibana_Dashboards_API_legacyMetricStatsMetric, Kibana_Dashboards_API_legacyMetricSumMetric, Kibana_Dashboards_API_legacyMetricLastValue, Kibana_Dashboards_API_legacyMetricPercentile, Kibana_Dashboards_API_legacyMetricPercentileRanks]), Kibana_Dashboards_API_legacyMetricFormula]),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  sampling: z.number().optional(),
+  title: z.string().optional(),
+  type: z.enum(['legacy_metric'])
+}).meta({ id: 'Kibana_Dashboards_API_legacyMetricNoESQL' })
+export type Kibana_Dashboards_API_legacyMetricNoESQL = z.infer<typeof Kibana_Dashboards_API_legacyMetricNoESQL>
+
+export const Kibana_Dashboards_API_regionMapNoESQL: z.ZodTypeAny = z.object({
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  ignore_global_filters: z.boolean().optional(),
+  metric: z.union([Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_formulaOperation]),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  region: z.union([Kibana_Dashboards_API_regionMapRegionDateHistogram, Kibana_Dashboards_API_regionMapRegionTerms, Kibana_Dashboards_API_regionMapRegionHistogram, Kibana_Dashboards_API_regionMapRegionRanges, Kibana_Dashboards_API_regionMapRegionFilters]),
+  sampling: z.number().optional(),
+  title: z.string().optional(),
+  type: z.enum(['region_map'])
+}).meta({ id: 'Kibana_Dashboards_API_regionMapNoESQL' })
+export type Kibana_Dashboards_API_regionMapNoESQL = z.infer<typeof Kibana_Dashboards_API_regionMapNoESQL>
+
+export const Kibana_Dashboards_API_datatableNoESQLByValuePanel: z.ZodTypeAny = z.object({
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  ignore_global_filters: z.boolean().optional(),
+  metrics: z.array(z.union([z.union([Kibana_Dashboards_API_datatableMetricCountMetric, Kibana_Dashboards_API_datatableMetricUniqueCountMetric, Kibana_Dashboards_API_datatableMetricStatsMetric, Kibana_Dashboards_API_datatableMetricSumMetric, Kibana_Dashboards_API_datatableMetricLastValue, Kibana_Dashboards_API_datatableMetricPercentile, Kibana_Dashboards_API_datatableMetricPercentileRanks]), z.union([Kibana_Dashboards_API_datatableMetricDifferences, Kibana_Dashboards_API_datatableMetricMovingAverage, Kibana_Dashboards_API_datatableMetricCumulativeSum, Kibana_Dashboards_API_datatableMetricCounterRate]), Kibana_Dashboards_API_datatableMetricFormula])),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  rows: z.array(z.union([Kibana_Dashboards_API_datatableRowDateHistogram, Kibana_Dashboards_API_datatableRowTerms, Kibana_Dashboards_API_datatableRowHistogram, Kibana_Dashboards_API_datatableRowRanges, Kibana_Dashboards_API_datatableRowFilters])).optional(),
+  sampling: z.number().optional(),
+  split_metrics_by: z.array(z.union([Kibana_Dashboards_API_dateHistogramOperation, Kibana_Dashboards_API_termsOperation, Kibana_Dashboards_API_histogramOperation, Kibana_Dashboards_API_rangesOperation, Kibana_Dashboards_API_filtersOperation])).optional(),
+  styling: Kibana_Dashboards_API_datatableStyling.optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['data_table'])
+}).meta({ id: 'Kibana_Dashboards_API_datatableNoESQLByValuePanel' })
+export type Kibana_Dashboards_API_datatableNoESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_datatableNoESQLByValuePanel>
+
+export const Kibana_Dashboards_API_datatableNoESQL: z.ZodTypeAny = z.object({
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  ignore_global_filters: z.boolean().optional(),
+  metrics: z.array(z.union([z.union([Kibana_Dashboards_API_datatableMetricCountMetric, Kibana_Dashboards_API_datatableMetricUniqueCountMetric, Kibana_Dashboards_API_datatableMetricStatsMetric, Kibana_Dashboards_API_datatableMetricSumMetric, Kibana_Dashboards_API_datatableMetricLastValue, Kibana_Dashboards_API_datatableMetricPercentile, Kibana_Dashboards_API_datatableMetricPercentileRanks]), z.union([Kibana_Dashboards_API_datatableMetricDifferences, Kibana_Dashboards_API_datatableMetricMovingAverage, Kibana_Dashboards_API_datatableMetricCumulativeSum, Kibana_Dashboards_API_datatableMetricCounterRate]), Kibana_Dashboards_API_datatableMetricFormula])),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  rows: z.array(z.union([Kibana_Dashboards_API_datatableRowDateHistogram, Kibana_Dashboards_API_datatableRowTerms, Kibana_Dashboards_API_datatableRowHistogram, Kibana_Dashboards_API_datatableRowRanges, Kibana_Dashboards_API_datatableRowFilters])).optional(),
+  sampling: z.number().optional(),
+  split_metrics_by: z.array(z.union([Kibana_Dashboards_API_dateHistogramOperation, Kibana_Dashboards_API_termsOperation, Kibana_Dashboards_API_histogramOperation, Kibana_Dashboards_API_rangesOperation, Kibana_Dashboards_API_filtersOperation])).optional(),
+  styling: Kibana_Dashboards_API_datatableStyling.optional(),
+  title: z.string().optional(),
+  type: z.enum(['data_table'])
+}).meta({ id: 'Kibana_Dashboards_API_datatableNoESQL' })
+export type Kibana_Dashboards_API_datatableNoESQL = z.infer<typeof Kibana_Dashboards_API_datatableNoESQL>
+
+export const Kibana_Dashboards_API_gaugeNoESQLByValuePanel: z.ZodTypeAny = z.object({
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  ignore_global_filters: z.boolean().optional(),
+  metric: z.union([z.union([Kibana_Dashboards_API_gaugeMetricCountMetric, Kibana_Dashboards_API_gaugeMetricUniqueCountMetric, Kibana_Dashboards_API_gaugeMetricStatsMetric, Kibana_Dashboards_API_gaugeMetricSumMetric, Kibana_Dashboards_API_gaugeMetricLastValue, Kibana_Dashboards_API_gaugeMetricPercentile, Kibana_Dashboards_API_gaugeMetricPercentileRanks]), Kibana_Dashboards_API_gaugeMetricFormula]),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_gaugeStyling.optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['gauge'])
+}).meta({ id: 'Kibana_Dashboards_API_gaugeNoESQLByValuePanel' })
+export type Kibana_Dashboards_API_gaugeNoESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_gaugeNoESQLByValuePanel>
+
+export const Kibana_Dashboards_API_gaugeNoESQL: z.ZodTypeAny = z.object({
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  ignore_global_filters: z.boolean().optional(),
+  metric: z.union([z.union([Kibana_Dashboards_API_gaugeMetricCountMetric, Kibana_Dashboards_API_gaugeMetricUniqueCountMetric, Kibana_Dashboards_API_gaugeMetricStatsMetric, Kibana_Dashboards_API_gaugeMetricSumMetric, Kibana_Dashboards_API_gaugeMetricLastValue, Kibana_Dashboards_API_gaugeMetricPercentile, Kibana_Dashboards_API_gaugeMetricPercentileRanks]), Kibana_Dashboards_API_gaugeMetricFormula]),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_gaugeStyling.optional(),
+  title: z.string().optional(),
+  type: z.enum(['gauge'])
+}).meta({ id: 'Kibana_Dashboards_API_gaugeNoESQL' })
+export type Kibana_Dashboards_API_gaugeNoESQL = z.infer<typeof Kibana_Dashboards_API_gaugeNoESQL>
+
+export const Kibana_Dashboards_API_heatmapNoESQLByValuePanel: z.ZodTypeAny = z.object({
+  axis: Kibana_Dashboards_API_heatmapAxes.optional(),
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  ignore_global_filters: z.boolean().optional(),
+  legend: Kibana_Dashboards_API_heatmapLegend.optional(),
+  metric: z.union([z.union([Kibana_Dashboards_API_heatmapMetricCountMetric, Kibana_Dashboards_API_heatmapMetricUniqueCountMetric, Kibana_Dashboards_API_heatmapMetricStatsMetric, Kibana_Dashboards_API_heatmapMetricSumMetric, Kibana_Dashboards_API_heatmapMetricLastValue, Kibana_Dashboards_API_heatmapMetricPercentile, Kibana_Dashboards_API_heatmapMetricPercentileRanks]), z.union([Kibana_Dashboards_API_heatmapMetricDifferences, Kibana_Dashboards_API_heatmapMetricMovingAverage, Kibana_Dashboards_API_heatmapMetricCumulativeSum, Kibana_Dashboards_API_heatmapMetricCounterRate]), Kibana_Dashboards_API_heatmapMetricFormula]),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_heatmapStyling.optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['heatmap']),
+  x: z.union([Kibana_Dashboards_API_dateHistogramOperation, Kibana_Dashboards_API_termsOperation, Kibana_Dashboards_API_histogramOperation, Kibana_Dashboards_API_rangesOperation, Kibana_Dashboards_API_filtersOperation]),
+  y: z.union([Kibana_Dashboards_API_dateHistogramOperation, Kibana_Dashboards_API_termsOperation, Kibana_Dashboards_API_histogramOperation, Kibana_Dashboards_API_rangesOperation, Kibana_Dashboards_API_filtersOperation]).optional()
+}).meta({ id: 'Kibana_Dashboards_API_heatmapNoESQLByValuePanel' })
+export type Kibana_Dashboards_API_heatmapNoESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_heatmapNoESQLByValuePanel>
+
+export const Kibana_Dashboards_API_heatmapNoESQL: z.ZodTypeAny = z.object({
+  axis: Kibana_Dashboards_API_heatmapAxes.optional(),
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  ignore_global_filters: z.boolean().optional(),
+  legend: Kibana_Dashboards_API_heatmapLegend.optional(),
+  metric: z.union([z.union([Kibana_Dashboards_API_heatmapMetricCountMetric, Kibana_Dashboards_API_heatmapMetricUniqueCountMetric, Kibana_Dashboards_API_heatmapMetricStatsMetric, Kibana_Dashboards_API_heatmapMetricSumMetric, Kibana_Dashboards_API_heatmapMetricLastValue, Kibana_Dashboards_API_heatmapMetricPercentile, Kibana_Dashboards_API_heatmapMetricPercentileRanks]), z.union([Kibana_Dashboards_API_heatmapMetricDifferences, Kibana_Dashboards_API_heatmapMetricMovingAverage, Kibana_Dashboards_API_heatmapMetricCumulativeSum, Kibana_Dashboards_API_heatmapMetricCounterRate]), Kibana_Dashboards_API_heatmapMetricFormula]),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_heatmapStyling.optional(),
+  title: z.string().optional(),
+  type: z.enum(['heatmap']),
+  x: z.union([Kibana_Dashboards_API_dateHistogramOperation, Kibana_Dashboards_API_termsOperation, Kibana_Dashboards_API_histogramOperation, Kibana_Dashboards_API_rangesOperation, Kibana_Dashboards_API_filtersOperation]),
+  y: z.union([Kibana_Dashboards_API_dateHistogramOperation, Kibana_Dashboards_API_termsOperation, Kibana_Dashboards_API_histogramOperation, Kibana_Dashboards_API_rangesOperation, Kibana_Dashboards_API_filtersOperation]).optional()
+}).meta({ id: 'Kibana_Dashboards_API_heatmapNoESQL' })
+export type Kibana_Dashboards_API_heatmapNoESQL = z.infer<typeof Kibana_Dashboards_API_heatmapNoESQL>
+
+export const Kibana_Dashboards_API_mosaicNoESQLByValuePanel: z.ZodTypeAny = z.object({
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  group_breakdown_by: z.array(z.union([Kibana_Dashboards_API_mosaicGroupBreakdownByDateHistogram, Kibana_Dashboards_API_mosaicGroupBreakdownByTerms, Kibana_Dashboards_API_mosaicGroupBreakdownByHistogram, Kibana_Dashboards_API_mosaicGroupBreakdownByRanges, Kibana_Dashboards_API_mosaicGroupBreakdownByFilters])).optional(),
+  group_by: z.array(z.union([Kibana_Dashboards_API_mosaicGroupByDateHistogram, Kibana_Dashboards_API_mosaicGroupByTerms, Kibana_Dashboards_API_mosaicGroupByHistogram, Kibana_Dashboards_API_mosaicGroupByRanges, Kibana_Dashboards_API_mosaicGroupByFilters])).optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  ignore_global_filters: z.boolean().optional(),
+  legend: Kibana_Dashboards_API_mosaicLegend.optional(),
+  metric: z.union([z.union([Kibana_Dashboards_API_mosaicMetricCountMetric, Kibana_Dashboards_API_mosaicMetricUniqueCountMetric, Kibana_Dashboards_API_mosaicMetricStatsMetric, Kibana_Dashboards_API_mosaicMetricSumMetric, Kibana_Dashboards_API_mosaicMetricLastValue, Kibana_Dashboards_API_mosaicMetricPercentile, Kibana_Dashboards_API_mosaicMetricPercentileRanks]), z.union([Kibana_Dashboards_API_mosaicMetricDifferences, Kibana_Dashboards_API_mosaicMetricMovingAverage, Kibana_Dashboards_API_mosaicMetricCumulativeSum, Kibana_Dashboards_API_mosaicMetricCounterRate]), Kibana_Dashboards_API_mosaicMetricFormula]),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_mosaicStyling.optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['mosaic'])
+}).meta({ id: 'Kibana_Dashboards_API_mosaicNoESQLByValuePanel' })
+export type Kibana_Dashboards_API_mosaicNoESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_mosaicNoESQLByValuePanel>
+
+export const Kibana_Dashboards_API_mosaicNoESQL: z.ZodTypeAny = z.object({
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  group_breakdown_by: z.array(z.union([Kibana_Dashboards_API_mosaicGroupBreakdownByDateHistogram, Kibana_Dashboards_API_mosaicGroupBreakdownByTerms, Kibana_Dashboards_API_mosaicGroupBreakdownByHistogram, Kibana_Dashboards_API_mosaicGroupBreakdownByRanges, Kibana_Dashboards_API_mosaicGroupBreakdownByFilters])).optional(),
+  group_by: z.array(z.union([Kibana_Dashboards_API_mosaicGroupByDateHistogram, Kibana_Dashboards_API_mosaicGroupByTerms, Kibana_Dashboards_API_mosaicGroupByHistogram, Kibana_Dashboards_API_mosaicGroupByRanges, Kibana_Dashboards_API_mosaicGroupByFilters])).optional(),
+  ignore_global_filters: z.boolean().optional(),
+  legend: Kibana_Dashboards_API_mosaicLegend.optional(),
+  metric: z.union([z.union([Kibana_Dashboards_API_mosaicMetricCountMetric, Kibana_Dashboards_API_mosaicMetricUniqueCountMetric, Kibana_Dashboards_API_mosaicMetricStatsMetric, Kibana_Dashboards_API_mosaicMetricSumMetric, Kibana_Dashboards_API_mosaicMetricLastValue, Kibana_Dashboards_API_mosaicMetricPercentile, Kibana_Dashboards_API_mosaicMetricPercentileRanks]), z.union([Kibana_Dashboards_API_mosaicMetricDifferences, Kibana_Dashboards_API_mosaicMetricMovingAverage, Kibana_Dashboards_API_mosaicMetricCumulativeSum, Kibana_Dashboards_API_mosaicMetricCounterRate]), Kibana_Dashboards_API_mosaicMetricFormula]),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_mosaicStyling.optional(),
+  title: z.string().optional(),
+  type: z.enum(['mosaic'])
+}).meta({ id: 'Kibana_Dashboards_API_mosaicNoESQL' })
+export type Kibana_Dashboards_API_mosaicNoESQL = z.infer<typeof Kibana_Dashboards_API_mosaicNoESQL>
+
+export const Kibana_Dashboards_API_metricBarBackgroundChart = z.object({
+  max_value: z.union([Kibana_Dashboards_API_formulaOperation, Kibana_Dashboards_API_staticOperationDefinition, Kibana_Dashboards_API_fieldMetricOperations, Kibana_Dashboards_API_differencesOperation, Kibana_Dashboards_API_movingAverageOperation, Kibana_Dashboards_API_cumulativeSumOperation, Kibana_Dashboards_API_counterRateOperation, Kibana_Dashboards_API_countMetricOperation, Kibana_Dashboards_API_uniqueCountMetricOperation, Kibana_Dashboards_API_lastValueOperation, Kibana_Dashboards_API_percentileOperation, Kibana_Dashboards_API_percentileRanksOperation]),
+  orientation: Kibana_Dashboards_API_vis_api_simple_orientation.optional(),
+  type: z.enum(['bar'])
+}).meta({ id: 'Kibana_Dashboards_API_metricBarBackgroundChart' })
+export type Kibana_Dashboards_API_metricBarBackgroundChart = z.infer<typeof Kibana_Dashboards_API_metricBarBackgroundChart>
+
+export const Kibana_Dashboards_API_pieNoESQLByValuePanel: z.ZodTypeAny = z.object({
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  group_by: z.array(z.union([Kibana_Dashboards_API_pieGroupByDateHistogram, Kibana_Dashboards_API_pieGroupByTerms, Kibana_Dashboards_API_pieGroupByHistogram, Kibana_Dashboards_API_pieGroupByRanges, Kibana_Dashboards_API_pieGroupByFilters])).optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  ignore_global_filters: z.boolean().optional(),
+  legend: Kibana_Dashboards_API_pieLegend.optional(),
+  metrics: z.array(z.union([z.union([Kibana_Dashboards_API_pieMetricCountMetric, Kibana_Dashboards_API_pieMetricUniqueCountMetric, Kibana_Dashboards_API_pieMetricStatsMetric, Kibana_Dashboards_API_pieMetricSumMetric, Kibana_Dashboards_API_pieMetricLastValue, Kibana_Dashboards_API_pieMetricPercentile, Kibana_Dashboards_API_pieMetricPercentileRanks]), z.union([Kibana_Dashboards_API_pieMetricDifferences, Kibana_Dashboards_API_pieMetricMovingAverage, Kibana_Dashboards_API_pieMetricCumulativeSum, Kibana_Dashboards_API_pieMetricCounterRate]), Kibana_Dashboards_API_pieMetricFormula])),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_pieStyling.optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['pie'])
+}).meta({ id: 'Kibana_Dashboards_API_pieNoESQLByValuePanel' })
+export type Kibana_Dashboards_API_pieNoESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_pieNoESQLByValuePanel>
+
+export const Kibana_Dashboards_API_pieNoESQL: z.ZodTypeAny = z.object({
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  group_by: z.array(z.union([Kibana_Dashboards_API_pieGroupByDateHistogram, Kibana_Dashboards_API_pieGroupByTerms, Kibana_Dashboards_API_pieGroupByHistogram, Kibana_Dashboards_API_pieGroupByRanges, Kibana_Dashboards_API_pieGroupByFilters])).optional(),
+  ignore_global_filters: z.boolean().optional(),
+  legend: Kibana_Dashboards_API_pieLegend.optional(),
+  metrics: z.array(z.union([z.union([Kibana_Dashboards_API_pieMetricCountMetric, Kibana_Dashboards_API_pieMetricUniqueCountMetric, Kibana_Dashboards_API_pieMetricStatsMetric, Kibana_Dashboards_API_pieMetricSumMetric, Kibana_Dashboards_API_pieMetricLastValue, Kibana_Dashboards_API_pieMetricPercentile, Kibana_Dashboards_API_pieMetricPercentileRanks]), z.union([Kibana_Dashboards_API_pieMetricDifferences, Kibana_Dashboards_API_pieMetricMovingAverage, Kibana_Dashboards_API_pieMetricCumulativeSum, Kibana_Dashboards_API_pieMetricCounterRate]), Kibana_Dashboards_API_pieMetricFormula])),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_pieStyling.optional(),
+  title: z.string().optional(),
+  type: z.enum(['pie'])
+}).meta({ id: 'Kibana_Dashboards_API_pieNoESQL' })
+export type Kibana_Dashboards_API_pieNoESQL = z.infer<typeof Kibana_Dashboards_API_pieNoESQL>
+
+export const Kibana_Dashboards_API_tagcloudNoESQLByValuePanel: z.ZodTypeAny = z.object({
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  ignore_global_filters: z.boolean().optional(),
+  metric: z.union([z.union([Kibana_Dashboards_API_tagcloudMetricCountMetric, Kibana_Dashboards_API_tagcloudMetricUniqueCountMetric, Kibana_Dashboards_API_tagcloudMetricStatsMetric, Kibana_Dashboards_API_tagcloudMetricSumMetric, Kibana_Dashboards_API_tagcloudMetricLastValue, Kibana_Dashboards_API_tagcloudMetricPercentile, Kibana_Dashboards_API_tagcloudMetricPercentileRanks]), z.union([Kibana_Dashboards_API_tagcloudMetricDifferences, Kibana_Dashboards_API_tagcloudMetricMovingAverage, Kibana_Dashboards_API_tagcloudMetricCumulativeSum, Kibana_Dashboards_API_tagcloudMetricCounterRate]), Kibana_Dashboards_API_tagcloudMetricFormula]),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_tagcloudStyling.optional(),
+  tag_by: z.union([Kibana_Dashboards_API_tagcloudTagDateHistogram, Kibana_Dashboards_API_tagcloudTagTerms, Kibana_Dashboards_API_tagcloudTagHistogram, Kibana_Dashboards_API_tagcloudTagRanges, Kibana_Dashboards_API_tagcloudTagFilters]),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['tag_cloud'])
+}).meta({ id: 'Kibana_Dashboards_API_tagcloudNoESQLByValuePanel' })
+export type Kibana_Dashboards_API_tagcloudNoESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_tagcloudNoESQLByValuePanel>
+
+export const Kibana_Dashboards_API_tagcloudNoESQL: z.ZodTypeAny = z.object({
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  ignore_global_filters: z.boolean().optional(),
+  metric: z.union([z.union([Kibana_Dashboards_API_tagcloudMetricCountMetric, Kibana_Dashboards_API_tagcloudMetricUniqueCountMetric, Kibana_Dashboards_API_tagcloudMetricStatsMetric, Kibana_Dashboards_API_tagcloudMetricSumMetric, Kibana_Dashboards_API_tagcloudMetricLastValue, Kibana_Dashboards_API_tagcloudMetricPercentile, Kibana_Dashboards_API_tagcloudMetricPercentileRanks]), z.union([Kibana_Dashboards_API_tagcloudMetricDifferences, Kibana_Dashboards_API_tagcloudMetricMovingAverage, Kibana_Dashboards_API_tagcloudMetricCumulativeSum, Kibana_Dashboards_API_tagcloudMetricCounterRate]), Kibana_Dashboards_API_tagcloudMetricFormula]),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_tagcloudStyling.optional(),
+  tag_by: z.union([Kibana_Dashboards_API_tagcloudTagDateHistogram, Kibana_Dashboards_API_tagcloudTagTerms, Kibana_Dashboards_API_tagcloudTagHistogram, Kibana_Dashboards_API_tagcloudTagRanges, Kibana_Dashboards_API_tagcloudTagFilters]),
+  title: z.string().optional(),
+  type: z.enum(['tag_cloud'])
+}).meta({ id: 'Kibana_Dashboards_API_tagcloudNoESQL' })
+export type Kibana_Dashboards_API_tagcloudNoESQL = z.infer<typeof Kibana_Dashboards_API_tagcloudNoESQL>
+
+export const Kibana_Dashboards_API_treemapNoESQLByValuePanel: z.ZodTypeAny = z.object({
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  group_by: z.array(z.union([Kibana_Dashboards_API_treemapGroupByDateHistogram, Kibana_Dashboards_API_treemapGroupByTerms, Kibana_Dashboards_API_treemapGroupByHistogram, Kibana_Dashboards_API_treemapGroupByRanges, Kibana_Dashboards_API_treemapGroupByFilters])).optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  ignore_global_filters: z.boolean().optional(),
+  legend: Kibana_Dashboards_API_treemapLegend.optional(),
+  metrics: z.array(z.union([z.union([Kibana_Dashboards_API_treemapMetricCountMetric, Kibana_Dashboards_API_treemapMetricUniqueCountMetric, Kibana_Dashboards_API_treemapMetricStatsMetric, Kibana_Dashboards_API_treemapMetricSumMetric, Kibana_Dashboards_API_treemapMetricLastValue, Kibana_Dashboards_API_treemapMetricPercentile, Kibana_Dashboards_API_treemapMetricPercentileRanks]), z.union([Kibana_Dashboards_API_treemapMetricDifferences, Kibana_Dashboards_API_treemapMetricMovingAverage, Kibana_Dashboards_API_treemapMetricCumulativeSum, Kibana_Dashboards_API_treemapMetricCounterRate]), Kibana_Dashboards_API_treemapMetricFormula])),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_treemapStyling.optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['treemap'])
+}).meta({ id: 'Kibana_Dashboards_API_treemapNoESQLByValuePanel' })
+export type Kibana_Dashboards_API_treemapNoESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_treemapNoESQLByValuePanel>
+
+export const Kibana_Dashboards_API_treemapNoESQL: z.ZodTypeAny = z.object({
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  group_by: z.array(z.union([Kibana_Dashboards_API_treemapGroupByDateHistogram, Kibana_Dashboards_API_treemapGroupByTerms, Kibana_Dashboards_API_treemapGroupByHistogram, Kibana_Dashboards_API_treemapGroupByRanges, Kibana_Dashboards_API_treemapGroupByFilters])).optional(),
+  ignore_global_filters: z.boolean().optional(),
+  legend: Kibana_Dashboards_API_treemapLegend.optional(),
+  metrics: z.array(z.union([z.union([Kibana_Dashboards_API_treemapMetricCountMetric, Kibana_Dashboards_API_treemapMetricUniqueCountMetric, Kibana_Dashboards_API_treemapMetricStatsMetric, Kibana_Dashboards_API_treemapMetricSumMetric, Kibana_Dashboards_API_treemapMetricLastValue, Kibana_Dashboards_API_treemapMetricPercentile, Kibana_Dashboards_API_treemapMetricPercentileRanks]), z.union([Kibana_Dashboards_API_treemapMetricDifferences, Kibana_Dashboards_API_treemapMetricMovingAverage, Kibana_Dashboards_API_treemapMetricCumulativeSum, Kibana_Dashboards_API_treemapMetricCounterRate]), Kibana_Dashboards_API_treemapMetricFormula])),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_treemapStyling.optional(),
+  title: z.string().optional(),
+  type: z.enum(['treemap'])
+}).meta({ id: 'Kibana_Dashboards_API_treemapNoESQL' })
+export type Kibana_Dashboards_API_treemapNoESQL = z.infer<typeof Kibana_Dashboards_API_treemapNoESQL>
+
+export const Kibana_Dashboards_API_waffleNoESQLByValuePanel: z.ZodTypeAny = z.object({
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  group_by: z.array(z.union([Kibana_Dashboards_API_waffleGroupByDateHistogram, Kibana_Dashboards_API_waffleGroupByTerms, Kibana_Dashboards_API_waffleGroupByHistogram, Kibana_Dashboards_API_waffleGroupByRanges, Kibana_Dashboards_API_waffleGroupByFilters])).optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  ignore_global_filters: z.boolean().optional(),
+  legend: Kibana_Dashboards_API_waffleLegend.optional(),
+  metrics: z.array(z.union([z.union([Kibana_Dashboards_API_waffleMetricCountMetric, Kibana_Dashboards_API_waffleMetricUniqueCountMetric, Kibana_Dashboards_API_waffleMetricStatsMetric, Kibana_Dashboards_API_waffleMetricSumMetric, Kibana_Dashboards_API_waffleMetricLastValue, Kibana_Dashboards_API_waffleMetricPercentile, Kibana_Dashboards_API_waffleMetricPercentileRanks]), z.union([Kibana_Dashboards_API_waffleMetricDifferences, Kibana_Dashboards_API_waffleMetricMovingAverage, Kibana_Dashboards_API_waffleMetricCumulativeSum, Kibana_Dashboards_API_waffleMetricCounterRate]), Kibana_Dashboards_API_waffleMetricFormula])),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_waffleStyling.optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['waffle'])
+}).meta({ id: 'Kibana_Dashboards_API_waffleNoESQLByValuePanel' })
+export type Kibana_Dashboards_API_waffleNoESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_waffleNoESQLByValuePanel>
+
+export const Kibana_Dashboards_API_waffleNoESQL: z.ZodTypeAny = z.object({
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  group_by: z.array(z.union([Kibana_Dashboards_API_waffleGroupByDateHistogram, Kibana_Dashboards_API_waffleGroupByTerms, Kibana_Dashboards_API_waffleGroupByHistogram, Kibana_Dashboards_API_waffleGroupByRanges, Kibana_Dashboards_API_waffleGroupByFilters])).optional(),
+  ignore_global_filters: z.boolean().optional(),
+  legend: Kibana_Dashboards_API_waffleLegend.optional(),
+  metrics: z.array(z.union([z.union([Kibana_Dashboards_API_waffleMetricCountMetric, Kibana_Dashboards_API_waffleMetricUniqueCountMetric, Kibana_Dashboards_API_waffleMetricStatsMetric, Kibana_Dashboards_API_waffleMetricSumMetric, Kibana_Dashboards_API_waffleMetricLastValue, Kibana_Dashboards_API_waffleMetricPercentile, Kibana_Dashboards_API_waffleMetricPercentileRanks]), z.union([Kibana_Dashboards_API_waffleMetricDifferences, Kibana_Dashboards_API_waffleMetricMovingAverage, Kibana_Dashboards_API_waffleMetricCumulativeSum, Kibana_Dashboards_API_waffleMetricCounterRate]), Kibana_Dashboards_API_waffleMetricFormula])),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_waffleStyling.optional(),
+  title: z.string().optional(),
+  type: z.enum(['waffle'])
+}).meta({ id: 'Kibana_Dashboards_API_waffleNoESQL' })
+export type Kibana_Dashboards_API_waffleNoESQL = z.infer<typeof Kibana_Dashboards_API_waffleNoESQL>
+
+export const Kibana_Dashboards_API_xyLayerNoESQL: z.ZodTypeAny = z.object({
+  breakdown_by: z.union([Kibana_Dashboards_API_xyBreakdownDateHistogram, Kibana_Dashboards_API_xyBreakdownTerms, Kibana_Dashboards_API_xyBreakdownHistogram, Kibana_Dashboards_API_xyBreakdownRanges, Kibana_Dashboards_API_xyBreakdownFilters]).optional(),
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  ignore_global_filters: z.boolean().optional(),
+  sampling: z.number().optional(),
+  type: z.enum(['area', 'area_percentage', 'area_stacked', 'bar', 'bar_horizontal', 'bar_horizontal_stacked', 'bar_horizontal_percentage', 'bar_percentage', 'bar_stacked', 'line']),
+  x: z.union([Kibana_Dashboards_API_xyXDateHistogram, Kibana_Dashboards_API_xyXTerms, Kibana_Dashboards_API_xyXHistogram, Kibana_Dashboards_API_xyXRanges, Kibana_Dashboards_API_xyXFilters]).optional(),
+  y: z.array(z.union([z.union([Kibana_Dashboards_API_xyYCountMetric, Kibana_Dashboards_API_xyYUniqueCountMetric, Kibana_Dashboards_API_xyYStatsMetric, Kibana_Dashboards_API_xyYSumMetric, Kibana_Dashboards_API_xyYLastValue, Kibana_Dashboards_API_xyYPercentile, Kibana_Dashboards_API_xyYPercentileRanks]), z.union([Kibana_Dashboards_API_xyYDifferences, Kibana_Dashboards_API_xyYMovingAverage, Kibana_Dashboards_API_xyYCumulativeSum, Kibana_Dashboards_API_xyYCounterRate]), Kibana_Dashboards_API_xyYFormula]))
+}).meta({ id: 'Kibana_Dashboards_API_xyLayerNoESQL' })
+export type Kibana_Dashboards_API_xyLayerNoESQL = z.infer<typeof Kibana_Dashboards_API_xyLayerNoESQL>
+
 export const Kibana_HTTP_APIs_datatableLibItemNoESQL: z.ZodTypeAny = z.object({
   data_source: z.discriminatedUnion('type', [Kibana_HTTP_APIs_kbn_data_view_reference_schema, Kibana_HTTP_APIs_kbn_data_view_spec_schema]),
   description: z.string().optional(),
@@ -5219,9 +11422,12 @@ export const Kibana_HTTP_APIs_kbn_dashboard_panel_type_discover_session = z.obje
         width: z.number().optional()
       })).optional(),
       data_source: z.discriminatedUnion('type', [Kibana_HTTP_APIs_kbn_data_view_reference_schema, Kibana_HTTP_APIs_kbn_data_view_spec_schema]),
+      default_rendered_nodes: z.number().optional(),
       density: z.union([z.enum(['compact']), z.enum(['expanded']), z.enum(['normal'])]).optional(),
+      documents_display_mode: z.union([z.enum(['table']), z.enum(['json'])]).optional(),
       filters: z.array(Kibana_HTTP_APIs_kbn_as_code_filters_schema_asCodeFilterSchema).optional(),
       header_row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
+      hide_nulls: z.boolean().optional(),
       query: Kibana_HTTP_APIs_kbn_as_code_query.optional(),
       row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
       rows_per_page: z.number().optional(),
@@ -5230,22 +11436,27 @@ export const Kibana_HTTP_APIs_kbn_dashboard_panel_type_discover_session = z.obje
         direction: z.enum(['asc', 'desc']),
         name: z.string()
       })).optional(),
-      view_mode: z.union([z.enum(['documents']), z.enum(['patterns']), z.enum(['aggregated'])]).optional()
+      view_mode: z.union([z.enum(['documents']), z.enum(['patterns']), z.enum(['aggregated'])]).optional(),
+      wrap_lines: z.boolean().optional()
     }), z.object({
       column_order: z.array(z.string()).optional(),
       column_settings: z.record(z.string(), z.object({
         width: z.number().optional()
       })).optional(),
       data_source: Kibana_HTTP_APIs_esqlDataSource,
+      default_rendered_nodes: z.number().optional(),
       density: z.union([z.enum(['compact']), z.enum(['expanded']), z.enum(['normal'])]).optional(),
+      documents_display_mode: z.union([z.enum(['table']), z.enum(['json'])]).optional(),
       header_row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
+      hide_nulls: z.boolean().optional(),
       row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
       rows_per_page: z.number().optional(),
       sample_size: z.number().optional(),
       sort: z.array(z.object({
         direction: z.enum(['asc', 'desc']),
         name: z.string()
-      })).optional()
+      })).optional(),
+      wrap_lines: z.boolean().optional()
     })])),
     time_range: Kibana_HTTP_APIs_kbn_es_query_server_timeRangeSchema.optional(),
     title: z.string().optional()
@@ -5267,15 +11478,19 @@ export const Kibana_HTTP_APIs_kbn_dashboard_panel_type_discover_session = z.obje
       column_settings: z.record(z.string(), z.object({
         width: z.number().optional()
       })).optional(),
+      default_rendered_nodes: z.number().optional(),
       density: z.union([z.enum(['compact']), z.enum(['expanded']), z.enum(['normal'])]).optional(),
+      documents_display_mode: z.union([z.enum(['table']), z.enum(['json'])]).optional(),
       header_row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
+      hide_nulls: z.boolean().optional(),
       row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
       rows_per_page: z.number().optional(),
       sample_size: z.number().optional(),
       sort: z.array(z.object({
         direction: z.enum(['asc', 'desc']),
         name: z.string()
-      })).optional()
+      })).optional(),
+      wrap_lines: z.boolean().optional()
     }).optional(),
     ref_id: z.string(),
     selected_tab_id: z.string().optional(),
@@ -5768,6 +11983,14 @@ export const Kibana_HTTP_APIs_visMetricNoESQL: z.ZodTypeAny = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_visMetricNoESQL' })
 export type Kibana_HTTP_APIs_visMetricNoESQL = z.infer<typeof Kibana_HTTP_APIs_visMetricNoESQL>
 
+export const Kibana_Dashboards_API_metricComplementaryViz = z.union([Kibana_Dashboards_API_metricBarBackgroundChart, z.object({
+  type: z.enum(['trend'])
+})]).meta({ id: 'Kibana_Dashboards_API_metricComplementaryViz' })
+export type Kibana_Dashboards_API_metricComplementaryViz = z.infer<typeof Kibana_Dashboards_API_metricComplementaryViz>
+
+export const Kibana_Dashboards_API_xyLayersNoESQL: z.ZodTypeAny = z.union([Kibana_Dashboards_API_xyLayerNoESQL, Kibana_Dashboards_API_xyReferenceLineLayerNoESQL, Kibana_Dashboards_API_xyAnnotationLayerNoESQL, Kibana_Dashboards_API_xyAnnotationByRefLayer]).meta({ id: 'Kibana_Dashboards_API_xyLayersNoESQL' })
+export type Kibana_Dashboards_API_xyLayersNoESQL = z.infer<typeof Kibana_Dashboards_API_xyLayersNoESQL>
+
 export const Kibana_HTTP_APIs_visDatatableChart: z.ZodTypeAny = z.union([Kibana_HTTP_APIs_visDatatableNoESQL, Kibana_HTTP_APIs_visDatatableESQL]).meta({ id: 'Kibana_HTTP_APIs_visDatatableChart' })
 export type Kibana_HTTP_APIs_visDatatableChart = z.infer<typeof Kibana_HTTP_APIs_visDatatableChart>
 
@@ -5804,6 +12027,268 @@ export type Kibana_HTTP_APIs_visXyLayersNoESQL = z.infer<typeof Kibana_HTTP_APIs
 export const Kibana_HTTP_APIs_visMetricChart: z.ZodTypeAny = z.union([Kibana_HTTP_APIs_visMetricNoESQL, Kibana_HTTP_APIs_visMetricESQL]).meta({ id: 'Kibana_HTTP_APIs_visMetricChart' })
 export type Kibana_HTTP_APIs_visMetricChart = z.infer<typeof Kibana_HTTP_APIs_visMetricChart>
 
+export const Kibana_Dashboards_API_metricPrimaryCounterRate = z.object({
+  apply_color_to: z.enum(['value', 'background']).optional(),
+  background_chart: Kibana_Dashboards_API_metricComplementaryViz.optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['counter_rate']),
+  reduced_time_range: z.string().optional(),
+  subtitle: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['primary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricPrimaryCounterRate' })
+export type Kibana_Dashboards_API_metricPrimaryCounterRate = z.infer<typeof Kibana_Dashboards_API_metricPrimaryCounterRate>
+
+export const Kibana_Dashboards_API_metricPrimaryCountMetric = z.object({
+  apply_color_to: z.enum(['value', 'background']).optional(),
+  background_chart: Kibana_Dashboards_API_metricComplementaryViz.optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['count']),
+  reduced_time_range: z.string().optional(),
+  subtitle: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['primary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricPrimaryCountMetric' })
+export type Kibana_Dashboards_API_metricPrimaryCountMetric = z.infer<typeof Kibana_Dashboards_API_metricPrimaryCountMetric>
+
+export const Kibana_Dashboards_API_metricPrimaryCumulativeSum = z.object({
+  apply_color_to: z.enum(['value', 'background']).optional(),
+  background_chart: Kibana_Dashboards_API_metricComplementaryViz.optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string().optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['cumulative_sum']),
+  reduced_time_range: z.string().optional(),
+  subtitle: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['primary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricPrimaryCumulativeSum' })
+export type Kibana_Dashboards_API_metricPrimaryCumulativeSum = z.infer<typeof Kibana_Dashboards_API_metricPrimaryCumulativeSum>
+
+export const Kibana_Dashboards_API_metricPrimaryDifferences = z.object({
+  apply_color_to: z.enum(['value', 'background']).optional(),
+  background_chart: Kibana_Dashboards_API_metricComplementaryViz.optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['differences']),
+  reduced_time_range: z.string().optional(),
+  subtitle: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['primary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricPrimaryDifferences' })
+export type Kibana_Dashboards_API_metricPrimaryDifferences = z.infer<typeof Kibana_Dashboards_API_metricPrimaryDifferences>
+
+export const Kibana_Dashboards_API_metricPrimaryFormula = z.object({
+  apply_color_to: z.enum(['value', 'background']).optional(),
+  background_chart: Kibana_Dashboards_API_metricComplementaryViz.optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  formula: z.string(),
+  label: z.string().optional(),
+  operation: z.enum(['formula']),
+  reduced_time_range: z.string().optional(),
+  subtitle: z.string().optional(),
+  time_scale: z.enum(['s', 'm', 'h', 'd']).optional(),
+  type: z.enum(['primary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricPrimaryFormula' })
+export type Kibana_Dashboards_API_metricPrimaryFormula = z.infer<typeof Kibana_Dashboards_API_metricPrimaryFormula>
+
+export const Kibana_Dashboards_API_metricPrimaryLastValue = z.object({
+  apply_color_to: z.enum(['value', 'background']).optional(),
+  background_chart: Kibana_Dashboards_API_metricComplementaryViz.optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  multi_value: z.boolean().optional(),
+  operation: z.enum(['last_value']),
+  reduced_time_range: z.string().optional(),
+  subtitle: z.string().optional(),
+  time_field: z.string(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['primary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricPrimaryLastValue' })
+export type Kibana_Dashboards_API_metricPrimaryLastValue = z.infer<typeof Kibana_Dashboards_API_metricPrimaryLastValue>
+
+export const Kibana_Dashboards_API_metricPrimaryMovingAverage = z.object({
+  apply_color_to: z.enum(['value', 'background']).optional(),
+  background_chart: Kibana_Dashboards_API_metricComplementaryViz.optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  of: Kibana_Dashboards_API_fieldMetricOperations,
+  operation: z.enum(['moving_average']),
+  reduced_time_range: z.string().optional(),
+  subtitle: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['primary']),
+  window: z.number().optional()
+}).meta({ id: 'Kibana_Dashboards_API_metricPrimaryMovingAverage' })
+export type Kibana_Dashboards_API_metricPrimaryMovingAverage = z.infer<typeof Kibana_Dashboards_API_metricPrimaryMovingAverage>
+
+export const Kibana_Dashboards_API_metricPrimaryPercentile = z.object({
+  apply_color_to: z.enum(['value', 'background']).optional(),
+  background_chart: Kibana_Dashboards_API_metricComplementaryViz.optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile']),
+  percentile: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  subtitle: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['primary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricPrimaryPercentile' })
+export type Kibana_Dashboards_API_metricPrimaryPercentile = z.infer<typeof Kibana_Dashboards_API_metricPrimaryPercentile>
+
+export const Kibana_Dashboards_API_metricPrimaryPercentileRanks = z.object({
+  apply_color_to: z.enum(['value', 'background']).optional(),
+  background_chart: Kibana_Dashboards_API_metricComplementaryViz.optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['percentile_rank']),
+  rank: z.number().optional(),
+  reduced_time_range: z.string().optional(),
+  subtitle: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['primary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricPrimaryPercentileRanks' })
+export type Kibana_Dashboards_API_metricPrimaryPercentileRanks = z.infer<typeof Kibana_Dashboards_API_metricPrimaryPercentileRanks>
+
+export const Kibana_Dashboards_API_metricPrimaryStatsMetric = z.object({
+  apply_color_to: z.enum(['value', 'background']).optional(),
+  background_chart: Kibana_Dashboards_API_metricComplementaryViz.optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['min', 'max', 'average', 'median', 'standard_deviation']),
+  reduced_time_range: z.string().optional(),
+  subtitle: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['primary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricPrimaryStatsMetric' })
+export type Kibana_Dashboards_API_metricPrimaryStatsMetric = z.infer<typeof Kibana_Dashboards_API_metricPrimaryStatsMetric>
+
+export const Kibana_Dashboards_API_metricPrimarySumMetric = z.object({
+  apply_color_to: z.enum(['value', 'background']).optional(),
+  background_chart: Kibana_Dashboards_API_metricComplementaryViz.optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['sum']),
+  reduced_time_range: z.string().optional(),
+  subtitle: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['primary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricPrimarySumMetric' })
+export type Kibana_Dashboards_API_metricPrimarySumMetric = z.infer<typeof Kibana_Dashboards_API_metricPrimarySumMetric>
+
+export const Kibana_Dashboards_API_metricPrimaryUniqueCountMetric = z.object({
+  apply_color_to: z.enum(['value', 'background']).optional(),
+  background_chart: Kibana_Dashboards_API_metricComplementaryViz.optional(),
+  color: z.union([Kibana_Dashboards_API_colorByValue, Kibana_Dashboards_API_staticColor, Kibana_Dashboards_API_autoColor]).optional(),
+  empty_as_null: z.boolean().optional(),
+  field: z.string(),
+  filter: Kibana_Dashboards_API_filterSimple.optional(),
+  format: Kibana_Dashboards_API_formatType.optional(),
+  label: z.string().optional(),
+  operation: z.enum(['unique_count']),
+  reduced_time_range: z.string().optional(),
+  subtitle: z.string().optional(),
+  time_scale: Kibana_Dashboards_API_operationTimeScaleSetting.optional(),
+  time_shift: z.string().optional(),
+  type: z.enum(['primary'])
+}).meta({ id: 'Kibana_Dashboards_API_metricPrimaryUniqueCountMetric' })
+export type Kibana_Dashboards_API_metricPrimaryUniqueCountMetric = z.infer<typeof Kibana_Dashboards_API_metricPrimaryUniqueCountMetric>
+
+export const Kibana_Dashboards_API_xyChartNoESQLByValuePanel: z.ZodTypeAny = z.object({
+  axis: Kibana_Dashboards_API_vis_api_xy_axis_config.optional(),
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  layers: z.array(Kibana_Dashboards_API_xyLayersNoESQL),
+  legend: Kibana_Dashboards_API_xyLegend.optional(),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  styling: Kibana_Dashboards_API_xyStyling.optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['xy'])
+}).meta({ id: 'Kibana_Dashboards_API_xyChartNoESQLByValuePanel' })
+export type Kibana_Dashboards_API_xyChartNoESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_xyChartNoESQLByValuePanel>
+
+export const Kibana_Dashboards_API_xyChartNoESQL: z.ZodTypeAny = z.object({
+  axis: Kibana_Dashboards_API_vis_api_xy_axis_config.optional(),
+  description: z.string().optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  layers: z.array(Kibana_Dashboards_API_xyLayersNoESQL),
+  legend: Kibana_Dashboards_API_xyLegend.optional(),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  styling: Kibana_Dashboards_API_xyStyling.optional(),
+  title: z.string().optional(),
+  type: z.enum(['xy'])
+}).meta({ id: 'Kibana_Dashboards_API_xyChartNoESQL' })
+export type Kibana_Dashboards_API_xyChartNoESQL = z.infer<typeof Kibana_Dashboards_API_xyChartNoESQL>
+
 export const Kibana_HTTP_APIs_visXyChartNoESQL: z.ZodTypeAny = z.object({
   axis: Kibana_HTTP_APIs_visApiXyAxisConfig.optional(),
   description: z.string().optional(),
@@ -5831,11 +12316,106 @@ export const Kibana_HTTP_APIs_xyLibItemNoESQL: z.ZodTypeAny = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_xyLibItemNoESQL' })
 export type Kibana_HTTP_APIs_xyLibItemNoESQL = z.infer<typeof Kibana_HTTP_APIs_xyLibItemNoESQL>
 
+export const Kibana_Dashboards_API_metricNoESQLByValuePanel: z.ZodTypeAny = z.object({
+  breakdown_by: z.union([Kibana_Dashboards_API_metricBreakdownDateHistogram, Kibana_Dashboards_API_metricBreakdownTerms, Kibana_Dashboards_API_metricBreakdownHistogram, Kibana_Dashboards_API_metricBreakdownRanges, Kibana_Dashboards_API_metricBreakdownFilters]).optional(),
+  data_source: z.union([Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  drilldowns: z.array(z.union([z.object({
+    dashboard_id: z.string(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['dashboard_drilldown']),
+    use_filters: z.boolean().optional(),
+    use_time_range: z.boolean().optional()
+  }), z.object({
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_apply_filter']),
+    type: z.enum(['discover_drilldown'])
+  }), z.object({
+    encode_url: z.boolean().optional(),
+    label: z.string(),
+    open_in_new_tab: z.boolean().optional(),
+    trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+    type: z.enum(['url_drilldown']),
+    url: z.string()
+  })])).optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  hide_border: z.boolean().optional(),
+  hide_title: z.boolean().optional(),
+  ignore_global_filters: z.boolean().optional(),
+  metrics: z.array(z.union([z.union([z.union([Kibana_Dashboards_API_metricPrimaryCountMetric, Kibana_Dashboards_API_metricPrimaryUniqueCountMetric, Kibana_Dashboards_API_metricPrimaryStatsMetric, Kibana_Dashboards_API_metricPrimarySumMetric, Kibana_Dashboards_API_metricPrimaryLastValue, Kibana_Dashboards_API_metricPrimaryPercentile, Kibana_Dashboards_API_metricPrimaryPercentileRanks]), z.union([Kibana_Dashboards_API_metricPrimaryDifferences, Kibana_Dashboards_API_metricPrimaryMovingAverage, Kibana_Dashboards_API_metricPrimaryCumulativeSum, Kibana_Dashboards_API_metricPrimaryCounterRate]), Kibana_Dashboards_API_metricPrimaryFormula]), z.union([z.union([Kibana_Dashboards_API_metricSecondaryCountMetric, Kibana_Dashboards_API_metricSecondaryUniqueCountMetric, Kibana_Dashboards_API_metricSecondaryStatsMetric, Kibana_Dashboards_API_metricSecondarySumMetric, Kibana_Dashboards_API_metricSecondaryLastValue, Kibana_Dashboards_API_metricSecondaryPercentile, Kibana_Dashboards_API_metricSecondaryPercentileRanks]), z.union([Kibana_Dashboards_API_metricSecondaryDifferences, Kibana_Dashboards_API_metricSecondaryMovingAverage, Kibana_Dashboards_API_metricSecondaryCumulativeSum, Kibana_Dashboards_API_metricSecondaryCounterRate]), Kibana_Dashboards_API_metricSecondaryFormula])])),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_metricStyling.optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string().optional(),
+  type: z.enum(['metric'])
+}).meta({ id: 'Kibana_Dashboards_API_metricNoESQLByValuePanel' })
+export type Kibana_Dashboards_API_metricNoESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_metricNoESQLByValuePanel>
+
+export const Kibana_Dashboards_API_metricNoESQL: z.ZodTypeAny = z.object({
+  breakdown_by: z.union([Kibana_Dashboards_API_metricBreakdownDateHistogram, Kibana_Dashboards_API_metricBreakdownTerms, Kibana_Dashboards_API_metricBreakdownHistogram, Kibana_Dashboards_API_metricBreakdownRanges, Kibana_Dashboards_API_metricBreakdownFilters]).optional(),
+  data_source: z.discriminatedUnion('type', [Kibana_Dashboards_API_kbn_data_view_reference_schema, Kibana_Dashboards_API_kbn_data_view_spec_schema]),
+  description: z.string().optional(),
+  filters: Kibana_Dashboards_API_lensPanelFilters.optional(),
+  ignore_global_filters: z.boolean().optional(),
+  metrics: z.array(z.union([z.union([z.union([Kibana_Dashboards_API_metricPrimaryCountMetric, Kibana_Dashboards_API_metricPrimaryUniqueCountMetric, Kibana_Dashboards_API_metricPrimaryStatsMetric, Kibana_Dashboards_API_metricPrimarySumMetric, Kibana_Dashboards_API_metricPrimaryLastValue, Kibana_Dashboards_API_metricPrimaryPercentile, Kibana_Dashboards_API_metricPrimaryPercentileRanks]), z.union([Kibana_Dashboards_API_metricPrimaryDifferences, Kibana_Dashboards_API_metricPrimaryMovingAverage, Kibana_Dashboards_API_metricPrimaryCumulativeSum, Kibana_Dashboards_API_metricPrimaryCounterRate]), Kibana_Dashboards_API_metricPrimaryFormula]), z.union([z.union([Kibana_Dashboards_API_metricSecondaryCountMetric, Kibana_Dashboards_API_metricSecondaryUniqueCountMetric, Kibana_Dashboards_API_metricSecondaryStatsMetric, Kibana_Dashboards_API_metricSecondarySumMetric, Kibana_Dashboards_API_metricSecondaryLastValue, Kibana_Dashboards_API_metricSecondaryPercentile, Kibana_Dashboards_API_metricSecondaryPercentileRanks]), z.union([Kibana_Dashboards_API_metricSecondaryDifferences, Kibana_Dashboards_API_metricSecondaryMovingAverage, Kibana_Dashboards_API_metricSecondaryCumulativeSum, Kibana_Dashboards_API_metricSecondaryCounterRate]), Kibana_Dashboards_API_metricSecondaryFormula])])),
+  query: Kibana_Dashboards_API_filterSimple.optional(),
+  sampling: z.number().optional(),
+  styling: Kibana_Dashboards_API_metricStyling.optional(),
+  title: z.string().optional(),
+  type: z.enum(['metric'])
+}).meta({ id: 'Kibana_Dashboards_API_metricNoESQL' })
+export type Kibana_Dashboards_API_metricNoESQL = z.infer<typeof Kibana_Dashboards_API_metricNoESQL>
+
 export const Kibana_HTTP_APIs_visXyChart: z.ZodTypeAny = z.union([Kibana_HTTP_APIs_visXyChartNoESQL, Kibana_HTTP_APIs_visXyChartESQL]).meta({ id: 'Kibana_HTTP_APIs_visXyChart' })
 export type Kibana_HTTP_APIs_visXyChart = z.infer<typeof Kibana_HTTP_APIs_visXyChart>
 
 export const Kibana_HTTP_APIs_lensApiConfigLibItemNoESQL: z.ZodTypeAny = z.union([Kibana_HTTP_APIs_metricLibItemNoESQL, Kibana_HTTP_APIs_legacyMetricLibItemNoESQL, Kibana_HTTP_APIs_xyLibItemNoESQL, Kibana_HTTP_APIs_gaugeLibItemNoESQL, Kibana_HTTP_APIs_heatmapLibItemNoESQL, Kibana_HTTP_APIs_tagcloudLibItemNoESQL, Kibana_HTTP_APIs_regionMapLibItemNoESQL, Kibana_HTTP_APIs_datatableLibItemNoESQL, Kibana_HTTP_APIs_pieLibItemNoESQL, Kibana_HTTP_APIs_mosaicLibItemNoESQL, Kibana_HTTP_APIs_treemapLibItemNoESQL, Kibana_HTTP_APIs_waffleLibItemNoESQL]).meta({ id: 'Kibana_HTTP_APIs_lensApiConfigLibItemNoESQL' })
 export type Kibana_HTTP_APIs_lensApiConfigLibItemNoESQL = z.infer<typeof Kibana_HTTP_APIs_lensApiConfigLibItemNoESQL>
+
+export const Kibana_Dashboards_API_kbn_dashboard_panel_type_vis = z.object({
+  config: z.union([z.union([Kibana_Dashboards_API_metricNoESQLByValuePanel, Kibana_Dashboards_API_metricESQLByValuePanel, Kibana_Dashboards_API_legacyMetricNoESQLByValuePanel, Kibana_Dashboards_API_xyChartNoESQLByValuePanel, Kibana_Dashboards_API_xyChartESQLByValuePanel, Kibana_Dashboards_API_gaugeNoESQLByValuePanel, Kibana_Dashboards_API_gaugeESQLByValuePanel, Kibana_Dashboards_API_heatmapNoESQLByValuePanel, Kibana_Dashboards_API_heatmapESQLByValuePanel, Kibana_Dashboards_API_tagcloudNoESQLByValuePanel, Kibana_Dashboards_API_tagcloudESQLByValuePanel, Kibana_Dashboards_API_regionMapNoESQLByValuePanel, Kibana_Dashboards_API_regionMapESQLByValuePanel, Kibana_Dashboards_API_datatableNoESQLByValuePanel, Kibana_Dashboards_API_datatableESQLByValuePanel, Kibana_Dashboards_API_pieNoESQLByValuePanel, Kibana_Dashboards_API_pieESQLByValuePanel, Kibana_Dashboards_API_mosaicNoESQLByValuePanel, Kibana_Dashboards_API_mosaicESQLByValuePanel, Kibana_Dashboards_API_treemapNoESQLByValuePanel, Kibana_Dashboards_API_treemapESQLByValuePanel, Kibana_Dashboards_API_waffleNoESQLByValuePanel, Kibana_Dashboards_API_waffleESQLByValuePanel]), z.object({
+    description: z.string().optional(),
+    drilldowns: z.array(z.union([z.object({
+      dashboard_id: z.string(),
+      label: z.string(),
+      open_in_new_tab: z.boolean().optional(),
+      trigger: z.enum(['on_apply_filter']),
+      type: z.enum(['dashboard_drilldown']),
+      use_filters: z.boolean().optional(),
+      use_time_range: z.boolean().optional()
+    }), z.object({
+      label: z.string(),
+      open_in_new_tab: z.boolean().optional(),
+      trigger: z.enum(['on_apply_filter']),
+      type: z.enum(['discover_drilldown'])
+    }), z.object({
+      encode_url: z.boolean().optional(),
+      label: z.string(),
+      open_in_new_tab: z.boolean().optional(),
+      trigger: z.enum(['on_click_row', 'on_click_value', 'on_open_panel_menu', 'on_select_range']),
+      type: z.enum(['url_drilldown']),
+      url: z.string()
+    })])).optional(),
+    hide_border: z.boolean().optional(),
+    hide_title: z.boolean().optional(),
+    ref_id: z.string(),
+    references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+    time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+    title: z.string().optional()
+  })]),
+  grid: Kibana_Dashboards_API_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['vis'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_panel_type_vis' })
+export type Kibana_Dashboards_API_kbn_dashboard_panel_type_vis = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_panel_type_vis>
+
+export const Kibana_Dashboards_API_lensApiConfigNoESQL: z.ZodTypeAny = z.union([Kibana_Dashboards_API_metricNoESQL, Kibana_Dashboards_API_legacyMetricNoESQL, Kibana_Dashboards_API_xyChartNoESQL, Kibana_Dashboards_API_gaugeNoESQL, Kibana_Dashboards_API_heatmapNoESQL, Kibana_Dashboards_API_tagcloudNoESQL, Kibana_Dashboards_API_regionMapNoESQL, Kibana_Dashboards_API_datatableNoESQL, Kibana_Dashboards_API_pieNoESQL, Kibana_Dashboards_API_mosaicNoESQL, Kibana_Dashboards_API_treemapNoESQL, Kibana_Dashboards_API_waffleNoESQL]).meta({ id: 'Kibana_Dashboards_API_lensApiConfigNoESQL' })
+export type Kibana_Dashboards_API_lensApiConfigNoESQL = z.infer<typeof Kibana_Dashboards_API_lensApiConfigNoESQL>
 
 export const Kibana_HTTP_APIs_visApiConfig: z.ZodTypeAny = z.union([Kibana_HTTP_APIs_visMetricChart, Kibana_HTTP_APIs_visLegacyMetricNoESQL, Kibana_HTTP_APIs_visXyChart, Kibana_HTTP_APIs_visGaugeChart, Kibana_HTTP_APIs_visHeatmapChart, Kibana_HTTP_APIs_visTagcloudChart, Kibana_HTTP_APIs_visRegionMapChart, Kibana_HTTP_APIs_visDatatableChart, Kibana_HTTP_APIs_visPieChart, Kibana_HTTP_APIs_visMosaicChart, Kibana_HTTP_APIs_visTreemapChart, Kibana_HTTP_APIs_visWaffleChart]).meta({ id: 'Kibana_HTTP_APIs_visApiConfig' })
 export type Kibana_HTTP_APIs_visApiConfig = z.infer<typeof Kibana_HTTP_APIs_visApiConfig>
@@ -5846,6 +12426,24 @@ export const Kibana_HTTP_APIs_visResponseItem: z.ZodTypeAny = z.object({
   meta: Kibana_HTTP_APIs_kbn_as_code_meta
 }).meta({ id: 'Kibana_HTTP_APIs_visResponseItem' })
 export type Kibana_HTTP_APIs_visResponseItem = z.infer<typeof Kibana_HTTP_APIs_visResponseItem>
+
+export const Kibana_Dashboards_API_kbn_dashboard_section: z.ZodTypeAny = z.object({
+  collapsed: z.boolean().optional(),
+  grid: z.object({
+    y: z.number()
+  }),
+  id: z.string().optional(),
+  panels: z.array(z.discriminatedUnion('type', [Kibana_Dashboards_API_kbn_dashboard_panel_type_ml_anomaly_charts, Kibana_Dashboards_API_kbn_dashboard_panel_type_ml_anomaly_swimlane, Kibana_Dashboards_API_kbn_dashboard_panel_type_apm_service_map, Kibana_Dashboards_API_kbn_dashboard_panel_type_aiops_change_point_chart, Kibana_Dashboards_API_kbn_dashboard_panel_type_discover_session, Kibana_Dashboards_API_kbn_dashboard_panel_type_esql_control, Kibana_Dashboards_API_kbn_dashboard_panel_type_field_stats_table, Kibana_Dashboards_API_kbn_dashboard_panel_type_image, Kibana_Dashboards_API_kbn_dashboard_panel_type_links, Kibana_Dashboards_API_kbn_dashboard_panel_type_aiops_log_rate_analysis, Kibana_Dashboards_API_kbn_dashboard_panel_type_markdown, Kibana_Dashboards_API_kbn_dashboard_panel_type_options_list_control, Kibana_Dashboards_API_kbn_dashboard_panel_type_aiops_pattern_analysis, Kibana_Dashboards_API_kbn_dashboard_panel_type_range_slider_control, Kibana_Dashboards_API_kbn_dashboard_panel_type_ml_single_metric_viewer, Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_alerts, Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_burn_rate, Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_error_budget, Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_overview, Kibana_Dashboards_API_kbn_dashboard_panel_type_synthetics_monitors, Kibana_Dashboards_API_kbn_dashboard_panel_type_synthetics_stats_overview, Kibana_Dashboards_API_kbn_dashboard_panel_type_time_slider_control, Kibana_Dashboards_API_kbn_dashboard_panel_type_vis])).optional(),
+  title: z.string()
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_section' })
+export type Kibana_Dashboards_API_kbn_dashboard_section = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_section>
+
+export const Kibana_Dashboards_API_lensResponseItem: z.ZodTypeAny = z.object({
+  data: Kibana_Dashboards_API_lensApiConfigNoESQL,
+  id: z.string(),
+  meta: Kibana_Dashboards_API_kbn_as_code_meta
+}).meta({ id: 'Kibana_Dashboards_API_lensResponseItem' })
+export type Kibana_Dashboards_API_lensResponseItem = z.infer<typeof Kibana_Dashboards_API_lensResponseItem>
 
 export const Kibana_HTTP_APIs_kbn_dashboard_panel_type_vis = z.object({
   config: z.union([z.intersection(Kibana_HTTP_APIs_visApiConfig, z.object({
@@ -5919,6 +12517,23 @@ export const Kibana_HTTP_APIs_kbn_dashboard_panel_type_vis = z.object({
   type: z.enum(['vis'])
 }).meta({ id: 'Kibana_HTTP_APIs_kbn_dashboard_panel_type_vis' })
 export type Kibana_HTTP_APIs_kbn_dashboard_panel_type_vis = z.infer<typeof Kibana_HTTP_APIs_kbn_dashboard_panel_type_vis>
+
+export const Kibana_Dashboards_API_kbn_dashboard_data: z.ZodTypeAny = z.object({
+  access_control: Kibana_Dashboards_API_kbn_dashboard_access_control.optional(),
+  description: z.string().optional(),
+  esql_approximation: z.boolean().optional(),
+  filters: z.array(z.union([Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeConditionFilterSchema, Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeGroupFilterSchema, Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeDSLFilterSchema, Kibana_Dashboards_API_kbn_as_code_filters_schema_asCodeSpatialFilterSchema])).optional(),
+  options: Kibana_Dashboards_API_kbn_dashboard_options.optional(),
+  panels: z.array(z.union([z.union([Kibana_Dashboards_API_kbn_dashboard_panel_type_ml_anomaly_charts, Kibana_Dashboards_API_kbn_dashboard_panel_type_ml_anomaly_swimlane, Kibana_Dashboards_API_kbn_dashboard_panel_type_apm_service_map, Kibana_Dashboards_API_kbn_dashboard_panel_type_aiops_change_point_chart, Kibana_Dashboards_API_kbn_dashboard_panel_type_discover_session, Kibana_Dashboards_API_kbn_dashboard_panel_type_esql_control, Kibana_Dashboards_API_kbn_dashboard_panel_type_field_stats_table, Kibana_Dashboards_API_kbn_dashboard_panel_type_image, Kibana_Dashboards_API_kbn_dashboard_panel_type_links, Kibana_Dashboards_API_kbn_dashboard_panel_type_aiops_log_rate_analysis, Kibana_Dashboards_API_kbn_dashboard_panel_type_markdown, Kibana_Dashboards_API_kbn_dashboard_panel_type_options_list_control, Kibana_Dashboards_API_kbn_dashboard_panel_type_aiops_pattern_analysis, Kibana_Dashboards_API_kbn_dashboard_panel_type_range_slider_control, Kibana_Dashboards_API_kbn_dashboard_panel_type_ml_single_metric_viewer, Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_alerts, Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_burn_rate, Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_error_budget, Kibana_Dashboards_API_kbn_dashboard_panel_type_slo_overview, Kibana_Dashboards_API_kbn_dashboard_panel_type_synthetics_monitors, Kibana_Dashboards_API_kbn_dashboard_panel_type_synthetics_stats_overview, Kibana_Dashboards_API_kbn_dashboard_panel_type_time_slider_control, Kibana_Dashboards_API_kbn_dashboard_panel_type_vis]), Kibana_Dashboards_API_kbn_dashboard_section])).optional(),
+  pinned_panels: z.array(z.discriminatedUnion('type', [Kibana_Dashboards_API_kbn_controls_schemas_controls_group_schema_esql_control, Kibana_Dashboards_API_kbn_controls_schemas_controls_group_schema_options_list_control, Kibana_Dashboards_API_kbn_controls_schemas_controls_group_schema_range_slider_control, Kibana_Dashboards_API_kbn_controls_schemas_controls_group_schema_time_slider_control])).optional(),
+  project_routing: z.string().optional(),
+  query: Kibana_Dashboards_API_kbn_as_code_query.optional(),
+  refresh_interval: Kibana_Dashboards_API_kbn_data_service_server_refreshIntervalSchema.optional(),
+  tags: z.array(z.string()).optional(),
+  time_range: Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema.optional(),
+  title: z.string()
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_data' })
+export type Kibana_Dashboards_API_kbn_dashboard_data = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_data>
 
 export const Kibana_HTTP_APIs_kbn_dashboard_section: z.ZodTypeAny = z.object({
   collapsed: z.boolean().optional(),
@@ -6250,3 +12865,9 @@ export const Kibana_HTTP_APIs_kbn_as_code_filters_schema_groupConditionSchema: z
   operator: z.union([z.enum(['and']), z.enum(['or'])])
 }).meta({ id: 'Kibana_HTTP_APIs_kbn_as_code_filters_schema_groupConditionSchema' })
 export type Kibana_HTTP_APIs_kbn_as_code_filters_schema_groupConditionSchema = z.infer<typeof Kibana_HTTP_APIs_kbn_as_code_filters_schema_groupConditionSchema>
+
+export const Kibana_Dashboards_API_kbn_as_code_filters_schema_groupFilter: z.ZodTypeAny = z.object({
+  conditions: z.array(z.union([z.union([Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_is, Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_is_one_of, Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_range, Kibana_Dashboards_API_kbn_as_code_filters_schema_condition_exists]), z.lazy(() => Kibana_Dashboards_API_kbn_as_code_filters_schema_groupFilter)])),
+  operator: z.enum(['and', 'or'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_as_code_filters_schema_groupFilter' })
+export type Kibana_Dashboards_API_kbn_as_code_filters_schema_groupFilter = z.infer<typeof Kibana_Dashboards_API_kbn_as_code_filters_schema_groupFilter>

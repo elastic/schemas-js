@@ -17,8 +17,10 @@ import _create_vector_dbprojectSchemaRaw from '../../../serverless/json/create_v
 import _get_vector_dbprojectSchemaRaw from '../../../serverless/json/get_vector_dbproject.request.json' with { type: 'json' }
 import _delete_vector_dbprojectSchemaRaw from '../../../serverless/json/delete_vector_dbproject.request.json' with { type: 'json' }
 import _patch_vector_dbprojectSchemaRaw from '../../../serverless/json/patch_vector_dbproject.request.json' with { type: 'json' }
+import _get_vector_dbproject_can_deleteSchemaRaw from '../../../serverless/json/get_vector_dbproject_can_delete.request.json' with { type: 'json' }
 import _reset_vector_dbproject_credentialsSchemaRaw from '../../../serverless/json/reset_vector_dbproject_credentials.request.json' with { type: 'json' }
 import _resume_vector_dbprojectSchemaRaw from '../../../serverless/json/resume_vector_dbproject.request.json' with { type: 'json' }
+import _get_vector_dbproject_link_candidatesSchemaRaw from '../../../serverless/json/get_vector_dbproject_link_candidates.request.json' with { type: 'json' }
 import _get_vector_dbproject_rolesSchemaRaw from '../../../serverless/json/get_vector_dbproject_roles.request.json' with { type: 'json' }
 import _get_vector_dbproject_statusSchemaRaw from '../../../serverless/json/get_vector_dbproject_status.request.json' with { type: 'json' }
 
@@ -27,8 +29,10 @@ const _create_vector_dbprojectSchema = _create_vector_dbprojectSchemaRaw as unkn
 const _get_vector_dbprojectSchema = _get_vector_dbprojectSchemaRaw as unknown as JsonSchemaObject
 const _delete_vector_dbprojectSchema = _delete_vector_dbprojectSchemaRaw as unknown as JsonSchemaObject
 const _patch_vector_dbprojectSchema = _patch_vector_dbprojectSchemaRaw as unknown as JsonSchemaObject
+const _get_vector_dbproject_can_deleteSchema = _get_vector_dbproject_can_deleteSchemaRaw as unknown as JsonSchemaObject
 const _reset_vector_dbproject_credentialsSchema = _reset_vector_dbproject_credentialsSchemaRaw as unknown as JsonSchemaObject
 const _resume_vector_dbprojectSchema = _resume_vector_dbprojectSchemaRaw as unknown as JsonSchemaObject
+const _get_vector_dbproject_link_candidatesSchema = _get_vector_dbproject_link_candidatesSchemaRaw as unknown as JsonSchemaObject
 const _get_vector_dbproject_rolesSchema = _get_vector_dbproject_rolesSchemaRaw as unknown as JsonSchemaObject
 const _get_vector_dbproject_statusSchema = _get_vector_dbproject_statusSchemaRaw as unknown as JsonSchemaObject
 
@@ -79,6 +83,15 @@ export const vectordbProjectsDefinitions: CloudApiDefinition[] = [
     input: _patch_vector_dbprojectSchema,
   },
   {
+    name: 'get-vector-dbproject-can-delete',
+    namespace: 'vectordb-projects',
+    description: 'Get VectorDB project delete status',
+    method: 'GET',
+    path: '/api/v1/serverless/projects/vectordb/{id}/_can-delete',
+    destructive: false,
+    input: _get_vector_dbproject_can_deleteSchema,
+  },
+  {
     name: 'reset-vector-dbproject-credentials',
     namespace: 'vectordb-projects',
     description: 'Reset the project credentials',
@@ -95,6 +108,15 @@ export const vectordbProjectsDefinitions: CloudApiDefinition[] = [
     path: '/api/v1/serverless/projects/vectordb/{id}/_resume',
     destructive: true,
     input: _resume_vector_dbprojectSchema,
+  },
+  {
+    name: 'get-vector-dbproject-link-candidates',
+    namespace: 'vectordb-projects',
+    description: 'Get VectorDB project link candidates',
+    method: 'GET',
+    path: '/api/v1/serverless/projects/vectordb/{id}/link-candidates',
+    destructive: false,
+    input: _get_vector_dbproject_link_candidatesSchema,
   },
   {
     name: 'get-vector-dbproject-roles',

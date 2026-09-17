@@ -1,1 +1,1 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-visualization","x-api":{"id":"visualizations.get-visualization","name":"get-visualization","namespace":"visualizations"},"type":"object","properties":{}}
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-visualization","x-api":{"id":"visualizations.get-visualization","name":"get-visualization","namespace":"visualizations"},"$ref":"./_defs.json#/$defs/Kibana_Dashboards_API_lensResponseItem"}

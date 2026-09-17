@@ -14,6 +14,7 @@ import { z } from 'zod'
 
 export const PutAgentBuilderConversationsConversationIdAttachmentsAttachmentIdRequest = z.object({
   data: z.unknown().nullable(),
-  description: z.string().optional()
+  description: z.string().optional(),
+  render_inline: z.boolean().optional()
 }).meta({ id: 'PutAgentBuilderConversationsConversationIdAttachmentsAttachmentIdRequest' })
 export type PutAgentBuilderConversationsConversationIdAttachmentsAttachmentIdRequest = z.infer<typeof PutAgentBuilderConversationsConversationIdAttachmentsAttachmentIdRequest>

@@ -19,7 +19,7 @@ export const upsert_visualizationDefinitions: KbApiDefinition[] = [
   {
     name: 'upsert-visualization',
     namespace: 'visualizations',
-    description: 'Upsert visualization',
+    description: 'Update visualization',
     method: 'PUT',
     path: '/api/visualizations/{id}',
     destructive: true,
