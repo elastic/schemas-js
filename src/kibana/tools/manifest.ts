@@ -649,7 +649,7 @@ export const kibanaManifest: readonly ApiRegistryMeta[] = [
   { id: 'visualizations.search-visualizations', name: 'search-visualizations', namespace: 'visualizations', description: 'Search visualizations', namespaceFile: 'search_visualizations' },
   { id: 'visualizations.create-visualization', name: 'create-visualization', namespace: 'visualizations', description: 'Create visualization', namespaceFile: 'create_visualization' },
   { id: 'visualizations.get-visualization', name: 'get-visualization', namespace: 'visualizations', description: 'Get visualization', namespaceFile: 'get_visualization' },
-  { id: 'visualizations.upsert-visualization', name: 'upsert-visualization', namespace: 'visualizations', description: 'Upsert visualization', namespaceFile: 'upsert_visualization' },
+  { id: 'visualizations.upsert-visualization', name: 'upsert-visualization', namespace: 'visualizations', description: 'Update visualization', namespaceFile: 'upsert_visualization' },
   { id: 'visualizations.delete-visualization', name: 'delete-visualization', namespace: 'visualizations', description: 'Delete visualization', namespaceFile: 'delete_visualization' },
   { id: 'workflows.delete-workflows', name: 'delete-workflows', namespace: 'workflows', description: 'Bulk delete workflows', namespaceFile: 'delete_workflows' },
   { id: 'workflows.get-workflows', name: 'get-workflows', namespace: 'workflows', description: 'Get workflows', namespaceFile: 'get_workflows' },

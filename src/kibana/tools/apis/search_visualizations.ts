@@ -9,7 +9,11 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
+import type { JsonSchemaObject } from '../../../json-schema.ts'
+import _inputSchemaRaw from '../../../kibana/json/visualizations.search-visualizations.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
+
+const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const search_visualizationsDefinitions: KbApiDefinition[] = [
   {
@@ -19,5 +23,6 @@ export const search_visualizationsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/visualizations',
     destructive: false,
+    input: _inputSchema,
   },
 ]

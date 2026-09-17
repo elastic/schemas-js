@@ -9,7 +9,11 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
+import type { JsonSchemaObject } from '../../../json-schema.ts'
+import _inputSchemaRaw from '../../../kibana/json/dashboards.search-dashboards.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
+
+const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const search_dashboardsDefinitions: KbApiDefinition[] = [
   {
@@ -19,5 +23,6 @@ export const search_dashboardsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/dashboards',
     destructive: false,
+    input: _inputSchema,
   },
 ]

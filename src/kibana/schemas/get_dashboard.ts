@@ -11,15 +11,36 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Kibana_Dashboards_API_kbn_as_code_meta, Kibana_Dashboards_API_kbn_dashboard_data } from './schemas/kibana.js'
+import { Kibana_Dashboards_API_kbn_as_code_meta, Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema, Kibana_Dashboards_API_kbn_dashboard_data } from './schemas/kibana.js'
 
-export const CreateDashboardResponse = z.object({
+export const Kibana_Dashboards_API_kbn_dashboard_dropped_property_warning = z.object({
+  key: z.string(),
+  message: z.string(),
+  type: z.enum(['dropped_property']),
+  value: z.unknown().nullable()
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_dropped_property_warning' })
+export type Kibana_Dashboards_API_kbn_dashboard_dropped_property_warning = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_dropped_property_warning>
+
+export const Kibana_Dashboards_API_kbn_dashboard_dropped_panel_warning = z.object({
+  message: z.string(),
+  panel_config: z.object({
+
+  }).passthrough(),
+  panel_references: z.array(Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema).optional(),
+  panel_type: z.string(),
+  type: z.enum(['dropped_panel'])
+}).meta({ id: 'Kibana_Dashboards_API_kbn_dashboard_dropped_panel_warning' })
+export type Kibana_Dashboards_API_kbn_dashboard_dropped_panel_warning = z.infer<typeof Kibana_Dashboards_API_kbn_dashboard_dropped_panel_warning>
+
+export const GetDashboardResponse = z.object({
   data: Kibana_Dashboards_API_kbn_dashboard_data,
   id: z.string(),
-  meta: Kibana_Dashboards_API_kbn_as_code_meta
-}).meta({ id: 'CreateDashboardResponse' })
-export type CreateDashboardResponse = z.infer<typeof CreateDashboardResponse>
+  meta: Kibana_Dashboards_API_kbn_as_code_meta,
+  warnings: z.array(z.union([Kibana_Dashboards_API_kbn_dashboard_dropped_panel_warning, Kibana_Dashboards_API_kbn_dashboard_dropped_property_warning])).optional()
+}).meta({ id: 'GetDashboardResponse' })
+export type GetDashboardResponse = z.infer<typeof GetDashboardResponse>
 
+export { Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema } from './schemas/kibana.js'
 export { Kibana_Dashboards_API_kbn_as_code_meta } from './schemas/kibana.js'
 export { Kibana_Dashboards_API_kbn_dashboard_data } from './schemas/kibana.js'
 export { Kibana_Dashboards_API_kbn_es_query_server_timeRangeSchema } from './schemas/kibana.js'
@@ -36,7 +57,6 @@ export { Kibana_Dashboards_API_kbn_controls_schemas_options_list_esql_control_sc
 export { Kibana_Dashboards_API_kbn_dashboard_section } from './schemas/kibana.js'
 export { Kibana_Dashboards_API_kbn_dashboard_panel_type_vis } from './schemas/kibana.js'
 export { Kibana_Dashboards_API_kbn_dashboard_panel_grid } from './schemas/kibana.js'
-export { Kibana_Dashboards_API_kbn_content_management_utils_referenceSchema } from './schemas/kibana.js'
 export { Kibana_Dashboards_API_waffleESQLByValuePanel } from './schemas/kibana.js'
 export { Kibana_Dashboards_API_waffleStyling } from './schemas/kibana.js'
 export { Kibana_Dashboards_API_valueDisplay } from './schemas/kibana.js'
