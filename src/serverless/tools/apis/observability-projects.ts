@@ -17,8 +17,10 @@ import _create_observability_projectSchemaRaw from '../../../serverless/json/cre
 import _get_observability_projectSchemaRaw from '../../../serverless/json/get_observability_project.request.json' with { type: 'json' }
 import _delete_observability_projectSchemaRaw from '../../../serverless/json/delete_observability_project.request.json' with { type: 'json' }
 import _patch_observability_projectSchemaRaw from '../../../serverless/json/patch_observability_project.request.json' with { type: 'json' }
+import _get_observability_project_can_deleteSchemaRaw from '../../../serverless/json/get_observability_project_can_delete.request.json' with { type: 'json' }
 import _reset_observability_project_credentialsSchemaRaw from '../../../serverless/json/reset_observability_project_credentials.request.json' with { type: 'json' }
 import _resume_observability_projectSchemaRaw from '../../../serverless/json/resume_observability_project.request.json' with { type: 'json' }
+import _get_observability_project_link_candidatesSchemaRaw from '../../../serverless/json/get_observability_project_link_candidates.request.json' with { type: 'json' }
 import _get_observability_project_rolesSchemaRaw from '../../../serverless/json/get_observability_project_roles.request.json' with { type: 'json' }
 import _get_observability_project_statusSchemaRaw from '../../../serverless/json/get_observability_project_status.request.json' with { type: 'json' }
 
@@ -27,8 +29,10 @@ const _create_observability_projectSchema = _create_observability_projectSchemaR
 const _get_observability_projectSchema = _get_observability_projectSchemaRaw as unknown as JsonSchemaObject
 const _delete_observability_projectSchema = _delete_observability_projectSchemaRaw as unknown as JsonSchemaObject
 const _patch_observability_projectSchema = _patch_observability_projectSchemaRaw as unknown as JsonSchemaObject
+const _get_observability_project_can_deleteSchema = _get_observability_project_can_deleteSchemaRaw as unknown as JsonSchemaObject
 const _reset_observability_project_credentialsSchema = _reset_observability_project_credentialsSchemaRaw as unknown as JsonSchemaObject
 const _resume_observability_projectSchema = _resume_observability_projectSchemaRaw as unknown as JsonSchemaObject
+const _get_observability_project_link_candidatesSchema = _get_observability_project_link_candidatesSchemaRaw as unknown as JsonSchemaObject
 const _get_observability_project_rolesSchema = _get_observability_project_rolesSchemaRaw as unknown as JsonSchemaObject
 const _get_observability_project_statusSchema = _get_observability_project_statusSchemaRaw as unknown as JsonSchemaObject
 
@@ -79,6 +83,15 @@ export const observabilityProjectsDefinitions: CloudApiDefinition[] = [
     input: _patch_observability_projectSchema,
   },
   {
+    name: 'get-observability-project-can-delete',
+    namespace: 'observability-projects',
+    description: 'Get Observability project delete status',
+    method: 'GET',
+    path: '/api/v1/serverless/projects/observability/{id}/_can-delete',
+    destructive: false,
+    input: _get_observability_project_can_deleteSchema,
+  },
+  {
     name: 'reset-observability-project-credentials',
     namespace: 'observability-projects',
     description: 'Reset the project credentials',
@@ -95,6 +108,15 @@ export const observabilityProjectsDefinitions: CloudApiDefinition[] = [
     path: '/api/v1/serverless/projects/observability/{id}/_resume',
     destructive: true,
     input: _resume_observability_projectSchema,
+  },
+  {
+    name: 'get-observability-project-link-candidates',
+    namespace: 'observability-projects',
+    description: 'Get Observability project link candidates',
+    method: 'GET',
+    path: '/api/v1/serverless/projects/observability/{id}/link-candidates',
+    destructive: false,
+    input: _get_observability_project_link_candidatesSchema,
   },
   {
     name: 'get-observability-project-roles',

@@ -15,6 +15,10 @@ import { z } from 'zod'
 export const PostFleetCloudConnectorsRequest = z.object({
   accountType: z.enum(['single-account', 'organization-account']).optional(),
   cloudProvider: z.enum(['aws', 'azure', 'gcp']),
+  iac_blueprint_id: z.string().nullable().optional(),
+  iac_blueprint_version: z.string().nullable().optional(),
+  iac_deployment_id: z.string().optional(),
+  iac_key: z.string().nullable().optional(),
   name: z.string(),
   vars: z.record(z.string(), z.union([z.string(), z.number(), z.boolean(), z.object({
     frozen: z.boolean().optional(),
@@ -32,6 +36,12 @@ export const PostFleetCloudConnectorsResponse = z.object({
     accountType: z.string().optional(),
     cloudProvider: z.string(),
     created_at: z.string(),
+    iac_blueprint_id: z.string().nullable().optional(),
+    iac_blueprint_version: z.string().nullable().optional(),
+    iac_deployment_id: z.string().optional(),
+    iac_key: z.string().nullable().optional(),
+    iac_upgrade_checked_at: z.string().optional(),
+    iac_upgrade_status: z.enum(['up_to_date', 'upgrade_available']).optional(),
     id: z.string(),
     name: z.string(),
     namespace: z.string().optional(),

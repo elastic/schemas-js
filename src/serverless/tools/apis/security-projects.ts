@@ -17,8 +17,10 @@ import _create_security_projectSchemaRaw from '../../../serverless/json/create_s
 import _get_security_projectSchemaRaw from '../../../serverless/json/get_security_project.request.json' with { type: 'json' }
 import _delete_security_projectSchemaRaw from '../../../serverless/json/delete_security_project.request.json' with { type: 'json' }
 import _patch_security_projectSchemaRaw from '../../../serverless/json/patch_security_project.request.json' with { type: 'json' }
+import _get_security_project_can_deleteSchemaRaw from '../../../serverless/json/get_security_project_can_delete.request.json' with { type: 'json' }
 import _reset_security_project_credentialsSchemaRaw from '../../../serverless/json/reset_security_project_credentials.request.json' with { type: 'json' }
 import _resume_security_projectSchemaRaw from '../../../serverless/json/resume_security_project.request.json' with { type: 'json' }
+import _get_security_project_link_candidatesSchemaRaw from '../../../serverless/json/get_security_project_link_candidates.request.json' with { type: 'json' }
 import _get_security_project_rolesSchemaRaw from '../../../serverless/json/get_security_project_roles.request.json' with { type: 'json' }
 import _get_security_project_statusSchemaRaw from '../../../serverless/json/get_security_project_status.request.json' with { type: 'json' }
 
@@ -27,8 +29,10 @@ const _create_security_projectSchema = _create_security_projectSchemaRaw as unkn
 const _get_security_projectSchema = _get_security_projectSchemaRaw as unknown as JsonSchemaObject
 const _delete_security_projectSchema = _delete_security_projectSchemaRaw as unknown as JsonSchemaObject
 const _patch_security_projectSchema = _patch_security_projectSchemaRaw as unknown as JsonSchemaObject
+const _get_security_project_can_deleteSchema = _get_security_project_can_deleteSchemaRaw as unknown as JsonSchemaObject
 const _reset_security_project_credentialsSchema = _reset_security_project_credentialsSchemaRaw as unknown as JsonSchemaObject
 const _resume_security_projectSchema = _resume_security_projectSchemaRaw as unknown as JsonSchemaObject
+const _get_security_project_link_candidatesSchema = _get_security_project_link_candidatesSchemaRaw as unknown as JsonSchemaObject
 const _get_security_project_rolesSchema = _get_security_project_rolesSchemaRaw as unknown as JsonSchemaObject
 const _get_security_project_statusSchema = _get_security_project_statusSchemaRaw as unknown as JsonSchemaObject
 
@@ -79,6 +83,15 @@ export const securityProjectsDefinitions: CloudApiDefinition[] = [
     input: _patch_security_projectSchema,
   },
   {
+    name: 'get-security-project-can-delete',
+    namespace: 'security-projects',
+    description: 'Get Security project delete status',
+    method: 'GET',
+    path: '/api/v1/serverless/projects/security/{id}/_can-delete',
+    destructive: false,
+    input: _get_security_project_can_deleteSchema,
+  },
+  {
     name: 'reset-security-project-credentials',
     namespace: 'security-projects',
     description: 'Reset the project credentials',
@@ -95,6 +108,15 @@ export const securityProjectsDefinitions: CloudApiDefinition[] = [
     path: '/api/v1/serverless/projects/security/{id}/_resume',
     destructive: true,
     input: _resume_security_projectSchema,
+  },
+  {
+    name: 'get-security-project-link-candidates',
+    namespace: 'security-projects',
+    description: 'Get Security project link candidates',
+    method: 'GET',
+    path: '/api/v1/serverless/projects/security/{id}/link-candidates',
+    destructive: false,
+    input: _get_security_project_link_candidatesSchema,
   },
   {
     name: 'get-security-project-roles',

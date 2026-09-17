@@ -26,6 +26,7 @@ export const PutAgentBuilderAgentsIdRequest = z.object({
     plugin_ids: z.array(z.string()).optional(),
     post_execution_workflow_ids: z.array(z.string()).optional(),
     skill_ids: z.array(z.string()).optional(),
+    subagent_ids: z.array(z.string()).optional(),
     tools: z.array(z.object({
       tool_ids: z.array(z.string())
     })).optional(),

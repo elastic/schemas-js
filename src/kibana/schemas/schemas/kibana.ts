@@ -3408,7 +3408,6 @@ export const Kibana_HTTP_APIs_alerting_action_policy_response = z.object({
   }).nullable(),
   name: z.string(),
   snoozed_until: z.string().nullable(),
-  tags: z.array(z.string()).nullable(),
   throttle: z.object({
     interval: z.string().nullable(),
     strategy: z.union([z.enum(['on_status_change']), z.enum(['per_status_interval']), z.enum(['time_interval']), z.enum(['every_time'])]).optional()
@@ -3429,7 +3428,6 @@ export const Kibana_HTTP_APIs_alerting_new_action_policy = z.object({
     tags: z.array(z.string()).nullable().optional()
   }).optional(),
   name: z.string(),
-  tags: z.array(z.string()).optional(),
   throttle: Kibana_HTTP_APIs_alerting_action_policy_throttle.optional()
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_new_action_policy' })
 export type Kibana_HTTP_APIs_alerting_new_action_policy = z.infer<typeof Kibana_HTTP_APIs_alerting_new_action_policy>
@@ -5219,9 +5217,12 @@ export const Kibana_HTTP_APIs_kbn_dashboard_panel_type_discover_session = z.obje
         width: z.number().optional()
       })).optional(),
       data_source: z.discriminatedUnion('type', [Kibana_HTTP_APIs_kbn_data_view_reference_schema, Kibana_HTTP_APIs_kbn_data_view_spec_schema]),
+      default_rendered_nodes: z.number().optional(),
       density: z.union([z.enum(['compact']), z.enum(['expanded']), z.enum(['normal'])]).optional(),
+      documents_display_mode: z.union([z.enum(['table']), z.enum(['json'])]).optional(),
       filters: z.array(Kibana_HTTP_APIs_kbn_as_code_filters_schema_asCodeFilterSchema).optional(),
       header_row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
+      hide_nulls: z.boolean().optional(),
       query: Kibana_HTTP_APIs_kbn_as_code_query.optional(),
       row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
       rows_per_page: z.number().optional(),
@@ -5230,22 +5231,27 @@ export const Kibana_HTTP_APIs_kbn_dashboard_panel_type_discover_session = z.obje
         direction: z.enum(['asc', 'desc']),
         name: z.string()
       })).optional(),
-      view_mode: z.union([z.enum(['documents']), z.enum(['patterns']), z.enum(['aggregated'])]).optional()
+      view_mode: z.union([z.enum(['documents']), z.enum(['patterns']), z.enum(['aggregated'])]).optional(),
+      wrap_lines: z.boolean().optional()
     }), z.object({
       column_order: z.array(z.string()).optional(),
       column_settings: z.record(z.string(), z.object({
         width: z.number().optional()
       })).optional(),
       data_source: Kibana_HTTP_APIs_esqlDataSource,
+      default_rendered_nodes: z.number().optional(),
       density: z.union([z.enum(['compact']), z.enum(['expanded']), z.enum(['normal'])]).optional(),
+      documents_display_mode: z.union([z.enum(['table']), z.enum(['json'])]).optional(),
       header_row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
+      hide_nulls: z.boolean().optional(),
       row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
       rows_per_page: z.number().optional(),
       sample_size: z.number().optional(),
       sort: z.array(z.object({
         direction: z.enum(['asc', 'desc']),
         name: z.string()
-      })).optional()
+      })).optional(),
+      wrap_lines: z.boolean().optional()
     })])),
     time_range: Kibana_HTTP_APIs_kbn_es_query_server_timeRangeSchema.optional(),
     title: z.string().optional()
@@ -5267,15 +5273,19 @@ export const Kibana_HTTP_APIs_kbn_dashboard_panel_type_discover_session = z.obje
       column_settings: z.record(z.string(), z.object({
         width: z.number().optional()
       })).optional(),
+      default_rendered_nodes: z.number().optional(),
       density: z.union([z.enum(['compact']), z.enum(['expanded']), z.enum(['normal'])]).optional(),
+      documents_display_mode: z.union([z.enum(['table']), z.enum(['json'])]).optional(),
       header_row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
+      hide_nulls: z.boolean().optional(),
       row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
       rows_per_page: z.number().optional(),
       sample_size: z.number().optional(),
       sort: z.array(z.object({
         direction: z.enum(['asc', 'desc']),
         name: z.string()
-      })).optional()
+      })).optional(),
+      wrap_lines: z.boolean().optional()
     }).optional(),
     ref_id: z.string(),
     selected_tab_id: z.string().optional(),

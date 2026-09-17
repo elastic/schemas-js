@@ -18,6 +18,7 @@ export const PostAgentBuilderConversationsConversationIdAttachmentsRequest = z.o
   hidden: z.boolean().optional(),
   id: z.string().optional(),
   origin: z.string().optional(),
+  render_inline: z.boolean().optional(),
   type: z.string()
 }).meta({ id: 'PostAgentBuilderConversationsConversationIdAttachmentsRequest' })
 export type PostAgentBuilderConversationsConversationIdAttachmentsRequest = z.infer<typeof PostAgentBuilderConversationsConversationIdAttachmentsRequest>

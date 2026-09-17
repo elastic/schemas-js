@@ -17,7 +17,7 @@ import { Id, integer } from './_types.js'
  * However, keeping points in time has a cost; close them as soon as they are no longer required for search requests.
  */
 export const ClosePointInTimeRequest = z.object({
-  id: z.lazy(() => Id).describe('The ID of the point-in-time.').meta({ found_in: 'body' })
+  id: z.lazy(() => Id).describe('The ID of the point-in-time. IMPORTANT: Each search request against a PIT returns in its response a `pit_id` field which may be different from the identifier you originally supplied. Always use the most recently-received PIT identifier for the next request. If you make concurrent search requests against the same PIT, Elasticsearch can return several different `pit_id` values in its responses. In that case, use any of these values for later requests, preferring more recently-received values whenever possible.').meta({ found_in: 'body' })
 }).meta({ id: 'ClosePointInTimeRequest' })
 export type ClosePointInTimeRequest = z.infer<typeof ClosePointInTimeRequest>
 
