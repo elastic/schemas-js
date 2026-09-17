@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.4](https://github.com/elastic/schemas-js/compare/v0.7.3...v0.7.4) (2026-09-17)
+
+
+### Bug Fixes
+
+* type Kibana dashboards and visualizations from the external spec ([#93](https://github.com/elastic/schemas-js/issues/93)) ([8eae2a2](https://github.com/elastic/schemas-js/commit/8eae2a2e222556db9d71742d77ce48f9c155d406)), closes [#78](https://github.com/elastic/schemas-js/issues/78)
+
 ## [0.7.3](https://github.com/elastic/schemas-js/compare/v0.7.2...v0.7.3) (2026-09-08)
 
 
