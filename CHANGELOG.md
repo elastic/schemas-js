@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.0](https://github.com/elastic/schemas-js/compare/v0.7.4...v0.8.0) (2026-09-18)
+
+
+### Features
+
+* add readOnly flag to tool definitions and JSON schemas ([#95](https://github.com/elastic/schemas-js/issues/95)) ([eada102](https://github.com/elastic/schemas-js/commit/eada102b7639f32fb5162409b69174d5f0f960a5))
+
 ## [0.7.4](https://github.com/elastic/schemas-js/compare/v0.7.3...v0.7.4) (2026-09-17)
 
 
