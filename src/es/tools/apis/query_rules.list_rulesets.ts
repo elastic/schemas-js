@@ -23,6 +23,7 @@ export const query_rules_list_rulesets_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_query_rules',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const delete_links_idDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/links/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

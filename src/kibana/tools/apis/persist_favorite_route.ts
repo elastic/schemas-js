@@ -23,6 +23,7 @@ export const persist_favorite_routeDefinitions: KbApiDefinition[] = [
     method: 'PATCH',
     path: '/api/timeline/_favorite',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const endpoint_unisolate_actionDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/endpoint/action/unisolate',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

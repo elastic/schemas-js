@@ -19,6 +19,7 @@ export const import_exception_listDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/exception_lists/_import',
     destructive: true,
+    readOnly: false,
     input: { type: 'object', properties: { overwrite: { type: 'boolean', description: 'Determines whether existing exception lists with the same `list_id` are overwritten.', 'x-found-in': 'query' }, as_new_list: { type: 'boolean', description: 'Determines whether the list being imported will have a new `list_id` generated.', 'x-found-in': 'query' }, file: { description: 'A `.ndjson` file containing the exception list', 'x-found-in': 'body', type: 'string' } } },
   },
 ]

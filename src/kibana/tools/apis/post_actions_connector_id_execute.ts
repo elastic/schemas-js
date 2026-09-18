@@ -23,6 +23,7 @@ export const post_actions_connector_id_executeDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/actions/connector/{id}/_execute',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

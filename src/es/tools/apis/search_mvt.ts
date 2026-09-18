@@ -22,6 +22,7 @@ export const search_mvt_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/{index}/_mvt/{field}/{zoom}/{x}/{y}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

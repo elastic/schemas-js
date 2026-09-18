@@ -23,6 +23,7 @@ export const delete_security_role_nameDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/security/role/{name}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

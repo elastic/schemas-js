@@ -23,6 +23,7 @@ export const patch_timelineDefinitions: KbApiDefinition[] = [
     method: 'PATCH',
     path: '/api/timeline',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

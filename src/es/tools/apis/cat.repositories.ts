@@ -23,6 +23,7 @@ export const cat_repositories_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cat/repositories',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
     responseType: 'text',
   },

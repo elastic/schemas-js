@@ -23,6 +23,7 @@ export const dangling_indices_delete_dangling_index_definitions: EsApiDefinition
     method: 'DELETE',
     path: '/_dangling/{index_uuid}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

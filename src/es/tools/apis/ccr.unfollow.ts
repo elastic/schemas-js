@@ -23,6 +23,7 @@ export const ccr_unfollow_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/{index}/_ccr/unfollow',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

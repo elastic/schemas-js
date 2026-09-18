@@ -23,6 +23,7 @@ export const post_security_entity_store_entities_entitytypeDefinitions: KbApiDef
     method: 'POST',
     path: '/api/security/entity_store/entities/{entityType}',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

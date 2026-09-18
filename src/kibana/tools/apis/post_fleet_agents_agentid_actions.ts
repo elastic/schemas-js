@@ -23,6 +23,7 @@ export const post_fleet_agents_agentid_actionsDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/fleet/agents/{agentId}/actions',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

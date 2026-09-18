@@ -23,6 +23,7 @@ export const search_application_put_behavioral_analytics_definitions: EsApiDefin
     method: 'PUT',
     path: '/_application/analytics/{name}',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

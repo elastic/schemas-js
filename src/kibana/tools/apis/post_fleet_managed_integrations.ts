@@ -23,6 +23,7 @@ export const post_fleet_managed_integrationsDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/fleet/managed_integrations',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

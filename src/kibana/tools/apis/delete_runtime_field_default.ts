@@ -23,6 +23,7 @@ export const delete_runtime_field_defaultDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/data_views/data_view/{viewId}/runtime_field/{fieldName}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const get_fleet_cloud_connectorsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/fleet/cloud_connectors',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

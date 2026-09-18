@@ -22,6 +22,7 @@ export const ping_definitions: EsApiDefinition[] = [
     method: 'HEAD',
     path: '/',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

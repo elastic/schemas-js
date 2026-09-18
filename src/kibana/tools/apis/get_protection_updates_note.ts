@@ -23,6 +23,7 @@ export const get_protection_updates_noteDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/endpoint/protection_updates_note/{package_policy_id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

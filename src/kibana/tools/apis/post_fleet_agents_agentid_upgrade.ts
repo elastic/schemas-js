@@ -23,6 +23,7 @@ export const post_fleet_agents_agentid_upgradeDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/fleet/agents/{agentId}/upgrade',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

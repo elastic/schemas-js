@@ -23,6 +23,7 @@ export const delete_timelinesDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/timeline',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

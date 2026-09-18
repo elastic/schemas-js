@@ -23,6 +23,7 @@ export const delete_markdowns_idDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/markdowns/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

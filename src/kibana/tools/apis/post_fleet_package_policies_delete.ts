@@ -23,6 +23,7 @@ export const post_fleet_package_policies_deleteDefinitions: KbApiDefinition[] = 
     method: 'POST',
     path: '/api/fleet/package_policies/delete',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

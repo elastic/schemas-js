@@ -23,6 +23,7 @@ export const ml_put_datafeed_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_ml/datafeeds/{datafeed_id}',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

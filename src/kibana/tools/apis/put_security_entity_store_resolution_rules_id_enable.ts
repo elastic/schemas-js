@@ -23,6 +23,7 @@ export const put_security_entity_store_resolution_rules_id_enableDefinitions: Kb
     method: 'PUT',
     path: '/api/security/entity_store/resolution/rules/{id}/enable',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

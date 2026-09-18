@@ -32,6 +32,7 @@ export const extensionsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/extensions',
     destructive: false,
+    readOnly: true,
   },
   {
     name: 'create-extension',
@@ -40,6 +41,7 @@ export const extensionsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/extensions',
     destructive: false,
+    readOnly: false,
     input: _create_extensionSchema,
   },
   {
@@ -49,6 +51,7 @@ export const extensionsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/extensions/{extension_id}',
     destructive: false,
+    readOnly: true,
     input: _get_extensionSchema,
   },
   {
@@ -58,6 +61,7 @@ export const extensionsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/extensions/{extension_id}',
     destructive: true,
+    readOnly: false,
     input: _update_extensionSchema,
   },
   {
@@ -67,6 +71,7 @@ export const extensionsDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/deployments/extensions/{extension_id}',
     destructive: true,
+    readOnly: false,
     input: _upload_extensionSchema,
   },
   {
@@ -76,6 +81,7 @@ export const extensionsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/deployments/extensions/{extension_id}',
     destructive: true,
+    readOnly: false,
     input: _delete_extensionSchema,
   },
 ]

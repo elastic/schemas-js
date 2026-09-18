@@ -19,6 +19,7 @@ export const add_case_file_default_spaceDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/cases/{caseId}/files',
     destructive: true,
+    readOnly: false,
     input: { type: 'object', properties: { caseId: { type: 'string', description: 'The caseId parameter', 'x-found-in': 'path' }, file: { description: 'The file being attached to the case.', 'x-found-in': 'body', type: 'string' }, filename: { description: 'The desired name of the file being attached to the case, it can be different than the name of the file in the filesystem. **This should not include the file extension.**', 'x-found-in': 'body', type: 'string' } }, required: ['caseId', 'file'] },
   },
 ]

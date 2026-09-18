@@ -23,6 +23,7 @@ export const cat_master_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cat/master',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
     responseType: 'text',
   },

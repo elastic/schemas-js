@@ -32,6 +32,7 @@ export const authenticationDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/users/auth/keys',
     destructive: false,
+    readOnly: true,
     input: _get_api_keysSchema,
   },
   {
@@ -41,6 +42,7 @@ export const authenticationDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/users/auth/keys',
     destructive: false,
+    readOnly: false,
     input: _create_api_keySchema,
   },
   {
@@ -50,6 +52,7 @@ export const authenticationDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/users/auth/keys',
     destructive: true,
+    readOnly: false,
     input: _delete_api_keysSchema,
   },
   {
@@ -59,6 +62,7 @@ export const authenticationDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/users/auth/keys/{api_key_id}',
     destructive: false,
+    readOnly: true,
     input: _get_api_keySchema,
   },
   {
@@ -68,6 +72,7 @@ export const authenticationDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/users/auth/keys/{api_key_id}',
     destructive: true,
+    readOnly: false,
     input: _delete_api_keySchema,
   },
 ]

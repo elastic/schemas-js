@@ -22,6 +22,7 @@ export const close_point_in_time_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_pit',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

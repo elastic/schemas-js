@@ -23,6 +23,7 @@ export const esql_list_queries_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_query/queries',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

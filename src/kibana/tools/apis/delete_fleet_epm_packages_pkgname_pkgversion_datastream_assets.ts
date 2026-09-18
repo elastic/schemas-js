@@ -23,6 +23,7 @@ export const delete_fleet_epm_packages_pkgname_pkgversion_datastream_assetsDefin
     method: 'DELETE',
     path: '/api/fleet/epm/packages/{pkgName}/{pkgVersion}/datastream_assets',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

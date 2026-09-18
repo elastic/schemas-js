@@ -23,6 +23,7 @@ export const searchable_snapshots_stats_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_searchable_snapshots/stats',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const update_priv_mon_userDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/entity_analytics/monitoring/users/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

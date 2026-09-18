@@ -23,6 +23,7 @@ export const watcher_stats_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_watcher/stats/{metric}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

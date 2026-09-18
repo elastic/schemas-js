@@ -23,6 +23,7 @@ export const indices_get_settings_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_settings/{name}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

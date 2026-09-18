@@ -23,6 +23,7 @@ export const eql_delete_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_eql/search/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

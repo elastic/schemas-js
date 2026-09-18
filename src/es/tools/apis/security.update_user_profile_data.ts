@@ -23,6 +23,7 @@ export const security_update_user_profile_data_definitions: EsApiDefinition[] = 
     method: 'PUT',
     path: '/_security/profile/{uid}/_data',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

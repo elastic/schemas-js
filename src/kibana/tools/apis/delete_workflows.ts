@@ -23,6 +23,7 @@ export const delete_workflowsDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/workflows',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

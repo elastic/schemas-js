@@ -23,6 +23,7 @@ export const delete_maintenance_window_idDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/maintenance_window/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

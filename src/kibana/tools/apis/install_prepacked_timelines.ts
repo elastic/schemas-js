@@ -23,6 +23,7 @@ export const install_prepacked_timelinesDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/timeline/_prepackaged',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

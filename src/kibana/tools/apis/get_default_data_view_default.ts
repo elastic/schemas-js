@@ -19,5 +19,6 @@ export const get_default_data_view_defaultDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/data_views/default',
     destructive: false,
+    readOnly: true,
   },
 ]

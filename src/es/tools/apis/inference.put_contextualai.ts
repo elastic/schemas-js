@@ -23,6 +23,7 @@ export const inference_put_contextualai_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_inference/{task_type}/{contextualai_inference_id}',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

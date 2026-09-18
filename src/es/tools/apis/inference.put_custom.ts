@@ -23,6 +23,7 @@ export const inference_put_custom_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_inference/{task_type}/{custom_inference_id}',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

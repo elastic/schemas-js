@@ -19,5 +19,6 @@ export const post_fleet_setupDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/fleet/setup',
     destructive: true,
+    readOnly: false,
   },
 ]

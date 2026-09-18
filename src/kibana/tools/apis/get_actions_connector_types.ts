@@ -23,6 +23,7 @@ export const get_actions_connector_typesDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/actions/connector_types',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

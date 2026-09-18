@@ -23,6 +23,7 @@ export const post_fleet_epm_packages_pkgname_pkgversion_kibana_assetsDefinitions
     method: 'POST',
     path: '/api/fleet/epm/packages/{pkgName}/{pkgVersion}/kibana_assets',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

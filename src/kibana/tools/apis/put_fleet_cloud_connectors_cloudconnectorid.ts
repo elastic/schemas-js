@@ -23,6 +23,7 @@ export const put_fleet_cloud_connectors_cloudconnectoridDefinitions: KbApiDefini
     method: 'PUT',
     path: '/api/fleet/cloud_connectors/{cloudConnectorId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const ml_infer_trained_model_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_ml/trained_models/{model_id}/_infer',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

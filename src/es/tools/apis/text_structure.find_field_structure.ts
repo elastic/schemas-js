@@ -23,6 +23,7 @@ export const text_structure_find_field_structure_definitions: EsApiDefinition[] 
     method: 'GET',
     path: '/_text_structure/find_field_structure',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

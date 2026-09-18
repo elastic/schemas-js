@@ -23,6 +23,7 @@ export const esql_async_query_get_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_query/async/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

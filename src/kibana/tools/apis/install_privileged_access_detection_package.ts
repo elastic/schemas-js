@@ -19,5 +19,6 @@ export const install_privileged_access_detection_packageDefinitions: KbApiDefini
     method: 'POST',
     path: '/api/entity_analytics/privileged_user_monitoring/pad/install',
     destructive: true,
+    readOnly: false,
   },
 ]

@@ -23,6 +23,7 @@ export const read_listDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/lists',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

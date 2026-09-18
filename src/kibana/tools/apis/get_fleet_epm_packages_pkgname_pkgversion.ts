@@ -23,6 +23,7 @@ export const get_fleet_epm_packages_pkgname_pkgversionDefinitions: KbApiDefiniti
     method: 'GET',
     path: '/api/fleet/epm/packages/{pkgName}/{pkgVersion}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

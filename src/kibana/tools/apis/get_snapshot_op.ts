@@ -23,6 +23,7 @@ export const get_snapshot_opDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/s/{spaceId}/api/observability/slos/{sloId}/_snapshot',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

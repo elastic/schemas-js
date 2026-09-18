@@ -23,6 +23,7 @@ export const get_fleet_agent_download_sources_sourceidDefinitions: KbApiDefiniti
     method: 'GET',
     path: '/api/fleet/agent_download_sources/{sourceId}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

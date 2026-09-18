@@ -23,6 +23,7 @@ export const get_fleet_epm_packages_pkgname_pkgversion_filepathDefinitions: KbAp
     method: 'GET',
     path: '/api/fleet/epm/packages/{pkgName}/{pkgVersion}/{filePath}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

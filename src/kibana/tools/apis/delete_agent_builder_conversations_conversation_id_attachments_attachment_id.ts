@@ -23,6 +23,7 @@ export const delete_agent_builder_conversations_conversation_id_attachments_atta
     method: 'DELETE',
     path: '/api/agent_builder/conversations/{conversation_id}/attachments/{attachment_id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

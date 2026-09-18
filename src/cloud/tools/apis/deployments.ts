@@ -126,6 +126,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments',
     destructive: false,
+    readOnly: true,
   },
   {
     name: 'create-deployment',
@@ -134,6 +135,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments',
     destructive: false,
+    readOnly: false,
     input: _create_deploymentSchema,
   },
   {
@@ -142,7 +144,8 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     description: 'Search Deployments',
     method: 'POST',
     path: '/api/v1/deployments/_search',
-    destructive: true,
+    destructive: false,
+    readOnly: true,
     input: _search_deploymentsSchema,
   },
   {
@@ -151,7 +154,8 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     description: 'Get eligible remote clusters',
     method: 'POST',
     path: '/api/v1/deployments/eligible-remote-clusters',
-    destructive: true,
+    destructive: false,
+    readOnly: true,
     input: _search_eligible_remote_clustersSchema,
   },
   {
@@ -161,6 +165,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}',
     destructive: false,
+    readOnly: true,
     input: _get_deploymentSchema,
   },
   {
@@ -170,6 +175,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/deployments/{deployment_id}',
     destructive: true,
+    readOnly: false,
     input: _update_deploymentSchema,
   },
   {
@@ -179,6 +185,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/_restore',
     destructive: true,
+    readOnly: false,
     input: _restore_deploymentSchema,
   },
   {
@@ -188,6 +195,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/_shutdown',
     destructive: true,
+    readOnly: false,
     input: _shutdown_deploymentSchema,
   },
   {
@@ -197,6 +205,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/apm/{ref_id}',
     destructive: false,
+    readOnly: true,
     input: _get_deployment_apm_resource_infoSchema,
   },
   {
@@ -206,6 +215,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/apm/{ref_id}/_reset-token',
     destructive: true,
+    readOnly: false,
     input: _deployment_apm_reset_secret_tokenSchema,
   },
   {
@@ -215,6 +225,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/appsearch/{ref_id}',
     destructive: false,
+    readOnly: true,
     input: _get_deployment_appsearch_resource_infoSchema,
   },
   {
@@ -224,6 +235,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/appsearch/{ref_id}/read_only_mode',
     destructive: false,
+    readOnly: true,
     input: _get_appsearch_read_only_modeSchema,
   },
   {
@@ -233,6 +245,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/deployments/{deployment_id}/appsearch/{ref_id}/read_only_mode',
     destructive: true,
+    readOnly: false,
     input: _set_appsearch_read_only_modeSchema,
   },
   {
@@ -242,6 +255,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/certificate-authority',
     destructive: false,
+    readOnly: true,
     input: _get_deployment_certificate_authoritySchema,
   },
   {
@@ -251,6 +265,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}',
     destructive: false,
+    readOnly: true,
     input: _get_deployment_es_resource_infoSchema,
   },
   {
@@ -260,6 +275,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/_enable-ccr',
     destructive: true,
+    readOnly: false,
     input: _enable_deployment_resource_ccrSchema,
   },
   {
@@ -269,6 +285,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/_enable-ilm',
     destructive: true,
+    readOnly: false,
     input: _enable_deployment_resource_ilmSchema,
   },
   {
@@ -278,6 +295,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/_enable-slm',
     destructive: true,
+    readOnly: false,
     input: _enable_deployment_resource_slmSchema,
   },
   {
@@ -287,6 +305,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/_reset-password',
     destructive: true,
+    readOnly: false,
     input: _reset_elasticsearch_user_passwordSchema,
   },
   {
@@ -296,6 +315,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/_restart',
     destructive: true,
+    readOnly: false,
     input: _restart_deployment_es_resourceSchema,
   },
   {
@@ -305,6 +325,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/_shutdown',
     destructive: true,
+    readOnly: false,
     input: _shutdown_deployment_es_resourceSchema,
   },
   {
@@ -313,7 +334,8 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     description: 'Get eligible remote clusters',
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/eligible-remote-clusters',
-    destructive: true,
+    destructive: false,
+    readOnly: true,
     input: _get_deployment_es_resource_eligible_remote_clustersSchema,
   },
   {
@@ -323,6 +345,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/keystore',
     destructive: false,
+    readOnly: true,
     input: _get_deployment_es_resource_keystoreSchema,
   },
   {
@@ -332,6 +355,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'PATCH',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/keystore',
     destructive: true,
+    readOnly: false,
     input: _set_deployment_es_resource_keystoreSchema,
   },
   {
@@ -341,6 +365,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/remote-clusters',
     destructive: false,
+    readOnly: true,
     input: _get_deployment_es_resource_remote_clustersSchema,
   },
   {
@@ -350,6 +375,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/remote-clusters',
     destructive: true,
+    readOnly: false,
     input: _set_deployment_es_resource_remote_clustersSchema,
   },
   {
@@ -359,6 +385,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/snapshot/repository',
     destructive: false,
+    readOnly: true,
     input: _get_deployment_es_resource_snapshot_repositorySchema,
   },
   {
@@ -368,6 +395,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/snapshot/repository',
     destructive: false,
+    readOnly: false,
     input: _create_deployment_es_resource_snapshot_repositorySchema,
   },
   {
@@ -377,6 +405,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/snapshot/repository/{repository_name}',
     destructive: true,
+    readOnly: false,
     input: _delete_deployment_es_resource_snapshot_repositorySchema,
   },
   {
@@ -386,6 +415,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/tiers',
     destructive: false,
+    readOnly: true,
     input: _get_deployment_es_resource_tiersSchema,
   },
   {
@@ -395,6 +425,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'PATCH',
     path: '/api/v1/deployments/{deployment_id}/elasticsearch/{ref_id}/tiers',
     destructive: true,
+    readOnly: false,
     input: _update_deployment_es_resource_tierSchema,
   },
   {
@@ -404,6 +435,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/enterprise_search/{ref_id}',
     destructive: false,
+    readOnly: true,
     input: _get_deployment_enterprise_search_resource_infoSchema,
   },
   {
@@ -413,6 +445,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/integrations_server/{ref_id}',
     destructive: false,
+    readOnly: true,
     input: _get_deployment_integrations_server_resource_infoSchema,
   },
   {
@@ -422,6 +455,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/kibana/{ref_id}',
     destructive: false,
+    readOnly: true,
     input: _get_deployment_kib_resource_infoSchema,
   },
   {
@@ -431,6 +465,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/migrate_template',
     destructive: false,
+    readOnly: true,
     input: _migrate_deployment_templateSchema,
   },
   {
@@ -440,6 +475,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/tags',
     destructive: false,
+    readOnly: true,
     input: _get_deployment_tagsSchema,
   },
   {
@@ -449,6 +485,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/deployments/{deployment_id}/tags',
     destructive: true,
+    readOnly: false,
     input: _set_deployment_tagsSchema,
   },
   {
@@ -458,6 +495,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/upgrade',
     destructive: true,
+    readOnly: false,
     input: _upgrade_deploymentSchema,
   },
   {
@@ -467,6 +505,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/upgrade_assistant/status',
     destructive: false,
+    readOnly: true,
     input: _get_deployment_upgrade_assistant_statusSchema,
   },
   {
@@ -476,6 +515,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/_restore',
     destructive: true,
+    readOnly: false,
     input: _restore_deployment_resourceSchema,
   },
   {
@@ -485,6 +525,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/instances/_start',
     destructive: true,
+    readOnly: false,
     input: _start_deployment_resource_instances_allSchema,
   },
   {
@@ -494,6 +535,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/instances/_stop',
     destructive: true,
+    readOnly: false,
     input: _stop_deployment_resource_instances_allSchema,
   },
   {
@@ -503,6 +545,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/instances/maintenance-mode/_start',
     destructive: true,
+    readOnly: false,
     input: _start_deployment_resource_instances_all_maintenance_modeSchema,
   },
   {
@@ -512,6 +555,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/instances/maintenance-mode/_stop',
     destructive: true,
+    readOnly: false,
     input: _stop_deployment_resource_instances_all_maintenance_modeSchema,
   },
   {
@@ -521,6 +565,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/instances/{instance_ids}/_start',
     destructive: true,
+    readOnly: false,
     input: _start_deployment_resource_instancesSchema,
   },
   {
@@ -530,6 +575,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/instances/{instance_ids}/_stop',
     destructive: true,
+    readOnly: false,
     input: _stop_deployment_resource_instancesSchema,
   },
   {
@@ -539,6 +585,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/instances/{instance_ids}/maintenance-mode/_start',
     destructive: true,
+    readOnly: false,
     input: _start_deployment_resource_maintenance_modeSchema,
   },
   {
@@ -548,6 +595,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/instances/{instance_ids}/maintenance-mode/_stop',
     destructive: true,
+    readOnly: false,
     input: _stop_deployment_resource_maintenance_modeSchema,
   },
   {
@@ -557,6 +605,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/plan/pending',
     destructive: true,
+    readOnly: false,
     input: _cancel_deployment_resource_pending_planSchema,
   },
   {
@@ -566,6 +615,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/user_settings',
     destructive: false,
+    readOnly: true,
     input: _get_deployment_resource_user_settingsSchema,
   },
   {
@@ -575,6 +625,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/deployments/{deployment_id}/{resource_kind}/{ref_id}/user_settings',
     destructive: true,
+    readOnly: false,
     input: _update_deployment_resource_user_settingsSchema,
   },
   {
@@ -584,6 +635,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{stateless_resource_kind}/{ref_id}/_restart',
     destructive: true,
+    readOnly: false,
     input: _restart_deployment_stateless_resourceSchema,
   },
   {
@@ -593,6 +645,7 @@ export const deploymentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/{deployment_id}/{stateless_resource_kind}/{ref_id}/_shutdown',
     destructive: true,
+    readOnly: false,
     input: _shutdown_deployment_stateless_resourceSchema,
   },
 ]

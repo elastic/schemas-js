@@ -23,6 +23,7 @@ export const post_fleet_enrollment_api_keys_bulk_deleteDefinitions: KbApiDefinit
     method: 'POST',
     path: '/api/fleet/enrollment_api_keys/_bulk_delete',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

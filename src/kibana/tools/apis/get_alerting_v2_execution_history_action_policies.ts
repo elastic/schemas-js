@@ -23,6 +23,7 @@ export const get_alerting_v2_execution_history_action_policiesDefinitions: KbApi
     method: 'GET',
     path: '/api/alerting/v2/execution_history/action_policies',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

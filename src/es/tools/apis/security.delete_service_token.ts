@@ -23,6 +23,7 @@ export const security_delete_service_token_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_security/service/{namespace}/{service}/credential/token/{name}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

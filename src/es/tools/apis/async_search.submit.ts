@@ -23,6 +23,7 @@ export const async_search_submit_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/{index}/_async_search',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

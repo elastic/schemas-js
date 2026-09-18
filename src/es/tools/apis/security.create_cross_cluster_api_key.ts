@@ -23,6 +23,7 @@ export const security_create_cross_cluster_api_key_definitions: EsApiDefinition[
     method: 'POST',
     path: '/_security/cross_cluster/api_key',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

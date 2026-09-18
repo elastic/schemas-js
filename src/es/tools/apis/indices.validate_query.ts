@@ -23,6 +23,7 @@ export const indices_validate_query_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_validate/query',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

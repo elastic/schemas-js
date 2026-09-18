@@ -19,5 +19,6 @@ export const post_streams_disableDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/streams/_disable',
     destructive: true,
+    readOnly: false,
   },
 ]

@@ -26,6 +26,7 @@ export const userRoleAssignmentsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/users/{user_id}/role_assignments',
     destructive: true,
+    readOnly: false,
     input: _add_role_assignmentsSchema,
   },
   {
@@ -35,6 +36,7 @@ export const userRoleAssignmentsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/users/{user_id}/role_assignments',
     destructive: true,
+    readOnly: false,
     input: _remove_role_assignmentsSchema,
   },
 ]

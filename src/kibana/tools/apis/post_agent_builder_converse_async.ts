@@ -23,6 +23,7 @@ export const post_agent_builder_converse_asyncDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/agent_builder/converse/async',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -22,7 +22,8 @@ export const post_security_role_queryDefinitions: KbApiDefinition[] = [
     description: 'Query roles',
     method: 'POST',
     path: '/api/security/role/_query',
-    destructive: true,
+    destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

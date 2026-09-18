@@ -23,6 +23,7 @@ export const watcher_start_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_watcher/_start',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

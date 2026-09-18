@@ -23,6 +23,7 @@ export const create_visualizationDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/visualizations',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

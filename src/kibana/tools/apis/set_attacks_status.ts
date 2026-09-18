@@ -23,6 +23,7 @@ export const set_attacks_statusDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/detection_engine/attacks/status',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const post_attack_discovery_bulkDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/attack_discovery/_bulk',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

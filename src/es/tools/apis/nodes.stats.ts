@@ -23,6 +23,7 @@ export const nodes_stats_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_nodes/{node_id}/stats/{metric}/{index_metric}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const ml_delete_calendar_job_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_ml/calendars/{calendar_id}/jobs/{job_id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

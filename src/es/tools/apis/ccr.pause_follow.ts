@@ -23,6 +23,7 @@ export const ccr_pause_follow_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/{index}/_ccr/pause_follow',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

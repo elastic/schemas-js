@@ -23,6 +23,7 @@ export const ml_post_calendar_events_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_ml/calendars/{calendar_id}/events',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

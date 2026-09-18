@@ -46,6 +46,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/traffic-filter/associations/{association_type}/{associated_entity_id}/rulesets',
     destructive: false,
+    readOnly: true,
     input: _get_traffic_filter_deployment_ruleset_associationsSchema,
   },
   {
@@ -55,6 +56,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/traffic-filter/link-ids',
     destructive: false,
+    readOnly: true,
     input: _get_traffic_filter_claimed_link_idsSchema,
   },
   {
@@ -64,6 +66,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/traffic-filter/link-ids/_claim',
     destructive: true,
+    readOnly: false,
     input: _claim_traffic_filter_link_idSchema,
   },
   {
@@ -73,6 +76,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/traffic-filter/link-ids/_unclaim',
     destructive: true,
+    readOnly: false,
     input: _unclaim_traffic_filter_link_idSchema,
   },
   {
@@ -82,6 +86,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/traffic-filter/rulesets',
     destructive: false,
+    readOnly: true,
     input: _get_traffic_filter_rulesetsSchema,
   },
   {
@@ -91,6 +96,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/traffic-filter/rulesets',
     destructive: false,
+    readOnly: false,
     input: _create_traffic_filter_rulesetSchema,
   },
   {
@@ -100,6 +106,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/traffic-filter/rulesets/{ruleset_id}',
     destructive: false,
+    readOnly: true,
     input: _get_traffic_filter_rulesetSchema,
   },
   {
@@ -109,6 +116,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/deployments/traffic-filter/rulesets/{ruleset_id}',
     destructive: true,
+    readOnly: false,
     input: _update_traffic_filter_rulesetSchema,
   },
   {
@@ -118,6 +126,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/deployments/traffic-filter/rulesets/{ruleset_id}',
     destructive: true,
+    readOnly: false,
     input: _delete_traffic_filter_rulesetSchema,
   },
   {
@@ -127,6 +136,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/traffic-filter/rulesets/{ruleset_id}/associations',
     destructive: false,
+    readOnly: true,
     input: _get_traffic_filter_ruleset_deployment_associationsSchema,
   },
   {
@@ -136,6 +146,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/deployments/traffic-filter/rulesets/{ruleset_id}/associations',
     destructive: false,
+    readOnly: false,
     input: _create_traffic_filter_ruleset_associationSchema,
   },
   {
@@ -145,6 +156,7 @@ export const deploymentsTrafficFilterDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/deployments/traffic-filter/rulesets/{ruleset_id}/associations/{association_type}/{associated_entity_id}',
     destructive: true,
+    readOnly: false,
     input: _delete_traffic_filter_ruleset_associationSchema,
   },
 ]

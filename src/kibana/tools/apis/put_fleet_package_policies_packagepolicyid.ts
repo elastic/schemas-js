@@ -23,6 +23,7 @@ export const put_fleet_package_policies_packagepolicyidDefinitions: KbApiDefinit
     method: 'PUT',
     path: '/api/fleet/package_policies/{packagePolicyId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

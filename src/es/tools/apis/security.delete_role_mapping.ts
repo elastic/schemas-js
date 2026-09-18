@@ -23,6 +23,7 @@ export const security_delete_role_mapping_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_security/role_mapping/{name}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

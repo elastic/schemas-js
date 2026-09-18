@@ -22,6 +22,7 @@ export const termvectors_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_termvectors/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

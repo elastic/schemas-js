@@ -24,6 +24,7 @@ export const stackDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/stack/versions',
     destructive: false,
+    readOnly: true,
     input: _get_version_stacksSchema,
   },
 ]

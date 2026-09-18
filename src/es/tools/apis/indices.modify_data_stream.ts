@@ -23,6 +23,7 @@ export const indices_modify_data_stream_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_data_stream/_modify',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

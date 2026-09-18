@@ -19,5 +19,6 @@ export const delete_case_default_spaceDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/cases',
     destructive: true,
+    readOnly: false,
   },
 ]

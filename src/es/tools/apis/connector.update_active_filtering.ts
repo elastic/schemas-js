@@ -23,6 +23,7 @@ export const connector_update_active_filtering_definitions: EsApiDefinition[] = 
     method: 'PUT',
     path: '/_connector/{connector_id}/_filtering/_activate',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

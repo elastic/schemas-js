@@ -23,6 +23,7 @@ export const security_put_user_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_security/user/{username}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const security_get_service_accounts_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_security/service/{namespace}/{service}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

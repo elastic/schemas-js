@@ -23,6 +23,7 @@ export const ilm_move_to_step_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_ilm/move/{index}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const update_slo_opDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/s/{spaceId}/api/observability/slos/{sloId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

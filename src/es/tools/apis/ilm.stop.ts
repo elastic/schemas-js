@@ -23,6 +23,7 @@ export const ilm_stop_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_ilm/stop',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

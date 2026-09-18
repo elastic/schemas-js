@@ -23,6 +23,7 @@ export const delete_data_view_defaultDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/data_views/data_view/{viewId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

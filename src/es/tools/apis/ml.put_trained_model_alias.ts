@@ -23,6 +23,7 @@ export const ml_put_trained_model_alias_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_ml/trained_models/{model_id}/model_aliases/{model_alias}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

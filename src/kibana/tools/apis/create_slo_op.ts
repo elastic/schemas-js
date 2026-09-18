@@ -23,6 +23,7 @@ export const create_slo_opDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/s/{spaceId}/api/observability/slos',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

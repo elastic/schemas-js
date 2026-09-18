@@ -23,6 +23,7 @@ export const project_tags_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_project/tags',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

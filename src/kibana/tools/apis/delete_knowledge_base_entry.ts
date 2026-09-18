@@ -23,6 +23,7 @@ export const delete_knowledge_base_entryDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/security_ai_assistant/knowledge_base/entries/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

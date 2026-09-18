@@ -23,6 +23,7 @@ export const post_workflows_step_testDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/workflows/step/test',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

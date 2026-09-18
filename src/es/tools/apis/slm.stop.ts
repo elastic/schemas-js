@@ -23,6 +23,7 @@ export const slm_stop_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_slm/stop',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

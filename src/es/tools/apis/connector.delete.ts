@@ -23,6 +23,7 @@ export const connector_delete_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_connector/{connector_id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

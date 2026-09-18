@@ -23,6 +23,7 @@ export const delete_fleet_cloud_onboarding_deployments_idDefinitions: KbApiDefin
     method: 'DELETE',
     path: '/api/fleet/cloud_onboarding_deployments/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

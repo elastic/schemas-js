@@ -23,6 +23,7 @@ export const get_case_default_spaceDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/cases/{caseId}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const ilm_start_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_ilm/start',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

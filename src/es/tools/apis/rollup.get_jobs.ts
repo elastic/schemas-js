@@ -23,6 +23,7 @@ export const rollup_get_jobs_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_rollup/job/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -22,6 +22,7 @@ export const mtermvectors_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_mtermvectors',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

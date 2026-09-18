@@ -23,6 +23,7 @@ export const post_security_entity_store_resolution_unlinkDefinitions: KbApiDefin
     method: 'POST',
     path: '/api/security/entity_store/resolution/unlink',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

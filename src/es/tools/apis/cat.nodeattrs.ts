@@ -23,6 +23,7 @@ export const cat_nodeattrs_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cat/nodeattrs',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
     responseType: 'text',
   },

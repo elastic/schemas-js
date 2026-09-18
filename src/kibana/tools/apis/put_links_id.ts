@@ -23,6 +23,7 @@ export const put_links_idDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/links/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

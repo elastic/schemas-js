@@ -23,6 +23,7 @@ export const clean_draft_timelinesDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/timeline/_draft',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

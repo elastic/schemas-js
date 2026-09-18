@@ -23,6 +23,7 @@ export const set_default_datail_view_defaultDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/data_views/default',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

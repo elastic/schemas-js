@@ -23,6 +23,7 @@ export const rollup_rollup_search_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_rollup_search',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

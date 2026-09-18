@@ -22,6 +22,7 @@ export const get_script_context_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_script_context',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

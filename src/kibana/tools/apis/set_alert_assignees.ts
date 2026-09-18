@@ -23,6 +23,7 @@ export const set_alert_assigneesDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/detection_engine/signals/assignees',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

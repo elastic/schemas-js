@@ -23,6 +23,7 @@ export const post_alerting_rule_id_unmute_allDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/alerting/rule/{id}/_unmute_all',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

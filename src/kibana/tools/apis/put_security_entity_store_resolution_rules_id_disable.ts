@@ -23,6 +23,7 @@ export const put_security_entity_store_resolution_rules_id_disableDefinitions: K
     method: 'PUT',
     path: '/api/security/entity_store/resolution/rules/{id}/disable',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

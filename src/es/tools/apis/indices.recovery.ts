@@ -23,6 +23,7 @@ export const indices_recovery_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_recovery',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const indices_get_migrate_reindex_status_definitions: EsApiDefinition[] =
     method: 'GET',
     path: '/_migration/reindex/{index}/_status',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

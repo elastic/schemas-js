@@ -23,6 +23,7 @@ export const create_dashboardDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/dashboards',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

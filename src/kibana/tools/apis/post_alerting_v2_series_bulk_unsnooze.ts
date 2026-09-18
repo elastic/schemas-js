@@ -23,6 +23,7 @@ export const post_alerting_v2_series_bulk_unsnoozeDefinitions: KbApiDefinition[]
     method: 'POST',
     path: '/api/alerting/v2/series/_bulk_unsnooze',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

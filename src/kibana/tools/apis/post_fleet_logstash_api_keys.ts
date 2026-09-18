@@ -19,5 +19,6 @@ export const post_fleet_logstash_api_keysDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/fleet/logstash_api_keys',
     destructive: true,
+    readOnly: false,
   },
 ]

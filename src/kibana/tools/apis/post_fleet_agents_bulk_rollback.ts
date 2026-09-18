@@ -23,6 +23,7 @@ export const post_fleet_agents_bulk_rollbackDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/fleet/agents/bulk_rollback',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

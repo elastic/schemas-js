@@ -23,6 +23,7 @@ export const update_runtime_field_defaultDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/data_views/data_view/{viewId}/runtime_field/{fieldName}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

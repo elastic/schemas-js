@@ -23,6 +23,7 @@ export const post_agent_builder_conversationsDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/agent_builder/conversations',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

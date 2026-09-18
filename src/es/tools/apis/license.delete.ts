@@ -23,6 +23,7 @@ export const license_delete_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_license',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

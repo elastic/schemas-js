@@ -23,6 +23,7 @@ export const security_invalidate_api_key_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_security/api_key',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

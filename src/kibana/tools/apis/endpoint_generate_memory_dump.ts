@@ -23,6 +23,7 @@ export const endpoint_generate_memory_dumpDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/endpoint/action/memory_dump',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

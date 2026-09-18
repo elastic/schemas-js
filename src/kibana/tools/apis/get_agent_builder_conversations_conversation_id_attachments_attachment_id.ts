@@ -23,6 +23,7 @@ export const get_agent_builder_conversations_conversation_id_attachments_attachm
     method: 'GET',
     path: '/api/agent_builder/conversations/{conversation_id}/attachments/{attachment_id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

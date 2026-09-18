@@ -23,6 +23,7 @@ export const post_fleet_managed_integrations_upgradeDefinitions: KbApiDefinition
     method: 'POST',
     path: '/api/fleet/managed_integrations/_upgrade',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

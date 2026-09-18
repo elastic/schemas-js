@@ -23,6 +23,7 @@ export const delete_fleet_agents_files_fileidDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/fleet/agents/files/{fileId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

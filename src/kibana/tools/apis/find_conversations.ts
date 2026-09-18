@@ -23,6 +23,7 @@ export const find_conversationsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/security_ai_assistant/current_user/conversations/_find',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

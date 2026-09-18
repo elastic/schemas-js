@@ -22,6 +22,7 @@ export const scroll_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_search/scroll',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

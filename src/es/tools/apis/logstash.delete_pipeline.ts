@@ -23,6 +23,7 @@ export const logstash_delete_pipeline_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_logstash/pipeline/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

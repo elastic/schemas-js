@@ -19,5 +19,6 @@ export const read_privilegesDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/detection_engine/privileges',
     destructive: false,
+    readOnly: true,
   },
 ]

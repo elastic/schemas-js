@@ -23,6 +23,7 @@ export const delete_agent_configurationDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/apm/settings/agent-configuration',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

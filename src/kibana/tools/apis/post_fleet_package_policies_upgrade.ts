@@ -23,6 +23,7 @@ export const post_fleet_package_policies_upgradeDefinitions: KbApiDefinition[] =
     method: 'POST',
     path: '/api/fleet/package_policies/upgrade',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

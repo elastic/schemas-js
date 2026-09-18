@@ -23,6 +23,7 @@ export const indices_delete_data_stream_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_data_stream/{name}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

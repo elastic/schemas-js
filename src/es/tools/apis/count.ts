@@ -22,6 +22,7 @@ export const count_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/{index}/_count',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const post_fleet_package_policiesDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/fleet/package_policies',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

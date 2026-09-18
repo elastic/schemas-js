@@ -23,6 +23,7 @@ export const get_fleet_kubernetes_downloadDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/fleet/kubernetes/download',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const post_alerting_v2_action_policies_bulk_deleteDefinitions: KbApiDefin
     method: 'POST',
     path: '/api/alerting/v2/action_policies/_bulk_delete',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

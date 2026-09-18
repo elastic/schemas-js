@@ -23,6 +23,7 @@ export const indices_rollover_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/{alias}/_rollover/{new_index}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

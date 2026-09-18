@@ -23,6 +23,7 @@ export const inference_completion_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_inference/completion/{inference_id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

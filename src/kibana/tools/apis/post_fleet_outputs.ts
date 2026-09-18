@@ -23,6 +23,7 @@ export const post_fleet_outputsDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/fleet/outputs',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

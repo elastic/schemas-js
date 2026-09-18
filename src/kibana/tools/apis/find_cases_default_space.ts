@@ -19,5 +19,6 @@ export const find_cases_default_spaceDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/cases/_find',
     destructive: false,
+    readOnly: true,
   },
 ]

@@ -23,6 +23,7 @@ export const delete_exception_listDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/exception_lists',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

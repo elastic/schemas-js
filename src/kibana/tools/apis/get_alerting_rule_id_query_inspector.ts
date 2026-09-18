@@ -23,6 +23,7 @@ export const get_alerting_rule_id_query_inspectorDefinitions: KbApiDefinition[] 
     method: 'GET',
     path: '/api/alerting/rule/{id}/query_inspector',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

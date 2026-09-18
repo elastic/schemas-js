@@ -23,6 +23,7 @@ export const security_get_privileges_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_security/privilege/{application}/{name}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

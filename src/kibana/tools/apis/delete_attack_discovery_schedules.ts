@@ -23,6 +23,7 @@ export const delete_attack_discovery_schedulesDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/attack_discovery/schedules/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

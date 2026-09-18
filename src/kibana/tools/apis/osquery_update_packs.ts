@@ -23,6 +23,7 @@ export const osquery_update_packsDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/osquery/packs/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

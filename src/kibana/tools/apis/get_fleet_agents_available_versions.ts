@@ -19,5 +19,6 @@ export const get_fleet_agents_available_versionsDefinitions: KbApiDefinition[] =
     method: 'GET',
     path: '/api/fleet/agents/available_versions',
     destructive: false,
+    readOnly: true,
   },
 ]

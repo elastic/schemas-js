@@ -22,6 +22,7 @@ export const get_reindex_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_reindex/{task_id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const cluster_pending_tasks_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cluster/pending_tasks',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

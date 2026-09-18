@@ -66,6 +66,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/organizations',
     destructive: false,
+    readOnly: true,
   },
   {
     name: 'get-organization-invitation',
@@ -74,6 +75,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/organizations/invitations/{invitation_token}',
     destructive: false,
+    readOnly: true,
     input: _get_organization_invitationSchema,
   },
   {
@@ -83,6 +85,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/organizations/{organization_id}',
     destructive: false,
+    readOnly: true,
     input: _get_organizationSchema,
   },
   {
@@ -92,6 +95,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/organizations/{organization_id}',
     destructive: true,
+    readOnly: false,
     input: _update_organizationSchema,
   },
   {
@@ -101,6 +105,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/organizations/{organization_id}/domains',
     destructive: false,
+    readOnly: true,
     input: _domain_claim_get_domain_claimsSchema,
   },
   {
@@ -110,6 +115,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/organizations/{organization_id}/domains',
     destructive: true,
+    readOnly: false,
     input: _domain_claim_deleteSchema,
   },
   {
@@ -119,6 +125,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/organizations/{organization_id}/domains/_generate_verification_code',
     destructive: true,
+    readOnly: false,
     input: _domain_claim_generate_verification_codeSchema,
   },
   {
@@ -128,6 +135,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/organizations/{organization_id}/domains/_verify',
     destructive: true,
+    readOnly: false,
     input: _domain_claim_verify_domainSchema,
   },
   {
@@ -137,6 +145,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/organizations/{organization_id}/idp',
     destructive: false,
+    readOnly: true,
     input: _get_organization_idpSchema,
   },
   {
@@ -146,6 +155,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/organizations/{organization_id}/idp',
     destructive: true,
+    readOnly: false,
     input: _setup_organization_idpSchema,
   },
   {
@@ -155,6 +165,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/organizations/{organization_id}/idp',
     destructive: true,
+    readOnly: false,
     input: _teardown_organization_idpSchema,
   },
   {
@@ -164,6 +175,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/organizations/{organization_id}/idp/metadata.xml',
     destructive: false,
+    readOnly: true,
     input: _get_organization_idp_metadataSchema,
   },
   {
@@ -173,6 +185,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/organizations/{organization_id}/invitations',
     destructive: false,
+    readOnly: true,
     input: _list_organization_invitationsSchema,
   },
   {
@@ -182,6 +195,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/organizations/{organization_id}/invitations',
     destructive: false,
+    readOnly: false,
     input: _create_organization_invitationsSchema,
   },
   {
@@ -191,6 +205,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/organizations/{organization_id}/invitations/{invitation_tokens}',
     destructive: true,
+    readOnly: false,
     input: _delete_organization_invitationsSchema,
   },
   {
@@ -200,6 +215,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/organizations/{organization_id}/members',
     destructive: false,
+    readOnly: true,
     input: _list_organization_membersSchema,
   },
   {
@@ -209,6 +225,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/organizations/{organization_id}/members/{user_ids}',
     destructive: true,
+    readOnly: false,
     input: _delete_organization_membershipsSchema,
   },
   {
@@ -218,6 +235,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/organizations/{organization_id}/role_mappings',
     destructive: false,
+    readOnly: true,
     input: _get_role_mappingsSchema,
   },
   {
@@ -227,6 +245,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/organizations/{organization_id}/role_mappings',
     destructive: true,
+    readOnly: false,
     input: _add_role_mappings_individuallySchema,
   },
   {
@@ -236,6 +255,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/organizations/{organization_id}/role_mappings',
     destructive: true,
+    readOnly: false,
     input: _update_role_mappingsSchema,
   },
   {
@@ -245,6 +265,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/organizations/{organization_id}/role_mappings',
     destructive: true,
+    readOnly: false,
     input: _delete_role_mappingsSchema,
   },
   {
@@ -254,6 +275,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/organizations/{organization_id}/role_mappings/{role_names}',
     destructive: true,
+    readOnly: false,
     input: _delete_role_mappings_individuallySchema,
   },
   {
@@ -263,6 +285,7 @@ export const organizationsDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/organizations/{organization_id}/role_mappings/{role_name}',
     destructive: true,
+    readOnly: false,
     input: _update_role_mappingSchema,
   },
 ]

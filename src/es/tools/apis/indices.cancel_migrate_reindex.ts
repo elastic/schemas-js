@@ -23,6 +23,7 @@ export const indices_cancel_migrate_reindex_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_migration/reindex/{index}/_cancel',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

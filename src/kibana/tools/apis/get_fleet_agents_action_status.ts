@@ -23,6 +23,7 @@ export const get_fleet_agents_action_statusDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/fleet/agents/action_status',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

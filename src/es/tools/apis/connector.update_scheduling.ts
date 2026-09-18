@@ -23,6 +23,7 @@ export const connector_update_scheduling_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_connector/{connector_id}/_scheduling',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const perform_prompts_bulk_actionDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/security_ai_assistant/prompts/_bulk_action',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const ccr_pause_auto_follow_pattern_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_ccr/auto_follow/{name}/pause',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

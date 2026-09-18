@@ -23,6 +23,7 @@ export const eql_get_status_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_eql/search/status/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

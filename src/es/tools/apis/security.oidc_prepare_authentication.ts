@@ -23,6 +23,7 @@ export const security_oidc_prepare_authentication_definitions: EsApiDefinition[]
     method: 'POST',
     path: '/_security/oidc/prepare',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

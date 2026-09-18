@@ -26,6 +26,7 @@ export const deploymentTemplatesDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/templates',
     destructive: false,
+    readOnly: true,
     input: _get_deployment_templates_v2Schema,
   },
   {
@@ -35,6 +36,7 @@ export const deploymentTemplatesDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/deployments/templates/{template_id}',
     destructive: false,
+    readOnly: true,
     input: _get_deployment_template_v2Schema,
   },
 ]

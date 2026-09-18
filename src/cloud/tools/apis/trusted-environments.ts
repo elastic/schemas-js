@@ -19,5 +19,6 @@ export const trustedEnvironmentsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/trusted-environments',
     destructive: false,
+    readOnly: true,
   },
 ]

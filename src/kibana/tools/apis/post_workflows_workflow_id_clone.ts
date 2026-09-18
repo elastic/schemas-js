@@ -23,6 +23,7 @@ export const post_workflows_workflow_id_cloneDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/workflows/workflow/{id}/clone',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

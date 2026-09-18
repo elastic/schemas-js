@@ -23,6 +23,7 @@ export const post_security_entity_store_resolution_linkDefinitions: KbApiDefinit
     method: 'POST',
     path: '/api/security/entity_store/resolution/link',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

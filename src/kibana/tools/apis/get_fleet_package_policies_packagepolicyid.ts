@@ -23,6 +23,7 @@ export const get_fleet_package_policies_packagepolicyidDefinitions: KbApiDefinit
     method: 'GET',
     path: '/api/fleet/package_policies/{packagePolicyId}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

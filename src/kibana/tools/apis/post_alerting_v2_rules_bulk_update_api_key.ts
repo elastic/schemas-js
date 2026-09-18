@@ -23,6 +23,7 @@ export const post_alerting_v2_rules_bulk_update_api_keyDefinitions: KbApiDefinit
     method: 'POST',
     path: '/api/alerting/v2/rules/_bulk_update_api_key',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

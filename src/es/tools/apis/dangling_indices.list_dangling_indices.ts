@@ -23,6 +23,7 @@ export const dangling_indices_list_dangling_indices_definitions: EsApiDefinition
     method: 'GET',
     path: '/_dangling',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

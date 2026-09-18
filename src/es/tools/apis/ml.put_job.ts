@@ -23,6 +23,7 @@ export const ml_put_job_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_ml/anomaly_detectors/{job_id}',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

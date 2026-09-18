@@ -23,6 +23,7 @@ export const cluster_allocation_explain_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cluster/allocation/explain',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

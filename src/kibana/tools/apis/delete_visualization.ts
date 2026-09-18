@@ -23,6 +23,7 @@ export const delete_visualizationDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/visualizations/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const create_ruleDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/detection_engine/rules',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

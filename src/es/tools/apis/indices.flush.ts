@@ -23,6 +23,7 @@ export const indices_flush_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/{index}/_flush',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const post_alerting_rule_id_snooze_scheduleDefinitions: KbApiDefinition[]
     method: 'POST',
     path: '/api/alerting/rule/{id}/snooze_schedule',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

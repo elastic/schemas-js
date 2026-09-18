@@ -23,6 +23,7 @@ export const read_ruleDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/detection_engine/rules',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

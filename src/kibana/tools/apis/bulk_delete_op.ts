@@ -23,6 +23,7 @@ export const bulk_delete_opDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/s/{spaceId}/api/observability/slos/_bulk_delete',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

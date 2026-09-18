@@ -23,6 +23,7 @@ export const search_application_search_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_application/search_application/{name}/_search',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

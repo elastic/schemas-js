@@ -23,6 +23,7 @@ export const get_case_alerts_default_spaceDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/cases/{caseId}/alerts',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

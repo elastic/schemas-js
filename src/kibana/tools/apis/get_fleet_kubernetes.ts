@@ -23,6 +23,7 @@ export const get_fleet_kubernetesDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/fleet/kubernetes',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

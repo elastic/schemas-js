@@ -23,6 +23,7 @@ export const connector_sync_job_post_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_connector/_sync_job',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

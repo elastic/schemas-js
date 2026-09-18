@@ -23,6 +23,7 @@ export const endpoint_suspend_process_actionDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/endpoint/action/suspend_process',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

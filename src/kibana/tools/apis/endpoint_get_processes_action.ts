@@ -23,6 +23,7 @@ export const endpoint_get_processes_actionDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/endpoint/action/running_procs',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

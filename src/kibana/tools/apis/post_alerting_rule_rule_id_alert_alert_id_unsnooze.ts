@@ -23,6 +23,7 @@ export const post_alerting_rule_rule_id_alert_alert_id_unsnoozeDefinitions: KbAp
     method: 'POST',
     path: '/api/alerting/rule/{rule_id}/alert/{alert_id}/_unsnooze',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

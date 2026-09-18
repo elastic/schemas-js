@@ -23,6 +23,7 @@ export const post_fleet_agents_agentid_remove_collectorDefinitions: KbApiDefinit
     method: 'POST',
     path: '/api/fleet/agents/{agentId}/remove_collector',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

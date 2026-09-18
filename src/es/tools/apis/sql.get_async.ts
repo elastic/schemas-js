@@ -23,6 +23,7 @@ export const sql_get_async_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_sql/async/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const post_fleet_enrollment_api_keysDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/fleet/enrollment_api_keys',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

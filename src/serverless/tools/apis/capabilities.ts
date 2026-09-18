@@ -19,5 +19,6 @@ export const capabilitiesDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/capabilities',
     destructive: false,
+    readOnly: true,
   },
 ]

@@ -22,7 +22,8 @@ export const post_workflows_mgetDefinitions: KbApiDefinition[] = [
     description: 'Get workflows by IDs',
     method: 'POST',
     path: '/api/workflows/mget',
-    destructive: true,
+    destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

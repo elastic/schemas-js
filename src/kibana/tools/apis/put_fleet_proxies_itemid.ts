@@ -23,6 +23,7 @@ export const put_fleet_proxies_itemidDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/fleet/proxies/{itemId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

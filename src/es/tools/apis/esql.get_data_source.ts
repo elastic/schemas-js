@@ -23,6 +23,7 @@ export const esql_get_data_source_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_query/data_source/{name}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

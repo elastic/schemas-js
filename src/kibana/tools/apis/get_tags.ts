@@ -23,6 +23,7 @@ export const get_tagsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/tags',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

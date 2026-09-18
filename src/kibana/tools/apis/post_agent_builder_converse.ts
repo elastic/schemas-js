@@ -23,6 +23,7 @@ export const post_agent_builder_converseDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/agent_builder/converse',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

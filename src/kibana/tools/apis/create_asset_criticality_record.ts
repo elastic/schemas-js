@@ -23,6 +23,7 @@ export const create_asset_criticality_recordDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/asset_criticality',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

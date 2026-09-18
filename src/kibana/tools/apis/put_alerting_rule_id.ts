@@ -23,6 +23,7 @@ export const put_alerting_rule_idDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/alerting/rule/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

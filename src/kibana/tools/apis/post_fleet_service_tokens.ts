@@ -23,6 +23,7 @@ export const post_fleet_service_tokensDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/fleet/service_tokens',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

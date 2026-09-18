@@ -23,6 +23,7 @@ export const transform_preview_transform_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_transform/{transform_id}/_preview',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

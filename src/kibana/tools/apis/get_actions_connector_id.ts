@@ -23,6 +23,7 @@ export const get_actions_connector_idDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/actions/connector/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -34,6 +34,7 @@ export const billingCostsAnalysisDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/billing/costs/{organization_id}',
     destructive: false,
+    readOnly: true,
     input: _get_costs_overviewSchema,
   },
   {
@@ -43,6 +44,7 @@ export const billingCostsAnalysisDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/billing/costs/{organization_id}/charts',
     destructive: false,
+    readOnly: true,
     input: _get_costs_chartsSchema,
   },
   {
@@ -52,6 +54,7 @@ export const billingCostsAnalysisDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/billing/costs/{organization_id}/deployments',
     destructive: false,
+    readOnly: true,
     input: _get_costs_deploymentsSchema,
   },
   {
@@ -61,6 +64,7 @@ export const billingCostsAnalysisDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/billing/costs/{organization_id}/deployments/{deployment_id}/charts',
     destructive: false,
+    readOnly: true,
     input: _get_costs_charts_by_deploymentSchema,
   },
   {
@@ -70,6 +74,7 @@ export const billingCostsAnalysisDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/billing/costs/{organization_id}/deployments/{deployment_id}/items',
     destructive: false,
+    readOnly: true,
     input: _get_costs_items_by_deploymentSchema,
   },
   {
@@ -79,6 +84,7 @@ export const billingCostsAnalysisDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/billing/costs/{organization_id}/items',
     destructive: false,
+    readOnly: true,
     input: _get_costs_itemsSchema,
   },
 ]

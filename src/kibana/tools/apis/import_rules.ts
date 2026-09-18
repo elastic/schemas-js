@@ -19,6 +19,7 @@ export const import_rulesDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/detection_engine/rules/_import',
     destructive: true,
+    readOnly: false,
     input: { type: 'object', properties: { overwrite: { type: 'boolean', description: 'Determines whether existing rules with the same `rule_id` are overwritten.', 'x-found-in': 'query' }, overwrite_exceptions: { type: 'boolean', description: 'Determines whether existing exception lists with the same `list_id` are overwritten. Both the exception list container and its items are overwritten.', 'x-found-in': 'query' }, overwrite_action_connectors: { type: 'boolean', description: 'Determines whether existing actions with the same `kibana.alert.rule.actions.id` are overwritten.', 'x-found-in': 'query' }, as_new_list: { type: 'boolean', description: 'Generates a new list ID for each imported exception list.', 'x-found-in': 'query' }, file: { description: 'The `.ndjson` file containing the rules.', 'x-found-in': 'body', type: 'string' } } },
   },
 ]

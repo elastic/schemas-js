@@ -23,6 +23,7 @@ export const ml_delete_filter_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_ml/filters/{filter_id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const put_streams_name_queryDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/streams/{name}/_query',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

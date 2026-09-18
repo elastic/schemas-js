@@ -22,6 +22,7 @@ export const reindex_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_reindex',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

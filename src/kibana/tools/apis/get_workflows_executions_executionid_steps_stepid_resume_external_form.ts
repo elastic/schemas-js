@@ -23,6 +23,7 @@ export const get_workflows_executions_executionid_steps_stepid_resume_external_f
     method: 'GET',
     path: '/api/workflows/executions/{executionId}/steps/{stepId}/resume/external/form',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

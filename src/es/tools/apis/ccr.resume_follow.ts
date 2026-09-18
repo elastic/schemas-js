@@ -23,6 +23,7 @@ export const ccr_resume_follow_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/{index}/_ccr/resume_follow',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -22,7 +22,8 @@ export const post_fleet_package_policies_bulk_getDefinitions: KbApiDefinition[] 
     description: 'Bulk get package policies',
     method: 'POST',
     path: '/api/fleet/package_policies/_bulk_get',
-    destructive: true,
+    destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

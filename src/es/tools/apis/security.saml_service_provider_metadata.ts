@@ -23,6 +23,7 @@ export const security_saml_service_provider_metadata_definitions: EsApiDefinitio
     method: 'GET',
     path: '/_security/saml/metadata/{realm_name}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

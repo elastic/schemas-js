@@ -23,6 +23,7 @@ export const get_fleet_agents_agentid_uploadsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/fleet/agents/{agentId}/uploads',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

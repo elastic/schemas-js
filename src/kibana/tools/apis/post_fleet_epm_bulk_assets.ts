@@ -22,7 +22,8 @@ export const post_fleet_epm_bulk_assetsDefinitions: KbApiDefinition[] = [
     description: 'Bulk get assets',
     method: 'POST',
     path: '/api/fleet/epm/bulk_assets',
-    destructive: true,
+    destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

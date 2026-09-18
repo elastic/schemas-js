@@ -23,6 +23,7 @@ export const delete_asset_criticality_recordDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/asset_criticality',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

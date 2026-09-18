@@ -23,6 +23,7 @@ export const get_agent_builder_conversations_conversation_id_attachments_staleDe
     method: 'GET',
     path: '/api/agent_builder/conversations/{conversation_id}/attachments/stale',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

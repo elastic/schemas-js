@@ -23,6 +23,7 @@ export const update_endpoint_list_itemDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/endpoint_list/items',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

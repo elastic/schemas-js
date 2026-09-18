@@ -23,6 +23,7 @@ export const delete_listDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/lists',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

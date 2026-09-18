@@ -23,6 +23,7 @@ export const post_alerting_v2_action_policies_id_update_api_keyDefinitions: KbAp
     method: 'POST',
     path: '/api/alerting/v2/action_policies/{id}/_update_api_key',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

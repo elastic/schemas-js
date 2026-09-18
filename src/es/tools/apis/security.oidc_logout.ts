@@ -23,6 +23,7 @@ export const security_oidc_logout_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_security/oidc/logout',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

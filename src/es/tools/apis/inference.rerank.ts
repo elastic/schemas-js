@@ -23,6 +23,7 @@ export const inference_rerank_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_inference/rerank/{inference_id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

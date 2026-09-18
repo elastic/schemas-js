@@ -23,6 +23,7 @@ export const security_change_password_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_security/user/{username}/_password',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const get_agent_builder_a2a_agentid_jsonDefinitions: KbApiDefinition[] = 
     method: 'GET',
     path: '/api/agent_builder/a2a/{agentId}.json',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

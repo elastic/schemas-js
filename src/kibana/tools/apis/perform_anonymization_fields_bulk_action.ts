@@ -23,6 +23,7 @@ export const perform_anonymization_fields_bulk_actionDefinitions: KbApiDefinitio
     method: 'POST',
     path: '/api/security_ai_assistant/anonymization_fields/_bulk_action',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

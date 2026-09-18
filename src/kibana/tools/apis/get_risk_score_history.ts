@@ -23,6 +23,7 @@ export const get_risk_score_historyDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/risk_score/history',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

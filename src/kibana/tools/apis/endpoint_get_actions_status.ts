@@ -23,6 +23,7 @@ export const endpoint_get_actions_statusDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/endpoint/action_status',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

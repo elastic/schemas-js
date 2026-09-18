@@ -23,6 +23,7 @@ export const endpoint_execute_actionDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/endpoint/action/execute',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

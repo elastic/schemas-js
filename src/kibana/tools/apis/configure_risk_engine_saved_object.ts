@@ -23,6 +23,7 @@ export const configure_risk_engine_saved_objectDefinitions: KbApiDefinition[] = 
     method: 'PUT',
     path: '/api/risk_score/engine/saved_object/configure',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

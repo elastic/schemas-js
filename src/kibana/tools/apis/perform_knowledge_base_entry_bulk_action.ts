@@ -23,6 +23,7 @@ export const perform_knowledge_base_entry_bulk_actionDefinitions: KbApiDefinitio
     method: 'POST',
     path: '/api/security_ai_assistant/knowledge_base/entries/_bulk_action',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

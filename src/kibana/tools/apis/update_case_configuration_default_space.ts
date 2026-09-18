@@ -23,6 +23,7 @@ export const update_case_configuration_default_spaceDefinitions: KbApiDefinition
     method: 'PATCH',
     path: '/api/cases/configure/{configurationId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

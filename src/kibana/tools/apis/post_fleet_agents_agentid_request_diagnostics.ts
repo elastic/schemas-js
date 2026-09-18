@@ -23,6 +23,7 @@ export const post_fleet_agents_agentid_request_diagnosticsDefinitions: KbApiDefi
     method: 'POST',
     path: '/api/fleet/agents/{agentId}/request_diagnostics',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -22,6 +22,7 @@ export const update_by_query_rethrottle_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_update_by_query/{task_id}/_rethrottle',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

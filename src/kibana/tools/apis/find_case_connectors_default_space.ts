@@ -19,5 +19,6 @@ export const find_case_connectors_default_spaceDefinitions: KbApiDefinition[] = 
     method: 'GET',
     path: '/api/cases/configure/connectors/_find',
     destructive: false,
+    readOnly: true,
   },
 ]

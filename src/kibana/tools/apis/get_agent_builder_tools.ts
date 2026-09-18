@@ -19,5 +19,6 @@ export const get_agent_builder_toolsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/agent_builder/tools',
     destructive: false,
+    readOnly: true,
   },
 ]

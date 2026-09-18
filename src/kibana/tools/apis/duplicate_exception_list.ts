@@ -23,6 +23,7 @@ export const duplicate_exception_listDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/exception_lists/_duplicate',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

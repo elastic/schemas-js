@@ -23,6 +23,7 @@ export const put_agent_builder_tools_toolidDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/agent_builder/tools/{toolId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

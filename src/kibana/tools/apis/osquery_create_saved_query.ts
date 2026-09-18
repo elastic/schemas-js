@@ -23,6 +23,7 @@ export const osquery_create_saved_queryDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/osquery/saved_queries',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

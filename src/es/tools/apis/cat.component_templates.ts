@@ -23,6 +23,7 @@ export const cat_component_templates_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cat/component_templates/{name}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
     responseType: 'text',
   },

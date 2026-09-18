@@ -19,5 +19,6 @@ export const get_case_reporters_default_spaceDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/cases/reporters',
     destructive: false,
+    readOnly: true,
   },
 ]

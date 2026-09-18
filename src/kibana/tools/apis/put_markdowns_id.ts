@@ -23,6 +23,7 @@ export const put_markdowns_idDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/markdowns/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

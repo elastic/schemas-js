@@ -23,6 +23,7 @@ export const delete_fleet_proxies_itemidDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/fleet/proxies/{itemId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

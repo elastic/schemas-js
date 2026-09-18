@@ -19,5 +19,6 @@ export const post_streams_resyncDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/streams/_resync',
     destructive: true,
+    readOnly: false,
   },
 ]

@@ -23,6 +23,7 @@ export const post_fleet_agents_agentid_reassignDefinitions: KbApiDefinition[] = 
     method: 'POST',
     path: '/api/fleet/agents/{agentId}/reassign',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

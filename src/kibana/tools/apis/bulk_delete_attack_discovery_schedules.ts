@@ -23,6 +23,7 @@ export const bulk_delete_attack_discovery_schedulesDefinitions: KbApiDefinition[
     method: 'POST',
     path: '/api/attack_discovery/schedules/_bulk_delete',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

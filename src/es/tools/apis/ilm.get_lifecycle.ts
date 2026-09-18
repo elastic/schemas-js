@@ -23,6 +23,7 @@ export const ilm_get_lifecycle_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_ilm/policy/{policy}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

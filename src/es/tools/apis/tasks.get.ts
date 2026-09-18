@@ -23,6 +23,7 @@ export const tasks_get_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_tasks/{task_id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

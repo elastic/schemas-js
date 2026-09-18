@@ -23,6 +23,7 @@ export const ml_update_trained_models_spacesDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/ml/saved_objects/update_trained_models_spaces',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

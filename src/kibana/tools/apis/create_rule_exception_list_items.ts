@@ -23,6 +23,7 @@ export const create_rule_exception_list_itemsDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/detection_engine/rules/{id}/exceptions',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

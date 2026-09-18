@@ -19,5 +19,6 @@ export const schedule_monitoring_engineDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/entity_analytics/monitoring/engine/schedule_now',
     destructive: true,
+    readOnly: false,
   },
 ]

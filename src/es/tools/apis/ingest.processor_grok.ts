@@ -23,6 +23,7 @@ export const ingest_processor_grok_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_ingest/processor/grok',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

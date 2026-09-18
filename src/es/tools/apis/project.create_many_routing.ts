@@ -23,6 +23,7 @@ export const project_create_many_routing_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_project_routing',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

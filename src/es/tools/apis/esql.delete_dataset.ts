@@ -23,6 +23,7 @@ export const esql_delete_dataset_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_query/dataset/{name}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

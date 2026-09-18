@@ -23,6 +23,7 @@ export const connector_update_service_type_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_connector/{connector_id}/_service_type',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

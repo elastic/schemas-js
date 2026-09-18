@@ -23,6 +23,7 @@ export const xpack_usage_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_xpack/usage',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

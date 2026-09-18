@@ -23,6 +23,7 @@ export const delete_fleet_epm_packages_pkgnameDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/fleet/epm/packages/{pkgName}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

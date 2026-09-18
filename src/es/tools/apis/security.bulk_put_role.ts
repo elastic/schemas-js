@@ -23,6 +23,7 @@ export const security_bulk_put_role_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_security/role',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

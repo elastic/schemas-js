@@ -23,6 +23,7 @@ export const post_maintenance_window_id_archiveDefinitions: KbApiDefinition[] = 
     method: 'POST',
     path: '/api/maintenance_window/{id}/_archive',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

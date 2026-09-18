@@ -23,6 +23,7 @@ export const watcher_deactivate_watch_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_watcher/watch/{watch_id}/_deactivate',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

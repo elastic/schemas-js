@@ -23,6 +23,7 @@ export const synonyms_put_synonym_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_synonyms/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

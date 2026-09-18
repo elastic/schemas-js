@@ -23,6 +23,7 @@ export const get_maintenance_window_idDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/maintenance_window/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

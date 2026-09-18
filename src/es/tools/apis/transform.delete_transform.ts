@@ -23,6 +23,7 @@ export const transform_delete_transform_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_transform/{transform_id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

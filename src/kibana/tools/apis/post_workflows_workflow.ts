@@ -23,6 +23,7 @@ export const post_workflows_workflowDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/workflows/workflow',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

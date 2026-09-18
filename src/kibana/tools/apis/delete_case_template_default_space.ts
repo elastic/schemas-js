@@ -23,6 +23,7 @@ export const delete_case_template_default_spaceDefinitions: KbApiDefinition[] = 
     method: 'DELETE',
     path: '/api/cases/templates/{template_id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

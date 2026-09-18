@@ -23,6 +23,7 @@ export const ml_get_datafeeds_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_ml/datafeeds/{datafeed_id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const cat_count_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_cat/count/{index}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
     responseType: 'text',
   },

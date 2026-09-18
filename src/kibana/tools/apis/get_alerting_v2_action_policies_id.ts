@@ -23,6 +23,7 @@ export const get_alerting_v2_action_policies_idDefinitions: KbApiDefinition[] = 
     method: 'GET',
     path: '/api/alerting/v2/action_policies/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const get_security_entity_store_resolution_groupDefinitions: KbApiDefinit
     method: 'GET',
     path: '/api/security/entity_store/resolution/group',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

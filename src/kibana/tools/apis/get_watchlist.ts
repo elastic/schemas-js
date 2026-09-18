@@ -23,6 +23,7 @@ export const get_watchlistDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/entity_analytics/watchlists/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

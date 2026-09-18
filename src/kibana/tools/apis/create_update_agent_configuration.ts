@@ -23,6 +23,7 @@ export const create_update_agent_configurationDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/apm/settings/agent-configuration',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

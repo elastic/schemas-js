@@ -23,6 +23,7 @@ export const ml_get_buckets_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_ml/anomaly_detectors/{job_id}/results/buckets/{timestamp}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

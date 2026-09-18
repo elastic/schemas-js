@@ -23,6 +23,7 @@ export const get_asset_criticality_recordDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/asset_criticality',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

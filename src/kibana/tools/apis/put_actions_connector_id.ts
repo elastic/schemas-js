@@ -23,6 +23,7 @@ export const put_actions_connector_idDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/actions/connector/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

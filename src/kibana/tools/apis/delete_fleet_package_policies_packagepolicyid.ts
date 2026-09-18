@@ -23,6 +23,7 @@ export const delete_fleet_package_policies_packagepolicyidDefinitions: KbApiDefi
     method: 'DELETE',
     path: '/api/fleet/package_policies/{packagePolicyId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

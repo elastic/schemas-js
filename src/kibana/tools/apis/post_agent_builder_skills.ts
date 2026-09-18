@@ -23,6 +23,7 @@ export const post_agent_builder_skillsDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/agent_builder/skills',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const read_exception_listDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/exception_lists',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

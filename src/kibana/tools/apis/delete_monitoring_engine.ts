@@ -23,6 +23,7 @@ export const delete_monitoring_engineDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/entity_analytics/monitoring/engine/delete',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

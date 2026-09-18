@@ -23,6 +23,7 @@ export const delete_case_comments_default_spaceDefinitions: KbApiDefinition[] = 
     method: 'DELETE',
     path: '/api/cases/{caseId}/comments',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const put_alerting_v2_action_policies_idDefinitions: KbApiDefinition[] = 
     method: 'PUT',
     path: '/api/alerting/v2/action_policies/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

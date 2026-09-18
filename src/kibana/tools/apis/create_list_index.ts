@@ -19,5 +19,6 @@ export const create_list_indexDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/lists/index',
     destructive: false,
+    readOnly: false,
   },
 ]

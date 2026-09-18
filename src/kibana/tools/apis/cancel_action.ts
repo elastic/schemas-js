@@ -23,6 +23,7 @@ export const cancel_actionDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/endpoint/action/cancel',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

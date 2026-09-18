@@ -23,6 +23,7 @@ export const slm_get_stats_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_slm/stats',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

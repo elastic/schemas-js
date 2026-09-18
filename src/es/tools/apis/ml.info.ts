@@ -23,6 +23,7 @@ export const ml_info_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_ml/info',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

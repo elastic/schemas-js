@@ -23,6 +23,7 @@ export const indices_close_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/{index}/_close',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

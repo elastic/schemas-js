@@ -22,7 +22,8 @@ export const search_attacksDefinitions: KbApiDefinition[] = [
     description: 'Find and/or aggregate attack discovery alerts',
     method: 'POST',
     path: '/api/detection_engine/attacks/search',
-    destructive: true,
+    destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

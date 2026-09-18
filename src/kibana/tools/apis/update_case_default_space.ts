@@ -23,6 +23,7 @@ export const update_case_default_spaceDefinitions: KbApiDefinition[] = [
     method: 'PATCH',
     path: '/api/cases',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

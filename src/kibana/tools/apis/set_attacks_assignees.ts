@@ -23,6 +23,7 @@ export const set_attacks_assigneesDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/detection_engine/attacks/assignees',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

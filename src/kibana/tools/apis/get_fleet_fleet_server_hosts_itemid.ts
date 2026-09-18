@@ -23,6 +23,7 @@ export const get_fleet_fleet_server_hosts_itemidDefinitions: KbApiDefinition[] =
     method: 'GET',
     path: '/api/fleet/fleet_server_hosts/{itemId}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

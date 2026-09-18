@@ -23,6 +23,7 @@ export const ml_clear_trained_model_deployment_cache_definitions: EsApiDefinitio
     method: 'POST',
     path: '/_ml/trained_models/{model_id}/deployment/cache/_clear',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

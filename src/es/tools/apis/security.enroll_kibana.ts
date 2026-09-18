@@ -23,6 +23,7 @@ export const security_enroll_kibana_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_security/enroll/kibana',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

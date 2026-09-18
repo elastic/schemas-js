@@ -23,6 +23,7 @@ export const ingest_put_geoip_database_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_ingest/geoip/database/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const delete_spaces_space_idDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/spaces/space/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const inference_put_alibabacloud_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_inference/{task_type}/{alibabacloud_inference_id}',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

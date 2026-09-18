@@ -19,5 +19,6 @@ export const post_fleet_agents_setupDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/fleet/agents/setup',
     destructive: true,
+    readOnly: false,
   },
 ]

@@ -34,6 +34,7 @@ export const trafficFiltersDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/traffic-filters',
     destructive: false,
+    readOnly: true,
     input: _list_traffic_filtersSchema,
   },
   {
@@ -43,6 +44,7 @@ export const trafficFiltersDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/serverless/traffic-filters',
     destructive: true,
+    readOnly: false,
     input: _create_traffic_filterSchema,
   },
   {
@@ -52,6 +54,7 @@ export const trafficFiltersDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/traffic-filters/metadata',
     destructive: false,
+    readOnly: true,
     input: _get_traffic_filter_metadataSchema,
   },
   {
@@ -61,6 +64,7 @@ export const trafficFiltersDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/traffic-filters/{id}',
     destructive: false,
+    readOnly: true,
     input: _get_traffic_filterSchema,
   },
   {
@@ -70,6 +74,7 @@ export const trafficFiltersDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/serverless/traffic-filters/{id}',
     destructive: true,
+    readOnly: false,
     input: _delete_traffic_filterSchema,
   },
   {
@@ -79,6 +84,7 @@ export const trafficFiltersDefinitions: CloudApiDefinition[] = [
     method: 'PATCH',
     path: '/api/v1/serverless/traffic-filters/{id}',
     destructive: true,
+    readOnly: false,
     input: _patch_traffic_filterSchema,
   },
 ]

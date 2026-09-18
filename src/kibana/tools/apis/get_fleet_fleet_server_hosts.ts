@@ -19,5 +19,6 @@ export const get_fleet_fleet_server_hostsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/fleet/fleet_server_hosts',
     destructive: false,
+    readOnly: true,
   },
 ]

@@ -23,6 +23,7 @@ export const put_security_entity_storeDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/security/entity_store',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

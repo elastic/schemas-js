@@ -23,6 +23,7 @@ export const snapshot_repository_analyze_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_snapshot/{repository}/_analyze',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

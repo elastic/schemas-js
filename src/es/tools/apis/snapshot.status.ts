@@ -23,6 +23,7 @@ export const snapshot_status_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_snapshot/{repository}/{snapshot}/_status',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

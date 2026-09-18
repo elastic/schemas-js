@@ -23,6 +23,7 @@ export const license_post_start_trial_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_license/start_trial',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

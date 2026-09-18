@@ -23,6 +23,7 @@ export const inference_sparse_embedding_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_inference/sparse_embedding/{inference_id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

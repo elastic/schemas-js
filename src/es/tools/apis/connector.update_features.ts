@@ -23,6 +23,7 @@ export const connector_update_features_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_connector/{connector_id}/_features',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

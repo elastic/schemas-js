@@ -23,6 +23,7 @@ export const find_list_itemsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/lists/items/_find',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

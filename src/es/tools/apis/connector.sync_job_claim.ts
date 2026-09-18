@@ -23,6 +23,7 @@ export const connector_sync_job_claim_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_connector/_sync_job/{connector_sync_job_id}/_claim',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -19,5 +19,6 @@ export const get_case_configuration_default_spaceDefinitions: KbApiDefinition[] 
     method: 'GET',
     path: '/api/cases/configure',
     destructive: false,
+    readOnly: true,
   },
 ]

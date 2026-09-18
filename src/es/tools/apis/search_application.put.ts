@@ -23,6 +23,7 @@ export const search_application_put_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_application/search_application/{name}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

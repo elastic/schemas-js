@@ -23,6 +23,7 @@ export const delete_dashboardDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/dashboards/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

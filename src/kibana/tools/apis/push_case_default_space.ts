@@ -23,6 +23,7 @@ export const push_case_default_spaceDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/cases/{caseId}/connector/{connectorId}/_push',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

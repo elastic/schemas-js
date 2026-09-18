@@ -23,6 +23,7 @@ export const security_query_user_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_security/_query/user',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

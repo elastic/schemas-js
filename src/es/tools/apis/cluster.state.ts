@@ -23,6 +23,7 @@ export const cluster_state_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cluster/state/{metric}/{index}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

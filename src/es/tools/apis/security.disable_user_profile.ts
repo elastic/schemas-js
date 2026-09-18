@@ -23,6 +23,7 @@ export const security_disable_user_profile_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_security/profile/{uid}/_disable',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

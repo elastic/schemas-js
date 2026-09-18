@@ -23,6 +23,7 @@ export const cat_help_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cat',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
     responseType: 'text',
   },

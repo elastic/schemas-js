@@ -19,6 +19,7 @@ export const upload_watchlist_csvDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/entity_analytics/watchlists/{watchlist_id}/csv_upload',
     destructive: true,
+    readOnly: false,
     input: { type: 'object', properties: { watchlist_id: { type: 'string', description: 'The ID of the watchlist to add entities to', 'x-found-in': 'path' }, file: { description: 'The CSV file to upload.', 'x-found-in': 'body', type: 'string' } }, required: ['watchlist_id', 'file'] },
   },
 ]

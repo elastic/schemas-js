@@ -23,6 +23,7 @@ export const post_security_rolesDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/security/roles',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const initialize_security_solutionDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/security_solution/initialize',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

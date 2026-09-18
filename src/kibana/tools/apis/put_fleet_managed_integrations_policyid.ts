@@ -23,6 +23,7 @@ export const put_fleet_managed_integrations_policyidDefinitions: KbApiDefinition
     method: 'PUT',
     path: '/api/fleet/managed_integrations/{policyId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

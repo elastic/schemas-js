@@ -23,6 +23,7 @@ export const put_tags_idDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/tags/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

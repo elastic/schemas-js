@@ -22,7 +22,8 @@ export const post_alerting_rules_backfill_findDefinitions: KbApiDefinition[] = [
     description: 'Find backfills for rules',
     method: 'POST',
     path: '/api/alerting/rules/backfill/_find',
-    destructive: true,
+    destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

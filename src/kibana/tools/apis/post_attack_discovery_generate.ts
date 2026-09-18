@@ -23,6 +23,7 @@ export const post_attack_discovery_generateDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/attack_discovery/_generate',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

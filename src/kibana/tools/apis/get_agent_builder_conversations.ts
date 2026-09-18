@@ -23,6 +23,7 @@ export const get_agent_builder_conversationsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/agent_builder/conversations',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

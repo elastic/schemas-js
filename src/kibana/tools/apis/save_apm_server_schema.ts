@@ -23,6 +23,7 @@ export const save_apm_server_schemaDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/apm/fleet/apm_server_schema',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

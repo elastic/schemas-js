@@ -23,6 +23,7 @@ export const delete_fleet_fleet_server_hosts_itemidDefinitions: KbApiDefinition[
     method: 'DELETE',
     path: '/api/fleet/fleet_server_hosts/{itemId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

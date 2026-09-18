@@ -23,6 +23,7 @@ export const security_get_user_profile_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_security/profile/{uid}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const get_fleet_agent_policies_agentpolicyidDefinitions: KbApiDefinition[
     method: 'GET',
     path: '/api/fleet/agent_policies/{agentPolicyId}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

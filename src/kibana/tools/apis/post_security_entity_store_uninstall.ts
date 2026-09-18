@@ -23,6 +23,7 @@ export const post_security_entity_store_uninstallDefinitions: KbApiDefinition[] 
     method: 'POST',
     path: '/api/security/entity_store/uninstall',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

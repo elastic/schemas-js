@@ -24,6 +24,7 @@ export const regionsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/regions',
     destructive: false,
+    readOnly: true,
   },
   {
     name: 'get-region',
@@ -32,6 +33,7 @@ export const regionsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/regions/{id}',
     destructive: false,
+    readOnly: true,
     input: _get_regionSchema,
   },
 ]

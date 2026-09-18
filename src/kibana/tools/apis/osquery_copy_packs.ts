@@ -23,6 +23,7 @@ export const osquery_copy_packsDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/osquery/packs/{id}/copy',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

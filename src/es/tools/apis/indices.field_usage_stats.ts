@@ -23,6 +23,7 @@ export const indices_field_usage_stats_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_field_usage_stats',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

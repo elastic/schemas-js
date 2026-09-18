@@ -19,5 +19,6 @@ export const priv_mon_privilegesDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/entity_analytics/monitoring/privileges/privileges',
     destructive: false,
+    readOnly: true,
   },
 ]

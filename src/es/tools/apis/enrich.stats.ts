@@ -23,6 +23,7 @@ export const enrich_stats_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_enrich/_stats',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

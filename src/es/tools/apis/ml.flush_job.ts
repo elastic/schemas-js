@@ -23,6 +23,7 @@ export const ml_flush_job_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_ml/anomaly_detectors/{job_id}/_flush',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

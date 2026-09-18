@@ -23,6 +23,7 @@ export const text_structure_test_grok_pattern_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_text_structure/test_grok_pattern',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

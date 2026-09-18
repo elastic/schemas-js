@@ -23,6 +23,7 @@ export const inference_delete_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_inference/{task_type}/{inference_id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

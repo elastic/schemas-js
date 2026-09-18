@@ -23,6 +23,7 @@ export const logstash_put_pipeline_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_logstash/pipeline/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

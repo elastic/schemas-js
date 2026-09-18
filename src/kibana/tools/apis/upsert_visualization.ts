@@ -23,6 +23,7 @@ export const upsert_visualizationDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/visualizations/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

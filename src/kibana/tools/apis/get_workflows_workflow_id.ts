@@ -23,6 +23,7 @@ export const get_workflows_workflow_idDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/workflows/workflow/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -94,6 +94,11 @@ const request = api.buildRequest({
 // { method: 'GET', path: '/my-index/_search', body: { query: ..., size: 10 } }
 ```
 
+Each loaded `definition` carries two classification flags. `destructive` marks operations that delete or mutate
+existing data. `readOnly` marks operations that only read: every GET and HEAD call except a few with side effects,
+plus search-style POST calls such as `count` or `sql.query`. A read-only operation is never destructive. The same
+flags appear on the JSON Schema request documents as `x-destructive` and `x-read-only`.
+
 Browse available API IDs via `esRegistry.manifest` (an array of `{ id, name, namespace, description }` entries).
 
 

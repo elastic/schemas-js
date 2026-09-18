@@ -22,6 +22,7 @@ export const bulk_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/{index}/_bulk',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
     bodyFormat: 'ndjson',
   },

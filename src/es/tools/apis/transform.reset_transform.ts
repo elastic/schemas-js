@@ -23,6 +23,7 @@ export const transform_reset_transform_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_transform/{transform_id}/_reset',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

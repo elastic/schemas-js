@@ -23,6 +23,7 @@ export const esql_put_dataset_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_query/dataset/{name}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

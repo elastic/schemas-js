@@ -23,6 +23,7 @@ export const get_visualizationDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/visualizations/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -22,7 +22,8 @@ export const preview_swap_data_views_defaultDefinitions: KbApiDefinition[] = [
     description: 'Preview swap references',
     method: 'POST',
     path: '/api/data_views/swap_references/_preview',
-    destructive: true,
+    destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

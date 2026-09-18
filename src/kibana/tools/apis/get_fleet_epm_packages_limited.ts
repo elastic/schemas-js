@@ -19,5 +19,6 @@ export const get_fleet_epm_packages_limitedDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/fleet/epm/packages/limited',
     destructive: false,
+    readOnly: true,
   },
 ]

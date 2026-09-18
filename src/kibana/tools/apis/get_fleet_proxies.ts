@@ -19,5 +19,6 @@ export const get_fleet_proxiesDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/fleet/proxies',
     destructive: false,
+    readOnly: true,
   },
 ]

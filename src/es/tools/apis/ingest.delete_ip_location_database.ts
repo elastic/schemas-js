@@ -23,6 +23,7 @@ export const ingest_delete_ip_location_database_definitions: EsApiDefinition[] =
     method: 'DELETE',
     path: '/_ingest/ip_location/database/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const post_fleet_epm_custom_integrationsDefinitions: KbApiDefinition[] = 
     method: 'POST',
     path: '/api/fleet/epm/custom_integrations',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

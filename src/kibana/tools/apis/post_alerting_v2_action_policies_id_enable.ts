@@ -23,6 +23,7 @@ export const post_alerting_v2_action_policies_id_enableDefinitions: KbApiDefinit
     method: 'POST',
     path: '/api/alerting/v2/action_policies/{id}/_enable',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

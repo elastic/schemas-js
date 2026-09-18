@@ -23,6 +23,7 @@ export const delete_fleet_managed_integrations_policyidDefinitions: KbApiDefinit
     method: 'DELETE',
     path: '/api/fleet/managed_integrations/{policyId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

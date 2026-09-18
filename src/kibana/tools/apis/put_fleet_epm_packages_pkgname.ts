@@ -23,6 +23,7 @@ export const put_fleet_epm_packages_pkgnameDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/fleet/epm/packages/{pkgName}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const find_anonymization_fieldsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/security_ai_assistant/anonymization_fields/_find',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

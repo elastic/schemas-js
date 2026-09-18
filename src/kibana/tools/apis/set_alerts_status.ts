@@ -23,6 +23,7 @@ export const set_alerts_statusDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/detection_engine/signals/status',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

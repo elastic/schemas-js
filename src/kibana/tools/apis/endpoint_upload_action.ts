@@ -19,5 +19,6 @@ export const endpoint_upload_actionDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/endpoint/action/upload',
     destructive: true,
+    readOnly: false,
   },
 ]

@@ -23,6 +23,7 @@ export const delete_streams_nameDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/streams/{name}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

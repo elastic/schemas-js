@@ -23,6 +23,7 @@ export const cat_ml_datafeeds_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cat/ml/datafeeds/{datafeed_id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
     responseType: 'text',
   },

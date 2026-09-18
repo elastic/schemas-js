@@ -23,6 +23,7 @@ export const patch_ruleDefinitions: KbApiDefinition[] = [
     method: 'PATCH',
     path: '/api/detection_engine/rules',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

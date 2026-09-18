@@ -23,6 +23,7 @@ export const license_post_start_basic_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_license/start_basic',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

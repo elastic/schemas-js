@@ -23,6 +23,7 @@ export const cat_templates_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cat/templates/{name}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
     responseType: 'text',
   },

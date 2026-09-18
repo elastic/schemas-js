@@ -22,7 +22,8 @@ export const post_alerting_v2_rules_bulk_getDefinitions: KbApiDefinition[] = [
     description: 'Get rules in bulk',
     method: 'POST',
     path: '/api/alerting/v2/rules/_bulk_get',
-    destructive: true,
+    destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const get_fleet_cloud_onboarding_deployments_connector_connectoridDefinit
     method: 'GET',
     path: '/api/fleet/cloud_onboarding_deployments/connector/{connectorId}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

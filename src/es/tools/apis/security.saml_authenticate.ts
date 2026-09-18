@@ -23,6 +23,7 @@ export const security_saml_authenticate_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_security/saml/authenticate',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const ccr_follow_stats_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_ccr/stats',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

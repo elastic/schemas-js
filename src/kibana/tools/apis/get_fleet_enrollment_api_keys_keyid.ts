@@ -23,6 +23,7 @@ export const get_fleet_enrollment_api_keys_keyidDefinitions: KbApiDefinition[] =
     method: 'GET',
     path: '/api/fleet/enrollment_api_keys/{keyId}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

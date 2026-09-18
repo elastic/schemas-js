@@ -23,6 +23,7 @@ export const get_fleet_uninstall_tokensDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/fleet/uninstall_tokens',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

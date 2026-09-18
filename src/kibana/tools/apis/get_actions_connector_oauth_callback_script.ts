@@ -19,5 +19,6 @@ export const get_actions_connector_oauth_callback_scriptDefinitions: KbApiDefini
     method: 'GET',
     path: '/api/actions/connector/_oauth_callback_script',
     destructive: false,
+    readOnly: true,
   },
 ]

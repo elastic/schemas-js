@@ -23,6 +23,7 @@ export const nodes_hot_threads_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_nodes/{node_id}/hot_threads',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
     responseType: 'text',
   },

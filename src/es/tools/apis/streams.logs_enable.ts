@@ -23,6 +23,7 @@ export const streams_logs_enable_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_streams/{name}/_enable',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

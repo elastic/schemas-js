@@ -23,6 +23,7 @@ export const post_tagsDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/tags',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

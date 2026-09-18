@@ -23,6 +23,7 @@ export const update_listDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/lists',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

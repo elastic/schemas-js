@@ -23,6 +23,7 @@ export const delete_rollup_data_opDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/s/{spaceId}/api/observability/slos/_bulk_purge_rollup',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

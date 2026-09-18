@@ -23,6 +23,7 @@ export const osquery_get_scheduled_action_resultsDefinitions: KbApiDefinition[] 
     method: 'GET',
     path: '/api/osquery/scheduled_results/{scheduleId}/{executionCount}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

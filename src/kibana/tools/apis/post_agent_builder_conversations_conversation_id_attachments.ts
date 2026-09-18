@@ -23,6 +23,7 @@ export const post_agent_builder_conversations_conversation_id_attachmentsDefinit
     method: 'POST',
     path: '/api/agent_builder/conversations/{conversation_id}/attachments',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

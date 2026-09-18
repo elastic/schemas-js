@@ -23,6 +23,7 @@ export const get_fleet_check_permissionsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/fleet/check-permissions',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

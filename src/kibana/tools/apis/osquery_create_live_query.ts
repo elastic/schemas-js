@@ -23,6 +23,7 @@ export const osquery_create_live_queryDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/osquery/live_queries',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

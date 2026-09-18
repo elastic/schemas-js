@@ -23,6 +23,7 @@ export const get_workflows_executions_executionid_logsDefinitions: KbApiDefiniti
     method: 'GET',
     path: '/api/workflows/executions/{executionId}/logs',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

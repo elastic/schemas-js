@@ -23,6 +23,7 @@ export const get_alerting_rule_idDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/alerting/rule/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]
