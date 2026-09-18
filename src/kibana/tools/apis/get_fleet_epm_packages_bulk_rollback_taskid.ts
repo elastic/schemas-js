@@ -23,6 +23,7 @@ export const get_fleet_epm_packages_bulk_rollback_taskidDefinitions: KbApiDefini
     method: 'GET',
     path: '/api/fleet/epm/packages/_bulk_rollback/{taskId}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

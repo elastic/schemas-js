@@ -23,6 +23,7 @@ export const post_fleet_cloud_connectorsDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/fleet/cloud_connectors',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

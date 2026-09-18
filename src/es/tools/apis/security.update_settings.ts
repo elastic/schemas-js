@@ -23,6 +23,7 @@ export const security_update_settings_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_security/settings',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

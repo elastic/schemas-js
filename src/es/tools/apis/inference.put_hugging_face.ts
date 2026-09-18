@@ -23,6 +23,7 @@ export const inference_put_hugging_face_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_inference/{task_type}/{huggingface_inference_id}',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

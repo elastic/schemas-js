@@ -23,6 +23,7 @@ export const get_fleet_agents_files_fileid_filenameDefinitions: KbApiDefinition[
     method: 'GET',
     path: '/api/fleet/agents/files/{fileId}/{fileName}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

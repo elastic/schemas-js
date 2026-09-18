@@ -23,6 +23,7 @@ export const put_fleet_agentless_policies_policyidDefinitions: KbApiDefinition[]
     method: 'PUT',
     path: '/api/fleet/agentless_policies/{policyId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const update_fields_metadata_defaultDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/data_views/data_view/{viewId}/fields',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

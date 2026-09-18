@@ -23,6 +23,7 @@ export const get_markdowns_idDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/markdowns/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

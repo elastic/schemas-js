@@ -23,6 +23,7 @@ export const put_workflows_managed_workflow_idDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/workflows/managed/workflow/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

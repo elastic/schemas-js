@@ -22,7 +22,8 @@ export const sql_translate_definitions: EsApiDefinition[] = [
     description: 'Translate SQL into Elasticsearch queries.',
     method: 'POST',
     path: '/_sql/translate',
-    destructive: true,
+    destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

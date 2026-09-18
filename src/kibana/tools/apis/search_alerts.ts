@@ -22,7 +22,8 @@ export const search_alertsDefinitions: KbApiDefinition[] = [
     description: 'Find and/or aggregate detection alerts',
     method: 'POST',
     path: '/api/detection_engine/signals/search',
-    destructive: true,
+    destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

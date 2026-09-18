@@ -23,6 +23,7 @@ export const ml_get_categories_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_ml/anomaly_detectors/{job_id}/results/categories/{category_id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

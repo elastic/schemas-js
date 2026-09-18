@@ -44,6 +44,7 @@ export const vectordbProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/vectordb',
     destructive: false,
+    readOnly: true,
     input: _list_vector_dbprojectsSchema,
   },
   {
@@ -53,6 +54,7 @@ export const vectordbProjectsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/serverless/projects/vectordb',
     destructive: true,
+    readOnly: false,
     input: _create_vector_dbprojectSchema,
   },
   {
@@ -62,6 +64,7 @@ export const vectordbProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/vectordb/{id}',
     destructive: false,
+    readOnly: true,
     input: _get_vector_dbprojectSchema,
   },
   {
@@ -71,6 +74,7 @@ export const vectordbProjectsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/serverless/projects/vectordb/{id}',
     destructive: true,
+    readOnly: false,
     input: _delete_vector_dbprojectSchema,
   },
   {
@@ -80,6 +84,7 @@ export const vectordbProjectsDefinitions: CloudApiDefinition[] = [
     method: 'PATCH',
     path: '/api/v1/serverless/projects/vectordb/{id}',
     destructive: true,
+    readOnly: false,
     input: _patch_vector_dbprojectSchema,
   },
   {
@@ -89,6 +94,7 @@ export const vectordbProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/vectordb/{id}/_can-delete',
     destructive: false,
+    readOnly: true,
     input: _get_vector_dbproject_can_deleteSchema,
   },
   {
@@ -98,6 +104,7 @@ export const vectordbProjectsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/serverless/projects/vectordb/{id}/_reset-credentials',
     destructive: true,
+    readOnly: false,
     input: _reset_vector_dbproject_credentialsSchema,
   },
   {
@@ -107,6 +114,7 @@ export const vectordbProjectsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/serverless/projects/vectordb/{id}/_resume',
     destructive: true,
+    readOnly: false,
     input: _resume_vector_dbprojectSchema,
   },
   {
@@ -116,6 +124,7 @@ export const vectordbProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/vectordb/{id}/link-candidates',
     destructive: false,
+    readOnly: true,
     input: _get_vector_dbproject_link_candidatesSchema,
   },
   {
@@ -125,6 +134,7 @@ export const vectordbProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/vectordb/{id}/roles',
     destructive: false,
+    readOnly: true,
     input: _get_vector_dbproject_rolesSchema,
   },
   {
@@ -134,6 +144,7 @@ export const vectordbProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/vectordb/{id}/status',
     destructive: false,
+    readOnly: true,
     input: _get_vector_dbproject_statusSchema,
   },
 ]

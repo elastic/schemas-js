@@ -19,5 +19,6 @@ export const get_fleet_outputsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/fleet/outputs',
     destructive: false,
+    readOnly: true,
   },
 ]

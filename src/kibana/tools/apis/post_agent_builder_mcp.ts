@@ -23,6 +23,7 @@ export const post_agent_builder_mcpDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/agent_builder/mcp',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

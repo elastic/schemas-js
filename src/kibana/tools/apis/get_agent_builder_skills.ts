@@ -23,6 +23,7 @@ export const get_agent_builder_skillsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/agent_builder/skills',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

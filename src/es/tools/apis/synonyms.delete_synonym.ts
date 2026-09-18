@@ -23,6 +23,7 @@ export const synonyms_delete_synonym_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_synonyms/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

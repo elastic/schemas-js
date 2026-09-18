@@ -19,5 +19,6 @@ export const post_streams_enableDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/streams/_enable',
     destructive: true,
+    readOnly: false,
   },
 ]

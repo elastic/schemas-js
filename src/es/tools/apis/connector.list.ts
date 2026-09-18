@@ -23,6 +23,7 @@ export const connector_list_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_connector',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

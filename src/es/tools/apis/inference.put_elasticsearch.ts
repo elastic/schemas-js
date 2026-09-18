@@ -23,6 +23,7 @@ export const inference_put_elasticsearch_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_inference/{task_type}/{elasticsearch_inference_id}',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

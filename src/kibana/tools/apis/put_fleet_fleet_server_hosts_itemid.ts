@@ -23,6 +23,7 @@ export const put_fleet_fleet_server_hosts_itemidDefinitions: KbApiDefinition[] =
     method: 'PUT',
     path: '/api/fleet/fleet_server_hosts/{itemId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

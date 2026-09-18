@@ -23,6 +23,7 @@ export const ilm_remove_policy_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/{index}/_ilm/remove',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

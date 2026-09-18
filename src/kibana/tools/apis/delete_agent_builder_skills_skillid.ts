@@ -23,6 +23,7 @@ export const delete_agent_builder_skills_skillidDefinitions: KbApiDefinition[] =
     method: 'DELETE',
     path: '/api/agent_builder/skills/{skillId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

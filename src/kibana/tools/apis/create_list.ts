@@ -23,6 +23,7 @@ export const create_listDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/lists',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

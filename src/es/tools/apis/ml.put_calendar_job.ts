@@ -23,6 +23,7 @@ export const ml_put_calendar_job_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_ml/calendars/{calendar_id}/jobs/{job_id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

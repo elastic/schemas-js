@@ -23,6 +23,7 @@ export const resolve_timelineDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/timeline/resolve',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

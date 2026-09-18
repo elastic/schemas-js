@@ -23,6 +23,7 @@ export const watcher_ack_watch_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_watcher/watch/{watch_id}/_ack/{action_id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -22,7 +22,8 @@ export const post_fleet_managed_integrations_upgrade_dryrunDefinitions: KbApiDef
     description: 'Preview a managed integrations upgrade',
     method: 'POST',
     path: '/api/fleet/managed_integrations/_upgrade/dryrun',
-    destructive: true,
+    destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

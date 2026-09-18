@@ -23,6 +23,7 @@ export const delete_noteDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/note',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

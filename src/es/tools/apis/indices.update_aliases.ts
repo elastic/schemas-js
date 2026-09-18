@@ -23,6 +23,7 @@ export const indices_update_aliases_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_aliases',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

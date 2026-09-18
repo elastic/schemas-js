@@ -23,6 +23,7 @@ export const connector_sync_job_check_in_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_connector/_sync_job/{connector_sync_job_id}/_check_in',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

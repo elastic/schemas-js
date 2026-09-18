@@ -23,6 +23,7 @@ export const put_fleet_epm_custom_integrations_pkgnameDefinitions: KbApiDefiniti
     method: 'PUT',
     path: '/api/fleet/epm/custom_integrations/{pkgName}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

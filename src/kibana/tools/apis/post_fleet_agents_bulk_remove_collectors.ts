@@ -23,6 +23,7 @@ export const post_fleet_agents_bulk_remove_collectorsDefinitions: KbApiDefinitio
     method: 'POST',
     path: '/api/fleet/agents/bulk_remove_collectors',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

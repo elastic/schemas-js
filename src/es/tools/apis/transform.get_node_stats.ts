@@ -23,6 +23,7 @@ export const transform_get_node_stats_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_transform/_node_stats',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

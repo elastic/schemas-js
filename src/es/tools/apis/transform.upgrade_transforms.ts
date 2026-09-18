@@ -23,6 +23,7 @@ export const transform_upgrade_transforms_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_transform/_upgrade',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

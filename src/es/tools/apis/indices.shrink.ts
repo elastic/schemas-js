@@ -23,6 +23,7 @@ export const indices_shrink_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/{index}/_shrink/{target}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const cluster_remote_info_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_remote/info',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

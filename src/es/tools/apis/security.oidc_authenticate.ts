@@ -23,6 +23,7 @@ export const security_oidc_authenticate_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_security/oidc/authenticate',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

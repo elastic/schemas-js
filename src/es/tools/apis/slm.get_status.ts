@@ -23,6 +23,7 @@ export const slm_get_status_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_slm/status',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

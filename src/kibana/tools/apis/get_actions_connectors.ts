@@ -19,5 +19,6 @@ export const get_actions_connectorsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/actions/connectors',
     destructive: false,
+    readOnly: true,
   },
 ]

@@ -23,6 +23,7 @@ export const get_policy_responseDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/endpoint/policy_response',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

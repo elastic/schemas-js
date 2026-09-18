@@ -23,6 +23,7 @@ export const post_fleet_epm_packages_bulk_namespace_customizationDefinitions: Kb
     method: 'POST',
     path: '/api/fleet/epm/packages/_bulk_namespace_customization',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

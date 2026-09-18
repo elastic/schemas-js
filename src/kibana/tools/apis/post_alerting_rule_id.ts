@@ -23,6 +23,7 @@ export const post_alerting_rule_idDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/alerting/rule/{id}',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

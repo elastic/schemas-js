@@ -23,6 +23,7 @@ export const cat_ml_data_frame_analytics_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cat/ml/data_frame/analytics/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
     responseType: 'text',
   },

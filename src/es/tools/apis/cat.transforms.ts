@@ -23,6 +23,7 @@ export const cat_transforms_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cat/transforms/{transform_id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
     responseType: 'text',
   },

@@ -23,6 +23,7 @@ export const cat_ml_jobs_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cat/ml/anomaly_detectors/{job_id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
     responseType: 'text',
   },

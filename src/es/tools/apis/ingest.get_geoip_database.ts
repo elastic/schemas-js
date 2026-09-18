@@ -23,6 +23,7 @@ export const ingest_get_geoip_database_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_ingest/geoip/database/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

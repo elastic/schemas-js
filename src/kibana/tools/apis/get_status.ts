@@ -23,6 +23,7 @@ export const get_statusDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/status',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

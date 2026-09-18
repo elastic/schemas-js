@@ -23,6 +23,7 @@ export const post_alerting_v2_rules_delete_by_queryDefinitions: KbApiDefinition[
     method: 'POST',
     path: '/api/alerting/v2/rules/_delete_by_query',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

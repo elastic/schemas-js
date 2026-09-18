@@ -23,6 +23,7 @@ export const security_clear_cached_roles_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_security/role/{name}/_clear_cache',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

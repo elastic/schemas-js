@@ -23,6 +23,7 @@ export const post_fleet_agents_agentid_privilege_level_changeDefinitions: KbApiD
     method: 'POST',
     path: '/api/fleet/agents/{agentId}/privilege_level_change',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

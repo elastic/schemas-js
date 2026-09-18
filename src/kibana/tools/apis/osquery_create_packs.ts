@@ -23,6 +23,7 @@ export const osquery_create_packsDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/osquery/packs',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const post_fleet_cloud_onboarding_deploymentsDefinitions: KbApiDefinition
     method: 'POST',
     path: '/api/fleet/cloud_onboarding_deployments',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

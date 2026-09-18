@@ -23,6 +23,7 @@ export const endpoint_scan_actionDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/endpoint/action/scan',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

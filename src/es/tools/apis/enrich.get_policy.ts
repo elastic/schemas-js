@@ -23,6 +23,7 @@ export const enrich_get_policy_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_enrich/policy/{name}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

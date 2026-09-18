@@ -19,5 +19,6 @@ export const schedule_risk_engine_nowDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/risk_score/engine/schedule_now',
     destructive: true,
+    readOnly: false,
   },
 ]

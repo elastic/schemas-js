@@ -23,6 +23,7 @@ export const migration_post_feature_upgrade_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_migration/system_features',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

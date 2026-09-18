@@ -23,6 +23,7 @@ export const inference_put_watsonx_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_inference/{task_type}/{watsonx_inference_id}',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const slm_execute_retention_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_slm/_execute_retention',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

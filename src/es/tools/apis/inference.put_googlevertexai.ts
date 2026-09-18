@@ -23,6 +23,7 @@ export const inference_put_googlevertexai_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_inference/{task_type}/{googlevertexai_inference_id}',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const put_fleet_settingsDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/fleet/settings',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

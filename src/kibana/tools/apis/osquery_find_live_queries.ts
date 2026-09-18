@@ -23,6 +23,7 @@ export const osquery_find_live_queriesDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/osquery/live_queries',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

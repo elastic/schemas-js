@@ -23,6 +23,7 @@ export const put_agent_builder_agents_idDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/agent_builder/agents/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

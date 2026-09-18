@@ -23,6 +23,7 @@ export const indices_delete_alias_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/{index}/_aliases/{name}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

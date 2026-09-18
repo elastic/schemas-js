@@ -23,6 +23,7 @@ export const put_security_entity_store_entities_entitytypeDefinitions: KbApiDefi
     method: 'PUT',
     path: '/api/security/entity_store/entities/{entityType}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

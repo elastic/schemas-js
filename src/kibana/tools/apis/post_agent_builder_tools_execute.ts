@@ -23,6 +23,7 @@ export const post_agent_builder_tools_executeDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/agent_builder/tools/_execute',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

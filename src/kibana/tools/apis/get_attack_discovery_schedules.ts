@@ -23,6 +23,7 @@ export const get_attack_discovery_schedulesDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/attack_discovery/schedules/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

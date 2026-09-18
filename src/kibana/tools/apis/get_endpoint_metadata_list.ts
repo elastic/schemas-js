@@ -23,6 +23,7 @@ export const get_endpoint_metadata_listDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/endpoint/metadata',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

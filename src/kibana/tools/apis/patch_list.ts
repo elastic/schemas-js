@@ -23,6 +23,7 @@ export const patch_listDefinitions: KbApiDefinition[] = [
     method: 'PATCH',
     path: '/api/lists',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

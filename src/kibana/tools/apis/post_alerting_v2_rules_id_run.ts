@@ -23,6 +23,7 @@ export const post_alerting_v2_rules_id_runDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/alerting/v2/rules/{id}/_run',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

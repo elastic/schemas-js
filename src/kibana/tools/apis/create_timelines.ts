@@ -23,6 +23,7 @@ export const create_timelinesDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/timeline',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

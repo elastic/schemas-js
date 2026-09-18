@@ -23,6 +23,7 @@ export const get_fleet_agentsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/fleet/agents',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

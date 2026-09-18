@@ -23,6 +23,7 @@ export const update_ruleDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/detection_engine/rules',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

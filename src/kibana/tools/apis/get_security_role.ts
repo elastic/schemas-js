@@ -23,6 +23,7 @@ export const get_security_roleDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/security/role',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

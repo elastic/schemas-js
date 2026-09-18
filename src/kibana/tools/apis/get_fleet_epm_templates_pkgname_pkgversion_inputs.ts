@@ -23,6 +23,7 @@ export const get_fleet_epm_templates_pkgname_pkgversion_inputsDefinitions: KbApi
     method: 'GET',
     path: '/api/fleet/epm/templates/{pkgName}/{pkgVersion}/inputs',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

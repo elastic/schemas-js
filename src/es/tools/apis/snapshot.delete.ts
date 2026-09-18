@@ -23,6 +23,7 @@ export const snapshot_delete_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_snapshot/{repository}/{snapshot}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

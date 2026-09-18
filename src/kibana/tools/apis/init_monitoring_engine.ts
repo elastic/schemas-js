@@ -19,5 +19,6 @@ export const init_monitoring_engineDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/entity_analytics/monitoring/engine/init',
     destructive: true,
+    readOnly: false,
   },
 ]

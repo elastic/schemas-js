@@ -23,6 +23,7 @@ export const ml_start_trained_model_deployment_definitions: EsApiDefinition[] = 
     method: 'POST',
     path: '/_ml/trained_models/{model_id}/deployment/_start',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

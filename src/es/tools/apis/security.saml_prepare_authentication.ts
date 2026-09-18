@@ -23,6 +23,7 @@ export const security_saml_prepare_authentication_definitions: EsApiDefinition[]
     method: 'POST',
     path: '/_security/saml/prepare',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

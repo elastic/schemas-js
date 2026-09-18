@@ -19,5 +19,6 @@ export const get_fleet_space_settingsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/fleet/space_settings',
     destructive: false,
+    readOnly: true,
   },
 ]

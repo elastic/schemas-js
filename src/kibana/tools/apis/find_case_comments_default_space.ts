@@ -23,6 +23,7 @@ export const find_case_comments_default_spaceDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/cases/{caseId}/comments/_find',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

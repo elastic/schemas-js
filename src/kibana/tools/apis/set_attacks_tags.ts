@@ -23,6 +23,7 @@ export const set_attacks_tagsDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/detection_engine/attacks/tags',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

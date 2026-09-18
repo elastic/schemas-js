@@ -23,6 +23,7 @@ export const ilm_delete_lifecycle_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_ilm/policy/{policy}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

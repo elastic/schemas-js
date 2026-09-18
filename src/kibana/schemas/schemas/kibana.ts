@@ -11436,6 +11436,7 @@ export const Kibana_HTTP_APIs_kbn_dashboard_panel_type_discover_session = z.obje
         direction: z.enum(['asc', 'desc']),
         name: z.string()
       })).optional(),
+      type: z.enum(['default']).optional(),
       view_mode: z.union([z.enum(['documents']), z.enum(['patterns']), z.enum(['aggregated'])]).optional(),
       wrap_lines: z.boolean().optional()
     }), z.object({
@@ -11456,6 +11457,32 @@ export const Kibana_HTTP_APIs_kbn_dashboard_panel_type_discover_session = z.obje
         direction: z.enum(['asc', 'desc']),
         name: z.string()
       })).optional(),
+      type: z.enum(['default']).optional(),
+      wrap_lines: z.boolean().optional()
+    }), z.object({
+      column_order: z.array(z.string()).optional(),
+      column_settings: z.record(z.string(), z.object({
+        width: z.number().optional()
+      })).optional(),
+      counter_aggregation: z.enum(['avg', 'sum', 'min', 'max']),
+      data_source: Kibana_HTTP_APIs_esqlDataSource,
+      default_rendered_nodes: z.number().optional(),
+      density: z.union([z.enum(['compact']), z.enum(['expanded']), z.enum(['normal'])]).optional(),
+      dimensions: z.array(z.string()),
+      documents_display_mode: z.union([z.enum(['table']), z.enum(['json'])]).optional(),
+      gauge_aggregation: z.enum(['avg', 'sum', 'min', 'max']),
+      header_row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
+      hide_nulls: z.boolean().optional(),
+      histogram_percentile: z.enum(['p50', 'p75', 'p90', 'p95', 'p99']),
+      row_height: z.union([z.number(), z.enum(['auto'])]).optional(),
+      rows_per_page: z.number().optional(),
+      sample_size: z.number().optional(),
+      search_term: z.string(),
+      sort: z.array(z.object({
+        direction: z.enum(['asc', 'desc']),
+        name: z.string()
+      })).optional(),
+      type: z.enum(['metrics']),
       wrap_lines: z.boolean().optional()
     })])),
     time_range: Kibana_HTTP_APIs_kbn_es_query_server_timeRangeSchema.optional(),

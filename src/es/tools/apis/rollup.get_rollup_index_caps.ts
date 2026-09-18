@@ -23,6 +23,7 @@ export const rollup_get_rollup_index_caps_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_rollup/data',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

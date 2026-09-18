@@ -23,6 +23,7 @@ export const get_fleet_outputs_outputid_healthDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/fleet/outputs/{outputId}/health',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

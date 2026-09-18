@@ -23,6 +23,7 @@ export const get_fleet_managed_integrationsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/fleet/managed_integrations',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

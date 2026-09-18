@@ -23,6 +23,7 @@ export const watcher_delete_watch_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_watcher/watch/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

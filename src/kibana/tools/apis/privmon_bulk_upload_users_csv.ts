@@ -19,6 +19,7 @@ export const privmon_bulk_upload_users_csvDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/entity_analytics/monitoring/users/_csv',
     destructive: true,
+    readOnly: false,
     input: { type: 'object', properties: { file: { description: 'The CSV file to upload.', 'x-found-in': 'body', type: 'string' } }, required: ['file'] },
   },
 ]

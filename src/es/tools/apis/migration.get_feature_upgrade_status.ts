@@ -23,6 +23,7 @@ export const migration_get_feature_upgrade_status_definitions: EsApiDefinition[]
     method: 'GET',
     path: '/_migration/system_features',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

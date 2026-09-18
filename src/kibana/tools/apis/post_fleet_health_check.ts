@@ -23,6 +23,7 @@ export const post_fleet_health_checkDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/fleet/health_check',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

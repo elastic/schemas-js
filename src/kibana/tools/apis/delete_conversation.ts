@@ -23,6 +23,7 @@ export const delete_conversationDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/security_ai_assistant/current_user/conversations/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

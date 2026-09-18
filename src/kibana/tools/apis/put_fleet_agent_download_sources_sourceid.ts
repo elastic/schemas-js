@@ -23,6 +23,7 @@ export const put_fleet_agent_download_sources_sourceidDefinitions: KbApiDefiniti
     method: 'PUT',
     path: '/api/fleet/agent_download_sources/{sourceId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

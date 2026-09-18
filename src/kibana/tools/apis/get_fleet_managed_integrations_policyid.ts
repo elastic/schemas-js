@@ -23,6 +23,7 @@ export const get_fleet_managed_integrations_policyidDefinitions: KbApiDefinition
     method: 'GET',
     path: '/api/fleet/managed_integrations/{policyId}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

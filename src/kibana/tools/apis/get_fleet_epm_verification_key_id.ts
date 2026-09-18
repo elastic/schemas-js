@@ -19,5 +19,6 @@ export const get_fleet_epm_verification_key_idDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/fleet/epm/verification_key_id',
     destructive: false,
+    readOnly: true,
   },
 ]

@@ -22,7 +22,8 @@ export const post_streams_name_content_exportDefinitions: KbApiDefinition[] = [
     description: 'Export stream content',
     method: 'POST',
     path: '/api/streams/{name}/content/export',
-    destructive: true,
+    destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

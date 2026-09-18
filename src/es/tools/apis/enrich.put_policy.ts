@@ -23,6 +23,7 @@ export const enrich_put_policy_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_enrich/policy/{name}',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

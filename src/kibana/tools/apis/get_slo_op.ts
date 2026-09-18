@@ -23,6 +23,7 @@ export const get_slo_opDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/s/{spaceId}/api/observability/slos/{sloId}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

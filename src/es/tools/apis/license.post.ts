@@ -23,6 +23,7 @@ export const license_post_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_license',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

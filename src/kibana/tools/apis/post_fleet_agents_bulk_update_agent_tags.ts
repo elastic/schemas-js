@@ -23,6 +23,7 @@ export const post_fleet_agents_bulk_update_agent_tagsDefinitions: KbApiDefinitio
     method: 'POST',
     path: '/api/fleet/agents/bulk_update_agent_tags',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

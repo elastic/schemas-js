@@ -23,6 +23,7 @@ export const bulk_upsert_asset_criticality_recordsDefinitions: KbApiDefinition[]
     method: 'POST',
     path: '/api/asset_criticality/bulk',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

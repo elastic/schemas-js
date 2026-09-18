@@ -23,6 +23,7 @@ export const indices_create_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/{index}',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

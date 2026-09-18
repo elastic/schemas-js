@@ -23,6 +23,7 @@ export const indices_put_data_stream_settings_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_data_stream/{name}/_settings',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const post_alerting_v2_series_group_hash_unsnoozeDefinitions: KbApiDefini
     method: 'POST',
     path: '/api/alerting/v2/series/{group_hash}/_unsnooze',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

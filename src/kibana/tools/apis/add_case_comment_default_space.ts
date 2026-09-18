@@ -23,6 +23,7 @@ export const add_case_comment_default_spaceDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/cases/{caseId}/comments',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

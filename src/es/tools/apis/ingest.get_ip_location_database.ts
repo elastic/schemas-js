@@ -23,6 +23,7 @@ export const ingest_get_ip_location_database_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_ingest/ip_location/database/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

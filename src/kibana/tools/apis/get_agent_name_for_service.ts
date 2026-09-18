@@ -23,6 +23,7 @@ export const get_agent_name_for_serviceDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/apm/settings/agent-configuration/agent_name',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const ml_delete_job_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_ml/anomaly_detectors/{job_id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

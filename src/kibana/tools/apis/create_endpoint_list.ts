@@ -19,5 +19,6 @@ export const create_endpoint_listDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/endpoint_list',
     destructive: false,
+    readOnly: false,
   },
 ]

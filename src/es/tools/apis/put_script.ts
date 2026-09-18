@@ -22,6 +22,7 @@ export const put_script_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_scripts/{id}/{context}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

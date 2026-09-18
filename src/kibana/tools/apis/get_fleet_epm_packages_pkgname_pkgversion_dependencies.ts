@@ -23,6 +23,7 @@ export const get_fleet_epm_packages_pkgname_pkgversion_dependenciesDefinitions: 
     method: 'GET',
     path: '/api/fleet/epm/packages/{pkgName}/{pkgVersion}/dependencies',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

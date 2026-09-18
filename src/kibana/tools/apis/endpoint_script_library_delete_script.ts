@@ -23,6 +23,7 @@ export const endpoint_script_library_delete_scriptDefinitions: KbApiDefinition[]
     method: 'DELETE',
     path: '/api/endpoint/scripts_library/{script_id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

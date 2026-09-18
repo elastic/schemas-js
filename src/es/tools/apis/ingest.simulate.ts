@@ -23,6 +23,7 @@ export const ingest_simulate_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_ingest/pipeline/{id}/_simulate',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

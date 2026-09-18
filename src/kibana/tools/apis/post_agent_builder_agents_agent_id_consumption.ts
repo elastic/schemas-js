@@ -22,7 +22,8 @@ export const post_agent_builder_agents_agent_id_consumptionDefinitions: KbApiDef
     description: 'Get agent consumption data',
     method: 'POST',
     path: '/api/agent_builder/agents/{agent_id}/consumption',
-    destructive: true,
+    destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

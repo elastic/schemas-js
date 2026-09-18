@@ -23,6 +23,7 @@ export const cat_ml_trained_models_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cat/ml/trained_models/{model_id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
     responseType: 'text',
   },

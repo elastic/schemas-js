@@ -22,6 +22,7 @@ export const field_caps_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_field_caps',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const security_delegate_pki_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_security/delegate_pki',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

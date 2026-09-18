@@ -23,6 +23,7 @@ export const post_fleet_message_signing_service_rotate_key_pairDefinitions: KbAp
     method: 'POST',
     path: '/api/fleet/message_signing_service/rotate_key_pair',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

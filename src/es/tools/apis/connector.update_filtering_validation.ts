@@ -23,6 +23,7 @@ export const connector_update_filtering_validation_definitions: EsApiDefinition[
     method: 'PUT',
     path: '/_connector/{connector_id}/_filtering/_validation',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

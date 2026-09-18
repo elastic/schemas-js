@@ -23,6 +23,7 @@ export const ml_get_calendars_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_ml/calendars/{calendar_id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

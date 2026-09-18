@@ -23,6 +23,7 @@ export const get_case_applicable_fields_default_spaceDefinitions: KbApiDefinitio
     method: 'GET',
     path: '/api/cases/{caseId}/fields',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

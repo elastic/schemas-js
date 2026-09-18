@@ -23,6 +23,7 @@ export const get_fleet_package_policiesDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/fleet/package_policies',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

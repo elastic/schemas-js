@@ -23,6 +23,7 @@ export const indices_forcemerge_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/{index}/_forcemerge',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const cat_thread_pool_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cat/thread_pool/{thread_pool_patterns}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
     responseType: 'text',
   },

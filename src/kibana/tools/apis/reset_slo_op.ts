@@ -23,6 +23,7 @@ export const reset_slo_opDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/s/{spaceId}/api/observability/slos/{sloId}/_reset',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

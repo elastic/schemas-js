@@ -23,6 +23,7 @@ export const nodes_get_repositories_metering_info_definitions: EsApiDefinition[]
     method: 'GET',
     path: '/_nodes/{node_id}/_repositories_metering',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

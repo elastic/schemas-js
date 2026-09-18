@@ -23,6 +23,7 @@ export const delete_fleet_agent_download_sources_sourceidDefinitions: KbApiDefin
     method: 'DELETE',
     path: '/api/fleet/agent_download_sources/{sourceId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const inference_get_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_inference/{task_type}/{inference_id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

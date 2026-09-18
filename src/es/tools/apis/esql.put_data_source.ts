@@ -23,6 +23,7 @@ export const esql_put_data_source_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_query/data_source/{name}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

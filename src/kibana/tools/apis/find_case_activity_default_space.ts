@@ -23,6 +23,7 @@ export const find_case_activity_default_spaceDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/cases/{caseId}/user_actions/_find',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

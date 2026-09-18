@@ -23,6 +23,7 @@ export const security_create_service_token_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_security/service/{namespace}/{service}/credential/token/{name}',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

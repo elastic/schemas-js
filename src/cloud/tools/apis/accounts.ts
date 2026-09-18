@@ -26,6 +26,7 @@ export const accountsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/account',
     destructive: false,
+    readOnly: true,
   },
   {
     name: 'update-current-account',
@@ -34,6 +35,7 @@ export const accountsDefinitions: CloudApiDefinition[] = [
     method: 'PUT',
     path: '/api/v1/account',
     destructive: true,
+    readOnly: false,
     input: _update_current_accountSchema,
   },
   {
@@ -43,6 +45,7 @@ export const accountsDefinitions: CloudApiDefinition[] = [
     method: 'PATCH',
     path: '/api/v1/account',
     destructive: true,
+    readOnly: false,
     input: _patch_current_accountSchema,
   },
 ]

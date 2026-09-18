@@ -23,6 +23,7 @@ export const cat_recovery_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cat/recovery/{index}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
     responseType: 'text',
   },

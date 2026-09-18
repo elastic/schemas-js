@@ -23,6 +23,7 @@ export const put_agent_builder_skills_skillidDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/agent_builder/skills/{skillId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

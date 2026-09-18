@@ -23,6 +23,7 @@ export const get_fleet_epm_packages_pkgname_statsDefinitions: KbApiDefinition[] 
     method: 'GET',
     path: '/api/fleet/epm/packages/{pkgName}/stats',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

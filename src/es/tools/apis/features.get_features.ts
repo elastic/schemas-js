@@ -23,6 +23,7 @@ export const features_get_features_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_features',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

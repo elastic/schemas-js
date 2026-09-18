@@ -23,6 +23,7 @@ export const get_streams_streamname_attachmentsDefinitions: KbApiDefinition[] = 
     method: 'GET',
     path: '/api/streams/{streamName}/attachments',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

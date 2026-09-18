@@ -23,6 +23,7 @@ export const get_fleet_epm_data_streamsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/fleet/epm/data_streams',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const osquery_delete_packsDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/osquery/packs/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

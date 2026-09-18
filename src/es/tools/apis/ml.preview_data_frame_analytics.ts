@@ -23,6 +23,7 @@ export const ml_preview_data_frame_analytics_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_ml/data_frame/analytics/{id}/_preview',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

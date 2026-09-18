@@ -23,6 +23,7 @@ export const get_workflows_aggsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/workflows/aggs',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

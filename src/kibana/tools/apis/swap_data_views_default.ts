@@ -23,6 +23,7 @@ export const swap_data_views_defaultDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/data_views/swap_references',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

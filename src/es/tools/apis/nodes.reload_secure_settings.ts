@@ -23,6 +23,7 @@ export const nodes_reload_secure_settings_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_nodes/{node_id}/reload_secure_settings',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

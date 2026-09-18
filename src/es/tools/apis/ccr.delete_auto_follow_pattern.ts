@@ -23,6 +23,7 @@ export const ccr_delete_auto_follow_pattern_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_ccr/auto_follow/{name}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

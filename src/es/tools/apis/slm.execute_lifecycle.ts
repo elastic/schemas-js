@@ -23,6 +23,7 @@ export const slm_execute_lifecycle_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_slm/policy/{policy_id}/_execute',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

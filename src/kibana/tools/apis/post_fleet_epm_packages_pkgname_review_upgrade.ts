@@ -23,6 +23,7 @@ export const post_fleet_epm_packages_pkgname_review_upgradeDefinitions: KbApiDef
     method: 'POST',
     path: '/api/fleet/epm/packages/{pkgName}/review_upgrade',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

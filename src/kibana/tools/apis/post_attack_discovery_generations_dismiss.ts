@@ -23,6 +23,7 @@ export const post_attack_discovery_generations_dismissDefinitions: KbApiDefiniti
     method: 'POST',
     path: '/api/attack_discovery/generations/{execution_uuid}/_dismiss',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

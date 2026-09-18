@@ -23,6 +23,7 @@ export const esql_delete_data_source_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_query/data_source/{name}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

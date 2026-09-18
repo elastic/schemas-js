@@ -23,6 +23,7 @@ export const ml_get_data_frame_analytics_stats_definitions: EsApiDefinition[] = 
     method: 'GET',
     path: '/_ml/data_frame/analytics/{id}/_stats',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

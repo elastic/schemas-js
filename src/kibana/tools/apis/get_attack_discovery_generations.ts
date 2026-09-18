@@ -23,6 +23,7 @@ export const get_attack_discovery_generationsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/attack_discovery/generations',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const put_streams_streamname_attachments_attachmenttype_attachmentidDefin
     method: 'PUT',
     path: '/api/streams/{streamName}/attachments/{attachmentType}/{attachmentId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

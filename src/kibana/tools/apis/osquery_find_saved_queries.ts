@@ -23,6 +23,7 @@ export const osquery_find_saved_queriesDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/osquery/saved_queries',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

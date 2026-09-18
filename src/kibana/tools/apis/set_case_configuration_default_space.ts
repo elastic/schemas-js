@@ -23,6 +23,7 @@ export const set_case_configuration_default_spaceDefinitions: KbApiDefinition[] 
     method: 'POST',
     path: '/api/cases/configure',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

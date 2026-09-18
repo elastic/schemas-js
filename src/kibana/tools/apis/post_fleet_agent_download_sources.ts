@@ -23,6 +23,7 @@ export const post_fleet_agent_download_sourcesDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/fleet/agent_download_sources',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

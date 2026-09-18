@@ -19,5 +19,6 @@ export const priv_mon_healthDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/entity_analytics/monitoring/privileges/health',
     destructive: false,
+    readOnly: true,
   },
 ]

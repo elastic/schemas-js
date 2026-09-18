@@ -23,6 +23,7 @@ export const post_fleet_proxiesDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/fleet/proxies',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

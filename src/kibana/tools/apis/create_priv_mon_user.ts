@@ -23,6 +23,7 @@ export const create_priv_mon_userDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/entity_analytics/monitoring/users',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

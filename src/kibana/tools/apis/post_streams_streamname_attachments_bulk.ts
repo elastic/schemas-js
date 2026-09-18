@@ -23,6 +23,7 @@ export const post_streams_streamname_attachments_bulkDefinitions: KbApiDefinitio
     method: 'POST',
     path: '/api/streams/{streamName}/attachments/_bulk',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

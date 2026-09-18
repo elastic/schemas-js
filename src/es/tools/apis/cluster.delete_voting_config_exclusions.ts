@@ -23,6 +23,7 @@ export const cluster_delete_voting_config_exclusions_definitions: EsApiDefinitio
     method: 'DELETE',
     path: '/_cluster/voting_config_exclusions',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

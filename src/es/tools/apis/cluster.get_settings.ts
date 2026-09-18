@@ -23,6 +23,7 @@ export const cluster_get_settings_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cluster/settings',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

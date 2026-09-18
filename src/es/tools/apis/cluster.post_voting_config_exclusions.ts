@@ -23,6 +23,7 @@ export const cluster_post_voting_config_exclusions_definitions: EsApiDefinition[
     method: 'POST',
     path: '/_cluster/voting_config_exclusions',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

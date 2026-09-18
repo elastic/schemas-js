@@ -23,6 +23,7 @@ export const create_agent_keyDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/apm/agent_keys',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

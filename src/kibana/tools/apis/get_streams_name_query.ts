@@ -23,6 +23,7 @@ export const get_streams_name_queryDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/streams/{name}/_query',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

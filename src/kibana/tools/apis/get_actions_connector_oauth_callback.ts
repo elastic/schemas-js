@@ -23,6 +23,7 @@ export const get_actions_connector_oauth_callbackDefinitions: KbApiDefinition[] 
     method: 'GET',
     path: '/api/actions/connector/_oauth_callback',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

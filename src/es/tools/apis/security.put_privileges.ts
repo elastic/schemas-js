@@ -23,6 +23,7 @@ export const security_put_privileges_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_security/privilege',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

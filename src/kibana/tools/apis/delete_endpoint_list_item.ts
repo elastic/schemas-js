@@ -23,6 +23,7 @@ export const delete_endpoint_list_itemDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/endpoint_list/items',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

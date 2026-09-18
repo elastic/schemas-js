@@ -23,6 +23,7 @@ export const get_dashboardDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/dashboards/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

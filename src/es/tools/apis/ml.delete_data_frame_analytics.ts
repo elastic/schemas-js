@@ -23,6 +23,7 @@ export const ml_delete_data_frame_analytics_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_ml/data_frame/analytics/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

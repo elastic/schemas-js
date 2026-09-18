@@ -23,6 +23,7 @@ export const ml_stop_datafeed_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_ml/datafeeds/{datafeed_id}/_stop',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

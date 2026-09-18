@@ -19,5 +19,6 @@ export const post_alerting_rules_backfill_scheduleDefinitions: KbApiDefinition[]
     method: 'POST',
     path: '/api/alerting/rules/backfill/_schedule',
     destructive: true,
+    readOnly: false,
   },
 ]

@@ -23,6 +23,7 @@ export const indices_migrate_reindex_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_migration/reindex',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

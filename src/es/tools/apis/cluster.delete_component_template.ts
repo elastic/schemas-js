@@ -23,6 +23,7 @@ export const cluster_delete_component_template_definitions: EsApiDefinition[] = 
     method: 'DELETE',
     path: '/_component_template/{name}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

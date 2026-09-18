@@ -23,6 +23,7 @@ export const chat_completeDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/security_ai_assistant/chat/complete',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const endpoint_kill_process_actionDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/endpoint/action/kill_process',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

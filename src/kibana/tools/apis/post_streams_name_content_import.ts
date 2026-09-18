@@ -19,6 +19,7 @@ export const post_streams_name_content_importDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/streams/{name}/content/import',
     destructive: true,
+    readOnly: false,
     input: { type: 'object', properties: { name: { type: 'string', description: 'The name of the stream to import content into.', 'x-found-in': 'path' }, content: { description: '', 'x-found-in': 'body', type: 'string' }, include: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['name', 'content', 'include'] },
   },
 ]

@@ -23,6 +23,7 @@ export const security_get_settings_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_security/settings',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const search_application_delete_behavioral_analytics_definitions: EsApiDe
     method: 'DELETE',
     path: '/_application/analytics/{name}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

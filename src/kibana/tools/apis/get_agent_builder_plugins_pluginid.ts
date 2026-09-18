@@ -23,6 +23,7 @@ export const get_agent_builder_plugins_pluginidDefinitions: KbApiDefinition[] = 
     method: 'GET',
     path: '/api/agent_builder/plugins/{pluginId}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

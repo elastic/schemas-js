@@ -23,6 +23,7 @@ export const security_has_privileges_user_profile_definitions: EsApiDefinition[]
     method: 'GET',
     path: '/_security/profile/_has_privileges',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

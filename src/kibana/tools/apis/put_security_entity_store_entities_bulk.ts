@@ -23,6 +23,7 @@ export const put_security_entity_store_entities_bulkDefinitions: KbApiDefinition
     method: 'PUT',
     path: '/api/security/entity_store/entities/bulk',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

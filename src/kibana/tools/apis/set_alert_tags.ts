@@ -23,6 +23,7 @@ export const set_alert_tagsDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/detection_engine/signals/tags',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

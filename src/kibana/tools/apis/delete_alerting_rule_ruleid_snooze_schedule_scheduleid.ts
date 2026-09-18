@@ -23,6 +23,7 @@ export const delete_alerting_rule_ruleid_snooze_schedule_scheduleidDefinitions: 
     method: 'DELETE',
     path: '/api/alerting/rule/{ruleId}/snooze_schedule/{scheduleId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

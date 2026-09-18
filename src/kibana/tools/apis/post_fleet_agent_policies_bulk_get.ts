@@ -22,7 +22,8 @@ export const post_fleet_agent_policies_bulk_getDefinitions: KbApiDefinition[] = 
     description: 'Bulk get agent policies',
     method: 'POST',
     path: '/api/fleet/agent_policies/_bulk_get',
-    destructive: true,
+    destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

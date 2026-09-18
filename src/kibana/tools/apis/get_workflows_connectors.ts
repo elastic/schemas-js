@@ -19,5 +19,6 @@ export const get_workflows_connectorsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/workflows/connectors',
     destructive: false,
+    readOnly: true,
   },
 ]

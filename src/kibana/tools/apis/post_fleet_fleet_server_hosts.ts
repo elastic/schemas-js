@@ -23,6 +23,7 @@ export const post_fleet_fleet_server_hostsDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/fleet/fleet_server_hosts',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

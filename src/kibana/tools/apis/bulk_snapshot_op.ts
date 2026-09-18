@@ -23,6 +23,7 @@ export const bulk_snapshot_opDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/s/{spaceId}/api/observability/slos/_bulk_snapshot',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

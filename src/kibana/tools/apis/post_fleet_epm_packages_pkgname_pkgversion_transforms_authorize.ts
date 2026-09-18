@@ -23,6 +23,7 @@ export const post_fleet_epm_packages_pkgname_pkgversion_transforms_authorizeDefi
     method: 'POST',
     path: '/api/fleet/epm/packages/{pkgName}/{pkgVersion}/transforms/authorize',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

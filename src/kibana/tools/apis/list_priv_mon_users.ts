@@ -23,6 +23,7 @@ export const list_priv_mon_usersDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/entity_analytics/monitoring/users/list',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const get_draft_timelinesDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/timeline/_draft',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

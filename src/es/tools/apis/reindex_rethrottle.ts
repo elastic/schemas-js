@@ -22,6 +22,7 @@ export const reindex_rethrottle_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_reindex/{task_id}/_rethrottle',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const cat_segments_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cat/segments/{index}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
     responseType: 'text',
   },

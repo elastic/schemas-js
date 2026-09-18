@@ -19,5 +19,6 @@ export const get_security_entity_store_resolution_rulesDefinitions: KbApiDefinit
     method: 'GET',
     path: '/api/security/entity_store/resolution/rules',
     destructive: false,
+    readOnly: true,
   },
 ]

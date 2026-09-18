@@ -22,6 +22,7 @@ export const get_source_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_source/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

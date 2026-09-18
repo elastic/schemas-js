@@ -23,6 +23,7 @@ export const snapshot_restore_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_snapshot/{repository}/{snapshot}/_restore',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

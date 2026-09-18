@@ -23,6 +23,7 @@ export const delete_fleet_outputs_outputidDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/fleet/outputs/{outputId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

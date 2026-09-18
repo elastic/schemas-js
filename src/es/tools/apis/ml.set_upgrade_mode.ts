@@ -23,6 +23,7 @@ export const ml_set_upgrade_mode_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_ml/set_upgrade_mode',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

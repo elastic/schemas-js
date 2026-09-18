@@ -23,6 +23,7 @@ export const observability_ai_assistant_chat_completeDefinitions: KbApiDefinitio
     method: 'POST',
     path: '/api/observability_ai_assistant/chat/complete',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -22,6 +22,7 @@ export const exists_source_definitions: EsApiDefinition[] = [
     method: 'HEAD',
     path: '/{index}/_source/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

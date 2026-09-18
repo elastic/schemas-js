@@ -23,6 +23,7 @@ export const indices_clone_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/{index}/_clone/{target}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

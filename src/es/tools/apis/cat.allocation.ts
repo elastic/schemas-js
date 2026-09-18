@@ -23,6 +23,7 @@ export const cat_allocation_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cat/allocation/{node_id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
     responseType: 'text',
   },

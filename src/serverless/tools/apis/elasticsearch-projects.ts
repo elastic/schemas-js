@@ -44,6 +44,7 @@ export const elasticsearchProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/elasticsearch',
     destructive: false,
+    readOnly: true,
     input: _list_elasticsearch_projectsSchema,
   },
   {
@@ -53,6 +54,7 @@ export const elasticsearchProjectsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/serverless/projects/elasticsearch',
     destructive: true,
+    readOnly: false,
     input: _create_elasticsearch_projectSchema,
   },
   {
@@ -62,6 +64,7 @@ export const elasticsearchProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/elasticsearch/{id}',
     destructive: false,
+    readOnly: true,
     input: _get_elasticsearch_projectSchema,
   },
   {
@@ -71,6 +74,7 @@ export const elasticsearchProjectsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/serverless/projects/elasticsearch/{id}',
     destructive: true,
+    readOnly: false,
     input: _delete_elasticsearch_projectSchema,
   },
   {
@@ -80,6 +84,7 @@ export const elasticsearchProjectsDefinitions: CloudApiDefinition[] = [
     method: 'PATCH',
     path: '/api/v1/serverless/projects/elasticsearch/{id}',
     destructive: true,
+    readOnly: false,
     input: _patch_elasticsearch_projectSchema,
   },
   {
@@ -89,6 +94,7 @@ export const elasticsearchProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/elasticsearch/{id}/_can-delete',
     destructive: false,
+    readOnly: true,
     input: _get_elasticsearch_project_can_deleteSchema,
   },
   {
@@ -98,6 +104,7 @@ export const elasticsearchProjectsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/serverless/projects/elasticsearch/{id}/_reset-credentials',
     destructive: true,
+    readOnly: false,
     input: _reset_elasticsearch_project_credentialsSchema,
   },
   {
@@ -107,6 +114,7 @@ export const elasticsearchProjectsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/serverless/projects/elasticsearch/{id}/_resume',
     destructive: true,
+    readOnly: false,
     input: _resume_elasticsearch_projectSchema,
   },
   {
@@ -116,6 +124,7 @@ export const elasticsearchProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/elasticsearch/{id}/link-candidates',
     destructive: false,
+    readOnly: true,
     input: _get_elasticsearch_project_link_candidatesSchema,
   },
   {
@@ -125,6 +134,7 @@ export const elasticsearchProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/elasticsearch/{id}/roles',
     destructive: false,
+    readOnly: true,
     input: _get_elasticsearch_project_rolesSchema,
   },
   {
@@ -134,6 +144,7 @@ export const elasticsearchProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/elasticsearch/{id}/status',
     destructive: false,
+    readOnly: true,
     input: _get_elasticsearch_project_statusSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const get_fleet_epm_packages_bulk_upgrade_taskidDefinitions: KbApiDefinit
     method: 'GET',
     path: '/api/fleet/epm/packages/_bulk_upgrade/{taskId}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

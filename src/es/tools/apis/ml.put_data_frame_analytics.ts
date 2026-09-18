@@ -23,6 +23,7 @@ export const ml_put_data_frame_analytics_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_ml/data_frame/analytics/{id}',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

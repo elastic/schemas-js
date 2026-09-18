@@ -23,6 +23,7 @@ export const put_agent_builder_conversations_conversation_id_attachments_attachm
     method: 'PUT',
     path: '/api/agent_builder/conversations/{conversation_id}/attachments/{attachment_id}/origin',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

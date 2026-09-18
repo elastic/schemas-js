@@ -23,6 +23,7 @@ export const osquery_get_packs_detailsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/osquery/packs/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

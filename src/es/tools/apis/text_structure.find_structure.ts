@@ -23,6 +23,7 @@ export const text_structure_find_structure_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_text_structure/find_structure',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
     bodyFormat: 'ndjson',
   },

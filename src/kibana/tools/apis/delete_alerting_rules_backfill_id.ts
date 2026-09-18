@@ -23,6 +23,7 @@ export const delete_alerting_rules_backfill_idDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/alerting/rules/backfill/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

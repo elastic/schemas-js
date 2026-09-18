@@ -23,6 +23,7 @@ export const get_fleet_epm_packages_installedDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/fleet/epm/packages/installed',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

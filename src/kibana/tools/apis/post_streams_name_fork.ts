@@ -23,6 +23,7 @@ export const post_streams_name_forkDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/streams/{name}/_fork',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const ml_put_trained_model_definition_part_definitions: EsApiDefinition[]
     method: 'PUT',
     path: '/_ml/trained_models/{model_id}/definition/{part}',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -22,6 +22,7 @@ export const health_report_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_health_report/{feature}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

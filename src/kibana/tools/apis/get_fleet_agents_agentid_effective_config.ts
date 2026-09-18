@@ -23,6 +23,7 @@ export const get_fleet_agents_agentid_effective_configDefinitions: KbApiDefiniti
     method: 'GET',
     path: '/api/fleet/agents/{agentId}/effective_config',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

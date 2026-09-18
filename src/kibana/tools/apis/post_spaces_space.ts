@@ -23,6 +23,7 @@ export const post_spaces_spaceDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/spaces/space',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

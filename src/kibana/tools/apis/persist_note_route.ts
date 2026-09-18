@@ -23,6 +23,7 @@ export const persist_note_routeDefinitions: KbApiDefinition[] = [
     method: 'PATCH',
     path: '/api/note',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

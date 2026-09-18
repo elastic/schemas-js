@@ -23,6 +23,7 @@ export const indices_open_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/{index}/_open',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

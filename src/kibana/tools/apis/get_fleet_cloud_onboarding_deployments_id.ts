@@ -23,6 +23,7 @@ export const get_fleet_cloud_onboarding_deployments_idDefinitions: KbApiDefiniti
     method: 'GET',
     path: '/api/fleet/cloud_onboarding_deployments/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

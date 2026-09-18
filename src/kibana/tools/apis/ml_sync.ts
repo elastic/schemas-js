@@ -19,5 +19,6 @@ export const ml_syncDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/ml/saved_objects/sync',
     destructive: false,
+    readOnly: false,
   },
 ]

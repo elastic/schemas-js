@@ -23,6 +23,7 @@ export const post_alerting_v2_episodes_bulk_tagDefinitions: KbApiDefinition[] = 
     method: 'POST',
     path: '/api/alerting/v2/episodes/_bulk_tag',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

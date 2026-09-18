@@ -23,6 +23,7 @@ export const put_security_role_nameDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/security/role/{name}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

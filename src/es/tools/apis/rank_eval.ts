@@ -22,6 +22,7 @@ export const rank_eval_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_rank_eval',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const bulk_enable_attack_discovery_schedulesDefinitions: KbApiDefinition[
     method: 'POST',
     path: '/api/attack_discovery/schedules/_bulk_enable',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

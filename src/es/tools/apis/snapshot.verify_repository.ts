@@ -23,6 +23,7 @@ export const snapshot_verify_repository_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_snapshot/{repository}/_verify',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const delete_actions_connector_idDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/actions/connector/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

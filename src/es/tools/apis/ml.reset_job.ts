@@ -23,6 +23,7 @@ export const ml_reset_job_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_ml/anomaly_detectors/{job_id}/_reset',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const indices_data_streams_stats_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_data_stream/{name}/_stats',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

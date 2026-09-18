@@ -23,6 +23,7 @@ export const find_promptsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/security_ai_assistant/prompts/_find',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

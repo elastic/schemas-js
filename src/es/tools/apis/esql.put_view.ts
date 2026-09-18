@@ -23,6 +23,7 @@ export const esql_put_view_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_query/view/{name}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

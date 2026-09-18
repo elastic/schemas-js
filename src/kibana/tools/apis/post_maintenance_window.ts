@@ -23,6 +23,7 @@ export const post_maintenance_windowDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/maintenance_window',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const post_security_entity_store_installDefinitions: KbApiDefinition[] = 
     method: 'POST',
     path: '/api/security/entity_store/install',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

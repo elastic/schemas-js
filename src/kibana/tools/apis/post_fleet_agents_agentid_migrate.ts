@@ -23,6 +23,7 @@ export const post_fleet_agents_agentid_migrateDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/fleet/agents/{agentId}/migrate',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

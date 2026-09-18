@@ -23,6 +23,7 @@ export const get_environments_for_serviceDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/apm/settings/agent-configuration/environments',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

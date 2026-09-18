@@ -23,6 +23,7 @@ export const post_workflows_workflow_workflowid_executions_cancelDefinitions: Kb
     method: 'POST',
     path: '/api/workflows/workflow/{workflowId}/executions/cancel',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

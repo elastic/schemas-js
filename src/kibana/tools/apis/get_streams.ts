@@ -19,5 +19,6 @@ export const get_streamsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/streams',
     destructive: false,
+    readOnly: true,
   },
 ]

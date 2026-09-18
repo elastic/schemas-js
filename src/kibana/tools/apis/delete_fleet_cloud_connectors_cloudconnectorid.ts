@@ -23,6 +23,7 @@ export const delete_fleet_cloud_connectors_cloudconnectoridDefinitions: KbApiDef
     method: 'DELETE',
     path: '/api/fleet/cloud_connectors/{cloudConnectorId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

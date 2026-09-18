@@ -23,6 +23,7 @@ export const inference_chat_completion_unified_definitions: EsApiDefinition[] = 
     method: 'POST',
     path: '/_inference/chat_completion/{inference_id}/_stream',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

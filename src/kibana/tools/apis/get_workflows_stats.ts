@@ -19,5 +19,6 @@ export const get_workflows_statsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/workflows/stats',
     destructive: false,
+    readOnly: true,
   },
 ]

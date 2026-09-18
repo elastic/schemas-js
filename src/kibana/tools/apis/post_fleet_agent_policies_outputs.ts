@@ -22,7 +22,8 @@ export const post_fleet_agent_policies_outputsDefinitions: KbApiDefinition[] = [
     description: 'Get outputs for agent policies',
     method: 'POST',
     path: '/api/fleet/agent_policies/outputs',
-    destructive: true,
+    destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

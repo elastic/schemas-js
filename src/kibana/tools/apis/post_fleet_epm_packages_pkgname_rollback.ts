@@ -23,6 +23,7 @@ export const post_fleet_epm_packages_pkgname_rollbackDefinitions: KbApiDefinitio
     method: 'POST',
     path: '/api/fleet/epm/packages/{pkgName}/rollback',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

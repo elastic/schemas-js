@@ -23,6 +23,7 @@ export const ilm_explain_lifecycle_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_ilm/explain',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

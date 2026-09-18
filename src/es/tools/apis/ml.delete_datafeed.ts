@@ -23,6 +23,7 @@ export const ml_delete_datafeed_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_ml/datafeeds/{datafeed_id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

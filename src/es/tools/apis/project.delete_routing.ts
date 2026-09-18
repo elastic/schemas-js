@@ -23,6 +23,7 @@ export const project_delete_routing_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_project_routing/{name}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const post_agent_builder_a2a_agentidDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/agent_builder/a2a/{agentId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const get_annotationDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/apm/services/{serviceName}/annotation/search',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

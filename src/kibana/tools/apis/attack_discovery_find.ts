@@ -23,6 +23,7 @@ export const attack_discovery_findDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/attack_discovery/_find',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const osquery_delete_saved_queryDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/osquery/saved_queries/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

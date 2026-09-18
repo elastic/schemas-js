@@ -23,6 +23,7 @@ export const rule_previewDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/detection_engine/rules/preview',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

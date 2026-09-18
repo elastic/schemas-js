@@ -23,6 +23,7 @@ export const project_get_routing_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_project_routing/{name}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

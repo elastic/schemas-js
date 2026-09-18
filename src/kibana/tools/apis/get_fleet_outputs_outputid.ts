@@ -23,6 +23,7 @@ export const get_fleet_outputs_outputidDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/fleet/outputs/{outputId}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

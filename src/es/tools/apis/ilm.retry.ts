@@ -23,6 +23,7 @@ export const ilm_retry_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/{index}/_ilm/retry',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

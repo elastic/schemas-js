@@ -23,6 +23,7 @@ export const create_case_template_default_spaceDefinitions: KbApiDefinition[] = 
     method: 'POST',
     path: '/api/cases/templates',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

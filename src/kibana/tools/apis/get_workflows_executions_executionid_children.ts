@@ -23,6 +23,7 @@ export const get_workflows_executions_executionid_childrenDefinitions: KbApiDefi
     method: 'GET',
     path: '/api/workflows/executions/{executionId}/children',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

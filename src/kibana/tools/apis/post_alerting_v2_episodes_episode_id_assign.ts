@@ -23,6 +23,7 @@ export const post_alerting_v2_episodes_episode_id_assignDefinitions: KbApiDefini
     method: 'POST',
     path: '/api/alerting/v2/episodes/{episode_id}/_assign',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

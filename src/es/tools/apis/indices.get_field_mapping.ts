@@ -23,6 +23,7 @@ export const indices_get_field_mapping_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_mapping/field/{fields}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

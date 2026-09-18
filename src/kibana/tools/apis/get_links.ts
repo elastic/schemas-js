@@ -23,6 +23,7 @@ export const get_linksDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/links',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const connector_check_in_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_connector/{connector_id}/_check_in',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

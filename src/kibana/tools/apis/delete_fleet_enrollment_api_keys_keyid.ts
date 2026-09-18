@@ -23,6 +23,7 @@ export const delete_fleet_enrollment_api_keys_keyidDefinitions: KbApiDefinition[
     method: 'DELETE',
     path: '/api/fleet/enrollment_api_keys/{keyId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

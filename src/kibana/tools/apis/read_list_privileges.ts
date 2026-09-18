@@ -19,5 +19,6 @@ export const read_list_privilegesDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/lists/privileges',
     destructive: false,
+    readOnly: true,
   },
 ]

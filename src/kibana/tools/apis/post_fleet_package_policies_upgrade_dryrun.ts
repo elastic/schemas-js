@@ -22,7 +22,8 @@ export const post_fleet_package_policies_upgrade_dryrunDefinitions: KbApiDefinit
     description: 'Dry run a package policy upgrade',
     method: 'POST',
     path: '/api/fleet/package_policies/upgrade/dryrun',
-    destructive: true,
+    destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

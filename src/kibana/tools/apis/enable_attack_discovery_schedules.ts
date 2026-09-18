@@ -23,6 +23,7 @@ export const enable_attack_discovery_schedulesDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/attack_discovery/schedules/{id}/_enable',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

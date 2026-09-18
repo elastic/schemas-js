@@ -19,6 +19,7 @@ export const import_list_itemsDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/lists/items/_import',
     destructive: true,
+    readOnly: false,
     input: { type: 'object', properties: { list_id: { type: 'string', description: "List's id.", 'x-found-in': 'query' }, type: { type: 'string', description: 'Type of the importing list.', 'x-found-in': 'query' }, refresh: { type: 'string', description: 'Determines when changes made by the request are made visible to search.', 'x-found-in': 'query' }, file: { description: 'A `.txt` or `.csv` file containing newline separated list items.', 'x-found-in': 'body', type: 'string' } } },
   },
 ]

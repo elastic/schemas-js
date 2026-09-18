@@ -23,6 +23,7 @@ export const security_query_role_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_security/_query/role',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

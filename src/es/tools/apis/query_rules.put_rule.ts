@@ -23,6 +23,7 @@ export const query_rules_put_rule_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_query_rules/{ruleset_id}/_rule/{rule_id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

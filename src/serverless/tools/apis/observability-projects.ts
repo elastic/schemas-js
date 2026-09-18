@@ -44,6 +44,7 @@ export const observabilityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/observability',
     destructive: false,
+    readOnly: true,
     input: _list_observability_projectsSchema,
   },
   {
@@ -53,6 +54,7 @@ export const observabilityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/serverless/projects/observability',
     destructive: true,
+    readOnly: false,
     input: _create_observability_projectSchema,
   },
   {
@@ -62,6 +64,7 @@ export const observabilityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/observability/{id}',
     destructive: false,
+    readOnly: true,
     input: _get_observability_projectSchema,
   },
   {
@@ -71,6 +74,7 @@ export const observabilityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/serverless/projects/observability/{id}',
     destructive: true,
+    readOnly: false,
     input: _delete_observability_projectSchema,
   },
   {
@@ -80,6 +84,7 @@ export const observabilityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'PATCH',
     path: '/api/v1/serverless/projects/observability/{id}',
     destructive: true,
+    readOnly: false,
     input: _patch_observability_projectSchema,
   },
   {
@@ -89,6 +94,7 @@ export const observabilityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/observability/{id}/_can-delete',
     destructive: false,
+    readOnly: true,
     input: _get_observability_project_can_deleteSchema,
   },
   {
@@ -98,6 +104,7 @@ export const observabilityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/serverless/projects/observability/{id}/_reset-credentials',
     destructive: true,
+    readOnly: false,
     input: _reset_observability_project_credentialsSchema,
   },
   {
@@ -107,6 +114,7 @@ export const observabilityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/serverless/projects/observability/{id}/_resume',
     destructive: true,
+    readOnly: false,
     input: _resume_observability_projectSchema,
   },
   {
@@ -116,6 +124,7 @@ export const observabilityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/observability/{id}/link-candidates',
     destructive: false,
+    readOnly: true,
     input: _get_observability_project_link_candidatesSchema,
   },
   {
@@ -125,6 +134,7 @@ export const observabilityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/observability/{id}/roles',
     destructive: false,
+    readOnly: true,
     input: _get_observability_project_rolesSchema,
   },
   {
@@ -134,6 +144,7 @@ export const observabilityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/observability/{id}/status',
     destructive: false,
+    readOnly: true,
     input: _get_observability_project_statusSchema,
   },
 ]

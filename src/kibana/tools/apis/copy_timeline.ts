@@ -23,6 +23,7 @@ export const copy_timelineDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/timeline/_copy',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

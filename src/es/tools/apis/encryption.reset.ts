@@ -23,6 +23,7 @@ export const encryption_reset_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_encryption/_reset',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

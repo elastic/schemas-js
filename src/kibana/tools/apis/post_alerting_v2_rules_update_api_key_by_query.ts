@@ -23,6 +23,7 @@ export const post_alerting_v2_rules_update_api_key_by_queryDefinitions: KbApiDef
     method: 'POST',
     path: '/api/alerting/v2/rules/_update_api_key_by_query',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

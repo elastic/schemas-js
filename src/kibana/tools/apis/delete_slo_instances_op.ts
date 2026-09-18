@@ -23,6 +23,7 @@ export const delete_slo_instances_opDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/s/{spaceId}/api/observability/slos/_delete_instances',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

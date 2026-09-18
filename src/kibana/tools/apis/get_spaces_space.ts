@@ -23,6 +23,7 @@ export const get_spaces_spaceDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/spaces/space',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const inference_put_region_policy_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_inference/_region_policy',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

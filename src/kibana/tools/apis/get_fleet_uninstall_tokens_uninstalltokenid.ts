@@ -23,6 +23,7 @@ export const get_fleet_uninstall_tokens_uninstalltokenidDefinitions: KbApiDefini
     method: 'GET',
     path: '/api/fleet/uninstall_tokens/{uninstallTokenId}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

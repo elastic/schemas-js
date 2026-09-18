@@ -23,6 +23,7 @@ export const cluster_health_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cluster/health/{index}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

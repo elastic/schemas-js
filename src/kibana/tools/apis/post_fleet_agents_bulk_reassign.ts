@@ -23,6 +23,7 @@ export const post_fleet_agents_bulk_reassignDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/fleet/agents/bulk_reassign',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

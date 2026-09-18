@@ -23,6 +23,7 @@ export const post_linksDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/links',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

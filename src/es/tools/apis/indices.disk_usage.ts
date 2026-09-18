@@ -22,7 +22,8 @@ export const indices_disk_usage_definitions: EsApiDefinition[] = [
     description: 'Analyze the index disk usage.',
     method: 'POST',
     path: '/{index}/_disk_usage',
-    destructive: true,
+    destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

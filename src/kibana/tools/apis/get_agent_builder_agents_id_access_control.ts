@@ -23,6 +23,7 @@ export const get_agent_builder_agents_id_access_controlDefinitions: KbApiDefinit
     method: 'GET',
     path: '/api/agent_builder/agents/{id}/access_control',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

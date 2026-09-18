@@ -23,6 +23,7 @@ export const indices_get_data_lifecycle_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_data_stream/{name}/_lifecycle',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const osquery_get_unified_historyDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/osquery/history',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

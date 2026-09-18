@@ -19,6 +19,7 @@ export const post_saved_objects_resolve_import_errorsDefinitions: KbApiDefinitio
     method: 'POST',
     path: '/api/saved_objects/_resolve_import_errors',
     destructive: true,
+    readOnly: false,
     input: { type: 'object', properties: { createNewCopies: { type: 'boolean', description: 'Creates copies of saved objects, regenerates each object ID, and resets the origin.', 'x-found-in': 'query' }, compatibilityMode: { type: 'boolean', description: 'Applies adjustments to maintain compatibility between different Kibana versions.', 'x-found-in': 'query' }, file: { description: '', 'x-found-in': 'body', type: 'string' }, retries: { description: '', 'x-found-in': 'body', type: 'string' } }, required: ['file', 'retries'] },
   },
 ]

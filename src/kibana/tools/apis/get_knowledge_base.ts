@@ -19,5 +19,6 @@ export const get_knowledge_baseDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/security_ai_assistant/knowledge_base',
     destructive: false,
+    readOnly: true,
   },
 ]

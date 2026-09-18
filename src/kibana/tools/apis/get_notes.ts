@@ -23,6 +23,7 @@ export const get_notesDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/note',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

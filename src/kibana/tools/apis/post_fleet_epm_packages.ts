@@ -23,6 +23,7 @@ export const post_fleet_epm_packagesDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/fleet/epm/packages',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

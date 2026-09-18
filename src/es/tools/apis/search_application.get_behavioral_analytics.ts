@@ -23,6 +23,7 @@ export const search_application_get_behavioral_analytics_definitions: EsApiDefin
     method: 'GET',
     path: '/_application/analytics/{name}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

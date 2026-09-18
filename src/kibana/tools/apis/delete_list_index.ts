@@ -19,5 +19,6 @@ export const delete_list_indexDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/lists/index',
     destructive: true,
+    readOnly: false,
   },
 ]

@@ -36,4 +36,9 @@ export interface CloudApiDefinition {
   responseType?: 'ndjson'
   /** Marks an operation as destructive (delete, update, etc.). */
   destructive: boolean
+  /**
+   * Marks an operation as read-only: GET/HEAD reads and search-style calls that mutate nothing.
+   * Never true together with `destructive`.
+   */
+  readOnly: boolean
 }

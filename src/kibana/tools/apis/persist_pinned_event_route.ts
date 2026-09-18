@@ -23,6 +23,7 @@ export const persist_pinned_event_routeDefinitions: KbApiDefinition[] = [
     method: 'PATCH',
     path: '/api/pinned_event',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

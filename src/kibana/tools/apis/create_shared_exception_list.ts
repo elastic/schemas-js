@@ -23,6 +23,7 @@ export const create_shared_exception_listDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/exceptions/shared',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

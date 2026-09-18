@@ -23,6 +23,7 @@ export const post_markdownsDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/markdowns',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const eql_search_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_eql/search',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

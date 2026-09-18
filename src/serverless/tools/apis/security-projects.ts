@@ -44,6 +44,7 @@ export const securityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/security',
     destructive: false,
+    readOnly: true,
     input: _list_security_projectsSchema,
   },
   {
@@ -53,6 +54,7 @@ export const securityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/serverless/projects/security',
     destructive: true,
+    readOnly: false,
     input: _create_security_projectSchema,
   },
   {
@@ -62,6 +64,7 @@ export const securityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/security/{id}',
     destructive: false,
+    readOnly: true,
     input: _get_security_projectSchema,
   },
   {
@@ -71,6 +74,7 @@ export const securityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'DELETE',
     path: '/api/v1/serverless/projects/security/{id}',
     destructive: true,
+    readOnly: false,
     input: _delete_security_projectSchema,
   },
   {
@@ -80,6 +84,7 @@ export const securityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'PATCH',
     path: '/api/v1/serverless/projects/security/{id}',
     destructive: true,
+    readOnly: false,
     input: _patch_security_projectSchema,
   },
   {
@@ -89,6 +94,7 @@ export const securityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/security/{id}/_can-delete',
     destructive: false,
+    readOnly: true,
     input: _get_security_project_can_deleteSchema,
   },
   {
@@ -98,6 +104,7 @@ export const securityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/serverless/projects/security/{id}/_reset-credentials',
     destructive: true,
+    readOnly: false,
     input: _reset_security_project_credentialsSchema,
   },
   {
@@ -107,6 +114,7 @@ export const securityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'POST',
     path: '/api/v1/serverless/projects/security/{id}/_resume',
     destructive: true,
+    readOnly: false,
     input: _resume_security_projectSchema,
   },
   {
@@ -116,6 +124,7 @@ export const securityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/security/{id}/link-candidates',
     destructive: false,
+    readOnly: true,
     input: _get_security_project_link_candidatesSchema,
   },
   {
@@ -125,6 +134,7 @@ export const securityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/security/{id}/roles',
     destructive: false,
+    readOnly: true,
     input: _get_security_project_rolesSchema,
   },
   {
@@ -134,6 +144,7 @@ export const securityProjectsDefinitions: CloudApiDefinition[] = [
     method: 'GET',
     path: '/api/v1/serverless/projects/security/{id}/status',
     destructive: false,
+    readOnly: true,
     input: _get_security_project_statusSchema,
   },
 ]

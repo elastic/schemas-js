@@ -23,6 +23,7 @@ export const delete_agent_builder_conversations_conversation_idDefinitions: KbAp
     method: 'DELETE',
     path: '/api/agent_builder/conversations/{conversation_id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

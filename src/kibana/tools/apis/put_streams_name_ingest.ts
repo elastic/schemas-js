@@ -23,6 +23,7 @@ export const put_streams_name_ingestDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/streams/{name}/_ingest',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

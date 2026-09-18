@@ -23,6 +23,7 @@ export const update_watchlistDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/entity_analytics/watchlists/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

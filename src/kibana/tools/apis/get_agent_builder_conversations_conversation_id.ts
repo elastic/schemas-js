@@ -23,6 +23,7 @@ export const get_agent_builder_conversations_conversation_idDefinitions: KbApiDe
     method: 'GET',
     path: '/api/agent_builder/conversations/{conversation_id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

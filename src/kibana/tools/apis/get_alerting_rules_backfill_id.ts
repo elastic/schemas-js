@@ -23,6 +23,7 @@ export const get_alerting_rules_backfill_idDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/alerting/rules/backfill/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

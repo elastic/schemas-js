@@ -23,6 +23,7 @@ export const rollup_start_job_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_rollup/job/{id}/_start',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const graph_explore_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_graph/explore',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

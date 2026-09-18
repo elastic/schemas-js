@@ -23,6 +23,7 @@ export const delete_security_entity_store_entitiesDefinitions: KbApiDefinition[]
     method: 'DELETE',
     path: '/api/security/entity_store/entities/',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

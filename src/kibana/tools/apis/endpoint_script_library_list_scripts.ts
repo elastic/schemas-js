@@ -23,6 +23,7 @@ export const endpoint_script_library_list_scriptsDefinitions: KbApiDefinition[] 
     method: 'GET',
     path: '/api/endpoint/scripts_library',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

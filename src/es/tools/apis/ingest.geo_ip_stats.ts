@@ -23,6 +23,7 @@ export const ingest_geo_ip_stats_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_ingest/geoip/stats',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

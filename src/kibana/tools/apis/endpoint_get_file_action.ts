@@ -23,6 +23,7 @@ export const endpoint_get_file_actionDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/endpoint/action/get_file',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

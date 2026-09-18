@@ -23,6 +23,7 @@ export const ccr_forget_follower_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/{index}/_ccr/forget_follower',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

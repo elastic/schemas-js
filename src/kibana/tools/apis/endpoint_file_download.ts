@@ -23,6 +23,7 @@ export const endpoint_file_downloadDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/endpoint/action/{action_id}/file/{file_id}/download',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

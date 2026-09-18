@@ -23,6 +23,7 @@ export const put_agent_builder_conversations_conversation_id_access_controlDefin
     method: 'PUT',
     path: '/api/agent_builder/conversations/{conversation_id}/access_control',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

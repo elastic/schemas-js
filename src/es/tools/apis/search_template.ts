@@ -22,6 +22,7 @@ export const search_template_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_search/template',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

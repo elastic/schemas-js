@@ -23,6 +23,7 @@ export const post_fleet_uninstall_tokens_agentpolicyid_rotateDefinitions: KbApiD
     method: 'POST',
     path: '/api/fleet/uninstall_tokens/{agentPolicyId}/rotate',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const search_single_configurationDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/apm/settings/agent-configuration/search',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

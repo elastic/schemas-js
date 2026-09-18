@@ -23,6 +23,7 @@ export const post_workflows_executions_executionid_steps_stepid_resume_externalD
     method: 'POST',
     path: '/api/workflows/executions/{executionId}/steps/{stepId}/resume/external',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

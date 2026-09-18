@@ -23,6 +23,7 @@ export const ccr_put_auto_follow_pattern_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_ccr/auto_follow/{name}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

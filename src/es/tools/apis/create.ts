@@ -22,6 +22,7 @@ export const create_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/{index}/_create/{id}',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

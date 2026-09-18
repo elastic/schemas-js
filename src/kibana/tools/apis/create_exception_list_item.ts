@@ -23,6 +23,7 @@ export const create_exception_list_itemDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/exception_lists/items',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

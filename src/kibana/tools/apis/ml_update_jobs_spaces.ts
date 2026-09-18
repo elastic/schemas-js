@@ -23,6 +23,7 @@ export const ml_update_jobs_spacesDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/ml/saved_objects/update_jobs_spaces',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

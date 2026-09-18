@@ -23,6 +23,7 @@ export const get_streams_name_ingestDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/streams/{name}/_ingest',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const put_fleet_agents_agentidDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/fleet/agents/{agentId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

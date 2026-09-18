@@ -23,6 +23,7 @@ export const post_alerting_rule_id_update_api_keyDefinitions: KbApiDefinition[] 
     method: 'POST',
     path: '/api/alerting/rule/{id}/_update_api_key',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const async_search_delete_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_async_search/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

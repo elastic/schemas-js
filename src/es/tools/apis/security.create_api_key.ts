@@ -23,6 +23,7 @@ export const security_create_api_key_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_security/api_key',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

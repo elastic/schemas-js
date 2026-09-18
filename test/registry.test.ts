@@ -27,6 +27,7 @@ const searchDef: ApiRegistryDefinition = {
     },
   },
   destructive: false,
+  readOnly: true,
 }
 
 const bulkDef: ApiRegistryDefinition = {
@@ -42,6 +43,7 @@ const bulkDef: ApiRegistryDefinition = {
     },
   },
   destructive: false,
+  readOnly: false,
 }
 
 describe('buildRequest', () => {
@@ -76,7 +78,7 @@ describe('buildRequest', () => {
   })
 
   it('uses querystring for unannotated params', () => {
-    const def: ApiRegistryDefinition = { name: 'test', description: 'Test', method: 'GET', path: '/_test', destructive: false }
+    const def: ApiRegistryDefinition = { name: 'test', description: 'Test', method: 'GET', path: '/_test', destructive: false, readOnly: true }
     expect(buildRequest(def, { unknown: 'value' }).querystring).toEqual({ unknown: 'value' })
   })
 })
@@ -94,9 +96,10 @@ const indicesCreateDef: ApiRegistryDefinition = {
   name: 'create', namespace: 'indices', description: 'Create index', method: 'PUT', path: '/{index}',
   input: { type: 'object', properties: { index: { type: 'string', 'x-found-in': 'path' } } },
   destructive: false,
+  readOnly: false,
 }
-const searchApiDef: ApiRegistryDefinition = { name: 'search', description: 'Search', method: 'POST', path: '/_search', destructive: false }
-const deleteRuleDef: ApiRegistryDefinition = { name: 'delete-rule', namespace: 'query-rules', description: 'Delete a query rule', method: 'DELETE', path: '/_query_rules/{ruleset_id}/_rule/{rule_id}', destructive: true }
+const searchApiDef: ApiRegistryDefinition = { name: 'search', description: 'Search', method: 'POST', path: '/_search', destructive: false, readOnly: true }
+const deleteRuleDef: ApiRegistryDefinition = { name: 'delete-rule', namespace: 'query-rules', description: 'Delete a query rule', method: 'DELETE', path: '/_query_rules/{ruleset_id}/_rule/{rule_id}', destructive: true, readOnly: false }
 
 const loader = async (namespaceFile: string): Promise<ApiRegistryDefinition[]> => {
   if (namespaceFile === 'indices_create') return [indicesCreateDef]

@@ -23,6 +23,7 @@ export const delete_fleet_epm_packages_pkgname_pkgversionDefinitions: KbApiDefin
     method: 'DELETE',
     path: '/api/fleet/epm/packages/{pkgName}/{pkgVersion}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const get_security_entity_store_statusDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/security/entity_store/status',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

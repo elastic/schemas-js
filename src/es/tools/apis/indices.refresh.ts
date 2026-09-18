@@ -23,6 +23,7 @@ export const indices_refresh_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/{index}/_refresh',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

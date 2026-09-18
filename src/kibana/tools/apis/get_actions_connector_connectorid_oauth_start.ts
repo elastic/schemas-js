@@ -23,6 +23,7 @@ export const get_actions_connector_connectorid_oauth_startDefinitions: KbApiDefi
     method: 'GET',
     path: '/api/actions/connector/{connectorId}/oauth/start',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

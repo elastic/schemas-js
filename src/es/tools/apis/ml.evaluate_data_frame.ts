@@ -23,6 +23,7 @@ export const ml_evaluate_data_frame_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_ml/data_frame/_evaluate',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

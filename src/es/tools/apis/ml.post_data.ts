@@ -23,6 +23,7 @@ export const ml_post_data_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_ml/anomaly_detectors/{job_id}/_data',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
     bodyFormat: 'ndjson',
   },

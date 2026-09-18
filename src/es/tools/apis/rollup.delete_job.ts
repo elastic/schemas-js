@@ -23,6 +23,7 @@ export const rollup_delete_job_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_rollup/job/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

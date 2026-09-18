@@ -23,6 +23,7 @@ export const create_update_protection_updates_noteDefinitions: KbApiDefinition[]
     method: 'POST',
     path: '/api/endpoint/protection_updates_note/{package_policy_id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

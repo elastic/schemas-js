@@ -23,6 +23,7 @@ export const perform_rules_bulk_actionDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/detection_engine/rules/_bulk_action',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

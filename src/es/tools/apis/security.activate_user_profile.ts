@@ -23,6 +23,7 @@ export const security_activate_user_profile_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_security/profile/_activate',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const watcher_put_watch_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_watcher/watch/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

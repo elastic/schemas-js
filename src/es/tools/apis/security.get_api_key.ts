@@ -23,6 +23,7 @@ export const security_get_api_key_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_security/api_key',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

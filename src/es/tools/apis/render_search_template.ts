@@ -22,6 +22,7 @@ export const render_search_template_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_render/template/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

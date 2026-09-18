@@ -22,6 +22,7 @@ export const explain_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_explain/{id}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

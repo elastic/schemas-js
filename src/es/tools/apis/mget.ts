@@ -22,6 +22,7 @@ export const mget_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_mget',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

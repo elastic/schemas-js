@@ -22,6 +22,7 @@ export const terms_enum_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_terms_enum',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

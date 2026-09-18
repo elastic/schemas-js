@@ -23,6 +23,7 @@ export const create_conversationDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/security_ai_assistant/current_user/conversations',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

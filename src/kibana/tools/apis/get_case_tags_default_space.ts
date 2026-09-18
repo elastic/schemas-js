@@ -19,5 +19,6 @@ export const get_case_tags_default_spaceDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/cases/tags',
     destructive: false,
+    readOnly: true,
   },
 ]

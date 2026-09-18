@@ -23,6 +23,7 @@ export const security_saml_invalidate_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_security/saml/invalidate',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

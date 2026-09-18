@@ -23,6 +23,7 @@ export const sql_query_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_sql',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

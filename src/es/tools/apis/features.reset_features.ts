@@ -23,6 +23,7 @@ export const features_reset_features_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_features/_reset',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

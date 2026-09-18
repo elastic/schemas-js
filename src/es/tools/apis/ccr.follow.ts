@@ -23,6 +23,7 @@ export const ccr_follow_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/{index}/_ccr/follow',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

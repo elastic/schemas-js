@@ -23,6 +23,7 @@ export const endpoint_script_library_download_scriptDefinitions: KbApiDefinition
     method: 'GET',
     path: '/api/endpoint/scripts_library/{script_id}/download',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

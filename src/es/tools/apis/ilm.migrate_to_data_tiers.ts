@@ -23,6 +23,7 @@ export const ilm_migrate_to_data_tiers_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_ilm/migrate_to_data_tiers',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

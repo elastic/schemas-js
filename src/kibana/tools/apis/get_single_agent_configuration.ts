@@ -23,6 +23,7 @@ export const get_single_agent_configurationDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/apm/settings/agent-configuration/view',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const inference_put_amazonbedrock_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_inference/{task_type}/{amazonbedrock_inference_id}',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

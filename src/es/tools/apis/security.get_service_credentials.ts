@@ -23,6 +23,7 @@ export const security_get_service_credentials_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_security/service/{namespace}/{service}/credential',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

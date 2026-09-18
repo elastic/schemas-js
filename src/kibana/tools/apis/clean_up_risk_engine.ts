@@ -19,5 +19,6 @@ export const clean_up_risk_engineDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/risk_score/engine/dangerously_delete_data',
     destructive: true,
+    readOnly: false,
   },
 ]

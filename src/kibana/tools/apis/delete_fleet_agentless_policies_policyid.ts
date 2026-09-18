@@ -23,6 +23,7 @@ export const delete_fleet_agentless_policies_policyidDefinitions: KbApiDefinitio
     method: 'DELETE',
     path: '/api/fleet/agentless_policies/{policyId}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const cat_health_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cat/health',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
     responseType: 'text',
   },

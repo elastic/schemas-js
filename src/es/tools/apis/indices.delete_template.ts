@@ -23,6 +23,7 @@ export const indices_delete_template_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_template/{name}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

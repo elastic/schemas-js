@@ -19,5 +19,6 @@ export const read_tagsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/detection_engine/tags',
     destructive: false,
+    readOnly: true,
   },
 ]

@@ -23,6 +23,7 @@ export const get_workflows_executions_executionid_step_stepexecutionidDefinition
     method: 'GET',
     path: '/api/workflows/executions/{executionId}/step/{stepExecutionId}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

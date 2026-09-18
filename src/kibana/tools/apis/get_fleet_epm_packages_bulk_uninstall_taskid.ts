@@ -23,6 +23,7 @@ export const get_fleet_epm_packages_bulk_uninstall_taskidDefinitions: KbApiDefin
     method: 'GET',
     path: '/api/fleet/epm/packages/_bulk_uninstall/{taskId}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

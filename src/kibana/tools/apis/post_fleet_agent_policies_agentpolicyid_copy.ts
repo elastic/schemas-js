@@ -23,6 +23,7 @@ export const post_fleet_agent_policies_agentpolicyid_copyDefinitions: KbApiDefin
     method: 'POST',
     path: '/api/fleet/agent_policies/{agentPolicyId}/copy',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

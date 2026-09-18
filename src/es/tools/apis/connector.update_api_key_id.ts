@@ -23,6 +23,7 @@ export const connector_update_api_key_id_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_connector/{connector_id}/_api_key_id',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const inference_delete_region_policy_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_inference/_region_policy',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

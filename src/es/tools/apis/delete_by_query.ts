@@ -22,6 +22,7 @@ export const delete_by_query_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/{index}/_delete_by_query',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

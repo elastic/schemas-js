@@ -19,5 +19,6 @@ export const get_privileged_access_detection_package_statusDefinitions: KbApiDef
     method: 'GET',
     path: '/api/entity_analytics/privileged_user_monitoring/pad/status',
     destructive: false,
+    readOnly: true,
   },
 ]

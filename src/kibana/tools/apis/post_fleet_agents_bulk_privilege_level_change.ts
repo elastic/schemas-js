@@ -23,6 +23,7 @@ export const post_fleet_agents_bulk_privilege_level_changeDefinitions: KbApiDefi
     method: 'POST',
     path: '/api/fleet/agents/bulk_privilege_level_change',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

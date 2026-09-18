@@ -22,7 +22,8 @@ export const post_fleet_agentless_policies_upgrade_dryrunDefinitions: KbApiDefin
     description: 'Deprecated: Preview a managed integrations upgrade',
     method: 'POST',
     path: '/api/fleet/agentless_policies/_upgrade/dryrun',
-    destructive: true,
+    destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

@@ -22,6 +22,7 @@ export const clear_scroll_definitions: EsApiDefinition[] = [
     method: 'DELETE',
     path: '/_search/scroll',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

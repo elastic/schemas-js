@@ -23,6 +23,7 @@ export const ingest_put_pipeline_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_ingest/pipeline/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

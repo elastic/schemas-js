@@ -23,6 +23,7 @@ export const transform_schedule_now_transform_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_transform/{transform_id}/_schedule_now',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

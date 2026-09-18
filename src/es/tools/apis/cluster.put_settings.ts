@@ -23,6 +23,7 @@ export const cluster_put_settings_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_cluster/settings',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

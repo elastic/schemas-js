@@ -23,6 +23,7 @@ export const snapshot_cleanup_repository_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_snapshot/{repository}/_cleanup',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

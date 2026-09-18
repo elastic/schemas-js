@@ -23,6 +23,7 @@ export const upsert_dashboardDefinitions: KbApiDefinition[] = [
     method: 'PUT',
     path: '/api/dashboards/{id}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

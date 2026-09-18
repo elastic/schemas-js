@@ -23,6 +23,7 @@ export const ml_start_data_frame_analytics_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_ml/data_frame/analytics/{id}/_start',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

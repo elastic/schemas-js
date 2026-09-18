@@ -23,6 +23,7 @@ export const cat_shards_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/_cat/shards/{index}',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
     responseType: 'text',
   },

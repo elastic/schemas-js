@@ -19,5 +19,6 @@ export const get_agent_configurationsDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/apm/settings/agent-configuration',
     destructive: false,
+    readOnly: true,
   },
 ]

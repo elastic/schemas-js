@@ -23,6 +23,7 @@ export const create_knowledge_baseDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/security_ai_assistant/knowledge_base/{resource}',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

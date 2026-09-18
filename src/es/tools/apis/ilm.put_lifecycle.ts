@@ -23,6 +23,7 @@ export const ilm_put_lifecycle_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/_ilm/policy/{policy}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

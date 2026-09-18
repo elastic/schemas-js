@@ -19,5 +19,6 @@ export const read_list_indexDefinitions: KbApiDefinition[] = [
     method: 'GET',
     path: '/api/lists/index',
     destructive: false,
+    readOnly: true,
   },
 ]

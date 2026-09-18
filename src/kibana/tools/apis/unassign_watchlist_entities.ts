@@ -23,6 +23,7 @@ export const unassign_watchlist_entitiesDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/entity_analytics/watchlists/{watchlist_id}/entities/unassign',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

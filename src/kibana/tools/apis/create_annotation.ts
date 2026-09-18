@@ -23,6 +23,7 @@ export const create_annotationDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/apm/services/{serviceName}/annotation',
     destructive: false,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const delete_ruleDefinitions: KbApiDefinition[] = [
     method: 'DELETE',
     path: '/api/detection_engine/rules',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

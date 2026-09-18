@@ -23,6 +23,7 @@ export const post_fleet_agents_bulk_request_diagnosticsDefinitions: KbApiDefinit
     method: 'POST',
     path: '/api/fleet/agents/bulk_request_diagnostics',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

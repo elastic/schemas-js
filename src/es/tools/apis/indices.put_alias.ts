@@ -23,6 +23,7 @@ export const indices_put_alias_definitions: EsApiDefinition[] = [
     method: 'PUT',
     path: '/{index}/_aliases/{name}',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

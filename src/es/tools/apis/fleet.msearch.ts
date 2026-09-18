@@ -23,6 +23,7 @@ export const fleet_msearch_definitions: EsApiDefinition[] = [
     method: 'GET',
     path: '/{index}/_fleet/_fleet_msearch',
     destructive: false,
+    readOnly: true,
     input: _inputSchema,
     bodyFormat: 'ndjson',
   },

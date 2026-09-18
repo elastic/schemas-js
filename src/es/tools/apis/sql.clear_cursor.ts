@@ -23,6 +23,7 @@ export const sql_clear_cursor_definitions: EsApiDefinition[] = [
     method: 'POST',
     path: '/_sql/close',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]

@@ -23,6 +23,7 @@ export const run_script_actionDefinitions: KbApiDefinition[] = [
     method: 'POST',
     path: '/api/endpoint/action/run_script',
     destructive: true,
+    readOnly: false,
     input: _inputSchema,
   },
 ]
