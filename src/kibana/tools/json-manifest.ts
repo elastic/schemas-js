@@ -61,6 +61,8 @@ export const kibanaJsonManifest: readonly string[] = [
   'agent-builder.post-agent-builder-agents-agent-id-consumption.response.json',
   'agent-builder.post-agent-builder-agents.request.json',
   'agent-builder.post-agent-builder-agents.response.json',
+  'agent-builder.post-agent-builder-conversations-conversation-id-add-events.request.json',
+  'agent-builder.post-agent-builder-conversations-conversation-id-add-events.response.json',
   'agent-builder.post-agent-builder-conversations-conversation-id-attachments-attachment-id-restore.request.json',
   'agent-builder.post-agent-builder-conversations-conversation-id-attachments-attachment-id-restore.response.json',
   'agent-builder.post-agent-builder-conversations-conversation-id-attachments.request.json',

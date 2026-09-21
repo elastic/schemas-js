@@ -1583,6 +1583,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/post_agent_builder_conversations.ts') as Record<string, unknown>
       return mod['post_agent_builder_conversationsDefinitions'] as KbApiDefinition[]
     }
+    case 'post_agent_builder_conversations_conversation_id_add_events': {
+      const mod = await import('./apis/post_agent_builder_conversations_conversation_id_add_events.ts') as Record<string, unknown>
+      return mod['post_agent_builder_conversations_conversation_id_add_eventsDefinitions'] as KbApiDefinition[]
+    }
     case 'post_agent_builder_conversations_conversation_id_attachments': {
       const mod = await import('./apis/post_agent_builder_conversations_conversation_id_attachments.ts') as Record<string, unknown>
       return mod['post_agent_builder_conversations_conversation_id_attachmentsDefinitions'] as KbApiDefinition[]

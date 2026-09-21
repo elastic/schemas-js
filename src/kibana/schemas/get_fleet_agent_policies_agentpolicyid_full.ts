@@ -33,6 +33,7 @@ export const Kibana_HTTP_APIs_full_agent_policy = z.object({
           }).passthrough()
         }).passthrough().optional()
       }).passthrough().optional(),
+      sources: z.array(z.string()).optional(),
       sourceURI: z.string(),
       ssl: z.object({
         certificate: z.string().optional(),

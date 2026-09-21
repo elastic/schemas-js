@@ -267,6 +267,7 @@ export { PostAgentBuilderA2aAgentidRequest } from './post_agent_builder_a2a_agen
 export { PostAgentBuilderAgentsRequest } from './post_agent_builder_agents.js'
 export { PostAgentBuilderAgentsAgentIdConsumptionRequest } from './post_agent_builder_agents_agent_id_consumption.js'
 export { PostAgentBuilderConversationsRequest } from './post_agent_builder_conversations.js'
+export { PostAgentBuilderConversationsConversationIdAddEventsRequest } from './post_agent_builder_conversations_conversation_id_add_events.js'
 export { PostAgentBuilderConversationsConversationIdAttachmentsRequest } from './post_agent_builder_conversations_conversation_id_attachments.js'
 export { PostAgentBuilderConverseRequest } from './post_agent_builder_converse.js'
 export { PostAgentBuilderConverseAsyncRequest } from './post_agent_builder_converse_async.js'

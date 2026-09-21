@@ -5299,6 +5299,7 @@ export const Kibana_HTTP_APIs_agent_policy_response = z.object({
   data_output_id: z.string().nullable().optional(),
   description: z.string().optional(),
   download_source_id: z.string().nullable().optional(),
+  download_source_ids: z.array(z.string()).optional(),
   fips_agents: z.number().optional(),
   fleet_server_host_id: z.string().nullable().optional(),
   global_data_tags: z.array(z.object({
