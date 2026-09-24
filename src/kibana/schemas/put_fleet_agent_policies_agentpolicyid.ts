@@ -49,6 +49,7 @@ export const Kibana_HTTP_APIs_update_agent_policy_request_body = z.object({
   data_output_id: z.string().nullable().optional(),
   description: z.string().optional(),
   download_source_id: z.string().nullable().optional(),
+  download_source_ids: z.array(z.string()).optional(),
   fleet_server_host_id: z.string().nullable().optional(),
   force: z.boolean().optional(),
   global_data_tags: z.array(z.object({
