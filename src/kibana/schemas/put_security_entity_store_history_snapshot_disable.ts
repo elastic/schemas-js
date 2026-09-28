@@ -12,7 +12,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Kibana_HTTP_APIs_alerting_new_unsnooze_series_action = z.object({
-
-}).meta({ id: 'Kibana_HTTP_APIs_alerting_new_unsnooze_series_action' })
-export type Kibana_HTTP_APIs_alerting_new_unsnooze_series_action = z.infer<typeof Kibana_HTTP_APIs_alerting_new_unsnooze_series_action>
+export const PutSecurityEntityStoreHistorySnapshotDisableRequest = z.object({
+  clearHistorySnapshots: z.boolean().optional()
+}).meta({ id: 'PutSecurityEntityStoreHistorySnapshotDisableRequest' })
+export type PutSecurityEntityStoreHistorySnapshotDisableRequest = z.infer<typeof PutSecurityEntityStoreHistorySnapshotDisableRequest>

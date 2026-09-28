@@ -103,6 +103,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/create_case_default_space.ts') as Record<string, unknown>
       return mod['create_case_default_spaceDefinitions'] as KbApiDefinition[]
     }
+    case 'create_case_field_definition_default_space': {
+      const mod = await import('./apis/create_case_field_definition_default_space.ts') as Record<string, unknown>
+      return mod['create_case_field_definition_default_spaceDefinitions'] as KbApiDefinition[]
+    }
     case 'create_case_template_default_space': {
       const mod = await import('./apis/create_case_template_default_space.ts') as Record<string, unknown>
       return mod['create_case_template_default_spaceDefinitions'] as KbApiDefinition[]
@@ -278,6 +282,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'delete_case_default_space': {
       const mod = await import('./apis/delete_case_default_space.ts') as Record<string, unknown>
       return mod['delete_case_default_spaceDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_case_field_definition_default_space': {
+      const mod = await import('./apis/delete_case_field_definition_default_space.ts') as Record<string, unknown>
+      return mod['delete_case_field_definition_default_spaceDefinitions'] as KbApiDefinition[]
     }
     case 'delete_case_template_default_space': {
       const mod = await import('./apis/delete_case_template_default_space.ts') as Record<string, unknown>
@@ -846,6 +854,14 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'get_case_default_space': {
       const mod = await import('./apis/get_case_default_space.ts') as Record<string, unknown>
       return mod['get_case_default_spaceDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_case_field_definition_default_space': {
+      const mod = await import('./apis/get_case_field_definition_default_space.ts') as Record<string, unknown>
+      return mod['get_case_field_definition_default_spaceDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_case_field_definitions_default_space': {
+      const mod = await import('./apis/get_case_field_definitions_default_space.ts') as Record<string, unknown>
+      return mod['get_case_field_definitions_default_spaceDefinitions'] as KbApiDefinition[]
     }
     case 'get_case_reporters_default_space': {
       const mod = await import('./apis/get_case_reporters_default_space.ts') as Record<string, unknown>
@@ -1827,22 +1843,6 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/post_alerting_v2_rules_update_api_key_by_query.ts') as Record<string, unknown>
       return mod['post_alerting_v2_rules_update_api_key_by_queryDefinitions'] as KbApiDefinition[]
     }
-    case 'post_alerting_v2_series_bulk_snooze': {
-      const mod = await import('./apis/post_alerting_v2_series_bulk_snooze.ts') as Record<string, unknown>
-      return mod['post_alerting_v2_series_bulk_snoozeDefinitions'] as KbApiDefinition[]
-    }
-    case 'post_alerting_v2_series_bulk_unsnooze': {
-      const mod = await import('./apis/post_alerting_v2_series_bulk_unsnooze.ts') as Record<string, unknown>
-      return mod['post_alerting_v2_series_bulk_unsnoozeDefinitions'] as KbApiDefinition[]
-    }
-    case 'post_alerting_v2_series_group_hash_snooze': {
-      const mod = await import('./apis/post_alerting_v2_series_group_hash_snooze.ts') as Record<string, unknown>
-      return mod['post_alerting_v2_series_group_hash_snoozeDefinitions'] as KbApiDefinition[]
-    }
-    case 'post_alerting_v2_series_group_hash_unsnooze': {
-      const mod = await import('./apis/post_alerting_v2_series_group_hash_unsnooze.ts') as Record<string, unknown>
-      return mod['post_alerting_v2_series_group_hash_unsnoozeDefinitions'] as KbApiDefinition[]
-    }
     case 'post_attack_discovery_bulk': {
       const mod = await import('./apis/post_attack_discovery_bulk.ts') as Record<string, unknown>
       return mod['post_attack_discovery_bulkDefinitions'] as KbApiDefinition[]
@@ -2415,6 +2415,14 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/put_security_entity_store_entities_entitytype.ts') as Record<string, unknown>
       return mod['put_security_entity_store_entities_entitytypeDefinitions'] as KbApiDefinition[]
     }
+    case 'put_security_entity_store_history_snapshot_disable': {
+      const mod = await import('./apis/put_security_entity_store_history_snapshot_disable.ts') as Record<string, unknown>
+      return mod['put_security_entity_store_history_snapshot_disableDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_security_entity_store_history_snapshot_enable': {
+      const mod = await import('./apis/put_security_entity_store_history_snapshot_enable.ts') as Record<string, unknown>
+      return mod['put_security_entity_store_history_snapshot_enableDefinitions'] as KbApiDefinition[]
+    }
     case 'put_security_entity_store_resolution_rules_id_disable': {
       const mod = await import('./apis/put_security_entity_store_resolution_rules_id_disable.ts') as Record<string, unknown>
       return mod['put_security_entity_store_resolution_rules_id_disableDefinitions'] as KbApiDefinition[]
@@ -2630,6 +2638,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'update_case_default_space': {
       const mod = await import('./apis/update_case_default_space.ts') as Record<string, unknown>
       return mod['update_case_default_spaceDefinitions'] as KbApiDefinition[]
+    }
+    case 'update_case_field_definition_default_space': {
+      const mod = await import('./apis/update_case_field_definition_default_space.ts') as Record<string, unknown>
+      return mod['update_case_field_definition_default_spaceDefinitions'] as KbApiDefinition[]
     }
     case 'update_case_template_default_space': {
       const mod = await import('./apis/update_case_template_default_space.ts') as Record<string, unknown>

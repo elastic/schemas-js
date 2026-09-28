@@ -6,7 +6,8 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { DateTime, byte, float, integer } from './_types.js'
+import { DateTime, Id, byte, float, integer, long } from './_types.js'
+import { InferenceReasoningDetail } from './inference.non_streaming_chat_completion.js'
 import { InferenceRegionPolicy } from './inference.put_region_policy.js'
 
 export const InferenceEmbeddingContentType = z.enum(['text', 'image', 'audio', 'video', 'pdf']).meta({ id: 'InferenceEmbeddingContentType' })
@@ -36,6 +37,65 @@ export const InferenceCompletionResult = z.object({
   result: z.string()
 }).meta({ id: 'InferenceCompletionResult' })
 export type InferenceCompletionResult = z.infer<typeof InferenceCompletionResult>
+
+/** The completion tool function definition. */
+export const InferenceCompletionToolFunction = z.object({
+  description: z.string().describe('A description of what the function does. This is used by the model to choose when and how to call the function.').optional(),
+  name: z.string().describe('The name of the function.'),
+  parameters: z.any().describe('The parameters the functional accepts. This should be formatted as a JSON object.').optional(),
+  strict: z.boolean().describe('Whether to enable schema adherence when generating the function call.').optional()
+}).meta({ id: 'InferenceCompletionToolFunction' })
+export type InferenceCompletionToolFunction = z.infer<typeof InferenceCompletionToolFunction>
+
+/** A list of tools that the model can call. */
+export const InferenceCompletionTool = z.object({
+  type: z.string().describe('The type of tool.'),
+  function: InferenceCompletionToolFunction.describe('The function definition.')
+}).meta({ id: 'InferenceCompletionTool' })
+export type InferenceCompletionTool = z.infer<typeof InferenceCompletionTool>
+
+/** The tool choice function. */
+export const InferenceCompletionToolChoiceFunction = z.object({
+  name: z.string().describe('The name of the function to call.')
+}).meta({ id: 'InferenceCompletionToolChoiceFunction' })
+export type InferenceCompletionToolChoiceFunction = z.infer<typeof InferenceCompletionToolChoiceFunction>
+
+/** Controls which tool is called by the model. */
+export const InferenceCompletionToolChoice = z.object({
+  type: z.string().describe('The type of the tool.'),
+  function: InferenceCompletionToolChoiceFunction.describe('The tool choice function.')
+}).meta({ id: 'InferenceCompletionToolChoice' })
+export type InferenceCompletionToolChoice = z.infer<typeof InferenceCompletionToolChoice>
+
+export const InferenceCompletionToolType = z.union([z.string(), InferenceCompletionToolChoice]).meta({ id: 'InferenceCompletionToolType' })
+export type InferenceCompletionToolType = z.infer<typeof InferenceCompletionToolType>
+
+export const InferenceContentType = z.enum(['text', 'image_url', 'file']).meta({ id: 'InferenceContentType' })
+export type InferenceContentType = z.infer<typeof InferenceContentType>
+
+export const InferenceImageUrlDetail = z.enum(['auto', 'low', 'high']).meta({ id: 'InferenceImageUrlDetail' })
+export type InferenceImageUrlDetail = z.infer<typeof InferenceImageUrlDetail>
+
+export const InferenceImageUrl = z.object({
+  url: z.string().describe('The base64 encoded image data as a data URI'),
+  detail: InferenceImageUrlDetail.describe('Specifies the detail level of the image').optional()
+}).meta({ id: 'InferenceImageUrl' })
+export type InferenceImageUrl = z.infer<typeof InferenceImageUrl>
+
+export const InferenceFileContent = z.object({
+  file_data: z.string().describe('The base64 encoded file data'),
+  filename: z.string().describe('The name of the file')
+}).meta({ id: 'InferenceFileContent' })
+export type InferenceFileContent = z.infer<typeof InferenceFileContent>
+
+/** An object style representation of a single portion of a conversation. */
+export const InferenceContentObject = z.object({
+  type: InferenceContentType.describe('The type of content. Must be one of `text`, `image_url` or `file`. Not all services/models support content types other than "text"'),
+  text: z.string().describe('The text content. Only applicable for the `text` type'),
+  image_url: InferenceImageUrl.describe('The image content. Only applicable for the `image_url` type'),
+  file: InferenceFileContent.describe('The file content. Only applicable for the `file` type')
+}).meta({ id: 'InferenceContentObject' })
+export type InferenceContentObject = z.infer<typeof InferenceContentObject>
 
 /**
  * Dense Embedding results containing bytes are represented as Dense
@@ -126,6 +186,53 @@ export const InferenceRankedDocument = z.object({
 }).meta({ id: 'InferenceRankedDocument' })
 export type InferenceRankedDocument = z.infer<typeof InferenceRankedDocument>
 
+export const InferenceMessageContent = z.union([z.string(), z.array(InferenceContentObject)]).meta({ id: 'InferenceMessageContent' })
+export type InferenceMessageContent = z.infer<typeof InferenceMessageContent>
+
+/** The function that the model called. */
+export const InferenceToolCallFunction = z.object({
+  arguments: z.string().describe('The arguments to call the function with in JSON format.'),
+  name: z.string().describe('The name of the function to call.')
+}).meta({ id: 'InferenceToolCallFunction' })
+export type InferenceToolCallFunction = z.infer<typeof InferenceToolCallFunction>
+
+/** A tool call generated by the model. */
+export const InferenceToolCall = z.object({
+  id: z.lazy(() => Id).describe('The identifier of the tool call.'),
+  function: InferenceToolCallFunction.describe('The function that the model called.'),
+  type: z.string().describe('The type of the tool call.')
+}).meta({ id: 'InferenceToolCall' })
+export type InferenceToolCall = z.infer<typeof InferenceToolCall>
+
+/** An object representing part of the conversation. */
+export const InferenceMessage = z.object({
+  content: InferenceMessageContent.describe('The content of the message. String example: ``` {    "content": "Some string" } ``` Text example: ``` {   "content": [       {        "text": "Some text",        "type": "text"       }    ] } ``` Image example: ``` {   "content": [       {        "image_url": {          "url": "data:image/jpeg;base64,..."        },        "type": "image_url"       }    ] } ``` File example: ``` {   "content": [       {        "file": {          "file_data": "data:application/pdf;base64,...",          "filename": "somePDF"        },        "type": "file"       }    ] } ```').optional(),
+  role: z.string().describe('The role of the message author. Valid values are `user`, `assistant`, `system`, and `tool`.'),
+  tool_call_id: z.lazy(() => Id).describe('Only for `tool` role messages. The tool call that this message is responding to.').optional(),
+  tool_calls: z.array(InferenceToolCall).describe('Only for `assistant` role messages. The tool calls generated by the model. If it\'s specified, the `content` field is optional. Example: ``` {   "tool_calls": [       {           "id": "call_KcAjWtAww20AihPHphUh46Gd",           "type": "function",           "function": {               "name": "get_current_weather",               "arguments": "{"location":"Boston, MA"}"           }       }   ] } ```').optional(),
+  reasoning: z.string().describe('Only for `assistant` role messages. The reasoning details generated by the model as plaintext. Currently supported only for `elastic` provider.').optional(),
+  reasoning_details: z.array(z.lazy(() => InferenceReasoningDetail)).describe('Only for `assistant` role messages. The reasoning details generated by the model as structured data. Currently supported only for `elastic` provider.').optional()
+}).meta({ id: 'InferenceMessage' })
+export type InferenceMessage = z.infer<typeof InferenceMessage>
+
+export const InferenceReasoningEffort = z.enum(['xhigh', 'high', 'medium', 'low', 'minimal', 'none']).meta({ id: 'InferenceReasoningEffort' })
+export type InferenceReasoningEffort = z.infer<typeof InferenceReasoningEffort>
+
+export const InferenceReasoningSummary = z.enum(['auto', 'concise', 'detailed']).meta({ id: 'InferenceReasoningSummary' })
+export type InferenceReasoningSummary = z.infer<typeof InferenceReasoningSummary>
+
+/**
+ * The reasoning configuration to use for the completion request.
+ * Currently supported only for `elastic` provider.
+ */
+export const InferenceReasoning = z.object({
+  effort: InferenceReasoningEffort.describe('The level of effort the model should put into reasoning. This is a hint that guides the model in how much effort to put into reasoning, with `xhigh` being the most effort and `none` being no effort.').optional(),
+  enabled: z.boolean().describe('Whether to enable reasoning with default settings. This is a shortcut for enabling reasoning without having to specify the other parameters. If `enabled` is set to `true`, then reasoning at the `medium` effort level is enabled. Ignored if `effort` is specified, in which case that parameter will control the reasoning process instead.').optional(),
+  exclude: z.boolean().describe('Whether to exclude reasoning information from the response. If `true`, the response will not include any reasoning details.').optional(),
+  summary: InferenceReasoningSummary.describe('The level of detail included in the reasoning summary returned in the response. This is a hint on how much detail to include in the summary of the reasoning that is returned in the response, with `auto` being the default level of detail, `concise` being less detail, and `detailed` being more detail.').optional()
+}).meta({ id: 'InferenceReasoning' })
+export type InferenceReasoning = z.infer<typeof InferenceReasoning>
+
 /** The stored region policy document. */
 export const InferenceRegionPolicyDoc = z.object({
   region_policy: z.lazy(() => InferenceRegionPolicy),
@@ -135,3 +242,16 @@ export const InferenceRegionPolicyDoc = z.object({
   updated_by: z.string().describe('The user who last updated the region policy.').optional()
 }).meta({ id: 'InferenceRegionPolicyDoc' })
 export type InferenceRegionPolicyDoc = z.infer<typeof InferenceRegionPolicyDoc>
+
+export const InferenceRequestChatCompletion = z.object({
+  messages: z.array(InferenceMessage).describe('A list of objects representing the conversation. Requests should generally only add new messages from the user (role `user`). The other message roles (`assistant`, `system`, or `tool`) should generally only be copied from the response to a previous completion request, such that the messages array is built up throughout a conversation.'),
+  model: z.string().describe('The ID of the model to use. By default, the model ID is set to the value included when creating the inference endpoint.').optional(),
+  max_completion_tokens: z.lazy(() => long).describe('The upper bound limit for the number of tokens that can be generated for a completion request.').optional(),
+  reasoning: InferenceReasoning.describe('The reasoning configuration for the completion request. This controls the model\'s reasoning process in one of two ways: * By specifying the model’s reasoning effort level with the `effort` field. * By enabling reasoning with default settings by setting `enabled` field to `true`. It also includes optional settings to control: * The level of detail in the summary returned in the response with the `summary` field. * Whether reasoning details are included in the response at all with the `exclude` field. Example (effort): ``` {    "reasoning": {        "effort": "high",        "summary": "concise",        "exclude": false    } } ``` Example (enabled): ``` {    "reasoning": {        "enabled": true,        "summary": "concise",        "exclude": false    } } ``` Currently supported only for `elastic` provider.').optional(),
+  stop: z.array(z.string()).describe('A sequence of strings to control when the model should stop generating additional tokens.').optional(),
+  temperature: z.lazy(() => float).describe('The sampling temperature to use.').optional(),
+  tool_choice: InferenceCompletionToolType.describe('Controls which tool is called by the model. String representation: One of `auto`, `none`, or `requrired`. `auto` allows the model to choose between calling tools and generating a message. `none` causes the model to not call any tools. `required` forces the model to call one or more tools. Example (object representation): ``` {   "tool_choice": {       "type": "function",       "function": {           "name": "get_current_weather"       }   } } ```').optional(),
+  tools: z.array(InferenceCompletionTool).describe('A list of tools that the model can call. Example: ``` {   "tools": [       {           "type": "function",           "function": {               "name": "get_price_of_item",               "description": "Get the current price of an item",               "parameters": {                   "type": "object",                   "properties": {                       "item": {                           "id": "12345"                       },                       "unit": {                           "type": "currency"                       }                   }               }           }       }   ] } ```').optional(),
+  top_p: z.lazy(() => float).describe('Nucleus sampling, an alternative to sampling with temperature.').optional()
+}).meta({ id: 'InferenceRequestChatCompletion' })
+export type InferenceRequestChatCompletion = z.infer<typeof InferenceRequestChatCompletion>

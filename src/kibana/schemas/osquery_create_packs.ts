@@ -11,15 +11,18 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Security_Osquery_API_Enabled, Security_Osquery_API_ObjectQueries, Security_Osquery_API_PackDescription, Security_Osquery_API_PackInterval, Security_Osquery_API_PackName, Security_Osquery_API_PolicyIds, Security_Osquery_API_RRuleScheduleConfig, Security_Osquery_API_ScheduleType, Security_Osquery_API_Shards } from './schemas/security.js'
+import { Security_Osquery_API_Enabled, Security_Osquery_API_MinOsqueryVersion, Security_Osquery_API_ObjectQueries, Security_Osquery_API_PackDescription, Security_Osquery_API_PackInterval, Security_Osquery_API_PackName, Security_Osquery_API_PackPlatform, Security_Osquery_API_PolicyIds, Security_Osquery_API_RRuleScheduleConfig, Security_Osquery_API_ResultType, Security_Osquery_API_ScheduleType, Security_Osquery_API_Shards } from './schemas/security.js'
 
 export const Security_Osquery_API_CreatePacksRequestBody = z.object({
   description: Security_Osquery_API_PackDescription.optional(),
   enabled: Security_Osquery_API_Enabled.optional(),
   interval: Security_Osquery_API_PackInterval.optional(),
+  min_osquery_version: Security_Osquery_API_MinOsqueryVersion.optional(),
   name: Security_Osquery_API_PackName.optional(),
+  platform: Security_Osquery_API_PackPlatform.optional(),
   policy_ids: Security_Osquery_API_PolicyIds.optional(),
   queries: Security_Osquery_API_ObjectQueries.optional(),
+  result_type: Security_Osquery_API_ResultType.optional(),
   rrule_schedule: Security_Osquery_API_RRuleScheduleConfig.optional(),
   schedule_type: Security_Osquery_API_ScheduleType.optional(),
   shards: Security_Osquery_API_Shards.optional()
@@ -34,9 +37,12 @@ export const Security_Osquery_API_CreatePacksResponse = z.object({
     description: Security_Osquery_API_PackDescription.optional(),
     enabled: Security_Osquery_API_Enabled.optional(),
     interval: Security_Osquery_API_PackInterval.optional(),
+    min_osquery_version: Security_Osquery_API_MinOsqueryVersion.optional(),
     name: Security_Osquery_API_PackName,
+    platform: Security_Osquery_API_PackPlatform.optional(),
     policy_ids: Security_Osquery_API_PolicyIds.optional(),
     queries: Security_Osquery_API_ObjectQueries.optional(),
+    result_type: Security_Osquery_API_ResultType.optional(),
     rrule_schedule: Security_Osquery_API_RRuleScheduleConfig.optional(),
     saved_object_id: z.string(),
     schedule_type: Security_Osquery_API_ScheduleType.optional(),
@@ -54,6 +60,7 @@ export type Security_Osquery_API_CreatePacksResponse = z.infer<typeof Security_O
 
 export { Security_Osquery_API_ScheduleType } from './schemas/security.js'
 export { Security_Osquery_API_RRuleScheduleConfig } from './schemas/security.js'
+export { Security_Osquery_API_ResultType } from './schemas/security.js'
 export { Security_Osquery_API_ObjectQueries } from './schemas/security.js'
 export { Security_Osquery_API_ObjectQueriesItem } from './schemas/security.js'
 export { Security_Osquery_API_Version } from './schemas/security.js'
@@ -63,10 +70,13 @@ export { Security_Osquery_API_Removed } from './schemas/security.js'
 export { Security_Osquery_API_Query } from './schemas/security.js'
 export { Security_Osquery_API_Platform } from './schemas/security.js'
 export { Security_Osquery_API_QueryId } from './schemas/security.js'
+export { Security_Osquery_API_QueryEnabled } from './schemas/security.js'
 export { Security_Osquery_API_ECSMapping } from './schemas/security.js'
 export { Security_Osquery_API_ECSMappingItem } from './schemas/security.js'
 export { Security_Osquery_API_PolicyIds } from './schemas/security.js'
+export { Security_Osquery_API_PackPlatform } from './schemas/security.js'
 export { Security_Osquery_API_PackName } from './schemas/security.js'
+export { Security_Osquery_API_MinOsqueryVersion } from './schemas/security.js'
 export { Security_Osquery_API_PackInterval } from './schemas/security.js'
 export { Security_Osquery_API_Enabled } from './schemas/security.js'
 export { Security_Osquery_API_PackDescription } from './schemas/security.js'

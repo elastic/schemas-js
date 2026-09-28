@@ -109,6 +109,8 @@ export const IndicesRecoveryShardRecovery = z.object({
   stage: IndicesRecoveryRecoveryStage.describe('The recovery stage.'),
   local_retries: z.lazy(() => integer).describe('The number of times this recovery has failed in a way which is retried locally (i.e. on the data node).').optional(),
   priority: IndicesRecoveryRecoveryPriority.describe('The recovery priority.').optional(),
+  gate: z.string().describe('The name of the recovery gate that blocked recovery on the target node. Only present for queued recoveries in the `CREATED` stage that are blocked by a recovery gate.').optional(),
+  blocked_for_millis: z.lazy(() => DurationValue).describe('The elapsed time in milliseconds recovery is blocked for. Only present with `gate`.').optional(),
   start: IndicesRecoveryRecoveryStartStatus.optional(),
   start_time: z.lazy(() => DateTime).describe('The time the recovery started. For recoveries in the `CREATED` stage (not yet started), this value is the Unix epoch (1970-01-01T00:00:00.000Z).').optional(),
   start_time_in_millis: z.lazy(() => EpochTime).describe('The time the recovery started, in milliseconds since the Unix epoch. For recoveries in the `CREATED` stage (not yet started), this value is 0.'),

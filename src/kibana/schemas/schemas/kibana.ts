@@ -31,6 +31,11 @@ export const Kibana_HTTP_APIs_alerting_action_policy_throttle = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_action_policy_throttle' })
 export type Kibana_HTTP_APIs_alerting_action_policy_throttle = z.infer<typeof Kibana_HTTP_APIs_alerting_action_policy_throttle>
 
+export const Kibana_HTTP_APIs_alerting_actor = z.object({
+  profile_uid: z.string().nullable()
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_actor' })
+export type Kibana_HTTP_APIs_alerting_actor = z.infer<typeof Kibana_HTTP_APIs_alerting_actor>
+
 export const Kibana_HTTP_APIs_alerting_bulk_by_ids_request = z.object({
   ids: z.array(z.string())
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_bulk_by_ids_request' })
@@ -99,7 +104,6 @@ export const Kibana_HTTP_APIs_alerting_rule_metadata = z.object({
   builder_type: z.string().optional(),
   description: z.string().optional(),
   name: z.string(),
-  owner: z.string().optional(),
   tags: z.array(z.string()).optional()
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_rule_metadata' })
 export type Kibana_HTTP_APIs_alerting_rule_metadata = z.infer<typeof Kibana_HTTP_APIs_alerting_rule_metadata>
@@ -108,7 +112,6 @@ export const Kibana_HTTP_APIs_alerting_rule_response_metadata = z.object({
   builder_type: z.string().optional(),
   description: z.string().optional(),
   name: z.string(),
-  owner: z.string().optional(),
   tags: z.array(z.string()).optional(),
   version: z.number()
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_rule_response_metadata' })
@@ -908,12 +911,35 @@ export type Kibana_HTTP_APIs_maintenance_window_schedule_recurring_response = z.
 
 export const Kibana_HTTP_APIs_maintenance_window_scope = z.object({
   alerting: z.object({
+    enabled: z.boolean().optional(),
     query: z.object({
       kql: z.string()
     })
-  })
+  }),
+  alerting_v2: z.object({
+    enabled: z.boolean().optional(),
+    query: z.object({
+      kql: z.string()
+    }).optional()
+  }).optional()
 }).meta({ id: 'Kibana_HTTP_APIs_maintenance_window_scope' })
 export type Kibana_HTTP_APIs_maintenance_window_scope = z.infer<typeof Kibana_HTTP_APIs_maintenance_window_scope>
+
+export const Kibana_HTTP_APIs_maintenance_window_scope_request = z.object({
+  alerting: z.object({
+    enabled: z.boolean().optional(),
+    query: z.object({
+      kql: z.string()
+    }).optional()
+  }).optional(),
+  alerting_v2: z.object({
+    enabled: z.boolean().optional(),
+    query: z.object({
+      kql: z.string()
+    }).optional()
+  }).optional()
+}).meta({ id: 'Kibana_HTTP_APIs_maintenance_window_scope_request' })
+export type Kibana_HTTP_APIs_maintenance_window_scope_request = z.infer<typeof Kibana_HTTP_APIs_maintenance_window_scope_request>
 
 export const Kibana_HTTP_APIs_managed_integration_cloud_connector = z.object({
   cloud_connector_id: z.string(),
@@ -2948,7 +2974,7 @@ export const Kibana_HTTP_APIs_ml_anomaly_charts = z.object({
     max: z.literal(75),
     min: z.literal(50)
   }), z.object({
-    min: z.literal(75)
+    min: z.number()
   })])).optional(),
   time_range: Kibana_HTTP_APIs_kbn_es_query_server_timeRangeSchema.optional(),
   title: z.string().optional()
@@ -2961,6 +2987,7 @@ export const Kibana_HTTP_APIs_ml_anomaly_swimlane = z.union([z.object({
   hide_title: z.boolean().optional(),
   job_ids: z.array(z.string()),
   per_page: z.number().optional(),
+  severity_threshold: z.number().optional(),
   swimlane_type: z.enum(['overall']),
   time_range: Kibana_HTTP_APIs_kbn_es_query_server_timeRangeSchema.optional(),
   title: z.string().optional()
@@ -2970,6 +2997,7 @@ export const Kibana_HTTP_APIs_ml_anomaly_swimlane = z.union([z.object({
   hide_title: z.boolean().optional(),
   job_ids: z.array(z.string()),
   per_page: z.number().optional(),
+  severity_threshold: z.number().optional(),
   swimlane_type: z.enum(['viewBy']),
   time_range: Kibana_HTTP_APIs_kbn_es_query_server_timeRangeSchema.optional(),
   title: z.string().optional(),
@@ -3935,7 +3963,7 @@ export const Kibana_HTTP_APIs_visMetricStyling = z.object({
   }).optional(),
   secondary: z.object({
     label: z.object({
-      placement: z.enum(['before', 'after']).optional(),
+      placement: z.enum(['before', 'after', 'tooltip']).optional(),
       visible: z.boolean().optional()
     }).optional(),
     value: z.object({
@@ -4948,10 +4976,10 @@ export const Kibana_HTTP_APIs_alerting_new_rule = z.object({
   schedule: Kibana_HTTP_APIs_alerting_rule_schedule,
   state_transition: z.object({
     pending_count: z.number().optional(),
-    pending_operator: z.enum(['AND', 'OR']).optional(),
+    pending_operator: z.enum(['and', 'or']).optional(),
     pending_timeframe: z.string().optional(),
     recovering_count: z.number().optional(),
-    recovering_operator: z.enum(['AND', 'OR']).optional(),
+    recovering_operator: z.enum(['and', 'or']).optional(),
     recovering_timeframe: z.string().optional()
   }).nullable().optional(),
   time_field: z.string().optional()
@@ -4961,7 +4989,7 @@ export type Kibana_HTTP_APIs_alerting_new_rule = z.infer<typeof Kibana_HTTP_APIs
 export const Kibana_HTTP_APIs_alerting_rule_response = z.object({
   artifacts: z.array(Kibana_HTTP_APIs_alerting_rule_artifact).optional(),
   created_at: z.string(),
-  created_by: z.string().nullable(),
+  created_by: Kibana_HTTP_APIs_alerting_actor.nullable(),
   enabled: z.boolean(),
   grouping: Kibana_HTTP_APIs_alerting_rule_grouping.optional(),
   id: z.string(),
@@ -4973,26 +5001,22 @@ export const Kibana_HTTP_APIs_alerting_rule_response = z.object({
   schedule: Kibana_HTTP_APIs_alerting_rule_schedule,
   state_transition: z.object({
     pending_count: z.number().optional(),
-    pending_operator: z.enum(['AND', 'OR']).optional(),
+    pending_operator: z.enum(['and', 'or']).optional(),
     pending_timeframe: z.string().optional(),
     recovering_count: z.number().optional(),
-    recovering_operator: z.enum(['AND', 'OR']).optional(),
+    recovering_operator: z.enum(['and', 'or']).optional(),
     recovering_timeframe: z.string().optional()
   }).nullable().optional(),
   time_field: z.string().optional(),
   updated_at: z.string(),
-  updated_by: z.string().nullable(),
+  updated_by: Kibana_HTTP_APIs_alerting_actor.nullable(),
   version: z.string().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_rule_response' })
 export type Kibana_HTTP_APIs_alerting_rule_response = z.infer<typeof Kibana_HTTP_APIs_alerting_rule_response>
 
 export const Kibana_HTTP_APIs_alerting_action_policy_response = z.object({
-  auth: z.object({
-    created_by_user: z.boolean(),
-    owner: z.string()
-  }),
   created_at: z.string(),
-  created_by: z.string().nullable(),
+  created_by: Kibana_HTTP_APIs_alerting_actor.nullable(),
   description: z.string(),
   destinations: z.array(Kibana_HTTP_APIs_alerting_action_policy_destination),
   enabled: z.boolean(),
@@ -5010,7 +5034,7 @@ export const Kibana_HTTP_APIs_alerting_action_policy_response = z.object({
     strategy: z.union([z.enum(['on_status_change']), z.enum(['per_status_interval']), z.enum(['time_interval']), z.enum(['every_time'])]).optional()
   }).nullable(),
   updated_at: z.string(),
-  updated_by: z.string().nullable(),
+  updated_by: Kibana_HTTP_APIs_alerting_actor.nullable(),
   version: z.string().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_action_policy_response' })
 export type Kibana_HTTP_APIs_alerting_action_policy_response = z.infer<typeof Kibana_HTTP_APIs_alerting_action_policy_response>
@@ -12591,7 +12615,7 @@ export const Kibana_HTTP_APIs_kbn_dashboard_data: z.ZodTypeAny = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_kbn_dashboard_data' })
 export type Kibana_HTTP_APIs_kbn_dashboard_data = z.infer<typeof Kibana_HTTP_APIs_kbn_dashboard_data>
 
-export const Kibana_HTTP_APIs_RecursiveRecord: z.ZodTypeAny = z.record(z.string(), z.union([z.union([z.string(), z.number(), z.boolean(), z.unknown()]).nullable(), z.array(z.union([z.string(), z.number(), z.boolean(), z.unknown()]).nullable()), z.array(z.unknown()), z.lazy(() => Kibana_HTTP_APIs_RecursiveRecord)])).meta({ id: 'Kibana_HTTP_APIs_RecursiveRecord' })
+export const Kibana_HTTP_APIs_RecursiveRecord: z.ZodTypeAny = z.record(z.string(), z.union([z.union([z.string(), z.number(), z.boolean(), z.unknown()]).nullable(), z.array(z.union([z.string(), z.number(), z.boolean(), z.unknown()]).nullable()), z.array(z.union([z.union([z.string(), z.number(), z.boolean(), z.unknown()]).nullable(), z.lazy(() => Kibana_HTTP_APIs_RecursiveRecord)])), z.lazy(() => Kibana_HTTP_APIs_RecursiveRecord)])).meta({ id: 'Kibana_HTTP_APIs_RecursiveRecord' })
 export type Kibana_HTTP_APIs_RecursiveRecord = z.infer<typeof Kibana_HTTP_APIs_RecursiveRecord>
 
 export const Kibana_HTTP_APIs_Condition: z.ZodTypeAny = z.union([Kibana_HTTP_APIs_FilterCondition, z.object({

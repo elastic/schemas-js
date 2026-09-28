@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.non_streaming_chat_completion","x-api":{"id":"inference.non_streaming_chat_completion","name":"non-streaming-chat-completion","namespace":"inference"},"$ref":"./inference._types.json#/$defs/inference._types__ChatCompletionInferenceResult"}

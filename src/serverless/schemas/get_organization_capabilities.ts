@@ -15,6 +15,9 @@ import { z } from 'zod'
 export const GetOrganizationCapabilitiesResponse = z.object({
   cross_project_search: z.object({
     max_linked_projects: z.number()
+  }),
+  quotas: z.object({
+    max_projects: z.number()
   })
 }).meta({ id: 'GetOrganizationCapabilitiesResponse' })
 export type GetOrganizationCapabilitiesResponse = z.infer<typeof GetOrganizationCapabilitiesResponse>

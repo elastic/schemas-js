@@ -6,9 +6,9 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { DateTime, Duration, EpochTime, IndexName, Indices, Names, Percentage, integer } from './_types.js'
+import { DateTime, Duration, EpochTime, IndexName, Indices, Names, Percentage } from './_types.js'
 
-export const CatCatRecoveryColumn = z.union([z.enum(['index', 'i', 'idx', 'shard', 's', 'sh', 'start_time', 'start', 'start_time_millis', 'start_millis', 'stop_time', 'stop', 'stop_time_millis', 'stop_millis', 'time', 't', 'ti', 'type', 'ty', 'stage', 'st', 'local_retries', 'lr', 'priority', 'pr', 'source_host', 'shost', 'source_node', 'snode', 'target_host', 'thost', 'target_node', 'tnode', 'repository', 'rep', 'snapshot', 'snap', 'files', 'f', 'files_recovered', 'fr', 'files_percent', 'fp', 'files_total', 'tf', 'bytes', 'b', 'bytes_recovered', 'br', 'bytes_percent', 'bp', 'bytes_total', 'tb', 'translog_ops', 'to', 'translog_ops_recovered', 'tor', 'translog_ops_percent', 'top']), z.string()]).meta({ id: 'CatCatRecoveryColumn' })
+export const CatCatRecoveryColumn = z.union([z.enum(['index', 'i', 'idx', 'shard', 's', 'sh', 'start_time', 'start', 'start_time_millis', 'start_millis', 'stop_time', 'stop', 'stop_time_millis', 'stop_millis', 'time', 't', 'ti', 'type', 'ty', 'stage', 'st', 'local_retries', 'lr', 'priority', 'pr', 'gate', 'g', 'blocked_for_millis', 'bf', 'source_host', 'shost', 'source_node', 'snode', 'target_host', 'thost', 'target_node', 'tnode', 'repository', 'rep', 'snapshot', 'snap', 'files', 'f', 'files_recovered', 'fr', 'files_percent', 'fp', 'files_total', 'tf', 'bytes', 'b', 'bytes_recovered', 'br', 'bytes_percent', 'bp', 'bytes_total', 'tb', 'translog_ops', 'to', 'translog_ops_recovered', 'tor', 'translog_ops_percent', 'top']), z.string()]).meta({ id: 'CatCatRecoveryColumn' })
 export type CatCatRecoveryColumn = z.infer<typeof CatCatRecoveryColumn>
 
 export const CatCatRecoveryColumns = z.union([CatCatRecoveryColumn, z.array(CatCatRecoveryColumn)]).meta({ id: 'CatCatRecoveryColumns' })
@@ -36,10 +36,14 @@ export const CatRecoveryRecoveryRecord = z.object({
   ty: z.string().describe('The recovery type.').optional(),
   stage: z.string().describe('The recovery stage.').optional(),
   st: z.string().describe('The recovery stage.').optional(),
-  local_retries: z.lazy(() => integer).describe('The number of times this recovery has failed in a way which is retried locally (i.e. on the data node).').optional(),
-  lr: z.lazy(() => integer).describe('The number of times this recovery has failed in a way which is retried locally (i.e. on the data node).').optional(),
+  local_retries: z.string().describe('The number of times this recovery has failed in a way which is retried locally (i.e. on the data node).').optional(),
+  lr: z.string().describe('The number of times this recovery has failed in a way which is retried locally (i.e. on the data node).').optional(),
   priority: z.string().describe('The recovery priority.').optional(),
   pr: z.string().describe('The recovery priority.').optional(),
+  gate: z.string().describe('The name of the recovery gate that blocked recovery on the target node. The value is `n/a` unless the recovery is queued in the `created` stage and blocked by a recovery gate.').optional(),
+  g: z.string().describe('The name of the recovery gate that blocked recovery on the target node. The value is `n/a` unless the recovery is queued in the `created` stage and blocked by a recovery gate.').optional(),
+  blocked_for_millis: z.string().describe('The elapsed time in milliseconds recovery is blocked for. The value is `n/a` when the recovery is not blocked by a recovery gate.').optional(),
+  bf: z.string().describe('The elapsed time in milliseconds recovery is blocked for. The value is `n/a` when the recovery is not blocked by a recovery gate.').optional(),
   source_host: z.string().describe('The source host.').optional(),
   shost: z.string().describe('The source host.').optional(),
   source_node: z.string().describe('The source node name.').optional(),

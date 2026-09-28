@@ -11,14 +11,16 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Security_Osquery_API_ECSMapping, Security_Osquery_API_PackId, Security_Osquery_API_Platform, Security_Osquery_API_Query, Security_Osquery_API_QueryId, Security_Osquery_API_Removed, Security_Osquery_API_SavedQueryId, Security_Osquery_API_Snapshot, Security_Osquery_API_Version } from './schemas/security.js'
+import { Security_Osquery_API_ECSMapping, Security_Osquery_API_PackId, Security_Osquery_API_Platform, Security_Osquery_API_Query, Security_Osquery_API_QueryEnabled, Security_Osquery_API_QueryId, Security_Osquery_API_Removed, Security_Osquery_API_ResultType, Security_Osquery_API_SavedQueryId, Security_Osquery_API_Snapshot, Security_Osquery_API_Version } from './schemas/security.js'
 
 export const Security_Osquery_API_ArrayQueriesItem = z.object({
   ecs_mapping: Security_Osquery_API_ECSMapping.optional(),
+  enabled: Security_Osquery_API_QueryEnabled.optional(),
   id: Security_Osquery_API_QueryId.optional(),
   platform: Security_Osquery_API_Platform.optional(),
   query: Security_Osquery_API_Query.optional(),
   removed: Security_Osquery_API_Removed.optional(),
+  result_type: Security_Osquery_API_ResultType.optional(),
   snapshot: Security_Osquery_API_Snapshot.optional(),
   version: Security_Osquery_API_Version.optional()
 }).meta({ id: 'Security_Osquery_API_ArrayQueriesItem' })
@@ -80,7 +82,9 @@ export { Security_Osquery_API_SavedQueryId } from './schemas/security.js'
 export { Security_Osquery_API_Query } from './schemas/security.js'
 export { Security_Osquery_API_Version } from './schemas/security.js'
 export { Security_Osquery_API_Snapshot } from './schemas/security.js'
+export { Security_Osquery_API_ResultType } from './schemas/security.js'
 export { Security_Osquery_API_Removed } from './schemas/security.js'
 export { Security_Osquery_API_Platform } from './schemas/security.js'
 export { Security_Osquery_API_QueryId } from './schemas/security.js'
+export { Security_Osquery_API_QueryEnabled } from './schemas/security.js'
 export { Security_Osquery_API_PackId } from './schemas/security.js'

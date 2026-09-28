@@ -28,6 +28,7 @@ export const Cases_set_case_configuration_request = z.object({
     type: z.enum(['text', 'toggle']),
     required: z.boolean()
   })).optional(),
+  extractObservables: z.boolean().optional(),
   owner: Cases_owner,
   templates: Cases_templates.optional()
 }).meta({ id: 'Cases_set_case_configuration_request' })
@@ -56,6 +57,7 @@ export const SetCaseConfigurationResponse = z.object({
     required: z.boolean().optional()
   })).optional(),
   error: z.string().nullable().optional(),
+  extractObservables: z.boolean().optional(),
   id: z.string().optional(),
   mappings: z.array(z.object({
     action_type: z.string().optional(),

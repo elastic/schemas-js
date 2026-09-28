@@ -11,7 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Security_Osquery_API_ECSMappingArray, Security_Osquery_API_Enabled, Security_Osquery_API_PackDescription, Security_Osquery_API_PackInterval, Security_Osquery_API_PackName, Security_Osquery_API_PolicyIds, Security_Osquery_API_RRuleScheduleConfig, Security_Osquery_API_ScheduleType } from './schemas/security.js'
+import { Security_Osquery_API_ECSMappingArray, Security_Osquery_API_Enabled, Security_Osquery_API_MinOsqueryVersion, Security_Osquery_API_PackDescription, Security_Osquery_API_PackInterval, Security_Osquery_API_PackName, Security_Osquery_API_PackPlatform, Security_Osquery_API_PolicyIds, Security_Osquery_API_QueryEnabled, Security_Osquery_API_RRuleScheduleConfig, Security_Osquery_API_ResultType, Security_Osquery_API_ScheduleType } from './schemas/security.js'
 
 export const Security_Osquery_API_FindPacksResponse = z.object({
   data: z.array(z.object({
@@ -21,15 +21,19 @@ export const Security_Osquery_API_FindPacksResponse = z.object({
     description: Security_Osquery_API_PackDescription.optional(),
     enabled: Security_Osquery_API_Enabled.optional(),
     interval: Security_Osquery_API_PackInterval.optional(),
+    min_osquery_version: Security_Osquery_API_MinOsqueryVersion.optional(),
     name: Security_Osquery_API_PackName,
+    platform: Security_Osquery_API_PackPlatform.optional(),
     policy_ids: Security_Osquery_API_PolicyIds.optional(),
     queries: z.array(z.object({
       ecs_mapping: Security_Osquery_API_ECSMappingArray.optional(),
+      enabled: Security_Osquery_API_QueryEnabled.optional(),
       id: z.string().optional(),
       interval: z.number().optional(),
       platform: z.string().optional(),
       query: z.string().optional(),
       removed: z.boolean().optional(),
+      result_type: Security_Osquery_API_ResultType.optional(),
       rrule_schedule: Security_Osquery_API_RRuleScheduleConfig.optional(),
       schedule_type: Security_Osquery_API_ScheduleType.optional(),
       snapshot: z.boolean().optional(),
@@ -37,6 +41,7 @@ export const Security_Osquery_API_FindPacksResponse = z.object({
       version: z.string().optional()
     })).optional(),
     read_only: z.boolean().optional(),
+    result_type: Security_Osquery_API_ResultType.optional(),
     rrule_schedule: Security_Osquery_API_RRuleScheduleConfig.optional(),
     saved_object_id: z.string(),
     schedule_type: Security_Osquery_API_ScheduleType.optional(),
@@ -53,11 +58,15 @@ export type Security_Osquery_API_FindPacksResponse = z.infer<typeof Security_Osq
 
 export { Security_Osquery_API_ScheduleType } from './schemas/security.js'
 export { Security_Osquery_API_RRuleScheduleConfig } from './schemas/security.js'
+export { Security_Osquery_API_ResultType } from './schemas/security.js'
+export { Security_Osquery_API_QueryEnabled } from './schemas/security.js'
 export { Security_Osquery_API_ECSMappingArray } from './schemas/security.js'
 export { Security_Osquery_API_ECSMappingArrayItem } from './schemas/security.js'
 export { Security_Osquery_API_ECSMappingItem } from './schemas/security.js'
 export { Security_Osquery_API_PolicyIds } from './schemas/security.js'
+export { Security_Osquery_API_PackPlatform } from './schemas/security.js'
 export { Security_Osquery_API_PackName } from './schemas/security.js'
+export { Security_Osquery_API_MinOsqueryVersion } from './schemas/security.js'
 export { Security_Osquery_API_PackInterval } from './schemas/security.js'
 export { Security_Osquery_API_Enabled } from './schemas/security.js'
 export { Security_Osquery_API_PackDescription } from './schemas/security.js'

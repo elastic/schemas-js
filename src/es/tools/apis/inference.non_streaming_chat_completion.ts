@@ -10,18 +10,18 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/alerting-v2.post-alerting-v2-series-group-hash-snooze.request.json' with { type: 'json' }
-import type { KbApiDefinition } from '../types.ts'
+import _inputSchemaRaw from '../../json/inference.non_streaming_chat_completion.request.json' with { type: 'json' }
+import type { EsApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
-export const post_alerting_v2_series_group_hash_snoozeDefinitions: KbApiDefinition[] = [
+export const inference_non_streaming_chat_completion_definitions: EsApiDefinition[] = [
   {
-    name: 'post-alerting-v2-series-group-hash-snooze',
-    namespace: 'alerting-v2',
-    description: 'Snooze an alert episode series',
+    name: 'non-streaming-chat-completion',
+    namespace: 'inference',
+    description: 'Perform non-streaming chat completion inference on the service.',
     method: 'POST',
-    path: '/api/alerting/v2/series/{group_hash}/_snooze',
+    path: '/_inference/chat_completion/{inference_id}',
     destructive: true,
     readOnly: false,
     input: _inputSchema,

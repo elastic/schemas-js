@@ -28,8 +28,8 @@ export const Kibana_HTTP_APIs_alerting_rule_execution = z.object({
   space_id: z.string(),
   started_at: z.string(),
   timings: z.object({
-    duration: z.number(),
-    scheduled_delay: z.number()
+    duration_ms: z.number(),
+    scheduled_delay_ms: z.number()
   })
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_rule_execution' })
 export type Kibana_HTTP_APIs_alerting_rule_execution = z.infer<typeof Kibana_HTTP_APIs_alerting_rule_execution>

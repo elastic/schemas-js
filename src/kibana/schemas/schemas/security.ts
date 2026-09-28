@@ -1001,6 +1001,9 @@ export type Security_Osquery_API_Interval = z.infer<typeof Security_Osquery_API_
 export const Security_Osquery_API_KueryOrUndefined = z.string().nullable().meta({ id: 'Security_Osquery_API_KueryOrUndefined' })
 export type Security_Osquery_API_KueryOrUndefined = z.infer<typeof Security_Osquery_API_KueryOrUndefined>
 
+export const Security_Osquery_API_MinOsqueryVersion = z.string().meta({ id: 'Security_Osquery_API_MinOsqueryVersion' })
+export type Security_Osquery_API_MinOsqueryVersion = z.infer<typeof Security_Osquery_API_MinOsqueryVersion>
+
 export const Security_Osquery_API_PackDescription = z.string().meta({ id: 'Security_Osquery_API_PackDescription' })
 export type Security_Osquery_API_PackDescription = z.infer<typeof Security_Osquery_API_PackDescription>
 
@@ -1012,6 +1015,9 @@ export type Security_Osquery_API_PackInterval = z.infer<typeof Security_Osquery_
 
 export const Security_Osquery_API_PackName = z.string().meta({ id: 'Security_Osquery_API_PackName' })
 export type Security_Osquery_API_PackName = z.infer<typeof Security_Osquery_API_PackName>
+
+export const Security_Osquery_API_PackPlatform = z.string().meta({ id: 'Security_Osquery_API_PackPlatform' })
+export type Security_Osquery_API_PackPlatform = z.infer<typeof Security_Osquery_API_PackPlatform>
 
 export const Security_Osquery_API_PageOrUndefined = z.number().nullable().meta({ id: 'Security_Osquery_API_PageOrUndefined' })
 export type Security_Osquery_API_PageOrUndefined = z.infer<typeof Security_Osquery_API_PageOrUndefined>
@@ -1028,11 +1034,17 @@ export type Security_Osquery_API_PolicyIds = z.infer<typeof Security_Osquery_API
 export const Security_Osquery_API_Query = z.string().meta({ id: 'Security_Osquery_API_Query' })
 export type Security_Osquery_API_Query = z.infer<typeof Security_Osquery_API_Query>
 
+export const Security_Osquery_API_QueryEnabled = z.boolean().meta({ id: 'Security_Osquery_API_QueryEnabled' })
+export type Security_Osquery_API_QueryEnabled = z.infer<typeof Security_Osquery_API_QueryEnabled>
+
 export const Security_Osquery_API_QueryId = z.string().meta({ id: 'Security_Osquery_API_QueryId' })
 export type Security_Osquery_API_QueryId = z.infer<typeof Security_Osquery_API_QueryId>
 
 export const Security_Osquery_API_Removed = z.boolean().meta({ id: 'Security_Osquery_API_Removed' })
 export type Security_Osquery_API_Removed = z.infer<typeof Security_Osquery_API_Removed>
+
+export const Security_Osquery_API_ResultType = z.enum(['snapshot', 'differential', 'differential_added_only']).meta({ id: 'Security_Osquery_API_ResultType' })
+export type Security_Osquery_API_ResultType = z.infer<typeof Security_Osquery_API_ResultType>
 
 export const Security_Osquery_API_RRuleScheduleConfig = z.object({
   end_date: z.string().optional(),
@@ -2046,6 +2058,9 @@ export type Security_Osquery_API_ExportMetadata = z.infer<typeof Security_Osquer
 export const Security_Osquery_API_IntervalOrUndefined = Security_Osquery_API_Interval.meta({ id: 'Security_Osquery_API_IntervalOrUndefined' })
 export type Security_Osquery_API_IntervalOrUndefined = z.infer<typeof Security_Osquery_API_IntervalOrUndefined>
 
+export const Security_Osquery_API_MinOsqueryVersionOrUndefined = Security_Osquery_API_MinOsqueryVersion.meta({ id: 'Security_Osquery_API_MinOsqueryVersionOrUndefined' })
+export type Security_Osquery_API_MinOsqueryVersionOrUndefined = z.infer<typeof Security_Osquery_API_MinOsqueryVersionOrUndefined>
+
 export const Security_Osquery_API_PackDescriptionOrUndefined = Security_Osquery_API_PackDescription.meta({ id: 'Security_Osquery_API_PackDescriptionOrUndefined' })
 export type Security_Osquery_API_PackDescriptionOrUndefined = z.infer<typeof Security_Osquery_API_PackDescriptionOrUndefined>
 
@@ -2054,6 +2069,9 @@ export type Security_Osquery_API_PackIdOrUndefined = z.infer<typeof Security_Osq
 
 export const Security_Osquery_API_PackIntervalOrUndefined = Security_Osquery_API_PackInterval.meta({ id: 'Security_Osquery_API_PackIntervalOrUndefined' })
 export type Security_Osquery_API_PackIntervalOrUndefined = z.infer<typeof Security_Osquery_API_PackIntervalOrUndefined>
+
+export const Security_Osquery_API_PackPlatformOrUndefined = Security_Osquery_API_PackPlatform.meta({ id: 'Security_Osquery_API_PackPlatformOrUndefined' })
+export type Security_Osquery_API_PackPlatformOrUndefined = z.infer<typeof Security_Osquery_API_PackPlatformOrUndefined>
 
 export const Security_Osquery_API_PlatformOrUndefined = Security_Osquery_API_Platform.meta({ id: 'Security_Osquery_API_PlatformOrUndefined' })
 export type Security_Osquery_API_PlatformOrUndefined = z.infer<typeof Security_Osquery_API_PlatformOrUndefined>
@@ -2066,6 +2084,9 @@ export type Security_Osquery_API_QueryOrUndefined = z.infer<typeof Security_Osqu
 
 export const Security_Osquery_API_RemovedOrUndefined = Security_Osquery_API_Removed.meta({ id: 'Security_Osquery_API_RemovedOrUndefined' })
 export type Security_Osquery_API_RemovedOrUndefined = z.infer<typeof Security_Osquery_API_RemovedOrUndefined>
+
+export const Security_Osquery_API_ResultTypeOrUndefined = Security_Osquery_API_ResultType.meta({ id: 'Security_Osquery_API_ResultTypeOrUndefined' })
+export type Security_Osquery_API_ResultTypeOrUndefined = z.infer<typeof Security_Osquery_API_ResultTypeOrUndefined>
 
 export const Security_Osquery_API_RRuleScheduleConfigOrUndefined = Security_Osquery_API_RRuleScheduleConfig.meta({ id: 'Security_Osquery_API_RRuleScheduleConfigOrUndefined' })
 export type Security_Osquery_API_RRuleScheduleConfigOrUndefined = z.infer<typeof Security_Osquery_API_RRuleScheduleConfigOrUndefined>
@@ -2381,11 +2402,13 @@ export type Security_Osquery_API_ECSMappingOrUndefined = z.infer<typeof Security
 
 export const Security_Osquery_API_ObjectQueriesItem = z.object({
   ecs_mapping: Security_Osquery_API_ECSMapping.optional(),
+  enabled: Security_Osquery_API_QueryEnabled.optional(),
   id: Security_Osquery_API_QueryId.optional(),
   interval: z.number().nullable().optional(),
   platform: Security_Osquery_API_Platform.optional(),
   query: Security_Osquery_API_Query.optional(),
   removed: Security_Osquery_API_Removed.optional(),
+  result_type: Security_Osquery_API_ResultType.optional(),
   rrule_schedule: Security_Osquery_API_RRuleScheduleConfig.optional(),
   saved_query_id: Security_Osquery_API_SavedQueryId.optional(),
   schedule_type: Security_Osquery_API_ScheduleType.optional(),

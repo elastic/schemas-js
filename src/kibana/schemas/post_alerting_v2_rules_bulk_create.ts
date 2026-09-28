@@ -26,10 +26,10 @@ export const Kibana_HTTP_APIs_alerting_bulk_create_rule_item = z.object({
   schedule: Kibana_HTTP_APIs_alerting_rule_schedule,
   state_transition: z.object({
     pending_count: z.number().optional(),
-    pending_operator: z.enum(['AND', 'OR']).optional(),
+    pending_operator: z.enum(['and', 'or']).optional(),
     pending_timeframe: z.string().optional(),
     recovering_count: z.number().optional(),
-    recovering_operator: z.enum(['AND', 'OR']).optional(),
+    recovering_operator: z.enum(['and', 'or']).optional(),
     recovering_timeframe: z.string().optional()
   }).nullable().optional(),
   time_field: z.string().optional()
@@ -50,11 +50,12 @@ export const Kibana_HTTP_APIs_alerting_bulk_create_rules_response = z.object({
     }),
     id: z.string()
   })),
-  rules: z.array(Kibana_HTTP_APIs_alerting_rule_response)
+  items: z.array(Kibana_HTTP_APIs_alerting_rule_response)
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_bulk_create_rules_response' })
 export type Kibana_HTTP_APIs_alerting_bulk_create_rules_response = z.infer<typeof Kibana_HTTP_APIs_alerting_bulk_create_rules_response>
 
 export { Kibana_HTTP_APIs_alerting_rule_response } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_actor } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_schedule } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_query } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_standalone_rule_query } from './schemas/kibana.js'

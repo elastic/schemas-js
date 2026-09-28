@@ -10,18 +10,18 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/alerting-v2.post-alerting-v2-series-group-hash-unsnooze.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/cases.update-case-field-definition-default-space.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
-export const post_alerting_v2_series_group_hash_unsnoozeDefinitions: KbApiDefinition[] = [
+export const update_case_field_definition_default_spaceDefinitions: KbApiDefinition[] = [
   {
-    name: 'post-alerting-v2-series-group-hash-unsnooze',
-    namespace: 'alerting-v2',
-    description: 'Unsnooze an alert episode series',
-    method: 'POST',
-    path: '/api/alerting/v2/series/{group_hash}/_unsnooze',
+    name: 'update-case-field-definition-default-space',
+    namespace: 'cases',
+    description: 'Update a field definition',
+    method: 'PUT',
+    path: '/api/cases/field_definitions/{field_definition_id}',
     destructive: true,
     readOnly: false,
     input: _inputSchema,
