@@ -211,6 +211,17 @@ export const Cases_external_service = z.object({
 }).nullable().meta({ id: 'Cases_external_service' })
 export type Cases_external_service = z.infer<typeof Cases_external_service>
 
+export const Cases_field_definition_response = z.object({
+  definition: z.string(),
+  description: z.string().optional(),
+  displayOrder: z.number().optional(),
+  fieldDefinitionId: z.string(),
+  isGlobal: z.boolean().optional(),
+  name: z.string(),
+  owner: z.string()
+}).meta({ id: 'Cases_field_definition_response' })
+export type Cases_field_definition_response = z.infer<typeof Cases_field_definition_response>
+
 export const Cases_owner = z.enum(['cases', 'observability', 'securitySolution']).meta({ id: 'Cases_owner' })
 export type Cases_owner = z.infer<typeof Cases_owner>
 

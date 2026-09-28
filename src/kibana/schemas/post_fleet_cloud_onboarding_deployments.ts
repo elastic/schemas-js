@@ -43,6 +43,7 @@ export const PostFleetCloudOnboardingDeploymentsResponse = z.object({
     id: z.string(),
     mechanisms: z.array(z.enum(['managed_integration', 'ecf', 'agent_based'])),
     packagePolicyIds: z.array(z.string()).optional(),
+    policyIdsByInstance: z.record(z.string(), z.string()).optional(),
     provider: z.enum(['aws', 'azure', 'gcp']),
     services: z.array(z.string()),
     serviceVars: z.record(z.string(), z.record(z.string(), z.unknown().nullable())).optional(),

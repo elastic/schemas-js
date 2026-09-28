@@ -36,6 +36,7 @@ export const GetCaseConfigurationResponse = z.array(z.object({
     required: z.boolean().optional()
   })).optional(),
   error: z.string().nullable().optional(),
+  extractObservables: z.boolean().optional(),
   id: z.string().optional(),
   mappings: z.array(z.object({
     action_type: z.string().optional(),

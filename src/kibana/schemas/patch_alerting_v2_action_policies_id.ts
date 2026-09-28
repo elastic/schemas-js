@@ -29,6 +29,7 @@ export const Kibana_HTTP_APIs_alerting_update_action_policy = z.object({
 export type Kibana_HTTP_APIs_alerting_update_action_policy = z.infer<typeof Kibana_HTTP_APIs_alerting_update_action_policy>
 
 export { Kibana_HTTP_APIs_alerting_action_policy_response } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_actor } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_action_policy_grouping_mode } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_action_policy_destination } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_workflow_action_policy_destination } from './schemas/kibana.js'

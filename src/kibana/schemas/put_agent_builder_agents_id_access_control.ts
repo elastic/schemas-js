@@ -14,7 +14,8 @@ import { z } from 'zod'
 
 export const PutAgentBuilderAgentsIdAccessControlRequest = z.object({
   entries: z.array(z.object({
-    name: z.string(),
+    id: z.string().optional(),
+    name: z.string().optional(),
     role: z.enum(['user', 'editor', 'manager']),
     type: z.enum(['user'])
   }))

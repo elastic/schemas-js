@@ -11,14 +11,14 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Kibana_HTTP_APIs_maintenance_window_schedule_request, Kibana_HTTP_APIs_maintenance_window_scope } from './schemas/kibana.js'
+import { Kibana_HTTP_APIs_maintenance_window_schedule_request, Kibana_HTTP_APIs_maintenance_window_scope_request } from './schemas/kibana.js'
 
 export const Kibana_HTTP_APIs_new_maintenance_window = z.object({
   enabled: z.boolean().optional(),
   schedule: z.object({
     custom: Kibana_HTTP_APIs_maintenance_window_schedule_request
   }),
-  scope: Kibana_HTTP_APIs_maintenance_window_scope.optional(),
+  scope: Kibana_HTTP_APIs_maintenance_window_scope_request.optional(),
   title: z.string()
 }).meta({ id: 'Kibana_HTTP_APIs_new_maintenance_window' })
 export type Kibana_HTTP_APIs_new_maintenance_window = z.infer<typeof Kibana_HTTP_APIs_new_maintenance_window>
@@ -27,5 +27,6 @@ export { Kibana_HTTP_APIs_maintenance_window_response } from './schemas/kibana.j
 export { Kibana_HTTP_APIs_maintenance_window_scope } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_maintenance_window_schedule_response } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_maintenance_window_schedule_recurring_response } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_maintenance_window_scope_request } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_maintenance_window_schedule_request } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_maintenance_window_schedule_recurring_request } from './schemas/kibana.js'

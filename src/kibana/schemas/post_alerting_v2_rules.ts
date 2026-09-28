@@ -10,6 +10,7 @@
  */
 
 export { Kibana_HTTP_APIs_alerting_rule_response } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_actor } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_schedule } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_query } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_standalone_rule_query } from './schemas/kibana.js'

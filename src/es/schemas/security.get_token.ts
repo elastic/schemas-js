@@ -9,7 +9,7 @@ import { z } from 'zod'
 import { Name, Password, Username, long } from './_types.js'
 import { SecurityUser } from './security.js'
 
-export const SecurityGetTokenAccessTokenGrantType = z.enum(['password', 'client_credentials', '_kerberos', 'refresh_token']).meta({ id: 'SecurityGetTokenAccessTokenGrantType' })
+export const SecurityGetTokenAccessTokenGrantType = z.enum(['password', 'client_credentials', '_kerberos', 'refresh_token', '_user_managed_service_account']).meta({ id: 'SecurityGetTokenAccessTokenGrantType' })
 export type SecurityGetTokenAccessTokenGrantType = z.infer<typeof SecurityGetTokenAccessTokenGrantType>
 
 export const SecurityGetTokenUserRealm = z.object({
@@ -50,7 +50,7 @@ export type SecurityGetTokenAuthenticatedUser = z.infer<typeof SecurityGetTokenA
  * If you want to invalidate a token immediately, you can do so by using the invalidate token API.
  */
 export const SecurityGetTokenRequest = z.object({
-  grant_type: SecurityGetTokenAccessTokenGrantType.describe('The type of grant. Supported grant types are: `password`, `_kerberos`, `client_credentials`, and `refresh_token`.').optional().meta({ found_in: 'body' }),
+  grant_type: SecurityGetTokenAccessTokenGrantType.describe('The type of grant. Supported grant types are: `password`, `_kerberos`, `client_credentials`, `refresh_token`, and `_user_managed_service_account`.').optional().meta({ found_in: 'body' }),
   scope: z.string().describe('The scope of the token. Currently tokens are only issued for a scope of FULL regardless of the value sent with the request.').optional().meta({ found_in: 'body' }),
   password: z.lazy(() => Password).describe('The user\'s password. If you specify the `password` grant type, this parameter is required. This parameter is not valid with any other supported grant type.').optional().meta({ found_in: 'body' }),
   kerberos_ticket: z.string().describe('The base64 encoded kerberos ticket. If you specify the `_kerberos` grant type, this parameter is required. This parameter is not valid with any other supported grant type.').optional().meta({ found_in: 'body' }),

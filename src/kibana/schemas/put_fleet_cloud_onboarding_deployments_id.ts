@@ -16,6 +16,8 @@ export const PutFleetCloudOnboardingDeploymentsIdRequest = z.object({
   agentPolicyId: z.string().optional(),
   apiKeyId: z.string().optional(),
   attemptCount: z.number().optional(),
+  authMethod: z.union([z.literal('identity_federation'), z.literal('static_keys'), z.literal(null)]).nullable().optional(),
+  connectorId: z.string().nullable().optional(),
   deploymentId: z.string().optional(),
   deploymentName: z.string().optional(),
   ecfStacks: z.array(z.object({
@@ -23,7 +25,10 @@ export const PutFleetCloudOnboardingDeploymentsIdRequest = z.object({
     stackName: z.string(),
     templateVersion: z.string()
   })).optional(),
+  mechanisms: z.array(z.enum(['managed_integration', 'ecf', 'agent_based'])).optional(),
   packagePolicyIds: z.array(z.string()).optional(),
+  policyIdsByInstance: z.record(z.string(), z.string()).optional(),
+  services: z.array(z.string()).optional(),
   serviceVars: z.record(z.string(), z.record(z.string(), z.unknown().nullable())).optional(),
   status: z.enum(['pending', 'deploying', 'succeeded', 'failed']).optional(),
   statusMessage: z.string().optional()
@@ -49,6 +54,7 @@ export const PutFleetCloudOnboardingDeploymentsIdResponse = z.object({
     id: z.string(),
     mechanisms: z.array(z.enum(['managed_integration', 'ecf', 'agent_based'])),
     packagePolicyIds: z.array(z.string()).optional(),
+    policyIdsByInstance: z.record(z.string(), z.string()).optional(),
     provider: z.enum(['aws', 'azure', 'gcp']),
     services: z.array(z.string()),
     serviceVars: z.record(z.string(), z.record(z.string(), z.unknown().nullable())).optional(),

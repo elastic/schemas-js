@@ -10,18 +10,18 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/alerting-v2.post-alerting-v2-series-bulk-snooze.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/security-entity-store.put-security-entity-store-history-snapshot-disable.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
-export const post_alerting_v2_series_bulk_snoozeDefinitions: KbApiDefinition[] = [
+export const put_security_entity_store_history_snapshot_disableDefinitions: KbApiDefinition[] = [
   {
-    name: 'post-alerting-v2-series-bulk-snooze',
-    namespace: 'alerting-v2',
-    description: 'Bulk snooze alert episode series',
-    method: 'POST',
-    path: '/api/alerting/v2/series/_bulk_snooze',
+    name: 'put-security-entity-store-history-snapshot-disable',
+    namespace: 'security-entity-store',
+    description: 'Disable the history snapshot task',
+    method: 'PUT',
+    path: '/api/security/entity_store/history_snapshot/disable',
     destructive: true,
     readOnly: false,
     input: _inputSchema,

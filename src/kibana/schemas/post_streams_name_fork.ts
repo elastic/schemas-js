@@ -11,7 +11,6 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Kibana_HTTP_APIs_Condition } from './schemas/kibana.js'
 
 export const PostStreamsNameForkRequest = z.object({
   draft: z.boolean().optional(),
@@ -19,9 +18,11288 @@ export const PostStreamsNameForkRequest = z.object({
   stream: z.object({
     name: z.string()
   }),
-  where: z.lazy(() => Kibana_HTTP_APIs_Condition)
+  where: z.union([z.union([z.object({
+    contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+    endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+    eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+    field: z.string(),
+    gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+    gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+    includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+    lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+    lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+    neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+    range: z.object({
+      gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+    }).optional(),
+    startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+  }), z.object({
+    exists: z.boolean().optional(),
+    field: z.string()
+  })]), z.object({
+    and: z.array(z.union([z.union([z.object({
+      contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      field: z.string(),
+      gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      range: z.object({
+        gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+      }).optional(),
+      startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+    }), z.object({
+      exists: z.boolean().optional(),
+      field: z.string()
+    })]), z.object({
+      and: z.array(z.union([z.union([z.object({
+        contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        field: z.string(),
+        gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        range: z.object({
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }).optional(),
+        startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+      }), z.object({
+        exists: z.boolean().optional(),
+        field: z.string()
+      })]), z.object({
+        and: z.array(z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })]))
+      }), z.object({
+        or: z.array(z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })]))
+      }), z.object({
+        not: z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })])
+      }), z.object({
+        always: z.object({
+
+        })
+      }), z.object({
+        never: z.object({
+
+        })
+      })]))
+    }), z.object({
+      or: z.array(z.union([z.union([z.object({
+        contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        field: z.string(),
+        gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        range: z.object({
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }).optional(),
+        startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+      }), z.object({
+        exists: z.boolean().optional(),
+        field: z.string()
+      })]), z.object({
+        and: z.array(z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })]))
+      }), z.object({
+        or: z.array(z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })]))
+      }), z.object({
+        not: z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })])
+      }), z.object({
+        always: z.object({
+
+        })
+      }), z.object({
+        never: z.object({
+
+        })
+      })]))
+    }), z.object({
+      not: z.union([z.union([z.object({
+        contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        field: z.string(),
+        gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        range: z.object({
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }).optional(),
+        startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+      }), z.object({
+        exists: z.boolean().optional(),
+        field: z.string()
+      })]), z.object({
+        and: z.array(z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })]))
+      }), z.object({
+        or: z.array(z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })]))
+      }), z.object({
+        not: z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })])
+      }), z.object({
+        always: z.object({
+
+        })
+      }), z.object({
+        never: z.object({
+
+        })
+      })])
+    }), z.object({
+      always: z.object({
+
+      })
+    }), z.object({
+      never: z.object({
+
+      })
+    })]))
+  }), z.object({
+    or: z.array(z.union([z.union([z.object({
+      contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      field: z.string(),
+      gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      range: z.object({
+        gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+      }).optional(),
+      startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+    }), z.object({
+      exists: z.boolean().optional(),
+      field: z.string()
+    })]), z.object({
+      and: z.array(z.union([z.union([z.object({
+        contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        field: z.string(),
+        gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        range: z.object({
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }).optional(),
+        startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+      }), z.object({
+        exists: z.boolean().optional(),
+        field: z.string()
+      })]), z.object({
+        and: z.array(z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })]))
+      }), z.object({
+        or: z.array(z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })]))
+      }), z.object({
+        not: z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })])
+      }), z.object({
+        always: z.object({
+
+        })
+      }), z.object({
+        never: z.object({
+
+        })
+      })]))
+    }), z.object({
+      or: z.array(z.union([z.union([z.object({
+        contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        field: z.string(),
+        gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        range: z.object({
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }).optional(),
+        startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+      }), z.object({
+        exists: z.boolean().optional(),
+        field: z.string()
+      })]), z.object({
+        and: z.array(z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })]))
+      }), z.object({
+        or: z.array(z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })]))
+      }), z.object({
+        not: z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })])
+      }), z.object({
+        always: z.object({
+
+        })
+      }), z.object({
+        never: z.object({
+
+        })
+      })]))
+    }), z.object({
+      not: z.union([z.union([z.object({
+        contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        field: z.string(),
+        gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        range: z.object({
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }).optional(),
+        startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+      }), z.object({
+        exists: z.boolean().optional(),
+        field: z.string()
+      })]), z.object({
+        and: z.array(z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })]))
+      }), z.object({
+        or: z.array(z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })]))
+      }), z.object({
+        not: z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })])
+      }), z.object({
+        always: z.object({
+
+        })
+      }), z.object({
+        never: z.object({
+
+        })
+      })])
+    }), z.object({
+      always: z.object({
+
+      })
+    }), z.object({
+      never: z.object({
+
+      })
+    })]))
+  }), z.object({
+    not: z.union([z.union([z.object({
+      contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      field: z.string(),
+      gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+      range: z.object({
+        gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+      }).optional(),
+      startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+    }), z.object({
+      exists: z.boolean().optional(),
+      field: z.string()
+    })]), z.object({
+      and: z.array(z.union([z.union([z.object({
+        contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        field: z.string(),
+        gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        range: z.object({
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }).optional(),
+        startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+      }), z.object({
+        exists: z.boolean().optional(),
+        field: z.string()
+      })]), z.object({
+        and: z.array(z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })]))
+      }), z.object({
+        or: z.array(z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })]))
+      }), z.object({
+        not: z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })])
+      }), z.object({
+        always: z.object({
+
+        })
+      }), z.object({
+        never: z.object({
+
+        })
+      })]))
+    }), z.object({
+      or: z.array(z.union([z.union([z.object({
+        contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        field: z.string(),
+        gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        range: z.object({
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }).optional(),
+        startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+      }), z.object({
+        exists: z.boolean().optional(),
+        field: z.string()
+      })]), z.object({
+        and: z.array(z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })]))
+      }), z.object({
+        or: z.array(z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })]))
+      }), z.object({
+        not: z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })])
+      }), z.object({
+        always: z.object({
+
+        })
+      }), z.object({
+        never: z.object({
+
+        })
+      })]))
+    }), z.object({
+      not: z.union([z.union([z.object({
+        contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        field: z.string(),
+        gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+        range: z.object({
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }).optional(),
+        startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+      }), z.object({
+        exists: z.boolean().optional(),
+        field: z.string()
+      })]), z.object({
+        and: z.array(z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })]))
+      }), z.object({
+        or: z.array(z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })]))
+      }), z.object({
+        not: z.union([z.union([z.object({
+          contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          field: z.string(),
+          gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+          range: z.object({
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }).optional(),
+          startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+        }), z.object({
+          exists: z.boolean().optional(),
+          field: z.string()
+        })]), z.object({
+          and: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          or: z.array(z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })]))
+        }), z.object({
+          not: z.union([z.union([z.object({
+            contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            field: z.string(),
+            gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+            range: z.object({
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }).optional(),
+            startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+          }), z.object({
+            exists: z.boolean().optional(),
+            field: z.string()
+          })]), z.object({
+            and: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            or: z.array(z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })]))
+          }), z.object({
+            not: z.union([z.union([z.object({
+              contains: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              endsWith: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              eq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              field: z.string(),
+              gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              includes: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              lte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              neq: z.union([z.string(), z.number(), z.boolean()]).optional(),
+              range: z.object({
+                gt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                gte: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lt: z.union([z.string(), z.number(), z.boolean()]).optional(),
+                lte: z.union([z.string(), z.number(), z.boolean()]).optional()
+              }).optional(),
+              startsWith: z.union([z.string(), z.number(), z.boolean()]).optional()
+            }), z.object({
+              exists: z.boolean().optional(),
+              field: z.string()
+            })]), z.object({
+              always: z.object({
+
+              })
+            }), z.object({
+              never: z.object({
+
+              })
+            })])
+          }), z.object({
+            always: z.object({
+
+            })
+          }), z.object({
+            never: z.object({
+
+            })
+          })])
+        }), z.object({
+          always: z.object({
+
+          })
+        }), z.object({
+          never: z.object({
+
+          })
+        })])
+      }), z.object({
+        always: z.object({
+
+        })
+      }), z.object({
+        never: z.object({
+
+        })
+      })])
+    }), z.object({
+      always: z.object({
+
+      })
+    }), z.object({
+      never: z.object({
+
+      })
+    })])
+  }), z.object({
+    always: z.object({
+
+    })
+  }), z.object({
+    never: z.object({
+
+    })
+  })])
 }).meta({ id: 'PostStreamsNameForkRequest' })
 export type PostStreamsNameForkRequest = z.infer<typeof PostStreamsNameForkRequest>
-
-export { Kibana_HTTP_APIs_Condition } from './schemas/kibana.js'
-export { Kibana_HTTP_APIs_FilterCondition } from './schemas/kibana.js'

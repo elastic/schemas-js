@@ -527,6 +527,10 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
       const mod = await import('./apis/esql.query.ts') as Record<string, unknown>
       return mod['esql_query_definitions'] as EsApiDefinition[]
     }
+    case 'esql.test_data_source_connection': {
+      const mod = await import('./apis/esql.test_data_source_connection.ts') as Record<string, unknown>
+      return mod['esql_test_data_source_connection_definitions'] as EsApiDefinition[]
+    }
     case 'exists': {
       const mod = await import('./apis/exists.ts') as Record<string, unknown>
       return mod['exists_definitions'] as EsApiDefinition[]
@@ -958,6 +962,10 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
     case 'inference.inference': {
       const mod = await import('./apis/inference.inference.ts') as Record<string, unknown>
       return mod['inference_inference_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.non_streaming_chat_completion': {
+      const mod = await import('./apis/inference.non_streaming_chat_completion.ts') as Record<string, unknown>
+      return mod['inference_non_streaming_chat_completion_definitions'] as EsApiDefinition[]
     }
     case 'inference.put': {
       const mod = await import('./apis/inference.put.ts') as Record<string, unknown>
@@ -1807,6 +1815,10 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
       const mod = await import('./apis/security.delete_user.ts') as Record<string, unknown>
       return mod['security_delete_user_definitions'] as EsApiDefinition[]
     }
+    case 'security.delete_user_managed_service_account': {
+      const mod = await import('./apis/security.delete_user_managed_service_account.ts') as Record<string, unknown>
+      return mod['security_delete_user_managed_service_account_definitions'] as EsApiDefinition[]
+    }
     case 'security.disable_user': {
       const mod = await import('./apis/security.disable_user.ts') as Record<string, unknown>
       return mod['security_disable_user_definitions'] as EsApiDefinition[]
@@ -1930,6 +1942,10 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
     case 'security.put_user': {
       const mod = await import('./apis/security.put_user.ts') as Record<string, unknown>
       return mod['security_put_user_definitions'] as EsApiDefinition[]
+    }
+    case 'security.put_user_managed_service_account': {
+      const mod = await import('./apis/security.put_user_managed_service_account.ts') as Record<string, unknown>
+      return mod['security_put_user_managed_service_account_definitions'] as EsApiDefinition[]
     }
     case 'security.query_api_keys': {
       const mod = await import('./apis/security.query_api_keys.ts') as Record<string, unknown>

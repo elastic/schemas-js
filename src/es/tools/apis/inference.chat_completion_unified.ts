@@ -19,7 +19,7 @@ export const inference_chat_completion_unified_definitions: EsApiDefinition[] = 
   {
     name: 'chat-completion-unified',
     namespace: 'inference',
-    description: 'Perform chat completion inference on the service.',
+    description: 'Perform streaming chat completion inference on the service.',
     method: 'POST',
     path: '/_inference/chat_completion/{inference_id}/_stream',
     destructive: true,

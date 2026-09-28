@@ -20,10 +20,11 @@ export const Kibana_HTTP_APIs_alerting_policy_execution_history_item = z.object(
     id: z.string()
   })).optional(),
   error: z.object({
-    message: z.string()
-  }).optional(),
+    message: z.string(),
+    stack_trace: z.string().nullable()
+  }).nullable(),
   failure_reason: z.enum(['missing_api_key', 'workflow_not_found', 'workflow_disabled', 'schedule_error']).optional(),
-  outcome: z.enum(['dispatched', 'throttled', 'dispatch_failed']),
+  outcome: z.enum(['success', 'throttled', 'failure']),
   policy: z.object({
     id: z.string(),
     name: z.string().nullable().optional()
@@ -45,10 +46,10 @@ export const Kibana_HTTP_APIs_alerting_policy_execution_history_response = z.obj
   page: z.number(),
   per_page: z.number(),
   search_matches: z.object({
-    cap: z.number(),
+    is_truncated: z.boolean(),
     policies: z.number(),
     rules: z.number()
   }).nullable(),
-  total_events: z.number()
+  total: z.number()
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_policy_execution_history_response' })
 export type Kibana_HTTP_APIs_alerting_policy_execution_history_response = z.infer<typeof Kibana_HTTP_APIs_alerting_policy_execution_history_response>

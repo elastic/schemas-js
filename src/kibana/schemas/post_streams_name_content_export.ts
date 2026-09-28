@@ -12,7 +12,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Kibana_HTTP_APIs_ContentPackIncludedObjects: z.ZodTypeAny = z.union([z.object({
+export const Kibana_HTTP_APIs_zod_v4_54_schema0: z.ZodTypeAny = z.union([z.object({
   objects: z.object({
     all: z.object({
 
@@ -21,16 +21,16 @@ export const Kibana_HTTP_APIs_ContentPackIncludedObjects: z.ZodTypeAny = z.union
 }), z.object({
   objects: z.object({
     mappings: z.boolean(),
-    routing: z.array(z.intersection(z.lazy(() => Kibana_HTTP_APIs_ContentPackIncludedObjects), z.object({
+    routing: z.array(z.intersection(z.lazy(() => Kibana_HTTP_APIs_zod_v4_54_schema0), z.object({
       destination: z.string()
     })))
   })
-})]).meta({ id: 'Kibana_HTTP_APIs_ContentPackIncludedObjects' })
-export type Kibana_HTTP_APIs_ContentPackIncludedObjects = z.infer<typeof Kibana_HTTP_APIs_ContentPackIncludedObjects>
+})]).meta({ id: 'Kibana_HTTP_APIs_zod_v4_54_schema0' })
+export type Kibana_HTTP_APIs_zod_v4_54_schema0 = z.infer<typeof Kibana_HTTP_APIs_zod_v4_54_schema0>
 
 export const PostStreamsNameContentExportRequest = z.object({
   description: z.string(),
-  include: z.lazy(() => Kibana_HTTP_APIs_ContentPackIncludedObjects),
+  include: z.lazy(() => Kibana_HTTP_APIs_zod_v4_54_schema0),
   name: z.string(),
   version: z.string()
 }).meta({ id: 'PostStreamsNameContentExportRequest' })
