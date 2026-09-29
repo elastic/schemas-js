@@ -11,7 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Kibana_HTTP_APIs_alerting_rule_artifact, Kibana_HTTP_APIs_alerting_rule_grouping, Kibana_HTTP_APIs_alerting_rule_query } from './schemas/kibana.js'
+import { Kibana_HTTP_APIs_alerting_rule_artifact, Kibana_HTTP_APIs_alerting_rule_grouping, Kibana_HTTP_APIs_alerting_rule_no_data, Kibana_HTTP_APIs_alerting_rule_query, Kibana_HTTP_APIs_alerting_rule_recovery, Kibana_HTTP_APIs_alerting_rule_state_transition } from './schemas/kibana.js'
 
 export const Kibana_HTTP_APIs_alerting_update_rule = z.object({
   artifacts: z.array(Kibana_HTTP_APIs_alerting_rule_artifact).nullable().optional(),
@@ -22,21 +22,14 @@ export const Kibana_HTTP_APIs_alerting_update_rule = z.object({
     name: z.string().optional(),
     tags: z.array(z.string()).nullable().optional()
   }).optional(),
-  no_data_strategy: z.union([z.enum(['last_known_status']), z.enum(['emit']), z.enum(['recover']), z.enum(['none'])]).nullable().optional(),
+  no_data: Kibana_HTTP_APIs_alerting_rule_no_data.optional(),
   query: Kibana_HTTP_APIs_alerting_rule_query.optional(),
-  recovery_strategy: z.union([z.enum(['no_breach']), z.enum(['query']), z.enum(['none'])]).nullable().optional(),
+  recovery: Kibana_HTTP_APIs_alerting_rule_recovery.optional(),
   schedule: z.object({
     every: z.string().optional(),
     lookback: z.string().optional()
   }).nullable().optional(),
-  state_transition: z.union([z.object({
-    pending_count: z.number().optional(),
-    pending_operator: z.enum(['and', 'or']).optional(),
-    pending_timeframe: z.string().optional(),
-    recovering_count: z.number().optional(),
-    recovering_operator: z.enum(['and', 'or']).optional(),
-    recovering_timeframe: z.string().optional()
-  }), z.unknown().nullable()]).nullable().optional(),
+  state_transition: Kibana_HTTP_APIs_alerting_rule_state_transition.nullable().optional(),
   time_field: z.string().optional(),
   version: z.string().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_update_rule' })
@@ -44,10 +37,22 @@ export type Kibana_HTTP_APIs_alerting_update_rule = z.infer<typeof Kibana_HTTP_A
 
 export { Kibana_HTTP_APIs_alerting_rule_response } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_actor } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_rule_state_transition } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_rule_state_transition_recovering } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_rule_state_transition_pending } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_schedule } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_rule_recovery } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_rule_recovery_manual } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_rule_recovery_query } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_rule_recovery_condition } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_rule_recovery_no_breach } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_query } from './schemas/kibana.js'
-export { Kibana_HTTP_APIs_alerting_standalone_rule_query } from './schemas/kibana.js'
-export { Kibana_HTTP_APIs_alerting_composed_rule_query } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_rule_breach } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_rule_no_data } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_rule_no_data_alert } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_rule_no_data_resolve } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_rule_no_data_keep_last } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_rule_no_data_ignore } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_response_metadata } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_grouping } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_artifact } from './schemas/kibana.js'

@@ -15,7 +15,7 @@ import { z } from 'zod'
 export const CreateTrafficFilterRequest = z.object({
   name: z.string(),
   description: z.string().optional(),
-  type: z.enum(['ip', 'vpce', 'private_endpoint']),
+  type: z.enum(['ip', 'vpce', 'private_endpoint', 'psc_endpoint']),
   include_by_default: z.boolean().optional(),
   region: z.string(),
   rules: z.array(z.object({
@@ -31,7 +31,7 @@ export const CreateTrafficFilterResponse = z.object({
   id: z.string(),
   name: z.string(),
   description: z.string().optional(),
-  type: z.enum(['ip', 'vpce', 'private_endpoint']),
+  type: z.enum(['ip', 'vpce', 'private_endpoint', 'psc_endpoint']),
   include_by_default: z.boolean(),
   region: z.string(),
   rules: z.array(z.object({

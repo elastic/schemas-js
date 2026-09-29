@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-context-engine-ai-index-aiindexid","x-api":{"id":"context-engine.put-context-engine-ai-index-aiindexid","name":"put-context-engine-ai-index-aiindexid","namespace":"context-engine"},"type":"object","properties":{"status":{"enum":["updated"]}},"required":["status"]}

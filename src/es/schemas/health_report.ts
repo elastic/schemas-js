@@ -91,6 +91,33 @@ export const HealthReportDiskIndicator = z.object({
 }).meta({ id: 'HealthReportDiskIndicator' })
 export type HealthReportDiskIndicator = z.infer<typeof HealthReportDiskIndicator>
 
+export const HealthReportDlmFrozenTransitionState = z.enum(['unmarked', 'marked', 'queued', 'running']).meta({ id: 'HealthReportDlmFrozenTransitionState' })
+export type HealthReportDlmFrozenTransitionState = z.infer<typeof HealthReportDlmFrozenTransitionState>
+
+export const HealthReportDlmFrozenTransitionOverdueIndex = z.object({
+  index_name: z.lazy(() => IndexName),
+  transition_state: HealthReportDlmFrozenTransitionState
+}).meta({ id: 'HealthReportDlmFrozenTransitionOverdueIndex' })
+export type HealthReportDlmFrozenTransitionOverdueIndex = z.infer<typeof HealthReportDlmFrozenTransitionOverdueIndex>
+
+export const HealthReportDlmFrozenTransitionsIndicatorDetails = z.object({
+  transitions_enabled: z.boolean().optional(),
+  service_running: z.boolean().optional(),
+  default_repository_configured: z.boolean().optional(),
+  overdue_indices_count: z.lazy(() => integer).optional(),
+  overdue_indices_count_by_state: z.record(HealthReportDlmFrozenTransitionState, z.lazy(() => integer)).optional(),
+  overdue_indices_sample: z.array(HealthReportDlmFrozenTransitionOverdueIndex).optional(),
+  generated_at_millis: z.lazy(() => long).describe('Only present when the indicator status is `unknown`, meaning the health snapshot is stale.').optional()
+}).meta({ id: 'HealthReportDlmFrozenTransitionsIndicatorDetails' })
+export type HealthReportDlmFrozenTransitionsIndicatorDetails = z.infer<typeof HealthReportDlmFrozenTransitionsIndicatorDetails>
+
+/** DLM_FROZEN_TRANSITIONS */
+export const HealthReportDlmFrozenTransitionsIndicator = z.object({
+  ...HealthReportBaseIndicator.shape,
+  details: HealthReportDlmFrozenTransitionsIndicatorDetails.optional()
+}).meta({ id: 'HealthReportDlmFrozenTransitionsIndicator' })
+export type HealthReportDlmFrozenTransitionsIndicator = z.infer<typeof HealthReportDlmFrozenTransitionsIndicator>
+
 export const HealthReportFileSettingsIndicatorDetails = z.object({
   failure_streak: z.lazy(() => long),
   most_recent_failure: z.string()

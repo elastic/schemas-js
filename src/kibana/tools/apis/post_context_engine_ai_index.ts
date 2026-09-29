@@ -10,18 +10,18 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../json/esql.test_data_source_connection.request.json' with { type: 'json' }
-import type { EsApiDefinition } from '../types.ts'
+import _inputSchemaRaw from '../../../kibana/json/context-engine.post-context-engine-ai-index.request.json' with { type: 'json' }
+import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
-export const esql_test_data_source_connection_definitions: EsApiDefinition[] = [
+export const post_context_engine_ai_indexDefinitions: KbApiDefinition[] = [
   {
-    name: 'test-data-source-connection',
-    namespace: 'esql',
-    description: 'Test an ES|QL data source connection.',
+    name: 'post-context-engine-ai-index',
+    namespace: 'context-engine',
+    description: 'Create an AI Index',
     method: 'POST',
-    path: '/_query/data_source/_test',
+    path: '/api/context_engine/ai_index',
     destructive: true,
     readOnly: false,
     input: _inputSchema,

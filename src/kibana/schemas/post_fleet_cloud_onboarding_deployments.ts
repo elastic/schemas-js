@@ -13,7 +13,8 @@
 import { z } from 'zod'
 
 export const PostFleetCloudOnboardingDeploymentsRequest = z.object({
-  authMethod: z.enum(['identity_federation', 'static_keys']).optional(),
+  agentPolicyIds: z.array(z.string()).optional(),
+  authMethod: z.enum(['identity_federation', 'static_keys', 'temporary_keys', 'shared_credentials', 'assume_role']).optional(),
   connectorId: z.string().optional(),
   dataFormat: z.enum(['ecs', 'otel']).optional(),
   globalRegion: z.string().optional(),
@@ -26,10 +27,10 @@ export type PostFleetCloudOnboardingDeploymentsRequest = z.infer<typeof PostFlee
 
 export const PostFleetCloudOnboardingDeploymentsResponse = z.object({
   item: z.object({
-    agentPolicyId: z.string().optional(),
+    agentPolicyIds: z.array(z.string()).optional(),
     apiKeyId: z.string().optional(),
     attemptCount: z.number(),
-    authMethod: z.enum(['identity_federation', 'static_keys']).optional(),
+    authMethod: z.enum(['identity_federation', 'static_keys', 'temporary_keys', 'shared_credentials', 'assume_role']).optional(),
     connectorId: z.string().optional(),
     dataFormat: z.enum(['ecs', 'otel']).optional(),
     deploymentId: z.string().optional(),

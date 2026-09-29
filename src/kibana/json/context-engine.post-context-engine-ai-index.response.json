@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-context-engine-ai-index","x-api":{"id":"context-engine.post-context-engine-ai-index","name":"post-context-engine-ai-index","namespace":"context-engine"},"type":"object","properties":{"status":{"enum":["created"]}},"required":["status"]}
