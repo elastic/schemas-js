@@ -18,7 +18,7 @@ for (const dir of jsonDirs) {
   const fullDir = join(srcDir, dir)
   let files: string[]
   try {
-    files = readdirSync(fullDir).filter(f => f.endsWith('.json'))
+    files = readdirSync(fullDir).filter(f => f.endsWith('.json') && f !== 'manifest.json')
   } catch {
     // dir not generated yet — skip
     continue

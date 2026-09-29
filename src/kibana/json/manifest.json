@@ -1,0 +1,6022 @@
+[
+  {
+    "id": "agent-builder.delete-agent-builder-agents-id",
+    "name": "delete-agent-builder-agents-id",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.delete-agent-builder-agents-id"
+  },
+  {
+    "id": "agent-builder.delete-agent-builder-conversations-conversation-id",
+    "name": "delete-agent-builder-conversations-conversation-id",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.delete-agent-builder-conversations-conversation-id"
+  },
+  {
+    "id": "agent-builder.delete-agent-builder-conversations-conversation-id-attachments-attachment-id",
+    "name": "delete-agent-builder-conversations-conversation-id-attachments-attachment-id",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.delete-agent-builder-conversations-conversation-id-attachments-attachment-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.delete-agent-builder-plugins-pluginid",
+    "name": "delete-agent-builder-plugins-pluginid",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.delete-agent-builder-plugins-pluginid",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.delete-agent-builder-skills-skillid",
+    "name": "delete-agent-builder-skills-skillid",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.delete-agent-builder-skills-skillid",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.delete-agent-builder-tools-toolid",
+    "name": "delete-agent-builder-tools-toolid",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.delete-agent-builder-tools-toolid"
+  },
+  {
+    "id": "agent-builder.get-agent-builder-a2a-agentid-json",
+    "name": "get-agent-builder-a2a-agentid-json",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.get-agent-builder-a2a-agentid-json",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.get-agent-builder-agents",
+    "name": "get-agent-builder-agents",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.get-agent-builder-agents"
+  },
+  {
+    "id": "agent-builder.get-agent-builder-agents-id",
+    "name": "get-agent-builder-agents-id",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.get-agent-builder-agents-id"
+  },
+  {
+    "id": "agent-builder.get-agent-builder-agents-id-access-control",
+    "name": "get-agent-builder-agents-id-access-control",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.get-agent-builder-agents-id-access-control",
+    "availability": {
+      "serverless": {
+        "stability": "tech_preview"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.get-agent-builder-conversations",
+    "name": "get-agent-builder-conversations",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.get-agent-builder-conversations"
+  },
+  {
+    "id": "agent-builder.get-agent-builder-conversations-conversation-id",
+    "name": "get-agent-builder-conversations-conversation-id",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.get-agent-builder-conversations-conversation-id"
+  },
+  {
+    "id": "agent-builder.get-agent-builder-conversations-conversation-id-attachments",
+    "name": "get-agent-builder-conversations-conversation-id-attachments",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.get-agent-builder-conversations-conversation-id-attachments",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.get-agent-builder-conversations-conversation-id-attachments-attachment-id",
+    "name": "get-agent-builder-conversations-conversation-id-attachments-attachment-id",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.get-agent-builder-conversations-conversation-id-attachments-attachment-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.get-agent-builder-conversations-conversation-id-attachments-stale",
+    "name": "get-agent-builder-conversations-conversation-id-attachments-stale",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.get-agent-builder-conversations-conversation-id-attachments-stale",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.get-agent-builder-plugins",
+    "name": "get-agent-builder-plugins",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.get-agent-builder-plugins",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.get-agent-builder-plugins-pluginid",
+    "name": "get-agent-builder-plugins-pluginid",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.get-agent-builder-plugins-pluginid",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.get-agent-builder-skills",
+    "name": "get-agent-builder-skills",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.get-agent-builder-skills",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.get-agent-builder-skills-skillid",
+    "name": "get-agent-builder-skills-skillid",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.get-agent-builder-skills-skillid",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.get-agent-builder-tools",
+    "name": "get-agent-builder-tools",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.get-agent-builder-tools"
+  },
+  {
+    "id": "agent-builder.get-agent-builder-tools-toolid",
+    "name": "get-agent-builder-tools-toolid",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.get-agent-builder-tools-toolid"
+  },
+  {
+    "id": "agent-builder.patch-agent-builder-conversations-conversation-id-attachments-attachment-id",
+    "name": "patch-agent-builder-conversations-conversation-id-attachments-attachment-id",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.patch-agent-builder-conversations-conversation-id-attachments-attachment-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.post-agent-builder-a2a-agentid",
+    "name": "post-agent-builder-a2a-agentid",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.post-agent-builder-a2a-agentid",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.post-agent-builder-agents",
+    "name": "post-agent-builder-agents",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.post-agent-builder-agents"
+  },
+  {
+    "id": "agent-builder.post-agent-builder-agents-agent-id-consumption",
+    "name": "post-agent-builder-agents-agent-id-consumption",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.post-agent-builder-agents-agent-id-consumption",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.post-agent-builder-conversations",
+    "name": "post-agent-builder-conversations",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.post-agent-builder-conversations"
+  },
+  {
+    "id": "agent-builder.post-agent-builder-conversations-conversation-id-add-events",
+    "name": "post-agent-builder-conversations-conversation-id-add-events",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.post-agent-builder-conversations-conversation-id-add-events",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.post-agent-builder-conversations-conversation-id-attachments",
+    "name": "post-agent-builder-conversations-conversation-id-attachments",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.post-agent-builder-conversations-conversation-id-attachments",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.post-agent-builder-conversations-conversation-id-attachments-attachment-id-restore",
+    "name": "post-agent-builder-conversations-conversation-id-attachments-attachment-id-restore",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.post-agent-builder-conversations-conversation-id-attachments-attachment-id-restore",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.post-agent-builder-converse",
+    "name": "post-agent-builder-converse",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.post-agent-builder-converse"
+  },
+  {
+    "id": "agent-builder.post-agent-builder-converse-async",
+    "name": "post-agent-builder-converse-async",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.post-agent-builder-converse-async"
+  },
+  {
+    "id": "agent-builder.post-agent-builder-mcp",
+    "name": "post-agent-builder-mcp",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.post-agent-builder-mcp"
+  },
+  {
+    "id": "agent-builder.post-agent-builder-plugins-install",
+    "name": "post-agent-builder-plugins-install",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.post-agent-builder-plugins-install",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.post-agent-builder-skills",
+    "name": "post-agent-builder-skills",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.post-agent-builder-skills",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.post-agent-builder-tools",
+    "name": "post-agent-builder-tools",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.post-agent-builder-tools"
+  },
+  {
+    "id": "agent-builder.post-agent-builder-tools-execute",
+    "name": "post-agent-builder-tools-execute",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.post-agent-builder-tools-execute"
+  },
+  {
+    "id": "agent-builder.put-agent-builder-agents-id",
+    "name": "put-agent-builder-agents-id",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.put-agent-builder-agents-id"
+  },
+  {
+    "id": "agent-builder.put-agent-builder-agents-id-access-control",
+    "name": "put-agent-builder-agents-id-access-control",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.put-agent-builder-agents-id-access-control",
+    "availability": {
+      "serverless": {
+        "stability": "tech_preview"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.put-agent-builder-conversations-conversation-id-access-control",
+    "name": "put-agent-builder-conversations-conversation-id-access-control",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.put-agent-builder-conversations-conversation-id-access-control",
+    "availability": {
+      "serverless": {
+        "stability": "tech_preview"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.put-agent-builder-conversations-conversation-id-attachments-attachment-id",
+    "name": "put-agent-builder-conversations-conversation-id-attachments-attachment-id",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.put-agent-builder-conversations-conversation-id-attachments-attachment-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.put-agent-builder-conversations-conversation-id-attachments-attachment-id-origin",
+    "name": "put-agent-builder-conversations-conversation-id-attachments-attachment-id-origin",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.put-agent-builder-conversations-conversation-id-attachments-attachment-id-origin",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.put-agent-builder-skills-skillid",
+    "name": "put-agent-builder-skills-skillid",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.put-agent-builder-skills-skillid",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "agent-builder.put-agent-builder-tools-toolid",
+    "name": "put-agent-builder-tools-toolid",
+    "namespace": "agent-builder",
+    "description": "",
+    "namespaceFile": "agent-builder.put-agent-builder-tools-toolid"
+  },
+  {
+    "id": "alerting-v2.delete-alerting-v2-action-policies-id",
+    "name": "delete-alerting-v2-action-policies-id",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.delete-alerting-v2-action-policies-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.delete-alerting-v2-rules-id",
+    "name": "delete-alerting-v2-rules-id",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.delete-alerting-v2-rules-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.get-alerting-v2-action-policies",
+    "name": "get-alerting-v2-action-policies",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.get-alerting-v2-action-policies",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.get-alerting-v2-action-policies-id",
+    "name": "get-alerting-v2-action-policies-id",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.get-alerting-v2-action-policies-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.get-alerting-v2-execution-history-action-policies",
+    "name": "get-alerting-v2-execution-history-action-policies",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.get-alerting-v2-execution-history-action-policies",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.get-alerting-v2-execution-history-rules",
+    "name": "get-alerting-v2-execution-history-rules",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.get-alerting-v2-execution-history-rules",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.get-alerting-v2-rules",
+    "name": "get-alerting-v2-rules",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.get-alerting-v2-rules",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.get-alerting-v2-rules-id",
+    "name": "get-alerting-v2-rules-id",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.get-alerting-v2-rules-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.patch-alerting-v2-action-policies-id",
+    "name": "patch-alerting-v2-action-policies-id",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.patch-alerting-v2-action-policies-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.patch-alerting-v2-rules-id",
+    "name": "patch-alerting-v2-rules-id",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.patch-alerting-v2-rules-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-action-policies",
+    "name": "post-alerting-v2-action-policies",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-action-policies",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-action-policies-bulk-delete",
+    "name": "post-alerting-v2-action-policies-bulk-delete",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-action-policies-bulk-delete",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-action-policies-bulk-disable",
+    "name": "post-alerting-v2-action-policies-bulk-disable",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-action-policies-bulk-disable",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-action-policies-bulk-enable",
+    "name": "post-alerting-v2-action-policies-bulk-enable",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-action-policies-bulk-enable",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-action-policies-bulk-snooze",
+    "name": "post-alerting-v2-action-policies-bulk-snooze",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-action-policies-bulk-snooze",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-action-policies-bulk-unsnooze",
+    "name": "post-alerting-v2-action-policies-bulk-unsnooze",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-action-policies-bulk-unsnooze",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-action-policies-bulk-update-api-key",
+    "name": "post-alerting-v2-action-policies-bulk-update-api-key",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-action-policies-bulk-update-api-key",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-action-policies-id-disable",
+    "name": "post-alerting-v2-action-policies-id-disable",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-action-policies-id-disable",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-action-policies-id-enable",
+    "name": "post-alerting-v2-action-policies-id-enable",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-action-policies-id-enable",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-action-policies-id-snooze",
+    "name": "post-alerting-v2-action-policies-id-snooze",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-action-policies-id-snooze",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-action-policies-id-unsnooze",
+    "name": "post-alerting-v2-action-policies-id-unsnooze",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-action-policies-id-unsnooze",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-action-policies-id-update-api-key",
+    "name": "post-alerting-v2-action-policies-id-update-api-key",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-action-policies-id-update-api-key",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-episodes-bulk-ack",
+    "name": "post-alerting-v2-episodes-bulk-ack",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-episodes-bulk-ack",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-episodes-bulk-activate",
+    "name": "post-alerting-v2-episodes-bulk-activate",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-episodes-bulk-activate",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-episodes-bulk-assign",
+    "name": "post-alerting-v2-episodes-bulk-assign",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-episodes-bulk-assign",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-episodes-bulk-deactivate",
+    "name": "post-alerting-v2-episodes-bulk-deactivate",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-episodes-bulk-deactivate",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-episodes-bulk-tag",
+    "name": "post-alerting-v2-episodes-bulk-tag",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-episodes-bulk-tag",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-episodes-bulk-unack",
+    "name": "post-alerting-v2-episodes-bulk-unack",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-episodes-bulk-unack",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-episodes-episode-id-ack",
+    "name": "post-alerting-v2-episodes-episode-id-ack",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-episodes-episode-id-ack",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-episodes-episode-id-activate",
+    "name": "post-alerting-v2-episodes-episode-id-activate",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-episodes-episode-id-activate",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-episodes-episode-id-assign",
+    "name": "post-alerting-v2-episodes-episode-id-assign",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-episodes-episode-id-assign",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-episodes-episode-id-deactivate",
+    "name": "post-alerting-v2-episodes-episode-id-deactivate",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-episodes-episode-id-deactivate",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-episodes-episode-id-tag",
+    "name": "post-alerting-v2-episodes-episode-id-tag",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-episodes-episode-id-tag",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-episodes-episode-id-unack",
+    "name": "post-alerting-v2-episodes-episode-id-unack",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-episodes-episode-id-unack",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-rules",
+    "name": "post-alerting-v2-rules",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-rules",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-rules-bulk-create",
+    "name": "post-alerting-v2-rules-bulk-create",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-rules-bulk-create",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-rules-bulk-delete",
+    "name": "post-alerting-v2-rules-bulk-delete",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-rules-bulk-delete",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-rules-bulk-disable",
+    "name": "post-alerting-v2-rules-bulk-disable",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-rules-bulk-disable",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-rules-bulk-enable",
+    "name": "post-alerting-v2-rules-bulk-enable",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-rules-bulk-enable",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-rules-bulk-get",
+    "name": "post-alerting-v2-rules-bulk-get",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-rules-bulk-get",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-rules-bulk-update-api-key",
+    "name": "post-alerting-v2-rules-bulk-update-api-key",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-rules-bulk-update-api-key",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-rules-delete-by-query",
+    "name": "post-alerting-v2-rules-delete-by-query",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-rules-delete-by-query",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-rules-disable-by-query",
+    "name": "post-alerting-v2-rules-disable-by-query",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-rules-disable-by-query",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-rules-enable-by-query",
+    "name": "post-alerting-v2-rules-enable-by-query",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-rules-enable-by-query",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-rules-id-disable",
+    "name": "post-alerting-v2-rules-id-disable",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-rules-id-disable",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-rules-id-enable",
+    "name": "post-alerting-v2-rules-id-enable",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-rules-id-enable",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-rules-id-run",
+    "name": "post-alerting-v2-rules-id-run",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-rules-id-run",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.post-alerting-v2-rules-update-api-key-by-query",
+    "name": "post-alerting-v2-rules-update-api-key-by-query",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.post-alerting-v2-rules-update-api-key-by-query",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.put-alerting-v2-action-policies-id",
+    "name": "put-alerting-v2-action-policies-id",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.put-alerting-v2-action-policies-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting-v2.put-alerting-v2-rules-id",
+    "name": "put-alerting-v2-rules-id",
+    "namespace": "alerting-v2",
+    "description": "",
+    "namespaceFile": "alerting-v2.put-alerting-v2-rules-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "alerting.delete-alerting-rule-id",
+    "name": "delete-alerting-rule-id",
+    "namespace": "alerting",
+    "description": "",
+    "namespaceFile": "alerting.delete-alerting-rule-id"
+  },
+  {
+    "id": "alerting.delete-alerting-rule-ruleid-snooze-schedule-scheduleid",
+    "name": "delete-alerting-rule-ruleid-snooze-schedule-scheduleid",
+    "namespace": "alerting",
+    "description": "",
+    "namespaceFile": "alerting.delete-alerting-rule-ruleid-snooze-schedule-scheduleid",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "alerting.delete-alerting-rules-backfill-id",
+    "name": "delete-alerting-rules-backfill-id",
+    "namespace": "alerting",
+    "description": "",
+    "namespaceFile": "alerting.delete-alerting-rules-backfill-id"
+  },
+  {
+    "id": "alerting.get-alerting-rule-id",
+    "name": "get-alerting-rule-id",
+    "namespace": "alerting",
+    "description": "",
+    "namespaceFile": "alerting.get-alerting-rule-id"
+  },
+  {
+    "id": "alerting.get-alerting-rule-id-query-inspector",
+    "name": "get-alerting-rule-id-query-inspector",
+    "namespace": "alerting",
+    "description": "",
+    "namespaceFile": "alerting.get-alerting-rule-id-query-inspector"
+  },
+  {
+    "id": "alerting.get-alerting-rules-backfill-id",
+    "name": "get-alerting-rules-backfill-id",
+    "namespace": "alerting",
+    "description": "",
+    "namespaceFile": "alerting.get-alerting-rules-backfill-id"
+  },
+  {
+    "id": "alerting.get-alerting-rules-find",
+    "name": "get-alerting-rules-find",
+    "namespace": "alerting",
+    "description": "",
+    "namespaceFile": "alerting.get-alerting-rules-find"
+  },
+  {
+    "id": "alerting.post-alerting-rule-id",
+    "name": "post-alerting-rule-id",
+    "namespace": "alerting",
+    "description": "",
+    "namespaceFile": "alerting.post-alerting-rule-id"
+  },
+  {
+    "id": "alerting.post-alerting-rule-id-disable",
+    "name": "post-alerting-rule-id-disable",
+    "namespace": "alerting",
+    "description": "",
+    "namespaceFile": "alerting.post-alerting-rule-id-disable"
+  },
+  {
+    "id": "alerting.post-alerting-rule-id-enable",
+    "name": "post-alerting-rule-id-enable",
+    "namespace": "alerting",
+    "description": "",
+    "namespaceFile": "alerting.post-alerting-rule-id-enable"
+  },
+  {
+    "id": "alerting.post-alerting-rule-id-mute-all",
+    "name": "post-alerting-rule-id-mute-all",
+    "namespace": "alerting",
+    "description": "",
+    "namespaceFile": "alerting.post-alerting-rule-id-mute-all"
+  },
+  {
+    "id": "alerting.post-alerting-rule-id-snooze-schedule",
+    "name": "post-alerting-rule-id-snooze-schedule",
+    "namespace": "alerting",
+    "description": "",
+    "namespaceFile": "alerting.post-alerting-rule-id-snooze-schedule",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "alerting.post-alerting-rule-id-unmute-all",
+    "name": "post-alerting-rule-id-unmute-all",
+    "namespace": "alerting",
+    "description": "",
+    "namespaceFile": "alerting.post-alerting-rule-id-unmute-all"
+  },
+  {
+    "id": "alerting.post-alerting-rule-id-update-api-key",
+    "name": "post-alerting-rule-id-update-api-key",
+    "namespace": "alerting",
+    "description": "",
+    "namespaceFile": "alerting.post-alerting-rule-id-update-api-key"
+  },
+  {
+    "id": "alerting.post-alerting-rule-rule-id-alert-alert-id-mute",
+    "name": "post-alerting-rule-rule-id-alert-alert-id-mute",
+    "namespace": "alerting",
+    "description": "",
+    "namespaceFile": "alerting.post-alerting-rule-rule-id-alert-alert-id-mute"
+  },
+  {
+    "id": "alerting.post-alerting-rule-rule-id-alert-alert-id-snooze",
+    "name": "post-alerting-rule-rule-id-alert-alert-id-snooze",
+    "namespace": "alerting",
+    "description": "",
+    "namespaceFile": "alerting.post-alerting-rule-rule-id-alert-alert-id-snooze",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "alerting.post-alerting-rule-rule-id-alert-alert-id-unmute",
+    "name": "post-alerting-rule-rule-id-alert-alert-id-unmute",
+    "namespace": "alerting",
+    "description": "",
+    "namespaceFile": "alerting.post-alerting-rule-rule-id-alert-alert-id-unmute"
+  },
+  {
+    "id": "alerting.post-alerting-rule-rule-id-alert-alert-id-unsnooze",
+    "name": "post-alerting-rule-rule-id-alert-alert-id-unsnooze",
+    "namespace": "alerting",
+    "description": "",
+    "namespaceFile": "alerting.post-alerting-rule-rule-id-alert-alert-id-unsnooze",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "alerting.post-alerting-rules-backfill-find",
+    "name": "post-alerting-rules-backfill-find",
+    "namespace": "alerting",
+    "description": "",
+    "namespaceFile": "alerting.post-alerting-rules-backfill-find"
+  },
+  {
+    "id": "alerting.post-alerting-rules-backfill-schedule",
+    "name": "post-alerting-rules-backfill-schedule",
+    "namespace": "alerting",
+    "description": "",
+    "namespaceFile": "alerting.post-alerting-rules-backfill-schedule"
+  },
+  {
+    "id": "alerting.put-alerting-rule-id",
+    "name": "put-alerting-rule-id",
+    "namespace": "alerting",
+    "description": "",
+    "namespaceFile": "alerting.put-alerting-rule-id"
+  },
+  {
+    "id": "apm-agent-configuration.create-update-agent-configuration",
+    "name": "create-update-agent-configuration",
+    "namespace": "apm-agent-configuration",
+    "description": "",
+    "namespaceFile": "apm-agent-configuration.create-update-agent-configuration"
+  },
+  {
+    "id": "apm-agent-configuration.delete-agent-configuration",
+    "name": "delete-agent-configuration",
+    "namespace": "apm-agent-configuration",
+    "description": "",
+    "namespaceFile": "apm-agent-configuration.delete-agent-configuration"
+  },
+  {
+    "id": "apm-agent-configuration.get-agent-configurations",
+    "name": "get-agent-configurations",
+    "namespace": "apm-agent-configuration",
+    "description": "",
+    "namespaceFile": "apm-agent-configuration.get-agent-configurations"
+  },
+  {
+    "id": "apm-agent-configuration.get-agent-name-for-service",
+    "name": "get-agent-name-for-service",
+    "namespace": "apm-agent-configuration",
+    "description": "",
+    "namespaceFile": "apm-agent-configuration.get-agent-name-for-service"
+  },
+  {
+    "id": "apm-agent-configuration.get-environments-for-service",
+    "name": "get-environments-for-service",
+    "namespace": "apm-agent-configuration",
+    "description": "",
+    "namespaceFile": "apm-agent-configuration.get-environments-for-service"
+  },
+  {
+    "id": "apm-agent-configuration.get-single-agent-configuration",
+    "name": "get-single-agent-configuration",
+    "namespace": "apm-agent-configuration",
+    "description": "",
+    "namespaceFile": "apm-agent-configuration.get-single-agent-configuration"
+  },
+  {
+    "id": "apm-agent-configuration.search-single-configuration",
+    "name": "search-single-configuration",
+    "namespace": "apm-agent-configuration",
+    "description": "",
+    "namespaceFile": "apm-agent-configuration.search-single-configuration"
+  },
+  {
+    "id": "apm-agent-keys.create-agent-key",
+    "name": "create-agent-key",
+    "namespace": "apm-agent-keys",
+    "description": "",
+    "namespaceFile": "apm-agent-keys.create-agent-key"
+  },
+  {
+    "id": "apm-annotations.create-annotation",
+    "name": "create-annotation",
+    "namespace": "apm-annotations",
+    "description": "",
+    "namespaceFile": "apm-annotations.create-annotation"
+  },
+  {
+    "id": "apm-annotations.get-annotation",
+    "name": "get-annotation",
+    "namespace": "apm-annotations",
+    "description": "",
+    "namespaceFile": "apm-annotations.get-annotation"
+  },
+  {
+    "id": "apm-server-schema.save-apm-server-schema",
+    "name": "save-apm-server-schema",
+    "namespace": "apm-server-schema",
+    "description": "",
+    "namespaceFile": "apm-server-schema.save-apm-server-schema"
+  },
+  {
+    "id": "cases.add-case-comment",
+    "name": "add-case-comment",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.add-case-comment"
+  },
+  {
+    "id": "cases.add-case-file",
+    "name": "add-case-file",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.add-case-file"
+  },
+  {
+    "id": "cases.create-case",
+    "name": "create-case",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.create-case"
+  },
+  {
+    "id": "cases.create-case-field-definition-default-space",
+    "name": "create-case-field-definition-default-space",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.create-case-field-definition-default-space",
+    "availability": {
+      "serverless": {
+        "stability": "tech_preview"
+      }
+    }
+  },
+  {
+    "id": "cases.create-case-template",
+    "name": "create-case-template",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.create-case-template",
+    "availability": {
+      "serverless": {
+        "stability": "tech_preview"
+      }
+    }
+  },
+  {
+    "id": "cases.delete-case",
+    "name": "delete-case",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.delete-case"
+  },
+  {
+    "id": "cases.delete-case-comment",
+    "name": "delete-case-comment",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.delete-case-comment"
+  },
+  {
+    "id": "cases.delete-case-comments",
+    "name": "delete-case-comments",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.delete-case-comments"
+  },
+  {
+    "id": "cases.delete-case-field-definition-default-space",
+    "name": "delete-case-field-definition-default-space",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.delete-case-field-definition-default-space",
+    "availability": {
+      "serverless": {
+        "stability": "tech_preview"
+      }
+    }
+  },
+  {
+    "id": "cases.delete-case-template",
+    "name": "delete-case-template",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.delete-case-template",
+    "availability": {
+      "serverless": {
+        "stability": "tech_preview"
+      }
+    }
+  },
+  {
+    "id": "cases.find-case-activity",
+    "name": "find-case-activity",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.find-case-activity"
+  },
+  {
+    "id": "cases.find-case-comments",
+    "name": "find-case-comments",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.find-case-comments"
+  },
+  {
+    "id": "cases.find-case-connectors",
+    "name": "find-case-connectors",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.find-case-connectors"
+  },
+  {
+    "id": "cases.find-cases",
+    "name": "find-cases",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.find-cases"
+  },
+  {
+    "id": "cases.get-applicable-fields",
+    "name": "get-applicable-fields",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.get-applicable-fields"
+  },
+  {
+    "id": "cases.get-case",
+    "name": "get-case",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.get-case"
+  },
+  {
+    "id": "cases.get-case-alerts",
+    "name": "get-case-alerts",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.get-case-alerts",
+    "availability": {
+      "serverless": {
+        "stability": "tech_preview"
+      }
+    }
+  },
+  {
+    "id": "cases.get-case-applicable-fields",
+    "name": "get-case-applicable-fields",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.get-case-applicable-fields"
+  },
+  {
+    "id": "cases.get-case-comment",
+    "name": "get-case-comment",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.get-case-comment"
+  },
+  {
+    "id": "cases.get-case-configuration",
+    "name": "get-case-configuration",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.get-case-configuration"
+  },
+  {
+    "id": "cases.get-case-field-definition-default-space",
+    "name": "get-case-field-definition-default-space",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.get-case-field-definition-default-space",
+    "availability": {
+      "serverless": {
+        "stability": "tech_preview"
+      }
+    }
+  },
+  {
+    "id": "cases.get-case-field-definitions-default-space",
+    "name": "get-case-field-definitions-default-space",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.get-case-field-definitions-default-space",
+    "availability": {
+      "serverless": {
+        "stability": "tech_preview"
+      }
+    }
+  },
+  {
+    "id": "cases.get-case-reporters",
+    "name": "get-case-reporters",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.get-case-reporters"
+  },
+  {
+    "id": "cases.get-case-tags",
+    "name": "get-case-tags",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.get-case-tags"
+  },
+  {
+    "id": "cases.get-case-template",
+    "name": "get-case-template",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.get-case-template"
+  },
+  {
+    "id": "cases.get-case-templates",
+    "name": "get-case-templates",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.get-case-templates"
+  },
+  {
+    "id": "cases.get-cases-by-alert",
+    "name": "get-cases-by-alert",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.get-cases-by-alert",
+    "availability": {
+      "serverless": {
+        "stability": "tech_preview"
+      }
+    }
+  },
+  {
+    "id": "cases.push-case",
+    "name": "push-case",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.push-case"
+  },
+  {
+    "id": "cases.set-case-configuration",
+    "name": "set-case-configuration",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.set-case-configuration"
+  },
+  {
+    "id": "cases.update-case",
+    "name": "update-case",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.update-case"
+  },
+  {
+    "id": "cases.update-case-comment",
+    "name": "update-case-comment",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.update-case-comment"
+  },
+  {
+    "id": "cases.update-case-configuration",
+    "name": "update-case-configuration",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.update-case-configuration"
+  },
+  {
+    "id": "cases.update-case-field-definition-default-space",
+    "name": "update-case-field-definition-default-space",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.update-case-field-definition-default-space",
+    "availability": {
+      "serverless": {
+        "stability": "tech_preview"
+      }
+    }
+  },
+  {
+    "id": "cases.update-case-template",
+    "name": "update-case-template",
+    "namespace": "cases",
+    "description": "",
+    "namespaceFile": "cases.update-case-template",
+    "availability": {
+      "serverless": {
+        "stability": "tech_preview"
+      }
+    }
+  },
+  {
+    "id": "connectors.delete-actions-connector-id",
+    "name": "delete-actions-connector-id",
+    "namespace": "connectors",
+    "description": "",
+    "namespaceFile": "connectors.delete-actions-connector-id"
+  },
+  {
+    "id": "connectors.get-actions-connector-connectorid-oauth-start",
+    "name": "get-actions-connector-connectorid-oauth-start",
+    "namespace": "connectors",
+    "description": "",
+    "namespaceFile": "connectors.get-actions-connector-connectorid-oauth-start"
+  },
+  {
+    "id": "connectors.get-actions-connector-id",
+    "name": "get-actions-connector-id",
+    "namespace": "connectors",
+    "description": "",
+    "namespaceFile": "connectors.get-actions-connector-id"
+  },
+  {
+    "id": "connectors.get-actions-connector-oauth-callback",
+    "name": "get-actions-connector-oauth-callback",
+    "namespace": "connectors",
+    "description": "",
+    "namespaceFile": "connectors.get-actions-connector-oauth-callback"
+  },
+  {
+    "id": "connectors.get-actions-connector-types",
+    "name": "get-actions-connector-types",
+    "namespace": "connectors",
+    "description": "",
+    "namespaceFile": "connectors.get-actions-connector-types"
+  },
+  {
+    "id": "connectors.get-actions-connectors",
+    "name": "get-actions-connectors",
+    "namespace": "connectors",
+    "description": "",
+    "namespaceFile": "connectors.get-actions-connectors"
+  },
+  {
+    "id": "connectors.post-actions-connector-id",
+    "name": "post-actions-connector-id",
+    "namespace": "connectors",
+    "description": "",
+    "namespaceFile": "connectors.post-actions-connector-id"
+  },
+  {
+    "id": "connectors.post-actions-connector-id-execute",
+    "name": "post-actions-connector-id-execute",
+    "namespace": "connectors",
+    "description": "",
+    "namespaceFile": "connectors.post-actions-connector-id-execute"
+  },
+  {
+    "id": "connectors.put-actions-connector-id",
+    "name": "put-actions-connector-id",
+    "namespace": "connectors",
+    "description": "",
+    "namespaceFile": "connectors.put-actions-connector-id"
+  },
+  {
+    "id": "context-engine.delete-context-engine-ai-index-aiindexid",
+    "name": "delete-context-engine-ai-index-aiindexid",
+    "namespace": "context-engine",
+    "description": "",
+    "namespaceFile": "context-engine.delete-context-engine-ai-index-aiindexid",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "context-engine.get-context-engine-ai-index",
+    "name": "get-context-engine-ai-index",
+    "namespace": "context-engine",
+    "description": "",
+    "namespaceFile": "context-engine.get-context-engine-ai-index",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "context-engine.get-context-engine-ai-index-aiindexid",
+    "name": "get-context-engine-ai-index-aiindexid",
+    "namespace": "context-engine",
+    "description": "",
+    "namespaceFile": "context-engine.get-context-engine-ai-index-aiindexid",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "context-engine.get-context-engine-ai-index-aiindexid-describe",
+    "name": "get-context-engine-ai-index-aiindexid-describe",
+    "namespace": "context-engine",
+    "description": "",
+    "namespaceFile": "context-engine.get-context-engine-ai-index-aiindexid-describe",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "context-engine.post-context-engine-ai-index",
+    "name": "post-context-engine-ai-index",
+    "namespace": "context-engine",
+    "description": "",
+    "namespaceFile": "context-engine.post-context-engine-ai-index",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "context-engine.post-context-engine-ai-index-query",
+    "name": "post-context-engine-ai-index-query",
+    "namespace": "context-engine",
+    "description": "",
+    "namespaceFile": "context-engine.post-context-engine-ai-index-query",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "context-engine.put-context-engine-ai-index-aiindexid",
+    "name": "put-context-engine-ai-index-aiindexid",
+    "namespace": "context-engine",
+    "description": "",
+    "namespaceFile": "context-engine.put-context-engine-ai-index-aiindexid",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "dashboards.create-dashboard",
+    "name": "create-dashboard",
+    "namespace": "dashboards",
+    "description": "",
+    "namespaceFile": "dashboards.create-dashboard",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "dashboards.delete-dashboard",
+    "name": "delete-dashboard",
+    "namespace": "dashboards",
+    "description": "",
+    "namespaceFile": "dashboards.delete-dashboard",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "dashboards.get-dashboard",
+    "name": "get-dashboard",
+    "namespace": "dashboards",
+    "description": "",
+    "namespaceFile": "dashboards.get-dashboard",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "dashboards.search-dashboards",
+    "name": "search-dashboards",
+    "namespace": "dashboards",
+    "description": "",
+    "namespaceFile": "dashboards.search-dashboards",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "dashboards.upsert-dashboard",
+    "name": "upsert-dashboard",
+    "namespace": "dashboards",
+    "description": "",
+    "namespaceFile": "dashboards.upsert-dashboard",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "data-streams.get-fleet-data-streams",
+    "name": "get-fleet-data-streams",
+    "namespace": "data-streams",
+    "description": "",
+    "namespaceFile": "data-streams.get-fleet-data-streams"
+  },
+  {
+    "id": "data-streams.get-fleet-data-streams-data",
+    "name": "get-fleet-data-streams-data",
+    "namespace": "data-streams",
+    "description": "",
+    "namespaceFile": "data-streams.get-fleet-data-streams-data",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "data-streams.get-fleet-epm-data-streams",
+    "name": "get-fleet-epm-data-streams",
+    "namespace": "data-streams",
+    "description": "",
+    "namespaceFile": "data-streams.get-fleet-epm-data-streams"
+  },
+  {
+    "id": "data-views.create-data-view-default",
+    "name": "create-data-view-default",
+    "namespace": "data-views",
+    "description": "",
+    "namespaceFile": "data-views.create-data-view-default"
+  },
+  {
+    "id": "data-views.create-runtime-field-default",
+    "name": "create-runtime-field-default",
+    "namespace": "data-views",
+    "description": "",
+    "namespaceFile": "data-views.create-runtime-field-default"
+  },
+  {
+    "id": "data-views.create-update-runtime-field-default",
+    "name": "create-update-runtime-field-default",
+    "namespace": "data-views",
+    "description": "",
+    "namespaceFile": "data-views.create-update-runtime-field-default"
+  },
+  {
+    "id": "data-views.delete-data-view-default",
+    "name": "delete-data-view-default",
+    "namespace": "data-views",
+    "description": "",
+    "namespaceFile": "data-views.delete-data-view-default"
+  },
+  {
+    "id": "data-views.delete-runtime-field-default",
+    "name": "delete-runtime-field-default",
+    "namespace": "data-views",
+    "description": "",
+    "namespaceFile": "data-views.delete-runtime-field-default"
+  },
+  {
+    "id": "data-views.get-all-data-views-default",
+    "name": "get-all-data-views-default",
+    "namespace": "data-views",
+    "description": "",
+    "namespaceFile": "data-views.get-all-data-views-default"
+  },
+  {
+    "id": "data-views.get-data-view-default",
+    "name": "get-data-view-default",
+    "namespace": "data-views",
+    "description": "",
+    "namespaceFile": "data-views.get-data-view-default"
+  },
+  {
+    "id": "data-views.get-default-data-view-default",
+    "name": "get-default-data-view-default",
+    "namespace": "data-views",
+    "description": "",
+    "namespaceFile": "data-views.get-default-data-view-default"
+  },
+  {
+    "id": "data-views.get-runtime-field-default",
+    "name": "get-runtime-field-default",
+    "namespace": "data-views",
+    "description": "",
+    "namespaceFile": "data-views.get-runtime-field-default"
+  },
+  {
+    "id": "data-views.preview-swap-data-views-default",
+    "name": "preview-swap-data-views-default",
+    "namespace": "data-views",
+    "description": "",
+    "namespaceFile": "data-views.preview-swap-data-views-default"
+  },
+  {
+    "id": "data-views.set-default-datail-view-default",
+    "name": "set-default-datail-view-default",
+    "namespace": "data-views",
+    "description": "",
+    "namespaceFile": "data-views.set-default-datail-view-default"
+  },
+  {
+    "id": "data-views.swap-data-views-default",
+    "name": "swap-data-views-default",
+    "namespace": "data-views",
+    "description": "",
+    "namespaceFile": "data-views.swap-data-views-default"
+  },
+  {
+    "id": "data-views.update-data-view-default",
+    "name": "update-data-view-default",
+    "namespace": "data-views",
+    "description": "",
+    "namespaceFile": "data-views.update-data-view-default"
+  },
+  {
+    "id": "data-views.update-fields-metadata-default",
+    "name": "update-fields-metadata-default",
+    "namespace": "data-views",
+    "description": "",
+    "namespaceFile": "data-views.update-fields-metadata-default"
+  },
+  {
+    "id": "data-views.update-runtime-field-default",
+    "name": "update-runtime-field-default",
+    "namespace": "data-views",
+    "description": "",
+    "namespaceFile": "data-views.update-runtime-field-default"
+  },
+  {
+    "id": "elastic-agent-actions.get-fleet-agents-action-status",
+    "name": "get-fleet-agents-action-status",
+    "namespace": "elastic-agent-actions",
+    "description": "",
+    "namespaceFile": "elastic-agent-actions.get-fleet-agents-action-status"
+  },
+  {
+    "id": "elastic-agent-actions.post-fleet-agents-actions-actionid-cancel",
+    "name": "post-fleet-agents-actions-actionid-cancel",
+    "namespace": "elastic-agent-actions",
+    "description": "",
+    "namespaceFile": "elastic-agent-actions.post-fleet-agents-actions-actionid-cancel"
+  },
+  {
+    "id": "elastic-agent-actions.post-fleet-agents-agentid-actions",
+    "name": "post-fleet-agents-agentid-actions",
+    "namespace": "elastic-agent-actions",
+    "description": "",
+    "namespaceFile": "elastic-agent-actions.post-fleet-agents-agentid-actions"
+  },
+  {
+    "id": "elastic-agent-actions.post-fleet-agents-agentid-reassign",
+    "name": "post-fleet-agents-agentid-reassign",
+    "namespace": "elastic-agent-actions",
+    "description": "",
+    "namespaceFile": "elastic-agent-actions.post-fleet-agents-agentid-reassign"
+  },
+  {
+    "id": "elastic-agent-actions.post-fleet-agents-agentid-remove-collector",
+    "name": "post-fleet-agents-agentid-remove-collector",
+    "namespace": "elastic-agent-actions",
+    "description": "",
+    "namespaceFile": "elastic-agent-actions.post-fleet-agents-agentid-remove-collector",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "elastic-agent-actions.post-fleet-agents-agentid-request-diagnostics",
+    "name": "post-fleet-agents-agentid-request-diagnostics",
+    "namespace": "elastic-agent-actions",
+    "description": "",
+    "namespaceFile": "elastic-agent-actions.post-fleet-agents-agentid-request-diagnostics"
+  },
+  {
+    "id": "elastic-agent-actions.post-fleet-agents-agentid-rollback",
+    "name": "post-fleet-agents-agentid-rollback",
+    "namespace": "elastic-agent-actions",
+    "description": "",
+    "namespaceFile": "elastic-agent-actions.post-fleet-agents-agentid-rollback",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "elastic-agent-actions.post-fleet-agents-agentid-unenroll",
+    "name": "post-fleet-agents-agentid-unenroll",
+    "namespace": "elastic-agent-actions",
+    "description": "",
+    "namespaceFile": "elastic-agent-actions.post-fleet-agents-agentid-unenroll"
+  },
+  {
+    "id": "elastic-agent-actions.post-fleet-agents-agentid-upgrade",
+    "name": "post-fleet-agents-agentid-upgrade",
+    "namespace": "elastic-agent-actions",
+    "description": "",
+    "namespaceFile": "elastic-agent-actions.post-fleet-agents-agentid-upgrade"
+  },
+  {
+    "id": "elastic-agent-actions.post-fleet-agents-bulk-reassign",
+    "name": "post-fleet-agents-bulk-reassign",
+    "namespace": "elastic-agent-actions",
+    "description": "",
+    "namespaceFile": "elastic-agent-actions.post-fleet-agents-bulk-reassign"
+  },
+  {
+    "id": "elastic-agent-actions.post-fleet-agents-bulk-remove-collectors",
+    "name": "post-fleet-agents-bulk-remove-collectors",
+    "namespace": "elastic-agent-actions",
+    "description": "",
+    "namespaceFile": "elastic-agent-actions.post-fleet-agents-bulk-remove-collectors",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "elastic-agent-actions.post-fleet-agents-bulk-request-diagnostics",
+    "name": "post-fleet-agents-bulk-request-diagnostics",
+    "namespace": "elastic-agent-actions",
+    "description": "",
+    "namespaceFile": "elastic-agent-actions.post-fleet-agents-bulk-request-diagnostics"
+  },
+  {
+    "id": "elastic-agent-actions.post-fleet-agents-bulk-rollback",
+    "name": "post-fleet-agents-bulk-rollback",
+    "namespace": "elastic-agent-actions",
+    "description": "",
+    "namespaceFile": "elastic-agent-actions.post-fleet-agents-bulk-rollback",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "elastic-agent-actions.post-fleet-agents-bulk-unenroll",
+    "name": "post-fleet-agents-bulk-unenroll",
+    "namespace": "elastic-agent-actions",
+    "description": "",
+    "namespaceFile": "elastic-agent-actions.post-fleet-agents-bulk-unenroll"
+  },
+  {
+    "id": "elastic-agent-actions.post-fleet-agents-bulk-update-agent-tags",
+    "name": "post-fleet-agents-bulk-update-agent-tags",
+    "namespace": "elastic-agent-actions",
+    "description": "",
+    "namespaceFile": "elastic-agent-actions.post-fleet-agents-bulk-update-agent-tags"
+  },
+  {
+    "id": "elastic-agent-actions.post-fleet-agents-bulk-upgrade",
+    "name": "post-fleet-agents-bulk-upgrade",
+    "namespace": "elastic-agent-actions",
+    "description": "",
+    "namespaceFile": "elastic-agent-actions.post-fleet-agents-bulk-upgrade"
+  },
+  {
+    "id": "elastic-agent-binary-download-sources.delete-fleet-agent-download-sources-sourceid",
+    "name": "delete-fleet-agent-download-sources-sourceid",
+    "namespace": "elastic-agent-binary-download-sources",
+    "description": "",
+    "namespaceFile": "elastic-agent-binary-download-sources.delete-fleet-agent-download-sources-sourceid"
+  },
+  {
+    "id": "elastic-agent-binary-download-sources.get-fleet-agent-download-sources",
+    "name": "get-fleet-agent-download-sources",
+    "namespace": "elastic-agent-binary-download-sources",
+    "description": "",
+    "namespaceFile": "elastic-agent-binary-download-sources.get-fleet-agent-download-sources"
+  },
+  {
+    "id": "elastic-agent-binary-download-sources.get-fleet-agent-download-sources-sourceid",
+    "name": "get-fleet-agent-download-sources-sourceid",
+    "namespace": "elastic-agent-binary-download-sources",
+    "description": "",
+    "namespaceFile": "elastic-agent-binary-download-sources.get-fleet-agent-download-sources-sourceid"
+  },
+  {
+    "id": "elastic-agent-binary-download-sources.post-fleet-agent-download-sources",
+    "name": "post-fleet-agent-download-sources",
+    "namespace": "elastic-agent-binary-download-sources",
+    "description": "",
+    "namespaceFile": "elastic-agent-binary-download-sources.post-fleet-agent-download-sources"
+  },
+  {
+    "id": "elastic-agent-binary-download-sources.put-fleet-agent-download-sources-sourceid",
+    "name": "put-fleet-agent-download-sources-sourceid",
+    "namespace": "elastic-agent-binary-download-sources",
+    "description": "",
+    "namespaceFile": "elastic-agent-binary-download-sources.put-fleet-agent-download-sources-sourceid"
+  },
+  {
+    "id": "elastic-agent-policies.get-fleet-agent-policies",
+    "name": "get-fleet-agent-policies",
+    "namespace": "elastic-agent-policies",
+    "description": "",
+    "namespaceFile": "elastic-agent-policies.get-fleet-agent-policies"
+  },
+  {
+    "id": "elastic-agent-policies.get-fleet-agent-policies-agentpolicyid",
+    "name": "get-fleet-agent-policies-agentpolicyid",
+    "namespace": "elastic-agent-policies",
+    "description": "",
+    "namespaceFile": "elastic-agent-policies.get-fleet-agent-policies-agentpolicyid"
+  },
+  {
+    "id": "elastic-agent-policies.get-fleet-agent-policies-agentpolicyid-auto-upgrade-agents-status",
+    "name": "get-fleet-agent-policies-agentpolicyid-auto-upgrade-agents-status",
+    "namespace": "elastic-agent-policies",
+    "description": "",
+    "namespaceFile": "elastic-agent-policies.get-fleet-agent-policies-agentpolicyid-auto-upgrade-agents-status"
+  },
+  {
+    "id": "elastic-agent-policies.get-fleet-agent-policies-agentpolicyid-download",
+    "name": "get-fleet-agent-policies-agentpolicyid-download",
+    "namespace": "elastic-agent-policies",
+    "description": "",
+    "namespaceFile": "elastic-agent-policies.get-fleet-agent-policies-agentpolicyid-download"
+  },
+  {
+    "id": "elastic-agent-policies.get-fleet-agent-policies-agentpolicyid-full",
+    "name": "get-fleet-agent-policies-agentpolicyid-full",
+    "namespace": "elastic-agent-policies",
+    "description": "",
+    "namespaceFile": "elastic-agent-policies.get-fleet-agent-policies-agentpolicyid-full"
+  },
+  {
+    "id": "elastic-agent-policies.get-fleet-agent-policies-agentpolicyid-outputs",
+    "name": "get-fleet-agent-policies-agentpolicyid-outputs",
+    "namespace": "elastic-agent-policies",
+    "description": "",
+    "namespaceFile": "elastic-agent-policies.get-fleet-agent-policies-agentpolicyid-outputs"
+  },
+  {
+    "id": "elastic-agent-policies.get-fleet-kubernetes",
+    "name": "get-fleet-kubernetes",
+    "namespace": "elastic-agent-policies",
+    "description": "",
+    "namespaceFile": "elastic-agent-policies.get-fleet-kubernetes"
+  },
+  {
+    "id": "elastic-agent-policies.get-fleet-kubernetes-download",
+    "name": "get-fleet-kubernetes-download",
+    "namespace": "elastic-agent-policies",
+    "description": "",
+    "namespaceFile": "elastic-agent-policies.get-fleet-kubernetes-download"
+  },
+  {
+    "id": "elastic-agent-policies.post-fleet-agent-policies",
+    "name": "post-fleet-agent-policies",
+    "namespace": "elastic-agent-policies",
+    "description": "",
+    "namespaceFile": "elastic-agent-policies.post-fleet-agent-policies"
+  },
+  {
+    "id": "elastic-agent-policies.post-fleet-agent-policies-agentpolicyid-copy",
+    "name": "post-fleet-agent-policies-agentpolicyid-copy",
+    "namespace": "elastic-agent-policies",
+    "description": "",
+    "namespaceFile": "elastic-agent-policies.post-fleet-agent-policies-agentpolicyid-copy"
+  },
+  {
+    "id": "elastic-agent-policies.post-fleet-agent-policies-bulk-get",
+    "name": "post-fleet-agent-policies-bulk-get",
+    "namespace": "elastic-agent-policies",
+    "description": "",
+    "namespaceFile": "elastic-agent-policies.post-fleet-agent-policies-bulk-get"
+  },
+  {
+    "id": "elastic-agent-policies.post-fleet-agent-policies-delete",
+    "name": "post-fleet-agent-policies-delete",
+    "namespace": "elastic-agent-policies",
+    "description": "",
+    "namespaceFile": "elastic-agent-policies.post-fleet-agent-policies-delete"
+  },
+  {
+    "id": "elastic-agent-policies.post-fleet-agent-policies-outputs",
+    "name": "post-fleet-agent-policies-outputs",
+    "namespace": "elastic-agent-policies",
+    "description": "",
+    "namespaceFile": "elastic-agent-policies.post-fleet-agent-policies-outputs"
+  },
+  {
+    "id": "elastic-agent-policies.put-fleet-agent-policies-agentpolicyid",
+    "name": "put-fleet-agent-policies-agentpolicyid",
+    "namespace": "elastic-agent-policies",
+    "description": "",
+    "namespaceFile": "elastic-agent-policies.put-fleet-agent-policies-agentpolicyid"
+  },
+  {
+    "id": "elastic-agent-status.get-fleet-agent-status",
+    "name": "get-fleet-agent-status",
+    "namespace": "elastic-agent-status",
+    "description": "",
+    "namespaceFile": "elastic-agent-status.get-fleet-agent-status"
+  },
+  {
+    "id": "elastic-agents.delete-fleet-agents-agentid",
+    "name": "delete-fleet-agents-agentid",
+    "namespace": "elastic-agents",
+    "description": "",
+    "namespaceFile": "elastic-agents.delete-fleet-agents-agentid"
+  },
+  {
+    "id": "elastic-agents.delete-fleet-agents-files-fileid",
+    "name": "delete-fleet-agents-files-fileid",
+    "namespace": "elastic-agents",
+    "description": "",
+    "namespaceFile": "elastic-agents.delete-fleet-agents-files-fileid"
+  },
+  {
+    "id": "elastic-agents.get-fleet-agent-status-data",
+    "name": "get-fleet-agent-status-data",
+    "namespace": "elastic-agents",
+    "description": "",
+    "namespaceFile": "elastic-agents.get-fleet-agent-status-data"
+  },
+  {
+    "id": "elastic-agents.get-fleet-agents",
+    "name": "get-fleet-agents",
+    "namespace": "elastic-agents",
+    "description": "",
+    "namespaceFile": "elastic-agents.get-fleet-agents"
+  },
+  {
+    "id": "elastic-agents.get-fleet-agents-agentid",
+    "name": "get-fleet-agents-agentid",
+    "namespace": "elastic-agents",
+    "description": "",
+    "namespaceFile": "elastic-agents.get-fleet-agents-agentid"
+  },
+  {
+    "id": "elastic-agents.get-fleet-agents-agentid-effective-config",
+    "name": "get-fleet-agents-agentid-effective-config",
+    "namespace": "elastic-agents",
+    "description": "",
+    "namespaceFile": "elastic-agents.get-fleet-agents-agentid-effective-config"
+  },
+  {
+    "id": "elastic-agents.get-fleet-agents-agentid-uploads",
+    "name": "get-fleet-agents-agentid-uploads",
+    "namespace": "elastic-agents",
+    "description": "",
+    "namespaceFile": "elastic-agents.get-fleet-agents-agentid-uploads"
+  },
+  {
+    "id": "elastic-agents.get-fleet-agents-available-versions",
+    "name": "get-fleet-agents-available-versions",
+    "namespace": "elastic-agents",
+    "description": "",
+    "namespaceFile": "elastic-agents.get-fleet-agents-available-versions"
+  },
+  {
+    "id": "elastic-agents.get-fleet-agents-files-fileid-filename",
+    "name": "get-fleet-agents-files-fileid-filename",
+    "namespace": "elastic-agents",
+    "description": "",
+    "namespaceFile": "elastic-agents.get-fleet-agents-files-fileid-filename"
+  },
+  {
+    "id": "elastic-agents.get-fleet-agents-setup",
+    "name": "get-fleet-agents-setup",
+    "namespace": "elastic-agents",
+    "description": "",
+    "namespaceFile": "elastic-agents.get-fleet-agents-setup"
+  },
+  {
+    "id": "elastic-agents.get-fleet-agents-tags",
+    "name": "get-fleet-agents-tags",
+    "namespace": "elastic-agents",
+    "description": "",
+    "namespaceFile": "elastic-agents.get-fleet-agents-tags"
+  },
+  {
+    "id": "elastic-agents.post-fleet-agents",
+    "name": "post-fleet-agents",
+    "namespace": "elastic-agents",
+    "description": "",
+    "namespaceFile": "elastic-agents.post-fleet-agents"
+  },
+  {
+    "id": "elastic-agents.post-fleet-agents-agentid-migrate",
+    "name": "post-fleet-agents-agentid-migrate",
+    "namespace": "elastic-agents",
+    "description": "",
+    "namespaceFile": "elastic-agents.post-fleet-agents-agentid-migrate"
+  },
+  {
+    "id": "elastic-agents.post-fleet-agents-agentid-privilege-level-change",
+    "name": "post-fleet-agents-agentid-privilege-level-change",
+    "namespace": "elastic-agents",
+    "description": "",
+    "namespaceFile": "elastic-agents.post-fleet-agents-agentid-privilege-level-change",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "elastic-agents.post-fleet-agents-bulk-migrate",
+    "name": "post-fleet-agents-bulk-migrate",
+    "namespace": "elastic-agents",
+    "description": "",
+    "namespaceFile": "elastic-agents.post-fleet-agents-bulk-migrate"
+  },
+  {
+    "id": "elastic-agents.post-fleet-agents-bulk-privilege-level-change",
+    "name": "post-fleet-agents-bulk-privilege-level-change",
+    "namespace": "elastic-agents",
+    "description": "",
+    "namespaceFile": "elastic-agents.post-fleet-agents-bulk-privilege-level-change",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "elastic-agents.post-fleet-agents-setup",
+    "name": "post-fleet-agents-setup",
+    "namespace": "elastic-agents",
+    "description": "",
+    "namespaceFile": "elastic-agents.post-fleet-agents-setup"
+  },
+  {
+    "id": "elastic-agents.put-fleet-agents-agentid",
+    "name": "put-fleet-agents-agentid",
+    "namespace": "elastic-agents",
+    "description": "",
+    "namespaceFile": "elastic-agents.put-fleet-agents-agentid"
+  },
+  {
+    "id": "elastic-package-manager-epm.delete-fleet-epm-packages-pkgname",
+    "name": "delete-fleet-epm-packages-pkgname",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.delete-fleet-epm-packages-pkgname"
+  },
+  {
+    "id": "elastic-package-manager-epm.delete-fleet-epm-packages-pkgname-pkgversion",
+    "name": "delete-fleet-epm-packages-pkgname-pkgversion",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.delete-fleet-epm-packages-pkgname-pkgversion"
+  },
+  {
+    "id": "elastic-package-manager-epm.delete-fleet-epm-packages-pkgname-pkgversion-datastream-assets",
+    "name": "delete-fleet-epm-packages-pkgname-pkgversion-datastream-assets",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.delete-fleet-epm-packages-pkgname-pkgversion-datastream-assets"
+  },
+  {
+    "id": "elastic-package-manager-epm.delete-fleet-epm-packages-pkgname-pkgversion-kibana-assets",
+    "name": "delete-fleet-epm-packages-pkgname-pkgversion-kibana-assets",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.delete-fleet-epm-packages-pkgname-pkgversion-kibana-assets"
+  },
+  {
+    "id": "elastic-package-manager-epm.get-fleet-epm-categories",
+    "name": "get-fleet-epm-categories",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.get-fleet-epm-categories"
+  },
+  {
+    "id": "elastic-package-manager-epm.get-fleet-epm-packages",
+    "name": "get-fleet-epm-packages",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.get-fleet-epm-packages"
+  },
+  {
+    "id": "elastic-package-manager-epm.get-fleet-epm-packages-bulk-rollback-taskid",
+    "name": "get-fleet-epm-packages-bulk-rollback-taskid",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.get-fleet-epm-packages-bulk-rollback-taskid"
+  },
+  {
+    "id": "elastic-package-manager-epm.get-fleet-epm-packages-bulk-uninstall-taskid",
+    "name": "get-fleet-epm-packages-bulk-uninstall-taskid",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.get-fleet-epm-packages-bulk-uninstall-taskid"
+  },
+  {
+    "id": "elastic-package-manager-epm.get-fleet-epm-packages-bulk-upgrade-taskid",
+    "name": "get-fleet-epm-packages-bulk-upgrade-taskid",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.get-fleet-epm-packages-bulk-upgrade-taskid"
+  },
+  {
+    "id": "elastic-package-manager-epm.get-fleet-epm-packages-installed",
+    "name": "get-fleet-epm-packages-installed",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.get-fleet-epm-packages-installed"
+  },
+  {
+    "id": "elastic-package-manager-epm.get-fleet-epm-packages-limited",
+    "name": "get-fleet-epm-packages-limited",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.get-fleet-epm-packages-limited"
+  },
+  {
+    "id": "elastic-package-manager-epm.get-fleet-epm-packages-pkgname",
+    "name": "get-fleet-epm-packages-pkgname",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.get-fleet-epm-packages-pkgname"
+  },
+  {
+    "id": "elastic-package-manager-epm.get-fleet-epm-packages-pkgname-pkgversion",
+    "name": "get-fleet-epm-packages-pkgname-pkgversion",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.get-fleet-epm-packages-pkgname-pkgversion"
+  },
+  {
+    "id": "elastic-package-manager-epm.get-fleet-epm-packages-pkgname-pkgversion-dependencies",
+    "name": "get-fleet-epm-packages-pkgname-pkgversion-dependencies",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.get-fleet-epm-packages-pkgname-pkgversion-dependencies",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "elastic-package-manager-epm.get-fleet-epm-packages-pkgname-pkgversion-filepath",
+    "name": "get-fleet-epm-packages-pkgname-pkgversion-filepath",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.get-fleet-epm-packages-pkgname-pkgversion-filepath"
+  },
+  {
+    "id": "elastic-package-manager-epm.get-fleet-epm-packages-pkgname-stats",
+    "name": "get-fleet-epm-packages-pkgname-stats",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.get-fleet-epm-packages-pkgname-stats"
+  },
+  {
+    "id": "elastic-package-manager-epm.get-fleet-epm-templates-pkgname-pkgversion-inputs",
+    "name": "get-fleet-epm-templates-pkgname-pkgversion-inputs",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.get-fleet-epm-templates-pkgname-pkgversion-inputs"
+  },
+  {
+    "id": "elastic-package-manager-epm.get-fleet-epm-verification-key-id",
+    "name": "get-fleet-epm-verification-key-id",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.get-fleet-epm-verification-key-id"
+  },
+  {
+    "id": "elastic-package-manager-epm.post-fleet-epm-bulk-assets",
+    "name": "post-fleet-epm-bulk-assets",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.post-fleet-epm-bulk-assets"
+  },
+  {
+    "id": "elastic-package-manager-epm.post-fleet-epm-custom-integrations",
+    "name": "post-fleet-epm-custom-integrations",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.post-fleet-epm-custom-integrations"
+  },
+  {
+    "id": "elastic-package-manager-epm.post-fleet-epm-packages",
+    "name": "post-fleet-epm-packages",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.post-fleet-epm-packages"
+  },
+  {
+    "id": "elastic-package-manager-epm.post-fleet-epm-packages-bulk",
+    "name": "post-fleet-epm-packages-bulk",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.post-fleet-epm-packages-bulk"
+  },
+  {
+    "id": "elastic-package-manager-epm.post-fleet-epm-packages-bulk-namespace-customization",
+    "name": "post-fleet-epm-packages-bulk-namespace-customization",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.post-fleet-epm-packages-bulk-namespace-customization"
+  },
+  {
+    "id": "elastic-package-manager-epm.post-fleet-epm-packages-bulk-rollback",
+    "name": "post-fleet-epm-packages-bulk-rollback",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.post-fleet-epm-packages-bulk-rollback"
+  },
+  {
+    "id": "elastic-package-manager-epm.post-fleet-epm-packages-bulk-uninstall",
+    "name": "post-fleet-epm-packages-bulk-uninstall",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.post-fleet-epm-packages-bulk-uninstall"
+  },
+  {
+    "id": "elastic-package-manager-epm.post-fleet-epm-packages-bulk-upgrade",
+    "name": "post-fleet-epm-packages-bulk-upgrade",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.post-fleet-epm-packages-bulk-upgrade"
+  },
+  {
+    "id": "elastic-package-manager-epm.post-fleet-epm-packages-pkgname",
+    "name": "post-fleet-epm-packages-pkgname",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.post-fleet-epm-packages-pkgname"
+  },
+  {
+    "id": "elastic-package-manager-epm.post-fleet-epm-packages-pkgname-pkgversion",
+    "name": "post-fleet-epm-packages-pkgname-pkgversion",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.post-fleet-epm-packages-pkgname-pkgversion"
+  },
+  {
+    "id": "elastic-package-manager-epm.post-fleet-epm-packages-pkgname-pkgversion-kibana-assets",
+    "name": "post-fleet-epm-packages-pkgname-pkgversion-kibana-assets",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.post-fleet-epm-packages-pkgname-pkgversion-kibana-assets"
+  },
+  {
+    "id": "elastic-package-manager-epm.post-fleet-epm-packages-pkgname-pkgversion-rule-assets",
+    "name": "post-fleet-epm-packages-pkgname-pkgversion-rule-assets",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.post-fleet-epm-packages-pkgname-pkgversion-rule-assets"
+  },
+  {
+    "id": "elastic-package-manager-epm.post-fleet-epm-packages-pkgname-pkgversion-transforms-authorize",
+    "name": "post-fleet-epm-packages-pkgname-pkgversion-transforms-authorize",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.post-fleet-epm-packages-pkgname-pkgversion-transforms-authorize"
+  },
+  {
+    "id": "elastic-package-manager-epm.post-fleet-epm-packages-pkgname-review-upgrade",
+    "name": "post-fleet-epm-packages-pkgname-review-upgrade",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.post-fleet-epm-packages-pkgname-review-upgrade",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "elastic-package-manager-epm.post-fleet-epm-packages-pkgname-rollback",
+    "name": "post-fleet-epm-packages-pkgname-rollback",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.post-fleet-epm-packages-pkgname-rollback",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "elastic-package-manager-epm.put-fleet-epm-custom-integrations-pkgname",
+    "name": "put-fleet-epm-custom-integrations-pkgname",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.put-fleet-epm-custom-integrations-pkgname"
+  },
+  {
+    "id": "elastic-package-manager-epm.put-fleet-epm-packages-pkgname",
+    "name": "put-fleet-epm-packages-pkgname",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.put-fleet-epm-packages-pkgname"
+  },
+  {
+    "id": "elastic-package-manager-epm.put-fleet-epm-packages-pkgname-pkgversion",
+    "name": "put-fleet-epm-packages-pkgname-pkgversion",
+    "namespace": "elastic-package-manager-epm",
+    "description": "",
+    "namespaceFile": "elastic-package-manager-epm.put-fleet-epm-packages-pkgname-pkgversion"
+  },
+  {
+    "id": "fleet-agentless-policies.delete-fleet-agentless-policies-policyid",
+    "name": "delete-fleet-agentless-policies-policyid",
+    "namespace": "fleet-agentless-policies",
+    "description": "",
+    "namespaceFile": "fleet-agentless-policies.delete-fleet-agentless-policies-policyid",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-agentless-policies.get-fleet-agentless-policies",
+    "name": "get-fleet-agentless-policies",
+    "namespace": "fleet-agentless-policies",
+    "description": "",
+    "namespaceFile": "fleet-agentless-policies.get-fleet-agentless-policies",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-agentless-policies.get-fleet-agentless-policies-policyid",
+    "name": "get-fleet-agentless-policies-policyid",
+    "namespace": "fleet-agentless-policies",
+    "description": "",
+    "namespaceFile": "fleet-agentless-policies.get-fleet-agentless-policies-policyid",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-agentless-policies.post-fleet-agentless-policies",
+    "name": "post-fleet-agentless-policies",
+    "namespace": "fleet-agentless-policies",
+    "description": "",
+    "namespaceFile": "fleet-agentless-policies.post-fleet-agentless-policies",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-agentless-policies.post-fleet-agentless-policies-upgrade",
+    "name": "post-fleet-agentless-policies-upgrade",
+    "namespace": "fleet-agentless-policies",
+    "description": "",
+    "namespaceFile": "fleet-agentless-policies.post-fleet-agentless-policies-upgrade",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-agentless-policies.post-fleet-agentless-policies-upgrade-dryrun",
+    "name": "post-fleet-agentless-policies-upgrade-dryrun",
+    "namespace": "fleet-agentless-policies",
+    "description": "",
+    "namespaceFile": "fleet-agentless-policies.post-fleet-agentless-policies-upgrade-dryrun",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-agentless-policies.put-fleet-agentless-policies-policyid",
+    "name": "put-fleet-agentless-policies-policyid",
+    "namespace": "fleet-agentless-policies",
+    "description": "",
+    "namespaceFile": "fleet-agentless-policies.put-fleet-agentless-policies-policyid",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-cloud-connectors.delete-fleet-cloud-connectors-cloudconnectorid",
+    "name": "delete-fleet-cloud-connectors-cloudconnectorid",
+    "namespace": "fleet-cloud-connectors",
+    "description": "",
+    "namespaceFile": "fleet-cloud-connectors.delete-fleet-cloud-connectors-cloudconnectorid",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-cloud-connectors.get-fleet-cloud-connectors",
+    "name": "get-fleet-cloud-connectors",
+    "namespace": "fleet-cloud-connectors",
+    "description": "",
+    "namespaceFile": "fleet-cloud-connectors.get-fleet-cloud-connectors",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-cloud-connectors.get-fleet-cloud-connectors-cloudconnectorid",
+    "name": "get-fleet-cloud-connectors-cloudconnectorid",
+    "namespace": "fleet-cloud-connectors",
+    "description": "",
+    "namespaceFile": "fleet-cloud-connectors.get-fleet-cloud-connectors-cloudconnectorid",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-cloud-connectors.get-fleet-cloud-connectors-cloudconnectorid-usage",
+    "name": "get-fleet-cloud-connectors-cloudconnectorid-usage",
+    "namespace": "fleet-cloud-connectors",
+    "description": "",
+    "namespaceFile": "fleet-cloud-connectors.get-fleet-cloud-connectors-cloudconnectorid-usage",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-cloud-connectors.post-fleet-cloud-connectors",
+    "name": "post-fleet-cloud-connectors",
+    "namespace": "fleet-cloud-connectors",
+    "description": "",
+    "namespaceFile": "fleet-cloud-connectors.post-fleet-cloud-connectors",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-cloud-connectors.put-fleet-cloud-connectors-cloudconnectorid",
+    "name": "put-fleet-cloud-connectors-cloudconnectorid",
+    "namespace": "fleet-cloud-connectors",
+    "description": "",
+    "namespaceFile": "fleet-cloud-connectors.put-fleet-cloud-connectors-cloudconnectorid",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-cloud-onboarding-deployments.delete-fleet-cloud-onboarding-deployments-id",
+    "name": "delete-fleet-cloud-onboarding-deployments-id",
+    "namespace": "fleet-cloud-onboarding-deployments",
+    "description": "",
+    "namespaceFile": "fleet-cloud-onboarding-deployments.delete-fleet-cloud-onboarding-deployments-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-cloud-onboarding-deployments.get-fleet-cloud-onboarding-deployments-connector-connectorid",
+    "name": "get-fleet-cloud-onboarding-deployments-connector-connectorid",
+    "namespace": "fleet-cloud-onboarding-deployments",
+    "description": "",
+    "namespaceFile": "fleet-cloud-onboarding-deployments.get-fleet-cloud-onboarding-deployments-connector-connectorid",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-cloud-onboarding-deployments.get-fleet-cloud-onboarding-deployments-id",
+    "name": "get-fleet-cloud-onboarding-deployments-id",
+    "namespace": "fleet-cloud-onboarding-deployments",
+    "description": "",
+    "namespaceFile": "fleet-cloud-onboarding-deployments.get-fleet-cloud-onboarding-deployments-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-cloud-onboarding-deployments.post-fleet-cloud-onboarding-deployments",
+    "name": "post-fleet-cloud-onboarding-deployments",
+    "namespace": "fleet-cloud-onboarding-deployments",
+    "description": "",
+    "namespaceFile": "fleet-cloud-onboarding-deployments.post-fleet-cloud-onboarding-deployments",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-cloud-onboarding-deployments.put-fleet-cloud-onboarding-deployments-id",
+    "name": "put-fleet-cloud-onboarding-deployments-id",
+    "namespace": "fleet-cloud-onboarding-deployments",
+    "description": "",
+    "namespaceFile": "fleet-cloud-onboarding-deployments.put-fleet-cloud-onboarding-deployments-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-enrollment-api-keys.delete-fleet-enrollment-api-keys-keyid",
+    "name": "delete-fleet-enrollment-api-keys-keyid",
+    "namespace": "fleet-enrollment-api-keys",
+    "description": "",
+    "namespaceFile": "fleet-enrollment-api-keys.delete-fleet-enrollment-api-keys-keyid"
+  },
+  {
+    "id": "fleet-enrollment-api-keys.get-fleet-enrollment-api-keys",
+    "name": "get-fleet-enrollment-api-keys",
+    "namespace": "fleet-enrollment-api-keys",
+    "description": "",
+    "namespaceFile": "fleet-enrollment-api-keys.get-fleet-enrollment-api-keys"
+  },
+  {
+    "id": "fleet-enrollment-api-keys.get-fleet-enrollment-api-keys-keyid",
+    "name": "get-fleet-enrollment-api-keys-keyid",
+    "namespace": "fleet-enrollment-api-keys",
+    "description": "",
+    "namespaceFile": "fleet-enrollment-api-keys.get-fleet-enrollment-api-keys-keyid"
+  },
+  {
+    "id": "fleet-enrollment-api-keys.post-fleet-enrollment-api-keys",
+    "name": "post-fleet-enrollment-api-keys",
+    "namespace": "fleet-enrollment-api-keys",
+    "description": "",
+    "namespaceFile": "fleet-enrollment-api-keys.post-fleet-enrollment-api-keys"
+  },
+  {
+    "id": "fleet-enrollment-api-keys.post-fleet-enrollment-api-keys-bulk-delete",
+    "name": "post-fleet-enrollment-api-keys-bulk-delete",
+    "namespace": "fleet-enrollment-api-keys",
+    "description": "",
+    "namespaceFile": "fleet-enrollment-api-keys.post-fleet-enrollment-api-keys-bulk-delete",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "fleet-internals.get-fleet-check-permissions",
+    "name": "get-fleet-check-permissions",
+    "namespace": "fleet-internals",
+    "description": "",
+    "namespaceFile": "fleet-internals.get-fleet-check-permissions"
+  },
+  {
+    "id": "fleet-internals.get-fleet-settings",
+    "name": "get-fleet-settings",
+    "namespace": "fleet-internals",
+    "description": "",
+    "namespaceFile": "fleet-internals.get-fleet-settings"
+  },
+  {
+    "id": "fleet-internals.get-fleet-space-settings",
+    "name": "get-fleet-space-settings",
+    "namespace": "fleet-internals",
+    "description": "",
+    "namespaceFile": "fleet-internals.get-fleet-space-settings",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "fleet-internals.post-fleet-health-check",
+    "name": "post-fleet-health-check",
+    "namespace": "fleet-internals",
+    "description": "",
+    "namespaceFile": "fleet-internals.post-fleet-health-check"
+  },
+  {
+    "id": "fleet-internals.post-fleet-setup",
+    "name": "post-fleet-setup",
+    "namespace": "fleet-internals",
+    "description": "",
+    "namespaceFile": "fleet-internals.post-fleet-setup"
+  },
+  {
+    "id": "fleet-internals.put-fleet-settings",
+    "name": "put-fleet-settings",
+    "namespace": "fleet-internals",
+    "description": "",
+    "namespaceFile": "fleet-internals.put-fleet-settings"
+  },
+  {
+    "id": "fleet-internals.put-fleet-space-settings",
+    "name": "put-fleet-space-settings",
+    "namespace": "fleet-internals",
+    "description": "",
+    "namespaceFile": "fleet-internals.put-fleet-space-settings",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "fleet-managed-integrations.delete-fleet-managed-integrations-policyid",
+    "name": "delete-fleet-managed-integrations-policyid",
+    "namespace": "fleet-managed-integrations",
+    "description": "",
+    "namespaceFile": "fleet-managed-integrations.delete-fleet-managed-integrations-policyid",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-managed-integrations.get-fleet-managed-integrations",
+    "name": "get-fleet-managed-integrations",
+    "namespace": "fleet-managed-integrations",
+    "description": "",
+    "namespaceFile": "fleet-managed-integrations.get-fleet-managed-integrations",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-managed-integrations.get-fleet-managed-integrations-policyid",
+    "name": "get-fleet-managed-integrations-policyid",
+    "namespace": "fleet-managed-integrations",
+    "description": "",
+    "namespaceFile": "fleet-managed-integrations.get-fleet-managed-integrations-policyid",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-managed-integrations.post-fleet-managed-integrations",
+    "name": "post-fleet-managed-integrations",
+    "namespace": "fleet-managed-integrations",
+    "description": "",
+    "namespaceFile": "fleet-managed-integrations.post-fleet-managed-integrations",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-managed-integrations.post-fleet-managed-integrations-upgrade",
+    "name": "post-fleet-managed-integrations-upgrade",
+    "namespace": "fleet-managed-integrations",
+    "description": "",
+    "namespaceFile": "fleet-managed-integrations.post-fleet-managed-integrations-upgrade",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-managed-integrations.post-fleet-managed-integrations-upgrade-dryrun",
+    "name": "post-fleet-managed-integrations-upgrade-dryrun",
+    "namespace": "fleet-managed-integrations",
+    "description": "",
+    "namespaceFile": "fleet-managed-integrations.post-fleet-managed-integrations-upgrade-dryrun",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-managed-integrations.put-fleet-managed-integrations-policyid",
+    "name": "put-fleet-managed-integrations-policyid",
+    "namespace": "fleet-managed-integrations",
+    "description": "",
+    "namespaceFile": "fleet-managed-integrations.put-fleet-managed-integrations-policyid",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "fleet-outputs.delete-fleet-outputs-outputid",
+    "name": "delete-fleet-outputs-outputid",
+    "namespace": "fleet-outputs",
+    "description": "",
+    "namespaceFile": "fleet-outputs.delete-fleet-outputs-outputid"
+  },
+  {
+    "id": "fleet-outputs.get-fleet-outputs",
+    "name": "get-fleet-outputs",
+    "namespace": "fleet-outputs",
+    "description": "",
+    "namespaceFile": "fleet-outputs.get-fleet-outputs"
+  },
+  {
+    "id": "fleet-outputs.get-fleet-outputs-outputid",
+    "name": "get-fleet-outputs-outputid",
+    "namespace": "fleet-outputs",
+    "description": "",
+    "namespaceFile": "fleet-outputs.get-fleet-outputs-outputid"
+  },
+  {
+    "id": "fleet-outputs.get-fleet-outputs-outputid-health",
+    "name": "get-fleet-outputs-outputid-health",
+    "namespace": "fleet-outputs",
+    "description": "",
+    "namespaceFile": "fleet-outputs.get-fleet-outputs-outputid-health"
+  },
+  {
+    "id": "fleet-outputs.post-fleet-logstash-api-keys",
+    "name": "post-fleet-logstash-api-keys",
+    "namespace": "fleet-outputs",
+    "description": "",
+    "namespaceFile": "fleet-outputs.post-fleet-logstash-api-keys"
+  },
+  {
+    "id": "fleet-outputs.post-fleet-outputs",
+    "name": "post-fleet-outputs",
+    "namespace": "fleet-outputs",
+    "description": "",
+    "namespaceFile": "fleet-outputs.post-fleet-outputs"
+  },
+  {
+    "id": "fleet-outputs.put-fleet-outputs-outputid",
+    "name": "put-fleet-outputs-outputid",
+    "namespace": "fleet-outputs",
+    "description": "",
+    "namespaceFile": "fleet-outputs.put-fleet-outputs-outputid"
+  },
+  {
+    "id": "fleet-package-policies.delete-fleet-package-policies-packagepolicyid",
+    "name": "delete-fleet-package-policies-packagepolicyid",
+    "namespace": "fleet-package-policies",
+    "description": "",
+    "namespaceFile": "fleet-package-policies.delete-fleet-package-policies-packagepolicyid"
+  },
+  {
+    "id": "fleet-package-policies.get-fleet-package-policies",
+    "name": "get-fleet-package-policies",
+    "namespace": "fleet-package-policies",
+    "description": "",
+    "namespaceFile": "fleet-package-policies.get-fleet-package-policies"
+  },
+  {
+    "id": "fleet-package-policies.get-fleet-package-policies-packagepolicyid",
+    "name": "get-fleet-package-policies-packagepolicyid",
+    "namespace": "fleet-package-policies",
+    "description": "",
+    "namespaceFile": "fleet-package-policies.get-fleet-package-policies-packagepolicyid"
+  },
+  {
+    "id": "fleet-package-policies.post-fleet-package-policies",
+    "name": "post-fleet-package-policies",
+    "namespace": "fleet-package-policies",
+    "description": "",
+    "namespaceFile": "fleet-package-policies.post-fleet-package-policies"
+  },
+  {
+    "id": "fleet-package-policies.post-fleet-package-policies-bulk-get",
+    "name": "post-fleet-package-policies-bulk-get",
+    "namespace": "fleet-package-policies",
+    "description": "",
+    "namespaceFile": "fleet-package-policies.post-fleet-package-policies-bulk-get"
+  },
+  {
+    "id": "fleet-package-policies.post-fleet-package-policies-delete",
+    "name": "post-fleet-package-policies-delete",
+    "namespace": "fleet-package-policies",
+    "description": "",
+    "namespaceFile": "fleet-package-policies.post-fleet-package-policies-delete"
+  },
+  {
+    "id": "fleet-package-policies.post-fleet-package-policies-upgrade",
+    "name": "post-fleet-package-policies-upgrade",
+    "namespace": "fleet-package-policies",
+    "description": "",
+    "namespaceFile": "fleet-package-policies.post-fleet-package-policies-upgrade"
+  },
+  {
+    "id": "fleet-package-policies.post-fleet-package-policies-upgrade-dryrun",
+    "name": "post-fleet-package-policies-upgrade-dryrun",
+    "namespace": "fleet-package-policies",
+    "description": "",
+    "namespaceFile": "fleet-package-policies.post-fleet-package-policies-upgrade-dryrun"
+  },
+  {
+    "id": "fleet-package-policies.put-fleet-package-policies-packagepolicyid",
+    "name": "put-fleet-package-policies-packagepolicyid",
+    "namespace": "fleet-package-policies",
+    "description": "",
+    "namespaceFile": "fleet-package-policies.put-fleet-package-policies-packagepolicyid"
+  },
+  {
+    "id": "fleet-proxies.delete-fleet-proxies-itemid",
+    "name": "delete-fleet-proxies-itemid",
+    "namespace": "fleet-proxies",
+    "description": "",
+    "namespaceFile": "fleet-proxies.delete-fleet-proxies-itemid"
+  },
+  {
+    "id": "fleet-proxies.get-fleet-proxies",
+    "name": "get-fleet-proxies",
+    "namespace": "fleet-proxies",
+    "description": "",
+    "namespaceFile": "fleet-proxies.get-fleet-proxies"
+  },
+  {
+    "id": "fleet-proxies.get-fleet-proxies-itemid",
+    "name": "get-fleet-proxies-itemid",
+    "namespace": "fleet-proxies",
+    "description": "",
+    "namespaceFile": "fleet-proxies.get-fleet-proxies-itemid"
+  },
+  {
+    "id": "fleet-proxies.post-fleet-proxies",
+    "name": "post-fleet-proxies",
+    "namespace": "fleet-proxies",
+    "description": "",
+    "namespaceFile": "fleet-proxies.post-fleet-proxies"
+  },
+  {
+    "id": "fleet-proxies.put-fleet-proxies-itemid",
+    "name": "put-fleet-proxies-itemid",
+    "namespace": "fleet-proxies",
+    "description": "",
+    "namespaceFile": "fleet-proxies.put-fleet-proxies-itemid"
+  },
+  {
+    "id": "fleet-server-hosts.delete-fleet-fleet-server-hosts-itemid",
+    "name": "delete-fleet-fleet-server-hosts-itemid",
+    "namespace": "fleet-server-hosts",
+    "description": "",
+    "namespaceFile": "fleet-server-hosts.delete-fleet-fleet-server-hosts-itemid"
+  },
+  {
+    "id": "fleet-server-hosts.get-fleet-fleet-server-hosts",
+    "name": "get-fleet-fleet-server-hosts",
+    "namespace": "fleet-server-hosts",
+    "description": "",
+    "namespaceFile": "fleet-server-hosts.get-fleet-fleet-server-hosts"
+  },
+  {
+    "id": "fleet-server-hosts.get-fleet-fleet-server-hosts-itemid",
+    "name": "get-fleet-fleet-server-hosts-itemid",
+    "namespace": "fleet-server-hosts",
+    "description": "",
+    "namespaceFile": "fleet-server-hosts.get-fleet-fleet-server-hosts-itemid"
+  },
+  {
+    "id": "fleet-server-hosts.post-fleet-fleet-server-hosts",
+    "name": "post-fleet-fleet-server-hosts",
+    "namespace": "fleet-server-hosts",
+    "description": "",
+    "namespaceFile": "fleet-server-hosts.post-fleet-fleet-server-hosts"
+  },
+  {
+    "id": "fleet-server-hosts.put-fleet-fleet-server-hosts-itemid",
+    "name": "put-fleet-fleet-server-hosts-itemid",
+    "namespace": "fleet-server-hosts",
+    "description": "",
+    "namespaceFile": "fleet-server-hosts.put-fleet-fleet-server-hosts-itemid"
+  },
+  {
+    "id": "fleet-service-tokens.post-fleet-service-tokens",
+    "name": "post-fleet-service-tokens",
+    "namespace": "fleet-service-tokens",
+    "description": "",
+    "namespaceFile": "fleet-service-tokens.post-fleet-service-tokens"
+  },
+  {
+    "id": "fleet-uninstall-tokens.get-fleet-uninstall-tokens",
+    "name": "get-fleet-uninstall-tokens",
+    "namespace": "fleet-uninstall-tokens",
+    "description": "",
+    "namespaceFile": "fleet-uninstall-tokens.get-fleet-uninstall-tokens"
+  },
+  {
+    "id": "fleet-uninstall-tokens.get-fleet-uninstall-tokens-uninstalltokenid",
+    "name": "get-fleet-uninstall-tokens-uninstalltokenid",
+    "namespace": "fleet-uninstall-tokens",
+    "description": "",
+    "namespaceFile": "fleet-uninstall-tokens.get-fleet-uninstall-tokens-uninstalltokenid"
+  },
+  {
+    "id": "fleet-uninstall-tokens.post-fleet-uninstall-tokens-agentpolicyid-rotate",
+    "name": "post-fleet-uninstall-tokens-agentpolicyid-rotate",
+    "namespace": "fleet-uninstall-tokens",
+    "description": "",
+    "namespaceFile": "fleet-uninstall-tokens.post-fleet-uninstall-tokens-agentpolicyid-rotate"
+  },
+  {
+    "id": "links.delete-links-id",
+    "name": "delete-links-id",
+    "namespace": "links",
+    "description": "",
+    "namespaceFile": "links.delete-links-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "links.get-links",
+    "name": "get-links",
+    "namespace": "links",
+    "description": "",
+    "namespaceFile": "links.get-links",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "links.get-links-id",
+    "name": "get-links-id",
+    "namespace": "links",
+    "description": "",
+    "namespaceFile": "links.get-links-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "links.post-links",
+    "name": "post-links",
+    "namespace": "links",
+    "description": "",
+    "namespaceFile": "links.post-links",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "links.put-links-id",
+    "name": "put-links-id",
+    "namespace": "links",
+    "description": "",
+    "namespaceFile": "links.put-links-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "maintenance-window.delete-maintenance-window-id",
+    "name": "delete-maintenance-window-id",
+    "namespace": "maintenance-window",
+    "description": "",
+    "namespaceFile": "maintenance-window.delete-maintenance-window-id",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "maintenance-window.get-maintenance-window-find",
+    "name": "get-maintenance-window-find",
+    "namespace": "maintenance-window",
+    "description": "",
+    "namespaceFile": "maintenance-window.get-maintenance-window-find",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "maintenance-window.get-maintenance-window-id",
+    "name": "get-maintenance-window-id",
+    "namespace": "maintenance-window",
+    "description": "",
+    "namespaceFile": "maintenance-window.get-maintenance-window-id",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "maintenance-window.patch-maintenance-window-id",
+    "name": "patch-maintenance-window-id",
+    "namespace": "maintenance-window",
+    "description": "",
+    "namespaceFile": "maintenance-window.patch-maintenance-window-id",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "maintenance-window.post-maintenance-window",
+    "name": "post-maintenance-window",
+    "namespace": "maintenance-window",
+    "description": "",
+    "namespaceFile": "maintenance-window.post-maintenance-window",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "maintenance-window.post-maintenance-window-id-archive",
+    "name": "post-maintenance-window-id-archive",
+    "namespace": "maintenance-window",
+    "description": "",
+    "namespaceFile": "maintenance-window.post-maintenance-window-id-archive",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "maintenance-window.post-maintenance-window-id-unarchive",
+    "name": "post-maintenance-window-id-unarchive",
+    "namespace": "maintenance-window",
+    "description": "",
+    "namespaceFile": "maintenance-window.post-maintenance-window-id-unarchive",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "markdowns.delete-markdowns-id",
+    "name": "delete-markdowns-id",
+    "namespace": "markdowns",
+    "description": "",
+    "namespaceFile": "markdowns.delete-markdowns-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "markdowns.get-markdowns",
+    "name": "get-markdowns",
+    "namespace": "markdowns",
+    "description": "",
+    "namespaceFile": "markdowns.get-markdowns",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "markdowns.get-markdowns-id",
+    "name": "get-markdowns-id",
+    "namespace": "markdowns",
+    "description": "",
+    "namespaceFile": "markdowns.get-markdowns-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "markdowns.post-markdowns",
+    "name": "post-markdowns",
+    "namespace": "markdowns",
+    "description": "",
+    "namespaceFile": "markdowns.post-markdowns",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "markdowns.put-markdowns-id",
+    "name": "put-markdowns-id",
+    "namespace": "markdowns",
+    "description": "",
+    "namespaceFile": "markdowns.put-markdowns-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "message-signing-service.post-fleet-message-signing-service-rotate-key-pair",
+    "name": "post-fleet-message-signing-service-rotate-key-pair",
+    "namespace": "message-signing-service",
+    "description": "",
+    "namespaceFile": "message-signing-service.post-fleet-message-signing-service-rotate-key-pair"
+  },
+  {
+    "id": "misc.get-actions-connector-oauth-callback-script",
+    "name": "get-actions-connector-oauth-callback-script",
+    "namespace": "misc",
+    "description": "",
+    "namespaceFile": "misc.get-actions-connector-oauth-callback-script"
+  },
+  {
+    "id": "misc.post-security-role-query",
+    "name": "post-security-role-query",
+    "namespace": "misc",
+    "description": "",
+    "namespaceFile": "misc.post-security-role-query"
+  },
+  {
+    "id": "ml.ml-sync",
+    "name": "ml-sync",
+    "namespace": "ml",
+    "description": "",
+    "namespaceFile": "ml.ml-sync"
+  },
+  {
+    "id": "ml.ml-update-jobs-spaces",
+    "name": "ml-update-jobs-spaces",
+    "namespace": "ml",
+    "description": "",
+    "namespaceFile": "ml.ml-update-jobs-spaces"
+  },
+  {
+    "id": "ml.ml-update-trained-models-spaces",
+    "name": "ml-update-trained-models-spaces",
+    "namespace": "ml",
+    "description": "",
+    "namespaceFile": "ml.ml-update-trained-models-spaces"
+  },
+  {
+    "id": "observabilityaiassistant.observability-ai-assistant-chat-complete",
+    "name": "observability-ai-assistant-chat-complete",
+    "namespace": "observabilityaiassistant",
+    "description": "",
+    "namespaceFile": "observabilityaiassistant.observability-ai-assistant-chat-complete",
+    "availability": {
+      "serverless": {
+        "stability": "tech_preview"
+      }
+    }
+  },
+  {
+    "id": "roles.delete-security-role-name",
+    "name": "delete-security-role-name",
+    "namespace": "roles",
+    "description": "",
+    "namespaceFile": "roles.delete-security-role-name"
+  },
+  {
+    "id": "roles.get-security-role",
+    "name": "get-security-role",
+    "namespace": "roles",
+    "description": "",
+    "namespaceFile": "roles.get-security-role"
+  },
+  {
+    "id": "roles.get-security-role-name",
+    "name": "get-security-role-name",
+    "namespace": "roles",
+    "description": "",
+    "namespaceFile": "roles.get-security-role-name"
+  },
+  {
+    "id": "roles.post-security-roles",
+    "name": "post-security-roles",
+    "namespace": "roles",
+    "description": "",
+    "namespaceFile": "roles.post-security-roles"
+  },
+  {
+    "id": "roles.put-security-role-name",
+    "name": "put-security-role-name",
+    "namespace": "roles",
+    "description": "",
+    "namespaceFile": "roles.put-security-role-name"
+  },
+  {
+    "id": "saved-objects.post-saved-objects-export",
+    "name": "post-saved-objects-export",
+    "namespace": "saved-objects",
+    "description": "",
+    "namespaceFile": "saved-objects.post-saved-objects-export"
+  },
+  {
+    "id": "saved-objects.post-saved-objects-import",
+    "name": "post-saved-objects-import",
+    "namespace": "saved-objects",
+    "description": "",
+    "namespaceFile": "saved-objects.post-saved-objects-import"
+  },
+  {
+    "id": "saved-objects.post-saved-objects-resolve-import-errors",
+    "name": "post-saved-objects-resolve-import-errors",
+    "namespace": "saved-objects",
+    "description": "",
+    "namespaceFile": "saved-objects.post-saved-objects-resolve-import-errors"
+  },
+  {
+    "id": "security-ai-assistant-api.chat-complete",
+    "name": "chat-complete",
+    "namespace": "security-ai-assistant-api",
+    "description": "",
+    "namespaceFile": "security-ai-assistant-api.chat-complete"
+  },
+  {
+    "id": "security-ai-assistant-api.create-conversation",
+    "name": "create-conversation",
+    "namespace": "security-ai-assistant-api",
+    "description": "",
+    "namespaceFile": "security-ai-assistant-api.create-conversation"
+  },
+  {
+    "id": "security-ai-assistant-api.create-knowledge-base",
+    "name": "create-knowledge-base",
+    "namespace": "security-ai-assistant-api",
+    "description": "",
+    "namespaceFile": "security-ai-assistant-api.create-knowledge-base"
+  },
+  {
+    "id": "security-ai-assistant-api.create-knowledge-base-entry",
+    "name": "create-knowledge-base-entry",
+    "namespace": "security-ai-assistant-api",
+    "description": "",
+    "namespaceFile": "security-ai-assistant-api.create-knowledge-base-entry"
+  },
+  {
+    "id": "security-ai-assistant-api.delete-all-conversations",
+    "name": "delete-all-conversations",
+    "namespace": "security-ai-assistant-api",
+    "description": "",
+    "namespaceFile": "security-ai-assistant-api.delete-all-conversations"
+  },
+  {
+    "id": "security-ai-assistant-api.delete-conversation",
+    "name": "delete-conversation",
+    "namespace": "security-ai-assistant-api",
+    "description": "",
+    "namespaceFile": "security-ai-assistant-api.delete-conversation"
+  },
+  {
+    "id": "security-ai-assistant-api.delete-knowledge-base-entry",
+    "name": "delete-knowledge-base-entry",
+    "namespace": "security-ai-assistant-api",
+    "description": "",
+    "namespaceFile": "security-ai-assistant-api.delete-knowledge-base-entry"
+  },
+  {
+    "id": "security-ai-assistant-api.find-anonymization-fields",
+    "name": "find-anonymization-fields",
+    "namespace": "security-ai-assistant-api",
+    "description": "",
+    "namespaceFile": "security-ai-assistant-api.find-anonymization-fields"
+  },
+  {
+    "id": "security-ai-assistant-api.find-conversations",
+    "name": "find-conversations",
+    "namespace": "security-ai-assistant-api",
+    "description": "",
+    "namespaceFile": "security-ai-assistant-api.find-conversations"
+  },
+  {
+    "id": "security-ai-assistant-api.find-knowledge-base-entries",
+    "name": "find-knowledge-base-entries",
+    "namespace": "security-ai-assistant-api",
+    "description": "",
+    "namespaceFile": "security-ai-assistant-api.find-knowledge-base-entries"
+  },
+  {
+    "id": "security-ai-assistant-api.find-prompts",
+    "name": "find-prompts",
+    "namespace": "security-ai-assistant-api",
+    "description": "",
+    "namespaceFile": "security-ai-assistant-api.find-prompts"
+  },
+  {
+    "id": "security-ai-assistant-api.get-knowledge-base",
+    "name": "get-knowledge-base",
+    "namespace": "security-ai-assistant-api",
+    "description": "",
+    "namespaceFile": "security-ai-assistant-api.get-knowledge-base"
+  },
+  {
+    "id": "security-ai-assistant-api.perform-anonymization-fields-bulk-action",
+    "name": "perform-anonymization-fields-bulk-action",
+    "namespace": "security-ai-assistant-api",
+    "description": "",
+    "namespaceFile": "security-ai-assistant-api.perform-anonymization-fields-bulk-action"
+  },
+  {
+    "id": "security-ai-assistant-api.perform-knowledge-base-entry-bulk-action",
+    "name": "perform-knowledge-base-entry-bulk-action",
+    "namespace": "security-ai-assistant-api",
+    "description": "",
+    "namespaceFile": "security-ai-assistant-api.perform-knowledge-base-entry-bulk-action"
+  },
+  {
+    "id": "security-ai-assistant-api.perform-prompts-bulk-action",
+    "name": "perform-prompts-bulk-action",
+    "namespace": "security-ai-assistant-api",
+    "description": "",
+    "namespaceFile": "security-ai-assistant-api.perform-prompts-bulk-action"
+  },
+  {
+    "id": "security-ai-assistant-api.post-knowledge-base",
+    "name": "post-knowledge-base",
+    "namespace": "security-ai-assistant-api",
+    "description": "",
+    "namespaceFile": "security-ai-assistant-api.post-knowledge-base"
+  },
+  {
+    "id": "security-ai-assistant-api.read-conversation",
+    "name": "read-conversation",
+    "namespace": "security-ai-assistant-api",
+    "description": "",
+    "namespaceFile": "security-ai-assistant-api.read-conversation"
+  },
+  {
+    "id": "security-ai-assistant-api.read-knowledge-base",
+    "name": "read-knowledge-base",
+    "namespace": "security-ai-assistant-api",
+    "description": "",
+    "namespaceFile": "security-ai-assistant-api.read-knowledge-base"
+  },
+  {
+    "id": "security-ai-assistant-api.read-knowledge-base-entry",
+    "name": "read-knowledge-base-entry",
+    "namespace": "security-ai-assistant-api",
+    "description": "",
+    "namespaceFile": "security-ai-assistant-api.read-knowledge-base-entry"
+  },
+  {
+    "id": "security-ai-assistant-api.update-conversation",
+    "name": "update-conversation",
+    "namespace": "security-ai-assistant-api",
+    "description": "",
+    "namespaceFile": "security-ai-assistant-api.update-conversation"
+  },
+  {
+    "id": "security-ai-assistant-api.update-knowledge-base-entry",
+    "name": "update-knowledge-base-entry",
+    "namespace": "security-ai-assistant-api",
+    "description": "",
+    "namespaceFile": "security-ai-assistant-api.update-knowledge-base-entry"
+  },
+  {
+    "id": "security-attack-discovery-api.attack-discovery-find",
+    "name": "attack-discovery-find",
+    "namespace": "security-attack-discovery-api",
+    "description": "",
+    "namespaceFile": "security-attack-discovery-api.attack-discovery-find"
+  },
+  {
+    "id": "security-attack-discovery-api.bulk-delete-attack-discovery-schedules",
+    "name": "bulk-delete-attack-discovery-schedules",
+    "namespace": "security-attack-discovery-api",
+    "description": "",
+    "namespaceFile": "security-attack-discovery-api.bulk-delete-attack-discovery-schedules"
+  },
+  {
+    "id": "security-attack-discovery-api.bulk-disable-attack-discovery-schedules",
+    "name": "bulk-disable-attack-discovery-schedules",
+    "namespace": "security-attack-discovery-api",
+    "description": "",
+    "namespaceFile": "security-attack-discovery-api.bulk-disable-attack-discovery-schedules"
+  },
+  {
+    "id": "security-attack-discovery-api.bulk-enable-attack-discovery-schedules",
+    "name": "bulk-enable-attack-discovery-schedules",
+    "namespace": "security-attack-discovery-api",
+    "description": "",
+    "namespaceFile": "security-attack-discovery-api.bulk-enable-attack-discovery-schedules"
+  },
+  {
+    "id": "security-attack-discovery-api.create-attack-discovery-schedules",
+    "name": "create-attack-discovery-schedules",
+    "namespace": "security-attack-discovery-api",
+    "description": "",
+    "namespaceFile": "security-attack-discovery-api.create-attack-discovery-schedules"
+  },
+  {
+    "id": "security-attack-discovery-api.delete-attack-discovery-schedules",
+    "name": "delete-attack-discovery-schedules",
+    "namespace": "security-attack-discovery-api",
+    "description": "",
+    "namespaceFile": "security-attack-discovery-api.delete-attack-discovery-schedules"
+  },
+  {
+    "id": "security-attack-discovery-api.disable-attack-discovery-schedules",
+    "name": "disable-attack-discovery-schedules",
+    "namespace": "security-attack-discovery-api",
+    "description": "",
+    "namespaceFile": "security-attack-discovery-api.disable-attack-discovery-schedules"
+  },
+  {
+    "id": "security-attack-discovery-api.enable-attack-discovery-schedules",
+    "name": "enable-attack-discovery-schedules",
+    "namespace": "security-attack-discovery-api",
+    "description": "",
+    "namespaceFile": "security-attack-discovery-api.enable-attack-discovery-schedules"
+  },
+  {
+    "id": "security-attack-discovery-api.find-attack-discovery-schedules",
+    "name": "find-attack-discovery-schedules",
+    "namespace": "security-attack-discovery-api",
+    "description": "",
+    "namespaceFile": "security-attack-discovery-api.find-attack-discovery-schedules"
+  },
+  {
+    "id": "security-attack-discovery-api.get-attack-discovery-generation",
+    "name": "get-attack-discovery-generation",
+    "namespace": "security-attack-discovery-api",
+    "description": "",
+    "namespaceFile": "security-attack-discovery-api.get-attack-discovery-generation"
+  },
+  {
+    "id": "security-attack-discovery-api.get-attack-discovery-generations",
+    "name": "get-attack-discovery-generations",
+    "namespace": "security-attack-discovery-api",
+    "description": "",
+    "namespaceFile": "security-attack-discovery-api.get-attack-discovery-generations"
+  },
+  {
+    "id": "security-attack-discovery-api.get-attack-discovery-schedules",
+    "name": "get-attack-discovery-schedules",
+    "namespace": "security-attack-discovery-api",
+    "description": "",
+    "namespaceFile": "security-attack-discovery-api.get-attack-discovery-schedules"
+  },
+  {
+    "id": "security-attack-discovery-api.post-attack-discovery-bulk",
+    "name": "post-attack-discovery-bulk",
+    "namespace": "security-attack-discovery-api",
+    "description": "",
+    "namespaceFile": "security-attack-discovery-api.post-attack-discovery-bulk"
+  },
+  {
+    "id": "security-attack-discovery-api.post-attack-discovery-generate",
+    "name": "post-attack-discovery-generate",
+    "namespace": "security-attack-discovery-api",
+    "description": "",
+    "namespaceFile": "security-attack-discovery-api.post-attack-discovery-generate"
+  },
+  {
+    "id": "security-attack-discovery-api.post-attack-discovery-generations-dismiss",
+    "name": "post-attack-discovery-generations-dismiss",
+    "namespace": "security-attack-discovery-api",
+    "description": "",
+    "namespaceFile": "security-attack-discovery-api.post-attack-discovery-generations-dismiss"
+  },
+  {
+    "id": "security-attack-discovery-api.update-attack-discovery-schedules",
+    "name": "update-attack-discovery-schedules",
+    "namespace": "security-attack-discovery-api",
+    "description": "",
+    "namespaceFile": "security-attack-discovery-api.update-attack-discovery-schedules"
+  },
+  {
+    "id": "security-detections-api.create-rule",
+    "name": "create-rule",
+    "namespace": "security-detections-api",
+    "description": "",
+    "namespaceFile": "security-detections-api.create-rule"
+  },
+  {
+    "id": "security-detections-api.delete-rule",
+    "name": "delete-rule",
+    "namespace": "security-detections-api",
+    "description": "",
+    "namespaceFile": "security-detections-api.delete-rule"
+  },
+  {
+    "id": "security-detections-api.export-rules",
+    "name": "export-rules",
+    "namespace": "security-detections-api",
+    "description": "",
+    "namespaceFile": "security-detections-api.export-rules"
+  },
+  {
+    "id": "security-detections-api.find-rules",
+    "name": "find-rules",
+    "namespace": "security-detections-api",
+    "description": "",
+    "namespaceFile": "security-detections-api.find-rules"
+  },
+  {
+    "id": "security-detections-api.import-rules",
+    "name": "import-rules",
+    "namespace": "security-detections-api",
+    "description": "",
+    "namespaceFile": "security-detections-api.import-rules"
+  },
+  {
+    "id": "security-detections-api.patch-rule",
+    "name": "patch-rule",
+    "namespace": "security-detections-api",
+    "description": "",
+    "namespaceFile": "security-detections-api.patch-rule"
+  },
+  {
+    "id": "security-detections-api.perform-rules-bulk-action",
+    "name": "perform-rules-bulk-action",
+    "namespace": "security-detections-api",
+    "description": "",
+    "namespaceFile": "security-detections-api.perform-rules-bulk-action"
+  },
+  {
+    "id": "security-detections-api.read-privileges",
+    "name": "read-privileges",
+    "namespace": "security-detections-api",
+    "description": "",
+    "namespaceFile": "security-detections-api.read-privileges"
+  },
+  {
+    "id": "security-detections-api.read-rule",
+    "name": "read-rule",
+    "namespace": "security-detections-api",
+    "description": "",
+    "namespaceFile": "security-detections-api.read-rule"
+  },
+  {
+    "id": "security-detections-api.read-tags",
+    "name": "read-tags",
+    "namespace": "security-detections-api",
+    "description": "",
+    "namespaceFile": "security-detections-api.read-tags"
+  },
+  {
+    "id": "security-detections-api.rule-preview",
+    "name": "rule-preview",
+    "namespace": "security-detections-api",
+    "description": "",
+    "namespaceFile": "security-detections-api.rule-preview"
+  },
+  {
+    "id": "security-detections-api.search-alerts",
+    "name": "search-alerts",
+    "namespace": "security-detections-api",
+    "description": "",
+    "namespaceFile": "security-detections-api.search-alerts"
+  },
+  {
+    "id": "security-detections-api.search-attacks",
+    "name": "search-attacks",
+    "namespace": "security-detections-api",
+    "description": "",
+    "namespaceFile": "security-detections-api.search-attacks",
+    "availability": {
+      "serverless": {
+        "stability": "stable",
+        "since": "9.5.0"
+      }
+    }
+  },
+  {
+    "id": "security-detections-api.set-alert-assignees",
+    "name": "set-alert-assignees",
+    "namespace": "security-detections-api",
+    "description": "",
+    "namespaceFile": "security-detections-api.set-alert-assignees"
+  },
+  {
+    "id": "security-detections-api.set-alert-tags",
+    "name": "set-alert-tags",
+    "namespace": "security-detections-api",
+    "description": "",
+    "namespaceFile": "security-detections-api.set-alert-tags"
+  },
+  {
+    "id": "security-detections-api.set-alerts-status",
+    "name": "set-alerts-status",
+    "namespace": "security-detections-api",
+    "description": "",
+    "namespaceFile": "security-detections-api.set-alerts-status"
+  },
+  {
+    "id": "security-detections-api.set-attacks-assignees",
+    "name": "set-attacks-assignees",
+    "namespace": "security-detections-api",
+    "description": "",
+    "namespaceFile": "security-detections-api.set-attacks-assignees",
+    "availability": {
+      "serverless": {
+        "stability": "stable",
+        "since": "9.5.0"
+      }
+    }
+  },
+  {
+    "id": "security-detections-api.set-attacks-status",
+    "name": "set-attacks-status",
+    "namespace": "security-detections-api",
+    "description": "",
+    "namespaceFile": "security-detections-api.set-attacks-status",
+    "availability": {
+      "serverless": {
+        "stability": "stable",
+        "since": "9.5.0"
+      }
+    }
+  },
+  {
+    "id": "security-detections-api.set-attacks-tags",
+    "name": "set-attacks-tags",
+    "namespace": "security-detections-api",
+    "description": "",
+    "namespaceFile": "security-detections-api.set-attacks-tags",
+    "availability": {
+      "serverless": {
+        "stability": "stable",
+        "since": "9.5.0"
+      }
+    }
+  },
+  {
+    "id": "security-detections-api.update-rule",
+    "name": "update-rule",
+    "namespace": "security-detections-api",
+    "description": "",
+    "namespaceFile": "security-detections-api.update-rule"
+  },
+  {
+    "id": "security-endpoint-exceptions-api.create-endpoint-list",
+    "name": "create-endpoint-list",
+    "namespace": "security-endpoint-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-exceptions-api.create-endpoint-list"
+  },
+  {
+    "id": "security-endpoint-exceptions-api.create-endpoint-list-item",
+    "name": "create-endpoint-list-item",
+    "namespace": "security-endpoint-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-exceptions-api.create-endpoint-list-item"
+  },
+  {
+    "id": "security-endpoint-exceptions-api.delete-endpoint-list-item",
+    "name": "delete-endpoint-list-item",
+    "namespace": "security-endpoint-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-exceptions-api.delete-endpoint-list-item"
+  },
+  {
+    "id": "security-endpoint-exceptions-api.find-endpoint-list-items",
+    "name": "find-endpoint-list-items",
+    "namespace": "security-endpoint-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-exceptions-api.find-endpoint-list-items"
+  },
+  {
+    "id": "security-endpoint-exceptions-api.read-endpoint-list-item",
+    "name": "read-endpoint-list-item",
+    "namespace": "security-endpoint-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-exceptions-api.read-endpoint-list-item"
+  },
+  {
+    "id": "security-endpoint-exceptions-api.update-endpoint-list-item",
+    "name": "update-endpoint-list-item",
+    "namespace": "security-endpoint-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-exceptions-api.update-endpoint-list-item"
+  },
+  {
+    "id": "security-endpoint-management-api.cancel-action",
+    "name": "cancel-action",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.cancel-action"
+  },
+  {
+    "id": "security-endpoint-management-api.create-update-protection-updates-note",
+    "name": "create-update-protection-updates-note",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.create-update-protection-updates-note"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-execute-action",
+    "name": "endpoint-execute-action",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-execute-action"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-file-download",
+    "name": "endpoint-file-download",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-file-download"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-file-info",
+    "name": "endpoint-file-info",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-file-info"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-generate-memory-dump",
+    "name": "endpoint-generate-memory-dump",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-generate-memory-dump"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-get-actions-details",
+    "name": "endpoint-get-actions-details",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-get-actions-details"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-get-actions-list",
+    "name": "endpoint-get-actions-list",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-get-actions-list"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-get-actions-state",
+    "name": "endpoint-get-actions-state",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-get-actions-state"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-get-actions-status",
+    "name": "endpoint-get-actions-status",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-get-actions-status"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-get-file-action",
+    "name": "endpoint-get-file-action",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-get-file-action"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-get-processes-action",
+    "name": "endpoint-get-processes-action",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-get-processes-action"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-isolate-action",
+    "name": "endpoint-isolate-action",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-isolate-action"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-kill-process-action",
+    "name": "endpoint-kill-process-action",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-kill-process-action"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-scan-action",
+    "name": "endpoint-scan-action",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-scan-action"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-script-library-create-script",
+    "name": "endpoint-script-library-create-script",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-script-library-create-script"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-script-library-delete-script",
+    "name": "endpoint-script-library-delete-script",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-script-library-delete-script"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-script-library-download-script",
+    "name": "endpoint-script-library-download-script",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-script-library-download-script"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-script-library-get-one-script",
+    "name": "endpoint-script-library-get-one-script",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-script-library-get-one-script"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-script-library-list-scripts",
+    "name": "endpoint-script-library-list-scripts",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-script-library-list-scripts"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-script-library-patch-update-script",
+    "name": "endpoint-script-library-patch-update-script",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-script-library-patch-update-script"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-suspend-process-action",
+    "name": "endpoint-suspend-process-action",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-suspend-process-action"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-unisolate-action",
+    "name": "endpoint-unisolate-action",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-unisolate-action"
+  },
+  {
+    "id": "security-endpoint-management-api.endpoint-upload-action",
+    "name": "endpoint-upload-action",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.endpoint-upload-action"
+  },
+  {
+    "id": "security-endpoint-management-api.get-endpoint-metadata",
+    "name": "get-endpoint-metadata",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.get-endpoint-metadata"
+  },
+  {
+    "id": "security-endpoint-management-api.get-endpoint-metadata-list",
+    "name": "get-endpoint-metadata-list",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.get-endpoint-metadata-list"
+  },
+  {
+    "id": "security-endpoint-management-api.get-policy-response",
+    "name": "get-policy-response",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.get-policy-response"
+  },
+  {
+    "id": "security-endpoint-management-api.get-protection-updates-note",
+    "name": "get-protection-updates-note",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.get-protection-updates-note"
+  },
+  {
+    "id": "security-endpoint-management-api.run-script-action",
+    "name": "run-script-action",
+    "namespace": "security-endpoint-management-api",
+    "description": "",
+    "namespaceFile": "security-endpoint-management-api.run-script-action"
+  },
+  {
+    "id": "security-entity-analytics-api.assign-watchlist-entities",
+    "name": "assign-watchlist-entities",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.assign-watchlist-entities",
+    "availability": {
+      "serverless": {
+        "stability": "tech_preview",
+        "since": "9.4.0"
+      }
+    }
+  },
+  {
+    "id": "security-entity-analytics-api.bulk-upsert-asset-criticality-records",
+    "name": "bulk-upsert-asset-criticality-records",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.bulk-upsert-asset-criticality-records"
+  },
+  {
+    "id": "security-entity-analytics-api.clean-up-risk-engine",
+    "name": "clean-up-risk-engine",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.clean-up-risk-engine"
+  },
+  {
+    "id": "security-entity-analytics-api.configure-risk-engine-saved-object",
+    "name": "configure-risk-engine-saved-object",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.configure-risk-engine-saved-object"
+  },
+  {
+    "id": "security-entity-analytics-api.create-asset-criticality-record",
+    "name": "create-asset-criticality-record",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.create-asset-criticality-record"
+  },
+  {
+    "id": "security-entity-analytics-api.create-priv-mon-user",
+    "name": "create-priv-mon-user",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.create-priv-mon-user"
+  },
+  {
+    "id": "security-entity-analytics-api.create-watchlist",
+    "name": "create-watchlist",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.create-watchlist",
+    "availability": {
+      "serverless": {
+        "stability": "tech_preview"
+      }
+    }
+  },
+  {
+    "id": "security-entity-analytics-api.delete-asset-criticality-record",
+    "name": "delete-asset-criticality-record",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.delete-asset-criticality-record"
+  },
+  {
+    "id": "security-entity-analytics-api.delete-monitoring-engine",
+    "name": "delete-monitoring-engine",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.delete-monitoring-engine"
+  },
+  {
+    "id": "security-entity-analytics-api.delete-priv-mon-user",
+    "name": "delete-priv-mon-user",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.delete-priv-mon-user"
+  },
+  {
+    "id": "security-entity-analytics-api.disable-monitoring-engine",
+    "name": "disable-monitoring-engine",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.disable-monitoring-engine"
+  },
+  {
+    "id": "security-entity-analytics-api.find-asset-criticality-records",
+    "name": "find-asset-criticality-records",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.find-asset-criticality-records"
+  },
+  {
+    "id": "security-entity-analytics-api.get-asset-criticality-record",
+    "name": "get-asset-criticality-record",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.get-asset-criticality-record"
+  },
+  {
+    "id": "security-entity-analytics-api.get-privileged-access-detection-package-status",
+    "name": "get-privileged-access-detection-package-status",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.get-privileged-access-detection-package-status"
+  },
+  {
+    "id": "security-entity-analytics-api.get-risk-score-history",
+    "name": "get-risk-score-history",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.get-risk-score-history",
+    "availability": {
+      "serverless": {
+        "stability": "stable",
+        "since": "9.5.0"
+      }
+    }
+  },
+  {
+    "id": "security-entity-analytics-api.get-watchlist",
+    "name": "get-watchlist",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.get-watchlist",
+    "availability": {
+      "serverless": {
+        "stability": "tech_preview"
+      }
+    }
+  },
+  {
+    "id": "security-entity-analytics-api.init-monitoring-engine",
+    "name": "init-monitoring-engine",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.init-monitoring-engine"
+  },
+  {
+    "id": "security-entity-analytics-api.install-privileged-access-detection-package",
+    "name": "install-privileged-access-detection-package",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.install-privileged-access-detection-package"
+  },
+  {
+    "id": "security-entity-analytics-api.list-priv-mon-users",
+    "name": "list-priv-mon-users",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.list-priv-mon-users"
+  },
+  {
+    "id": "security-entity-analytics-api.list-watchlists",
+    "name": "list-watchlists",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.list-watchlists",
+    "availability": {
+      "serverless": {
+        "stability": "tech_preview"
+      }
+    }
+  },
+  {
+    "id": "security-entity-analytics-api.priv-mon-health",
+    "name": "priv-mon-health",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.priv-mon-health"
+  },
+  {
+    "id": "security-entity-analytics-api.priv-mon-privileges",
+    "name": "priv-mon-privileges",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.priv-mon-privileges"
+  },
+  {
+    "id": "security-entity-analytics-api.privmon-bulk-upload-users-c-s-v",
+    "name": "privmon-bulk-upload-users-c-s-v",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.privmon-bulk-upload-users-c-s-v"
+  },
+  {
+    "id": "security-entity-analytics-api.schedule-monitoring-engine",
+    "name": "schedule-monitoring-engine",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.schedule-monitoring-engine"
+  },
+  {
+    "id": "security-entity-analytics-api.schedule-risk-engine-now",
+    "name": "schedule-risk-engine-now",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.schedule-risk-engine-now"
+  },
+  {
+    "id": "security-entity-analytics-api.unassign-watchlist-entities",
+    "name": "unassign-watchlist-entities",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.unassign-watchlist-entities",
+    "availability": {
+      "serverless": {
+        "stability": "tech_preview",
+        "since": "9.4.0"
+      }
+    }
+  },
+  {
+    "id": "security-entity-analytics-api.update-priv-mon-user",
+    "name": "update-priv-mon-user",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.update-priv-mon-user"
+  },
+  {
+    "id": "security-entity-analytics-api.update-watchlist",
+    "name": "update-watchlist",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.update-watchlist",
+    "availability": {
+      "serverless": {
+        "stability": "tech_preview"
+      }
+    }
+  },
+  {
+    "id": "security-entity-analytics-api.upload-watchlist-csv",
+    "name": "upload-watchlist-csv",
+    "namespace": "security-entity-analytics-api",
+    "description": "",
+    "namespaceFile": "security-entity-analytics-api.upload-watchlist-csv",
+    "availability": {
+      "serverless": {
+        "stability": "tech_preview"
+      }
+    }
+  },
+  {
+    "id": "security-entity-store.delete-security-entity-store-entities",
+    "name": "delete-security-entity-store-entities",
+    "namespace": "security-entity-store",
+    "description": "",
+    "namespaceFile": "security-entity-store.delete-security-entity-store-entities"
+  },
+  {
+    "id": "security-entity-store.get-security-entity-store-entities",
+    "name": "get-security-entity-store-entities",
+    "namespace": "security-entity-store",
+    "description": "",
+    "namespaceFile": "security-entity-store.get-security-entity-store-entities"
+  },
+  {
+    "id": "security-entity-store.get-security-entity-store-resolution-group",
+    "name": "get-security-entity-store-resolution-group",
+    "namespace": "security-entity-store",
+    "description": "",
+    "namespaceFile": "security-entity-store.get-security-entity-store-resolution-group",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "security-entity-store.get-security-entity-store-resolution-rules",
+    "name": "get-security-entity-store-resolution-rules",
+    "namespace": "security-entity-store",
+    "description": "",
+    "namespaceFile": "security-entity-store.get-security-entity-store-resolution-rules",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "security-entity-store.get-security-entity-store-status",
+    "name": "get-security-entity-store-status",
+    "namespace": "security-entity-store",
+    "description": "",
+    "namespaceFile": "security-entity-store.get-security-entity-store-status"
+  },
+  {
+    "id": "security-entity-store.post-security-entity-store-entities-entitytype",
+    "name": "post-security-entity-store-entities-entitytype",
+    "namespace": "security-entity-store",
+    "description": "",
+    "namespaceFile": "security-entity-store.post-security-entity-store-entities-entitytype"
+  },
+  {
+    "id": "security-entity-store.post-security-entity-store-install",
+    "name": "post-security-entity-store-install",
+    "namespace": "security-entity-store",
+    "description": "",
+    "namespaceFile": "security-entity-store.post-security-entity-store-install"
+  },
+  {
+    "id": "security-entity-store.post-security-entity-store-resolution-link",
+    "name": "post-security-entity-store-resolution-link",
+    "namespace": "security-entity-store",
+    "description": "",
+    "namespaceFile": "security-entity-store.post-security-entity-store-resolution-link",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "security-entity-store.post-security-entity-store-resolution-unlink",
+    "name": "post-security-entity-store-resolution-unlink",
+    "namespace": "security-entity-store",
+    "description": "",
+    "namespaceFile": "security-entity-store.post-security-entity-store-resolution-unlink",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "security-entity-store.post-security-entity-store-uninstall",
+    "name": "post-security-entity-store-uninstall",
+    "namespace": "security-entity-store",
+    "description": "",
+    "namespaceFile": "security-entity-store.post-security-entity-store-uninstall"
+  },
+  {
+    "id": "security-entity-store.put-security-entity-store",
+    "name": "put-security-entity-store",
+    "namespace": "security-entity-store",
+    "description": "",
+    "namespaceFile": "security-entity-store.put-security-entity-store"
+  },
+  {
+    "id": "security-entity-store.put-security-entity-store-entities-bulk",
+    "name": "put-security-entity-store-entities-bulk",
+    "namespace": "security-entity-store",
+    "description": "",
+    "namespaceFile": "security-entity-store.put-security-entity-store-entities-bulk"
+  },
+  {
+    "id": "security-entity-store.put-security-entity-store-entities-entitytype",
+    "name": "put-security-entity-store-entities-entitytype",
+    "namespace": "security-entity-store",
+    "description": "",
+    "namespaceFile": "security-entity-store.put-security-entity-store-entities-entitytype"
+  },
+  {
+    "id": "security-entity-store.put-security-entity-store-history-snapshot-disable",
+    "name": "put-security-entity-store-history-snapshot-disable",
+    "namespace": "security-entity-store",
+    "description": "",
+    "namespaceFile": "security-entity-store.put-security-entity-store-history-snapshot-disable",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "security-entity-store.put-security-entity-store-history-snapshot-enable",
+    "name": "put-security-entity-store-history-snapshot-enable",
+    "namespace": "security-entity-store",
+    "description": "",
+    "namespaceFile": "security-entity-store.put-security-entity-store-history-snapshot-enable",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "security-entity-store.put-security-entity-store-resolution-rules-id-disable",
+    "name": "put-security-entity-store-resolution-rules-id-disable",
+    "namespace": "security-entity-store",
+    "description": "",
+    "namespaceFile": "security-entity-store.put-security-entity-store-resolution-rules-id-disable",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "security-entity-store.put-security-entity-store-resolution-rules-id-enable",
+    "name": "put-security-entity-store-resolution-rules-id-enable",
+    "namespace": "security-entity-store",
+    "description": "",
+    "namespaceFile": "security-entity-store.put-security-entity-store-resolution-rules-id-enable",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "security-entity-store.put-security-entity-store-start",
+    "name": "put-security-entity-store-start",
+    "namespace": "security-entity-store",
+    "description": "",
+    "namespaceFile": "security-entity-store.put-security-entity-store-start"
+  },
+  {
+    "id": "security-entity-store.put-security-entity-store-stop",
+    "name": "put-security-entity-store-stop",
+    "namespace": "security-entity-store",
+    "description": "",
+    "namespaceFile": "security-entity-store.put-security-entity-store-stop"
+  },
+  {
+    "id": "security-exceptions-api.create-exception-list",
+    "name": "create-exception-list",
+    "namespace": "security-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-exceptions-api.create-exception-list"
+  },
+  {
+    "id": "security-exceptions-api.create-exception-list-item",
+    "name": "create-exception-list-item",
+    "namespace": "security-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-exceptions-api.create-exception-list-item"
+  },
+  {
+    "id": "security-exceptions-api.create-rule-exception-list-items",
+    "name": "create-rule-exception-list-items",
+    "namespace": "security-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-exceptions-api.create-rule-exception-list-items"
+  },
+  {
+    "id": "security-exceptions-api.create-shared-exception-list",
+    "name": "create-shared-exception-list",
+    "namespace": "security-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-exceptions-api.create-shared-exception-list"
+  },
+  {
+    "id": "security-exceptions-api.delete-exception-list",
+    "name": "delete-exception-list",
+    "namespace": "security-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-exceptions-api.delete-exception-list"
+  },
+  {
+    "id": "security-exceptions-api.delete-exception-list-item",
+    "name": "delete-exception-list-item",
+    "namespace": "security-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-exceptions-api.delete-exception-list-item"
+  },
+  {
+    "id": "security-exceptions-api.duplicate-exception-list",
+    "name": "duplicate-exception-list",
+    "namespace": "security-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-exceptions-api.duplicate-exception-list"
+  },
+  {
+    "id": "security-exceptions-api.export-exception-list",
+    "name": "export-exception-list",
+    "namespace": "security-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-exceptions-api.export-exception-list"
+  },
+  {
+    "id": "security-exceptions-api.find-exception-list-items",
+    "name": "find-exception-list-items",
+    "namespace": "security-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-exceptions-api.find-exception-list-items"
+  },
+  {
+    "id": "security-exceptions-api.find-exception-lists",
+    "name": "find-exception-lists",
+    "namespace": "security-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-exceptions-api.find-exception-lists"
+  },
+  {
+    "id": "security-exceptions-api.import-exception-list",
+    "name": "import-exception-list",
+    "namespace": "security-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-exceptions-api.import-exception-list"
+  },
+  {
+    "id": "security-exceptions-api.read-exception-list",
+    "name": "read-exception-list",
+    "namespace": "security-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-exceptions-api.read-exception-list"
+  },
+  {
+    "id": "security-exceptions-api.read-exception-list-item",
+    "name": "read-exception-list-item",
+    "namespace": "security-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-exceptions-api.read-exception-list-item"
+  },
+  {
+    "id": "security-exceptions-api.read-exception-list-summary",
+    "name": "read-exception-list-summary",
+    "namespace": "security-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-exceptions-api.read-exception-list-summary"
+  },
+  {
+    "id": "security-exceptions-api.update-exception-list",
+    "name": "update-exception-list",
+    "namespace": "security-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-exceptions-api.update-exception-list"
+  },
+  {
+    "id": "security-exceptions-api.update-exception-list-item",
+    "name": "update-exception-list-item",
+    "namespace": "security-exceptions-api",
+    "description": "",
+    "namespaceFile": "security-exceptions-api.update-exception-list-item"
+  },
+  {
+    "id": "security-lists-api.create-list",
+    "name": "create-list",
+    "namespace": "security-lists-api",
+    "description": "",
+    "namespaceFile": "security-lists-api.create-list"
+  },
+  {
+    "id": "security-lists-api.create-list-index",
+    "name": "create-list-index",
+    "namespace": "security-lists-api",
+    "description": "",
+    "namespaceFile": "security-lists-api.create-list-index"
+  },
+  {
+    "id": "security-lists-api.create-list-item",
+    "name": "create-list-item",
+    "namespace": "security-lists-api",
+    "description": "",
+    "namespaceFile": "security-lists-api.create-list-item"
+  },
+  {
+    "id": "security-lists-api.delete-list",
+    "name": "delete-list",
+    "namespace": "security-lists-api",
+    "description": "",
+    "namespaceFile": "security-lists-api.delete-list"
+  },
+  {
+    "id": "security-lists-api.delete-list-index",
+    "name": "delete-list-index",
+    "namespace": "security-lists-api",
+    "description": "",
+    "namespaceFile": "security-lists-api.delete-list-index"
+  },
+  {
+    "id": "security-lists-api.delete-list-item",
+    "name": "delete-list-item",
+    "namespace": "security-lists-api",
+    "description": "",
+    "namespaceFile": "security-lists-api.delete-list-item"
+  },
+  {
+    "id": "security-lists-api.export-list-items",
+    "name": "export-list-items",
+    "namespace": "security-lists-api",
+    "description": "",
+    "namespaceFile": "security-lists-api.export-list-items"
+  },
+  {
+    "id": "security-lists-api.find-list-items",
+    "name": "find-list-items",
+    "namespace": "security-lists-api",
+    "description": "",
+    "namespaceFile": "security-lists-api.find-list-items"
+  },
+  {
+    "id": "security-lists-api.find-lists",
+    "name": "find-lists",
+    "namespace": "security-lists-api",
+    "description": "",
+    "namespaceFile": "security-lists-api.find-lists"
+  },
+  {
+    "id": "security-lists-api.import-list-items",
+    "name": "import-list-items",
+    "namespace": "security-lists-api",
+    "description": "",
+    "namespaceFile": "security-lists-api.import-list-items"
+  },
+  {
+    "id": "security-lists-api.patch-list",
+    "name": "patch-list",
+    "namespace": "security-lists-api",
+    "description": "",
+    "namespaceFile": "security-lists-api.patch-list"
+  },
+  {
+    "id": "security-lists-api.patch-list-item",
+    "name": "patch-list-item",
+    "namespace": "security-lists-api",
+    "description": "",
+    "namespaceFile": "security-lists-api.patch-list-item"
+  },
+  {
+    "id": "security-lists-api.read-list",
+    "name": "read-list",
+    "namespace": "security-lists-api",
+    "description": "",
+    "namespaceFile": "security-lists-api.read-list"
+  },
+  {
+    "id": "security-lists-api.read-list-index",
+    "name": "read-list-index",
+    "namespace": "security-lists-api",
+    "description": "",
+    "namespaceFile": "security-lists-api.read-list-index"
+  },
+  {
+    "id": "security-lists-api.read-list-item",
+    "name": "read-list-item",
+    "namespace": "security-lists-api",
+    "description": "",
+    "namespaceFile": "security-lists-api.read-list-item"
+  },
+  {
+    "id": "security-lists-api.read-list-privileges",
+    "name": "read-list-privileges",
+    "namespace": "security-lists-api",
+    "description": "",
+    "namespaceFile": "security-lists-api.read-list-privileges"
+  },
+  {
+    "id": "security-lists-api.update-list",
+    "name": "update-list",
+    "namespace": "security-lists-api",
+    "description": "",
+    "namespaceFile": "security-lists-api.update-list"
+  },
+  {
+    "id": "security-lists-api.update-list-item",
+    "name": "update-list-item",
+    "namespace": "security-lists-api",
+    "description": "",
+    "namespaceFile": "security-lists-api.update-list-item"
+  },
+  {
+    "id": "security-osquery-api.osquery-copy-packs",
+    "name": "osquery-copy-packs",
+    "namespace": "security-osquery-api",
+    "description": "",
+    "namespaceFile": "security-osquery-api.osquery-copy-packs",
+    "availability": {
+      "serverless": {
+        "stability": "stable",
+        "since": "9.4.0"
+      }
+    }
+  },
+  {
+    "id": "security-osquery-api.osquery-copy-saved-query",
+    "name": "osquery-copy-saved-query",
+    "namespace": "security-osquery-api",
+    "description": "",
+    "namespaceFile": "security-osquery-api.osquery-copy-saved-query",
+    "availability": {
+      "serverless": {
+        "stability": "stable",
+        "since": "9.4.0"
+      }
+    }
+  },
+  {
+    "id": "security-osquery-api.osquery-create-live-query",
+    "name": "osquery-create-live-query",
+    "namespace": "security-osquery-api",
+    "description": "",
+    "namespaceFile": "security-osquery-api.osquery-create-live-query"
+  },
+  {
+    "id": "security-osquery-api.osquery-create-packs",
+    "name": "osquery-create-packs",
+    "namespace": "security-osquery-api",
+    "description": "",
+    "namespaceFile": "security-osquery-api.osquery-create-packs"
+  },
+  {
+    "id": "security-osquery-api.osquery-create-saved-query",
+    "name": "osquery-create-saved-query",
+    "namespace": "security-osquery-api",
+    "description": "",
+    "namespaceFile": "security-osquery-api.osquery-create-saved-query"
+  },
+  {
+    "id": "security-osquery-api.osquery-delete-packs",
+    "name": "osquery-delete-packs",
+    "namespace": "security-osquery-api",
+    "description": "",
+    "namespaceFile": "security-osquery-api.osquery-delete-packs"
+  },
+  {
+    "id": "security-osquery-api.osquery-delete-saved-query",
+    "name": "osquery-delete-saved-query",
+    "namespace": "security-osquery-api",
+    "description": "",
+    "namespaceFile": "security-osquery-api.osquery-delete-saved-query"
+  },
+  {
+    "id": "security-osquery-api.osquery-export-live-query-results",
+    "name": "osquery-export-live-query-results",
+    "namespace": "security-osquery-api",
+    "description": "",
+    "namespaceFile": "security-osquery-api.osquery-export-live-query-results",
+    "availability": {
+      "serverless": {
+        "stability": "stable",
+        "since": "9.5.0"
+      }
+    }
+  },
+  {
+    "id": "security-osquery-api.osquery-export-scheduled-query-results",
+    "name": "osquery-export-scheduled-query-results",
+    "namespace": "security-osquery-api",
+    "description": "",
+    "namespaceFile": "security-osquery-api.osquery-export-scheduled-query-results",
+    "availability": {
+      "serverless": {
+        "stability": "stable",
+        "since": "9.5.0"
+      }
+    }
+  },
+  {
+    "id": "security-osquery-api.osquery-find-live-queries",
+    "name": "osquery-find-live-queries",
+    "namespace": "security-osquery-api",
+    "description": "",
+    "namespaceFile": "security-osquery-api.osquery-find-live-queries"
+  },
+  {
+    "id": "security-osquery-api.osquery-find-packs",
+    "name": "osquery-find-packs",
+    "namespace": "security-osquery-api",
+    "description": "",
+    "namespaceFile": "security-osquery-api.osquery-find-packs"
+  },
+  {
+    "id": "security-osquery-api.osquery-find-saved-queries",
+    "name": "osquery-find-saved-queries",
+    "namespace": "security-osquery-api",
+    "description": "",
+    "namespaceFile": "security-osquery-api.osquery-find-saved-queries"
+  },
+  {
+    "id": "security-osquery-api.osquery-get-live-query-details",
+    "name": "osquery-get-live-query-details",
+    "namespace": "security-osquery-api",
+    "description": "",
+    "namespaceFile": "security-osquery-api.osquery-get-live-query-details"
+  },
+  {
+    "id": "security-osquery-api.osquery-get-live-query-results",
+    "name": "osquery-get-live-query-results",
+    "namespace": "security-osquery-api",
+    "description": "",
+    "namespaceFile": "security-osquery-api.osquery-get-live-query-results"
+  },
+  {
+    "id": "security-osquery-api.osquery-get-packs-details",
+    "name": "osquery-get-packs-details",
+    "namespace": "security-osquery-api",
+    "description": "",
+    "namespaceFile": "security-osquery-api.osquery-get-packs-details"
+  },
+  {
+    "id": "security-osquery-api.osquery-get-saved-query-details",
+    "name": "osquery-get-saved-query-details",
+    "namespace": "security-osquery-api",
+    "description": "",
+    "namespaceFile": "security-osquery-api.osquery-get-saved-query-details"
+  },
+  {
+    "id": "security-osquery-api.osquery-get-scheduled-action-results",
+    "name": "osquery-get-scheduled-action-results",
+    "namespace": "security-osquery-api",
+    "description": "",
+    "namespaceFile": "security-osquery-api.osquery-get-scheduled-action-results",
+    "availability": {
+      "serverless": {
+        "stability": "stable",
+        "since": "9.4.0"
+      }
+    }
+  },
+  {
+    "id": "security-osquery-api.osquery-get-scheduled-query-results",
+    "name": "osquery-get-scheduled-query-results",
+    "namespace": "security-osquery-api",
+    "description": "",
+    "namespaceFile": "security-osquery-api.osquery-get-scheduled-query-results",
+    "availability": {
+      "serverless": {
+        "stability": "stable",
+        "since": "9.4.0"
+      }
+    }
+  },
+  {
+    "id": "security-osquery-api.osquery-get-unified-history",
+    "name": "osquery-get-unified-history",
+    "namespace": "security-osquery-api",
+    "description": "",
+    "namespaceFile": "security-osquery-api.osquery-get-unified-history",
+    "availability": {
+      "serverless": {
+        "stability": "stable",
+        "since": "9.4.0"
+      }
+    }
+  },
+  {
+    "id": "security-osquery-api.osquery-update-packs",
+    "name": "osquery-update-packs",
+    "namespace": "security-osquery-api",
+    "description": "",
+    "namespaceFile": "security-osquery-api.osquery-update-packs"
+  },
+  {
+    "id": "security-osquery-api.osquery-update-saved-query",
+    "name": "osquery-update-saved-query",
+    "namespace": "security-osquery-api",
+    "description": "",
+    "namespaceFile": "security-osquery-api.osquery-update-saved-query"
+  },
+  {
+    "id": "security-solution-initialization-api.initialize-security-solution",
+    "name": "initialize-security-solution",
+    "namespace": "security-solution-initialization-api",
+    "description": "",
+    "namespaceFile": "security-solution-initialization-api.initialize-security-solution"
+  },
+  {
+    "id": "security-timeline-api.clean-draft-timelines",
+    "name": "clean-draft-timelines",
+    "namespace": "security-timeline-api",
+    "description": "",
+    "namespaceFile": "security-timeline-api.clean-draft-timelines"
+  },
+  {
+    "id": "security-timeline-api.copy-timeline",
+    "name": "copy-timeline",
+    "namespace": "security-timeline-api",
+    "description": "",
+    "namespaceFile": "security-timeline-api.copy-timeline"
+  },
+  {
+    "id": "security-timeline-api.create-timelines",
+    "name": "create-timelines",
+    "namespace": "security-timeline-api",
+    "description": "",
+    "namespaceFile": "security-timeline-api.create-timelines"
+  },
+  {
+    "id": "security-timeline-api.delete-note",
+    "name": "delete-note",
+    "namespace": "security-timeline-api",
+    "description": "",
+    "namespaceFile": "security-timeline-api.delete-note"
+  },
+  {
+    "id": "security-timeline-api.delete-timelines",
+    "name": "delete-timelines",
+    "namespace": "security-timeline-api",
+    "description": "",
+    "namespaceFile": "security-timeline-api.delete-timelines"
+  },
+  {
+    "id": "security-timeline-api.export-timelines",
+    "name": "export-timelines",
+    "namespace": "security-timeline-api",
+    "description": "",
+    "namespaceFile": "security-timeline-api.export-timelines"
+  },
+  {
+    "id": "security-timeline-api.get-draft-timelines",
+    "name": "get-draft-timelines",
+    "namespace": "security-timeline-api",
+    "description": "",
+    "namespaceFile": "security-timeline-api.get-draft-timelines"
+  },
+  {
+    "id": "security-timeline-api.get-notes",
+    "name": "get-notes",
+    "namespace": "security-timeline-api",
+    "description": "",
+    "namespaceFile": "security-timeline-api.get-notes"
+  },
+  {
+    "id": "security-timeline-api.get-timeline",
+    "name": "get-timeline",
+    "namespace": "security-timeline-api",
+    "description": "",
+    "namespaceFile": "security-timeline-api.get-timeline"
+  },
+  {
+    "id": "security-timeline-api.get-timelines",
+    "name": "get-timelines",
+    "namespace": "security-timeline-api",
+    "description": "",
+    "namespaceFile": "security-timeline-api.get-timelines"
+  },
+  {
+    "id": "security-timeline-api.import-timelines",
+    "name": "import-timelines",
+    "namespace": "security-timeline-api",
+    "description": "",
+    "namespaceFile": "security-timeline-api.import-timelines"
+  },
+  {
+    "id": "security-timeline-api.install-prepacked-timelines",
+    "name": "install-prepacked-timelines",
+    "namespace": "security-timeline-api",
+    "description": "",
+    "namespaceFile": "security-timeline-api.install-prepacked-timelines"
+  },
+  {
+    "id": "security-timeline-api.patch-timeline",
+    "name": "patch-timeline",
+    "namespace": "security-timeline-api",
+    "description": "",
+    "namespaceFile": "security-timeline-api.patch-timeline"
+  },
+  {
+    "id": "security-timeline-api.persist-favorite-route",
+    "name": "persist-favorite-route",
+    "namespace": "security-timeline-api",
+    "description": "",
+    "namespaceFile": "security-timeline-api.persist-favorite-route"
+  },
+  {
+    "id": "security-timeline-api.persist-note-route",
+    "name": "persist-note-route",
+    "namespace": "security-timeline-api",
+    "description": "",
+    "namespaceFile": "security-timeline-api.persist-note-route"
+  },
+  {
+    "id": "security-timeline-api.persist-pinned-event-route",
+    "name": "persist-pinned-event-route",
+    "namespace": "security-timeline-api",
+    "description": "",
+    "namespaceFile": "security-timeline-api.persist-pinned-event-route"
+  },
+  {
+    "id": "security-timeline-api.resolve-timeline",
+    "name": "resolve-timeline",
+    "namespace": "security-timeline-api",
+    "description": "",
+    "namespaceFile": "security-timeline-api.resolve-timeline"
+  },
+  {
+    "id": "slo.bulk-delete-op",
+    "name": "bulk-delete-op",
+    "namespace": "slo",
+    "description": "",
+    "namespaceFile": "slo.bulk-delete-op"
+  },
+  {
+    "id": "slo.bulk-delete-status-op",
+    "name": "bulk-delete-status-op",
+    "namespace": "slo",
+    "description": "",
+    "namespaceFile": "slo.bulk-delete-status-op"
+  },
+  {
+    "id": "slo.bulk-snapshot-op",
+    "name": "bulk-snapshot-op",
+    "namespace": "slo",
+    "description": "",
+    "namespaceFile": "slo.bulk-snapshot-op",
+    "availability": {
+      "serverless": {
+        "stability": "stable",
+        "since": "9.6.0"
+      }
+    }
+  },
+  {
+    "id": "slo.create-slo-op",
+    "name": "create-slo-op",
+    "namespace": "slo",
+    "description": "",
+    "namespaceFile": "slo.create-slo-op"
+  },
+  {
+    "id": "slo.delete-rollup-data-op",
+    "name": "delete-rollup-data-op",
+    "namespace": "slo",
+    "description": "",
+    "namespaceFile": "slo.delete-rollup-data-op"
+  },
+  {
+    "id": "slo.delete-slo-instances-op",
+    "name": "delete-slo-instances-op",
+    "namespace": "slo",
+    "description": "",
+    "namespaceFile": "slo.delete-slo-instances-op"
+  },
+  {
+    "id": "slo.delete-slo-op",
+    "name": "delete-slo-op",
+    "namespace": "slo",
+    "description": "",
+    "namespaceFile": "slo.delete-slo-op"
+  },
+  {
+    "id": "slo.disable-slo-op",
+    "name": "disable-slo-op",
+    "namespace": "slo",
+    "description": "",
+    "namespaceFile": "slo.disable-slo-op"
+  },
+  {
+    "id": "slo.enable-slo-op",
+    "name": "enable-slo-op",
+    "namespace": "slo",
+    "description": "",
+    "namespaceFile": "slo.enable-slo-op"
+  },
+  {
+    "id": "slo.find-slos-op",
+    "name": "find-slos-op",
+    "namespace": "slo",
+    "description": "",
+    "namespaceFile": "slo.find-slos-op"
+  },
+  {
+    "id": "slo.get-definitions-op",
+    "name": "get-definitions-op",
+    "namespace": "slo",
+    "description": "",
+    "namespaceFile": "slo.get-definitions-op"
+  },
+  {
+    "id": "slo.get-slo-op",
+    "name": "get-slo-op",
+    "namespace": "slo",
+    "description": "",
+    "namespaceFile": "slo.get-slo-op"
+  },
+  {
+    "id": "slo.get-snapshot-op",
+    "name": "get-snapshot-op",
+    "namespace": "slo",
+    "description": "",
+    "namespaceFile": "slo.get-snapshot-op",
+    "availability": {
+      "serverless": {
+        "stability": "stable",
+        "since": "9.6.0"
+      }
+    }
+  },
+  {
+    "id": "slo.reset-slo-op",
+    "name": "reset-slo-op",
+    "namespace": "slo",
+    "description": "",
+    "namespaceFile": "slo.reset-slo-op"
+  },
+  {
+    "id": "slo.update-slo-op",
+    "name": "update-slo-op",
+    "namespace": "slo",
+    "description": "",
+    "namespaceFile": "slo.update-slo-op"
+  },
+  {
+    "id": "spaces.delete-spaces-space-id",
+    "name": "delete-spaces-space-id",
+    "namespace": "spaces",
+    "description": "",
+    "namespaceFile": "spaces.delete-spaces-space-id"
+  },
+  {
+    "id": "spaces.get-spaces-space",
+    "name": "get-spaces-space",
+    "namespace": "spaces",
+    "description": "",
+    "namespaceFile": "spaces.get-spaces-space"
+  },
+  {
+    "id": "spaces.get-spaces-space-id",
+    "name": "get-spaces-space-id",
+    "namespace": "spaces",
+    "description": "",
+    "namespaceFile": "spaces.get-spaces-space-id"
+  },
+  {
+    "id": "spaces.post-spaces-space",
+    "name": "post-spaces-space",
+    "namespace": "spaces",
+    "description": "",
+    "namespaceFile": "spaces.post-spaces-space"
+  },
+  {
+    "id": "spaces.put-spaces-space-id",
+    "name": "put-spaces-space-id",
+    "namespace": "spaces",
+    "description": "",
+    "namespaceFile": "spaces.put-spaces-space-id"
+  },
+  {
+    "id": "streams.delete-streams-name",
+    "name": "delete-streams-name",
+    "namespace": "streams",
+    "description": "",
+    "namespaceFile": "streams.delete-streams-name",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "streams.delete-streams-streamname-attachments-attachmenttype-attachmentid",
+    "name": "delete-streams-streamname-attachments-attachmenttype-attachmentid",
+    "namespace": "streams",
+    "description": "",
+    "namespaceFile": "streams.delete-streams-streamname-attachments-attachmenttype-attachmentid",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "streams.get-streams",
+    "name": "get-streams",
+    "namespace": "streams",
+    "description": "",
+    "namespaceFile": "streams.get-streams",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "streams.get-streams-name",
+    "name": "get-streams-name",
+    "namespace": "streams",
+    "description": "",
+    "namespaceFile": "streams.get-streams-name",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "streams.get-streams-name-ingest",
+    "name": "get-streams-name-ingest",
+    "namespace": "streams",
+    "description": "",
+    "namespaceFile": "streams.get-streams-name-ingest",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "streams.get-streams-name-query",
+    "name": "get-streams-name-query",
+    "namespace": "streams",
+    "description": "",
+    "namespaceFile": "streams.get-streams-name-query",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "streams.get-streams-streamname-attachments",
+    "name": "get-streams-streamname-attachments",
+    "namespace": "streams",
+    "description": "",
+    "namespaceFile": "streams.get-streams-streamname-attachments",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "streams.post-streams-disable",
+    "name": "post-streams-disable",
+    "namespace": "streams",
+    "description": "",
+    "namespaceFile": "streams.post-streams-disable",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "streams.post-streams-enable",
+    "name": "post-streams-enable",
+    "namespace": "streams",
+    "description": "",
+    "namespaceFile": "streams.post-streams-enable",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "streams.post-streams-name-content-export",
+    "name": "post-streams-name-content-export",
+    "namespace": "streams",
+    "description": "",
+    "namespaceFile": "streams.post-streams-name-content-export",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "streams.post-streams-name-content-import",
+    "name": "post-streams-name-content-import",
+    "namespace": "streams",
+    "description": "",
+    "namespaceFile": "streams.post-streams-name-content-import",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "streams.post-streams-name-fork",
+    "name": "post-streams-name-fork",
+    "namespace": "streams",
+    "description": "",
+    "namespaceFile": "streams.post-streams-name-fork",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "streams.post-streams-resync",
+    "name": "post-streams-resync",
+    "namespace": "streams",
+    "description": "",
+    "namespaceFile": "streams.post-streams-resync",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "streams.post-streams-streamname-attachments-bulk",
+    "name": "post-streams-streamname-attachments-bulk",
+    "namespace": "streams",
+    "description": "",
+    "namespaceFile": "streams.post-streams-streamname-attachments-bulk",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "streams.put-streams-name",
+    "name": "put-streams-name",
+    "namespace": "streams",
+    "description": "",
+    "namespaceFile": "streams.put-streams-name",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "streams.put-streams-name-ingest",
+    "name": "put-streams-name-ingest",
+    "namespace": "streams",
+    "description": "",
+    "namespaceFile": "streams.put-streams-name-ingest",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "streams.put-streams-name-query",
+    "name": "put-streams-name-query",
+    "namespace": "streams",
+    "description": "",
+    "namespaceFile": "streams.put-streams-name-query",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "streams.put-streams-streamname-attachments-attachmenttype-attachmentid",
+    "name": "put-streams-streamname-attachments-attachmenttype-attachmentid",
+    "namespace": "streams",
+    "description": "",
+    "namespaceFile": "streams.put-streams-streamname-attachments-attachmenttype-attachmentid",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "system.get-status",
+    "name": "get-status",
+    "namespace": "system",
+    "description": "",
+    "namespaceFile": "system.get-status"
+  },
+  {
+    "id": "tags.delete-tags-id",
+    "name": "delete-tags-id",
+    "namespace": "tags",
+    "description": "",
+    "namespaceFile": "tags.delete-tags-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "tags.get-tags",
+    "name": "get-tags",
+    "namespace": "tags",
+    "description": "",
+    "namespaceFile": "tags.get-tags",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "tags.get-tags-id",
+    "name": "get-tags-id",
+    "namespace": "tags",
+    "description": "",
+    "namespaceFile": "tags.get-tags-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "tags.post-tags",
+    "name": "post-tags",
+    "namespace": "tags",
+    "description": "",
+    "namespaceFile": "tags.post-tags",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "tags.put-tags-id",
+    "name": "put-tags-id",
+    "namespace": "tags",
+    "description": "",
+    "namespaceFile": "tags.put-tags-id",
+    "availability": {
+      "serverless": {
+        "stability": "experimental"
+      }
+    }
+  },
+  {
+    "id": "task-manager.task-manager-health",
+    "name": "task-manager-health",
+    "namespace": "task-manager",
+    "description": "",
+    "namespaceFile": "task-manager.task-manager-health"
+  },
+  {
+    "id": "visualizations.create-visualization",
+    "name": "create-visualization",
+    "namespace": "visualizations",
+    "description": "",
+    "namespaceFile": "visualizations.create-visualization",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "visualizations.delete-visualization",
+    "name": "delete-visualization",
+    "namespace": "visualizations",
+    "description": "",
+    "namespaceFile": "visualizations.delete-visualization",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "visualizations.get-visualization",
+    "name": "get-visualization",
+    "namespace": "visualizations",
+    "description": "",
+    "namespaceFile": "visualizations.get-visualization",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "visualizations.search-visualizations",
+    "name": "search-visualizations",
+    "namespace": "visualizations",
+    "description": "",
+    "namespaceFile": "visualizations.search-visualizations",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "visualizations.upsert-visualization",
+    "name": "upsert-visualization",
+    "namespace": "visualizations",
+    "description": "",
+    "namespaceFile": "visualizations.upsert-visualization",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.delete-workflows",
+    "name": "delete-workflows",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.delete-workflows",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.delete-workflows-workflow-id",
+    "name": "delete-workflows-workflow-id",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.delete-workflows-workflow-id",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.get-workflows",
+    "name": "get-workflows",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.get-workflows",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.get-workflows-aggs",
+    "name": "get-workflows-aggs",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.get-workflows-aggs",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.get-workflows-connectors",
+    "name": "get-workflows-connectors",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.get-workflows-connectors",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.get-workflows-executions-executionid",
+    "name": "get-workflows-executions-executionid",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.get-workflows-executions-executionid",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.get-workflows-executions-executionid-children",
+    "name": "get-workflows-executions-executionid-children",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.get-workflows-executions-executionid-children",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.get-workflows-executions-executionid-logs",
+    "name": "get-workflows-executions-executionid-logs",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.get-workflows-executions-executionid-logs",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.get-workflows-executions-executionid-step-stepexecutionid",
+    "name": "get-workflows-executions-executionid-step-stepexecutionid",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.get-workflows-executions-executionid-step-stepexecutionid",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.get-workflows-executions-executionid-steps",
+    "name": "get-workflows-executions-executionid-steps",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.get-workflows-executions-executionid-steps",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.get-workflows-executions-executionid-steps-stepid-resume-external",
+    "name": "get-workflows-executions-executionid-steps-stepid-resume-external",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.get-workflows-executions-executionid-steps-stepid-resume-external",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.get-workflows-executions-executionid-steps-stepid-resume-external-form",
+    "name": "get-workflows-executions-executionid-steps-stepid-resume-external-form",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.get-workflows-executions-executionid-steps-stepid-resume-external-form",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.get-workflows-schema",
+    "name": "get-workflows-schema",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.get-workflows-schema",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.get-workflows-stats",
+    "name": "get-workflows-stats",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.get-workflows-stats",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.get-workflows-workflow-executions",
+    "name": "get-workflows-workflow-executions",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.get-workflows-workflow-executions",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.get-workflows-workflow-id",
+    "name": "get-workflows-workflow-id",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.get-workflows-workflow-id",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.get-workflows-workflow-workflowid-executions",
+    "name": "get-workflows-workflow-workflowid-executions",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.get-workflows-workflow-workflowid-executions",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.get-workflows-workflow-workflowid-executions-steps",
+    "name": "get-workflows-workflow-workflowid-executions-steps",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.get-workflows-workflow-workflowid-executions-steps",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.post-workflows",
+    "name": "post-workflows",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.post-workflows",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.post-workflows-executions-executionid-cancel",
+    "name": "post-workflows-executions-executionid-cancel",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.post-workflows-executions-executionid-cancel",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.post-workflows-executions-executionid-resume",
+    "name": "post-workflows-executions-executionid-resume",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.post-workflows-executions-executionid-resume",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.post-workflows-executions-executionid-steps-stepid-resume-external",
+    "name": "post-workflows-executions-executionid-steps-stepid-resume-external",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.post-workflows-executions-executionid-steps-stepid-resume-external",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.post-workflows-export",
+    "name": "post-workflows-export",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.post-workflows-export",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.post-workflows-mget",
+    "name": "post-workflows-mget",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.post-workflows-mget",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.post-workflows-step-test",
+    "name": "post-workflows-step-test",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.post-workflows-step-test",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.post-workflows-test",
+    "name": "post-workflows-test",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.post-workflows-test",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.post-workflows-workflow",
+    "name": "post-workflows-workflow",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.post-workflows-workflow",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.post-workflows-workflow-id-clone",
+    "name": "post-workflows-workflow-id-clone",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.post-workflows-workflow-id-clone",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.post-workflows-workflow-id-run",
+    "name": "post-workflows-workflow-id-run",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.post-workflows-workflow-id-run",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.post-workflows-workflow-workflowid-executions-cancel",
+    "name": "post-workflows-workflow-workflowid-executions-cancel",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.post-workflows-workflow-workflowid-executions-cancel",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.put-workflows-managed-workflow-id",
+    "name": "put-workflows-managed-workflow-id",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.put-workflows-managed-workflow-id",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "workflows.put-workflows-workflow-id",
+    "name": "put-workflows-workflow-id",
+    "namespace": "workflows",
+    "description": "",
+    "namespaceFile": "workflows.put-workflows-workflow-id",
+    "availability": {
+      "serverless": {
+        "stability": "stable"
+      }
+    }
+  }
+]

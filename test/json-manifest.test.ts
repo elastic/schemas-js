@@ -24,7 +24,7 @@ const manifests: Record<string, readonly string[]> = {
 describe('JSON schema manifests', () => {
   for (const [category, manifest] of Object.entries(manifests)) {
     it(`${category}JsonManifest lists exactly the files in src/${category}/json/`, () => {
-      const actual = readdirSync(join(srcDir, category, 'json')).filter(f => f.endsWith('.json')).sort()
+      const actual = readdirSync(join(srcDir, category, 'json')).filter(f => f.endsWith('.json') && f !== 'manifest.json').sort()
       expect([...manifest].sort()).toEqual(actual)
     })
 
