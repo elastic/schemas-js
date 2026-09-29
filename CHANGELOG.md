@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.1](https://github.com/elastic/schemas-js/compare/v0.8.0...v0.8.1) (2026-09-29)
+
+
+### Bug Fixes
+
+* include all stack + serverless properties in ES schemas ([#99](https://github.com/elastic/schemas-js/issues/99)) ([825e07d](https://github.com/elastic/schemas-js/commit/825e07df45e4e246041f3314961566b74bf7afe4))
+
 ## [0.8.0](https://github.com/elastic/schemas-js/compare/v0.7.4...v0.8.0) (2026-09-18)
 
 
