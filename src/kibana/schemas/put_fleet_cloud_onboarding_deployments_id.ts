@@ -13,10 +13,10 @@
 import { z } from 'zod'
 
 export const PutFleetCloudOnboardingDeploymentsIdRequest = z.object({
-  agentPolicyId: z.string().optional(),
+  agentPolicyIds: z.array(z.string()).optional(),
   apiKeyId: z.string().optional(),
   attemptCount: z.number().optional(),
-  authMethod: z.union([z.literal('identity_federation'), z.literal('static_keys'), z.literal(null)]).nullable().optional(),
+  authMethod: z.union([z.literal('identity_federation'), z.literal('static_keys'), z.literal('temporary_keys'), z.literal('shared_credentials'), z.literal('assume_role'), z.literal(null)]).nullable().optional(),
   connectorId: z.string().nullable().optional(),
   deploymentId: z.string().optional(),
   deploymentName: z.string().optional(),
@@ -37,10 +37,10 @@ export type PutFleetCloudOnboardingDeploymentsIdRequest = z.infer<typeof PutFlee
 
 export const PutFleetCloudOnboardingDeploymentsIdResponse = z.object({
   item: z.object({
-    agentPolicyId: z.string().optional(),
+    agentPolicyIds: z.array(z.string()).optional(),
     apiKeyId: z.string().optional(),
     attemptCount: z.number(),
-    authMethod: z.enum(['identity_federation', 'static_keys']).optional(),
+    authMethod: z.enum(['identity_federation', 'static_keys', 'temporary_keys', 'shared_credentials', 'assume_role']).optional(),
     connectorId: z.string().optional(),
     dataFormat: z.enum(['ecs', 'otel']).optional(),
     deploymentId: z.string().optional(),

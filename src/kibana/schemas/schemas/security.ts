@@ -2557,6 +2557,7 @@ export type Security_Detections_API_OsqueryResponseAction = z.infer<typeof Secur
 export const Security_Detections_API_ResponseFields = z.object({
   created_at: z.string(),
   created_by: z.string(),
+  created_by_profile_uid: z.string().optional(),
   execution_summary: Security_Detections_API_RuleExecutionSummary.optional(),
   id: Security_Detections_API_UUID,
   immutable: Security_Detections_API_IsRuleImmutable,
@@ -2565,7 +2566,8 @@ export const Security_Detections_API_ResponseFields = z.object({
   rule_id: Security_Detections_API_RuleSignatureId,
   rule_source: Security_Detections_API_RuleSource,
   updated_at: z.string(),
-  updated_by: z.string()
+  updated_by: z.string(),
+  updated_by_profile_uid: z.string().optional()
 }).meta({ id: 'Security_Detections_API_ResponseFields' })
 export type Security_Detections_API_ResponseFields = z.infer<typeof Security_Detections_API_ResponseFields>
 

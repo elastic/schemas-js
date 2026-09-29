@@ -140,7 +140,6 @@ export const esManifest: readonly ApiRegistryMeta[] = [
   { id: 'esql.put_dataset', name: 'put-dataset', namespace: 'esql', description: 'Create or update an ES|QL dataset.', namespaceFile: 'esql.put_dataset' },
   { id: 'esql.put_view', name: 'put-view', namespace: 'esql', description: 'Create or update an ES|QL view.', namespaceFile: 'esql.put_view' },
   { id: 'esql.query', name: 'query', namespace: 'esql', description: 'Run an ES|QL query.', namespaceFile: 'esql.query' },
-  { id: 'esql.test_data_source_connection', name: 'test-data-source-connection', namespace: 'esql', description: 'Test an ES|QL data source connection.', namespaceFile: 'esql.test_data_source_connection' },
   { id: 'exists', name: 'exists', namespace: null, description: 'Check a document.', namespaceFile: 'exists' },
   { id: 'exists_source', name: 'exists-source', namespace: null, description: 'Check for a document source.', namespaceFile: 'exists_source' },
   { id: 'explain', name: 'explain', namespace: null, description: 'Explain a document match result.', namespaceFile: 'explain' },

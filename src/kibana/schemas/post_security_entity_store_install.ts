@@ -15,7 +15,8 @@ import { z } from 'zod'
 export const PostSecurityEntityStoreInstallRequest = z.object({
   entityTypes: z.array(z.enum(['user', 'host', 'service', 'generic'])).optional(),
   historySnapshot: z.object({
-    frequency: z.string().optional()
+    frequency: z.string().optional(),
+    retentionDays: z.number().optional()
   }).optional(),
   logExtraction: z.object({
     additionalIndexPatterns: z.array(z.string()).nullable().optional(),

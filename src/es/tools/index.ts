@@ -527,10 +527,6 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
       const mod = await import('./apis/esql.query.ts') as Record<string, unknown>
       return mod['esql_query_definitions'] as EsApiDefinition[]
     }
-    case 'esql.test_data_source_connection': {
-      const mod = await import('./apis/esql.test_data_source_connection.ts') as Record<string, unknown>
-      return mod['esql_test_data_source_connection_definitions'] as EsApiDefinition[]
-    }
     case 'exists': {
       const mod = await import('./apis/exists.ts') as Record<string, unknown>
       return mod['exists_definitions'] as EsApiDefinition[]

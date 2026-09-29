@@ -291,6 +291,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/delete_case_template_default_space.ts') as Record<string, unknown>
       return mod['delete_case_template_default_spaceDefinitions'] as KbApiDefinition[]
     }
+    case 'delete_context_engine_ai_index_aiindexid': {
+      const mod = await import('./apis/delete_context_engine_ai_index_aiindexid.ts') as Record<string, unknown>
+      return mod['delete_context_engine_ai_index_aiindexidDefinitions'] as KbApiDefinition[]
+    }
     case 'delete_conversation': {
       const mod = await import('./apis/delete_conversation.ts') as Record<string, unknown>
       return mod['delete_conversationDefinitions'] as KbApiDefinition[]
@@ -882,6 +886,18 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'get_cases_by_alert_default_space': {
       const mod = await import('./apis/get_cases_by_alert_default_space.ts') as Record<string, unknown>
       return mod['get_cases_by_alert_default_spaceDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_context_engine_ai_index': {
+      const mod = await import('./apis/get_context_engine_ai_index.ts') as Record<string, unknown>
+      return mod['get_context_engine_ai_indexDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_context_engine_ai_index_aiindexid': {
+      const mod = await import('./apis/get_context_engine_ai_index_aiindexid.ts') as Record<string, unknown>
+      return mod['get_context_engine_ai_index_aiindexidDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_context_engine_ai_index_aiindexid_describe': {
+      const mod = await import('./apis/get_context_engine_ai_index_aiindexid_describe.ts') as Record<string, unknown>
+      return mod['get_context_engine_ai_index_aiindexid_describeDefinitions'] as KbApiDefinition[]
     }
     case 'get_dashboard': {
       const mod = await import('./apis/get_dashboard.ts') as Record<string, unknown>
@@ -1855,6 +1871,14 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/post_attack_discovery_generations_dismiss.ts') as Record<string, unknown>
       return mod['post_attack_discovery_generations_dismissDefinitions'] as KbApiDefinition[]
     }
+    case 'post_context_engine_ai_index': {
+      const mod = await import('./apis/post_context_engine_ai_index.ts') as Record<string, unknown>
+      return mod['post_context_engine_ai_indexDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_context_engine_ai_index_query': {
+      const mod = await import('./apis/post_context_engine_ai_index_query.ts') as Record<string, unknown>
+      return mod['post_context_engine_ai_index_queryDefinitions'] as KbApiDefinition[]
+    }
     case 'post_fleet_agent_download_sources': {
       const mod = await import('./apis/post_fleet_agent_download_sources.ts') as Record<string, unknown>
       return mod['post_fleet_agent_download_sourcesDefinitions'] as KbApiDefinition[]
@@ -2330,6 +2354,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'put_alerting_v2_rules_id': {
       const mod = await import('./apis/put_alerting_v2_rules_id.ts') as Record<string, unknown>
       return mod['put_alerting_v2_rules_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_context_engine_ai_index_aiindexid': {
+      const mod = await import('./apis/put_context_engine_ai_index_aiindexid.ts') as Record<string, unknown>
+      return mod['put_context_engine_ai_index_aiindexidDefinitions'] as KbApiDefinition[]
     }
     case 'put_fleet_agent_download_sources_sourceid': {
       const mod = await import('./apis/put_fleet_agent_download_sources_sourceid.ts') as Record<string, unknown>
