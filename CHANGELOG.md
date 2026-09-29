@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.0](https://github.com/elastic/schemas-js/compare/v0.8.1...v0.9.0) (2026-09-29)
+
+
+### Features
+
+* add pure-JSON manifests to JSON schema output ([#101](https://github.com/elastic/schemas-js/issues/101)) ([5322c23](https://github.com/elastic/schemas-js/commit/5322c239c4d7492a8393e208ce4b2eaea7e43446))
+
 ## [0.8.1](https://github.com/elastic/schemas-js/compare/v0.8.0...v0.8.1) (2026-09-29)
 
 
