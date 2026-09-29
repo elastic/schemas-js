@@ -9,6 +9,10 @@ export interface ApiRegistryMeta {
   readonly namespace: string | null
   readonly description: string
   readonly namespaceFile: string
+  readonly availability?: {
+    stack?: { stability?: string; since?: string }
+    serverless?: { stability?: string; since?: string }
+  }
 }
 
 export interface ApiRequest {

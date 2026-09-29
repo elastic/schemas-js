@@ -23,7 +23,7 @@ export const Kibana_HTTP_APIs_alerting_policy_execution_history_item = z.object(
     message: z.string(),
     stack_trace: z.string().nullable()
   }).nullable(),
-  failure_reason: z.enum(['missing_api_key', 'workflow_not_found', 'workflow_disabled', 'schedule_error']).optional(),
+  failure_reason: z.enum(['missing_api_key', 'workflow_not_found', 'workflow_disabled', 'schedule_error', 'license_not_supported']).optional(),
   outcome: z.enum(['success', 'throttled', 'failure']),
   policy: z.object({
     id: z.string(),
