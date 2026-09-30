@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.1](https://github.com/elastic/schemas-js/compare/v0.9.0...v0.9.1) (2026-09-30)
+
+
+### Bug Fixes
+
+* add availability to ES tools manifest ([#104](https://github.com/elastic/schemas-js/issues/104)) ([a040462](https://github.com/elastic/schemas-js/commit/a040462b0441481a5515b2d5ecf39eb841d00136))
+
 ## [0.9.0](https://github.com/elastic/schemas-js/compare/v0.8.1...v0.9.0) (2026-09-29)
 
 
