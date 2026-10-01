@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-logstash-pipeline","x-api":{"id":"logstash.put-logstash-pipeline","name":"put-logstash-pipeline","namespace":"logstash"},"type":"object","properties":{}}

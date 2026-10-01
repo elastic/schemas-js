@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-parameter","x-api":{"id":"synthetics.get-parameter","name":"get-parameter","namespace":"synthetics"},"$ref":"./_defs.json#/$defs/Synthetics_getParameterResponse"}

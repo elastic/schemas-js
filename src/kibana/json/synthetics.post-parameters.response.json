@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-parameters","x-api":{"id":"synthetics.post-parameters","name":"post-parameters","namespace":"synthetics"},"oneOf":[{"type":"array","items":{"$ref":"./_defs.json#/$defs/Synthetics_postParameterResponse"}},{"$ref":"./_defs.json#/$defs/Synthetics_postParameterResponse"}]}

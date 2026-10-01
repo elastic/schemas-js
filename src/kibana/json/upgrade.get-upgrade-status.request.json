@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-upgrade-status","x-api":{"id":"upgrade.get-upgrade-status","name":"get-upgrade-status","namespace":"upgrade"},"x-method":"GET","x-path":"/api/upgrade_assistant/status","x-destructive":false,"x-read-only":true,"x-availability":{"stack":{"stability":"tech_preview"}},"type":"object","properties":{}}

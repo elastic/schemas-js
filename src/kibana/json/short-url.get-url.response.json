@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-url","x-api":{"id":"short-url.get-url","name":"get-url","namespace":"short-url"},"$ref":"./_defs.json#/$defs/Short_URL_APIs_urlResponse"}

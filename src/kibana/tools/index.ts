@@ -23,6 +23,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/add_case_file_default_space.ts') as Record<string, unknown>
       return mod['add_case_file_default_spaceDefinitions'] as KbApiDefinition[]
     }
+    case 'alerts_migration_cleanup': {
+      const mod = await import('./apis/alerts_migration_cleanup.ts') as Record<string, unknown>
+      return mod['alerts_migration_cleanupDefinitions'] as KbApiDefinition[]
+    }
     case 'assign_watchlist_entities': {
       const mod = await import('./apis/assign_watchlist_entities.ts') as Record<string, unknown>
       return mod['assign_watchlist_entitiesDefinitions'] as KbApiDefinition[]
@@ -86,6 +90,14 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'create_agent_key': {
       const mod = await import('./apis/create_agent_key.ts') as Record<string, unknown>
       return mod['create_agent_keyDefinitions'] as KbApiDefinition[]
+    }
+    case 'create_alerts_index': {
+      const mod = await import('./apis/create_alerts_index.ts') as Record<string, unknown>
+      return mod['create_alerts_indexDefinitions'] as KbApiDefinition[]
+    }
+    case 'create_alerts_migration': {
+      const mod = await import('./apis/create_alerts_migration.ts') as Record<string, unknown>
+      return mod['create_alerts_migrationDefinitions'] as KbApiDefinition[]
     }
     case 'create_annotation': {
       const mod = await import('./apis/create_annotation.ts') as Record<string, unknown>
@@ -259,6 +271,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/delete_alerting_v2_rules_id.ts') as Record<string, unknown>
       return mod['delete_alerting_v2_rules_idDefinitions'] as KbApiDefinition[]
     }
+    case 'delete_alerts_index': {
+      const mod = await import('./apis/delete_alerts_index.ts') as Record<string, unknown>
+      return mod['delete_alerts_indexDefinitions'] as KbApiDefinition[]
+    }
     case 'delete_all_conversations': {
       const mod = await import('./apis/delete_all_conversations.ts') as Record<string, unknown>
       return mod['delete_all_conversationsDefinitions'] as KbApiDefinition[]
@@ -403,6 +419,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/delete_list_item.ts') as Record<string, unknown>
       return mod['delete_list_itemDefinitions'] as KbApiDefinition[]
     }
+    case 'delete_logstash_pipeline': {
+      const mod = await import('./apis/delete_logstash_pipeline.ts') as Record<string, unknown>
+      return mod['delete_logstash_pipelineDefinitions'] as KbApiDefinition[]
+    }
     case 'delete_maintenance_window_id': {
       const mod = await import('./apis/delete_maintenance_window_id.ts') as Record<string, unknown>
       return mod['delete_maintenance_window_idDefinitions'] as KbApiDefinition[]
@@ -419,9 +439,21 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/delete_note.ts') as Record<string, unknown>
       return mod['delete_noteDefinitions'] as KbApiDefinition[]
     }
+    case 'delete_parameter': {
+      const mod = await import('./apis/delete_parameter.ts') as Record<string, unknown>
+      return mod['delete_parameterDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_parameters': {
+      const mod = await import('./apis/delete_parameters.ts') as Record<string, unknown>
+      return mod['delete_parametersDefinitions'] as KbApiDefinition[]
+    }
     case 'delete_priv_mon_user': {
       const mod = await import('./apis/delete_priv_mon_user.ts') as Record<string, unknown>
       return mod['delete_priv_mon_userDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_private_location': {
+      const mod = await import('./apis/delete_private_location.ts') as Record<string, unknown>
+      return mod['delete_private_locationDefinitions'] as KbApiDefinition[]
     }
     case 'delete_rollup_data_op': {
       const mod = await import('./apis/delete_rollup_data_op.ts') as Record<string, unknown>
@@ -434,6 +466,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'delete_runtime_field_default': {
       const mod = await import('./apis/delete_runtime_field_default.ts') as Record<string, unknown>
       return mod['delete_runtime_field_defaultDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_saved_objects_type_id': {
+      const mod = await import('./apis/delete_saved_objects_type_id.ts') as Record<string, unknown>
+      return mod['delete_saved_objects_type_idDefinitions'] as KbApiDefinition[]
     }
     case 'delete_security_entity_store_entities': {
       const mod = await import('./apis/delete_security_entity_store_entities.ts') as Record<string, unknown>
@@ -451,6 +487,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/delete_slo_op.ts') as Record<string, unknown>
       return mod['delete_slo_opDefinitions'] as KbApiDefinition[]
     }
+    case 'delete_source_map': {
+      const mod = await import('./apis/delete_source_map.ts') as Record<string, unknown>
+      return mod['delete_source_mapDefinitions'] as KbApiDefinition[]
+    }
     case 'delete_spaces_space_id': {
       const mod = await import('./apis/delete_spaces_space_id.ts') as Record<string, unknown>
       return mod['delete_spaces_space_idDefinitions'] as KbApiDefinition[]
@@ -463,6 +503,14 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/delete_streams_streamname_attachments_attachmenttype_attachmentid.ts') as Record<string, unknown>
       return mod['delete_streams_streamname_attachments_attachmenttype_attachmentidDefinitions'] as KbApiDefinition[]
     }
+    case 'delete_synthetic_monitor': {
+      const mod = await import('./apis/delete_synthetic_monitor.ts') as Record<string, unknown>
+      return mod['delete_synthetic_monitorDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_synthetic_monitors': {
+      const mod = await import('./apis/delete_synthetic_monitors.ts') as Record<string, unknown>
+      return mod['delete_synthetic_monitorsDefinitions'] as KbApiDefinition[]
+    }
     case 'delete_tags_id': {
       const mod = await import('./apis/delete_tags_id.ts') as Record<string, unknown>
       return mod['delete_tags_idDefinitions'] as KbApiDefinition[]
@@ -470,6 +518,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'delete_timelines': {
       const mod = await import('./apis/delete_timelines.ts') as Record<string, unknown>
       return mod['delete_timelinesDefinitions'] as KbApiDefinition[]
+    }
+    case 'delete_url': {
+      const mod = await import('./apis/delete_url.ts') as Record<string, unknown>
+      return mod['delete_urlDefinitions'] as KbApiDefinition[]
     }
     case 'delete_visualization': {
       const mod = await import('./apis/delete_visualization.ts') as Record<string, unknown>
@@ -610,6 +662,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'export_timelines': {
       const mod = await import('./apis/export_timelines.ts') as Record<string, unknown>
       return mod['export_timelinesDefinitions'] as KbApiDefinition[]
+    }
+    case 'finalize_alerts_migration': {
+      const mod = await import('./apis/finalize_alerts_migration.ts') as Record<string, unknown>
+      return mod['finalize_alerts_migrationDefinitions'] as KbApiDefinition[]
     }
     case 'find_anonymization_fields': {
       const mod = await import('./apis/find_anonymization_fields.ts') as Record<string, unknown>
@@ -771,6 +827,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/get_agent_name_for_service.ts') as Record<string, unknown>
       return mod['get_agent_name_for_serviceDefinitions'] as KbApiDefinition[]
     }
+    case 'get_alerting_health': {
+      const mod = await import('./apis/get_alerting_health.ts') as Record<string, unknown>
+      return mod['get_alerting_healthDefinitions'] as KbApiDefinition[]
+    }
     case 'get_alerting_rule_id': {
       const mod = await import('./apis/get_alerting_rule_id.ts') as Record<string, unknown>
       return mod['get_alerting_rule_idDefinitions'] as KbApiDefinition[]
@@ -930,6 +990,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'get_environments_for_service': {
       const mod = await import('./apis/get_environments_for_service.ts') as Record<string, unknown>
       return mod['get_environments_for_serviceDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_features': {
+      const mod = await import('./apis/get_features.ts') as Record<string, unknown>
+      return mod['get_featuresDefinitions'] as KbApiDefinition[]
     }
     case 'get_fleet_agent_download_sources': {
       const mod = await import('./apis/get_fleet_agent_download_sources.ts') as Record<string, unknown>
@@ -1167,6 +1231,14 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/get_fleet_proxies_itemid.ts') as Record<string, unknown>
       return mod['get_fleet_proxies_itemidDefinitions'] as KbApiDefinition[]
     }
+    case 'get_fleet_remote_synced_integrations_outputid_remote_status': {
+      const mod = await import('./apis/get_fleet_remote_synced_integrations_outputid_remote_status.ts') as Record<string, unknown>
+      return mod['get_fleet_remote_synced_integrations_outputid_remote_statusDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_fleet_remote_synced_integrations_status': {
+      const mod = await import('./apis/get_fleet_remote_synced_integrations_status.ts') as Record<string, unknown>
+      return mod['get_fleet_remote_synced_integrations_statusDefinitions'] as KbApiDefinition[]
+    }
     case 'get_fleet_settings': {
       const mod = await import('./apis/get_fleet_settings.ts') as Record<string, unknown>
       return mod['get_fleet_settingsDefinitions'] as KbApiDefinition[]
@@ -1195,6 +1267,14 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/get_links_id.ts') as Record<string, unknown>
       return mod['get_links_idDefinitions'] as KbApiDefinition[]
     }
+    case 'get_logstash_pipeline': {
+      const mod = await import('./apis/get_logstash_pipeline.ts') as Record<string, unknown>
+      return mod['get_logstash_pipelineDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_logstash_pipelines': {
+      const mod = await import('./apis/get_logstash_pipelines.ts') as Record<string, unknown>
+      return mod['get_logstash_pipelinesDefinitions'] as KbApiDefinition[]
+    }
     case 'get_maintenance_window_find': {
       const mod = await import('./apis/get_maintenance_window_find.ts') as Record<string, unknown>
       return mod['get_maintenance_window_findDefinitions'] as KbApiDefinition[]
@@ -1215,13 +1295,33 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/get_notes.ts') as Record<string, unknown>
       return mod['get_notesDefinitions'] as KbApiDefinition[]
     }
+    case 'get_parameter': {
+      const mod = await import('./apis/get_parameter.ts') as Record<string, unknown>
+      return mod['get_parameterDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_parameters': {
+      const mod = await import('./apis/get_parameters.ts') as Record<string, unknown>
+      return mod['get_parametersDefinitions'] as KbApiDefinition[]
+    }
     case 'get_policy_response': {
       const mod = await import('./apis/get_policy_response.ts') as Record<string, unknown>
       return mod['get_policy_responseDefinitions'] as KbApiDefinition[]
     }
+    case 'get_private_location': {
+      const mod = await import('./apis/get_private_location.ts') as Record<string, unknown>
+      return mod['get_private_locationDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_private_locations': {
+      const mod = await import('./apis/get_private_locations.ts') as Record<string, unknown>
+      return mod['get_private_locationsDefinitions'] as KbApiDefinition[]
+    }
     case 'get_privileged_access_detection_package_status': {
       const mod = await import('./apis/get_privileged_access_detection_package_status.ts') as Record<string, unknown>
       return mod['get_privileged_access_detection_package_statusDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_profiling_setup_es_resources': {
+      const mod = await import('./apis/get_profiling_setup_es_resources.ts') as Record<string, unknown>
+      return mod['get_profiling_setup_es_resourcesDefinitions'] as KbApiDefinition[]
     }
     case 'get_protection_updates_note': {
       const mod = await import('./apis/get_protection_updates_note.ts') as Record<string, unknown>
@@ -1231,9 +1331,25 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/get_risk_score_history.ts') as Record<string, unknown>
       return mod['get_risk_score_historyDefinitions'] as KbApiDefinition[]
     }
+    case 'get_rule_types': {
+      const mod = await import('./apis/get_rule_types.ts') as Record<string, unknown>
+      return mod['get_rule_typesDefinitions'] as KbApiDefinition[]
+    }
     case 'get_runtime_field_default': {
       const mod = await import('./apis/get_runtime_field_default.ts') as Record<string, unknown>
       return mod['get_runtime_field_defaultDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_saved_objects_find': {
+      const mod = await import('./apis/get_saved_objects_find.ts') as Record<string, unknown>
+      return mod['get_saved_objects_findDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_saved_objects_resolve_type_id': {
+      const mod = await import('./apis/get_saved_objects_resolve_type_id.ts') as Record<string, unknown>
+      return mod['get_saved_objects_resolve_type_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_saved_objects_type_id': {
+      const mod = await import('./apis/get_saved_objects_type_id.ts') as Record<string, unknown>
+      return mod['get_saved_objects_type_idDefinitions'] as KbApiDefinition[]
     }
     case 'get_security_entity_store_entities': {
       const mod = await import('./apis/get_security_entity_store_entities.ts') as Record<string, unknown>
@@ -1271,6 +1387,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/get_snapshot_op.ts') as Record<string, unknown>
       return mod['get_snapshot_opDefinitions'] as KbApiDefinition[]
     }
+    case 'get_source_maps': {
+      const mod = await import('./apis/get_source_maps.ts') as Record<string, unknown>
+      return mod['get_source_mapsDefinitions'] as KbApiDefinition[]
+    }
     case 'get_spaces_space': {
       const mod = await import('./apis/get_spaces_space.ts') as Record<string, unknown>
       return mod['get_spaces_spaceDefinitions'] as KbApiDefinition[]
@@ -1303,6 +1423,14 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/get_streams_streamname_attachments.ts') as Record<string, unknown>
       return mod['get_streams_streamname_attachmentsDefinitions'] as KbApiDefinition[]
     }
+    case 'get_synthetic_monitor': {
+      const mod = await import('./apis/get_synthetic_monitor.ts') as Record<string, unknown>
+      return mod['get_synthetic_monitorDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_synthetic_monitors': {
+      const mod = await import('./apis/get_synthetic_monitors.ts') as Record<string, unknown>
+      return mod['get_synthetic_monitorsDefinitions'] as KbApiDefinition[]
+    }
     case 'get_tags': {
       const mod = await import('./apis/get_tags.ts') as Record<string, unknown>
       return mod['get_tagsDefinitions'] as KbApiDefinition[]
@@ -1318,6 +1446,18 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'get_timelines': {
       const mod = await import('./apis/get_timelines.ts') as Record<string, unknown>
       return mod['get_timelinesDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_upgrade_status': {
+      const mod = await import('./apis/get_upgrade_status.ts') as Record<string, unknown>
+      return mod['get_upgrade_statusDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_uptime_settings': {
+      const mod = await import('./apis/get_uptime_settings.ts') as Record<string, unknown>
+      return mod['get_uptime_settingsDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_url': {
+      const mod = await import('./apis/get_url.ts') as Record<string, unknown>
+      return mod['get_urlDefinitions'] as KbApiDefinition[]
     }
     case 'get_visualization': {
       const mod = await import('./apis/get_visualization.ts') as Record<string, unknown>
@@ -1414,6 +1554,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'initialize_security_solution': {
       const mod = await import('./apis/initialize_security_solution.ts') as Record<string, unknown>
       return mod['initialize_security_solutionDefinitions'] as KbApiDefinition[]
+    }
+    case 'install_prebuilt_rules_and_timelines': {
+      const mod = await import('./apis/install_prebuilt_rules_and_timelines.ts') as Record<string, unknown>
+      return mod['install_prebuilt_rules_and_timelinesDefinitions'] as KbApiDefinition[]
     }
     case 'install_prepacked_timelines': {
       const mod = await import('./apis/install_prepacked_timelines.ts') as Record<string, unknown>
@@ -2167,6 +2311,34 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/post_markdowns.ts') as Record<string, unknown>
       return mod['post_markdownsDefinitions'] as KbApiDefinition[]
     }
+    case 'post_parameters': {
+      const mod = await import('./apis/post_parameters.ts') as Record<string, unknown>
+      return mod['post_parametersDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_private_location': {
+      const mod = await import('./apis/post_private_location.ts') as Record<string, unknown>
+      return mod['post_private_locationDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_profiling_setup_es_resources': {
+      const mod = await import('./apis/post_profiling_setup_es_resources.ts') as Record<string, unknown>
+      return mod['post_profiling_setup_es_resourcesDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_saved_objects_bulk_create': {
+      const mod = await import('./apis/post_saved_objects_bulk_create.ts') as Record<string, unknown>
+      return mod['post_saved_objects_bulk_createDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_saved_objects_bulk_delete': {
+      const mod = await import('./apis/post_saved_objects_bulk_delete.ts') as Record<string, unknown>
+      return mod['post_saved_objects_bulk_deleteDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_saved_objects_bulk_get': {
+      const mod = await import('./apis/post_saved_objects_bulk_get.ts') as Record<string, unknown>
+      return mod['post_saved_objects_bulk_getDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_saved_objects_bulk_resolve': {
+      const mod = await import('./apis/post_saved_objects_bulk_resolve.ts') as Record<string, unknown>
+      return mod['post_saved_objects_bulk_resolveDefinitions'] as KbApiDefinition[]
+    }
     case 'post_saved_objects_export': {
       const mod = await import('./apis/post_saved_objects_export.ts') as Record<string, unknown>
       return mod['post_saved_objects_exportDefinitions'] as KbApiDefinition[]
@@ -2178,6 +2350,14 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'post_saved_objects_resolve_import_errors': {
       const mod = await import('./apis/post_saved_objects_resolve_import_errors.ts') as Record<string, unknown>
       return mod['post_saved_objects_resolve_import_errorsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_saved_objects_type': {
+      const mod = await import('./apis/post_saved_objects_type.ts') as Record<string, unknown>
+      return mod['post_saved_objects_typeDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_saved_objects_type_id': {
+      const mod = await import('./apis/post_saved_objects_type_id.ts') as Record<string, unknown>
+      return mod['post_saved_objects_type_idDefinitions'] as KbApiDefinition[]
     }
     case 'post_security_entity_store_entities_entitytype': {
       const mod = await import('./apis/post_security_entity_store_entities_entitytype.ts') as Record<string, unknown>
@@ -2207,9 +2387,33 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/post_security_roles.ts') as Record<string, unknown>
       return mod['post_security_rolesDefinitions'] as KbApiDefinition[]
     }
+    case 'post_security_session_invalidate': {
+      const mod = await import('./apis/post_security_session_invalidate.ts') as Record<string, unknown>
+      return mod['post_security_session_invalidateDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_spaces_copy_saved_objects': {
+      const mod = await import('./apis/post_spaces_copy_saved_objects.ts') as Record<string, unknown>
+      return mod['post_spaces_copy_saved_objectsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_spaces_disable_legacy_url_aliases': {
+      const mod = await import('./apis/post_spaces_disable_legacy_url_aliases.ts') as Record<string, unknown>
+      return mod['post_spaces_disable_legacy_url_aliasesDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_spaces_get_shareable_references': {
+      const mod = await import('./apis/post_spaces_get_shareable_references.ts') as Record<string, unknown>
+      return mod['post_spaces_get_shareable_referencesDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_spaces_resolve_copy_saved_objects_errors': {
+      const mod = await import('./apis/post_spaces_resolve_copy_saved_objects_errors.ts') as Record<string, unknown>
+      return mod['post_spaces_resolve_copy_saved_objects_errorsDefinitions'] as KbApiDefinition[]
+    }
     case 'post_spaces_space': {
       const mod = await import('./apis/post_spaces_space.ts') as Record<string, unknown>
       return mod['post_spaces_spaceDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_spaces_update_objects_spaces': {
+      const mod = await import('./apis/post_spaces_update_objects_spaces.ts') as Record<string, unknown>
+      return mod['post_spaces_update_objects_spacesDefinitions'] as KbApiDefinition[]
     }
     case 'post_streams_disable': {
       const mod = await import('./apis/post_streams_disable.ts') as Record<string, unknown>
@@ -2239,9 +2443,21 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/post_streams_streamname_attachments_bulk.ts') as Record<string, unknown>
       return mod['post_streams_streamname_attachments_bulkDefinitions'] as KbApiDefinition[]
     }
+    case 'post_synthetic_monitors': {
+      const mod = await import('./apis/post_synthetic_monitors.ts') as Record<string, unknown>
+      return mod['post_synthetic_monitorsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_synthetics_monitor_test': {
+      const mod = await import('./apis/post_synthetics_monitor_test.ts') as Record<string, unknown>
+      return mod['post_synthetics_monitor_testDefinitions'] as KbApiDefinition[]
+    }
     case 'post_tags': {
       const mod = await import('./apis/post_tags.ts') as Record<string, unknown>
       return mod['post_tagsDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_url': {
+      const mod = await import('./apis/post_url.ts') as Record<string, unknown>
+      return mod['post_urlDefinitions'] as KbApiDefinition[]
     }
     case 'post_workflows': {
       const mod = await import('./apis/post_workflows.ts') as Record<string, unknown>
@@ -2427,9 +2643,29 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/put_links_id.ts') as Record<string, unknown>
       return mod['put_links_idDefinitions'] as KbApiDefinition[]
     }
+    case 'put_logstash_pipeline': {
+      const mod = await import('./apis/put_logstash_pipeline.ts') as Record<string, unknown>
+      return mod['put_logstash_pipelineDefinitions'] as KbApiDefinition[]
+    }
     case 'put_markdowns_id': {
       const mod = await import('./apis/put_markdowns_id.ts') as Record<string, unknown>
       return mod['put_markdowns_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_parameter': {
+      const mod = await import('./apis/put_parameter.ts') as Record<string, unknown>
+      return mod['put_parameterDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_private_location': {
+      const mod = await import('./apis/put_private_location.ts') as Record<string, unknown>
+      return mod['put_private_locationDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_saved_objects_bulk_update': {
+      const mod = await import('./apis/put_saved_objects_bulk_update.ts') as Record<string, unknown>
+      return mod['put_saved_objects_bulk_updateDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_saved_objects_type_id': {
+      const mod = await import('./apis/put_saved_objects_type_id.ts') as Record<string, unknown>
+      return mod['put_saved_objects_type_idDefinitions'] as KbApiDefinition[]
     }
     case 'put_security_entity_store': {
       const mod = await import('./apis/put_security_entity_store.ts') as Record<string, unknown>
@@ -2491,9 +2727,21 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/put_streams_streamname_attachments_attachmenttype_attachmentid.ts') as Record<string, unknown>
       return mod['put_streams_streamname_attachments_attachmenttype_attachmentidDefinitions'] as KbApiDefinition[]
     }
+    case 'put_synthetic_monitor': {
+      const mod = await import('./apis/put_synthetic_monitor.ts') as Record<string, unknown>
+      return mod['put_synthetic_monitorDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_synthetic_monitors_bulk_update': {
+      const mod = await import('./apis/put_synthetic_monitors_bulk_update.ts') as Record<string, unknown>
+      return mod['put_synthetic_monitors_bulk_updateDefinitions'] as KbApiDefinition[]
+    }
     case 'put_tags_id': {
       const mod = await import('./apis/put_tags_id.ts') as Record<string, unknown>
       return mod['put_tags_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_uptime_settings': {
+      const mod = await import('./apis/put_uptime_settings.ts') as Record<string, unknown>
+      return mod['put_uptime_settingsDefinitions'] as KbApiDefinition[]
     }
     case 'put_workflows_managed_workflow_id': {
       const mod = await import('./apis/put_workflows_managed_workflow_id.ts') as Record<string, unknown>
@@ -2502,6 +2750,14 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'put_workflows_workflow_id': {
       const mod = await import('./apis/put_workflows_workflow_id.ts') as Record<string, unknown>
       return mod['put_workflows_workflow_idDefinitions'] as KbApiDefinition[]
+    }
+    case 'read_alerts_index': {
+      const mod = await import('./apis/read_alerts_index.ts') as Record<string, unknown>
+      return mod['read_alerts_indexDefinitions'] as KbApiDefinition[]
+    }
+    case 'read_alerts_migration_status': {
+      const mod = await import('./apis/read_alerts_migration_status.ts') as Record<string, unknown>
+      return mod['read_alerts_migration_statusDefinitions'] as KbApiDefinition[]
     }
     case 'read_conversation': {
       const mod = await import('./apis/read_conversation.ts') as Record<string, unknown>
@@ -2547,6 +2803,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/read_list_privileges.ts') as Record<string, unknown>
       return mod['read_list_privilegesDefinitions'] as KbApiDefinition[]
     }
+    case 'read_prebuilt_rules_and_timelines_status': {
+      const mod = await import('./apis/read_prebuilt_rules_and_timelines_status.ts') as Record<string, unknown>
+      return mod['read_prebuilt_rules_and_timelines_statusDefinitions'] as KbApiDefinition[]
+    }
     case 'read_privileges': {
       const mod = await import('./apis/read_privileges.ts') as Record<string, unknown>
       return mod['read_privilegesDefinitions'] as KbApiDefinition[]
@@ -2566,6 +2826,14 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'resolve_timeline': {
       const mod = await import('./apis/resolve_timeline.ts') as Record<string, unknown>
       return mod['resolve_timelineDefinitions'] as KbApiDefinition[]
+    }
+    case 'resolve_url': {
+      const mod = await import('./apis/resolve_url.ts') as Record<string, unknown>
+      return mod['resolve_urlDefinitions'] as KbApiDefinition[]
+    }
+    case 'rotate_encryption_key': {
+      const mod = await import('./apis/rotate_encryption_key.ts') as Record<string, unknown>
+      return mod['rotate_encryption_keyDefinitions'] as KbApiDefinition[]
     }
     case 'rule_preview': {
       const mod = await import('./apis/rule_preview.ts') as Record<string, unknown>
@@ -2730,6 +2998,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'update_watchlist': {
       const mod = await import('./apis/update_watchlist.ts') as Record<string, unknown>
       return mod['update_watchlistDefinitions'] as KbApiDefinition[]
+    }
+    case 'upload_source_map': {
+      const mod = await import('./apis/upload_source_map.ts') as Record<string, unknown>
+      return mod['upload_source_mapDefinitions'] as KbApiDefinition[]
     }
     case 'upload_watchlist_csv': {
       const mod = await import('./apis/upload_watchlist_csv.ts') as Record<string, unknown>

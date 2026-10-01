@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-saved-objects-bulk-update","x-api":{"id":"saved-objects.put-saved-objects-bulk-update","name":"put-saved-objects-bulk-update","namespace":"saved-objects"},"type":"object","properties":{}}

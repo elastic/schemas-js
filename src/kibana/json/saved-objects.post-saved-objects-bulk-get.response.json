@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-saved-objects-bulk-get","x-api":{"id":"saved-objects.post-saved-objects-bulk-get","name":"post-saved-objects-bulk-get","namespace":"saved-objects"},"type":"object","properties":{}}

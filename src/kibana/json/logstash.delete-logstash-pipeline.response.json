@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-logstash-pipeline","x-api":{"id":"logstash.delete-logstash-pipeline","name":"delete-logstash-pipeline","namespace":"logstash"},"type":"object","properties":{}}

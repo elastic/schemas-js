@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-uptime-settings","x-api":{"id":"uptime.get-uptime-settings","name":"get-uptime-settings","namespace":"uptime"},"type":"object"}

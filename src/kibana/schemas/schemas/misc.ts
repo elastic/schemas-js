@@ -12,6 +12,13 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
+export const Alerting_401_response = z.object({
+  error: z.enum(['Unauthorized']).optional(),
+  message: z.string().optional(),
+  statusCode: z.literal(401).optional()
+}).meta({ id: 'Alerting_401_response' })
+export type Alerting_401_response = z.infer<typeof Alerting_401_response>
+
 export const Cases_add_case_file_request = z.object({
   file: z.string(),
   filename: z.string().optional()
@@ -257,6 +264,74 @@ export type Cases_template_dry_run_response = z.infer<typeof Cases_template_dry_
 
 export const Cases_template_tags = z.array(z.string()).meta({ id: 'Cases_template_tags' })
 export type Cases_template_tags = z.infer<typeof Cases_template_tags>
+
+export const Saved_objects_400_response = z.object({
+  error: z.enum(['Bad Request']),
+  message: z.string(),
+  statusCode: z.literal(400)
+}).meta({ id: 'Saved_objects_400_response' })
+export type Saved_objects_400_response = z.infer<typeof Saved_objects_400_response>
+
+export const Short_URL_APIs_urlResponse = z.object({
+  accessCount: z.number().optional(),
+  accessDate: z.number().optional(),
+  createDate: z.number().optional(),
+  id: z.string().optional(),
+  locator: z.object({
+    id: z.string().optional(),
+    state: z.object({}).optional(),
+    version: z.string().optional()
+  }).optional(),
+  slug: z.string().optional()
+}).meta({ id: 'Short_URL_APIs_urlResponse' })
+export type Short_URL_APIs_urlResponse = z.infer<typeof Short_URL_APIs_urlResponse>
+
+export const Synthetics_commonMonitorFields = z.object({
+  alert: z.object({}).optional(),
+  enabled: z.boolean().optional(),
+  labels: z.record(z.string(), z.string()).optional(),
+  locations: z.array(z.string()).optional(),
+  name: z.string(),
+  namespace: z.string().optional(),
+  params: z.string().optional(),
+  private_locations: z.array(z.string()).optional(),
+  retest_on_failure: z.boolean().optional(),
+  schedule: z.number().optional(),
+  'service.name': z.string().optional(),
+  tags: z.array(z.string()).optional(),
+  timeout: z.number().optional()
+}).meta({ id: 'Synthetics_commonMonitorFields' })
+export type Synthetics_commonMonitorFields = z.infer<typeof Synthetics_commonMonitorFields>
+
+export const Synthetics_getParameterResponse = z.object({
+  description: z.string().optional(),
+  id: z.string().optional(),
+  key: z.string().optional(),
+  namespaces: z.array(z.string()).optional(),
+  tags: z.array(z.string()).optional(),
+  value: z.string().optional()
+}).meta({ id: 'Synthetics_getParameterResponse' })
+export type Synthetics_getParameterResponse = z.infer<typeof Synthetics_getParameterResponse>
+
+export const Synthetics_getPrivateLocation = z.object({
+  agentPolicyId: z.string().optional(),
+  geo: z.object({
+    lat: z.number(),
+    lon: z.number()
+  }).optional(),
+  id: z.string().optional(),
+  isInvalid: z.boolean().optional(),
+  label: z.string().optional(),
+  namespace: z.string().optional()
+}).passthrough().meta({ id: 'Synthetics_getPrivateLocation' })
+export type Synthetics_getPrivateLocation = z.infer<typeof Synthetics_getPrivateLocation>
+
+export const Synthetics_monitorWarning = z.object({
+  message: z.string().optional(),
+  monitorId: z.string().optional(),
+  publicLocationIds: z.array(z.string()).optional()
+}).meta({ id: 'Synthetics_monitorWarning' })
+export type Synthetics_monitorWarning = z.infer<typeof Synthetics_monitorWarning>
 
 export const bedrock_config = z.object({
   apiUrl: z.string(),
@@ -721,6 +796,60 @@ export const Cases_templates = z.array(z.object({
   tags: Cases_template_tags.optional()
 })).meta({ id: 'Cases_templates' })
 export type Cases_templates = z.infer<typeof Cases_templates>
+
+export const Synthetics_browserMonitorFields = Synthetics_commonMonitorFields.merge(z.object({
+  certificate_error_spki_allowlist: z.array(z.string()).optional(),
+  ignore_https_errors: z.boolean().optional(),
+  inline_script: z.string(),
+  playwright_options: z.object({}).optional(),
+  screenshots: z.enum(['on', 'off', 'only-on-failure']).optional(),
+  synthetics_args: z.array(z.string()).optional(),
+  type: z.enum(['browser'])
+}).passthrough()).meta({ id: 'Synthetics_browserMonitorFields' })
+export type Synthetics_browserMonitorFields = z.infer<typeof Synthetics_browserMonitorFields>
+
+export const Synthetics_httpMonitorFields = Synthetics_commonMonitorFields.merge(z.object({
+  check: z.object({
+    request: z.object({
+      body: z.string().optional(),
+      headers: z.object({}).optional(),
+      method: z.enum(['HEAD', 'GET', 'POST', 'OPTIONS']).optional()
+    }).optional(),
+    response: z.object({
+      body: z.object({}).optional(),
+      headers: z.object({}).optional()
+    }).passthrough().optional()
+  }).optional(),
+  ipv4: z.boolean().optional(),
+  ipv6: z.boolean().optional(),
+  max_redirects: z.number().optional(),
+  mode: z.enum(['all', 'any']).optional(),
+  password: z.string().optional(),
+  proxy_headers: z.object({}).optional(),
+  proxy_url: z.string().optional(),
+  response: z.object({}).optional(),
+  ssl: z.object({}).optional(),
+  type: z.enum(['http']),
+  url: z.string(),
+  username: z.string().optional()
+}).passthrough()).meta({ id: 'Synthetics_httpMonitorFields' })
+export type Synthetics_httpMonitorFields = z.infer<typeof Synthetics_httpMonitorFields>
+
+export const Synthetics_icmpMonitorFields = Synthetics_commonMonitorFields.merge(z.object({
+  host: z.string(),
+  type: z.enum(['icmp']),
+  wait: z.number().optional()
+}).passthrough()).meta({ id: 'Synthetics_icmpMonitorFields' })
+export type Synthetics_icmpMonitorFields = z.infer<typeof Synthetics_icmpMonitorFields>
+
+export const Synthetics_tcpMonitorFields = Synthetics_commonMonitorFields.merge(z.object({
+  host: z.string(),
+  proxy_url: z.string().optional(),
+  proxy_use_local_resolver: z.boolean().optional(),
+  ssl: z.object({}).optional(),
+  type: z.enum(['tcp'])
+}).passthrough()).meta({ id: 'Synthetics_tcpMonitorFields' })
+export type Synthetics_tcpMonitorFields = z.infer<typeof Synthetics_tcpMonitorFields>
 
 export const webhook_config = z.object({
   accessTokenUrl: z.string().optional(),

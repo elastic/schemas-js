@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-private-location","x-api":{"id":"synthetics.post-private-location","name":"post-private-location","namespace":"synthetics"},"type":"object"}

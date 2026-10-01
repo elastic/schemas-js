@@ -21,7 +21,8 @@ export const PutSpacesSpaceIdRequest = z.object({
   imageUrl: z.string().optional(),
   initials: z.string().optional(),
   name: z.string(),
-  projectRouting: z.string().optional()
+  projectRouting: z.string().optional(),
+  solution: z.enum(['security', 'oblt', 'es', 'classic']).optional()
 }).meta({ id: 'PutSpacesSpaceIdRequest' })
 export type PutSpacesSpaceIdRequest = z.infer<typeof PutSpacesSpaceIdRequest>
 
@@ -34,6 +35,7 @@ export const PutSpacesSpaceIdResponse = z.object({
   imageUrl: z.string().optional(),
   initials: z.string().optional(),
   name: z.string(),
-  projectRouting: z.string().optional()
+  projectRouting: z.string().optional(),
+  solution: z.enum(['security', 'oblt', 'es', 'classic']).optional()
 }).meta({ id: 'PutSpacesSpaceIdResponse' })
 export type PutSpacesSpaceIdResponse = z.infer<typeof PutSpacesSpaceIdResponse>

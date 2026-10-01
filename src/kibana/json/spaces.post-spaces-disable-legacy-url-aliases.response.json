@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-spaces-disable-legacy-url-aliases","x-api":{"id":"spaces.post-spaces-disable-legacy-url-aliases","name":"post-spaces-disable-legacy-url-aliases","namespace":"spaces"},"type":"object","properties":{}}

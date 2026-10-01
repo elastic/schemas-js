@@ -12,20 +12,22 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Task_manager_health_Serverless_APIs_configuration = z.object({}).meta({ id: 'Task_manager_health_Serverless_APIs_configuration' })
-export type Task_manager_health_Serverless_APIs_configuration = z.infer<typeof Task_manager_health_Serverless_APIs_configuration>
+export const Task_manager_health_APIs_configuration = z.object({}).meta({ id: 'Task_manager_health_APIs_configuration' })
+export type Task_manager_health_APIs_configuration = z.infer<typeof Task_manager_health_APIs_configuration>
 
-export const Task_manager_health_Serverless_APIs_workload = z.object({}).meta({ id: 'Task_manager_health_Serverless_APIs_workload' })
-export type Task_manager_health_Serverless_APIs_workload = z.infer<typeof Task_manager_health_Serverless_APIs_workload>
+export const Task_manager_health_APIs_workload = z.object({}).meta({ id: 'Task_manager_health_APIs_workload' })
+export type Task_manager_health_APIs_workload = z.infer<typeof Task_manager_health_APIs_workload>
 
-export const Task_manager_health_Serverless_APIs_health_response_serverless = z.object({
+export const Task_manager_health_APIs_health_response = z.object({
   id: z.string().optional(),
   last_update: z.string().optional(),
   stats: z.object({
-    configuration: Task_manager_health_Serverless_APIs_configuration.optional(),
-    workload: Task_manager_health_Serverless_APIs_workload.optional()
+    capacity_estimation: z.object({}).optional(),
+    configuration: Task_manager_health_APIs_configuration.optional(),
+    runtime: z.object({}).optional(),
+    workload: Task_manager_health_APIs_workload.optional()
   }).optional(),
   status: z.string().optional(),
   timestamp: z.string().optional()
-}).meta({ id: 'Task_manager_health_Serverless_APIs_health_response_serverless' })
-export type Task_manager_health_Serverless_APIs_health_response_serverless = z.infer<typeof Task_manager_health_Serverless_APIs_health_response_serverless>
+}).meta({ id: 'Task_manager_health_APIs_health_response' })
+export type Task_manager_health_APIs_health_response = z.infer<typeof Task_manager_health_APIs_health_response>

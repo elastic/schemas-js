@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-saved-objects-resolve-type-id","x-api":{"id":"saved-objects.get-saved-objects-resolve-type-id","name":"get-saved-objects-resolve-type-id","namespace":"saved-objects"},"type":"object","properties":{}}

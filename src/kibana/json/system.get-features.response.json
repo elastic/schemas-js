@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-features","x-api":{"id":"system.get-features","name":"get-features","namespace":"system"},"type":"object"}
