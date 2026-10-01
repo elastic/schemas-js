@@ -14,11 +14,11 @@ import { z } from 'zod'
 
 export const Kibana_HTTP_APIs_alerting_policy_execution_history_item = z.object({
   action_group_count: z.number(),
-  dispatched_at: z.string(),
-  episode_count: z.number(),
-  episodes: z.array(z.object({
+  alert_count: z.number(),
+  alerts: z.array(z.object({
     id: z.string()
   })).optional(),
+  dispatched_at: z.string(),
   error: z.object({
     message: z.string(),
     stack_trace: z.string().nullable()

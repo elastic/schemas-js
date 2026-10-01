@@ -9,6 +9,8 @@ export interface ApiRegistryMeta {
   readonly namespace: string | null
   readonly description: string
   readonly namespaceFile: string
+  readonly destructive: boolean
+  readonly readOnly: boolean
   readonly availability?: {
     stack?: { stability?: string; since?: string; visibility?: string }
     serverless?: { stability?: string; since?: string; visibility?: string }

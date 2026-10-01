@@ -87,9 +87,9 @@ describe('buildRequest', () => {
 // createRegistry
 
 const manifest: readonly ApiRegistryMeta[] = [
-  { id: 'indices.create', name: 'create', namespace: 'indices', description: 'Create index', namespaceFile: 'indices_create' },
-  { id: 'search', name: 'search', namespace: null, description: 'Search', namespaceFile: 'search' },
-  { id: 'query-rules.delete_rule', name: 'delete-rule', namespace: 'query-rules', description: 'Delete a query rule', namespaceFile: 'query_rules_delete_rule' },
+  { id: 'indices.create', name: 'create', namespace: 'indices', description: 'Create index', namespaceFile: 'indices_create', destructive: false, readOnly: false },
+  { id: 'search', name: 'search', namespace: null, description: 'Search', namespaceFile: 'search', destructive: false, readOnly: true },
+  { id: 'query-rules.delete_rule', name: 'delete-rule', namespace: 'query-rules', description: 'Delete a query rule', namespaceFile: 'query_rules_delete_rule', destructive: true, readOnly: false },
 ]
 
 const indicesCreateDef: ApiRegistryDefinition = {
