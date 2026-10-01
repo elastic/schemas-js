@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-private-locations","x-api":{"id":"synthetics.get-private-locations","name":"get-private-locations","namespace":"synthetics"},"type":"array","items":{"$ref":"./_defs.json#/$defs/Synthetics_getPrivateLocation"}}

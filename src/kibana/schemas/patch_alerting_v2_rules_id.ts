@@ -30,8 +30,7 @@ export const Kibana_HTTP_APIs_alerting_update_rule = z.object({
     lookback: z.string().optional()
   }).nullable().optional(),
   state_transition: Kibana_HTTP_APIs_alerting_rule_state_transition.nullable().optional(),
-  time_field: z.string().optional(),
-  version: z.string().optional()
+  time_field: z.string().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_update_rule' })
 export type Kibana_HTTP_APIs_alerting_update_rule = z.infer<typeof Kibana_HTTP_APIs_alerting_update_rule>
 
@@ -53,6 +52,6 @@ export { Kibana_HTTP_APIs_alerting_rule_no_data_alert } from './schemas/kibana.j
 export { Kibana_HTTP_APIs_alerting_rule_no_data_resolve } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_no_data_keep_last } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_no_data_ignore } from './schemas/kibana.js'
-export { Kibana_HTTP_APIs_alerting_rule_response_metadata } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_rule_metadata } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_grouping } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_artifact } from './schemas/kibana.js'

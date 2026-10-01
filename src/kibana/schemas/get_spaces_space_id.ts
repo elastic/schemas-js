@@ -21,6 +21,7 @@ export const GetSpacesSpaceIdResponse = z.object({
   imageUrl: z.string().optional(),
   initials: z.string().optional(),
   name: z.string(),
-  projectRouting: z.string().optional()
+  projectRouting: z.string().optional(),
+  solution: z.enum(['security', 'oblt', 'es', 'classic']).optional()
 }).meta({ id: 'GetSpacesSpaceIdResponse' })
 export type GetSpacesSpaceIdResponse = z.infer<typeof GetSpacesSpaceIdResponse>

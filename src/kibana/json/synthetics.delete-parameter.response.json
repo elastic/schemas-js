@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-parameter","x-api":{"id":"synthetics.delete-parameter","name":"delete-parameter","namespace":"synthetics"},"type":"object","properties":{}}

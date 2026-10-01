@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-source-maps","x-api":{"id":"apm-sourcemaps.get-source-maps","name":"get-source-maps","namespace":"apm-sourcemaps"},"$ref":"./_defs.json#/$defs/APM_UI_source_maps_response"}

@@ -23,8 +23,7 @@ export const Kibana_HTTP_APIs_alerting_update_action_policy = z.object({
     tags: z.array(z.string()).nullable().optional()
   }).nullable().optional(),
   name: z.string().optional(),
-  throttle: Kibana_HTTP_APIs_alerting_action_policy_throttle.nullable().optional(),
-  version: z.string()
+  throttle: Kibana_HTTP_APIs_alerting_action_policy_throttle.nullable().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_update_action_policy' })
 export type Kibana_HTTP_APIs_alerting_update_action_policy = z.infer<typeof Kibana_HTTP_APIs_alerting_update_action_policy>
 

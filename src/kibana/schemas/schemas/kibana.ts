@@ -146,15 +146,6 @@ export const Kibana_HTTP_APIs_alerting_rule_recovery_query = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_rule_recovery_query' })
 export type Kibana_HTTP_APIs_alerting_rule_recovery_query = z.infer<typeof Kibana_HTTP_APIs_alerting_rule_recovery_query>
 
-export const Kibana_HTTP_APIs_alerting_rule_response_metadata = z.object({
-  builder_type: z.string().optional(),
-  description: z.string().optional(),
-  name: z.string(),
-  tags: z.array(z.string()).optional(),
-  version: z.number()
-}).meta({ id: 'Kibana_HTTP_APIs_alerting_rule_response_metadata' })
-export type Kibana_HTTP_APIs_alerting_rule_response_metadata = z.infer<typeof Kibana_HTTP_APIs_alerting_rule_response_metadata>
-
 export const Kibana_HTTP_APIs_alerting_rule_schedule = z.object({
   every: z.string(),
   lookback: z.string().optional()
@@ -5040,7 +5031,7 @@ export const Kibana_HTTP_APIs_alerting_rule_response = z.object({
   grouping: Kibana_HTTP_APIs_alerting_rule_grouping.optional(),
   id: z.string(),
   kind: z.union([z.enum(['alert']), z.enum(['signal'])]),
-  metadata: Kibana_HTTP_APIs_alerting_rule_response_metadata,
+  metadata: Kibana_HTTP_APIs_alerting_rule_metadata,
   no_data: Kibana_HTTP_APIs_alerting_rule_no_data.optional(),
   query: Kibana_HTTP_APIs_alerting_rule_query,
   recovery: Kibana_HTTP_APIs_alerting_rule_recovery.optional(),
@@ -5049,7 +5040,7 @@ export const Kibana_HTTP_APIs_alerting_rule_response = z.object({
   time_field: z.string().optional(),
   updated_at: z.string(),
   updated_by: Kibana_HTTP_APIs_alerting_actor.nullable(),
-  version: z.string().optional()
+  version: z.number()
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_rule_response' })
 export type Kibana_HTTP_APIs_alerting_rule_response = z.infer<typeof Kibana_HTTP_APIs_alerting_rule_response>
 
@@ -5073,24 +5064,9 @@ export const Kibana_HTTP_APIs_alerting_action_policy_response = z.object({
     strategy: z.union([z.enum(['on_status_change']), z.enum(['per_status_interval']), z.enum(['time_interval']), z.enum(['every_time'])]).optional()
   }).nullable(),
   updated_at: z.string(),
-  updated_by: Kibana_HTTP_APIs_alerting_actor.nullable(),
-  version: z.string().optional()
+  updated_by: Kibana_HTTP_APIs_alerting_actor.nullable()
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_action_policy_response' })
 export type Kibana_HTTP_APIs_alerting_action_policy_response = z.infer<typeof Kibana_HTTP_APIs_alerting_action_policy_response>
-
-export const Kibana_HTTP_APIs_alerting_new_action_policy = z.object({
-  description: z.string(),
-  destinations: z.array(Kibana_HTTP_APIs_alerting_action_policy_destination),
-  group_by: z.array(z.string()).optional(),
-  grouping_mode: Kibana_HTTP_APIs_alerting_action_policy_grouping_mode.optional(),
-  matcher: z.object({
-    expression: z.string().nullable().optional(),
-    tags: z.array(z.string()).nullable().optional()
-  }).optional(),
-  name: z.string(),
-  throttle: Kibana_HTTP_APIs_alerting_action_policy_throttle.optional()
-}).meta({ id: 'Kibana_HTTP_APIs_alerting_new_action_policy' })
-export type Kibana_HTTP_APIs_alerting_new_action_policy = z.infer<typeof Kibana_HTTP_APIs_alerting_new_action_policy>
 
 export const Kibana_HTTP_APIs_kbn_as_code_filters_schema_asCodeConditionFilterSchema = z.object({
   condition: Kibana_HTTP_APIs_kbn_as_code_filters_schema_conditionSchema,
@@ -5706,6 +5682,13 @@ export const Kibana_HTTP_APIs_visUniqueCountMetricOperation = z.object({
   time_shift: Kibana_HTTP_APIs_visOperationTimeShiftSetting.optional()
 }).meta({ id: 'Kibana_HTTP_APIs_visUniqueCountMetricOperation' })
 export type Kibana_HTTP_APIs_visUniqueCountMetricOperation = z.infer<typeof Kibana_HTTP_APIs_visUniqueCountMetricOperation>
+
+export const Kibana_HTTP_APIs_visXyAnnotationLayerESQL = z.object({
+  events: z.array(z.union([Kibana_HTTP_APIs_visXyAnnotationManualEvent, Kibana_HTTP_APIs_visXyAnnotationManualRange])),
+  ignore_global_filters: z.boolean().optional(),
+  type: z.enum(['annotations'])
+}).meta({ id: 'Kibana_HTTP_APIs_visXyAnnotationLayerESQL' })
+export type Kibana_HTTP_APIs_visXyAnnotationLayerESQL = z.infer<typeof Kibana_HTTP_APIs_visXyAnnotationLayerESQL>
 
 export const Kibana_HTTP_APIs_visXyLegend: z.ZodTypeAny = z.union([Kibana_HTTP_APIs_visXyLegendOutsideHorizontal, Kibana_HTTP_APIs_visXyLegendOutsideVertical, Kibana_HTTP_APIs_visXyLegendInside]).meta({ id: 'Kibana_HTTP_APIs_visXyLegend' })
 export type Kibana_HTTP_APIs_visXyLegend = z.infer<typeof Kibana_HTTP_APIs_visXyLegend>
@@ -10523,21 +10506,6 @@ export const Kibana_HTTP_APIs_visDatatableESQL: z.ZodTypeAny = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_visDatatableESQL' })
 export type Kibana_HTTP_APIs_visDatatableESQL = z.infer<typeof Kibana_HTTP_APIs_visDatatableESQL>
 
-export const Kibana_HTTP_APIs_visXyChartESQL: z.ZodTypeAny = z.object({
-  axis: Kibana_HTTP_APIs_visApiXyAxisConfig.optional(),
-  description: z.string().optional(),
-  filters: Kibana_HTTP_APIs_visPanelFilters.optional(),
-  layers: z.array(Kibana_HTTP_APIs_visXyLayerESQL),
-  legend: Kibana_HTTP_APIs_visXyLegend.optional(),
-  styling: Kibana_HTTP_APIs_visXyStyling.optional(),
-  title: z.string().optional(),
-  type: z.enum(['xy'])
-}).meta({ id: 'Kibana_HTTP_APIs_visXyChartESQL' })
-export type Kibana_HTTP_APIs_visXyChartESQL = z.infer<typeof Kibana_HTTP_APIs_visXyChartESQL>
-
-export const Kibana_HTTP_APIs_visXyLayersESQL: z.ZodTypeAny = Kibana_HTTP_APIs_visXyLayerESQL.meta({ id: 'Kibana_HTTP_APIs_visXyLayersESQL' })
-export type Kibana_HTTP_APIs_visXyLayersESQL = z.infer<typeof Kibana_HTTP_APIs_visXyLayersESQL>
-
 export const Kibana_HTTP_APIs_visDatatableMetricDifferences = Kibana_HTTP_APIs_visDifferencesOperation.meta({ id: 'Kibana_HTTP_APIs_visDatatableMetricDifferences' })
 export type Kibana_HTTP_APIs_visDatatableMetricDifferences = z.infer<typeof Kibana_HTTP_APIs_visDatatableMetricDifferences>
 
@@ -11975,6 +11943,30 @@ export const Kibana_HTTP_APIs_visXyLayerNoESQL: z.ZodTypeAny = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_visXyLayerNoESQL' })
 export type Kibana_HTTP_APIs_visXyLayerNoESQL = z.infer<typeof Kibana_HTTP_APIs_visXyLayerNoESQL>
 
+export const Kibana_HTTP_APIs_visXyReferenceLineLayerESQLStatic: z.ZodTypeAny = z.object({
+  data_source: z.discriminatedUnion('type', [Kibana_HTTP_APIs_kbn_data_view_reference_schema, Kibana_HTTP_APIs_kbn_data_view_spec_schema]),
+  ignore_global_filters: z.boolean().optional(),
+  sampling: z.number().optional(),
+  thresholds: z.array(z.object({
+    axis: z.union([z.enum(['x']), z.enum(['y']), z.enum(['y2'])]).optional(),
+    color: z.union([Kibana_HTTP_APIs_visStaticColor, Kibana_HTTP_APIs_visAutoColor]).optional(),
+    fill: z.union([z.enum(['above']), z.enum(['below'])]).optional(),
+    format: Kibana_HTTP_APIs_visFormatType.optional(),
+    icon: z.union([z.enum(['asterisk']), z.enum(['alert']), z.enum(['bell']), z.enum(['bolt']), z.enum(['bug']), z.enum(['circle']), z.enum(['editor_comment']), z.enum(['flag']), z.enum(['heart']), z.enum(['map_marker']), z.enum(['pin_filled']), z.enum(['star_empty']), z.enum(['star_filled']), z.enum(['tag']), z.enum(['triangle'])]).optional(),
+    label: z.string().optional(),
+    operation: z.enum(['static_value']),
+    position: z.union([z.enum(['auto']), z.enum(['left']), z.enum(['right'])]).optional(),
+    stroke_dash: z.union([z.enum(['solid']), z.enum(['dashed']), z.enum(['dotted'])]).optional(),
+    stroke_width: z.number().optional(),
+    text: z.object({
+      visible: z.boolean()
+    }).optional(),
+    value: z.number().optional()
+  })),
+  type: z.enum(['reference_lines'])
+}).meta({ id: 'Kibana_HTTP_APIs_visXyReferenceLineLayerESQLStatic' })
+export type Kibana_HTTP_APIs_visXyReferenceLineLayerESQLStatic = z.infer<typeof Kibana_HTTP_APIs_visXyReferenceLineLayerESQLStatic>
+
 export const Kibana_HTTP_APIs_visXyReferenceLineLayerNoESQL: z.ZodTypeAny = z.object({
   data_source: z.discriminatedUnion('type', [Kibana_HTTP_APIs_kbn_data_view_reference_schema, Kibana_HTTP_APIs_kbn_data_view_spec_schema]),
   ignore_global_filters: z.boolean().optional(),
@@ -12111,6 +12103,9 @@ export type Kibana_HTTP_APIs_visTreemapChart = z.infer<typeof Kibana_HTTP_APIs_v
 
 export const Kibana_HTTP_APIs_visWaffleChart: z.ZodTypeAny = z.union([Kibana_HTTP_APIs_visWaffleNoESQL, Kibana_HTTP_APIs_visWaffleESQL]).meta({ id: 'Kibana_HTTP_APIs_visWaffleChart' })
 export type Kibana_HTTP_APIs_visWaffleChart = z.infer<typeof Kibana_HTTP_APIs_visWaffleChart>
+
+export const Kibana_HTTP_APIs_visXyLayersESQL: z.ZodTypeAny = z.union([Kibana_HTTP_APIs_visXyLayerESQL, Kibana_HTTP_APIs_visXyReferenceLineLayerESQLStatic, Kibana_HTTP_APIs_visXyAnnotationLayerESQL]).meta({ id: 'Kibana_HTTP_APIs_visXyLayersESQL' })
+export type Kibana_HTTP_APIs_visXyLayersESQL = z.infer<typeof Kibana_HTTP_APIs_visXyLayersESQL>
 
 export const Kibana_HTTP_APIs_visXyLayersNoESQL: z.ZodTypeAny = z.union([Kibana_HTTP_APIs_visXyLayerNoESQL, Kibana_HTTP_APIs_visXyReferenceLineLayerNoESQL, Kibana_HTTP_APIs_visXyAnnotationLayerNoESQL, Kibana_HTTP_APIs_visXyAnnotationByRefLayer]).meta({ id: 'Kibana_HTTP_APIs_visXyLayersNoESQL' })
 export type Kibana_HTTP_APIs_visXyLayersNoESQL = z.infer<typeof Kibana_HTTP_APIs_visXyLayersNoESQL>
@@ -12379,6 +12374,18 @@ export const Kibana_Dashboards_API_xyChartNoESQL: z.ZodTypeAny = z.object({
   type: z.enum(['xy'])
 }).meta({ id: 'Kibana_Dashboards_API_xyChartNoESQL' })
 export type Kibana_Dashboards_API_xyChartNoESQL = z.infer<typeof Kibana_Dashboards_API_xyChartNoESQL>
+
+export const Kibana_HTTP_APIs_visXyChartESQL: z.ZodTypeAny = z.object({
+  axis: Kibana_HTTP_APIs_visApiXyAxisConfig.optional(),
+  description: z.string().optional(),
+  filters: Kibana_HTTP_APIs_visPanelFilters.optional(),
+  layers: z.array(Kibana_HTTP_APIs_visXyLayersESQL),
+  legend: Kibana_HTTP_APIs_visXyLegend.optional(),
+  styling: Kibana_HTTP_APIs_visXyStyling.optional(),
+  title: z.string().optional(),
+  type: z.enum(['xy'])
+}).meta({ id: 'Kibana_HTTP_APIs_visXyChartESQL' })
+export type Kibana_HTTP_APIs_visXyChartESQL = z.infer<typeof Kibana_HTTP_APIs_visXyChartESQL>
 
 export const Kibana_HTTP_APIs_visXyChartNoESQL: z.ZodTypeAny = z.object({
   axis: Kibana_HTTP_APIs_visApiXyAxisConfig.optional(),

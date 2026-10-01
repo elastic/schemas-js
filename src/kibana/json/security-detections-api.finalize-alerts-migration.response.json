@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"finalize-alerts-migration","x-api":{"id":"security-detections-api.finalize-alerts-migration","name":"finalize-alerts-migration","namespace":"security-detections-api"},"type":"array","items":{"$ref":"./_defs.json#/$defs/Security_Detections_API_MigrationFinalizationResult"}}

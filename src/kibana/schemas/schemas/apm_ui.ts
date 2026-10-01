@@ -87,30 +87,6 @@ export const APM_UI_upload_source_map_object = z.object({
 }).meta({ id: 'APM_UI_upload_source_map_object' })
 export type APM_UI_upload_source_map_object = z.infer<typeof APM_UI_upload_source_map_object>
 
-export const APM_UI_source_maps_response = z.object({
-  artifacts: z.array(z.object({
-    body: z.object({
-      bundleFilepath: z.string().optional(),
-      serviceName: z.string().optional(),
-      serviceVersion: z.string().optional(),
-      sourceMap: z.object({
-        file: z.string().optional(),
-        mappings: z.string().optional(),
-        sourceRoot: z.string().optional(),
-        sources: z.array(z.string()).optional(),
-        sourcesContent: z.array(z.string()).optional(),
-        version: z.number().optional()
-      }).optional()
-    }).optional()
-  }).merge(APM_UI_base_source_map_object)).optional()
-}).meta({ id: 'APM_UI_source_maps_response' })
-export type APM_UI_source_maps_response = z.infer<typeof APM_UI_source_maps_response>
-
-export const APM_UI_upload_source_maps_response = z.object({
-  body: z.string().optional()
-}).merge(APM_UI_base_source_map_object).meta({ id: 'APM_UI_upload_source_maps_response' })
-export type APM_UI_upload_source_maps_response = z.infer<typeof APM_UI_upload_source_maps_response>
-
 export const APM_UI_agent_configuration_object = z.object({
   '@timestamp': z.number(),
   agent_name: z.string().optional(),

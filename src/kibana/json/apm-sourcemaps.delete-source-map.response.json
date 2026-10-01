@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-source-map","x-api":{"id":"apm-sourcemaps.delete-source-map","name":"delete-source-map","namespace":"apm-sourcemaps"},"type":"object"}

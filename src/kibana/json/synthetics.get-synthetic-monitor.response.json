@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-synthetic-monitor","x-api":{"id":"synthetics.get-synthetic-monitor","name":"get-synthetic-monitor","namespace":"synthetics"},"type":"object"}

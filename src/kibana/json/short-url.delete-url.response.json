@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-url","x-api":{"id":"short-url.delete-url","name":"delete-url","namespace":"short-url"},"type":"object","properties":{}}

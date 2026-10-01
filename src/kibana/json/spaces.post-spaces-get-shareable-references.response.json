@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"post-spaces-get-shareable-references","x-api":{"id":"spaces.post-spaces-get-shareable-references","name":"post-spaces-get-shareable-references","namespace":"spaces"},"type":"object","properties":{}}

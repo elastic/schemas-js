@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"create-alerts-index","x-api":{"id":"security-detections-api.create-alerts-index","name":"create-alerts-index","namespace":"security-detections-api"},"type":"object","properties":{"acknowledged":{"type":"boolean"}},"required":["acknowledged"]}

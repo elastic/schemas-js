@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-synthetic-monitor","x-api":{"id":"synthetics.delete-synthetic-monitor","name":"delete-synthetic-monitor","namespace":"synthetics"},"type":"object","properties":{}}

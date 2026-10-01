@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"resolve-url","x-api":{"id":"short-url.resolve-url","name":"resolve-url","namespace":"short-url"},"$ref":"./_defs.json#/$defs/Short_URL_APIs_urlResponse"}

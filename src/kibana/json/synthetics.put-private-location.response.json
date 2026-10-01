@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-private-location","x-api":{"id":"synthetics.put-private-location","name":"put-private-location","namespace":"synthetics"},"$ref":"./_defs.json#/$defs/Synthetics_getPrivateLocation"}

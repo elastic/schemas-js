@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-saved-objects-find","x-api":{"id":"saved-objects.get-saved-objects-find","name":"get-saved-objects-find","namespace":"saved-objects"},"type":"object","properties":{}}

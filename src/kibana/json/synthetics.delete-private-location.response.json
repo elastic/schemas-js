@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-private-location","x-api":{"id":"synthetics.delete-private-location","name":"delete-private-location","namespace":"synthetics"},"type":"object","properties":{}}

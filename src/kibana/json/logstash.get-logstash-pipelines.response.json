@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-logstash-pipelines","x-api":{"id":"logstash.get-logstash-pipelines","name":"get-logstash-pipelines","namespace":"logstash"},"type":"object"}

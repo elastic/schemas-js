@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-saved-objects-type-id","x-api":{"id":"saved-objects.delete-saved-objects-type-id","name":"delete-saved-objects-type-id","namespace":"saved-objects"},"type":"object","properties":{}}

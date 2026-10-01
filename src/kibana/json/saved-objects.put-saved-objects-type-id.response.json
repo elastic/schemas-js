@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-saved-objects-type-id","x-api":{"id":"saved-objects.put-saved-objects-type-id","name":"put-saved-objects-type-id","namespace":"saved-objects"},"type":"object","properties":{}}

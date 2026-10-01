@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"put-parameter","x-api":{"id":"synthetics.put-parameter","name":"put-parameter","namespace":"synthetics"},"type":"object"}
