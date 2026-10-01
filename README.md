@@ -99,12 +99,12 @@ existing data. `readOnly` marks operations that only read: every GET and HEAD ca
 plus search-style POST calls such as `count` or `sql.query`. A read-only operation is never destructive. The same
 flags appear on the JSON Schema request documents as `x-destructive` and `x-read-only`.
 
-Browse available API IDs via `esRegistry.manifest` (an array of `{ id, name, namespace, description }` entries).
+Browse available API IDs via `esRegistry.manifest` (an array of `{ id, name, namespace, description, destructive, readOnly }` entries).
 
 
 ### Tool manifests
 
-Each product exposes a manifest: a lightweight array of `ApiRegistryMeta` objects describing every available API (`{ id, name, namespace, description, namespaceFile }`). You can import a manifest directly without loading any schema code:
+Each product exposes a manifest: a lightweight array of `ApiRegistryMeta` objects describing every available API (`{ id, name, namespace, description, namespaceFile, destructive, readOnly }`). The `destructive` and `readOnly` flags match the loaded definition's, so you can filter APIs by classification without loading any definitions. You can import a manifest directly without loading any schema code:
 
 ```typescript
 import { kibanaManifest } from '@elastic/schemas/kibana/tools/manifest.js'

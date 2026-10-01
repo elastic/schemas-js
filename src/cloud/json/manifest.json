@@ -4,210 +4,270 @@
     "name": "get-current-account",
     "namespace": "accounts",
     "description": "",
-    "namespaceFile": "get_current_account"
+    "namespaceFile": "get_current_account",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "accounts.patch-current-account",
     "name": "patch-current-account",
     "namespace": "accounts",
     "description": "",
-    "namespaceFile": "patch_current_account"
+    "namespaceFile": "patch_current_account",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "accounts.update-current-account",
     "name": "update-current-account",
     "namespace": "accounts",
     "description": "",
-    "namespaceFile": "update_current_account"
+    "namespaceFile": "update_current_account",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "authentication.create-api-key",
     "name": "create-api-key",
     "namespace": "authentication",
     "description": "",
-    "namespaceFile": "create_api_key"
+    "namespaceFile": "create_api_key",
+    "destructive": false,
+    "readOnly": false
   },
   {
     "id": "authentication.delete-api-key",
     "name": "delete-api-key",
     "namespace": "authentication",
     "description": "",
-    "namespaceFile": "delete_api_key"
+    "namespaceFile": "delete_api_key",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "authentication.delete-api-keys",
     "name": "delete-api-keys",
     "namespace": "authentication",
     "description": "",
-    "namespaceFile": "delete_api_keys"
+    "namespaceFile": "delete_api_keys",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "authentication.get-api-key",
     "name": "get-api-key",
     "namespace": "authentication",
     "description": "",
-    "namespaceFile": "get_api_key"
+    "namespaceFile": "get_api_key",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "authentication.get-api-keys",
     "name": "get-api-keys",
     "namespace": "authentication",
     "description": "",
-    "namespaceFile": "get_api_keys"
+    "namespaceFile": "get_api_keys",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "billing-costs-analysis.get-costs-charts",
     "name": "get-costs-charts",
     "namespace": "billing-costs-analysis",
     "description": "",
-    "namespaceFile": "get_costs_charts"
+    "namespaceFile": "get_costs_charts",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "billing-costs-analysis.get-costs-charts-by-deployment",
     "name": "get-costs-charts-by-deployment",
     "namespace": "billing-costs-analysis",
     "description": "",
-    "namespaceFile": "get_costs_charts_by_deployment"
+    "namespaceFile": "get_costs_charts_by_deployment",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "billing-costs-analysis.get-costs-deployments",
     "name": "get-costs-deployments",
     "namespace": "billing-costs-analysis",
     "description": "",
-    "namespaceFile": "get_costs_deployments"
+    "namespaceFile": "get_costs_deployments",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "billing-costs-analysis.get-costs-items",
     "name": "get-costs-items",
     "namespace": "billing-costs-analysis",
     "description": "",
-    "namespaceFile": "get_costs_items"
+    "namespaceFile": "get_costs_items",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "billing-costs-analysis.get-costs-items-by-deployment",
     "name": "get-costs-items-by-deployment",
     "namespace": "billing-costs-analysis",
     "description": "",
-    "namespaceFile": "get_costs_items_by_deployment"
+    "namespaceFile": "get_costs_items_by_deployment",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "billing-costs-analysis.get-costs-overview",
     "name": "get-costs-overview",
     "namespace": "billing-costs-analysis",
     "description": "",
-    "namespaceFile": "get_costs_overview"
+    "namespaceFile": "get_costs_overview",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployment-templates.get-deployment-template-v2",
     "name": "get-deployment-template-v2",
     "namespace": "deployment-templates",
     "description": "",
-    "namespaceFile": "get_deployment_template_v2"
+    "namespaceFile": "get_deployment_template_v2",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployment-templates.get-deployment-templates-v2",
     "name": "get-deployment-templates-v2",
     "namespace": "deployment-templates",
     "description": "",
-    "namespaceFile": "get_deployment_templates_v2"
+    "namespaceFile": "get_deployment_templates_v2",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments-traffic-filter.claim-traffic-filter-link-id",
     "name": "claim-traffic-filter-link-id",
     "namespace": "deployments-traffic-filter",
     "description": "",
-    "namespaceFile": "claim_traffic_filter_link_id"
+    "namespaceFile": "claim_traffic_filter_link_id",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments-traffic-filter.create-traffic-filter-ruleset",
     "name": "create-traffic-filter-ruleset",
     "namespace": "deployments-traffic-filter",
     "description": "",
-    "namespaceFile": "create_traffic_filter_ruleset"
+    "namespaceFile": "create_traffic_filter_ruleset",
+    "destructive": false,
+    "readOnly": false
   },
   {
     "id": "deployments-traffic-filter.create-traffic-filter-ruleset-association",
     "name": "create-traffic-filter-ruleset-association",
     "namespace": "deployments-traffic-filter",
     "description": "",
-    "namespaceFile": "create_traffic_filter_ruleset_association"
+    "namespaceFile": "create_traffic_filter_ruleset_association",
+    "destructive": false,
+    "readOnly": false
   },
   {
     "id": "deployments-traffic-filter.delete-traffic-filter-ruleset",
     "name": "delete-traffic-filter-ruleset",
     "namespace": "deployments-traffic-filter",
     "description": "",
-    "namespaceFile": "delete_traffic_filter_ruleset"
+    "namespaceFile": "delete_traffic_filter_ruleset",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments-traffic-filter.delete-traffic-filter-ruleset-association",
     "name": "delete-traffic-filter-ruleset-association",
     "namespace": "deployments-traffic-filter",
     "description": "",
-    "namespaceFile": "delete_traffic_filter_ruleset_association"
+    "namespaceFile": "delete_traffic_filter_ruleset_association",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments-traffic-filter.get-traffic-filter-claimed-link-ids",
     "name": "get-traffic-filter-claimed-link-ids",
     "namespace": "deployments-traffic-filter",
     "description": "",
-    "namespaceFile": "get_traffic_filter_claimed_link_ids"
+    "namespaceFile": "get_traffic_filter_claimed_link_ids",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments-traffic-filter.get-traffic-filter-deployment-ruleset-associations",
     "name": "get-traffic-filter-deployment-ruleset-associations",
     "namespace": "deployments-traffic-filter",
     "description": "",
-    "namespaceFile": "get_traffic_filter_deployment_ruleset_associations"
+    "namespaceFile": "get_traffic_filter_deployment_ruleset_associations",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments-traffic-filter.get-traffic-filter-ruleset",
     "name": "get-traffic-filter-ruleset",
     "namespace": "deployments-traffic-filter",
     "description": "",
-    "namespaceFile": "get_traffic_filter_ruleset"
+    "namespaceFile": "get_traffic_filter_ruleset",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments-traffic-filter.get-traffic-filter-ruleset-deployment-associations",
     "name": "get-traffic-filter-ruleset-deployment-associations",
     "namespace": "deployments-traffic-filter",
     "description": "",
-    "namespaceFile": "get_traffic_filter_ruleset_deployment_associations"
+    "namespaceFile": "get_traffic_filter_ruleset_deployment_associations",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments-traffic-filter.get-traffic-filter-rulesets",
     "name": "get-traffic-filter-rulesets",
     "namespace": "deployments-traffic-filter",
     "description": "",
-    "namespaceFile": "get_traffic_filter_rulesets"
+    "namespaceFile": "get_traffic_filter_rulesets",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments-traffic-filter.unclaim-traffic-filter-link-id",
     "name": "unclaim-traffic-filter-link-id",
     "namespace": "deployments-traffic-filter",
     "description": "",
-    "namespaceFile": "unclaim_traffic_filter_link_id"
+    "namespaceFile": "unclaim_traffic_filter_link_id",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments-traffic-filter.update-traffic-filter-ruleset",
     "name": "update-traffic-filter-ruleset",
     "namespace": "deployments-traffic-filter",
     "description": "",
-    "namespaceFile": "update_traffic_filter_ruleset"
+    "namespaceFile": "update_traffic_filter_ruleset",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.cancel-deployment-resource-pending-plan",
     "name": "cancel-deployment-resource-pending-plan",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "cancel_deployment_resource_pending_plan"
+    "namespaceFile": "cancel_deployment_resource_pending_plan",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.create-deployment",
     "name": "create-deployment",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "create_deployment"
+    "namespaceFile": "create_deployment",
+    "destructive": false,
+    "readOnly": false
   },
   {
     "id": "deployments.create-deployment-es-resource-snapshot-repository",
@@ -215,6 +275,8 @@
     "namespace": "deployments",
     "description": "",
     "namespaceFile": "create_deployment_es_resource_snapshot_repository",
+    "destructive": false,
+    "readOnly": false,
     "availability": {
       "cloud": {
         "stability": "tech_preview"
@@ -226,343 +288,441 @@
     "name": "delete-deployment-es-resource-snapshot-repository",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "delete_deployment_es_resource_snapshot_repository"
+    "namespaceFile": "delete_deployment_es_resource_snapshot_repository",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.deployment-apm-reset-secret-token",
     "name": "deployment-apm-reset-secret-token",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "deployment_apm_reset_secret_token"
+    "namespaceFile": "deployment_apm_reset_secret_token",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.enable-deployment-resource-ccr",
     "name": "enable-deployment-resource-ccr",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "enable_deployment_resource_ccr"
+    "namespaceFile": "enable_deployment_resource_ccr",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.enable-deployment-resource-ilm",
     "name": "enable-deployment-resource-ilm",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "enable_deployment_resource_ilm"
+    "namespaceFile": "enable_deployment_resource_ilm",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.enable-deployment-resource-slm",
     "name": "enable-deployment-resource-slm",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "enable_deployment_resource_slm"
+    "namespaceFile": "enable_deployment_resource_slm",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.get-appsearch-read-only-mode",
     "name": "get-appsearch-read-only-mode",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "get_appsearch_read_only_mode"
+    "namespaceFile": "get_appsearch_read_only_mode",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments.get-deployment",
     "name": "get-deployment",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "get_deployment"
+    "namespaceFile": "get_deployment",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments.get-deployment-apm-resource-info",
     "name": "get-deployment-apm-resource-info",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "get_deployment_apm_resource_info"
+    "namespaceFile": "get_deployment_apm_resource_info",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments.get-deployment-appsearch-resource-info",
     "name": "get-deployment-appsearch-resource-info",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "get_deployment_appsearch_resource_info"
+    "namespaceFile": "get_deployment_appsearch_resource_info",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments.get-deployment-certificate-authority",
     "name": "get-deployment-certificate-authority",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "get_deployment_certificate_authority"
+    "namespaceFile": "get_deployment_certificate_authority",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments.get-deployment-enterprise-search-resource-info",
     "name": "get-deployment-enterprise-search-resource-info",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "get_deployment_enterprise_search_resource_info"
+    "namespaceFile": "get_deployment_enterprise_search_resource_info",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments.get-deployment-es-resource-eligible-remote-clusters",
     "name": "get-deployment-es-resource-eligible-remote-clusters",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "get_deployment_es_resource_eligible_remote_clusters"
+    "namespaceFile": "get_deployment_es_resource_eligible_remote_clusters",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments.get-deployment-es-resource-info",
     "name": "get-deployment-es-resource-info",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "get_deployment_es_resource_info"
+    "namespaceFile": "get_deployment_es_resource_info",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments.get-deployment-es-resource-keystore",
     "name": "get-deployment-es-resource-keystore",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "get_deployment_es_resource_keystore"
+    "namespaceFile": "get_deployment_es_resource_keystore",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments.get-deployment-es-resource-remote-clusters",
     "name": "get-deployment-es-resource-remote-clusters",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "get_deployment_es_resource_remote_clusters"
+    "namespaceFile": "get_deployment_es_resource_remote_clusters",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments.get-deployment-es-resource-snapshot-repository",
     "name": "get-deployment-es-resource-snapshot-repository",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "get_deployment_es_resource_snapshot_repository"
+    "namespaceFile": "get_deployment_es_resource_snapshot_repository",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments.get-deployment-es-resource-tiers",
     "name": "get-deployment-es-resource-tiers",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "get_deployment_es_resource_tiers"
+    "namespaceFile": "get_deployment_es_resource_tiers",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments.get-deployment-integrations-server-resource-info",
     "name": "get-deployment-integrations-server-resource-info",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "get_deployment_integrations_server_resource_info"
+    "namespaceFile": "get_deployment_integrations_server_resource_info",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments.get-deployment-kib-resource-info",
     "name": "get-deployment-kib-resource-info",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "get_deployment_kib_resource_info"
+    "namespaceFile": "get_deployment_kib_resource_info",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments.get-deployment-resource-user-settings",
     "name": "get-deployment-resource-user-settings",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "get_deployment_resource_user_settings"
+    "namespaceFile": "get_deployment_resource_user_settings",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments.get-deployment-tags",
     "name": "get-deployment-tags",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "get_deployment_tags"
+    "namespaceFile": "get_deployment_tags",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments.get-deployment-upgrade-assistant-status",
     "name": "get-deployment-upgrade-assistant-status",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "get_deployment_upgrade_assistant_status"
+    "namespaceFile": "get_deployment_upgrade_assistant_status",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments.list-deployments",
     "name": "list-deployments",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "list_deployments"
+    "namespaceFile": "list_deployments",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments.migrate-deployment-template",
     "name": "migrate-deployment-template",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "migrate_deployment_template"
+    "namespaceFile": "migrate_deployment_template",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments.reset-elasticsearch-user-password",
     "name": "reset-elasticsearch-user-password",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "reset_elasticsearch_user_password"
+    "namespaceFile": "reset_elasticsearch_user_password",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.restart-deployment-es-resource",
     "name": "restart-deployment-es-resource",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "restart_deployment_es_resource"
+    "namespaceFile": "restart_deployment_es_resource",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.restart-deployment-stateless-resource",
     "name": "restart-deployment-stateless-resource",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "restart_deployment_stateless_resource"
+    "namespaceFile": "restart_deployment_stateless_resource",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.restore-deployment",
     "name": "restore-deployment",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "restore_deployment"
+    "namespaceFile": "restore_deployment",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.restore-deployment-resource",
     "name": "restore-deployment-resource",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "restore_deployment_resource"
+    "namespaceFile": "restore_deployment_resource",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.search-deployments",
     "name": "search-deployments",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "search_deployments"
+    "namespaceFile": "search_deployments",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments.search-eligible-remote-clusters",
     "name": "search-eligible-remote-clusters",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "search_eligible_remote_clusters"
+    "namespaceFile": "search_eligible_remote_clusters",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "deployments.set-appsearch-read-only-mode",
     "name": "set-appsearch-read-only-mode",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "set_appsearch_read_only_mode"
+    "namespaceFile": "set_appsearch_read_only_mode",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.set-deployment-es-resource-keystore",
     "name": "set-deployment-es-resource-keystore",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "set_deployment_es_resource_keystore"
+    "namespaceFile": "set_deployment_es_resource_keystore",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.set-deployment-es-resource-remote-clusters",
     "name": "set-deployment-es-resource-remote-clusters",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "set_deployment_es_resource_remote_clusters"
+    "namespaceFile": "set_deployment_es_resource_remote_clusters",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.set-deployment-tags",
     "name": "set-deployment-tags",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "set_deployment_tags"
+    "namespaceFile": "set_deployment_tags",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.shutdown-deployment",
     "name": "shutdown-deployment",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "shutdown_deployment"
+    "namespaceFile": "shutdown_deployment",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.shutdown-deployment-es-resource",
     "name": "shutdown-deployment-es-resource",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "shutdown_deployment_es_resource"
+    "namespaceFile": "shutdown_deployment_es_resource",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.shutdown-deployment-stateless-resource",
     "name": "shutdown-deployment-stateless-resource",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "shutdown_deployment_stateless_resource"
+    "namespaceFile": "shutdown_deployment_stateless_resource",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.start-deployment-resource-instances",
     "name": "start-deployment-resource-instances",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "start_deployment_resource_instances"
+    "namespaceFile": "start_deployment_resource_instances",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.start-deployment-resource-instances-all",
     "name": "start-deployment-resource-instances-all",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "start_deployment_resource_instances_all"
+    "namespaceFile": "start_deployment_resource_instances_all",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.start-deployment-resource-instances-all-maintenance-mode",
     "name": "start-deployment-resource-instances-all-maintenance-mode",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "start_deployment_resource_instances_all_maintenance_mode"
+    "namespaceFile": "start_deployment_resource_instances_all_maintenance_mode",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.start-deployment-resource-maintenance-mode",
     "name": "start-deployment-resource-maintenance-mode",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "start_deployment_resource_maintenance_mode"
+    "namespaceFile": "start_deployment_resource_maintenance_mode",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.stop-deployment-resource-instances",
     "name": "stop-deployment-resource-instances",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "stop_deployment_resource_instances"
+    "namespaceFile": "stop_deployment_resource_instances",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.stop-deployment-resource-instances-all",
     "name": "stop-deployment-resource-instances-all",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "stop_deployment_resource_instances_all"
+    "namespaceFile": "stop_deployment_resource_instances_all",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.stop-deployment-resource-instances-all-maintenance-mode",
     "name": "stop-deployment-resource-instances-all-maintenance-mode",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "stop_deployment_resource_instances_all_maintenance_mode"
+    "namespaceFile": "stop_deployment_resource_instances_all_maintenance_mode",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.stop-deployment-resource-maintenance-mode",
     "name": "stop-deployment-resource-maintenance-mode",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "stop_deployment_resource_maintenance_mode"
+    "namespaceFile": "stop_deployment_resource_maintenance_mode",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.update-deployment",
     "name": "update-deployment",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "update_deployment"
+    "namespaceFile": "update_deployment",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.update-deployment-es-resource-tier",
     "name": "update-deployment-es-resource-tier",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "update_deployment_es_resource_tier"
+    "namespaceFile": "update_deployment_es_resource_tier",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.update-deployment-resource-user-settings",
     "name": "update-deployment-resource-user-settings",
     "namespace": "deployments",
     "description": "",
-    "namespaceFile": "update_deployment_resource_user_settings"
+    "namespaceFile": "update_deployment_resource_user_settings",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "deployments.upgrade-deployment",
@@ -570,6 +730,8 @@
     "namespace": "deployments",
     "description": "",
     "namespaceFile": "upgrade_deployment",
+    "destructive": true,
+    "readOnly": false,
     "availability": {
       "cloud": {
         "stability": "tech_preview"
@@ -581,230 +743,296 @@
     "name": "create-extension",
     "namespace": "extensions",
     "description": "",
-    "namespaceFile": "create_extension"
+    "namespaceFile": "create_extension",
+    "destructive": false,
+    "readOnly": false
   },
   {
     "id": "extensions.delete-extension",
     "name": "delete-extension",
     "namespace": "extensions",
     "description": "",
-    "namespaceFile": "delete_extension"
+    "namespaceFile": "delete_extension",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "extensions.get-extension",
     "name": "get-extension",
     "namespace": "extensions",
     "description": "",
-    "namespaceFile": "get_extension"
+    "namespaceFile": "get_extension",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "extensions.list-extensions",
     "name": "list-extensions",
     "namespace": "extensions",
     "description": "",
-    "namespaceFile": "list_extensions"
+    "namespaceFile": "list_extensions",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "extensions.update-extension",
     "name": "update-extension",
     "namespace": "extensions",
     "description": "",
-    "namespaceFile": "update_extension"
+    "namespaceFile": "update_extension",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "extensions.upload-extension",
     "name": "upload-extension",
     "namespace": "extensions",
     "description": "",
-    "namespaceFile": "upload_extension"
+    "namespaceFile": "upload_extension",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "organizations.add-role-mappings-individually",
     "name": "add-role-mappings-individually",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "add_role_mappings_individually"
+    "namespaceFile": "add_role_mappings_individually",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "organizations.create-organization-invitations",
     "name": "create-organization-invitations",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "create_organization_invitations"
+    "namespaceFile": "create_organization_invitations",
+    "destructive": false,
+    "readOnly": false
   },
   {
     "id": "organizations.delete-organization-invitations",
     "name": "delete-organization-invitations",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "delete_organization_invitations"
+    "namespaceFile": "delete_organization_invitations",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "organizations.delete-organization-memberships",
     "name": "delete-organization-memberships",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "delete_organization_memberships"
+    "namespaceFile": "delete_organization_memberships",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "organizations.delete-role-mappings",
     "name": "delete-role-mappings",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "delete_role_mappings"
+    "namespaceFile": "delete_role_mappings",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "organizations.delete-role-mappings-individually",
     "name": "delete-role-mappings-individually",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "delete_role_mappings_individually"
+    "namespaceFile": "delete_role_mappings_individually",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "organizations.domain-claim-delete",
     "name": "domain-claim-delete",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "domain_claim_delete"
+    "namespaceFile": "domain_claim_delete",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "organizations.domain-claim-generate-verification-code",
     "name": "domain-claim-generate-verification-code",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "domain_claim_generate_verification_code"
+    "namespaceFile": "domain_claim_generate_verification_code",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "organizations.domain-claim-get-domain-claims",
     "name": "domain-claim-get-domain-claims",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "domain_claim_get_domain_claims"
+    "namespaceFile": "domain_claim_get_domain_claims",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "organizations.domain-claim-verify-domain",
     "name": "domain-claim-verify-domain",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "domain_claim_verify_domain"
+    "namespaceFile": "domain_claim_verify_domain",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "organizations.get-organization",
     "name": "get-organization",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "get_organization"
+    "namespaceFile": "get_organization",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "organizations.get-organization-idp",
     "name": "get-organization-idp",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "get_organization_idp"
+    "namespaceFile": "get_organization_idp",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "organizations.get-organization-idp-metadata",
     "name": "get-organization-idp-metadata",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "get_organization_idp_metadata"
+    "namespaceFile": "get_organization_idp_metadata",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "organizations.get-organization-invitation",
     "name": "get-organization-invitation",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "get_organization_invitation"
+    "namespaceFile": "get_organization_invitation",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "organizations.get-role-mappings",
     "name": "get-role-mappings",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "get_role_mappings"
+    "namespaceFile": "get_role_mappings",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "organizations.list-organization-invitations",
     "name": "list-organization-invitations",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "list_organization_invitations"
+    "namespaceFile": "list_organization_invitations",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "organizations.list-organization-members",
     "name": "list-organization-members",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "list_organization_members"
+    "namespaceFile": "list_organization_members",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "organizations.list-organizations",
     "name": "list-organizations",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "list_organizations"
+    "namespaceFile": "list_organizations",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "organizations.setup-organization-idp",
     "name": "setup-organization-idp",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "setup_organization_idp"
+    "namespaceFile": "setup_organization_idp",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "organizations.teardown-organization-idp",
     "name": "teardown-organization-idp",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "teardown_organization_idp"
+    "namespaceFile": "teardown_organization_idp",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "organizations.update-organization",
     "name": "update-organization",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "update_organization"
+    "namespaceFile": "update_organization",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "organizations.update-role-mapping",
     "name": "update-role-mapping",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "update_role_mapping"
+    "namespaceFile": "update_role_mapping",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "organizations.update-role-mappings",
     "name": "update-role-mappings",
     "namespace": "organizations",
     "description": "",
-    "namespaceFile": "update_role_mappings"
+    "namespaceFile": "update_role_mappings",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "stack.get-version-stacks",
     "name": "get-version-stacks",
     "namespace": "stack",
     "description": "",
-    "namespaceFile": "get_version_stacks"
+    "namespaceFile": "get_version_stacks",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "trusted-environments.get-trusted-envs",
     "name": "get-trusted-envs",
     "namespace": "trusted-environments",
     "description": "",
-    "namespaceFile": "get_trusted_envs"
+    "namespaceFile": "get_trusted_envs",
+    "destructive": false,
+    "readOnly": true
   },
   {
     "id": "user-role-assignments.add-role-assignments",
     "name": "add-role-assignments",
     "namespace": "user-role-assignments",
     "description": "",
-    "namespaceFile": "add_role_assignments"
+    "namespaceFile": "add_role_assignments",
+    "destructive": true,
+    "readOnly": false
   },
   {
     "id": "user-role-assignments.remove-role-assignments",
     "name": "remove-role-assignments",
     "namespace": "user-role-assignments",
     "description": "",
-    "namespaceFile": "remove_role_assignments"
+    "namespaceFile": "remove_role_assignments",
+    "destructive": true,
+    "readOnly": false
   }
 ]
