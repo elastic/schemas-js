@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.10.0](https://github.com/elastic/schemas-js/compare/v0.9.1...v0.10.0) (2026-10-02)
+
+
+### Features
+
+* enhance API manifests with destructive and read-only flags ([#110](https://github.com/elastic/schemas-js/issues/110)) ([1821d6c](https://github.com/elastic/schemas-js/commit/1821d6cb9d22e93b6ac09b9ea2ba7d52c50e59d4))
+* **kibana:** improve accuracy and completeness of availability metadata ([#108](https://github.com/elastic/schemas-js/issues/108)) ([94007e8](https://github.com/elastic/schemas-js/commit/94007e83e54ecfdd27bd35cac715eb24f2eaf26b))
+
 ## [0.9.1](https://github.com/elastic/schemas-js/compare/v0.9.0...v0.9.1) (2026-09-30)
 
 
