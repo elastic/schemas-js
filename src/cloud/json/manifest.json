@@ -3,7 +3,7 @@
     "id": "accounts.get-current-account",
     "name": "get-current-account",
     "namespace": "accounts",
-    "description": "",
+    "description": "Fetch current account information",
     "namespaceFile": "get_current_account",
     "destructive": false,
     "readOnly": true
@@ -12,7 +12,7 @@
     "id": "accounts.patch-current-account",
     "name": "patch-current-account",
     "namespace": "accounts",
-    "description": "",
+    "description": "Updates the current account",
     "namespaceFile": "patch_current_account",
     "destructive": true,
     "readOnly": false
@@ -21,7 +21,7 @@
     "id": "accounts.update-current-account",
     "name": "update-current-account",
     "namespace": "accounts",
-    "description": "",
+    "description": "Updates the current account",
     "namespaceFile": "update_current_account",
     "destructive": true,
     "readOnly": false
@@ -30,7 +30,7 @@
     "id": "authentication.create-api-key",
     "name": "create-api-key",
     "namespace": "authentication",
-    "description": "",
+    "description": "Create API key",
     "namespaceFile": "create_api_key",
     "destructive": false,
     "readOnly": false
@@ -39,7 +39,7 @@
     "id": "authentication.delete-api-key",
     "name": "delete-api-key",
     "namespace": "authentication",
-    "description": "",
+    "description": "Delete API key",
     "namespaceFile": "delete_api_key",
     "destructive": true,
     "readOnly": false
@@ -48,7 +48,7 @@
     "id": "authentication.delete-api-keys",
     "name": "delete-api-keys",
     "namespace": "authentication",
-    "description": "",
+    "description": "Delete API keys",
     "namespaceFile": "delete_api_keys",
     "destructive": true,
     "readOnly": false
@@ -57,7 +57,7 @@
     "id": "authentication.get-api-key",
     "name": "get-api-key",
     "namespace": "authentication",
-    "description": "",
+    "description": "Get API key",
     "namespaceFile": "get_api_key",
     "destructive": false,
     "readOnly": true
@@ -66,7 +66,7 @@
     "id": "authentication.get-api-keys",
     "name": "get-api-keys",
     "namespace": "authentication",
-    "description": "",
+    "description": "Get all API keys",
     "namespaceFile": "get_api_keys",
     "destructive": false,
     "readOnly": true
@@ -75,7 +75,7 @@
     "id": "billing-costs-analysis.get-costs-charts",
     "name": "get-costs-charts",
     "namespace": "billing-costs-analysis",
-    "description": "",
+    "description": "Get charts for the organization. Currently unavailable in self-hosted ECE.",
     "namespaceFile": "get_costs_charts",
     "destructive": false,
     "readOnly": true
@@ -84,7 +84,7 @@
     "id": "billing-costs-analysis.get-costs-charts-by-deployment",
     "name": "get-costs-charts-by-deployment",
     "namespace": "billing-costs-analysis",
-    "description": "",
+    "description": "Get charts by deployment. Currently unavailable in self-hosted ECE.",
     "namespaceFile": "get_costs_charts_by_deployment",
     "destructive": false,
     "readOnly": true
@@ -93,7 +93,7 @@
     "id": "billing-costs-analysis.get-costs-deployments",
     "name": "get-costs-deployments",
     "namespace": "billing-costs-analysis",
-    "description": "",
+    "description": "Get deployments costs for the organization. Currently unavailable in self-hosted ECE.",
     "namespaceFile": "get_costs_deployments",
     "destructive": false,
     "readOnly": true
@@ -102,7 +102,7 @@
     "id": "billing-costs-analysis.get-costs-items",
     "name": "get-costs-items",
     "namespace": "billing-costs-analysis",
-    "description": "",
+    "description": "Get itemized costs for the organization. Currently unavailable in self-hosted ECE.",
     "namespaceFile": "get_costs_items",
     "destructive": false,
     "readOnly": true
@@ -111,7 +111,7 @@
     "id": "billing-costs-analysis.get-costs-items-by-deployment",
     "name": "get-costs-items-by-deployment",
     "namespace": "billing-costs-analysis",
-    "description": "",
+    "description": "Get itemized costs by deployments. Currently unavailable in self-hosted ECE.",
     "namespaceFile": "get_costs_items_by_deployment",
     "destructive": false,
     "readOnly": true
@@ -120,7 +120,7 @@
     "id": "billing-costs-analysis.get-costs-overview",
     "name": "get-costs-overview",
     "namespace": "billing-costs-analysis",
-    "description": "",
+    "description": "Get costs overview for the organization. Currently unavailable in self-hosted ECE.",
     "namespaceFile": "get_costs_overview",
     "destructive": false,
     "readOnly": true
@@ -129,7 +129,7 @@
     "id": "deployment-templates.get-deployment-template-v2",
     "name": "get-deployment-template-v2",
     "namespace": "deployment-templates",
-    "description": "",
+    "description": "Get deployment template",
     "namespaceFile": "get_deployment_template_v2",
     "destructive": false,
     "readOnly": true
@@ -138,7 +138,7 @@
     "id": "deployment-templates.get-deployment-templates-v2",
     "name": "get-deployment-templates-v2",
     "namespace": "deployment-templates",
-    "description": "",
+    "description": "Get deployment templates",
     "namespaceFile": "get_deployment_templates_v2",
     "destructive": false,
     "readOnly": true
@@ -147,7 +147,7 @@
     "id": "deployments-traffic-filter.claim-traffic-filter-link-id",
     "name": "claim-traffic-filter-link-id",
     "namespace": "deployments-traffic-filter",
-    "description": "",
+    "description": "Claim a link id",
     "namespaceFile": "claim_traffic_filter_link_id",
     "destructive": true,
     "readOnly": false
@@ -156,7 +156,7 @@
     "id": "deployments-traffic-filter.create-traffic-filter-ruleset",
     "name": "create-traffic-filter-ruleset",
     "namespace": "deployments-traffic-filter",
-    "description": "",
+    "description": "Create a ruleset",
     "namespaceFile": "create_traffic_filter_ruleset",
     "destructive": false,
     "readOnly": false
@@ -165,7 +165,7 @@
     "id": "deployments-traffic-filter.create-traffic-filter-ruleset-association",
     "name": "create-traffic-filter-ruleset-association",
     "namespace": "deployments-traffic-filter",
-    "description": "",
+    "description": "Create ruleset association",
     "namespaceFile": "create_traffic_filter_ruleset_association",
     "destructive": false,
     "readOnly": false
@@ -174,7 +174,7 @@
     "id": "deployments-traffic-filter.delete-traffic-filter-ruleset",
     "name": "delete-traffic-filter-ruleset",
     "namespace": "deployments-traffic-filter",
-    "description": "",
+    "description": "Delete a ruleset",
     "namespaceFile": "delete_traffic_filter_ruleset",
     "destructive": true,
     "readOnly": false
@@ -183,7 +183,7 @@
     "id": "deployments-traffic-filter.delete-traffic-filter-ruleset-association",
     "name": "delete-traffic-filter-ruleset-association",
     "namespace": "deployments-traffic-filter",
-    "description": "",
+    "description": "Delete ruleset association",
     "namespaceFile": "delete_traffic_filter_ruleset_association",
     "destructive": true,
     "readOnly": false
@@ -192,7 +192,7 @@
     "id": "deployments-traffic-filter.get-traffic-filter-claimed-link-ids",
     "name": "get-traffic-filter-claimed-link-ids",
     "namespace": "deployments-traffic-filter",
-    "description": "",
+    "description": "List traffic filter claimed link id",
     "namespaceFile": "get_traffic_filter_claimed_link_ids",
     "destructive": false,
     "readOnly": true
@@ -201,7 +201,7 @@
     "id": "deployments-traffic-filter.get-traffic-filter-deployment-ruleset-associations",
     "name": "get-traffic-filter-deployment-ruleset-associations",
     "namespace": "deployments-traffic-filter",
-    "description": "",
+    "description": "Get associated rulesets",
     "namespaceFile": "get_traffic_filter_deployment_ruleset_associations",
     "destructive": false,
     "readOnly": true
@@ -210,7 +210,7 @@
     "id": "deployments-traffic-filter.get-traffic-filter-ruleset",
     "name": "get-traffic-filter-ruleset",
     "namespace": "deployments-traffic-filter",
-    "description": "",
+    "description": "Retrieves the ruleset by ID.",
     "namespaceFile": "get_traffic_filter_ruleset",
     "destructive": false,
     "readOnly": true
@@ -219,7 +219,7 @@
     "id": "deployments-traffic-filter.get-traffic-filter-ruleset-deployment-associations",
     "name": "get-traffic-filter-ruleset-deployment-associations",
     "namespace": "deployments-traffic-filter",
-    "description": "",
+    "description": "Get associated deployments",
     "namespaceFile": "get_traffic_filter_ruleset_deployment_associations",
     "destructive": false,
     "readOnly": true
@@ -228,7 +228,7 @@
     "id": "deployments-traffic-filter.get-traffic-filter-rulesets",
     "name": "get-traffic-filter-rulesets",
     "namespace": "deployments-traffic-filter",
-    "description": "",
+    "description": "List traffic filter rulesets",
     "namespaceFile": "get_traffic_filter_rulesets",
     "destructive": false,
     "readOnly": true
@@ -237,7 +237,7 @@
     "id": "deployments-traffic-filter.unclaim-traffic-filter-link-id",
     "name": "unclaim-traffic-filter-link-id",
     "namespace": "deployments-traffic-filter",
-    "description": "",
+    "description": "Unclaims a link id",
     "namespaceFile": "unclaim_traffic_filter_link_id",
     "destructive": true,
     "readOnly": false
@@ -246,7 +246,7 @@
     "id": "deployments-traffic-filter.update-traffic-filter-ruleset",
     "name": "update-traffic-filter-ruleset",
     "namespace": "deployments-traffic-filter",
-    "description": "",
+    "description": "Updates a ruleset",
     "namespaceFile": "update_traffic_filter_ruleset",
     "destructive": true,
     "readOnly": false
@@ -255,7 +255,7 @@
     "id": "deployments.cancel-deployment-resource-pending-plan",
     "name": "cancel-deployment-resource-pending-plan",
     "namespace": "deployments",
-    "description": "",
+    "description": "Cancel resource pending plan",
     "namespaceFile": "cancel_deployment_resource_pending_plan",
     "destructive": true,
     "readOnly": false
@@ -264,7 +264,7 @@
     "id": "deployments.create-deployment",
     "name": "create-deployment",
     "namespace": "deployments",
-    "description": "",
+    "description": "Create Deployment",
     "namespaceFile": "create_deployment",
     "destructive": false,
     "readOnly": false
@@ -273,7 +273,7 @@
     "id": "deployments.create-deployment-es-resource-snapshot-repository",
     "name": "create-deployment-es-resource-snapshot-repository",
     "namespace": "deployments",
-    "description": "",
+    "description": "Create a snapshot repository for Elasticsearch resource",
     "namespaceFile": "create_deployment_es_resource_snapshot_repository",
     "destructive": false,
     "readOnly": false,
@@ -287,7 +287,7 @@
     "id": "deployments.delete-deployment-es-resource-snapshot-repository",
     "name": "delete-deployment-es-resource-snapshot-repository",
     "namespace": "deployments",
-    "description": "",
+    "description": "Remove the attached snapshot repository",
     "namespaceFile": "delete_deployment_es_resource_snapshot_repository",
     "destructive": true,
     "readOnly": false
@@ -296,7 +296,7 @@
     "id": "deployments.deployment-apm-reset-secret-token",
     "name": "deployment-apm-reset-secret-token",
     "namespace": "deployments",
-    "description": "",
+    "description": "Reset the secret token for an APM resource.",
     "namespaceFile": "deployment_apm_reset_secret_token",
     "destructive": true,
     "readOnly": false
@@ -305,7 +305,7 @@
     "id": "deployments.enable-deployment-resource-ccr",
     "name": "enable-deployment-resource-ccr",
     "namespace": "deployments",
-    "description": "",
+    "description": "Migrate Elasticsearch and associated Kibana resources to enable CCR",
     "namespaceFile": "enable_deployment_resource_ccr",
     "destructive": true,
     "readOnly": false
@@ -314,7 +314,7 @@
     "id": "deployments.enable-deployment-resource-ilm",
     "name": "enable-deployment-resource-ilm",
     "namespace": "deployments",
-    "description": "",
+    "description": "Migrate Elasticsearch resource to use ILM",
     "namespaceFile": "enable_deployment_resource_ilm",
     "destructive": true,
     "readOnly": false
@@ -323,7 +323,7 @@
     "id": "deployments.enable-deployment-resource-slm",
     "name": "enable-deployment-resource-slm",
     "namespace": "deployments",
-    "description": "",
+    "description": "Migrate Elasticsearch resource to use SLM",
     "namespaceFile": "enable_deployment_resource_slm",
     "destructive": true,
     "readOnly": false
@@ -332,7 +332,7 @@
     "id": "deployments.get-appsearch-read-only-mode",
     "name": "get-appsearch-read-only-mode",
     "namespace": "deployments",
-    "description": "",
+    "description": "Set AppSearch read-only status",
     "namespaceFile": "get_appsearch_read_only_mode",
     "destructive": false,
     "readOnly": true
@@ -341,7 +341,7 @@
     "id": "deployments.get-deployment",
     "name": "get-deployment",
     "namespace": "deployments",
-    "description": "",
+    "description": "Get Deployment",
     "namespaceFile": "get_deployment",
     "destructive": false,
     "readOnly": true
@@ -350,7 +350,7 @@
     "id": "deployments.get-deployment-apm-resource-info",
     "name": "get-deployment-apm-resource-info",
     "namespace": "deployments",
-    "description": "",
+    "description": "Get Deployment APM Resource Info",
     "namespaceFile": "get_deployment_apm_resource_info",
     "destructive": false,
     "readOnly": true
@@ -359,7 +359,7 @@
     "id": "deployments.get-deployment-appsearch-resource-info",
     "name": "get-deployment-appsearch-resource-info",
     "namespace": "deployments",
-    "description": "",
+    "description": "Get Deployment App Search Resource Info",
     "namespaceFile": "get_deployment_appsearch_resource_info",
     "destructive": false,
     "readOnly": true
@@ -368,7 +368,7 @@
     "id": "deployments.get-deployment-certificate-authority",
     "name": "get-deployment-certificate-authority",
     "namespace": "deployments",
-    "description": "",
+    "description": "Get certificate authority",
     "namespaceFile": "get_deployment_certificate_authority",
     "destructive": false,
     "readOnly": true
@@ -377,7 +377,7 @@
     "id": "deployments.get-deployment-enterprise-search-resource-info",
     "name": "get-deployment-enterprise-search-resource-info",
     "namespace": "deployments",
-    "description": "",
+    "description": "Get Deployment Enterprise Search Resource Info",
     "namespaceFile": "get_deployment_enterprise_search_resource_info",
     "destructive": false,
     "readOnly": true
@@ -386,7 +386,7 @@
     "id": "deployments.get-deployment-es-resource-eligible-remote-clusters",
     "name": "get-deployment-es-resource-eligible-remote-clusters",
     "namespace": "deployments",
-    "description": "",
+    "description": "Get eligible remote clusters",
     "namespaceFile": "get_deployment_es_resource_eligible_remote_clusters",
     "destructive": false,
     "readOnly": true
@@ -395,7 +395,7 @@
     "id": "deployments.get-deployment-es-resource-info",
     "name": "get-deployment-es-resource-info",
     "namespace": "deployments",
-    "description": "",
+    "description": "Get Deployment Elasticsearch Resource Info",
     "namespaceFile": "get_deployment_es_resource_info",
     "destructive": false,
     "readOnly": true
@@ -404,7 +404,7 @@
     "id": "deployments.get-deployment-es-resource-keystore",
     "name": "get-deployment-es-resource-keystore",
     "namespace": "deployments",
-    "description": "",
+    "description": "Get the items in the Elasticsearch resource keystore",
     "namespaceFile": "get_deployment_es_resource_keystore",
     "destructive": false,
     "readOnly": true
@@ -413,7 +413,7 @@
     "id": "deployments.get-deployment-es-resource-remote-clusters",
     "name": "get-deployment-es-resource-remote-clusters",
     "namespace": "deployments",
-    "description": "",
+    "description": "Get certificate based remote clusters",
     "namespaceFile": "get_deployment_es_resource_remote_clusters",
     "destructive": false,
     "readOnly": true
@@ -422,7 +422,7 @@
     "id": "deployments.get-deployment-es-resource-snapshot-repository",
     "name": "get-deployment-es-resource-snapshot-repository",
     "namespace": "deployments",
-    "description": "",
+    "description": "List the attached snapshot repositories",
     "namespaceFile": "get_deployment_es_resource_snapshot_repository",
     "destructive": false,
     "readOnly": true
@@ -431,7 +431,7 @@
     "id": "deployments.get-deployment-es-resource-tiers",
     "name": "get-deployment-es-resource-tiers",
     "namespace": "deployments",
-    "description": "",
+    "description": "Get Elasticsearch tiers",
     "namespaceFile": "get_deployment_es_resource_tiers",
     "destructive": false,
     "readOnly": true
@@ -440,7 +440,7 @@
     "id": "deployments.get-deployment-integrations-server-resource-info",
     "name": "get-deployment-integrations-server-resource-info",
     "namespace": "deployments",
-    "description": "",
+    "description": "Get Deployment Integrations Server Resource Info",
     "namespaceFile": "get_deployment_integrations_server_resource_info",
     "destructive": false,
     "readOnly": true
@@ -449,7 +449,7 @@
     "id": "deployments.get-deployment-kib-resource-info",
     "name": "get-deployment-kib-resource-info",
     "namespace": "deployments",
-    "description": "",
+    "description": "Get Deployment Kibana Resource Info",
     "namespaceFile": "get_deployment_kib_resource_info",
     "destructive": false,
     "readOnly": true
@@ -458,7 +458,7 @@
     "id": "deployments.get-deployment-resource-user-settings",
     "name": "get-deployment-resource-user-settings",
     "namespace": "deployments",
-    "description": "",
+    "description": "Get the user settings of a Deployment resource",
     "namespaceFile": "get_deployment_resource_user_settings",
     "destructive": false,
     "readOnly": true
@@ -467,7 +467,7 @@
     "id": "deployments.get-deployment-tags",
     "name": "get-deployment-tags",
     "namespace": "deployments",
-    "description": "",
+    "description": "Get the tags for a Deployment",
     "namespaceFile": "get_deployment_tags",
     "destructive": false,
     "readOnly": true
@@ -476,7 +476,7 @@
     "id": "deployments.get-deployment-upgrade-assistant-status",
     "name": "get-deployment-upgrade-assistant-status",
     "namespace": "deployments",
-    "description": "",
+    "description": "Get Deployment upgrade assistant status",
     "namespaceFile": "get_deployment_upgrade_assistant_status",
     "destructive": false,
     "readOnly": true
@@ -485,7 +485,7 @@
     "id": "deployments.list-deployments",
     "name": "list-deployments",
     "namespace": "deployments",
-    "description": "",
+    "description": "List Deployments",
     "namespaceFile": "list_deployments",
     "destructive": false,
     "readOnly": true
@@ -494,7 +494,7 @@
     "id": "deployments.migrate-deployment-template",
     "name": "migrate-deployment-template",
     "namespace": "deployments",
-    "description": "",
+    "description": "Build request to migrate deployment to a different template",
     "namespaceFile": "migrate_deployment_template",
     "destructive": false,
     "readOnly": true
@@ -503,7 +503,7 @@
     "id": "deployments.reset-elasticsearch-user-password",
     "name": "reset-elasticsearch-user-password",
     "namespace": "deployments",
-    "description": "",
+    "description": "Reset 'elastic' user password",
     "namespaceFile": "reset_elasticsearch_user_password",
     "destructive": true,
     "readOnly": false
@@ -512,7 +512,7 @@
     "id": "deployments.restart-deployment-es-resource",
     "name": "restart-deployment-es-resource",
     "namespace": "deployments",
-    "description": "",
+    "description": "Restart Deployment Elasticsearch Resource",
     "namespaceFile": "restart_deployment_es_resource",
     "destructive": true,
     "readOnly": false
@@ -521,7 +521,7 @@
     "id": "deployments.restart-deployment-stateless-resource",
     "name": "restart-deployment-stateless-resource",
     "namespace": "deployments",
-    "description": "",
+    "description": "Restart Deployment Stateless Resource",
     "namespaceFile": "restart_deployment_stateless_resource",
     "destructive": true,
     "readOnly": false
@@ -530,7 +530,7 @@
     "id": "deployments.restore-deployment",
     "name": "restore-deployment",
     "namespace": "deployments",
-    "description": "",
+    "description": "Restores a shutdown Deployment",
     "namespaceFile": "restore_deployment",
     "destructive": true,
     "readOnly": false
@@ -539,7 +539,7 @@
     "id": "deployments.restore-deployment-resource",
     "name": "restore-deployment-resource",
     "namespace": "deployments",
-    "description": "",
+    "description": "Restores a shutdown resource",
     "namespaceFile": "restore_deployment_resource",
     "destructive": true,
     "readOnly": false
@@ -548,7 +548,7 @@
     "id": "deployments.search-deployments",
     "name": "search-deployments",
     "namespace": "deployments",
-    "description": "",
+    "description": "Search Deployments",
     "namespaceFile": "search_deployments",
     "destructive": false,
     "readOnly": true
@@ -557,7 +557,7 @@
     "id": "deployments.search-eligible-remote-clusters",
     "name": "search-eligible-remote-clusters",
     "namespace": "deployments",
-    "description": "",
+    "description": "Get eligible remote clusters",
     "namespaceFile": "search_eligible_remote_clusters",
     "destructive": false,
     "readOnly": true
@@ -566,7 +566,7 @@
     "id": "deployments.set-appsearch-read-only-mode",
     "name": "set-appsearch-read-only-mode",
     "namespace": "deployments",
-    "description": "",
+    "description": "Set AppSearch read-only status",
     "namespaceFile": "set_appsearch_read_only_mode",
     "destructive": true,
     "readOnly": false
@@ -575,7 +575,7 @@
     "id": "deployments.set-deployment-es-resource-keystore",
     "name": "set-deployment-es-resource-keystore",
     "namespace": "deployments",
-    "description": "",
+    "description": "Add or remove items from the Elasticsearch resource keystore",
     "namespaceFile": "set_deployment_es_resource_keystore",
     "destructive": true,
     "readOnly": false
@@ -584,7 +584,7 @@
     "id": "deployments.set-deployment-es-resource-remote-clusters",
     "name": "set-deployment-es-resource-remote-clusters",
     "namespace": "deployments",
-    "description": "",
+    "description": "Set certificate based remote clusters",
     "namespaceFile": "set_deployment_es_resource_remote_clusters",
     "destructive": true,
     "readOnly": false
@@ -593,7 +593,7 @@
     "id": "deployments.set-deployment-tags",
     "name": "set-deployment-tags",
     "namespace": "deployments",
-    "description": "",
+    "description": "Set the tags for a Deployment",
     "namespaceFile": "set_deployment_tags",
     "destructive": true,
     "readOnly": false
@@ -602,7 +602,7 @@
     "id": "deployments.shutdown-deployment",
     "name": "shutdown-deployment",
     "namespace": "deployments",
-    "description": "",
+    "description": "Shuts down Deployment",
     "namespaceFile": "shutdown_deployment",
     "destructive": true,
     "readOnly": false
@@ -611,7 +611,7 @@
     "id": "deployments.shutdown-deployment-es-resource",
     "name": "shutdown-deployment-es-resource",
     "namespace": "deployments",
-    "description": "",
+    "description": "Shutdown Deployment Elasticsearch Resource",
     "namespaceFile": "shutdown_deployment_es_resource",
     "destructive": true,
     "readOnly": false
@@ -620,7 +620,7 @@
     "id": "deployments.shutdown-deployment-stateless-resource",
     "name": "shutdown-deployment-stateless-resource",
     "namespace": "deployments",
-    "description": "",
+    "description": "Shutdown Deployment Stateless Resource",
     "namespaceFile": "shutdown_deployment_stateless_resource",
     "destructive": true,
     "readOnly": false
@@ -629,7 +629,7 @@
     "id": "deployments.start-deployment-resource-instances",
     "name": "start-deployment-resource-instances",
     "namespace": "deployments",
-    "description": "",
+    "description": "Start instances",
     "namespaceFile": "start_deployment_resource_instances",
     "destructive": true,
     "readOnly": false
@@ -638,7 +638,7 @@
     "id": "deployments.start-deployment-resource-instances-all",
     "name": "start-deployment-resource-instances-all",
     "namespace": "deployments",
-    "description": "",
+    "description": "Start all instances",
     "namespaceFile": "start_deployment_resource_instances_all",
     "destructive": true,
     "readOnly": false
@@ -647,7 +647,7 @@
     "id": "deployments.start-deployment-resource-instances-all-maintenance-mode",
     "name": "start-deployment-resource-instances-all-maintenance-mode",
     "namespace": "deployments",
-    "description": "",
+    "description": "Start maintenance mode (all instances)",
     "namespaceFile": "start_deployment_resource_instances_all_maintenance_mode",
     "destructive": true,
     "readOnly": false
@@ -656,7 +656,7 @@
     "id": "deployments.start-deployment-resource-maintenance-mode",
     "name": "start-deployment-resource-maintenance-mode",
     "namespace": "deployments",
-    "description": "",
+    "description": "Start maintenance mode",
     "namespaceFile": "start_deployment_resource_maintenance_mode",
     "destructive": true,
     "readOnly": false
@@ -665,7 +665,7 @@
     "id": "deployments.stop-deployment-resource-instances",
     "name": "stop-deployment-resource-instances",
     "namespace": "deployments",
-    "description": "",
+    "description": "Stop instances",
     "namespaceFile": "stop_deployment_resource_instances",
     "destructive": true,
     "readOnly": false
@@ -674,7 +674,7 @@
     "id": "deployments.stop-deployment-resource-instances-all",
     "name": "stop-deployment-resource-instances-all",
     "namespace": "deployments",
-    "description": "",
+    "description": "Stop all instances",
     "namespaceFile": "stop_deployment_resource_instances_all",
     "destructive": true,
     "readOnly": false
@@ -683,7 +683,7 @@
     "id": "deployments.stop-deployment-resource-instances-all-maintenance-mode",
     "name": "stop-deployment-resource-instances-all-maintenance-mode",
     "namespace": "deployments",
-    "description": "",
+    "description": "Stop maintenance mode (all instances)",
     "namespaceFile": "stop_deployment_resource_instances_all_maintenance_mode",
     "destructive": true,
     "readOnly": false
@@ -692,7 +692,7 @@
     "id": "deployments.stop-deployment-resource-maintenance-mode",
     "name": "stop-deployment-resource-maintenance-mode",
     "namespace": "deployments",
-    "description": "",
+    "description": "Stop maintenance mode",
     "namespaceFile": "stop_deployment_resource_maintenance_mode",
     "destructive": true,
     "readOnly": false
@@ -701,7 +701,7 @@
     "id": "deployments.update-deployment",
     "name": "update-deployment",
     "namespace": "deployments",
-    "description": "",
+    "description": "Update Deployment",
     "namespaceFile": "update_deployment",
     "destructive": true,
     "readOnly": false
@@ -710,7 +710,7 @@
     "id": "deployments.update-deployment-es-resource-tier",
     "name": "update-deployment-es-resource-tier",
     "namespace": "deployments",
-    "description": "",
+    "description": "Update Elasticsearch tiers",
     "namespaceFile": "update_deployment_es_resource_tier",
     "destructive": true,
     "readOnly": false
@@ -719,7 +719,7 @@
     "id": "deployments.update-deployment-resource-user-settings",
     "name": "update-deployment-resource-user-settings",
     "namespace": "deployments",
-    "description": "",
+    "description": "Update user settings for a deployment resource",
     "namespaceFile": "update_deployment_resource_user_settings",
     "destructive": true,
     "readOnly": false
@@ -728,7 +728,7 @@
     "id": "deployments.upgrade-deployment",
     "name": "upgrade-deployment",
     "namespace": "deployments",
-    "description": "",
+    "description": "Upgrade a Deployment to a new Elastic Stack version",
     "namespaceFile": "upgrade_deployment",
     "destructive": true,
     "readOnly": false,
@@ -742,7 +742,7 @@
     "id": "extensions.create-extension",
     "name": "create-extension",
     "namespace": "extensions",
-    "description": "",
+    "description": "Create an extension",
     "namespaceFile": "create_extension",
     "destructive": false,
     "readOnly": false
@@ -751,7 +751,7 @@
     "id": "extensions.delete-extension",
     "name": "delete-extension",
     "namespace": "extensions",
-    "description": "",
+    "description": "Delete Extension",
     "namespaceFile": "delete_extension",
     "destructive": true,
     "readOnly": false
@@ -760,7 +760,7 @@
     "id": "extensions.get-extension",
     "name": "get-extension",
     "namespace": "extensions",
-    "description": "",
+    "description": "Get Extension",
     "namespaceFile": "get_extension",
     "destructive": false,
     "readOnly": true
@@ -769,7 +769,7 @@
     "id": "extensions.list-extensions",
     "name": "list-extensions",
     "namespace": "extensions",
-    "description": "",
+    "description": "List Extensions",
     "namespaceFile": "list_extensions",
     "destructive": false,
     "readOnly": true
@@ -778,7 +778,7 @@
     "id": "extensions.update-extension",
     "name": "update-extension",
     "namespace": "extensions",
-    "description": "",
+    "description": "Update Extension",
     "namespaceFile": "update_extension",
     "destructive": true,
     "readOnly": false
@@ -787,7 +787,7 @@
     "id": "extensions.upload-extension",
     "name": "upload-extension",
     "namespace": "extensions",
-    "description": "",
+    "description": "Uploads the Extension",
     "namespaceFile": "upload_extension",
     "destructive": true,
     "readOnly": false
@@ -796,7 +796,7 @@
     "id": "organizations.add-role-mappings-individually",
     "name": "add-role-mappings-individually",
     "namespace": "organizations",
-    "description": "",
+    "description": "Adds role mapping",
     "namespaceFile": "add_role_mappings_individually",
     "destructive": true,
     "readOnly": false
@@ -805,7 +805,7 @@
     "id": "organizations.create-organization-invitations",
     "name": "create-organization-invitations",
     "namespace": "organizations",
-    "description": "",
+    "description": "Create organization invitations",
     "namespaceFile": "create_organization_invitations",
     "destructive": false,
     "readOnly": false
@@ -814,7 +814,7 @@
     "id": "organizations.delete-organization-invitations",
     "name": "delete-organization-invitations",
     "namespace": "organizations",
-    "description": "",
+    "description": "Delete organization invitations",
     "namespaceFile": "delete_organization_invitations",
     "destructive": true,
     "readOnly": false
@@ -823,7 +823,7 @@
     "id": "organizations.delete-organization-memberships",
     "name": "delete-organization-memberships",
     "namespace": "organizations",
-    "description": "",
+    "description": "Delete organization memberships",
     "namespaceFile": "delete_organization_memberships",
     "destructive": true,
     "readOnly": false
@@ -832,7 +832,7 @@
     "id": "organizations.delete-role-mappings",
     "name": "delete-role-mappings",
     "namespace": "organizations",
-    "description": "",
+    "description": "Delete role mappings",
     "namespaceFile": "delete_role_mappings",
     "destructive": true,
     "readOnly": false
@@ -841,7 +841,7 @@
     "id": "organizations.delete-role-mappings-individually",
     "name": "delete-role-mappings-individually",
     "namespace": "organizations",
-    "description": "",
+    "description": "Delete role mapping",
     "namespaceFile": "delete_role_mappings_individually",
     "destructive": true,
     "readOnly": false
@@ -850,7 +850,7 @@
     "id": "organizations.domain-claim-delete",
     "name": "domain-claim-delete",
     "namespace": "organizations",
-    "description": "",
+    "description": "Delete domain claim",
     "namespaceFile": "domain_claim_delete",
     "destructive": true,
     "readOnly": false
@@ -859,7 +859,7 @@
     "id": "organizations.domain-claim-generate-verification-code",
     "name": "domain-claim-generate-verification-code",
     "namespace": "organizations",
-    "description": "",
+    "description": "Generate verification code",
     "namespaceFile": "domain_claim_generate_verification_code",
     "destructive": true,
     "readOnly": false
@@ -868,7 +868,7 @@
     "id": "organizations.domain-claim-get-domain-claims",
     "name": "domain-claim-get-domain-claims",
     "namespace": "organizations",
-    "description": "",
+    "description": "Get domain claims",
     "namespaceFile": "domain_claim_get_domain_claims",
     "destructive": false,
     "readOnly": true
@@ -877,7 +877,7 @@
     "id": "organizations.domain-claim-verify-domain",
     "name": "domain-claim-verify-domain",
     "namespace": "organizations",
-    "description": "",
+    "description": "Verify domain claim",
     "namespaceFile": "domain_claim_verify_domain",
     "destructive": true,
     "readOnly": false
@@ -886,7 +886,7 @@
     "id": "organizations.get-organization",
     "name": "get-organization",
     "namespace": "organizations",
-    "description": "",
+    "description": "Fetch organization information",
     "namespaceFile": "get_organization",
     "destructive": false,
     "readOnly": true
@@ -895,7 +895,7 @@
     "id": "organizations.get-organization-idp",
     "name": "get-organization-idp",
     "namespace": "organizations",
-    "description": "",
+    "description": "Get organization IdP",
     "namespaceFile": "get_organization_idp",
     "destructive": false,
     "readOnly": true
@@ -904,7 +904,7 @@
     "id": "organizations.get-organization-idp-metadata",
     "name": "get-organization-idp-metadata",
     "namespace": "organizations",
-    "description": "",
+    "description": "Get organization service provider SAML2 metadata.xml for configuring the identity provider",
     "namespaceFile": "get_organization_idp_metadata",
     "destructive": false,
     "readOnly": true
@@ -913,7 +913,7 @@
     "id": "organizations.get-organization-invitation",
     "name": "get-organization-invitation",
     "namespace": "organizations",
-    "description": "",
+    "description": "Get organization invitation",
     "namespaceFile": "get_organization_invitation",
     "destructive": false,
     "readOnly": true
@@ -922,7 +922,7 @@
     "id": "organizations.get-role-mappings",
     "name": "get-role-mappings",
     "namespace": "organizations",
-    "description": "",
+    "description": "Get role mappings",
     "namespaceFile": "get_role_mappings",
     "destructive": false,
     "readOnly": true
@@ -931,7 +931,7 @@
     "id": "organizations.list-organization-invitations",
     "name": "list-organization-invitations",
     "namespace": "organizations",
-    "description": "",
+    "description": "List organization invitations",
     "namespaceFile": "list_organization_invitations",
     "destructive": false,
     "readOnly": true
@@ -940,7 +940,7 @@
     "id": "organizations.list-organization-members",
     "name": "list-organization-members",
     "namespace": "organizations",
-    "description": "",
+    "description": "List organization members",
     "namespaceFile": "list_organization_members",
     "destructive": false,
     "readOnly": true
@@ -949,7 +949,7 @@
     "id": "organizations.list-organizations",
     "name": "list-organizations",
     "namespace": "organizations",
-    "description": "",
+    "description": "List organizations",
     "namespaceFile": "list_organizations",
     "destructive": false,
     "readOnly": true
@@ -958,7 +958,7 @@
     "id": "organizations.setup-organization-idp",
     "name": "setup-organization-idp",
     "namespace": "organizations",
-    "description": "",
+    "description": "Setup organization IdP",
     "namespaceFile": "setup_organization_idp",
     "destructive": true,
     "readOnly": false
@@ -967,7 +967,7 @@
     "id": "organizations.teardown-organization-idp",
     "name": "teardown-organization-idp",
     "namespace": "organizations",
-    "description": "",
+    "description": "Tear down organization IdP",
     "namespaceFile": "teardown_organization_idp",
     "destructive": true,
     "readOnly": false
@@ -976,7 +976,7 @@
     "id": "organizations.update-organization",
     "name": "update-organization",
     "namespace": "organizations",
-    "description": "",
+    "description": "Update organization",
     "namespaceFile": "update_organization",
     "destructive": true,
     "readOnly": false
@@ -985,7 +985,7 @@
     "id": "organizations.update-role-mapping",
     "name": "update-role-mapping",
     "namespace": "organizations",
-    "description": "",
+    "description": "Update role mapping",
     "namespaceFile": "update_role_mapping",
     "destructive": true,
     "readOnly": false
@@ -994,7 +994,7 @@
     "id": "organizations.update-role-mappings",
     "name": "update-role-mappings",
     "namespace": "organizations",
-    "description": "",
+    "description": "Updates role mappings",
     "namespaceFile": "update_role_mappings",
     "destructive": true,
     "readOnly": false
@@ -1003,7 +1003,7 @@
     "id": "stack.get-version-stacks",
     "name": "get-version-stacks",
     "namespace": "stack",
-    "description": "",
+    "description": "Get stack versions",
     "namespaceFile": "get_version_stacks",
     "destructive": false,
     "readOnly": true
@@ -1012,7 +1012,7 @@
     "id": "trusted-environments.get-trusted-envs",
     "name": "get-trusted-envs",
     "namespace": "trusted-environments",
-    "description": "",
+    "description": "Get trusted environments",
     "namespaceFile": "get_trusted_envs",
     "destructive": false,
     "readOnly": true
@@ -1021,7 +1021,7 @@
     "id": "user-role-assignments.add-role-assignments",
     "name": "add-role-assignments",
     "namespace": "user-role-assignments",
-    "description": "",
+    "description": "Add Role Assignments",
     "namespaceFile": "add_role_assignments",
     "destructive": true,
     "readOnly": false
@@ -1030,7 +1030,7 @@
     "id": "user-role-assignments.remove-role-assignments",
     "name": "remove-role-assignments",
     "namespace": "user-role-assignments",
-    "description": "",
+    "description": "Remove Role Assignments",
     "namespaceFile": "remove_role_assignments",
     "destructive": true,
     "readOnly": false

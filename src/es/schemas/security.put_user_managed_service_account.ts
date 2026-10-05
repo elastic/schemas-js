@@ -25,7 +25,8 @@ export const SecurityPutUserManagedServiceAccountRequest = z.object({
   service: z.lazy(() => Service).describe('The service name. It must start with a letter or digit and can contain only letters, digits, hyphens, and underscores, up to a maximum of 128 characters.').meta({ found_in: 'path' }),
   refresh: z.lazy(() => Refresh).describe('If `wait_for` (the default) then wait for a refresh to make this operation visible to search, if `true` then refresh the affected shards to make this operation visible to search, if `false` then do nothing with refreshes.').optional().meta({ found_in: 'query' }),
   roles: z.array(z.string()).describe('The names of the roles to grant to the service account, up to a maximum of 1000. The roles are resolved when the account authenticates, so they do not have to exist yet.').meta({ found_in: 'body' }),
-  enabled: z.boolean().describe('Whether the account can authenticate. Tokens can still be created for a disabled account; they just cannot be used until the account is enabled.').optional().meta({ found_in: 'body' })
+  enabled: z.boolean().describe('Whether the account can authenticate. Tokens can still be created for a disabled account; they just cannot be used until the account is enabled.').optional().meta({ found_in: 'body' }),
+  description: z.string().describe('A free-text description of the account, as sent on the last PUT of the account. It has no meaning to Elasticsearch. Absent when the account has no description.').optional().meta({ found_in: 'body' })
 }).meta({ id: 'SecurityPutUserManagedServiceAccountRequest' })
 export type SecurityPutUserManagedServiceAccountRequest = z.infer<typeof SecurityPutUserManagedServiceAccountRequest>
 

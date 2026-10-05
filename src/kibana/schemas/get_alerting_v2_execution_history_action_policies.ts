@@ -17,7 +17,7 @@ export const Kibana_HTTP_APIs_alerting_policy_execution_history_item = z.object(
   alert_count: z.number(),
   alerts: z.array(z.object({
     id: z.string()
-  })).optional(),
+  })),
   dispatched_at: z.string(),
   error: z.object({
     message: z.string(),
@@ -29,11 +29,11 @@ export const Kibana_HTTP_APIs_alerting_policy_execution_history_item = z.object(
     id: z.string(),
     name: z.string().nullable().optional()
   }),
+  rule_count: z.number(),
   rules: z.array(z.object({
     id: z.string(),
     name: z.string().nullable().optional()
   })),
-  total_rule_count: z.number(),
   workflows: z.array(z.object({
     id: z.string(),
     name: z.string().nullable().optional()

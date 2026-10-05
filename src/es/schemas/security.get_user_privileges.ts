@@ -30,8 +30,31 @@ export const SecurityApplicationGlobalUserPrivileges = z.object({
 }).meta({ id: 'SecurityApplicationGlobalUserPrivileges' })
 export type SecurityApplicationGlobalUserPrivileges = z.infer<typeof SecurityApplicationGlobalUserPrivileges>
 
+export const SecurityWriteProfileGlobalUserPrivileges = z.object({
+  write: SecurityManageUserPrivileges.describe('The applications for which user profile data can be written. Absent when the `profile` section is present but grants no privileges.').optional()
+}).meta({ id: 'SecurityWriteProfileGlobalUserPrivileges' })
+export type SecurityWriteProfileGlobalUserPrivileges = z.infer<typeof SecurityWriteProfileGlobalUserPrivileges>
+
+export const SecurityManageRolesIndexPermissions = z.object({
+  names: z.array(z.string()).describe('A list of indices (or index name patterns) that the owners of the role can manage roles for.'),
+  privileges: z.array(z.string()).describe('The index privileges that the managed roles are allowed to grant on the specified indices.')
+}).meta({ id: 'SecurityManageRolesIndexPermissions' })
+export type SecurityManageRolesIndexPermissions = z.infer<typeof SecurityManageRolesIndexPermissions>
+
+export const SecurityManageRolesPrivileges = z.object({
+  indices: z.array(SecurityManageRolesIndexPermissions)
+}).meta({ id: 'SecurityManageRolesPrivileges' })
+export type SecurityManageRolesPrivileges = z.infer<typeof SecurityManageRolesPrivileges>
+
+export const SecurityManageRolesGlobalUserPrivileges = z.object({
+  manage: SecurityManageRolesPrivileges.describe('The index-scoped role management privileges. Absent when the `role` section is present but grants no privileges.').optional()
+}).meta({ id: 'SecurityManageRolesGlobalUserPrivileges' })
+export type SecurityManageRolesGlobalUserPrivileges = z.infer<typeof SecurityManageRolesGlobalUserPrivileges>
+
 export const SecurityGlobalPrivilege = z.object({
-  application: SecurityApplicationGlobalUserPrivileges.optional()
+  application: SecurityApplicationGlobalUserPrivileges.optional(),
+  profile: SecurityWriteProfileGlobalUserPrivileges.describe('A privilege that grants the ability to write the `data` and `access` sections of user profiles for the specified applications.').optional(),
+  role: SecurityManageRolesGlobalUserPrivileges.describe('A privilege that grants the ability to manage roles that are scoped to the specified indices.').optional()
 }).meta({ id: 'SecurityGlobalPrivilege' })
 export type SecurityGlobalPrivilege = z.infer<typeof SecurityGlobalPrivilege>
 

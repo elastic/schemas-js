@@ -10,18 +10,18 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/alerting-v2.post-alerting-v2-alerts-alert-id-deactivate.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/alerting-v2.post-alerting-v2-alerts-id-tag.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
-export const post_alerting_v2_alerts_alert_id_deactivateDefinitions: KbApiDefinition[] = [
+export const post_alerting_v2_alerts_id_tagDefinitions: KbApiDefinition[] = [
   {
-    name: 'post-alerting-v2-alerts-alert-id-deactivate',
+    name: 'post-alerting-v2-alerts-id-tag',
     namespace: 'alerting-v2',
-    description: 'Deactivate an alert episode',
+    description: 'Tag an alert episode',
     method: 'POST',
-    path: '/api/alerting/v2/alerts/{alert_id}/_deactivate',
+    path: '/api/alerting/v2/alerts/{id}/_tag',
     destructive: true,
     readOnly: false,
     input: _inputSchema,

@@ -13,7 +13,7 @@ import { InferenceRegionPolicy } from './inference.put_region_policy.js'
 export const InferenceEmbeddingContentType = z.enum(['text', 'image', 'audio', 'video', 'pdf']).meta({ id: 'InferenceEmbeddingContentType' })
 export type InferenceEmbeddingContentType = z.infer<typeof InferenceEmbeddingContentType>
 
-export const InferenceEmbeddingContentFormat = z.enum(['text', 'base64']).meta({ id: 'InferenceEmbeddingContentFormat' })
+export const InferenceEmbeddingContentFormat = z.enum(['text', 'base64', 'url']).meta({ id: 'InferenceEmbeddingContentFormat' })
 export type InferenceEmbeddingContentFormat = z.infer<typeof InferenceEmbeddingContentFormat>
 
 export const InferenceAdaptiveAllocations = z.object({

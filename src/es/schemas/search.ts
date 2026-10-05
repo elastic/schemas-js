@@ -265,7 +265,7 @@ export type SearchInnerHits = z.infer<typeof SearchInnerHits>
 export const InferenceString = z.object({
   type: z.lazy(() => InferenceEmbeddingContentType).describe('The type of data that the value represents.'),
   format: z.union([z.lazy(() => InferenceEmbeddingContentFormat), z.null()]).describe('The format of the data. If null, the default data format for the given type is used.').optional(),
-  value: z.string().describe('String which may be raw text, or the string representation of some other data such as an image in base64.')
+  value: z.string().describe('String which may be raw text, the string representation of some other data such as an image in base64, or a URL that points to the data.')
 }).meta({ id: 'InferenceString' })
 export type InferenceString = z.infer<typeof InferenceString>
 

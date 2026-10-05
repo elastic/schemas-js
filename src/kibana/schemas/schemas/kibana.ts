@@ -22,7 +22,7 @@ export const Kibana_HTTP_APIs_action_message_response = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_action_message_response' })
 export type Kibana_HTTP_APIs_action_message_response = z.infer<typeof Kibana_HTTP_APIs_action_message_response>
 
-export const Kibana_HTTP_APIs_alerting_action_policy_grouping_mode = z.union([z.enum(['per_episode']), z.enum(['all']), z.enum(['per_field'])]).meta({ id: 'Kibana_HTTP_APIs_alerting_action_policy_grouping_mode' })
+export const Kibana_HTTP_APIs_alerting_action_policy_grouping_mode = z.union([z.enum(['per_alert']), z.enum(['all']), z.enum(['per_field'])]).meta({ id: 'Kibana_HTTP_APIs_alerting_action_policy_grouping_mode' })
 export type Kibana_HTTP_APIs_alerting_action_policy_grouping_mode = z.infer<typeof Kibana_HTTP_APIs_alerting_action_policy_grouping_mode>
 
 export const Kibana_HTTP_APIs_alerting_action_policy_throttle = z.object({
