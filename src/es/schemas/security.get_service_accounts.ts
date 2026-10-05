@@ -56,8 +56,9 @@ export const SecurityGetServiceAccountsRequest = z.object({
 export type SecurityGetServiceAccountsRequest = z.infer<typeof SecurityGetServiceAccountsRequest>
 
 export const SecurityGetServiceAccountsUserManagedServiceAccount = z.object({
-  roles: z.array(z.string()).describe('The names of the roles granted to the account, as they were given when it was created. They are resolved when the account authenticates.'),
-  enabled: z.boolean().describe('Whether the account can authenticate.')
+  roles: z.array(z.string()).describe('The names of the roles granted to the account, as sent on the last PUT of the account. They are resolved when the account authenticates.'),
+  enabled: z.boolean().describe('Whether the account can authenticate.'),
+  description: z.string().describe('A free-text description of the account, as sent on the last PUT of the account. It has no meaning to Elasticsearch. Absent when the account has no description.').optional()
 }).meta({ id: 'SecurityGetServiceAccountsUserManagedServiceAccount' })
 export type SecurityGetServiceAccountsUserManagedServiceAccount = z.infer<typeof SecurityGetServiceAccountsUserManagedServiceAccount>
 

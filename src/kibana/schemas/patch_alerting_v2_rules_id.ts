@@ -28,7 +28,7 @@ export const Kibana_HTTP_APIs_alerting_update_rule = z.object({
   schedule: z.object({
     every: z.string().optional(),
     lookback: z.string().optional()
-  }).nullable().optional(),
+  }).optional(),
   state_transition: Kibana_HTTP_APIs_alerting_rule_state_transition.nullable().optional(),
   time_field: z.string().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_update_rule' })

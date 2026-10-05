@@ -10,18 +10,18 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/alerting-v2.post-alerting-v2-alerts-alert-id-ack.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/alerting-v2.post-alerting-v2-alerts-id-assign.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
-export const post_alerting_v2_alerts_alert_id_ackDefinitions: KbApiDefinition[] = [
+export const post_alerting_v2_alerts_id_assignDefinitions: KbApiDefinition[] = [
   {
-    name: 'post-alerting-v2-alerts-alert-id-ack',
+    name: 'post-alerting-v2-alerts-id-assign',
     namespace: 'alerting-v2',
-    description: 'Acknowledge an alert episode',
+    description: 'Assign an alert episode to a user',
     method: 'POST',
-    path: '/api/alerting/v2/alerts/{alert_id}/_ack',
+    path: '/api/alerting/v2/alerts/{id}/_assign',
     destructive: true,
     readOnly: false,
     input: _inputSchema,

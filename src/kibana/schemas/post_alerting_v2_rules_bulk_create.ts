@@ -30,7 +30,7 @@ export const Kibana_HTTP_APIs_alerting_bulk_create_rule_item = z.object({
 export type Kibana_HTTP_APIs_alerting_bulk_create_rule_item = z.infer<typeof Kibana_HTTP_APIs_alerting_bulk_create_rule_item>
 
 export const Kibana_HTTP_APIs_alerting_bulk_create_rules_request = z.object({
-  rules: z.array(Kibana_HTTP_APIs_alerting_bulk_create_rule_item)
+  items: z.array(Kibana_HTTP_APIs_alerting_bulk_create_rule_item)
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_bulk_create_rules_request' })
 export type Kibana_HTTP_APIs_alerting_bulk_create_rules_request = z.infer<typeof Kibana_HTTP_APIs_alerting_bulk_create_rules_request>
 

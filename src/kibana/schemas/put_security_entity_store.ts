@@ -13,6 +13,10 @@
 import { z } from 'zod'
 
 export const PutSecurityEntityStoreRequest = z.object({
+  historySnapshot: z.object({
+    frequency: z.string().optional(),
+    retentionDays: z.number().optional()
+  }).optional(),
   logExtraction: z.object({
     additionalIndexPatterns: z.array(z.string()).nullable().optional(),
     delay: z.string().nullable().optional(),
@@ -25,6 +29,6 @@ export const PutSecurityEntityStoreRequest = z.object({
     maxLogsPerWindow: z.number().nullable().optional(),
     maxLogsPerWindowCapBehavior: z.enum(['defer', 'drop']).nullable().optional(),
     maxTimeWindowSize: z.string().nullable().optional()
-  })
+  }).optional()
 }).meta({ id: 'PutSecurityEntityStoreRequest' })
 export type PutSecurityEntityStoreRequest = z.infer<typeof PutSecurityEntityStoreRequest>
