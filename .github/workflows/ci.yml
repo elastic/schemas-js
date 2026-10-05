@@ -196,6 +196,8 @@ jobs:
 
       - name: Test elastic/cli
         working-directory: cli
+        env:
+          NODE_OPTIONS: --test-isolation=none
         run: npm test
 
   ci:
