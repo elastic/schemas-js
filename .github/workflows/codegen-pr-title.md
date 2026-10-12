@@ -20,7 +20,7 @@ safe-outputs:
 
 # Describe the codegen PR
 
-Find the open pull request in ${{ github.repository }} whose head branch is `codegen/update`. If none exists, stop.
+Find the open pull request in ${{ github.repository }} whose head branch is `codegen/update` **and whose head repository is `${{ github.repository }}`**. If none exists, stop.
 
 Read the PR diff. Files under `src/es/`, `src/cloud/`, and `src/kibana/` are generated API schemas. Classify the change using the most severe category that applies:
 
