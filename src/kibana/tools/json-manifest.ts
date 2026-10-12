@@ -105,6 +105,8 @@ export const kibanaJsonManifest: readonly string[] = [
   'alerting-v2.delete-alerting-v2-rules-id.response.json',
   'alerting-v2.get-alerting-v2-action-policies-id.request.json',
   'alerting-v2.get-alerting-v2-action-policies-id.response.json',
+  'alerting-v2.get-alerting-v2-action-policies.request.json',
+  'alerting-v2.get-alerting-v2-action-policies.response.json',
   'alerting-v2.get-alerting-v2-execution-history-action-policies.request.json',
   'alerting-v2.get-alerting-v2-execution-history-action-policies.response.json',
   'alerting-v2.get-alerting-v2-execution-history-rules.request.json',

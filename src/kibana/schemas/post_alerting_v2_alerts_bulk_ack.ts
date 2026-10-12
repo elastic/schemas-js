@@ -12,14 +12,14 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Kibana_HTTP_APIs_alerting_bulk_ack_episodes_item = z.object({
+export const Kibana_HTTP_APIs_alerting_bulk_ack_alerts_item = z.object({
   alert_id: z.string()
-}).meta({ id: 'Kibana_HTTP_APIs_alerting_bulk_ack_episodes_item' })
-export type Kibana_HTTP_APIs_alerting_bulk_ack_episodes_item = z.infer<typeof Kibana_HTTP_APIs_alerting_bulk_ack_episodes_item>
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_bulk_ack_alerts_item' })
+export type Kibana_HTTP_APIs_alerting_bulk_ack_alerts_item = z.infer<typeof Kibana_HTTP_APIs_alerting_bulk_ack_alerts_item>
 
-export const Kibana_HTTP_APIs_alerting_bulk_ack_episodes_request = z.object({
-  items: z.array(Kibana_HTTP_APIs_alerting_bulk_ack_episodes_item)
-}).meta({ id: 'Kibana_HTTP_APIs_alerting_bulk_ack_episodes_request' })
-export type Kibana_HTTP_APIs_alerting_bulk_ack_episodes_request = z.infer<typeof Kibana_HTTP_APIs_alerting_bulk_ack_episodes_request>
+export const Kibana_HTTP_APIs_alerting_bulk_ack_alerts_request = z.object({
+  items: z.array(Kibana_HTTP_APIs_alerting_bulk_ack_alerts_item)
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_bulk_ack_alerts_request' })
+export type Kibana_HTTP_APIs_alerting_bulk_ack_alerts_request = z.infer<typeof Kibana_HTTP_APIs_alerting_bulk_ack_alerts_request>
 
 export { Kibana_HTTP_APIs_alerting_bulk_operation_response } from './schemas/kibana.js'

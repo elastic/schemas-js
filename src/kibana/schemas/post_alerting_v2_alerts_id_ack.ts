@@ -12,7 +12,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Kibana_HTTP_APIs_alerting_new_ack_episode_action = z.object({
+export const Kibana_HTTP_APIs_alerting_new_ack_alert_action = z.object({
 
-}).meta({ id: 'Kibana_HTTP_APIs_alerting_new_ack_episode_action' })
-export type Kibana_HTTP_APIs_alerting_new_ack_episode_action = z.infer<typeof Kibana_HTTP_APIs_alerting_new_ack_episode_action>
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_new_ack_alert_action' })
+export type Kibana_HTTP_APIs_alerting_new_ack_alert_action = z.infer<typeof Kibana_HTTP_APIs_alerting_new_ack_alert_action>

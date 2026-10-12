@@ -874,6 +874,25 @@
     }
   },
   {
+    "id": "alerting-v2.get-alerting-v2-action-policies",
+    "name": "get-alerting-v2-action-policies",
+    "namespace": "alerting-v2",
+    "description": "List action policies",
+    "namespaceFile": "alerting-v2.get-alerting-v2-action-policies",
+    "destructive": false,
+    "readOnly": true,
+    "availability": {
+      "stack": {
+        "stability": "experimental",
+        "since": "9.5.0"
+      },
+      "serverless": {
+        "stability": "experimental",
+        "since": "9.5.0"
+      }
+    }
+  },
+  {
     "id": "alerting-v2.get-alerting-v2-action-policies-id",
     "name": "get-alerting-v2-action-policies-id",
     "namespace": "alerting-v2",

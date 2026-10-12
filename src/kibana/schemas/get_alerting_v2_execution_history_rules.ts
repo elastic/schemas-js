@@ -16,14 +16,14 @@ export const Kibana_HTTP_APIs_alerting_rule_execution = z.object({
   ended_at: z.string(),
   error: z.object({
     message: z.string(),
-    stack_trace: z.string().nullable()
-  }).nullable(),
+    stack_trace: z.string().optional()
+  }).optional(),
   id: z.string(),
   outcome: z.enum(['success', 'failure']),
-  reason: z.string().nullable(),
+  reason: z.string().optional(),
   rule: z.object({
     id: z.string(),
-    version: z.number().nullable()
+    version: z.number().optional()
   }),
   space_id: z.string(),
   started_at: z.string(),

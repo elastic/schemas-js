@@ -847,6 +847,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/get_alerting_rules_find.ts') as Record<string, unknown>
       return mod['get_alerting_rules_findDefinitions'] as KbApiDefinition[]
     }
+    case 'get_alerting_v2_action_policies': {
+      const mod = await import('./apis/get_alerting_v2_action_policies.ts') as Record<string, unknown>
+      return mod['get_alerting_v2_action_policiesDefinitions'] as KbApiDefinition[]
+    }
     case 'get_alerting_v2_action_policies_id': {
       const mod = await import('./apis/get_alerting_v2_action_policies_id.ts') as Record<string, unknown>
       return mod['get_alerting_v2_action_policies_idDefinitions'] as KbApiDefinition[]

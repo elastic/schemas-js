@@ -11,13 +11,12 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Kibana_HTTP_APIs_alerting_action_policy_destination, Kibana_HTTP_APIs_alerting_action_policy_grouping_mode, Kibana_HTTP_APIs_alerting_action_policy_throttle } from './schemas/kibana.js'
+import { Kibana_HTTP_APIs_alerting_action_policy_destination, Kibana_HTTP_APIs_alerting_action_policy_grouping, Kibana_HTTP_APIs_alerting_action_policy_throttle } from './schemas/kibana.js'
 
 export const Kibana_HTTP_APIs_alerting_update_action_policy = z.object({
-  description: z.string().optional(),
+  description: z.string().nullable().optional(),
   destinations: z.array(Kibana_HTTP_APIs_alerting_action_policy_destination).optional(),
-  group_by: z.array(z.string()).nullable().optional(),
-  grouping_mode: Kibana_HTTP_APIs_alerting_action_policy_grouping_mode.nullable().optional(),
+  grouping: Kibana_HTTP_APIs_alerting_action_policy_grouping.nullable().optional(),
   matcher: z.object({
     expression: z.string().nullable().optional(),
     tags: z.array(z.string()).nullable().optional()
@@ -29,7 +28,14 @@ export type Kibana_HTTP_APIs_alerting_update_action_policy = z.infer<typeof Kiba
 
 export { Kibana_HTTP_APIs_alerting_action_policy_response } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_actor } from './schemas/kibana.js'
-export { Kibana_HTTP_APIs_alerting_action_policy_grouping_mode } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_action_policy_throttle } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_action_policy_throttle_every_time } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_action_policy_throttle_time_interval } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_action_policy_throttle_per_status_interval } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_action_policy_throttle_on_status_change } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_action_policy_grouping } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_action_policy_grouping_per_field } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_action_policy_grouping_all } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_action_policy_grouping_per_alert } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_action_policy_destination } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_workflow_action_policy_destination } from './schemas/kibana.js'
-export { Kibana_HTTP_APIs_alerting_action_policy_throttle } from './schemas/kibana.js'

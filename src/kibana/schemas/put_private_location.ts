@@ -13,7 +13,8 @@
 import { z } from 'zod'
 
 export const PutPrivateLocationRequest = z.object({
-  label: z.string()
+  agentPolicyId: z.string().optional(),
+  label: z.string().optional()
 }).meta({ id: 'PutPrivateLocationRequest' })
 export type PutPrivateLocationRequest = z.infer<typeof PutPrivateLocationRequest>
 

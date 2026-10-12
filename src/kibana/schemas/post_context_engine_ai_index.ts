@@ -39,6 +39,7 @@ export const PostContextEngineAiIndexRequest = z.object({
     })]).optional()
   }).optional(),
   id: z.string(),
+  memory_enabled: z.boolean().optional(),
   sources: z.array(z.union([z.object({
     type: z.enum(['esql']),
     value: z.string()
