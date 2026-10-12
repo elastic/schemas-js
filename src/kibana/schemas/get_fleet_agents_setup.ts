@@ -14,6 +14,7 @@ import { z } from 'zod'
 
 export const GetFleetAgentsSetupResponse = z.object({
   is_action_secrets_storage_enabled: z.boolean().optional(),
+  is_fips_enabled: z.boolean().optional(),
   is_secrets_storage_enabled: z.boolean().optional(),
   is_space_awareness_enabled: z.boolean().optional(),
   is_ssl_secrets_storage_enabled: z.boolean().optional(),

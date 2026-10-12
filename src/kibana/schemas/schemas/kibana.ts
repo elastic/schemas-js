@@ -22,14 +22,43 @@ export const Kibana_HTTP_APIs_action_message_response = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_action_message_response' })
 export type Kibana_HTTP_APIs_action_message_response = z.infer<typeof Kibana_HTTP_APIs_action_message_response>
 
-export const Kibana_HTTP_APIs_alerting_action_policy_grouping_mode = z.union([z.enum(['per_alert']), z.enum(['all']), z.enum(['per_field'])]).meta({ id: 'Kibana_HTTP_APIs_alerting_action_policy_grouping_mode' })
-export type Kibana_HTTP_APIs_alerting_action_policy_grouping_mode = z.infer<typeof Kibana_HTTP_APIs_alerting_action_policy_grouping_mode>
+export const Kibana_HTTP_APIs_alerting_action_policy_grouping_all = z.object({
+  mode: z.enum(['all'])
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_action_policy_grouping_all' })
+export type Kibana_HTTP_APIs_alerting_action_policy_grouping_all = z.infer<typeof Kibana_HTTP_APIs_alerting_action_policy_grouping_all>
 
-export const Kibana_HTTP_APIs_alerting_action_policy_throttle = z.object({
-  interval: z.string().nullable().optional(),
-  strategy: z.union([z.enum(['on_status_change']), z.enum(['per_status_interval']), z.enum(['time_interval']), z.enum(['every_time'])]).optional()
-}).meta({ id: 'Kibana_HTTP_APIs_alerting_action_policy_throttle' })
-export type Kibana_HTTP_APIs_alerting_action_policy_throttle = z.infer<typeof Kibana_HTTP_APIs_alerting_action_policy_throttle>
+export const Kibana_HTTP_APIs_alerting_action_policy_grouping_per_alert = z.object({
+  mode: z.enum(['per_alert'])
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_action_policy_grouping_per_alert' })
+export type Kibana_HTTP_APIs_alerting_action_policy_grouping_per_alert = z.infer<typeof Kibana_HTTP_APIs_alerting_action_policy_grouping_per_alert>
+
+export const Kibana_HTTP_APIs_alerting_action_policy_grouping_per_field = z.object({
+  fields: z.array(z.string()),
+  mode: z.enum(['per_field'])
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_action_policy_grouping_per_field' })
+export type Kibana_HTTP_APIs_alerting_action_policy_grouping_per_field = z.infer<typeof Kibana_HTTP_APIs_alerting_action_policy_grouping_per_field>
+
+export const Kibana_HTTP_APIs_alerting_action_policy_throttle_every_time = z.object({
+  strategy: z.enum(['every_time'])
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_action_policy_throttle_every_time' })
+export type Kibana_HTTP_APIs_alerting_action_policy_throttle_every_time = z.infer<typeof Kibana_HTTP_APIs_alerting_action_policy_throttle_every_time>
+
+export const Kibana_HTTP_APIs_alerting_action_policy_throttle_on_status_change = z.object({
+  strategy: z.enum(['on_status_change'])
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_action_policy_throttle_on_status_change' })
+export type Kibana_HTTP_APIs_alerting_action_policy_throttle_on_status_change = z.infer<typeof Kibana_HTTP_APIs_alerting_action_policy_throttle_on_status_change>
+
+export const Kibana_HTTP_APIs_alerting_action_policy_throttle_per_status_interval = z.object({
+  interval: z.string(),
+  strategy: z.enum(['per_status_interval'])
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_action_policy_throttle_per_status_interval' })
+export type Kibana_HTTP_APIs_alerting_action_policy_throttle_per_status_interval = z.infer<typeof Kibana_HTTP_APIs_alerting_action_policy_throttle_per_status_interval>
+
+export const Kibana_HTTP_APIs_alerting_action_policy_throttle_time_interval = z.object({
+  interval: z.string(),
+  strategy: z.enum(['time_interval'])
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_action_policy_throttle_time_interval' })
+export type Kibana_HTTP_APIs_alerting_action_policy_throttle_time_interval = z.infer<typeof Kibana_HTTP_APIs_alerting_action_policy_throttle_time_interval>
 
 export const Kibana_HTTP_APIs_alerting_actor = z.object({
   profile_uid: z.string().nullable()
@@ -94,9 +123,12 @@ export const Kibana_HTTP_APIs_alerting_rule_grouping = z.object({
 export type Kibana_HTTP_APIs_alerting_rule_grouping = z.infer<typeof Kibana_HTTP_APIs_alerting_rule_grouping>
 
 export const Kibana_HTTP_APIs_alerting_rule_metadata = z.object({
-  builder_type: z.string().optional(),
+  builder: z.object({
+    type: z.string()
+  }).optional(),
   description: z.string().optional(),
   name: z.string(),
+  routing_tags: z.array(z.string()).optional(),
   tags: z.array(z.string()).optional()
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_rule_metadata' })
 export type Kibana_HTTP_APIs_alerting_rule_metadata = z.infer<typeof Kibana_HTTP_APIs_alerting_rule_metadata>
@@ -2643,6 +2675,12 @@ export const Kibana_Dashboards_API_xyXDateHistogram = z.object({
 }).meta({ id: 'Kibana_Dashboards_API_xyXDateHistogram' })
 export type Kibana_Dashboards_API_xyXDateHistogram = z.infer<typeof Kibana_Dashboards_API_xyXDateHistogram>
 
+export const Kibana_HTTP_APIs_alerting_action_policy_grouping = z.discriminatedUnion('mode', [Kibana_HTTP_APIs_alerting_action_policy_grouping_per_alert, Kibana_HTTP_APIs_alerting_action_policy_grouping_all, Kibana_HTTP_APIs_alerting_action_policy_grouping_per_field]).meta({ id: 'Kibana_HTTP_APIs_alerting_action_policy_grouping' })
+export type Kibana_HTTP_APIs_alerting_action_policy_grouping = z.infer<typeof Kibana_HTTP_APIs_alerting_action_policy_grouping>
+
+export const Kibana_HTTP_APIs_alerting_action_policy_throttle = z.discriminatedUnion('strategy', [Kibana_HTTP_APIs_alerting_action_policy_throttle_on_status_change, Kibana_HTTP_APIs_alerting_action_policy_throttle_per_status_interval, Kibana_HTTP_APIs_alerting_action_policy_throttle_time_interval, Kibana_HTTP_APIs_alerting_action_policy_throttle_every_time]).meta({ id: 'Kibana_HTTP_APIs_alerting_action_policy_throttle' })
+export type Kibana_HTTP_APIs_alerting_action_policy_throttle = z.infer<typeof Kibana_HTTP_APIs_alerting_action_policy_throttle>
+
 export const Kibana_HTTP_APIs_alerting_rule_query = z.object({
   base: z.string(),
   breach: Kibana_HTTP_APIs_alerting_rule_breach.optional()
@@ -3781,10 +3819,19 @@ export type Kibana_HTTP_APIs_visTermsRankByCustomCountOperation = z.infer<typeof
 export const Kibana_HTTP_APIs_visTermsRankByCustomDirection = Kibana_HTTP_APIs_visApiDirection.meta({ id: 'Kibana_HTTP_APIs_visTermsRankByCustomDirection' })
 export type Kibana_HTTP_APIs_visTermsRankByCustomDirection = z.infer<typeof Kibana_HTTP_APIs_visTermsRankByCustomDirection>
 
+export const Kibana_HTTP_APIs_visTermsRankByCustomLastValueOperation = z.object({
+  direction: Kibana_HTTP_APIs_visApiDirection,
+  field: z.string(),
+  operation: z.enum(['last_value']),
+  time_field: z.string().optional(),
+  type: z.enum(['custom'])
+}).meta({ id: 'Kibana_HTTP_APIs_visTermsRankByCustomLastValueOperation' })
+export type Kibana_HTTP_APIs_visTermsRankByCustomLastValueOperation = z.infer<typeof Kibana_HTTP_APIs_visTermsRankByCustomLastValueOperation>
+
 export const Kibana_HTTP_APIs_visTermsRankByCustomOperation = z.object({
   direction: Kibana_HTTP_APIs_visApiDirection,
   field: z.string(),
-  operation: z.enum(['min', 'max', 'average', 'median', 'standard_deviation', 'unique_count', 'sum', 'last_value']),
+  operation: z.enum(['min', 'max', 'average', 'median', 'standard_deviation', 'unique_count', 'sum']),
   type: z.enum(['custom'])
 }).meta({ id: 'Kibana_HTTP_APIs_visTermsRankByCustomOperation' })
 export type Kibana_HTTP_APIs_visTermsRankByCustomOperation = z.infer<typeof Kibana_HTTP_APIs_visTermsRankByCustomOperation>
@@ -5018,7 +5065,7 @@ export const Kibana_HTTP_APIs_alerting_new_rule = z.object({
   query: Kibana_HTTP_APIs_alerting_rule_query,
   recovery: Kibana_HTTP_APIs_alerting_rule_recovery.optional(),
   schedule: Kibana_HTTP_APIs_alerting_rule_schedule,
-  state_transition: Kibana_HTTP_APIs_alerting_rule_state_transition.nullable().optional(),
+  state_transition: Kibana_HTTP_APIs_alerting_rule_state_transition.optional(),
   time_field: z.string().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_new_rule' })
 export type Kibana_HTTP_APIs_alerting_new_rule = z.infer<typeof Kibana_HTTP_APIs_alerting_new_rule>
@@ -5031,7 +5078,18 @@ export const Kibana_HTTP_APIs_alerting_rule_response = z.object({
   grouping: Kibana_HTTP_APIs_alerting_rule_grouping.optional(),
   id: z.string(),
   kind: z.union([z.enum(['alert']), z.enum(['signal'])]),
-  metadata: Kibana_HTTP_APIs_alerting_rule_metadata,
+  metadata: z.object({
+    builder: z.object({
+      type: z.string()
+    }).optional(),
+    description: z.string().optional(),
+    name: z.string(),
+    routing_tags: z.array(z.string()).optional(),
+    tags: z.array(z.string()).optional(),
+    template: z.object({
+      id: z.string()
+    }).optional()
+  }),
   no_data: Kibana_HTTP_APIs_alerting_rule_no_data.optional(),
   query: Kibana_HTTP_APIs_alerting_rule_query,
   recovery: Kibana_HTTP_APIs_alerting_rule_recovery.optional(),
@@ -5047,22 +5105,18 @@ export type Kibana_HTTP_APIs_alerting_rule_response = z.infer<typeof Kibana_HTTP
 export const Kibana_HTTP_APIs_alerting_action_policy_response = z.object({
   created_at: z.string(),
   created_by: Kibana_HTTP_APIs_alerting_actor.nullable(),
-  description: z.string(),
+  description: z.string().optional(),
   destinations: z.array(Kibana_HTTP_APIs_alerting_action_policy_destination),
   enabled: z.boolean(),
-  group_by: z.array(z.string()).nullable(),
-  grouping_mode: Kibana_HTTP_APIs_alerting_action_policy_grouping_mode.nullable(),
+  grouping: Kibana_HTTP_APIs_alerting_action_policy_grouping.optional(),
   id: z.string(),
   matcher: z.object({
-    expression: z.string().nullable().optional(),
-    tags: z.array(z.string()).nullable().optional()
-  }).nullable(),
+    expression: z.string().optional(),
+    tags: z.array(z.string()).optional()
+  }).optional(),
   name: z.string(),
-  snoozed_until: z.string().nullable(),
-  throttle: z.object({
-    interval: z.string().nullable(),
-    strategy: z.union([z.enum(['on_status_change']), z.enum(['per_status_interval']), z.enum(['time_interval']), z.enum(['every_time'])]).optional()
-  }).nullable(),
+  snoozed_until: z.string().optional(),
+  throttle: Kibana_HTTP_APIs_alerting_action_policy_throttle.optional(),
   updated_at: z.string(),
   updated_by: Kibana_HTTP_APIs_alerting_actor.nullable()
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_action_policy_response' })
@@ -5666,7 +5720,7 @@ export const Kibana_HTTP_APIs_visTermsOperation = z.object({
   other_bucket: z.object({
     include_documents_without_field: z.boolean()
   }).optional(),
-  rank_by: z.union([Kibana_HTTP_APIs_visTermsRankByAlphabetical, Kibana_HTTP_APIs_visTermsRankByRare, Kibana_HTTP_APIs_visTermsRankBySignificant, Kibana_HTTP_APIs_visTermsRankByMetric, Kibana_HTTP_APIs_visTermsRankByCustomOperation, Kibana_HTTP_APIs_visTermsRankByCustomCountOperation, Kibana_HTTP_APIs_visTermsRankByPercentileOperation, Kibana_HTTP_APIs_visTermsRankByPercentileRankOperation]).optional()
+  rank_by: z.union([Kibana_HTTP_APIs_visTermsRankByAlphabetical, Kibana_HTTP_APIs_visTermsRankByRare, Kibana_HTTP_APIs_visTermsRankBySignificant, Kibana_HTTP_APIs_visTermsRankByMetric, Kibana_HTTP_APIs_visTermsRankByCustomOperation, Kibana_HTTP_APIs_visTermsRankByCustomLastValueOperation, Kibana_HTTP_APIs_visTermsRankByCustomCountOperation, Kibana_HTTP_APIs_visTermsRankByPercentileOperation, Kibana_HTTP_APIs_visTermsRankByPercentileRankOperation]).optional()
 }).meta({ id: 'Kibana_HTTP_APIs_visTermsOperation' })
 export type Kibana_HTTP_APIs_visTermsOperation = z.infer<typeof Kibana_HTTP_APIs_visTermsOperation>
 

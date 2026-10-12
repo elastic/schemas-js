@@ -23,6 +23,8 @@ export const FieldCapsFieldCapability = z.object({
   type: z.string(),
   inference: z.boolean().describe('Whether this field is an inference field, meaning a field that automatically performs inference (for example, `semantic_text` fields), on all indices.').optional(),
   non_inference_indices: z.lazy(() => Indices).describe('The list of indices where this field is not an inference field, or null if all indices have the same definition for the field.').optional(),
+  passthrough: z.boolean().describe('Whether this field is a passthrough source on all indices. This property is present only for field types that support passthrough.').optional(),
+  non_passthrough_indices: z.lazy(() => Indices).describe('The list of indices where this field is not a passthrough source, or null if all indices have the same definition for the field.').optional(),
   metadata_field: z.boolean().describe('Whether this field is registered as a metadata field.').optional(),
   time_series_dimension: z.boolean().describe('Whether this field is used as a time series dimension.').optional(),
   time_series_metric: z.lazy(() => MappingTimeSeriesMetricType).describe('Contains metric type if this fields is used as a time series metrics, absent if the field is not used as metric.').optional(),

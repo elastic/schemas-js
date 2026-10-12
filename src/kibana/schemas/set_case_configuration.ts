@@ -30,7 +30,8 @@ export const Cases_set_case_configuration_request = z.object({
   })).optional(),
   extractObservables: z.boolean().optional(),
   owner: Cases_owner,
-  templates: Cases_templates.optional()
+  templates: Cases_templates.optional(),
+  workflowTags: z.array(z.string()).optional()
 }).meta({ id: 'Cases_set_case_configuration_request' })
 export type Cases_set_case_configuration_request = z.infer<typeof Cases_set_case_configuration_request>
 
@@ -77,7 +78,8 @@ export const SetCaseConfigurationResponse = z.object({
     profile_uid: z.string().optional(),
     username: z.string().nullable()
   }).nullable().optional(),
-  version: z.string().optional()
+  version: z.string().optional(),
+  workflowTags: z.array(z.string()).optional()
 }).meta({ id: 'SetCaseConfigurationResponse' })
 export type SetCaseConfigurationResponse = z.infer<typeof SetCaseConfigurationResponse>
 

@@ -13,6 +13,7 @@
 import { z } from 'zod'
 
 export const PutSecurityEntityStoreRequest = z.object({
+  excludedUserNames: z.array(z.string()).optional(),
   historySnapshot: z.object({
     frequency: z.string().optional(),
     retentionDays: z.number().optional()

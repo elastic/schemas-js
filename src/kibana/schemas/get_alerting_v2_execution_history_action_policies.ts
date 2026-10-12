@@ -21,22 +21,22 @@ export const Kibana_HTTP_APIs_alerting_policy_execution_history_item = z.object(
   dispatched_at: z.string(),
   error: z.object({
     message: z.string(),
-    stack_trace: z.string().nullable()
-  }).nullable(),
+    stack_trace: z.string().optional()
+  }).optional(),
   failure_reason: z.enum(['missing_api_key', 'workflow_not_found', 'workflow_disabled', 'schedule_error', 'license_not_supported']).optional(),
   outcome: z.enum(['success', 'throttled', 'failure']),
   policy: z.object({
     id: z.string(),
-    name: z.string().nullable().optional()
+    name: z.string().optional()
   }),
   rule_count: z.number(),
   rules: z.array(z.object({
     id: z.string(),
-    name: z.string().nullable().optional()
+    name: z.string().optional()
   })),
   workflows: z.array(z.object({
     id: z.string(),
-    name: z.string().nullable().optional()
+    name: z.string().optional()
   }))
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_policy_execution_history_item' })
 export type Kibana_HTTP_APIs_alerting_policy_execution_history_item = z.infer<typeof Kibana_HTTP_APIs_alerting_policy_execution_history_item>
@@ -49,7 +49,7 @@ export const Kibana_HTTP_APIs_alerting_policy_execution_history_response = z.obj
     is_truncated: z.boolean(),
     policies: z.number(),
     rules: z.number()
-  }).nullable(),
+  }).optional(),
   total: z.number()
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_policy_execution_history_response' })
 export type Kibana_HTTP_APIs_alerting_policy_execution_history_response = z.infer<typeof Kibana_HTTP_APIs_alerting_policy_execution_history_response>

@@ -56,7 +56,8 @@ export const GetCaseConfigurationResponse = z.array(z.object({
     profile_uid: z.string().optional(),
     username: z.string().nullable()
   }).nullable().optional(),
-  version: z.string().optional()
+  version: z.string().optional(),
+  workflowTags: z.array(z.string()).optional()
 })).meta({ id: 'GetCaseConfigurationResponse' })
 export type GetCaseConfigurationResponse = z.infer<typeof GetCaseConfigurationResponse>
 

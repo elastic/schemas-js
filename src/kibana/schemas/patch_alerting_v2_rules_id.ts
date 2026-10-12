@@ -11,25 +11,70 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Kibana_HTTP_APIs_alerting_rule_artifact, Kibana_HTTP_APIs_alerting_rule_grouping, Kibana_HTTP_APIs_alerting_rule_no_data, Kibana_HTTP_APIs_alerting_rule_query, Kibana_HTTP_APIs_alerting_rule_recovery, Kibana_HTTP_APIs_alerting_rule_state_transition } from './schemas/kibana.js'
+import { Kibana_HTTP_APIs_alerting_rule_artifact, Kibana_HTTP_APIs_alerting_rule_no_data, Kibana_HTTP_APIs_alerting_rule_recovery } from './schemas/kibana.js'
+
+export const Kibana_HTTP_APIs_alerting_rule_breach_patch = z.object({
+  segment: z.string().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_rule_breach_patch' })
+export type Kibana_HTTP_APIs_alerting_rule_breach_patch = z.infer<typeof Kibana_HTTP_APIs_alerting_rule_breach_patch>
+
+export const Kibana_HTTP_APIs_alerting_rule_grouping_patch = z.object({
+  fields: z.array(z.string()).optional()
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_rule_grouping_patch' })
+export type Kibana_HTTP_APIs_alerting_rule_grouping_patch = z.infer<typeof Kibana_HTTP_APIs_alerting_rule_grouping_patch>
+
+export const Kibana_HTTP_APIs_alerting_rule_metadata_patch = z.object({
+  builder: z.object({
+    type: z.string()
+  }).nullable().optional(),
+  description: z.string().nullable().optional(),
+  name: z.string().optional(),
+  routing_tags: z.array(z.string()).nullable().optional(),
+  tags: z.array(z.string()).nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_rule_metadata_patch' })
+export type Kibana_HTTP_APIs_alerting_rule_metadata_patch = z.infer<typeof Kibana_HTTP_APIs_alerting_rule_metadata_patch>
+
+export const Kibana_HTTP_APIs_alerting_rule_schedule_patch = z.object({
+  every: z.string().optional(),
+  lookback: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_rule_schedule_patch' })
+export type Kibana_HTTP_APIs_alerting_rule_schedule_patch = z.infer<typeof Kibana_HTTP_APIs_alerting_rule_schedule_patch>
+
+export const Kibana_HTTP_APIs_alerting_rule_state_transition_pending_patch = z.object({
+  count: z.number().nullable().optional(),
+  operator: z.enum(['and', 'or']).nullable().optional(),
+  timeframe: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_rule_state_transition_pending_patch' })
+export type Kibana_HTTP_APIs_alerting_rule_state_transition_pending_patch = z.infer<typeof Kibana_HTTP_APIs_alerting_rule_state_transition_pending_patch>
+
+export const Kibana_HTTP_APIs_alerting_rule_state_transition_recovering_patch = z.object({
+  count: z.number().nullable().optional(),
+  operator: z.enum(['and', 'or']).nullable().optional(),
+  timeframe: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_rule_state_transition_recovering_patch' })
+export type Kibana_HTTP_APIs_alerting_rule_state_transition_recovering_patch = z.infer<typeof Kibana_HTTP_APIs_alerting_rule_state_transition_recovering_patch>
+
+export const Kibana_HTTP_APIs_alerting_rule_query_patch = z.object({
+  base: z.string().optional(),
+  breach: Kibana_HTTP_APIs_alerting_rule_breach_patch.nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_rule_query_patch' })
+export type Kibana_HTTP_APIs_alerting_rule_query_patch = z.infer<typeof Kibana_HTTP_APIs_alerting_rule_query_patch>
+
+export const Kibana_HTTP_APIs_alerting_rule_state_transition_patch = z.object({
+  pending: Kibana_HTTP_APIs_alerting_rule_state_transition_pending_patch.nullable().optional(),
+  recovering: Kibana_HTTP_APIs_alerting_rule_state_transition_recovering_patch.nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_rule_state_transition_patch' })
+export type Kibana_HTTP_APIs_alerting_rule_state_transition_patch = z.infer<typeof Kibana_HTTP_APIs_alerting_rule_state_transition_patch>
 
 export const Kibana_HTTP_APIs_alerting_update_rule = z.object({
   artifacts: z.array(Kibana_HTTP_APIs_alerting_rule_artifact).nullable().optional(),
-  grouping: Kibana_HTTP_APIs_alerting_rule_grouping.nullable().optional(),
-  metadata: z.object({
-    builder_type: z.string().nullable().optional(),
-    description: z.string().optional(),
-    name: z.string().optional(),
-    tags: z.array(z.string()).nullable().optional()
-  }).optional(),
-  no_data: Kibana_HTTP_APIs_alerting_rule_no_data.optional(),
-  query: Kibana_HTTP_APIs_alerting_rule_query.optional(),
-  recovery: Kibana_HTTP_APIs_alerting_rule_recovery.optional(),
-  schedule: z.object({
-    every: z.string().optional(),
-    lookback: z.string().optional()
-  }).optional(),
-  state_transition: Kibana_HTTP_APIs_alerting_rule_state_transition.nullable().optional(),
+  grouping: Kibana_HTTP_APIs_alerting_rule_grouping_patch.nullable().optional(),
+  metadata: Kibana_HTTP_APIs_alerting_rule_metadata_patch.optional(),
+  no_data: Kibana_HTTP_APIs_alerting_rule_no_data.nullable().optional(),
+  query: Kibana_HTTP_APIs_alerting_rule_query_patch.optional(),
+  recovery: Kibana_HTTP_APIs_alerting_rule_recovery.nullable().optional(),
+  schedule: Kibana_HTTP_APIs_alerting_rule_schedule_patch.optional(),
+  state_transition: Kibana_HTTP_APIs_alerting_rule_state_transition_patch.nullable().optional(),
   time_field: z.string().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_update_rule' })
 export type Kibana_HTTP_APIs_alerting_update_rule = z.infer<typeof Kibana_HTTP_APIs_alerting_update_rule>
@@ -52,6 +97,5 @@ export { Kibana_HTTP_APIs_alerting_rule_no_data_alert } from './schemas/kibana.j
 export { Kibana_HTTP_APIs_alerting_rule_no_data_resolve } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_no_data_keep_last } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_no_data_ignore } from './schemas/kibana.js'
-export { Kibana_HTTP_APIs_alerting_rule_metadata } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_grouping } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_artifact } from './schemas/kibana.js'

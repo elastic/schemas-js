@@ -149,6 +149,8 @@ export { DanglingIndicesDeleteDanglingIndexRequest, DanglingIndicesDeleteDanglin
 export { DanglingIndicesImportDanglingIndexRequest, DanglingIndicesImportDanglingIndexResponse } from './dangling_indices.import_dangling_index.js'
 export { DanglingIndicesListDanglingIndicesDanglingIndex, DanglingIndicesListDanglingIndicesRequest, DanglingIndicesListDanglingIndicesResponse } from './dangling_indices.list_dangling_indices.js'
 export { DataRecoveryGetRecoveryPointsRecoveryPoint, DataRecoveryGetRecoveryPointsRequest, DataRecoveryGetRecoveryPointsResponse } from './data_recovery.get_recovery_points.js'
+export { DataRecoveryGetRecoverySourcesRecoverySource, DataRecoveryGetRecoverySourcesRecoverySourceType, DataRecoveryGetRecoverySourcesRequest, DataRecoveryGetRecoverySourcesResponse } from './data_recovery.get_recovery_sources.js'
+export { DataRecoveryGetRpoSeriesRequest, DataRecoveryGetRpoSeriesResponse, DataRecoveryGetRpoSeriesRpoBucket } from './data_recovery.get_rpo_series.js'
 export { DeleteRequest, DeleteResponse } from './delete.js'
 export { DeleteByQueryRequest, DeleteByQueryResponse } from './delete_by_query.js'
 export { DeleteByQueryRethrottleRequest, DeleteByQueryRethrottleResponse } from './delete_by_query_rethrottle.js'

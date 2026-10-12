@@ -11,23 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Security_Osquery_API_Enabled, Security_Osquery_API_MinOsqueryVersion, Security_Osquery_API_ObjectQueries, Security_Osquery_API_PackDescription, Security_Osquery_API_PackInterval, Security_Osquery_API_PackName, Security_Osquery_API_PackPlatform, Security_Osquery_API_PolicyIds, Security_Osquery_API_RRuleScheduleConfig, Security_Osquery_API_ResultType, Security_Osquery_API_ScheduleType, Security_Osquery_API_Shards } from './schemas/security.js'
-
-export const Security_Osquery_API_CreatePacksRequestBody = z.object({
-  description: Security_Osquery_API_PackDescription.optional(),
-  enabled: Security_Osquery_API_Enabled.optional(),
-  interval: Security_Osquery_API_PackInterval.optional(),
-  min_osquery_version: Security_Osquery_API_MinOsqueryVersion.optional(),
-  name: Security_Osquery_API_PackName.optional(),
-  platform: Security_Osquery_API_PackPlatform.optional(),
-  policy_ids: Security_Osquery_API_PolicyIds.optional(),
-  queries: Security_Osquery_API_ObjectQueries.optional(),
-  result_type: Security_Osquery_API_ResultType.optional(),
-  rrule_schedule: Security_Osquery_API_RRuleScheduleConfig.optional(),
-  schedule_type: Security_Osquery_API_ScheduleType.optional(),
-  shards: Security_Osquery_API_Shards.optional()
-}).meta({ id: 'Security_Osquery_API_CreatePacksRequestBody' })
-export type Security_Osquery_API_CreatePacksRequestBody = z.infer<typeof Security_Osquery_API_CreatePacksRequestBody>
+import { Security_Osquery_API_Enabled, Security_Osquery_API_MinOsqueryVersion, Security_Osquery_API_MinOsqueryVersionInput, Security_Osquery_API_ObjectQueries, Security_Osquery_API_ObjectQueriesInput, Security_Osquery_API_PackDescription, Security_Osquery_API_PackInterval, Security_Osquery_API_PackName, Security_Osquery_API_PackPlatform, Security_Osquery_API_PolicyIds, Security_Osquery_API_RRuleScheduleConfig, Security_Osquery_API_ResultType, Security_Osquery_API_ScheduleType, Security_Osquery_API_Shards } from './schemas/security.js'
 
 export const Security_Osquery_API_CreatePacksResponse = z.object({
   data: z.object({
@@ -58,6 +42,22 @@ export const Security_Osquery_API_CreatePacksResponse = z.object({
 }).meta({ id: 'Security_Osquery_API_CreatePacksResponse' })
 export type Security_Osquery_API_CreatePacksResponse = z.infer<typeof Security_Osquery_API_CreatePacksResponse>
 
+export const Security_Osquery_API_CreatePacksRequestBody = z.object({
+  description: Security_Osquery_API_PackDescription.optional(),
+  enabled: Security_Osquery_API_Enabled.optional(),
+  interval: Security_Osquery_API_PackInterval.optional(),
+  min_osquery_version: Security_Osquery_API_MinOsqueryVersionInput.optional(),
+  name: Security_Osquery_API_PackName.optional(),
+  platform: Security_Osquery_API_PackPlatform.optional(),
+  policy_ids: Security_Osquery_API_PolicyIds.optional(),
+  queries: Security_Osquery_API_ObjectQueriesInput.optional(),
+  result_type: Security_Osquery_API_ResultType.optional(),
+  rrule_schedule: Security_Osquery_API_RRuleScheduleConfig.optional(),
+  schedule_type: Security_Osquery_API_ScheduleType.optional(),
+  shards: Security_Osquery_API_Shards.optional()
+}).meta({ id: 'Security_Osquery_API_CreatePacksRequestBody' })
+export type Security_Osquery_API_CreatePacksRequestBody = z.infer<typeof Security_Osquery_API_CreatePacksRequestBody>
+
 export { Security_Osquery_API_ScheduleType } from './schemas/security.js'
 export { Security_Osquery_API_RRuleScheduleConfig } from './schemas/security.js'
 export { Security_Osquery_API_ResultType } from './schemas/security.js'
@@ -81,3 +81,7 @@ export { Security_Osquery_API_PackInterval } from './schemas/security.js'
 export { Security_Osquery_API_Enabled } from './schemas/security.js'
 export { Security_Osquery_API_PackDescription } from './schemas/security.js'
 export { Security_Osquery_API_Shards } from './schemas/security.js'
+export { Security_Osquery_API_ObjectQueriesInput } from './schemas/security.js'
+export { Security_Osquery_API_ObjectQueriesItemInput } from './schemas/security.js'
+export { Security_Osquery_API_PackQueryVersionInput } from './schemas/security.js'
+export { Security_Osquery_API_MinOsqueryVersionInput } from './schemas/security.js'
