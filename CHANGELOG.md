@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.11.0](https://github.com/elastic/schemas-js/compare/v0.10.0...v0.11.0) (2026-10-12)
+
+
+### Features
+
+* **es:** add `data_recovery.get_recovery_sources` and `data_recovery.get_rpo_series` APIs ([#117](https://github.com/elastic/schemas-js/issues/117)) ([7dd0e1c](https://github.com/elastic/schemas-js/commit/7dd0e1c1a8322da713dc6f482996de02b66cece5))
+* **es:** add passthrough and non_passthrough_indices to field_caps response ([7dd0e1c](https://github.com/elastic/schemas-js/commit/7dd0e1c1a8322da713dc6f482996de02b66cece5))
+* **kibana:** add get-alerting-v2-action-policies (list action policies) API ([7dd0e1c](https://github.com/elastic/schemas-js/commit/7dd0e1c1a8322da713dc6f482996de02b66cece5))
+* **kibana:** add new optional fields to cases configuration, context engine AI index, Fleet agents setup, entity store, and synthetics private location APIs ([7dd0e1c](https://github.com/elastic/schemas-js/commit/7dd0e1c1a8322da713dc6f482996de02b66cece5))
+* **kibana:** rename alerting v2 alert action exports from *_episode(s)_* to *_alert(s)_*, and replace action policy group_by/grouping_mode with a grouping discriminated union ([7dd0e1c](https://github.com/elastic/schemas-js/commit/7dd0e1c1a8322da713dc6f482996de02b66cece5))
+
+
+### Bug Fixes
+
+* **kibana:** correct alerting v2 rule, action policy, and execution history schemas for accuracy ([7dd0e1c](https://github.com/elastic/schemas-js/commit/7dd0e1c1a8322da713dc6f482996de02b66cece5))
+* **kibana:** use input schemas for osquery pack create/update request bodies ([7dd0e1c](https://github.com/elastic/schemas-js/commit/7dd0e1c1a8322da713dc6f482996de02b66cece5))
+
 ## [0.10.0](https://github.com/elastic/schemas-js/compare/v0.9.1...v0.10.0) (2026-10-05)
 
 
