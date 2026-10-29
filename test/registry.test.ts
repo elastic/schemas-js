@@ -59,6 +59,11 @@ describe('buildRequest', () => {
     expect(buildRequest(searchDef, { index: 'logs', query: { term: { status: 'active' } } }).body).toEqual({ query: { term: { status: 'active' } } })
   })
 
+  it('sends an x-body-root property as the whole body', () => {
+    const def = { ...searchDef, input: { type: 'object', properties: { id: { 'x-found-in': 'path' }, body: { type: 'object', 'x-found-in': 'body', 'x-body-root': true } } } } as ApiRegistryDefinition
+    expect(buildRequest(def, { body: { title: 'T', tabs: [] } }).body).toEqual({ title: 'T', tabs: [] })
+  })
+
   it('encodes path param values', () => {
     expect(buildRequest(searchDef, { index: 'my index' }).path).toBe('/my%20index/_search')
   })
@@ -74,6 +79,13 @@ describe('buildRequest', () => {
   it('puts ndjson body in bulkBody', () => {
     const req = buildRequest(bulkDef, { operations: ['line1', 'line2'] })
     expect(req.bulkBody).toEqual({ operations: ['line1', 'line2'] })
+    expect(req.body).toBeUndefined()
+  })
+
+  it('sends an x-body-root property as bulkBody for ndjson', () => {
+    const def = { ...bulkDef, input: { type: 'object', properties: { operations: { type: 'array', 'x-found-in': 'body', 'x-body-root': true } } } } as ApiRegistryDefinition
+    const req = buildRequest(def, { operations: ['line1', 'line2'] })
+    expect(req.bulkBody).toEqual(['line1', 'line2'])
     expect(req.body).toBeUndefined()
   })
 
