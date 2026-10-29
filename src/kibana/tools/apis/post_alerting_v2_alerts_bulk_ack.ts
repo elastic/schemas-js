@@ -19,7 +19,7 @@ export const post_alerting_v2_alerts_bulk_ackDefinitions: KbApiDefinition[] = [
   {
     name: 'post-alerting-v2-alerts-bulk-ack',
     namespace: 'alerting-v2',
-    description: 'Bulk acknowledge alert episodes',
+    description: 'Bulk acknowledge alerts',
     method: 'POST',
     path: '/api/alerting/v2/alerts/_bulk_ack',
     destructive: true,

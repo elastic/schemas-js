@@ -11,7 +11,7 @@ import { AcknowledgedResponseBase, Ids } from './_types.js'
 /**
  * Delete an ES|QL view.
  *
- * Deletes a stored ES|QL view.
+ * Deletes a stored ES|QL view. Deleting a reserved view fails.
  */
 export const EsqlDeleteViewRequest = z.object({
   name: z.lazy(() => Ids).describe('The view name to remove.').meta({ found_in: 'path' })

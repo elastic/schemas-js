@@ -32,9 +32,10 @@ export type defender_secrets = z.infer<typeof defender_secrets>
 
 export const Kibana_HTTP_APIs_new_connector: z.ZodTypeAny = z.object({
   connector_type_id: z.string(),
+  is_inbound_events_enabled: z.boolean().optional(),
   name: z.string(),
-  config: z.union([bedrock_config, crowdstrike_config, d3security_config, email_config, gemini_config, resilient_config, index_config, jira_config, genai_azure_config, genai_openai_config, genai_openai_other_config, opsgenie_config, pagerduty_config, sentinelone_config, servicenow_config, servicenow_itom_config, slack_api_config, swimlane_config, thehive_config, tines_config, torq_config, webhook_config, cases_webhook_config, xmatters_config]).optional(),
-  secrets: z.union([bedrock_secrets, crowdstrike_secrets, d3security_secrets, email_secrets, gemini_secrets, resilient_secrets, jira_secrets, defender_secrets, teams_secrets, genai_secrets, opsgenie_secrets, pagerduty_secrets, sentinelone_secrets, servicenow_secrets, slack_api_secrets, swimlane_secrets, thehive_secrets, tines_secrets, torq_secrets, webhook_secrets, cases_webhook_secrets, xmatters_secrets]).optional()
+  config: z.union([bedrock_config.loose(), crowdstrike_config.loose(), d3security_config.loose(), email_config.loose(), gemini_config.loose(), resilient_config.loose(), index_config.loose(), jira_config.loose(), genai_azure_config.loose(), genai_openai_config.loose(), genai_openai_other_config.loose(), opsgenie_config.loose(), sentinelone_config.loose(), servicenow_config.loose(), servicenow_itom_config.loose(), swimlane_config.loose(), thehive_config.loose(), tines_config.loose(), torq_config.loose(), cases_webhook_config.loose(), pagerduty_config.loose(), slack_api_config.loose(), webhook_config.loose(), xmatters_config]).optional(),
+  secrets: z.union([bedrock_secrets.loose(), crowdstrike_secrets.loose(), d3security_secrets.loose(), gemini_secrets.loose(), resilient_secrets.loose(), jira_secrets.loose(), defender_secrets.loose(), teams_secrets.loose(), opsgenie_secrets.loose(), pagerduty_secrets.loose(), sentinelone_secrets.loose(), slack_api_secrets.loose(), thehive_secrets.loose(), tines_secrets.loose(), torq_secrets.loose(), email_secrets.loose(), genai_secrets.loose(), servicenow_secrets.loose(), swimlane_secrets.loose(), webhook_secrets.loose(), cases_webhook_secrets.loose(), xmatters_secrets]).optional()
 }).meta({ id: 'Kibana_HTTP_APIs_new_connector' })
 export type Kibana_HTTP_APIs_new_connector = z.infer<typeof Kibana_HTTP_APIs_new_connector>
 

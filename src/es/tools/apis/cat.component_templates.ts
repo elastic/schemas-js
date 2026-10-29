@@ -19,7 +19,7 @@ export const cat_component_templates_definitions: EsApiDefinition[] = [
   {
     name: 'component-templates',
     namespace: 'cat',
-    description: 'Get component templates.',
+    description: 'Get a compact list of component templates.',
     method: 'GET',
     path: '/_cat/component_templates/{name}',
     destructive: false,

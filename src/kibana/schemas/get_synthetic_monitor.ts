@@ -12,5 +12,5 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const GetSyntheticMonitorResponse = z.object({}).meta({ id: 'GetSyntheticMonitorResponse' })
+export const GetSyntheticMonitorResponse = z.record(z.string(), z.unknown()).meta({ id: 'GetSyntheticMonitorResponse' })
 export type GetSyntheticMonitorResponse = z.infer<typeof GetSyntheticMonitorResponse>

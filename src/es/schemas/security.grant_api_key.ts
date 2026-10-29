@@ -9,7 +9,7 @@ import { z } from 'zod'
 import { DurationLarge, EpochTime, Id, Metadata, Name, Password, Refresh, Username } from './_types.js'
 import { SecurityRoleDescriptor } from './security.js'
 
-export const SecurityGrantApiKeyApiKeyGrantType = z.enum(['access_token', 'password']).meta({ id: 'SecurityGrantApiKeyApiKeyGrantType' })
+export const SecurityGrantApiKeyApiKeyGrantType = z.enum(['access_token', 'password', '_user_managed_service_account']).meta({ id: 'SecurityGrantApiKeyApiKeyGrantType' })
 export type SecurityGrantApiKeyApiKeyGrantType = z.infer<typeof SecurityGrantApiKeyApiKeyGrantType>
 
 export const SecurityGrantApiKeyGrantApiKey = z.object({
@@ -19,6 +19,15 @@ export const SecurityGrantApiKeyGrantApiKey = z.object({
   metadata: z.lazy(() => Metadata).describe('Arbitrary metadata that you want to associate with the API key. It supports nested data structure. Within the `metadata` object, keys beginning with `_` are reserved for system usage.').optional()
 }).meta({ id: 'SecurityGrantApiKeyGrantApiKey' })
 export type SecurityGrantApiKeyGrantApiKey = z.infer<typeof SecurityGrantApiKeyGrantApiKey>
+
+export const SecurityGrantApiKeyGrantApiKeyClientAuthenticationScheme = z.enum(['SharedSecret']).meta({ id: 'SecurityGrantApiKeyGrantApiKeyClientAuthenticationScheme' })
+export type SecurityGrantApiKeyGrantApiKeyClientAuthenticationScheme = z.infer<typeof SecurityGrantApiKeyGrantApiKeyClientAuthenticationScheme>
+
+export const SecurityGrantApiKeyGrantApiKeyClientAuthentication = z.object({
+  scheme: SecurityGrantApiKeyGrantApiKeyClientAuthenticationScheme.describe('The client authentication scheme.'),
+  value: z.string().describe('The client authentication value, which is what normally follows the scheme in the `ES-Client-Authentication` request header.')
+}).meta({ id: 'SecurityGrantApiKeyGrantApiKeyClientAuthentication' })
+export type SecurityGrantApiKeyGrantApiKeyClientAuthentication = z.infer<typeof SecurityGrantApiKeyGrantApiKeyClientAuthentication>
 
 /**
  * Grant an API key.
@@ -32,9 +41,11 @@ export type SecurityGrantApiKeyGrantApiKey = z.infer<typeof SecurityGrantApiKeyG
  * * username and password
  * * Elasticsearch access tokens
  * * JWTs
+ * * service account tokens of user-managed service accounts
  *
  * The user, for whom the authentication credentials is provided, can optionally "run as" (impersonate) another user.
  * In this case, the API key will be created on behalf of the impersonated user.
+ * Run as is not supported with the `_user_managed_service_account` grant type.
  *
  * This API is intended be used by applications that need to create and manage API keys for end users, but cannot guarantee that those users have permission to create API keys on their own behalf.
  * The API keys are created by the Elasticsearch API key service, which is automatically enabled.
@@ -47,11 +58,12 @@ export type SecurityGrantApiKeyGrantApiKey = z.infer<typeof SecurityGrantApiKeyG
 export const SecurityGrantApiKeyRequest = z.object({
   refresh: z.lazy(() => Refresh).describe('If \'true\', Elasticsearch refreshes the affected shards to make this operation visible to search. If \'wait_for\', it waits for a refresh to make this operation visible to search. If \'false\', nothing is done with refreshes.').optional().meta({ found_in: 'query' }),
   api_key: SecurityGrantApiKeyGrantApiKey.describe('The API key.').meta({ found_in: 'body' }),
-  grant_type: SecurityGrantApiKeyApiKeyGrantType.describe('The type of grant. Supported grant types are: `access_token`, `password`.').meta({ found_in: 'body' }),
+  grant_type: SecurityGrantApiKeyApiKeyGrantType.describe('The type of grant. Supported grant types are: `access_token`, `password`, and `_user_managed_service_account`.').meta({ found_in: 'body' }),
   access_token: z.string().describe('The user\'s access token. If you specify the `access_token` grant type, this parameter is required. It is not valid with other grant types.').optional().meta({ found_in: 'body' }),
+  client_authentication: SecurityGrantApiKeyGrantApiKeyClientAuthentication.describe('The client authentication for a JWT that requires it, which is what is normally sent in the `ES-Client-Authentication` request header. It is valid only with the `access_token` grant type, when the access token is a JWT.').optional().meta({ found_in: 'body' }),
   username: z.lazy(() => Username).describe('The user name that identifies the user. If you specify the `password` grant type, this parameter is required. It is not valid with other grant types.').optional().meta({ found_in: 'body' }),
   password: z.lazy(() => Password).describe('The user\'s password. If you specify the `password` grant type, this parameter is required. It is not valid with other grant types.').optional().meta({ found_in: 'body' }),
-  run_as: z.lazy(() => Username).describe('The name of the user to be impersonated.').optional().meta({ found_in: 'body' })
+  run_as: z.lazy(() => Username).describe('The name of the user to be impersonated. It is not valid with the `_user_managed_service_account` grant type.').optional().meta({ found_in: 'body' })
 }).meta({ id: 'SecurityGrantApiKeyRequest' })
 export type SecurityGrantApiKeyRequest = z.infer<typeof SecurityGrantApiKeyRequest>
 

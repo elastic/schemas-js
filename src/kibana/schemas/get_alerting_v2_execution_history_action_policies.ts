@@ -12,7 +12,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Kibana_HTTP_APIs_alerting_policy_execution_history_item = z.object({
+export const Kibana_HTTP_APIs_alerting_action_policy_execution_history_item = z.object({
   action_group_count: z.number(),
   alert_count: z.number(),
   alerts: z.array(z.object({
@@ -38,18 +38,18 @@ export const Kibana_HTTP_APIs_alerting_policy_execution_history_item = z.object(
     id: z.string(),
     name: z.string().optional()
   }))
-}).meta({ id: 'Kibana_HTTP_APIs_alerting_policy_execution_history_item' })
-export type Kibana_HTTP_APIs_alerting_policy_execution_history_item = z.infer<typeof Kibana_HTTP_APIs_alerting_policy_execution_history_item>
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_action_policy_execution_history_item' })
+export type Kibana_HTTP_APIs_alerting_action_policy_execution_history_item = z.infer<typeof Kibana_HTTP_APIs_alerting_action_policy_execution_history_item>
 
-export const Kibana_HTTP_APIs_alerting_policy_execution_history_response = z.object({
-  items: z.array(Kibana_HTTP_APIs_alerting_policy_execution_history_item),
+export const Kibana_HTTP_APIs_alerting_action_policy_execution_history_response = z.object({
+  items: z.array(Kibana_HTTP_APIs_alerting_action_policy_execution_history_item),
   page: z.number(),
   per_page: z.number(),
   search_matches: z.object({
     is_truncated: z.boolean(),
-    policies: z.number(),
-    rules: z.number()
+    policy_count: z.number(),
+    rule_count: z.number()
   }).optional(),
   total: z.number()
-}).meta({ id: 'Kibana_HTTP_APIs_alerting_policy_execution_history_response' })
-export type Kibana_HTTP_APIs_alerting_policy_execution_history_response = z.infer<typeof Kibana_HTTP_APIs_alerting_policy_execution_history_response>
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_action_policy_execution_history_response' })
+export type Kibana_HTTP_APIs_alerting_action_policy_execution_history_response = z.infer<typeof Kibana_HTTP_APIs_alerting_action_policy_execution_history_response>

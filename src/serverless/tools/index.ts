@@ -23,6 +23,10 @@ async function loadDefinitions (namespaceFile: string): Promise<CloudApiDefiniti
       const mod = await import('./apis/elasticsearch-projects.ts') as Record<string, unknown>
       return mod['elasticsearchProjectsDefinitions'] as CloudApiDefinition[]
     }
+    case 'monitoring': {
+      const mod = await import('./apis/monitoring.ts') as Record<string, unknown>
+      return mod['monitoringDefinitions'] as CloudApiDefinition[]
+    }
     case 'observability-projects': {
       const mod = await import('./apis/observability-projects.ts') as Record<string, unknown>
       return mod['observabilityProjectsDefinitions'] as CloudApiDefinition[]

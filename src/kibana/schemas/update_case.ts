@@ -34,6 +34,10 @@ export const Cases_update_case_request = z.object({
     severity: Cases_case_severity.optional(),
     status: Cases_case_status.optional(),
     tags: Cases_case_tags.optional(),
+    template: z.object({
+      id: z.string(),
+      version: z.number()
+    }).nullable().optional(),
     title: Cases_case_title.optional(),
     version: z.string()
   }))
@@ -51,6 +55,7 @@ export { Cases_settings } from './schemas/misc.js'
 export { Cases_owner } from './schemas/misc.js'
 export { Cases_case_observable } from './schemas/misc.js'
 export { Cases_external_service } from './schemas/misc.js'
+export { Cases_case_extended_fields_labels } from './schemas/misc.js'
 export { Cases_case_response_created_by_properties } from './schemas/misc.js'
 export { Cases_connector_properties_swimlane } from './schemas/misc.js'
 export { Cases_connector_properties_servicenow_sir } from './schemas/misc.js'

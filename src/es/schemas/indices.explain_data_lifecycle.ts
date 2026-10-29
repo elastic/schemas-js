@@ -18,7 +18,9 @@ export const IndicesExplainDataLifecycleDataStreamLifecycleExplain = z.object({
   time_since_rollover: z.lazy(() => Duration).optional(),
   lifecycle: z.lazy(() => IndicesDataStreamLifecycleWithRollover).optional(),
   generation_time: z.lazy(() => Duration).optional(),
-  error: z.string().optional()
+  error: z.string().optional(),
+  frozen_transition_status: z.string().optional(),
+  unmanaged_reason: z.string().optional()
 }).meta({ id: 'IndicesExplainDataLifecycleDataStreamLifecycleExplain' })
 export type IndicesExplainDataLifecycleDataStreamLifecycleExplain = z.infer<typeof IndicesExplainDataLifecycleDataStreamLifecycleExplain>
 

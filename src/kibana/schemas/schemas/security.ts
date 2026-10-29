@@ -766,13 +766,29 @@ export const Security_Entity_Analytics_API_WatchlistObject = z.object({
 }).meta({ id: 'Security_Entity_Analytics_API_WatchlistObject' })
 export type Security_Entity_Analytics_API_WatchlistObject = z.infer<typeof Security_Entity_Analytics_API_WatchlistObject>
 
-export const Security_Exceptions_API_BlocklistHashOrPathEntry = z.object({
-  field: z.enum(['file.hash.md5', 'file.hash.sha1', 'file.hash.sha256', 'file.path', 'file.path.caseless']),
+export const Security_Exceptions_API_BlocklistHashEntry = z.object({
+  field: z.enum(['file.hash.md5', 'file.hash.sha1', 'file.hash.sha256']),
   operator: z.enum(['included']),
   type: z.enum(['match_any']),
   value: z.array(z.string())
-}).meta({ id: 'Security_Exceptions_API_BlocklistHashOrPathEntry' })
-export type Security_Exceptions_API_BlocklistHashOrPathEntry = z.infer<typeof Security_Exceptions_API_BlocklistHashOrPathEntry>
+}).meta({ id: 'Security_Exceptions_API_BlocklistHashEntry' })
+export type Security_Exceptions_API_BlocklistHashEntry = z.infer<typeof Security_Exceptions_API_BlocklistHashEntry>
+
+export const Security_Exceptions_API_BlocklistPathOrFileNameMatchAnyEntry = z.object({
+  field: z.enum(['file.path', 'file.path.caseless', 'file.name', 'file.name.caseless']),
+  operator: z.enum(['included']),
+  type: z.enum(['match_any']),
+  value: z.array(z.string())
+}).meta({ id: 'Security_Exceptions_API_BlocklistPathOrFileNameMatchAnyEntry' })
+export type Security_Exceptions_API_BlocklistPathOrFileNameMatchAnyEntry = z.infer<typeof Security_Exceptions_API_BlocklistPathOrFileNameMatchAnyEntry>
+
+export const Security_Exceptions_API_BlocklistPathOrFileNameWildcardEntry = z.object({
+  field: z.enum(['file.path', 'file.path.caseless', 'file.name', 'file.name.caseless']),
+  operator: z.enum(['included']),
+  type: z.enum(['wildcard']),
+  value: z.string()
+}).meta({ id: 'Security_Exceptions_API_BlocklistPathOrFileNameWildcardEntry' })
+export type Security_Exceptions_API_BlocklistPathOrFileNameWildcardEntry = z.infer<typeof Security_Exceptions_API_BlocklistPathOrFileNameWildcardEntry>
 
 export const Security_Exceptions_API_BlocklistWindowsCodeSignatureEntry = z.object({
   entries: z.array(z.object({
@@ -1840,7 +1856,7 @@ export const Security_Entity_Analytics_API_MonitoringEngineDescriptor = z.object
 export type Security_Entity_Analytics_API_MonitoringEngineDescriptor = z.infer<typeof Security_Entity_Analytics_API_MonitoringEngineDescriptor>
 
 export const Security_Exceptions_API_BlocklistLinuxProperties = z.object({
-  entries: z.array(Security_Exceptions_API_BlocklistHashOrPathEntry).optional(),
+  entries: z.array(z.union([Security_Exceptions_API_BlocklistHashEntry, Security_Exceptions_API_BlocklistPathOrFileNameMatchAnyEntry, Security_Exceptions_API_BlocklistPathOrFileNameWildcardEntry])).optional(),
   list_id: z.enum(['endpoint_blocklists']),
   os_types: z.array(z.enum(['linux'])).optional(),
   tags: Security_Exceptions_API_EndpointArtifactTags.optional()
@@ -1848,7 +1864,7 @@ export const Security_Exceptions_API_BlocklistLinuxProperties = z.object({
 export type Security_Exceptions_API_BlocklistLinuxProperties = z.infer<typeof Security_Exceptions_API_BlocklistLinuxProperties>
 
 export const Security_Exceptions_API_BlocklistMacProperties = z.object({
-  entries: z.array(Security_Exceptions_API_BlocklistHashOrPathEntry).optional(),
+  entries: z.array(z.union([Security_Exceptions_API_BlocklistHashEntry, Security_Exceptions_API_BlocklistPathOrFileNameMatchAnyEntry, Security_Exceptions_API_BlocklistPathOrFileNameWildcardEntry])).optional(),
   list_id: z.enum(['endpoint_blocklists']),
   os_types: z.array(z.enum(['macos'])).optional(),
   tags: Security_Exceptions_API_EndpointArtifactTags.optional()
@@ -1856,7 +1872,7 @@ export const Security_Exceptions_API_BlocklistMacProperties = z.object({
 export type Security_Exceptions_API_BlocklistMacProperties = z.infer<typeof Security_Exceptions_API_BlocklistMacProperties>
 
 export const Security_Exceptions_API_BlocklistWindowsProperties = z.object({
-  entries: z.array(z.union([Security_Exceptions_API_BlocklistHashOrPathEntry, Security_Exceptions_API_BlocklistWindowsCodeSignatureEntry])).optional(),
+  entries: z.array(z.union([Security_Exceptions_API_BlocklistHashEntry, Security_Exceptions_API_BlocklistPathOrFileNameMatchAnyEntry, Security_Exceptions_API_BlocklistPathOrFileNameWildcardEntry, Security_Exceptions_API_BlocklistWindowsCodeSignatureEntry])).optional(),
   list_id: z.enum(['endpoint_blocklists']),
   os_types: z.array(z.enum(['windows'])).optional(),
   tags: Security_Exceptions_API_EndpointArtifactTags.optional()
@@ -2322,7 +2338,7 @@ export type Security_Detections_API_RuleAction = z.infer<typeof Security_Detecti
 
 export const Security_Detections_API_EndpointResponseAction = z.object({
   action_type_id: z.enum(['.endpoint']),
-  params: z.union([Security_Detections_API_DefaultParams, Security_Detections_API_ProcessesParams, Security_Detections_API_RunscriptParams])
+  params: z.union([Security_Detections_API_DefaultParams, Security_Detections_API_RunscriptParams, Security_Detections_API_ProcessesParams])
 }).meta({ id: 'Security_Detections_API_EndpointResponseAction' })
 export type Security_Detections_API_EndpointResponseAction = z.infer<typeof Security_Detections_API_EndpointResponseAction>
 

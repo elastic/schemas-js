@@ -70,7 +70,7 @@ export const CatHealthHealthRecord = z.object({
 export type CatHealthHealthRecord = z.infer<typeof CatHealthHealthRecord>
 
 /**
- * Get the cluster health status.
+ * Get a compact cluster health summary.
  *
  * IMPORTANT: CAT APIs are only intended for human consumption using the command line or Kibana console.
  * They are not intended for use by applications. For application consumption, use the cluster health API.

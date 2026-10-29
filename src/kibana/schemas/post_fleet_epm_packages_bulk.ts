@@ -16,11 +16,11 @@ import { Kibana_HTTP_APIs_es_asset_reference, Kibana_HTTP_APIs_kibana_asset_refe
 export const Kibana_HTTP_APIs_bulk_install_packages_from_registry_request = z.object({
   allow_outdated_version: z.boolean().optional(),
   force: z.boolean().optional(),
-  packages: z.array(z.union([z.string(), z.object({
+  packages: z.array(z.union([z.object({
     name: z.string(),
     prerelease: z.boolean().optional(),
     version: z.string()
-  })]))
+  }), z.string()]))
 }).meta({ id: 'Kibana_HTTP_APIs_bulk_install_packages_from_registry_request' })
 export type Kibana_HTTP_APIs_bulk_install_packages_from_registry_request = z.infer<typeof Kibana_HTTP_APIs_bulk_install_packages_from_registry_request>
 

@@ -14,8 +14,8 @@ import type { KbApiDefinition } from '../types.ts'
 export const get_actions_connector_oauth_callback_scriptDefinitions: KbApiDefinition[] = [
   {
     name: 'get-actions-connector-oauth-callback-script',
-    namespace: 'misc',
-    description: '',
+    namespace: 'connectors',
+    description: 'Get OAuth callback script',
     method: 'GET',
     path: '/api/actions/connector/_oauth_callback_script',
     destructive: false,

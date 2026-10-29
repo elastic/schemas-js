@@ -19,7 +19,7 @@ export const post_alerting_v2_alerts_id_tagDefinitions: KbApiDefinition[] = [
   {
     name: 'post-alerting-v2-alerts-id-tag',
     namespace: 'alerting-v2',
-    description: 'Tag an alert episode',
+    description: 'Tag an alert',
     method: 'POST',
     path: '/api/alerting/v2/alerts/{id}/_tag',
     destructive: true,

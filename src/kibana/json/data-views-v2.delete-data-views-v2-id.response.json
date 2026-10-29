@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-data-views-v2-id","x-api":{"id":"data-views-v2.delete-data-views-v2-id","name":"delete-data-views-v2-id","namespace":"data-views-v2"},"type":"object","properties":{}}

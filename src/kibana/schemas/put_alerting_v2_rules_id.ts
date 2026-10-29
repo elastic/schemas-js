@@ -9,6 +9,25 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
+/* eslint-disable @typescript-eslint/no-redeclare */
+import { z } from 'zod'
+import { Kibana_HTTP_APIs_alerting_rule_artifact, Kibana_HTTP_APIs_alerting_rule_grouping, Kibana_HTTP_APIs_alerting_rule_metadata, Kibana_HTTP_APIs_alerting_rule_no_data, Kibana_HTTP_APIs_alerting_rule_query, Kibana_HTTP_APIs_alerting_rule_recovery, Kibana_HTTP_APIs_alerting_rule_schedule, Kibana_HTTP_APIs_alerting_rule_state_transition } from './schemas/kibana.js'
+
+export const Kibana_HTTP_APIs_alerting_put_rule = z.object({
+  artifacts: z.array(Kibana_HTTP_APIs_alerting_rule_artifact).optional(),
+  enabled: z.boolean().optional(),
+  grouping: Kibana_HTTP_APIs_alerting_rule_grouping.optional(),
+  kind: z.union([z.enum(['alert']), z.enum(['signal'])]),
+  metadata: Kibana_HTTP_APIs_alerting_rule_metadata,
+  no_data: Kibana_HTTP_APIs_alerting_rule_no_data.optional(),
+  query: Kibana_HTTP_APIs_alerting_rule_query,
+  recovery: Kibana_HTTP_APIs_alerting_rule_recovery.optional(),
+  schedule: Kibana_HTTP_APIs_alerting_rule_schedule,
+  state_transition: Kibana_HTTP_APIs_alerting_rule_state_transition.optional(),
+  time_field: z.string().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_put_rule' })
+export type Kibana_HTTP_APIs_alerting_put_rule = z.infer<typeof Kibana_HTTP_APIs_alerting_put_rule>
+
 export { Kibana_HTTP_APIs_alerting_rule_response } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_actor } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_state_transition } from './schemas/kibana.js'
@@ -27,7 +46,6 @@ export { Kibana_HTTP_APIs_alerting_rule_no_data_alert } from './schemas/kibana.j
 export { Kibana_HTTP_APIs_alerting_rule_no_data_resolve } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_no_data_keep_last } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_no_data_ignore } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_rule_metadata } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_grouping } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_artifact } from './schemas/kibana.js'
-export { Kibana_HTTP_APIs_alerting_new_rule } from './schemas/kibana.js'
-export { Kibana_HTTP_APIs_alerting_rule_metadata } from './schemas/kibana.js'

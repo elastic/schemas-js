@@ -11,9 +11,18 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Synthetics_getPrivateLocation } from './schemas/misc.js'
 
-export const GetPrivateLocationsResponse = z.array(Synthetics_getPrivateLocation).meta({ id: 'GetPrivateLocationsResponse' })
+export const GetPrivateLocationsResponse = z.array(z.object({
+  agentPolicyId: z.string().optional(),
+  geo: z.object({
+    lat: z.number(),
+    lon: z.number()
+  }).optional(),
+  id: z.string().optional(),
+  isInvalid: z.boolean().optional(),
+  label: z.string().optional(),
+  namespace: z.string().optional(),
+  spaces: z.array(z.string()).optional(),
+  tags: z.array(z.string()).optional()
+}).passthrough()).meta({ id: 'GetPrivateLocationsResponse' })
 export type GetPrivateLocationsResponse = z.infer<typeof GetPrivateLocationsResponse>
-
-export { Synthetics_getPrivateLocation } from './schemas/misc.js'

@@ -19,7 +19,7 @@ export const cat_indices_definitions: EsApiDefinition[] = [
   {
     name: 'indices',
     namespace: 'cat',
-    description: 'Get index information.',
+    description: 'Get a compact list of indices.',
     method: 'GET',
     path: '/_cat/indices/{index}',
     destructive: false,

@@ -103,7 +103,7 @@ export const Kibana_HTTP_APIs_update_package_policy_request = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_update_package_policy_request' })
 export type Kibana_HTTP_APIs_update_package_policy_request = z.infer<typeof Kibana_HTTP_APIs_update_package_policy_request>
 
-export const PutFleetPackagePoliciesPackagepolicyidRequest = z.union([Kibana_HTTP_APIs_update_package_policy_request, Kibana_HTTP_APIs_simplified_create_package_policy_request]).meta({ id: 'PutFleetPackagePoliciesPackagepolicyidRequest' })
+export const PutFleetPackagePoliciesPackagepolicyidRequest = z.union([Kibana_HTTP_APIs_simplified_create_package_policy_request.loose(), Kibana_HTTP_APIs_update_package_policy_request]).meta({ id: 'PutFleetPackagePoliciesPackagepolicyidRequest' })
 export type PutFleetPackagePoliciesPackagepolicyidRequest = z.infer<typeof PutFleetPackagePoliciesPackagepolicyidRequest>
 
 export const PutFleetPackagePoliciesPackagepolicyidResponse = z.object({

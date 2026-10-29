@@ -11,7 +11,8 @@ import { AcknowledgedResponseBase, Duration, Name } from './_types.js'
 /** A per-column declaration inside a dataset mapping's `properties`. */
 export const EsqlDatasetFieldMapping = z.object({
   type: z.string().describe('The declared column type.'),
-  path: z.string().describe('The underlying file column that this logical column reads from. This is a read-path rename: the physical column becomes this single logical column.').optional(),
+  rename_from: z.string().describe('The underlying file column that this logical column reads from. This is a read-path rename: the physical column becomes this single logical column. Responses always use `rename_from`. `path`, the former name for this field, is still accepted in requests and means the same thing.').optional(),
+  path: z.string().describe('The underlying file column that this logical column reads from. This is a read-path rename: the physical column becomes this single logical column. Responses always use `rename_from`. `path`, the former name for this field, is still accepted in requests and means the same thing.').optional(),
   format: z.string().describe('The date-parse pattern for a declared `date` column, mirroring the index date-field `format`.').optional()
 }).meta({ id: 'EsqlDatasetFieldMapping' })
 export type EsqlDatasetFieldMapping = z.infer<typeof EsqlDatasetFieldMapping>

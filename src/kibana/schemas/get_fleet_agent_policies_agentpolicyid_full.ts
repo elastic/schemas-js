@@ -189,6 +189,6 @@ export const Kibana_HTTP_APIs_full_agent_policy = z.object({
 export type Kibana_HTTP_APIs_full_agent_policy = z.infer<typeof Kibana_HTTP_APIs_full_agent_policy>
 
 export const Kibana_HTTP_APIs_get_full_agent_policy_response = z.object({
-  item: z.union([z.string(), Kibana_HTTP_APIs_full_agent_policy])
+  item: z.union([Kibana_HTTP_APIs_full_agent_policy, z.string()])
 }).meta({ id: 'Kibana_HTTP_APIs_get_full_agent_policy_response' })
 export type Kibana_HTTP_APIs_get_full_agent_policy_response = z.infer<typeof Kibana_HTTP_APIs_get_full_agent_policy_response>

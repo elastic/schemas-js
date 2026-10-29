@@ -13,6 +13,6 @@
 import { z } from 'zod'
 
 export const Kibana_HTTP_APIs_alerting_new_tag_alert_action = z.object({
-  tags: z.array(z.string())
+  tags: z.array(z.string()).nullable()
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_new_tag_alert_action' })
 export type Kibana_HTTP_APIs_alerting_new_tag_alert_action = z.infer<typeof Kibana_HTTP_APIs_alerting_new_tag_alert_action>

@@ -117,7 +117,7 @@
     "id": "cat.aliases",
     "name": "aliases",
     "namespace": "cat",
-    "description": "Get aliases.\n\nGet the cluster's index aliases, including filter and routing information.\nThis API does not return data stream aliases.\n\nIMPORTANT: CAT APIs are only intended for human consumption using the command line or the Kibana console. They are not intended for use by applications. For application consumption, use the aliases API.",
+    "description": "Get a compact list of aliases.\n\nGet the cluster's index aliases, including filter and routing information.\nThis API does not return data stream aliases.\n\nIMPORTANT: CAT APIs are only intended for human consumption using the command line or the Kibana console. They are not intended for use by applications. For application consumption, use the aliases API.",
     "namespaceFile": "cat.aliases",
     "destructive": false,
     "readOnly": true,
@@ -171,7 +171,7 @@
     "id": "cat.component_templates",
     "name": "component-templates",
     "namespace": "cat",
-    "description": "Get component templates.\n\nGet information about component templates in a cluster.\nComponent templates are building blocks for constructing index templates that specify index mappings, settings, and aliases.\n\nIMPORTANT: CAT APIs are only intended for human consumption using the command line or Kibana console.\nThey are not intended for use by applications. For application consumption, use the get component template API.",
+    "description": "Get a compact list of component templates.\n\nGet information about component templates in a cluster.\nComponent templates are building blocks for constructing index templates that specify index mappings, settings, and aliases.\n\nIMPORTANT: CAT APIs are only intended for human consumption using the command line or Kibana console.\nThey are not intended for use by applications. For application consumption, use the get component template API.",
     "namespaceFile": "cat.component_templates",
     "destructive": false,
     "readOnly": true,
@@ -226,7 +226,7 @@
     "id": "cat.health",
     "name": "health",
     "namespace": "cat",
-    "description": "Get the cluster health status.\n\nIMPORTANT: CAT APIs are only intended for human consumption using the command line or Kibana console.\nThey are not intended for use by applications. For application consumption, use the cluster health API.\nThis API is often used to check malfunctioning clusters.\nTo help you track cluster health alongside log files and alerting systems, the API returns timestamps in two formats:\n`HH:MM:SS`, which is human-readable but includes no date information;\n`Unix epoch time`, which is machine-sortable and includes date information.\nThe latter format is useful for cluster recoveries that take multiple days.\nYou can use the cat health API to verify cluster health across multiple nodes.\nYou also can use the API to track the recovery of a large cluster over a longer period of time.",
+    "description": "Get a compact cluster health summary.\n\nIMPORTANT: CAT APIs are only intended for human consumption using the command line or Kibana console.\nThey are not intended for use by applications. For application consumption, use the cluster health API.\nThis API is often used to check malfunctioning clusters.\nTo help you track cluster health alongside log files and alerting systems, the API returns timestamps in two formats:\n`HH:MM:SS`, which is human-readable but includes no date information;\n`Unix epoch time`, which is machine-sortable and includes date information.\nThe latter format is useful for cluster recoveries that take multiple days.\nYou can use the cat health API to verify cluster health across multiple nodes.\nYou also can use the API to track the recovery of a large cluster over a longer period of time.",
     "namespaceFile": "cat.health",
     "destructive": false,
     "readOnly": true,
@@ -262,7 +262,7 @@
     "id": "cat.indices",
     "name": "indices",
     "namespace": "cat",
-    "description": "Get index information.\n\nGet high-level information about indices in a cluster, including backing indices for data streams.\n\nUse this request to get the following information for each index in a cluster:\n- shard count\n- document count\n- deleted document count\n- primary store size\n- total store size of all shards, including shard replicas\n\nThese metrics are retrieved directly from Lucene, which Elasticsearch uses internally to power indexing and search. As a result, all document counts include hidden nested documents.\nTo get an accurate count of Elasticsearch documents, use the cat count or count APIs.\n\nNOTE: Storage metrics reported by this API reflect the post-compression size of the indices on disk. Because these values are calculated after Elasticsearch compresses the data and processes deletions, they are typically significantly smaller than the raw, uncompressed data volume ingested.\n\nIMPORTANT: For Elastic Cloud Serverless, ingest billing is based on the raw, uncompressed data volume, not the post-compression metrics reported here. To learn more, refer to [Elasticsearch billing dimensions](https://www.elastic.co/docs/deploy-manage/cloud-organization/billing/elasticsearch-billing-dimensions).\n\nCAT APIs are only intended for human consumption using the command line or Kibana console.\nThey are not intended for use by applications. For application consumption, use an index endpoint.",
+    "description": "Get a compact list of indices.\n\nGet high-level information about indices in a cluster, including backing indices for data streams.\n\nUse this request to get the following information for each index in a cluster:\n- shard count\n- document count\n- deleted document count\n- primary store size\n- total store size of all shards, including shard replicas\n\nThese metrics are retrieved directly from Lucene, which Elasticsearch uses internally to power indexing and search. As a result, all document counts include hidden nested documents.\nTo get an accurate count of Elasticsearch documents, use the cat count or count APIs.\n\nNOTE: Storage metrics reported by this API reflect the post-compression size of the indices on disk. Because these values are calculated after Elasticsearch compresses the data and processes deletions, they are typically significantly smaller than the raw, uncompressed data volume ingested.\n\nIMPORTANT: For Elastic Cloud Serverless, ingest billing is based on the raw, uncompressed data volume, not the post-compression metrics reported here. To learn more, refer to [Elasticsearch billing dimensions](https://www.elastic.co/docs/deploy-manage/cloud-organization/billing/elasticsearch-billing-dimensions).\n\nCAT APIs are only intended for human consumption using the command line or Kibana console.\nThey are not intended for use by applications. For application consumption, use an index endpoint.",
     "namespaceFile": "cat.indices",
     "destructive": false,
     "readOnly": true,
@@ -392,7 +392,7 @@
     "id": "cat.nodes",
     "name": "nodes",
     "namespace": "cat",
-    "description": "Get node information.\n\nGet information about the nodes in a cluster.\nIMPORTANT: cat APIs are only intended for human consumption using the command line or Kibana console. They are not intended for use by applications. For application consumption, use the nodes info API.",
+    "description": "Get a compact list of nodes.\n\nGet information about the nodes in a cluster.\nIMPORTANT: cat APIs are only intended for human consumption using the command line or Kibana console. They are not intended for use by applications. For application consumption, use the nodes info API.",
     "namespaceFile": "cat.nodes",
     "destructive": false,
     "readOnly": true,
@@ -464,7 +464,7 @@
     "id": "cat.repositories",
     "name": "repositories",
     "namespace": "cat",
-    "description": "Get snapshot repository information.\n\nGet a list of snapshot repositories for a cluster.\nIMPORTANT: cat APIs are only intended for human consumption using the command line or Kibana console. They are not intended for use by applications. For application consumption, use the get snapshot repository API.",
+    "description": "Get a compact list of snapshot repositories.\n\nGet a list of snapshot repositories for a cluster.\nIMPORTANT: cat APIs are only intended for human consumption using the command line or Kibana console. They are not intended for use by applications. For application consumption, use the get snapshot repository API.",
     "namespaceFile": "cat.repositories",
     "destructive": false,
     "readOnly": true,
@@ -519,7 +519,7 @@
     "id": "cat.snapshots",
     "name": "snapshots",
     "namespace": "cat",
-    "description": "Get snapshot information.\n\nGet information about the snapshots stored in one or more repositories.\nA snapshot is a backup of an index or running Elasticsearch cluster.\nIMPORTANT: cat APIs are only intended for human consumption using the command line or Kibana console. They are not intended for use by applications. For application consumption, use the get snapshot API.",
+    "description": "Get a compact list of snapshots.\n\nGet information about the snapshots stored in one or more repositories.\nA snapshot is a backup of an index or running Elasticsearch cluster.\nIMPORTANT: cat APIs are only intended for human consumption using the command line or Kibana console. They are not intended for use by applications. For application consumption, use the get snapshot API.",
     "namespaceFile": "cat.snapshots",
     "destructive": false,
     "readOnly": true,
@@ -538,7 +538,7 @@
     "id": "cat.tasks",
     "name": "tasks",
     "namespace": "cat",
-    "description": "Get task information.\n\nGet information about tasks currently running in the cluster.\nIMPORTANT: cat APIs are only intended for human consumption using the command line or Kibana console. They are not intended for use by applications. For application consumption, use the task management API.",
+    "description": "Get a compact list of running tasks.\n\nGet information about tasks currently running in the cluster.\nIMPORTANT: cat APIs are only intended for human consumption using the command line or Kibana console. They are not intended for use by applications. For application consumption, use the task management API.",
     "namespaceFile": "cat.tasks",
     "destructive": false,
     "readOnly": true,
@@ -973,7 +973,7 @@
     "id": "cluster.info",
     "name": "info",
     "namespace": "cluster",
-    "description": "Get cluster info.\n\nReturns basic information about the cluster.",
+    "description": "Get cluster subsystem info.\n\nReturns basic information about the cluster.",
     "namespaceFile": "cluster.info",
     "destructive": false,
     "readOnly": true,
@@ -2115,18 +2115,18 @@
     "id": "esql.delete_view",
     "name": "delete-view",
     "namespace": "esql",
-    "description": "Delete an ES|QL view.\n\nDeletes a stored ES|QL view.",
+    "description": "Delete an ES|QL view.\n\nDeletes a stored ES|QL view. Deleting a reserved view fails.",
     "namespaceFile": "esql.delete_view",
     "destructive": true,
     "readOnly": false,
     "availability": {
       "stack": {
         "since": "9.4.0",
-        "stability": "experimental",
+        "stability": "stable",
         "visibility": "public"
       },
       "serverless": {
-        "stability": "experimental",
+        "stability": "stable",
         "visibility": "public"
       }
     }
@@ -2195,18 +2195,18 @@
     "id": "esql.get_view",
     "name": "get-view",
     "namespace": "esql",
-    "description": "Get an ES|QL view.\n\nReturns a stored ES|QL view.",
+    "description": "Get an ES|QL view.\n\nReturns one or more stored views. A reserved view includes `reserved` set to `true`.",
     "namespaceFile": "esql.get_view",
     "destructive": false,
     "readOnly": true,
     "availability": {
       "stack": {
         "since": "9.4.0",
-        "stability": "experimental",
+        "stability": "stable",
         "visibility": "public"
       },
       "serverless": {
-        "stability": "experimental",
+        "stability": "stable",
         "visibility": "public"
       }
     }
@@ -2275,18 +2275,18 @@
     "id": "esql.put_view",
     "name": "put-view",
     "namespace": "esql",
-    "description": "Create or update an ES|QL view.",
+    "description": "Create or update an ES|QL view.\n\nStores an ES|QL query that runs whenever the view is referenced.\nA query that cannot be parsed is rejected. Replacing a reserved view fails.",
     "namespaceFile": "esql.put_view",
     "destructive": true,
     "readOnly": false,
     "availability": {
       "stack": {
         "since": "9.4.0",
-        "stability": "experimental",
+        "stability": "stable",
         "visibility": "public"
       },
       "serverless": {
-        "stability": "experimental",
+        "stability": "stable",
         "visibility": "public"
       }
     }
@@ -3434,7 +3434,7 @@
     "id": "indices.get_field_mapping",
     "name": "get-field-mapping",
     "namespace": "indices",
-    "description": "Get mapping definitions.\n\nRetrieves mapping definitions for one or more fields.\nFor data streams, the API retrieves field mappings for the stream’s backing indices.\n\nThis API is useful if you don't need a complete mapping or if an index mapping contains a large number of fields.",
+    "description": "Get field mapping definitions.\n\nRetrieves mapping definitions for one or more fields.\nFor data streams, the API retrieves field mappings for the stream’s backing indices.\n\nThis API is useful if you don't need a complete mapping or if an index mapping contains a large number of fields.",
     "namespaceFile": "indices.get_field_mapping",
     "destructive": false,
     "readOnly": true,
@@ -3891,7 +3891,7 @@
     "id": "indices.rollover",
     "name": "rollover",
     "namespace": "indices",
-    "description": "Roll over to a new index.\n\nTIP: We recommend using the index lifecycle rollover action to automate rollovers. However, Serverless does not support Index Lifecycle Management (ILM), so don't use this approach in the Serverless context.\n\nThe rollover API creates a new index for a data stream or index alias.\nThe API behavior depends on the rollover target.\n\n**Roll over a data stream**\n\nIf you roll over a data stream, the API creates a new write index for the stream.\nThe stream's previous write index becomes a regular backing index.\nA rollover also increments the data stream's generation.\n\n**Roll over an index alias with a write index**\n\nTIP: Prior to Elasticsearch 7.9, you'd typically use an index alias with a write index to manage time series data.\nData streams replace this functionality, require less maintenance, and automatically integrate with data tiers.\n\nIf an index alias points to multiple indices, one of the indices must be a write index.\nThe rollover API creates a new write index for the alias with `is_write_index` set to `true`.\nThe API also `sets is_write_index` to `false` for the previous write index.\n\n**Roll over an index alias with one index**\n\nIf you roll over an index alias that points to only one index, the API creates a new index for the alias and removes the original index from the alias.\n\nNOTE: A rollover creates a new index and is subject to the `wait_for_active_shards` setting.\n\n**Increment index names for an alias**\n\nWhen you roll over an index alias, you can specify a name for the new index.\nIf you don't specify a name and the current index ends with `-` and a number, such as `my-index-000001` or `my-index-3`, the new index name increments that number.\nFor example, if you roll over an alias with a current index of `my-index-000001`, the rollover creates a new index named `my-index-000002`.\nThis number is always six characters and zero-padded, regardless of the previous index's name.\n\nIf you use an index alias for time series data, you can use date math in the index name to track the rollover date.\nFor example, you can create an alias that points to an index named `<my-index-{now/d}-000001>`.\nIf you create the index on May 6, 2099, the index's name is `my-index-2099.05.06-000001`.\nIf you roll over the alias on May 7, 2099, the new index's name is `my-index-2099.05.07-000002`.",
+    "description": "Roll over to a new index.\n\nTIP: To automate rollovers, use index lifecycle management (ILM) in deployments that support it.\nServerless does not support ILM. For data streams in Serverless, use data stream lifecycle instead.\n\nThe rollover API creates a new index for a data stream or index alias.\nThe API behavior depends on the rollover target.\n\n**Roll over a data stream**\n\nIf you roll over a data stream, the API creates a new write index for the stream.\nThe stream's previous write index becomes a regular backing index.\nA rollover also increments the data stream's generation.\n\n**Roll over an index alias with a write index**\n\nTIP: Prior to Elasticsearch 7.9, you'd typically use an index alias with a write index to manage time series data.\nData streams replace this functionality, require less maintenance, and automatically integrate with data tiers.\n\nIf an index alias points to multiple indices, one of the indices must be a write index.\nThe rollover API creates a new write index for the alias with `is_write_index` set to `true`.\nThe API also `sets is_write_index` to `false` for the previous write index.\n\n**Roll over an index alias with one index**\n\nIf you roll over an index alias that points to only one index, the API creates a new index for the alias and removes the original index from the alias.\n\nNOTE: A rollover creates a new index and is subject to the `wait_for_active_shards` setting.\n\n**Increment index names for an alias**\n\nWhen you roll over an index alias, you can specify a name for the new index.\nIf you don't specify a name and the current index ends with `-` and a number, such as `my-index-000001` or `my-index-3`, the new index name increments that number.\nFor example, if you roll over an alias with a current index of `my-index-000001`, the rollover creates a new index named `my-index-000002`.\nThis number is always six characters and zero-padded, regardless of the previous index's name.\n\nIf you use an index alias for time series data, you can use date math in the index name to track the rollover date.\nFor example, you can create an alias that points to an index named `<my-index-{now/d}-000001>`.\nIf you create the index on May 6, 2099, the index's name is `my-index-2099.05.06-000001`.\nIf you roll over the alias on May 7, 2099, the new index's name is `my-index-2099.05.07-000002`.",
     "namespaceFile": "indices.rollover",
     "destructive": true,
     "readOnly": false,
@@ -4028,7 +4028,7 @@
     "id": "indices.update_aliases",
     "name": "update-aliases",
     "namespace": "indices",
-    "description": "Create or update an alias.\n\nAdds a data stream or index to an alias.",
+    "description": "Update aliases and delete indices atomically.\n\nApplies one or more actions in a single request:\n\n- Add a data stream or index to an alias.\n- Remove a data stream or index from an alias.\n- Delete an index in that same request, so the deletion and the alias changes are applied together.\n\nFor example, you can replace an index with an alias of the same name.\n\nNOTE: Every `remove_index` action in the request runs first, before any `add` or `remove` actions, no matter where it sits in the `actions` array.",
     "namespaceFile": "indices.update_aliases",
     "destructive": true,
     "readOnly": false,
@@ -4138,6 +4138,26 @@
       },
       "serverless": {
         "stability": "stable",
+        "visibility": "public"
+      }
+    }
+  },
+  {
+    "id": "inference.document_extraction",
+    "name": "document-extraction",
+    "namespace": "inference",
+    "description": "Perform document extraction inference on the service.\n\nExtract the content of documents, such as PDFs or images of documents, into a textual format.",
+    "namespaceFile": "inference.document_extraction",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "since": "9.6.0",
+        "stability": "experimental",
+        "visibility": "public"
+      },
+      "serverless": {
+        "stability": "experimental",
         "visibility": "public"
       }
     }
@@ -7718,7 +7738,7 @@
     "id": "searchable-snapshots.clear_cache",
     "name": "clear-cache",
     "namespace": "searchable-snapshots",
-    "description": "Clear the cache.\n\nClear indices and data streams from the shared cache for partially mounted indices.",
+    "description": "Clear the searchable snapshots shared cache.\n\nClear indices and data streams from the shared cache for partially mounted indices.",
     "namespaceFile": "searchable_snapshots.clear_cache",
     "destructive": true,
     "readOnly": false,
@@ -8483,7 +8503,7 @@
     "id": "security.grant_api_key",
     "name": "grant-api-key",
     "namespace": "security",
-    "description": "Grant an API key.\n\nCreate an API key on behalf of another user.\nThis API is similar to the create API keys API, however it creates the API key for a user that is different than the user that runs the API.\nThe caller must have authentication credentials for the user on whose behalf the API key will be created.\nIt is not possible to use this API to create an API key without that user's credentials.\nThe supported user authentication credential types are:\n\n* username and password\n* Elasticsearch access tokens\n* JWTs\n\nThe user, for whom the authentication credentials is provided, can optionally \"run as\" (impersonate) another user.\nIn this case, the API key will be created on behalf of the impersonated user.\n\nThis API is intended be used by applications that need to create and manage API keys for end users, but cannot guarantee that those users have permission to create API keys on their own behalf.\nThe API keys are created by the Elasticsearch API key service, which is automatically enabled.\n\nA successful grant API key API call returns a JSON structure that contains the API key, its unique id, and its name.\nIf applicable, it also returns expiration information for the API key in milliseconds.\n\nBy default, API keys never expire. You can specify expiration information when you create the API keys.",
+    "description": "Grant an API key.\n\nCreate an API key on behalf of another user.\nThis API is similar to the create API keys API, however it creates the API key for a user that is different than the user that runs the API.\nThe caller must have authentication credentials for the user on whose behalf the API key will be created.\nIt is not possible to use this API to create an API key without that user's credentials.\nThe supported user authentication credential types are:\n\n* username and password\n* Elasticsearch access tokens\n* JWTs\n* service account tokens of user-managed service accounts\n\nThe user, for whom the authentication credentials is provided, can optionally \"run as\" (impersonate) another user.\nIn this case, the API key will be created on behalf of the impersonated user.\nRun as is not supported with the `_user_managed_service_account` grant type.\n\nThis API is intended be used by applications that need to create and manage API keys for end users, but cannot guarantee that those users have permission to create API keys on their own behalf.\nThe API keys are created by the Elasticsearch API key service, which is automatically enabled.\n\nA successful grant API key API call returns a JSON structure that contains the API key, its unique id, and its name.\nIf applicable, it also returns expiration information for the API key in milliseconds.\n\nBy default, API keys never expire. You can specify expiration information when you create the API keys.",
     "namespaceFile": "security.grant_api_key",
     "destructive": true,
     "readOnly": false,

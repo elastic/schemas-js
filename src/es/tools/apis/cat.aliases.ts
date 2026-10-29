@@ -19,7 +19,7 @@ export const cat_aliases_definitions: EsApiDefinition[] = [
   {
     name: 'aliases',
     namespace: 'cat',
-    description: 'Get aliases.',
+    description: 'Get a compact list of aliases.',
     method: 'GET',
     path: '/_cat/aliases/{name}',
     destructive: false,

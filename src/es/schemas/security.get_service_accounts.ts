@@ -6,7 +6,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { Metadata, Namespace, Service } from './_types.js'
+import { Id, Metadata, Name, Namespace, Service, Username } from './_types.js'
 import { SecurityApplicationPrivileges, SecurityClusterPrivilege } from './security.js'
 import { SecurityIndicesPrivileges } from './security.put_role.js'
 
@@ -54,6 +54,26 @@ export const SecurityGetServiceAccountsRequest = z.object({
   type: z.union([SecurityGetServiceAccountsServiceAccountType, z.array(SecurityGetServiceAccountsServiceAccountType)]).describe('A comma-separated list of the kinds of service account to return. If it is omitted, it defaults to `built_in` when no namespace is given and to `built_in,user_managed` otherwise.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'SecurityGetServiceAccountsRequest' })
 export type SecurityGetServiceAccountsRequest = z.infer<typeof SecurityGetServiceAccountsRequest>
+
+export const SecurityGetServiceAccountsServiceAccountAuthorApiKey = z.object({
+  id: z.lazy(() => Id).describe('The ID of the API key.'),
+  name: z.lazy(() => Name).describe('The name that the API key had when the request was made. Absent when the API key has no name.').optional()
+}).meta({ id: 'SecurityGetServiceAccountsServiceAccountAuthorApiKey' })
+export type SecurityGetServiceAccountsServiceAccountAuthorApiKey = z.infer<typeof SecurityGetServiceAccountsServiceAccountAuthorApiKey>
+
+/**
+ * The user who wrote a user-managed service account.
+ * If the request ran as another user, that user is recorded.
+ * If the request was made with an API key, the owner of the key is recorded, from the owner's own realm, together with the key itself.
+ * For an older API key that does not record its owner's realm, the realm is the API key realm, `_es_api_key`.
+ */
+export const SecurityGetServiceAccountsServiceAccountAuthor = z.object({
+  username: z.lazy(() => Username).describe('The username of the user.'),
+  realm: z.string().describe('The name of the realm that authenticated the user.'),
+  realm_type: z.string().describe('The type of the realm that authenticated the user.'),
+  api_key: SecurityGetServiceAccountsServiceAccountAuthorApiKey.describe('The API key that the request was made with. Absent when the request was not made with an API key, or when the API key ran as another user.').optional()
+}).meta({ id: 'SecurityGetServiceAccountsServiceAccountAuthor' })
+export type SecurityGetServiceAccountsServiceAccountAuthor = z.infer<typeof SecurityGetServiceAccountsServiceAccountAuthor>
 
 export const SecurityGetServiceAccountsUserManagedServiceAccount = z.object({
   roles: z.array(z.string()).describe('The names of the roles granted to the account, as sent on the last PUT of the account. They are resolved when the account authenticates.'),

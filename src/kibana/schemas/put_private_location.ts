@@ -14,8 +14,22 @@ import { z } from 'zod'
 
 export const PutPrivateLocationRequest = z.object({
   agentPolicyId: z.string().optional(),
-  label: z.string().optional()
+  label: z.string().optional(),
+  tags: z.array(z.string()).optional()
 }).meta({ id: 'PutPrivateLocationRequest' })
 export type PutPrivateLocationRequest = z.infer<typeof PutPrivateLocationRequest>
 
-export { Synthetics_getPrivateLocation } from './schemas/misc.js'
+export const PutPrivateLocationResponse = z.object({
+  agentPolicyId: z.string().optional(),
+  geo: z.object({
+    lat: z.number(),
+    lon: z.number()
+  }).optional(),
+  id: z.string().optional(),
+  isInvalid: z.boolean().optional(),
+  label: z.string().optional(),
+  namespace: z.string().optional(),
+  spaces: z.array(z.string()).optional(),
+  tags: z.array(z.string()).optional()
+}).passthrough().meta({ id: 'PutPrivateLocationResponse' })
+export type PutPrivateLocationResponse = z.infer<typeof PutPrivateLocationResponse>

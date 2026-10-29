@@ -19,7 +19,7 @@ export const cat_health_definitions: EsApiDefinition[] = [
   {
     name: 'health',
     namespace: 'cat',
-    description: 'Get the cluster health status.',
+    description: 'Get a compact cluster health summary.',
     method: 'GET',
     path: '/_cat/health',
     destructive: false,

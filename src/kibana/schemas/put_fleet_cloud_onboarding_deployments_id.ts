@@ -20,12 +20,23 @@ export const PutFleetCloudOnboardingDeploymentsIdRequest = z.object({
   connectorId: z.string().nullable().optional(),
   deploymentId: z.string().optional(),
   deploymentName: z.string().optional(),
+  description: z.string().nullable().optional(),
   ecfStacks: z.array(z.object({
     family: z.enum(['unified', 'otel', 'crowdstrike']),
+    serviceIds: z.array(z.string()).optional(),
+    stackArn: z.string().optional(),
     stackName: z.string(),
     templateVersion: z.string()
   })).optional(),
+  instances: z.array(z.object({
+    instanceId: z.string(),
+    isDuplicate: z.boolean(),
+    name: z.string(),
+    serviceId: z.string()
+  })).optional(),
+  integrationName: z.string().optional(),
   mechanisms: z.array(z.enum(['managed_integration', 'ecf', 'agent_based'])).optional(),
+  namespace: z.string().nullable().optional(),
   packagePolicyIds: z.array(z.string()).optional(),
   policyIdsByInstance: z.record(z.string(), z.string()).optional(),
   services: z.array(z.string()).optional(),
@@ -45,14 +56,25 @@ export const PutFleetCloudOnboardingDeploymentsIdResponse = z.object({
     dataFormat: z.enum(['ecs', 'otel']).optional(),
     deploymentId: z.string().optional(),
     deploymentName: z.string().optional(),
+    description: z.string().optional(),
     ecfStacks: z.array(z.object({
       family: z.enum(['unified', 'otel', 'crowdstrike']),
+      serviceIds: z.array(z.string()).optional(),
+      stackArn: z.string().optional(),
       stackName: z.string(),
       templateVersion: z.string()
     })).optional(),
     globalRegion: z.string().optional(),
     id: z.string(),
+    instances: z.array(z.object({
+      instanceId: z.string(),
+      isDuplicate: z.boolean(),
+      name: z.string(),
+      serviceId: z.string()
+    })).optional(),
+    integrationName: z.string().optional(),
     mechanisms: z.array(z.enum(['managed_integration', 'ecf', 'agent_based'])),
+    namespace: z.string().optional(),
     packagePolicyIds: z.array(z.string()).optional(),
     policyIdsByInstance: z.record(z.string(), z.string()).optional(),
     provider: z.enum(['aws', 'azure', 'gcp']),

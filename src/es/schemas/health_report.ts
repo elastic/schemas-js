@@ -95,19 +95,23 @@ export const HealthReportDlmFrozenTransitionState = z.enum(['unmarked', 'marked'
 export type HealthReportDlmFrozenTransitionState = z.infer<typeof HealthReportDlmFrozenTransitionState>
 
 export const HealthReportDlmFrozenTransitionOverdueIndex = z.object({
-  index_name: z.lazy(() => IndexName),
-  transition_state: HealthReportDlmFrozenTransitionState
+  index_name: z.lazy(() => IndexName).describe('The name of the overdue index.'),
+  transition_state: HealthReportDlmFrozenTransitionState.describe('The transition state of the overdue index.')
 }).meta({ id: 'HealthReportDlmFrozenTransitionOverdueIndex' })
 export type HealthReportDlmFrozenTransitionOverdueIndex = z.infer<typeof HealthReportDlmFrozenTransitionOverdueIndex>
 
+/**
+ * An index is overdue when it has passed its `frozen_after` age by more than the configured threshold and has not yet completed its transition to the frozen tier.
+ * Indices with a running transition are making progress and are not counted as overdue.
+ */
 export const HealthReportDlmFrozenTransitionsIndicatorDetails = z.object({
-  transitions_enabled: z.boolean().optional(),
-  service_running: z.boolean().optional(),
-  default_repository_configured: z.boolean().optional(),
-  overdue_indices_count: z.lazy(() => integer).optional(),
-  overdue_indices_count_by_state: z.record(HealthReportDlmFrozenTransitionState, z.lazy(() => integer)).optional(),
-  overdue_indices_sample: z.array(HealthReportDlmFrozenTransitionOverdueIndex).optional(),
-  generated_at_millis: z.lazy(() => long).describe('Only present when the indicator status is `unknown`, meaning the health snapshot is stale.').optional()
+  transitions_enabled: z.boolean().describe('Indicates whether frozen-tier transitions are enabled by the `dlm.frozen_transitions.enabled` cluster setting.').optional(),
+  service_running: z.boolean().describe('Indicates whether the frozen transition service is running on the current master node.').optional(),
+  default_repository_configured: z.boolean().describe('Indicates whether a default snapshot repository is configured with the `repositories.default_repository` cluster setting.').optional(),
+  overdue_indices_count: z.lazy(() => integer).describe('The total number of overdue indices in the cluster.').optional(),
+  overdue_indices_count_by_state: z.record(HealthReportDlmFrozenTransitionState, z.lazy(() => integer)).describe('The number of overdue indices in the cluster for each transition state. Only present when there are overdue indices.').optional(),
+  overdue_indices_sample: z.array(HealthReportDlmFrozenTransitionOverdueIndex).describe('A sample of the overdue indices and their transition states, sorted by index name. The sample is limited to 100 indices for each transition state, so it can contain fewer indices than `overdue_indices_count`. Only present when there are overdue indices.').optional(),
+  generated_at_millis: z.lazy(() => long).describe('The time, in milliseconds since the Unix epoch, when the master node generated the health snapshot. Only present when the indicator status is `unknown`, meaning the health snapshot is stale.').optional()
 }).meta({ id: 'HealthReportDlmFrozenTransitionsIndicatorDetails' })
 export type HealthReportDlmFrozenTransitionsIndicatorDetails = z.infer<typeof HealthReportDlmFrozenTransitionsIndicatorDetails>
 

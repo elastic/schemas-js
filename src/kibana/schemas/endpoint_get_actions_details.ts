@@ -167,7 +167,7 @@ export const Security_Endpoint_Management_API_Runscript = Security_Endpoint_Mana
       stdout: z.string().optional()
     })).optional()
   })).optional(),
-  parameters: z.union([Security_Endpoint_Management_API_RunscriptParamsCrowdStrike, Security_Endpoint_Management_API_RunscriptParamsMicrosoft, Security_Endpoint_Management_API_RunscriptParamsSentinelOne]).optional()
+  parameters: z.union([Security_Endpoint_Management_API_RunscriptParamsCrowdStrike.loose(), Security_Endpoint_Management_API_RunscriptParamsMicrosoft.loose(), Security_Endpoint_Management_API_RunscriptParamsSentinelOne]).optional()
 })).meta({ id: 'Security_Endpoint_Management_API_Runscript' })
 export type Security_Endpoint_Management_API_Runscript = z.infer<typeof Security_Endpoint_Management_API_Runscript>
 

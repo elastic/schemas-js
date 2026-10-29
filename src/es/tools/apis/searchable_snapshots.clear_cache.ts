@@ -19,7 +19,7 @@ export const searchable_snapshots_clear_cache_definitions: EsApiDefinition[] = [
   {
     name: 'clear-cache',
     namespace: 'searchable-snapshots',
-    description: 'Clear the cache.',
+    description: 'Clear the searchable snapshots shared cache.',
     method: 'POST',
     path: '/{index}/_searchable_snapshots/cache/clear',
     destructive: true,

@@ -13,7 +13,7 @@
 import { z } from 'zod'
 
 export const DeleteParametersRequest = z.object({
-  ids: z.array(z.string()).optional()
+  ids: z.array(z.string())
 }).meta({ id: 'DeleteParametersRequest' })
 export type DeleteParametersRequest = z.infer<typeof DeleteParametersRequest>
 

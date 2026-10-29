@@ -6,7 +6,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { ClusterStatistics, Duration, DurationValue, ExpandWildcards, Field, Fields, Fuzziness, GeoHashPrecision, GeoLocation, Id, IndexName, Indices, KnnSearch, Name, NodeId, Routing, Script, ScriptField, ScriptSource, ScrollId, SearchType, SequenceNumber, ShardStatistics, SlicedScroll, Sort, SortResults, SuggestMode, SuggestionName, VersionNumber, double, float, integer, long } from './_types.js'
+import { ClusterStatistics, Duration, DurationValue, EmptyObject, ExpandWildcards, Field, Fields, Fuzziness, GeoHashPrecision, GeoLocation, Id, IndexName, Indices, KnnSearch, Name, NodeId, Routing, Script, ScriptField, ScriptSource, ScrollId, SearchType, SequenceNumber, ShardStatistics, SlicedScroll, Sort, SortResults, SuggestMode, SuggestionName, VersionNumber, double, float, integer, long } from './_types.js'
 import type { KnnSearchShape, ScriptFieldShape, ScriptShape, ScriptSourceShape, SortShape } from './_types.js'
 import { AggregationsAggregationContainer } from './_types.aggregations.js'
 import type { AggregationsAggregationContainerShape } from './_types.aggregations.js'
@@ -1063,6 +1063,54 @@ export const SearchFetchProfile = z.object({
 }).meta({ id: 'SearchFetchProfile' })
 export type SearchFetchProfile = z.infer<typeof SearchFetchProfile>
 
+export const SearchRescoreProfileBase = z.object({
+  description: z.string().describe('What the rescorer runs.'),
+  time_in_nanos: z.lazy(() => DurationValue).describe('The total time spent in the rescorer, including the time spent running its queries.'),
+  time: z.lazy(() => Duration).describe('The time spent in the rescorer, in human-readable units. Only returned when `human` is `true`.').optional(),
+  debug: z.record(z.string(), z.any()).describe('Extra details about the rescorer. Every rescorer reports `window_size`, the number of top documents it was configured to rescore. `timed_out` is set to `true` if the search timed out while the rescorer was running. Rescorers can add their own keys.').optional()
+}).meta({ id: 'SearchRescoreProfileBase' })
+export type SearchRescoreProfileBase = z.infer<typeof SearchRescoreProfileBase>
+
+export const SearchQueryRescoreProfile = z.object({
+  ...SearchRescoreProfileBase.shape,
+  type: z.literal('query'),
+  breakdown: z.lazy(() => EmptyObject).describe('The `query` rescorer does not report any steps.')
+}).meta({ id: 'SearchQueryRescoreProfile' })
+export type SearchQueryRescoreProfile = z.infer<typeof SearchQueryRescoreProfile>
+
+export const SearchScriptRescoreProfile = z.object({
+  ...SearchRescoreProfileBase.shape,
+  type: z.literal('script'),
+  breakdown: z.lazy(() => EmptyObject).describe('The `script` rescorer does not report any steps.')
+}).meta({ id: 'SearchScriptRescoreProfile' })
+export type SearchScriptRescoreProfile = z.infer<typeof SearchScriptRescoreProfile>
+
+export const SearchLearningToRankRescoreProfileBreakdown = z.object({
+  build_feature_extractors: z.lazy(() => long).describe('The time spent turning the feature queries of the model into queries that can score documents.'),
+  build_feature_extractors_count: z.lazy(() => long),
+  feature_extraction: z.lazy(() => long).describe('The time spent extracting the features of the top documents.'),
+  feature_extraction_count: z.lazy(() => long),
+  inference: z.lazy(() => long).describe('The time spent running the model on the extracted features.'),
+  inference_count: z.lazy(() => long)
+}).meta({ id: 'SearchLearningToRankRescoreProfileBreakdown' })
+export type SearchLearningToRankRescoreProfileBreakdown = z.infer<typeof SearchLearningToRankRescoreProfileBreakdown>
+
+export const SearchLearningToRankRescoreProfile = z.object({
+  ...SearchRescoreProfileBase.shape,
+  type: z.literal('learning_to_rank'),
+  breakdown: SearchLearningToRankRescoreProfileBreakdown
+}).meta({ id: 'SearchLearningToRankRescoreProfile' })
+export type SearchLearningToRankRescoreProfile = z.infer<typeof SearchLearningToRankRescoreProfile>
+
+/**
+ * Profile of a single rescorer.
+ *
+ * The shape of `breakdown` depends on the type of rescorer: `query` and `script` do not report any steps,
+ * `learning_to_rank` does.
+ */
+export const SearchRescoreProfile = z.union([SearchQueryRescoreProfile, SearchScriptRescoreProfile, SearchLearningToRankRescoreProfile]).meta({ id: 'SearchRescoreProfile' })
+export type SearchRescoreProfile = z.infer<typeof SearchRescoreProfile>
+
 export interface SearchCollectorShape {
   name: string
   reason: string
@@ -1106,6 +1154,7 @@ export interface SearchQueryProfileShape {
   description: string
   time_in_nanos: DurationValue
   type: string
+  debug?: Record<string, unknown> | undefined
   children?: SearchQueryProfileShape[] | undefined
 }
 export const SearchQueryProfile = z.object({
@@ -1113,6 +1162,7 @@ export const SearchQueryProfile = z.object({
   description: z.string(),
   time_in_nanos: z.lazy(() => DurationValue),
   type: z.string(),
+  debug: z.record(z.string(), z.any()).describe('Extra details about the query. Queries run by a rescorer include a `rescorer` key with the position of that rescorer in the shard\'s `rescore` array.').optional(),
   get children () { return SearchQueryProfile.array().optional() }
 }).meta({ id: 'SearchQueryProfile' })
 export type SearchQueryProfile = z.infer<typeof SearchQueryProfile>
@@ -1132,6 +1182,7 @@ export const SearchShardProfile = z.object({
   id: z.string(),
   index: z.lazy(() => IndexName),
   node_id: z.lazy(() => NodeId),
+  rescore: z.array(SearchRescoreProfile).describe('One entry per rescorer, in the order they ran. Omitted when the request has no rescorer.').optional(),
   searches: z.array(SearchSearchProfile),
   shard_id: z.lazy(() => integer)
 }).meta({ id: 'SearchShardProfile' })

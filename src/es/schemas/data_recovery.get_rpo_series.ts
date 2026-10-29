@@ -21,7 +21,7 @@ export const DataRecoveryGetRpoSeriesRequest = z.object({
   start: z.lazy(() => DateTime).describe('The inclusive start of the range, as a date or epoch milliseconds. When omitted, it is seven days before `end`, rounded down to a whole multiple of `bucket_duration`, so that repeated requests with default parameters return the same bucket boundaries.').optional().meta({ found_in: 'query' }),
   end: z.lazy(() => DateTime).describe('The exclusive end of the range, as a date or epoch milliseconds.').optional().meta({ found_in: 'query' }),
   bucket_duration: z.lazy(() => Duration).describe('The duration of each bucket. It must be greater than zero, and the range must divide into at most 1,000 buckets.').optional().meta({ found_in: 'query' }),
-  master_timeout: z.lazy(() => Duration).describe('The period to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' })
+  master_timeout: z.lazy(() => Duration).describe('The period to wait for the master node. If the master node is not available before the timeout expires, the request fails and returns an error. To indicate that the request should never timeout, set it to `-1`.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'DataRecoveryGetRpoSeriesRequest' })
 export type DataRecoveryGetRpoSeriesRequest = z.infer<typeof DataRecoveryGetRpoSeriesRequest>
 

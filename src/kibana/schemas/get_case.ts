@@ -11,7 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Cases_assignees, Cases_case_observable, Cases_case_response_closed_by_properties, Cases_case_response_created_by_properties, Cases_case_response_updated_by_properties, Cases_case_severity, Cases_case_status, Cases_connector_properties_cases_webhook, Cases_connector_properties_jira, Cases_connector_properties_none, Cases_connector_properties_resilient, Cases_connector_properties_servicenow, Cases_connector_properties_servicenow_sir, Cases_connector_properties_swimlane, Cases_external_service, Cases_owner, Cases_settings } from './schemas/misc.js'
+import { Cases_assignees, Cases_case_extended_fields_labels, Cases_case_observable, Cases_case_response_closed_by_properties, Cases_case_response_created_by_properties, Cases_case_response_updated_by_properties, Cases_case_severity, Cases_case_status, Cases_connector_properties_cases_webhook, Cases_connector_properties_jira, Cases_connector_properties_none, Cases_connector_properties_resilient, Cases_connector_properties_servicenow, Cases_connector_properties_servicenow_sir, Cases_connector_properties_swimlane, Cases_external_service, Cases_owner, Cases_settings } from './schemas/misc.js'
 
 export const Cases_case_response_get_case = z.object({
   assignees: Cases_assignees.optional(),
@@ -28,6 +28,8 @@ export const Cases_case_response_get_case = z.object({
   })).optional(),
   description: z.string(),
   duration: z.number().nullable(),
+  extended_fields: z.record(z.string(), z.string()).optional(),
+  extended_fields_labels: Cases_case_extended_fields_labels.optional(),
   external_service: Cases_external_service,
   id: z.string(),
   incremental_id: z.number().nullable().optional(),
@@ -55,6 +57,7 @@ export { Cases_settings } from './schemas/misc.js'
 export { Cases_owner } from './schemas/misc.js'
 export { Cases_case_observable } from './schemas/misc.js'
 export { Cases_external_service } from './schemas/misc.js'
+export { Cases_case_extended_fields_labels } from './schemas/misc.js'
 export { Cases_case_response_created_by_properties } from './schemas/misc.js'
 export { Cases_connector_properties_swimlane } from './schemas/misc.js'
 export { Cases_connector_properties_servicenow_sir } from './schemas/misc.js'

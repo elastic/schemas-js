@@ -19,7 +19,7 @@ export const indices_update_aliases_definitions: EsApiDefinition[] = [
   {
     name: 'update-aliases',
     namespace: 'indices',
-    description: 'Create or update an alias.',
+    description: 'Update aliases and delete indices atomically.',
     method: 'POST',
     path: '/_aliases',
     destructive: true,

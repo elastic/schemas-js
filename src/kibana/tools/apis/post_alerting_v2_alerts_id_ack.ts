@@ -19,7 +19,7 @@ export const post_alerting_v2_alerts_id_ackDefinitions: KbApiDefinition[] = [
   {
     name: 'post-alerting-v2-alerts-id-ack',
     namespace: 'alerting-v2',
-    description: 'Acknowledge an alert episode',
+    description: 'Acknowledge an alert',
     method: 'POST',
     path: '/api/alerting/v2/alerts/{id}/_ack',
     destructive: true,

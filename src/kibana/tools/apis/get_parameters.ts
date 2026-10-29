@@ -15,7 +15,7 @@ export const get_parametersDefinitions: KbApiDefinition[] = [
   {
     name: 'get-parameters',
     namespace: 'synthetics',
-    description: 'Get parameters',
+    description: 'Search parameters',
     method: 'GET',
     path: '/api/synthetics/params',
     destructive: false,

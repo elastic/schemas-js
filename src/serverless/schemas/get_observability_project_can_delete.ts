@@ -19,6 +19,12 @@ export const GetObservabilityProjectCanDeleteResponse = z.object({
     alias: z.string().optional(),
     type: z.enum(['elasticsearch', 'observability', 'security', 'vectordb'])
   })),
+  monitored_projects: z.array(z.object({
+    id: z.string(),
+    name: z.string().optional(),
+    alias: z.string().optional(),
+    type: z.enum(['elasticsearch', 'observability', 'security', 'vectordb'])
+  })),
   can_be_deleted: z.boolean()
 }).meta({ id: 'GetObservabilityProjectCanDeleteResponse' })
 export type GetObservabilityProjectCanDeleteResponse = z.infer<typeof GetObservabilityProjectCanDeleteResponse>

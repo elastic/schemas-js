@@ -35,6 +35,12 @@ export const ImportRulesResponse = z.object({
   exceptions_success: z.boolean(),
   exceptions_success_count: z.number(),
   rules_count: z.number(),
+  rules_summary: z.object({
+    created: z.number(),
+    failed: z.number(),
+    skipped: z.number(),
+    updated: z.number()
+  }),
   success: z.boolean(),
   success_count: z.number()
 }).meta({ id: 'ImportRulesResponse' })

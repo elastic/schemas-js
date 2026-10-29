@@ -9,7 +9,11 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
+import type { JsonSchemaObject } from '../../../json-schema.ts'
+import _inputSchemaRaw from '../../../kibana/json/agent-builder.get-agent-builder-agents.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
+
+const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
 export const get_agent_builder_agentsDefinitions: KbApiDefinition[] = [
   {
@@ -20,5 +24,6 @@ export const get_agent_builder_agentsDefinitions: KbApiDefinition[] = [
     path: '/api/agent_builder/agents',
     destructive: false,
     readOnly: true,
+    input: _inputSchema,
   },
 ]

@@ -12,5 +12,11 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const GetSyntheticMonitorsResponse = z.object({}).meta({ id: 'GetSyntheticMonitorsResponse' })
+export const GetSyntheticMonitorsResponse = z.object({
+  absoluteTotal: z.number().optional(),
+  monitors: z.array(z.record(z.string(), z.unknown())).optional(),
+  page: z.number().optional(),
+  perPage: z.number().optional(),
+  total: z.number().optional()
+}).meta({ id: 'GetSyntheticMonitorsResponse' })
 export type GetSyntheticMonitorsResponse = z.infer<typeof GetSyntheticMonitorsResponse>

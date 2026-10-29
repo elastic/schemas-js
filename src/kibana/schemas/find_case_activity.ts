@@ -16,6 +16,14 @@ import { Cases_assignees, Cases_case_severity, Cases_case_status, Cases_connecto
 export const Cases_actions = z.enum(['add', 'create', 'delete', 'push_to_service', 'update']).meta({ id: 'Cases_actions' })
 export type Cases_actions = z.infer<typeof Cases_actions>
 
+export const Cases_payload_bulk_attachments = z.object({
+  bulkAttachments: z.object({
+    attachmentType: z.string(),
+    count: z.number()
+  })
+}).meta({ id: 'Cases_payload_bulk_attachments' })
+export type Cases_payload_bulk_attachments = z.infer<typeof Cases_payload_bulk_attachments>
+
 export const Cases_payload_delete = z.object({}).nullable().meta({ id: 'Cases_payload_delete' })
 export type Cases_payload_delete = z.infer<typeof Cases_payload_delete>
 
@@ -186,8 +194,8 @@ export const Cases_user_actions_find_response_properties = z.object({
   }),
   id: z.string(),
   owner: Cases_owner,
-  payload: z.union([Cases_payload_alert_comment, Cases_payload_assignees, Cases_payload_connector, Cases_payload_create_case, Cases_payload_delete, Cases_payload_description, Cases_payload_pushed, Cases_payload_settings, Cases_payload_severity, Cases_payload_status, Cases_payload_tags, Cases_payload_title, Cases_payload_user_comment, Cases_payload_workflow]),
-  type: z.enum(['assignees', 'category', 'comment', 'connector', 'create_case', 'customFields', 'delete_case', 'description', 'extended_fields', 'observables', 'pushed', 'settings', 'severity', 'status', 'tags', 'title', 'workflow']),
+  payload: z.union([Cases_payload_bulk_attachments.loose(), Cases_payload_workflow.loose(), Cases_payload_alert_comment.loose(), Cases_payload_assignees.loose(), Cases_payload_connector.loose(), Cases_payload_create_case.loose(), Cases_payload_delete, Cases_payload_description.loose(), Cases_payload_pushed.loose(), Cases_payload_settings.loose(), Cases_payload_severity.loose(), Cases_payload_status.loose(), Cases_payload_tags.loose(), Cases_payload_title.loose(), Cases_payload_user_comment]),
+  type: z.enum(['assignees', 'bulkAttachments', 'category', 'comment', 'connector', 'create_case', 'customFields', 'delete_case', 'description', 'extended_fields', 'observables', 'pushed', 'settings', 'severity', 'status', 'tags', 'title', 'workflow']),
   version: z.string()
 }).meta({ id: 'Cases_user_actions_find_response_properties' })
 export type Cases_user_actions_find_response_properties = z.infer<typeof Cases_user_actions_find_response_properties>

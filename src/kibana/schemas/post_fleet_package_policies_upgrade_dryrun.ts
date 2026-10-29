@@ -211,15 +211,15 @@ export const Kibana_HTTP_APIs_dry_run_package_policy_response = z.object({
       deprecated: Kibana_HTTP_APIs_simplified_package_policy_stream_deprecation_info.optional(),
       enabled: z.boolean().optional(),
       var_group_selections: z.record(z.string(), z.string()).optional(),
-      vars: z.record(z.string(), z.union([z.string(), z.number(), z.boolean(), z.array(z.string()), z.array(z.number()), z.object({
+      vars: z.record(z.string(), z.union([z.object({
         id: z.string(),
         isSecretRef: z.boolean()
-      })]).nullable()).optional()
+      }), z.string(), z.number(), z.boolean(), z.array(z.string()), z.array(z.number())]).nullable()).optional()
     })).optional(),
-    vars: z.record(z.string(), z.union([z.string(), z.number(), z.boolean(), z.array(z.string()), z.array(z.number()), z.object({
+    vars: z.record(z.string(), z.union([z.object({
       id: z.string(),
       isSecretRef: z.boolean()
-    })]).nullable()).optional()
+    }), z.string(), z.number(), z.boolean(), z.array(z.string()), z.array(z.number())]).nullable()).optional()
   }))]),
   is_managed: z.boolean().optional(),
   name: z.string(),
@@ -246,10 +246,10 @@ export const Kibana_HTTP_APIs_dry_run_package_policy_response = z.object({
     frozen: z.boolean().optional(),
     type: z.string().optional(),
     value: z.unknown().nullable()
-  })), z.record(z.string(), z.union([z.string(), z.number(), z.boolean(), z.array(z.string()), z.array(z.number()), z.object({
+  })), z.record(z.string(), z.union([z.object({
     id: z.string(),
     isSecretRef: z.boolean()
-  })]).nullable())]).optional(),
+  }), z.string(), z.number(), z.boolean(), z.array(z.string()), z.array(z.number())]).nullable())]).optional(),
   version: z.string().optional()
 }).meta({ id: 'Kibana_HTTP_APIs_dry_run_package_policy_response' })
 export type Kibana_HTTP_APIs_dry_run_package_policy_response = z.infer<typeof Kibana_HTTP_APIs_dry_run_package_policy_response>

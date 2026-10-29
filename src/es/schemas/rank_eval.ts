@@ -6,7 +6,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { ExpandWildcards, Id, IndexName, Indices, SearchType, double, integer } from './_types.js'
+import { ExpandWildcards, Id, IndexName, Indices, SearchType, double, integer, long } from './_types.js'
 import { QueryDslQueryContainer } from './_types.query_dsl.js'
 import type { QueryDslQueryContainerShape } from './_types.query_dsl.js'
 
@@ -91,6 +91,7 @@ export type RankEvalUnratedDocument = z.infer<typeof RankEvalUnratedDocument>
 
 export const RankEvalRankEvalMetricDetail = z.object({
   metric_score: z.lazy(() => double).describe('The metric_score in the details section shows the contribution of this query to the global quality metric score'),
+  took: z.lazy(() => long).describe('The time in milliseconds it took to execute the search request for this query'),
   unrated_docs: z.array(RankEvalUnratedDocument).describe('The unrated_docs section contains an _index and _id entry for each document in the search result for this query that didn’t have a ratings value. This can be used to ask the user to supply ratings for these documents'),
   hits: z.array(RankEvalRankEvalHitItem).describe('The hits section shows a grouping of the search results with their supplied ratings'),
   metric_details: z.record(z.string(), z.record(z.string(), z.any())).describe('The metric_details give additional information about the calculated quality metric (e.g. how many of the retrieved documents were relevant). The content varies for each metric but allows for better interpretation of the results')

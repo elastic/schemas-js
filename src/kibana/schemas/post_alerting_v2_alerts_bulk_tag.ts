@@ -14,7 +14,7 @@ import { z } from 'zod'
 
 export const Kibana_HTTP_APIs_alerting_bulk_tag_alerts_item = z.object({
   alert_id: z.string(),
-  tags: z.array(z.string())
+  tags: z.array(z.string()).nullable()
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_bulk_tag_alerts_item' })
 export type Kibana_HTTP_APIs_alerting_bulk_tag_alerts_item = z.infer<typeof Kibana_HTTP_APIs_alerting_bulk_tag_alerts_item>
 

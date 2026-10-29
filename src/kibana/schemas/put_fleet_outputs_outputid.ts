@@ -28,16 +28,16 @@ export const Kibana_HTTP_APIs_update_output_otlp = z.object({
         key_pem: z.union([z.object({
           hash: z.string().optional(),
           id: z.string()
-        }), z.string()]).optional(),
+        }), z.string()]).nullable().optional(),
         tpm: z.object({
           auth: z.union([z.object({
             hash: z.string().optional(),
             id: z.string()
-          }), z.string()]).optional(),
+          }), z.string()]).nullable().optional(),
           owner_auth: z.union([z.object({
             hash: z.string().optional(),
             id: z.string()
-          }), z.string()]).optional()
+          }), z.string()]).nullable().optional()
         }).optional()
       }).optional()
     }).optional()
@@ -67,7 +67,7 @@ export const Kibana_HTTP_APIs_update_output_elasticsearch = z.object({
       key: z.union([z.object({
         hash: z.string().optional(),
         id: z.string()
-      }), z.string()]).optional()
+      }), z.string()]).nullable().optional()
     }).optional()
   }).optional(),
   shipper: Kibana_HTTP_APIs_output_shipper.nullable().optional(),
@@ -79,7 +79,7 @@ export type Kibana_HTTP_APIs_update_output_elasticsearch = z.infer<typeof Kibana
 
 export const Kibana_HTTP_APIs_update_output_kafka = z.object({
   allow_edit: z.array(z.string()).optional(),
-  auth_type: z.enum(['none', 'user_pass', 'ssl', 'kerberos']).optional(),
+  auth_type: z.enum(['none', 'user_pass', 'ssl', 'kerberos', 'oauth2']).optional(),
   broker_timeout: z.number().optional(),
   ca_sha256: z.string().nullable().optional(),
   ca_trusted_fingerprint: z.string().nullable().optional(),
@@ -102,8 +102,43 @@ export const Kibana_HTTP_APIs_update_output_kafka = z.object({
   is_default_monitoring: z.boolean().optional(),
   is_internal: z.boolean().optional(),
   is_preconfigured: z.boolean().optional(),
+  kerberos: z.object({
+    auth_type: z.enum(['keytab', 'password']),
+    config_path: z.string(),
+    enable_krb5_fast: z.boolean().optional(),
+    keytab: z.string().optional(),
+    realm: z.string(),
+    service_name: z.string().optional(),
+    username: z.string().optional()
+  }).nullable().optional(),
   key: z.string().optional(),
   name: z.string(),
+  oauth2: z.object({
+    audience: z.string().optional(),
+    claims: z.record(z.string(), z.unknown().nullable()).optional(),
+    client_certificate_key_file: z.string().optional(),
+    client_certificate_key_id: z.string().optional(),
+    client_id: z.string().optional(),
+    client_id_file: z.string().optional(),
+    client_secret_file: z.string().optional(),
+    endpoint_params: z.record(z.string(), z.array(z.string())).optional(),
+    expiry_buffer: z.number().optional(),
+    grant_type: z.enum(['client_credentials', 'urn:ietf:params:oauth:grant-type:jwt-bearer']).optional(),
+    iss: z.string().optional(),
+    scopes: z.array(z.string()).optional(),
+    signature_algorithm: z.enum(['RS256', 'RS384', 'RS512']).optional(),
+    timeout: z.number().optional(),
+    tls: z.object({
+      ca_file: z.string().optional(),
+      cert_file: z.string().optional(),
+      insecure_skip_verify: z.boolean().optional(),
+      key_file: z.string().optional(),
+      max_version: z.string().optional(),
+      min_version: z.string().optional(),
+      server_name_override: z.string().optional()
+    }).optional(),
+    token_url: z.string()
+  }).nullable().optional(),
   otel_disable_beatsauth: z.boolean().nullable().optional(),
   otel_exporter_config_yaml: z.string().nullable().optional(),
   partition: z.enum(['random', 'round_robin', 'hash']).optional(),
@@ -120,15 +155,31 @@ export const Kibana_HTTP_APIs_update_output_kafka = z.object({
     mechanism: z.enum(['PLAIN', 'SCRAM-SHA-256', 'SCRAM-SHA-512']).optional()
   }).nullable().optional(),
   secrets: z.object({
+    kerberos: z.object({
+      password: z.union([z.object({
+        hash: z.string().optional(),
+        id: z.string()
+      }), z.string()]).optional()
+    }).optional(),
+    oauth2: z.object({
+      client_certificate_key: z.union([z.object({
+        hash: z.string().optional(),
+        id: z.string()
+      }), z.string()]).optional(),
+      client_secret: z.union([z.object({
+        hash: z.string().optional(),
+        id: z.string()
+      }), z.string()]).optional()
+    }).optional(),
     password: z.union([z.object({
       hash: z.string().optional(),
       id: z.string()
-    }), z.string()]).optional(),
+    }), z.string()]).nullable().optional(),
     ssl: z.object({
       key: z.union([z.object({
         hash: z.string().optional(),
         id: z.string()
-      }), z.string()])
+      }), z.string()]).nullable()
     }).optional()
   }).optional(),
   shipper: Kibana_HTTP_APIs_output_shipper.nullable().optional(),
@@ -161,7 +212,7 @@ export const Kibana_HTTP_APIs_update_output_logstash = z.object({
       key: z.union([z.object({
         hash: z.string().optional(),
         id: z.string()
-      }), z.string()]).optional()
+      }), z.string()]).nullable().optional()
     }).optional()
   }).optional(),
   shipper: Kibana_HTTP_APIs_output_shipper.nullable().optional(),
@@ -192,12 +243,12 @@ export const Kibana_HTTP_APIs_update_output_remote_elasticsearch = z.object({
     service_token: z.union([z.object({
       hash: z.string().optional(),
       id: z.string()
-    }), z.string()]).optional(),
+    }), z.string()]).nullable().optional(),
     ssl: z.object({
       key: z.union([z.object({
         hash: z.string().optional(),
         id: z.string()
-      }), z.string()]).optional()
+      }), z.string()]).nullable().optional()
     }).optional()
   }).optional(),
   service_token: z.string().nullable().optional(),
@@ -210,7 +261,7 @@ export const Kibana_HTTP_APIs_update_output_remote_elasticsearch = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_update_output_remote_elasticsearch' })
 export type Kibana_HTTP_APIs_update_output_remote_elasticsearch = z.infer<typeof Kibana_HTTP_APIs_update_output_remote_elasticsearch>
 
-export const PutFleetOutputsOutputidRequest = z.union([Kibana_HTTP_APIs_update_output_elasticsearch, Kibana_HTTP_APIs_update_output_remote_elasticsearch, Kibana_HTTP_APIs_update_output_logstash, Kibana_HTTP_APIs_update_output_kafka, Kibana_HTTP_APIs_update_output_otlp]).meta({ id: 'PutFleetOutputsOutputidRequest' })
+export const PutFleetOutputsOutputidRequest = z.union([Kibana_HTTP_APIs_update_output_kafka.loose(), Kibana_HTTP_APIs_update_output_otlp.loose(), Kibana_HTTP_APIs_update_output_elasticsearch.loose(), Kibana_HTTP_APIs_update_output_remote_elasticsearch.loose(), Kibana_HTTP_APIs_update_output_logstash]).meta({ id: 'PutFleetOutputsOutputidRequest' })
 export type PutFleetOutputsOutputidRequest = z.infer<typeof PutFleetOutputsOutputidRequest>
 
 export const PutFleetOutputsOutputidResponse = z.object({

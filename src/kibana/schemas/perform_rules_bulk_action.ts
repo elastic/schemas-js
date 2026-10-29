@@ -30,6 +30,9 @@ export type Security_Detections_API_BulkActionEditPayloadSchedule = z.infer<type
 export const Security_Detections_API_BulkActionsDryRunErrCode = z.enum(['IMMUTABLE', 'PREBUILT_CUSTOMIZATION_LICENSE', 'MACHINE_LEARNING_AUTH', 'MACHINE_LEARNING_INDEX_PATTERN', 'ESQL_INDEX_PATTERN', 'MANUAL_RULE_RUN_FEATURE', 'MANUAL_RULE_RUN_DISABLED_RULE', 'THRESHOLD_RULE_TYPE_IN_SUPPRESSION', 'UNSUPPORTED_RULE_IN_SUPPRESSION_FOR_THRESHOLD', 'RULE_FILL_GAPS_DISABLED_RULE', 'USER_INSUFFICIENT_RULE_PRIVILEGES']).meta({ id: 'Security_Detections_API_BulkActionsDryRunErrCode' })
 export type Security_Detections_API_BulkActionsDryRunErrCode = z.infer<typeof Security_Detections_API_BulkActionsDryRunErrCode>
 
+export const Security_Detections_API_BulkDeleteSkipReason = z.enum(['RULE_NOT_FOUND']).meta({ id: 'Security_Detections_API_BulkDeleteSkipReason' })
+export type Security_Detections_API_BulkDeleteSkipReason = z.infer<typeof Security_Detections_API_BulkDeleteSkipReason>
+
 export const Security_Detections_API_BulkEditActionSummary = z.object({
   failed: z.number(),
   skipped: z.number(),
@@ -62,7 +65,7 @@ export type Security_Detections_API_ThrottleForBulkActions = z.infer<typeof Secu
 export const Security_Detections_API_BulkActionSkipResult = z.object({
   id: z.string(),
   name: z.string().optional(),
-  skip_reason: z.union([Security_Detections_API_BulkEditSkipReason, Security_Detections_API_BulkGapsFillingSkipReason])
+  skip_reason: z.union([Security_Detections_API_BulkEditSkipReason, Security_Detections_API_BulkGapsFillingSkipReason, Security_Detections_API_BulkDeleteSkipReason])
 }).meta({ id: 'Security_Detections_API_BulkActionSkipResult' })
 export type Security_Detections_API_BulkActionSkipResult = z.infer<typeof Security_Detections_API_BulkActionSkipResult>
 

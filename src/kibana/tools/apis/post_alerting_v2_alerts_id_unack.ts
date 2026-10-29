@@ -19,7 +19,7 @@ export const post_alerting_v2_alerts_id_unackDefinitions: KbApiDefinition[] = [
   {
     name: 'post-alerting-v2-alerts-id-unack',
     namespace: 'alerting-v2',
-    description: 'Unacknowledge an alert episode',
+    description: 'Unacknowledge an alert',
     method: 'POST',
     path: '/api/alerting/v2/alerts/{id}/_unack',
     destructive: true,

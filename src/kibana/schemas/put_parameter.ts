@@ -20,5 +20,12 @@ export const PutParameterRequest = z.object({
 }).meta({ id: 'PutParameterRequest' })
 export type PutParameterRequest = z.infer<typeof PutParameterRequest>
 
-export const PutParameterResponse = z.object({}).meta({ id: 'PutParameterResponse' })
+export const PutParameterResponse = z.object({
+  description: z.string().optional(),
+  id: z.string().optional(),
+  key: z.string().optional(),
+  namespaces: z.array(z.string()).optional(),
+  tags: z.array(z.string()).optional(),
+  value: z.string().optional()
+}).meta({ id: 'PutParameterResponse' })
 export type PutParameterResponse = z.infer<typeof PutParameterResponse>

@@ -19,7 +19,7 @@ export const cat_nodes_definitions: EsApiDefinition[] = [
   {
     name: 'nodes',
     namespace: 'cat',
-    description: 'Get node information.',
+    description: 'Get a compact list of nodes.',
     method: 'GET',
     path: '/_cat/nodes',
     destructive: false,

@@ -11,19 +11,103 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Synthetics_browserMonitorFields, Synthetics_httpMonitorFields, Synthetics_icmpMonitorFields, Synthetics_monitorWarning, Synthetics_tcpMonitorFields } from './schemas/misc.js'
+import { Kibana_HTTP_APIs_syntheticsJsonValue } from './schemas/kibana.js'
 
-export const PutSyntheticMonitorRequest = z.union([Synthetics_browserMonitorFields, Synthetics_httpMonitorFields, Synthetics_icmpMonitorFields, Synthetics_tcpMonitorFields]).meta({ id: 'PutSyntheticMonitorRequest' })
-export type PutSyntheticMonitorRequest = z.infer<typeof PutSyntheticMonitorRequest>
+export const Kibana_HTTP_APIs_editMonitorRequest = z.object({
+  alert: z.object({
+    status: z.object({
+      enabled: z.boolean(),
+      groupBy: z.string().optional()
+    }).passthrough().optional(),
+    tls: z.object({
+      enabled: z.boolean(),
+      groupBy: z.string().optional()
+    }).passthrough().optional()
+  }).passthrough().optional(),
+  certificate_error_spki_allowlist: Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  check: Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'check.receive': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'check.request.body': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'check.request.headers': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'check.request.method': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'check.response.body.negative': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'check.response.body.positive': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'check.response.headers': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'check.response.json': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'check.response.status': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'check.send': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  enabled: z.boolean().optional(),
+  filter_journeys: Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'filter_journeys.match': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'filter_journeys.tags': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  host: z.string().optional(),
+  id: Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  ignore_https_errors: Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  inline_script: z.string().optional(),
+  ipv4: z.boolean().optional(),
+  ipv6: z.boolean().optional(),
+  kerberos: Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  labels: z.record(z.string(), z.string()).optional(),
+  locations: z.array(z.union([z.object({
+    id: z.string()
+  }).passthrough(), z.string()])).optional(),
+  maintenance_windows: z.array(z.string()).optional(),
+  max_redirects: z.union([z.string(), z.number()]).optional(),
+  mode: z.enum(['any', 'all']).optional(),
+  name: z.string().optional(),
+  namespace: z.string().optional(),
+  ntlm: Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  params: z.union([z.string(), z.record(z.string(), z.string())]).optional(),
+  password: Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  playwright_options: Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  playwright_text_assertion: Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  private_locations: z.array(z.union([z.object({
+    id: z.string()
+  }).passthrough(), z.string()])).optional(),
+  proxy_headers: Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  proxy_url: Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  proxy_use_local_resolver: Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  response: Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'response.include_body': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'response.include_body_max_bytes': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'response.include_headers': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  retest_on_failure: z.boolean().optional(),
+  schedule: z.union([z.object({
+    number: z.union([z.string(), z.number()]),
+    unit: z.enum(['m', 's'])
+  }), z.number()]).optional(),
+  screenshots: Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'service.name': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  source: Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'source.inline': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'source.inline.script': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'source.project.content': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  spaces: z.array(z.string()).optional(),
+  ssl: Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'ssl.certificate': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'ssl.certificate_authorities': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'ssl.key': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'ssl.key_passphrase': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'ssl.supported_protocols': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  'ssl.verification_mode': Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  synthetics_args: Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  tags: z.union([z.string(), z.array(z.string())]).optional(),
+  throttling: Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  timeout: z.union([z.string(), z.number()]).nullable().optional(),
+  type: z.enum(['http', 'tcp', 'icmp', 'browser', 'api']).optional(),
+  url: z.string().optional(),
+  username: Kibana_HTTP_APIs_syntheticsJsonValue.optional(),
+  wait: Kibana_HTTP_APIs_syntheticsJsonValue.optional()
+}).meta({ id: 'Kibana_HTTP_APIs_editMonitorRequest' })
+export type Kibana_HTTP_APIs_editMonitorRequest = z.infer<typeof Kibana_HTTP_APIs_editMonitorRequest>
 
 export const PutSyntheticMonitorResponse = z.object({
-  warnings: z.array(Synthetics_monitorWarning).optional()
-}).meta({ id: 'PutSyntheticMonitorResponse' })
+  warnings: z.array(z.object({
+    message: z.string().optional(),
+    monitorId: z.string().optional(),
+    publicLocationIds: z.array(z.string()).optional()
+  })).optional()
+}).passthrough().meta({ id: 'PutSyntheticMonitorResponse' })
 export type PutSyntheticMonitorResponse = z.infer<typeof PutSyntheticMonitorResponse>
 
-export { Synthetics_monitorWarning } from './schemas/misc.js'
-export { Synthetics_tcpMonitorFields } from './schemas/misc.js'
-export { Synthetics_commonMonitorFields } from './schemas/misc.js'
-export { Synthetics_icmpMonitorFields } from './schemas/misc.js'
-export { Synthetics_httpMonitorFields } from './schemas/misc.js'
-export { Synthetics_browserMonitorFields } from './schemas/misc.js'
+export { Kibana_HTTP_APIs_syntheticsJsonValue } from './schemas/kibana.js'

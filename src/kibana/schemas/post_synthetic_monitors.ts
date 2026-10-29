@@ -11,19 +11,20 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Synthetics_browserMonitorFields, Synthetics_httpMonitorFields, Synthetics_icmpMonitorFields, Synthetics_monitorWarning, Synthetics_tcpMonitorFields } from './schemas/misc.js'
-
-export const PostSyntheticMonitorsRequest = z.union([Synthetics_browserMonitorFields, Synthetics_httpMonitorFields, Synthetics_icmpMonitorFields, Synthetics_tcpMonitorFields]).meta({ id: 'PostSyntheticMonitorsRequest' })
-export type PostSyntheticMonitorsRequest = z.infer<typeof PostSyntheticMonitorsRequest>
 
 export const PostSyntheticMonitorsResponse = z.object({
-  warnings: z.array(Synthetics_monitorWarning).optional()
-}).meta({ id: 'PostSyntheticMonitorsResponse' })
+  warnings: z.array(z.object({
+    message: z.string().optional(),
+    monitorId: z.string().optional(),
+    publicLocationIds: z.array(z.string()).optional()
+  })).optional()
+}).passthrough().meta({ id: 'PostSyntheticMonitorsResponse' })
 export type PostSyntheticMonitorsResponse = z.infer<typeof PostSyntheticMonitorsResponse>
 
-export { Synthetics_monitorWarning } from './schemas/misc.js'
-export { Synthetics_tcpMonitorFields } from './schemas/misc.js'
-export { Synthetics_commonMonitorFields } from './schemas/misc.js'
-export { Synthetics_icmpMonitorFields } from './schemas/misc.js'
-export { Synthetics_httpMonitorFields } from './schemas/misc.js'
-export { Synthetics_browserMonitorFields } from './schemas/misc.js'
+export { Kibana_HTTP_APIs_createMonitorRequest } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_apiMonitorFields } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_syntheticsJsonValue } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_browserMonitorFields } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_icmpMonitorFields } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_tcpMonitorFields } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_httpMonitorFields } from './schemas/kibana.js'

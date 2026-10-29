@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-discover-session","x-api":{"id":"discover-sessions.delete-discover-session","name":"delete-discover-session","namespace":"discover-sessions"},"type":"object","properties":{}}

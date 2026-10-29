@@ -47,7 +47,7 @@ export const MlUpdateJobRequest = z.object({
   renormalization_window_days: z.lazy(() => long).describe('Advanced configuration option. The period over which adjustments to the score are applied, as new data is seen.').optional().meta({ found_in: 'body' }),
   results_retention_days: z.lazy(() => long).describe('Advanced configuration option. The period of time (in days) that results are retained. Age is calculated relative to the timestamp of the latest bucket result. If this property has a non-null value, once per day at 00:30 (server time), results that are the specified number of days older than the latest bucket result are deleted from Elasticsearch. The default value is null, which means all results are retained.').optional().meta({ found_in: 'body' }),
   groups: z.array(z.string()).describe('A list of job groups. A job can belong to no groups or many.').optional().meta({ found_in: 'body' }),
-  detectors: z.array(MlDetectorUpdate).describe('An array of detector update objects.').optional().meta({ found_in: 'body' }),
+  detectors: z.union([MlDetectorUpdate, z.array(MlDetectorUpdate)]).describe('A detector update object or an array of detector update objects.').optional().meta({ found_in: 'body' }),
   per_partition_categorization: z.lazy(() => MlPerPartitionCategorization).describe('Settings related to how categorization interacts with partition fields.').optional().meta({ found_in: 'body' })
 }).meta({ id: 'MlUpdateJobRequest' })
 export type MlUpdateJobRequest = z.infer<typeof MlUpdateJobRequest>

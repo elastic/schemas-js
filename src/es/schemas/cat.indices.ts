@@ -307,7 +307,7 @@ export const CatIndicesIndicesRecord = z.object({
 export type CatIndicesIndicesRecord = z.infer<typeof CatIndicesIndicesRecord>
 
 /**
- * Get index information.
+ * Get a compact list of indices.
  *
  * Get high-level information about indices in a cluster, including backing indices for data streams.
  *

@@ -12,7 +12,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Kibana_HTTP_APIs_alerting_rule_execution = z.object({
+export const Kibana_HTTP_APIs_alerting_rule_execution_history_item = z.object({
   ended_at: z.string(),
   error: z.object({
     message: z.string(),
@@ -25,19 +25,22 @@ export const Kibana_HTTP_APIs_alerting_rule_execution = z.object({
     id: z.string(),
     version: z.number().optional()
   }),
-  space_id: z.string(),
   started_at: z.string(),
   timings: z.object({
     duration_ms: z.number(),
     scheduled_delay_ms: z.number()
   })
-}).meta({ id: 'Kibana_HTTP_APIs_alerting_rule_execution' })
-export type Kibana_HTTP_APIs_alerting_rule_execution = z.infer<typeof Kibana_HTTP_APIs_alerting_rule_execution>
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_rule_execution_history_item' })
+export type Kibana_HTTP_APIs_alerting_rule_execution_history_item = z.infer<typeof Kibana_HTTP_APIs_alerting_rule_execution_history_item>
 
-export const Kibana_HTTP_APIs_alerting_rule_executions_response = z.object({
-  items: z.array(Kibana_HTTP_APIs_alerting_rule_execution),
+export const Kibana_HTTP_APIs_alerting_rule_execution_history_response = z.object({
+  items: z.array(Kibana_HTTP_APIs_alerting_rule_execution_history_item),
   page: z.number(),
   per_page: z.number(),
+  search_matches: z.object({
+    is_truncated: z.boolean(),
+    rule_count: z.number()
+  }).optional(),
   total: z.number()
-}).meta({ id: 'Kibana_HTTP_APIs_alerting_rule_executions_response' })
-export type Kibana_HTTP_APIs_alerting_rule_executions_response = z.infer<typeof Kibana_HTTP_APIs_alerting_rule_executions_response>
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_rule_execution_history_response' })
+export type Kibana_HTTP_APIs_alerting_rule_execution_history_response = z.infer<typeof Kibana_HTTP_APIs_alerting_rule_execution_history_response>

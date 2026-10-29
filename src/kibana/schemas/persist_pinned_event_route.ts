@@ -13,9 +13,9 @@
 import { z } from 'zod'
 import { Security_Timeline_API_PinnedEvent } from './schemas/security.js'
 
-export const Security_Timeline_API_PersistPinnedEventResponse = z.union([Security_Timeline_API_PinnedEvent, z.object({
+export const Security_Timeline_API_PersistPinnedEventResponse = z.union([z.object({
   unpinned: z.boolean()
-})]).meta({ id: 'Security_Timeline_API_PersistPinnedEventResponse' })
+}), Security_Timeline_API_PinnedEvent]).meta({ id: 'Security_Timeline_API_PersistPinnedEventResponse' })
 export type Security_Timeline_API_PersistPinnedEventResponse = z.infer<typeof Security_Timeline_API_PersistPinnedEventResponse>
 
 export const PersistPinnedEventRouteRequest = z.object({

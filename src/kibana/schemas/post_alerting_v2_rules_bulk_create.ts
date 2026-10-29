@@ -13,6 +13,17 @@
 import { z } from 'zod'
 import { Kibana_HTTP_APIs_alerting_rule_artifact, Kibana_HTTP_APIs_alerting_rule_grouping, Kibana_HTTP_APIs_alerting_rule_metadata, Kibana_HTTP_APIs_alerting_rule_no_data, Kibana_HTTP_APIs_alerting_rule_query, Kibana_HTTP_APIs_alerting_rule_recovery, Kibana_HTTP_APIs_alerting_rule_response, Kibana_HTTP_APIs_alerting_rule_schedule, Kibana_HTTP_APIs_alerting_rule_state_transition } from './schemas/kibana.js'
 
+export const Kibana_HTTP_APIs_alerting_bulk_create_error = z.object({
+  error: z.object({
+    code: z.string(),
+    details: z.record(z.string(), z.unknown()).optional(),
+    message: z.string()
+  }),
+  id: z.string().optional(),
+  index: z.number()
+}).meta({ id: 'Kibana_HTTP_APIs_alerting_bulk_create_error' })
+export type Kibana_HTTP_APIs_alerting_bulk_create_error = z.infer<typeof Kibana_HTTP_APIs_alerting_bulk_create_error>
+
 export const Kibana_HTTP_APIs_alerting_bulk_create_rule_item = z.object({
   artifacts: z.array(Kibana_HTTP_APIs_alerting_rule_artifact).optional(),
   enabled: z.boolean().optional(),
@@ -35,14 +46,7 @@ export const Kibana_HTTP_APIs_alerting_bulk_create_rules_request = z.object({
 export type Kibana_HTTP_APIs_alerting_bulk_create_rules_request = z.infer<typeof Kibana_HTTP_APIs_alerting_bulk_create_rules_request>
 
 export const Kibana_HTTP_APIs_alerting_bulk_create_rules_response = z.object({
-  errors: z.array(z.object({
-    error: z.object({
-      code: z.string(),
-      details: z.record(z.string(), z.unknown()).optional(),
-      message: z.string()
-    }),
-    id: z.string()
-  })),
+  errors: z.array(Kibana_HTTP_APIs_alerting_bulk_create_error),
   items: z.array(Kibana_HTTP_APIs_alerting_rule_response)
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_bulk_create_rules_response' })
 export type Kibana_HTTP_APIs_alerting_bulk_create_rules_response = z.infer<typeof Kibana_HTTP_APIs_alerting_bulk_create_rules_response>
@@ -65,6 +69,6 @@ export { Kibana_HTTP_APIs_alerting_rule_no_data_alert } from './schemas/kibana.j
 export { Kibana_HTTP_APIs_alerting_rule_no_data_resolve } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_no_data_keep_last } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_no_data_ignore } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_rule_metadata } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_grouping } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_artifact } from './schemas/kibana.js'
-export { Kibana_HTTP_APIs_alerting_rule_metadata } from './schemas/kibana.js'

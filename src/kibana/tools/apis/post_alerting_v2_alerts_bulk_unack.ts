@@ -19,7 +19,7 @@ export const post_alerting_v2_alerts_bulk_unackDefinitions: KbApiDefinition[] = 
   {
     name: 'post-alerting-v2-alerts-bulk-unack',
     namespace: 'alerting-v2',
-    description: 'Bulk unacknowledge alert episodes',
+    description: 'Bulk unacknowledge alerts',
     method: 'POST',
     path: '/api/alerting/v2/alerts/_bulk_unack',
     destructive: true,

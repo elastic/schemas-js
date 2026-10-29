@@ -845,12 +845,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -864,12 +864,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -883,12 +883,12 @@
     "readOnly": true,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -902,12 +902,12 @@
     "readOnly": true,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -921,12 +921,12 @@
     "readOnly": true,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -940,12 +940,12 @@
     "readOnly": true,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -959,12 +959,12 @@
     "readOnly": true,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -978,12 +978,12 @@
     "readOnly": true,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -997,12 +997,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1016,12 +1016,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1035,12 +1035,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1054,12 +1054,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1073,12 +1073,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1092,12 +1092,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1111,12 +1111,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1130,12 +1130,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1149,12 +1149,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1168,12 +1168,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1187,12 +1187,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1206,12 +1206,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1225,12 +1225,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1244,12 +1244,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1257,18 +1257,18 @@
     "id": "alerting-v2.post-alerting-v2-alerts-bulk-ack",
     "name": "post-alerting-v2-alerts-bulk-ack",
     "namespace": "alerting-v2",
-    "description": "Bulk acknowledge alert episodes",
+    "description": "Bulk acknowledge alerts",
     "namespaceFile": "alerting-v2.post-alerting-v2-alerts-bulk-ack",
     "destructive": true,
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1276,18 +1276,18 @@
     "id": "alerting-v2.post-alerting-v2-alerts-bulk-activate",
     "name": "post-alerting-v2-alerts-bulk-activate",
     "namespace": "alerting-v2",
-    "description": "Bulk activate alert episodes",
+    "description": "Bulk activate alerts",
     "namespaceFile": "alerting-v2.post-alerting-v2-alerts-bulk-activate",
     "destructive": true,
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1295,18 +1295,18 @@
     "id": "alerting-v2.post-alerting-v2-alerts-bulk-assign",
     "name": "post-alerting-v2-alerts-bulk-assign",
     "namespace": "alerting-v2",
-    "description": "Bulk assign alert episodes",
+    "description": "Bulk assign alerts",
     "namespaceFile": "alerting-v2.post-alerting-v2-alerts-bulk-assign",
     "destructive": true,
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1314,18 +1314,18 @@
     "id": "alerting-v2.post-alerting-v2-alerts-bulk-deactivate",
     "name": "post-alerting-v2-alerts-bulk-deactivate",
     "namespace": "alerting-v2",
-    "description": "Bulk deactivate alert episodes",
+    "description": "Bulk deactivate alerts",
     "namespaceFile": "alerting-v2.post-alerting-v2-alerts-bulk-deactivate",
     "destructive": true,
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1333,18 +1333,18 @@
     "id": "alerting-v2.post-alerting-v2-alerts-bulk-tag",
     "name": "post-alerting-v2-alerts-bulk-tag",
     "namespace": "alerting-v2",
-    "description": "Bulk tag alert episodes",
+    "description": "Bulk tag alerts",
     "namespaceFile": "alerting-v2.post-alerting-v2-alerts-bulk-tag",
     "destructive": true,
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1352,18 +1352,18 @@
     "id": "alerting-v2.post-alerting-v2-alerts-bulk-unack",
     "name": "post-alerting-v2-alerts-bulk-unack",
     "namespace": "alerting-v2",
-    "description": "Bulk unacknowledge alert episodes",
+    "description": "Bulk unacknowledge alerts",
     "namespaceFile": "alerting-v2.post-alerting-v2-alerts-bulk-unack",
     "destructive": true,
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1371,18 +1371,18 @@
     "id": "alerting-v2.post-alerting-v2-alerts-id-ack",
     "name": "post-alerting-v2-alerts-id-ack",
     "namespace": "alerting-v2",
-    "description": "Acknowledge an alert episode",
+    "description": "Acknowledge an alert",
     "namespaceFile": "alerting-v2.post-alerting-v2-alerts-id-ack",
     "destructive": true,
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1390,18 +1390,18 @@
     "id": "alerting-v2.post-alerting-v2-alerts-id-activate",
     "name": "post-alerting-v2-alerts-id-activate",
     "namespace": "alerting-v2",
-    "description": "Activate an alert episode",
+    "description": "Activate an alert",
     "namespaceFile": "alerting-v2.post-alerting-v2-alerts-id-activate",
     "destructive": true,
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1409,18 +1409,18 @@
     "id": "alerting-v2.post-alerting-v2-alerts-id-assign",
     "name": "post-alerting-v2-alerts-id-assign",
     "namespace": "alerting-v2",
-    "description": "Assign an alert episode to a user",
+    "description": "Assign an alert to a user",
     "namespaceFile": "alerting-v2.post-alerting-v2-alerts-id-assign",
     "destructive": true,
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1428,18 +1428,18 @@
     "id": "alerting-v2.post-alerting-v2-alerts-id-deactivate",
     "name": "post-alerting-v2-alerts-id-deactivate",
     "namespace": "alerting-v2",
-    "description": "Deactivate an alert episode",
+    "description": "Deactivate an alert",
     "namespaceFile": "alerting-v2.post-alerting-v2-alerts-id-deactivate",
     "destructive": true,
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1447,18 +1447,18 @@
     "id": "alerting-v2.post-alerting-v2-alerts-id-tag",
     "name": "post-alerting-v2-alerts-id-tag",
     "namespace": "alerting-v2",
-    "description": "Tag an alert episode",
+    "description": "Tag an alert",
     "namespaceFile": "alerting-v2.post-alerting-v2-alerts-id-tag",
     "destructive": true,
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1466,18 +1466,18 @@
     "id": "alerting-v2.post-alerting-v2-alerts-id-unack",
     "name": "post-alerting-v2-alerts-id-unack",
     "namespace": "alerting-v2",
-    "description": "Unacknowledge an alert episode",
+    "description": "Unacknowledge an alert",
     "namespaceFile": "alerting-v2.post-alerting-v2-alerts-id-unack",
     "destructive": true,
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1491,12 +1491,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1510,12 +1510,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1529,12 +1529,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1548,12 +1548,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1567,12 +1567,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1586,12 +1586,12 @@
     "readOnly": true,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1605,12 +1605,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1624,12 +1624,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1643,12 +1643,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1662,12 +1662,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1681,12 +1681,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1700,12 +1700,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1719,12 +1719,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1738,12 +1738,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1757,12 +1757,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -1776,12 +1776,12 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
-        "since": "9.5.0"
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -2459,6 +2459,25 @@
     }
   },
   {
+    "id": "cases.create-case-attachment-default-space",
+    "name": "create-case-attachment-default-space",
+    "namespace": "cases",
+    "description": "Create a case attachment",
+    "namespaceFile": "cases.create-case-attachment-default-space",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "stability": "tech_preview",
+        "since": "9.6.0"
+      },
+      "serverless": {
+        "stability": "tech_preview",
+        "since": "9.6.0"
+      }
+    }
+  },
+  {
     "id": "cases.create-case-field-definition-default-space",
     "name": "create-case-field-definition-default-space",
     "namespace": "cases",
@@ -2506,6 +2525,44 @@
       },
       "serverless": {
         "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "cases.delete-case-attachment-default-space",
+    "name": "delete-case-attachment-default-space",
+    "namespace": "cases",
+    "description": "Delete a case attachment",
+    "namespaceFile": "cases.delete-case-attachment-default-space",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "stability": "tech_preview",
+        "since": "9.6.0"
+      },
+      "serverless": {
+        "stability": "tech_preview",
+        "since": "9.6.0"
+      }
+    }
+  },
+  {
+    "id": "cases.delete-case-attachments-default-space",
+    "name": "delete-case-attachments-default-space",
+    "namespace": "cases",
+    "description": "Delete all case attachments",
+    "namespaceFile": "cases.delete-case-attachments-default-space",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "stability": "tech_preview",
+        "since": "9.6.0"
+      },
+      "serverless": {
+        "stability": "tech_preview",
+        "since": "9.6.0"
       }
     }
   },
@@ -2591,6 +2648,25 @@
       },
       "serverless": {
         "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "cases.find-case-attachments-default-space",
+    "name": "find-case-attachments-default-space",
+    "namespace": "cases",
+    "description": "Find case attachments",
+    "namespaceFile": "cases.find-case-attachments-default-space",
+    "destructive": false,
+    "readOnly": true,
+    "availability": {
+      "stack": {
+        "stability": "tech_preview",
+        "since": "9.6.0"
+      },
+      "serverless": {
+        "stability": "tech_preview",
+        "since": "9.6.0"
       }
     }
   },
@@ -2710,6 +2786,25 @@
       },
       "serverless": {
         "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "cases.get-case-attachment-default-space",
+    "name": "get-case-attachment-default-space",
+    "namespace": "cases",
+    "description": "Get a case attachment",
+    "namespaceFile": "cases.get-case-attachment-default-space",
+    "destructive": false,
+    "readOnly": true,
+    "availability": {
+      "stack": {
+        "stability": "tech_preview",
+        "since": "9.6.0"
+      },
+      "serverless": {
+        "stability": "tech_preview",
+        "since": "9.6.0"
       }
     }
   },
@@ -2880,6 +2975,25 @@
       },
       "serverless": {
         "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "cases.replace-case-attachment-default-space",
+    "name": "replace-case-attachment-default-space",
+    "namespace": "cases",
+    "description": "Replace a case attachment",
+    "namespaceFile": "cases.replace-case-attachment-default-space",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "stability": "tech_preview",
+        "since": "9.6.0"
+      },
+      "serverless": {
+        "stability": "tech_preview",
+        "since": "9.6.0"
       }
     }
   },
@@ -3056,6 +3170,25 @@
     }
   },
   {
+    "id": "connectors.get-actions-connector-oauth-callback-script",
+    "name": "get-actions-connector-oauth-callback-script",
+    "namespace": "connectors",
+    "description": "Get OAuth callback script",
+    "namespaceFile": "connectors.get-actions-connector-oauth-callback-script",
+    "destructive": false,
+    "readOnly": true,
+    "availability": {
+      "stack": {
+        "stability": "stable",
+        "since": "9.4.0"
+      },
+      "serverless": {
+        "stability": "stable",
+        "since": "9.4.0"
+      }
+    }
+  },
+  {
     "id": "connectors.get-actions-connector-types",
     "name": "get-actions-connector-types",
     "namespace": "connectors",
@@ -3120,6 +3253,25 @@
       },
       "serverless": {
         "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "connectors.post-actions-events-connector-type-id-connector-id",
+    "name": "post-actions-events-connector-type-id-connector-id",
+    "namespace": "connectors",
+    "description": "Ingest an external event for a Kibana connector",
+    "namespaceFile": "connectors.post-actions-events-connector-type-id-connector-id",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "stability": "experimental",
+        "since": "9.6.0"
+      },
+      "serverless": {
+        "stability": "experimental",
+        "since": "9.6.0"
       }
     }
   },
@@ -3422,6 +3574,101 @@
     }
   },
   {
+    "id": "data-views-v2.delete-data-views-v2-id",
+    "name": "delete-data-views-v2-id",
+    "namespace": "data-views-v2",
+    "description": "Delete a data view",
+    "namespaceFile": "data-views-v2.delete-data-views-v2-id",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "stability": "stable",
+        "since": "9.6.0"
+      },
+      "serverless": {
+        "stability": "stable",
+        "since": "9.6.0"
+      }
+    }
+  },
+  {
+    "id": "data-views-v2.get-data-views-v2",
+    "name": "get-data-views-v2",
+    "namespace": "data-views-v2",
+    "description": "Search data views",
+    "namespaceFile": "data-views-v2.get-data-views-v2",
+    "destructive": false,
+    "readOnly": true,
+    "availability": {
+      "stack": {
+        "stability": "stable",
+        "since": "9.6.0"
+      },
+      "serverless": {
+        "stability": "stable",
+        "since": "9.6.0"
+      }
+    }
+  },
+  {
+    "id": "data-views-v2.get-data-views-v2-id",
+    "name": "get-data-views-v2-id",
+    "namespace": "data-views-v2",
+    "description": "Get a data view",
+    "namespaceFile": "data-views-v2.get-data-views-v2-id",
+    "destructive": false,
+    "readOnly": true,
+    "availability": {
+      "stack": {
+        "stability": "stable",
+        "since": "9.6.0"
+      },
+      "serverless": {
+        "stability": "stable",
+        "since": "9.6.0"
+      }
+    }
+  },
+  {
+    "id": "data-views-v2.post-data-views-v2",
+    "name": "post-data-views-v2",
+    "namespace": "data-views-v2",
+    "description": "Create a data view",
+    "namespaceFile": "data-views-v2.post-data-views-v2",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "stability": "stable",
+        "since": "9.6.0"
+      },
+      "serverless": {
+        "stability": "stable",
+        "since": "9.6.0"
+      }
+    }
+  },
+  {
+    "id": "data-views-v2.put-data-views-v2-id",
+    "name": "put-data-views-v2-id",
+    "namespace": "data-views-v2",
+    "description": "Upsert a data view",
+    "namespaceFile": "data-views-v2.put-data-views-v2-id",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "stability": "stable",
+        "since": "9.6.0"
+      },
+      "serverless": {
+        "stability": "stable",
+        "since": "9.6.0"
+      }
+    }
+  },
+  {
     "id": "data-views.create-data-view-default",
     "name": "create-data-view-default",
     "namespace": "data-views",
@@ -3673,6 +3920,101 @@
       },
       "serverless": {
         "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "discover-sessions.create-discover-session",
+    "name": "create-discover-session",
+    "namespace": "discover-sessions",
+    "description": "Create a Discover session",
+    "namespaceFile": "discover-sessions.create-discover-session",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "stability": "stable",
+        "since": "9.6.0"
+      },
+      "serverless": {
+        "stability": "stable",
+        "since": "9.6.0"
+      }
+    }
+  },
+  {
+    "id": "discover-sessions.delete-discover-session",
+    "name": "delete-discover-session",
+    "namespace": "discover-sessions",
+    "description": "Delete a Discover session",
+    "namespaceFile": "discover-sessions.delete-discover-session",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "stability": "stable",
+        "since": "9.6.0"
+      },
+      "serverless": {
+        "stability": "stable",
+        "since": "9.6.0"
+      }
+    }
+  },
+  {
+    "id": "discover-sessions.get-discover-session",
+    "name": "get-discover-session",
+    "namespace": "discover-sessions",
+    "description": "Get a Discover session",
+    "namespaceFile": "discover-sessions.get-discover-session",
+    "destructive": false,
+    "readOnly": true,
+    "availability": {
+      "stack": {
+        "stability": "stable",
+        "since": "9.6.0"
+      },
+      "serverless": {
+        "stability": "stable",
+        "since": "9.6.0"
+      }
+    }
+  },
+  {
+    "id": "discover-sessions.search-discover-sessions",
+    "name": "search-discover-sessions",
+    "namespace": "discover-sessions",
+    "description": "Search Discover sessions",
+    "namespaceFile": "discover-sessions.search-discover-sessions",
+    "destructive": false,
+    "readOnly": true,
+    "availability": {
+      "stack": {
+        "stability": "stable",
+        "since": "9.6.0"
+      },
+      "serverless": {
+        "stability": "stable",
+        "since": "9.6.0"
+      }
+    }
+  },
+  {
+    "id": "discover-sessions.upsert-discover-session",
+    "name": "upsert-discover-session",
+    "namespace": "discover-sessions",
+    "description": "Upsert a Discover session",
+    "namespaceFile": "discover-sessions.upsert-discover-session",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "stability": "stable",
+        "since": "9.6.0"
+      },
+      "serverless": {
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },
@@ -6880,25 +7222,6 @@
       },
       "serverless": {
         "stability": "stable"
-      }
-    }
-  },
-  {
-    "id": "misc.get-actions-connector-oauth-callback-script",
-    "name": "get-actions-connector-oauth-callback-script",
-    "namespace": "misc",
-    "description": "",
-    "namespaceFile": "misc.get-actions-connector-oauth-callback-script",
-    "destructive": false,
-    "readOnly": true,
-    "availability": {
-      "stack": {
-        "stability": "stable",
-        "since": "9.4.0"
-      },
-      "serverless": {
-        "stability": "stable",
-        "since": "9.4.0"
       }
     }
   },
@@ -11919,6 +12242,9 @@
     "availability": {
       "stack": {
         "stability": "stable"
+      },
+      "serverless": {
+        "stability": "stable"
       }
     }
   },
@@ -11932,6 +12258,9 @@
     "readOnly": false,
     "availability": {
       "stack": {
+        "stability": "stable"
+      },
+      "serverless": {
         "stability": "stable"
       }
     }
@@ -11947,6 +12276,9 @@
     "availability": {
       "stack": {
         "stability": "stable"
+      },
+      "serverless": {
+        "stability": "stable"
       }
     }
   },
@@ -11960,6 +12292,9 @@
     "readOnly": false,
     "availability": {
       "stack": {
+        "stability": "stable"
+      },
+      "serverless": {
         "stability": "stable"
       }
     }
@@ -11975,6 +12310,9 @@
     "availability": {
       "stack": {
         "stability": "stable"
+      },
+      "serverless": {
+        "stability": "stable"
       }
     }
   },
@@ -11989,6 +12327,9 @@
     "availability": {
       "stack": {
         "stability": "stable"
+      },
+      "serverless": {
+        "stability": "stable"
       }
     }
   },
@@ -11996,12 +12337,15 @@
     "id": "synthetics.get-parameters",
     "name": "get-parameters",
     "namespace": "synthetics",
-    "description": "Get parameters",
+    "description": "Search parameters",
     "namespaceFile": "synthetics.get-parameters",
     "destructive": false,
     "readOnly": true,
     "availability": {
       "stack": {
+        "stability": "stable"
+      },
+      "serverless": {
         "stability": "stable"
       }
     }
@@ -12017,6 +12361,9 @@
     "availability": {
       "stack": {
         "stability": "stable"
+      },
+      "serverless": {
+        "stability": "stable"
       }
     }
   },
@@ -12030,6 +12377,9 @@
     "readOnly": true,
     "availability": {
       "stack": {
+        "stability": "stable"
+      },
+      "serverless": {
         "stability": "stable"
       }
     }
@@ -12045,6 +12395,9 @@
     "availability": {
       "stack": {
         "stability": "stable"
+      },
+      "serverless": {
+        "stability": "stable"
       }
     }
   },
@@ -12052,12 +12405,15 @@
     "id": "synthetics.get-synthetic-monitors",
     "name": "get-synthetic-monitors",
     "namespace": "synthetics",
-    "description": "Get monitors",
+    "description": "Search monitors",
     "namespaceFile": "synthetics.get-synthetic-monitors",
     "destructive": false,
     "readOnly": true,
     "availability": {
       "stack": {
+        "stability": "stable"
+      },
+      "serverless": {
         "stability": "stable"
       }
     }
@@ -12073,6 +12429,9 @@
     "availability": {
       "stack": {
         "stability": "stable"
+      },
+      "serverless": {
+        "stability": "stable"
       }
     }
   },
@@ -12086,6 +12445,9 @@
     "readOnly": false,
     "availability": {
       "stack": {
+        "stability": "stable"
+      },
+      "serverless": {
         "stability": "stable"
       }
     }
@@ -12101,6 +12463,9 @@
     "availability": {
       "stack": {
         "stability": "stable"
+      },
+      "serverless": {
+        "stability": "stable"
       }
     }
   },
@@ -12114,6 +12479,9 @@
     "readOnly": false,
     "availability": {
       "stack": {
+        "stability": "stable"
+      },
+      "serverless": {
         "stability": "stable"
       }
     }
@@ -12130,6 +12498,10 @@
       "stack": {
         "stability": "stable",
         "since": "9.2.0"
+      },
+      "serverless": {
+        "stability": "stable",
+        "since": "9.2.0"
       }
     }
   },
@@ -12143,6 +12515,9 @@
     "readOnly": false,
     "availability": {
       "stack": {
+        "stability": "stable"
+      },
+      "serverless": {
         "stability": "stable"
       }
     }
@@ -12158,6 +12533,9 @@
     "availability": {
       "stack": {
         "stability": "stable"
+      },
+      "serverless": {
+        "stability": "stable"
       }
     }
   },
@@ -12172,6 +12550,9 @@
     "availability": {
       "stack": {
         "stability": "stable"
+      },
+      "serverless": {
+        "stability": "stable"
       }
     }
   },
@@ -12185,6 +12566,10 @@
     "readOnly": false,
     "availability": {
       "stack": {
+        "stability": "stable",
+        "since": "9.5.0"
+      },
+      "serverless": {
         "stability": "stable",
         "since": "9.5.0"
       }
