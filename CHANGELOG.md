@@ -1,5 +1,43 @@
 # Changelog
 
+## [0.11.0](https://github.com/elastic/schemas-js/compare/v0.10.0...v0.11.0) (2026-10-29)
+
+
+### Features
+
+* **es:** add `data_recovery.get_recovery_sources` and `data_recovery.get_rpo_series` APIs ([#117](https://github.com/elastic/schemas-js/issues/117)) ([7dd0e1c](https://github.com/elastic/schemas-js/commit/7dd0e1c1a8322da713dc6f482996de02b66cece5))
+* **es:** add `data_recovery.get_recovery`, `data_recovery.list_recoveries`, `data_recovery.start_recovery` and `security.query_service_accounts` APIs ([4889602](https://github.com/elastic/schemas-js/commit/488960219a2693f783032072ff4339def460d1bb))
+* **es:** add `inference.document_extraction` API ([4889602](https://github.com/elastic/schemas-js/commit/488960219a2693f783032072ff4339def460d1bb))
+* **es:** add `rescore` profiles to `search` shard profiles and `debug` to query profiles ([4889602](https://github.com/elastic/schemas-js/commit/488960219a2693f783032072ff4339def460d1bb))
+* **es:** add `validate` parameter to `esql.put_view` and `reserved` to `esql.get_view` response ([4889602](https://github.com/elastic/schemas-js/commit/488960219a2693f783032072ff4339def460d1bb))
+* **es:** add action summaries and per-action results to `indices.update_aliases` response ([4889602](https://github.com/elastic/schemas-js/commit/488960219a2693f783032072ff4339def460d1bb))
+* **es:** add passthrough and non_passthrough_indices to field_caps response ([7dd0e1c](https://github.com/elastic/schemas-js/commit/7dd0e1c1a8322da713dc6f482996de02b66cece5))
+* **kibana:** add `approvals` to agent builder agents, `errors` to alerting v2 rules bulk get, and `rules_summary` to `import_rules` response ([4889602](https://github.com/elastic/schemas-js/commit/488960219a2693f783032072ff4339def460d1bb))
+* **kibana:** add `delete-parameter` and `delete-synthetic-monitor` responses and new fields to synthetic monitor and parameter schemas ([4889602](https://github.com/elastic/schemas-js/commit/488960219a2693f783032072ff4339def460d1bb))
+* **kibana:** add `oauth2` and `kerberos` auth to Fleet outputs and make Fleet output secrets nullable ([4889602](https://github.com/elastic/schemas-js/commit/488960219a2693f783032072ff4339def460d1bb))
+* **kibana:** add `post-actions-events-connector-type-id-connector-id` (ingest connector event) API ([4889602](https://github.com/elastic/schemas-js/commit/488960219a2693f783032072ff4339def460d1bb))
+* **kibana:** add data views v2 APIs (`get`, `post`, `put`, `delete`) ([4889602](https://github.com/elastic/schemas-js/commit/488960219a2693f783032072ff4339def460d1bb))
+* **kibana:** add default-space case attachment APIs (`create`, `find`, `get`, `replace`, `delete`) ([4889602](https://github.com/elastic/schemas-js/commit/488960219a2693f783032072ff4339def460d1bb))
+* **kibana:** add Discover sessions APIs (`create`, `get`, `search`, `upsert`, `delete`) ([4889602](https://github.com/elastic/schemas-js/commit/488960219a2693f783032072ff4339def460d1bb))
+* **kibana:** add get-alerting-v2-action-policies (list action policies) API ([7dd0e1c](https://github.com/elastic/schemas-js/commit/7dd0e1c1a8322da713dc6f482996de02b66cece5))
+* **kibana:** add new optional fields to cases configuration, context engine AI index, Fleet agents setup, entity store, and synthetics private location APIs ([7dd0e1c](https://github.com/elastic/schemas-js/commit/7dd0e1c1a8322da713dc6f482996de02b66cece5))
+* **kibana:** rename alerting v2 alert action exports from *_episode(s)_* to *_alert(s)_*, and replace action policy group_by/grouping_mode with a grouping discriminated union ([7dd0e1c](https://github.com/elastic/schemas-js/commit/7dd0e1c1a8322da713dc6f482996de02b66cece5))
+* **serverless:** add `list_ignore_filters` and `get_ignore_filter` APIs and new fields to project create/patch requests ([4889602](https://github.com/elastic/schemas-js/commit/488960219a2693f783032072ff4339def460d1bb))
+
+
+### Bug Fixes
+
+* **es:** share the `data_recovery` recovery point and source type schemas and correct the `master_timeout` description ([4889602](https://github.com/elastic/schemas-js/commit/488960219a2693f783032072ff4339def460d1bb))
+* **kibana:** correct alerting v2 rule, action policy, and execution history schemas for accuracy ([7dd0e1c](https://github.com/elastic/schemas-js/commit/7dd0e1c1a8322da713dc6f482996de02b66cece5))
+* **kibana:** keep `tags`, `title`, `status`, `assignees` and other payloads in case activity user actions instead of parsing them to `{}` ([4889602](https://github.com/elastic/schemas-js/commit/488960219a2693f783032072ff4339def460d1bb))
+* **kibana:** keep unknown keys on endpoint management runscript `parameters`, connector `config`/`secrets`, and Fleet output union members ([4889602](https://github.com/elastic/schemas-js/commit/488960219a2693f783032072ff4339def460d1bb))
+* **kibana:** keep unknown keys on Fleet package policy update bodies, including `enabled` and `cloud_connector_id` ([4889602](https://github.com/elastic/schemas-js/commit/488960219a2693f783032072ff4339def460d1bb))
+* **kibana:** rename alerting v2 action policy execution history `policies`/`rules` counts to `policy_count`/`rule_count` ([4889602](https://github.com/elastic/schemas-js/commit/488960219a2693f783032072ff4339def460d1bb))
+* **kibana:** send the event payload of the connector events ingest API as the request body ([4889602](https://github.com/elastic/schemas-js/commit/488960219a2693f783032072ff4339def460d1bb))
+* **kibana:** use a shared `createMonitorRequest` schema for synthetic monitors bulk create ([4889602](https://github.com/elastic/schemas-js/commit/488960219a2693f783032072ff4339def460d1bb))
+* **kibana:** use input schemas for osquery pack create/update request bodies ([7dd0e1c](https://github.com/elastic/schemas-js/commit/7dd0e1c1a8322da713dc6f482996de02b66cece5))
+* send body prop marked as x-body-root as the whole body ([#126](https://github.com/elastic/schemas-js/issues/126)) ([381f503](https://github.com/elastic/schemas-js/commit/381f503e77c5126834f46633a3770e134fb37b62))
+
 ## [0.10.0](https://github.com/elastic/schemas-js/compare/v0.9.1...v0.10.0) (2026-10-05)
 
 
