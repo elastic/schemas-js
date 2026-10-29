@@ -37,6 +37,20 @@ export const CreateSecurityProjectRequest = z.object({
   }).optional(),
   metadata: z.object({
     tags: z.record(z.string(), z.string())
+  }).optional(),
+  monitoring: z.object({
+    logging: z.object({
+      audit: z.object({
+        destination: z.object({
+          project_id: z.string(),
+          project_type: z.enum(['elasticsearch', 'observability', 'security', 'vectordb']).optional()
+        }),
+        enabled: z.boolean().optional(),
+        ignore_filters: z.array(z.object({
+          id: z.string()
+        })).optional()
+      }).optional()
+    }).optional()
   }).optional()
 }).meta({ id: 'CreateSecurityProjectRequest' })
 export type CreateSecurityProjectRequest = z.infer<typeof CreateSecurityProjectRequest>
@@ -64,6 +78,21 @@ export const CreateSecurityProjectResponse = z.intersection(z.intersection(z.obj
       status: z.enum(['enabled', 'suspended', 'deleted']),
       type: z.enum(['elasticsearch', 'observability', 'security', 'vectordb'])
     }))
+  }).optional(),
+  monitoring: z.object({
+    logging: z.object({
+      audit: z.object({
+        destination: z.object({
+          project_id: z.string(),
+          project_type: z.enum(['elasticsearch', 'observability', 'security', 'vectordb']),
+          status: z.enum(['enabled', 'suspended', 'deleted'])
+        }),
+        enabled: z.boolean(),
+        ignore_filters: z.array(z.object({
+          id: z.string()
+        })).optional()
+      }).optional()
+    }).optional()
   }).optional()
 }), z.object({
   type: z.enum(['security']),

@@ -19,7 +19,7 @@ export const post_alerting_v2_alerts_id_deactivateDefinitions: KbApiDefinition[]
   {
     name: 'post-alerting-v2-alerts-id-deactivate',
     namespace: 'alerting-v2',
-    description: 'Deactivate an alert episode',
+    description: 'Deactivate an alert',
     method: 'POST',
     path: '/api/alerting/v2/alerts/{id}/_deactivate',
     destructive: true,

@@ -19,7 +19,7 @@ export const post_alerting_v2_alerts_id_activateDefinitions: KbApiDefinition[] =
   {
     name: 'post-alerting-v2-alerts-id-activate',
     namespace: 'alerting-v2',
-    description: 'Activate an alert episode',
+    description: 'Activate an alert',
     method: 'POST',
     path: '/api/alerting/v2/alerts/{id}/_activate',
     destructive: true,

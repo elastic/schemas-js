@@ -19,7 +19,7 @@ export const cluster_info_definitions: EsApiDefinition[] = [
   {
     name: 'info',
     namespace: 'cluster',
-    description: 'Get cluster info.',
+    description: 'Get cluster subsystem info.',
     method: 'GET',
     path: '/_info/{target}',
     destructive: false,

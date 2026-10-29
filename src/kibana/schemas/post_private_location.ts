@@ -24,5 +24,17 @@ export const PostPrivateLocationRequest = z.object({
 }).meta({ id: 'PostPrivateLocationRequest' })
 export type PostPrivateLocationRequest = z.infer<typeof PostPrivateLocationRequest>
 
-export const PostPrivateLocationResponse = z.object({}).meta({ id: 'PostPrivateLocationResponse' })
+export const PostPrivateLocationResponse = z.object({
+  agentPolicyId: z.string().optional(),
+  geo: z.object({
+    lat: z.number(),
+    lon: z.number()
+  }).optional(),
+  id: z.string().optional(),
+  isInvalid: z.boolean().optional(),
+  label: z.string().optional(),
+  namespace: z.string().optional(),
+  spaces: z.array(z.string()).optional(),
+  tags: z.array(z.string()).optional()
+}).passthrough().meta({ id: 'PostPrivateLocationResponse' })
 export type PostPrivateLocationResponse = z.infer<typeof PostPrivateLocationResponse>

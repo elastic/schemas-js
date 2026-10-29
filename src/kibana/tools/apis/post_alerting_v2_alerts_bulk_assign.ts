@@ -19,7 +19,7 @@ export const post_alerting_v2_alerts_bulk_assignDefinitions: KbApiDefinition[] =
   {
     name: 'post-alerting-v2-alerts-bulk-assign',
     namespace: 'alerting-v2',
-    description: 'Bulk assign alert episodes',
+    description: 'Bulk assign alerts',
     method: 'POST',
     path: '/api/alerting/v2/alerts/_bulk_assign',
     destructive: true,

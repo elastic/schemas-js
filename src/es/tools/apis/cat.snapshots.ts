@@ -19,7 +19,7 @@ export const cat_snapshots_definitions: EsApiDefinition[] = [
   {
     name: 'snapshots',
     namespace: 'cat',
-    description: 'Get snapshot information.',
+    description: 'Get a compact list of snapshots.',
     method: 'GET',
     path: '/_cat/snapshots/{repository}',
     destructive: false,

@@ -36,7 +36,7 @@ export const CatAliasesAliasesRecord = z.object({
 export type CatAliasesAliasesRecord = z.infer<typeof CatAliasesAliasesRecord>
 
 /**
- * Get aliases.
+ * Get a compact list of aliases.
  *
  * Get the cluster's index aliases, including filter and routing information.
  * This API does not return data stream aliases.

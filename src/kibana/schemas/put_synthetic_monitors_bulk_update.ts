@@ -14,7 +14,9 @@ import { z } from 'zod'
 
 export const PutSyntheticMonitorsBulkUpdateRequest = z.object({
   updates: z.array(z.object({
-    attributes: z.record(z.string(), z.unknown()),
+    attributes: z.object({
+
+    }).passthrough().optional(),
     id: z.string()
   }))
 }).meta({ id: 'PutSyntheticMonitorsBulkUpdateRequest' })

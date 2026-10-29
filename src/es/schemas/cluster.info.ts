@@ -15,7 +15,7 @@ export const ClusterInfoTargets = z.union([ClusterInfoTarget, z.array(ClusterInf
 export type ClusterInfoTargets = z.infer<typeof ClusterInfoTargets>
 
 /**
- * Get cluster info.
+ * Get cluster subsystem info.
  *
  * Returns basic information about the cluster.
  */

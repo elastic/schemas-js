@@ -19,7 +19,7 @@ export const post_alerting_v2_alerts_bulk_activateDefinitions: KbApiDefinition[]
   {
     name: 'post-alerting-v2-alerts-bulk-activate',
     namespace: 'alerting-v2',
-    description: 'Bulk activate alert episodes',
+    description: 'Bulk activate alerts',
     method: 'POST',
     path: '/api/alerting/v2/alerts/_bulk_activate',
     destructive: true,

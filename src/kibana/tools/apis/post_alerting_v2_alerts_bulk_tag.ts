@@ -19,7 +19,7 @@ export const post_alerting_v2_alerts_bulk_tagDefinitions: KbApiDefinition[] = [
   {
     name: 'post-alerting-v2-alerts-bulk-tag',
     namespace: 'alerting-v2',
-    description: 'Bulk tag alert episodes',
+    description: 'Bulk tag alerts',
     method: 'POST',
     path: '/api/alerting/v2/alerts/_bulk_tag',
     destructive: true,

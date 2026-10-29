@@ -9,4 +9,15 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
-export { Synthetics_getParameterResponse } from './schemas/misc.js'
+/* eslint-disable @typescript-eslint/no-redeclare */
+import { z } from 'zod'
+
+export const GetParameterResponse = z.object({
+  description: z.string().optional(),
+  id: z.string().optional(),
+  key: z.string().optional(),
+  namespaces: z.array(z.string()).optional(),
+  tags: z.array(z.string()).optional(),
+  value: z.string().optional()
+}).meta({ id: 'GetParameterResponse' })
+export type GetParameterResponse = z.infer<typeof GetParameterResponse>

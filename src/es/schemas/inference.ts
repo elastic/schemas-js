@@ -149,7 +149,7 @@ export const InferenceInferenceEndpoint = z.object({
 }).meta({ id: 'InferenceInferenceEndpoint' })
 export type InferenceInferenceEndpoint = z.infer<typeof InferenceInferenceEndpoint>
 
-export const InferenceTaskType = z.enum(['sparse_embedding', 'text_embedding', 'rerank', 'completion', 'chat_completion', 'embedding']).meta({ id: 'InferenceTaskType' })
+export const InferenceTaskType = z.enum(['sparse_embedding', 'text_embedding', 'rerank', 'completion', 'chat_completion', 'embedding', 'document_extraction']).meta({ id: 'InferenceTaskType' })
 export type InferenceTaskType = z.infer<typeof InferenceTaskType>
 
 /** Represents an inference endpoint as returned by the GET API */

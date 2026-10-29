@@ -26,10 +26,10 @@ export const Observability_AI_Assistant_API_FunctionCall = z.object({
 }).meta({ id: 'Observability_AI_Assistant_API_FunctionCall' })
 export type Observability_AI_Assistant_API_FunctionCall = z.infer<typeof Observability_AI_Assistant_API_FunctionCall>
 
-export const Observability_AI_Assistant_API_Instruction = z.union([z.string(), z.object({
+export const Observability_AI_Assistant_API_Instruction = z.union([z.object({
   id: z.string(),
   text: z.string()
-})]).meta({ id: 'Observability_AI_Assistant_API_Instruction' })
+}), z.string()]).meta({ id: 'Observability_AI_Assistant_API_Instruction' })
 export type Observability_AI_Assistant_API_Instruction = z.infer<typeof Observability_AI_Assistant_API_Instruction>
 
 export const Observability_AI_Assistant_API_MessageRoleEnum = z.enum(['system', 'assistant', 'function', 'user', 'elastic']).meta({ id: 'Observability_AI_Assistant_API_MessageRoleEnum' })

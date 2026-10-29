@@ -943,6 +943,10 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
       const mod = await import('./apis/inference.delete_region_policy.ts') as Record<string, unknown>
       return mod['inference_delete_region_policy_definitions'] as EsApiDefinition[]
     }
+    case 'inference.document_extraction': {
+      const mod = await import('./apis/inference.document_extraction.ts') as Record<string, unknown>
+      return mod['inference_document_extraction_definitions'] as EsApiDefinition[]
+    }
     case 'inference.embedding': {
       const mod = await import('./apis/inference.embedding.ts') as Record<string, unknown>
       return mod['inference_embedding_definitions'] as EsApiDefinition[]

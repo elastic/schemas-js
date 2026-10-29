@@ -9,4 +9,20 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
-export { Synthetics_getPrivateLocation } from './schemas/misc.js'
+/* eslint-disable @typescript-eslint/no-redeclare */
+import { z } from 'zod'
+
+export const GetPrivateLocationResponse = z.object({
+  agentPolicyId: z.string().optional(),
+  geo: z.object({
+    lat: z.number(),
+    lon: z.number()
+  }).optional(),
+  id: z.string().optional(),
+  isInvalid: z.boolean().optional(),
+  label: z.string().optional(),
+  namespace: z.string().optional(),
+  spaces: z.array(z.string()).optional(),
+  tags: z.array(z.string()).optional()
+}).passthrough().meta({ id: 'GetPrivateLocationResponse' })
+export type GetPrivateLocationResponse = z.infer<typeof GetPrivateLocationResponse>

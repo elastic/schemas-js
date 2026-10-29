@@ -9,7 +9,7 @@ import { z } from 'zod'
 import { ExpandWildcards, Indices } from './_types.js'
 
 /**
- * Clear the cache.
+ * Clear the searchable snapshots shared cache.
  *
  * Clear indices and data streams from the shared cache for partially mounted indices.
  */

@@ -12,27 +12,31 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const Synthetics_parameterRequest = z.object({
+export const Kibana_HTTP_APIs_parameterRequest = z.object({
   description: z.string().optional(),
   key: z.string(),
   share_across_spaces: z.boolean().optional(),
   tags: z.array(z.string()).optional(),
   value: z.string()
-}).meta({ id: 'Synthetics_parameterRequest' })
-export type Synthetics_parameterRequest = z.infer<typeof Synthetics_parameterRequest>
+}).meta({ id: 'Kibana_HTTP_APIs_parameterRequest' })
+export type Kibana_HTTP_APIs_parameterRequest = z.infer<typeof Kibana_HTTP_APIs_parameterRequest>
 
-export const Synthetics_postParameterResponse = z.object({
+export const PostParametersRequest = z.union([Kibana_HTTP_APIs_parameterRequest, z.array(Kibana_HTTP_APIs_parameterRequest)]).meta({ id: 'PostParametersRequest' })
+export type PostParametersRequest = z.infer<typeof PostParametersRequest>
+
+export const PostParametersResponse = z.union([z.array(z.object({
   description: z.string().optional(),
   id: z.string().optional(),
   key: z.string().optional(),
   share_across_spaces: z.boolean().optional(),
   tags: z.array(z.string()).optional(),
   value: z.string().optional()
-}).meta({ id: 'Synthetics_postParameterResponse' })
-export type Synthetics_postParameterResponse = z.infer<typeof Synthetics_postParameterResponse>
-
-export const PostParametersRequest = z.union([z.array(Synthetics_parameterRequest), Synthetics_parameterRequest]).meta({ id: 'PostParametersRequest' })
-export type PostParametersRequest = z.infer<typeof PostParametersRequest>
-
-export const PostParametersResponse = z.union([z.array(Synthetics_postParameterResponse), Synthetics_postParameterResponse]).meta({ id: 'PostParametersResponse' })
+})), z.object({
+  description: z.string().optional(),
+  id: z.string().optional(),
+  key: z.string().optional(),
+  share_across_spaces: z.boolean().optional(),
+  tags: z.array(z.string()).optional(),
+  value: z.string().optional()
+})]).meta({ id: 'PostParametersResponse' })
 export type PostParametersResponse = z.infer<typeof PostParametersResponse>

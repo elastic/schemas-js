@@ -8,6 +8,7 @@ import { z } from 'zod'
 
 import { BulkIndexByScrollFailure, Conflicts, Duration, DurationValue, ExpandWildcards, Indices, ReindexStatus, Retries, Script, ScriptSource, SearchType, SlicedScroll, Slices, TaskId, float, long } from './_types.js'
 import type { ScriptSourceShape } from './_types.js'
+import { MappingRuntimeFields } from './_types.mapping.js'
 import { QueryDslOperator, QueryDslQueryContainer } from './_types.query_dsl.js'
 
 /**
@@ -127,6 +128,7 @@ export const UpdateByQueryRequest = z.object({
   wait_for_completion: z.boolean().describe('If `true`, the request blocks until the operation is complete. If `false`, Elasticsearch performs some preflight checks, launches the request, and returns a task ID that you can use to cancel or get the status of the task. Elasticsearch creates a record of this task as a document at `.tasks/task/{taskId}`.').optional().meta({ found_in: 'query' }),
   max_docs: z.lazy(() => long).describe('The maximum number of documents to update.').optional().meta({ found_in: 'body' }),
   query: z.lazy(() => QueryDslQueryContainer).describe('The documents to update using the Query DSL.').optional().meta({ found_in: 'body' }),
+  runtime_mappings: z.lazy(() => MappingRuntimeFields).describe('One or more runtime fields in the search request. These fields take precedence over mapped fields with the same name.').optional().meta({ found_in: 'body' }),
   script: z.union([z.lazy(() => Script), z.lazy(() => ScriptSource)]).describe('The script to run to update the document source or metadata when updating.').optional().meta({ found_in: 'body' }),
   slice: z.lazy(() => SlicedScroll).describe('Slice the request manually using the provided slice ID and total number of slices.').optional().meta({ found_in: 'body' }),
   conflicts: Conflicts.describe('The preferred behavior when update by query hits version conflicts: `abort` or `proceed`.').optional().meta({ found_in: 'body' })

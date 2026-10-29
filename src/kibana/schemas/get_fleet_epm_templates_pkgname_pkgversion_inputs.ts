@@ -40,5 +40,5 @@ export const Kibana_HTTP_APIs_get_inputs_response = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_get_inputs_response' })
 export type Kibana_HTTP_APIs_get_inputs_response = z.infer<typeof Kibana_HTTP_APIs_get_inputs_response>
 
-export const GetFleetEpmTemplatesPkgnamePkgversionInputsResponse = z.union([z.string(), Kibana_HTTP_APIs_get_inputs_response]).meta({ id: 'GetFleetEpmTemplatesPkgnamePkgversionInputsResponse' })
+export const GetFleetEpmTemplatesPkgnamePkgversionInputsResponse = z.union([Kibana_HTTP_APIs_get_inputs_response, z.string()]).meta({ id: 'GetFleetEpmTemplatesPkgnamePkgversionInputsResponse' })
 export type GetFleetEpmTemplatesPkgnamePkgversionInputsResponse = z.infer<typeof GetFleetEpmTemplatesPkgnamePkgversionInputsResponse>

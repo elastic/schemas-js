@@ -19,7 +19,7 @@ export const indices_get_field_mapping_definitions: EsApiDefinition[] = [
   {
     name: 'get-field-mapping',
     namespace: 'indices',
-    description: 'Get mapping definitions.',
+    description: 'Get field mapping definitions.',
     method: 'GET',
     path: '/{index}/_mapping/field/{fields}',
     destructive: false,

@@ -20,6 +20,12 @@ export const PostAgentBuilderAgentsRequest = z.object({
   avatar_symbol: z.string().optional(),
   configuration: z.object({
     ai_indices: z.array(z.string()).optional(),
+    approvals: z.object({
+      auto_approved_apis: z.object({
+        elasticsearch: z.array(z.string()).optional(),
+        kibana: z.array(z.string()).optional()
+      }).optional()
+    }).optional(),
     connector_ids: z.array(z.string()).optional(),
     enable_elastic_capabilities: z.boolean().optional(),
     instructions: z.string().optional(),

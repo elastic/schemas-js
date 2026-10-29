@@ -19,14 +19,14 @@ export const PutFleetCloudConnectorsCloudconnectoridRequest = z.object({
   iac_deployment_id: z.string().optional(),
   iac_key: z.string().nullable().optional(),
   name: z.string().optional(),
-  vars: z.record(z.string(), z.union([z.string(), z.number(), z.boolean(), z.object({
+  vars: z.record(z.string(), z.union([z.object({
     frozen: z.boolean().optional(),
     type: z.string(),
-    value: z.union([z.string(), z.object({
+    value: z.union([z.object({
       id: z.string(),
       isSecretRef: z.boolean()
-    })])
-  })])).optional()
+    }), z.string()])
+  }), z.string(), z.number(), z.boolean()])).optional()
 }).meta({ id: 'PutFleetCloudConnectorsCloudconnectoridRequest' })
 export type PutFleetCloudConnectorsCloudconnectoridRequest = z.infer<typeof PutFleetCloudConnectorsCloudconnectoridRequest>
 

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"getIgnoreFilter","x-api":{"id":"monitoring.get-ignore-filter","name":"get-ignore-filter","namespace":"monitoring"},"type":"object","properties":{"id":{"type":"string"},"name":{"type":"string"},"description":{"type":"string"},"type":{"enum":["audit"]}},"required":["id","name","description","type"]}

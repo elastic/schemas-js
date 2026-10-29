@@ -19,6 +19,7 @@ export const Kibana_HTTP_APIs_connector_response_with_references_count = z.objec
   id: z.string(),
   is_connector_type_deprecated: z.boolean(),
   is_deprecated: z.boolean(),
+  is_inbound_events_enabled: z.boolean().optional(),
   is_missing_secrets: z.boolean().optional(),
   is_preconfigured: z.boolean(),
   is_system_action: z.boolean(),

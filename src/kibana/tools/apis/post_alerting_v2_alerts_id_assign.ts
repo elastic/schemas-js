@@ -19,7 +19,7 @@ export const post_alerting_v2_alerts_id_assignDefinitions: KbApiDefinition[] = [
   {
     name: 'post-alerting-v2-alerts-id-assign',
     namespace: 'alerting-v2',
-    description: 'Assign an alert episode to a user',
+    description: 'Assign an alert to a user',
     method: 'POST',
     path: '/api/alerting/v2/alerts/{id}/_assign',
     destructive: true,

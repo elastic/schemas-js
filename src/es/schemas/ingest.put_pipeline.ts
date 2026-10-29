@@ -996,6 +996,7 @@ export interface IngestRenameProcessorShape {
   tag?: string | undefined
   field: Field
   ignore_missing?: boolean | undefined
+  override?: boolean | undefined
   target_field: Field
 }
 export const IngestRenameProcessor = z.object({
@@ -1006,6 +1007,7 @@ export const IngestRenameProcessor = z.object({
   tag: z.string().describe('Identifier for the processor. Useful for debugging and metrics.').optional(),
   field: z.lazy(() => Field).describe('The field to be renamed. Supports template snippets.'),
   ignore_missing: z.boolean().describe('If `true` and `field` does not exist, the processor quietly exits without modifying the document.').optional(),
+  override: z.boolean().describe('If `true`, the processor overwrites `target_field` if it already exists. If `false`, the processor fails when `target_field` already exists.').optional(),
   target_field: z.lazy(() => Field).describe('The new name of the field. Supports template snippets.')
 }).meta({ id: 'IngestRenameProcessor' })
 export type IngestRenameProcessor = z.infer<typeof IngestRenameProcessor>

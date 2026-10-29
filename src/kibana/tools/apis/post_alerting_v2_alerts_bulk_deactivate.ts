@@ -19,7 +19,7 @@ export const post_alerting_v2_alerts_bulk_deactivateDefinitions: KbApiDefinition
   {
     name: 'post-alerting-v2-alerts-bulk-deactivate',
     namespace: 'alerting-v2',
-    description: 'Bulk deactivate alert episodes',
+    description: 'Bulk deactivate alerts',
     method: 'POST',
     path: '/api/alerting/v2/alerts/_bulk_deactivate',
     destructive: true,

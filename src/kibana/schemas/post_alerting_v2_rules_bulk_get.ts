@@ -14,6 +14,14 @@ import { z } from 'zod'
 import { Kibana_HTTP_APIs_alerting_rule_response } from './schemas/kibana.js'
 
 export const Kibana_HTTP_APIs_alerting_bulk_get_rules_response = z.object({
+  errors: z.array(z.object({
+    error: z.object({
+      code: z.string(),
+      details: z.record(z.string(), z.unknown()).optional(),
+      message: z.string()
+    }),
+    id: z.string()
+  })),
   items: z.array(Kibana_HTTP_APIs_alerting_rule_response)
 }).meta({ id: 'Kibana_HTTP_APIs_alerting_bulk_get_rules_response' })
 export type Kibana_HTTP_APIs_alerting_bulk_get_rules_response = z.infer<typeof Kibana_HTTP_APIs_alerting_bulk_get_rules_response>
@@ -36,6 +44,7 @@ export { Kibana_HTTP_APIs_alerting_rule_no_data_alert } from './schemas/kibana.j
 export { Kibana_HTTP_APIs_alerting_rule_no_data_resolve } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_no_data_keep_last } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_no_data_ignore } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_alerting_rule_metadata } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_grouping } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_rule_artifact } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_alerting_bulk_by_ids_request } from './schemas/kibana.js'

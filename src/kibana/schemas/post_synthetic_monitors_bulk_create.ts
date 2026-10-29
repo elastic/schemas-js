@@ -11,20 +11,10 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Synthetics_browserMonitorFields, Synthetics_commonMonitorFields, Synthetics_httpMonitorFields, Synthetics_icmpMonitorFields, Synthetics_tcpMonitorFields } from './schemas/misc.js'
-
-export const Synthetics_apiMonitorFields = Synthetics_commonMonitorFields.merge(z.object({
-  certificate_error_spki_allowlist: z.array(z.string()).optional(),
-  ignore_https_errors: z.boolean().optional(),
-  inline_script: z.string(),
-  playwright_options: z.object({}).optional(),
-  synthetics_args: z.array(z.string()).optional(),
-  type: z.enum(['api'])
-}).passthrough()).meta({ id: 'Synthetics_apiMonitorFields' })
-export type Synthetics_apiMonitorFields = z.infer<typeof Synthetics_apiMonitorFields>
+import { Kibana_HTTP_APIs_createMonitorRequest } from './schemas/kibana.js'
 
 export const PostSyntheticMonitorsBulkCreateRequest = z.object({
-  monitors: z.array(z.union([Synthetics_browserMonitorFields, Synthetics_httpMonitorFields, Synthetics_icmpMonitorFields, Synthetics_tcpMonitorFields, Synthetics_apiMonitorFields]))
+  monitors: z.array(Kibana_HTTP_APIs_createMonitorRequest)
 }).meta({ id: 'PostSyntheticMonitorsBulkCreateRequest' })
 export type PostSyntheticMonitorsBulkCreateRequest = z.infer<typeof PostSyntheticMonitorsBulkCreateRequest>
 
@@ -38,8 +28,10 @@ export const PostSyntheticMonitorsBulkCreateResponse = z.object({
 }).meta({ id: 'PostSyntheticMonitorsBulkCreateResponse' })
 export type PostSyntheticMonitorsBulkCreateResponse = z.infer<typeof PostSyntheticMonitorsBulkCreateResponse>
 
-export { Synthetics_commonMonitorFields } from './schemas/misc.js'
-export { Synthetics_tcpMonitorFields } from './schemas/misc.js'
-export { Synthetics_icmpMonitorFields } from './schemas/misc.js'
-export { Synthetics_httpMonitorFields } from './schemas/misc.js'
-export { Synthetics_browserMonitorFields } from './schemas/misc.js'
+export { Kibana_HTTP_APIs_createMonitorRequest } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_apiMonitorFields } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_syntheticsJsonValue } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_browserMonitorFields } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_icmpMonitorFields } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_tcpMonitorFields } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_httpMonitorFields } from './schemas/kibana.js'

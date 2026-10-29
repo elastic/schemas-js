@@ -19,7 +19,7 @@ export const cat_tasks_definitions: EsApiDefinition[] = [
   {
     name: 'tasks',
     namespace: 'cat',
-    description: 'Get task information.',
+    description: 'Get a compact list of running tasks.',
     method: 'GET',
     path: '/_cat/tasks',
     destructive: false,

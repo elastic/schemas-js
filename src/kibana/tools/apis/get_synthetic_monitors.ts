@@ -19,7 +19,7 @@ export const get_synthetic_monitorsDefinitions: KbApiDefinition[] = [
   {
     name: 'get-synthetic-monitors',
     namespace: 'synthetics',
-    description: 'Get monitors',
+    description: 'Search monitors',
     method: 'GET',
     path: '/api/synthetics/monitors',
     destructive: false,

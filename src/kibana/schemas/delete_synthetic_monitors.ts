@@ -19,6 +19,6 @@ export type DeleteSyntheticMonitorsRequest = z.infer<typeof DeleteSyntheticMonit
 
 export const DeleteSyntheticMonitorsResponse = z.array(z.object({
   deleted: z.boolean().optional(),
-  ids: z.string().optional()
+  id: z.string().optional()
 })).meta({ id: 'DeleteSyntheticMonitorsResponse' })
 export type DeleteSyntheticMonitorsResponse = z.infer<typeof DeleteSyntheticMonitorsResponse>

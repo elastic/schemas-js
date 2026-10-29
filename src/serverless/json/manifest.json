@@ -108,6 +108,24 @@
     "readOnly": false
   },
   {
+    "id": "monitoring.get-ignore-filter",
+    "name": "get-ignore-filter",
+    "namespace": "monitoring",
+    "description": "Get an ignore filter",
+    "namespaceFile": "get_ignore_filter",
+    "destructive": false,
+    "readOnly": true
+  },
+  {
+    "id": "monitoring.list-ignore-filters",
+    "name": "list-ignore-filters",
+    "namespace": "monitoring",
+    "description": "List ignore filters",
+    "namespaceFile": "list_ignore_filters",
+    "destructive": false,
+    "readOnly": true
+  },
+  {
     "id": "observability-projects.create-observability-project",
     "name": "create-observability-project",
     "namespace": "observability-projects",
