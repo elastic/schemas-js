@@ -65,6 +65,7 @@ export function buildRequest (
   let path = definition.path
   const querystring: Record<string, unknown> = {}
   const body: Record<string, unknown> = {}
+  let rootBody: unknown
 
   const props = (definition.input?.properties ?? {}) as Record<string, Record<string, unknown>>
 
@@ -77,6 +78,8 @@ export function buildRequest (
       path = path.replace(`{${key}}`, encodeURIComponent(String(value)))
     } else if (foundIn === 'query') {
       querystring[key] = value
+    } else if (foundIn === 'body' && propSchema?.['x-body-root'] === true) {
+      rootBody = value
     } else if (foundIn === 'body') {
       body[key] = value
     } else {
@@ -94,7 +97,10 @@ export function buildRequest (
 
   if (Object.keys(querystring).length > 0) result.querystring = querystring
 
-  if (definition.bodyFormat === 'ndjson') {
+  if (rootBody !== undefined) {
+    if (definition.bodyFormat === 'ndjson') result.bulkBody = rootBody
+    else result.body = rootBody
+  } else if (definition.bodyFormat === 'ndjson') {
     if (Object.keys(body).length > 0) result.bulkBody = body
   } else if (Object.keys(body).length > 0) {
     result.body = body
