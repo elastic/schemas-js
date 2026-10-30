@@ -19,6 +19,7 @@ export const CopyTimelineRequest = z.object({
 }).meta({ id: 'CopyTimelineRequest' })
 export type CopyTimelineRequest = z.infer<typeof CopyTimelineRequest>
 
+export { Security_Timeline_API_PersistTimelineResponse } from './schemas/security.js'
 export { Security_Timeline_API_TimelineResponse } from './schemas/security.js'
 export { Security_Timeline_API_PinnedEvent } from './schemas/security.js'
 export { Security_Timeline_API_BarePinnedEvent } from './schemas/security.js'

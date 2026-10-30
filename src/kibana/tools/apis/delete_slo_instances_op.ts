@@ -19,9 +19,9 @@ export const delete_slo_instances_opDefinitions: KbApiDefinition[] = [
   {
     name: 'delete-slo-instances-op',
     namespace: 'slo',
-    description: 'Batch delete rollup and summary data',
+    description: 'Batch delete SLO instances',
     method: 'POST',
-    path: '/s/{spaceId}/api/observability/slos/_delete_instances',
+    path: '/api/observability/slos/_delete_instances',
     destructive: true,
     readOnly: false,
     input: _inputSchema,

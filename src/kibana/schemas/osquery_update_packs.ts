@@ -11,25 +11,34 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Security_Osquery_API_Enabled, Security_Osquery_API_MinOsqueryVersion, Security_Osquery_API_MinOsqueryVersionInput, Security_Osquery_API_ObjectQueries, Security_Osquery_API_ObjectQueriesInput, Security_Osquery_API_PackDescription, Security_Osquery_API_PackInterval, Security_Osquery_API_PackName, Security_Osquery_API_PackPlatform, Security_Osquery_API_PolicyIds, Security_Osquery_API_RRuleScheduleConfig, Security_Osquery_API_ResultType, Security_Osquery_API_ScheduleType, Security_Osquery_API_Shards } from './schemas/security.js'
+import { Security_Osquery_API_EnabledOrUndefined, Security_Osquery_API_MinOsqueryVersion, Security_Osquery_API_MinOsqueryVersionInput, Security_Osquery_API_ObjectQueries, Security_Osquery_API_ObjectQueriesInput, Security_Osquery_API_PackDescriptionOrUndefined, Security_Osquery_API_PackIntervalOrUndefined, Security_Osquery_API_PackName, Security_Osquery_API_PackPlatform, Security_Osquery_API_PolicyIdsOrUndefined, Security_Osquery_API_RRuleScheduleConfigOrUndefined, Security_Osquery_API_ResultType, Security_Osquery_API_ScheduleTypeOrUndefined, Security_Osquery_API_Shards } from './schemas/security.js'
+
+export const Security_Osquery_API_MinOsqueryVersionInputOrUndefined = Security_Osquery_API_MinOsqueryVersionInput.meta({ id: 'Security_Osquery_API_MinOsqueryVersionInputOrUndefined' })
+export type Security_Osquery_API_MinOsqueryVersionInputOrUndefined = z.infer<typeof Security_Osquery_API_MinOsqueryVersionInputOrUndefined>
+
+export const Security_Osquery_API_PackPlatformOrUndefined = Security_Osquery_API_PackPlatform.meta({ id: 'Security_Osquery_API_PackPlatformOrUndefined' })
+export type Security_Osquery_API_PackPlatformOrUndefined = z.infer<typeof Security_Osquery_API_PackPlatformOrUndefined>
+
+export const Security_Osquery_API_ResultTypeOrUndefined = Security_Osquery_API_ResultType.meta({ id: 'Security_Osquery_API_ResultTypeOrUndefined' })
+export type Security_Osquery_API_ResultTypeOrUndefined = z.infer<typeof Security_Osquery_API_ResultTypeOrUndefined>
 
 export const Security_Osquery_API_UpdatePacksResponse = z.object({
   data: z.object({
     created_at: z.string().optional(),
     created_by: z.string().nullable().optional(),
     created_by_profile_uid: z.string().optional(),
-    description: Security_Osquery_API_PackDescription.optional(),
-    enabled: Security_Osquery_API_Enabled.optional(),
-    interval: Security_Osquery_API_PackInterval.optional(),
+    description: Security_Osquery_API_PackDescriptionOrUndefined.optional(),
+    enabled: Security_Osquery_API_EnabledOrUndefined.optional(),
+    interval: Security_Osquery_API_PackIntervalOrUndefined.optional(),
     min_osquery_version: Security_Osquery_API_MinOsqueryVersion.optional(),
     name: Security_Osquery_API_PackName.optional(),
     platform: Security_Osquery_API_PackPlatform.optional(),
-    policy_ids: Security_Osquery_API_PolicyIds.optional(),
+    policy_ids: Security_Osquery_API_PolicyIdsOrUndefined.optional(),
     queries: Security_Osquery_API_ObjectQueries.optional(),
     result_type: Security_Osquery_API_ResultType.optional(),
-    rrule_schedule: Security_Osquery_API_RRuleScheduleConfig.optional(),
+    rrule_schedule: Security_Osquery_API_RRuleScheduleConfigOrUndefined.optional(),
     saved_object_id: z.string().optional(),
-    schedule_type: Security_Osquery_API_ScheduleType.optional(),
+    schedule_type: Security_Osquery_API_ScheduleTypeOrUndefined.optional(),
     shards: Security_Osquery_API_Shards.optional(),
     updated_at: z.string().optional(),
     updated_by: z.string().nullable().optional(),
@@ -40,45 +49,58 @@ export const Security_Osquery_API_UpdatePacksResponse = z.object({
 export type Security_Osquery_API_UpdatePacksResponse = z.infer<typeof Security_Osquery_API_UpdatePacksResponse>
 
 export const Security_Osquery_API_UpdatePacksRequestBody = z.object({
-  description: Security_Osquery_API_PackDescription.optional(),
-  enabled: Security_Osquery_API_Enabled.optional(),
-  interval: Security_Osquery_API_PackInterval.optional(),
-  min_osquery_version: Security_Osquery_API_MinOsqueryVersionInput.optional(),
+  description: Security_Osquery_API_PackDescriptionOrUndefined.optional(),
+  enabled: Security_Osquery_API_EnabledOrUndefined.optional(),
+  interval: Security_Osquery_API_PackIntervalOrUndefined.optional(),
+  min_osquery_version: Security_Osquery_API_MinOsqueryVersionInputOrUndefined.optional(),
   name: Security_Osquery_API_PackName.optional(),
-  platform: Security_Osquery_API_PackPlatform.optional(),
-  policy_ids: Security_Osquery_API_PolicyIds.optional(),
+  platform: Security_Osquery_API_PackPlatformOrUndefined.optional(),
+  policy_ids: Security_Osquery_API_PolicyIdsOrUndefined.optional(),
   queries: Security_Osquery_API_ObjectQueriesInput.optional(),
-  result_type: Security_Osquery_API_ResultType.optional(),
-  rrule_schedule: Security_Osquery_API_RRuleScheduleConfig.optional(),
-  schedule_type: Security_Osquery_API_ScheduleType.optional(),
+  result_type: Security_Osquery_API_ResultTypeOrUndefined.optional(),
+  rrule_schedule: Security_Osquery_API_RRuleScheduleConfigOrUndefined.optional(),
+  schedule_type: Security_Osquery_API_ScheduleTypeOrUndefined.optional(),
   shards: Security_Osquery_API_Shards.optional()
 }).meta({ id: 'Security_Osquery_API_UpdatePacksRequestBody' })
 export type Security_Osquery_API_UpdatePacksRequestBody = z.infer<typeof Security_Osquery_API_UpdatePacksRequestBody>
 
 export { Security_Osquery_API_Shards } from './schemas/security.js'
+export { Security_Osquery_API_ScheduleTypeOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_ScheduleType } from './schemas/security.js'
+export { Security_Osquery_API_RRuleScheduleConfigOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_RRuleScheduleConfig } from './schemas/security.js'
 export { Security_Osquery_API_ResultType } from './schemas/security.js'
 export { Security_Osquery_API_ObjectQueries } from './schemas/security.js'
 export { Security_Osquery_API_ObjectQueriesItem } from './schemas/security.js'
+export { Security_Osquery_API_VersionOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_Version } from './schemas/security.js'
+export { Security_Osquery_API_SnapshotOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_Snapshot } from './schemas/security.js'
+export { Security_Osquery_API_SavedQueryIdOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_SavedQueryId } from './schemas/security.js'
+export { Security_Osquery_API_RemovedOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_Removed } from './schemas/security.js'
 export { Security_Osquery_API_Query } from './schemas/security.js'
+export { Security_Osquery_API_PlatformOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_Platform } from './schemas/security.js'
 export { Security_Osquery_API_QueryId } from './schemas/security.js'
 export { Security_Osquery_API_QueryEnabled } from './schemas/security.js'
+export { Security_Osquery_API_ECSMappingOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_ECSMapping } from './schemas/security.js'
 export { Security_Osquery_API_ECSMappingItem } from './schemas/security.js'
+export { Security_Osquery_API_PolicyIdsOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_PolicyIds } from './schemas/security.js'
 export { Security_Osquery_API_PackPlatform } from './schemas/security.js'
 export { Security_Osquery_API_PackName } from './schemas/security.js'
 export { Security_Osquery_API_MinOsqueryVersion } from './schemas/security.js'
+export { Security_Osquery_API_PackIntervalOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_PackInterval } from './schemas/security.js'
+export { Security_Osquery_API_EnabledOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_Enabled } from './schemas/security.js'
+export { Security_Osquery_API_PackDescriptionOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_PackDescription } from './schemas/security.js'
 export { Security_Osquery_API_ObjectQueriesInput } from './schemas/security.js'
 export { Security_Osquery_API_ObjectQueriesItemInput } from './schemas/security.js'
+export { Security_Osquery_API_PackQueryVersionInputOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_PackQueryVersionInput } from './schemas/security.js'
 export { Security_Osquery_API_MinOsqueryVersionInput } from './schemas/security.js'

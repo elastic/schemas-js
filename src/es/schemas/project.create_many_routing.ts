@@ -11,7 +11,7 @@ import { ProjectNamedProjectRoutingExpressions } from './project.js'
 
 /** Create or update project routing expressions. */
 export const ProjectCreateManyRoutingRequest = z.object({
-  expressions: ProjectNamedProjectRoutingExpressions.optional().meta({ found_in: 'body' })
+  expressions: ProjectNamedProjectRoutingExpressions.meta({ found_in: 'body' })
 }).meta({ id: 'ProjectCreateManyRoutingRequest' })
 export type ProjectCreateManyRoutingRequest = z.infer<typeof ProjectCreateManyRoutingRequest>
 

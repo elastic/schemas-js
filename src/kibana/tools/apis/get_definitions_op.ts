@@ -21,7 +21,7 @@ export const get_definitions_opDefinitions: KbApiDefinition[] = [
     namespace: 'slo',
     description: 'Get the SLO definitions',
     method: 'GET',
-    path: '/s/{spaceId}/internal/observability/slos/_definitions',
+    path: '/api/observability/slos/_definitions',
     destructive: false,
     readOnly: true,
     input: _inputSchema,

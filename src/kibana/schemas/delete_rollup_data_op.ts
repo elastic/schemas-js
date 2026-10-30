@@ -12,19 +12,20 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const SLOs_bulk_purge_rollup_request = z.object({
+export const DeleteRollupDataOpRequest = z.object({
+  force: z.boolean().optional(),
   list: z.array(z.string()),
-  purgePolicy: z.union([z.object({
-    age: z.string().optional(),
-    purgeType: z.enum(['fixed-age']).optional()
+  purgePolicy: z.discriminatedUnion('purgeType', [z.object({
+    age: z.string(),
+    purgeType: z.enum(['fixed_age'])
   }), z.object({
-    purgeType: z.enum(['fixed-time']).optional(),
-    timestamp: z.string().optional()
+    purgeType: z.enum(['fixed_time']),
+    timestamp: z.string()
   })])
-}).meta({ id: 'SLOs_bulk_purge_rollup_request' })
-export type SLOs_bulk_purge_rollup_request = z.infer<typeof SLOs_bulk_purge_rollup_request>
+}).meta({ id: 'DeleteRollupDataOpRequest' })
+export type DeleteRollupDataOpRequest = z.infer<typeof DeleteRollupDataOpRequest>
 
-export const SLOs_bulk_purge_rollup_response = z.object({
+export const DeleteRollupDataOpResponse = z.object({
   taskId: z.string().optional()
-}).meta({ id: 'SLOs_bulk_purge_rollup_response' })
-export type SLOs_bulk_purge_rollup_response = z.infer<typeof SLOs_bulk_purge_rollup_response>
+}).meta({ id: 'DeleteRollupDataOpResponse' })
+export type DeleteRollupDataOpResponse = z.infer<typeof DeleteRollupDataOpResponse>

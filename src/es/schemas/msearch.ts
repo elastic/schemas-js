@@ -85,7 +85,7 @@ export const MsearchRequest = z.object({
   routing: z.lazy(() => Routing).describe('Custom routing value used to route search operations to a specific shard. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional().meta({ found_in: 'query' }),
   search_type: z.lazy(() => SearchType).describe('Indicates whether global term and document frequencies should be used when scoring returned documents.').optional().meta({ found_in: 'query' }),
   typed_keys: z.boolean().describe('Specifies whether aggregation and suggester names should be prefixed by their respective types in the response.').optional().meta({ found_in: 'query' }),
-  searches: z.array(MsearchRequestItem).optional().meta({ found_in: 'body' })
+  searches: z.array(MsearchRequestItem).meta({ found_in: 'body' })
 }).meta({ id: 'MsearchRequest' })
 export type MsearchRequest = z.infer<typeof MsearchRequest>
 

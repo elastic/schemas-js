@@ -11,7 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Security_Osquery_API_ECSMapping } from './schemas/security.js'
+import { Security_Osquery_API_ECSMappingOrUndefined } from './schemas/security.js'
 
 export const Security_Osquery_API_FindLiveQueryDetailsResponse = z.object({
   data: z.object({
@@ -26,7 +26,7 @@ export const Security_Osquery_API_FindLiveQueryDetailsResponse = z.object({
       action_id: z.string().optional(),
       agents: z.array(z.string()).optional(),
       docs: z.number().optional(),
-      ecs_mapping: Security_Osquery_API_ECSMapping.optional(),
+      ecs_mapping: Security_Osquery_API_ECSMappingOrUndefined.optional(),
       failed: z.number().optional(),
       id: z.string().optional(),
       pending: z.number().optional(),
@@ -44,5 +44,6 @@ export const Security_Osquery_API_FindLiveQueryDetailsResponse = z.object({
 }).meta({ id: 'Security_Osquery_API_FindLiveQueryDetailsResponse' })
 export type Security_Osquery_API_FindLiveQueryDetailsResponse = z.infer<typeof Security_Osquery_API_FindLiveQueryDetailsResponse>
 
+export { Security_Osquery_API_ECSMappingOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_ECSMapping } from './schemas/security.js'
 export { Security_Osquery_API_ECSMappingItem } from './schemas/security.js'

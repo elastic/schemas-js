@@ -47,6 +47,11 @@ export const PostFleetCloudOnboardingDeploymentsResponse = z.object({
     description: z.string().optional(),
     ecfStacks: z.array(z.object({
       family: z.enum(['unified', 'otel', 'crowdstrike']),
+      serviceConfigs: z.array(z.object({
+        bucketArns: z.array(z.string()),
+        logGroupArns: z.array(z.string()),
+        serviceId: z.string()
+      })).optional(),
       serviceIds: z.array(z.string()).optional(),
       stackArn: z.string().optional(),
       stackName: z.string(),

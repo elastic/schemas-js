@@ -21,7 +21,7 @@ export const get_snapshot_opDefinitions: KbApiDefinition[] = [
     namespace: 'slo',
     description: 'Compute an SLO instance summary at a point in time',
     method: 'GET',
-    path: '/s/{spaceId}/api/observability/slos/{sloId}/_snapshot',
+    path: '/api/observability/slos/{id}/_snapshot',
     destructive: false,
     readOnly: true,
     input: _inputSchema,

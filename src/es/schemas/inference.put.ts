@@ -46,7 +46,7 @@ export const InferencePutRequest = z.object({
   task_type: InferenceTaskType.describe('The task type. Refer to the integration list in the API description for the available task types.').optional().meta({ found_in: 'path' }),
   inference_id: z.lazy(() => Id).describe('The inference Id').meta({ found_in: 'path' }),
   timeout: z.lazy(() => Duration).describe('Specifies the amount of time to wait for the inference endpoint to be created. The default depends on the task type: 120s for `completion` and `chat_completion`, and 30s for all other task types.').optional().meta({ found_in: 'query' }),
-  inference_config: InferenceInferenceEndpoint.optional().meta({ found_in: 'body' })
+  inference_config: InferenceInferenceEndpoint.meta({ found_in: 'body' })
 }).meta({ id: 'InferencePutRequest' })
 export type InferencePutRequest = z.infer<typeof InferencePutRequest>
 

@@ -94,7 +94,7 @@ export const CreateRequest = z.object({
   timeout: z.lazy(() => Duration).describe('The period the request waits for the following operations: automatic index creation, dynamic mapping updates, waiting for active shards. Elasticsearch waits for at least the specified timeout period before failing. The actual wait time could be longer, particularly when multiple waits occur. This parameter is useful for situations where the primary shard assigned to perform the operation might not be available when the operation runs. Some reasons for this might be that the primary shard is currently recovering from a gateway or undergoing relocation. By default, the operation will wait on the primary shard to become available for at least 1 minute before failing and responding with an error. The actual wait time could be longer, particularly when multiple waits occur.').optional().meta({ found_in: 'query' }),
   version: z.lazy(() => VersionNumber).describe('The explicit version number for concurrency control. It must be a non-negative long number.').optional().meta({ found_in: 'query' }),
   version_type: z.lazy(() => VersionType).describe('The version type.').optional().meta({ found_in: 'query' }),
-  document: z.any().optional().meta({ found_in: 'body' })
+  document: z.any().meta({ found_in: 'body' })
 }).meta({ id: 'CreateRequest' })
 export type CreateRequest = z.infer<typeof CreateRequest>
 

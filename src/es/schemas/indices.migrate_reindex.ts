@@ -30,7 +30,7 @@ export type IndicesMigrateReindexMigrateReindex = z.infer<typeof IndicesMigrateR
  * The persistent task ID is returned immediately and the reindexing work is completed in that task.
  */
 export const IndicesMigrateReindexRequest = z.object({
-  reindex: IndicesMigrateReindexMigrateReindex.optional().meta({ found_in: 'body' })
+  reindex: IndicesMigrateReindexMigrateReindex.meta({ found_in: 'body' })
 }).meta({ id: 'IndicesMigrateReindexRequest' })
 export type IndicesMigrateReindexRequest = z.infer<typeof IndicesMigrateReindexRequest>
 

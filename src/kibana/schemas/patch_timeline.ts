@@ -20,6 +20,7 @@ export const PatchTimelineRequest = z.object({
 }).meta({ id: 'PatchTimelineRequest' })
 export type PatchTimelineRequest = z.infer<typeof PatchTimelineRequest>
 
+export { Security_Timeline_API_PersistTimelineResponse } from './schemas/security.js'
 export { Security_Timeline_API_TimelineResponse } from './schemas/security.js'
 export { Security_Timeline_API_PinnedEvent } from './schemas/security.js'
 export { Security_Timeline_API_BarePinnedEvent } from './schemas/security.js'

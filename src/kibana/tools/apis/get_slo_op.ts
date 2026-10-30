@@ -21,7 +21,7 @@ export const get_slo_opDefinitions: KbApiDefinition[] = [
     namespace: 'slo',
     description: 'Get an SLO',
     method: 'GET',
-    path: '/s/{spaceId}/api/observability/slos/{sloId}',
+    path: '/api/observability/slos/{id}',
     destructive: false,
     readOnly: true,
     input: _inputSchema,
