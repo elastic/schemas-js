@@ -1026,9 +1026,6 @@ export type Security_Osquery_API_MinOsqueryVersionInput = z.infer<typeof Securit
 export const Security_Osquery_API_PackDescription = z.string().meta({ id: 'Security_Osquery_API_PackDescription' })
 export type Security_Osquery_API_PackDescription = z.infer<typeof Security_Osquery_API_PackDescription>
 
-export const Security_Osquery_API_PackId = z.string().meta({ id: 'Security_Osquery_API_PackId' })
-export type Security_Osquery_API_PackId = z.infer<typeof Security_Osquery_API_PackId>
-
 export const Security_Osquery_API_PackInterval = z.number().meta({ id: 'Security_Osquery_API_PackInterval' })
 export type Security_Osquery_API_PackInterval = z.infer<typeof Security_Osquery_API_PackInterval>
 
@@ -2077,23 +2074,11 @@ export const Security_Osquery_API_ExportMetadata = z.object({
 }).meta({ id: 'Security_Osquery_API_ExportMetadata' })
 export type Security_Osquery_API_ExportMetadata = z.infer<typeof Security_Osquery_API_ExportMetadata>
 
-export const Security_Osquery_API_IntervalOrUndefined = Security_Osquery_API_Interval.meta({ id: 'Security_Osquery_API_IntervalOrUndefined' })
-export type Security_Osquery_API_IntervalOrUndefined = z.infer<typeof Security_Osquery_API_IntervalOrUndefined>
-
-export const Security_Osquery_API_MinOsqueryVersionInputOrUndefined = Security_Osquery_API_MinOsqueryVersionInput.meta({ id: 'Security_Osquery_API_MinOsqueryVersionInputOrUndefined' })
-export type Security_Osquery_API_MinOsqueryVersionInputOrUndefined = z.infer<typeof Security_Osquery_API_MinOsqueryVersionInputOrUndefined>
-
 export const Security_Osquery_API_PackDescriptionOrUndefined = Security_Osquery_API_PackDescription.meta({ id: 'Security_Osquery_API_PackDescriptionOrUndefined' })
 export type Security_Osquery_API_PackDescriptionOrUndefined = z.infer<typeof Security_Osquery_API_PackDescriptionOrUndefined>
 
-export const Security_Osquery_API_PackIdOrUndefined = Security_Osquery_API_PackId.meta({ id: 'Security_Osquery_API_PackIdOrUndefined' })
-export type Security_Osquery_API_PackIdOrUndefined = z.infer<typeof Security_Osquery_API_PackIdOrUndefined>
-
 export const Security_Osquery_API_PackIntervalOrUndefined = Security_Osquery_API_PackInterval.meta({ id: 'Security_Osquery_API_PackIntervalOrUndefined' })
 export type Security_Osquery_API_PackIntervalOrUndefined = z.infer<typeof Security_Osquery_API_PackIntervalOrUndefined>
-
-export const Security_Osquery_API_PackPlatformOrUndefined = Security_Osquery_API_PackPlatform.meta({ id: 'Security_Osquery_API_PackPlatformOrUndefined' })
-export type Security_Osquery_API_PackPlatformOrUndefined = z.infer<typeof Security_Osquery_API_PackPlatformOrUndefined>
 
 export const Security_Osquery_API_PackQueryVersionInputOrUndefined = Security_Osquery_API_PackQueryVersionInput.meta({ id: 'Security_Osquery_API_PackQueryVersionInputOrUndefined' })
 export type Security_Osquery_API_PackQueryVersionInputOrUndefined = z.infer<typeof Security_Osquery_API_PackQueryVersionInputOrUndefined>
@@ -2109,9 +2094,6 @@ export type Security_Osquery_API_QueryOrUndefined = z.infer<typeof Security_Osqu
 
 export const Security_Osquery_API_RemovedOrUndefined = Security_Osquery_API_Removed.meta({ id: 'Security_Osquery_API_RemovedOrUndefined' })
 export type Security_Osquery_API_RemovedOrUndefined = z.infer<typeof Security_Osquery_API_RemovedOrUndefined>
-
-export const Security_Osquery_API_ResultTypeOrUndefined = Security_Osquery_API_ResultType.meta({ id: 'Security_Osquery_API_ResultTypeOrUndefined' })
-export type Security_Osquery_API_ResultTypeOrUndefined = z.infer<typeof Security_Osquery_API_ResultTypeOrUndefined>
 
 export const Security_Osquery_API_RRuleScheduleConfigOrUndefined = Security_Osquery_API_RRuleScheduleConfig.meta({ id: 'Security_Osquery_API_RRuleScheduleConfigOrUndefined' })
 export type Security_Osquery_API_RRuleScheduleConfigOrUndefined = z.infer<typeof Security_Osquery_API_RRuleScheduleConfigOrUndefined>
@@ -2425,40 +2407,6 @@ export type Security_Exceptions_API_ExceptionListItemEntryNestedEntryItem = z.in
 export const Security_Osquery_API_ECSMappingOrUndefined = Security_Osquery_API_ECSMapping.meta({ id: 'Security_Osquery_API_ECSMappingOrUndefined' })
 export type Security_Osquery_API_ECSMappingOrUndefined = z.infer<typeof Security_Osquery_API_ECSMappingOrUndefined>
 
-export const Security_Osquery_API_ObjectQueriesItem = z.object({
-  ecs_mapping: Security_Osquery_API_ECSMapping.optional(),
-  enabled: Security_Osquery_API_QueryEnabled.optional(),
-  id: Security_Osquery_API_QueryId.optional(),
-  interval: z.number().nullable().optional(),
-  platform: Security_Osquery_API_Platform.optional(),
-  query: Security_Osquery_API_Query.optional(),
-  removed: Security_Osquery_API_Removed.optional(),
-  result_type: Security_Osquery_API_ResultType.optional(),
-  rrule_schedule: Security_Osquery_API_RRuleScheduleConfig.optional(),
-  saved_query_id: Security_Osquery_API_SavedQueryId.optional(),
-  schedule_type: Security_Osquery_API_ScheduleType.optional(),
-  snapshot: Security_Osquery_API_Snapshot.optional(),
-  version: Security_Osquery_API_Version.optional()
-}).meta({ id: 'Security_Osquery_API_ObjectQueriesItem' })
-export type Security_Osquery_API_ObjectQueriesItem = z.infer<typeof Security_Osquery_API_ObjectQueriesItem>
-
-export const Security_Osquery_API_ObjectQueriesItemInput = z.object({
-  ecs_mapping: Security_Osquery_API_ECSMapping.optional(),
-  enabled: Security_Osquery_API_QueryEnabled.optional(),
-  id: Security_Osquery_API_QueryId.optional(),
-  interval: z.number().nullable().optional(),
-  platform: Security_Osquery_API_Platform.optional(),
-  query: Security_Osquery_API_Query.optional(),
-  removed: Security_Osquery_API_Removed.optional(),
-  result_type: Security_Osquery_API_ResultType.optional(),
-  rrule_schedule: Security_Osquery_API_RRuleScheduleConfig.optional(),
-  saved_query_id: Security_Osquery_API_SavedQueryId.optional(),
-  schedule_type: Security_Osquery_API_ScheduleType.optional(),
-  snapshot: Security_Osquery_API_Snapshot.optional(),
-  version: Security_Osquery_API_PackQueryVersionInput.optional()
-}).meta({ id: 'Security_Osquery_API_ObjectQueriesItemInput' })
-export type Security_Osquery_API_ObjectQueriesItemInput = z.infer<typeof Security_Osquery_API_ObjectQueriesItemInput>
-
 export const Security_Osquery_API_ECSMappingArray = z.array(Security_Osquery_API_ECSMappingArrayItem).meta({ id: 'Security_Osquery_API_ECSMappingArray' })
 export type Security_Osquery_API_ECSMappingArray = z.infer<typeof Security_Osquery_API_ECSMappingArray>
 
@@ -2601,7 +2549,7 @@ export const Security_Detections_API_ResponseFields = z.object({
   created_by: z.string(),
   created_by_profile_uid: z.string().optional(),
   execution_summary: Security_Detections_API_RuleExecutionSummary.optional(),
-  id: Security_Detections_API_UUID,
+  id: Security_Detections_API_RuleObjectId,
   immutable: Security_Detections_API_IsRuleImmutable,
   required_fields: Security_Detections_API_RequiredFieldArray,
   revision: Security_Detections_API_RuleRevision,
@@ -2644,11 +2592,39 @@ export const Security_Exceptions_API_ExceptionListItemEntryNested = z.object({
 }).meta({ id: 'Security_Exceptions_API_ExceptionListItemEntryNested' })
 export type Security_Exceptions_API_ExceptionListItemEntryNested = z.infer<typeof Security_Exceptions_API_ExceptionListItemEntryNested>
 
-export const Security_Osquery_API_ObjectQueries = z.record(z.string(), Security_Osquery_API_ObjectQueriesItem).meta({ id: 'Security_Osquery_API_ObjectQueries' })
-export type Security_Osquery_API_ObjectQueries = z.infer<typeof Security_Osquery_API_ObjectQueries>
+export const Security_Osquery_API_ObjectQueriesItem = z.object({
+  ecs_mapping: Security_Osquery_API_ECSMappingOrUndefined.optional(),
+  enabled: Security_Osquery_API_QueryEnabled.optional(),
+  id: Security_Osquery_API_QueryId.optional(),
+  interval: z.number().nullable().optional(),
+  platform: Security_Osquery_API_PlatformOrUndefined.optional(),
+  query: Security_Osquery_API_Query.optional(),
+  removed: Security_Osquery_API_RemovedOrUndefined.optional(),
+  result_type: Security_Osquery_API_ResultType.optional(),
+  rrule_schedule: Security_Osquery_API_RRuleScheduleConfigOrUndefined.optional(),
+  saved_query_id: Security_Osquery_API_SavedQueryIdOrUndefined.optional(),
+  schedule_type: Security_Osquery_API_ScheduleTypeOrUndefined.optional(),
+  snapshot: Security_Osquery_API_SnapshotOrUndefined.optional(),
+  version: Security_Osquery_API_VersionOrUndefined.optional()
+}).meta({ id: 'Security_Osquery_API_ObjectQueriesItem' })
+export type Security_Osquery_API_ObjectQueriesItem = z.infer<typeof Security_Osquery_API_ObjectQueriesItem>
 
-export const Security_Osquery_API_ObjectQueriesInput = z.record(z.string(), Security_Osquery_API_ObjectQueriesItemInput).meta({ id: 'Security_Osquery_API_ObjectQueriesInput' })
-export type Security_Osquery_API_ObjectQueriesInput = z.infer<typeof Security_Osquery_API_ObjectQueriesInput>
+export const Security_Osquery_API_ObjectQueriesItemInput = z.object({
+  ecs_mapping: Security_Osquery_API_ECSMappingOrUndefined.optional(),
+  enabled: Security_Osquery_API_QueryEnabled.optional(),
+  id: Security_Osquery_API_QueryId.optional(),
+  interval: z.number().nullable().optional(),
+  platform: Security_Osquery_API_PlatformOrUndefined.optional(),
+  query: Security_Osquery_API_Query.optional(),
+  removed: Security_Osquery_API_RemovedOrUndefined.optional(),
+  result_type: Security_Osquery_API_ResultType.optional(),
+  rrule_schedule: Security_Osquery_API_RRuleScheduleConfigOrUndefined.optional(),
+  saved_query_id: Security_Osquery_API_SavedQueryIdOrUndefined.optional(),
+  schedule_type: Security_Osquery_API_ScheduleTypeOrUndefined.optional(),
+  snapshot: Security_Osquery_API_SnapshotOrUndefined.optional(),
+  version: Security_Osquery_API_PackQueryVersionInputOrUndefined.optional()
+}).meta({ id: 'Security_Osquery_API_ObjectQueriesItemInput' })
+export type Security_Osquery_API_ObjectQueriesItemInput = z.infer<typeof Security_Osquery_API_ObjectQueriesItemInput>
 
 export const Security_Osquery_API_ECSMappingArrayOrUndefined = Security_Osquery_API_ECSMappingArray.meta({ id: 'Security_Osquery_API_ECSMappingArrayOrUndefined' })
 export type Security_Osquery_API_ECSMappingArrayOrUndefined = z.infer<typeof Security_Osquery_API_ECSMappingArrayOrUndefined>
@@ -2783,6 +2759,12 @@ export type Security_Endpoint_Exceptions_API_ExceptionListItemEntry = z.infer<ty
 
 export const Security_Exceptions_API_ExceptionListItemEntry = z.discriminatedUnion('type', [Security_Exceptions_API_ExceptionListItemEntryMatch, Security_Exceptions_API_ExceptionListItemEntryMatchAny, Security_Exceptions_API_ExceptionListItemEntryList, Security_Exceptions_API_ExceptionListItemEntryExists, Security_Exceptions_API_ExceptionListItemEntryNested, Security_Exceptions_API_ExceptionListItemEntryMatchWildcard]).meta({ id: 'Security_Exceptions_API_ExceptionListItemEntry' })
 export type Security_Exceptions_API_ExceptionListItemEntry = z.infer<typeof Security_Exceptions_API_ExceptionListItemEntry>
+
+export const Security_Osquery_API_ObjectQueries = z.record(z.string(), Security_Osquery_API_ObjectQueriesItem).meta({ id: 'Security_Osquery_API_ObjectQueries' })
+export type Security_Osquery_API_ObjectQueries = z.infer<typeof Security_Osquery_API_ObjectQueries>
+
+export const Security_Osquery_API_ObjectQueriesInput = z.record(z.string(), Security_Osquery_API_ObjectQueriesItemInput).meta({ id: 'Security_Osquery_API_ObjectQueriesInput' })
+export type Security_Osquery_API_ObjectQueriesInput = z.infer<typeof Security_Osquery_API_ObjectQueriesInput>
 
 export const Security_Timeline_API_SavedTimelineWithSavedObjectId = Security_Timeline_API_SavedTimeline.merge(z.object({
   savedObjectId: z.string(),

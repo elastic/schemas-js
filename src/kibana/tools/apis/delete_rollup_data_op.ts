@@ -21,7 +21,7 @@ export const delete_rollup_data_opDefinitions: KbApiDefinition[] = [
     namespace: 'slo',
     description: 'Batch delete rollup and summary data',
     method: 'POST',
-    path: '/s/{spaceId}/api/observability/slos/_bulk_purge_rollup',
+    path: '/api/observability/slos/_bulk_purge_rollup',
     destructive: true,
     readOnly: false,
     input: _inputSchema,

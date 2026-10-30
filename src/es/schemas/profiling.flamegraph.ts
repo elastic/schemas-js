@@ -8,7 +8,7 @@ import { z } from 'zod'
 
 /** Returns basic information about the status of Universal Profiling. */
 export const ProfilingFlamegraphRequest = z.object({
-  conditions: z.any().optional().meta({ found_in: 'body' })
+  conditions: z.any().meta({ found_in: 'body' })
 }).meta({ id: 'ProfilingFlamegraphRequest' })
 export type ProfilingFlamegraphRequest = z.infer<typeof ProfilingFlamegraphRequest>
 

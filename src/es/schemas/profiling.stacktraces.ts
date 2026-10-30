@@ -8,7 +8,7 @@ import { z } from 'zod'
 
 /** Extracts raw stacktrace information from Universal Profiling. */
 export const ProfilingStacktracesRequest = z.object({
-  conditions: z.any().optional().meta({ found_in: 'body' })
+  conditions: z.any().meta({ found_in: 'body' })
 }).meta({ id: 'ProfilingStacktracesRequest' })
 export type ProfilingStacktracesRequest = z.infer<typeof ProfilingStacktracesRequest>
 

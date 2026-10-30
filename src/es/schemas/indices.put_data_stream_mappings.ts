@@ -21,7 +21,7 @@ export const IndicesPutDataStreamMappingsRequest = z.object({
   dry_run: z.boolean().describe('If `true`, the request does not actually change the mappings on any data streams. Instead, it simulates changing the settings and reports back to the user what would have happened had these settings actually been applied.').optional().meta({ found_in: 'query' }),
   master_timeout: z.lazy(() => Duration).describe('The period to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' }),
   timeout: z.lazy(() => Duration).describe('The period to wait for a response. If no response is received before the  timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' }),
-  mappings: z.lazy(() => MappingTypeMapping).optional().meta({ found_in: 'body' })
+  mappings: z.lazy(() => MappingTypeMapping).meta({ found_in: 'body' })
 }).meta({ id: 'IndicesPutDataStreamMappingsRequest' })
 export type IndicesPutDataStreamMappingsRequest = z.infer<typeof IndicesPutDataStreamMappingsRequest>
 

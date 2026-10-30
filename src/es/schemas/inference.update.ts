@@ -22,7 +22,7 @@ export const InferenceUpdateRequest = z.object({
   inference_id: z.lazy(() => Id).describe('The unique identifier of the inference endpoint.').meta({ found_in: 'path' }),
   task_type: InferenceTaskType.describe('The type of inference task that the model performs.').optional().meta({ found_in: 'path' }),
   timeout: z.lazy(() => Duration).describe('Specifies the amount of time to wait for the inference endpoint to be updated. The default depends on the task type: 120s for `completion` and `chat_completion`, and 30s for all other task types.').optional().meta({ found_in: 'query' }),
-  inference_config: InferenceInferenceEndpoint.optional().meta({ found_in: 'body' })
+  inference_config: InferenceInferenceEndpoint.meta({ found_in: 'body' })
 }).meta({ id: 'InferenceUpdateRequest' })
 export type InferenceUpdateRequest = z.infer<typeof InferenceUpdateRequest>
 

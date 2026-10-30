@@ -21,7 +21,7 @@ export const bulk_snapshot_opDefinitions: KbApiDefinition[] = [
     namespace: 'slo',
     description: 'Compute SLO instance summaries in bulk at a point in time',
     method: 'POST',
-    path: '/s/{spaceId}/api/observability/slos/_bulk_snapshot',
+    path: '/api/observability/slos/_bulk_snapshot',
     destructive: true,
     readOnly: false,
     input: _inputSchema,

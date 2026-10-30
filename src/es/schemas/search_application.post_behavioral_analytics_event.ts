@@ -19,7 +19,7 @@ export const SearchApplicationPostBehavioralAnalyticsEventRequest = z.object({
   collection_name: z.lazy(() => Name).describe('The name of the behavioral analytics collection.').meta({ found_in: 'path' }),
   event_type: SearchApplicationEventType.describe('The analytics event type.').meta({ found_in: 'path' }),
   debug: z.boolean().describe('Whether the response type has to include more details').optional().meta({ found_in: 'query' }),
-  payload: z.any().optional().meta({ found_in: 'body' })
+  payload: z.any().meta({ found_in: 'body' })
 }).meta({ id: 'SearchApplicationPostBehavioralAnalyticsEventRequest' })
 export type SearchApplicationPostBehavioralAnalyticsEventRequest = z.infer<typeof SearchApplicationPostBehavioralAnalyticsEventRequest>
 

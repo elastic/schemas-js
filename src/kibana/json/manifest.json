@@ -11580,7 +11580,7 @@
     "id": "slo.delete-slo-instances-op",
     "name": "delete-slo-instances-op",
     "namespace": "slo",
-    "description": "Batch delete rollup and summary data",
+    "description": "Batch delete SLO instances",
     "namespaceFile": "slo.delete-slo-instances-op",
     "destructive": true,
     "readOnly": false,

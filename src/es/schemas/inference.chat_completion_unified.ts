@@ -23,7 +23,7 @@ import { InferenceRequestChatCompletion } from './inference.js'
 export const InferenceChatCompletionUnifiedRequest = z.object({
   inference_id: z.lazy(() => Id).describe('The inference Id').meta({ found_in: 'path' }),
   timeout: z.lazy(() => Duration).describe('Specifies the amount of time to wait for the inference request to complete.').optional().meta({ found_in: 'query' }),
-  chat_completion_request: z.lazy(() => InferenceRequestChatCompletion).optional().meta({ found_in: 'body' })
+  chat_completion_request: z.lazy(() => InferenceRequestChatCompletion).meta({ found_in: 'body' })
 }).meta({ id: 'InferenceChatCompletionUnifiedRequest' })
 export type InferenceChatCompletionUnifiedRequest = z.infer<typeof InferenceChatCompletionUnifiedRequest>
 

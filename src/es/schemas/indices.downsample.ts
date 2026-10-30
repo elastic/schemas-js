@@ -34,7 +34,7 @@ export type IndicesDownsampleConfig = z.infer<typeof IndicesDownsampleConfig>
 export const IndicesDownsampleRequest = z.object({
   index: z.lazy(() => IndexName).describe('Name of the time series index to downsample.').meta({ found_in: 'path' }),
   target_index: z.lazy(() => IndexName).describe('Name of the index to create.').meta({ found_in: 'path' }),
-  config: IndicesDownsampleConfig.optional().meta({ found_in: 'body' })
+  config: IndicesDownsampleConfig.meta({ found_in: 'body' })
 }).meta({ id: 'IndicesDownsampleRequest' })
 export type IndicesDownsampleRequest = z.infer<typeof IndicesDownsampleRequest>
 

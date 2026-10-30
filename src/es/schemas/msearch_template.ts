@@ -45,7 +45,7 @@ export const MsearchTemplateRequest = z.object({
   search_type: z.lazy(() => SearchType).describe('The type of the search operation.').optional().meta({ found_in: 'query' }),
   rest_total_hits_as_int: z.boolean().describe('If `true`, the response returns `hits.total` as an integer. If `false`, it returns `hits.total` as an object.').optional().meta({ found_in: 'query' }),
   typed_keys: z.boolean().describe('If `true`, the response prefixes aggregation and suggester names with their respective types.').optional().meta({ found_in: 'query' }),
-  search_templates: z.array(MsearchTemplateRequestItem).optional().meta({ found_in: 'body' })
+  search_templates: z.array(MsearchTemplateRequestItem).meta({ found_in: 'body' })
 }).meta({ id: 'MsearchTemplateRequest' })
 export type MsearchTemplateRequest = z.infer<typeof MsearchTemplateRequest>
 

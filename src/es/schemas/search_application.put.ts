@@ -25,7 +25,7 @@ export type SearchApplicationSearchApplicationParameters = z.infer<typeof Search
 export const SearchApplicationPutRequest = z.object({
   name: z.lazy(() => Name).describe('The name of the search application to be created or updated.').meta({ found_in: 'path' }),
   create: z.boolean().describe('If `true`, this request cannot replace or update existing Search Applications.').optional().meta({ found_in: 'query' }),
-  search_application: SearchApplicationSearchApplicationParameters.optional().meta({ found_in: 'body' })
+  search_application: SearchApplicationSearchApplicationParameters.meta({ found_in: 'body' })
 }).meta({ id: 'SearchApplicationPutRequest' })
 export type SearchApplicationPutRequest = z.infer<typeof SearchApplicationPutRequest>
 

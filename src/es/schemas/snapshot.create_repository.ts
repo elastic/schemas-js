@@ -24,7 +24,7 @@ export const SnapshotCreateRepositoryRequest = z.object({
   master_timeout: z.lazy(() => Duration).describe('The period to wait for the master node. If the master node is not available before the timeout expires, the request fails and returns an error. To indicate that the request should never timeout, set it to `-1`.').optional().meta({ found_in: 'query' }),
   timeout: z.lazy(() => Duration).describe('The period to wait for a response from all relevant nodes in the cluster after updating the cluster metadata. If no response is received before the timeout expires, the cluster metadata update still applies but the response will indicate that it was not completely acknowledged. To indicate that the request should never timeout, set it to `-1`.').optional().meta({ found_in: 'query' }),
   verify: z.boolean().describe('If `true`, the request verifies the repository is functional on all master and data nodes in the cluster. If `false`, this verification is skipped. You can also perform this verification with the verify snapshot repository API.').optional().meta({ found_in: 'query' }),
-  repository: SnapshotRepository.optional().meta({ found_in: 'body' })
+  repository: SnapshotRepository.meta({ found_in: 'body' })
 }).meta({ id: 'SnapshotCreateRepositoryRequest' })
 export type SnapshotCreateRepositoryRequest = z.infer<typeof SnapshotCreateRepositoryRequest>
 

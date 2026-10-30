@@ -144,7 +144,7 @@ export const IndexRequest = z.object({
   version_type: z.lazy(() => VersionType).describe('The version type.').optional().meta({ found_in: 'query' }),
   require_alias: z.boolean().describe('If `true`, the destination must be an index alias.').optional().meta({ found_in: 'query' }),
   require_data_stream: z.boolean().describe('If `true`, the request\'s actions must target a data stream (existing or to be created).').optional().meta({ found_in: 'query' }),
-  document: z.any().optional().meta({ found_in: 'body' })
+  document: z.any().meta({ found_in: 'body' })
 }).meta({ id: 'IndexRequest' })
 export type IndexRequest = z.infer<typeof IndexRequest>
 

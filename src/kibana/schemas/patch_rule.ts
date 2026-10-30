@@ -11,7 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Security_Detections_API_AlertsIndex, Security_Detections_API_AlertsIndexNamespace, Security_Detections_API_AnomalyThreshold, Security_Detections_API_BuildingBlockType, Security_Detections_API_EqlOptionalFields, Security_Detections_API_EqlQueryLanguage, Security_Detections_API_EsqlQueryLanguage, Security_Detections_API_EsqlRuleOptionalFields, Security_Detections_API_HistoryWindowStart, Security_Detections_API_InvestigationFields, Security_Detections_API_InvestigationGuide, Security_Detections_API_IsRuleEnabled, Security_Detections_API_MachineLearningJobId, Security_Detections_API_MachineLearningRuleOptionalFields, Security_Detections_API_MaxSignals, Security_Detections_API_NewTermsFields, Security_Detections_API_NewTermsRuleDefaultableFields, Security_Detections_API_NewTermsRuleOptionalFields, Security_Detections_API_QueryRuleDefaultableFields, Security_Detections_API_QueryRuleOptionalFields, Security_Detections_API_RelatedIntegrationArray, Security_Detections_API_RequiredFieldInput, Security_Detections_API_ResponseAction, Security_Detections_API_RiskScore, Security_Detections_API_RiskScoreMapping, Security_Detections_API_RuleAction, Security_Detections_API_RuleActionThrottle, Security_Detections_API_RuleAuthorArray, Security_Detections_API_RuleDescription, Security_Detections_API_RuleExceptionList, Security_Detections_API_RuleFalsePositiveArray, Security_Detections_API_RuleInterval, Security_Detections_API_RuleIntervalFrom, Security_Detections_API_RuleIntervalTo, Security_Detections_API_RuleLicense, Security_Detections_API_RuleMetadata, Security_Detections_API_RuleName, Security_Detections_API_RuleNameOverride, Security_Detections_API_RuleQuery, Security_Detections_API_RuleReferenceArray, Security_Detections_API_RuleSignatureId, Security_Detections_API_RuleTagArray, Security_Detections_API_RuleVersion, Security_Detections_API_SavedObjectResolveAliasPurpose, Security_Detections_API_SavedObjectResolveAliasTargetId, Security_Detections_API_SavedObjectResolveOutcome, Security_Detections_API_SavedQueryId, Security_Detections_API_SavedQueryRuleDefaultableFields, Security_Detections_API_SavedQueryRuleOptionalFields, Security_Detections_API_SetupGuide, Security_Detections_API_Severity, Security_Detections_API_SeverityMapping, Security_Detections_API_ThreatArray, Security_Detections_API_ThreatIndex, Security_Detections_API_ThreatMapping, Security_Detections_API_ThreatMatchRuleDefaultableFields, Security_Detections_API_ThreatMatchRuleOptionalFields, Security_Detections_API_ThreatQuery, Security_Detections_API_Threshold, Security_Detections_API_ThresholdRuleDefaultableFields, Security_Detections_API_ThresholdRuleOptionalFields, Security_Detections_API_TimelineTemplateId, Security_Detections_API_TimelineTemplateTitle, Security_Detections_API_TimestampOverride, Security_Detections_API_TimestampOverrideFallbackDisabled, Security_Detections_API_UUID } from './schemas/security.js'
+import { Security_Detections_API_AlertsIndex, Security_Detections_API_AlertsIndexNamespace, Security_Detections_API_AnomalyThreshold, Security_Detections_API_BuildingBlockType, Security_Detections_API_EqlOptionalFields, Security_Detections_API_EqlQueryLanguage, Security_Detections_API_EsqlQueryLanguage, Security_Detections_API_EsqlRuleOptionalFields, Security_Detections_API_HistoryWindowStart, Security_Detections_API_InvestigationFields, Security_Detections_API_InvestigationGuide, Security_Detections_API_IsRuleEnabled, Security_Detections_API_MachineLearningJobId, Security_Detections_API_MachineLearningRuleOptionalFields, Security_Detections_API_MaxSignals, Security_Detections_API_NewTermsFields, Security_Detections_API_NewTermsRuleDefaultableFields, Security_Detections_API_NewTermsRuleOptionalFields, Security_Detections_API_QueryRuleDefaultableFields, Security_Detections_API_QueryRuleOptionalFields, Security_Detections_API_RelatedIntegrationArray, Security_Detections_API_RequiredFieldInput, Security_Detections_API_ResponseAction, Security_Detections_API_RiskScore, Security_Detections_API_RiskScoreMapping, Security_Detections_API_RuleAction, Security_Detections_API_RuleActionThrottle, Security_Detections_API_RuleAuthorArray, Security_Detections_API_RuleDescription, Security_Detections_API_RuleExceptionList, Security_Detections_API_RuleFalsePositiveArray, Security_Detections_API_RuleInterval, Security_Detections_API_RuleIntervalFrom, Security_Detections_API_RuleIntervalTo, Security_Detections_API_RuleLicense, Security_Detections_API_RuleMetadata, Security_Detections_API_RuleName, Security_Detections_API_RuleNameOverride, Security_Detections_API_RuleObjectId, Security_Detections_API_RuleQuery, Security_Detections_API_RuleReferenceArray, Security_Detections_API_RuleSignatureId, Security_Detections_API_RuleTagArray, Security_Detections_API_RuleVersion, Security_Detections_API_SavedObjectResolveAliasPurpose, Security_Detections_API_SavedObjectResolveAliasTargetId, Security_Detections_API_SavedObjectResolveOutcome, Security_Detections_API_SavedQueryId, Security_Detections_API_SavedQueryRuleDefaultableFields, Security_Detections_API_SavedQueryRuleOptionalFields, Security_Detections_API_SetupGuide, Security_Detections_API_Severity, Security_Detections_API_SeverityMapping, Security_Detections_API_ThreatArray, Security_Detections_API_ThreatIndex, Security_Detections_API_ThreatMapping, Security_Detections_API_ThreatMatchRuleDefaultableFields, Security_Detections_API_ThreatMatchRuleOptionalFields, Security_Detections_API_ThreatQuery, Security_Detections_API_Threshold, Security_Detections_API_ThresholdRuleDefaultableFields, Security_Detections_API_ThresholdRuleOptionalFields, Security_Detections_API_TimelineTemplateId, Security_Detections_API_TimelineTemplateTitle, Security_Detections_API_TimestampOverride, Security_Detections_API_TimestampOverrideFallbackDisabled } from './schemas/security.js'
 
 export const Security_Detections_API_EqlRulePatchFields = z.object({
   language: Security_Detections_API_EqlQueryLanguage.optional(),
@@ -73,7 +73,7 @@ export const Security_Detections_API_EqlRulePatchProps = z.intersection(z.object
   exceptions_list: z.array(Security_Detections_API_RuleExceptionList).optional(),
   false_positives: Security_Detections_API_RuleFalsePositiveArray.optional(),
   from: Security_Detections_API_RuleIntervalFrom.optional(),
-  id: Security_Detections_API_UUID.optional(),
+  id: Security_Detections_API_RuleObjectId.optional(),
   interval: Security_Detections_API_RuleInterval.optional(),
   investigation_fields: Security_Detections_API_InvestigationFields.optional(),
   license: Security_Detections_API_RuleLicense.optional(),
@@ -118,7 +118,7 @@ export const Security_Detections_API_EsqlRulePatchProps = z.object({
   exceptions_list: z.array(Security_Detections_API_RuleExceptionList).optional(),
   false_positives: Security_Detections_API_RuleFalsePositiveArray.optional(),
   from: Security_Detections_API_RuleIntervalFrom.optional(),
-  id: Security_Detections_API_UUID.optional(),
+  id: Security_Detections_API_RuleObjectId.optional(),
   interval: Security_Detections_API_RuleInterval.optional(),
   investigation_fields: Security_Detections_API_InvestigationFields.optional(),
   language: Security_Detections_API_EsqlQueryLanguage.optional(),
@@ -166,7 +166,7 @@ export const Security_Detections_API_MachineLearningRulePatchProps = z.intersect
   exceptions_list: z.array(Security_Detections_API_RuleExceptionList).optional(),
   false_positives: Security_Detections_API_RuleFalsePositiveArray.optional(),
   from: Security_Detections_API_RuleIntervalFrom.optional(),
-  id: Security_Detections_API_UUID.optional(),
+  id: Security_Detections_API_RuleObjectId.optional(),
   interval: Security_Detections_API_RuleInterval.optional(),
   investigation_fields: Security_Detections_API_InvestigationFields.optional(),
   license: Security_Detections_API_RuleLicense.optional(),
@@ -211,7 +211,7 @@ export const Security_Detections_API_NewTermsRulePatchProps = z.intersection(z.o
   exceptions_list: z.array(Security_Detections_API_RuleExceptionList).optional(),
   false_positives: Security_Detections_API_RuleFalsePositiveArray.optional(),
   from: Security_Detections_API_RuleIntervalFrom.optional(),
-  id: Security_Detections_API_UUID.optional(),
+  id: Security_Detections_API_RuleObjectId.optional(),
   interval: Security_Detections_API_RuleInterval.optional(),
   investigation_fields: Security_Detections_API_InvestigationFields.optional(),
   license: Security_Detections_API_RuleLicense.optional(),
@@ -256,7 +256,7 @@ export const Security_Detections_API_QueryRulePatchProps = z.intersection(z.obje
   exceptions_list: z.array(Security_Detections_API_RuleExceptionList).optional(),
   false_positives: Security_Detections_API_RuleFalsePositiveArray.optional(),
   from: Security_Detections_API_RuleIntervalFrom.optional(),
-  id: Security_Detections_API_UUID.optional(),
+  id: Security_Detections_API_RuleObjectId.optional(),
   interval: Security_Detections_API_RuleInterval.optional(),
   investigation_fields: Security_Detections_API_InvestigationFields.optional(),
   license: Security_Detections_API_RuleLicense.optional(),
@@ -301,7 +301,7 @@ export const Security_Detections_API_SavedQueryRulePatchProps = z.intersection(z
   exceptions_list: z.array(Security_Detections_API_RuleExceptionList).optional(),
   false_positives: Security_Detections_API_RuleFalsePositiveArray.optional(),
   from: Security_Detections_API_RuleIntervalFrom.optional(),
-  id: Security_Detections_API_UUID.optional(),
+  id: Security_Detections_API_RuleObjectId.optional(),
   interval: Security_Detections_API_RuleInterval.optional(),
   investigation_fields: Security_Detections_API_InvestigationFields.optional(),
   license: Security_Detections_API_RuleLicense.optional(),
@@ -346,7 +346,7 @@ export const Security_Detections_API_ThreatMatchRulePatchProps = z.intersection(
   exceptions_list: z.array(Security_Detections_API_RuleExceptionList).optional(),
   false_positives: Security_Detections_API_RuleFalsePositiveArray.optional(),
   from: Security_Detections_API_RuleIntervalFrom.optional(),
-  id: Security_Detections_API_UUID.optional(),
+  id: Security_Detections_API_RuleObjectId.optional(),
   interval: Security_Detections_API_RuleInterval.optional(),
   investigation_fields: Security_Detections_API_InvestigationFields.optional(),
   license: Security_Detections_API_RuleLicense.optional(),
@@ -391,7 +391,7 @@ export const Security_Detections_API_ThresholdRulePatchProps = z.intersection(z.
   exceptions_list: z.array(Security_Detections_API_RuleExceptionList).optional(),
   false_positives: Security_Detections_API_RuleFalsePositiveArray.optional(),
   from: Security_Detections_API_RuleIntervalFrom.optional(),
-  id: Security_Detections_API_UUID.optional(),
+  id: Security_Detections_API_RuleObjectId.optional(),
   interval: Security_Detections_API_RuleInterval.optional(),
   investigation_fields: Security_Detections_API_InvestigationFields.optional(),
   license: Security_Detections_API_RuleLicense.optional(),
@@ -452,6 +452,7 @@ export { Security_Detections_API_RuleRevision } from './schemas/security.js'
 export { Security_Detections_API_RequiredFieldArray } from './schemas/security.js'
 export { Security_Detections_API_RequiredField } from './schemas/security.js'
 export { Security_Detections_API_IsRuleImmutable } from './schemas/security.js'
+export { Security_Detections_API_RuleObjectId } from './schemas/security.js'
 export { Security_Detections_API_UUID } from './schemas/security.js'
 export { Security_Detections_API_RuleExecutionSummary } from './schemas/security.js'
 export { Security_Detections_API_RuleExecutionStatusOrder } from './schemas/security.js'

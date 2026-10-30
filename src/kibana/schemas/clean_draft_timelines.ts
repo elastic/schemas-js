@@ -18,6 +18,7 @@ export const CleanDraftTimelinesRequest = z.object({
 }).meta({ id: 'CleanDraftTimelinesRequest' })
 export type CleanDraftTimelinesRequest = z.infer<typeof CleanDraftTimelinesRequest>
 
+export { Security_Timeline_API_PersistTimelineResponse } from './schemas/security.js'
 export { Security_Timeline_API_TimelineResponse } from './schemas/security.js'
 export { Security_Timeline_API_PinnedEvent } from './schemas/security.js'
 export { Security_Timeline_API_BarePinnedEvent } from './schemas/security.js'

@@ -9,6 +9,7 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
+export { Security_Timeline_API_PersistTimelineResponse } from './schemas/security.js'
 export { Security_Timeline_API_TimelineResponse } from './schemas/security.js'
 export { Security_Timeline_API_PinnedEvent } from './schemas/security.js'
 export { Security_Timeline_API_BarePinnedEvent } from './schemas/security.js'

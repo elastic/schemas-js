@@ -21,7 +21,7 @@ export const enable_slo_opDefinitions: KbApiDefinition[] = [
     namespace: 'slo',
     description: 'Enable an SLO',
     method: 'POST',
-    path: '/s/{spaceId}/api/observability/slos/{sloId}/enable',
+    path: '/api/observability/slos/{id}/enable',
     destructive: true,
     readOnly: false,
     input: _inputSchema,
