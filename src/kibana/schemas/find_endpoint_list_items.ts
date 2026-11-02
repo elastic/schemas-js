@@ -11,10 +11,10 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Security_Endpoint_Exceptions_API_ExceptionListItem } from './schemas/security.js'
+import { Security_Endpoint_Exceptions_API_EndpointListItem } from './schemas/security.js'
 
 export const FindEndpointListItemsResponse = z.object({
-  data: z.array(Security_Endpoint_Exceptions_API_ExceptionListItem),
+  data: z.array(Security_Endpoint_Exceptions_API_EndpointListItem),
   page: z.number(),
   per_page: z.number(),
   pit: z.string().optional(),
@@ -22,6 +22,7 @@ export const FindEndpointListItemsResponse = z.object({
 }).meta({ id: 'FindEndpointListItemsResponse' })
 export type FindEndpointListItemsResponse = z.infer<typeof FindEndpointListItemsResponse>
 
+export { Security_Endpoint_Exceptions_API_EndpointListItem } from './schemas/security.js'
 export { Security_Endpoint_Exceptions_API_ExceptionListItem } from './schemas/security.js'
 export { Security_Endpoint_Exceptions_API_ExceptionListItemType } from './schemas/security.js'
 export { Security_Endpoint_Exceptions_API_ExceptionListItemTags } from './schemas/security.js'

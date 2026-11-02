@@ -28,7 +28,9 @@ export const PostFleetCloudOnboardingDeploymentsRequest = z.object({
   integrationName: z.string().optional(),
   mechanisms: z.array(z.enum(['managed_integration', 'ecf', 'agent_based'])),
   namespace: z.string().optional(),
+  packageNames: z.array(z.string()).optional(),
   provider: z.enum(['aws', 'azure', 'gcp']),
+  serviceNames: z.record(z.string(), z.string()).optional(),
   services: z.array(z.string()),
   serviceVars: z.record(z.string(), z.record(z.string(), z.unknown().nullable())).optional()
 }).meta({ id: 'PostFleetCloudOnboardingDeploymentsRequest' })
@@ -47,6 +49,11 @@ export const PostFleetCloudOnboardingDeploymentsResponse = z.object({
     description: z.string().optional(),
     ecfStacks: z.array(z.object({
       family: z.enum(['unified', 'otel', 'crowdstrike']),
+      serviceConfigs: z.array(z.object({
+        bucketArns: z.array(z.string()),
+        logGroupArns: z.array(z.string()),
+        serviceId: z.string()
+      })).optional(),
       serviceIds: z.array(z.string()).optional(),
       stackArn: z.string().optional(),
       stackName: z.string(),
@@ -63,13 +70,17 @@ export const PostFleetCloudOnboardingDeploymentsResponse = z.object({
     integrationName: z.string().optional(),
     mechanisms: z.array(z.enum(['managed_integration', 'ecf', 'agent_based'])),
     namespace: z.string().optional(),
+    packageNames: z.array(z.string()).optional(),
     packagePolicyIds: z.array(z.string()).optional(),
     policyIdsByInstance: z.record(z.string(), z.string()).optional(),
     provider: z.enum(['aws', 'azure', 'gcp']),
+    serviceNames: z.record(z.string(), z.string()).optional(),
     services: z.array(z.string()),
     serviceVars: z.record(z.string(), z.record(z.string(), z.unknown().nullable())).optional(),
     status: z.enum(['pending', 'deploying', 'succeeded', 'failed']),
-    statusMessage: z.string().optional()
+    statusMessage: z.string().optional(),
+    updatedAt: z.string().optional(),
+    updatedBy: z.string().optional()
   })
 }).meta({ id: 'PostFleetCloudOnboardingDeploymentsResponse' })
 export type PostFleetCloudOnboardingDeploymentsResponse = z.infer<typeof PostFleetCloudOnboardingDeploymentsResponse>

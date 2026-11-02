@@ -21,7 +21,7 @@ export const bulk_delete_opDefinitions: KbApiDefinition[] = [
     namespace: 'slo',
     description: 'Bulk delete SLO definitions and their associated summary and rollup data.',
     method: 'POST',
-    path: '/s/{spaceId}/api/observability/slos/_bulk_delete',
+    path: '/api/observability/slos/_bulk_delete',
     destructive: true,
     readOnly: false,
     input: _inputSchema,

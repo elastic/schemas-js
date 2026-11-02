@@ -12,10 +12,11 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const SLOs_delete_slo_instances_request = z.object({
+export const DeleteSloInstancesOpRequest = z.object({
   list: z.array(z.object({
+    excludeRollup: z.boolean().optional(),
     instanceId: z.string(),
     sloId: z.string()
   }))
-}).meta({ id: 'SLOs_delete_slo_instances_request' })
-export type SLOs_delete_slo_instances_request = z.infer<typeof SLOs_delete_slo_instances_request>
+}).meta({ id: 'DeleteSloInstancesOpRequest' })
+export type DeleteSloInstancesOpRequest = z.infer<typeof DeleteSloInstancesOpRequest>

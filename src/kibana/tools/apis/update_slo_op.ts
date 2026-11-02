@@ -21,7 +21,7 @@ export const update_slo_opDefinitions: KbApiDefinition[] = [
     namespace: 'slo',
     description: 'Update an SLO',
     method: 'PUT',
-    path: '/s/{spaceId}/api/observability/slos/{sloId}',
+    path: '/api/observability/slos/{id}',
     destructive: true,
     readOnly: false,
     input: _inputSchema,

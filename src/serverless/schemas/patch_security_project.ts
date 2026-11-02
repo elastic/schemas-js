@@ -30,7 +30,8 @@ export const PatchSecurityProjectRequest = z.object({
     id: z.string()
   })).optional(),
   metadata: z.object({
-    tags: z.record(z.string(), z.string())
+    tags: z.record(z.string(), z.string()).optional(),
+    annotations: z.record(z.string(), z.string()).optional()
   }).optional(),
   linked: z.object({
     projects: z.record(z.string(), z.object({
@@ -66,7 +67,8 @@ export const PatchSecurityProjectResponse = z.intersection(z.object({
     suspended_at: z.string().optional(),
     suspended_reason: z.string().optional(),
     tags: z.record(z.string(), z.string()).optional(),
-    system_tags: z.record(z.string(), z.string()).optional()
+    system_tags: z.record(z.string(), z.string()).optional(),
+    annotations: z.record(z.string(), z.string()).optional()
   }),
   cloud_id: z.string(),
   traffic_filters: z.array(z.object({

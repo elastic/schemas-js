@@ -11,18 +11,18 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Security_Osquery_API_ECSMapping, Security_Osquery_API_Interval, Security_Osquery_API_Platform, Security_Osquery_API_Query, Security_Osquery_API_Removed, Security_Osquery_API_SavedQueryDescription, Security_Osquery_API_SavedQueryId, Security_Osquery_API_Snapshot, Security_Osquery_API_Version } from './schemas/security.js'
+import { Security_Osquery_API_ECSMappingOrUndefined, Security_Osquery_API_Interval, Security_Osquery_API_PlatformOrUndefined, Security_Osquery_API_Query, Security_Osquery_API_QueryOrUndefined, Security_Osquery_API_RemovedOrUndefined, Security_Osquery_API_SavedQueryDescriptionOrUndefined, Security_Osquery_API_SavedQueryId, Security_Osquery_API_SnapshotOrUndefined, Security_Osquery_API_VersionOrUndefined } from './schemas/security.js'
 
 export const Security_Osquery_API_CreateSavedQueryRequestBody = z.object({
-  description: Security_Osquery_API_SavedQueryDescription.optional(),
-  ecs_mapping: Security_Osquery_API_ECSMapping.optional(),
+  description: Security_Osquery_API_SavedQueryDescriptionOrUndefined.optional(),
+  ecs_mapping: Security_Osquery_API_ECSMappingOrUndefined.optional(),
   id: Security_Osquery_API_SavedQueryId.optional(),
   interval: Security_Osquery_API_Interval.optional(),
-  platform: Security_Osquery_API_Platform.optional(),
-  query: Security_Osquery_API_Query.optional(),
-  removed: Security_Osquery_API_Removed.optional(),
-  snapshot: Security_Osquery_API_Snapshot.optional(),
-  version: Security_Osquery_API_Version.optional()
+  platform: Security_Osquery_API_PlatformOrUndefined.optional(),
+  query: Security_Osquery_API_QueryOrUndefined.optional(),
+  removed: Security_Osquery_API_RemovedOrUndefined.optional(),
+  snapshot: Security_Osquery_API_SnapshotOrUndefined.optional(),
+  version: Security_Osquery_API_VersionOrUndefined.optional()
 }).meta({ id: 'Security_Osquery_API_CreateSavedQueryRequestBody' })
 export type Security_Osquery_API_CreateSavedQueryRequestBody = z.infer<typeof Security_Osquery_API_CreateSavedQueryRequestBody>
 
@@ -31,16 +31,16 @@ export const Security_Osquery_API_CreateSavedQueryResponse = z.object({
     created_at: z.string().optional(),
     created_by: z.string().nullable().optional(),
     created_by_profile_uid: z.string().optional(),
-    description: Security_Osquery_API_SavedQueryDescription.optional(),
-    ecs_mapping: Security_Osquery_API_ECSMapping.optional(),
+    description: Security_Osquery_API_SavedQueryDescriptionOrUndefined.optional(),
+    ecs_mapping: Security_Osquery_API_ECSMappingOrUndefined.optional(),
     id: Security_Osquery_API_SavedQueryId,
     interval: z.union([z.number(), z.string()]).optional(),
-    platform: Security_Osquery_API_Platform.optional(),
+    platform: Security_Osquery_API_PlatformOrUndefined.optional(),
     prebuilt: z.boolean().optional(),
     query: Security_Osquery_API_Query.optional(),
-    removed: Security_Osquery_API_Removed.optional(),
+    removed: Security_Osquery_API_RemovedOrUndefined.optional(),
     saved_object_id: z.string(),
-    snapshot: Security_Osquery_API_Snapshot.optional(),
+    snapshot: Security_Osquery_API_SnapshotOrUndefined.optional(),
     timeout: z.number().optional(),
     updated_at: z.string().optional(),
     updated_by: z.string().nullable().optional(),
@@ -50,13 +50,20 @@ export const Security_Osquery_API_CreateSavedQueryResponse = z.object({
 }).meta({ id: 'Security_Osquery_API_CreateSavedQueryResponse' })
 export type Security_Osquery_API_CreateSavedQueryResponse = z.infer<typeof Security_Osquery_API_CreateSavedQueryResponse>
 
+export { Security_Osquery_API_SnapshotOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_Snapshot } from './schemas/security.js'
+export { Security_Osquery_API_RemovedOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_Removed } from './schemas/security.js'
 export { Security_Osquery_API_Query } from './schemas/security.js'
+export { Security_Osquery_API_PlatformOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_Platform } from './schemas/security.js'
 export { Security_Osquery_API_SavedQueryId } from './schemas/security.js'
+export { Security_Osquery_API_ECSMappingOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_ECSMapping } from './schemas/security.js'
 export { Security_Osquery_API_ECSMappingItem } from './schemas/security.js'
+export { Security_Osquery_API_SavedQueryDescriptionOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_SavedQueryDescription } from './schemas/security.js'
+export { Security_Osquery_API_VersionOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_Version } from './schemas/security.js'
+export { Security_Osquery_API_QueryOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_Interval } from './schemas/security.js'

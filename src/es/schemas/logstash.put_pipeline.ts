@@ -17,7 +17,7 @@ import { LogstashPipeline } from './logstash.js'
  */
 export const LogstashPutPipelineRequest = z.object({
   id: z.lazy(() => Id).describe('An identifier for the pipeline. Pipeline IDs must begin with a letter or underscore and contain only letters, underscores, dashes, hyphens and numbers.').meta({ found_in: 'path' }),
-  pipeline: LogstashPipeline.optional().meta({ found_in: 'body' })
+  pipeline: LogstashPipeline.meta({ found_in: 'body' })
 }).meta({ id: 'LogstashPutPipelineRequest' })
 export type LogstashPutPipelineRequest = z.infer<typeof LogstashPutPipelineRequest>
 

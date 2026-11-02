@@ -207,7 +207,7 @@ export const BulkRequest = z.object({
   timeout: z.lazy(() => Duration).describe('The period each action waits for the following operations: automatic index creation, dynamic mapping updates, and waiting for active shards. The default is `1m` (one minute), which guarantees Elasticsearch waits for at least the timeout before failing. The actual wait time could be longer, particularly when multiple waits occur.').optional().meta({ found_in: 'query' }),
   require_alias: z.boolean().describe('If `true`, the request\'s actions must target an index alias.').optional().meta({ found_in: 'query' }),
   require_data_stream: z.boolean().describe('If `true`, the request\'s actions must target a data stream (existing or to be created).').optional().meta({ found_in: 'query' }),
-  operations: z.array(z.union([BulkOperationContainer, BulkUpdateAction, z.any()])).optional().meta({ found_in: 'body' })
+  operations: z.array(z.union([BulkOperationContainer, BulkUpdateAction, z.any()])).meta({ found_in: 'body' })
 }).meta({ id: 'BulkRequest' })
 export type BulkRequest = z.infer<typeof BulkRequest>
 

@@ -5871,6 +5871,25 @@
     }
   },
   {
+    "id": "fleet-cloud-onboarding-deployments.get-fleet-cloud-onboarding-deployments",
+    "name": "get-fleet-cloud-onboarding-deployments",
+    "namespace": "fleet-cloud-onboarding-deployments",
+    "description": "Get cloud onboarding deployment instances",
+    "namespaceFile": "fleet-cloud-onboarding-deployments.get-fleet-cloud-onboarding-deployments",
+    "destructive": false,
+    "readOnly": true,
+    "availability": {
+      "stack": {
+        "stability": "experimental",
+        "since": "9.7.0"
+      },
+      "serverless": {
+        "stability": "experimental",
+        "since": "9.7.0"
+      }
+    }
+  },
+  {
     "id": "fleet-cloud-onboarding-deployments.get-fleet-cloud-onboarding-deployments-connector-connectorid",
     "name": "get-fleet-cloud-onboarding-deployments-connector-connectorid",
     "namespace": "fleet-cloud-onboarding-deployments",
@@ -11580,7 +11599,7 @@
     "id": "slo.delete-slo-instances-op",
     "name": "delete-slo-instances-op",
     "namespace": "slo",
-    "description": "Batch delete rollup and summary data",
+    "description": "Batch delete SLO instances",
     "namespaceFile": "slo.delete-slo-instances-op",
     "destructive": true,
     "readOnly": false,

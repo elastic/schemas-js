@@ -12,7 +12,7 @@ import { ProjectProjectRoutingExpression } from './project.js'
 /** Create or update a project routing expression. */
 export const ProjectCreateRoutingRequest = z.object({
   name: z.string().describe('The name of project routing expression').meta({ found_in: 'path' }),
-  expressions: ProjectProjectRoutingExpression.optional().meta({ found_in: 'body' })
+  expressions: ProjectProjectRoutingExpression.meta({ found_in: 'body' })
 }).meta({ id: 'ProjectCreateRoutingRequest' })
 export type ProjectCreateRoutingRequest = z.infer<typeof ProjectCreateRoutingRequest>
 

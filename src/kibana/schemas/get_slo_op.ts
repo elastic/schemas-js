@@ -9,26 +9,57 @@
  * and elastic/elastic-client-generator-js to regenerate this file again.
  */
 
-export { SLOs_slo_with_summary_response } from './schemas/slos.js'
-export { SLOs_time_window } from './schemas/slos.js'
-export { SLOs_summary } from './schemas/slos.js'
-export { SLOs_summary_status } from './schemas/slos.js'
-export { SLOs_error_budget } from './schemas/slos.js'
-export { SLOs_settings } from './schemas/slos.js'
-export { SLOs_objective } from './schemas/slos.js'
-export { SLOs_indicator_properties_timeslice_metric } from './schemas/slos.js'
-export { SLOs_timeslice_metric_doc_count_metric } from './schemas/slos.js'
-export { SLOs_timeslice_metric_percentile_metric } from './schemas/slos.js'
-export { SLOs_timeslice_metric_basic_metric_with_field } from './schemas/slos.js'
-export { SLOs_indicator_properties_histogram } from './schemas/slos.js'
-export { SLOs_indicator_properties_custom_metric } from './schemas/slos.js'
-export { SLOs_indicator_properties_apm_latency } from './schemas/slos.js'
-export { SLOs_indicator_properties_apm_availability } from './schemas/slos.js'
-export { SLOs_indicator_properties_custom_kql } from './schemas/slos.js'
-export { SLOs_kql_with_filters_total } from './schemas/slos.js'
-export { SLOs_filter } from './schemas/slos.js'
-export { SLOs_filter_meta } from './schemas/slos.js'
-export { SLOs_kql_with_filters_good } from './schemas/slos.js'
-export { SLOs_kql_with_filters } from './schemas/slos.js'
-export { SLOs_group_by } from './schemas/slos.js'
-export { SLOs_budgeting_method } from './schemas/slos.js'
+/* eslint-disable @typescript-eslint/no-redeclare */
+import { z } from 'zod'
+
+export const GetSloOpRequest = z.union([z.object({
+
+}), z.unknown()]).nullable().meta({ id: 'GetSloOpRequest' })
+export type GetSloOpRequest = z.infer<typeof GetSloOpRequest>
+
+export const GetSloOpResponse = z.object({
+  budgetingMethod: z.enum(['occurrences', 'timeslices']),
+  createdAt: z.string(),
+  description: z.string(),
+  enabled: z.boolean(),
+  groupBy: z.union([z.string(), z.array(z.string())]),
+  id: z.string(),
+  indicator: z.object({
+    params: z.record(z.string(), z.unknown()),
+    type: z.string()
+  }),
+  instanceId: z.string(),
+  name: z.string(),
+  objective: z.object({
+    target: z.number(),
+    timesliceTarget: z.number().optional(),
+    timesliceWindow: z.string().optional()
+  }),
+  revision: z.number(),
+  settings: z.object({
+    frequency: z.string().optional(),
+    preventCrossProjectSearch: z.boolean().optional(),
+    preventInitialBackfill: z.boolean().optional(),
+    projectRoutings: z.string().nullable().optional(),
+    syncDelay: z.string().optional(),
+    syncField: z.string().optional()
+  }),
+  summary: z.object({
+    errorBudget: z.object({
+      consumed: z.number(),
+      initial: z.number(),
+      isEstimated: z.boolean(),
+      remaining: z.number()
+    }),
+    sliValue: z.number(),
+    status: z.enum(['NO_DATA', 'HEALTHY', 'DEGRADING', 'VIOLATED'])
+  }),
+  tags: z.array(z.string()),
+  timeWindow: z.object({
+    duration: z.string(),
+    type: z.enum(['rolling', 'calendarAligned'])
+  }),
+  updatedAt: z.string(),
+  version: z.number()
+}).meta({ id: 'GetSloOpResponse' })
+export type GetSloOpResponse = z.infer<typeof GetSloOpResponse>

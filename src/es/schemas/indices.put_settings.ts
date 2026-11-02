@@ -77,7 +77,7 @@ export const IndicesPutSettingsRequest = z.object({
   preserve_existing: z.boolean().describe('If `true`, existing index settings remain unchanged.').optional().meta({ found_in: 'query' }),
   reopen: z.boolean().describe('Whether to close and reopen the index to apply non-dynamic settings. If set to `true` the indices to which the settings are being applied will be closed temporarily and then reopened in order to apply the changes.').optional().meta({ found_in: 'query' }),
   timeout: z.lazy(() => Duration).describe('Period to wait for a response. If no response is received before the  timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' }),
-  settings: z.lazy(() => IndicesIndexSettings).optional().meta({ found_in: 'body' })
+  settings: z.lazy(() => IndicesIndexSettings).meta({ found_in: 'body' })
 }).meta({ id: 'IndicesPutSettingsRequest' })
 export type IndicesPutSettingsRequest = z.infer<typeof IndicesPutSettingsRequest>
 

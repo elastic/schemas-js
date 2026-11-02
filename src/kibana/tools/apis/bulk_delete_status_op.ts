@@ -21,7 +21,7 @@ export const bulk_delete_status_opDefinitions: KbApiDefinition[] = [
     namespace: 'slo',
     description: 'Retrieve the status of the bulk deletion',
     method: 'GET',
-    path: '/s/{spaceId}/api/observability/slos/_bulk_delete/{taskId}',
+    path: '/api/observability/slos/_bulk_delete/{taskId}',
     destructive: false,
     readOnly: true,
     input: _inputSchema,

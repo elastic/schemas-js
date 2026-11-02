@@ -8,7 +8,7 @@ import { z } from 'zod'
 
 /** Extracts a list of topN functions from Universal Profiling. */
 export const ProfilingTopnFunctionsRequest = z.object({
-  conditions: z.any().optional().meta({ found_in: 'body' })
+  conditions: z.any().meta({ found_in: 'body' })
 }).meta({ id: 'ProfilingTopnFunctionsRequest' })
 export type ProfilingTopnFunctionsRequest = z.infer<typeof ProfilingTopnFunctionsRequest>
 

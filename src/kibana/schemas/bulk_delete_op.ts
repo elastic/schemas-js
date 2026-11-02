@@ -12,12 +12,12 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const SLOs_bulk_delete_request = z.object({
+export const BulkDeleteOpRequest = z.object({
   list: z.array(z.string())
-}).meta({ id: 'SLOs_bulk_delete_request' })
-export type SLOs_bulk_delete_request = z.infer<typeof SLOs_bulk_delete_request>
+}).meta({ id: 'BulkDeleteOpRequest' })
+export type BulkDeleteOpRequest = z.infer<typeof BulkDeleteOpRequest>
 
-export const SLOs_bulk_delete_response = z.object({
+export const BulkDeleteOpResponse = z.object({
   taskId: z.string().optional()
-}).meta({ id: 'SLOs_bulk_delete_response' })
-export type SLOs_bulk_delete_response = z.infer<typeof SLOs_bulk_delete_response>
+}).meta({ id: 'BulkDeleteOpResponse' })
+export type BulkDeleteOpResponse = z.infer<typeof BulkDeleteOpResponse>

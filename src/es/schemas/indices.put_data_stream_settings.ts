@@ -37,7 +37,7 @@ export const IndicesPutDataStreamSettingsRequest = z.object({
   dry_run: z.boolean().describe('If `true`, the request does not actually change the settings on any data streams or indices. Instead, it simulates changing the settings and reports back to the user what would have happened had these settings actually been applied.').optional().meta({ found_in: 'query' }),
   master_timeout: z.lazy(() => Duration).describe('The period to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' }),
   timeout: z.lazy(() => Duration).describe('The period to wait for a response. If no response is received before the  timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' }),
-  settings: z.lazy(() => IndicesIndexSettings).optional().meta({ found_in: 'body' })
+  settings: z.lazy(() => IndicesIndexSettings).meta({ found_in: 'body' })
 }).meta({ id: 'IndicesPutDataStreamSettingsRequest' })
 export type IndicesPutDataStreamSettingsRequest = z.infer<typeof IndicesPutDataStreamSettingsRequest>
 
