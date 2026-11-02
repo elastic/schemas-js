@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.12.0](https://github.com/elastic/schemas-js/compare/v0.11.0...v0.12.0) (2026-11-02)
+
+
+### Features
+
+* **es:** add IndicesIndexRoutingAllocationRequire field to indices.put_settings and nodes.info routing allocation schema ([e310775](https://github.com/elastic/schemas-js/commit/e3107754de8d0690c4a878ae1383951b19720cb1))
+* **es:** allow global.rank_eval request query to be a bare query DSL object in addition to the wrapped request/size form ([e310775](https://github.com/elastic/schemas-js/commit/e3107754de8d0690c4a878ae1383951b19720cb1))
+* **es:** require previously-optional request body on bulk, create, index, msearch, msearch_template, monitoring.bulk, fleet.msearch, autoscaling.put_autoscaling_policy, indices.downsample, indices.migrate_reindex, indices.put_data_stream_mappings, indices.put_data_stream_settings, indices.put_settings, inference.chat_completion_unified, inference.embedding, inference.non_streaming_chat_completion, inference.put, inference.update, ingest.put_ip_location_database, logstash.put_pipeline, ml.post_data, ml.validate_detector, profiling.flamegraph, profiling.stacktraces, profiling.topn_functions, project.create_many_routing, project.create_routing, search_application.post_behavioral_analytics_event, search_application.put, security.put_privileges, snapshot.create_repository, and text_structure.find_structure ([e310775](https://github.com/elastic/schemas-js/commit/e3107754de8d0690c4a878ae1383951b19720cb1))
+* **kibana:** add fleet cloud onboarding deployments list endpoint and new serviceConfigs, packageNames, serviceNames, updatedAt, updatedBy fields on existing onboarding deployment schemas ([e310775](https://github.com/elastic/schemas-js/commit/e3107754de8d0690c4a878ae1383951b19720cb1))
+* **kibana:** rename Security_Osquery_API_* optional field types to explicit *OrUndefined variants and rename Security_Endpoint_Exceptions_API_ExceptionListItem export to EndpointListItem ([e310775](https://github.com/elastic/schemas-js/commit/e3107754de8d0690c4a878ae1383951b19720cb1))
+* **serverless:** add optional annotations field to elasticsearch, observability, security, and vector_db project metadata schemas ([e310775](https://github.com/elastic/schemas-js/commit/e3107754de8d0690c4a878ae1383951b19720cb1))
+
+
+### Bug Fixes
+
+* **kibana:** rename detection rule id type from Security_Detections_API_UUID to Security_Detections_API_RuleObjectId across rule create/read/update/patch/delete/find/bulk-action schemas ([e310775](https://github.com/elastic/schemas-js/commit/e3107754de8d0690c4a878ae1383951b19720cb1))
+* **serverless:** make metadata.tags optional on elasticsearch, observability, security, and vector_db project create requests ([e310775](https://github.com/elastic/schemas-js/commit/e3107754de8d0690c4a878ae1383951b19720cb1))
+
 ## [0.11.0](https://github.com/elastic/schemas-js/compare/v0.10.0...v0.11.0) (2026-10-29)
 
 
