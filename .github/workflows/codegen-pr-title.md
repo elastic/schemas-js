@@ -17,6 +17,8 @@ safe-outputs:
   update-pull-request:
     title: true
     body: true
+    target: "*"
+    footer: false
 ---
 
 # Describe the codegen PR
@@ -32,6 +34,6 @@ Write one conventional commit message per distinct change. Name the API (e.g. `d
 - **Fix** (`fix:`): corrected definitions or added missing metadata on existing APIs/params.
 - Anything else: `chore:`.
 
-Update the PR:
+Update the PR by passing its number as `pull_request_number`:
 
 The PR title should be replaced in its entirety with the most severe conventional commit message (a single line, no body). The PR description should consist of every other conventional commit message, most severe first, with a blank line between each and nothing else: no heading, no list markers, no summary prose. If the only change is an automated no-op or formatting, use `chore: regenerate API schemas` as the title and leave the description empty.
