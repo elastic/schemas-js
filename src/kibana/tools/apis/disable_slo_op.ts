@@ -21,7 +21,7 @@ export const disable_slo_opDefinitions: KbApiDefinition[] = [
     namespace: 'slo',
     description: 'Disable an SLO',
     method: 'POST',
-    path: '/s/{spaceId}/api/observability/slos/{sloId}/disable',
+    path: '/api/observability/slos/{id}/disable',
     destructive: true,
     readOnly: false,
     input: _inputSchema,

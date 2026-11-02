@@ -26,6 +26,7 @@ export const CreateEndpointListItemRequest = z.object({
 }).meta({ id: 'CreateEndpointListItemRequest' })
 export type CreateEndpointListItemRequest = z.infer<typeof CreateEndpointListItemRequest>
 
+export { Security_Endpoint_Exceptions_API_EndpointListItem } from './schemas/security.js'
 export { Security_Endpoint_Exceptions_API_ExceptionListItem } from './schemas/security.js'
 export { Security_Endpoint_Exceptions_API_ExceptionListItemType } from './schemas/security.js'
 export { Security_Endpoint_Exceptions_API_ExceptionListItemTags } from './schemas/security.js'

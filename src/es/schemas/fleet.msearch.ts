@@ -32,7 +32,7 @@ export const FleetMsearchRequest = z.object({
   typed_keys: z.boolean().describe('Specifies whether aggregation and suggester names should be prefixed by their respective types in the response.').optional().meta({ found_in: 'query' }),
   wait_for_checkpoints: z.array(FleetCheckpoint).describe('A comma separated list of checkpoints. When configured, the search API will only be executed on a shard after the relevant checkpoint has become visible for search. Defaults to an empty list which will cause Elasticsearch to immediately execute the search.').optional().meta({ found_in: 'query' }),
   allow_partial_search_results: z.boolean().describe('If true, returns partial results if there are shard request timeouts or shard failures. If false, returns an error with no partial results. Defaults to the configured cluster setting `search.default_allow_partial_results`, which is true by default.').optional().meta({ found_in: 'query' }),
-  searches: z.array(MsearchRequestItem).optional().meta({ found_in: 'body' })
+  searches: z.array(MsearchRequestItem).meta({ found_in: 'body' })
 }).meta({ id: 'FleetMsearchRequest' })
 export type FleetMsearchRequest = z.infer<typeof FleetMsearchRequest>
 

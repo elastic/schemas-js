@@ -19,7 +19,7 @@ export const MlPostDataRequest = z.object({
   job_id: z.lazy(() => Id).describe('Identifier for the anomaly detection job. The job must have a state of open to receive and process the data.').meta({ found_in: 'path' }),
   reset_end: z.lazy(() => DateTime).describe('Specifies the end of the bucket resetting range.').optional().meta({ found_in: 'query' }),
   reset_start: z.lazy(() => DateTime).describe('Specifies the start of the bucket resetting range.').optional().meta({ found_in: 'query' }),
-  data: z.array(z.any()).optional().meta({ found_in: 'body' })
+  data: z.array(z.any()).meta({ found_in: 'body' })
 }).meta({ id: 'MlPostDataRequest' })
 export type MlPostDataRequest = z.infer<typeof MlPostDataRequest>
 

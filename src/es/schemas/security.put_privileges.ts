@@ -40,7 +40,7 @@ export type SecurityPutPrivilegesActions = z.infer<typeof SecurityPutPrivilegesA
  */
 export const SecurityPutPrivilegesRequest = z.object({
   refresh: z.lazy(() => Refresh).describe('If `true` (the default) then refresh the affected shards to make this operation visible to search, if `wait_for` then wait for a refresh to make this operation visible to search, if `false` then do nothing with refreshes.').optional().meta({ found_in: 'query' }),
-  privileges: z.record(z.string(), z.record(z.string(), SecurityPutPrivilegesActions)).optional().meta({ found_in: 'body' })
+  privileges: z.record(z.string(), z.record(z.string(), SecurityPutPrivilegesActions)).meta({ found_in: 'body' })
 }).meta({ id: 'SecurityPutPrivilegesRequest' })
 export type SecurityPutPrivilegesRequest = z.infer<typeof SecurityPutPrivilegesRequest>
 

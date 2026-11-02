@@ -21,7 +21,7 @@ export const reset_slo_opDefinitions: KbApiDefinition[] = [
     namespace: 'slo',
     description: 'Reset an SLO',
     method: 'POST',
-    path: '/s/{spaceId}/api/observability/slos/{sloId}/_reset',
+    path: '/api/observability/slos/{id}/_reset',
     destructive: true,
     readOnly: false,
     input: _inputSchema,

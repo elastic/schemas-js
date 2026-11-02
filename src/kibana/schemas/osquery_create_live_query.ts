@@ -11,18 +11,24 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Security_Osquery_API_ECSMapping, Security_Osquery_API_PackId, Security_Osquery_API_Platform, Security_Osquery_API_Query, Security_Osquery_API_QueryEnabled, Security_Osquery_API_QueryId, Security_Osquery_API_Removed, Security_Osquery_API_ResultType, Security_Osquery_API_SavedQueryId, Security_Osquery_API_Snapshot, Security_Osquery_API_Version } from './schemas/security.js'
+import { Security_Osquery_API_ECSMappingOrUndefined, Security_Osquery_API_PlatformOrUndefined, Security_Osquery_API_Query, Security_Osquery_API_QueryEnabled, Security_Osquery_API_QueryId, Security_Osquery_API_QueryOrUndefined, Security_Osquery_API_RemovedOrUndefined, Security_Osquery_API_ResultType, Security_Osquery_API_SavedQueryIdOrUndefined, Security_Osquery_API_SnapshotOrUndefined, Security_Osquery_API_VersionOrUndefined } from './schemas/security.js'
+
+export const Security_Osquery_API_PackId = z.string().meta({ id: 'Security_Osquery_API_PackId' })
+export type Security_Osquery_API_PackId = z.infer<typeof Security_Osquery_API_PackId>
+
+export const Security_Osquery_API_PackIdOrUndefined = Security_Osquery_API_PackId.meta({ id: 'Security_Osquery_API_PackIdOrUndefined' })
+export type Security_Osquery_API_PackIdOrUndefined = z.infer<typeof Security_Osquery_API_PackIdOrUndefined>
 
 export const Security_Osquery_API_ArrayQueriesItem = z.object({
-  ecs_mapping: Security_Osquery_API_ECSMapping.optional(),
+  ecs_mapping: Security_Osquery_API_ECSMappingOrUndefined.optional(),
   enabled: Security_Osquery_API_QueryEnabled.optional(),
   id: Security_Osquery_API_QueryId.optional(),
-  platform: Security_Osquery_API_Platform.optional(),
+  platform: Security_Osquery_API_PlatformOrUndefined.optional(),
   query: Security_Osquery_API_Query.optional(),
-  removed: Security_Osquery_API_Removed.optional(),
+  removed: Security_Osquery_API_RemovedOrUndefined.optional(),
   result_type: Security_Osquery_API_ResultType.optional(),
-  snapshot: Security_Osquery_API_Snapshot.optional(),
-  version: Security_Osquery_API_Version.optional()
+  snapshot: Security_Osquery_API_SnapshotOrUndefined.optional(),
+  version: Security_Osquery_API_VersionOrUndefined.optional()
 }).meta({ id: 'Security_Osquery_API_ArrayQueriesItem' })
 export type Security_Osquery_API_ArrayQueriesItem = z.infer<typeof Security_Osquery_API_ArrayQueriesItem>
 
@@ -42,7 +48,7 @@ export const Security_Osquery_API_CreateLiveQueryResponse = z.object({
     queries: z.array(z.object({
       action_id: z.string().optional(),
       agents: z.array(z.string()).optional(),
-      ecs_mapping: Security_Osquery_API_ECSMapping.optional(),
+      ecs_mapping: Security_Osquery_API_ECSMappingOrUndefined.optional(),
       id: z.string().optional(),
       platform: z.string().optional(),
       query: z.string().optional(),
@@ -66,25 +72,31 @@ export const Security_Osquery_API_CreateLiveQueryRequestBody = z.object({
   agent_policy_ids: z.array(z.string()).optional(),
   alert_ids: z.array(z.string()).optional(),
   case_ids: z.array(z.string()).optional(),
-  ecs_mapping: Security_Osquery_API_ECSMapping.optional(),
+  ecs_mapping: Security_Osquery_API_ECSMappingOrUndefined.optional(),
   event_ids: z.array(z.string()).optional(),
   metadata: z.object({}).nullable().optional(),
-  pack_id: Security_Osquery_API_PackId.optional(),
+  pack_id: Security_Osquery_API_PackIdOrUndefined.optional(),
   queries: Security_Osquery_API_ArrayQueries.optional(),
-  query: Security_Osquery_API_Query.optional(),
-  saved_query_id: Security_Osquery_API_SavedQueryId.optional()
+  query: Security_Osquery_API_QueryOrUndefined.optional(),
+  saved_query_id: Security_Osquery_API_SavedQueryIdOrUndefined.optional()
 }).meta({ id: 'Security_Osquery_API_CreateLiveQueryRequestBody' })
 export type Security_Osquery_API_CreateLiveQueryRequestBody = z.infer<typeof Security_Osquery_API_CreateLiveQueryRequestBody>
 
+export { Security_Osquery_API_ECSMappingOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_ECSMapping } from './schemas/security.js'
 export { Security_Osquery_API_ECSMappingItem } from './schemas/security.js'
+export { Security_Osquery_API_SavedQueryIdOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_SavedQueryId } from './schemas/security.js'
+export { Security_Osquery_API_QueryOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_Query } from './schemas/security.js'
+export { Security_Osquery_API_VersionOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_Version } from './schemas/security.js'
+export { Security_Osquery_API_SnapshotOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_Snapshot } from './schemas/security.js'
 export { Security_Osquery_API_ResultType } from './schemas/security.js'
+export { Security_Osquery_API_RemovedOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_Removed } from './schemas/security.js'
+export { Security_Osquery_API_PlatformOrUndefined } from './schemas/security.js'
 export { Security_Osquery_API_Platform } from './schemas/security.js'
 export { Security_Osquery_API_QueryId } from './schemas/security.js'
 export { Security_Osquery_API_QueryEnabled } from './schemas/security.js'
-export { Security_Osquery_API_PackId } from './schemas/security.js'

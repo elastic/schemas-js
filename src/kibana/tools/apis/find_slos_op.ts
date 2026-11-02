@@ -21,7 +21,7 @@ export const find_slos_opDefinitions: KbApiDefinition[] = [
     namespace: 'slo',
     description: 'Get a paginated list of SLOs',
     method: 'GET',
-    path: '/s/{spaceId}/api/observability/slos',
+    path: '/api/observability/slos',
     destructive: false,
     readOnly: true,
     input: _inputSchema,

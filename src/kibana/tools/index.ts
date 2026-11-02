@@ -1139,6 +1139,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/get_fleet_cloud_connectors_cloudconnectorid_usage.ts') as Record<string, unknown>
       return mod['get_fleet_cloud_connectors_cloudconnectorid_usageDefinitions'] as KbApiDefinition[]
     }
+    case 'get_fleet_cloud_onboarding_deployments': {
+      const mod = await import('./apis/get_fleet_cloud_onboarding_deployments.ts') as Record<string, unknown>
+      return mod['get_fleet_cloud_onboarding_deploymentsDefinitions'] as KbApiDefinition[]
+    }
     case 'get_fleet_cloud_onboarding_deployments_connector_connectorid': {
       const mod = await import('./apis/get_fleet_cloud_onboarding_deployments_connector_connectorid.ts') as Record<string, unknown>
       return mod['get_fleet_cloud_onboarding_deployments_connector_connectoridDefinitions'] as KbApiDefinition[]

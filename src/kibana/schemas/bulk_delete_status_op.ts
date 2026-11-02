@@ -12,7 +12,12 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const SLOs_bulk_delete_status_response = z.object({
+export const BulkDeleteStatusOpRequest = z.union([z.object({
+
+}), z.unknown()]).nullable().meta({ id: 'BulkDeleteStatusOpRequest' })
+export type BulkDeleteStatusOpRequest = z.infer<typeof BulkDeleteStatusOpRequest>
+
+export const BulkDeleteStatusOpResponse = z.object({
   error: z.string().optional(),
   isDone: z.boolean().optional(),
   results: z.array(z.object({
@@ -20,5 +25,5 @@ export const SLOs_bulk_delete_status_response = z.object({
     id: z.string().optional(),
     success: z.boolean().optional()
   })).optional()
-}).meta({ id: 'SLOs_bulk_delete_status_response' })
-export type SLOs_bulk_delete_status_response = z.infer<typeof SLOs_bulk_delete_status_response>
+}).meta({ id: 'BulkDeleteStatusOpResponse' })
+export type BulkDeleteStatusOpResponse = z.infer<typeof BulkDeleteStatusOpResponse>

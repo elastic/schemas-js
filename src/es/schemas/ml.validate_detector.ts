@@ -28,7 +28,7 @@ export type MlDetector = z.infer<typeof MlDetector>
 
 /** Validate an anomaly detection job. */
 export const MlValidateDetectorRequest = z.object({
-  detector: z.lazy(() => MlDetector).optional().meta({ found_in: 'body' })
+  detector: z.lazy(() => MlDetector).meta({ found_in: 'body' })
 }).meta({ id: 'MlValidateDetectorRequest' })
 export type MlValidateDetectorRequest = z.infer<typeof MlValidateDetectorRequest>
 

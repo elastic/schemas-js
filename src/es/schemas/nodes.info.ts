@@ -17,6 +17,9 @@ export const IndicesIndexRoutingAllocationInclude = z.object({
 }).meta({ id: 'IndicesIndexRoutingAllocationInclude' })
 export type IndicesIndexRoutingAllocationInclude = z.infer<typeof IndicesIndexRoutingAllocationInclude>
 
+export const IndicesIndexRoutingAllocationRequire = z.record(z.string(), z.union([z.string(), z.array(z.string())])).meta({ id: 'IndicesIndexRoutingAllocationRequire' })
+export type IndicesIndexRoutingAllocationRequire = z.infer<typeof IndicesIndexRoutingAllocationRequire>
+
 export const IndicesIndexRoutingAllocationInitialRecovery = z.object({
   _id: z.lazy(() => Id).optional()
 }).meta({ id: 'IndicesIndexRoutingAllocationInitialRecovery' })
@@ -30,6 +33,7 @@ export type IndicesIndexRoutingAllocationDisk = z.infer<typeof IndicesIndexRouti
 export const IndicesIndexRoutingAllocation = z.object({
   enable: IndicesIndexRoutingAllocationOptions.optional(),
   include: IndicesIndexRoutingAllocationInclude.optional(),
+  require: IndicesIndexRoutingAllocationRequire.describe('Assign the index to a node whose attribute has all of the given values. Each key is a node attribute: one of the built-in attributes `_name`, `_host_ip`, `_publish_ip`, `_ip`, `_host`, `_id` and `_tier`, or a custom node attribute. Each value is a comma-separated string or an array of strings, and can use wildcards.').optional(),
   initial_recovery: IndicesIndexRoutingAllocationInitialRecovery.optional(),
   disk: IndicesIndexRoutingAllocationDisk.optional()
 }).meta({ id: 'IndicesIndexRoutingAllocation' })

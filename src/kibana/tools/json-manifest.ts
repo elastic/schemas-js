@@ -671,6 +671,8 @@ export const kibanaJsonManifest: readonly string[] = [
   'fleet-cloud-onboarding-deployments.get-fleet-cloud-onboarding-deployments-connector-connectorid.response.json',
   'fleet-cloud-onboarding-deployments.get-fleet-cloud-onboarding-deployments-id.request.json',
   'fleet-cloud-onboarding-deployments.get-fleet-cloud-onboarding-deployments-id.response.json',
+  'fleet-cloud-onboarding-deployments.get-fleet-cloud-onboarding-deployments.request.json',
+  'fleet-cloud-onboarding-deployments.get-fleet-cloud-onboarding-deployments.response.json',
   'fleet-cloud-onboarding-deployments.post-fleet-cloud-onboarding-deployments.request.json',
   'fleet-cloud-onboarding-deployments.post-fleet-cloud-onboarding-deployments.response.json',
   'fleet-cloud-onboarding-deployments.put-fleet-cloud-onboarding-deployments-id.request.json',

@@ -12,14 +12,35 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-export const SLOs_bulk_snapshot_request = z.object({
+export const BulkSnapshotOpRequest = z.object({
   at: z.string(),
   requests: z.array(z.object({
     id: z.string(),
-    instanceId: z.string().optional()
+    instanceId: z.union([z.enum(['*']), z.string()]).optional()
   }))
-}).meta({ id: 'SLOs_bulk_snapshot_request' })
-export type SLOs_bulk_snapshot_request = z.infer<typeof SLOs_bulk_snapshot_request>
+}).meta({ id: 'BulkSnapshotOpRequest' })
+export type BulkSnapshotOpRequest = z.infer<typeof BulkSnapshotOpRequest>
 
-export { SLOs_snapshot_response } from './schemas/slos.js'
-export { SLOs_snapshot_result } from './schemas/slos.js'
+export const BulkSnapshotOpResponse = z.object({
+  at: z.string(),
+  results: z.array(z.object({
+    error: z.object({
+      message: z.string(),
+      statusCode: z.number()
+    }).optional(),
+    id: z.string(),
+    instanceId: z.string(),
+    summary: z.object({
+      errorBudget: z.object({
+        consumed: z.number().nullable(),
+        initial: z.number(),
+        remaining: z.number().nullable()
+      }),
+      good: z.number(),
+      sliValue: z.number().nullable(),
+      status: z.enum(['NO_DATA', 'HEALTHY', 'DEGRADING', 'VIOLATED']),
+      total: z.number()
+    }).optional()
+  }))
+}).meta({ id: 'BulkSnapshotOpResponse' })
+export type BulkSnapshotOpResponse = z.infer<typeof BulkSnapshotOpResponse>
