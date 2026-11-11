@@ -373,6 +373,7 @@ export type IndicesStatsIndicesStats = z.infer<typeof IndicesStatsIndicesStats>
 
 export interface IndicesStatsIndexStatsShape {
   completion?: CompletionStats | undefined
+  dense_vector?: ClusterStatsDenseVectorStats | undefined
   docs?: DocStats | undefined
   fielddata?: FielddataStats | undefined
   flush?: FlushStats | undefined
@@ -386,6 +387,7 @@ export interface IndicesStatsIndexStatsShape {
   request_cache?: RequestCacheStats | undefined
   search?: SearchStatsShape | undefined
   segments?: SegmentsStats | undefined
+  sparse_vector?: ClusterStatsSparseVectorStats | undefined
   store?: StoreStats | undefined
   translog?: TranslogStats | undefined
   warmer?: WarmerStats | undefined
@@ -394,6 +396,7 @@ export interface IndicesStatsIndexStatsShape {
 }
 export const IndicesStatsIndexStats = z.object({
   completion: z.lazy(() => CompletionStats).describe('Contains statistics about completions across all shards assigned to the node.').optional(),
+  dense_vector: z.lazy(() => ClusterStatsDenseVectorStats).describe('Contains statistics about the dense vectors in the index.').optional(),
   docs: z.lazy(() => DocStats).describe('Contains statistics about documents across all primary shards assigned to the node.').optional(),
   fielddata: z.lazy(() => FielddataStats).describe('Contains statistics about the field data cache across all shards assigned to the node.').optional(),
   flush: FlushStats.describe('Contains statistics about flush operations for the node.').optional(),
@@ -407,6 +410,7 @@ export const IndicesStatsIndexStats = z.object({
   request_cache: RequestCacheStats.describe('Contains statistics about the request cache across all shards assigned to the node.').optional(),
   get search () { return SearchStats.describe('Contains statistics about search operations for the node.').optional() },
   segments: z.lazy(() => SegmentsStats).describe('Contains statistics about segments across all shards assigned to the node.').optional(),
+  sparse_vector: z.lazy(() => ClusterStatsSparseVectorStats).describe('Contains statistics about the sparse vectors in the index.').optional(),
   store: z.lazy(() => StoreStats).describe('Contains statistics about the size of shards assigned to the node.').optional(),
   translog: TranslogStats.describe('Contains statistics about transaction log operations for the node.').optional(),
   warmer: WarmerStats.describe('Contains statistics about index warming operations for the node.').optional(),
@@ -438,6 +442,7 @@ export const IndicesStatsRequest = z.object({
   fields: z.lazy(() => Fields).describe('Comma-separated list or wildcard expressions of fields to include in the statistics.').optional().meta({ found_in: 'query' }),
   forbid_closed_indices: z.boolean().describe('If true, statistics are not collected from closed indices.').optional().meta({ found_in: 'query' }),
   groups: z.union([z.string(), z.array(z.string())]).describe('Comma-separated list of search groups to include in the search statistics.').optional().meta({ found_in: 'query' }),
+  include_auto_calibration: z.boolean().describe('If `true`, the response includes the auto-calibration information of each `dense_vector` field that supports auto-calibration. Only applies at the `indices` and `shards` levels.').optional().meta({ found_in: 'query' }),
   include_segment_file_sizes: z.boolean().describe('If true, the call reports the aggregated disk usage of each one of the Lucene index files (only applies if segment stats are requested).').optional().meta({ found_in: 'query' }),
   include_unloaded_segments: z.boolean().describe('If true, the response includes information from segments that are not loaded into memory.').optional().meta({ found_in: 'query' }),
   level: z.lazy(() => Level).describe('Indicates whether statistics are aggregated at the cluster, indices, or shards level.').optional().meta({ found_in: 'query' })

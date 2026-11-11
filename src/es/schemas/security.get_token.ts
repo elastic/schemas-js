@@ -8,6 +8,7 @@ import { z } from 'zod'
 
 import { Name, Password, Username, long } from './_types.js'
 import { SecurityUser } from './security.js'
+import { SecurityAuthenticateAuthenticateApiKey, SecurityAuthenticateToken } from './security.authenticate.js'
 
 export const SecurityGetTokenAccessTokenGrantType = z.enum(['password', 'client_credentials', '_kerberos', 'refresh_token', '_user_managed_service_account']).meta({ id: 'SecurityGetTokenAccessTokenGrantType' })
 export type SecurityGetTokenAccessTokenGrantType = z.infer<typeof SecurityGetTokenAccessTokenGrantType>
@@ -29,7 +30,9 @@ export const SecurityGetTokenAuthenticatedUser = z.object({
   authentication_realm: SecurityGetTokenUserRealm,
   lookup_realm: SecurityGetTokenUserRealm,
   authentication_provider: SecurityGetTokenAuthenticationProvider.optional(),
-  authentication_type: z.string()
+  authentication_type: z.string(),
+  api_key: SecurityAuthenticateAuthenticateApiKey.describe('Present when the authenticated user is an API key.').optional(),
+  token: SecurityAuthenticateToken.describe('Present when the authenticated user is a service account, or authenticated with a token.').optional()
 }).meta({ id: 'SecurityGetTokenAuthenticatedUser' })
 export type SecurityGetTokenAuthenticatedUser = z.infer<typeof SecurityGetTokenAuthenticatedUser>
 

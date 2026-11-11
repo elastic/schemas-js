@@ -8,6 +8,9 @@ import { z } from 'zod'
 
 import { Duration, NodeIds, long } from './_types.js'
 
+export const ThreadSortOrder = z.enum(['total', 'cpu']).meta({ id: 'ThreadSortOrder' })
+export type ThreadSortOrder = z.infer<typeof ThreadSortOrder>
+
 export const ThreadType = z.enum(['cpu', 'wait', 'block', 'gpu', 'mem']).meta({ id: 'ThreadType' })
 export type ThreadType = z.infer<typeof ThreadType>
 
@@ -25,7 +28,7 @@ export const NodesHotThreadsRequest = z.object({
   threads: z.lazy(() => long).describe('Specifies the number of hot threads to provide information for.').optional().meta({ found_in: 'query' }),
   timeout: z.lazy(() => Duration).describe('Period to wait for a response. If no response is received before the timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' }),
   type: ThreadType.describe('The type to sample.').optional().meta({ found_in: 'query' }),
-  sort: ThreadType.describe('The sort order for \'cpu\' type').optional().meta({ found_in: 'query' })
+  sort: ThreadSortOrder.describe('The sort order for \'cpu\' type').optional().meta({ found_in: 'query' })
 }).meta({ id: 'NodesHotThreadsRequest' })
 export type NodesHotThreadsRequest = z.infer<typeof NodesHotThreadsRequest>
 

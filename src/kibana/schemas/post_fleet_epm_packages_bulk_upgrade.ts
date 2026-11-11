@@ -13,6 +13,7 @@
 import { z } from 'zod'
 
 export const Kibana_HTTP_APIs_bulk_upgrade_packages_request = z.object({
+  acknowledge_breaking_changes: z.boolean().optional(),
   force: z.boolean().optional(),
   packages: z.array(z.object({
     name: z.string(),

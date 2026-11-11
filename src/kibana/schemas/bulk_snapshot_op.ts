@@ -21,26 +21,6 @@ export const BulkSnapshotOpRequest = z.object({
 }).meta({ id: 'BulkSnapshotOpRequest' })
 export type BulkSnapshotOpRequest = z.infer<typeof BulkSnapshotOpRequest>
 
-export const BulkSnapshotOpResponse = z.object({
-  at: z.string(),
-  results: z.array(z.object({
-    error: z.object({
-      message: z.string(),
-      statusCode: z.number()
-    }).optional(),
-    id: z.string(),
-    instanceId: z.string(),
-    summary: z.object({
-      errorBudget: z.object({
-        consumed: z.number().nullable(),
-        initial: z.number(),
-        remaining: z.number().nullable()
-      }),
-      good: z.number(),
-      sliValue: z.number().nullable(),
-      status: z.enum(['NO_DATA', 'HEALTHY', 'DEGRADING', 'VIOLATED']),
-      total: z.number()
-    }).optional()
-  }))
-}).meta({ id: 'BulkSnapshotOpResponse' })
-export type BulkSnapshotOpResponse = z.infer<typeof BulkSnapshotOpResponse>
+export { Kibana_HTTP_APIs_SLOSnapshotResponse } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOSnapshotResult } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOSummaryStatus } from './schemas/kibana.js'

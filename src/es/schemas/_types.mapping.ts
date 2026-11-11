@@ -12,6 +12,9 @@ import { MappingTimeSeriesMetricType } from './field_caps.js'
 import { MappingDocValues, MappingDynamicMapping, MappingDynamicTemplate, MappingFieldNamesField, MappingOnScriptError, MappingProperty, MappingRoutingField, MappingRuntimeField, MappingSourceField, MappingSubobjects, MappingSyntheticSourceKeepEnum } from './indices.put_mapping.js'
 import type { MappingPropertyShape, MappingRuntimeFieldShape } from './indices.put_mapping.js'
 
+export const MappingDenseVectorSimilarity = z.enum(['cosine', 'dot_product', 'l2_norm', 'max_inner_product']).meta({ id: 'MappingDenseVectorSimilarity' })
+export type MappingDenseVectorSimilarity = z.infer<typeof MappingDenseVectorSimilarity>
+
 export type MappingRuntimeFieldsShape = Record<Field, MappingRuntimeFieldShape>
 export const MappingRuntimeFields: z.ZodType<MappingRuntimeFieldsShape> = z.record(z.lazy(() => Field), z.lazy(() => MappingRuntimeField)).meta({ id: 'MappingRuntimeFields' })
 export type MappingRuntimeFields = z.infer<typeof MappingRuntimeFields>

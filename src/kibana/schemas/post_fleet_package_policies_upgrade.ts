@@ -24,6 +24,7 @@ export const Kibana_HTTP_APIs_package_policy_status_response = z.object({
 export type Kibana_HTTP_APIs_package_policy_status_response = z.infer<typeof Kibana_HTTP_APIs_package_policy_status_response>
 
 export const Kibana_HTTP_APIs_upgrade_package_policies_request = z.object({
+  acknowledge_breaking_changes: z.boolean().optional(),
   packagePolicyIds: z.array(z.string())
 }).meta({ id: 'Kibana_HTTP_APIs_upgrade_package_policies_request' })
 export type Kibana_HTTP_APIs_upgrade_package_policies_request = z.infer<typeof Kibana_HTTP_APIs_upgrade_package_policies_request>

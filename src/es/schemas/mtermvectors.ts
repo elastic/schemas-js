@@ -19,7 +19,7 @@ export const MtermvectorsOperation = z.object({
   offsets: z.boolean().describe('If `true`, the response includes term offsets.').optional(),
   payloads: z.boolean().describe('If `true`, the response includes term payloads.').optional(),
   positions: z.boolean().describe('If `true`, the response includes term positions.').optional(),
-  routing: z.lazy(() => Routing).describe('Custom value used to route operations to a specific shard.').optional(),
+  routing: z.lazy(() => Routing).describe('Custom value used to route operations to a specific shard. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional(),
   term_statistics: z.boolean().describe('If true, the response includes term frequency and document frequency.').optional(),
   version: z.lazy(() => VersionNumber).describe('If `true`, returns the document version as part of a hit.').optional(),
   version_type: z.lazy(() => VersionType).describe('Specific version type.').optional()

@@ -31,6 +31,6 @@ export type EnrichExecutePolicyRequest = z.infer<typeof EnrichExecutePolicyReque
 
 export const EnrichExecutePolicyResponse = z.object({
   status: EnrichExecutePolicyExecuteEnrichPolicyStatus.optional(),
-  task: TaskId.optional()
+  task: z.lazy(() => TaskId).optional()
 }).meta({ id: 'EnrichExecutePolicyResponse' })
 export type EnrichExecutePolicyResponse = z.infer<typeof EnrichExecutePolicyResponse>

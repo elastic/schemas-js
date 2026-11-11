@@ -6,7 +6,8 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { ExpandWildcards, Id, IndexName, Indices, SearchType, double, integer, long } from './_types.js'
+import { ExpandWildcards, Id, IndexName, Indices, Script, ScriptSource, SearchType, double, integer, long } from './_types.js'
+import type { ScriptSourceShape } from './_types.js'
 import { QueryDslQueryContainer } from './_types.query_dsl.js'
 import type { QueryDslQueryContainerShape } from './_types.query_dsl.js'
 
@@ -113,6 +114,12 @@ export const RankEvalRankEvalRequestItem = z.object({
 }).meta({ id: 'RankEvalRankEvalRequestItem' })
 export type RankEvalRankEvalRequestItem = z.infer<typeof RankEvalRankEvalRequestItem>
 
+export const RankEvalRankEvalTemplate = z.object({
+  id: z.lazy(() => Id).describe('The ID of the template. A rated request refers to it by this ID in its `template_id`.'),
+  template: z.union([z.lazy(() => Script), z.lazy(() => ScriptSource)]).describe('The search template, either an inline `source` or the `id` of a stored search template. It must be a `mustache` template (the default `lang`), and it must render to a search request body. Any `params` set here are ignored: each rated request provides its own `params`, which are used to render the template.')
+}).meta({ id: 'RankEvalRankEvalTemplate' })
+export type RankEvalRankEvalTemplate = z.infer<typeof RankEvalRankEvalTemplate>
+
 /**
  * Evaluate ranked search results.
  *
@@ -125,7 +132,8 @@ export const RankEvalRequest = z.object({
   ignore_unavailable: z.boolean().describe('If `false`, the request returns an error if it targets a concrete (non-wildcarded) index, alias, or data stream that is missing, closed, or otherwise unavailable. If `true`, unavailable concrete targets are silently ignored.').optional().meta({ found_in: 'query' }),
   search_type: z.lazy(() => SearchType).describe('Search operation type').optional().meta({ found_in: 'query' }),
   requests: z.array(RankEvalRankEvalRequestItem).describe('A set of typical search requests, together with their provided ratings.').meta({ found_in: 'body' }),
-  metric: RankEvalRankEvalMetric.describe('Definition of the evaluation metric to calculate.').optional().meta({ found_in: 'body' })
+  metric: RankEvalRankEvalMetric.describe('Definition of the evaluation metric to calculate.').optional().meta({ found_in: 'body' }),
+  templates: z.array(RankEvalRankEvalTemplate).describe('Query templates that the rated requests can refer to by their `template_id`. This way, queries that differ only in their parameters don\'t have to be repeated in `requests`.').optional().meta({ found_in: 'body' })
 }).meta({ id: 'RankEvalRequest' })
 export type RankEvalRequest = z.infer<typeof RankEvalRequest>
 

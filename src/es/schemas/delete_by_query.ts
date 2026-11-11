@@ -6,7 +6,8 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { BulkIndexByScrollFailure, Conflicts, Duration, DurationValue, ExpandWildcards, Indices, ReindexStatus, Retries, SearchType, SlicedScroll, Slices, Sort, TaskId, float, integer, long } from './_types.js'
+import { BulkByPaginatedSearchFailure, Conflicts, Duration, DurationValue, ExpandWildcards, Indices, ReindexStatus, Retries, SearchType, SlicedScroll, Slices, Sort, TaskId, float, integer, long } from './_types.js'
+import { MappingRuntimeFields } from './_types.mapping.js'
 import { QueryDslOperator, QueryDslQueryContainer } from './_types.query_dsl.js'
 
 /**
@@ -120,6 +121,7 @@ export const DeleteByQueryRequest = z.object({
   wait_for_completion: z.boolean().describe('If `true`, the request blocks until the operation is complete. If `false`, Elasticsearch performs some preflight checks, launches the request, and returns a task you can use to cancel or get the status of the task. Elasticsearch creates a record of this task as a document at `.tasks/task/{taskId}`. When you are done with a task, you should delete the task document so Elasticsearch can reclaim the space.').optional().meta({ found_in: 'query' }),
   max_docs: z.lazy(() => long).describe('The maximum number of documents to delete.').optional().meta({ found_in: 'body' }),
   query: z.lazy(() => QueryDslQueryContainer).describe('The documents to delete specified with Query DSL.').optional().meta({ found_in: 'body' }),
+  runtime_mappings: z.lazy(() => MappingRuntimeFields).describe('One or more runtime fields in the search request. These fields take precedence over mapped fields with the same name.').optional().meta({ found_in: 'body' }),
   slice: z.lazy(() => SlicedScroll).describe('Slice the request manually using the provided slice ID and total number of slices.').optional().meta({ found_in: 'body' }),
   sort: z.lazy(() => Sort).describe('A sort object that specifies the order of deleted documents.').optional().meta({ found_in: 'body' })
 }).meta({ id: 'DeleteByQueryRequest' })
@@ -128,13 +130,13 @@ export type DeleteByQueryRequest = z.infer<typeof DeleteByQueryRequest>
 export const DeleteByQueryResponse = z.object({
   batches: z.lazy(() => long).describe('The number of scroll responses pulled back by the delete by query.').optional(),
   deleted: z.lazy(() => long).describe('The number of documents that were successfully deleted.').optional(),
-  failures: z.array(BulkIndexByScrollFailure).describe('An array of failures if there were any unrecoverable errors during the process. If this array is not empty, the request ended abnormally because of those failures. Delete by query is implemented using batches and any failures cause the entire process to end but all failures in the current batch are collected into the array. You can use the `conflicts` option to prevent reindex from ending on version conflicts.').optional(),
+  failures: z.array(BulkByPaginatedSearchFailure).describe('An array of failures if there were any unrecoverable errors during the process. If this array is not empty, the request ended abnormally because of those failures. Delete by query is implemented using batches and any failures cause the entire process to end but all failures in the current batch are collected into the array. You can use the `conflicts` option to prevent reindex from ending on version conflicts.').optional(),
   noops: z.lazy(() => long).describe('This field is always equal to zero for delete by query. It exists only so that delete by query, update by query, and reindex APIs return responses with the same structure.').optional(),
   requests_per_second: z.lazy(() => float).describe('The number of requests per second effectively run during the delete by query.').optional(),
   retries: Retries.describe('The number of retries attempted by delete by query. `bulk` is the number of bulk actions retried. `search` is the number of search actions retried.').optional(),
   slice_id: z.lazy(() => integer).optional(),
   slices: z.array(ReindexStatus).describe('Status of each slice if the delete by query was sliced').optional(),
-  task: TaskId.optional(),
+  task: z.lazy(() => TaskId).optional(),
   throttled: z.lazy(() => Duration).optional(),
   throttled_millis: z.lazy(() => DurationValue).describe('The number of milliseconds the request slept to conform to `requests_per_second`.').optional(),
   throttled_until: z.lazy(() => Duration).optional(),

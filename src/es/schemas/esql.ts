@@ -7,66 +7,17 @@
 import { z } from 'zod'
 
 import { SpecUtilsStringified } from './_spec_utils.js'
-import { DurationValue, ErrorCause, FieldValue, IndexName, NodeId, ProjectRouting, double, integer, long } from './_types.js'
-
-export const EsqlEsqlColumnInfo = z.object({
-  name: z.string(),
-  type: z.string()
-}).meta({ id: 'EsqlEsqlColumnInfo' })
-export type EsqlEsqlColumnInfo = z.infer<typeof EsqlEsqlColumnInfo>
-
-export const EsqlEsqlClusterStatus = z.enum(['running', 'successful', 'partial', 'skipped', 'failed']).meta({ id: 'EsqlEsqlClusterStatus' })
-export type EsqlEsqlClusterStatus = z.infer<typeof EsqlEsqlClusterStatus>
-
-export const EsqlEsqlShardInfo = z.object({
-  total: z.lazy(() => integer),
-  successful: z.lazy(() => integer).optional(),
-  skipped: z.lazy(() => integer).optional(),
-  failed: z.lazy(() => integer).optional()
-}).meta({ id: 'EsqlEsqlShardInfo' })
-export type EsqlEsqlShardInfo = z.infer<typeof EsqlEsqlShardInfo>
-
-export const EsqlEsqlShardFailure = z.object({
-  shard: z.lazy(() => integer),
-  index: z.union([z.lazy(() => IndexName), z.null()]),
-  node: z.lazy(() => NodeId).optional(),
-  reason: z.lazy(() => ErrorCause)
-}).meta({ id: 'EsqlEsqlShardFailure' })
-export type EsqlEsqlShardFailure = z.infer<typeof EsqlEsqlShardFailure>
-
-export const EsqlEsqlClusterDetails = z.object({
-  status: EsqlEsqlClusterStatus,
-  indices: z.string(),
-  took: z.lazy(() => DurationValue).optional(),
-  _shards: EsqlEsqlShardInfo.optional(),
-  failures: z.array(EsqlEsqlShardFailure).optional()
-}).meta({ id: 'EsqlEsqlClusterDetails' })
-export type EsqlEsqlClusterDetails = z.infer<typeof EsqlEsqlClusterDetails>
-
-export const EsqlEsqlClusterInfo = z.object({
-  total: z.lazy(() => integer),
-  successful: z.lazy(() => integer),
-  running: z.lazy(() => integer),
-  skipped: z.lazy(() => integer),
-  partial: z.lazy(() => integer),
-  failed: z.lazy(() => integer),
-  details: z.record(z.string(), EsqlEsqlClusterDetails)
-}).meta({ id: 'EsqlEsqlClusterInfo' })
-export type EsqlEsqlClusterInfo = z.infer<typeof EsqlEsqlClusterInfo>
-
-export const EsqlEsqlResult = z.object({
-  took: z.lazy(() => DurationValue).optional(),
-  is_partial: z.boolean().optional(),
-  all_columns: z.array(EsqlEsqlColumnInfo).optional(),
-  columns: z.array(EsqlEsqlColumnInfo),
-  values: z.array(z.array(z.lazy(() => FieldValue))),
-  _clusters: EsqlEsqlClusterInfo.describe('Cross-cluster search information. Present if `include_ccs_metadata` was `true` in the request and a cross-cluster search was performed.').optional(),
-  profile: z.any().describe('Profiling information. Present if `profile` was `true` in the request. The contents of this field are currently unstable.').optional()
-}).meta({ id: 'EsqlEsqlResult' })
-export type EsqlEsqlResult = z.infer<typeof EsqlEsqlResult>
+import { DurationValue, FieldValue, ProjectRouting, double, integer, long } from './_types.js'
+import { EsqlEsqlClusterInfo, EsqlEsqlColumnInfo } from './esql.query.js'
 
 export const EsqlAsyncEsqlResult = z.object({
-  ...EsqlEsqlResult.shape,
+  took: z.lazy(() => DurationValue).optional(),
+  is_partial: z.boolean().optional(),
+  all_columns: z.array(z.lazy(() => EsqlEsqlColumnInfo)).optional(),
+  columns: z.array(z.lazy(() => EsqlEsqlColumnInfo)),
+  values: z.array(z.array(z.lazy(() => FieldValue))),
+  _clusters: z.lazy(() => EsqlEsqlClusterInfo).describe('Cross-cluster search information. Present if `include_ccs_metadata` was `true` in the request and a cross-cluster search was performed.').optional(),
+  profile: z.any().describe('Profiling information. Present if `profile` was `true` in the request. The contents of this field are currently unstable.').optional(),
   id: z.string().describe('The ID of the async query, to be used in subsequent requests to check the status or retrieve results. Also available in the `X-Elasticsearch-Async-Id` HTTP header.').optional(),
   is_running: z.boolean().describe('Indicates whether the async query is still running or has completed. Also available in the `X-Elasticsearch-Async-Is-Running` HTTP header.')
 }).meta({ id: 'EsqlAsyncEsqlResult' })

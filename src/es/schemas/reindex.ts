@@ -6,7 +6,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { BulkIndexByScrollFailure, Conflicts, Duration, DurationValue, EpochTime, Host, IndexName, Indices, OpType, Password, ReindexStatus, Retries, Script, ScriptSource, SlicedScroll, Slices, Sort, TaskId, Username, VersionType, float, integer, long } from './_types.js'
+import { BulkByPaginatedSearchFailure, Conflicts, Duration, DurationValue, EpochTime, Host, IndexName, Indices, OpType, Password, ReindexStatus, Retries, Script, ScriptSource, SlicedScroll, Slices, Sort, TaskId, Username, VersionType, float, integer, long } from './_types.js'
 import type { ScriptSourceShape } from './_types.js'
 import { MappingRuntimeFields } from './_types.mapping.js'
 import { QueryDslQueryContainer } from './_types.query_dsl.js'
@@ -115,13 +115,13 @@ export const ReindexResponse = z.object({
   batches: z.lazy(() => long).describe('The number of scroll responses that were pulled back by the reindex.').optional(),
   created: z.lazy(() => long).describe('The number of documents that were successfully created.').optional(),
   deleted: z.lazy(() => long).describe('The number of documents that were successfully deleted.').optional(),
-  failures: z.array(BulkIndexByScrollFailure).describe('If there were any unrecoverable errors during the process, it is an array of those failures. If this array is not empty, the request ended because of those failures. Reindex is implemented using batches and any failure causes the entire process to end but all failures in the current batch are collected into the array. You can use the `conflicts` option to prevent the reindex from ending on version conflicts.').optional(),
+  failures: z.array(BulkByPaginatedSearchFailure).describe('If there were any unrecoverable errors during the process, it is an array of those failures. If this array is not empty, the request ended because of those failures. Reindex is implemented using batches and any failure causes the entire process to end but all failures in the current batch are collected into the array. You can use the `conflicts` option to prevent the reindex from ending on version conflicts.').optional(),
   noops: z.lazy(() => long).describe('The number of documents that were ignored because the script used for the reindex returned a `noop` value for `ctx.op`.').optional(),
   retries: Retries.describe('The number of retries attempted by reindex.').optional(),
   requests_per_second: z.lazy(() => float).describe('The number of requests per second effectively run during the reindex.').optional(),
   slice_id: z.lazy(() => integer).optional(),
   slices: z.array(ReindexStatus).describe('Status of each slice if the reindex was sliced').optional(),
-  task: TaskId.optional(),
+  task: z.lazy(() => TaskId).optional(),
   throttled_millis: z.lazy(() => EpochTime).describe('The number of milliseconds the request slept to conform to `requests_per_second`.').optional(),
   throttled_until_millis: z.lazy(() => EpochTime).describe('This field should always be equal to zero in a reindex response. It has meaning only when using the task API, where it indicates the next time (in milliseconds since epoch) that a throttled request will be run again in order to conform to `requests_per_second`.').optional(),
   timed_out: z.boolean().describe('If any of the requests that ran during the reindex timed out, it is `true`.').optional(),

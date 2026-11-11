@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/fleet-cloud-onboarding-deployments.get-fleet-cloud-onboarding-deployments-connector-connectorid.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/fleet-cloud-onboarding-instances.get-fleet-cloud-onboarding-deployments-connector-connectorid.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
@@ -18,8 +18,8 @@ const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 export const get_fleet_cloud_onboarding_deployments_connector_connectoridDefinitions: KbApiDefinition[] = [
   {
     name: 'get-fleet-cloud-onboarding-deployments-connector-connectorid',
-    namespace: 'fleet-cloud-onboarding-deployments',
-    description: 'Get cloud onboarding deployments by connector ID',
+    namespace: 'fleet-cloud-onboarding-instances',
+    description: 'Get cloud onboarding instances by connector ID',
     method: 'GET',
     path: '/api/fleet/cloud_onboarding_deployments/connector/{connectorId}',
     destructive: false,

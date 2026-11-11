@@ -11,54 +11,79 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
+import { Kibana_HTTP_APIs_SLOArtifacts, Kibana_HTTP_APIs_SLOBudgetingMethod, Kibana_HTTP_APIs_SLOGroupBy, Kibana_HTTP_APIs_SLOIndicator, Kibana_HTTP_APIs_SLOObjective, Kibana_HTTP_APIs_SLOSettings, Kibana_HTTP_APIs_SLOTimeWindow } from './schemas/kibana.js'
+
+export const Kibana_HTTP_APIs_SLODefinitionResponse: z.ZodTypeAny = z.object({
+  artifacts: Kibana_HTTP_APIs_SLOArtifacts.optional(),
+  budgetingMethod: Kibana_HTTP_APIs_SLOBudgetingMethod,
+  createdAt: z.string(),
+  createdBy: z.string().optional(),
+  description: z.string(),
+  enabled: z.boolean(),
+  groupBy: Kibana_HTTP_APIs_SLOGroupBy,
+  health: z.object({
+    isProblematic: z.boolean(),
+    rollup: z.object({
+      isProblematic: z.boolean(),
+      missing: z.boolean(),
+      state: z.union([z.enum(['stopped']), z.enum(['started']), z.enum(['stopping']), z.enum(['aborting']), z.enum(['failed']), z.enum(['indexing']), z.enum(['unavailable'])]),
+      stateMatches: z.boolean().optional(),
+      status: z.union([z.enum(['healthy']), z.enum(['unhealthy']), z.enum(['unavailable'])])
+    }).passthrough(),
+    summary: z.object({
+      isProblematic: z.boolean(),
+      missing: z.boolean(),
+      state: z.union([z.enum(['stopped']), z.enum(['started']), z.enum(['stopping']), z.enum(['aborting']), z.enum(['failed']), z.enum(['indexing']), z.enum(['unavailable'])]),
+      stateMatches: z.boolean().optional(),
+      status: z.union([z.enum(['healthy']), z.enum(['unhealthy']), z.enum(['unavailable'])])
+    }).passthrough()
+  }).passthrough().optional(),
+  id: z.string(),
+  indicator: Kibana_HTTP_APIs_SLOIndicator,
+  name: z.string(),
+  objective: Kibana_HTTP_APIs_SLOObjective,
+  revision: z.number(),
+  settings: Kibana_HTTP_APIs_SLOSettings,
+  tags: z.array(z.string()),
+  timeWindow: Kibana_HTTP_APIs_SLOTimeWindow,
+  updatedAt: z.string(),
+  updatedBy: z.string().optional(),
+  version: z.number()
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_SLODefinitionResponse' })
+export type Kibana_HTTP_APIs_SLODefinitionResponse = z.infer<typeof Kibana_HTTP_APIs_SLODefinitionResponse>
+
+export const Kibana_HTTP_APIs_SLOFindDefinitionsResponse: z.ZodTypeAny = z.object({
+  page: z.number(),
+  perPage: z.number(),
+  results: z.array(Kibana_HTTP_APIs_SLODefinitionResponse),
+  total: z.number()
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_SLOFindDefinitionsResponse' })
+export type Kibana_HTTP_APIs_SLOFindDefinitionsResponse = z.infer<typeof Kibana_HTTP_APIs_SLOFindDefinitionsResponse>
 
 export const GetDefinitionsOpRequest = z.union([z.object({
 
 }), z.unknown()]).nullable().meta({ id: 'GetDefinitionsOpRequest' })
 export type GetDefinitionsOpRequest = z.infer<typeof GetDefinitionsOpRequest>
 
-export const GetDefinitionsOpResponse = z.object({
-  page: z.number().optional(),
-  perPage: z.number().optional(),
-  results: z.array(z.object({
-    artifacts: z.object({
-      dashboards: z.array(z.object({
-        id: z.string()
-      })).optional()
-    }).optional(),
-    budgetingMethod: z.enum(['occurrences', 'timeslices']),
-    createdAt: z.string(),
-    description: z.string(),
-    enabled: z.boolean(),
-    groupBy: z.union([z.string(), z.array(z.string())]),
-    id: z.string(),
-    indicator: z.object({
-      params: z.record(z.string(), z.unknown()),
-      type: z.string()
-    }),
-    name: z.string(),
-    objective: z.object({
-      target: z.number(),
-      timesliceTarget: z.number().optional(),
-      timesliceWindow: z.string().optional()
-    }),
-    revision: z.number(),
-    settings: z.object({
-      frequency: z.string().optional(),
-      preventCrossProjectSearch: z.boolean().optional(),
-      preventInitialBackfill: z.boolean().optional(),
-      projectRoutings: z.string().nullable().optional(),
-      syncDelay: z.string().optional(),
-      syncField: z.string().optional()
-    }),
-    tags: z.array(z.string()),
-    timeWindow: z.object({
-      duration: z.string(),
-      type: z.enum(['rolling', 'calendarAligned'])
-    }),
-    updatedAt: z.string(),
-    version: z.number()
-  })).optional(),
-  total: z.number().optional()
-}).meta({ id: 'GetDefinitionsOpResponse' })
-export type GetDefinitionsOpResponse = z.infer<typeof GetDefinitionsOpResponse>
+export { Kibana_HTTP_APIs_SLOTimeWindow } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOTimeWindowCalendarAligned } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOTimeWindowRolling } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOSettings } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOObjective } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOIndicator } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOIndicatorPropertiesHistogram } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOKqlWithFilters } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOFilter } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOFilterMeta } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOIndicatorPropertiesTimesliceMetric } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOTimesliceMetricPercentileMetric } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOTimesliceMetricDocCountMetric } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOTimesliceMetricBasicMetricWithField } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOIndicatorPropertiesCustomMetric } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOIndicatorPropertiesCustomKql } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOIndicatorPropertiesSyntheticsAvailability } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOIndicatorPropertiesApmAvailability } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOIndicatorPropertiesApmLatency } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOGroupBy } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOBudgetingMethod } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOArtifacts } from './schemas/kibana.js'

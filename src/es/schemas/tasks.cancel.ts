@@ -28,7 +28,7 @@ import { TasksTaskListResponseBase } from './tasks.js'
  * if it is continuing work from an earlier task.
  */
 export const TasksCancelRequest = z.object({
-  task_id: TaskId.describe('The task identifier.').optional().meta({ found_in: 'path' }),
+  task_id: z.lazy(() => TaskId).describe('The task identifier.').optional().meta({ found_in: 'path' }),
   actions: z.union([z.string(), z.array(z.string())]).describe('A comma-separated list or wildcard expression of actions that is used to limit the request.').optional().meta({ found_in: 'query' }),
   nodes: z.array(z.string()).describe('A comma-separated list of node IDs or names that is used to limit the request.').optional().meta({ found_in: 'query' }),
   parent_task_id: z.string().describe('A parent task ID that is used to limit the tasks.').optional().meta({ found_in: 'query' }),

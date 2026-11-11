@@ -6,7 +6,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { BulkIndexByScrollFailure, Conflicts, Duration, DurationValue, ExpandWildcards, Indices, ReindexStatus, Retries, Script, ScriptSource, SearchType, SlicedScroll, Slices, TaskId, float, long } from './_types.js'
+import { BulkByPaginatedSearchFailure, Conflicts, Duration, DurationValue, ExpandWildcards, Indices, ReindexStatus, Retries, Script, ScriptSource, SearchType, SlicedScroll, Slices, TaskId, float, long } from './_types.js'
 import type { ScriptSourceShape } from './_types.js'
 import { MappingRuntimeFields } from './_types.mapping.js'
 import { QueryDslOperator, QueryDslQueryContainer } from './_types.query_dsl.js'
@@ -137,13 +137,13 @@ export type UpdateByQueryRequest = z.infer<typeof UpdateByQueryRequest>
 
 export const UpdateByQueryResponse = z.object({
   batches: z.lazy(() => long).describe('The number of scroll responses pulled back by the update by query.').optional(),
-  failures: z.array(BulkIndexByScrollFailure).describe('Array of failures if there were any unrecoverable errors during the process. If this is non-empty then the request ended because of those failures. Update by query is implemented using batches. Any failure causes the entire process to end, but all failures in the current batch are collected into the array. You can use the `conflicts` option to prevent reindex from ending when version conflicts occur.').optional(),
+  failures: z.array(BulkByPaginatedSearchFailure).describe('Array of failures if there were any unrecoverable errors during the process. If this is non-empty then the request ended because of those failures. Update by query is implemented using batches. Any failure causes the entire process to end, but all failures in the current batch are collected into the array. You can use the `conflicts` option to prevent reindex from ending when version conflicts occur.').optional(),
   noops: z.lazy(() => long).describe('The number of documents that were ignored because the script used for the update by query returned a noop value for `ctx.op`.').optional(),
   deleted: z.lazy(() => long).describe('The number of documents that were successfully deleted.').optional(),
   requests_per_second: z.lazy(() => float).describe('The number of requests per second effectively run during the update by query.').optional(),
   retries: Retries.describe('The number of retries attempted by update by query. `bulk` is the number of bulk actions retried. `search` is the number of search actions retried.').optional(),
   slices: z.array(ReindexStatus).describe('Status of each slice if the update by query was sliced').optional(),
-  task: TaskId.optional(),
+  task: z.lazy(() => TaskId).optional(),
   timed_out: z.boolean().describe('If true, some requests timed out during the update by query.').optional(),
   took: z.lazy(() => DurationValue).describe('The number of milliseconds from start to end of the whole operation.').optional(),
   total: z.lazy(() => long).describe('The number of documents that were successfully processed.').optional(),

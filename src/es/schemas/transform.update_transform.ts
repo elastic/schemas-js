@@ -41,7 +41,7 @@ export type TransformUpdateTransformRequest = z.infer<typeof TransformUpdateTran
 export const TransformUpdateTransformResponse = z.object({
   authorization: MlTransformAuthorization.optional(),
   create_time: z.lazy(() => long),
-  description: z.string(),
+  description: z.string().optional(),
   dest: TransformDestination,
   frequency: z.lazy(() => Duration).optional(),
   id: z.lazy(() => Id),

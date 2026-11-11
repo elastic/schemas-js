@@ -29,7 +29,7 @@ import { Duration, DurationValue, EpochTime, ErrorCause, ReindexStatus, ReindexT
  * ```
  */
 export const GetReindexRequest = z.object({
-  task_id: TaskId.describe('The ID of the reindex task to retrieve.').meta({ found_in: 'path' }),
+  task_id: z.lazy(() => TaskId).describe('The ID of the reindex task to retrieve.').meta({ found_in: 'path' }),
   wait_for_completion: z.boolean().describe('If `true`, the request blocks until the reindex task completes, then returns the result.').optional().meta({ found_in: 'query' }),
   timeout: z.lazy(() => Duration).describe('The period to wait for the reindex task to complete when `wait_for_completion` is `true`.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'GetReindexRequest' })
@@ -37,7 +37,7 @@ export type GetReindexRequest = z.infer<typeof GetReindexRequest>
 
 export const GetReindexResponse = z.object({
   completed: z.boolean().describe('Whether the reindex task has completed.'),
-  id: TaskId.describe('The ID of the reindex task. The value is the ID assigned when the task was first created and remains stable across node-shutdown relocations.'),
+  id: z.lazy(() => TaskId).describe('The ID of the reindex task. The value is the ID assigned when the task was first created and remains stable across node-shutdown relocations.'),
   description: z.string().describe('A sanitized description of the reindex operation (source and destination indices, and optionally remote host info).').optional(),
   start_time_in_millis: z.lazy(() => EpochTime).describe('The time at which the reindex task started, in milliseconds since the Unix epoch.'),
   start_time: z.string().describe('The time at which the reindex task started, as an ISO 8601 formatted string. Only present when the request includes the `?human=true` query parameter.').optional(),

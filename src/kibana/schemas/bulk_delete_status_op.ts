@@ -12,18 +12,21 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
+export const Kibana_HTTP_APIs_SLOBulkDeleteResult = z.object({
+  error: z.string().optional(),
+  id: z.string(),
+  success: z.boolean()
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_SLOBulkDeleteResult' })
+export type Kibana_HTTP_APIs_SLOBulkDeleteResult = z.infer<typeof Kibana_HTTP_APIs_SLOBulkDeleteResult>
+
+export const Kibana_HTTP_APIs_SLOBulkDeleteStatusResponse = z.object({
+  error: z.string().optional(),
+  isDone: z.boolean(),
+  results: z.array(Kibana_HTTP_APIs_SLOBulkDeleteResult).optional()
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_SLOBulkDeleteStatusResponse' })
+export type Kibana_HTTP_APIs_SLOBulkDeleteStatusResponse = z.infer<typeof Kibana_HTTP_APIs_SLOBulkDeleteStatusResponse>
+
 export const BulkDeleteStatusOpRequest = z.union([z.object({
 
 }), z.unknown()]).nullable().meta({ id: 'BulkDeleteStatusOpRequest' })
 export type BulkDeleteStatusOpRequest = z.infer<typeof BulkDeleteStatusOpRequest>
-
-export const BulkDeleteStatusOpResponse = z.object({
-  error: z.string().optional(),
-  isDone: z.boolean().optional(),
-  results: z.array(z.object({
-    error: z.string().optional(),
-    id: z.string().optional(),
-    success: z.boolean().optional()
-  })).optional()
-}).meta({ id: 'BulkDeleteStatusOpResponse' })
-export type BulkDeleteStatusOpResponse = z.infer<typeof BulkDeleteStatusOpResponse>

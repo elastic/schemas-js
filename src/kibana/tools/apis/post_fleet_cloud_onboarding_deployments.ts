@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/fleet-cloud-onboarding-deployments.post-fleet-cloud-onboarding-deployments.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/fleet-cloud-onboarding-instances.post-fleet-cloud-onboarding-deployments.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
@@ -18,8 +18,8 @@ const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 export const post_fleet_cloud_onboarding_deploymentsDefinitions: KbApiDefinition[] = [
   {
     name: 'post-fleet-cloud-onboarding-deployments',
-    namespace: 'fleet-cloud-onboarding-deployments',
-    description: 'Create cloud onboarding deployment',
+    namespace: 'fleet-cloud-onboarding-instances',
+    description: 'Create cloud onboarding instance',
     method: 'POST',
     path: '/api/fleet/cloud_onboarding_deployments',
     destructive: true,

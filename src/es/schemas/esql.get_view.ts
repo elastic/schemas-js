@@ -6,7 +6,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { Id } from './_types.js'
+import { Ids } from './_types.js'
 
 /** A non-materialized ES|QL view. */
 export const EsqlESQLView = z.object({
@@ -23,7 +23,7 @@ export type EsqlESQLView = z.infer<typeof EsqlESQLView>
  * Returns one or more stored views. A reserved view includes `reserved` set to `true`.
  */
 export const EsqlGetViewRequest = z.object({
-  name: z.lazy(() => Id).describe('The comma-separated view names to retrieve.').optional().meta({ found_in: 'path' })
+  name: z.lazy(() => Ids).describe('The comma-separated view names to retrieve.').optional().meta({ found_in: 'path' })
 }).meta({ id: 'EsqlGetViewRequest' })
 export type EsqlGetViewRequest = z.infer<typeof EsqlGetViewRequest>
 

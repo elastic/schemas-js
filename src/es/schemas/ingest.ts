@@ -50,6 +50,22 @@ export const IngestDocument = z.object({
 }).meta({ id: 'IngestDocument' })
 export type IngestDocument = z.infer<typeof IngestDocument>
 
+export interface IngestNormalizeForStreamProcessorShape {
+  description?: string | undefined
+  if?: ScriptShape | ScriptSourceShape | undefined
+  ignore_failure?: boolean | undefined
+  on_failure?: IngestProcessorContainerShape[] | undefined
+  tag?: string | undefined
+}
+export const IngestNormalizeForStreamProcessor = z.object({
+  description: z.string().describe('Description of the processor. Useful for describing the purpose of the processor or its configuration.').optional(),
+  get if () { return z.union([Script, ScriptSource]).describe('Conditionally execute the processor.').optional() },
+  ignore_failure: z.boolean().describe('Ignore failures for the processor.').optional(),
+  get on_failure () { return IngestProcessorContainer.array().describe('Handle failures for the processor.').optional() },
+  tag: z.string().describe('Identifier for the processor. Useful for debugging and metrics.').optional()
+}).meta({ id: 'IngestNormalizeForStreamProcessor' })
+export type IngestNormalizeForStreamProcessor = z.infer<typeof IngestNormalizeForStreamProcessor>
+
 export const IngestPipeline = z.object({
   description: z.string().describe('Description of the ingest pipeline.').optional(),
   on_failure: z.array(z.lazy(() => IngestProcessorContainer)).describe('Processors to run immediately after a processor failure.').optional(),

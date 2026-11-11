@@ -6,8 +6,9 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { AcknowledgedResponseBase, Duration, Indices, Name } from './_types.js'
+import { Duration, Indices, Name } from './_types.js'
 import { QueryDslQueryContainer } from './_types.query_dsl.js'
+import { IndicesAliasesResponseBody } from './indices.js'
 
 /**
  * Create or update an alias.
@@ -27,5 +28,5 @@ export const IndicesPutAliasRequest = z.object({
 }).meta({ id: 'IndicesPutAliasRequest' })
 export type IndicesPutAliasRequest = z.infer<typeof IndicesPutAliasRequest>
 
-export const IndicesPutAliasResponse = z.lazy(() => AcknowledgedResponseBase).meta({ id: 'IndicesPutAliasResponse' })
+export const IndicesPutAliasResponse = IndicesAliasesResponseBody.meta({ id: 'IndicesPutAliasResponse' })
 export type IndicesPutAliasResponse = z.infer<typeof IndicesPutAliasResponse>

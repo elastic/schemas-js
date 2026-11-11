@@ -7,7 +7,7 @@
 import { z } from 'zod'
 
 import { Id } from './_types.js'
-import { EsqlEsqlResult } from './esql.js'
+import { EsqlAsyncEsqlResult } from './esql.js'
 
 /**
  * Stop async ES|QL query.
@@ -21,5 +21,5 @@ export const EsqlAsyncQueryStopRequest = z.object({
 }).meta({ id: 'EsqlAsyncQueryStopRequest' })
 export type EsqlAsyncQueryStopRequest = z.infer<typeof EsqlAsyncQueryStopRequest>
 
-export const EsqlAsyncQueryStopResponse = EsqlEsqlResult.meta({ id: 'EsqlAsyncQueryStopResponse' })
+export const EsqlAsyncQueryStopResponse = EsqlAsyncEsqlResult.meta({ id: 'EsqlAsyncQueryStopResponse' })
 export type EsqlAsyncQueryStopResponse = z.infer<typeof EsqlAsyncQueryStopResponse>

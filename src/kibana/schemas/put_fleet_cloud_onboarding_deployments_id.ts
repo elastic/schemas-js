@@ -18,11 +18,13 @@ export const PutFleetCloudOnboardingDeploymentsIdRequest = z.object({
   attemptCount: z.number().optional(),
   authMethod: z.union([z.literal('identity_federation'), z.literal('static_keys'), z.literal('temporary_keys'), z.literal('shared_credentials'), z.literal('assume_role'), z.literal(null)]).nullable().optional(),
   connectorId: z.string().nullable().optional(),
+  dedicatedNamespaceTemplates: z.boolean().optional(),
   deploymentId: z.string().optional(),
   deploymentName: z.string().optional(),
   description: z.string().nullable().optional(),
   ecfStacks: z.array(z.object({
     family: z.enum(['unified', 'otel', 'crowdstrike']),
+    namespace: z.string().optional(),
     serviceConfigs: z.array(z.object({
       bucketArns: z.array(z.string()),
       logGroupArns: z.array(z.string()),
@@ -45,6 +47,7 @@ export const PutFleetCloudOnboardingDeploymentsIdRequest = z.object({
   packageNames: z.array(z.string()).optional(),
   packagePolicyIds: z.array(z.string()).optional(),
   policyIdsByInstance: z.record(z.string(), z.string()).optional(),
+  policySettings: z.record(z.string(), z.string().nullable()).optional(),
   serviceNames: z.record(z.string(), z.string()).optional(),
   services: z.array(z.string()).optional(),
   serviceVars: z.record(z.string(), z.record(z.string(), z.unknown().nullable())).optional(),
@@ -61,11 +64,13 @@ export const PutFleetCloudOnboardingDeploymentsIdResponse = z.object({
     authMethod: z.enum(['identity_federation', 'static_keys', 'temporary_keys', 'shared_credentials', 'assume_role']).optional(),
     connectorId: z.string().optional(),
     dataFormat: z.enum(['ecs', 'otel']).optional(),
+    dedicatedNamespaceTemplates: z.boolean().optional(),
     deploymentId: z.string().optional(),
     deploymentName: z.string().optional(),
     description: z.string().optional(),
     ecfStacks: z.array(z.object({
       family: z.enum(['unified', 'otel', 'crowdstrike']),
+      namespace: z.string().optional(),
       serviceConfigs: z.array(z.object({
         bucketArns: z.array(z.string()),
         logGroupArns: z.array(z.string()),
@@ -90,6 +95,7 @@ export const PutFleetCloudOnboardingDeploymentsIdResponse = z.object({
     packageNames: z.array(z.string()).optional(),
     packagePolicyIds: z.array(z.string()).optional(),
     policyIdsByInstance: z.record(z.string(), z.string()).optional(),
+    policySettings: z.record(z.string(), z.string().nullable()).optional(),
     provider: z.enum(['aws', 'azure', 'gcp']),
     serviceNames: z.record(z.string(), z.string()).optional(),
     services: z.array(z.string()),

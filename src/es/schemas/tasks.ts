@@ -21,8 +21,8 @@ export const TasksTaskInfo = z.object({
   start_time_in_millis: z.lazy(() => EpochTime),
   status: z.any().describe('The internal status of the task, which varies from task to task. The format also varies. While the goal is to keep the status for a particular task consistent from version to version, this is not always possible because sometimes the implementation changes. Fields might be removed from the status for a particular request so any parsing you do of the status might break in minor releases.').optional(),
   type: z.string(),
-  parent_task_id: TaskId.optional(),
-  original_task_id: TaskId.describe('The task ID of the original task. Only present when the task is continuing the work of an earlier task that was running on a node which has since shut down (i.e. a relocatable task). For tasks that have not been relocated this is always equal to the task\'s own ID and is omitted from the response.').optional(),
+  parent_task_id: z.lazy(() => TaskId).optional(),
+  original_task_id: z.lazy(() => TaskId).describe('The task ID of the original task. Only present when the task is continuing the work of an earlier task that was running on a node which has since shut down (i.e. a relocatable task). For tasks that have not been relocated this is always equal to the task\'s own ID and is omitted from the response.').optional(),
   original_start_time_in_millis: z.lazy(() => EpochTime).describe('The time at which the original task started, in milliseconds since the Unix epoch. Only present together with `original_task_id`.').optional(),
   original_start_time: z.string().describe('The time at which the original task started, as an ISO 8601 formatted string. Only present together with `original_task_id` and when the request includes the `?human=true` query parameter.').optional()
 }).meta({ id: 'TasksTaskInfo' })
@@ -35,7 +35,7 @@ export const TasksNodeTasks = z.object({
   ip: z.lazy(() => Ip).optional(),
   roles: z.array(z.string()).optional(),
   attributes: z.record(z.string(), z.string()).optional(),
-  tasks: z.record(TaskId, TasksTaskInfo)
+  tasks: z.record(z.lazy(() => TaskId), TasksTaskInfo)
 }).meta({ id: 'TasksNodeTasks' })
 export type TasksNodeTasks = z.infer<typeof TasksNodeTasks>
 

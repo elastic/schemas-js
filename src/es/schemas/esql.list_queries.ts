@@ -27,6 +27,6 @@ export const EsqlListQueriesRequest = z.object({
 export type EsqlListQueriesRequest = z.infer<typeof EsqlListQueriesRequest>
 
 export const EsqlListQueriesResponse = z.object({
-  queries: z.record(TaskId, EsqlListQueriesBody)
+  queries: z.record(z.lazy(() => TaskId), EsqlListQueriesBody)
 }).meta({ id: 'EsqlListQueriesResponse' })
 export type EsqlListQueriesResponse = z.infer<typeof EsqlListQueriesResponse>

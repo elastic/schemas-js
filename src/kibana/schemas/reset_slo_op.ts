@@ -17,43 +17,26 @@ export const ResetSloOpRequest = z.union([z.object({
 }), z.unknown()]).nullable().meta({ id: 'ResetSloOpRequest' })
 export type ResetSloOpRequest = z.infer<typeof ResetSloOpRequest>
 
-export const ResetSloOpResponse = z.object({
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional()
-  }).optional(),
-  budgetingMethod: z.enum(['occurrences', 'timeslices']),
-  createdAt: z.string(),
-  description: z.string(),
-  enabled: z.boolean(),
-  groupBy: z.union([z.string(), z.array(z.string())]),
-  id: z.string(),
-  indicator: z.object({
-    params: z.record(z.string(), z.unknown()),
-    type: z.string()
-  }),
-  name: z.string(),
-  objective: z.object({
-    target: z.number(),
-    timesliceTarget: z.number().optional(),
-    timesliceWindow: z.string().optional()
-  }),
-  revision: z.number(),
-  settings: z.object({
-    frequency: z.string().optional(),
-    preventCrossProjectSearch: z.boolean().optional(),
-    preventInitialBackfill: z.boolean().optional(),
-    projectRoutings: z.string().nullable().optional(),
-    syncDelay: z.string().optional(),
-    syncField: z.string().optional()
-  }),
-  tags: z.array(z.string()),
-  timeWindow: z.object({
-    duration: z.string(),
-    type: z.enum(['rolling', 'calendarAligned'])
-  }),
-  updatedAt: z.string(),
-  version: z.number()
-}).meta({ id: 'ResetSloOpResponse' })
-export type ResetSloOpResponse = z.infer<typeof ResetSloOpResponse>
+export { Kibana_HTTP_APIs_SLODefinition } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOTimeWindow } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOTimeWindowCalendarAligned } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOTimeWindowRolling } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOSettings } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOObjective } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOIndicator } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOIndicatorPropertiesHistogram } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOKqlWithFilters } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOFilter } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOFilterMeta } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOIndicatorPropertiesTimesliceMetric } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOTimesliceMetricPercentileMetric } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOTimesliceMetricDocCountMetric } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOTimesliceMetricBasicMetricWithField } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOIndicatorPropertiesCustomMetric } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOIndicatorPropertiesCustomKql } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOIndicatorPropertiesSyntheticsAvailability } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOIndicatorPropertiesApmAvailability } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOIndicatorPropertiesApmLatency } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOGroupBy } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOBudgetingMethod } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOArtifacts } from './schemas/kibana.js'

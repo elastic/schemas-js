@@ -935,6 +935,10 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
       const mod = await import('./apis/inference.completion.ts') as Record<string, unknown>
       return mod['inference_completion_definitions'] as EsApiDefinition[]
     }
+    case 'inference.decision': {
+      const mod = await import('./apis/inference.decision.ts') as Record<string, unknown>
+      return mod['inference_decision_definitions'] as EsApiDefinition[]
+    }
     case 'inference.delete': {
       const mod = await import('./apis/inference.delete.ts') as Record<string, unknown>
       return mod['inference_delete_definitions'] as EsApiDefinition[]
@@ -1150,6 +1154,10 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
     case 'ingest.simulate': {
       const mod = await import('./apis/ingest.simulate.ts') as Record<string, unknown>
       return mod['ingest_simulate_definitions'] as EsApiDefinition[]
+    }
+    case 'knn_eval': {
+      const mod = await import('./apis/knn_eval.ts') as Record<string, unknown>
+      return mod['knn_eval_definitions'] as EsApiDefinition[]
     }
     case 'license.delete': {
       const mod = await import('./apis/license.delete.ts') as Record<string, unknown>
