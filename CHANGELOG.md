@@ -1,5 +1,52 @@
 # Changelog
 
+## [0.12.0](https://github.com/elastic/schemas-js/compare/v0.11.0...v0.12.0) (2026-11-11)
+
+
+### Features
+
+* **es:** add _global.knn_eval and inference.decision APIs - [#139](https://github.com/elastic/schemas-js/issues/139)⁠ ([#139](https://github.com/elastic/schemas-js/issues/139)) ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **es:** add dense/sparse vector auto-calibration stats to indices.segments, indices.stats, and cluster.stats, plus segment sort/merge metadata and a vector\_formats option ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **es:** add dense\_vector query to Query DSL, and accept base64-encoded strings for dense vector query\_vector fields in knn\_search and Query DSL ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **es:** add doc\_values\_skipper stat to indices.field\_usage\_stats ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **es:** add fielddata, time\_series\_dimension, similarity, and subobjects properties to dynamic mapping fields ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **es:** add html content type and output\_format/parameters task settings to inference.document\_extraction ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **es:** add index-mode and vectordb\_columnar usage stats to xpack.usage ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **es:** add IndicesIndexRoutingAllocationRequire field to indices.put_settings and nodes.info routing allocation schema ([e310775](https://github.com/elastic/schemas-js/commit/e3107754de8d0690c4a878ae1383951b19720cb1))
+* **es:** add initial\_delay param to transform.start\_transform and make transform.update\_transform's response description optional ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **es:** add recover\_failure\_document and normalize\_for\_stream ingest processors ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **es:** add restore\_over\_existing param to snapshot.restore ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **es:** add runtime\_mappings param to delete\_by\_query ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **es:** add structured global privilege types to security.get\_role and security.get\_user\_privileges, and api\_key/token details to security.get\_token's authenticated user ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **es:** add templates param to rank\_eval for reusable query templates ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **es:** allow esql.get\_view to accept multiple comma-separated view names ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **es:** allow global.rank_eval request query to be a bare query DSL object in addition to the wrapped request/size form ([e310775](https://github.com/elastic/schemas-js/commit/e3107754de8d0690c4a878ae1383951b19720cb1))
+* **es:** rename health\_report's project\_encryption\_key indicator to cluster\_state\_encryption ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **es:** require name on security.create\_api\_key and clarify its validation rules ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **es:** require previously-optional request body on bulk, create, index, msearch, msearch_template, monitoring.bulk, fleet.msearch, autoscaling.put_autoscaling_policy, indices.downsample, indices.migrate_reindex, indices.put_data_stream_mappings, indices.put_data_stream_settings, indices.put_settings, inference.chat_completion_unified, inference.embedding, inference.non_streaming_chat_completion, inference.put, inference.update, ingest.put_ip_location_database, logstash.put_pipeline, ml.post_data, ml.validate_detector, profiling.flamegraph, profiling.stacktraces, profiling.topn_functions, project.create_many_routing, project.create_routing, search_application.post_behavioral_analytics_event, search_application.put, security.put_privileges, snapshot.create_repository, and text_structure.find_structure ([e310775](https://github.com/elastic/schemas-js/commit/e3107754de8d0690c4a878ae1383951b19720cb1))
+* **es:** restructure inference chat message content into a discriminated union and add InferenceCacheControl for prompt-caching support ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **es:** unify alias response bodies across indices.put\_alias, indices.delete\_alias, and indices.update\_aliases, adding errors/action\_results reporting ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **kibana:** add acknowledge\_breaking\_changes param to fleet package install/upgrade APIs ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **kibana:** add change\_point\_grid dashboard panel type ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **kibana:** add fleet cloud onboarding deployments list endpoint and new serviceConfigs, packageNames, serviceNames, updatedAt, updatedBy fields on existing onboarding deployment schemas ([e310775](https://github.com/elastic/schemas-js/commit/e3107754de8d0690c4a878ae1383951b19720cb1))
+* **kibana:** add onboarding\_deployment\_id to package policy responses ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **kibana:** add pending\_restart and unenrolled\_reason fields to fleet agent responses, and a force param to agent restart and get-file APIs ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **kibana:** add receive\_provisioning\_callback and post\_security\_entity\_store\_update\_api\_key APIs ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **kibana:** consolidate SLO response schemas into shared SLODefinition, SLOWithSummaryResponse, and SLOSnapshotResponse types, preserving unknown keys on summary/health/error-budget objects ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **kibana:** rename fleet-cloud-onboarding-deployments APIs' namespace to fleet-cloud-onboarding-instances and add dedicatedNamespaceTemplates, namespace, and policySettings fields ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **kibana:** rename Security_Osquery_API_* optional field types to explicit *OrUndefined variants and rename Security_Endpoint_Exceptions_API_ExceptionListItem export to EndpointListItem ([e310775](https://github.com/elastic/schemas-js/commit/e3107754de8d0690c4a878ae1383951b19720cb1))
+* **serverless:** add optional annotations field to elasticsearch, observability, security, and vector_db project metadata schemas ([e310775](https://github.com/elastic/schemas-js/commit/e3107754de8d0690c4a878ae1383951b19720cb1))
+
+
+### Bug Fixes
+
+* **es:** correct nodes.hot\_threads sort param type to reflect its actual cpu/total values ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **es:** document that routing params are ignored when index.slice.enabled is true across create, mget, exists, mtermvectors, fleet.search, open\_point\_in\_time, and search\_template ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **es:** remove the unsupported nested collapse field from search's SearchFieldCollapse ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **es:** widen indices.ts max\_result\_window and indices storage type to accept stringified/optional values ([7267232](https://github.com/elastic/schemas-js/commit/7267232fee1dbe9d7db6dcbb5ffece6626096844))
+* **kibana:** rename detection rule id type from Security_Detections_API_UUID to Security_Detections_API_RuleObjectId across rule create/read/update/patch/delete/find/bulk-action schemas ([e310775](https://github.com/elastic/schemas-js/commit/e3107754de8d0690c4a878ae1383951b19720cb1))
+* **serverless:** make metadata.tags optional on elasticsearch, observability, security, and vector_db project create requests ([e310775](https://github.com/elastic/schemas-js/commit/e3107754de8d0690c4a878ae1383951b19720cb1))
+
 ## [0.11.0](https://github.com/elastic/schemas-js/compare/v0.10.0...v0.11.0) (2026-10-29)
 
 
