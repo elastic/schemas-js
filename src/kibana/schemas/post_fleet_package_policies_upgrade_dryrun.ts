@@ -102,6 +102,7 @@ export const Kibana_HTTP_APIs_dry_run_package_policy = z.object({
   missingVars: z.array(z.string()).optional(),
   name: z.string(),
   namespace: z.string().optional(),
+  onboarding_deployment_id: z.string().nullable().optional(),
   output_id: z.string().nullable().optional(),
   overrides: z.object({
     inputs: z.record(z.string(), z.unknown().nullable()).optional()
@@ -224,6 +225,7 @@ export const Kibana_HTTP_APIs_dry_run_package_policy_response = z.object({
   is_managed: z.boolean().optional(),
   name: z.string(),
   namespace: z.string().optional(),
+  onboarding_deployment_id: z.string().nullable().optional(),
   output_id: z.string().nullable().optional(),
   overrides: z.object({
     inputs: z.record(z.string(), z.unknown().nullable()).optional()

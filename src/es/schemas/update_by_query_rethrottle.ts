@@ -24,7 +24,7 @@ export type UpdateByQueryRethrottleRequest = z.infer<typeof UpdateByQueryRethrot
 
 export const UpdateByQueryRethrottleUpdateByQueryRethrottleNode = z.object({
   ...SpecUtilsBaseNode.shape,
-  tasks: z.record(TaskId, TasksTaskInfo)
+  tasks: z.record(z.lazy(() => TaskId), TasksTaskInfo)
 }).meta({ id: 'UpdateByQueryRethrottleUpdateByQueryRethrottleNode' })
 export type UpdateByQueryRethrottleUpdateByQueryRethrottleNode = z.infer<typeof UpdateByQueryRethrottleUpdateByQueryRethrottleNode>
 

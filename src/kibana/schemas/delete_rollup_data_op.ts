@@ -12,20 +12,26 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
+export const Kibana_HTTP_APIs_SLOBulkPurgePolicyFixedAge = z.object({
+  age: z.string(),
+  purgeType: z.enum(['fixed_age'])
+}).meta({ id: 'Kibana_HTTP_APIs_SLOBulkPurgePolicyFixedAge' })
+export type Kibana_HTTP_APIs_SLOBulkPurgePolicyFixedAge = z.infer<typeof Kibana_HTTP_APIs_SLOBulkPurgePolicyFixedAge>
+
+export const Kibana_HTTP_APIs_SLOBulkPurgePolicyFixedTime = z.object({
+  purgeType: z.enum(['fixed_time']),
+  timestamp: z.string()
+}).meta({ id: 'Kibana_HTTP_APIs_SLOBulkPurgePolicyFixedTime' })
+export type Kibana_HTTP_APIs_SLOBulkPurgePolicyFixedTime = z.infer<typeof Kibana_HTTP_APIs_SLOBulkPurgePolicyFixedTime>
+
+export const Kibana_HTTP_APIs_SLOBulkPurgeRollupResponse = z.object({
+  taskId: z.string().optional()
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_SLOBulkPurgeRollupResponse' })
+export type Kibana_HTTP_APIs_SLOBulkPurgeRollupResponse = z.infer<typeof Kibana_HTTP_APIs_SLOBulkPurgeRollupResponse>
+
 export const DeleteRollupDataOpRequest = z.object({
   force: z.boolean().optional(),
   list: z.array(z.string()),
-  purgePolicy: z.discriminatedUnion('purgeType', [z.object({
-    age: z.string(),
-    purgeType: z.enum(['fixed_age'])
-  }), z.object({
-    purgeType: z.enum(['fixed_time']),
-    timestamp: z.string()
-  })])
+  purgePolicy: z.discriminatedUnion('purgeType', [Kibana_HTTP_APIs_SLOBulkPurgePolicyFixedAge, Kibana_HTTP_APIs_SLOBulkPurgePolicyFixedTime])
 }).meta({ id: 'DeleteRollupDataOpRequest' })
 export type DeleteRollupDataOpRequest = z.infer<typeof DeleteRollupDataOpRequest>
-
-export const DeleteRollupDataOpResponse = z.object({
-  taskId: z.string().optional()
-}).meta({ id: 'DeleteRollupDataOpResponse' })
-export type DeleteRollupDataOpResponse = z.infer<typeof DeleteRollupDataOpResponse>

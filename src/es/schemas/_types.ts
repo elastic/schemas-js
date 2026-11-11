@@ -14,8 +14,9 @@ import { BulkFailureStoreStatus } from './bulk.js'
 import { UnitMillis } from './cluster.stats.js'
 import { ClusterAlias } from './indices.resolve_cluster.js'
 import { IndicesStatsShardFileSizeInfo } from './indices.stats.js'
-import { QueryVector } from './knn_search.js'
-import { QueryVectorBuilder, RescoreVector, SearchInnerHits, SearchSearchRequestBody } from './search.js'
+import { InferenceEmbeddingContentFormat, InferenceEmbeddingContentType } from './inference.js'
+import { RescoreVector } from './knn_eval.js'
+import { SearchInnerHits, SearchSearchRequestBody } from './search.js'
 import type { SearchInnerHitsShape, SearchSearchRequestBodyShape } from './search.js'
 import { WatcherSearchInputRequestDefinition } from './watcher.js'
 
@@ -24,6 +25,9 @@ export type Id = z.infer<typeof Id>
 
 export const IndexName = z.string().meta({ id: 'IndexName' })
 export type IndexName = z.infer<typeof IndexName>
+
+export const SliceId = z.string().meta({ id: 'SliceId' })
+export type SliceId = z.infer<typeof SliceId>
 
 export const long = z.number().meta({ id: 'long' })
 export type long = z.infer<typeof long>
@@ -83,6 +87,53 @@ export type MinimumShouldMatch = z.infer<typeof MinimumShouldMatch>
 
 export const double = z.number().meta({ id: 'double' })
 export type double = z.infer<typeof double>
+
+/** Both the float vector form and the base64 string form are accepted by the server */
+export const QueryVector = z.union([z.array(z.lazy(() => float)), z.string()]).meta({ id: 'QueryVector' })
+export type QueryVector = z.infer<typeof QueryVector>
+
+export const InferenceString = z.object({
+  type: z.lazy(() => InferenceEmbeddingContentType).describe('The type of data that the value represents.'),
+  format: z.union([z.lazy(() => InferenceEmbeddingContentFormat), z.null()]).describe('The format of the data. If null, the default data format for the given type is used.').optional(),
+  value: z.string().describe('String which may be raw text, the string representation of some other data such as an image in base64, or a URL that points to the data.')
+}).meta({ id: 'InferenceString' })
+export type InferenceString = z.infer<typeof InferenceString>
+
+export const InferenceStringGroup = z.union([InferenceString, z.array(InferenceString)]).meta({ id: 'InferenceStringGroup' })
+export type InferenceStringGroup = z.infer<typeof InferenceStringGroup>
+
+/**
+ * Knn embedding input.
+ * Either a string, an object or array of objects
+ */
+export const KnnEmbeddingInput = z.union([z.string(), InferenceStringGroup]).meta({ id: 'KnnEmbeddingInput' })
+export type KnnEmbeddingInput = z.infer<typeof KnnEmbeddingInput>
+
+export const Embedding = z.object({
+  inference_id: z.string().optional(),
+  input: KnnEmbeddingInput,
+  timeout: z.lazy(() => Duration).optional()
+}).meta({ id: 'Embedding' })
+export type Embedding = z.infer<typeof Embedding>
+
+export const TextEmbedding = z.object({
+  model_id: z.string().describe('Model ID is required for all dense_vector fields but may be inferred for semantic_text fields').optional(),
+  model_text: z.string().describe('The text to be converted into a vector by the specified model')
+}).meta({ id: 'TextEmbedding' })
+export type TextEmbedding = z.infer<typeof TextEmbedding>
+
+export const LookupQueryVectorBuilder = z.object({
+  id: z.string().describe('The ID of the document to fetch the vector from'),
+  index: z.string().describe('The name of the index to fetch the document from'),
+  path: z.string().describe('The name of the field containing the vector'),
+  routing: z.string().describe('The routing value to use when fetching the document').optional()
+}).meta({ id: 'LookupQueryVectorBuilder' })
+export type LookupQueryVectorBuilder = z.infer<typeof LookupQueryVectorBuilder>
+
+const QueryVectorBuilderExclusiveProps = z.union([z.object({ embedding: Embedding }), z.object({ text_embedding: TextEmbedding }), z.object({ lookup: LookupQueryVectorBuilder })])
+
+export const QueryVectorBuilder = QueryVectorBuilderExclusiveProps.meta({ id: 'QueryVectorBuilder' })
+export type QueryVectorBuilder = z.infer<typeof QueryVectorBuilder>
 
 export const MultiTermQueryRewrite = z.string().meta({ id: 'MultiTermQueryRewrite' })
 export type MultiTermQueryRewrite = z.infer<typeof MultiTermQueryRewrite>
@@ -530,6 +581,9 @@ export const BulkIndexByScrollFailure = z.object({
 }).meta({ id: 'BulkIndexByScrollFailure' })
 export type BulkIndexByScrollFailure = z.infer<typeof BulkIndexByScrollFailure>
 
+export const BulkByPaginatedSearchFailure = z.union([BulkIndexByScrollFailure, ShardFailure]).meta({ id: 'BulkByPaginatedSearchFailure' })
+export type BulkByPaginatedSearchFailure = z.infer<typeof BulkByPaginatedSearchFailure>
+
 /**
  * The final result of a completed reindex operation, as stored in the task result.
  * This is the serialized form of `BulkByScrollResponse`.
@@ -538,7 +592,7 @@ export const ReindexTaskResult = z.object({
   batches: z.lazy(() => long).describe('The number of scroll responses pulled back by the reindex.').optional(),
   created: z.lazy(() => long).describe('The number of documents that were successfully created.').optional(),
   deleted: z.lazy(() => long).describe('The number of documents that were successfully deleted.').optional(),
-  failures: z.array(BulkIndexByScrollFailure).describe('Any failures encountered during the reindex. If non-empty, the reindex ended because of these failures.').optional(),
+  failures: z.array(BulkByPaginatedSearchFailure).describe('Any failures encountered during the reindex. If non-empty, the reindex ended because of these failures.').optional(),
   noops: z.lazy(() => long).describe('The number of documents that were ignored because the script returned a `noop` value for `ctx.op`.').optional(),
   requests_per_second: z.lazy(() => float).describe('The number of requests per second effectively executed during the reindex.').optional(),
   retries: Retries.describe('The number of retries attempted by reindex.').optional(),
@@ -566,6 +620,10 @@ export type ScrollId = z.infer<typeof ScrollId>
 
 export const Indices = z.union([z.lazy(() => IndexName), z.array(z.lazy(() => IndexName))]).meta({ id: 'Indices' })
 export type Indices = z.infer<typeof Indices>
+
+/** Only to be used in query and path parameters, as the array form is actually a csv */
+export const SliceIds = z.union([z.lazy(() => SliceId), z.array(z.lazy(() => SliceId))]).meta({ id: 'SliceIds' })
+export type SliceIds = z.infer<typeof SliceIds>
 
 export const ExpandWildcard = z.enum(['all', 'open', 'closed', 'hidden', 'none']).meta({ id: 'ExpandWildcard' })
 export type ExpandWildcard = z.infer<typeof ExpandWildcard>
@@ -897,7 +955,8 @@ export const PluginStats = z.object({
   java_version: z.lazy(() => VersionString),
   name: z.lazy(() => Name),
   version: z.lazy(() => VersionString),
-  licensed: z.boolean()
+  licensed: z.boolean(),
+  native_controller_enabled_settings: z.array(z.string())
 }).meta({ id: 'PluginStats' })
 export type PluginStats = z.infer<typeof PluginStats>
 

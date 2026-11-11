@@ -22,6 +22,7 @@ export const Security_Endpoint_Management_API_GetFileRouteRequestBody = z.object
   parameters: Security_Endpoint_Management_API_Parameters.optional()
 }).merge(z.object({
   parameters: z.object({
+    force: z.boolean().optional(),
     path: z.string()
   })
 })).meta({ id: 'Security_Endpoint_Management_API_GetFileRouteRequestBody' })

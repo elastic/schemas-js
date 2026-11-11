@@ -13,6 +13,11 @@
 import { z } from 'zod'
 import { Kibana_HTTP_APIs_action_id_response, Kibana_HTTP_APIs_action_message_response } from './schemas/kibana.js'
 
+export const PostFleetAgentsAgentidRestartRequest = z.object({
+  force: z.boolean().optional()
+}).nullable().meta({ id: 'PostFleetAgentsAgentidRestartRequest' })
+export type PostFleetAgentsAgentidRestartRequest = z.infer<typeof PostFleetAgentsAgentidRestartRequest>
+
 export const PostFleetAgentsAgentidRestartResponse = z.union([Kibana_HTTP_APIs_action_id_response, Kibana_HTTP_APIs_action_message_response]).meta({ id: 'PostFleetAgentsAgentidRestartResponse' })
 export type PostFleetAgentsAgentidRestartResponse = z.infer<typeof PostFleetAgentsAgentidRestartResponse>
 

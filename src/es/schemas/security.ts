@@ -52,6 +52,37 @@ export const SecurityRemoteIndicesPrivileges = z.object({
 }).meta({ id: 'SecurityRemoteIndicesPrivileges' })
 export type SecurityRemoteIndicesPrivileges = z.infer<typeof SecurityRemoteIndicesPrivileges>
 
+export const SecurityManageUserPrivileges = z.object({
+  applications: z.array(z.string())
+}).meta({ id: 'SecurityManageUserPrivileges' })
+export type SecurityManageUserPrivileges = z.infer<typeof SecurityManageUserPrivileges>
+
+export const SecurityApplicationGlobalUserPrivileges = z.object({
+  manage: SecurityManageUserPrivileges.describe('The applications for which application privileges can be managed. Absent when the `application` section is present but grants no privileges.').optional()
+}).meta({ id: 'SecurityApplicationGlobalUserPrivileges' })
+export type SecurityApplicationGlobalUserPrivileges = z.infer<typeof SecurityApplicationGlobalUserPrivileges>
+
+export const SecurityWriteProfileGlobalUserPrivileges = z.object({
+  write: SecurityManageUserPrivileges.describe('The applications for which user profile data can be written. Absent when the `profile` section is present but grants no privileges.').optional()
+}).meta({ id: 'SecurityWriteProfileGlobalUserPrivileges' })
+export type SecurityWriteProfileGlobalUserPrivileges = z.infer<typeof SecurityWriteProfileGlobalUserPrivileges>
+
+export const SecurityManageRolesIndexPermissions = z.object({
+  names: z.array(z.string()).describe('A list of indices (or index name patterns) that the owners of the role can manage roles for.'),
+  privileges: z.array(z.string()).describe('The index privileges that the managed roles are allowed to grant on the specified indices.')
+}).meta({ id: 'SecurityManageRolesIndexPermissions' })
+export type SecurityManageRolesIndexPermissions = z.infer<typeof SecurityManageRolesIndexPermissions>
+
+export const SecurityManageRolesPrivileges = z.object({
+  indices: z.array(SecurityManageRolesIndexPermissions)
+}).meta({ id: 'SecurityManageRolesPrivileges' })
+export type SecurityManageRolesPrivileges = z.infer<typeof SecurityManageRolesPrivileges>
+
+export const SecurityManageRolesGlobalUserPrivileges = z.object({
+  manage: SecurityManageRolesPrivileges.describe('The index-scoped role management privileges. Absent when the `role` section is present but grants no privileges.').optional()
+}).meta({ id: 'SecurityManageRolesGlobalUserPrivileges' })
+export type SecurityManageRolesGlobalUserPrivileges = z.infer<typeof SecurityManageRolesGlobalUserPrivileges>
+
 export const SecurityDataSourcePrivilege = z.union([z.enum(['create', 'delete', 'read_metadata', 'read', 'manage']), z.string()]).meta({ id: 'SecurityDataSourcePrivilege' })
 export type SecurityDataSourcePrivilege = z.infer<typeof SecurityDataSourcePrivilege>
 
@@ -60,6 +91,13 @@ export const SecurityDataSourcePrivileges = z.object({
   privileges: z.array(SecurityDataSourcePrivilege).describe('The data source privileges that owners of the role have for the specified data sources.')
 }).meta({ id: 'SecurityDataSourcePrivileges' })
 export type SecurityDataSourcePrivileges = z.infer<typeof SecurityDataSourcePrivileges>
+
+export const SecurityGlobalPrivilege = z.object({
+  application: SecurityApplicationGlobalUserPrivileges.optional(),
+  profile: SecurityWriteProfileGlobalUserPrivileges.describe('A privilege that grants the ability to write the `data` and `access` sections of user profiles for the specified applications.').optional(),
+  role: SecurityManageRolesGlobalUserPrivileges.describe('A privilege that grants the ability to manage roles that are scoped to the specified indices.').optional()
+}).meta({ id: 'SecurityGlobalPrivilege' })
+export type SecurityGlobalPrivilege = z.infer<typeof SecurityGlobalPrivilege>
 
 export const SecurityApplicationPrivileges = z.object({
   application: z.string().describe('The name of the application to which this entry applies.'),
@@ -170,7 +208,7 @@ export type SecurityUserProfileHitMetadata = z.infer<typeof SecurityUserProfileH
 
 export const SecurityUserProfileWithMetadata = z.object({
   uid: z.lazy(() => SecurityUserProfileId),
-  user: SecurityUserProfileUser,
+  user: z.lazy(() => SecurityUserProfileUser),
   data: z.record(z.string(), z.any()),
   labels: z.record(z.string(), z.any()),
   enabled: z.boolean().optional(),

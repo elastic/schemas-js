@@ -34,48 +34,11 @@ export const UpdateSloOpRequest = z.object({
 }).meta({ id: 'UpdateSloOpRequest' })
 export type UpdateSloOpRequest = z.infer<typeof UpdateSloOpRequest>
 
-export const UpdateSloOpResponse = z.object({
-  artifacts: z.object({
-    dashboards: z.array(z.object({
-      id: z.string()
-    })).optional()
-  }).optional(),
-  budgetingMethod: z.enum(['occurrences', 'timeslices']),
-  createdAt: z.string(),
-  description: z.string(),
-  enabled: z.boolean(),
-  groupBy: z.union([z.string(), z.array(z.string())]),
-  id: z.string(),
-  indicator: z.object({
-    params: z.record(z.string(), z.unknown()),
-    type: z.string()
-  }),
-  name: z.string(),
-  objective: z.object({
-    target: z.number(),
-    timesliceTarget: z.number().optional(),
-    timesliceWindow: z.string().optional()
-  }),
-  revision: z.number(),
-  settings: z.object({
-    frequency: z.string().optional(),
-    preventCrossProjectSearch: z.boolean().optional(),
-    preventInitialBackfill: z.boolean().optional(),
-    projectRoutings: z.string().nullable().optional(),
-    syncDelay: z.string().optional(),
-    syncField: z.string().optional()
-  }),
-  tags: z.array(z.string()),
-  timeWindow: z.object({
-    duration: z.string(),
-    type: z.enum(['rolling', 'calendarAligned'])
-  }),
-  updatedAt: z.string(),
-  version: z.number()
-}).meta({ id: 'UpdateSloOpResponse' })
-export type UpdateSloOpResponse = z.infer<typeof UpdateSloOpResponse>
-
+export { Kibana_HTTP_APIs_SLODefinition } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_SLOTimeWindow } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOTimeWindowCalendarAligned } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOTimeWindowRolling } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOSettings } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_SLOObjective } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_SLOIndicator } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_SLOIndicatorPropertiesHistogram } from './schemas/kibana.js'

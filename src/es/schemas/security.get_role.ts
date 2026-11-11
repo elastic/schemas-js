@@ -8,7 +8,7 @@ import { z } from 'zod'
 
 import { Fields, Id, IndexName, Metadata, Names, ScriptLanguage } from './_types.js'
 import { QueryDslQueryContainer } from './_types.query_dsl.js'
-import { SecurityApplicationPrivileges, SecurityClusterPrivilege, SecurityIndexPrivilege, SecurityRoleTemplate } from './security.js'
+import { SecurityApplicationPrivileges, SecurityClusterPrivilege, SecurityGlobalPrivilege, SecurityIndexPrivilege, SecurityRoleTemplate } from './security.js'
 
 export const SecurityFieldSecurity = z.object({
   except: z.lazy(() => Fields).optional(),
@@ -78,7 +78,7 @@ export const SecurityGetRoleRole = z.object({
   transient_metadata: z.record(z.string(), z.any()).optional(),
   applications: z.array(z.lazy(() => SecurityApplicationPrivileges)),
   role_templates: z.array(z.lazy(() => SecurityRoleTemplate)).optional(),
-  global: z.record(z.string(), z.record(z.string(), z.record(z.string(), z.array(z.string())))).optional()
+  global: z.lazy(() => SecurityGlobalPrivilege).optional()
 }).meta({ id: 'SecurityGetRoleRole' })
 export type SecurityGetRoleRole = z.infer<typeof SecurityGetRoleRole>
 

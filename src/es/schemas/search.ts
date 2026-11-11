@@ -6,7 +6,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { ClusterStatistics, Duration, DurationValue, EmptyObject, ExpandWildcards, Field, Fields, Fuzziness, GeoHashPrecision, GeoLocation, Id, IndexName, Indices, KnnSearch, Name, NodeId, Routing, Script, ScriptField, ScriptSource, ScrollId, SearchType, SequenceNumber, ShardStatistics, SlicedScroll, Sort, SortResults, SuggestMode, SuggestionName, VersionNumber, double, float, integer, long } from './_types.js'
+import { ClusterStatistics, Duration, DurationValue, EmptyObject, ExpandWildcards, Field, Fields, Fuzziness, GeoHashPrecision, GeoLocation, Id, IndexName, Indices, KnnSearch, Name, NodeId, QueryVector, QueryVectorBuilder, Routing, Script, ScriptField, ScriptSource, ScrollId, SearchType, SequenceNumber, ShardStatistics, SlicedScroll, Sort, SortResults, SuggestMode, SuggestionName, VersionNumber, double, float, integer, long } from './_types.js'
 import type { KnnSearchShape, ScriptFieldShape, ScriptShape, ScriptSourceShape, SortShape } from './_types.js'
 import { AggregationsAggregationContainer } from './_types.aggregations.js'
 import type { AggregationsAggregationContainerShape } from './_types.aggregations.js'
@@ -15,8 +15,7 @@ import type { MappingRuntimeFieldsShape } from './_types.mapping.js'
 import { QueryDslFieldAndFormat, QueryDslOperator, QueryDslQueryContainer } from './_types.query_dsl.js'
 import type { QueryDslQueryContainerShape } from './_types.query_dsl.js'
 import { ExplainExplanation } from './explain.js'
-import { InferenceEmbeddingContentFormat, InferenceEmbeddingContentType } from './inference.js'
-import { QueryVector } from './knn_search.js'
+import { RescoreVector } from './knn_eval.js'
 
 /**
  * Defines how to fetch a source. Fetching can be disabled entirely, or the source can be filtered.
@@ -29,13 +28,11 @@ export interface SearchFieldCollapseShape {
   field: Field
   inner_hits?: SearchInnerHitsShape | SearchInnerHitsShape[] | undefined
   max_concurrent_group_searches?: integer | undefined
-  collapse?: SearchFieldCollapseShape | undefined
 }
 export const SearchFieldCollapse = z.object({
   field: z.lazy(() => Field).describe('The field to collapse the result set on'),
   get inner_hits (): z.ZodOptional<z.ZodUnion<readonly [typeof SearchInnerHits, z.ZodArray<typeof SearchInnerHits>]>> { return z.union([SearchInnerHits, SearchInnerHits.array()]).describe('The number of inner hits and their sort order').optional() },
-  max_concurrent_group_searches: z.lazy(() => integer).describe('The number of concurrent requests allowed to retrieve the inner_hits per group').optional(),
-  get collapse () { return SearchFieldCollapse.optional() }
+  max_concurrent_group_searches: z.lazy(() => integer).describe('The number of concurrent requests allowed to retrieve the inner_hits per group').optional()
 }).meta({ id: 'SearchFieldCollapse' })
 export type SearchFieldCollapse = z.infer<typeof SearchFieldCollapse>
 
@@ -261,54 +258,6 @@ export const SearchInnerHits = z.object({
   version: z.boolean().optional()
 }).meta({ id: 'SearchInnerHits' })
 export type SearchInnerHits = z.infer<typeof SearchInnerHits>
-
-export const InferenceString = z.object({
-  type: z.lazy(() => InferenceEmbeddingContentType).describe('The type of data that the value represents.'),
-  format: z.union([z.lazy(() => InferenceEmbeddingContentFormat), z.null()]).describe('The format of the data. If null, the default data format for the given type is used.').optional(),
-  value: z.string().describe('String which may be raw text, the string representation of some other data such as an image in base64, or a URL that points to the data.')
-}).meta({ id: 'InferenceString' })
-export type InferenceString = z.infer<typeof InferenceString>
-
-export const InferenceStringGroup = z.union([InferenceString, z.array(InferenceString)]).meta({ id: 'InferenceStringGroup' })
-export type InferenceStringGroup = z.infer<typeof InferenceStringGroup>
-
-/**
- * Knn embedding input.
- * Either a string, an object or array of objects
- */
-export const KnnEmbeddingInput = z.union([z.string(), InferenceStringGroup]).meta({ id: 'KnnEmbeddingInput' })
-export type KnnEmbeddingInput = z.infer<typeof KnnEmbeddingInput>
-
-export const Embedding = z.object({
-  inference_id: z.string().optional(),
-  input: KnnEmbeddingInput,
-  timeout: z.lazy(() => Duration).optional()
-}).meta({ id: 'Embedding' })
-export type Embedding = z.infer<typeof Embedding>
-
-export const TextEmbedding = z.object({
-  model_id: z.string().describe('Model ID is required for all dense_vector fields but may be inferred for semantic_text fields').optional(),
-  model_text: z.string().describe('The text to be converted into a vector by the specified model')
-}).meta({ id: 'TextEmbedding' })
-export type TextEmbedding = z.infer<typeof TextEmbedding>
-
-export const LookupQueryVectorBuilder = z.object({
-  id: z.string().describe('The ID of the document to fetch the vector from'),
-  index: z.string().describe('The name of the index to fetch the document from'),
-  path: z.string().describe('The name of the field containing the vector'),
-  routing: z.string().describe('The routing value to use when fetching the document').optional()
-}).meta({ id: 'LookupQueryVectorBuilder' })
-export type LookupQueryVectorBuilder = z.infer<typeof LookupQueryVectorBuilder>
-
-const QueryVectorBuilderExclusiveProps = z.union([z.object({ embedding: Embedding }), z.object({ text_embedding: TextEmbedding }), z.object({ lookup: LookupQueryVectorBuilder })])
-
-export const QueryVectorBuilder = QueryVectorBuilderExclusiveProps.meta({ id: 'QueryVectorBuilder' })
-export type QueryVectorBuilder = z.infer<typeof QueryVectorBuilder>
-
-export const RescoreVector = z.object({
-  oversample: z.lazy(() => float).describe('Applies the specified oversample factor to k on the approximate kNN search')
-}).meta({ id: 'RescoreVector' })
-export type RescoreVector = z.infer<typeof RescoreVector>
 
 /**
  * Number of hits matching the query to count accurately. If true, the exact
@@ -1132,6 +1081,8 @@ export const SearchQueryBreakdown = z.object({
   build_scorer_count: z.lazy(() => long),
   create_weight: z.lazy(() => long),
   create_weight_count: z.lazy(() => long),
+  into_bit_set: z.lazy(() => long),
+  into_bit_set_count: z.lazy(() => long),
   match: z.lazy(() => long),
   match_count: z.lazy(() => long),
   shallow_advance: z.lazy(() => long),

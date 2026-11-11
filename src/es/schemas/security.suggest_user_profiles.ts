@@ -21,7 +21,7 @@ export type SecurityUserProfileUser = z.infer<typeof SecurityUserProfileUser>
 
 export const SecurityUserProfile = z.object({
   uid: z.lazy(() => SecurityUserProfileId),
-  user: SecurityUserProfileUser,
+  user: z.lazy(() => SecurityUserProfileUser),
   data: z.record(z.string(), z.any()),
   labels: z.record(z.string(), z.any()),
   enabled: z.boolean().optional()

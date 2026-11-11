@@ -278,7 +278,7 @@ export const HealthReportIndicators = z.object({
   slm: HealthReportSlmIndicator.optional(),
   shards_capacity: HealthReportShardsCapacityIndicator.optional(),
   file_settings: HealthReportFileSettingsIndicator.optional(),
-  project_encryption_key: HealthReportProjectEncryptionKeyIndicator.optional()
+  cluster_state_encryption: HealthReportProjectEncryptionKeyIndicator.optional()
 }).meta({ id: 'HealthReportIndicators' })
 export type HealthReportIndicators = z.infer<typeof HealthReportIndicators>
 

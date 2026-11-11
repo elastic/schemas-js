@@ -8,6 +8,7 @@ import { z } from 'zod'
 
 import { Duration, ErrorCause, IndexAlias, IndexName, Indices, integer } from './_types.js'
 import { QueryDslQueryContainer } from './_types.query_dsl.js'
+import { IndicesAliasesResponseBody } from './indices.js'
 
 export const IndicesUpdateAliasesAddAction = z.object({
   alias: IndexAlias.describe('Alias for the action. Index alias names support date math.').optional(),
@@ -63,7 +64,8 @@ export const IndicesUpdateAliasesAliasActionResult = z.object({
 export type IndicesUpdateAliasesAliasActionResult = z.infer<typeof IndicesUpdateAliasesAliasActionResult>
 
 export const IndicesUpdateAliasesIndicesUpdateAliasesResponseBody = z.object({
-  acknowledged: z.boolean().describe('For a successful response, this value is always true. On failure, an exception is returned instead.')
+  ...IndicesAliasesResponseBody.shape,
+  action_results: z.array(IndicesUpdateAliasesAliasActionResult).describe('Results for each action in the request. Returned only when `errors` is `true`.').optional()
 }).meta({ id: 'IndicesUpdateAliasesIndicesUpdateAliasesResponseBody' })
 export type IndicesUpdateAliasesIndicesUpdateAliasesResponseBody = z.infer<typeof IndicesUpdateAliasesIndicesUpdateAliasesResponseBody>
 

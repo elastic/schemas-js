@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"delete-fleet-cloud-onboarding-deployments-id","x-api":{"id":"fleet-cloud-onboarding-instances.delete-fleet-cloud-onboarding-deployments-id","name":"delete-fleet-cloud-onboarding-deployments-id","namespace":"fleet-cloud-onboarding-instances"},"type":"object","properties":{"id":{"type":"string"}},"required":["id"]}

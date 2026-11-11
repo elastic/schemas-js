@@ -6,12 +6,9 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { Field, Fields, Indices, Routing, ShardStatistics, double, float, integer, long } from './_types.js'
+import { Field, Fields, Indices, QueryVector, Routing, ShardStatistics, double, integer, long } from './_types.js'
 import { QueryDslFieldAndFormat, QueryDslQueryContainer } from './_types.query_dsl.js'
 import { SearchHitsMetadata, SearchSourceConfig } from './search.js'
-
-export const QueryVector = z.array(z.lazy(() => float)).meta({ id: 'QueryVector' })
-export type QueryVector = z.infer<typeof QueryVector>
 
 export const KnnSearchKnnSearchQuery = z.object({
   field: z.lazy(() => Field).describe('The name of the vector field to search against'),

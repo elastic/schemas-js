@@ -14,6 +14,7 @@ import { z } from 'zod'
 import { Kibana_HTTP_APIs_es_asset_reference, Kibana_HTTP_APIs_kibana_asset_reference } from './schemas/kibana.js'
 
 export const Kibana_HTTP_APIs_bulk_install_packages_from_registry_request = z.object({
+  acknowledge_breaking_changes: z.boolean().optional(),
   allow_outdated_version: z.boolean().optional(),
   force: z.boolean().optional(),
   packages: z.array(z.union([z.object({

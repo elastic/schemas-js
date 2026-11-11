@@ -12,12 +12,12 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
+export const Kibana_HTTP_APIs_SLOBulkDeleteResponse = z.object({
+  taskId: z.string()
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_SLOBulkDeleteResponse' })
+export type Kibana_HTTP_APIs_SLOBulkDeleteResponse = z.infer<typeof Kibana_HTTP_APIs_SLOBulkDeleteResponse>
+
 export const BulkDeleteOpRequest = z.object({
   list: z.array(z.string())
 }).meta({ id: 'BulkDeleteOpRequest' })
 export type BulkDeleteOpRequest = z.infer<typeof BulkDeleteOpRequest>
-
-export const BulkDeleteOpResponse = z.object({
-  taskId: z.string().optional()
-}).meta({ id: 'BulkDeleteOpResponse' })
-export type BulkDeleteOpResponse = z.infer<typeof BulkDeleteOpResponse>

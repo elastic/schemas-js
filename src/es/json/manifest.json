@@ -1275,6 +1275,10 @@
       "stack": {
         "stability": "experimental",
         "visibility": "public"
+      },
+      "serverless": {
+        "stability": "experimental",
+        "visibility": "public"
       }
     }
   },
@@ -1288,6 +1292,10 @@
     "readOnly": false,
     "availability": {
       "stack": {
+        "stability": "experimental",
+        "visibility": "public"
+      },
+      "serverless": {
         "stability": "experimental",
         "visibility": "public"
       }
@@ -1322,6 +1330,10 @@
     "readOnly": false,
     "availability": {
       "stack": {
+        "stability": "experimental",
+        "visibility": "public"
+      },
+      "serverless": {
         "stability": "experimental",
         "visibility": "public"
       }
@@ -1394,6 +1406,10 @@
     "readOnly": false,
     "availability": {
       "stack": {
+        "stability": "experimental",
+        "visibility": "public"
+      },
+      "serverless": {
         "stability": "experimental",
         "visibility": "public"
       }
@@ -1485,6 +1501,10 @@
     "readOnly": false,
     "availability": {
       "stack": {
+        "stability": "experimental",
+        "visibility": "public"
+      },
+      "serverless": {
         "stability": "experimental",
         "visibility": "public"
       }
@@ -2020,6 +2040,10 @@
         "since": "8.13.0",
         "stability": "stable",
         "visibility": "public"
+      },
+      "serverless": {
+        "stability": "stable",
+        "visibility": "public"
       }
     }
   },
@@ -2034,6 +2058,10 @@
     "availability": {
       "stack": {
         "since": "8.13.0",
+        "stability": "stable",
+        "visibility": "public"
+      },
+      "serverless": {
         "stability": "stable",
         "visibility": "public"
       }
@@ -2052,6 +2080,10 @@
         "since": "8.13.0",
         "stability": "stable",
         "visibility": "public"
+      },
+      "serverless": {
+        "stability": "stable",
+        "visibility": "public"
       }
     }
   },
@@ -2066,6 +2098,10 @@
     "availability": {
       "stack": {
         "since": "8.18.0",
+        "stability": "stable",
+        "visibility": "public"
+      },
+      "serverless": {
         "stability": "stable",
         "visibility": "public"
       }
@@ -3349,6 +3385,10 @@
       "stack": {
         "since": "8.12.0",
         "stability": "stable"
+      },
+      "serverless": {
+        "stability": "stable",
+        "visibility": "public"
       }
     }
   },
@@ -4098,6 +4138,26 @@
       },
       "serverless": {
         "stability": "stable",
+        "visibility": "public"
+      }
+    }
+  },
+  {
+    "id": "inference.decision",
+    "name": "decision",
+    "namespace": "inference",
+    "description": "Perform decision inference on the service.\n\nAnswer a set of named questions about an input, such as whether a customer is complaining, which team should handle a request, or how angry a customer is.\nThe questions are defined in the task settings of the inference endpoint, and can be replaced for a single request through `task_settings`.\n\n> info\n> Only the `elastic` service currently supports the `decision` task.",
+    "namespaceFile": "inference.decision",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "since": "9.6.0",
+        "stability": "experimental",
+        "visibility": "public"
+      },
+      "serverless": {
+        "stability": "experimental",
         "visibility": "public"
       }
     }
@@ -5158,6 +5218,26 @@
       },
       "serverless": {
         "stability": "stable",
+        "visibility": "public"
+      }
+    }
+  },
+  {
+    "id": "knn_eval",
+    "name": "knn-eval",
+    "namespace": null,
+    "description": "Evaluate kNN search settings.\n\nEstimate the recall and cost of approximate kNN search configurations on a `dense_vector` field against a more thorough baseline.\nThe field must use the `bbq_disk` index type, and must not be inside a nested object.\n\nEach `knn_settings` entry reports the mean recall of the baseline's top `k`, not of relevance judgments, plus included and excluded query counts and cost totals.\nA query is excluded from the mean recall when the candidate finds a document scoring above the baseline's lowest top `k` score.\nA baseline returning fewer than `k` hits fails that query, because recall at `k` is undefined.\nAll configurations run against one point in time.\n\nThe default baseline uses a `visit_percentage` of 20 and a `rescore_vector.oversample` of 100.\nAn exact full-precision baseline must be requested explicitly with `allow_exact_baseline`, and is limited to 100 million vector-by-query comparisons.\n\nThe request is refused when the `search.knn_eval.enabled` cluster setting or the `index.knn_eval.enabled` index setting is `false`.",
+    "namespaceFile": "knn_eval",
+    "destructive": false,
+    "readOnly": true,
+    "availability": {
+      "stack": {
+        "since": "9.6.0",
+        "stability": "experimental",
+        "visibility": "public"
+      },
+      "serverless": {
+        "stability": "experimental",
         "visibility": "public"
       }
     }
@@ -7643,6 +7723,10 @@
       "stack": {
         "stability": "experimental",
         "visibility": "public"
+      },
+      "serverless": {
+        "stability": "experimental",
+        "visibility": "public"
       }
     }
   },
@@ -7866,6 +7950,10 @@
     "availability": {
       "stack": {
         "since": "8.5.0",
+        "stability": "stable",
+        "visibility": "public"
+      },
+      "serverless": {
         "stability": "stable",
         "visibility": "public"
       }
@@ -8994,6 +9082,10 @@
         "since": "8.12.0",
         "stability": "experimental",
         "visibility": "public"
+      },
+      "serverless": {
+        "stability": "experimental",
+        "visibility": "public"
       }
     }
   },
@@ -9547,6 +9639,10 @@
         "since": "9.1.0",
         "stability": "experimental",
         "visibility": "public"
+      },
+      "serverless": {
+        "stability": "experimental",
+        "visibility": "public"
       }
     }
   },
@@ -9563,6 +9659,10 @@
         "since": "9.1.0",
         "stability": "experimental",
         "visibility": "public"
+      },
+      "serverless": {
+        "stability": "experimental",
+        "visibility": "public"
       }
     }
   },
@@ -9577,6 +9677,10 @@
     "availability": {
       "stack": {
         "since": "9.1.0",
+        "stability": "experimental",
+        "visibility": "public"
+      },
+      "serverless": {
         "stability": "experimental",
         "visibility": "public"
       }

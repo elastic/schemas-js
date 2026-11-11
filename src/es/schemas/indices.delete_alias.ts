@@ -7,12 +7,7 @@
 import { z } from 'zod'
 
 import { Duration, Indices, Names } from './_types.js'
-
-export const IndicesDeleteAliasIndicesAliasesResponseBody = z.object({
-  acknowledged: z.boolean().describe('For a successful response, this value is always true. On failure, an exception is returned instead.'),
-  errors: z.boolean().optional()
-}).meta({ id: 'IndicesDeleteAliasIndicesAliasesResponseBody' })
-export type IndicesDeleteAliasIndicesAliasesResponseBody = z.infer<typeof IndicesDeleteAliasIndicesAliasesResponseBody>
+import { IndicesAliasesResponseBody } from './indices.js'
 
 /**
  * Delete an alias.
@@ -27,5 +22,5 @@ export const IndicesDeleteAliasRequest = z.object({
 }).meta({ id: 'IndicesDeleteAliasRequest' })
 export type IndicesDeleteAliasRequest = z.infer<typeof IndicesDeleteAliasRequest>
 
-export const IndicesDeleteAliasResponse = IndicesDeleteAliasIndicesAliasesResponseBody.meta({ id: 'IndicesDeleteAliasResponse' })
+export const IndicesDeleteAliasResponse = IndicesAliasesResponseBody.meta({ id: 'IndicesDeleteAliasResponse' })
 export type IndicesDeleteAliasResponse = z.infer<typeof IndicesDeleteAliasResponse>

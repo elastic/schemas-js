@@ -693,11 +693,11 @@
     "readOnly": false,
     "availability": {
       "stack": {
-        "stability": "experimental",
+        "stability": "tech_preview",
         "since": "9.6.0"
       },
       "serverless": {
-        "stability": "experimental",
+        "stability": "tech_preview",
         "since": "9.6.0"
       }
     }
@@ -5852,11 +5852,11 @@
     }
   },
   {
-    "id": "fleet-cloud-onboarding-deployments.delete-fleet-cloud-onboarding-deployments-id",
+    "id": "fleet-cloud-onboarding-instances.delete-fleet-cloud-onboarding-deployments-id",
     "name": "delete-fleet-cloud-onboarding-deployments-id",
-    "namespace": "fleet-cloud-onboarding-deployments",
-    "description": "Delete cloud onboarding deployment",
-    "namespaceFile": "fleet-cloud-onboarding-deployments.delete-fleet-cloud-onboarding-deployments-id",
+    "namespace": "fleet-cloud-onboarding-instances",
+    "description": "Delete cloud onboarding instance",
+    "namespaceFile": "fleet-cloud-onboarding-instances.delete-fleet-cloud-onboarding-deployments-id",
     "destructive": true,
     "readOnly": false,
     "availability": {
@@ -5871,11 +5871,11 @@
     }
   },
   {
-    "id": "fleet-cloud-onboarding-deployments.get-fleet-cloud-onboarding-deployments",
+    "id": "fleet-cloud-onboarding-instances.get-fleet-cloud-onboarding-deployments",
     "name": "get-fleet-cloud-onboarding-deployments",
-    "namespace": "fleet-cloud-onboarding-deployments",
-    "description": "Get cloud onboarding deployment instances",
-    "namespaceFile": "fleet-cloud-onboarding-deployments.get-fleet-cloud-onboarding-deployments",
+    "namespace": "fleet-cloud-onboarding-instances",
+    "description": "Get cloud onboarding instances",
+    "namespaceFile": "fleet-cloud-onboarding-instances.get-fleet-cloud-onboarding-deployments",
     "destructive": false,
     "readOnly": true,
     "availability": {
@@ -5890,11 +5890,11 @@
     }
   },
   {
-    "id": "fleet-cloud-onboarding-deployments.get-fleet-cloud-onboarding-deployments-connector-connectorid",
+    "id": "fleet-cloud-onboarding-instances.get-fleet-cloud-onboarding-deployments-connector-connectorid",
     "name": "get-fleet-cloud-onboarding-deployments-connector-connectorid",
-    "namespace": "fleet-cloud-onboarding-deployments",
-    "description": "Get cloud onboarding deployments by connector ID",
-    "namespaceFile": "fleet-cloud-onboarding-deployments.get-fleet-cloud-onboarding-deployments-connector-connectorid",
+    "namespace": "fleet-cloud-onboarding-instances",
+    "description": "Get cloud onboarding instances by connector ID",
+    "namespaceFile": "fleet-cloud-onboarding-instances.get-fleet-cloud-onboarding-deployments-connector-connectorid",
     "destructive": false,
     "readOnly": true,
     "availability": {
@@ -5909,11 +5909,11 @@
     }
   },
   {
-    "id": "fleet-cloud-onboarding-deployments.get-fleet-cloud-onboarding-deployments-id",
+    "id": "fleet-cloud-onboarding-instances.get-fleet-cloud-onboarding-deployments-id",
     "name": "get-fleet-cloud-onboarding-deployments-id",
-    "namespace": "fleet-cloud-onboarding-deployments",
-    "description": "Get cloud onboarding deployment",
-    "namespaceFile": "fleet-cloud-onboarding-deployments.get-fleet-cloud-onboarding-deployments-id",
+    "namespace": "fleet-cloud-onboarding-instances",
+    "description": "Get cloud onboarding instance",
+    "namespaceFile": "fleet-cloud-onboarding-instances.get-fleet-cloud-onboarding-deployments-id",
     "destructive": false,
     "readOnly": true,
     "availability": {
@@ -5928,11 +5928,11 @@
     }
   },
   {
-    "id": "fleet-cloud-onboarding-deployments.post-fleet-cloud-onboarding-deployments",
+    "id": "fleet-cloud-onboarding-instances.post-fleet-cloud-onboarding-deployments",
     "name": "post-fleet-cloud-onboarding-deployments",
-    "namespace": "fleet-cloud-onboarding-deployments",
-    "description": "Create cloud onboarding deployment",
-    "namespaceFile": "fleet-cloud-onboarding-deployments.post-fleet-cloud-onboarding-deployments",
+    "namespace": "fleet-cloud-onboarding-instances",
+    "description": "Create cloud onboarding instance",
+    "namespaceFile": "fleet-cloud-onboarding-instances.post-fleet-cloud-onboarding-deployments",
     "destructive": true,
     "readOnly": false,
     "availability": {
@@ -5947,11 +5947,11 @@
     }
   },
   {
-    "id": "fleet-cloud-onboarding-deployments.put-fleet-cloud-onboarding-deployments-id",
+    "id": "fleet-cloud-onboarding-instances.put-fleet-cloud-onboarding-deployments-id",
     "name": "put-fleet-cloud-onboarding-deployments-id",
-    "namespace": "fleet-cloud-onboarding-deployments",
-    "description": "Update cloud onboarding deployment",
-    "namespaceFile": "fleet-cloud-onboarding-deployments.put-fleet-cloud-onboarding-deployments-id",
+    "namespace": "fleet-cloud-onboarding-instances",
+    "description": "Update cloud onboarding instance",
+    "namespaceFile": "fleet-cloud-onboarding-instances.put-fleet-cloud-onboarding-deployments-id",
     "destructive": true,
     "readOnly": false,
     "availability": {
@@ -6049,6 +6049,25 @@
       "serverless": {
         "stability": "stable",
         "since": "9.5.0"
+      }
+    }
+  },
+  {
+    "id": "fleet-ia-c-provisioner.receive-provisioning-callback",
+    "name": "receive-provisioning-callback",
+    "namespace": "fleet-ia-c-provisioner",
+    "description": "Receive a provisioning callback",
+    "namespaceFile": "fleet-ia-c-provisioner.receive-provisioning-callback",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "stability": "experimental",
+        "since": "9.6.0"
+      },
+      "serverless": {
+        "stability": "experimental",
+        "since": "9.6.0"
       }
     }
   },
@@ -10033,6 +10052,25 @@
       },
       "serverless": {
         "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "security-entity-store.post-security-entity-store-update-api-key",
+    "name": "post-security-entity-store-update-api-key",
+    "namespace": "security-entity-store",
+    "description": "Update the API key of the Entity Store tasks",
+    "namespaceFile": "security-entity-store.post-security-entity-store-update-api-key",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "stability": "stable",
+        "since": "9.6.0"
+      },
+      "serverless": {
+        "stability": "stable",
+        "since": "9.6.0"
       }
     }
   },

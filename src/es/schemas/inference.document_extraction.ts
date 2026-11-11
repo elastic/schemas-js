@@ -7,7 +7,6 @@
 import { z } from 'zod'
 
 import { Duration, Id, Metadata } from './_types.js'
-import { InferenceTaskSettings } from './inference.js'
 
 /** The document extraction result object representing the content extracted from a single document. */
 export const InferenceDocumentExtractionResult = z.object({
@@ -29,13 +28,13 @@ export type InferenceDocumentExtractionInferenceResult = z.infer<typeof Inferenc
 export const InferenceDocumentExtractionDocumentExtractionContentFormat = z.enum(['base64', 'url']).meta({ id: 'InferenceDocumentExtractionDocumentExtractionContentFormat' })
 export type InferenceDocumentExtractionDocumentExtractionContentFormat = z.infer<typeof InferenceDocumentExtractionDocumentExtractionContentFormat>
 
-export const InferenceDocumentExtractionDocumentExtractionContentType = z.enum(['image', 'pdf']).meta({ id: 'InferenceDocumentExtractionDocumentExtractionContentType' })
+export const InferenceDocumentExtractionDocumentExtractionContentType = z.enum(['image', 'pdf', 'html']).meta({ id: 'InferenceDocumentExtractionDocumentExtractionContentType' })
 export type InferenceDocumentExtractionDocumentExtractionContentType = z.infer<typeof InferenceDocumentExtractionDocumentExtractionContentType>
 
 /** An object describing a single document to extract the content from. */
 export const InferenceDocumentExtractionDocumentExtractionContentObjectItem = z.object({
   type: InferenceDocumentExtractionDocumentExtractionContentType.describe('The type of the document. Not all services and models support all types.'),
-  format: InferenceDocumentExtractionDocumentExtractionContentFormat.describe('The format of the document. If not specified, this defaults to `base64`. Not all services and models support all formats.').optional(),
+  format: InferenceDocumentExtractionDocumentExtractionContentFormat.describe('The format of the document. If not specified, this defaults to `base64` for `pdf` and `image`, and `url` for `html`. The `html` type supports `url` only. Not all services and models support all formats.').optional(),
   value: z.string().describe('The value of the document. For the `base64` format, this must be a base64-encoded data URI, that is, "data:content/type;base64,...". For the `url` format, this must be a URL that points to the document, that is, "https://example.com/document.pdf".')
 }).meta({ id: 'InferenceDocumentExtractionDocumentExtractionContentObjectItem' })
 export type InferenceDocumentExtractionDocumentExtractionContentObjectItem = z.infer<typeof InferenceDocumentExtractionDocumentExtractionContentObjectItem>
@@ -53,6 +52,20 @@ export type InferenceDocumentExtractionDocumentExtractionContentObject = z.infer
 export const InferenceDocumentExtractionDocumentExtractionInput = z.union([InferenceDocumentExtractionDocumentExtractionContentObject, z.array(InferenceDocumentExtractionDocumentExtractionContentObject)]).meta({ id: 'InferenceDocumentExtractionDocumentExtractionInput' })
 export type InferenceDocumentExtractionDocumentExtractionInput = z.infer<typeof InferenceDocumentExtractionDocumentExtractionInput>
 
+export const InferenceDocumentExtractionDocumentExtractionOutputFormat = z.enum(['markdown']).meta({ id: 'InferenceDocumentExtractionDocumentExtractionOutputFormat' })
+export type InferenceDocumentExtractionDocumentExtractionOutputFormat = z.infer<typeof InferenceDocumentExtractionDocumentExtractionOutputFormat>
+
+/**
+ * Task settings for the `document_extraction` task type of the `elastic` service.
+ * They can be set when creating the inference endpoint and overridden per request.
+ * Request values take precedence, and `parameters` are merged per key.
+ */
+export const InferenceDocumentExtractionDocumentExtractionTaskSettings = z.object({
+  output_format: InferenceDocumentExtractionDocumentExtractionOutputFormat.describe('The output format of the extracted content. Only `markdown` is supported.').optional(),
+  parameters: z.record(z.string(), z.any()).describe('A free-form object of extraction options that is forwarded to the Elastic Inference Service as-is. The accepted parameters are defined by the Elastic Inference Service.').optional()
+}).meta({ id: 'InferenceDocumentExtractionDocumentExtractionTaskSettings' })
+export type InferenceDocumentExtractionDocumentExtractionTaskSettings = z.infer<typeof InferenceDocumentExtractionDocumentExtractionTaskSettings>
+
 /**
  * Perform document extraction inference on the service.
  *
@@ -62,7 +75,7 @@ export const InferenceDocumentExtractionRequest = z.object({
   inference_id: z.lazy(() => Id).describe('The unique identifier for the inference endpoint.').meta({ found_in: 'path' }),
   timeout: z.lazy(() => Duration).describe('The amount of time to wait for the inference request to complete.').optional().meta({ found_in: 'query' }),
   input: InferenceDocumentExtractionDocumentExtractionInput.describe('The documents to extract the content from. Either a `content` object or an array of `content` objects. `content` object example: ``` "input": {   "content": {     "type": "pdf",     "format": "base64",     "value": "data:application/pdf;base64,..."   } } ``` `content` object array example: ``` "input": [   {     "content": {       "type": "pdf",       "format": "base64",       "value": "data:application/pdf;base64,..."     }   },   {     "content": {       "type": "image",       "format": "url",       "value": "https://example.com/scanned-page.png"     }   } ] ```').meta({ found_in: 'body' }),
-  task_settings: InferenceTaskSettings.describe('Task settings for the individual inference request. These settings are specific to the task type you specified and override the task settings specified when initializing the service.').optional().meta({ found_in: 'body' })
+  task_settings: InferenceDocumentExtractionDocumentExtractionTaskSettings.describe('Task settings for the individual inference request. These settings are specific to the task type you specified and override the task settings specified when initializing the service.').optional().meta({ found_in: 'body' })
 }).meta({ id: 'InferenceDocumentExtractionRequest' })
 export type InferenceDocumentExtractionRequest = z.infer<typeof InferenceDocumentExtractionRequest>
 

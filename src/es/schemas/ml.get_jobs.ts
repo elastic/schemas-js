@@ -15,7 +15,7 @@ export type MlJobBlockedReason = z.infer<typeof MlJobBlockedReason>
 
 export const MlJobBlocked = z.object({
   reason: MlJobBlockedReason,
-  task_id: TaskId.optional()
+  task_id: z.lazy(() => TaskId).optional()
 }).meta({ id: 'MlJobBlocked' })
 export type MlJobBlocked = z.infer<typeof MlJobBlocked>
 

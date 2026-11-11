@@ -16,6 +16,7 @@ import { Kibana_HTTP_APIs_action_id_response, Kibana_HTTP_APIs_action_message_re
 export const PostFleetAgentsBulkRestartRequest = z.object({
   agents: z.union([z.array(z.string()), z.string()]),
   batchSize: z.number().optional(),
+  force: z.boolean().optional(),
   includeInactive: z.boolean().optional()
 }).meta({ id: 'PostFleetAgentsBulkRestartRequest' })
 export type PostFleetAgentsBulkRestartRequest = z.infer<typeof PostFleetAgentsBulkRestartRequest>

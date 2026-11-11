@@ -319,6 +319,19 @@ export const XpackUsageIlm = z.object({
 }).meta({ id: 'XpackUsageIlm' })
 export type XpackUsageIlm = z.infer<typeof XpackUsageIlm>
 
+/** Usage of the indices with a given `index.mode`. */
+export const XpackUsageIndexModeUsage = z.object({
+  ...XpackUsageBase.shape,
+  indices_count: z.lazy(() => long).describe('The number of indices in this index mode.'),
+  indices_with_synthetic_source: z.lazy(() => long).describe('The number of indices in this index mode that use synthetic `_source`.'),
+  num_docs: z.lazy(() => long).describe('The number of documents in the indices in this index mode.'),
+  size_in_bytes: z.lazy(() => long).describe('The size of the indices in this index mode, in bytes.'),
+  data_streams_count: z.lazy(() => long).describe('The number of data streams in this index mode.'),
+  data_streams_managed_by_ilm: z.lazy(() => long).describe('The number of data streams in this index mode that are managed by index lifecycle management.'),
+  data_streams_managed_by_dlm: z.lazy(() => long).describe('The number of data streams in this index mode that are managed by data stream lifecycle.')
+}).meta({ id: 'XpackUsageIndexModeUsage' })
+export type XpackUsageIndexModeUsage = z.infer<typeof XpackUsageIndexModeUsage>
+
 export const XpackUsageIpFilter = z.object({
   http: z.boolean(),
   transport: z.boolean()
@@ -638,6 +651,14 @@ export const XpackUsageVectorDbDocument = z.object({
   num_docs: z.lazy(() => long).describe('The total number of documents held across all `vectordb_document` indices.')
 }).meta({ id: 'XpackUsageVectorDbDocument' })
 export type XpackUsageVectorDbDocument = z.infer<typeof XpackUsageVectorDbDocument>
+
+/** Usage statistics for indices using the `vectordb_columnar` index mode. */
+export const XpackUsageVectorDbColumnar = z.object({
+  ...XpackUsageBase.shape,
+  indices_count: z.lazy(() => integer).describe('The number of indices using the `vectordb_columnar` index mode.'),
+  num_docs: z.lazy(() => long).describe('The total number of documents held across all `vectordb_columnar` indices.')
+}).meta({ id: 'XpackUsageVectorDbColumnar' })
+export type XpackUsageVectorDbColumnar = z.infer<typeof XpackUsageVectorDbColumnar>
 
 export const XpackUsageResponse = z.object({
   aggregate_metric: XpackUsageBase,

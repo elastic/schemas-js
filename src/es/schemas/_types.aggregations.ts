@@ -1237,22 +1237,17 @@ export const AggregationsTTestAggregation = z.object({
 export type AggregationsTTestAggregation = z.infer<typeof AggregationsTTestAggregation>
 
 export const AggregationsTopMetricsValue = z.object({
-  field: z.lazy(() => Field).describe('A field to return as a metric.')
+  field: z.lazy(() => Field).describe('A field to return as a metric.'),
+  missing: z.lazy(() => AggregationsMissing).describe('The value to treat a document as having when it has no value for the field. By default, a document that is missing any of the metrics or the sort value is ignored.').optional()
 }).meta({ id: 'AggregationsTopMetricsValue' })
 export type AggregationsTopMetricsValue = z.infer<typeof AggregationsTopMetricsValue>
 
 export interface AggregationsTopMetricsAggregationShape {
-  field?: Field | undefined
-  missing?: AggregationsMissing | undefined
-  script?: ScriptShape | ScriptSourceShape | undefined
   metrics?: AggregationsTopMetricsValue | AggregationsTopMetricsValue[] | undefined
   size?: integer | undefined
   sort?: SortShape | undefined
 }
 export const AggregationsTopMetricsAggregation = z.object({
-  field: z.lazy(() => Field).describe('The field on which to run the aggregation.').optional(),
-  missing: z.lazy(() => AggregationsMissing).describe('The value to apply to documents that do not have a value. By default, documents without a value are ignored.').optional(),
-  get script () { return z.union([Script, ScriptSource]).optional() },
   metrics: z.union([AggregationsTopMetricsValue, z.array(AggregationsTopMetricsValue)]).describe('The fields of the top document to return.').optional(),
   size: z.lazy(() => integer).describe('The number of top documents from which to return metrics.').optional(),
   get sort () { return Sort.describe('The sort order of the documents.').optional() }

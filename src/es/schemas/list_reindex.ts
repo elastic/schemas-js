@@ -23,7 +23,7 @@ export type ListReindexRequest = z.infer<typeof ListReindexRequest>
 
 /** Information about a single parent reindex task, as returned by the reindex management APIs. */
 export const ReindexTaskInfo = z.object({
-  id: TaskId.describe('The ID of the reindex task. The ID is assigned when the task was first created and remains the same across graceful shutdown relocations.'),
+  id: z.lazy(() => TaskId).describe('The ID of the reindex task. The ID is assigned when the task was first created and remains the same across graceful shutdown relocations.'),
   description: z.string().describe('A sanitized description of the reindex operation (source and destination indices, and optionally remote host info).').optional(),
   start_time_in_millis: z.lazy(() => EpochTime).describe('The time at which the reindex task started, in milliseconds since the Unix epoch. Remains the same across graceful shutdown relocations.'),
   start_time: z.string().describe('The time at which the reindex task started, as an ISO-8601 formatted string. Remains the same across graceful shutdown relocations. Only present when the request includes the `?human=true` query parameter.').optional(),

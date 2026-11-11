@@ -52,7 +52,7 @@ export type ReindexRethrottleParentReindexTask = z.infer<typeof ReindexRethrottl
 
 export const ReindexRethrottleReindexNode = z.object({
   ...SpecUtilsBaseNode.shape,
-  tasks: z.record(TaskId, ReindexRethrottleReindexTask)
+  tasks: z.record(z.lazy(() => TaskId), ReindexRethrottleReindexTask)
 }).meta({ id: 'ReindexRethrottleReindexNode' })
 export type ReindexRethrottleReindexNode = z.infer<typeof ReindexRethrottleReindexNode>
 

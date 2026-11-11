@@ -21,11 +21,13 @@ export const GetFleetCloudOnboardingDeploymentsResponse = z.object({
     authMethod: z.enum(['identity_federation', 'static_keys', 'temporary_keys', 'shared_credentials', 'assume_role']).optional(),
     connectorId: z.string().optional(),
     dataFormat: z.enum(['ecs', 'otel']).optional(),
+    dedicatedNamespaceTemplates: z.boolean().optional(),
     deploymentId: z.string().optional(),
     deploymentName: z.string().optional(),
     description: z.string().optional(),
     ecfStacks: z.array(z.object({
       family: z.enum(['unified', 'otel', 'crowdstrike']),
+      namespace: z.string().optional(),
       serviceConfigs: z.array(z.object({
         bucketArns: z.array(z.string()),
         logGroupArns: z.array(z.string()),
@@ -55,6 +57,7 @@ export const GetFleetCloudOnboardingDeploymentsResponse = z.object({
       version: z.string()
     })),
     policyIdsByInstance: z.record(z.string(), z.string()).optional(),
+    policySettings: z.record(z.string(), z.string().nullable()).optional(),
     provider: z.enum(['aws', 'azure', 'gcp']),
     serviceNames: z.record(z.string(), z.string()).optional(),
     services: z.array(z.string()),

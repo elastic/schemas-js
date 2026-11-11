@@ -29,7 +29,8 @@ import { AcknowledgedResponseBase, Duration, Id } from './_types.js'
 export const TransformStartTransformRequest = z.object({
   transform_id: z.lazy(() => Id).describe('Identifier for the transform.').meta({ found_in: 'path' }),
   timeout: z.lazy(() => Duration).describe('Period to wait for a response. If no response is received before the timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' }),
-  from: z.string().describe('Restricts the set of transformed entities to those changed after this time. Relative times like now-30d are supported. Only applicable for continuous transforms.').optional().meta({ found_in: 'query' })
+  from: z.string().describe('Restricts the set of transformed entities to those changed after this time. Relative times like now-30d are supported. Only applicable for continuous transforms.').optional().meta({ found_in: 'query' }),
+  initial_delay: z.lazy(() => Duration).describe('A one-time, reduced sync delay that applies until the transform has processed its first document. It then reverts to the `sync.time.delay` of the transform. Only applicable for continuous transforms, and it can\'t be greater than `sync.time.delay`.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'TransformStartTransformRequest' })
 export type TransformStartTransformRequest = z.infer<typeof TransformStartTransformRequest>
 

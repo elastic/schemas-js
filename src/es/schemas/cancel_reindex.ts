@@ -43,7 +43,7 @@ import { Duration, DurationValue, EpochTime, ErrorCause, ReindexStatus, ReindexT
  * ```
  */
 export const CancelReindexRequest = z.object({
-  task_id: TaskId.describe('The ID of the reindex task to cancel.').meta({ found_in: 'path' }),
+  task_id: z.lazy(() => TaskId).describe('The ID of the reindex task to cancel.').meta({ found_in: 'path' }),
   wait_for_completion: z.boolean().describe('If `true` (the default), the request blocks until the cancellation is complete and returns the final task state. If `false`, the request returns immediately with `acknowledged: true`.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'CancelReindexRequest' })
 export type CancelReindexRequest = z.infer<typeof CancelReindexRequest>
@@ -51,7 +51,7 @@ export type CancelReindexRequest = z.infer<typeof CancelReindexRequest>
 export const CancelReindexResponse = z.object({
   acknowledged: z.boolean().describe('Present and `true` when `wait_for_completion=false`.').optional(),
   completed: z.boolean().describe('Whether the reindex task has completed. Present when `wait_for_completion=true`.').optional(),
-  id: TaskId.describe('The ID of the reindex task. The value is the ID assigned when the task was first created and remains stable across node-shutdown relocations. Present when `wait_for_completion=true`.').optional(),
+  id: z.lazy(() => TaskId).describe('The ID of the reindex task. The value is the ID assigned when the task was first created and remains stable across node-shutdown relocations. Present when `wait_for_completion=true`.').optional(),
   description: z.string().describe('A sanitized description of the reindex operation.').optional(),
   start_time_in_millis: z.lazy(() => EpochTime).describe('The time at which the reindex task started, in milliseconds since the Unix epoch.').optional(),
   start_time: z.string().describe('The time at which the reindex task started, as an ISO 8601 formatted string.').optional(),

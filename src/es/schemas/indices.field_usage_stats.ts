@@ -28,6 +28,7 @@ export const IndicesFieldUsageStatsFieldSummary = z.object({
   norms: z.lazy(() => uint),
   term_vectors: z.lazy(() => uint),
   knn_vectors: z.lazy(() => uint),
+  doc_values_skipper: z.lazy(() => uint),
   inverted_index: IndicesFieldUsageStatsInvertedIndex
 }).meta({ id: 'IndicesFieldUsageStatsFieldSummary' })
 export type IndicesFieldUsageStatsFieldSummary = z.infer<typeof IndicesFieldUsageStatsFieldSummary>

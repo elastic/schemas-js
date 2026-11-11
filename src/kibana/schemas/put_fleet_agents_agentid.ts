@@ -74,6 +74,11 @@ export const PutFleetAgentsAgentidResponse = z.object({
       type: z.string().optional()
     })).optional(),
     packages: z.array(z.string()),
+    pending_restart: z.object({
+      action_id: z.string(),
+      created_at: z.string(),
+      expiration: z.string().optional()
+    }).optional(),
     pipeline_config: z.string().optional(),
     policy_base_id: z.string().optional(),
     policy_id: z.string().optional(),
@@ -85,6 +90,7 @@ export const PutFleetAgentsAgentidResponse = z.object({
     tags: z.array(z.string()).optional(),
     type: z.enum(['PERMANENT', 'EPHEMERAL', 'TEMPORARY', 'OPAMP']),
     unenrolled_at: z.string().optional(),
+    unenrolled_reason: z.string().optional(),
     unenrollment_started_at: z.string().optional(),
     unhealthy_reason: z.array(z.enum(['input', 'output', 'other'])).nullable().optional(),
     upgrade: z.object({

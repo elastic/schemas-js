@@ -7,15 +7,8 @@
 import { z } from 'zod'
 
 import { Duration, Id } from './_types.js'
-import { InferenceDenseEmbeddingByteResult, InferenceDenseEmbeddingResult, InferenceEmbeddingContentFormat, InferenceEmbeddingContentType, InferenceTaskSettings } from './inference.js'
-
-/** An object containing the input data for a single item for the model to embed. */
-export const InferenceEmbeddingContentObjectItem = z.object({
-  type: z.lazy(() => InferenceEmbeddingContentType).describe('The type of input to embed. Not all models support all input types. The `audio`, `video`, and `pdf` types are available in Elasticsearch 9.5.0 and later.'),
-  format: z.lazy(() => InferenceEmbeddingContentFormat).describe('The format of the input. For the `text` type this must be `text`. For all other types, this must be `base64` or `url`. If not specified, this will default to `text` for the `text` type and `base64` for all other types. The `url` format is available in Elasticsearch 9.6.0 and later. Not all services and models support all formats.').optional(),
-  value: z.string().describe('The value of the input to embed. For the `base64` format, this must be a base64-encoded data URI, i.e. "data:content/type;base64,...". For the `url` format, this must be a URL that points to the content, i.e. "https://example.com/image.jpg".')
-}).meta({ id: 'InferenceEmbeddingContentObjectItem' })
-export type InferenceEmbeddingContentObjectItem = z.infer<typeof InferenceEmbeddingContentObjectItem>
+import { InferenceDenseEmbeddingByteResult, InferenceDenseEmbeddingResult, InferenceTaskSettings } from './inference.js'
+import { InferenceEmbeddingContentObjectItem } from './inference.decision.js'
 
 /**
  * Allows specifying one or multiple items for the `embedding` task, which should result in a single embedding vector.

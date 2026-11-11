@@ -2447,6 +2447,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/post_security_entity_store_uninstall.ts') as Record<string, unknown>
       return mod['post_security_entity_store_uninstallDefinitions'] as KbApiDefinition[]
     }
+    case 'post_security_entity_store_update_api_key': {
+      const mod = await import('./apis/post_security_entity_store_update_api_key.ts') as Record<string, unknown>
+      return mod['post_security_entity_store_update_api_keyDefinitions'] as KbApiDefinition[]
+    }
     case 'post_security_role_query': {
       const mod = await import('./apis/post_security_role_query.ts') as Record<string, unknown>
       return mod['post_security_role_queryDefinitions'] as KbApiDefinition[]
@@ -2894,6 +2898,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'read_tags': {
       const mod = await import('./apis/read_tags.ts') as Record<string, unknown>
       return mod['read_tagsDefinitions'] as KbApiDefinition[]
+    }
+    case 'receive_provisioning_callback': {
+      const mod = await import('./apis/receive_provisioning_callback.ts') as Record<string, unknown>
+      return mod['receive_provisioning_callbackDefinitions'] as KbApiDefinition[]
     }
     case 'replace_case_attachment_default_space': {
       const mod = await import('./apis/replace_case_attachment_default_space.ts') as Record<string, unknown>

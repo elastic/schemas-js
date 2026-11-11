@@ -47,9 +47,9 @@ export type InternalGetDesiredNodesResponse = z.infer<typeof InternalGetDesiredN
 
 /** Prevalidates node removal from the cluster. */
 export const InternalPrevalidateNodeRemovalRequest = z.object({
-  names: z.array(z.string()).describe('A comma-separated list of node names to prevalidate').optional().meta({ found_in: 'query' }),
-  ids: z.array(z.string()).describe('A comma-separated list of node IDs to prevalidate').optional().meta({ found_in: 'query' }),
-  external_ids: z.array(z.string()).describe('A comma-separated list of node external IDs to prevalidate').optional().meta({ found_in: 'query' }),
+  names: z.union([z.array(z.string()), z.string()]).describe('A comma-separated list of node names to prevalidate. Defaults to an empty array.').optional().meta({ found_in: 'query' }),
+  ids: z.union([z.array(z.string()), z.string()]).describe('A comma-separated list of node IDs to prevalidate Defaults to an empty array.').optional().meta({ found_in: 'query' }),
+  external_ids: z.union([z.array(z.string()), z.string()]).describe('A comma-separated list of node external IDs to prevalidate Defaults to an empty array.').optional().meta({ found_in: 'query' }),
   master_timeout: z.lazy(() => Duration).describe('Period to wait for a connection to the master node.').optional().meta({ found_in: 'query' }),
   timeout: z.lazy(() => Duration).describe('Period to wait for a response. If no response is received before the timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'InternalPrevalidateNodeRemovalRequest' })

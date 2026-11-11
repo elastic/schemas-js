@@ -8,7 +8,7 @@ import { z } from 'zod'
 
 import { DateTime, Duration, ExpandWildcards, Field, FieldValue, Fields, GeoLocation, Id, IndexName, Indices, IndicesResponseBase, Metadata, Name, PropertyName, RelationName, Script, ScriptSource, TokenPruningConfig, byte, double, float, integer, long, ulong } from './_types.js'
 import type { ScriptShape, ScriptSourceShape } from './_types.js'
-import { MappingRuntimeFields } from './_types.mapping.js'
+import { MappingDenseVectorSimilarity, MappingRuntimeFields } from './_types.mapping.js'
 import { MappingTimeSeriesMetricType } from './field_caps.js'
 
 export const MappingRuntimeFieldType = z.enum(['boolean', 'composite', 'date', 'double', 'geo_point', 'geo_shape', 'ip', 'keyword', 'long', 'lookup']).meta({ id: 'MappingRuntimeFieldType' })
@@ -86,6 +86,13 @@ export const IndicesNumericFielddata = z.object({
 }).meta({ id: 'IndicesNumericFielddata' })
 export type IndicesNumericFielddata = z.infer<typeof IndicesNumericFielddata>
 
+export const IndicesFielddataFrequencyFilter = z.object({
+  max: z.lazy(() => double),
+  min: z.lazy(() => double),
+  min_segment_size: z.lazy(() => integer)
+}).meta({ id: 'IndicesFielddataFrequencyFilter' })
+export type IndicesFielddataFrequencyFilter = z.infer<typeof IndicesFielddataFrequencyFilter>
+
 export const MappingIndexOptions = z.enum(['docs', 'freqs', 'positions', 'offsets']).meta({ id: 'MappingIndexOptions' })
 export type MappingIndexOptions = z.infer<typeof MappingIndexOptions>
 
@@ -97,6 +104,9 @@ export type MappingTextIndexPrefixes = z.infer<typeof MappingTextIndexPrefixes>
 
 export const MappingTermVectorOption = z.enum(['no', 'yes', 'with_offsets', 'with_positions', 'with_positions_offsets', 'with_positions_offsets_payloads', 'with_positions_payloads']).meta({ id: 'MappingTermVectorOption' })
 export type MappingTermVectorOption = z.infer<typeof MappingTermVectorOption>
+
+export const MappingSubobjects = z.union([z.boolean(), z.enum(['true', 'false', 'auto'])]).meta({ id: 'MappingSubobjects' })
+export type MappingSubobjects = z.infer<typeof MappingSubobjects>
 
 export interface MappingMatchOnlyTextPropertyShape {
   type: 'match_only_text'
@@ -119,13 +129,6 @@ export const MappingMatchOnlyTextProperty = z.object({
 }).meta({ id: 'MappingMatchOnlyTextProperty' })
 export type MappingMatchOnlyTextProperty = z.infer<typeof MappingMatchOnlyTextProperty>
 
-export const IndicesFielddataFrequencyFilter = z.object({
-  max: z.lazy(() => double),
-  min: z.lazy(() => double),
-  min_segment_size: z.lazy(() => integer)
-}).meta({ id: 'IndicesFielddataFrequencyFilter' })
-export type IndicesFielddataFrequencyFilter = z.infer<typeof IndicesFielddataFrequencyFilter>
-
 export const MappingDenseVectorElementType = z.enum(['bit', 'byte', 'float', 'bfloat16']).meta({ id: 'MappingDenseVectorElementType' })
 export type MappingDenseVectorElementType = z.infer<typeof MappingDenseVectorElementType>
 
@@ -146,14 +149,8 @@ export const MappingDenseVectorIndexOptions = z.object({
 }).meta({ id: 'MappingDenseVectorIndexOptions' })
 export type MappingDenseVectorIndexOptions = z.infer<typeof MappingDenseVectorIndexOptions>
 
-export const MappingDenseVectorSimilarity = z.enum(['cosine', 'dot_product', 'l2_norm', 'max_inner_product']).meta({ id: 'MappingDenseVectorSimilarity' })
-export type MappingDenseVectorSimilarity = z.infer<typeof MappingDenseVectorSimilarity>
-
 export const MappingPreserveLeafArrays = z.enum(['lossy', 'exact']).meta({ id: 'MappingPreserveLeafArrays' })
 export type MappingPreserveLeafArrays = z.infer<typeof MappingPreserveLeafArrays>
-
-export const MappingSubobjects = z.union([z.boolean(), z.enum(['true', 'false', 'auto'])]).meta({ id: 'MappingSubobjects' })
-export type MappingSubobjects = z.infer<typeof MappingSubobjects>
 
 export const MappingRankVectorElementType = z.enum(['byte', 'float', 'bit']).meta({ id: 'MappingRankVectorElementType' })
 export type MappingRankVectorElementType = z.infer<typeof MappingRankVectorElementType>
@@ -597,7 +594,7 @@ export const MappingDenseVectorProperty = z.object({
   element_type: MappingDenseVectorElementType.describe('The data type used to encode vectors. The supported data types are `float` (default), `byte`, and `bit`.').optional(),
   index: z.boolean().describe('If `true`, you can search this field using the kNN search API.').optional(),
   index_options: MappingDenseVectorIndexOptions.describe('An optional section that configures the kNN indexing algorithm. The HNSW algorithm has two internal parameters that influence how the data structure is built. These can be adjusted to improve the accuracy of results, at the expense of slower indexing speed. This parameter can only be specified when `index` is `true`.').optional(),
-  similarity: MappingDenseVectorSimilarity.describe('The vector similarity metric to use in kNN search. Documents are ranked by their vector field\'s similarity to the query vector. The `_score` of each document will be derived from the similarity, in a way that ensures scores are positive and that a larger score corresponds to a higher ranking. Defaults to `l2_norm` when `element_type` is `bit` otherwise defaults to `cosine`. `bit` vectors only support `l2_norm` as their similarity metric. This parameter can only be specified when `index` is `true`.').optional()
+  similarity: z.lazy(() => MappingDenseVectorSimilarity).describe('The vector similarity metric to use in kNN search. Documents are ranked by their vector field\'s similarity to the query vector. The `_score` of each document will be derived from the similarity, in a way that ensures scores are positive and that a larger score corresponds to a higher ranking. Defaults to `l2_norm` when `element_type` is `bit` otherwise defaults to `cosine`. `bit` vectors only support `l2_norm` as their similarity metric. This parameter can only be specified when `index` is `true`.').optional()
 }).meta({ id: 'MappingDenseVectorProperty' })
 export type MappingDenseVectorProperty = z.infer<typeof MappingDenseVectorProperty>
 
@@ -696,8 +693,11 @@ export interface MappingDynamicPropertyShape {
   on_script_error?: MappingOnScriptError | undefined
   ignore_malformed?: boolean | undefined
   time_series_metric?: MappingTimeSeriesMetricType | undefined
+  time_series_dimension?: boolean | undefined
   analyzer?: string | undefined
   eager_global_ordinals?: boolean | undefined
+  fielddata?: boolean | undefined
+  fielddata_frequency_filter?: IndicesFielddataFrequencyFilter | undefined
   index?: boolean | undefined
   index_options?: MappingIndexOptions | undefined
   index_phrases?: boolean | undefined
@@ -706,10 +706,12 @@ export interface MappingDynamicPropertyShape {
   position_increment_gap?: integer | undefined
   search_analyzer?: string | undefined
   search_quote_analyzer?: string | undefined
+  similarity?: string | null | undefined
   term_vector?: MappingTermVectorOption | undefined
   format?: string | undefined
   precision_step?: integer | undefined
   locale?: string | undefined
+  subobjects?: MappingSubobjects | undefined
 }
 export const MappingDynamicProperty = z.object({
   meta: z.record(z.string(), z.string()).describe('Metadata about the field.').optional(),
@@ -730,8 +732,11 @@ export const MappingDynamicProperty = z.object({
   on_script_error: z.lazy(() => MappingOnScriptError).optional(),
   ignore_malformed: z.boolean().optional(),
   time_series_metric: z.lazy(() => MappingTimeSeriesMetricType).optional(),
+  time_series_dimension: z.boolean().optional(),
   analyzer: z.string().optional(),
   eager_global_ordinals: z.boolean().optional(),
+  fielddata: z.boolean().optional(),
+  fielddata_frequency_filter: IndicesFielddataFrequencyFilter.optional(),
   index: z.boolean().optional(),
   index_options: MappingIndexOptions.optional(),
   index_phrases: z.boolean().optional(),
@@ -740,10 +745,12 @@ export const MappingDynamicProperty = z.object({
   position_increment_gap: z.lazy(() => integer).optional(),
   search_analyzer: z.string().optional(),
   search_quote_analyzer: z.string().optional(),
+  similarity: z.union([z.string(), z.null()]).optional(),
   term_vector: MappingTermVectorOption.optional(),
   format: z.string().optional(),
   precision_step: z.lazy(() => integer).optional(),
-  locale: z.string().optional()
+  locale: z.string().optional(),
+  subobjects: z.lazy(() => MappingSubobjects).optional()
 }).meta({ id: 'MappingDynamicProperty' })
 export type MappingDynamicProperty = z.infer<typeof MappingDynamicProperty>
 

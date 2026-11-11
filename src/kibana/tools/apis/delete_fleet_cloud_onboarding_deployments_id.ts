@@ -10,7 +10,7 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../../kibana/json/fleet-cloud-onboarding-deployments.delete-fleet-cloud-onboarding-deployments-id.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../../kibana/json/fleet-cloud-onboarding-instances.delete-fleet-cloud-onboarding-deployments-id.request.json' with { type: 'json' }
 import type { KbApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
@@ -18,8 +18,8 @@ const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 export const delete_fleet_cloud_onboarding_deployments_idDefinitions: KbApiDefinition[] = [
   {
     name: 'delete-fleet-cloud-onboarding-deployments-id',
-    namespace: 'fleet-cloud-onboarding-deployments',
-    description: 'Delete cloud onboarding deployment',
+    namespace: 'fleet-cloud-onboarding-instances',
+    description: 'Delete cloud onboarding instance',
     method: 'DELETE',
     path: '/api/fleet/cloud_onboarding_deployments/{id}',
     destructive: true,

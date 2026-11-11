@@ -13,6 +13,11 @@
 import { z } from 'zod'
 import { Kibana_HTTP_APIs_SLOArtifacts, Kibana_HTTP_APIs_SLOBudgetingMethod, Kibana_HTTP_APIs_SLOGroupBy, Kibana_HTTP_APIs_SLOIndicator, Kibana_HTTP_APIs_SLOObjective, Kibana_HTTP_APIs_SLOTimeWindow } from './schemas/kibana.js'
 
+export const Kibana_HTTP_APIs_SLOCreateResponse = z.object({
+  id: z.string()
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_SLOCreateResponse' })
+export type Kibana_HTTP_APIs_SLOCreateResponse = z.infer<typeof Kibana_HTTP_APIs_SLOCreateResponse>
+
 export const CreateSloOpRequest = z.object({
   artifacts: Kibana_HTTP_APIs_SLOArtifacts.optional(),
   budgetingMethod: Kibana_HTTP_APIs_SLOBudgetingMethod,
@@ -36,12 +41,9 @@ export const CreateSloOpRequest = z.object({
 }).meta({ id: 'CreateSloOpRequest' })
 export type CreateSloOpRequest = z.infer<typeof CreateSloOpRequest>
 
-export const CreateSloOpResponse = z.object({
-  id: z.string()
-}).meta({ id: 'CreateSloOpResponse' })
-export type CreateSloOpResponse = z.infer<typeof CreateSloOpResponse>
-
 export { Kibana_HTTP_APIs_SLOTimeWindow } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOTimeWindowCalendarAligned } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOTimeWindowRolling } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_SLOObjective } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_SLOIndicator } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_SLOIndicatorPropertiesHistogram } from './schemas/kibana.js'

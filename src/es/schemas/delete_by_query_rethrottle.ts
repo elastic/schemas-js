@@ -16,7 +16,7 @@ import { TasksTaskListResponseBase } from './tasks.js'
  * Rethrottling that speeds up the query takes effect immediately but rethrotting that slows down the query takes effect after completing the current batch to prevent scroll timeouts.
  */
 export const DeleteByQueryRethrottleRequest = z.object({
-  task_id: TaskId.describe('The ID for the task.').meta({ found_in: 'path' }),
+  task_id: z.lazy(() => TaskId).describe('The ID for the task.').meta({ found_in: 'path' }),
   requests_per_second: z.lazy(() => float).describe('The maximum number of documents to delete per second, across the entire delete-by-query operation (including slices). It can be either `-1` to turn off throttling or any decimal number like `1.7` or `12` to throttle to that level.').meta({ found_in: 'query' })
 }).meta({ id: 'DeleteByQueryRethrottleRequest' })
 export type DeleteByQueryRethrottleRequest = z.infer<typeof DeleteByQueryRethrottleRequest>

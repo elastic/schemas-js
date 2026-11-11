@@ -191,6 +191,16 @@ export const IndicesQueries = z.object({
 }).meta({ id: 'IndicesQueries' })
 export type IndicesQueries = z.infer<typeof IndicesQueries>
 
+export const IndicesCacheRequests = z.object({
+  enable: z.lazy(() => SpecUtilsStringified).describe('Whether the shard request cache is enabled for the index. This setting is dynamic and can be updated on an existing index.').optional()
+}).meta({ id: 'IndicesCacheRequests' })
+export type IndicesCacheRequests = z.infer<typeof IndicesCacheRequests>
+
+export const IndicesRequests = z.object({
+  cache: IndicesCacheRequests.optional()
+}).meta({ id: 'IndicesRequests' })
+export type IndicesRequests = z.infer<typeof IndicesRequests>
+
 export const IndicesSettingsSimilarityBm25 = z.object({
   type: z.literal('BM25'),
   b: z.lazy(() => double).optional(),
@@ -328,7 +338,7 @@ export const IndicesStorageType = z.union([z.enum(['fs', 'niofs', 'mmapfs', 'hyb
 export type IndicesStorageType = z.infer<typeof IndicesStorageType>
 
 export const IndicesStorage = z.object({
-  type: IndicesStorageType,
+  type: IndicesStorageType.optional(),
   allow_mmap: z.boolean().describe('You can restrict the use of the mmapfs and the related hybridfs store type via the setting node.store.allow_mmap. This is a boolean setting indicating whether or not memory-mapping is allowed. The default is to allow it. This setting is useful, for example, if you are in an environment where you can not control the ability to create a lot of memory maps so you need disable the ability to use memory-mapping.').optional(),
   stats_refresh_interval: z.lazy(() => Duration).describe('How often store statistics are refreshed').optional()
 }).meta({ id: 'IndicesStorage' })
@@ -350,7 +360,7 @@ export interface IndicesIndexSettingsShape {
   merge?: IndicesMerge | undefined
   search?: IndicesSettingsSearch | undefined
   refresh_interval?: Duration | undefined
-  max_result_window?: integer | undefined
+  max_result_window?: SpecUtilsStringified | undefined
   max_inner_result_window?: integer | undefined
   max_rescore_window?: integer | undefined
   max_docvalue_fields_search?: integer | undefined
@@ -385,6 +395,7 @@ export interface IndicesIndexSettingsShape {
   settings?: IndicesIndexSettingsShape | undefined
   time_series?: IndicesIndexSettingsTimeSeries | undefined
   queries?: IndicesQueries | undefined
+  requests?: IndicesRequests | undefined
   similarity?: Record<string, IndicesSettingsSimilarity> | undefined
   mapping?: IndicesMappingLimitSettings | undefined
   'indexing.slowlog'?: IndicesIndexingSlowlogSettings | undefined
@@ -407,7 +418,7 @@ export const IndicesIndexSettings = z.looseObject({
   merge: IndicesMerge.optional(),
   search: IndicesSettingsSearch.optional(),
   refresh_interval: z.lazy(() => Duration).optional(),
-  max_result_window: z.lazy(() => integer).optional(),
+  max_result_window: z.lazy(() => SpecUtilsStringified).optional(),
   max_inner_result_window: z.lazy(() => integer).optional(),
   max_rescore_window: z.lazy(() => integer).optional(),
   max_docvalue_fields_search: z.lazy(() => integer).optional(),
@@ -442,6 +453,7 @@ export const IndicesIndexSettings = z.looseObject({
   get settings () { return IndicesIndexSettings.optional() },
   time_series: IndicesIndexSettingsTimeSeries.optional(),
   queries: IndicesQueries.optional(),
+  requests: IndicesRequests.optional(),
   similarity: z.record(z.string(), IndicesSettingsSimilarity).describe('Configure custom similarity settings to customize how search results are scored.').optional(),
   mapping: IndicesMappingLimitSettings.describe('Enable or disable dynamic mapping for an index.').optional(),
   'indexing.slowlog': IndicesIndexingSlowlogSettings.optional(),
@@ -516,6 +528,12 @@ export const IndicesAlias = z.object({
   search_routing: z.string().describe('Value used to route search operations to a specific shard. If specified, this overwrites the `routing` value for search operations.').optional()
 }).meta({ id: 'IndicesAlias' })
 export type IndicesAlias = z.infer<typeof IndicesAlias>
+
+export const IndicesAliasesResponseBody = z.object({
+  acknowledged: z.boolean().describe('For a successful response, this value is always true. On failure, an exception is returned instead.'),
+  errors: z.boolean().describe('If `true`, at least one alias action failed. The request still returns HTTP 200.').optional()
+}).meta({ id: 'IndicesAliasesResponseBody' })
+export type IndicesAliasesResponseBody = z.infer<typeof IndicesAliasesResponseBody>
 
 export const IndicesDataStreamVisibility = z.object({
   hidden: z.boolean().optional(),

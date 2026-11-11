@@ -6,7 +6,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { DateTime, Id, byte, float, integer, long } from './_types.js'
+import { DateTime, Duration, Id, byte, float, integer, long } from './_types.js'
 import { InferenceReasoningDetail } from './inference.non_streaming_chat_completion.js'
 import { InferenceRegionPolicy } from './inference.put_region_policy.js'
 
@@ -28,6 +28,16 @@ export const InferenceRateLimitSetting = z.object({
   requests_per_minute: z.lazy(() => integer).describe('The number of requests allowed per minute. By default, the number of requests allowed per minute is set by each service as follows: * `alibabacloud-ai-search` service: `1000` * `amazonbedrock` service: `240` * `anthropic` service: `50` * `azureaistudio` service: `240` * `azureopenai` service and task type `text_embedding`: `1440` * `azureopenai` service and task types `completion` or `chat_completion`: `120` * `cohere` service: `10000` * `contextualai` service: `1000` * `elastic` service and task type `chat_completion`: `240` * `fireworksai` service: `6000` * `googleaistudio` service: `360` * `googlevertexai` service: `30000` * `hugging_face` service: `3000` * `jinaai` service: `2000` * `llama` service: `3000` * `mistral` service: `240` * `openai` service and task type `text_embedding`: `3000` * `openai` service and task type `completion`: `500` * `openshift_ai` service: `3000` * `voyageai` service: `2000` * `watsonxai` service: `120`').optional()
 }).meta({ id: 'InferenceRateLimitSetting' })
 export type InferenceRateLimitSetting = z.infer<typeof InferenceRateLimitSetting>
+
+/**
+ * The prompt caching configuration to use for the completion request.
+ * Currently supported only for `elastic` provider.
+ */
+export const InferenceCacheControl = z.object({
+  type: z.string().describe('The type of cache control, for example `ephemeral`.').optional(),
+  ttl: z.lazy(() => Duration).describe('The time to live of the cached content, for example `1h`.').optional()
+}).meta({ id: 'InferenceCacheControl' })
+export type InferenceCacheControl = z.infer<typeof InferenceCacheControl>
 
 export const InferenceCohereTruncateType = z.enum(['END', 'NONE', 'START']).meta({ id: 'InferenceCohereTruncateType' })
 export type InferenceCohereTruncateType = z.infer<typeof InferenceCohereTruncateType>
@@ -70,8 +80,11 @@ export type InferenceCompletionToolChoice = z.infer<typeof InferenceCompletionTo
 export const InferenceCompletionToolType = z.union([z.string(), InferenceCompletionToolChoice]).meta({ id: 'InferenceCompletionToolType' })
 export type InferenceCompletionToolType = z.infer<typeof InferenceCompletionToolType>
 
-export const InferenceContentType = z.enum(['text', 'image_url', 'file']).meta({ id: 'InferenceContentType' })
-export type InferenceContentType = z.infer<typeof InferenceContentType>
+export const InferenceTextContent = z.object({
+  type: z.literal('text'),
+  text: z.string().describe('The text content.')
+}).meta({ id: 'InferenceTextContent' })
+export type InferenceTextContent = z.infer<typeof InferenceTextContent>
 
 export const InferenceImageUrlDetail = z.enum(['auto', 'low', 'high']).meta({ id: 'InferenceImageUrlDetail' })
 export type InferenceImageUrlDetail = z.infer<typeof InferenceImageUrlDetail>
@@ -82,19 +95,30 @@ export const InferenceImageUrl = z.object({
 }).meta({ id: 'InferenceImageUrl' })
 export type InferenceImageUrl = z.infer<typeof InferenceImageUrl>
 
+export const InferenceImageUrlContent = z.object({
+  type: z.literal('image_url'),
+  image_url: InferenceImageUrl.describe('The image content.')
+}).meta({ id: 'InferenceImageUrlContent' })
+export type InferenceImageUrlContent = z.infer<typeof InferenceImageUrlContent>
+
 export const InferenceFileContent = z.object({
   file_data: z.string().describe('The base64 encoded file data'),
   filename: z.string().describe('The name of the file')
 }).meta({ id: 'InferenceFileContent' })
 export type InferenceFileContent = z.infer<typeof InferenceFileContent>
 
-/** An object style representation of a single portion of a conversation. */
-export const InferenceContentObject = z.object({
-  type: InferenceContentType.describe('The type of content. Must be one of `text`, `image_url` or `file`. Not all services/models support content types other than "text"'),
-  text: z.string().describe('The text content. Only applicable for the `text` type'),
-  image_url: InferenceImageUrl.describe('The image content. Only applicable for the `image_url` type'),
-  file: InferenceFileContent.describe('The file content. Only applicable for the `file` type')
-}).meta({ id: 'InferenceContentObject' })
+export const InferenceFileContentPart = z.object({
+  type: z.literal('file'),
+  file: InferenceFileContent.describe('The file content.')
+}).meta({ id: 'InferenceFileContentPart' })
+export type InferenceFileContentPart = z.infer<typeof InferenceFileContentPart>
+
+/**
+ * One part of a chat message.
+ * The `type` field selects which property is present.
+ * Not all services and models support content types other than `text`.
+ */
+export const InferenceContentObject = z.union([InferenceTextContent, InferenceImageUrlContent, InferenceFileContentPart]).meta({ id: 'InferenceContentObject' })
 export type InferenceContentObject = z.infer<typeof InferenceContentObject>
 
 /**
@@ -149,7 +173,7 @@ export const InferenceInferenceEndpoint = z.object({
 }).meta({ id: 'InferenceInferenceEndpoint' })
 export type InferenceInferenceEndpoint = z.infer<typeof InferenceInferenceEndpoint>
 
-export const InferenceTaskType = z.enum(['sparse_embedding', 'text_embedding', 'rerank', 'completion', 'chat_completion', 'embedding', 'document_extraction']).meta({ id: 'InferenceTaskType' })
+export const InferenceTaskType = z.enum(['sparse_embedding', 'text_embedding', 'rerank', 'completion', 'chat_completion', 'embedding', 'document_extraction', 'decision']).meta({ id: 'InferenceTaskType' })
 export type InferenceTaskType = z.infer<typeof InferenceTaskType>
 
 /** Represents an inference endpoint as returned by the GET API */

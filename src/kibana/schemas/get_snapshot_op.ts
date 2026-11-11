@@ -17,26 +17,6 @@ export const GetSnapshotOpRequest = z.union([z.object({
 }), z.unknown()]).nullable().meta({ id: 'GetSnapshotOpRequest' })
 export type GetSnapshotOpRequest = z.infer<typeof GetSnapshotOpRequest>
 
-export const GetSnapshotOpResponse = z.object({
-  at: z.string(),
-  results: z.array(z.object({
-    error: z.object({
-      message: z.string(),
-      statusCode: z.number()
-    }).optional(),
-    id: z.string(),
-    instanceId: z.string(),
-    summary: z.object({
-      errorBudget: z.object({
-        consumed: z.number().nullable(),
-        initial: z.number(),
-        remaining: z.number().nullable()
-      }),
-      good: z.number(),
-      sliValue: z.number().nullable(),
-      status: z.enum(['NO_DATA', 'HEALTHY', 'DEGRADING', 'VIOLATED']),
-      total: z.number()
-    }).optional()
-  }))
-}).meta({ id: 'GetSnapshotOpResponse' })
-export type GetSnapshotOpResponse = z.infer<typeof GetSnapshotOpResponse>
+export { Kibana_HTTP_APIs_SLOSnapshotResponse } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOSnapshotResult } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_SLOSummaryStatus } from './schemas/kibana.js'

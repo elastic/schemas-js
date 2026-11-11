@@ -330,7 +330,7 @@ export type CatIndicesIndicesRecord = z.infer<typeof CatIndicesIndicesRecord>
  */
 export const CatIndicesRequest = z.object({
   index: z.lazy(() => Indices).describe('Comma-separated list of data streams, indices, and aliases used to limit the request. Supports wildcards (`*`). To target all data streams and indices, omit this parameter or use `*` or `_all`.').optional().meta({ found_in: 'path' }),
-  expand_wildcards: z.lazy(() => ExpandWildcards).describe('The type of index that wildcard patterns can match.').optional().meta({ found_in: 'query' }),
+  expand_wildcards: z.lazy(() => ExpandWildcards).describe('The type of index that wildcard patterns can match. Note that `closed` also matches non-hidden data streams, so their open backing indices are returned as well. It does not restrict the response to closed indices only.').optional().meta({ found_in: 'query' }),
   health: z.lazy(() => HealthStatus).describe('The health status used to limit returned indices. By default, the response includes indices of any health status.').optional().meta({ found_in: 'query' }),
   include_unloaded_segments: z.boolean().describe('If true, the response includes information from segments that are not loaded into memory.').optional().meta({ found_in: 'query' }),
   pri: z.boolean().describe('If true, the response only includes information from primary shards.').optional().meta({ found_in: 'query' }),

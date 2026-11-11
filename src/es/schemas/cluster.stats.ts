@@ -7,6 +7,7 @@
 import { z } from 'zod'
 
 import { ByteSize, CompletionStats, DateFormat, DocStats, Duration, DurationValue, FielddataStats, HealthStatus, Name, NodeIds, NodeStatistics, PluginStats, QueryCacheStats, SegmentsStats, StoreStats, Uuid, VersionString, double, integer, long } from './_types.js'
+import { IndicesSegmentsOsqSegmentAutoCalibrationParameters } from './indices.segments.js'
 
 /** Time unit for milliseconds */
 export const UnitMillis = z.lazy(() => long).meta({ id: 'UnitMillis' })
@@ -224,6 +225,36 @@ export const ClusterStatsIndicesVersions = z.object({
 }).meta({ id: 'ClusterStatsIndicesVersions' })
 export type ClusterStatsIndicesVersions = z.infer<typeof ClusterStatsIndicesVersions>
 
+export const ClusterStatsDenseVectorAutoCalibrationBase = z.object({
+  calibrated: z.boolean().describe('If `true`, the segment has been calibrated, and `parameters` is present.'),
+  number_of_vectors: z.lazy(() => long).describe('The number of vectors of the field in the segment.'),
+  size: z.lazy(() => ByteSize).optional(),
+  size_in_bytes: z.lazy(() => long).describe('The size of the vectors of the field in the segment, in bytes.'),
+  number_of_segments: z.lazy(() => integer).describe('The number of segments that share these parameters.')
+}).meta({ id: 'ClusterStatsDenseVectorAutoCalibrationBase' })
+export type ClusterStatsDenseVectorAutoCalibrationBase = z.infer<typeof ClusterStatsDenseVectorAutoCalibrationBase>
+
+export const ClusterStatsOsqDenseVectorAutoCalibration = z.object({
+  ...ClusterStatsDenseVectorAutoCalibrationBase.shape,
+  type: z.literal('osq'),
+  parameters: z.lazy(() => IndicesSegmentsOsqSegmentAutoCalibrationParameters).describe('The calibration parameters.').optional()
+}).meta({ id: 'ClusterStatsOsqDenseVectorAutoCalibration' })
+export type ClusterStatsOsqDenseVectorAutoCalibration = z.infer<typeof ClusterStatsOsqDenseVectorAutoCalibration>
+
+/**
+ * The auto-calibration information of a `dense_vector` field, aggregated over the segments that share the same parameters.
+ *
+ * The shape of `parameters` depends on the quantization method of the field.
+ */
+export const ClusterStatsDenseVectorAutoCalibration = ClusterStatsOsqDenseVectorAutoCalibration.meta({ id: 'ClusterStatsDenseVectorAutoCalibration' })
+export type ClusterStatsDenseVectorAutoCalibration = z.infer<typeof ClusterStatsDenseVectorAutoCalibration>
+
+/** The off-heap stats of a `dense_vector` field. */
+export const ClusterStatsDenseVectorFieldOffHeapStats = z.object({
+  auto_calibration: z.array(ClusterStatsDenseVectorAutoCalibration).describe('The auto-calibration information of the field, aggregated by distinct set of parameters. Only returned when `include_auto_calibration` is `true`.').optional()
+}).catchall(z.any()).meta({ id: 'ClusterStatsDenseVectorFieldOffHeapStats' })
+export type ClusterStatsDenseVectorFieldOffHeapStats = z.infer<typeof ClusterStatsDenseVectorFieldOffHeapStats>
+
 export const ClusterStatsDenseVectorOffHeapStats = z.object({
   total_size_bytes: z.lazy(() => long),
   total_size: z.lazy(() => ByteSize).optional(),
@@ -239,7 +270,7 @@ export const ClusterStatsDenseVectorOffHeapStats = z.object({
   total_cenivf_size: z.lazy(() => ByteSize).optional(),
   total_clivf_size_bytes: z.lazy(() => long),
   total_clivf_size: z.lazy(() => ByteSize).optional(),
-  fielddata: z.record(z.string(), z.record(z.string(), z.lazy(() => long))).optional()
+  fielddata: z.record(z.string(), ClusterStatsDenseVectorFieldOffHeapStats).optional()
 }).meta({ id: 'ClusterStatsDenseVectorOffHeapStats' })
 export type ClusterStatsDenseVectorOffHeapStats = z.infer<typeof ClusterStatsDenseVectorOffHeapStats>
 

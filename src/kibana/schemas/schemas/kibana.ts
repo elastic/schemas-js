@@ -267,6 +267,7 @@ export const Kibana_HTTP_APIs_bulk_upgrade_managed_integration_result = z.object
 export type Kibana_HTTP_APIs_bulk_upgrade_managed_integration_result = z.infer<typeof Kibana_HTTP_APIs_bulk_upgrade_managed_integration_result>
 
 export const Kibana_HTTP_APIs_bulk_upgrade_managed_integrations_request = z.object({
+  acknowledge_breaking_changes: z.boolean().optional(),
   policyIds: z.array(z.string())
 }).meta({ id: 'Kibana_HTTP_APIs_bulk_upgrade_managed_integrations_request' })
 export type Kibana_HTTP_APIs_bulk_upgrade_managed_integrations_request = z.infer<typeof Kibana_HTTP_APIs_bulk_upgrade_managed_integrations_request>
@@ -448,6 +449,7 @@ export const Kibana_HTTP_APIs_install_kibana_assets_response = z.object({
 export type Kibana_HTTP_APIs_install_kibana_assets_response = z.infer<typeof Kibana_HTTP_APIs_install_kibana_assets_response>
 
 export const Kibana_HTTP_APIs_install_package_from_registry_request = z.object({
+  acknowledge_breaking_changes: z.boolean().optional(),
   allow_outdated_version: z.boolean().optional(),
   force: z.boolean().optional(),
   ignore_constraints: z.boolean().optional()
@@ -1616,6 +1618,14 @@ export type Kibana_HTTP_APIs_SLOArtifacts = z.infer<typeof Kibana_HTTP_APIs_SLOA
 export const Kibana_HTTP_APIs_SLOBudgetingMethod = z.union([z.enum(['occurrences']), z.enum(['timeslices'])]).meta({ id: 'Kibana_HTTP_APIs_SLOBudgetingMethod' })
 export type Kibana_HTTP_APIs_SLOBudgetingMethod = z.infer<typeof Kibana_HTTP_APIs_SLOBudgetingMethod>
 
+export const Kibana_HTTP_APIs_SLOErrorBudget = z.object({
+  consumed: z.number(),
+  initial: z.number(),
+  isEstimated: z.boolean(),
+  remaining: z.number()
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_SLOErrorBudget' })
+export type Kibana_HTTP_APIs_SLOErrorBudget = z.infer<typeof Kibana_HTTP_APIs_SLOErrorBudget>
+
 export const Kibana_HTTP_APIs_SLOFilterMeta = z.object({
   alias: z.string().nullable().optional(),
   controlledBy: z.string().optional(),
@@ -1628,7 +1638,15 @@ export const Kibana_HTTP_APIs_SLOFilterMeta = z.object({
   negate: z.boolean().optional(),
   params: z.unknown().optional(),
   type: z.string().optional(),
-  value: z.string().optional()
+  value: z.union([z.string(), z.object({
+    format: z.string().optional(),
+    from: z.union([z.number(), z.string()]).optional(),
+    gt: z.union([z.number(), z.string()]).optional(),
+    gte: z.union([z.number(), z.string()]).optional(),
+    lt: z.union([z.number(), z.string()]).optional(),
+    lte: z.union([z.number(), z.string()]).optional(),
+    to: z.union([z.number(), z.string()]).optional()
+  }), z.array(z.union([z.string(), z.number(), z.boolean()]))]).optional()
 }).meta({ id: 'Kibana_HTTP_APIs_SLOFilterMeta' })
 export type Kibana_HTTP_APIs_SLOFilterMeta = z.infer<typeof Kibana_HTTP_APIs_SLOFilterMeta>
 
@@ -1642,14 +1660,30 @@ export const Kibana_HTTP_APIs_SLOObjective = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_SLOObjective' })
 export type Kibana_HTTP_APIs_SLOObjective = z.infer<typeof Kibana_HTTP_APIs_SLOObjective>
 
-export const Kibana_HTTP_APIs_SLOTimeWindow = z.discriminatedUnion('type', [z.object({
-  duration: z.string(),
-  type: z.enum(['rolling'])
-}), z.object({
+export const Kibana_HTTP_APIs_SLOSettings = z.object({
+  frequency: z.string(),
+  preventCrossProjectSearch: z.boolean().optional(),
+  preventInitialBackfill: z.boolean(),
+  projectRoutings: z.string().nullable().optional(),
+  syncDelay: z.string(),
+  syncField: z.string().nullable().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_SLOSettings' })
+export type Kibana_HTTP_APIs_SLOSettings = z.infer<typeof Kibana_HTTP_APIs_SLOSettings>
+
+export const Kibana_HTTP_APIs_SLOSummaryStatus = z.enum(['NO_DATA', 'HEALTHY', 'DEGRADING', 'VIOLATED']).meta({ id: 'Kibana_HTTP_APIs_SLOSummaryStatus' })
+export type Kibana_HTTP_APIs_SLOSummaryStatus = z.infer<typeof Kibana_HTTP_APIs_SLOSummaryStatus>
+
+export const Kibana_HTTP_APIs_SLOTimeWindowCalendarAligned = z.object({
   duration: z.string(),
   type: z.enum(['calendarAligned'])
-})]).meta({ id: 'Kibana_HTTP_APIs_SLOTimeWindow' })
-export type Kibana_HTTP_APIs_SLOTimeWindow = z.infer<typeof Kibana_HTTP_APIs_SLOTimeWindow>
+}).meta({ id: 'Kibana_HTTP_APIs_SLOTimeWindowCalendarAligned' })
+export type Kibana_HTTP_APIs_SLOTimeWindowCalendarAligned = z.infer<typeof Kibana_HTTP_APIs_SLOTimeWindowCalendarAligned>
+
+export const Kibana_HTTP_APIs_SLOTimeWindowRolling = z.object({
+  duration: z.string(),
+  type: z.enum(['rolling'])
+}).meta({ id: 'Kibana_HTTP_APIs_SLOTimeWindowRolling' })
+export type Kibana_HTTP_APIs_SLOTimeWindowRolling = z.infer<typeof Kibana_HTTP_APIs_SLOTimeWindowRolling>
 
 export const Kibana_HTTP_APIs_syntheticsJsonValue = z.unknown().meta({ id: 'Kibana_HTTP_APIs_syntheticsJsonValue' })
 export type Kibana_HTTP_APIs_syntheticsJsonValue = z.infer<typeof Kibana_HTTP_APIs_syntheticsJsonValue>
@@ -3717,6 +3751,7 @@ export const Kibana_HTTP_APIs_managed_integration = z.object({
   })),
   name: z.string(),
   namespace: z.string().optional(),
+  onboarding_deployment_id: z.string().optional(),
   package: Kibana_HTTP_APIs_managed_integration_package,
   updated_at: z.string(),
   updated_by: z.string(),
@@ -3824,6 +3859,7 @@ export const Kibana_HTTP_APIs_package_policy_response = z.object({
   is_managed: z.boolean().optional(),
   name: z.string(),
   namespace: z.string().optional(),
+  onboarding_deployment_id: z.string().nullable().optional(),
   output_id: z.string().nullable().optional(),
   overrides: z.object({
     inputs: z.record(z.string(), z.unknown().nullable()).optional()
@@ -3925,6 +3961,44 @@ export const Kibana_HTTP_APIs_SLOFilter = z.object({
   query: z.record(z.string(), z.unknown())
 }).meta({ id: 'Kibana_HTTP_APIs_SLOFilter' })
 export type Kibana_HTTP_APIs_SLOFilter = z.infer<typeof Kibana_HTTP_APIs_SLOFilter>
+
+export const Kibana_HTTP_APIs_SLOSnapshotResult = z.union([z.object({
+  id: z.string(),
+  instanceId: z.string(),
+  summary: z.object({
+    errorBudget: z.object({
+      consumed: z.number().nullable(),
+      initial: z.number(),
+      remaining: z.number().nullable()
+    }).passthrough(),
+    good: z.number(),
+    sliValue: z.number().nullable(),
+    status: Kibana_HTTP_APIs_SLOSummaryStatus,
+    total: z.number()
+  }).passthrough()
+}).passthrough(), z.object({
+  error: z.object({
+    message: z.string(),
+    statusCode: z.number()
+  }).passthrough(),
+  id: z.string(),
+  instanceId: z.string()
+}).passthrough()]).meta({ id: 'Kibana_HTTP_APIs_SLOSnapshotResult' })
+export type Kibana_HTTP_APIs_SLOSnapshotResult = z.infer<typeof Kibana_HTTP_APIs_SLOSnapshotResult>
+
+export const Kibana_HTTP_APIs_SLOSummary = z.object({
+  errorBudget: Kibana_HTTP_APIs_SLOErrorBudget,
+  fiveMinuteBurnRate: z.number(),
+  oneDayBurnRate: z.number(),
+  oneHourBurnRate: z.number(),
+  sliValue: z.number(),
+  status: Kibana_HTTP_APIs_SLOSummaryStatus,
+  summaryUpdatedAt: z.string().nullable().optional()
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_SLOSummary' })
+export type Kibana_HTTP_APIs_SLOSummary = z.infer<typeof Kibana_HTTP_APIs_SLOSummary>
+
+export const Kibana_HTTP_APIs_SLOTimeWindow = z.discriminatedUnion('type', [Kibana_HTTP_APIs_SLOTimeWindowRolling, Kibana_HTTP_APIs_SLOTimeWindowCalendarAligned]).meta({ id: 'Kibana_HTTP_APIs_SLOTimeWindow' })
+export type Kibana_HTTP_APIs_SLOTimeWindow = z.infer<typeof Kibana_HTTP_APIs_SLOTimeWindow>
 
 export const Kibana_HTTP_APIs_apiMonitorFields = z.object({
   alert: z.object({
@@ -5816,6 +5890,12 @@ export const Kibana_HTTP_APIs_SLOKqlWithFilters = z.object({
   kqlQuery: z.string()
 }).meta({ id: 'Kibana_HTTP_APIs_SLOKqlWithFilters' })
 export type Kibana_HTTP_APIs_SLOKqlWithFilters = z.infer<typeof Kibana_HTTP_APIs_SLOKqlWithFilters>
+
+export const Kibana_HTTP_APIs_SLOSnapshotResponse = z.object({
+  at: z.string(),
+  results: z.array(Kibana_HTTP_APIs_SLOSnapshotResult)
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_SLOSnapshotResponse' })
+export type Kibana_HTTP_APIs_SLOSnapshotResponse = z.infer<typeof Kibana_HTTP_APIs_SLOSnapshotResponse>
 
 export const Kibana_HTTP_APIs_createMonitorRequest: z.ZodTypeAny = z.discriminatedUnion('type', [Kibana_HTTP_APIs_httpMonitorFields, Kibana_HTTP_APIs_tcpMonitorFields, Kibana_HTTP_APIs_icmpMonitorFields, Kibana_HTTP_APIs_browserMonitorFields, Kibana_HTTP_APIs_apiMonitorFields]).meta({ id: 'Kibana_HTTP_APIs_createMonitorRequest' })
 export type Kibana_HTTP_APIs_createMonitorRequest = z.infer<typeof Kibana_HTTP_APIs_createMonitorRequest>
@@ -9168,6 +9248,35 @@ export const Kibana_Dashboards_API_metricESQLByValuePanel: z.ZodTypeAny = z.obje
 }).meta({ id: 'Kibana_Dashboards_API_metricESQLByValuePanel' })
 export type Kibana_Dashboards_API_metricESQLByValuePanel = z.infer<typeof Kibana_Dashboards_API_metricESQLByValuePanel>
 
+export const Kibana_HTTP_APIs_kbn_dashboard_panel_type_change_point_grid = z.object({
+  config: z.object({
+    apply_dashboard_context: z.boolean().optional(),
+    description: z.string().optional(),
+    esql: z.string(),
+    hide_border: z.boolean().optional(),
+    hide_title: z.boolean().optional(),
+    static_context: z.object({
+      esql_variables: z.array(z.object({
+        key: z.string(),
+        type: z.enum(['time_literal', 'fields', 'values', 'multi_values', 'functions']),
+        value: z.union([z.string(), z.number(), z.array(z.union([z.string(), z.number()]))])
+      })).optional(),
+      filters: z.array(Kibana_HTTP_APIs_kbn_as_code_filters_schema_asCodeFilterSchema).optional(),
+      query: Kibana_HTTP_APIs_kbn_as_code_query.optional()
+    }).optional(),
+    time_range: z.object({
+      from: z.string(),
+      mode: z.enum(['absolute', 'relative']).optional(),
+      to: z.string()
+    }).optional(),
+    title: z.string().optional()
+  }),
+  grid: Kibana_HTTP_APIs_kbn_dashboard_panel_grid,
+  id: z.string().optional(),
+  type: z.enum(['change_point_grid'])
+}).meta({ id: 'Kibana_HTTP_APIs_kbn_dashboard_panel_type_change_point_grid' })
+export type Kibana_HTTP_APIs_kbn_dashboard_panel_type_change_point_grid = z.infer<typeof Kibana_HTTP_APIs_kbn_dashboard_panel_type_change_point_grid>
+
 export const Kibana_HTTP_APIs_slo_group_overview_embeddable = z.object({
   description: z.string().optional(),
   drilldowns: z.array(z.object({
@@ -12482,6 +12591,64 @@ export const Kibana_HTTP_APIs_visXyReferenceLineLayerNoESQL: z.ZodTypeAny = z.ob
 }).meta({ id: 'Kibana_HTTP_APIs_visXyReferenceLineLayerNoESQL' })
 export type Kibana_HTTP_APIs_visXyReferenceLineLayerNoESQL = z.infer<typeof Kibana_HTTP_APIs_visXyReferenceLineLayerNoESQL>
 
+export const Kibana_HTTP_APIs_SLODefinition: z.ZodTypeAny = z.object({
+  artifacts: Kibana_HTTP_APIs_SLOArtifacts.optional(),
+  budgetingMethod: Kibana_HTTP_APIs_SLOBudgetingMethod,
+  createdAt: z.string(),
+  createdBy: z.string().optional(),
+  description: z.string(),
+  enabled: z.boolean(),
+  groupBy: Kibana_HTTP_APIs_SLOGroupBy,
+  id: z.string(),
+  indicator: Kibana_HTTP_APIs_SLOIndicator,
+  name: z.string(),
+  objective: Kibana_HTTP_APIs_SLOObjective,
+  revision: z.number(),
+  settings: Kibana_HTTP_APIs_SLOSettings,
+  tags: z.array(z.string()),
+  timeWindow: Kibana_HTTP_APIs_SLOTimeWindow,
+  updatedAt: z.string(),
+  updatedBy: z.string().optional(),
+  version: z.number()
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_SLODefinition' })
+export type Kibana_HTTP_APIs_SLODefinition = z.infer<typeof Kibana_HTTP_APIs_SLODefinition>
+
+export const Kibana_HTTP_APIs_SLOWithSummaryResponse: z.ZodTypeAny = z.object({
+  artifacts: Kibana_HTTP_APIs_SLOArtifacts.optional(),
+  budgetingMethod: Kibana_HTTP_APIs_SLOBudgetingMethod,
+  createdAt: z.string(),
+  createdBy: z.string().optional(),
+  description: z.string(),
+  enabled: z.boolean(),
+  groupBy: Kibana_HTTP_APIs_SLOGroupBy,
+  groupings: z.record(z.string(), z.union([z.string(), z.number()])),
+  id: z.string(),
+  indicator: Kibana_HTTP_APIs_SLOIndicator,
+  instanceId: z.union([z.enum(['*']), z.string()]),
+  meta: z.object({
+    synthetics: z.object({
+      configId: z.string(),
+      locationId: z.string(),
+      monitorId: z.string()
+    }).passthrough().optional()
+  }).passthrough().optional(),
+  name: z.string(),
+  objective: Kibana_HTTP_APIs_SLOObjective,
+  remote: z.object({
+    kibanaUrl: z.string(),
+    remoteName: z.string()
+  }).passthrough().optional(),
+  revision: z.number(),
+  settings: Kibana_HTTP_APIs_SLOSettings,
+  summary: Kibana_HTTP_APIs_SLOSummary,
+  tags: z.array(z.string()),
+  timeWindow: Kibana_HTTP_APIs_SLOTimeWindow,
+  updatedAt: z.string(),
+  updatedBy: z.string().optional(),
+  version: z.number()
+}).passthrough().meta({ id: 'Kibana_HTTP_APIs_SLOWithSummaryResponse' })
+export type Kibana_HTTP_APIs_SLOWithSummaryResponse = z.infer<typeof Kibana_HTTP_APIs_SLOWithSummaryResponse>
+
 export const Kibana_HTTP_APIs_datatableLibItemNoESQL: z.ZodTypeAny = z.object({
   data_source: z.discriminatedUnion('type', [Kibana_HTTP_APIs_kbn_data_view_reference_schema, Kibana_HTTP_APIs_kbn_data_view_spec_schema]),
   description: z.string().optional(),
@@ -13445,7 +13612,7 @@ export const Kibana_HTTP_APIs_kbn_dashboard_section: z.ZodTypeAny = z.object({
     y: z.number()
   }),
   id: z.string().optional(),
-  panels: z.array(z.discriminatedUnion('type', [Kibana_HTTP_APIs_kbn_dashboard_panel_type_ml_anomaly_charts, Kibana_HTTP_APIs_kbn_dashboard_panel_type_ml_anomaly_swimlane, Kibana_HTTP_APIs_kbn_dashboard_panel_type_apm_service_map, Kibana_HTTP_APIs_kbn_dashboard_panel_type_aiops_change_point_chart, Kibana_HTTP_APIs_kbn_dashboard_panel_type_custom_content, Kibana_HTTP_APIs_kbn_dashboard_panel_type_discover_session, Kibana_HTTP_APIs_kbn_dashboard_panel_type_esql_control, Kibana_HTTP_APIs_kbn_dashboard_panel_type_field_stats_table, Kibana_HTTP_APIs_kbn_dashboard_panel_type_image, Kibana_HTTP_APIs_kbn_dashboard_panel_type_links, Kibana_HTTP_APIs_kbn_dashboard_panel_type_aiops_log_rate_analysis, Kibana_HTTP_APIs_kbn_dashboard_panel_type_markdown, Kibana_HTTP_APIs_kbn_dashboard_panel_type_options_list_control, Kibana_HTTP_APIs_kbn_dashboard_panel_type_aiops_pattern_analysis, Kibana_HTTP_APIs_kbn_dashboard_panel_type_range_slider_control, Kibana_HTTP_APIs_kbn_dashboard_panel_type_ml_single_metric_viewer, Kibana_HTTP_APIs_kbn_dashboard_panel_type_slo_alerts, Kibana_HTTP_APIs_kbn_dashboard_panel_type_slo_burn_rate, Kibana_HTTP_APIs_kbn_dashboard_panel_type_slo_error_budget, Kibana_HTTP_APIs_kbn_dashboard_panel_type_slo_overview, Kibana_HTTP_APIs_kbn_dashboard_panel_type_synthetics_monitors, Kibana_HTTP_APIs_kbn_dashboard_panel_type_synthetics_stats_overview, Kibana_HTTP_APIs_kbn_dashboard_panel_type_time_slider_control, Kibana_HTTP_APIs_kbn_dashboard_panel_type_vis])).optional(),
+  panels: z.array(z.discriminatedUnion('type', [Kibana_HTTP_APIs_kbn_dashboard_panel_type_ml_anomaly_charts, Kibana_HTTP_APIs_kbn_dashboard_panel_type_ml_anomaly_swimlane, Kibana_HTTP_APIs_kbn_dashboard_panel_type_apm_service_map, Kibana_HTTP_APIs_kbn_dashboard_panel_type_change_point_grid, Kibana_HTTP_APIs_kbn_dashboard_panel_type_aiops_change_point_chart, Kibana_HTTP_APIs_kbn_dashboard_panel_type_custom_content, Kibana_HTTP_APIs_kbn_dashboard_panel_type_discover_session, Kibana_HTTP_APIs_kbn_dashboard_panel_type_esql_control, Kibana_HTTP_APIs_kbn_dashboard_panel_type_field_stats_table, Kibana_HTTP_APIs_kbn_dashboard_panel_type_image, Kibana_HTTP_APIs_kbn_dashboard_panel_type_links, Kibana_HTTP_APIs_kbn_dashboard_panel_type_aiops_log_rate_analysis, Kibana_HTTP_APIs_kbn_dashboard_panel_type_markdown, Kibana_HTTP_APIs_kbn_dashboard_panel_type_options_list_control, Kibana_HTTP_APIs_kbn_dashboard_panel_type_aiops_pattern_analysis, Kibana_HTTP_APIs_kbn_dashboard_panel_type_range_slider_control, Kibana_HTTP_APIs_kbn_dashboard_panel_type_ml_single_metric_viewer, Kibana_HTTP_APIs_kbn_dashboard_panel_type_slo_alerts, Kibana_HTTP_APIs_kbn_dashboard_panel_type_slo_burn_rate, Kibana_HTTP_APIs_kbn_dashboard_panel_type_slo_error_budget, Kibana_HTTP_APIs_kbn_dashboard_panel_type_slo_overview, Kibana_HTTP_APIs_kbn_dashboard_panel_type_synthetics_monitors, Kibana_HTTP_APIs_kbn_dashboard_panel_type_synthetics_stats_overview, Kibana_HTTP_APIs_kbn_dashboard_panel_type_time_slider_control, Kibana_HTTP_APIs_kbn_dashboard_panel_type_vis])).optional(),
   title: z.string()
 }).meta({ id: 'Kibana_HTTP_APIs_kbn_dashboard_section' })
 export type Kibana_HTTP_APIs_kbn_dashboard_section = z.infer<typeof Kibana_HTTP_APIs_kbn_dashboard_section>
@@ -13456,7 +13623,7 @@ export const Kibana_HTTP_APIs_kbn_dashboard_data: z.ZodTypeAny = z.object({
   esql_approximation: z.boolean().optional(),
   filters: z.array(Kibana_HTTP_APIs_kbn_as_code_filters_schema_asCodeFilterSchema).optional(),
   options: Kibana_HTTP_APIs_kbn_dashboard_options.optional(),
-  panels: z.array(z.union([Kibana_HTTP_APIs_kbn_dashboard_section, z.discriminatedUnion('type', [Kibana_HTTP_APIs_kbn_dashboard_panel_type_ml_anomaly_charts, Kibana_HTTP_APIs_kbn_dashboard_panel_type_ml_anomaly_swimlane, Kibana_HTTP_APIs_kbn_dashboard_panel_type_apm_service_map, Kibana_HTTP_APIs_kbn_dashboard_panel_type_aiops_change_point_chart, Kibana_HTTP_APIs_kbn_dashboard_panel_type_custom_content, Kibana_HTTP_APIs_kbn_dashboard_panel_type_discover_session, Kibana_HTTP_APIs_kbn_dashboard_panel_type_esql_control, Kibana_HTTP_APIs_kbn_dashboard_panel_type_field_stats_table, Kibana_HTTP_APIs_kbn_dashboard_panel_type_image, Kibana_HTTP_APIs_kbn_dashboard_panel_type_links, Kibana_HTTP_APIs_kbn_dashboard_panel_type_aiops_log_rate_analysis, Kibana_HTTP_APIs_kbn_dashboard_panel_type_markdown, Kibana_HTTP_APIs_kbn_dashboard_panel_type_options_list_control, Kibana_HTTP_APIs_kbn_dashboard_panel_type_aiops_pattern_analysis, Kibana_HTTP_APIs_kbn_dashboard_panel_type_range_slider_control, Kibana_HTTP_APIs_kbn_dashboard_panel_type_ml_single_metric_viewer, Kibana_HTTP_APIs_kbn_dashboard_panel_type_slo_alerts, Kibana_HTTP_APIs_kbn_dashboard_panel_type_slo_burn_rate, Kibana_HTTP_APIs_kbn_dashboard_panel_type_slo_error_budget, Kibana_HTTP_APIs_kbn_dashboard_panel_type_slo_overview, Kibana_HTTP_APIs_kbn_dashboard_panel_type_synthetics_monitors, Kibana_HTTP_APIs_kbn_dashboard_panel_type_synthetics_stats_overview, Kibana_HTTP_APIs_kbn_dashboard_panel_type_time_slider_control, Kibana_HTTP_APIs_kbn_dashboard_panel_type_vis])])).optional(),
+  panels: z.array(z.union([Kibana_HTTP_APIs_kbn_dashboard_section, z.discriminatedUnion('type', [Kibana_HTTP_APIs_kbn_dashboard_panel_type_ml_anomaly_charts, Kibana_HTTP_APIs_kbn_dashboard_panel_type_ml_anomaly_swimlane, Kibana_HTTP_APIs_kbn_dashboard_panel_type_apm_service_map, Kibana_HTTP_APIs_kbn_dashboard_panel_type_change_point_grid, Kibana_HTTP_APIs_kbn_dashboard_panel_type_aiops_change_point_chart, Kibana_HTTP_APIs_kbn_dashboard_panel_type_custom_content, Kibana_HTTP_APIs_kbn_dashboard_panel_type_discover_session, Kibana_HTTP_APIs_kbn_dashboard_panel_type_esql_control, Kibana_HTTP_APIs_kbn_dashboard_panel_type_field_stats_table, Kibana_HTTP_APIs_kbn_dashboard_panel_type_image, Kibana_HTTP_APIs_kbn_dashboard_panel_type_links, Kibana_HTTP_APIs_kbn_dashboard_panel_type_aiops_log_rate_analysis, Kibana_HTTP_APIs_kbn_dashboard_panel_type_markdown, Kibana_HTTP_APIs_kbn_dashboard_panel_type_options_list_control, Kibana_HTTP_APIs_kbn_dashboard_panel_type_aiops_pattern_analysis, Kibana_HTTP_APIs_kbn_dashboard_panel_type_range_slider_control, Kibana_HTTP_APIs_kbn_dashboard_panel_type_ml_single_metric_viewer, Kibana_HTTP_APIs_kbn_dashboard_panel_type_slo_alerts, Kibana_HTTP_APIs_kbn_dashboard_panel_type_slo_burn_rate, Kibana_HTTP_APIs_kbn_dashboard_panel_type_slo_error_budget, Kibana_HTTP_APIs_kbn_dashboard_panel_type_slo_overview, Kibana_HTTP_APIs_kbn_dashboard_panel_type_synthetics_monitors, Kibana_HTTP_APIs_kbn_dashboard_panel_type_synthetics_stats_overview, Kibana_HTTP_APIs_kbn_dashboard_panel_type_time_slider_control, Kibana_HTTP_APIs_kbn_dashboard_panel_type_vis])])).optional(),
   pinned_panels: z.array(z.discriminatedUnion('type', [Kibana_HTTP_APIs_kbn_controls_schemas_controls_group_schema_esql_control, Kibana_HTTP_APIs_kbn_controls_schemas_controls_group_schema_options_list_control, Kibana_HTTP_APIs_kbn_controls_schemas_controls_group_schema_range_slider_control, Kibana_HTTP_APIs_kbn_controls_schemas_controls_group_schema_time_slider_control])).optional(),
   project_routing: z.string().optional(),
   query: Kibana_HTTP_APIs_kbn_as_code_query.optional(),

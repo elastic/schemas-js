@@ -36,7 +36,7 @@ export const FleetSearchRequest = z.object({
   preference: z.string().optional().meta({ found_in: 'query' }),
   pre_filter_shard_size: z.lazy(() => long).optional().meta({ found_in: 'query' }),
   request_cache: z.boolean().optional().meta({ found_in: 'query' }),
-  routing: z.lazy(() => Routing).optional().meta({ found_in: 'query' }),
+  routing: z.lazy(() => Routing).describe('A custom value used to route operations to a specific shard. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional().meta({ found_in: 'query' }),
   scroll: z.lazy(() => Duration).optional().meta({ found_in: 'query' }),
   search_type: z.lazy(() => SearchType).optional().meta({ found_in: 'query' }),
   suggest_field: z.lazy(() => Field).describe('Specifies which field to use for suggestions.').optional().meta({ found_in: 'query' }),

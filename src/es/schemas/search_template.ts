@@ -19,7 +19,7 @@ export const SearchTemplateRequest = z.object({
   ignore_throttled: z.boolean().describe('If `true`, specified concrete, expanded, or aliased indices are not included in the response when throttled.').optional().meta({ found_in: 'query' }),
   ignore_unavailable: z.boolean().describe('If `false`, the request returns an error if it targets a concrete (non-wildcarded) index, alias, or data stream that is missing, closed, or otherwise unavailable. If `true`, unavailable concrete targets are silently ignored.').optional().meta({ found_in: 'query' }),
   preference: z.string().describe('The node or shard the operation should be performed on. It is random by default.').optional().meta({ found_in: 'query' }),
-  routing: z.lazy(() => Routing).describe('A custom value used to route operations to a specific shard.').optional().meta({ found_in: 'query' }),
+  routing: z.lazy(() => Routing).describe('A custom value used to route operations to a specific shard. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional().meta({ found_in: 'query' }),
   scroll: z.lazy(() => Duration).describe('Specifies how long a consistent view of the index should be maintained for scrolled search.').optional().meta({ found_in: 'query' }),
   search_type: z.lazy(() => SearchType).describe('The type of the search operation.').optional().meta({ found_in: 'query' }),
   rest_total_hits_as_int: z.boolean().describe('If `true`, `hits.total` is rendered as an integer in the response. If `false`, it is rendered as an object.').optional().meta({ found_in: 'query' }),
