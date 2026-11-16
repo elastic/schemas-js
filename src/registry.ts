@@ -58,11 +58,28 @@ export class UnknownApiError extends Error {
   }
 }
 
+interface ApiUrl {
+  path: string
+  methods: string[]
+}
+
+// route whose placeholders are exactly the supplied path params; definition.path wins ties and is the fallback
+function selectPath (definition: ApiRegistryDefinition, input: Record<string, unknown>): string {
+  const urls = (definition.input?.['x-urls'] ?? []) as ApiUrl[]
+  const props = (definition.input?.properties ?? {}) as Record<string, Record<string, unknown>>
+  const supplied = Object.keys(props).filter(k => props[k]!['x-found-in'] === 'path' && input[k] !== undefined)
+  const candidates = [definition.path, ...urls.filter(u => u.methods.includes(definition.method)).map(u => u.path)]
+  return candidates.find(path => {
+    const params = [...path.matchAll(/\{([^}]+)\}/g)].map(m => m[1]!)
+    return params.length === supplied.length && params.every(p => supplied.includes(p))
+  }) ?? definition.path
+}
+
 export function buildRequest (
   definition: ApiRegistryDefinition,
   input: Record<string, unknown>
 ): ApiRequest {
-  let path = definition.path
+  let path = selectPath(definition, input)
   const querystring: Record<string, unknown> = {}
   const body: Record<string, unknown> = {}
   let rootBody: unknown
