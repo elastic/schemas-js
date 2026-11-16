@@ -91,6 +91,25 @@ describe('buildRequest', () => {
     expect(buildRequest(def, { index: 'i', name: 'n' }).path).toBe('/i/_alias/n')
   })
 
+  it('does not select a route that drops a supplied path param', () => {
+    const def: ApiRegistryDefinition = {
+      ...catIndicesDef,
+      path: '/_nodes/{node_id}/stats/{metric}/{index_metric}',
+      input: {
+        'x-urls': [
+          { path: '/_nodes/{node_id}/stats', methods: ['GET'] },
+          { path: '/_nodes/{node_id}/stats/{metric}/{index_metric}', methods: ['GET'] },
+        ],
+        properties: {
+          node_id: { type: 'string', 'x-found-in': 'path' },
+          metric: { type: 'string', 'x-found-in': 'path' },
+          index_metric: { type: 'string', 'x-found-in': 'path' },
+        },
+      },
+    }
+    expect(buildRequest(def, { node_id: 'node-a', index_metric: 'store' }).path).toBe('/_nodes/node-a/stats/{metric}/store')
+  })
+
   it('interpolates path params', () => {
     expect(buildRequest(searchDef, { index: 'my-index', query: { match_all: {} } }).path).toBe('/my-index/_search')
   })

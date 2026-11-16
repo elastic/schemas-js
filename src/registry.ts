@@ -63,15 +63,18 @@ interface ApiUrl {
   methods: string[]
 }
 
-// most specific URL whose path params are all supplied; definition.path wins ties
+// most specific URL whose params are all supplied and that covers every supplied path param; definition.path wins ties
 function selectPath (definition: ApiRegistryDefinition, input: Record<string, unknown>): string {
   const urls = (definition.input?.['x-urls'] ?? []) as ApiUrl[]
+  const props = (definition.input?.properties ?? {}) as Record<string, Record<string, unknown>>
+  const suppliedPathParams = Object.keys(props).filter(k => props[k]!['x-found-in'] === 'path' && input[k] !== undefined)
   const candidates = [definition.path, ...urls.filter(u => u.methods.includes(definition.method)).map(u => u.path)]
   let best = definition.path
   let bestCount = -1
   for (const path of candidates) {
     const params = [...path.matchAll(/\{([^}]+)\}/g)].map(m => m[1]!)
     if (params.some(p => input[p] === undefined)) continue
+    if (suppliedPathParams.some(p => !params.includes(p))) continue
     if (params.length > bestCount) {
       best = path
       bestCount = params.length
