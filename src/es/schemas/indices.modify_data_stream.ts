@@ -14,7 +14,7 @@ export const IndicesModifyDataStreamIndexAndDataStreamAction = z.object({
 }).meta({ id: 'IndicesModifyDataStreamIndexAndDataStreamAction' })
 export type IndicesModifyDataStreamIndexAndDataStreamAction = z.infer<typeof IndicesModifyDataStreamIndexAndDataStreamAction>
 
-const IndicesModifyDataStreamActionExclusiveProps = z.union([z.object({ add_backing_index: IndicesModifyDataStreamIndexAndDataStreamAction }), z.object({ remove_backing_index: IndicesModifyDataStreamIndexAndDataStreamAction })])
+const IndicesModifyDataStreamActionExclusiveProps = z.union([z.object({ add_backing_index: IndicesModifyDataStreamIndexAndDataStreamAction, remove_backing_index: z.never().optional() }), z.object({ remove_backing_index: IndicesModifyDataStreamIndexAndDataStreamAction, add_backing_index: z.never().optional() })])
 
 export const IndicesModifyDataStreamAction = IndicesModifyDataStreamActionExclusiveProps.meta({ id: 'IndicesModifyDataStreamAction' })
 export type IndicesModifyDataStreamAction = z.infer<typeof IndicesModifyDataStreamAction>

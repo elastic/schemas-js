@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"inference.chat_completion_streaming","description":"base64-encoded binary","x-api":{"id":"inference.chat_completion_streaming","name":"chat-completion-streaming","namespace":"inference"},"type":"string"}

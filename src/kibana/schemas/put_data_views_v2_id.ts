@@ -11,7 +11,7 @@
 
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
-import { Kibana_HTTP_APIs_kbn_field_filters_schema, Kibana_HTTP_APIs_kbn_index_pattern_schema, Kibana_HTTP_APIs_kbn_saved_data_view_spec_schema, Kibana_HTTP_APIs_kbn_saved_field_settings_entry, Kibana_HTTP_APIs_kbn_time_field_schema } from './schemas/kibana.js'
+import { Kibana_HTTP_APIs_kbn_field_filters_schema, Kibana_HTTP_APIs_kbn_index_pattern_schema, Kibana_HTTP_APIs_kbn_saved_data_view_spec_with_scripted_fields_schema, Kibana_HTTP_APIs_kbn_saved_field_settings_entry, Kibana_HTTP_APIs_kbn_time_field_schema } from './schemas/kibana.js'
 
 export const PutDataViewsV2IdRequest = z.object({
   allow_hidden_indices: z.boolean().optional(),
@@ -24,7 +24,7 @@ export const PutDataViewsV2IdRequest = z.object({
 export type PutDataViewsV2IdRequest = z.infer<typeof PutDataViewsV2IdRequest>
 
 export const PutDataViewsV2IdResponse200 = z.object({
-  data: Kibana_HTTP_APIs_kbn_saved_data_view_spec_schema,
+  data: Kibana_HTTP_APIs_kbn_saved_data_view_spec_with_scripted_fields_schema,
   id: z.string(),
   meta: z.object({
     created_at: z.string().optional(),
@@ -40,7 +40,7 @@ export const PutDataViewsV2IdResponse200 = z.object({
 export type PutDataViewsV2IdResponse200 = z.infer<typeof PutDataViewsV2IdResponse200>
 
 export const PutDataViewsV2IdResponse201 = z.object({
-  data: Kibana_HTTP_APIs_kbn_saved_data_view_spec_schema,
+  data: Kibana_HTTP_APIs_kbn_saved_data_view_spec_with_scripted_fields_schema,
   id: z.string(),
   meta: z.object({
     created_at: z.string().optional(),
@@ -55,11 +55,9 @@ export const PutDataViewsV2IdResponse201 = z.object({
 }).meta({ id: 'PutDataViewsV2IdResponse201' })
 export type PutDataViewsV2IdResponse201 = z.infer<typeof PutDataViewsV2IdResponse201>
 
-export { Kibana_HTTP_APIs_kbn_saved_data_view_spec_schema } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_kbn_saved_data_view_spec_with_scripted_fields_schema } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_kbn_time_field_schema } from './schemas/kibana.js'
-export { Kibana_HTTP_APIs_kbn_index_pattern_schema } from './schemas/kibana.js'
-export { Kibana_HTTP_APIs_kbn_saved_field_settings_entry } from './schemas/kibana.js'
-export { Kibana_HTTP_APIs_kbn_field_settings_with_popularity } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_kbn_saved_scripted_field_schema } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_kbn_runtime_field_popularity } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_kbn_field_format } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_kbn_field_format_url } from './schemas/kibana.js'
@@ -81,6 +79,9 @@ export { Kibana_HTTP_APIs_kbn_field_format_bytes } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_kbn_field_format_boolean } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_kbn_field_custom_label } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_kbn_field_custom_description } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_kbn_index_pattern_schema } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_kbn_saved_field_settings_entry } from './schemas/kibana.js'
+export { Kibana_HTTP_APIs_kbn_field_settings_with_popularity } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_kbn_saved_runtime_field_schema } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_kbn_runtime_field_type } from './schemas/kibana.js'
 export { Kibana_HTTP_APIs_kbn_runtime_field_script } from './schemas/kibana.js'

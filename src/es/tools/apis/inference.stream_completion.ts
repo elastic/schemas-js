@@ -25,5 +25,6 @@ export const inference_stream_completion_definitions: EsApiDefinition[] = [
     destructive: true,
     readOnly: false,
     input: _inputSchema,
+    responseType: 'text',
   },
 ]

@@ -10,14 +10,14 @@
  */
 
 import type { JsonSchemaObject } from '../../../json-schema.ts'
-import _inputSchemaRaw from '../../json/inference.non_streaming_chat_completion.request.json' with { type: 'json' }
+import _inputSchemaRaw from '../../json/inference.chat_completion.request.json' with { type: 'json' }
 import type { EsApiDefinition } from '../types.ts'
 
 const _inputSchema = _inputSchemaRaw as unknown as JsonSchemaObject
 
-export const inference_non_streaming_chat_completion_definitions: EsApiDefinition[] = [
+export const inference_chat_completion_definitions: EsApiDefinition[] = [
   {
-    name: 'non-streaming-chat-completion',
+    name: 'chat-completion',
     namespace: 'inference',
     description: 'Perform non-streaming chat completion inference on the service.',
     method: 'POST',

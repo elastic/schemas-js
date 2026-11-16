@@ -54,7 +54,7 @@ export const IndicesDataStream = z.object({
   mappings: z.lazy(() => MappingTypeMapping).describe('The mappings specific to this data stream that will take precedence over the mappings in the matching index template.').optional(),
   status: z.lazy(() => HealthStatus).describe('Health status of the data stream. This health status is based on the state of the primary and replica shards of the stream’s backing indices.'),
   system: z.boolean().describe('If `true`, the data stream is created and managed by an Elastic stack component and cannot be modified through normal user interaction.').optional(),
-  template: z.lazy(() => Name).describe('Name of the index template used to create the data stream’s backing indices. The template’s index pattern must match the name of this data stream.'),
+  template: z.lazy(() => Name).describe('Name of the index template used to create the data stream’s backing indices. The template’s index pattern must match the name of this data stream. This property is omitted if no index template currently matches the data stream, for example on a cross-cluster replication follower cluster that has no matching local template. For replicated data streams (`replicated` is `true`), the value is the local index template that matches the data stream name, which might not be the template that created the backing indices on the leader cluster.').optional(),
   timestamp_field: IndicesDataStreamTimestampField.describe('Information about the `@timestamp` field in the data stream.'),
   index_mode: IndicesIndexMode.describe('The index mode for the data stream that will be used for newly created backing indices.').optional()
 }).meta({ id: 'IndicesDataStream' })

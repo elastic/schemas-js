@@ -41,7 +41,7 @@ export const IndicesUpdateAliasesRemoveIndexAction = z.object({
 }).meta({ id: 'IndicesUpdateAliasesRemoveIndexAction' })
 export type IndicesUpdateAliasesRemoveIndexAction = z.infer<typeof IndicesUpdateAliasesRemoveIndexAction>
 
-const IndicesUpdateAliasesActionExclusiveProps = z.union([z.object({ add: IndicesUpdateAliasesAddAction }), z.object({ remove: IndicesUpdateAliasesRemoveAction }), z.object({ remove_index: IndicesUpdateAliasesRemoveIndexAction })])
+const IndicesUpdateAliasesActionExclusiveProps = z.union([z.object({ add: IndicesUpdateAliasesAddAction, remove: z.never().optional(), remove_index: z.never().optional() }), z.object({ remove: IndicesUpdateAliasesRemoveAction, add: z.never().optional(), remove_index: z.never().optional() }), z.object({ remove_index: IndicesUpdateAliasesRemoveIndexAction, add: z.never().optional(), remove: z.never().optional() })])
 
 export const IndicesUpdateAliasesAction = IndicesUpdateAliasesActionExclusiveProps.meta({ id: 'IndicesUpdateAliasesAction' })
 export type IndicesUpdateAliasesAction = z.infer<typeof IndicesUpdateAliasesAction>

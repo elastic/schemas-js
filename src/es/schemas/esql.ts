@@ -26,7 +26,7 @@ export type EsqlAsyncEsqlResult = z.infer<typeof EsqlAsyncEsqlResult>
 export const EsqlSingleOrMultiValue = z.union([z.lazy(() => FieldValue), z.array(z.lazy(() => FieldValue))]).meta({ id: 'EsqlSingleOrMultiValue' })
 export type EsqlSingleOrMultiValue = z.infer<typeof EsqlSingleOrMultiValue>
 
-const EsqlClassifiedNamedParameterExclusiveProps = z.union([z.object({ value: EsqlSingleOrMultiValue }), z.object({ identifier: z.string() }), z.object({ pattern: z.string() })])
+const EsqlClassifiedNamedParameterExclusiveProps = z.union([z.object({ value: EsqlSingleOrMultiValue, identifier: z.never().optional(), pattern: z.never().optional() }), z.object({ identifier: z.string(), value: z.never().optional(), pattern: z.never().optional() }), z.object({ pattern: z.string(), value: z.never().optional(), identifier: z.never().optional() })])
 
 /**
  * A named ES|QL query parameter supplied in its classified form.
@@ -91,7 +91,7 @@ export type EsqlTableValuesLongValue = z.infer<typeof EsqlTableValuesLongValue>
 export const EsqlTableValuesLongDouble = z.union([z.lazy(() => double), z.array(z.lazy(() => double))]).meta({ id: 'EsqlTableValuesLongDouble' })
 export type EsqlTableValuesLongDouble = z.infer<typeof EsqlTableValuesLongDouble>
 
-const EsqlTableValuesContainerExclusiveProps = z.union([z.object({ integer: z.array(EsqlTableValuesIntegerValue) }), z.object({ keyword: z.array(EsqlTableValuesKeywordValue) }), z.object({ long: z.array(EsqlTableValuesLongValue) }), z.object({ double: z.array(EsqlTableValuesLongDouble) })])
+const EsqlTableValuesContainerExclusiveProps = z.union([z.object({ integer: z.array(EsqlTableValuesIntegerValue), keyword: z.never().optional(), long: z.never().optional(), double: z.never().optional() }), z.object({ keyword: z.array(EsqlTableValuesKeywordValue), integer: z.never().optional(), long: z.never().optional(), double: z.never().optional() }), z.object({ long: z.array(EsqlTableValuesLongValue), integer: z.never().optional(), keyword: z.never().optional(), double: z.never().optional() }), z.object({ double: z.array(EsqlTableValuesLongDouble), integer: z.never().optional(), keyword: z.never().optional(), long: z.never().optional() })])
 
 export const EsqlTableValuesContainer = EsqlTableValuesContainerExclusiveProps.meta({ id: 'EsqlTableValuesContainer' })
 export type EsqlTableValuesContainer = z.infer<typeof EsqlTableValuesContainer>

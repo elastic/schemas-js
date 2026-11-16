@@ -1129,8 +1129,6 @@ export const kibanaJsonManifest: readonly string[] = [
   'security-entity-analytics-api.privmon-bulk-upload-users-c-s-v.response.json',
   'security-entity-analytics-api.schedule-monitoring-engine.request.json',
   'security-entity-analytics-api.schedule-monitoring-engine.response.json',
-  'security-entity-analytics-api.schedule-risk-engine-now.request.json',
-  'security-entity-analytics-api.schedule-risk-engine-now.response.json',
   'security-entity-analytics-api.unassign-watchlist-entities.request.json',
   'security-entity-analytics-api.unassign-watchlist-entities.response.json',
   'security-entity-analytics-api.update-priv-mon-user.request.json',

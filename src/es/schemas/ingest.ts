@@ -33,7 +33,7 @@ const IngestDatabaseConfigurationCommonProps = z.object({
   name: z.lazy(() => Name).describe('The provider-assigned name of the IP geolocation database to download.')
 })
 
-const IngestDatabaseConfigurationExclusiveProps = z.union([z.object({ maxmind: IngestMaxmind }), z.object({ ipinfo: IngestIpinfo })])
+const IngestDatabaseConfigurationExclusiveProps = z.union([z.object({ maxmind: IngestMaxmind, ipinfo: z.never().optional() }), z.object({ ipinfo: IngestIpinfo, maxmind: z.never().optional() })])
 
 /**
  * The configuration necessary to identify which IP geolocation provider to use to download a database, as well as any provider-specific configuration necessary for such downloading.

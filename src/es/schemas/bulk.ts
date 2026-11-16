@@ -6,7 +6,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { Duration, ErrorCause, Fields, Id, IndexName, InlineGet, Refresh, Script, ScriptSource, SequenceNumber, ShardStatistics, VersionNumber, VersionType, integer, long } from './_types.js'
+import { Duration, ErrorCause, Fields, Id, IndexName, InlineGet, OpType, Refresh, Script, ScriptSource, SequenceNumber, ShardStatistics, VersionNumber, VersionType, integer, long } from './_types.js'
 import type { ScriptSourceShape } from './_types.js'
 import { SearchSourceConfig, SearchSourceConfigParam } from './search.js'
 
@@ -14,17 +14,20 @@ export const BulkOperationBase = z.object({
   _id: z.lazy(() => Id).describe('The document ID.').optional(),
   _index: z.lazy(() => IndexName).describe('The name of the index or index alias to perform the action on.').optional(),
   if_primary_term: z.lazy(() => long).optional(),
-  if_seq_no: z.lazy(() => SequenceNumber).optional(),
-  version: z.lazy(() => VersionNumber).optional(),
-  version_type: z.lazy(() => VersionType).optional()
+  if_seq_no: z.lazy(() => SequenceNumber).optional()
 }).meta({ id: 'BulkOperationBase' })
 export type BulkOperationBase = z.infer<typeof BulkOperationBase>
 
 export const BulkWriteOperation = z.object({
   ...BulkOperationBase.shape,
+  version: z.lazy(() => VersionNumber).describe('The explicit version number for concurrency control. It must be a non-negative long number. This parameter is not supported for `update` actions.').optional(),
+  version_type: z.lazy(() => VersionType).describe('The version type. This parameter is not supported for `update` actions.').optional(),
   dynamic_templates: z.record(z.string(), z.string()).describe('A map from the full name of fields to the name of dynamic templates. It defaults to an empty map. If a name matches a dynamic template, that template will be applied regardless of other match predicates defined in the template. If a field is already defined in the mapping, then this parameter won\'t be used.').optional(),
+  dynamic_template_params: z.record(z.string(), z.record(z.string(), z.string())).describe('A map from the full name of fields to the parameters to pass to the dynamic template selected for that field in `dynamic_templates`. Each value is a map from parameter names to parameter values. The dynamic template can reference a parameter with a placeholder such as `{unit:}`, where the text after the colon is the default value.').optional(),
   pipeline: z.string().describe('The ID of the pipeline to use to preprocess incoming documents. If the index has a default ingest pipeline specified, setting the value to `_none` turns off the default ingest pipeline for this request. If a final pipeline is configured, it will always run regardless of the value of this parameter.').optional(),
-  require_alias: z.boolean().describe('If `true`, the request\'s actions must target an index alias.').optional()
+  require_alias: z.boolean().describe('If `true`, the request\'s actions must target an index alias.').optional(),
+  require_data_stream: z.boolean().describe('If `true`, the action must target a data stream (existing or to be created).').optional(),
+  list_executed_pipelines: z.boolean().describe('If `true`, the response includes the ingest pipelines that were run for this action.').optional()
 }).meta({ id: 'BulkWriteOperation' })
 export type BulkWriteOperation = z.infer<typeof BulkWriteOperation>
 
@@ -34,7 +37,9 @@ export const BulkCreateOperation = z.object({
 export type BulkCreateOperation = z.infer<typeof BulkCreateOperation>
 
 export const BulkDeleteOperation = z.object({
-  ...BulkOperationBase.shape
+  ...BulkOperationBase.shape,
+  version: z.lazy(() => VersionNumber).describe('The explicit version number for concurrency control. It must be a non-negative long number. This parameter is not supported for `update` actions.').optional(),
+  version_type: z.lazy(() => VersionType).describe('The version type. This parameter is not supported for `update` actions.').optional()
 }).meta({ id: 'BulkDeleteOperation' })
 export type BulkDeleteOperation = z.infer<typeof BulkDeleteOperation>
 
@@ -42,18 +47,22 @@ export const BulkFailureStoreStatus = z.enum(['not_applicable_or_unknown', 'used
 export type BulkFailureStoreStatus = z.infer<typeof BulkFailureStoreStatus>
 
 export const BulkIndexOperation = z.object({
-  ...BulkWriteOperation.shape
+  ...BulkWriteOperation.shape,
+  op_type: z.lazy(() => OpType).describe('Set to `create` to only index the document if it does not already exist.').optional()
 }).meta({ id: 'BulkIndexOperation' })
 export type BulkIndexOperation = z.infer<typeof BulkIndexOperation>
 
 export const BulkUpdateOperation = z.object({
   ...BulkOperationBase.shape,
   require_alias: z.boolean().describe('If `true`, the request\'s actions must target an index alias.').optional(),
-  retry_on_conflict: z.lazy(() => integer).describe('The number of times an update should be retried in the case of a version conflict.').optional()
+  retry_on_conflict: z.lazy(() => integer).describe('The number of times an update should be retried in the case of a version conflict.').optional(),
+  pipeline: z.string().describe('The ID of the pipeline to use to preprocess the `upsert` document, if one is created. If the index has a default ingest pipeline specified, setting the value to `_none` turns off the default ingest pipeline for this request. If a final pipeline is configured, it will always run regardless of the value of this parameter.').optional(),
+  list_executed_pipelines: z.boolean().describe('If `true`, the response includes the ingest pipelines that were run for the `upsert` document, if one is created.').optional(),
+  _source: z.lazy(() => SearchSourceConfig).describe('If `false`, source retrieval is turned off. You can also specify a comma-separated list of the fields you want to retrieve. If set, it overrides the `_source` value in the update source line.').optional()
 }).meta({ id: 'BulkUpdateOperation' })
 export type BulkUpdateOperation = z.infer<typeof BulkUpdateOperation>
 
-const BulkOperationContainerExclusiveProps = z.union([z.object({ index: BulkIndexOperation }), z.object({ create: BulkCreateOperation }), z.object({ update: BulkUpdateOperation }), z.object({ delete: BulkDeleteOperation })])
+const BulkOperationContainerExclusiveProps = z.union([z.object({ index: BulkIndexOperation, create: z.never().optional(), update: z.never().optional(), delete: z.never().optional() }), z.object({ create: BulkCreateOperation, index: z.never().optional(), update: z.never().optional(), delete: z.never().optional() }), z.object({ update: BulkUpdateOperation, index: z.never().optional(), create: z.never().optional(), delete: z.never().optional() }), z.object({ delete: BulkDeleteOperation, index: z.never().optional(), create: z.never().optional(), update: z.never().optional() })])
 
 /**
  * An action line, which is the first line of each operation in a bulk request.
@@ -76,6 +85,8 @@ export const BulkUpdateAction = z.object({
   doc_as_upsert: z.boolean().describe('Set to `true` to use the contents of `doc` as the value of `upsert`.').optional(),
   script: z.union([z.lazy(() => Script), z.lazy(() => ScriptSource)]).describe('The script to run to update the document.').optional(),
   scripted_upsert: z.boolean().describe('Set to `true` to run the script whether or not the document exists.').optional(),
+  if_seq_no: z.lazy(() => SequenceNumber).describe('Only perform the update if the document has this sequence number.').optional(),
+  if_primary_term: z.lazy(() => long).describe('Only perform the update if the document has this primary term.').optional(),
   _source: z.lazy(() => SearchSourceConfig).describe('If `false`, source retrieval is turned off. You can also specify a comma-separated list of the fields you want to retrieve.').optional(),
   upsert: z.any().describe('If the document does not already exist, the contents of `upsert` are inserted as a new document. If the document exists, the `script` is run.').optional()
 }).meta({ id: 'BulkUpdateAction' })
@@ -212,7 +223,7 @@ export const BulkRequest = z.object({
 export type BulkRequest = z.infer<typeof BulkRequest>
 
 export const BulkResponseItem = z.object({
-  _id: z.union([z.string(), z.null()]).describe('The document ID associated with the operation.').optional(),
+  _id: z.union([z.string(), z.null()]).describe('The document ID associated with the operation. It is `null` when an `index` or `create` operation without an explicit `_id` fails before Elasticsearch generates an ID for the document. Elasticsearch generates the ID when it routes the document to a shard, so the ID is still `null` for failures that happen earlier, such as an ingest pipeline error, a missing or closed target index, a failed `require_alias` or `require_data_stream` check, or missing required routing. `update` and `delete` operations always include an ID.').optional(),
   _index: z.string().describe('The name of the index associated with the operation. If the operation targeted a data stream, this is the backing index into which the document was written.'),
   status: z.lazy(() => integer).describe('The HTTP status code returned for the operation.'),
   failure_store: z.lazy(() => BulkFailureStoreStatus).optional(),

@@ -540,7 +540,6 @@ export { Security_Detections_API_RulePreviewParams, Security_Detections_API_Rule
 export { Security_Endpoint_Management_API_CloudFileScriptParameters, Security_Endpoint_Management_API_EndpointRunScriptParameters, Security_Endpoint_Management_API_HostPathScriptParameters, Security_Endpoint_Management_API_MDERunScriptParameters, Security_Endpoint_Management_API_RawScriptParameters, Security_Endpoint_Management_API_SentinelOneRunScriptParameters, Security_Endpoint_Management_API_RunScriptRouteRequestBody } from './run_script_action.js'
 export { SaveApmServerSchemaRequest, SaveApmServerSchemaResponse } from './save_apm_server_schema.js'
 export { ScheduleMonitoringEngineResponse } from './schedule_monitoring_engine.js'
-export { Security_Entity_Analytics_API_RiskEngineScheduleNowResponse, ScheduleRiskEngineNowRequest } from './schedule_risk_engine_now.js'
 export { SearchAlertsResponse } from './search_alerts.js'
 export { SearchAttacksResponse } from './search_attacks.js'
 export { SearchDashboardsResponse } from './search_dashboards.js'

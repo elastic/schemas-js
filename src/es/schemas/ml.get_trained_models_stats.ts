@@ -34,6 +34,7 @@ export const MlTrainedModelDeploymentNodesStats = z.object({
   average_inference_time_ms_last_minute: z.lazy(() => DurationValue).optional(),
   average_inference_time_ms_excluding_cache_hits: z.lazy(() => DurationValue).describe('The average time for each inference call to complete on this node, excluding cache').optional(),
   average_inference_process_memory_rss_bytes: z.lazy(() => ByteSize).optional(),
+  peak_inference_process_memory_rss_bytes: z.lazy(() => ByteSize).describe('The peak native memory (resident set size) of the inference process on this node.').optional(),
   error_count: z.lazy(() => integer).describe('The number of errors when evaluating the trained model.').optional(),
   inference_count: z.lazy(() => long).describe('The total number of inference calls made against this node for this model.').optional(),
   inference_cache_hit_count: z.lazy(() => long).optional(),
@@ -84,7 +85,9 @@ export type MlTrainedModelInferenceStats = z.infer<typeof MlTrainedModelInferenc
 
 export const MlTrainedModelSizeStats = z.object({
   model_size_bytes: z.lazy(() => ByteSize).describe('The size of the model in bytes.'),
-  required_native_memory_bytes: z.lazy(() => ByteSize).describe('The amount of memory required to load the model in bytes.')
+  required_native_memory_bytes: z.lazy(() => ByteSize).describe('The amount of memory required to load the model in bytes.'),
+  runtime_native_memory_bytes: z.lazy(() => ByteSize).describe('The sum, across the nodes the deployment runs on, of the average memory of each node\'s inference process since it started. Unlike `required_native_memory_bytes`, which is an estimate, this is a measured value. It is returned only after the native process has reported a measurement.').optional(),
+  peak_runtime_native_memory_bytes: z.lazy(() => ByteSize).describe('The sum, across the nodes the deployment runs on, of the peak native memory (resident set size) of each node\'s inference process since it started. It is returned only after the native process has reported a measurement.').optional()
 }).meta({ id: 'MlTrainedModelSizeStats' })
 export type MlTrainedModelSizeStats = z.infer<typeof MlTrainedModelSizeStats>
 

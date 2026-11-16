@@ -258,7 +258,7 @@ export const MlDataframeAnalysisFeatureProcessorTargetMeanEncoding = z.object({
 }).meta({ id: 'MlDataframeAnalysisFeatureProcessorTargetMeanEncoding' })
 export type MlDataframeAnalysisFeatureProcessorTargetMeanEncoding = z.infer<typeof MlDataframeAnalysisFeatureProcessorTargetMeanEncoding>
 
-const MlDataframeAnalysisFeatureProcessorExclusiveProps = z.union([z.object({ frequency_encoding: MlDataframeAnalysisFeatureProcessorFrequencyEncoding }), z.object({ multi_encoding: MlDataframeAnalysisFeatureProcessorMultiEncoding }), z.object({ n_gram_encoding: MlDataframeAnalysisFeatureProcessorNGramEncoding }), z.object({ one_hot_encoding: MlDataframeAnalysisFeatureProcessorOneHotEncoding }), z.object({ target_mean_encoding: MlDataframeAnalysisFeatureProcessorTargetMeanEncoding })])
+const MlDataframeAnalysisFeatureProcessorExclusiveProps = z.union([z.object({ frequency_encoding: MlDataframeAnalysisFeatureProcessorFrequencyEncoding, multi_encoding: z.never().optional(), n_gram_encoding: z.never().optional(), one_hot_encoding: z.never().optional(), target_mean_encoding: z.never().optional() }), z.object({ multi_encoding: MlDataframeAnalysisFeatureProcessorMultiEncoding, frequency_encoding: z.never().optional(), n_gram_encoding: z.never().optional(), one_hot_encoding: z.never().optional(), target_mean_encoding: z.never().optional() }), z.object({ n_gram_encoding: MlDataframeAnalysisFeatureProcessorNGramEncoding, frequency_encoding: z.never().optional(), multi_encoding: z.never().optional(), one_hot_encoding: z.never().optional(), target_mean_encoding: z.never().optional() }), z.object({ one_hot_encoding: MlDataframeAnalysisFeatureProcessorOneHotEncoding, frequency_encoding: z.never().optional(), multi_encoding: z.never().optional(), n_gram_encoding: z.never().optional(), target_mean_encoding: z.never().optional() }), z.object({ target_mean_encoding: MlDataframeAnalysisFeatureProcessorTargetMeanEncoding, frequency_encoding: z.never().optional(), multi_encoding: z.never().optional(), n_gram_encoding: z.never().optional(), one_hot_encoding: z.never().optional() })])
 
 export const MlDataframeAnalysisFeatureProcessor = MlDataframeAnalysisFeatureProcessorExclusiveProps.meta({ id: 'MlDataframeAnalysisFeatureProcessor' })
 export type MlDataframeAnalysisFeatureProcessor = z.infer<typeof MlDataframeAnalysisFeatureProcessor>
@@ -316,7 +316,7 @@ export const MlDataframeAnalysisRegression = z.object({
 }).meta({ id: 'MlDataframeAnalysisRegression' })
 export type MlDataframeAnalysisRegression = z.infer<typeof MlDataframeAnalysisRegression>
 
-const MlDataframeAnalysisContainerExclusiveProps = z.union([z.object({ classification: MlDataframeAnalysisClassification }), z.object({ outlier_detection: MlDataframeAnalysisOutlierDetection }), z.object({ regression: MlDataframeAnalysisRegression })])
+const MlDataframeAnalysisContainerExclusiveProps = z.union([z.object({ classification: MlDataframeAnalysisClassification, outlier_detection: z.never().optional(), regression: z.never().optional() }), z.object({ outlier_detection: MlDataframeAnalysisOutlierDetection, classification: z.never().optional(), regression: z.never().optional() }), z.object({ regression: MlDataframeAnalysisRegression, classification: z.never().optional(), outlier_detection: z.never().optional() })])
 
 export const MlDataframeAnalysisContainer = MlDataframeAnalysisContainerExclusiveProps.meta({ id: 'MlDataframeAnalysisContainer' })
 export type MlDataframeAnalysisContainer = z.infer<typeof MlDataframeAnalysisContainer>

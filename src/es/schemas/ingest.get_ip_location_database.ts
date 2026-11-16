@@ -26,7 +26,7 @@ const IngestDatabaseConfigurationFullCommonProps = z.object({
   name: z.lazy(() => Name).describe('The provider-assigned name of the IP geolocation database to download.')
 })
 
-const IngestDatabaseConfigurationFullExclusiveProps = z.union([z.object({ web: IngestWeb }), z.object({ local: IngestLocal }), z.object({ maxmind: IngestMaxmind }), z.object({ ipinfo: IngestIpinfo })])
+const IngestDatabaseConfigurationFullExclusiveProps = z.union([z.object({ web: IngestWeb, local: z.never().optional(), maxmind: z.never().optional(), ipinfo: z.never().optional() }), z.object({ local: IngestLocal, web: z.never().optional(), maxmind: z.never().optional(), ipinfo: z.never().optional() }), z.object({ maxmind: IngestMaxmind, web: z.never().optional(), local: z.never().optional(), ipinfo: z.never().optional() }), z.object({ ipinfo: IngestIpinfo, web: z.never().optional(), local: z.never().optional(), maxmind: z.never().optional() })])
 
 export const IngestDatabaseConfigurationFull = IngestDatabaseConfigurationFullCommonProps.and(IngestDatabaseConfigurationFullExclusiveProps).meta({ id: 'IngestDatabaseConfigurationFull' })
 export type IngestDatabaseConfigurationFull = z.infer<typeof IngestDatabaseConfigurationFull>

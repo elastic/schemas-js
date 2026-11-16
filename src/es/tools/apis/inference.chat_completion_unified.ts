@@ -25,5 +25,6 @@ export const inference_chat_completion_unified_definitions: EsApiDefinition[] = 
     destructive: true,
     readOnly: false,
     input: _inputSchema,
+    responseType: 'text',
   },
 ]

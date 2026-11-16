@@ -6,7 +6,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { Field, Id, IndexName, Routing, VersionNumber, VersionType, double, integer, long } from './_types.js'
+import { Field, Id, IndexName, VersionNumber, VersionType, double, integer, long } from './_types.js'
 
 export const TermvectorsFilter = z.object({
   max_doc_freq: z.lazy(() => integer).describe('Ignore words which occur in more than this many docs. Defaults to unbounded.').optional(),
@@ -107,7 +107,7 @@ export const TermvectorsRequest = z.object({
   payloads: z.boolean().describe('If `true`, the response includes term payloads.').optional().meta({ found_in: 'body' }),
   positions: z.boolean().describe('If `true`, the response includes term positions.').optional().meta({ found_in: 'body' }),
   term_statistics: z.boolean().describe('If `true`, the response includes: * The total term frequency (how often a term occurs in all documents). * The document frequency (the number of documents containing the current term). By default these values are not returned since term statistics can have a serious performance impact.').optional().meta({ found_in: 'body' }),
-  routing: z.lazy(() => Routing).describe('A custom value that is used to route operations to a specific shard.').optional().meta({ found_in: 'body' }),
+  routing: z.string().describe('A custom value that is used to route operations to a specific shard.').optional().meta({ found_in: 'body' }),
   version: z.lazy(() => VersionNumber).describe('If `true`, returns the document version as part of a hit.').optional().meta({ found_in: 'body' }),
   version_type: z.lazy(() => VersionType).describe('The version type.').optional().meta({ found_in: 'body' })
 }).meta({ id: 'TermvectorsRequest' })

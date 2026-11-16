@@ -2939,10 +2939,6 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/schedule_monitoring_engine.ts') as Record<string, unknown>
       return mod['schedule_monitoring_engineDefinitions'] as KbApiDefinition[]
     }
-    case 'schedule_risk_engine_now': {
-      const mod = await import('./apis/schedule_risk_engine_now.ts') as Record<string, unknown>
-      return mod['schedule_risk_engine_nowDefinitions'] as KbApiDefinition[]
-    }
     case 'search_alerts': {
       const mod = await import('./apis/search_alerts.ts') as Record<string, unknown>
       return mod['search_alertsDefinitions'] as KbApiDefinition[]

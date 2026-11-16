@@ -42,7 +42,6 @@ export const GetContextEngineAiIndexAiindexidResponse = z.object({
   }).optional(),
   id: z.string(),
   managed: z.boolean(),
-  memory_enabled: z.boolean(),
   sources: z.array(z.object({
     type: z.enum(['esql', 'connector']),
     value: z.string()

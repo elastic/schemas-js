@@ -16,9 +16,11 @@ import { InferenceRequestChatCompletion } from './inference.js'
  * It only works with the `chat_completion` task type.
  *
  * NOTE: The `chat_completion` task type supports both streaming and non-streaming.
+ * For a single, non-streamed response, use the chat completion API (`POST _inference/chat_completion/{inference_id}`).
  * The Chat completion inference API and the Stream inference API differ in their response structure and capabilities.
  * The Chat completion inference API provides more comprehensive customization options through more fields and function calling support.
  * To determine whether a given inference service supports this task type, please see the page for that service.
+ * @deprecated Use `inference.chat_completion_streaming` instead, which calls the same endpoint.
  */
 export const InferenceChatCompletionUnifiedRequest = z.object({
   inference_id: z.lazy(() => Id).describe('The inference Id').meta({ found_in: 'path' }),

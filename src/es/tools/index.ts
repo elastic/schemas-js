@@ -927,6 +927,14 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
       const mod = await import('./apis/indices.validate_query.ts') as Record<string, unknown>
       return mod['indices_validate_query_definitions'] as EsApiDefinition[]
     }
+    case 'inference.chat_completion': {
+      const mod = await import('./apis/inference.chat_completion.ts') as Record<string, unknown>
+      return mod['inference_chat_completion_definitions'] as EsApiDefinition[]
+    }
+    case 'inference.chat_completion_streaming': {
+      const mod = await import('./apis/inference.chat_completion_streaming.ts') as Record<string, unknown>
+      return mod['inference_chat_completion_streaming_definitions'] as EsApiDefinition[]
+    }
     case 'inference.chat_completion_unified': {
       const mod = await import('./apis/inference.chat_completion_unified.ts') as Record<string, unknown>
       return mod['inference_chat_completion_unified_definitions'] as EsApiDefinition[]
@@ -966,10 +974,6 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
     case 'inference.inference': {
       const mod = await import('./apis/inference.inference.ts') as Record<string, unknown>
       return mod['inference_inference_definitions'] as EsApiDefinition[]
-    }
-    case 'inference.non_streaming_chat_completion': {
-      const mod = await import('./apis/inference.non_streaming_chat_completion.ts') as Record<string, unknown>
-      return mod['inference_non_streaming_chat_completion_definitions'] as EsApiDefinition[]
     }
     case 'inference.put': {
       const mod = await import('./apis/inference.put.ts') as Record<string, unknown>
@@ -1574,6 +1578,10 @@ async function loadDefinitions (namespaceFile: string): Promise<EsApiDefinition[
     case 'project.tags': {
       const mod = await import('./apis/project.tags.ts') as Record<string, unknown>
       return mod['project_tags_definitions'] as EsApiDefinition[]
+    }
+    case 'prometheus.status_buildinfo': {
+      const mod = await import('./apis/prometheus.status_buildinfo.ts') as Record<string, unknown>
+      return mod['prometheus_status_buildinfo_definitions'] as EsApiDefinition[]
     }
     case 'put_script': {
       const mod = await import('./apis/put_script.ts') as Record<string, unknown>

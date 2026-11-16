@@ -27,7 +27,7 @@ export type InferenceEmbeddingContentObject = z.infer<typeof InferenceEmbeddingC
 export const InferenceEmbeddingContentInput = z.union([InferenceEmbeddingContentObject, z.array(InferenceEmbeddingContentObject)]).meta({ id: 'InferenceEmbeddingContentInput' })
 export type InferenceEmbeddingContentInput = z.infer<typeof InferenceEmbeddingContentInput>
 
-const InferenceEmbeddingInferenceResultExclusiveProps = z.union([z.object({ embeddings_bytes: z.array(InferenceDenseEmbeddingByteResult) }), z.object({ embeddings_bits: z.array(InferenceDenseEmbeddingByteResult) }), z.object({ embeddings: z.array(InferenceDenseEmbeddingResult) })])
+const InferenceEmbeddingInferenceResultExclusiveProps = z.union([z.object({ embeddings_bytes: z.array(InferenceDenseEmbeddingByteResult), embeddings_bits: z.never().optional(), embeddings: z.never().optional() }), z.object({ embeddings_bits: z.array(InferenceDenseEmbeddingByteResult), embeddings_bytes: z.never().optional(), embeddings: z.never().optional() }), z.object({ embeddings: z.array(InferenceDenseEmbeddingResult), embeddings_bytes: z.never().optional(), embeddings_bits: z.never().optional() })])
 
 /** EmbeddingInferenceResult is an aggregation of mutually exclusive embeddings variants */
 export const InferenceEmbeddingInferenceResult = InferenceEmbeddingInferenceResultExclusiveProps.meta({ id: 'InferenceEmbeddingInferenceResult' })

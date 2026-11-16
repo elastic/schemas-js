@@ -9,7 +9,7 @@ import { z } from 'zod'
 import { Duration, Id } from './_types.js'
 import { InferenceDenseEmbeddingByteResult, InferenceDenseEmbeddingResult, InferenceTaskSettings } from './inference.js'
 
-const InferenceTextEmbeddingInferenceResultExclusiveProps = z.union([z.object({ text_embedding_bytes: z.array(InferenceDenseEmbeddingByteResult) }), z.object({ text_embedding_bits: z.array(InferenceDenseEmbeddingByteResult) }), z.object({ text_embedding: z.array(InferenceDenseEmbeddingResult) })])
+const InferenceTextEmbeddingInferenceResultExclusiveProps = z.union([z.object({ text_embedding_bytes: z.array(InferenceDenseEmbeddingByteResult), text_embedding_bits: z.never().optional(), text_embedding: z.never().optional() }), z.object({ text_embedding_bits: z.array(InferenceDenseEmbeddingByteResult), text_embedding_bytes: z.never().optional(), text_embedding: z.never().optional() }), z.object({ text_embedding: z.array(InferenceDenseEmbeddingResult), text_embedding_bytes: z.never().optional(), text_embedding_bits: z.never().optional() })])
 
 /** TextEmbeddingInferenceResult is an aggregation of mutually exclusive text_embedding variants */
 export const InferenceTextEmbeddingInferenceResult = InferenceTextEmbeddingInferenceResultExclusiveProps.meta({ id: 'InferenceTextEmbeddingInferenceResult' })

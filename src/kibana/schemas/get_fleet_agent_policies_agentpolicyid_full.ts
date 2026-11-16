@@ -26,6 +26,9 @@ export const Kibana_HTTP_APIs_full_agent_policy = z.object({
       }).optional(),
       proxy_headers: z.record(z.string(), z.union([z.string(), z.boolean(), z.number()])).nullable().optional(),
       proxy_url: z.string().optional(),
+      reserve_diskspace: z.object({
+        enabled: z.boolean()
+      }).optional(),
       secrets: z.object({
         ssl: z.object({
           key: z.object({

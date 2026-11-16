@@ -740,12 +740,6 @@ export type Security_Entity_Analytics_API_MonitoringLabel = z.infer<typeof Secur
 export const Security_Entity_Analytics_API_PrivilegeMonitoringEngineStatus = z.enum(['started', 'error', 'disabled', 'not_installed']).meta({ id: 'Security_Entity_Analytics_API_PrivilegeMonitoringEngineStatus' })
 export type Security_Entity_Analytics_API_PrivilegeMonitoringEngineStatus = z.infer<typeof Security_Entity_Analytics_API_PrivilegeMonitoringEngineStatus>
 
-export const Security_Entity_Analytics_API_RiskEngineScheduleNowErrorResponse = z.object({
-  full_error: z.string(),
-  message: z.string()
-}).meta({ id: 'Security_Entity_Analytics_API_RiskEngineScheduleNowErrorResponse' })
-export type Security_Entity_Analytics_API_RiskEngineScheduleNowErrorResponse = z.infer<typeof Security_Entity_Analytics_API_RiskEngineScheduleNowErrorResponse>
-
 export const Security_Entity_Analytics_API_TaskManagerUnavailableResponse = z.object({
   message: z.string(),
   status_code: z.number()

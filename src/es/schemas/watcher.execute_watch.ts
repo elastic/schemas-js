@@ -52,7 +52,7 @@ export const WatcherIndexResultRequestSummary = z.object({
 }).meta({ id: 'WatcherIndexResultRequestSummary' })
 export type WatcherIndexResultRequestSummary = z.infer<typeof WatcherIndexResultRequestSummary>
 
-const WatcherIndexResultExclusiveProps = z.union([z.object({ response: z.union([WatcherIndexResultSummary, z.array(WatcherIndexResultSummary)]) }), z.object({ request: WatcherIndexResultRequestSummary })])
+const WatcherIndexResultExclusiveProps = z.union([z.object({ response: z.union([WatcherIndexResultSummary, z.array(WatcherIndexResultSummary)]), request: z.never().optional() }), z.object({ request: WatcherIndexResultRequestSummary, response: z.never().optional() })])
 
 /**
  * The result of an index action.

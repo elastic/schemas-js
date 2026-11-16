@@ -9,7 +9,7 @@ import { z } from 'zod'
 import { Field, FieldValue, Metadata, Name, Refresh } from './_types.js'
 import { SecurityCreatedStatus, SecurityRoleTemplate } from './security.js'
 
-const SecurityRoleMappingRuleExclusiveProps = z.union([z.object({ any: z.array(z.lazy(() => SecurityRoleMappingRule)) }), z.object({ all: z.array(z.lazy(() => SecurityRoleMappingRule)) }), z.object({ field: z.record(z.lazy(() => Field), z.union([z.lazy(() => FieldValue), z.array(z.lazy(() => FieldValue))])) }), z.object({ except: z.lazy(() => SecurityRoleMappingRule) })])
+const SecurityRoleMappingRuleExclusiveProps = z.union([z.object({ any: z.array(z.lazy(() => SecurityRoleMappingRule)), all: z.never().optional(), field: z.never().optional(), except: z.never().optional() }), z.object({ all: z.array(z.lazy(() => SecurityRoleMappingRule)), any: z.never().optional(), field: z.never().optional(), except: z.never().optional() }), z.object({ field: z.record(z.lazy(() => Field), z.union([z.lazy(() => FieldValue), z.array(z.lazy(() => FieldValue))])), any: z.never().optional(), all: z.never().optional(), except: z.never().optional() }), z.object({ except: z.lazy(() => SecurityRoleMappingRule), any: z.never().optional(), all: z.never().optional(), field: z.never().optional() })])
 
 export interface SecurityRoleMappingRuleShape {
   any?: SecurityRoleMappingRule[] | undefined
