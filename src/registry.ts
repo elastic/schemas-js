@@ -58,11 +58,33 @@ export class UnknownApiError extends Error {
   }
 }
 
+interface ApiUrl {
+  path: string
+  methods: string[]
+}
+
+// most specific URL whose path params are all supplied; definition.path wins ties
+function selectPath (definition: ApiRegistryDefinition, input: Record<string, unknown>): string {
+  const urls = (definition.input?.['x-urls'] ?? []) as ApiUrl[]
+  const candidates = [definition.path, ...urls.filter(u => u.methods.includes(definition.method)).map(u => u.path)]
+  let best = definition.path
+  let bestCount = -1
+  for (const path of candidates) {
+    const params = [...path.matchAll(/\{([^}]+)\}/g)].map(m => m[1]!)
+    if (params.some(p => input[p] === undefined)) continue
+    if (params.length > bestCount) {
+      best = path
+      bestCount = params.length
+    }
+  }
+  return best
+}
+
 export function buildRequest (
   definition: ApiRegistryDefinition,
   input: Record<string, unknown>
 ): ApiRequest {
-  let path = definition.path
+  let path = selectPath(definition, input)
   const querystring: Record<string, unknown> = {}
   const body: Record<string, unknown> = {}
   let rootBody: unknown

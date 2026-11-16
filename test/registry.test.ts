@@ -47,6 +47,50 @@ const bulkDef: ApiRegistryDefinition = {
 }
 
 describe('buildRequest', () => {
+  const catIndicesDef: ApiRegistryDefinition = {
+    name: 'indices',
+    namespace: 'cat',
+    description: 'Cat indices',
+    method: 'GET',
+    path: '/_cat/indices/{index}',
+    input: {
+      type: 'object',
+      'x-urls': [
+        { path: '/_cat/indices', methods: ['GET'] },
+        { path: '/_cat/indices/{index}', methods: ['GET'] },
+      ],
+      properties: { index: { type: 'string', 'x-found-in': 'path' } },
+    },
+    destructive: false,
+    readOnly: true,
+  }
+
+  it('selects the index-free URL when index is omitted', () => {
+    expect(buildRequest(catIndicesDef, {}).path).toBe('/_cat/indices')
+  })
+
+  it('selects the indexed URL when index is supplied', () => {
+    expect(buildRequest(catIndicesDef, { index: 'logs' }).path).toBe('/_cat/indices/logs')
+  })
+
+  it('prefers definition.path over an equally specific x-urls entry', () => {
+    const def: ApiRegistryDefinition = {
+      ...catIndicesDef,
+      path: '/{index}/_alias/{name}',
+      input: {
+        'x-urls': [
+          { path: '/{index}/_aliases/{name}', methods: ['GET'] },
+          { path: '/{index}/_alias/{name}', methods: ['GET'] },
+        ],
+        properties: {
+          index: { type: 'string', 'x-found-in': 'path' },
+          name: { type: 'string', 'x-found-in': 'path' },
+        },
+      },
+    }
+    expect(buildRequest(def, { index: 'i', name: 'n' }).path).toBe('/i/_alias/n')
+  })
+
   it('interpolates path params', () => {
     expect(buildRequest(searchDef, { index: 'my-index', query: { match_all: {} } }).path).toBe('/my-index/_search')
   })
