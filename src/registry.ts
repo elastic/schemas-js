@@ -63,24 +63,16 @@ interface ApiUrl {
   methods: string[]
 }
 
-// most specific URL whose params are all supplied and that covers every supplied path param; definition.path wins ties
+// route whose placeholders are exactly the supplied path params; definition.path wins ties and is the fallback
 function selectPath (definition: ApiRegistryDefinition, input: Record<string, unknown>): string {
   const urls = (definition.input?.['x-urls'] ?? []) as ApiUrl[]
   const props = (definition.input?.properties ?? {}) as Record<string, Record<string, unknown>>
-  const suppliedPathParams = Object.keys(props).filter(k => props[k]!['x-found-in'] === 'path' && input[k] !== undefined)
+  const supplied = Object.keys(props).filter(k => props[k]!['x-found-in'] === 'path' && input[k] !== undefined)
   const candidates = [definition.path, ...urls.filter(u => u.methods.includes(definition.method)).map(u => u.path)]
-  let best = definition.path
-  let bestCount = -1
-  for (const path of candidates) {
+  return candidates.find(path => {
     const params = [...path.matchAll(/\{([^}]+)\}/g)].map(m => m[1]!)
-    if (params.some(p => input[p] === undefined)) continue
-    if (suppliedPathParams.some(p => !params.includes(p))) continue
-    if (params.length > bestCount) {
-      best = path
-      bestCount = params.length
-    }
-  }
-  return best
+    return params.length === supplied.length && params.every(p => supplied.includes(p))
+  }) ?? definition.path
 }
 
 export function buildRequest (

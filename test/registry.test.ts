@@ -110,6 +110,23 @@ describe('buildRequest', () => {
     expect(buildRequest(def, { node_id: 'node-a', index_metric: 'store' }).path).toBe('/_nodes/node-a/stats/{metric}/store')
   })
 
+  it('does not select a route whose placeholder is a body param', () => {
+    const def: ApiRegistryDefinition = {
+      ...catIndicesDef,
+      path: '/_search/scroll',
+      input: {
+        'x-urls': [
+          { path: '/_search/scroll', methods: ['GET'] },
+          { path: '/_search/scroll/{scroll_id}', methods: ['GET'] },
+        ],
+        properties: { scroll_id: { type: 'string', 'x-found-in': 'body' } },
+      },
+    }
+    const req = buildRequest(def, { scroll_id: 'abc' })
+    expect(req.path).toBe('/_search/scroll')
+    expect(req.body).toEqual({ scroll_id: 'abc' })
+  })
+
   it('interpolates path params', () => {
     expect(buildRequest(searchDef, { index: 'my-index', query: { match_all: {} } }).path).toBe('/my-index/_search')
   })
