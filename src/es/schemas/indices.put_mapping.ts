@@ -161,10 +161,9 @@ export const MappingSparseVectorIndexOptions = z.object({
 }).meta({ id: 'MappingSparseVectorIndexOptions' })
 export type MappingSparseVectorIndexOptions = z.infer<typeof MappingSparseVectorIndexOptions>
 
-export const MappingSemanticTextIndexOptions = z.object({
-  dense_vector: MappingDenseVectorIndexOptions.optional(),
-  sparse_vector: MappingSparseVectorIndexOptions.optional()
-}).meta({ id: 'MappingSemanticTextIndexOptions' })
+const MappingSemanticTextIndexOptionsExclusiveProps = z.union([z.object({ dense_vector: MappingDenseVectorIndexOptions, sparse_vector: z.never().optional() }), z.object({ sparse_vector: MappingSparseVectorIndexOptions, dense_vector: z.never().optional() })])
+
+export const MappingSemanticTextIndexOptions = MappingSemanticTextIndexOptionsExclusiveProps.meta({ id: 'MappingSemanticTextIndexOptions' })
 export type MappingSemanticTextIndexOptions = z.infer<typeof MappingSemanticTextIndexOptions>
 
 export const MappingChunkingSettings = z.object({
@@ -767,7 +766,7 @@ const MappingDynamicTemplateCommonProps = z.object({
   match_pattern: MappingMatchType.optional()
 })
 
-const MappingDynamicTemplateExclusiveProps = z.union([z.object({ mapping: z.lazy(() => MappingProperty) }), z.object({ runtime: z.lazy(() => MappingRuntimeField) })])
+const MappingDynamicTemplateExclusiveProps = z.union([z.object({ mapping: z.lazy(() => MappingProperty), runtime: z.never().optional() }), z.object({ runtime: z.lazy(() => MappingRuntimeField), mapping: z.never().optional() })])
 
 export const MappingDynamicTemplate = MappingDynamicTemplateCommonProps.and(MappingDynamicTemplateExclusiveProps).meta({ id: 'MappingDynamicTemplate' })
 export type MappingDynamicTemplate = z.infer<typeof MappingDynamicTemplate>
@@ -1167,6 +1166,7 @@ export interface MappingIntegerNumberPropertyShape {
   time_series_dimension?: boolean | undefined
   type: 'integer'
   null_value?: integer | undefined
+  index_terms?: boolean | undefined
 }
 export const MappingIntegerNumberProperty = z.object({
   meta: z.record(z.string(), z.string()).describe('Metadata about the field.').optional(),
@@ -1187,7 +1187,8 @@ export const MappingIntegerNumberProperty = z.object({
   time_series_metric: z.lazy(() => MappingTimeSeriesMetricType).describe('For internal use by Elastic only. Marks the field as a time series dimension. Defaults to false.').optional(),
   time_series_dimension: z.boolean().describe('For internal use by Elastic only. Marks the field as a time series dimension. Defaults to false.').optional(),
   type: z.literal('integer'),
-  null_value: z.lazy(() => integer).optional()
+  null_value: z.lazy(() => integer).optional(),
+  index_terms: z.boolean().describe('If `true`, the field\'s values are indexed in an inverted index instead of a BKD tree. This speeds up queries that match a field against many values, such as `terms` queries, but wide range queries are typically slower than on a BKD tree. Requires `index` to be `true`.').optional()
 }).meta({ id: 'MappingIntegerNumberProperty' })
 export type MappingIntegerNumberProperty = z.infer<typeof MappingIntegerNumberProperty>
 
@@ -1389,6 +1390,7 @@ export interface MappingLongNumberPropertyShape {
   time_series_dimension?: boolean | undefined
   type: 'long'
   null_value?: long | undefined
+  index_terms?: boolean | undefined
 }
 export const MappingLongNumberProperty = z.object({
   meta: z.record(z.string(), z.string()).describe('Metadata about the field.').optional(),
@@ -1409,7 +1411,8 @@ export const MappingLongNumberProperty = z.object({
   time_series_metric: z.lazy(() => MappingTimeSeriesMetricType).describe('For internal use by Elastic only. Marks the field as a time series dimension. Defaults to false.').optional(),
   time_series_dimension: z.boolean().describe('For internal use by Elastic only. Marks the field as a time series dimension. Defaults to false.').optional(),
   type: z.literal('long'),
-  null_value: z.lazy(() => long).optional()
+  null_value: z.lazy(() => long).optional(),
+  index_terms: z.boolean().describe('If `true`, the field\'s values are indexed in an inverted index instead of a BKD tree. This speeds up queries that match a field against many values, such as `terms` queries, but wide range queries are typically slower than on a BKD tree. Requires `index` to be `true`.').optional()
 }).meta({ id: 'MappingLongNumberProperty' })
 export type MappingLongNumberProperty = z.infer<typeof MappingLongNumberProperty>
 
@@ -1538,7 +1541,7 @@ export interface MappingPassthroughObjectPropertyShape {
   synthetic_source_keep?: MappingSyntheticSourceKeepEnum | undefined
   copy_to?: Fields | undefined
   store?: boolean | undefined
-  type?: 'passthrough' | undefined
+  type: 'passthrough'
   enabled?: boolean | undefined
   priority?: integer | undefined
   time_series_dimension?: boolean | undefined
@@ -1552,7 +1555,7 @@ export const MappingPassthroughObjectProperty = z.object({
   synthetic_source_keep: z.lazy(() => MappingSyntheticSourceKeepEnum).optional(),
   copy_to: z.lazy(() => Fields).optional(),
   store: z.boolean().optional(),
-  type: z.literal('passthrough').optional(),
+  type: z.literal('passthrough'),
   enabled: z.boolean().optional(),
   priority: z.lazy(() => integer).optional(),
   time_series_dimension: z.boolean().optional()

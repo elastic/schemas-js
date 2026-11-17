@@ -16,6 +16,7 @@ import { Kibana_HTTP_APIs_alerting_rule_artifact, Kibana_HTTP_APIs_alerting_rule
 export const Kibana_HTTP_APIs_alerting_new_rule = z.object({
   artifacts: z.array(Kibana_HTTP_APIs_alerting_rule_artifact).optional(),
   grouping: Kibana_HTTP_APIs_alerting_rule_grouping.optional(),
+  id: z.string().optional(),
   kind: z.union([z.enum(['alert']), z.enum(['signal'])]),
   metadata: Kibana_HTTP_APIs_alerting_rule_metadata,
   no_data: Kibana_HTTP_APIs_alerting_rule_no_data.optional(),

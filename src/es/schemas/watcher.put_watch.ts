@@ -103,7 +103,7 @@ export const WatcherDataEmailAttachment = z.object({
 }).meta({ id: 'WatcherDataEmailAttachment' })
 export type WatcherDataEmailAttachment = z.infer<typeof WatcherDataEmailAttachment>
 
-const WatcherEmailAttachmentContainerExclusiveProps = z.union([z.object({ http: WatcherHttpEmailAttachment }), z.object({ reporting: WatcherReportingEmailAttachment }), z.object({ data: WatcherDataEmailAttachment })])
+const WatcherEmailAttachmentContainerExclusiveProps = z.union([z.object({ http: WatcherHttpEmailAttachment, reporting: z.never().optional(), data: z.never().optional() }), z.object({ reporting: WatcherReportingEmailAttachment, http: z.never().optional(), data: z.never().optional() }), z.object({ data: WatcherDataEmailAttachment, http: z.never().optional(), reporting: z.never().optional() })])
 
 export const WatcherEmailAttachmentContainer = WatcherEmailAttachmentContainerExclusiveProps.meta({ id: 'WatcherEmailAttachmentContainer' })
 export type WatcherEmailAttachmentContainer = z.infer<typeof WatcherEmailAttachmentContainer>
@@ -284,9 +284,13 @@ export const WatcherTimeOfYear = z.object({
 }).meta({ id: 'WatcherTimeOfYear' })
 export type WatcherTimeOfYear = z.infer<typeof WatcherTimeOfYear>
 
-const WatcherScheduleContainerExclusiveProps = z.union([z.object({ timezone: z.string() }), z.object({ cron: z.lazy(() => WatcherCronExpression) }), z.object({ daily: WatcherDailySchedule }), z.object({ hourly: WatcherHourlySchedule }), z.object({ interval: z.lazy(() => Duration) }), z.object({ monthly: z.union([WatcherTimeOfMonth, z.array(WatcherTimeOfMonth)]) }), z.object({ weekly: z.union([WatcherTimeOfWeek, z.array(WatcherTimeOfWeek)]) }), z.object({ yearly: z.union([WatcherTimeOfYear, z.array(WatcherTimeOfYear)]) })])
+const WatcherScheduleContainerCommonProps = z.object({
+  timezone: z.string().optional()
+})
 
-export const WatcherScheduleContainer = WatcherScheduleContainerExclusiveProps.meta({ id: 'WatcherScheduleContainer' })
+const WatcherScheduleContainerExclusiveProps = z.union([z.object({ cron: z.lazy(() => WatcherCronExpression), daily: z.never().optional(), hourly: z.never().optional(), interval: z.never().optional(), monthly: z.never().optional(), weekly: z.never().optional(), yearly: z.never().optional() }), z.object({ daily: WatcherDailySchedule, cron: z.never().optional(), hourly: z.never().optional(), interval: z.never().optional(), monthly: z.never().optional(), weekly: z.never().optional(), yearly: z.never().optional() }), z.object({ hourly: WatcherHourlySchedule, cron: z.never().optional(), daily: z.never().optional(), interval: z.never().optional(), monthly: z.never().optional(), weekly: z.never().optional(), yearly: z.never().optional() }), z.object({ interval: z.lazy(() => Duration), cron: z.never().optional(), daily: z.never().optional(), hourly: z.never().optional(), monthly: z.never().optional(), weekly: z.never().optional(), yearly: z.never().optional() }), z.object({ monthly: z.union([WatcherTimeOfMonth, z.array(WatcherTimeOfMonth)]), cron: z.never().optional(), daily: z.never().optional(), hourly: z.never().optional(), interval: z.never().optional(), weekly: z.never().optional(), yearly: z.never().optional() }), z.object({ weekly: z.union([WatcherTimeOfWeek, z.array(WatcherTimeOfWeek)]), cron: z.never().optional(), daily: z.never().optional(), hourly: z.never().optional(), interval: z.never().optional(), monthly: z.never().optional(), yearly: z.never().optional() }), z.object({ yearly: z.union([WatcherTimeOfYear, z.array(WatcherTimeOfYear)]), cron: z.never().optional(), daily: z.never().optional(), hourly: z.never().optional(), interval: z.never().optional(), monthly: z.never().optional(), weekly: z.never().optional() })])
+
+export const WatcherScheduleContainer = WatcherScheduleContainerCommonProps.and(WatcherScheduleContainerExclusiveProps).meta({ id: 'WatcherScheduleContainer' })
 export type WatcherScheduleContainer = z.infer<typeof WatcherScheduleContainer>
 
 const WatcherTriggerContainerExclusiveProps = z.union([z.object({ schedule: WatcherScheduleContainer })])

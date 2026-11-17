@@ -4103,10 +4103,50 @@
     }
   },
   {
+    "id": "inference.chat_completion",
+    "name": "chat-completion",
+    "namespace": "inference",
+    "description": "Perform non-streaming chat completion inference on the service.\n\nThe chat completion inference API enables rich responses for chat completion tasks.\nIt only works with the `chat_completion` task type.\n\nNOTE: The `chat_completion` task type supports both streaming and non-streaming.\nTo stream the response, use the streaming chat completion API (`POST _inference/chat_completion/{inference_id}/_stream`).\nThe Chat completion inference API provides more comprehensive customization options through more fields and function calling support.\nTo determine whether a given inference service supports this task type, please see the page for that service.\n\nThese services support non-streaming chat completion inference:\n- AI21\n- Azure OpenAI\n- Deepseek\n- Elastic\n- FireworksAI\n- Groq\n- Huggingface\n- IBMWatsonX\n- Llama\n- Mistral\n- NVIDIA\n- OpenAI\n- OpenShiftAI",
+    "namespaceFile": "inference.chat_completion",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "since": "9.6.0",
+        "stability": "stable",
+        "visibility": "public"
+      },
+      "serverless": {
+        "stability": "stable",
+        "visibility": "public"
+      }
+    }
+  },
+  {
+    "id": "inference.chat_completion_streaming",
+    "name": "chat-completion-streaming",
+    "namespace": "inference",
+    "description": "Perform streaming chat completion inference on the service.\n\nThe chat completion inference API enables real-time responses for chat completion tasks by delivering answers incrementally, reducing response times during computation.\nIt only works with the `chat_completion` task type.\n\nNOTE: The `chat_completion` task type supports both streaming and non-streaming.\nFor a single, non-streamed response, use the chat completion API (`POST _inference/chat_completion/{inference_id}`).\nThe Chat completion inference API and the Stream inference API differ in their response structure and capabilities.\nThe Chat completion inference API provides more comprehensive customization options through more fields and function calling support.\nTo determine whether a given inference service supports this task type, please see the page for that service.",
+    "namespaceFile": "inference.chat_completion_streaming",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "since": "9.6.0",
+        "stability": "stable",
+        "visibility": "public"
+      },
+      "serverless": {
+        "stability": "stable",
+        "visibility": "public"
+      }
+    }
+  },
+  {
     "id": "inference.chat_completion_unified",
     "name": "chat-completion-unified",
     "namespace": "inference",
-    "description": "Perform streaming chat completion inference on the service.\n\nThe chat completion inference API enables real-time responses for chat completion tasks by delivering answers incrementally, reducing response times during computation.\nIt only works with the `chat_completion` task type.\n\nNOTE: The `chat_completion` task type supports both streaming and non-streaming.\nThe Chat completion inference API and the Stream inference API differ in their response structure and capabilities.\nThe Chat completion inference API provides more comprehensive customization options through more fields and function calling support.\nTo determine whether a given inference service supports this task type, please see the page for that service.",
+    "description": "Perform streaming chat completion inference on the service.\n\nThe chat completion inference API enables real-time responses for chat completion tasks by delivering answers incrementally, reducing response times during computation.\nIt only works with the `chat_completion` task type.\n\nNOTE: The `chat_completion` task type supports both streaming and non-streaming.\nFor a single, non-streamed response, use the chat completion API (`POST _inference/chat_completion/{inference_id}`).\nThe Chat completion inference API and the Stream inference API differ in their response structure and capabilities.\nThe Chat completion inference API provides more comprehensive customization options through more fields and function calling support.\nTo determine whether a given inference service supports this task type, please see the page for that service.",
     "namespaceFile": "inference.chat_completion_unified",
     "destructive": true,
     "readOnly": false,
@@ -4293,26 +4333,6 @@
     "availability": {
       "stack": {
         "since": "8.11.0",
-        "stability": "stable",
-        "visibility": "public"
-      },
-      "serverless": {
-        "stability": "stable",
-        "visibility": "public"
-      }
-    }
-  },
-  {
-    "id": "inference.non_streaming_chat_completion",
-    "name": "non-streaming-chat-completion",
-    "namespace": "inference",
-    "description": "Perform non-streaming chat completion inference on the service.\n\nThe chat completion inference API enables rich responses for chat completion tasks.\nIt only works with the `chat_completion` task type.\n\nNOTE: The `chat_completion` task type supports both streaming and non-streaming.\nThe Chat completion inference API provides more comprehensive customization options through more fields and function calling support.\nTo determine whether a given inference service supports this task type, please see the page for that service.\n\nThese services support non-streaming chat completion inference:\n- AI21\n- Azure OpenAI\n- Deepseek\n- Elastic\n- FireworksAI\n- Groq\n- Huggingface\n- IBMWatsonX\n- Llama\n- Mistral\n- NVIDIA\n- OpenAI\n- OpenShiftAI",
-    "namespaceFile": "inference.non_streaming_chat_completion",
-    "destructive": true,
-    "readOnly": false,
-    "availability": {
-      "stack": {
-        "since": "9.6.0",
         "stability": "stable",
         "visibility": "public"
       },
@@ -7140,6 +7160,26 @@
     "availability": {
       "serverless": {
         "stability": "experimental",
+        "visibility": "public"
+      }
+    }
+  },
+  {
+    "id": "prometheus.status_buildinfo",
+    "name": "status-buildinfo",
+    "namespace": "prometheus",
+    "description": "Get Prometheus build information.\n\nGet Elasticsearch build information in the format of the Prometheus `/api/v1/status/buildinfo` endpoint.\nPrometheus-compatible clients, such as Grafana, call this endpoint to identify the backend and the features it supports.",
+    "namespaceFile": "prometheus.status_buildinfo",
+    "destructive": false,
+    "readOnly": true,
+    "availability": {
+      "stack": {
+        "since": "9.5.0",
+        "stability": "tech_preview",
+        "visibility": "public"
+      },
+      "serverless": {
+        "stability": "tech_preview",
         "visibility": "public"
       }
     }

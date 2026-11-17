@@ -75,7 +75,7 @@ export const MlDataframeEvaluationRegression = z.object({
 }).meta({ id: 'MlDataframeEvaluationRegression' })
 export type MlDataframeEvaluationRegression = z.infer<typeof MlDataframeEvaluationRegression>
 
-const MlDataframeEvaluationContainerExclusiveProps = z.union([z.object({ classification: MlDataframeEvaluationClassification }), z.object({ outlier_detection: MlDataframeEvaluationOutlierDetection }), z.object({ regression: MlDataframeEvaluationRegression })])
+const MlDataframeEvaluationContainerExclusiveProps = z.union([z.object({ classification: MlDataframeEvaluationClassification, outlier_detection: z.never().optional(), regression: z.never().optional() }), z.object({ outlier_detection: MlDataframeEvaluationOutlierDetection, classification: z.never().optional(), regression: z.never().optional() }), z.object({ regression: MlDataframeEvaluationRegression, classification: z.never().optional(), outlier_detection: z.never().optional() })])
 
 export const MlDataframeEvaluationContainer = MlDataframeEvaluationContainerExclusiveProps.meta({ id: 'MlDataframeEvaluationContainer' })
 export type MlDataframeEvaluationContainer = z.infer<typeof MlDataframeEvaluationContainer>

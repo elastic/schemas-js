@@ -17,6 +17,19 @@ import type { QueryDslQueryContainerShape } from './_types.query_dsl.js'
 import { ExplainExplanation } from './explain.js'
 import { RescoreVector } from './knn_eval.js'
 
+export const SearchSourceFilter = z.object({
+  exclude_vectors: z.boolean().describe('If `true`, vector fields are excluded from the returned source. This option takes precedence over `includes`: any vector field will remain excluded even if it matches an `includes` rule.').optional(),
+  excludes: z.lazy(() => Fields).describe('A list of fields to exclude from the returned source.').optional(),
+  exclude: z.lazy(() => Fields).describe('A list of fields to exclude from the returned source.').optional(),
+  includes: z.lazy(() => Fields).describe('A list of fields to include in the returned source.').optional(),
+  include: z.lazy(() => Fields).describe('A list of fields to include in the returned source.').optional()
+}).meta({ id: 'SearchSourceFilter' })
+export type SearchSourceFilter = z.infer<typeof SearchSourceFilter>
+
+/** Defines how to fetch a source. Fetching can be disabled entirely, or the source can be filtered. */
+export const SearchSourceConfig = z.union([z.boolean(), z.union([SearchSourceFilter, z.lazy(() => Fields)])]).meta({ id: 'SearchSourceConfig' })
+export type SearchSourceConfig = z.infer<typeof SearchSourceConfig>
+
 /**
  * Defines how to fetch a source. Fetching can be disabled entirely, or the source can be filtered.
  * Used as a query parameter along with the `_source_includes` and `_source_excludes` parameters.
@@ -45,7 +58,7 @@ export type SearchBoundaryScanner = z.infer<typeof SearchBoundaryScanner>
 export const SearchHighlighterFragmenter = z.enum(['simple', 'span']).meta({ id: 'SearchHighlighterFragmenter' })
 export type SearchHighlighterFragmenter = z.infer<typeof SearchHighlighterFragmenter>
 
-export const SearchHighlighterOrder = z.enum(['score']).meta({ id: 'SearchHighlighterOrder' })
+export const SearchHighlighterOrder = z.enum(['none', 'score']).meta({ id: 'SearchHighlighterOrder' })
 export type SearchHighlighterOrder = z.infer<typeof SearchHighlighterOrder>
 
 export const SearchHighlighterTagsSchema = z.enum(['styled']).meta({ id: 'SearchHighlighterTagsSchema' })
@@ -206,19 +219,6 @@ export const SearchHighlight = z.object({
 }).meta({ id: 'SearchHighlight' })
 export type SearchHighlight = z.infer<typeof SearchHighlight>
 
-export const SearchSourceFilter = z.object({
-  exclude_vectors: z.boolean().describe('If `true`, vector fields are excluded from the returned source. This option takes precedence over `includes`: any vector field will remain excluded even if it matches an `includes` rule.').optional(),
-  excludes: z.lazy(() => Fields).describe('A list of fields to exclude from the returned source.').optional(),
-  exclude: z.lazy(() => Fields).describe('A list of fields to exclude from the returned source.').optional(),
-  includes: z.lazy(() => Fields).describe('A list of fields to include in the returned source.').optional(),
-  include: z.lazy(() => Fields).describe('A list of fields to include in the returned source.').optional()
-}).meta({ id: 'SearchSourceFilter' })
-export type SearchSourceFilter = z.infer<typeof SearchSourceFilter>
-
-/** Defines how to fetch a source. Fetching can be disabled entirely, or the source can be filtered. */
-export const SearchSourceConfig = z.union([z.boolean(), z.union([SearchSourceFilter, z.lazy(() => Fields)])]).meta({ id: 'SearchSourceConfig' })
-export type SearchSourceConfig = z.infer<typeof SearchSourceConfig>
-
 export interface SearchInnerHitsShape {
   name?: Name | undefined
   size?: integer | undefined
@@ -303,7 +303,7 @@ const SearchRescoreCommonProps = z.object({
   window_size: z.lazy(() => integer).optional()
 })
 
-const SearchRescoreExclusiveProps = z.union([z.object({ query: z.lazy(() => SearchRescoreQuery) }), z.object({ learning_to_rank: SearchLearningToRank }), z.object({ script: z.lazy(() => SearchScriptRescore) })])
+const SearchRescoreExclusiveProps = z.union([z.object({ query: z.lazy(() => SearchRescoreQuery), learning_to_rank: z.never().optional(), script: z.never().optional() }), z.object({ learning_to_rank: SearchLearningToRank, query: z.never().optional(), script: z.never().optional() }), z.object({ script: z.lazy(() => SearchScriptRescore), query: z.never().optional(), learning_to_rank: z.never().optional() })])
 
 export interface SearchRescoreShape {
   window_size?: integer | undefined
@@ -572,7 +572,7 @@ export const DiversifyRetriever = z.object({
 }).meta({ id: 'DiversifyRetriever' })
 export type DiversifyRetriever = z.infer<typeof DiversifyRetriever>
 
-const RetrieverContainerExclusiveProps = z.union([z.object({ standard: z.lazy(() => StandardRetriever) }), z.object({ knn: z.lazy(() => KnnRetriever) }), z.object({ rrf: z.lazy(() => RRFRetriever) }), z.object({ text_similarity_reranker: z.lazy(() => TextSimilarityReranker) }), z.object({ rule: z.lazy(() => RuleRetriever) }), z.object({ rescorer: z.lazy(() => RescorerRetriever) }), z.object({ linear: z.lazy(() => LinearRetriever) }), z.object({ pinned: z.lazy(() => PinnedRetriever) }), z.object({ diversify: z.lazy(() => DiversifyRetriever) })])
+const RetrieverContainerExclusiveProps = z.union([z.object({ standard: z.lazy(() => StandardRetriever), knn: z.never().optional(), rrf: z.never().optional(), text_similarity_reranker: z.never().optional(), rule: z.never().optional(), rescorer: z.never().optional(), linear: z.never().optional(), pinned: z.never().optional(), diversify: z.never().optional() }), z.object({ knn: z.lazy(() => KnnRetriever), standard: z.never().optional(), rrf: z.never().optional(), text_similarity_reranker: z.never().optional(), rule: z.never().optional(), rescorer: z.never().optional(), linear: z.never().optional(), pinned: z.never().optional(), diversify: z.never().optional() }), z.object({ rrf: z.lazy(() => RRFRetriever), standard: z.never().optional(), knn: z.never().optional(), text_similarity_reranker: z.never().optional(), rule: z.never().optional(), rescorer: z.never().optional(), linear: z.never().optional(), pinned: z.never().optional(), diversify: z.never().optional() }), z.object({ text_similarity_reranker: z.lazy(() => TextSimilarityReranker), standard: z.never().optional(), knn: z.never().optional(), rrf: z.never().optional(), rule: z.never().optional(), rescorer: z.never().optional(), linear: z.never().optional(), pinned: z.never().optional(), diversify: z.never().optional() }), z.object({ rule: z.lazy(() => RuleRetriever), standard: z.never().optional(), knn: z.never().optional(), rrf: z.never().optional(), text_similarity_reranker: z.never().optional(), rescorer: z.never().optional(), linear: z.never().optional(), pinned: z.never().optional(), diversify: z.never().optional() }), z.object({ rescorer: z.lazy(() => RescorerRetriever), standard: z.never().optional(), knn: z.never().optional(), rrf: z.never().optional(), text_similarity_reranker: z.never().optional(), rule: z.never().optional(), linear: z.never().optional(), pinned: z.never().optional(), diversify: z.never().optional() }), z.object({ linear: z.lazy(() => LinearRetriever), standard: z.never().optional(), knn: z.never().optional(), rrf: z.never().optional(), text_similarity_reranker: z.never().optional(), rule: z.never().optional(), rescorer: z.never().optional(), pinned: z.never().optional(), diversify: z.never().optional() }), z.object({ pinned: z.lazy(() => PinnedRetriever), standard: z.never().optional(), knn: z.never().optional(), rrf: z.never().optional(), text_similarity_reranker: z.never().optional(), rule: z.never().optional(), rescorer: z.never().optional(), linear: z.never().optional(), diversify: z.never().optional() }), z.object({ diversify: z.lazy(() => DiversifyRetriever), standard: z.never().optional(), knn: z.never().optional(), rrf: z.never().optional(), text_similarity_reranker: z.never().optional(), rule: z.never().optional(), rescorer: z.never().optional(), linear: z.never().optional(), pinned: z.never().optional() })])
 
 export interface RetrieverContainerShape {
   standard?: StandardRetriever | undefined
@@ -913,6 +913,8 @@ export const SearchKnnQueryProfileBreakdown = z.object({
   count_weight_count: z.lazy(() => long),
   create_weight: z.lazy(() => long),
   create_weight_count: z.lazy(() => long),
+  into_bit_set: z.lazy(() => long),
+  into_bit_set_count: z.lazy(() => long),
   match: z.lazy(() => long),
   match_count: z.lazy(() => long),
   next_doc: z.lazy(() => long),
@@ -1420,7 +1422,7 @@ export const SearchStupidBackoffSmoothingModel = z.object({
 }).meta({ id: 'SearchStupidBackoffSmoothingModel' })
 export type SearchStupidBackoffSmoothingModel = z.infer<typeof SearchStupidBackoffSmoothingModel>
 
-const SearchSmoothingModelContainerExclusiveProps = z.union([z.object({ laplace: SearchLaplaceSmoothingModel }), z.object({ linear_interpolation: SearchLinearInterpolationSmoothingModel }), z.object({ stupid_backoff: SearchStupidBackoffSmoothingModel })])
+const SearchSmoothingModelContainerExclusiveProps = z.union([z.object({ laplace: SearchLaplaceSmoothingModel, linear_interpolation: z.never().optional(), stupid_backoff: z.never().optional() }), z.object({ linear_interpolation: SearchLinearInterpolationSmoothingModel, laplace: z.never().optional(), stupid_backoff: z.never().optional() }), z.object({ stupid_backoff: SearchStupidBackoffSmoothingModel, laplace: z.never().optional(), linear_interpolation: z.never().optional() })])
 
 export const SearchSmoothingModelContainer = SearchSmoothingModelContainerExclusiveProps.meta({ id: 'SearchSmoothingModelContainer' })
 export type SearchSmoothingModelContainer = z.infer<typeof SearchSmoothingModelContainer>
@@ -1470,7 +1472,7 @@ const SearchFieldSuggesterCommonProps = z.object({
   text: z.string().describe('The text to use as input for the suggester. Needs to be set globally or per suggestion.').optional()
 })
 
-const SearchFieldSuggesterExclusiveProps = z.union([z.object({ completion: SearchCompletionSuggester }), z.object({ phrase: SearchPhraseSuggester }), z.object({ term: SearchTermSuggester })])
+const SearchFieldSuggesterExclusiveProps = z.union([z.object({ completion: SearchCompletionSuggester, phrase: z.never().optional(), term: z.never().optional() }), z.object({ phrase: SearchPhraseSuggester, completion: z.never().optional(), term: z.never().optional() }), z.object({ term: SearchTermSuggester, completion: z.never().optional(), phrase: z.never().optional() })])
 
 export const SearchFieldSuggester = SearchFieldSuggesterCommonProps.and(SearchFieldSuggesterExclusiveProps).meta({ id: 'SearchFieldSuggester' })
 export type SearchFieldSuggester = z.infer<typeof SearchFieldSuggester>

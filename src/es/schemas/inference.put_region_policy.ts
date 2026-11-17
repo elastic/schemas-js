@@ -15,7 +15,7 @@ export const InferenceCspRegion = z.object({
 }).meta({ id: 'InferenceCspRegion' })
 export type InferenceCspRegion = z.infer<typeof InferenceCspRegion>
 
-const InferenceRegionPolicyExclusiveProps = z.union([z.object({ allowed_geos: z.array(z.string()) }), z.object({ allowed_regions: z.array(InferenceCspRegion) })])
+const InferenceRegionPolicyExclusiveProps = z.union([z.object({ allowed_geos: z.array(z.string()), allowed_regions: z.never().optional() }), z.object({ allowed_regions: z.array(InferenceCspRegion), allowed_geos: z.never().optional() })])
 
 /**
  * The region policy configuration.

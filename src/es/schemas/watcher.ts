@@ -66,7 +66,7 @@ export const WatcherScriptCondition = z.object({
 }).meta({ id: 'WatcherScriptCondition' })
 export type WatcherScriptCondition = z.infer<typeof WatcherScriptCondition>
 
-const WatcherConditionContainerExclusiveProps = z.union([z.object({ always: WatcherAlwaysCondition }), z.object({ array_compare: z.record(z.string(), WatcherArrayCompareCondition) }), z.object({ compare: z.record(z.string(), z.record(WatcherConditionOp, z.lazy(() => FieldValue))) }), z.object({ never: WatcherNeverCondition }), z.object({ script: WatcherScriptCondition })])
+const WatcherConditionContainerExclusiveProps = z.union([z.object({ always: WatcherAlwaysCondition, array_compare: z.never().optional(), compare: z.never().optional(), never: z.never().optional(), script: z.never().optional() }), z.object({ array_compare: z.record(z.string(), WatcherArrayCompareCondition), always: z.never().optional(), compare: z.never().optional(), never: z.never().optional(), script: z.never().optional() }), z.object({ compare: z.record(z.string(), z.record(WatcherConditionOp, z.lazy(() => FieldValue))), always: z.never().optional(), array_compare: z.never().optional(), never: z.never().optional(), script: z.never().optional() }), z.object({ never: WatcherNeverCondition, always: z.never().optional(), array_compare: z.never().optional(), compare: z.never().optional(), script: z.never().optional() }), z.object({ script: WatcherScriptCondition, always: z.never().optional(), array_compare: z.never().optional(), compare: z.never().optional(), never: z.never().optional() })])
 
 export const WatcherConditionContainer = WatcherConditionContainerExclusiveProps.meta({ id: 'WatcherConditionContainer' })
 export type WatcherConditionContainer = z.infer<typeof WatcherConditionContainer>
@@ -134,7 +134,7 @@ export const WatcherSearchInput = z.object({
 }).meta({ id: 'WatcherSearchInput' })
 export type WatcherSearchInput = z.infer<typeof WatcherSearchInput>
 
-const WatcherInputContainerExclusiveProps = z.union([z.object({ chain: z.lazy(() => WatcherChainInput) }), z.object({ http: WatcherHttpInput }), z.object({ search: WatcherSearchInput }), z.object({ simple: z.record(z.string(), z.any()) }), z.object({ transform: z.lazy(() => TransformContainer) })])
+const WatcherInputContainerExclusiveProps = z.union([z.object({ chain: z.lazy(() => WatcherChainInput), http: z.never().optional(), search: z.never().optional(), simple: z.never().optional(), transform: z.never().optional() }), z.object({ http: WatcherHttpInput, chain: z.never().optional(), search: z.never().optional(), simple: z.never().optional(), transform: z.never().optional() }), z.object({ search: WatcherSearchInput, chain: z.never().optional(), http: z.never().optional(), simple: z.never().optional(), transform: z.never().optional() }), z.object({ simple: z.record(z.string(), z.any()), chain: z.never().optional(), http: z.never().optional(), search: z.never().optional(), transform: z.never().optional() }), z.object({ transform: z.lazy(() => TransformContainer), chain: z.never().optional(), http: z.never().optional(), search: z.never().optional(), simple: z.never().optional() })])
 
 export interface WatcherInputContainerShape {
   chain?: WatcherChainInput | undefined

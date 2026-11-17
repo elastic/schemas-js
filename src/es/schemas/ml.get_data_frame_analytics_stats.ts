@@ -64,7 +64,7 @@ export const MlDataframeAnalyticsStatsOutlierDetection = z.object({
 }).meta({ id: 'MlDataframeAnalyticsStatsOutlierDetection' })
 export type MlDataframeAnalyticsStatsOutlierDetection = z.infer<typeof MlDataframeAnalyticsStatsOutlierDetection>
 
-const MlDataframeAnalyticsStatsContainerExclusiveProps = z.union([z.object({ classification_stats: MlDataframeAnalyticsStatsHyperparameters }), z.object({ outlier_detection_stats: MlDataframeAnalyticsStatsOutlierDetection }), z.object({ regression_stats: MlDataframeAnalyticsStatsHyperparameters })])
+const MlDataframeAnalyticsStatsContainerExclusiveProps = z.union([z.object({ classification_stats: MlDataframeAnalyticsStatsHyperparameters, outlier_detection_stats: z.never().optional(), regression_stats: z.never().optional() }), z.object({ outlier_detection_stats: MlDataframeAnalyticsStatsOutlierDetection, classification_stats: z.never().optional(), regression_stats: z.never().optional() }), z.object({ regression_stats: MlDataframeAnalyticsStatsHyperparameters, classification_stats: z.never().optional(), outlier_detection_stats: z.never().optional() })])
 
 export const MlDataframeAnalyticsStatsContainer = MlDataframeAnalyticsStatsContainerExclusiveProps.meta({ id: 'MlDataframeAnalyticsStatsContainer' })
 export type MlDataframeAnalyticsStatsContainer = z.infer<typeof MlDataframeAnalyticsStatsContainer>

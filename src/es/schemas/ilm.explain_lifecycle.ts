@@ -6,7 +6,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from 'zod'
 
-import { ByteSize, DateTime, Duration, DurationLarge, EmptyObject, EpochTime, IndexName, Name, VersionNumber, integer, long } from './_types.js'
+import { ByteSize, DateTime, Duration, DurationLarge, EmptyObject, EpochTime, ExpandWildcards, IndexName, Name, VersionNumber, integer, long } from './_types.js'
 
 export const IlmAllocateAction = z.object({
   number_of_replicas: z.lazy(() => integer).optional(),
@@ -160,6 +160,7 @@ export const IlmExplainLifecycleRequest = z.object({
   index: z.lazy(() => IndexName).describe('Comma-separated list of data streams, indices, and aliases to target. Supports wildcards (`*`). To target all data streams and indices, use `*` or `_all`.').meta({ found_in: 'path' }),
   only_errors: z.boolean().describe('Filters the returned indices to only indices that are managed by ILM and are in an error state, either due to an encountering an error while executing the policy, or attempting to use a policy that does not exist.').optional().meta({ found_in: 'query' }),
   only_managed: z.boolean().describe('Filters the returned indices to only indices that are managed by ILM.').optional().meta({ found_in: 'query' }),
+  expand_wildcards: z.lazy(() => ExpandWildcards).describe('Type of index that wildcard patterns can match. If the request can target data streams, this argument determines whether wildcard expressions match hidden data streams. Supports comma-separated values, such as `open,hidden`.').optional().meta({ found_in: 'query' }),
   master_timeout: z.lazy(() => Duration).describe('Period to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error.').optional().meta({ found_in: 'query' })
 }).meta({ id: 'IlmExplainLifecycleRequest' })
 export type IlmExplainLifecycleRequest = z.infer<typeof IlmExplainLifecycleRequest>

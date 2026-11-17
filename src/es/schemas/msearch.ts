@@ -40,7 +40,7 @@ export const MsearchMultisearchHeader = z.object({
   preference: z.string().optional(),
   project_routing: z.lazy(() => ProjectRouting).optional(),
   request_cache: z.boolean().optional(),
-  routing: z.lazy(() => Routing).describe('A custom value used to route operations to a specific shard. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional(),
+  routing: z.string().describe('A custom value used to route operations to a specific shard, or multiple comma separated values. Not allowed when `index.slice.enabled` is `true` for the target index; use `_slice` instead.').optional(),
   search_type: z.lazy(() => SearchType).optional(),
   ccs_minimize_roundtrips: z.boolean().optional(),
   allow_partial_search_results: z.boolean().optional(),

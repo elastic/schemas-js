@@ -124,6 +124,7 @@ export type InferenceChatCompletionInferenceResult = z.infer<typeof InferenceCha
  * It only works with the `chat_completion` task type.
  *
  * NOTE: The `chat_completion` task type supports both streaming and non-streaming.
+ * To stream the response, use the streaming chat completion API (`POST _inference/chat_completion/{inference_id}/_stream`).
  * The Chat completion inference API provides more comprehensive customization options through more fields and function calling support.
  * To determine whether a given inference service supports this task type, please see the page for that service.
  *
@@ -142,12 +143,12 @@ export type InferenceChatCompletionInferenceResult = z.infer<typeof InferenceCha
  * - OpenAI
  * - OpenShiftAI
  */
-export const InferenceNonStreamingChatCompletionRequest = z.object({
+export const InferenceChatCompletionRequest = z.object({
   inference_id: z.lazy(() => Id).describe('The inference Id').meta({ found_in: 'path' }),
   timeout: z.lazy(() => Duration).describe('Specifies the amount of time to wait for the inference request to complete.').optional().meta({ found_in: 'query' }),
   chat_completion_request: z.lazy(() => InferenceRequestChatCompletion).meta({ found_in: 'body' })
-}).meta({ id: 'InferenceNonStreamingChatCompletionRequest' })
-export type InferenceNonStreamingChatCompletionRequest = z.infer<typeof InferenceNonStreamingChatCompletionRequest>
+}).meta({ id: 'InferenceChatCompletionRequest' })
+export type InferenceChatCompletionRequest = z.infer<typeof InferenceChatCompletionRequest>
 
-export const InferenceNonStreamingChatCompletionResponse = InferenceChatCompletionInferenceResult.meta({ id: 'InferenceNonStreamingChatCompletionResponse' })
-export type InferenceNonStreamingChatCompletionResponse = z.infer<typeof InferenceNonStreamingChatCompletionResponse>
+export const InferenceChatCompletionResponse = InferenceChatCompletionInferenceResult.meta({ id: 'InferenceChatCompletionResponse' })
+export type InferenceChatCompletionResponse = z.infer<typeof InferenceChatCompletionResponse>

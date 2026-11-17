@@ -41,8 +41,18 @@ export type VersionNumber = z.infer<typeof VersionNumber>
 export const VersionType = z.enum(['internal', 'external', 'external_gte']).meta({ id: 'VersionType' })
 export type VersionType = z.infer<typeof VersionType>
 
+export const OpType = z.enum(['index', 'create']).meta({ id: 'OpType' })
+export type OpType = z.infer<typeof OpType>
+
 export const integer = z.number().meta({ id: 'integer' })
 export type integer = z.infer<typeof integer>
+
+/** Path to field or array of paths. Some API's support wildcards in the path to select multiple fields. */
+export const Field = z.string().meta({ id: 'Field' })
+export type Field = z.infer<typeof Field>
+
+export const Fields = z.union([z.lazy(() => Field), z.array(z.lazy(() => Field))]).meta({ id: 'Fields' })
+export type Fields = z.infer<typeof Fields>
 
 export const RequestBase = z.object({
 }).meta({ id: 'RequestBase' })
@@ -54,13 +64,6 @@ export type Refresh = z.infer<typeof Refresh>
 /** Only to be used in query and path parameters, as the array form is actually a csv */
 export const Routing = z.union([z.string(), z.array(z.string())]).meta({ id: 'Routing' })
 export type Routing = z.infer<typeof Routing>
-
-/** Path to field or array of paths. Some API's support wildcards in the path to select multiple fields. */
-export const Field = z.string().meta({ id: 'Field' })
-export type Field = z.infer<typeof Field>
-
-export const Fields = z.union([z.lazy(() => Field), z.array(z.lazy(() => Field))]).meta({ id: 'Fields' })
-export type Fields = z.infer<typeof Fields>
 
 /**
  * A duration. Units can be `nanos`, `micros`, `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours) and
@@ -130,7 +133,7 @@ export const LookupQueryVectorBuilder = z.object({
 }).meta({ id: 'LookupQueryVectorBuilder' })
 export type LookupQueryVectorBuilder = z.infer<typeof LookupQueryVectorBuilder>
 
-const QueryVectorBuilderExclusiveProps = z.union([z.object({ embedding: Embedding }), z.object({ text_embedding: TextEmbedding }), z.object({ lookup: LookupQueryVectorBuilder })])
+const QueryVectorBuilderExclusiveProps = z.union([z.object({ embedding: Embedding, text_embedding: z.never().optional(), lookup: z.never().optional() }), z.object({ text_embedding: TextEmbedding, embedding: z.never().optional(), lookup: z.never().optional() }), z.object({ lookup: LookupQueryVectorBuilder, embedding: z.never().optional(), text_embedding: z.never().optional() })])
 
 export const QueryVectorBuilder = QueryVectorBuilderExclusiveProps.meta({ id: 'QueryVectorBuilder' })
 export type QueryVectorBuilder = z.infer<typeof QueryVectorBuilder>
@@ -537,7 +540,7 @@ export const InlineGet = z.object({
   found: z.boolean(),
   _seq_no: z.lazy(() => SequenceNumber).optional(),
   _primary_term: z.lazy(() => long).optional(),
-  _routing: z.lazy(() => Routing).optional(),
+  _routing: z.string().optional(),
   _source: z.any().optional()
 }).catchall(z.any()).meta({ id: 'InlineGet' })
 export type InlineGet = z.infer<typeof InlineGet>
@@ -697,9 +700,6 @@ export type StoredScript = z.infer<typeof StoredScript>
 
 export const LifecycleOperationMode = z.enum(['RUNNING', 'STOPPING', 'STOPPED']).meta({ id: 'LifecycleOperationMode' })
 export type LifecycleOperationMode = z.infer<typeof LifecycleOperationMode>
-
-export const OpType = z.enum(['index', 'create']).meta({ id: 'OpType' })
-export type OpType = z.infer<typeof OpType>
 
 export const Uuid = z.string().meta({ id: 'Uuid' })
 export type Uuid = z.infer<typeof Uuid>
@@ -1048,7 +1048,7 @@ export type TimeOfDay = z.infer<typeof TimeOfDay>
 export const TimeUnit = z.enum(['nanos', 'micros', 'ms', 's', 'm', 'h', 'd']).meta({ id: 'TimeUnit' })
 export type TimeUnit = z.infer<typeof TimeUnit>
 
-const TransformContainerExclusiveProps = z.union([z.object({ chain: z.array(z.lazy(() => TransformContainer)) }), z.object({ script: z.union([ScriptTransform, z.lazy(() => ScriptSource)]) }), z.object({ search: SearchTransform })])
+const TransformContainerExclusiveProps = z.union([z.object({ chain: z.array(z.lazy(() => TransformContainer)), script: z.never().optional(), search: z.never().optional() }), z.object({ script: z.union([ScriptTransform, z.lazy(() => ScriptSource)]), chain: z.never().optional(), search: z.never().optional() }), z.object({ search: SearchTransform, chain: z.never().optional(), script: z.never().optional() })])
 
 export interface TransformContainerShape {
   chain?: TransformContainer[] | undefined

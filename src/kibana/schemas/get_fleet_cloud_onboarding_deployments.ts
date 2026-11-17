@@ -57,7 +57,7 @@ export const GetFleetCloudOnboardingDeploymentsResponse = z.object({
       version: z.string()
     })),
     policyIdsByInstance: z.record(z.string(), z.string()).optional(),
-    policySettings: z.record(z.string(), z.string().nullable()).optional(),
+    policySettings: z.record(z.string(), z.union([z.string(), z.array(z.string())]).nullable()).optional(),
     provider: z.enum(['aws', 'azure', 'gcp']),
     serviceNames: z.record(z.string(), z.string()).optional(),
     services: z.array(z.string()),

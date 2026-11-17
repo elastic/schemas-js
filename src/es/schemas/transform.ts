@@ -30,7 +30,7 @@ export const TransformLatest = z.object({
 }).meta({ id: 'TransformLatest' })
 export type TransformLatest = z.infer<typeof TransformLatest>
 
-const TransformPivotGroupByContainerExclusiveProps = z.union([z.object({ date_histogram: z.lazy(() => AggregationsDateHistogramAggregation) }), z.object({ geotile_grid: AggregationsGeoTileGridAggregation }), z.object({ histogram: z.lazy(() => AggregationsHistogramAggregation) }), z.object({ terms: z.lazy(() => AggregationsTermsAggregation) })])
+const TransformPivotGroupByContainerExclusiveProps = z.union([z.object({ date_histogram: z.lazy(() => AggregationsDateHistogramAggregation), geotile_grid: z.never().optional(), histogram: z.never().optional(), terms: z.never().optional() }), z.object({ geotile_grid: AggregationsGeoTileGridAggregation, date_histogram: z.never().optional(), histogram: z.never().optional(), terms: z.never().optional() }), z.object({ histogram: z.lazy(() => AggregationsHistogramAggregation), date_histogram: z.never().optional(), geotile_grid: z.never().optional(), terms: z.never().optional() }), z.object({ terms: z.lazy(() => AggregationsTermsAggregation), date_histogram: z.never().optional(), geotile_grid: z.never().optional(), histogram: z.never().optional() })])
 
 export const TransformPivotGroupByContainer = TransformPivotGroupByContainerExclusiveProps.meta({ id: 'TransformPivotGroupByContainer' })
 export type TransformPivotGroupByContainer = z.infer<typeof TransformPivotGroupByContainer>

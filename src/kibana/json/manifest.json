@@ -9791,23 +9791,6 @@
     }
   },
   {
-    "id": "security-entity-analytics-api.schedule-risk-engine-now",
-    "name": "schedule-risk-engine-now",
-    "namespace": "security-entity-analytics-api",
-    "description": "Run the risk scoring engine",
-    "namespaceFile": "security-entity-analytics-api.schedule-risk-engine-now",
-    "destructive": true,
-    "readOnly": false,
-    "availability": {
-      "stack": {
-        "stability": "stable"
-      },
-      "serverless": {
-        "stability": "stable"
-      }
-    }
-  },
-  {
     "id": "security-entity-analytics-api.unassign-watchlist-entities",
     "name": "unassign-watchlist-entities",
     "namespace": "security-entity-analytics-api",

@@ -7,7 +7,7 @@
 import { z } from 'zod'
 
 import { DateTime, Duration, Id, byte, float, integer, long } from './_types.js'
-import { InferenceReasoningDetail } from './inference.non_streaming_chat_completion.js'
+import { InferenceReasoningDetail } from './inference.chat_completion.js'
 import { InferenceRegionPolicy } from './inference.put_region_policy.js'
 
 export const InferenceEmbeddingContentType = z.enum(['text', 'image', 'audio', 'video', 'pdf']).meta({ id: 'InferenceEmbeddingContentType' })
@@ -147,6 +147,84 @@ export const InferenceDenseEmbeddingResult = z.object({
 }).meta({ id: 'InferenceDenseEmbeddingResult' })
 export type InferenceDenseEmbeddingResult = z.infer<typeof InferenceDenseEmbeddingResult>
 
+export const InferenceEndpointMetadataStatus = z.enum(['beta', 'preview', 'ga', 'deprecated']).meta({ id: 'InferenceEndpointMetadataStatus' })
+export type InferenceEndpointMetadataStatus = z.infer<typeof InferenceEndpointMetadataStatus>
+
+export const InferenceEndpointMetadataHeuristics = z.object({
+  properties: z.array(z.string()).describe('Tags that describe the properties of the model, for example `multilingual`, `english` or `multimodal`.'),
+  status: InferenceEndpointMetadataStatus.describe('The release status of the model.').optional(),
+  release_date: z.string().describe('The date on which the model was released, in `yyyy-MM-dd` format.').optional(),
+  end_of_life_date: z.string().describe('The date on which the model reaches the end of its life, in `yyyy-MM-dd` format.').optional()
+}).meta({ id: 'InferenceEndpointMetadataHeuristics' })
+export type InferenceEndpointMetadataHeuristics = z.infer<typeof InferenceEndpointMetadataHeuristics>
+
+export const InferenceEndpointMetadataDisplay = z.object({
+  name: z.string().describe('The name to display for the endpoint.').optional(),
+  model_creator: z.string().describe('The creator of the model, for display purposes.').optional()
+}).meta({ id: 'InferenceEndpointMetadataDisplay' })
+export type InferenceEndpointMetadataDisplay = z.infer<typeof InferenceEndpointMetadataDisplay>
+
+export const InferenceEndpointMetadataModelIdentity = z.object({
+  creator: z.string().describe('The model creator or lab, for example `anthropic`, `openai` or `jina`.').optional(),
+  family: z.string().describe('The model family within the creator, for example `claude`, `gpt` or `gemini`.').optional(),
+  tier: z.string().describe('The performance or size tier within the family, for example `sonnet` or `mini`. It is not set if the model has no tier variants.').optional(),
+  version: z.string().describe('The version of the model.').optional()
+}).meta({ id: 'InferenceEndpointMetadataModelIdentity' })
+export type InferenceEndpointMetadataModelIdentity = z.infer<typeof InferenceEndpointMetadataModelIdentity>
+
+export const InferenceEndpointMetadataRegion = z.object({
+  csp: z.string().describe('The cloud service provider, for example `aws`, `gcp` or `azure`.').optional(),
+  region: z.string().describe('The region of the cloud service provider, for example `us-east-1`.').optional(),
+  geo: z.string().describe('The geographic area, for example `us` or `eu`.').optional(),
+  region_display_name: z.string().describe('The human-readable name of the region.').optional()
+}).meta({ id: 'InferenceEndpointMetadataRegion' })
+export type InferenceEndpointMetadataRegion = z.infer<typeof InferenceEndpointMetadataRegion>
+
+export const InferenceReasoningEffort = z.enum(['xhigh', 'high', 'medium', 'low', 'minimal', 'none']).meta({ id: 'InferenceReasoningEffort' })
+export type InferenceReasoningEffort = z.infer<typeof InferenceReasoningEffort>
+
+export const InferenceEndpointMetadataReasoningCapability = z.object({
+  supported_effort_levels: z.array(InferenceReasoningEffort).describe('The reasoning effort levels that the endpoint supports.'),
+  default_effort_level: InferenceReasoningEffort.describe('The reasoning effort level that the endpoint uses by default.').optional()
+}).meta({ id: 'InferenceEndpointMetadataReasoningCapability' })
+export type InferenceEndpointMetadataReasoningCapability = z.infer<typeof InferenceEndpointMetadataReasoningCapability>
+
+export const InferenceEndpointMetadataContextWindow = z.object({
+  max_input_tokens: z.lazy(() => integer).describe('The maximum number of input tokens that the model accepts.').optional(),
+  max_output_tokens: z.lazy(() => integer).describe('The maximum number of output tokens that the model generates.').optional()
+}).meta({ id: 'InferenceEndpointMetadataContextWindow' })
+export type InferenceEndpointMetadataContextWindow = z.infer<typeof InferenceEndpointMetadataContextWindow>
+
+export const InferenceEndpointMetadataTemplatePolicy = z.enum(['required']).meta({ id: 'InferenceEndpointMetadataTemplatePolicy' })
+export type InferenceEndpointMetadataTemplatePolicy = z.infer<typeof InferenceEndpointMetadataTemplatePolicy>
+
+export const InferenceEndpointMetadataTemplatesCapability = z.object({
+  policy: InferenceEndpointMetadataTemplatePolicy.describe('Whether the endpoint requires chat completion requests to carry a prompt template. Elasticsearch displays the policy so that clients can choose the request shape, but it doesn\'t enforce it.')
+}).meta({ id: 'InferenceEndpointMetadataTemplatesCapability' })
+export type InferenceEndpointMetadataTemplatesCapability = z.infer<typeof InferenceEndpointMetadataTemplatesCapability>
+
+export const InferenceEndpointMetadataCapabilities = z.object({
+  reasoning: InferenceEndpointMetadataReasoningCapability.describe('The reasoning support of the endpoint.').optional(),
+  context_window: InferenceEndpointMetadataContextWindow.describe('The context window of the model.').optional(),
+  templates: InferenceEndpointMetadataTemplatesCapability.describe('The prompt template support of the endpoint. It is returned only for chat completion endpoints that require a template instead of caller-authored messages.').optional()
+}).meta({ id: 'InferenceEndpointMetadataCapabilities' })
+export type InferenceEndpointMetadataCapabilities = z.infer<typeof InferenceEndpointMetadataCapabilities>
+
+/**
+ * Metadata about an inference endpoint, such as the model it serves, where it is available and what it supports.
+ * It is returned for the endpoints of the Elastic Inference Service.
+ * The internal fields that Elasticsearch uses to track the metadata are not part of the response.
+ */
+export const InferenceEndpointMetadata = z.object({
+  heuristics: InferenceEndpointMetadataHeuristics.describe('Properties of the endpoint that help clients to determine which model to use.'),
+  display: InferenceEndpointMetadataDisplay.describe('Information to display for the endpoint.'),
+  model_identity: InferenceEndpointMetadataModelIdentity.describe('The identity of the model that the endpoint serves.').optional(),
+  regions: z.array(InferenceEndpointMetadataRegion).describe('The regions in which the endpoint is available.').optional(),
+  denied_by_region_policy: z.boolean().describe('If `true`, the region policy of the caller prohibits access to the endpoint.').optional(),
+  capabilities: InferenceEndpointMetadataCapabilities.describe('The capabilities of the endpoint.').optional()
+}).meta({ id: 'InferenceEndpointMetadata' })
+export type InferenceEndpointMetadata = z.infer<typeof InferenceEndpointMetadata>
+
 /** Chunking configuration object */
 export const InferenceInferenceChunkingSettings = z.object({
   max_chunk_size: z.lazy(() => integer).describe('The maximum size of a chunk in words. This value cannot be lower than `20` (for `sentence` strategy) or `10` (for `word` strategy). This value should not exceed the window size for the associated model.').optional(),
@@ -180,7 +258,8 @@ export type InferenceTaskType = z.infer<typeof InferenceTaskType>
 export const InferenceInferenceEndpointInfo = z.object({
   ...InferenceInferenceEndpoint.shape,
   inference_id: z.string().describe('The inference Id'),
-  task_type: InferenceTaskType.describe('The task type')
+  task_type: InferenceTaskType.describe('The task type'),
+  metadata: InferenceEndpointMetadata.describe('Metadata about the endpoint, such as the model it serves, where it is available and what it supports. It is returned for the endpoints of the Elastic Inference Service.').optional()
 }).meta({ id: 'InferenceInferenceEndpointInfo' })
 export type InferenceInferenceEndpointInfo = z.infer<typeof InferenceInferenceEndpointInfo>
 
@@ -238,9 +317,6 @@ export const InferenceMessage = z.object({
   reasoning_details: z.array(z.lazy(() => InferenceReasoningDetail)).describe('Only for `assistant` role messages. The reasoning details generated by the model as structured data. Currently supported only for `elastic` provider.').optional()
 }).meta({ id: 'InferenceMessage' })
 export type InferenceMessage = z.infer<typeof InferenceMessage>
-
-export const InferenceReasoningEffort = z.enum(['xhigh', 'high', 'medium', 'low', 'minimal', 'none']).meta({ id: 'InferenceReasoningEffort' })
-export type InferenceReasoningEffort = z.infer<typeof InferenceReasoningEffort>
 
 export const InferenceReasoningSummary = z.enum(['auto', 'concise', 'detailed']).meta({ id: 'InferenceReasoningSummary' })
 export type InferenceReasoningSummary = z.infer<typeof InferenceReasoningSummary>

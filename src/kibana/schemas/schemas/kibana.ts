@@ -1792,6 +1792,15 @@ export const Kibana_HTTP_APIs_visDatatableDensity = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_visDatatableDensity' })
 export type Kibana_HTTP_APIs_visDatatableDensity = z.infer<typeof Kibana_HTTP_APIs_visDatatableDensity>
 
+export const Kibana_HTTP_APIs_visDatatableProgressBarValueRange = z.discriminatedUnion('type', [z.object({
+  type: z.enum(['auto'])
+}), z.object({
+  max: z.number(),
+  min: z.number(),
+  type: z.enum(['custom'])
+})]).meta({ id: 'Kibana_HTTP_APIs_visDatatableProgressBarValueRange' })
+export type Kibana_HTTP_APIs_visDatatableProgressBarValueRange = z.infer<typeof Kibana_HTTP_APIs_visDatatableProgressBarValueRange>
+
 export const Kibana_HTTP_APIs_visDateHistogramOperation = z.object({
   drop_partial_intervals: z.boolean().optional(),
   field: z.string(),
@@ -4372,6 +4381,36 @@ export const Kibana_HTTP_APIs_visDatatableStyling = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_visDatatableStyling' })
 export type Kibana_HTTP_APIs_visDatatableStyling = z.infer<typeof Kibana_HTTP_APIs_visDatatableStyling>
 
+export const Kibana_HTTP_APIs_visDatatableProgressBarGradient = z.object({
+  alignment: z.enum(['left', 'right']).optional(),
+  apply_color_to: z.enum(['progress_bar']),
+  color: z.union([Kibana_HTTP_APIs_visAutoColor, Kibana_HTTP_APIs_visColorByValuePalette, Kibana_HTTP_APIs_visColorByValueAbsolute, Kibana_HTTP_APIs_visColorByValuePercentage]).optional(),
+  fill_mode: z.enum(['gradient']).optional(),
+  summary: z.object({
+    label: z.string().optional(),
+    type: z.union([z.enum(['sum']), z.enum(['avg']), z.enum(['count']), z.enum(['min']), z.enum(['max'])])
+  }).optional(),
+  value_range: Kibana_HTTP_APIs_visDatatableProgressBarValueRange.optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_visDatatableProgressBarGradient' })
+export type Kibana_HTTP_APIs_visDatatableProgressBarGradient = z.infer<typeof Kibana_HTTP_APIs_visDatatableProgressBarGradient>
+
+export const Kibana_HTTP_APIs_visDatatableProgressBarSolid = z.object({
+  alignment: z.enum(['left', 'right']).optional(),
+  apply_color_to: z.enum(['progress_bar']),
+  color: z.union([Kibana_HTTP_APIs_visAutoColor, Kibana_HTTP_APIs_visColorByValuePalette, Kibana_HTTP_APIs_visColorByValueAbsolute, Kibana_HTTP_APIs_visColorByValuePercentage]).optional(),
+  fill_mode: z.enum(['solid']),
+  summary: z.object({
+    label: z.string().optional(),
+    type: z.union([z.enum(['sum']), z.enum(['avg']), z.enum(['count']), z.enum(['min']), z.enum(['max'])])
+  }).optional(),
+  value_range: Kibana_HTTP_APIs_visDatatableProgressBarValueRange.optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_visDatatableProgressBarSolid' })
+export type Kibana_HTTP_APIs_visDatatableProgressBarSolid = z.infer<typeof Kibana_HTTP_APIs_visDatatableProgressBarSolid>
+
 export const Kibana_HTTP_APIs_visDatatableRowDateHistogram = Kibana_HTTP_APIs_visDateHistogramOperation.meta({ id: 'Kibana_HTTP_APIs_visDatatableRowDateHistogram' })
 export type Kibana_HTTP_APIs_visDatatableRowDateHistogram = z.infer<typeof Kibana_HTTP_APIs_visDatatableRowDateHistogram>
 
@@ -4490,6 +4529,21 @@ export type Kibana_HTTP_APIs_visMetricStyling = z.infer<typeof Kibana_HTTP_APIs_
 
 export const Kibana_HTTP_APIs_visFormatType = z.union([Kibana_HTTP_APIs_visNumericFormat, Kibana_HTTP_APIs_visByteFormat, Kibana_HTTP_APIs_visDurationFormat, Kibana_HTTP_APIs_visCustomFormat]).meta({ id: 'Kibana_HTTP_APIs_visFormatType' })
 export type Kibana_HTTP_APIs_visFormatType = z.infer<typeof Kibana_HTTP_APIs_visFormatType>
+
+export const Kibana_HTTP_APIs_visDatatableProgressBarSingle = z.object({
+  alignment: z.enum(['left', 'right']).optional(),
+  apply_color_to: z.enum(['progress_bar']),
+  color: z.union([Kibana_HTTP_APIs_visStaticColor, Kibana_HTTP_APIs_visAutoColor]).optional(),
+  fill_mode: z.enum(['single']),
+  summary: z.object({
+    label: z.string().optional(),
+    type: z.union([z.enum(['sum']), z.enum(['avg']), z.enum(['count']), z.enum(['min']), z.enum(['max'])])
+  }).optional(),
+  value_range: Kibana_HTTP_APIs_visDatatableProgressBarValueRange.optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_visDatatableProgressBarSingle' })
+export type Kibana_HTTP_APIs_visDatatableProgressBarSingle = z.infer<typeof Kibana_HTTP_APIs_visDatatableProgressBarSingle>
 
 export const Kibana_HTTP_APIs_visXyAnnotationManualEvent = z.object({
   color: z.union([Kibana_HTTP_APIs_visStaticColor, Kibana_HTTP_APIs_visAutoColor]).optional(),
@@ -5648,6 +5702,17 @@ export const Kibana_HTTP_APIs_kbn_saved_runtime_field_schema: z.ZodTypeAny = z.o
 }).meta({ id: 'Kibana_HTTP_APIs_kbn_saved_runtime_field_schema' })
 export type Kibana_HTTP_APIs_kbn_saved_runtime_field_schema = z.infer<typeof Kibana_HTTP_APIs_kbn_saved_runtime_field_schema>
 
+export const Kibana_HTTP_APIs_kbn_saved_scripted_field_schema: z.ZodTypeAny = z.object({
+  custom_description: Kibana_HTTP_APIs_kbn_field_custom_description.optional(),
+  custom_label: Kibana_HTTP_APIs_kbn_field_custom_label.optional(),
+  format: Kibana_HTTP_APIs_kbn_field_format.optional(),
+  lang: z.string().optional(),
+  popularity: Kibana_HTTP_APIs_kbn_runtime_field_popularity.optional(),
+  script: z.string(),
+  type: z.string()
+}).meta({ id: 'Kibana_HTTP_APIs_kbn_saved_scripted_field_schema' })
+export type Kibana_HTTP_APIs_kbn_saved_scripted_field_schema = z.infer<typeof Kibana_HTTP_APIs_kbn_saved_scripted_field_schema>
+
 export const Kibana_HTTP_APIs_maintenance_window_response = z.object({
   created_at: z.string(),
   created_by: z.string().nullable().optional(),
@@ -6092,6 +6157,108 @@ export const Kibana_HTTP_APIs_visCumulativeSumOperation = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_visCumulativeSumOperation' })
 export type Kibana_HTTP_APIs_visCumulativeSumOperation = z.infer<typeof Kibana_HTTP_APIs_visCumulativeSumOperation>
 
+export const Kibana_HTTP_APIs_visDatatableESQLMetricProgressBarGradient = z.object({
+  alignment: z.enum(['left', 'right']).optional(),
+  apply_color_to: z.enum(['progress_bar']),
+  color: z.union([Kibana_HTTP_APIs_visAutoColor, Kibana_HTTP_APIs_visColorByValuePalette, Kibana_HTTP_APIs_visColorByValueAbsolute, Kibana_HTTP_APIs_visColorByValuePercentage]).optional(),
+  column: z.string(),
+  fill_mode: z.enum(['gradient']).optional(),
+  format: Kibana_HTTP_APIs_visFormatType.optional(),
+  label: z.string().optional(),
+  summary: z.object({
+    label: z.string().optional(),
+    type: z.union([z.enum(['sum']), z.enum(['avg']), z.enum(['count']), z.enum(['min']), z.enum(['max'])])
+  }).optional(),
+  value_range: Kibana_HTTP_APIs_visDatatableProgressBarValueRange.optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_visDatatableESQLMetricProgressBarGradient' })
+export type Kibana_HTTP_APIs_visDatatableESQLMetricProgressBarGradient = z.infer<typeof Kibana_HTTP_APIs_visDatatableESQLMetricProgressBarGradient>
+
+export const Kibana_HTTP_APIs_visDatatableESQLMetricProgressBarSingle = z.object({
+  alignment: z.enum(['left', 'right']).optional(),
+  apply_color_to: z.enum(['progress_bar']),
+  color: z.union([Kibana_HTTP_APIs_visStaticColor, Kibana_HTTP_APIs_visAutoColor]).optional(),
+  column: z.string(),
+  fill_mode: z.enum(['single']),
+  format: Kibana_HTTP_APIs_visFormatType.optional(),
+  label: z.string().optional(),
+  summary: z.object({
+    label: z.string().optional(),
+    type: z.union([z.enum(['sum']), z.enum(['avg']), z.enum(['count']), z.enum(['min']), z.enum(['max'])])
+  }).optional(),
+  value_range: Kibana_HTTP_APIs_visDatatableProgressBarValueRange.optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_visDatatableESQLMetricProgressBarSingle' })
+export type Kibana_HTTP_APIs_visDatatableESQLMetricProgressBarSingle = z.infer<typeof Kibana_HTTP_APIs_visDatatableESQLMetricProgressBarSingle>
+
+export const Kibana_HTTP_APIs_visDatatableESQLMetricProgressBarSolid = z.object({
+  alignment: z.enum(['left', 'right']).optional(),
+  apply_color_to: z.enum(['progress_bar']),
+  color: z.union([Kibana_HTTP_APIs_visAutoColor, Kibana_HTTP_APIs_visColorByValuePalette, Kibana_HTTP_APIs_visColorByValueAbsolute, Kibana_HTTP_APIs_visColorByValuePercentage]).optional(),
+  column: z.string(),
+  fill_mode: z.enum(['solid']),
+  format: Kibana_HTTP_APIs_visFormatType.optional(),
+  label: z.string().optional(),
+  summary: z.object({
+    label: z.string().optional(),
+    type: z.union([z.enum(['sum']), z.enum(['avg']), z.enum(['count']), z.enum(['min']), z.enum(['max'])])
+  }).optional(),
+  value_range: Kibana_HTTP_APIs_visDatatableProgressBarValueRange.optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_visDatatableESQLMetricProgressBarSolid' })
+export type Kibana_HTTP_APIs_visDatatableESQLMetricProgressBarSolid = z.infer<typeof Kibana_HTTP_APIs_visDatatableESQLMetricProgressBarSolid>
+
+export const Kibana_HTTP_APIs_visDatatableESQLRowProgressBarGradient = z.object({
+  alignment: z.enum(['left', 'right']).optional(),
+  apply_color_to: z.enum(['progress_bar']),
+  click_filter: z.boolean().optional(),
+  collapse_by: Kibana_HTTP_APIs_visCollapseBy.optional(),
+  color: z.union([Kibana_HTTP_APIs_visAutoColor, Kibana_HTTP_APIs_visColorByValuePalette, Kibana_HTTP_APIs_visColorByValueAbsolute, Kibana_HTTP_APIs_visColorByValuePercentage]).optional(),
+  column: z.string(),
+  fill_mode: z.enum(['gradient']).optional(),
+  format: Kibana_HTTP_APIs_visFormatType.optional(),
+  label: z.string().optional(),
+  value_range: Kibana_HTTP_APIs_visDatatableProgressBarValueRange.optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_visDatatableESQLRowProgressBarGradient' })
+export type Kibana_HTTP_APIs_visDatatableESQLRowProgressBarGradient = z.infer<typeof Kibana_HTTP_APIs_visDatatableESQLRowProgressBarGradient>
+
+export const Kibana_HTTP_APIs_visDatatableESQLRowProgressBarSingle = z.object({
+  alignment: z.enum(['left', 'right']).optional(),
+  apply_color_to: z.enum(['progress_bar']),
+  click_filter: z.boolean().optional(),
+  collapse_by: Kibana_HTTP_APIs_visCollapseBy.optional(),
+  color: z.union([Kibana_HTTP_APIs_visStaticColor, Kibana_HTTP_APIs_visAutoColor]).optional(),
+  column: z.string(),
+  fill_mode: z.enum(['single']),
+  format: Kibana_HTTP_APIs_visFormatType.optional(),
+  label: z.string().optional(),
+  value_range: Kibana_HTTP_APIs_visDatatableProgressBarValueRange.optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_visDatatableESQLRowProgressBarSingle' })
+export type Kibana_HTTP_APIs_visDatatableESQLRowProgressBarSingle = z.infer<typeof Kibana_HTTP_APIs_visDatatableESQLRowProgressBarSingle>
+
+export const Kibana_HTTP_APIs_visDatatableESQLRowProgressBarSolid = z.object({
+  alignment: z.enum(['left', 'right']).optional(),
+  apply_color_to: z.enum(['progress_bar']),
+  click_filter: z.boolean().optional(),
+  collapse_by: Kibana_HTTP_APIs_visCollapseBy.optional(),
+  color: z.union([Kibana_HTTP_APIs_visAutoColor, Kibana_HTTP_APIs_visColorByValuePalette, Kibana_HTTP_APIs_visColorByValueAbsolute, Kibana_HTTP_APIs_visColorByValuePercentage]).optional(),
+  column: z.string(),
+  fill_mode: z.enum(['solid']),
+  format: Kibana_HTTP_APIs_visFormatType.optional(),
+  label: z.string().optional(),
+  value_range: Kibana_HTTP_APIs_visDatatableProgressBarValueRange.optional(),
+  visible: z.boolean().optional(),
+  width: z.number().optional()
+}).meta({ id: 'Kibana_HTTP_APIs_visDatatableESQLRowProgressBarSolid' })
+export type Kibana_HTTP_APIs_visDatatableESQLRowProgressBarSolid = z.infer<typeof Kibana_HTTP_APIs_visDatatableESQLRowProgressBarSolid>
+
 export const Kibana_HTTP_APIs_visFormulaOperation = z.object({
   filter: Kibana_HTTP_APIs_visFilterSimple.optional(),
   format: Kibana_HTTP_APIs_visFormatType.optional(),
@@ -6234,6 +6401,9 @@ export const Kibana_HTTP_APIs_visXyReferenceLineLayerESQL = z.object({
   type: z.enum(['reference_lines'])
 }).meta({ id: 'Kibana_HTTP_APIs_visXyReferenceLineLayerESQL' })
 export type Kibana_HTTP_APIs_visXyReferenceLineLayerESQL = z.infer<typeof Kibana_HTTP_APIs_visXyReferenceLineLayerESQL>
+
+export const Kibana_HTTP_APIs_visDatatableProgressBar = z.discriminatedUnion('fill_mode', [Kibana_HTTP_APIs_visDatatableProgressBarSingle, Kibana_HTTP_APIs_visDatatableProgressBarSolid, Kibana_HTTP_APIs_visDatatableProgressBarGradient]).meta({ id: 'Kibana_HTTP_APIs_visDatatableProgressBar' })
+export type Kibana_HTTP_APIs_visDatatableProgressBar = z.infer<typeof Kibana_HTTP_APIs_visDatatableProgressBar>
 
 export const Kibana_HTTP_APIs_visXyAnnotationLayerESQL = z.object({
   events: z.array(z.union([Kibana_HTTP_APIs_visXyAnnotationManualEvent, Kibana_HTTP_APIs_visXyAnnotationManualRange])),
@@ -8657,6 +8827,12 @@ export type Kibana_HTTP_APIs_visWaffleMetricCumulativeSum = z.infer<typeof Kiban
 export const Kibana_HTTP_APIs_visXyYCumulativeSum = Kibana_HTTP_APIs_visCumulativeSumOperation.meta({ id: 'Kibana_HTTP_APIs_visXyYCumulativeSum' })
 export type Kibana_HTTP_APIs_visXyYCumulativeSum = z.infer<typeof Kibana_HTTP_APIs_visXyYCumulativeSum>
 
+export const Kibana_HTTP_APIs_visDatatableESQLMetricProgressBar = z.discriminatedUnion('fill_mode', [Kibana_HTTP_APIs_visDatatableESQLMetricProgressBarSingle, Kibana_HTTP_APIs_visDatatableESQLMetricProgressBarSolid, Kibana_HTTP_APIs_visDatatableESQLMetricProgressBarGradient]).meta({ id: 'Kibana_HTTP_APIs_visDatatableESQLMetricProgressBar' })
+export type Kibana_HTTP_APIs_visDatatableESQLMetricProgressBar = z.infer<typeof Kibana_HTTP_APIs_visDatatableESQLMetricProgressBar>
+
+export const Kibana_HTTP_APIs_visDatatableESQLRowProgressBar = z.discriminatedUnion('fill_mode', [Kibana_HTTP_APIs_visDatatableESQLRowProgressBarSingle, Kibana_HTTP_APIs_visDatatableESQLRowProgressBarSolid, Kibana_HTTP_APIs_visDatatableESQLRowProgressBarGradient]).meta({ id: 'Kibana_HTTP_APIs_visDatatableESQLRowProgressBar' })
+export type Kibana_HTTP_APIs_visDatatableESQLRowProgressBar = z.infer<typeof Kibana_HTTP_APIs_visDatatableESQLRowProgressBar>
+
 export const Kibana_HTTP_APIs_visDatatableMetricFormula = Kibana_HTTP_APIs_visFormulaOperation.meta({ id: 'Kibana_HTTP_APIs_visDatatableMetricFormula' })
 export type Kibana_HTTP_APIs_visDatatableMetricFormula = z.infer<typeof Kibana_HTTP_APIs_visDatatableMetricFormula>
 
@@ -9359,7 +9535,7 @@ export type Kibana_HTTP_APIs_visXyBreakdownTerms = z.infer<typeof Kibana_HTTP_AP
 export const Kibana_HTTP_APIs_visXyXTerms = Kibana_HTTP_APIs_visTermsOperation.meta({ id: 'Kibana_HTTP_APIs_visXyXTerms' })
 export type Kibana_HTTP_APIs_visXyXTerms = z.infer<typeof Kibana_HTTP_APIs_visXyXTerms>
 
-export const Kibana_HTTP_APIs_visDatatableESQLMetric: z.ZodTypeAny = z.object({
+export const Kibana_HTTP_APIs_visDatatableESQLMetric = z.object({
   alignment: z.enum(['left', 'center', 'right']).optional(),
   apply_color_to: z.union([z.enum(['value', 'background']), z.enum(['badge'])]).optional(),
   color: z.union([Kibana_HTTP_APIs_visAutoColor, Kibana_HTTP_APIs_visColorByValue, Kibana_HTTP_APIs_visColorMapping]).optional(),
@@ -11263,16 +11439,17 @@ export const Kibana_HTTP_APIs_kbn_data_view_spec_schema = z.object({
 }).meta({ id: 'Kibana_HTTP_APIs_kbn_data_view_spec_schema' })
 export type Kibana_HTTP_APIs_kbn_data_view_spec_schema = z.infer<typeof Kibana_HTTP_APIs_kbn_data_view_spec_schema>
 
-export const Kibana_HTTP_APIs_kbn_saved_data_view_spec_schema: z.ZodTypeAny = z.object({
+export const Kibana_HTTP_APIs_kbn_saved_data_view_spec_with_scripted_fields_schema: z.ZodTypeAny = z.object({
   allow_hidden_indices: z.boolean().optional(),
   field_filters: Kibana_HTTP_APIs_kbn_field_filters_schema.optional(),
   field_settings: z.record(z.string(), Kibana_HTTP_APIs_kbn_saved_field_settings_entry).optional(),
   id: z.string().optional(),
   index_pattern: Kibana_HTTP_APIs_kbn_index_pattern_schema,
   name: z.string().optional(),
+  scripted_fields: z.record(z.string(), Kibana_HTTP_APIs_kbn_saved_scripted_field_schema).optional(),
   time_field: Kibana_HTTP_APIs_kbn_time_field_schema.optional()
-}).meta({ id: 'Kibana_HTTP_APIs_kbn_saved_data_view_spec_schema' })
-export type Kibana_HTTP_APIs_kbn_saved_data_view_spec_schema = z.infer<typeof Kibana_HTTP_APIs_kbn_saved_data_view_spec_schema>
+}).meta({ id: 'Kibana_HTTP_APIs_kbn_saved_data_view_spec_with_scripted_fields_schema' })
+export type Kibana_HTTP_APIs_kbn_saved_data_view_spec_with_scripted_fields_schema = z.infer<typeof Kibana_HTTP_APIs_kbn_saved_data_view_spec_with_scripted_fields_schema>
 
 export const Kibana_HTTP_APIs_SLOIndicator: z.ZodTypeAny = z.discriminatedUnion('type', [Kibana_HTTP_APIs_SLOIndicatorPropertiesApmLatency, Kibana_HTTP_APIs_SLOIndicatorPropertiesApmAvailability, Kibana_HTTP_APIs_SLOIndicatorPropertiesSyntheticsAvailability, Kibana_HTTP_APIs_SLOIndicatorPropertiesCustomKql, Kibana_HTTP_APIs_SLOIndicatorPropertiesCustomMetric, Kibana_HTTP_APIs_SLOIndicatorPropertiesTimesliceMetric, Kibana_HTTP_APIs_SLOIndicatorPropertiesHistogram]).meta({ id: 'Kibana_HTTP_APIs_SLOIndicator' })
 export type Kibana_HTTP_APIs_SLOIndicator = z.infer<typeof Kibana_HTTP_APIs_SLOIndicator>
@@ -11282,8 +11459,8 @@ export const Kibana_HTTP_APIs_visDatatableESQL: z.ZodTypeAny = z.object({
   description: z.string().optional(),
   filters: Kibana_HTTP_APIs_visPanelFilters.optional(),
   ignore_global_filters: z.boolean().optional(),
-  metrics: z.array(Kibana_HTTP_APIs_visDatatableESQLMetric).optional(),
-  rows: z.array(z.object({
+  metrics: z.array(z.union([Kibana_HTTP_APIs_visDatatableESQLMetric, Kibana_HTTP_APIs_visDatatableESQLMetricProgressBar])).optional(),
+  rows: z.array(z.union([z.object({
     alignment: z.enum(['left', 'center', 'right']).optional(),
     apply_color_to: z.union([z.enum(['value', 'background']), z.enum(['badge'])]).optional(),
     click_filter: z.boolean().optional(),
@@ -11294,7 +11471,7 @@ export const Kibana_HTTP_APIs_visDatatableESQL: z.ZodTypeAny = z.object({
     label: z.string().optional(),
     visible: z.boolean().optional(),
     width: z.number().optional()
-  })).optional(),
+  }), Kibana_HTTP_APIs_visDatatableESQLRowProgressBar])).optional(),
   sampling: z.number().optional(),
   split_metrics_by: z.array(z.object({
     column: z.string(),
@@ -12654,7 +12831,7 @@ export const Kibana_HTTP_APIs_datatableLibItemNoESQL: z.ZodTypeAny = z.object({
   description: z.string().optional(),
   filters: Kibana_HTTP_APIs_visPanelFilters.optional(),
   ignore_global_filters: z.boolean().optional(),
-  metrics: z.array(z.intersection(z.union([z.union([Kibana_HTTP_APIs_visDatatableMetricCountMetric, Kibana_HTTP_APIs_visDatatableMetricUniqueCountMetric, Kibana_HTTP_APIs_visDatatableMetricStatsMetric, Kibana_HTTP_APIs_visDatatableMetricSumMetric, Kibana_HTTP_APIs_visDatatableMetricLastValue, Kibana_HTTP_APIs_visDatatableMetricPercentile, Kibana_HTTP_APIs_visDatatableMetricPercentileRanks]), z.union([Kibana_HTTP_APIs_visDatatableMetricDifferences, Kibana_HTTP_APIs_visDatatableMetricMovingAverage, Kibana_HTTP_APIs_visDatatableMetricCumulativeSum, Kibana_HTTP_APIs_visDatatableMetricCounterRate]), Kibana_HTTP_APIs_visDatatableMetricFormula]), z.object({
+  metrics: z.array(z.intersection(z.union([z.union([Kibana_HTTP_APIs_visDatatableMetricCountMetric, Kibana_HTTP_APIs_visDatatableMetricUniqueCountMetric, Kibana_HTTP_APIs_visDatatableMetricStatsMetric, Kibana_HTTP_APIs_visDatatableMetricSumMetric, Kibana_HTTP_APIs_visDatatableMetricLastValue, Kibana_HTTP_APIs_visDatatableMetricPercentile, Kibana_HTTP_APIs_visDatatableMetricPercentileRanks]), z.union([Kibana_HTTP_APIs_visDatatableMetricDifferences, Kibana_HTTP_APIs_visDatatableMetricMovingAverage, Kibana_HTTP_APIs_visDatatableMetricCumulativeSum, Kibana_HTTP_APIs_visDatatableMetricCounterRate]), Kibana_HTTP_APIs_visDatatableMetricFormula]), z.union([z.object({
     alignment: z.enum(['left', 'center', 'right']).optional(),
     apply_color_to: z.union([z.enum(['value', 'background']), z.enum(['badge'])]).optional(),
     color: z.union([Kibana_HTTP_APIs_visAutoColor, Kibana_HTTP_APIs_visColorByValue, Kibana_HTTP_APIs_visColorMapping]).optional(),
@@ -12664,7 +12841,7 @@ export const Kibana_HTTP_APIs_datatableLibItemNoESQL: z.ZodTypeAny = z.object({
     }).optional(),
     visible: z.boolean().optional(),
     width: z.number().optional()
-  }))),
+  }), Kibana_HTTP_APIs_visDatatableProgressBar]))),
   query: Kibana_HTTP_APIs_visFilterSimple.optional(),
   rows: z.array(z.intersection(z.union([Kibana_HTTP_APIs_visDatatableRowDateHistogram, Kibana_HTTP_APIs_visDatatableRowTerms, Kibana_HTTP_APIs_visDatatableRowHistogram, Kibana_HTTP_APIs_visDatatableRowRanges, Kibana_HTTP_APIs_visDatatableRowFilters]), z.object({
     alignment: z.enum(['left', 'center', 'right']).optional(),
@@ -12689,7 +12866,7 @@ export const Kibana_HTTP_APIs_visDatatableNoESQL: z.ZodTypeAny = z.object({
   description: z.string().optional(),
   filters: Kibana_HTTP_APIs_visPanelFilters.optional(),
   ignore_global_filters: z.boolean().optional(),
-  metrics: z.array(z.intersection(z.union([z.union([Kibana_HTTP_APIs_visDatatableMetricCountMetric, Kibana_HTTP_APIs_visDatatableMetricUniqueCountMetric, Kibana_HTTP_APIs_visDatatableMetricStatsMetric, Kibana_HTTP_APIs_visDatatableMetricSumMetric, Kibana_HTTP_APIs_visDatatableMetricLastValue, Kibana_HTTP_APIs_visDatatableMetricPercentile, Kibana_HTTP_APIs_visDatatableMetricPercentileRanks]), z.union([Kibana_HTTP_APIs_visDatatableMetricDifferences, Kibana_HTTP_APIs_visDatatableMetricMovingAverage, Kibana_HTTP_APIs_visDatatableMetricCumulativeSum, Kibana_HTTP_APIs_visDatatableMetricCounterRate]), Kibana_HTTP_APIs_visDatatableMetricFormula]), z.object({
+  metrics: z.array(z.intersection(z.union([z.union([Kibana_HTTP_APIs_visDatatableMetricCountMetric, Kibana_HTTP_APIs_visDatatableMetricUniqueCountMetric, Kibana_HTTP_APIs_visDatatableMetricStatsMetric, Kibana_HTTP_APIs_visDatatableMetricSumMetric, Kibana_HTTP_APIs_visDatatableMetricLastValue, Kibana_HTTP_APIs_visDatatableMetricPercentile, Kibana_HTTP_APIs_visDatatableMetricPercentileRanks]), z.union([Kibana_HTTP_APIs_visDatatableMetricDifferences, Kibana_HTTP_APIs_visDatatableMetricMovingAverage, Kibana_HTTP_APIs_visDatatableMetricCumulativeSum, Kibana_HTTP_APIs_visDatatableMetricCounterRate]), Kibana_HTTP_APIs_visDatatableMetricFormula]), z.union([z.object({
     alignment: z.enum(['left', 'center', 'right']).optional(),
     apply_color_to: z.union([z.enum(['value', 'background']), z.enum(['badge'])]).optional(),
     color: z.union([Kibana_HTTP_APIs_visAutoColor, Kibana_HTTP_APIs_visColorByValue, Kibana_HTTP_APIs_visColorMapping]).optional(),
@@ -12699,7 +12876,7 @@ export const Kibana_HTTP_APIs_visDatatableNoESQL: z.ZodTypeAny = z.object({
     }).optional(),
     visible: z.boolean().optional(),
     width: z.number().optional()
-  }))),
+  }), Kibana_HTTP_APIs_visDatatableProgressBar]))),
   query: Kibana_HTTP_APIs_visFilterSimple.optional(),
   rows: z.array(z.intersection(z.union([Kibana_HTTP_APIs_visDatatableRowDateHistogram, Kibana_HTTP_APIs_visDatatableRowTerms, Kibana_HTTP_APIs_visDatatableRowHistogram, Kibana_HTTP_APIs_visDatatableRowRanges, Kibana_HTTP_APIs_visDatatableRowFilters]), z.object({
     alignment: z.enum(['left', 'center', 'right']).optional(),

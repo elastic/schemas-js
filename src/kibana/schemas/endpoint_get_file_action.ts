@@ -23,7 +23,8 @@ export const Security_Endpoint_Management_API_GetFileRouteRequestBody = z.object
 }).merge(z.object({
   parameters: z.object({
     force: z.boolean().optional(),
-    path: z.string()
+    path: z.string().optional(),
+    paths: z.array(z.string()).optional()
   })
 })).meta({ id: 'Security_Endpoint_Management_API_GetFileRouteRequestBody' })
 export type Security_Endpoint_Management_API_GetFileRouteRequestBody = z.infer<typeof Security_Endpoint_Management_API_GetFileRouteRequestBody>

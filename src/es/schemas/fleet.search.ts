@@ -49,6 +49,7 @@ export const FleetSearchRequest = z.object({
   _source_includes: z.lazy(() => Fields).optional().meta({ found_in: 'query' }),
   q: z.string().optional().meta({ found_in: 'query' }),
   wait_for_checkpoints: z.array(FleetCheckpoint).describe('A comma separated list of checkpoints. When configured, the search API will only be executed on a shard after the relevant checkpoint has become visible for search. Defaults to an empty list which will cause Elasticsearch to immediately execute the search.').optional().meta({ found_in: 'query' }),
+  wait_for_checkpoints_timeout: z.lazy(() => Duration).describe('The maximum time to wait for the checkpoints specified in `wait_for_checkpoints` to become visible for search.').optional().meta({ found_in: 'query' }),
   allow_partial_search_results: z.boolean().describe('If true, returns partial results if there are shard request timeouts or shard failures. If false, returns an error with no partial results. Defaults to the configured cluster setting `search.default_allow_partial_results`, which is true by default.').optional().meta({ found_in: 'query' }),
   aggregations: z.record(z.string(), z.lazy(() => AggregationsAggregationContainer)).optional().meta({ found_in: 'body' }),
   aggs: z.record(z.string(), z.lazy(() => AggregationsAggregationContainer)).optional(),

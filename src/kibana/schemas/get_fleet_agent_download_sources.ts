@@ -29,6 +29,7 @@ export const GetFleetAgentDownloadSourcesResponse = z.object({
     is_preconfigured: z.boolean().optional(),
     name: z.string(),
     proxy_id: z.string().nullable().optional(),
+    reserve_diskspace: z.boolean().optional(),
     secrets: z.object({
       auth: z.object({
         api_key: z.union([z.object({
