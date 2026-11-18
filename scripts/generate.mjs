@@ -177,6 +177,27 @@ const generators = [
     lint: false,
     jsonManifest: true,
   },
+  {
+    name: 'Zod: AutoOps',
+    npmScript: 'zod-auto-ops',
+    outputSubdir: 'auto-ops',
+    srcSubdir: join('auto-ops', 'schemas'),
+  },
+  {
+    name: 'AB tools: AutoOps',
+    npmScript: 'ab-tools-auto-ops',
+    outputSubdir: join('ab-tools', 'auto-ops'),
+    srcSubdir: join('auto-ops', 'tools'),
+  },
+  // json-schema-auto-ops runs `npm run clean`. Keep it last.
+  {
+    name: 'JSON Schema: AutoOps',
+    npmScript: 'json-schema-auto-ops',
+    outputSubdir: join('json-schema', 'auto-ops'),
+    srcSubdir: join('auto-ops', 'json'),
+    lint: false,
+    jsonManifest: true,
+  },
 ]
 
 export default async function generate (generatorPath) {

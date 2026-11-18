@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"search-insights","x-api":{"id":"insights.search-insights","name":"search-insights","namespace":"insights"},"$ref":"./_defs.json#/$defs/InsightSearchResponse"}

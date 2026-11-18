@@ -11,6 +11,7 @@ import { esJsonManifest } from '../src/es/tools/json-manifest.ts'
 import { kibanaJsonManifest } from '../src/kibana/tools/json-manifest.ts'
 import { cloudJsonManifest } from '../src/cloud/tools/json-manifest.ts'
 import { serverlessJsonManifest } from '../src/serverless/tools/json-manifest.ts'
+import { autoOpsJsonManifest } from '../src/auto-ops/tools/json-manifest.ts'
 
 const srcDir = join(fileURLToPath(import.meta.url), '..', '..', 'src')
 
@@ -19,6 +20,7 @@ const manifests: Record<string, readonly string[]> = {
   kibana: kibanaJsonManifest,
   cloud: cloudJsonManifest,
   serverless: serverlessJsonManifest,
+  'auto-ops': autoOpsJsonManifest,
 }
 
 describe('JSON schema manifests', () => {

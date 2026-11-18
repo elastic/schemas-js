@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"get-insight-by-id","x-api":{"id":"insights.get-insight-by-id","name":"get-insight-by-id","namespace":"insights"},"$ref":"./_defs.json#/$defs/SingleInsightResponse"}
