@@ -139,6 +139,8 @@ However, if you do need a full export as one object, the following exports are p
 | `CloudTools` | Cloud tool registry + `cloudRegistry` |
 | `ServerlessSchemas` | Zod schemas for all Serverless APIs |
 | `ServerlessTools` | Serverless tool registry + `serverlessRegistry` |
+| `AutoOpsSchemas` | Zod schemas for AutoOps insight APIs |
+| `AutoOpsTools` | AutoOps tool registry + `autoOpsRegistry` |
 | `ApiRegistryMeta` | Shared type for manifest entries |
 
 ## Version support

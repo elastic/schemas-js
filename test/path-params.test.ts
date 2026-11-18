@@ -18,6 +18,7 @@ const modules = {
   ...import.meta.glob('../src/es/tools/apis/*.ts', { eager: true }),
   ...import.meta.glob('../src/kibana/tools/apis/*.ts', { eager: true }),
   ...import.meta.glob('../src/cloud/tools/apis/*.ts', { eager: true }),
+  ...import.meta.glob('../src/auto-ops/tools/apis/*.ts', { eager: true }),
 } as Record<string, Record<string, unknown>>
 
 function pathParams (path: string): Set<string> {
@@ -36,7 +37,7 @@ function schemaPathProps (def: Definition): Set<string> {
 describe('path parameters match x-found-in:"path" schema properties', () => {
   for (const [file, mod] of Object.entries(modules)) {
     for (const [exportName, value] of Object.entries(mod)) {
-      if (!exportName.endsWith('_definitions') || !Array.isArray(value)) continue
+      if (!(exportName.endsWith('_definitions') || exportName.endsWith('Definitions')) || !Array.isArray(value)) continue
 
       for (const def of value as Definition[]) {
         const label = `${file}#${exportName}: ${def.namespace != null ? `${def.namespace}.` : ''}${def.name}`

@@ -88,7 +88,18 @@
     "./serverless/json/*.json": "./src/serverless/json/*.json",
     "./es/json/*.json": "./src/es/json/*.json",
     "./kibana/json/*.json": "./src/kibana/json/*.json",
-    "./cloud/json/*.json": "./src/cloud/json/*.json"
+    "./cloud/json/*.json": "./src/cloud/json/*.json",
+    "./auto-ops/schemas/*.js": {
+      "types": "./lib/auto-ops/schemas/*.d.ts",
+      "import": "./lib/auto-ops/schemas/*.js",
+      "require": "./lib/cjs/auto-ops/schemas/*.js"
+    },
+    "./auto-ops/tools/*.js": {
+      "types": "./lib/auto-ops/tools/*.d.ts",
+      "import": "./lib/auto-ops/tools/*.js",
+      "require": "./lib/cjs/auto-ops/tools/*.js"
+    },
+    "./auto-ops/json/*.json": "./src/auto-ops/json/*.json"
   },
   "types": "lib/index.d.ts",
   "files": [
@@ -97,6 +108,7 @@
     "src/kibana/json/",
     "src/cloud/json/",
     "src/serverless/json/",
+    "src/auto-ops/json/",
     "LICENSE",
     "NOTICE.txt",
     "README.md"
