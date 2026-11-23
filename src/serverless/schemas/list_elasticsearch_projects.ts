@@ -59,7 +59,8 @@ export const ListElasticsearchProjectsResponse = z.object({
     optimized_for: z.enum(['general_purpose', 'vector']),
     search_lake: z.object({
       search_power: z.number().optional(),
-      boost_window: z.number().optional()
+      boost_window: z.number().optional(),
+      min_search_vcu: z.number().optional()
     }).optional(),
     endpoints: z.object({
       elasticsearch: z.string(),

@@ -16,7 +16,9 @@ import { Kibana_HTTP_APIs_alerting_action_policy_destination, Kibana_HTTP_APIs_a
 export const Kibana_HTTP_APIs_alerting_new_action_policy = z.object({
   description: z.string().optional(),
   destinations: z.array(Kibana_HTTP_APIs_alerting_action_policy_destination),
+  enabled: z.boolean().optional(),
   grouping: Kibana_HTTP_APIs_alerting_action_policy_grouping.optional(),
+  id: z.string().optional(),
   matcher: z.object({
     expression: z.string().optional(),
     tags: z.array(z.string()).optional()

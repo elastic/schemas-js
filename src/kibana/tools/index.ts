@@ -547,6 +547,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/delete_url.ts') as Record<string, unknown>
       return mod['delete_urlDefinitions'] as KbApiDefinition[]
     }
+    case 'delete_vega_id': {
+      const mod = await import('./apis/delete_vega_id.ts') as Record<string, unknown>
+      return mod['delete_vega_idDefinitions'] as KbApiDefinition[]
+    }
     case 'delete_visualization': {
       const mod = await import('./apis/delete_visualization.ts') as Record<string, unknown>
       return mod['delete_visualizationDefinitions'] as KbApiDefinition[]
@@ -1507,6 +1511,14 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/get_url.ts') as Record<string, unknown>
       return mod['get_urlDefinitions'] as KbApiDefinition[]
     }
+    case 'get_vega': {
+      const mod = await import('./apis/get_vega.ts') as Record<string, unknown>
+      return mod['get_vegaDefinitions'] as KbApiDefinition[]
+    }
+    case 'get_vega_id': {
+      const mod = await import('./apis/get_vega_id.ts') as Record<string, unknown>
+      return mod['get_vega_idDefinitions'] as KbApiDefinition[]
+    }
     case 'get_visualization': {
       const mod = await import('./apis/get_visualization.ts') as Record<string, unknown>
       return mod['get_visualizationDefinitions'] as KbApiDefinition[]
@@ -2079,6 +2091,18 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/post_context_engine_ai_index_query.ts') as Record<string, unknown>
       return mod['post_context_engine_ai_index_queryDefinitions'] as KbApiDefinition[]
     }
+    case 'post_context_engine_memory_forget': {
+      const mod = await import('./apis/post_context_engine_memory_forget.ts') as Record<string, unknown>
+      return mod['post_context_engine_memory_forgetDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_context_engine_memory_remember': {
+      const mod = await import('./apis/post_context_engine_memory_remember.ts') as Record<string, unknown>
+      return mod['post_context_engine_memory_rememberDefinitions'] as KbApiDefinition[]
+    }
+    case 'post_context_engine_memory_save_event': {
+      const mod = await import('./apis/post_context_engine_memory_save_event.ts') as Record<string, unknown>
+      return mod['post_context_engine_memory_save_eventDefinitions'] as KbApiDefinition[]
+    }
     case 'post_data_views_v2': {
       const mod = await import('./apis/post_data_views_v2.ts') as Record<string, unknown>
       return mod['post_data_views_v2Definitions'] as KbApiDefinition[]
@@ -2535,6 +2559,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
       const mod = await import('./apis/post_url.ts') as Record<string, unknown>
       return mod['post_urlDefinitions'] as KbApiDefinition[]
     }
+    case 'post_vega': {
+      const mod = await import('./apis/post_vega.ts') as Record<string, unknown>
+      return mod['post_vegaDefinitions'] as KbApiDefinition[]
+    }
     case 'post_workflows': {
       const mod = await import('./apis/post_workflows.ts') as Record<string, unknown>
       return mod['post_workflowsDefinitions'] as KbApiDefinition[]
@@ -2822,6 +2850,10 @@ async function loadDefinitions (namespaceFile: string): Promise<KbApiDefinition[
     case 'put_uptime_settings': {
       const mod = await import('./apis/put_uptime_settings.ts') as Record<string, unknown>
       return mod['put_uptime_settingsDefinitions'] as KbApiDefinition[]
+    }
+    case 'put_vega_id': {
+      const mod = await import('./apis/put_vega_id.ts') as Record<string, unknown>
+      return mod['put_vega_idDefinitions'] as KbApiDefinition[]
     }
     case 'put_workflows_managed_workflow_id': {
       const mod = await import('./apis/put_workflows_managed_workflow_id.ts') as Record<string, unknown>
