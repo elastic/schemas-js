@@ -22,8 +22,8 @@ export const post_context_engine_ai_index_queryDefinitions: KbApiDefinition[] = 
     description: 'Query AI Indices',
     method: 'POST',
     path: '/api/context_engine/ai_index/_query',
-    destructive: true,
-    readOnly: false,
+    destructive: false,
+    readOnly: true,
     input: _inputSchema,
   },
 ]

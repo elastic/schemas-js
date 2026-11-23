@@ -15,7 +15,8 @@ import { z } from 'zod'
 export const PostContextEngineAiIndexQueryRequest = z.object({
   limit: z.number().optional(),
   params: z.record(z.string(), z.union([z.string(), z.number(), z.boolean()])).optional(),
-  query: z.string()
+  query: z.string(),
+  user_id: z.string().optional()
 }).meta({ id: 'PostContextEngineAiIndexQueryRequest' })
 export type PostContextEngineAiIndexQueryRequest = z.infer<typeof PostContextEngineAiIndexQueryRequest>
 

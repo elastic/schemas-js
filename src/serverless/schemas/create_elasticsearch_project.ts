@@ -19,7 +19,8 @@ export const CreateElasticsearchProjectRequest = z.object({
   optimized_for: z.enum(['general_purpose', 'vector']).optional(),
   search_lake: z.object({
     search_power: z.number().optional(),
-    boost_window: z.number().optional()
+    boost_window: z.number().optional(),
+    min_search_vcu: z.number().optional()
   }).optional(),
   traffic_filters: z.array(z.object({
     id: z.string()
@@ -95,7 +96,8 @@ export const CreateElasticsearchProjectResponse = z.intersection(z.intersection(
   optimized_for: z.enum(['general_purpose', 'vector']),
   search_lake: z.object({
     search_power: z.number().optional(),
-    boost_window: z.number().optional()
+    boost_window: z.number().optional(),
+    min_search_vcu: z.number().optional()
   }).optional(),
   endpoints: z.object({
     elasticsearch: z.string(),

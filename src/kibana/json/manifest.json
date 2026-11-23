@@ -3393,8 +3393,8 @@
     "namespace": "context-engine",
     "description": "Query AI Indices",
     "namespaceFile": "context-engine.post-context-engine-ai-index-query",
-    "destructive": true,
-    "readOnly": false,
+    "destructive": false,
+    "readOnly": true,
     "availability": {
       "stack": {
         "stability": "experimental",
@@ -3403,6 +3403,63 @@
       "serverless": {
         "stability": "experimental",
         "since": "9.6.0"
+      }
+    }
+  },
+  {
+    "id": "context-engine.post-context-engine-memory-forget",
+    "name": "post-context-engine-memory-forget",
+    "namespace": "context-engine",
+    "description": "Forget session memories",
+    "namespaceFile": "context-engine.post-context-engine-memory-forget",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "stability": "experimental",
+        "since": "9.7.0"
+      },
+      "serverless": {
+        "stability": "experimental",
+        "since": "9.7.0"
+      }
+    }
+  },
+  {
+    "id": "context-engine.post-context-engine-memory-remember",
+    "name": "post-context-engine-memory-remember",
+    "namespace": "context-engine",
+    "description": "Remember a session memory",
+    "namespaceFile": "context-engine.post-context-engine-memory-remember",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "stability": "experimental",
+        "since": "9.7.0"
+      },
+      "serverless": {
+        "stability": "experimental",
+        "since": "9.7.0"
+      }
+    }
+  },
+  {
+    "id": "context-engine.post-context-engine-memory-save-event",
+    "name": "post-context-engine-memory-save-event",
+    "namespace": "context-engine",
+    "description": "Save session events",
+    "namespaceFile": "context-engine.post-context-engine-memory-save-event",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "stability": "experimental",
+        "since": "9.7.0"
+      },
+      "serverless": {
+        "stability": "experimental",
+        "since": "9.7.0"
       }
     }
   },
@@ -12839,6 +12896,101 @@
     "availability": {
       "stack": {
         "stability": "stable"
+      }
+    }
+  },
+  {
+    "id": "vega.delete-vega-id",
+    "name": "delete-vega-id",
+    "namespace": "vega",
+    "description": "Delete a Vega library item",
+    "namespaceFile": "vega.delete-vega-id",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "stability": "stable",
+        "since": "9.7.0"
+      },
+      "serverless": {
+        "stability": "stable",
+        "since": "9.7.0"
+      }
+    }
+  },
+  {
+    "id": "vega.get-vega",
+    "name": "get-vega",
+    "namespace": "vega",
+    "description": "List Vega library items",
+    "namespaceFile": "vega.get-vega",
+    "destructive": false,
+    "readOnly": true,
+    "availability": {
+      "stack": {
+        "stability": "stable",
+        "since": "9.7.0"
+      },
+      "serverless": {
+        "stability": "stable",
+        "since": "9.7.0"
+      }
+    }
+  },
+  {
+    "id": "vega.get-vega-id",
+    "name": "get-vega-id",
+    "namespace": "vega",
+    "description": "Get a Vega library item",
+    "namespaceFile": "vega.get-vega-id",
+    "destructive": false,
+    "readOnly": true,
+    "availability": {
+      "stack": {
+        "stability": "stable",
+        "since": "9.7.0"
+      },
+      "serverless": {
+        "stability": "stable",
+        "since": "9.7.0"
+      }
+    }
+  },
+  {
+    "id": "vega.post-vega",
+    "name": "post-vega",
+    "namespace": "vega",
+    "description": "Create a Vega library item",
+    "namespaceFile": "vega.post-vega",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "stability": "stable",
+        "since": "9.7.0"
+      },
+      "serverless": {
+        "stability": "stable",
+        "since": "9.7.0"
+      }
+    }
+  },
+  {
+    "id": "vega.put-vega-id",
+    "name": "put-vega-id",
+    "namespace": "vega",
+    "description": "Upsert a Vega library item",
+    "namespaceFile": "vega.put-vega-id",
+    "destructive": true,
+    "readOnly": false,
+    "availability": {
+      "stack": {
+        "stability": "stable",
+        "since": "9.7.0"
+      },
+      "serverless": {
+        "stability": "stable",
+        "since": "9.7.0"
       }
     }
   },
